@@ -1,0 +1,50 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f2eee5"><meta name="description" content="伊苏里亚的三维造物练习：原创 Blender 模型、Three.js 观察原型与诚实的制作复盘。"><title>QA · 伊苏里亚造物手记</title><link rel="stylesheet" href="../../../gallery.css"></head><body><a class="skip" href="#main">跳至内容</a><header class="mast"><a class="wordmark" href="../../../"><span class="seal">伊</span> 伊苏里亚 <small>造物手记</small></a><nav aria-label="主导航"><a href="../../../#works">作品</a><a href="../../../#fusions">融合</a><a href="../../../#recipes">配方</a><a href="../../../#research">研究</a></nav></header><main id="main" class="report"><a class="back" href="../../../">← 作品集</a><h1>004 · LIMEN 岬界｜几何与通行检查</h1>
+<h2>实测结果</h2>
+<p class="bullet">检查：结果</p>
+<p class="bullet">Blender 网格／GLB meshes：63 / 63</p>
+<p class="bullet">实际导出三角面：16,232</p>
+<p class="bullet">GLB 大小：941,012 bytes</p>
+<p class="bullet">导出顶点／材质：31,052 / 7</p>
+<p class="bullet">退化三角面／完全重复三角面组：0 / 0</p>
+<p class="bullet">非流形边／非邻接自交候选：0 / 0</p>
+<p class="bullet">独立共面正面积重叠候选：0</p>
+<p class="bullet">有意固定装配交叉：72 对构件</p>
+<p class="bullet">12 级台阶 × 3 横向位置：36 个实际踏面射线通过</p>
+<p class="bullet">上下平台通行采样／拱口射线：9 / 2 通过</p>
+<p class="bullet">抵达台与 12 级立板水平射线：32,643 个样本未命中外露岩石</p>
+<p class="bullet">WebGL 深度闪烁／iPhone 性能：未验证</p>
+<h2>修复并复测，不把漂亮图片当证明</h2>
+<p>1. <strong>第一版拱口实际未切通。</strong>自建挤出刀具面绕序反向，精确布尔没有得到预期洞口。统一封闭网格法线后重建，前门射线穿过门廊直到后墙、东门射线穿过侧门直到西墙；不再用门框外形冒充真洞。</p>
+<p>2. <strong>第一版岩体穿过台阶。</strong>对岩体作真实开挖。第二版阶梯状开挖的立面与台阶立板共面，出现可见黑条，独立检查找到 40 对跨构件共面三角面对。改为低于各级踏面的连续斜向开挖体，去掉平行重叠立面。</p>
+<p>3. <strong>护墙角部布尔拼块不稳。</strong>先倒角再合并、以及接触面精确合并均产生退化／重复面。改为从完整 L 形、U 形平面轮廓一次挤出封闭护墙和压顶，最后倒角。最终重复／退化／共面候选归零。</p>
+<p>4. <strong>望远镜轴不能穿光路。</strong>将贯通长轴改为两侧短耳轴，分别与叉架、镜筒壁嵌接，避免实轴横穿空心光路。镜口为真实环形结构，镜片退入前缘；不是贴黑面装孔。</p>
+<p>5. <strong>岩体前脚下延、后角补实支承。</strong>扩展低处岩面，避免台阶前段在岩缘之外悬挑过长。侧视另发现基础后角与岩面之间留空，增加四个嵌岩基础脚，其中前两脚被岩体包裹、后两脚可见并实际相交；再补标高 0.27 的下方抵达平台，开挖前缘突出岩尖，让第一级 0.45 与下平台保持 0.18 高差。未声称完成结构受力设计。</p>
+<h2>检查方法与边界</h2>
+<p class="bullet"><code>check_geometry.py</code> 读取真实 <code>.blend</code>。世界坐标三角化；面积阈值 1e−10；坐标按 1e−6 归一化检查重复；BMesh 检查每条边是否恰有两面；BVH 排除共享顶点后检查非邻接自交。</p>
+<p class="bullet"><strong>共面检测不依赖 BVH 先命中。</strong>世界三角平面按 1e−5 分桶，投影三角形作包围盒＋分离轴正面积检测；阈值 1e−6。共享边且位于两侧的相邻三角形不计重叠。检测有数值容差，不证明所有尺度下绝无 z-fighting。</p>
+<p class="bullet"><strong>射线基于实际场景几何。</strong>每级台阶取三个横向点，确认首先命中台阶且高度与名义值相差小于 0.002；上平台取六点、下方抵达平台取三点；门洞各一条水平射线确认穿到对侧内墙。它们是样本，不是连续人形碰撞体、无障碍或逃生认证。</p>
+<p class="bullet">护栏与整段台阶之间只存在五根立柱脚的有意嵌接；全局 BVH 未检出斜扶手与踏步直接交叉。固定接口不是可拆制造配合。</p>
+<p class="bullet">正面、侧面、俯视、背面、门廊近景与日光／薄暮图由同一真实网格离线渲染。它们与实时 Three.js 的光照不完全相同。</p>
+<h2>72 对有意装配交叉</h2>
+<p class="bullet">34 对：拱圈楔石、门框与墙身／平台嵌接。</p>
+<p class="bullet">10 对：望远镜固定装配与底座落地。</p>
+<p class="bullet">10 对：五根护栏立柱脚与踏步、五个立柱与扶手连接。</p>
+<p class="bullet">12 对：楼板、墙、屋面、基础、阶梯与下平台的固定接缝。</p>
+<p class="bullet">2 对：两段压顶与护墙。</p>
+<p class="bullet">4 对：开挖岩体与基础、阶梯、两处后侧基础脚接触。</p>
+<p>这些是设计意图上的嵌接，不是“零穿模”宣传，也不是所有部件布尔融合为一个制造实体。BVH 表面交叉不识别所有完全包裹但不穿表面的关系。</p>
+<h2>名义尺度</h2>
+<p>以约 1 单位 = 1 米建立一致比例：主室外轮廓 3.40 × 3.02、墙体高 3.06、墙厚约 0.36；两拱门净宽 1.38；露台标高 2.43；台阶 12 × 0.18 高、0.25 深、1.38 宽；望远镜轴心比露台高约 1.45。入口对齐楼梯，但没有真人代理或人因测试。单侧扶手、栏墙、排水、砌体受力、海岸基础、防腐与安全法规均未工程验证。</p>
+<h2>可复查数据</h2>
+<p><a href="geometry-check.json">几何记录</a> · <a href="circulation-check.json">通行射线</a> · <a href="contact-classification.json">固定接触分类</a> · <a href="glb-check.json">GLB 结构</a></p>
+<p>当前云端浏览器禁用 WebGL。网页对此明确显示“Blender · 预渲染”，保留图片切换，禁用实时控制；不能将静态几何检查等同实际浏览器闪烁或移动端测试通过。</p>
+<h2>网页与公开文件检查</h2>
+<p>七个离线视图按钮在不加载 Three.js 的状态机测试中均能切换图片、更新选中状态；静态链接无缺失，JavaScript 语法通过。这是代码／资源测试，<strong>不是浏览器像素或真实 GPU 测试</strong>。详见 <a href="web-check.json">网页检查记录</a>。</p>
+<p>PNG 文本元数据移除前后逐图解码像素 SHA256 相同；Blender 按文件内 SDNA 清理文件选择器目录缓冲，文件字节长度不变，并重新打开运行全套几何、通行检查。发布目录私有路径扫描无命中。详见 <a href="metadata-cleanup.json">元数据记录</a>。</p>
+<h2>追加复核：不能只检查踏面</h2>
+<p>再次目视发现最低白色抵达台前立面有一个暗三角，第一级立板底部还有细长岩条。<a href="arrival-before.png">修前近景</a> 证明它们是<strong>实际岩石实体露出，不是材质或阴影</strong>。旧的踏面射线只保证水平行走面，没有覆盖垂直立面。</p>
+<p><code>check_risers.py</code> 对下平台与 12 个立板分别采样 81×31 点，共 32,643 条水平射线，只比较对应石件与岩体，排除前方护栏的合理遮挡。修前下平台 13 点、第一立板 83 点先命中岩石，其余立板无命中；修后各组均为 0。采样避开侧边 0.02、上下倒角 0.018，不能宣称覆盖所有连续面或容差尺度。</p>
+<p>只下调开挖面的底边，使其低于抵达台底面以及各级立板下缘，不改建筑体量与台阶。该修改保留中上段阶梯／岩体支承接触，移除了下平台前方的岩石交叉。下平台前伸部分仍属于概念连接，未经结构计算。</p>
+<p><strong>旧分类的不足：</strong>把整对“岩体—阶梯”统称有意接触过于粗糙。同一对构件可以同时有合理嵌接与不合理外露；零共面、踏面净空、物体对分类都不能替代局部表面检查。最终保留 72 对固定装配交叉，不宣称全模型严格零相交。</p>
+<p><a href="arrival-after.png">同机位修后近景</a> · <a href="riser-before.json">立板修前记录</a> · <a href="riser-check.json">最终立板检查</a></p>
+<p>独立浏览器复核另已确认日光→薄暮的图片与标签切换，以及 WebGL 不可用时实时按钮禁用。此项不等于真实 WebGL 或手机性能通过，也不把仅代码测试的其余路径冒充浏览器逐项验收。</p><p class="report-download"><a href="QA.md" download>下载 Markdown 原文 ↓</a></p></main><footer><span>ISURIYA / FORM STUDIES</span><p>记录真实完成的作品，也记录尚未解决的问题。<br>Blender 建模 · Three.js 展示 · 持续修订</p><a href="../../../">返回作品集 ↑</a></footer></body></html>

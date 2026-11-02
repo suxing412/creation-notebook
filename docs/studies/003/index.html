@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111515"><meta name="description" content="玄瞳 UMBRA：原创八叶概念光阑，Blender 实体建模与 Three.js 状态观察。"><title>玄瞳 UMBRA — 造物练习 003</title>
+<link rel="stylesheet" href="./style.css"><noscript><style>.state-buttons,.realtime-tools,.load-status,#scene{display:none!important}</style></noscript><script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
+</head>
+<body data-render="static">
+<header class="masthead"><a class="brand" href="../../index.html" aria-label="返回造物练习首页">ISURIA<span>造物实验室</span></a><span class="mast-meta">FORM STUDIES <b>003 / CONCEPT</b></span></header>
+<main>
+<section class="intro"><div><p class="eyebrow"><span></span> AN EXERCISE IN LIGHT &amp; CLEARANCE</p><h1>玄瞳<span>UMBRA</span></h1></div><p class="intro-note">让光穿过，让结构留下。<br><span>八叶概念光阑 · 石墨与金属 · 独立旋转叶片</span></p></section>
+<div class="workbench">
+<div class="stage-shell"><noscript><p class="static-note">静态图册模式 · 下方完整三状态图版与下载无需脚本。</p></noscript><section class="stage" id="model-view" aria-label="玄瞳模型观察区">
+<img id="model-poster" src="./assets/state-mid.png" alt="玄瞳八叶概念光阑中间状态，Blender 实际离线渲染">
+<canvas id="scene" hidden aria-label="三维模型；拖动或方向键旋转，滚轮或双指缩放" tabindex="0"></canvas>
+<div class="stage-top"><span>UMBRA / 003</span><span id="render-badge">BLENDER · 离线图</span></div>
+<div class="stage-bottom"><div><span class="fine-label">CURRENT STATE</span><strong id="state-label" aria-live="polite" aria-atomic="true">中间 · 27.5°</strong></div><span id="stage-hint">实际渲染图 · 非实时画面</span></div>
+
+</section><div class="load-status" id="load-status" role="status">当前显示 Blender 实际渲染；正在检测交互能力。</div><div class="control-block"><div class="control-label"><span>状态选择</span><small id="state-mode">预渲染图切换</small></div><div class="state-buttons" id="state-buttons"><button data-state="closed" data-degrees="0" aria-pressed="false"><i class="iris-icon closed"></i><span>收拢</span><small>0°</small></button><button class="selected" data-state="mid" data-degrees="27.5" aria-pressed="true"><i class="iris-icon mid"></i><span>中间</span><small>27.5°</small></button><button data-state="open" data-degrees="55" aria-pressed="false"><i class="iris-icon open"></i><span>展开</span><small>55°</small></button></div></div>
+</div>
+<aside class="panel" aria-label="观察控制">
+<div class="panel-heading"><span>01 / 观察台</span><span class="status-light"></span></div>
+<h2>开合之间。</h2><p class="panel-description">同一组叶片、同一组转轴。<br>通过三个状态，观察负空间如何变化。</p>
+<details class="realtime-tools"><summary>实时观察工具 <small>需 WebGL 2</small></summary><div class="control-block"><label class="control-label" for="aperture"><span>叶片转角，非 f 值</span><output id="angle-output" for="aperture">27.5°</output></label><input id="aperture" data-realtime type="range" min="0" max="55" step="0.5" value="27.5" disabled><div class="range-notes"><span>0° / 收拢</span><span>55° / 展开</span></div><p class="control-note" id="motion-note">实时转角需 WebGL；上方三个按钮可查看离线状态。</p></div>
+<div class="control-block"><span class="control-label">表面观察 <small>REALTIME ONLY</small></span><div class="surface-buttons" id="surfaces"><button data-realtime data-surface="original" disabled aria-pressed="true" class="selected">原材质</button><button data-realtime data-surface="clay" disabled aria-pressed="false">灰模</button><button data-realtime data-surface="wire" disabled aria-pressed="false">线框</button></div><div class="camera-buttons"><button data-realtime id="rotate" disabled aria-pressed="false">↻ 自动环视</button><button data-realtime id="reset" disabled>复位视角 ↗</button></div></div>
+</details><div class="mechanism-note"><span>CONCEPT, NOT CALIBRATION</span><p>独立旋转的分层叶片示意；未制作联动驱动环、传动槽与完整轴承装配。转角不是 f 值，未作制造或光学标定。</p></div>
+</aside>
+</div>
+<section class="facts" aria-label="模型概况"><div><span>ASSEMBLY</span><strong>08 <small>片独立叶片</small></strong></div><div><span>CONSTRUCTION</span><strong>分层 <small>轴向错位与净空</small></strong></div><div><span>GEOMETRY</span><strong id="model-stats">62,056 <small>三角面</small></strong></div><div><span>PROVENANCE</span><strong>原创 <small>Blender → glTF</small></strong></div></section>
+<section class="sequence"><div class="section-heading"><div><p class="eyebrow">02 / MOTION ATLAS</p><h2>同一机构，三个瞬间。</h2></div><span>BLENDER 实际渲染 · 非 WebGL 截图</span></div><a href="./assets/contact-sheet.png" target="_blank" rel="noopener" aria-label="打开完整三状态图版"><img src="./assets/contact-sheet.png" alt="玄瞳收拢、中间与展开三个角度的实际 Blender 渲染对照图" loading="lazy"></a><p class="figure-caption">图版用于检查叶片遮挡、孔口轮廓和层次；离线图不能证明实时画面无深度闪烁。</p></section>
+<section class="notes"><div class="section-heading"><div><p class="eyebrow">03 / NOTES ON MAKING</p><h2>不只看成品，也检查过程。</h2></div></div><div class="note-grid"><article><span class="note-number">01</span><h3>把遮挡与碰撞分开</h3><p>叶片在俯视投影中交叠是光阑形态的一部分；实体以不同轴向高度分层。重复面、共面重叠与状态采样碰撞，分别检查，不用一张主图代替几何证据。</p></article><article><span class="note-number">02</span><h3>参考真实仪器，承认差距</h3><p>对照 <a href="https://www.knightoptical.com/stock/iris-diaphragm-sprung-steel-leaves-1-5-28mm-aperture-giq2840" target="_blank" rel="noopener">Knight Optical GIQ2840 ↗</a> 的真实光阑。我们的叶片数量、尺寸与厚度是视觉练习参数；不复制其结构，也不声称性能等同。</p></article><article><span class="note-number">03</span><h3>可检验，不夸大</h3><p>运动采样只覆盖记录的角度，不是连续运动证明。当前制作环境未能验证 WebGL 实时闪烁、手机性能或真实光学效果；这些仍是明确的待验项。</p></article></div><details class="assembly-view"><summary><span>打开结构检查视图 <small>ASSEMBLY STUDY</small></span><b>＋</b></summary><p>隐藏外壳后的 Blender 实际渲染，用于观察分层叶片与支承关系。不是爆炸动画，也不是实时剖切。</p><a href="./assets/assembly.png" target="_blank" rel="noopener"><img src="./assets/assembly.png" alt="隐藏外壳后的概念光阑结构视图：分层叶片、各层支承和固定转轴" loading="lazy"></a></details><figure class="joint-study"><img src="./assets/joint.png" alt="真实 Blender 接头细部：转轴、支承与分层叶片关系" loading="lazy"><figcaption>接头细部 / 用局部图解释轴向层次；并非已完成的联动驱动机构。</figcaption></figure></section>
+<section class="download-section"><div><p class="eyebrow">04 / OPEN THE OBJECT</p><h2>把作品带走。</h2><p>原始建模文件、交换模型与可复现脚本。</p></div><div class="download-links"><a href="./assets/iris.blend" download><span>Blender 源文件<small>EDITABLE SCENE / .BLEND</small></span><b>↓</b></a><a href="./assets/iris.glb" download><span>三维交换模型<small>NAMED PARTS / .GLB</small></span><b>↓</b></a><a href="./assets/generate.py" download><span>参数化生成脚本<small>ORIGINAL GENERATOR / .PY</small></span><b>↓</b></a><a href="./assets/QA.html"><span>几何检查记录<small>TESTS, CONTACTS &amp; LIMITATIONS / HTML</small></span><b>↗</b></a><a href="./web-design-notes.html"><span>网页设计复盘<small>WEB DESIGN V2 / HTML</small></span><b>↗</b></a><a href="./assets/REVIEW.html"><span>对标与本轮复盘<small>REFERENCE &amp; REFLECTION / HTML</small></span><b>↗</b></a></div></section>
+</main><footer><span>伊苏里亚 / 造物练习 003</span><span>BUILT IN THE CLOUD, WITH CARE.</span><a href="../../index.html">返回作品首页 ↗</a></footer>
+<noscript><p class="noscript">JavaScript 未启用，当前显示 Blender 离线渲染。可打开三状态图版或下载模型；实时观察需要 JavaScript 与 WebGL 2。</p></noscript>
+<script src="view-controls.js"></script><script type="module" src="./app.js"></script>
+</body></html>

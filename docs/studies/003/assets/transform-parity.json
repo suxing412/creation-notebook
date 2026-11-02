@@ -1,0 +1,251 @@
+{
+  "method": "Extract actual setAngle and validateMotion from app.js into Node VM; parse GLB positions/TRS/hierarchy; use vendored Three.js Object3D/Quaternion/Matrix4; compare every exported blade vertex against actual Blender matrix_world references, after Blender(x,y,z)->glTF(x,z,-y).",
+  "sampleCount": 57,
+  "exportedBladeVerticesPerState": 6904,
+  "sourceBladeVerticesPerState": 6344,
+  "comparedWorldVertices": 393528,
+  "maxLocalMappingError": 0,
+  "maxWorldPositionError": 0.000001786287908129609,
+  "rmsWorldPositionError": 2.2402353374525405e-7,
+  "tolerance": 0.00001,
+  "passed": true,
+  "samples": [
+    {
+      "degrees": 0,
+      "maxWorldPositionError": 0.0000014746705832157695
+    },
+    {
+      "degrees": 1,
+      "maxWorldPositionError": 0.0000013299378472247993
+    },
+    {
+      "degrees": 2,
+      "maxWorldPositionError": 0.0000015794314817088294
+    },
+    {
+      "degrees": 3,
+      "maxWorldPositionError": 7.667500061420458e-7
+    },
+    {
+      "degrees": 4,
+      "maxWorldPositionError": 7.694446234747198e-7
+    },
+    {
+      "degrees": 5,
+      "maxWorldPositionError": 0.0000014997987337516951
+    },
+    {
+      "degrees": 6,
+      "maxWorldPositionError": 0.0000013911508292541308
+    },
+    {
+      "degrees": 7,
+      "maxWorldPositionError": 0.0000016603395417564832
+    },
+    {
+      "degrees": 8,
+      "maxWorldPositionError": 5.574424657773432e-7
+    },
+    {
+      "degrees": 9,
+      "maxWorldPositionError": 8.498910238443488e-7
+    },
+    {
+      "degrees": 10,
+      "maxWorldPositionError": 0.0000014498869753888088
+    },
+    {
+      "degrees": 11,
+      "maxWorldPositionError": 0.0000014026176658584333
+    },
+    {
+      "degrees": 12,
+      "maxWorldPositionError": 0.0000016454573546118327
+    },
+    {
+      "degrees": 13,
+      "maxWorldPositionError": 6.523359685478944e-7
+    },
+    {
+      "degrees": 14,
+      "maxWorldPositionError": 0.0000016842246874589205
+    },
+    {
+      "degrees": 15,
+      "maxWorldPositionError": 0.0000013169960561658062
+    },
+    {
+      "degrees": 16,
+      "maxWorldPositionError": 0.000001406507036271257
+    },
+    {
+      "degrees": 17,
+      "maxWorldPositionError": 0.000001786287908129609
+    },
+    {
+      "degrees": 18,
+      "maxWorldPositionError": 6.709106152008066e-7
+    },
+    {
+      "degrees": 19,
+      "maxWorldPositionError": 0.0000016812500835632909
+    },
+    {
+      "degrees": 20,
+      "maxWorldPositionError": 0.000001342148690925522
+    },
+    {
+      "degrees": 21,
+      "maxWorldPositionError": 0.0000015896941951028688
+    },
+    {
+      "degrees": 22,
+      "maxWorldPositionError": 6.840509339772685e-7
+    },
+    {
+      "degrees": 23,
+      "maxWorldPositionError": 7.597340759973064e-7
+    },
+    {
+      "degrees": 24,
+      "maxWorldPositionError": 0.0000016311331547828835
+    },
+    {
+      "degrees": 25,
+      "maxWorldPositionError": 0.0000012828897656683122
+    },
+    {
+      "degrees": 26,
+      "maxWorldPositionError": 0.0000015363109315328735
+    },
+    {
+      "degrees": 27,
+      "maxWorldPositionError": 7.456934906586559e-7
+    },
+    {
+      "degrees": 27.5,
+      "maxWorldPositionError": 7.274148920095908e-7
+    },
+    {
+      "degrees": 28,
+      "maxWorldPositionError": 8.440537700252402e-7
+    },
+    {
+      "degrees": 29,
+      "maxWorldPositionError": 0.0000015773574405163605
+    },
+    {
+      "degrees": 30,
+      "maxWorldPositionError": 0.0000013247294916883809
+    },
+    {
+      "degrees": 31,
+      "maxWorldPositionError": 0.0000016331739777484646
+    },
+    {
+      "degrees": 32,
+      "maxWorldPositionError": 6.579171470014931e-7
+    },
+    {
+      "degrees": 33,
+      "maxWorldPositionError": 8.704818584328398e-7
+    },
+    {
+      "degrees": 34,
+      "maxWorldPositionError": 0.0000014250262737747275
+    },
+    {
+      "degrees": 35,
+      "maxWorldPositionError": 0.0000014757506479963538
+    },
+    {
+      "degrees": 36,
+      "maxWorldPositionError": 0.0000016518373732575488
+    },
+    {
+      "degrees": 37,
+      "maxWorldPositionError": 6.540263589916703e-7
+    },
+    {
+      "degrees": 38,
+      "maxWorldPositionError": 0.000001728262127591889
+    },
+    {
+      "degrees": 39,
+      "maxWorldPositionError": 0.000001534618805190604
+    },
+    {
+      "degrees": 40,
+      "maxWorldPositionError": 0.0000014121816403221615
+    },
+    {
+      "degrees": 41,
+      "maxWorldPositionError": 0.0000017518451908249467
+    },
+    {
+      "degrees": 42,
+      "maxWorldPositionError": 7.6779610762391e-7
+    },
+    {
+      "degrees": 43,
+      "maxWorldPositionError": 0.000001694947212177788
+    },
+    {
+      "degrees": 44,
+      "maxWorldPositionError": 0.0000014144192063216597
+    },
+    {
+      "degrees": 45,
+      "maxWorldPositionError": 0.000001464088523872516
+    },
+    {
+      "degrees": 46,
+      "maxWorldPositionError": 0.0000017842355711118642
+    },
+    {
+      "degrees": 47,
+      "maxWorldPositionError": 7.526171781004408e-7
+    },
+    {
+      "degrees": 48,
+      "maxWorldPositionError": 0.0000016901101204891526
+    },
+    {
+      "degrees": 49,
+      "maxWorldPositionError": 0.0000013429807632416052
+    },
+    {
+      "degrees": 50,
+      "maxWorldPositionError": 0.0000015362801307105011
+    },
+    {
+      "degrees": 51,
+      "maxWorldPositionError": 0.0000011506054452636936
+    },
+    {
+      "degrees": 52,
+      "maxWorldPositionError": 0.0000015326735082227457
+    },
+    {
+      "degrees": 53,
+      "maxWorldPositionError": 0.0000016325568293994966
+    },
+    {
+      "degrees": 54,
+      "maxWorldPositionError": 0.0000012832392594522462
+    },
+    {
+      "degrees": 55,
+      "maxWorldPositionError": 0.0000010346834982096238
+    }
+  ],
+  "repeatedStateNoAccumulation": true,
+  "appSha256": "c554316ef68bcdf14974e8cbf7697a3152c2558331b89789e2a66d9faa3e93aa",
+  "glbSha256": "49f009f9d7bac4a0a907677ddcb532a96bd13d967c97639a68088a1bda64fec1",
+  "metadataSha256": "0d60f2259341b18ddbb603a913d48d7cf7b8d4ce92237392f7d75f4eb42813ef",
+  "runtimeGpuRenderingVerified": false,
+  "limitations": [
+    "Mathematical transform parity only; no renderer, browser, rasterizer, depth buffer, lighting or device-performance validation.",
+    "Parser covers the actual uncompressed position accessors and TRS scene graph in this asset; not a general glTF conformance validator."
+  ]
+}

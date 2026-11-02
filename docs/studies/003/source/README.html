@@ -1,0 +1,21 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f2eee5"><meta name="description" content="伊苏里亚的三维造物练习：原创 Blender 模型、Three.js 观察原型与诚实的制作复盘。"><title>README · 伊苏里亚造物手记</title><link rel="stylesheet" href="../../../gallery.css"></head><body><a class="skip" href="#main">跳至内容</a><header class="mast"><a class="wordmark" href="../../../"><span class="seal">伊</span> 伊苏里亚 <small>造物手记</small></a><nav aria-label="主导航"><a href="../../../#works">作品</a><a href="../../../#fusions">融合</a><a href="../../../#recipes">配方</a><a href="../../../#research">研究</a></nav></header><main id="main" class="report"><a class="back" href="../../../">← 作品集</a><h1>UMBRA / 玄瞳 — Study 003</h1>
+<p>原创八叶概念光阑：Blender 可编辑模型、独立叶片 GLB、Three.js 原型，以及离线三状态与结构图。设计单位不是毫米；刻度只是视觉方向标，不是 f 值或光学标定。</p>
+<h2>复现</h2>
+<p>使用 Blender 4.3.2、Python 3（Pillow、NumPy 用于投影检测和图版）：</p>
+<pre><code>
+blender -b -t 8 --python source/generate.py
+blender -b -t 2 --python source/check_geometry.py
+blender -b -t 2 --python source/check_coplanar.py -- dist/assets/iris.blend evidence/coplanar-after.json
+blender -b -t 2 --python source/check_projection.py
+python source/analyze_projection.py
+python source/make_contact_sheet.py
+python -m http.server 8080 --directory dist
+</code></pre>
+<p>所有脚本从自身位置计算工程根目录；应保留 <code>source/</code>、<code>dist/</code>、<code>evidence/</code> 结构。<code>IRIS_MODEL_ONLY=1</code> 只生成模型，不渲染。CPU Cycles 128 samples，无降噪；图片仍有细微噪声。Three.js r180 与 addons 已本地保存，无 CDN、远程贴图、字体或外部模型依赖。</p>
+<p><code>Pivot_00</code>…<code>Pivot_07</code> 是固定位置的旋转父节点，<code>Blade_00</code>…<code>Blade_07</code> 是其子网格。网页转角 <code>u</code> 对应 Blender 角度 <code>i×45° + 55° − u</code>。导出后的本地转轴为 <code>[0,-1,0]</code>，默认 <code>u=27.5°</code>；网页保存默认 quaternion 后右乘增量，不能直接覆盖各片方位。</p>
+<h2>交付边界</h2>
+<p>这不是完整机械设计：8 片叶片独立转动，没有驱动环、滑槽与联动杆；不是快门，不完全闭孔，没有 f-stop 校准、衍射、光线传输或制造验证。分层通过设计间隙解决实体相交，但不等同于薄片交错机构的真实装配。</p>
+<p>当前实际验证了 Blender 几何、离线渲染、GLB 结构和前端语法/静态图切换。当前验证环境无法创建 WebGL 上下文，因此未完成真实实时闪烁、移动设备帧率或 GPU 渲染验收；页面必须显示明确的离线预渲染降级。</p>
+<p>第三方参考只作研究，不复制网格、不把其产品图放入网站。Three.js 的许可证保留在 <code>dist/vendor/THREE-LICENSE</code>。</p>
+<h2>本站源码下载布局</h2>
+<p>源码位于本页同目录；展示用最终文件位于上级 <code>assets/</code>。复现时将脚本放入独立工程的 <code>source/</code>，运行生成脚本会新建 <code>dist/assets/</code> 与 <code>evidence/</code>；不要把生成输出误认为本站已经发布的文件。先生成模型，再运行检查脚本。公开检查记录见<a href="../assets/QA.html">几何检查</a>，失败版本与对标见<a href="../assets/REVIEW.html">制作复盘</a>。</p><p class="report-download"><a href="README.md" download>下载 Markdown 原文 ↓</a></p></main><footer><span>ISURIYA / FORM STUDIES</span><p>记录真实完成的作品，也记录尚未解决的问题。<br>Blender 建模 · Three.js 展示 · 持续修订</p><a href="../../../">返回作品集 ↑</a></footer></body></html>

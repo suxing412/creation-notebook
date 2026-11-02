@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "up": "Y",
+  "units": "conceptual design units",
+  "fov": 48,
+  "near": 0.1,
+  "far": 160,
+  "motionMilliseconds": 1000,
+  "irisStateDegrees": 27.5,
+  "models": [
+    {
+      "id": "iris",
+      "file": "iris.glb",
+      "position": [
+        -7,
+        3,
+        4
+      ],
+      "rotationX": 1.5707963267948966,
+      "scale": 0.7,
+      "source": "study 003 frozen original"
+    },
+    {
+      "id": "limen",
+      "file": "limen.glb",
+      "position": [
+        1,
+        0,
+        -3
+      ],
+      "rotationX": 0,
+      "scale": 1,
+      "source": "study 004 final original"
+    }
+  ],
+  "routes": [
+    {
+      "id": "structure",
+      "title": "构造",
+      "eyebrow": "01 / THE INSTRUMENT",
+      "position": [
+        -7,
+        5,
+        13
+      ],
+      "target": [
+        -7,
+        3,
+        4
+      ],
+      "image": "structure.png"
+    },
+    {
+      "id": "arrival",
+      "title": "抵达",
+      "eyebrow": "02 / THE APPROACH",
+      "position": [
+        12,
+        10,
+        17
+      ],
+      "target": [
+        -1,
+        2,
+        0
+      ],
+      "image": "arrival.png"
+    },
+    {
+      "id": "observation",
+      "title": "观测",
+      "eyebrow": "03 / THE HORIZON",
+      "position": [
+        8,
+        8,
+        7
+      ],
+      "target": [
+        1,
+        3,
+        -3
+      ],
+      "image": "observation.png"
+    }
+  ]
+}
