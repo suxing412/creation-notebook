@@ -1,0 +1,215 @@
+{
+  "id": "C01-D08-candidate-v01",
+  "seed": 18044,
+  "seedRole": "deterministic fixed layout; not stochastic generation",
+  "units": "design_m",
+  "scale": [
+    1,
+    1,
+    1
+  ],
+  "proposedCityTranslation": [
+    580,
+    960
+  ],
+  "class": "C design; not archaeological residential block",
+  "publicReplacement": false,
+  "oldStage": "C01 R01-D06 unchanged",
+  "frameBounds": [
+    -60,
+    -60,
+    60,
+    60
+  ],
+  "lots": [
+    {
+      "id": "D08-S1",
+      "variant": "A",
+      "position": [
+        -37,
+        -15
+      ],
+      "rotation": 180,
+      "lotBounds": [
+        -46,
+        -27,
+        -28,
+        -3
+      ]
+    },
+    {
+      "id": "D08-S2",
+      "variant": "B",
+      "position": [
+        -15,
+        -15
+      ],
+      "rotation": 180,
+      "lotBounds": [
+        -24,
+        -27,
+        -6,
+        -3
+      ]
+    },
+    {
+      "id": "D08-S3",
+      "variant": "A",
+      "position": [
+        9,
+        -15
+      ],
+      "rotation": 180,
+      "lotBounds": [
+        0,
+        -27,
+        18,
+        -3
+      ]
+    },
+    {
+      "id": "D08-S4",
+      "variant": "B",
+      "position": [
+        31,
+        -15
+      ],
+      "rotation": 180,
+      "lotBounds": [
+        22,
+        -27,
+        40,
+        -3
+      ]
+    },
+    {
+      "id": "D08-M",
+      "variant": "A",
+      "position": [
+        -5,
+        15
+      ],
+      "rotation": 0,
+      "lotBounds": [
+        -14,
+        3,
+        4,
+        27
+      ]
+    },
+    {
+      "id": "D08-E",
+      "variant": "B",
+      "position": [
+        49,
+        15
+      ],
+      "rotation": 0,
+      "lotBounds": [
+        40,
+        3,
+        58,
+        27
+      ]
+    },
+    {
+      "id": "D08-NW",
+      "variant": "TC03",
+      "position": [
+        -46,
+        3
+      ],
+      "rotation": 0,
+      "lotBounds": [
+        -46,
+        3,
+        -18,
+        39
+      ]
+    },
+    {
+      "id": "D08-NE",
+      "variant": "TC03",
+      "position": [
+        8,
+        15
+      ],
+      "rotation": 0,
+      "lotBounds": [
+        8,
+        15,
+        36,
+        51
+      ]
+    }
+  ],
+  "roads": [
+    {
+      "id": "main",
+      "bounds": [
+        -60,
+        -3,
+        60,
+        3
+      ],
+      "width": 6
+    },
+    {
+      "id": "bend-stem",
+      "bounds": [
+        20,
+        3,
+        26,
+        15
+      ],
+      "width": 6
+    },
+    {
+      "id": "branch-front",
+      "bounds": [
+        8,
+        9,
+        36,
+        15
+      ],
+      "width": 6
+    }
+  ],
+  "gaps": [
+    {
+      "bounds": [
+        -18,
+        3,
+        -14,
+        39
+      ],
+      "meaning": "4m design separation, not automatic walkability"
+    },
+    {
+      "bounds": [
+        36,
+        3,
+        40,
+        51
+      ],
+      "meaning": "4m side separation"
+    }
+  ],
+  "groundBounds": [
+    -60,
+    -31,
+    60,
+    55
+  ],
+  "sourceTC03": {
+    "version": 0,
+    "sha256": "0e1bb6dd0ee48293993238d8c7a711ad0fb0118fc532c67ac8a448e8da02f3c6"
+  },
+  "limits": [
+    "within C01 frame only; unknown ancient water unchanged",
+    "TC03 structure/interiors incomplete",
+    "door swept motion untested",
+    "GPU not tested"
+  ],
+  "environmentUrl": "./assets/d08/D08-environment.glb"
+}

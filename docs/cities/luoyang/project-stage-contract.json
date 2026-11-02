@@ -1,6 +1,6 @@
 {
-  "id": "luoyang-project-C01-internal-candidate-v01",
-  "status": "C01 stage root visual review passed; frozen candidate for independent publication QA; not complete city",
+  "id": "luoyang-project-C01-D08-candidate-v01",
+  "status": "root reviewed CPU candidate; frozen for independent browser/public projection QA; not complete city",
   "defaultMode": "frozen-stage01-evidence",
   "modes": [
     "evidence-with-independent-C01-layer",
@@ -36,13 +36,15 @@
     "cloudNoGLFallbackNavigation": true,
     "gpu": false,
     "realMobile": false,
-    "continuousGlobalCollision": false
+    "continuousGlobalCollision": false,
+    "d08CloudNoGLKeyboardAndHistory": true,
+    "actualRuntimeAssetsBuiltAndDisposedCPU": true
   },
   "sourceDelivery": "Full source retained in private archive; public projection preserves geometry and images",
   "publicClassification": "ongoing city project, not numbered finished work",
   "publicationAuthorizedByThisFile": false,
   "c01": {
-    "placement": "data/c01/placement.json",
+    "placement": "data/d08/layout.json",
     "class": "C design location, not archaeological",
     "targetFrame": "luoyang-local-schematic-v01",
     "scale": [
@@ -57,7 +59,32 @@
     "BBytesUnchanged": true,
     "unknownWaterConflict": "unresolved",
     "camera": "same scene smooth finite station transitions; no arbitrary walking",
-    "CPUImages": "assets/c01/",
-    "publicationAuthorized": false
+    "CPUImages": "assets/d08/",
+    "publicationAuthorized": false,
+    "stages": {
+      "default": "d08",
+      "history": "?c01stage=d06",
+      "exclusive": true,
+      "notCombinedLotCount": 14
+    },
+    "lots": 8,
+    "prototypeVariants": [
+      "A",
+      "B",
+      "TC03"
+    ],
+    "areaCoverage": {
+      "lotFootprints": 4608,
+      "CFrame": 14400,
+      "fraction": 0.32
+    },
+    "limitations": [
+      "C placement not archaeology",
+      "unknown ancient water unchanged",
+      "TC03 no full internal supports or enterable interiors",
+      "fixed leaf only, no door swing sweep",
+      "GPU unverified"
+    ],
+    "connector": "assets/d08/access-D08.glb for D08; old connector only in D06"
   }
 }
