@@ -393,7 +393,38 @@
         "level": "陶明器/彩绘依据、三维解释与原创前场分层；非实证复原",
         "url": "studies/012/#evidence"
       },
-      "referenceCatalog": "research/han-architecture/index.html"
+      "referenceCatalog": "research/han-architecture/index.html",
+      "architecturalType": "架空仓楼 · 开放前场"
+    },
+    {
+      "id": "013",
+      "kind": "regular",
+      "name": "围院·留隙",
+      "english": "COURTYARD / CLEARANCE",
+      "category": "孙吴鄂州参考 · 原创围合宅院",
+      "path": "studies/013/",
+      "image": "studies/013/assets/A-front.webp",
+      "alt": "围院·留隙A门前型，Blender CPU渲染，围墙与内屋间留通隙，非考古复原",
+      "description": "外墙—通隙—内屋—院心；门前、庭内、侧院作业意向三种原创布局。与012开放前场不同，研究内向空间与边界关系。",
+      "qa": "v05三款3044/3836/2940三角；19参数与5合成SAT检查、闭合凸构件阈值内检查及导出有向三角匹配。保留渲染与可编辑原件、9视角和静态识别图。",
+      "pending": "非考古实证复原；限定构件与阈值检查不是任意建筑、连续参数域或结构证明。GPU/真实手机/运动导航/正式游戏性能预算未验。",
+      "version": "v05",
+      "architecturalType": "围合宅院 · 通隙与院心",
+      "evidenceContext": {
+        "period": "三国 · 孙吴",
+        "region": "湖北 · 鄂州",
+        "level": "国博陶院落启发；原证关系、三维解释与原创布局分层，不是实证复原",
+        "url": "studies/013/#evidence"
+      },
+      "referenceCatalog": "research/han-architecture/index.html#study-013-selection",
+      "webPrototype": "studies/013/",
+      "modelView": "studies/013/viewer.html",
+      "designCase": "studies/013/#revision",
+      "modelReflection": "studies/013/#qa-summary",
+      "qaReport": "studies/013/assets/validation-summary.json",
+      "source": "studies/013/source-download.html",
+      "designStatus": "模型介绍原型／非历史实证复原",
+      "webStatus": "静态优先；按需模型观察与无GL备用分层，GPU/真机未验"
     }
   ],
   "recipes": [
@@ -495,6 +526,18 @@
           "status": "历史原型·原字节保留"
         }
       ]
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "architecture-types",
+      "title": "看空间关系，不把历史混成一种风格",
+      "ids": [
+        "012",
+        "013"
+      ],
+      "claim": "012看仓楼如何面向开放前场；013看围墙、内屋与院心如何形成内向关系。它们来自不同年代、地域与器物证据，是两种原创转译练习，不是同一历史原型的升级。",
+      "reuseBoundary": "可迁移的是参数配置、几何检查和证据分层的方法；仓楼生成器与围合宅院生成器不互称通用。各自只保证已测变体，不能把一件器物的尺度、彩绘或构件制度搬给另一件。"
     }
   ]
 }

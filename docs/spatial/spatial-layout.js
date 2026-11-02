@@ -58,6 +58,17 @@ export function buildDirectoryScene(items,makeLabel=()=>null){
     for(const z of [-.42,.42])add(symbol,'box',dark,[0,.24,z],[1.6,.48,.13]);
     for(const x of [-.48,0,.48])add(symbol,'box',mat,[x,.57,0],[.12,1.14,1.18]);
    }
+   else if(n===13){
+    // Perimeter, distinct inner courtyard and gatehouse: navigational mark only, NOT original geometry.
+    for(const x of [-.77,.77])add(symbol,'box',mat,[x,.29,0],[.13,.58,1.60]);
+    add(symbol,'box',mat,[0,.29,-.74],[1.42,.58,.13]);
+    for(const x of [-.54,.54])add(symbol,'box',mat,[x,.29,.74],[.47,.58,.13]);
+    for(const x of [-.46,.46])add(symbol,'box',dark,[x,.42,-.10],[.25,.26,.78]);
+    add(symbol,'box',dark,[0,.42,-.44],[.70,.26,.25]);
+    for(const x of [-.20,.20])add(symbol,'box',dark,[x,.28,.74],[.10,.56,.26]);
+    add(symbol,'box',mat,[0,.67,.74],[.62,.24,.45]);
+    add(symbol,'box',dark,[0,.83,.74],[.76,.10,.60]);
+   }
    else if(n===12){
     // A raised storehouse and a short approach: an abstract index, NOT a reconstruction.
     add(symbol,'box',mat,[0,.60,0],[.92,.8,.68]);

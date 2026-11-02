@@ -1,0 +1,131 @@
+{
+  "title": "围院·留隙",
+  "subtitle": "孙吴鄂州陶院落启发的原创宅院",
+  "geometry_version": "v05",
+  "stage": "original stylized model study; not archaeological reconstruction or game-ready production asset",
+  "variants": [
+    {
+      "id": "A",
+      "title": "门前型",
+      "model": "courtyard-A.glb",
+      "sha256": "f7dc654269259ec87f03010d5ea3fe7853cf92a44d2b91287397af80532c5b9b",
+      "render_native_blend_sha256": "46567313dc23060691cb558ac513a02b2ab56e2d5f6c7ca2c2a0503a7099e4a5",
+      "editable_native_blend_sha256": "b42d4f50d64d9eb9c5f14951ae2fd23db16d89428bd31da582dbf4fe9ba39a06",
+      "bytes": 293452,
+      "triangles": 3044,
+      "native_world_bounds": [
+        [
+          -7.0,
+          7.0
+        ],
+        [
+          -9.199999809265137,
+          6.0
+        ],
+        [
+          0.0,
+          3.509999990463257
+        ]
+      ],
+      "preview": "A-front.webp",
+      "plan": "A-top.webp",
+      "rear": "A-rear.webp",
+      "parameters": {
+        "id": "A",
+        "width": 11,
+        "depth": 10,
+        "gate_x": 0,
+        "front_apron": 3.2,
+        "side_recess": 0,
+        "side_shortening": 0
+      }
+    },
+    {
+      "id": "B",
+      "title": "庭内型",
+      "model": "courtyard-B.glb",
+      "sha256": "696227e0223ac094135edeea839f4b6c9674f2bd0398f0a5a15f117e8d7692d5",
+      "render_native_blend_sha256": "b832bcc3828dba978d2f0b8dc51f0244952a88abf4921410c78998f39c0479b1",
+      "editable_native_blend_sha256": "dda805c514d3baff87a0b149fa75f2dc0807be326d3ea83d092beacf81a14435",
+      "bytes": 359428,
+      "triangles": 3836,
+      "native_world_bounds": [
+        [
+          -8.0,
+          8.0
+        ],
+        [
+          -9.0,
+          7.0
+        ],
+        [
+          0.0,
+          3.509999990463257
+        ]
+      ],
+      "preview": "B-front.webp",
+      "plan": "B-top.webp",
+      "rear": "B-rear.webp",
+      "parameters": {
+        "id": "B",
+        "width": 13,
+        "depth": 12,
+        "gate_x": -1.1,
+        "front_apron": 2,
+        "side_recess": 0,
+        "side_shortening": 0
+      }
+    },
+    {
+      "id": "C",
+      "title": "侧作意向型",
+      "model": "courtyard-C.glb",
+      "sha256": "9146595743ebd9f485e7b1355f2e640517eca6c7d92f4f96b071c35d431284fc",
+      "render_native_blend_sha256": "ce3e30988edb7802adfe202c1af03d5d645bda25f4c91db04cbed582ccb3a894",
+      "editable_native_blend_sha256": "b26c18e862acf75915da010b27b26f1985b17f238bde3dadaaaa53f6f095faa9",
+      "bytes": 286216,
+      "triangles": 2940,
+      "native_world_bounds": [
+        [
+          -7.5,
+          7.5
+        ],
+        [
+          -8.649999618530273,
+          6.25
+        ],
+        [
+          0.0,
+          3.509999990463257
+        ]
+      ],
+      "preview": "C-front.webp",
+      "plan": "C-top.webp",
+      "rear": "C-rear.webp",
+      "parameters": {
+        "id": "C",
+        "width": 12,
+        "depth": 10.5,
+        "gate_x": 0.8,
+        "front_apron": 2.4,
+        "side_recess": 0.65,
+        "side_shortening": 2.2
+      }
+    }
+  ],
+  "units": "original artistic units; not surveyed metres",
+  "viewer_contract": {
+    "gltf_axis": "Y-up as exported by Blender glTF exporter",
+    "native_bounds_axis": "Blender Z-up; derive viewer bounds from loaded GLB",
+    "materials": "opaque material colours, no textures",
+    "camera": "fit full ground apron; do not reuse granary camera",
+    "interaction": "closed rooms and upper shallow windows are not enterable; gate passage open"
+  },
+  "validation": {
+    "oriented_triangle_match": true,
+    "positive_volume_intersections": 0,
+    "degenerate_duplicate_nonmanifold_winding_errors": 0,
+    "gpu_tested": false,
+    "engine_performance_tested": false
+  }
+}
