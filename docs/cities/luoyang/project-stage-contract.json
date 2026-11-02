@@ -1,10 +1,10 @@
 {
-  "id": "luoyang-project-stage01-R01D06-candidate-v01",
-  "status": "in-progress internal candidate reviewed by root; not complete city",
+  "id": "luoyang-project-C01-internal-candidate-v01",
+  "status": "C01 stage root visual review passed; frozen candidate for independent publication QA; not complete city",
   "defaultMode": "frozen-stage01-evidence",
   "modes": [
-    "evidence",
-    "r01-unplaced-C-design-slice",
+    "evidence-with-independent-C01-layer",
+    "r01-unplaced-reference",
     "neutral-technical-reference"
   ],
   "evidence": {
@@ -40,5 +40,24 @@
   },
   "sourceDelivery": "Full source retained in private archive; public projection preserves geometry and images",
   "publicClassification": "ongoing city project, not numbered finished work",
-  "publicationAuthorizedByThisFile": false
+  "publicationAuthorizedByThisFile": false,
+  "c01": {
+    "placement": "data/c01/placement.json",
+    "class": "C design location, not archaeological",
+    "targetFrame": "luoyang-local-schematic-v01",
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "translationEastNorth": [
+      580,
+      960
+    ],
+    "BBytesUnchanged": true,
+    "unknownWaterConflict": "unresolved",
+    "camera": "same scene smooth finite station transitions; no arbitrary walking",
+    "CPUImages": "assets/c01/",
+    "publicationAuthorized": false
+  }
 }
