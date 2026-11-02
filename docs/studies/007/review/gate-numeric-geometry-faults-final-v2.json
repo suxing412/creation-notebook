@@ -1,0 +1,140 @@
+{
+  "created_utc": "2026-11-01T23:33:23.244117+00:00",
+  "passed": true,
+  "baseline": "assets/orison",
+  "formal_assets_untouched": true,
+  "formal_file_sha256": {
+    "model.blend": "980e11a3c72686abcea0f555ff3aef6d27380abf89af06add28e72945b4f3509",
+    "model.glb": "68d15df7bfdd59433a0f9070b91165882a93de3f29587f95e020ffcca914f4ed",
+    "model-info.json": "7f61fda4a207979e48cfd9dc49fe4059e7568ae66c16c8c4fa2350f51b8e7895",
+    "config.json": "6b9719719a3f40c6b7686efb0700441e49cd7170449ffbd60075a4c2a7644791"
+  },
+  "checker_sha256": "3c2140f88b6297e70f1a1d9c52f9eb9cc1008e7cf03d3b94f5e8331bb360847d",
+  "recipe_sha256": "7a4591a35e9cf843906df4eb7e4ef13647a39c474b96dd3251d85dd7b4a3718a",
+  "test_script_sha256": "01a4137cbe23100dd84a445fbb6a64f906919d8bff29de65c8913ed29dd17520",
+  "tests": [
+    {
+      "case": "curvature-limit",
+      "dedicated_field": "curvature_radius_failures",
+      "normal_generator_validation_rejected": true,
+      "normal_generator_rejection": "Curvature times section circumradius must be <0.72",
+      "raw_input_box_and_cross_field_validation_passed": true,
+      "bypass_used": "recipe.geometry(c, revision=1) called directly only in isolated work fault generator",
+      "config": {
+        "name": "orison",
+        "seed": 0,
+        "recipe_version": "1.0.0",
+        "radius_x": 0.085,
+        "radius_z": 0.22,
+        "asymmetry": 0.25,
+        "depth_wave": 0,
+        "lean": 0,
+        "section_width": 0.072,
+        "section_depth": 0.06,
+        "corner_radius": 0.014,
+        "roll_degrees": 16,
+        "width_modulation": 0.27
+      },
+      "recipe_diagnostics_640_samples": {
+        "samples": 640,
+        "max_curvature_per_m": 67.4409934508026,
+        "max_section_circumradius_m": 0.04949893317937236,
+        "max_curvature_radius_product": 2.319311047916009,
+        "minimum_frame_reference_sine": 0.9999999999999998,
+        "sampled_nonlocal_clearance_m": 0.009689544936286397,
+        "closest_station_pair": [
+          61,
+          571
+        ],
+        "nonlocal_arc_exclusion_m": 0.1385970129022426,
+        "centerline_length_m": 1.0123035464702042
+      },
+      "vertices": 11520,
+      "quad_faces": 11520,
+      "model_sha256": "2c871f9f52cb682a47c6339fd9d1b8b4a90dad9fc99c51de6ed81bc435451cf6",
+      "exit_code": 1,
+      "native_rejected": true,
+      "dedicated_field_triggered": true,
+      "dedicated_trigger_values": [
+        {
+          "maximum": 2.319963321551157,
+          "required_less_than": 0.72
+        }
+      ],
+      "fresh_identity_verified": true,
+      "input_vertex_topology_contracts_passed": true,
+      "passed": true,
+      "validation_report": "gate-numeric-final-v2-curvature-limit.json",
+      "other_nonempty_fields": [
+        "nonadjacent_self_intersection_candidates"
+      ]
+    },
+    {
+      "case": "frame-reference-limit",
+      "dedicated_field": "frame_reference_failures",
+      "normal_generator_validation_rejected": true,
+      "normal_generator_rejection": "Analytic frame reference near singularity",
+      "raw_input_box_and_cross_field_validation_passed": true,
+      "bypass_used": "recipe.geometry(c, revision=1) called directly only in isolated work fault generator",
+      "config": {
+        "name": "orison",
+        "seed": 0,
+        "recipe_version": "1.0.0",
+        "radius_x": 0.085,
+        "radius_z": 0.1,
+        "asymmetry": 0.14,
+        "depth_wave": 0.042,
+        "lean": 0.03,
+        "section_width": 0.052,
+        "section_depth": 0.038,
+        "corner_radius": 0.014,
+        "roll_degrees": 16,
+        "width_modulation": 0.22
+      },
+      "recipe_diagnostics_640_samples": {
+        "samples": 640,
+        "max_curvature_per_m": 31.5679018298404,
+        "max_section_circumradius_m": 0.03238724631718495,
+        "max_curvature_radius_product": 0.8879648604711707,
+        "minimum_frame_reference_sine": 0.6215385884824216,
+        "sampled_nonlocal_clearance_m": 0.02039186167927881,
+        "closest_station_pair": [
+          165,
+          262
+        ],
+        "nonlocal_arc_exclusion_m": 0.09068428968811787,
+        "centerline_length_m": 0.6682463730537216
+      },
+      "vertices": 11520,
+      "quad_faces": 11520,
+      "model_sha256": "0c029e920cfdf9a30f91f35b20ad3191c23d0f8d41bf6e7f3ab170d58cd09c6d",
+      "exit_code": 1,
+      "native_rejected": true,
+      "dedicated_field_triggered": true,
+      "dedicated_trigger_values": [
+        {
+          "minimum_reference_sine": 0.6215063209956132,
+          "required_at_least": 0.65
+        }
+      ],
+      "fresh_identity_verified": true,
+      "input_vertex_topology_contracts_passed": true,
+      "passed": true,
+      "validation_report": "gate-numeric-final-v2-frame-reference-limit.json",
+      "other_nonempty_fields": [
+        "curvature_radius_failures"
+      ]
+    }
+  ],
+  "coverage": {
+    "curvature_radius_failures": "Dedicated actual saved native mesh rejection triggered.",
+    "frame_reference_failures": "Dedicated actual saved native mesh rejection triggered.",
+    "nonlocal_centerline_clearance_failures": "NOT independently fault-trigger covered. Valid finite samples exercise the passing path; no known counterexample search was performed."
+  },
+  "limits": [
+    "Input-validator rejection alone is not counted as native field coverage. Both normal generation calls reject before geometry creation; direct geometry construction is an intentional isolated test bypass.",
+    "Other defect fields may trigger too; each selected dedicated field must independently be nonempty.",
+    "This supplement does not claim all checker fields or all parameter-domain failure modes have dedicated faults.",
+    "Bad native binaries and logs remain under work; public reports contain only configuration, identities and numerical results."
+  ]
+}

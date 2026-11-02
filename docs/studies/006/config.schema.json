@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FOLIO constrained digital shell recipe 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "width",
+    "height",
+    "display_angle",
+    "rear_angle",
+    "tray_depth",
+    "foot_depth",
+    "lip_height",
+    "bend_radius",
+    "thickness",
+    "name",
+    "seed",
+    "recipe_version"
+  ],
+  "properties": {
+    "width": {
+      "type": "number",
+      "minimum": 0.18,
+      "maximum": 0.31
+    },
+    "height": {
+      "type": "number",
+      "minimum": 0.13,
+      "maximum": 0.24
+    },
+    "display_angle": {
+      "type": "number",
+      "minimum": 55,
+      "maximum": 75
+    },
+    "rear_angle": {
+      "type": "number",
+      "minimum": 53,
+      "maximum": 72
+    },
+    "tray_depth": {
+      "type": "number",
+      "minimum": 0.038,
+      "maximum": 0.06
+    },
+    "foot_depth": {
+      "type": "number",
+      "minimum": 0.022,
+      "maximum": 0.045
+    },
+    "lip_height": {
+      "type": "number",
+      "minimum": 0.02,
+      "maximum": 0.032
+    },
+    "bend_radius": {
+      "type": "number",
+      "minimum": 0.006,
+      "maximum": 0.012
+    },
+    "thickness": {
+      "type": "number",
+      "minimum": 0.0024,
+      "maximum": 0.004
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,30}$"
+    },
+    "seed": {
+      "const": 0
+    },
+    "recipe_version": {
+      "const": "1.0.0"
+    }
+  },
+  "$comment": "JSON Schema is a preliminary type/range guide. recipe.validate is authoritative and also checks finite non-boolean numbers, Blender version, bend-radius/thickness, lip length and adjacent bend-trim coupling."
+}

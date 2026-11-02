@@ -1,0 +1,170 @@
+{
+  "format": "github-byte-parts-qa-v1",
+  "archiveTests": [
+    {
+      "study": "005",
+      "originalZipBytes": 21602539,
+      "originalZipSha256": "8931aaee8e86c8e0b5657499f40f6c71d0a7630a18c127afe71b99223917518c",
+      "zipEntryCount": 103,
+      "zipEntriesAndAllDecompressedBytesMatch": true,
+      "rawZipByteEquality": true,
+      "zipCrcPassed": true,
+      "existingOutputNotOverwritten": true,
+      "negativeTests": [
+        {
+          "case": "broken",
+          "rejected": true,
+          "reason": "Part size/SHA-256 mismatch: recipe-source.zip.part001"
+        },
+        {
+          "case": "missing",
+          "rejected": true,
+          "reason": "Missing part or disallowed symlink: recipe-source.zip.part002"
+        },
+        {
+          "case": "swapped-part-bytes",
+          "rejected": true,
+          "reason": "Part size/SHA-256 mismatch: recipe-source.zip.part001"
+        },
+        {
+          "case": "wrong-manifest-order",
+          "rejected": true,
+          "reason": "Incorrect part order or name"
+        },
+        {
+          "case": "wrong-full-hash",
+          "rejected": true,
+          "reason": "Original ZIP size/SHA-256 mismatch; no output created"
+        }
+      ]
+    },
+    {
+      "study": "006",
+      "originalZipBytes": 23865179,
+      "originalZipSha256": "c8a20198c56e9639e5291223840436d39118a894d8e6033105912b9675592786",
+      "zipEntryCount": 181,
+      "zipEntriesAndAllDecompressedBytesMatch": true,
+      "rawZipByteEquality": true,
+      "zipCrcPassed": true,
+      "existingOutputNotOverwritten": true,
+      "negativeTests": [
+        {
+          "case": "broken",
+          "rejected": true,
+          "reason": "Part size/SHA-256 mismatch: recipe-source.zip.part001"
+        },
+        {
+          "case": "missing",
+          "rejected": true,
+          "reason": "Missing part or disallowed symlink: recipe-source.zip.part002"
+        },
+        {
+          "case": "swapped-part-bytes",
+          "rejected": true,
+          "reason": "Part size/SHA-256 mismatch: recipe-source.zip.part001"
+        },
+        {
+          "case": "wrong-manifest-order",
+          "rejected": true,
+          "reason": "Incorrect part order or name"
+        },
+        {
+          "case": "wrong-full-hash",
+          "rejected": true,
+          "reason": "Original ZIP size/SHA-256 mismatch; no output created"
+        }
+      ]
+    }
+  ],
+  "staticLinks": {
+    "checked": 976,
+    "missing": [],
+    "directSmallZipLinks": 10,
+    "oversizedDirectZipLinks": 0
+  },
+  "originalFullSnapshotUnchanged": true,
+  "unchangedOriginalFileCount": 1053,
+  "jsSyntax": {
+    "allJavascriptModulesParsed": true,
+    "count": 84
+  },
+  "browser": {
+    "rerunForThisProjection": false,
+    "downloadImplementationByteIdenticalToPreviousVerifiedProjection": true,
+    "previousQaFile": "Previous projection DELIVERY-QA.json records real native Chrome saved-ZIP byte comparisons, no-script and keyboard cancel tests. These are historical checks, not a new native browser run.",
+    "original007IntegrationEvidence": "INTEGRATION-QA.json is preserved unchanged from the full007 snapshot; no expanded GPU or physical-device claim."
+  },
+  "limits": [
+    "Checks prove exact archive delivery, not model geometry, GPU behavior or physical device performance."
+  ],
+  "sourceSnapshot": "model-gallery-007",
+  "previousGithubProjection": "model-gallery-github-parts",
+  "counts": {
+    "regular": 7,
+    "fusion": 3,
+    "geometryRecipes": 1,
+    "new007Files": 354,
+    "study008Added": false,
+    "fusionF04Added": false
+  },
+  "allPythonSourceSyntaxPassed": true,
+  "rebuildTests": {
+    "rootBuildByteIdempotent": true,
+    "publishedRepoLayoutBuildByteIdempotent": true,
+    "freshProjectionEqualsCandidateStaticTree": true,
+    "originalInputReadOnly": true
+  },
+  "unchangedFromPreviousProjection": {
+    "staticFiles": 710,
+    "modifiedStaticFiles": [
+      "index.html",
+      "manifest.json"
+    ],
+    "addedStaticFiles": 354,
+    "addedStaticFilesAllUnder": "studies/007/",
+    "removedStaticFiles": 0,
+    "study005006SixPartsTwoManifestsTwoDownloadPagesAndSharedRuntimeByteIdentical": true
+  },
+  "new007FullOriginalLayout": {
+    "all354OriginalFilesByteIdentical": true,
+    "combinedSourceZipEmbedded": false,
+    "siteOnlyVendorDedupOrBlendZipTransformApplied": false
+  },
+  "javascriptActualPartTests": {
+    "byteEqualityPassed": true,
+    "brokenMissingWrongOrderAndWholeHashRejected": true
+  },
+  "javascriptStateHarness": {
+    "type": "Node mock DOM/fetch, not native browser",
+    "actualPartBytes": true,
+    "http503FailureNoSave": true,
+    "retryReusesVerifiedPart": true,
+    "cancelRetainsOnlyVerifiedParts": true,
+    "doubleStartSuppressed": true,
+    "realCorruptionRefused": true,
+    "http404MissingRefused": true,
+    "recoverySucceeds": true,
+    "clearRevokesSave": true,
+    "bfcacheReturnClearsStaleSaveAndRequiresRevalidation": true
+  },
+  "privacyScan": {
+    "new007ExternalImages": 0,
+    "new007LogFiles": 0,
+    "new007MachinePathMarkersInModelsOrImages": 0,
+    "sourcePathKeywordHits": "Only original run.py/package.py rejection signatures; not actual machine paths. All prior static files except the two gallery indexes retain previous bytes."
+  },
+  "uploadBudget": {
+    "requestLimitBytes": 16777216,
+    "metadataReserveBytes": 65536,
+    "rawArchiveSafeLimitBytes": 12533760,
+    "partSizeLimitBytes": 8388608,
+    "splitArchivesOnly": [
+      "studies/005/recipe-source.zip",
+      "studies/006/recipe-source.zip"
+    ],
+    "largestCandidateFile": "dist/fusions/F03/source.zip",
+    "largestRawBytes": 12231009,
+    "largestBase64Bytes": 16308012,
+    "requestHeadroomBeforeMetadataBytes": 469204
+  }
+}

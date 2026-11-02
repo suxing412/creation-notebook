@@ -1,0 +1,140 @@
+{
+  "passed": true,
+  "probe": {
+    "target_loop_triangle": 298,
+    "source_triangle_indices": [
+      149,
+      173,
+      174
+    ],
+    "source_points_m": [
+      [
+        0.12434999644756317,
+        -0.13427601754665375,
+        0.008820565417408943
+      ],
+      [
+        0.12434999644756317,
+        -0.13424836099147797,
+        0.008595374412834644
+      ],
+      [
+        -0.12434999644756317,
+        -0.13424836099147797,
+        0.008595374412834644
+      ]
+    ],
+    "stored_inset_points_m": [
+      [
+        0.08704499900341034,
+        -0.13426771759986877,
+        0.008753008209168911
+      ],
+      [
+        0.08704499900341034,
+        -0.13425251841545105,
+        0.008629153482615948
+      ],
+      [
+        -0.04974000155925751,
+        -0.13425251841545105,
+        0.008629153482615948
+      ]
+    ],
+    "inset_fraction": 0.55,
+    "shortest_source_edge_m": 0.00022688294879401108,
+    "source_width_m": 0.24869999289512634,
+    "float64_unit_normal_dot": 0.9999999955347064,
+    "source_plane_to_inset_max_distance_m": 8.822935937402576e-09,
+    "inset_plane_to_source_max_distance_m": 1.2039204744240806e-08,
+    "quantization": "Coordinates stored as Blender float32; plane arithmetic subsequently uses Python float64."
+  },
+  "cases": [
+    {
+      "case": "old-threshold",
+      "overall_rejected": true,
+      "coplanar_detection_expected": false,
+      "coplanar_detection_actual": false,
+      "coplanar_count": 0,
+      "nonadjacent_bvh_count": 1,
+      "matched": true,
+      "thresholds": {
+        "degenerate_area_m2": 1e-12,
+        "duplicate_vertex_round_m": 1e-08,
+        "recipe_vertex_distance_m": 2e-07,
+        "identity_matrix_entry_tolerance": 1e-08,
+        "coplanar_normal_cosine": 0.9999999999,
+        "coplanar_plane_distance_m": 1e-08,
+        "positive_overlap_axis_m": 1e-08,
+        "spatial_cell_m": 0.012
+      },
+      "model_sha256": "f7b25abcf1b5f665acc7e6d1f38f19fa3d800bf8cdec49e98ca31773fff6424f",
+      "checker_sha256": "73844d810548c29a32a974e3957f2620f9bace3cd0c6efcb33186639e1a0cae4",
+      "report": "work/gate-coplanar-locked/old-threshold-validation.json"
+    },
+    {
+      "case": "current-threshold",
+      "overall_rejected": true,
+      "coplanar_detection_expected": true,
+      "coplanar_detection_actual": true,
+      "coplanar_count": 1,
+      "nonadjacent_bvh_count": 1,
+      "matched": true,
+      "thresholds": {
+        "degenerate_area_m2": 1e-12,
+        "duplicate_vertex_round_m": 1e-08,
+        "recipe_vertex_distance_m": 2e-07,
+        "identity_matrix_entry_tolerance": 1e-08,
+        "coplanar_normal_cosine": 0.9999999,
+        "coplanar_plane_distance_m": 5e-08,
+        "positive_overlap_axis_m": 1e-08,
+        "spatial_cell_m": 0.012
+      },
+      "model_sha256": "f7b25abcf1b5f665acc7e6d1f38f19fa3d800bf8cdec49e98ca31773fff6424f",
+      "checker_sha256": "c15823a58e072f1ca21ec63a1696eff90e7928f0f86e594b6a898f33bd07f99c",
+      "report": "work/gate-coplanar-locked/current-threshold-validation.json"
+    },
+    {
+      "case": "one-micrometre-control",
+      "overall_rejected": true,
+      "coplanar_detection_expected": false,
+      "coplanar_detection_actual": false,
+      "coplanar_count": 0,
+      "nonadjacent_bvh_count": 0,
+      "matched": true,
+      "thresholds": {
+        "degenerate_area_m2": 1e-12,
+        "duplicate_vertex_round_m": 1e-08,
+        "recipe_vertex_distance_m": 2e-07,
+        "identity_matrix_entry_tolerance": 1e-08,
+        "coplanar_normal_cosine": 0.9999999,
+        "coplanar_plane_distance_m": 5e-08,
+        "positive_overlap_axis_m": 1e-08,
+        "spatial_cell_m": 0.012
+      },
+      "model_sha256": "3cf165b68854a423aff4ab9a69f76ed1200031a6cd41730aaa2c773d1b21c9ab",
+      "checker_sha256": "c15823a58e072f1ca21ec63a1696eff90e7928f0f86e594b6a898f33bd07f99c",
+      "report": "work/gate-coplanar-locked/one-micrometre-control-validation.json"
+    }
+  ],
+  "generation": {
+    "config": {
+      "name": "quantization-base",
+      "seed": 0,
+      "recipe_version": "1.0.0",
+      "width": 0.25,
+      "height": 0.19,
+      "display_angle": 65,
+      "rear_angle": 62,
+      "tray_depth": 0.05,
+      "foot_depth": 0.032,
+      "lip_height": 0.026,
+      "bend_radius": 0.008,
+      "thickness": 0.003
+    },
+    "revision": 0,
+    "source_triangle": 298,
+    "inset": 0.55
+  },
+  "meaning": "Old checker still rejects overall through other defects, but misses the dedicated coplanar field. Current checker must detect that field; a +1 um control must not. No old saved binary is required."
+}

@@ -1,0 +1,230 @@
+{
+  "baseline": "assets/folio",
+  "baseline_sha256": "cf54c7e72d9b84a9aa886b4f8281a7762945625a32e8b3e6ee9edc5d8533609b",
+  "checker_sha256": "c15823a58e072f1ca21ec63a1696eff90e7928f0f86e594b6a898f33bd07f99c",
+  "glb_checker_sha256": "5fa7561e3c23dd7a1059e7d8a8075dc0ca235db098c9f4a80845b5660d926feb",
+  "passed": true,
+  "model_state_raw_data_proofs": [
+    {
+      "case": "modifier-solidify",
+      "raw_ob_data_before_sha256": "21f775bf130e0c870431b132c781a2e0cd75386fdb2c801fa5c5b2bc75b537f7",
+      "raw_ob_data_after_sha256": "21f775bf130e0c870431b132c781a2e0cd75386fdb2c801fa5c5b2bc75b537f7",
+      "raw_ob_data_unchanged": true
+    },
+    {
+      "case": "shape-key-deform",
+      "raw_ob_data_before_sha256": "21f775bf130e0c870431b132c781a2e0cd75386fdb2c801fa5c5b2bc75b537f7",
+      "raw_ob_data_after_sha256": "21f775bf130e0c870431b132c781a2e0cd75386fdb2c801fa5c5b2bc75b537f7",
+      "raw_ob_data_unchanged": true
+    }
+  ],
+  "historical_policy_reproduction": {
+    "case": "world inversion under old local-volume-only policy",
+    "historical_false_pass_reproduced": true,
+    "world_volume_m3": -0.0003404568221503684,
+    "local_volume_m3": 0.00034045682215036867,
+    "note": "Derived working checker disables transform rejection and restores local-volume decision; current production checker is not modified.",
+    "report": "work/gate-faults-state-final/legacy-world-inversion-validation.json"
+  },
+  "tests": [
+    {
+      "kind": "native",
+      "case": "reversed-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "inconsistent_winding_edges",
+      "dedicated_detector_triggered": true,
+      "required_state_reason": null,
+      "trigger_count": 1,
+      "report": "work/gate-faults-state-final/reversed-face-validation.json",
+      "model_sha256": "3bb739435083eea410b261e2f95fde8e6d8c24199904427d00ee1d97bb0092de"
+    },
+    {
+      "kind": "native",
+      "case": "contained-island",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "invalid_connected_components",
+      "dedicated_detector_triggered": true,
+      "required_state_reason": null,
+      "trigger_count": 1,
+      "report": "work/gate-faults-state-final/contained-island-validation.json",
+      "model_sha256": "963bb6825b58218ec421212d952ca789a4133fd9063434e05e72e72eb9552100"
+    },
+    {
+      "kind": "native",
+      "case": "piercing-prism",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonadjacent_self_intersection_candidates",
+      "dedicated_detector_triggered": true,
+      "required_state_reason": null,
+      "trigger_count": 20,
+      "report": "work/gate-faults-state-final/piercing-prism-validation.json",
+      "model_sha256": "ca16fafe433208e0d682c36219e52b99df55e27f5c87333fccd6bc287c3d854e"
+    },
+    {
+      "kind": "native",
+      "case": "oblique-coplanar",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "coplanar_positive_area_overlaps",
+      "dedicated_detector_triggered": true,
+      "required_state_reason": null,
+      "trigger_count": 1,
+      "report": "work/gate-faults-state-final/oblique-coplanar-validation.json",
+      "model_sha256": "4706e7eb437dc4b4f8dcdbdce817745f24d0667b11f3803cab2cf03436ddab02"
+    },
+    {
+      "kind": "native",
+      "case": "missing-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonmanifold_edges",
+      "dedicated_detector_triggered": true,
+      "required_state_reason": null,
+      "trigger_count": 1,
+      "report": "work/gate-faults-state-final/missing-face-validation.json",
+      "model_sha256": "d80de995bfd9f4240bf4da1547279edeb61152341c3378cf3a0a87e6b4a75be0"
+    },
+    {
+      "kind": "native",
+      "case": "degenerate-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "degenerate_triangles",
+      "dedicated_detector_triggered": true,
+      "required_state_reason": null,
+      "trigger_count": 1,
+      "report": "work/gate-faults-state-final/degenerate-face-validation.json",
+      "model_sha256": "1a8a2ae4ae9bcf62ebe65668812d7558e8d02e65ab95f8889eb9e24af6233375"
+    },
+    {
+      "kind": "native",
+      "case": "duplicate-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "duplicate_triangles",
+      "dedicated_detector_triggered": true,
+      "required_state_reason": null,
+      "trigger_count": 1,
+      "report": "work/gate-faults-state-final/duplicate-face-validation.json",
+      "model_sha256": "1631389891d74c81355767ab5b4ba53751afe547f2554fec4d8de25643d72986"
+    },
+    {
+      "kind": "native",
+      "case": "crossing-triangles",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonadjacent_self_intersection_candidates",
+      "dedicated_detector_triggered": true,
+      "required_state_reason": null,
+      "trigger_count": 1,
+      "report": "work/gate-faults-state-final/crossing-triangles-validation.json",
+      "model_sha256": "07a74af9c35a97436698f7535f9d41f052fe3dded051890e5ef712ba375b2c4c"
+    },
+    {
+      "kind": "native",
+      "case": "off-recipe-vertex",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "recipe_vertex_envelope_failures",
+      "dedicated_detector_triggered": true,
+      "required_state_reason": null,
+      "trigger_count": 1,
+      "report": "work/gate-faults-state-final/off-recipe-vertex-validation.json",
+      "model_sha256": "eca459618a8e2d4cc9aae2133a86922053d2e521d31c490aa1892a34a11a5768"
+    },
+    {
+      "kind": "native",
+      "case": "mirrored-transform-inverted-world",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "non_positive_world_volume",
+      "dedicated_detector_triggered": true,
+      "required_state_reason": null,
+      "trigger_count": 1,
+      "report": "work/gate-faults-state-final/mirrored-transform-inverted-world-validation.json",
+      "model_sha256": "c44506d669b951bb018c0ff5eab4b7e156c0c10e50379f239510a1639f5fbdf7"
+    },
+    {
+      "kind": "native",
+      "case": "modifier-solidify",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "model_state_contract_failures",
+      "dedicated_detector_triggered": true,
+      "required_state_reason": "modifiers_present",
+      "trigger_count": 1,
+      "report": "work/gate-faults-state-final/modifier-solidify-validation.json",
+      "model_sha256": "476d002404e4fb17b4c1b830fbc28cf6108f619fa48fedcd4fc7c3f475765128"
+    },
+    {
+      "kind": "native",
+      "case": "shape-key-deform",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "model_state_contract_failures",
+      "dedicated_detector_triggered": true,
+      "required_state_reason": "shape_keys_present",
+      "trigger_count": 1,
+      "report": "work/gate-faults-state-final/shape-key-deform-validation.json",
+      "model_sha256": "2179201ca85165b3ac9e163c65d3c944cf7e5e0a5a7070e336d53f193b55f3cc"
+    },
+    {
+      "kind": "glb",
+      "case": "nan-position",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Nonfinite accessor bytes",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "8dd34dc318b7d35e8f9baa0175eb05e7559d04e370c86f815d4c7581a2cf4133"
+    },
+    {
+      "kind": "glb",
+      "case": "out-of-range-index",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Index exceeds POSITION count",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "8f80b4aac6b4f0a32b969b347aa12fab6613d271354ad624b0ef74c73b472cc4"
+    },
+    {
+      "kind": "glb",
+      "case": "zero-normal",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid normal length",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "19572fdf837303c106c79ff733ed4696688928db81ad3dace0866c68febbc75f"
+    },
+    {
+      "kind": "glb",
+      "case": "undersized-stride",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid accessor stride",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "41cc0bfac31fa8275726b9b6673c2b2cf070d69b14dda44d9f19c269720fd31c"
+    },
+    {
+      "kind": "glb",
+      "case": "accessor-overrun",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Accessor exceeds bufferView",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "fe459b13e04881698a9eabe3277700a0261ec3cb30f3c000893d1de9d17e8193"
+    },
+    {
+      "kind": "glb",
+      "case": "negative-offset",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid accessor offset",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "2f0c838ba2b228eec60b6ccf9aa8202d8ae7441b24c29a7bb5c71dd9dd591690"
+    }
+  ],
+  "scope": "Actual fault files and actual checker executions. Dedicated detector must trigger; rejection by another defect is not credited."
+}

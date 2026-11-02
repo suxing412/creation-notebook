@@ -1,0 +1,34 @@
+{
+  "scope": "Node VM executes actual app.js with synthetic DOM, Image and import failure. No browser, WebGL or GPU evidence.",
+  "source": "archived pre-fix app.js",
+  "results": [
+    {
+      "test": "out-of-order image decode",
+      "passed": true,
+      "rendered": "fold"
+    },
+    {
+      "test": "failed image preserves old route, label and poster",
+      "passed": true
+    },
+    {
+      "test": "renderer initialization failure during pending chapter decode",
+      "passed": false,
+      "actual": {
+        "current": "overview",
+        "request": 3,
+        "loading": false,
+        "mode": "poster",
+        "gl": false
+      },
+      "hash": "#light",
+      "poster": "assets/overview.png",
+      "status": "实时空间不可用（图形支持或资源加载失败）；已回到真实 CPU 离线图，目录与全文仍可阅读。"
+    },
+    {
+      "test": "reading entry restores recorded last scene on Back-like history event",
+      "passed": true,
+      "limitation": "Synthetic state/hash event; not native browser history automation."
+    }
+  ]
+}

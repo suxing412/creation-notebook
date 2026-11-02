@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "scope": "Actual Blender file reopen, actual assembled GLB and frozen GLB payload comparisons; CPU only.",
+  "tests": [
+    {
+      "check": "PBR payload unchanged / poise",
+      "passed": true,
+      "materials": [
+        "Vesper | mineral warm ivory",
+        "Vesper | warm opal luminous ceramic",
+        "Vesper | dark patinated bronze"
+      ]
+    },
+    {
+      "check": "PBR payload unchanged / folio",
+      "passed": true,
+      "materials": [
+        "FOLIO | satin mineral aluminium"
+      ]
+    },
+    {
+      "check": "assembled world geometry / poise",
+      "passed": true,
+      "sourceVertices": 20142,
+      "assembledVertices": 20142,
+      "topologyIndexIdentityClaimed": false,
+      "bidirectionalNearestMaxMetres": 0.0,
+      "thresholdMetres": 5e-06
+    },
+    {
+      "check": "assembled world geometry / folio",
+      "passed": true,
+      "sourceVertices": 6072,
+      "assembledVertices": 6098,
+      "topologyIndexIdentityClaimed": false,
+      "bidirectionalNearestMaxMetres": 3.332000986233652e-08,
+      "thresholdMetres": 5e-06
+    },
+    {
+      "check": "saved Blender camera / overview",
+      "passed": true,
+      "frame": 1,
+      "positionYUp": [
+        1.12,
+        1.3,
+        1.49
+      ],
+      "verticalFOVDegrees": 39.59999855106979,
+      "hotspotScreenUV": [
+        0.3852195739746094,
+        0.6120147109031677
+      ],
+      "cameraForwardError": 5.960464477539063e-08
+    },
+    {
+      "check": "saved Blender camera / light",
+      "passed": true,
+      "frame": 31,
+      "positionYUp": [
+        0.0,
+        0.58,
+        0.69
+      ],
+      "verticalFOVDegrees": 39.59999855106979,
+      "hotspotScreenUV": [
+        0.508944034576416,
+        0.258514404296875
+      ],
+      "cameraForwardError": 8.429369702178807e-08
+    },
+    {
+      "check": "saved Blender camera / fold",
+      "passed": true,
+      "frame": 61,
+      "positionYUp": [
+        0.66,
+        0.31,
+        0.48
+      ],
+      "verticalFOVDegrees": 39.59999855106979,
+      "hotspotScreenUV": [
+        0.5049439072608948,
+        0.3659905195236206
+      ],
+      "cameraForwardError": 2.2302015940987714e-07
+    },
+    {
+      "check": "three different camera images",
+      "passed": true
+    },
+    {
+      "check": "reopened scene finite vertices",
+      "passed": true
+    }
+  ]
+}

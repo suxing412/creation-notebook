@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "variant": "ascend",
+  "checks": {
+    "blender_432": true,
+    "renderer_CPU": true,
+    "one_camera": true,
+    "lights_3": true,
+    "model_and_ground_only": true,
+    "beauty_camera_position": true,
+    "beauty_camera_direction": true,
+    "beauty_orthographic": true,
+    "render_size": true,
+    "samples_match": true,
+    "seed_zero": true,
+    "fixed_sampling_no_denoise": true,
+    "AgX_exposure": true,
+    "relative_render_path": true,
+    "material_linear_color": true,
+    "material_roughness": true
+  },
+  "scene_sha256": "c4316a0bc78a35a2cb5ceb8fb62ee09cdb0e8c3d1573006b0a835c043ca4a908",
+  "info_sha256": "14a4e61038caefe3ce9c2cfc8a1847df98b054470b0a40638be89f6fdb8b9ef3",
+  "checker_sha256": "3734937ab11e3ae8319e5300a24be217894290e8bcf429a0e7cb3beaa4275d03",
+  "saved_camera": {
+    "location": [
+      0.5799999833106995,
+      -0.949999988079071,
+      0.5
+    ],
+    "direction": [
+      -0.503696084022522,
+      0.8250192999839783,
+      -0.2561901807785034
+    ],
+    "ortho_scale": 0.5299999713897705
+  },
+  "limits": [
+    "This independently reopens the actual saved scene and checks its beauty camera.",
+    "Other generated views are declared by generator configuration and separately visually inspected; this does not claim six independently saved camera scenes.",
+    "Not GPU, dynamic aliasing or photographic material calibration."
+  ]
+}

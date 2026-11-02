@@ -1,0 +1,33 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f2eee5"><meta name="description" content="伊苏里亚的三维造物练习：原创 Blender 模型、Three.js 观察原型与诚实的制作复盘。"><title>benchmark · 伊苏里亚造物手记</title><link rel="stylesheet" href="./gallery.css"></head><body><a class="skip" href="#main">跳至内容</a><header class="mast"><a class="wordmark" href="./"><span class="seal">伊</span> 伊苏里亚 <small>造物手记</small></a><nav aria-label="主导航"><a href="./#works">作品</a><a href="./#fusions">融合</a><a href="./#recipes">配方</a><a href="./#research">研究</a></nav></header><main id="main" class="report"><a class="back" href="./">← 作品集</a><h1>参考不是排名：从专业作品找到下一步</h1>
+<p>研究日期：2026-11-01。选择方向相近、值得学习的公开作品，不声称找到了客观的“世界最佳”。保留自己的金玉仪器和陶瓷滑翔翼语言，不复制第三方造型、网格或纹理。</p>
+<h2>证据范围</h2>
+<p class="bullet">本组作品的真实 Blender 渲染与检查结果已经查看。</p>
+<p class="bullet">对参考一、三，仅核实作者项目页和制作描述，没有实际检查原始模型或渲染图，不评价其具体拓扑或无穿模质量。</p>
+<p class="bullet">对参考二，另查看过作者商店的公开宣传图，但没有检查源网格或完整线框图集；特效宣传图不能证明底层几何质量。</p>
+<p class="bullet">未购买、下载或拆取第三方模型与纹理；本站不托管第三方宣传图片。</p>
+<h2>参考一：让仪器解释自己的装配</h2>
+<p><strong>Arron Manchester — Game Of Thrones Astrolabe</strong></p>
+<p><a href="https://thebearman.artstation.com/projects/2WzoY" rel="noopener">作者项目页</a></p>
+<p>作者描述了详细图纸、3D 渲染、环带细节及底座设计工作。值得学习的是装配与支撑的解释能力，而不是复制装饰。</p>
+<p>对 001 的观察：前景宽肋遮挡晶核、腰部环带投影偏密。下一步应改善主核心可读性，明确连接件和支撑逻辑；不以增加花纹替代结构设计。</p>
+<h2>参考二：大面积留白与清晰的体积层级</h2>
+<p><strong>Igor Puškarić — Orchid Manta, lowpoly PBR</strong></p>
+<p><a href="https://igorpuskaric.artstation.com/projects/1nqBNK" rel="noopener">作者项目页</a></p>
+<p><a href="https://cubebrush.co/iggy-design/products/iwnalq/orchid-manta-pbr-spaceship" rel="noopener">作者商店公开展示</a></p>
+<p>公开宣传图中的大面积翼面与集中躯干体积提供了有用的视觉对照。本站的陶瓷翼可以保持简洁，不必成为同样复杂的生物朋克飞船。</p>
+<p>对 002 的实际修订：深色中脊曾像张开的裂缝；已收窄并改成明确的铜嵌条，重新渲染和检查。尚未解决的是偏薄的翼根体积、尾根搭接和装饰线终止处的工艺解释。</p>
+<h2>参考三：从观察建立结构</h2>
+<p><strong>Johnson Martin / Digital Life 3D — “Skye” The Manta Ray</strong></p>
+<p><a href="https://johnson-martin.artstation.com/projects/QnNGzE" rel="noopener">作者项目页</a></p>
+<p>作者介绍了通过照片与视频在 Blender 中重建、参考实际游动录像制作动画的流程。这里只对标观察方法，不评价没有实际检查过的网格。</p>
+<p>对 002 的启示：先明确翼根到翼尖的厚度和弯曲变化、尾根接续及主体方向，再决定风格化程度。多视图比只交一张漂亮斜视图更能暴露问题。</p>
+<h2>改进顺序</h2>
+<p class="bullet">P0：检查并分类重复面、退化面、共面交叉和意外穿插；装配接触单独保留证据。</p>
+<p class="bullet">P1：改善 001 晶核遮挡、002 翼根体积与尾根连续性，用固定视角前后对照。</p>
+<p class="bullet">P2：在同曝光中性光下检查金属与陶瓷的辨识度，不用强发光遮掩接缝。</p>
+<p class="bullet">P3：在支持 WebGL 的环境实际绕转、远近缩放和切换光照，检查深度冲突与移动端表现；此项仍待验证。</p>
+<p>投影遮挡不等于穿模，有意装配交叠不等于错误；离线静帧不能代替实时 Z-fighting 验收。每轮保留：问题 → 几何修改 → 重新检查 → 同条件对照 → 尚未解决项。</p>
+<h2>003 补充：真实光阑的功能约束</h2>
+<p>玄瞳本轮对照 Knight Optical GIQ2840 的官方产品说明及其链接的类别展示图，重点研究孔口外侧覆盖、中央开口和支点的解释能力。没有检查其原始 CAD，不复制第三方模型，也不将宣传图托管到本站。</p>
+<p><a href="studies/003/assets/REVIEW.html">003 的完整参考、失败版本及修订记录</a></p>
+<p>八叶概念装置没有真实驱动联动、光学校准或制造验证；57 个状态的采样检查与特定径向净空的连续解析界限分开报告。</p><p class="report-download"><a href="benchmark.md" download>下载 Markdown 原文 ↓</a></p></main><footer><span>ISURIYA / FORM STUDIES</span><p>记录真实完成的作品，也记录尚未解决的问题。<br>Blender 建模 · Three.js 展示 · 持续修订</p><a href="./">返回作品集 ↑</a></footer></body></html>

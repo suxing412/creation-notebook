@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-01",
+  "scope": "Final native cloud-browser acceptance; CSS, native navigation, no-JavaScript and disabled-WebGL fallback only. Not GPU or mobile hardware validation.",
+  "passed": true,
+  "checks": [
+    {
+      "name": "primary task visible at desktop initial viewport",
+      "result": "Complete stage, native chapter navigation and opt-in 3D button visible together"
+    },
+    {
+      "name": "scene hotspot 02 keyboard Enter",
+      "result": "Navigates to light; corresponding poster natural width 1440"
+    },
+    {
+      "name": "native history",
+      "result": "light → reading preserves light → fold → Back to reading restores light"
+    },
+    {
+      "name": "disabled WebGL fallback",
+      "result": "Graphical/resource failure message; light poster and full text remain readable"
+    },
+    {
+      "name": "320 CSS px iframe",
+      "clientWidth": 305,
+      "scrollWidth": 305
+    },
+    {
+      "name": "390 CSS px iframe",
+      "clientWidth": 375,
+      "scrollWidth": 375
+    },
+    {
+      "name": "no JavaScript native iframe",
+      "sandbox": "allow-same-origin",
+      "posterNaturalWidth": 1440,
+      "posterComplete": true,
+      "keyboardNativeHash": "#fold",
+      "chapterTopCSSPixels": 56.05
+    }
+  ],
+  "unverified": [
+    "Real GPU shading and rendering",
+    "Dynamic flicker/depth artifacts",
+    "Real iPhone performance",
+    "Real touch interaction"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "variant": "spire",
+  "recipe_version": "1.0.0",
+  "blender_version": "4.3.2",
+  "model_sha256": "31e94898a48347f4d6f43fabef7cea605743fd69a13fb8057cb85fadf710a015",
+  "checker_sha256": "ecdd92eeb7f03f6b479a9377c1bc39525e022ae84a3fd0cb30d82f6eaa998fc4",
+  "mesh_objects": 1,
+  "triangles": 13004,
+  "degenerate_triangles": [],
+  "duplicate_triangles": [],
+  "nonmanifold_edges": [],
+  "non_positive_volume": [],
+  "inconsistent_winding_edges": [],
+  "invalid_connected_components": [],
+  "component_records": [
+    {
+      "object": "FOLIO | single continuous folded shell",
+      "component_sizes": [
+        6504
+      ],
+      "signed_volume_m3": 0.00027390469057832217
+    }
+  ],
+  "nonfinite_coordinates": [],
+  "recipe_vertex_envelope_failures": [],
+  "recipe_topology_failures": [],
+  "object_contract_failures": [],
+  "material_contract_failures": [],
+  "nonadjacent_self_intersection_candidates": [],
+  "coplanar_positive_area_overlaps": [],
+  "coplanar_candidate_pairs": 4341,
+  "minimum_triangle_area_m2": 6.3894048107915324e-09,
+  "thresholds": {
+    "degenerate_area_m2": 1e-12,
+    "duplicate_vertex_round_m": 1e-08,
+    "recipe_vertex_distance_m": 2e-07,
+    "coplanar_normal_cosine": 0.9999999,
+    "coplanar_plane_distance_m": 5e-08,
+    "positive_overlap_axis_m": 1e-08,
+    "spatial_cell_m": 0.012
+  },
+  "limits": [
+    "Recipe identity is a constrained full-vertex/topology contract, not independent proof of arbitrary geometry.",
+    "Nonadjacent BVH intersections exclude triangles sharing any vertex; adjacent noncoplanar foldover is not fully certified.",
+    "Float64 plane/SAT is numerical tolerance testing, not exact symbolic or continuous parameter-domain proof.",
+    "One closed connected shell is required; no allowed-pair exception exists. Interior islands are rejected by connectivity/recipe identity even when no surface intersection exists.",
+    "No fabrication, load, stability, ergonomics, GPU, WebGL, iPhone, or dynamic z-fighting verification."
+  ],
+  "passed": true,
+  "elapsed_seconds": 5.165
+}

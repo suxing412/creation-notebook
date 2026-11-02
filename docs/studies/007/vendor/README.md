@@ -1,0 +1,1 @@
+Three.js r180, pinned from the existing local project vendor copy. MIT licence is in THREE-LICENSE. Only addon imports were localized from the bare three specifier to ../../three.module.js. No CDN or external textures. Vendor is a software dependency, not reused model geometry.

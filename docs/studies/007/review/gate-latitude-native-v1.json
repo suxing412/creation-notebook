@@ -1,0 +1,124 @@
+{
+  "degenerate_triangles": [],
+  "duplicate_triangles": [],
+  "nonmanifold_edges": [],
+  "non_positive_world_volume": [],
+  "inconsistent_winding_edges": [],
+  "invalid_connected_components": [],
+  "nonfinite_coordinates": [],
+  "recipe_vertex_envelope_failures": [],
+  "recipe_topology_failures": [],
+  "object_contract_failures": [],
+  "material_contract_failures": [],
+  "object_transform_failures": [],
+  "model_state_contract_failures": [],
+  "nonadjacent_self_intersection_candidates": [],
+  "coplanar_positive_area_overlaps": [],
+  "seam_topology_failures": [],
+  "frame_periodicity_failures": [],
+  "frame_metadata_failures": [],
+  "ring_frame_fit_failures": [],
+  "genus_contract_failures": [],
+  "curvature_radius_failures": [],
+  "nonlocal_centerline_clearance_failures": [],
+  "frame_reference_failures": [],
+  "input_contract_failures": [],
+  "checker_version": "007-native-1.0",
+  "checker_sha256": "3c2140f88b6297e70f1a1d9c52f9eb9cc1008e7cf03d3b94f5e8331bb360847d",
+  "recipe_sha256": "7a4591a35e9cf843906df4eb7e4ef13647a39c474b96dd3251d85dd7b4a3718a",
+  "model_sha256": "7c056ecc9cba3fc6bd44ca960815010417575654d91d6427932bc8fd88b5c106",
+  "file": "model.blend",
+  "run_id": "59cb12fe-2e5e-444e-a864-5defc17c47f1",
+  "created_utc": "2026-11-01T23:12:17.255260+00:00",
+  "blender_version": "4.3.2",
+  "passed": true,
+  "limits": [
+    "Full-vertex/topology identity is a restricted recipe contract, not general geometry proof or reindexing equivalence.",
+    "BVH candidates exclude triangles sharing any vertex; noncoplanar adjacent foldover is not fully independently certified.",
+    "Frame is periodic analytic fixed-reference projection, not RMF. Station profile fits use raw float32 mesh vertices.",
+    "Curvature and nonlocal clearance are finite 960-sample numerical tests. Local arc neighborhoods <=2.8 max circumradius are excluded. No continuous curve, swept-volume or parameter-domain proof.",
+    "Near-coplanar overlaps use bidirectional float64 plane distances and projected SAT, not exact symbolic predicates or dynamic z-fighting validation.",
+    "Exactly one raw mesh object, no modifiers, shape keys, parents, constraints, object/mesh animation or drivers; photographic scene.blend is out of scope.",
+    "No GPU, WebGL, dynamic flicker, physical iPhone, manufacture, load, stability or ergonomics verification."
+  ],
+  "thresholds": {
+    "vertex_distance_m": 2e-07,
+    "frame_fit_m": 2e-07,
+    "frame_axis_residual": 2e-05,
+    "frame_endpoint_residual": 1e-10,
+    "triangle_area_m2": 1e-12,
+    "duplicate_vertex_round_m": 1e-08,
+    "identity_matrix_entry": 1e-08,
+    "coplanar_normal_cosine": 0.9999999,
+    "bidirectional_plane_distance_m": 5e-08,
+    "positive_projected_overlap_m": 1e-08,
+    "spatial_cell_m": 0.012,
+    "curvature_radius_max_exclusive": 0.72,
+    "sampled_nonlocal_clearance_m_min": 0.006
+  },
+  "variant": "latitude",
+  "recipe_version": "1.0.0",
+  "info_sha256": "ae3121e9e2e933de79bab90f72045c9df2446fd224b5a770ddc2cdc1f9fbee95",
+  "periodicity_records": {
+    "endpoint_parameters": [
+      -1.5707963267948966,
+      4.71238898038469
+    ],
+    "maximum_absolute_residuals": {
+      "point": 4.39109356302275e-17,
+      "tangent": 1.457167719820518e-16,
+      "normal": 1.457167719820518e-16,
+      "binormal": 2.7755575615628914e-17,
+      "section": 0.0
+    },
+    "unique_station_count": 320,
+    "duplicated_endpoint_ring_allowed": false
+  },
+  "independent_sampling": {
+    "samples": 960,
+    "max_curvature_radius_product": 0.4690989804113975,
+    "max_curvature_per_m": 16.221968172512067,
+    "max_section_circumradius_m": 0.034919266095517945,
+    "minimum_reference_sine": 0.9775786378086764,
+    "sampled_nonlocal_clearance_m": 0.027832479821863258,
+    "closest_pair": [
+      476,
+      577
+    ],
+    "tested_nonlocal_pairs": 356656,
+    "local_arc_exclusion_m": 0.09777394506745024,
+    "centerline_length_m": 0.8801254073223187,
+    "method": "Independent float64 arithmetic; analytic recipe point/derivatives/profile evaluated on 960 periodic parameters. Not a continuous proof."
+  },
+  "mesh_objects": 1,
+  "triangles": 23040,
+  "minimum_triangle_area_m2": 9.617235097646966e-07,
+  "component_records": [
+    {
+      "object": "ORISON | continuous closed sweep",
+      "component_sizes": [
+        11520
+      ],
+      "signed_world_volume_m3": 0.0014581646252432162,
+      "signed_local_volume_m3": 0.0014575511244594402,
+      "vertices": 11520,
+      "edges": 23040,
+      "faces": 11520,
+      "euler_characteristic": 0,
+      "genus_if_closed_connected_orientable": 1.0
+    }
+  ],
+  "ring_frame_records": [
+    {
+      "object": "ORISON | continuous closed sweep",
+      "max_profile_fit_residual_m": 7.451490036121225e-08,
+      "max_center_residual_m": 6.32203799512287e-08,
+      "max_normal_binormal_residual": 3.332000937312528e-07,
+      "last_to_first_center_distance_m": 0.003571388442215649,
+      "seam_connecting_edges": 36,
+      "duplicate_endpoint_ring": false
+    }
+  ],
+  "coplanar_candidate_pairs": 46,
+  "elapsed_seconds": 2.631
+}

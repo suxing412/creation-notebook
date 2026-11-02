@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-11-01T23:33:13.369700+00:00",
+  "passed": false,
+  "stage": "test-only native fault construction harness",
+  "exit_code": 1,
+  "failure_type": "ModuleNotFoundError",
+  "failure_message": "No module named recipe",
+  "initial_test_script_sha256": "d33f458e02bd29c6640ee76c610d5f089910604cd3353b3588050ff5cd63d8e5",
+  "geometry_checker_executed": false,
+  "fault_meshes_created": false,
+  "formal_assets_modified": false,
+  "classification": "Harness import-path failure, not a native checker false PASS or dedicated-field result. Initial raw log and source snapshot retained under work.",
+  "correction": "Explicitly insert script directory into sys.path for Blender --python execution; rerun with a fresh report label."
+}

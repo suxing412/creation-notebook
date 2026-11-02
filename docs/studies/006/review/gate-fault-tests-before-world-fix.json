@@ -1,0 +1,163 @@
+{
+  "baseline": "assets/folio",
+  "baseline_sha256": "cf54c7e72d9b84a9aa886b4f8281a7762945625a32e8b3e6ee9edc5d8533609b",
+  "checker_sha256": "ecdd92eeb7f03f6b479a9377c1bc39525e022ae84a3fd0cb30d82f6eaa998fc4",
+  "glb_checker_sha256": "5fa7561e3c23dd7a1059e7d8a8075dc0ca235db098c9f4a80845b5660d926feb",
+  "passed": true,
+  "tests": [
+    {
+      "kind": "native",
+      "case": "reversed-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "inconsistent_winding_edges",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-folio/reversed-face-validation.json",
+      "model_sha256": "cbadf048bfcc579efebaac3068a4c994851fa528a182192071d2bfaa54b3634d"
+    },
+    {
+      "kind": "native",
+      "case": "contained-island",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "invalid_connected_components",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-folio/contained-island-validation.json",
+      "model_sha256": "75c7d86c7fceef4c471ae43e4ee2dd915668c2b7a7253c33b764333c51dfd0e7"
+    },
+    {
+      "kind": "native",
+      "case": "piercing-prism",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonadjacent_self_intersection_candidates",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 20,
+      "report": "work/gate-faults-folio/piercing-prism-validation.json",
+      "model_sha256": "9224904f03d9beb8dd5e0d71819e04d182f756d41607e57b00f164f386d13668"
+    },
+    {
+      "kind": "native",
+      "case": "oblique-coplanar",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "coplanar_positive_area_overlaps",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-folio/oblique-coplanar-validation.json",
+      "model_sha256": "2a255f16505c4273f131728f51be98339cbc8138880b7a52f6a71ca36eb875c9"
+    },
+    {
+      "kind": "native",
+      "case": "missing-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonmanifold_edges",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-folio/missing-face-validation.json",
+      "model_sha256": "9f90632c9c9b368f363f7aef5ad44445d693bbf935e26581889e15845a730e16"
+    },
+    {
+      "kind": "native",
+      "case": "degenerate-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "degenerate_triangles",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-folio/degenerate-face-validation.json",
+      "model_sha256": "91bb61038c9136bed36c0322651c29fd167794fcb5cbaad20b9273ee8ed08f5d"
+    },
+    {
+      "kind": "native",
+      "case": "duplicate-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "duplicate_triangles",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-folio/duplicate-face-validation.json",
+      "model_sha256": "01a129be321893d7f112072e6e41d35b65bec08bae551047c7abdffc7cd20ec7"
+    },
+    {
+      "kind": "native",
+      "case": "crossing-triangles",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonadjacent_self_intersection_candidates",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-folio/crossing-triangles-validation.json",
+      "model_sha256": "79ae128e95a8facf130dfd55f4034374cfe0c37f400d38c787e193cf5888f70c"
+    },
+    {
+      "kind": "native",
+      "case": "off-recipe-vertex",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "recipe_vertex_envelope_failures",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-folio/off-recipe-vertex-validation.json",
+      "model_sha256": "76a3a59a5509ffde6c7f09daf1faa5b3583ae26c2552a47fb9161ce3450088f1"
+    },
+    {
+      "kind": "glb",
+      "case": "nan-position",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Nonfinite accessor bytes",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "8dd34dc318b7d35e8f9baa0175eb05e7559d04e370c86f815d4c7581a2cf4133"
+    },
+    {
+      "kind": "glb",
+      "case": "out-of-range-index",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Index exceeds POSITION count",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "8f80b4aac6b4f0a32b969b347aa12fab6613d271354ad624b0ef74c73b472cc4"
+    },
+    {
+      "kind": "glb",
+      "case": "zero-normal",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid normal length",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "19572fdf837303c106c79ff733ed4696688928db81ad3dace0866c68febbc75f"
+    },
+    {
+      "kind": "glb",
+      "case": "undersized-stride",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid accessor stride",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "41cc0bfac31fa8275726b9b6673c2b2cf070d69b14dda44d9f19c269720fd31c"
+    },
+    {
+      "kind": "glb",
+      "case": "accessor-overrun",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Accessor exceeds bufferView",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "fe459b13e04881698a9eabe3277700a0261ec3cb30f3c000893d1de9d17e8193"
+    },
+    {
+      "kind": "glb",
+      "case": "negative-offset",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid accessor offset",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "2f0c838ba2b228eec60b6ccf9aa8202d8ae7441b24c29a7bb5c71dd9dd591690"
+    }
+  ],
+  "scope": "Actual fault files and actual checker executions. Dedicated detector must trigger; rejection by another defect is not credited."
+}

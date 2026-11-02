@@ -1,0 +1,50 @@
+{
+  "scope": "Fake DOM unit checks; not browser or assistive-technology verification",
+  "tests": [
+    {
+      "name": "Progressive enhancement unhides controls; HTML carries initial selected state",
+      "passed": true
+    },
+    {
+      "name": "Successful switch commits image, alt, caption, original and selected state atomically",
+      "passed": true
+    },
+    {
+      "name": "404 preserves last valid image and all associated description/link",
+      "passed": true
+    },
+    {
+      "name": "Newest choice wins even when older success arrives later",
+      "passed": true
+    },
+    {
+      "name": "Older failure cannot overwrite new success or reveal retry",
+      "passed": true
+    },
+    {
+      "name": "Initial 404 announces no success, not imaginary previous image",
+      "passed": true
+    },
+    {
+      "name": "Initial 404 can recover through alternate image",
+      "passed": true
+    },
+    {
+      "name": "Retry uses failed selection then clears error on success",
+      "passed": true
+    },
+    {
+      "name": "Repeated currently selected click avoids unnecessary image load",
+      "passed": true
+    },
+    {
+      "name": "Selecting current while another image is pending cancels stale result",
+      "passed": true
+    },
+    {
+      "name": "Initial image succeeds during newer pending request, then 404 still preserves it",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "source_sha256": "d695fd6f8a7f2793d53bd374d84c423ca4755ad63d3f6b1a9212f2069e3f0128",
+  "checker_sha256": "aadbfa24ace90055fe8395e228ac043cef10a0c68fa252e84e28e1a06045e7c6",
+  "scope": "Isolated tiny ZIP fixtures, including interrupted import preservation; not final model quality or browser verification.",
+  "count": 16,
+  "cases": [
+    {
+      "name": "unapproved ZIP hash",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "parent path traversal",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "raw log entry",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "dot path alias cannot overwrite checked manifest",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "model package cannot occupy web namespace",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "empty QA directory rejected",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "nested archive in otherwise valid model namespace",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "required model files missing",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "unsupported model manifest contract",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "CRC corruption after supplied ZIP hash matches",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "identity report passed must be boolean true",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "identity asset passed must be boolean true",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "identity asset report_identities_current must be boolean true",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "identity variants must be exactly three unique entries",
+      "rejected": true,
+      "previous_target_preserved": true
+    },
+    {
+      "name": "disk ZIP replacement after hash cannot change consumed snapshot",
+      "passed": true
+    },
+    {
+      "name": "valid tiny fixture commits after all checks",
+      "passed": true
+    }
+  ]
+}

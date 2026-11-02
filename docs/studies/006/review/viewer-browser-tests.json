@@ -1,0 +1,398 @@
+{
+  "date": "2026-11-01",
+  "environment": "Native cloud Chromium via existing sites-preview, GL disabled and not changed",
+  "candidate_zip_sha256": "59578462c42a7990cc0f7c21871644675f95431a24558792dded01efcb7d54e5",
+  "passed": true,
+  "scope": [
+    "Folio explicit GLB attempt with parsed 1 component then WebGL-unavailable message",
+    "Folio→Atlas→Spire actual loaded 960px CPU fallback and coherent per-variant links/title",
+    "Active offline then Spire→Folio stays offline",
+    "viewer→index.html→viewer via actual links"
+  ],
+  "observed_dimensions_text": {
+    "folio": "249.97 × 273.12 × 183.08 mm",
+    "atlas": "304.99 × 271.92 × 131.31 mm",
+    "spire": "184.98 × 229.09 × 220.81 mm"
+  },
+  "runtime_render_verified": false,
+  "unverified": [
+    "GPU/WebGL rendering",
+    "Dynamic depth flicker",
+    "real iPhone",
+    "real Android",
+    "screen reader",
+    "200% browser zoom"
+  ],
+  "records": [
+    {
+      "action": "Folio: explicit real-3D attempt",
+      "ui": {
+        "disabled": [
+          {
+            "disabled": true,
+            "id": "wireframe"
+          },
+          {
+            "disabled": true,
+            "id": "rotate"
+          },
+          {
+            "disabled": true,
+            "id": "reset"
+          }
+        ],
+        "image": {
+          "alt": "Folio 折页变体的真实 Blender CPU Cycles 渲染",
+          "loaded": true,
+          "naturalWidth": 960,
+          "src": "assets/folio/beauty.png"
+        },
+        "links": [
+          {
+            "href": "./index.html",
+            "id": "catalogue"
+          },
+          {
+            "href": "assets/folio/model.glb",
+            "id": "glb-link"
+          },
+          {
+            "href": "assets/folio/model.blend",
+            "id": "blend-link"
+          },
+          {
+            "href": "assets/folio/validation.json",
+            "id": "qa-link"
+          },
+          {
+            "href": "assets/folio/bend-detail.png",
+            "id": "junction-link"
+          },
+          {
+            "href": "assets/folio/front.png",
+            "id": "front-link"
+          },
+          {
+            "href": "assets/folio/side.png",
+            "id": "side-link"
+          },
+          {
+            "href": "assets/folio/top.png",
+            "id": "top-link"
+          },
+          {
+            "href": "assets/folio/rear.png",
+            "id": "rear-link"
+          },
+          {
+            "href": "assets/folio/contact-detail.png",
+            "id": "contact-link"
+          },
+          {
+            "href": "assets/folio/section-measurements.json",
+            "id": "sections-link"
+          }
+        ],
+        "status": "真实 GLB 已解析（1 构件），但当前浏览器没有可用的 WebGL 上下文。仍显示同变体离线图；GPU / 闪烁 / iPhone 未验。",
+        "title": "Folio · 折页",
+        "variant": "folio"
+      }
+    },
+    {
+      "action": "Folio to Atlas after explicit 3D attempt",
+      "ui": {
+        "disabled": [
+          {
+            "disabled": true,
+            "id": "wireframe"
+          },
+          {
+            "disabled": true,
+            "id": "rotate"
+          },
+          {
+            "disabled": true,
+            "id": "reset"
+          }
+        ],
+        "image": {
+          "alt": "Atlas · 低宽 变体的真实 Blender CPU Cycles 渲染",
+          "loaded": true,
+          "naturalWidth": 960,
+          "src": "http://127.0.0.1:4173/assets/atlas/beauty.png"
+        },
+        "links": [
+          {
+            "href": "./index.html",
+            "id": "catalogue"
+          },
+          {
+            "href": "assets/atlas/model.glb",
+            "id": "glb-link"
+          },
+          {
+            "href": "assets/atlas/model.blend",
+            "id": "blend-link"
+          },
+          {
+            "href": "assets/atlas/validation.json",
+            "id": "qa-link"
+          },
+          {
+            "href": "assets/atlas/bend-detail.png",
+            "id": "junction-link"
+          },
+          {
+            "href": "assets/atlas/front.png",
+            "id": "front-link"
+          },
+          {
+            "href": "assets/atlas/side.png",
+            "id": "side-link"
+          },
+          {
+            "href": "assets/atlas/top.png",
+            "id": "top-link"
+          },
+          {
+            "href": "assets/atlas/rear.png",
+            "id": "rear-link"
+          },
+          {
+            "href": "assets/atlas/contact-detail.png",
+            "id": "contact-link"
+          },
+          {
+            "href": "assets/atlas/section-measurements.json",
+            "id": "sections-link"
+          }
+        ],
+        "status": "真实 GLB 已解析（1 构件），但当前浏览器没有可用的 WebGL 上下文。仍显示同变体离线图；GPU / 闪烁 / iPhone 未验。",
+        "title": "Atlas · 低宽",
+        "variant": "atlas"
+      }
+    },
+    {
+      "action": "Atlas to Spire after explicit 3D attempt",
+      "ui": {
+        "disabled": [
+          {
+            "disabled": true,
+            "id": "wireframe"
+          },
+          {
+            "disabled": true,
+            "id": "rotate"
+          },
+          {
+            "disabled": true,
+            "id": "reset"
+          }
+        ],
+        "image": {
+          "alt": "Spire · 高窄 变体的真实 Blender CPU Cycles 渲染",
+          "loaded": true,
+          "naturalWidth": 960,
+          "src": "http://127.0.0.1:4173/assets/spire/beauty.png"
+        },
+        "links": [
+          {
+            "href": "./index.html",
+            "id": "catalogue"
+          },
+          {
+            "href": "assets/spire/model.glb",
+            "id": "glb-link"
+          },
+          {
+            "href": "assets/spire/model.blend",
+            "id": "blend-link"
+          },
+          {
+            "href": "assets/spire/validation.json",
+            "id": "qa-link"
+          },
+          {
+            "href": "assets/spire/bend-detail.png",
+            "id": "junction-link"
+          },
+          {
+            "href": "assets/spire/front.png",
+            "id": "front-link"
+          },
+          {
+            "href": "assets/spire/side.png",
+            "id": "side-link"
+          },
+          {
+            "href": "assets/spire/top.png",
+            "id": "top-link"
+          },
+          {
+            "href": "assets/spire/rear.png",
+            "id": "rear-link"
+          },
+          {
+            "href": "assets/spire/contact-detail.png",
+            "id": "contact-link"
+          },
+          {
+            "href": "assets/spire/section-measurements.json",
+            "id": "sections-link"
+          }
+        ],
+        "status": "真实 GLB 已解析（1 构件），但当前浏览器没有可用的 WebGL 上下文。仍显示同变体离线图；GPU / 闪烁 / iPhone 未验。",
+        "title": "Spire · 高窄",
+        "variant": "spire"
+      }
+    },
+    {
+      "action": "Explicit offline on Spire",
+      "ui": {
+        "disabled": [
+          {
+            "disabled": true,
+            "id": "wireframe"
+          },
+          {
+            "disabled": true,
+            "id": "rotate"
+          },
+          {
+            "disabled": true,
+            "id": "reset"
+          }
+        ],
+        "image": {
+          "alt": "Spire · 高窄 变体的真实 Blender CPU Cycles 渲染",
+          "loaded": true,
+          "naturalWidth": 960,
+          "src": "http://127.0.0.1:4173/assets/spire/beauty.png"
+        },
+        "links": [
+          {
+            "href": "./index.html",
+            "id": "catalogue"
+          },
+          {
+            "href": "assets/spire/model.glb",
+            "id": "glb-link"
+          },
+          {
+            "href": "assets/spire/model.blend",
+            "id": "blend-link"
+          },
+          {
+            "href": "assets/spire/validation.json",
+            "id": "qa-link"
+          },
+          {
+            "href": "assets/spire/bend-detail.png",
+            "id": "junction-link"
+          },
+          {
+            "href": "assets/spire/front.png",
+            "id": "front-link"
+          },
+          {
+            "href": "assets/spire/side.png",
+            "id": "side-link"
+          },
+          {
+            "href": "assets/spire/top.png",
+            "id": "top-link"
+          },
+          {
+            "href": "assets/spire/rear.png",
+            "id": "rear-link"
+          },
+          {
+            "href": "assets/spire/contact-detail.png",
+            "id": "contact-link"
+          },
+          {
+            "href": "assets/spire/section-measurements.json",
+            "id": "sections-link"
+          }
+        ],
+        "status": "离线证据 · CPU Cycles。可再次点击实时 3D。",
+        "title": "Spire · 高窄",
+        "variant": "spire"
+      }
+    },
+    {
+      "action": "Spire to Folio after explicit offline",
+      "ui": {
+        "disabled": [
+          {
+            "disabled": true,
+            "id": "wireframe"
+          },
+          {
+            "disabled": true,
+            "id": "rotate"
+          },
+          {
+            "disabled": true,
+            "id": "reset"
+          }
+        ],
+        "image": {
+          "alt": "Folio · 折页 变体的真实 Blender CPU Cycles 渲染",
+          "loaded": true,
+          "naturalWidth": 960,
+          "src": "http://127.0.0.1:4173/assets/folio/beauty.png"
+        },
+        "links": [
+          {
+            "href": "./index.html",
+            "id": "catalogue"
+          },
+          {
+            "href": "assets/folio/model.glb",
+            "id": "glb-link"
+          },
+          {
+            "href": "assets/folio/model.blend",
+            "id": "blend-link"
+          },
+          {
+            "href": "assets/folio/validation.json",
+            "id": "qa-link"
+          },
+          {
+            "href": "assets/folio/bend-detail.png",
+            "id": "junction-link"
+          },
+          {
+            "href": "assets/folio/front.png",
+            "id": "front-link"
+          },
+          {
+            "href": "assets/folio/side.png",
+            "id": "side-link"
+          },
+          {
+            "href": "assets/folio/top.png",
+            "id": "top-link"
+          },
+          {
+            "href": "assets/folio/rear.png",
+            "id": "rear-link"
+          },
+          {
+            "href": "assets/folio/contact-detail.png",
+            "id": "contact-link"
+          },
+          {
+            "href": "assets/folio/section-measurements.json",
+            "id": "sections-link"
+          }
+        ],
+        "status": "已切换同配方几何；当前为离线 CPU 渲染。",
+        "title": "Folio · 折页",
+        "variant": "folio"
+      }
+    }
+  ]
+}

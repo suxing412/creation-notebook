@@ -1,0 +1,218 @@
+{
+  "passed": true,
+  "scope": "Native Three.js GLTFLoader, world bounds, CPU raycast, numeric camera projection and 909 path samples. Not a WebGL rendering test.",
+  "threeRevision": "180",
+  "GPU": false,
+  "tests": [
+    {
+      "name": "immutable-source-poise",
+      "passed": true,
+      "sha256": "53aef1b5fc4ef9d70bef6dae9562d393c80c93016d46bba2b41b67f97cd1a078",
+      "meshes": 8,
+      "triangles": 40256,
+      "bounds": {
+        "min": [
+          -0.5763339245319367,
+          0,
+          -0.2926301407814026
+        ],
+        "max": [
+          -0.15959419250488283,
+          0.47699999809265137,
+          0.03263014078140258
+        ]
+      },
+      "contactGapM": 0
+    },
+    {
+      "name": "immutable-source-folio",
+      "passed": true,
+      "sha256": "2f036da9f9170535d4bd07c0a7b964df22655991a7eb4b54e9c2b4d0f93c6d83",
+      "meshes": 1,
+      "triangles": 12044,
+      "bounds": {
+        "min": [
+          0.15947668036192264,
+          -3.903127820947816e-18,
+          -0.10979709642748234
+        ],
+        "max": [
+          0.44034375185516383,
+          0.18307653069496155,
+          0.19128630500223873
+        ]
+      },
+      "contactGapM": -3.903127820947816e-18
+    },
+    {
+      "name": "no-model-overlap",
+      "passed": true,
+      "aabbGapXMetres": 0.31907087286680547
+    },
+    {
+      "name": "chapter-camera-overview",
+      "passed": true,
+      "hotspots": [
+        {
+          "id": "overview",
+          "x": 0.38521952827182726,
+          "y": 0.6120147014227648,
+          "depth": 2.1468642503106916,
+          "visible": true
+        },
+        {
+          "id": "light",
+          "x": 0.41504039566613343,
+          "y": 0.2585713637269473,
+          "depth": 2.3283414286079145,
+          "visible": true
+        },
+        {
+          "id": "fold",
+          "x": 0.60045413379211,
+          "y": 0.567496644135379,
+          "depth": 2.016428238387507,
+          "visible": true
+        }
+      ],
+      "ownHotspotVisible": true
+    },
+    {
+      "name": "chapter-camera-light",
+      "passed": true,
+      "hotspots": [
+        {
+          "id": "overview",
+          "x": 0.5853978726480878,
+          "y": 1.3540631936025684,
+          "depth": 0.6099631527935054,
+          "visible": false
+        },
+        {
+          "id": "light",
+          "x": 0.5089440505572063,
+          "y": 0.258514474500614,
+          "depth": 0.9009078763396905,
+          "visible": true
+        },
+        {
+          "id": "fold",
+          "x": 1.347669830897378,
+          "y": 1.0560190126160363,
+          "depth": 0.5953073355795718,
+          "visible": false
+        }
+      ],
+      "ownHotspotVisible": true
+    },
+    {
+      "name": "chapter-camera-fold",
+      "passed": true,
+      "hotspots": [
+        {
+          "id": "overview",
+          "x": -0.11021193152369724,
+          "y": 0.5634795390721856,
+          "depth": 0.7259422166531903,
+          "visible": false
+        },
+        {
+          "id": "light",
+          "x": 0.1259643198227018,
+          "y": -0.1904829042360695,
+          "depth": 1.0075443370818553,
+          "visible": false
+        },
+        {
+          "id": "fold",
+          "x": 0.5049440466423434,
+          "y": 0.3659902441527007,
+          "depth": 0.5929304992501921,
+          "visible": true
+        }
+      ],
+      "ownHotspotVisible": true
+    },
+    {
+      "name": "sampled-camera-path-overview-overview",
+      "passed": true,
+      "samples": 101
+    },
+    {
+      "name": "sampled-camera-path-overview-light",
+      "passed": true,
+      "samples": 101
+    },
+    {
+      "name": "sampled-camera-path-overview-fold",
+      "passed": true,
+      "samples": 101
+    },
+    {
+      "name": "sampled-camera-path-light-overview",
+      "passed": true,
+      "samples": 101
+    },
+    {
+      "name": "sampled-camera-path-light-light",
+      "passed": true,
+      "samples": 101
+    },
+    {
+      "name": "sampled-camera-path-light-fold",
+      "passed": true,
+      "samples": 101
+    },
+    {
+      "name": "sampled-camera-path-fold-overview",
+      "passed": true,
+      "samples": 101
+    },
+    {
+      "name": "sampled-camera-path-fold-light",
+      "passed": true,
+      "samples": 101
+    },
+    {
+      "name": "sampled-camera-path-fold-fold",
+      "passed": true,
+      "samples": 101
+    },
+    {
+      "name": "native-hash-and-endpoint-contract",
+      "passed": true
+    },
+    {
+      "name": "five-invalid-config-mutations-rejected",
+      "passed": true
+    },
+    {
+      "name": "overview-hotspot-target-separation-268",
+      "passed": true,
+      "minCenterDistancePixels": 58.22867332709791,
+      "targetPixels": 44
+    },
+    {
+      "name": "overview-hotspot-target-separation-330",
+      "passed": true,
+      "minCenterDistancePixels": 71.69948581321758,
+      "targetPixels": 44
+    },
+    {
+      "name": "overview-hotspot-target-separation-655",
+      "passed": true,
+      "minCenterDistancePixels": 142.31261578078033,
+      "targetPixels": 44
+    },
+    {
+      "name": "cpu-raycast-poise",
+      "passed": true,
+      "screenGridRaysHittingOriginalMesh": 26
+    },
+    {
+      "name": "cpu-raycast-folio",
+      "passed": true,
+      "screenGridRaysHittingOriginalMesh": 52
+    }
+  ]
+}

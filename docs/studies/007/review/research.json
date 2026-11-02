@@ -1,0 +1,43 @@
+{
+  "date_utc": "2026-11-01",
+  "sequence": "First-version revision 0 was generated and visually reviewed before online research. The first revision-1 candidate was a hypothesis based on the first-version critique; the subsequently accepted softened candidate followed online research and the parent's crown-ROI review.",
+  "sources": [
+    {
+      "title": "Barbara Hepworth — Oval Form (Trezion)",
+      "url": "https://barbarahepworth.org.uk/sculptures/1963/oval-form-trezion/",
+      "authority": "Artist/estate official selected-sculptures page",
+      "method": "Web search and page text succeeded; additionally opened the original page in the native cloud browser and visually inspected its displayed photograph.",
+      "observed": "The photograph shows a wide, pierced bronze form on a plinth. A large central opening is accompanied by other openings; the visible inner and outer surfaces overlap in depth. The image includes the outdoor setting and a strongly articulated shadow.",
+      "documented_fact": "The official caption identifies the work as bronze, 1961–63, BH304, edition of 7+0; the photograph is labelled Battersea Park, 1966.",
+      "inference_not_author_claim": "A void can be composed by the relation of front and rear mass rather than merely cut as a flat graphic hole.",
+      "adopt": "Treat the front opening and side depth as separate review tasks. Preserve distinct light and heavy regions of the continuous body, and judge the silhouette from more than the hero angle.",
+      "do_not_adopt": "Do not reproduce the multi-opening bronze shell, proportions, silhouette, plinth, patina, source photograph or a downloaded model. ORISON's Fourier centreline, periodic frame and rounded-rectangle section are original equations.",
+      "aesthetic_vs_technical": "This is a compositional observation, not evidence that our algorithm is more advanced or that an official sculpture can be reduced to one formula."
+    },
+    {
+      "title": "Blender 4.3 Manual — Curve Shape / Twist Method",
+      "url": "https://docs.blender.org/manual/en/4.3/modeling/curves/properties/shape.html",
+      "authority": "Official Blender manual",
+      "method": "The official indexed search result exposed the relevant text. Direct web-page fetch returned 402 and is not claimed as a successful full-page or live UI inspection.",
+      "observed_text": "The documentation separates sampling resolution from curve twist handling, and lists Minimum, Tangent and Z-Up twist methods.",
+      "adopt": "State frame construction separately from centreline construction. Check the frame, tangent and section at the periodic boundary; increasing mesh density alone is not a seam correction.",
+      "do_not_adopt": "No claim that our analytic projected frame is Blender's Minimum Twist or a general rotation-minimizing frame. No unsupported claim of arbitrary closed-curve transport without holonomy."
+    },
+    {
+      "title": "Blender 4.3 Manual — Curve to Mesh",
+      "url": "https://docs.blender.org/manual/id/4.3/modeling/geometry_nodes/curve/operations/curve_to_mesh.html",
+      "authority": "Official Blender manual, indexed locale page with English node text",
+      "method": "Read indexed official search result; direct fetch returned 402. No node UI execution is claimed.",
+      "observed_text": "The node sweeps an optional profile curve along a curve. Fill Caps concerns ends of a generated mesh with a cyclic profile.",
+      "adopt": "Separate closed profile, closed path and end cap semantics. Our closed path uses modulo connectivity and has no end caps.",
+      "do_not_adopt": "Do not equate closed profile or manifold cap generation with globally non-self-intersecting geometry. Our explicit mesh recipe is independently tested."
+    }
+  ],
+  "specific_critique_and_revision": [
+    {"issue":"Revision 0 reads as a largely uniform thick ring.","change":"Revision 1 adds periodic width modulation and bounded roll; material, hero camera, background, exposure and seed remain fixed.","evidence":"first-version/beauty.png versus accepted soft candidate; side view separately reviewed."},
+    {"issue":"Revision-1 side view shows a pointed crown-outline change, reported by the parent at roughly x295,y145 in the 640px image.","inspection":"Actual mesh ray casting in crown-before/crown-ray-report.json localizes it to stations153–184, not seam319/0. 800px/128-sample crown crop preserves the feature, so it is not dismissed as low-sample noise.","change":"Orison corner radius increased from10 to14mm; roll amplitude reduced from22 to16 degrees. The rounded crown improves without removing the spatial foldback.","retained_limit":"A visible projected front/back silhouette crossover remains. The model author and parent inspected it and retain it as the side-view form, not claim an everywhere-smooth 2D silhouette."}
+  ],
+  "external_images_published": false,
+  "external_models_used": false,
+  "gpu_dynamic_flicker_physical_iphone_tested": false
+}

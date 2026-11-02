@@ -1,0 +1,163 @@
+{
+  "baseline": "review/first-version",
+  "baseline_sha256": "88933788a907f9ce55c806714e91939a0a0f92a8457eebf178682dd339f5e627",
+  "checker_sha256": "ecdd92eeb7f03f6b479a9377c1bc39525e022ae84a3fd0cb30d82f6eaa998fc4",
+  "glb_checker_sha256": "5fa7561e3c23dd7a1059e7d8a8075dc0ca235db098c9f4a80845b5660d926feb",
+  "passed": true,
+  "tests": [
+    {
+      "kind": "native",
+      "case": "reversed-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "inconsistent_winding_edges",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults/reversed-face-validation.json",
+      "model_sha256": "7e1982dfeb5bce7991d5142c8eaec4a57fc8812a18677d8658974cfb1728ef6b"
+    },
+    {
+      "kind": "native",
+      "case": "contained-island",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "invalid_connected_components",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults/contained-island-validation.json",
+      "model_sha256": "eaabc98bf8b54576907e904c76ea37f0f6597c02a5055eaa45407c83b759e7ea"
+    },
+    {
+      "kind": "native",
+      "case": "piercing-prism",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonadjacent_self_intersection_candidates",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 20,
+      "report": "work/gate-faults/piercing-prism-validation.json",
+      "model_sha256": "5e690a950399a75d1926db81df8212e38dc8c0d704e5895958a02bda989328d8"
+    },
+    {
+      "kind": "native",
+      "case": "oblique-coplanar",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "coplanar_positive_area_overlaps",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults/oblique-coplanar-validation.json",
+      "model_sha256": "aa84b8c3a810603c1bb1becda7183520a354a620794e35b3711eee95e206d222"
+    },
+    {
+      "kind": "native",
+      "case": "missing-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonmanifold_edges",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults/missing-face-validation.json",
+      "model_sha256": "4d905ae6da449553535ed3e2cd277a0fbffe3ca3f2c253d606101820a7ea339d"
+    },
+    {
+      "kind": "native",
+      "case": "degenerate-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "degenerate_triangles",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults/degenerate-face-validation.json",
+      "model_sha256": "e7765278a4c24180990a8c34201258cc135b54803e5361271323079a4ae8387e"
+    },
+    {
+      "kind": "native",
+      "case": "duplicate-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "duplicate_triangles",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults/duplicate-face-validation.json",
+      "model_sha256": "01b73a51b99ff8ba65246805202bd3d66b0332687da3c43a167c8afd7182dac8"
+    },
+    {
+      "kind": "native",
+      "case": "crossing-triangles",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonadjacent_self_intersection_candidates",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults/crossing-triangles-validation.json",
+      "model_sha256": "9966580f73905792cd3764d49370b984a8fb7dddd9f1f4d6f6510404889ad6f4"
+    },
+    {
+      "kind": "native",
+      "case": "off-recipe-vertex",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "recipe_vertex_envelope_failures",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults/off-recipe-vertex-validation.json",
+      "model_sha256": "f832561392bc3c0006c655ea234cdb82b636271896e0c6b01753854647f8128f"
+    },
+    {
+      "kind": "glb",
+      "case": "nan-position",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Nonfinite accessor bytes",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "4e25942fefb53e76a114cfe1b1293cd65c3223a89cc503b96a28afde89632763"
+    },
+    {
+      "kind": "glb",
+      "case": "out-of-range-index",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Index exceeds POSITION count",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "c66e8b9cd586e1071af0be95cb644045b70b259e814d735267c5ce7df0fd9eee"
+    },
+    {
+      "kind": "glb",
+      "case": "zero-normal",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid normal length",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "c0e8c2d445f7a2d7f9c3a8ae7131560845b15f5aa534470d5a9605db8e6bd86d"
+    },
+    {
+      "kind": "glb",
+      "case": "undersized-stride",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid accessor stride",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "46400ed43383c76d602987b55073fd51e9e6f6aef325803c5a40787e169d982b"
+    },
+    {
+      "kind": "glb",
+      "case": "accessor-overrun",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Accessor exceeds bufferView",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "05b7209a9d2d8b20301bada3fe820e1323c2224dfb7085dc865bf2dca7eb87be"
+    },
+    {
+      "kind": "glb",
+      "case": "negative-offset",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid accessor offset",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "82f54c6795de5d4ed630acbece013e1e0de2a2cd1adcfcc7a944a25f990cc3a4"
+    }
+  ],
+  "scope": "Actual fault files and actual checker executions. Dedicated detector must trigger; rejection by another defect is not credited."
+}

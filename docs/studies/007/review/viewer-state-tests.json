@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "scope": "Node deferred-promise simulation of actual state controller, not native browser or GPU",
+  "cases": [
+    "out-of-order image decode commits only newest image+metadata",
+    "broken image preserves committed identity",
+    "cancel pending parse then restart disposes stale scene and shows new",
+    "context loss does not cancel independent pending image route",
+    "offline during pending route commits image without restarting GPU",
+    "repeated activation uses latest session only",
+    "destroy invalidates image and GPU session",
+    "GPU failure cannot invalidate pending independent image route"
+  ]
+}

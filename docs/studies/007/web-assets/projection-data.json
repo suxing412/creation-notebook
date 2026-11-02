@@ -1,0 +1,380 @@
+{
+  "version": "007-projection-1.1",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "Pillow": "13.0.0",
+    "scipy": "1.17.0"
+  },
+  "generator_sha256": "564dd50535119e483e80be15a3fb22916cb3d71aacf4d19184d83437de1e7cec",
+  "passed": true,
+  "scope": "Six fixed-scale 2D raster projections from real GLB bytes; model quality is validated separately.",
+  "raster_limits": "Pillow polygon rasterization includes boundary pixels; resolution convergence is evidence, not exact continuous area proof.",
+  "records": [
+    {
+      "resolution_px": 2048,
+      "metres_per_pixel": 0.000244140625,
+      "projection": "orthographic raster union of all triangle projections",
+      "view": "front",
+      "world_window_m": {
+        "horizontal": [
+          -0.25,
+          0.25
+        ],
+        "vertical": [
+          -0.045,
+          0.455
+        ]
+      },
+      "body_pixels": 831673,
+      "interior_blank_pixels": 724636,
+      "interior_blank_components_px": [
+        724636
+      ],
+      "interior_blank_area_cm2": 431.9167137145996,
+      "file": "orison-front-projection.png",
+      "source_glb": "assets/orison/model.glb",
+      "source_glb_sha256": "68d15df7bfdd59433a0f9070b91165882a93de3f29587f95e020ffcca914f4ed",
+      "source_info_sha256": "7f61fda4a207979e48cfd9dc49fe4059e7568ae66c16c8c4fa2350f51b8e7895",
+      "output_sha256": "a2c5d775f5daeea6ef25ed8d010dfb049c2c252b3a881613151d3bf4668697c4",
+      "native_bounds_max_abs_error_m": 7.96170429584464e-09,
+      "glb_world_transforms": [
+        {
+          "node": 0,
+          "world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "convergence_1024_area_cm2": 430.97972869873047,
+      "convergence_absolute_difference_cm2": 0.9369850158691406,
+      "interpretation": "2D unoccluded enclosed blank regions at this direction; not 3D passage, minimum aperture, physical stability, or manufacturing clearance."
+    },
+    {
+      "resolution_px": 2048,
+      "metres_per_pixel": 0.000244140625,
+      "projection": "orthographic raster union of all triangle projections",
+      "view": "side",
+      "world_window_m": {
+        "horizontal": [
+          -0.25,
+          0.25
+        ],
+        "vertical": [
+          -0.045,
+          0.455
+        ]
+      },
+      "body_pixels": 372839,
+      "interior_blank_pixels": 0,
+      "interior_blank_components_px": [],
+      "interior_blank_area_cm2": 0.0,
+      "file": "orison-side-projection.png",
+      "source_glb": "assets/orison/model.glb",
+      "source_glb_sha256": "68d15df7bfdd59433a0f9070b91165882a93de3f29587f95e020ffcca914f4ed",
+      "source_info_sha256": "7f61fda4a207979e48cfd9dc49fe4059e7568ae66c16c8c4fa2350f51b8e7895",
+      "output_sha256": "242ef3063d8a5bd199da2be11456c66d495e5044abd27495611073325a3a21c1",
+      "native_bounds_max_abs_error_m": 7.96170429584464e-09,
+      "glb_world_transforms": [
+        {
+          "node": 0,
+          "world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "convergence_1024_area_cm2": 0.0,
+      "convergence_absolute_difference_cm2": 0.0,
+      "interpretation": "2D unoccluded enclosed blank regions at this direction; not 3D passage, minimum aperture, physical stability, or manufacturing clearance."
+    },
+    {
+      "resolution_px": 2048,
+      "metres_per_pixel": 0.000244140625,
+      "projection": "orthographic raster union of all triangle projections",
+      "view": "front",
+      "world_window_m": {
+        "horizontal": [
+          -0.25,
+          0.25
+        ],
+        "vertical": [
+          -0.045,
+          0.455
+        ]
+      },
+      "body_pixels": 864103,
+      "interior_blank_pixels": 563209,
+      "interior_blank_components_px": [
+        563209
+      ],
+      "interior_blank_area_cm2": 335.6987237930298,
+      "file": "latitude-front-projection.png",
+      "source_glb": "assets/latitude/model.glb",
+      "source_glb_sha256": "b6503f73284314a75b4385a8f33db0abf57da5a66fc8e0c79d85e22e3fdcbfbb",
+      "source_info_sha256": "e4e3d82b423f90e7d8ca865c4d52578a4410c4239a458b297b1ec17f43f8101e",
+      "output_sha256": "5af4f45c3cd76162464b704a79fea8137d99146675ed5f3607b7c6e5a7963994",
+      "native_bounds_max_abs_error_m": 8.039422183525602e-09,
+      "glb_world_transforms": [
+        {
+          "node": 0,
+          "world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "convergence_1024_area_cm2": 334.58709716796875,
+      "convergence_absolute_difference_cm2": 1.1116266250610352,
+      "interpretation": "2D unoccluded enclosed blank regions at this direction; not 3D passage, minimum aperture, physical stability, or manufacturing clearance."
+    },
+    {
+      "resolution_px": 2048,
+      "metres_per_pixel": 0.000244140625,
+      "projection": "orthographic raster union of all triangle projections",
+      "view": "side",
+      "world_window_m": {
+        "horizontal": [
+          -0.25,
+          0.25
+        ],
+        "vertical": [
+          -0.045,
+          0.455
+        ]
+      },
+      "body_pixels": 219909,
+      "interior_blank_pixels": 0,
+      "interior_blank_components_px": [],
+      "interior_blank_area_cm2": 0.0,
+      "file": "latitude-side-projection.png",
+      "source_glb": "assets/latitude/model.glb",
+      "source_glb_sha256": "b6503f73284314a75b4385a8f33db0abf57da5a66fc8e0c79d85e22e3fdcbfbb",
+      "source_info_sha256": "e4e3d82b423f90e7d8ca865c4d52578a4410c4239a458b297b1ec17f43f8101e",
+      "output_sha256": "539d3cdcbe2cd1edf4f0767a8758e6b421ed8072d284fa73f41bb5ab84f18406",
+      "native_bounds_max_abs_error_m": 8.039422183525602e-09,
+      "glb_world_transforms": [
+        {
+          "node": 0,
+          "world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "convergence_1024_area_cm2": 0.0,
+      "convergence_absolute_difference_cm2": 0.0,
+      "interpretation": "2D unoccluded enclosed blank regions at this direction; not 3D passage, minimum aperture, physical stability, or manufacturing clearance."
+    },
+    {
+      "resolution_px": 2048,
+      "metres_per_pixel": 0.000244140625,
+      "projection": "orthographic raster union of all triangle projections",
+      "view": "front",
+      "world_window_m": {
+        "horizontal": [
+          -0.25,
+          0.25
+        ],
+        "vertical": [
+          -0.045,
+          0.455
+        ]
+      },
+      "body_pixels": 774989,
+      "interior_blank_pixels": 733326,
+      "interior_blank_components_px": [
+        733326
+      ],
+      "interior_blank_area_cm2": 437.09635734558105,
+      "file": "ascend-front-projection.png",
+      "source_glb": "assets/ascend/model.glb",
+      "source_glb_sha256": "d17c5acac8676b506bdf7491ffe0061d03be477234e284fb45ac5376330255d2",
+      "source_info_sha256": "14a4e61038caefe3ce9c2cfc8a1847df98b054470b0a40638be89f6fdb8b9ef3",
+      "output_sha256": "90379d30225b684bf3033ff25bd9ae0b6c1ff4a22c82103d4bbf9ddec84f96d1",
+      "native_bounds_max_abs_error_m": 7.691643322260688e-09,
+      "glb_world_transforms": [
+        {
+          "node": 0,
+          "world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "convergence_1024_area_cm2": 436.08665466308594,
+      "convergence_absolute_difference_cm2": 1.0097026824951172,
+      "interpretation": "2D unoccluded enclosed blank regions at this direction; not 3D passage, minimum aperture, physical stability, or manufacturing clearance."
+    },
+    {
+      "resolution_px": 2048,
+      "metres_per_pixel": 0.000244140625,
+      "projection": "orthographic raster union of all triangle projections",
+      "view": "side",
+      "world_window_m": {
+        "horizontal": [
+          -0.25,
+          0.25
+        ],
+        "vertical": [
+          -0.045,
+          0.455
+        ]
+      },
+      "body_pixels": 566880,
+      "interior_blank_pixels": 0,
+      "interior_blank_components_px": [],
+      "interior_blank_area_cm2": 0.0,
+      "file": "ascend-side-projection.png",
+      "source_glb": "assets/ascend/model.glb",
+      "source_glb_sha256": "d17c5acac8676b506bdf7491ffe0061d03be477234e284fb45ac5376330255d2",
+      "source_info_sha256": "14a4e61038caefe3ce9c2cfc8a1847df98b054470b0a40638be89f6fdb8b9ef3",
+      "output_sha256": "efad9e291bed0f6307f9643b4b72d9932ebac05e01b8f0ac1c7d61a07bcb9e91",
+      "native_bounds_max_abs_error_m": 7.691643322260688e-09,
+      "glb_world_transforms": [
+        {
+          "node": 0,
+          "world_matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "convergence_1024_area_cm2": 0.0,
+      "convergence_absolute_difference_cm2": 0.0,
+      "interpretation": "2D unoccluded enclosed blank regions at this direction; not 3D passage, minimum aperture, physical stability, or manufacturing clearance."
+    }
+  ]
+}

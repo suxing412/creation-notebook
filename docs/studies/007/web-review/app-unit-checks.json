@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "source_sha256": {
+    "app": "5839326e51e35cda5ff5b8bd8eb25d650e6083cee9c17717dfe83e6ec148ec0e",
+    "state": "ff0ed3ec1fabf12759608a0802ea32aba99e30e6e88c0a1e3c5e5c85b5971d57"
+  },
+  "scope": "Fake DOM execution of actual app.js and state module; not native browser verification",
+  "cases": [
+    "A pending → B request → A late loaded → B error: A metadata retained",
+    "B fails before A late success: A revealed while B failure retained",
+    "B/C decode reversed: C image, alt, caption, href and selection",
+    "B loaded → A late error: B remains",
+    "Initial 404 → B404 → retry B success: synchronized recovery"
+  ]
+}

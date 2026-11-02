@@ -1,0 +1,126 @@
+{
+  "study": "F03",
+  "title": "案上秩序 / Desk Atlas",
+  "version": "0.2.0",
+  "seed": 0,
+  "units": "metres",
+  "frozenSourceModels": [
+    {
+      "id": "poise",
+      "route": "light",
+      "file": "poise.glb",
+      "position": [
+        -0.39,
+        0,
+        -0.13
+      ],
+      "rotationY": 0,
+      "scale": 1,
+      "source": "study-005 / poise / 1.1.0",
+      "sha256": "53aef1b5fc4ef9d70bef6dae9562d393c80c93016d46bba2b41b67f97cd1a078"
+    },
+    {
+      "id": "folio",
+      "route": "fold",
+      "file": "folio.glb",
+      "position": [
+        0.3,
+        0,
+        0.04
+      ],
+      "rotationY": -0.12,
+      "scale": 1,
+      "source": "study-006 / folio / 1.0.0",
+      "sha256": "2f036da9f9170535d4bd07c0a7b964df22655991a7eb4b54e9c2b4d0f93c6d83"
+    }
+  ],
+  "frozenRecipeSourceSHA256": {
+    "study-005": "8931aaee8e86c8e0b5657499f40f6c71d0a7630a18c127afe71b99223917518c",
+    "study-006": "c8a20198c56e9639e5291223840436d39118a894d8e6033105912b9675592786"
+  },
+  "generatedScene": {
+    "blend": "desk-atlas.blend",
+    "glb": "desk-atlas.glb",
+    "desk": "desk.glb",
+    "sameOriginalModels": true,
+    "newGeometry": [
+      "rounded desk support",
+      "ground plane"
+    ],
+    "renderer": "Cycles CPU",
+    "samples": 512,
+    "resolution": [
+      1440,
+      960
+    ],
+    "denoising": false
+  },
+  "verificationLimits": [
+    "Real GPU visuals unverified",
+    "Dynamic depth/flicker unverified",
+    "Real iPhone performance unverified",
+    "Physical manufacturing unverified"
+  ],
+  "files": [
+    {
+      "file": "desk-atlas.blend",
+      "bytes": 4128428,
+      "sha256": "83cd5b069cb2c011f872963ed654375eaefc0dc4e66b6c7c6311c536a8444b56"
+    },
+    {
+      "file": "desk-atlas.glb",
+      "bytes": 964752,
+      "sha256": "e7ef5470de0ee56cc34a2e4822a4d0ceade7994b1afa44e33fccc7daff1e74f2"
+    },
+    {
+      "file": "desk.glb",
+      "bytes": 12352,
+      "sha256": "b58a97dbff8a0df1e1b1b72d108137a4af5847be65dc1dc8f2551f63f646c58b"
+    },
+    {
+      "file": "fold-before.png",
+      "bytes": 1131515,
+      "sha256": "8eabc5b915fb45bbe54f10fed490f69a7ac5f5154b80312bc2c0931cc616191d"
+    },
+    {
+      "file": "fold.png",
+      "bytes": 1439555,
+      "sha256": "9644a3255bef7bef57df504d1cec5dd648d2dc79effe5c1474d98c31b96ed9c9"
+    },
+    {
+      "file": "folio.glb",
+      "bytes": 219200,
+      "sha256": "2f036da9f9170535d4bd07c0a7b964df22655991a7eb4b54e9c2b4d0f93c6d83"
+    },
+    {
+      "file": "light.png",
+      "bytes": 1343610,
+      "sha256": "e40704b852fb84874524b1b5d02b234a1be3a1de54df16316a21b4fa863d9a3f"
+    },
+    {
+      "file": "metadata-cleanup.json",
+      "bytes": 841,
+      "sha256": "95e796fdea05bc4c8aee22e3d1da098d216a57d7a69f851e12de863782914a5b"
+    },
+    {
+      "file": "overview-before.png",
+      "bytes": 1017335,
+      "sha256": "4d1a88eaa3fe846e85f426d856998471e0366b77890f677af776f189e5050834"
+    },
+    {
+      "file": "overview.png",
+      "bytes": 1312304,
+      "sha256": "74d08be34f46a403ed756991a2df46438060cc6e6b0668c081ddf55ae9965d44"
+    },
+    {
+      "file": "poise.glb",
+      "bytes": 730544,
+      "sha256": "53aef1b5fc4ef9d70bef6dae9562d393c80c93016d46bba2b41b67f97cd1a078"
+    },
+    {
+      "file": "scene.json",
+      "bytes": 3902,
+      "sha256": "70daff3ffe1cfb5c811db12a7a8629e908be90a2f14e591113b1f1af4d603e59"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "state_sha256": "ff0ed3ec1fabf12759608a0802ea32aba99e30e6e88c0a1e3c5e5c85b5971d57",
+  "scope": "Pure state + mocked decode/commit interleavings. Not a browser, screen reader or GPU test.",
+  "count": 13,
+  "results": [
+    {
+      "name": "first image is not assumed successful",
+      "passed": true
+    },
+    {
+      "name": "initial load commits known image",
+      "passed": true
+    },
+    {
+      "name": "initial 404 has no fabricated last image",
+      "passed": true
+    },
+    {
+      "name": "late initial success is kept when new image fails",
+      "passed": true
+    },
+    {
+      "name": "late initial success after new failure updates availability without hiding failure",
+      "passed": true
+    },
+    {
+      "name": "stale reject cannot overwrite newer success",
+      "passed": true
+    },
+    {
+      "name": "stale success cannot overwrite newer failure/last good",
+      "passed": true
+    },
+    {
+      "name": "initial error cannot overwrite new committed image",
+      "passed": true
+    },
+    {
+      "name": "initial success cannot overwrite new committed image",
+      "passed": true
+    },
+    {
+      "name": "retry resolves to requested key",
+      "passed": true
+    },
+    {
+      "name": "initial failed while a newer request is pending keeps pending",
+      "passed": true
+    },
+    {
+      "name": "controller only commits decoded latest payload",
+      "passed": true
+    },
+    {
+      "name": "controller commit throw becomes failure without changing metadata state",
+      "passed": true
+    }
+  ]
+}

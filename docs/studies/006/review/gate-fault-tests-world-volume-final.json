@@ -1,0 +1,182 @@
+{
+  "baseline": "assets/folio",
+  "baseline_sha256": "cf54c7e72d9b84a9aa886b4f8281a7762945625a32e8b3e6ee9edc5d8533609b",
+  "checker_sha256": "3437d3fae25f172aade6045fc92c049a45cb2b03d554c8dd89cf0f5a4a4a815b",
+  "glb_checker_sha256": "5fa7561e3c23dd7a1059e7d8a8075dc0ca235db098c9f4a80845b5660d926feb",
+  "passed": true,
+  "historical_policy_reproduction": {
+    "case": "world inversion under old local-volume-only policy",
+    "historical_false_pass_reproduced": true,
+    "world_volume_m3": -0.0003404568221503684,
+    "local_volume_m3": 0.00034045682215036867,
+    "note": "Derived working checker disables transform rejection and restores local-volume decision; current production checker is not modified.",
+    "report": "work/gate-faults-world-final/legacy-world-inversion-validation.json"
+  },
+  "tests": [
+    {
+      "kind": "native",
+      "case": "reversed-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "inconsistent_winding_edges",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-world-final/reversed-face-validation.json",
+      "model_sha256": "06f96b303ff45db25f76d61836f479679c186e2f369aa1ec66c592aebde1f424"
+    },
+    {
+      "kind": "native",
+      "case": "contained-island",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "invalid_connected_components",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-world-final/contained-island-validation.json",
+      "model_sha256": "b2a49ad76bcd486a3555236e5c9c846bab599302d39d4732f85653fb02b8be41"
+    },
+    {
+      "kind": "native",
+      "case": "piercing-prism",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonadjacent_self_intersection_candidates",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 20,
+      "report": "work/gate-faults-world-final/piercing-prism-validation.json",
+      "model_sha256": "5828b1c86ebb9c168407686e0e02630ad8300c90abfaebfea78fe4386cf145fa"
+    },
+    {
+      "kind": "native",
+      "case": "oblique-coplanar",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "coplanar_positive_area_overlaps",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-world-final/oblique-coplanar-validation.json",
+      "model_sha256": "26a8eba89554c1d5d09da0c1a1e1ba548671591a532e90b44aeb003b7aca50e1"
+    },
+    {
+      "kind": "native",
+      "case": "missing-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonmanifold_edges",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-world-final/missing-face-validation.json",
+      "model_sha256": "6b2b8b7dee77bcc8f16d1332cce99327c8e51b2dc007812b5c469839fad98fdc"
+    },
+    {
+      "kind": "native",
+      "case": "degenerate-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "degenerate_triangles",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-world-final/degenerate-face-validation.json",
+      "model_sha256": "5fab424c37340fa8af8f40dff0f088d2464120545acc6a69710cf3f6256353f6"
+    },
+    {
+      "kind": "native",
+      "case": "duplicate-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "duplicate_triangles",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-world-final/duplicate-face-validation.json",
+      "model_sha256": "177ae6dda9d05b5e275f72b21163cdc0d37db090d6b0cc723aff96c628ab248c"
+    },
+    {
+      "kind": "native",
+      "case": "crossing-triangles",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonadjacent_self_intersection_candidates",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-world-final/crossing-triangles-validation.json",
+      "model_sha256": "8ccf6b5d412369f80810dcde7f354ff2d1a4cabe97e2651e24067053572742f0"
+    },
+    {
+      "kind": "native",
+      "case": "off-recipe-vertex",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "recipe_vertex_envelope_failures",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-world-final/off-recipe-vertex-validation.json",
+      "model_sha256": "c697e0a9b044fbd2d6441846d80556b9236d277810ce5929673af3cc32551f02"
+    },
+    {
+      "kind": "native",
+      "case": "mirrored-transform-inverted-world",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "non_positive_world_volume",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-world-final/mirrored-transform-inverted-world-validation.json",
+      "model_sha256": "4e099d0e3c209d74c6c979a4f3641c1c0c45be4f65c4021916779bd7cf8c213a"
+    },
+    {
+      "kind": "glb",
+      "case": "nan-position",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Nonfinite accessor bytes",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "8dd34dc318b7d35e8f9baa0175eb05e7559d04e370c86f815d4c7581a2cf4133"
+    },
+    {
+      "kind": "glb",
+      "case": "out-of-range-index",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Index exceeds POSITION count",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "8f80b4aac6b4f0a32b969b347aa12fab6613d271354ad624b0ef74c73b472cc4"
+    },
+    {
+      "kind": "glb",
+      "case": "zero-normal",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid normal length",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "19572fdf837303c106c79ff733ed4696688928db81ad3dace0866c68febbc75f"
+    },
+    {
+      "kind": "glb",
+      "case": "undersized-stride",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid accessor stride",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "41cc0bfac31fa8275726b9b6673c2b2cf070d69b14dda44d9f19c269720fd31c"
+    },
+    {
+      "kind": "glb",
+      "case": "accessor-overrun",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Accessor exceeds bufferView",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "fe459b13e04881698a9eabe3277700a0261ec3cb30f3c000893d1de9d17e8193"
+    },
+    {
+      "kind": "glb",
+      "case": "negative-offset",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid accessor offset",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "2f0c838ba2b228eec60b6ccf9aa8202d8ae7441b24c29a7bb5c71dd9dd591690"
+    }
+  ],
+  "scope": "Actual fault files and actual checker executions. Dedicated detector must trigger; rejection by another defect is not credited."
+}

@@ -1,0 +1,67 @@
+{
+  "comparison": [
+    {
+      "samples_cap": 48,
+      "image": "review/sampling-48.png",
+      "resolution": [
+        560,
+        560
+      ],
+      "sha256": "0dcb205bdc35135413d22d4ea8a2695a5453410767267213c7429ae76ee57e89",
+      "measurements": {
+        "front_flat_patch": {
+          "roi_xyxy": [
+            215,
+            235,
+            345,
+            320
+          ],
+          "high_frequency_residual_std": 0.010812501128066332
+        },
+        "ground_patch": {
+          "roi_xyxy": [
+            35,
+            500,
+            170,
+            535
+          ],
+          "high_frequency_residual_std": 0.001872421524800764
+        }
+      }
+    },
+    {
+      "samples_cap": 128,
+      "image": "review/sampling-128.png",
+      "resolution": [
+        560,
+        560
+      ],
+      "sha256": "356a8888c60b741cd7d7123a3230461ba59781827f07b01b7562e1cc111379e9",
+      "measurements": {
+        "front_flat_patch": {
+          "roi_xyxy": [
+            215,
+            235,
+            345,
+            320
+          ],
+          "high_frequency_residual_std": 0.00452187264443654
+        },
+        "ground_patch": {
+          "roi_xyxy": [
+            35,
+            500,
+            170,
+            535
+          ],
+          "high_frequency_residual_std": 0.0008544747613799822
+        }
+      }
+    }
+  ],
+  "selection": "256 max adaptive samples at 960 x 960 for the final seven views, after visual review of 48 and 128 previews. Not 1024 by default.",
+  "denoising": false,
+  "adaptive_sampling": true,
+  "adaptive_threshold": 0.01,
+  "scope": "High-frequency residual after Gaussian blur is a finite image-patch indicator, not an unbiased noise estimator or geometry validation. Camera/material/seed match between the 560px previews. Do not compare this raw residual to the 960px final as if resolutions match."
+}

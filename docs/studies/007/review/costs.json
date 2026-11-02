@@ -1,0 +1,171 @@
+{
+  "units": "wall-clock seconds, not CPU core-seconds or API billing",
+  "final_render_jobs": [
+    {
+      "job": "assets/orison",
+      "render_and_export_wall_seconds": 209.574,
+      "resolution": [
+        960,
+        960
+      ],
+      "samples": 128,
+      "cpu_threads": 6,
+      "images": 6
+    },
+    {
+      "job": "assets/latitude",
+      "render_and_export_wall_seconds": 199.051,
+      "resolution": [
+        960,
+        960
+      ],
+      "samples": 128,
+      "cpu_threads": 6,
+      "images": 6
+    },
+    {
+      "job": "assets/ascend",
+      "render_and_export_wall_seconds": 195.848,
+      "resolution": [
+        960,
+        960
+      ],
+      "samples": 128,
+      "cpu_threads": 6,
+      "images": 6
+    }
+  ],
+  "final_render_and_export_wall_seconds_sum": 604.473,
+  "all_named_render_jobs": [
+    {
+      "job": "review/first-version",
+      "render_and_export_wall_seconds": 14.614,
+      "resolution": [
+        640,
+        640
+      ],
+      "samples": 32,
+      "cpu_threads": 6,
+      "images": 4
+    },
+    {
+      "job": "work/refined-draft",
+      "render_and_export_wall_seconds": 17.036,
+      "resolution": [
+        640,
+        640
+      ],
+      "samples": 32,
+      "cpu_threads": 6,
+      "images": 4
+    },
+    {
+      "job": "work/soft-draft",
+      "render_and_export_wall_seconds": 14.52,
+      "resolution": [
+        640,
+        640
+      ],
+      "samples": 32,
+      "cpu_threads": 6,
+      "images": 4
+    },
+    {
+      "job": "work/latitude-draft",
+      "render_and_export_wall_seconds": 8.354,
+      "resolution": [
+        640,
+        640
+      ],
+      "samples": 32,
+      "cpu_threads": 6,
+      "images": 3
+    },
+    {
+      "job": "work/ascend-draft",
+      "render_and_export_wall_seconds": 9.418,
+      "resolution": [
+        640,
+        640
+      ],
+      "samples": 32,
+      "cpu_threads": 6,
+      "images": 3
+    },
+    {
+      "job": "assets/orison",
+      "render_and_export_wall_seconds": 209.574,
+      "resolution": [
+        960,
+        960
+      ],
+      "samples": 128,
+      "cpu_threads": 6,
+      "images": 6
+    },
+    {
+      "job": "assets/latitude",
+      "render_and_export_wall_seconds": 199.051,
+      "resolution": [
+        960,
+        960
+      ],
+      "samples": 128,
+      "cpu_threads": 6,
+      "images": 6
+    },
+    {
+      "job": "assets/ascend",
+      "render_and_export_wall_seconds": 195.848,
+      "resolution": [
+        960,
+        960
+      ],
+      "samples": 128,
+      "cpu_threads": 6,
+      "images": 6
+    },
+    {
+      "job": "work/pipeline-smoke",
+      "render_and_export_wall_seconds": 7.649,
+      "resolution": [
+        256,
+        256
+      ],
+      "samples": 16,
+      "cpu_threads": 2,
+      "images": 6
+    },
+    {
+      "job": "work/pipeline-final-smoke",
+      "render_and_export_wall_seconds": 6.138,
+      "resolution": [
+        256,
+        256
+      ],
+      "samples": 16,
+      "cpu_threads": 2,
+      "images": 6
+    }
+  ],
+  "named_render_and_export_wall_seconds_sum": 682.202,
+  "native_gate_public_report_runs": 74,
+  "native_gate_public_report_wall_seconds_subtotal": 206.617,
+  "cost_coverage_limits": [
+    "Generator elapsed time includes validation, export and all requested CPU renders in that job.",
+    "Crown inspection renders, browser interaction, human review, GLB-only checker runtimes and private fault baseline setup are not included in the named-render subtotal.",
+    "No GPU renders performed. No purchased API or external model was used. Dollar/token billing was not supplied by tools and is not invented."
+  ],
+  "reusable_cli_final_smoke": {
+    "output": "work/pipeline-final-smoke",
+    "passed": true,
+    "wall_seconds": 19.977,
+    "commands_include_python_exit_code": 1,
+    "fresh_native_GLB_and_triangle_identity_reports_verified": true
+  },
+  "asset_bytes": {
+    "latitude": 7216978,
+    "orison": 7317192,
+    "ascend": 7408590
+  }
+}

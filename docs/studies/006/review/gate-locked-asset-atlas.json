@@ -1,0 +1,59 @@
+{
+  "variant": "atlas",
+  "recipe_version": "1.0.0",
+  "blender_version": "4.3.2",
+  "model_sha256": "397ec2b1ca2b8683be750e7c17eed7aa628d6a9802b63c9f169ef2cebb1f1fab",
+  "checker_sha256": "c15823a58e072f1ca21ec63a1696eff90e7928f0f86e594b6a898f33bd07f99c",
+  "mesh_objects": 1,
+  "triangles": 10988,
+  "degenerate_triangles": [],
+  "duplicate_triangles": [],
+  "nonmanifold_edges": [],
+  "non_positive_volume": [],
+  "non_positive_world_volume": [],
+  "inconsistent_winding_edges": [],
+  "invalid_connected_components": [],
+  "component_records": [
+    {
+      "object": "FOLIO | single continuous folded shell",
+      "component_sizes": [
+        5496
+      ],
+      "signed_volume_m3": 0.0003477413431995059,
+      "signed_world_volume_m3": 0.0003477413431995059,
+      "signed_local_volume_m3": 0.000347741343199505
+    }
+  ],
+  "nonfinite_coordinates": [],
+  "recipe_vertex_envelope_failures": [],
+  "recipe_topology_failures": [],
+  "object_contract_failures": [],
+  "material_contract_failures": [],
+  "object_transform_failures": [],
+  "model_state_contract_failures": [],
+  "nonadjacent_self_intersection_candidates": [],
+  "coplanar_positive_area_overlaps": [],
+  "coplanar_candidate_pairs": 3035,
+  "minimum_triangle_area_m2": 6.388934270518121e-09,
+  "thresholds": {
+    "degenerate_area_m2": 1e-12,
+    "duplicate_vertex_round_m": 1e-08,
+    "recipe_vertex_distance_m": 2e-07,
+    "identity_matrix_entry_tolerance": 1e-08,
+    "coplanar_normal_cosine": 0.9999999,
+    "coplanar_plane_distance_m": 5e-08,
+    "positive_overlap_axis_m": 1e-08,
+    "spatial_cell_m": 0.012
+  },
+  "limits": [
+    "Recipe identity is a constrained full-vertex/topology contract, not independent proof of arbitrary geometry.",
+    "Nonadjacent BVH intersections exclude triangles sharing any vertex; adjacent noncoplanar foldover is not fully certified.",
+    "Float64 plane/SAT is numerical tolerance testing, not exact symbolic or continuous parameter-domain proof.",
+    "Pure model contract: exactly one object, of type MESH; no modifier, shape key, constraint, parent, object/mesh animation_data or drivers. Photographic scene.blend is not accepted here.",
+    "World-space signed volume is checked separately from local volume; this recipe also requires identity object transforms.",
+    "One closed connected shell is required; no allowed-pair exception exists. Interior islands are rejected by connectivity/recipe identity even when no surface intersection exists.",
+    "No fabrication, load, stability, ergonomics, GPU, WebGL, iPhone, or dynamic z-fighting verification."
+  ],
+  "passed": true,
+  "elapsed_seconds": 3.31
+}

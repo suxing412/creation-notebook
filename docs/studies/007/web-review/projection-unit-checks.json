@@ -1,0 +1,277 @@
+{
+  "passed": true,
+  "checker_version": "007-projection-tests-1.0",
+  "checker_sha256": "0ad8f2bc74623182e0ebfa8ba78671b1c5d38d81ccc094e8230a1e074dcafaf6",
+  "projection_version": "007-projection-1.1",
+  "projection_sha256": "564dd50535119e483e80be15a3fb22916cb3d71aacf4d19184d83437de1e7cec",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "Pillow": "13.0.0",
+    "scipy": "1.17.0"
+  },
+  "scope": "Isolated malformed-GLB and synthetic 2D projection fixtures plus three actual-file controls. Not a complete model, native-browser, GPU or manufacturing test.",
+  "historical_regression": {
+    "version": "007-projection-1.0",
+    "negative_scene_root_index_accepted": true,
+    "observation": "Independently executed against a real candidate GLB copy before the fix on 2026-11-01 UTC. Valid current assets were not affected.",
+    "current_expectation": "dedicated node_index rejection"
+  },
+  "input_identities": {
+    "orison": {
+      "glb_sha256": "68d15df7bfdd59433a0f9070b91165882a93de3f29587f95e020ffcca914f4ed",
+      "info_sha256": "7f61fda4a207979e48cfd9dc49fe4059e7568ae66c16c8c4fa2350f51b8e7895"
+    },
+    "latitude": {
+      "glb_sha256": "b6503f73284314a75b4385a8f33db0abf57da5a66fc8e0c79d85e22e3fdcbfbb",
+      "info_sha256": "e4e3d82b423f90e7d8ca865c4d52578a4410c4239a458b297b1ec17f43f8101e"
+    },
+    "ascend": {
+      "glb_sha256": "d17c5acac8676b506bdf7491ffe0061d03be477234e284fb45ac5376330255d2",
+      "info_sha256": "14a4e61038caefe3ce9c2cfc8a1847df98b054470b0a40638be89f6fdb8b9ef3"
+    }
+  },
+  "count": 31,
+  "results": [
+    {
+      "name": "valid actual orison",
+      "passed": true,
+      "detail": {
+        "native_bounds_max_abs_error_m": 7.96170429584464e-09,
+        "vertices": 11520,
+        "triangles": 23040
+      }
+    },
+    {
+      "name": "valid actual latitude",
+      "passed": true,
+      "detail": {
+        "native_bounds_max_abs_error_m": 8.039422183525602e-09,
+        "vertices": 11520,
+        "triangles": 23040
+      }
+    },
+    {
+      "name": "valid actual ascend",
+      "passed": true,
+      "detail": {
+        "native_bounds_max_abs_error_m": 7.691643322260688e-09,
+        "vertices": 11520,
+        "triangles": 23040
+      }
+    },
+    {
+      "name": "negative scene index",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "scene_index"
+      }
+    },
+    {
+      "name": "out-of-range scene index",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "scene_index"
+      }
+    },
+    {
+      "name": "boolean scene index",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "scene_index"
+      }
+    },
+    {
+      "name": "negative root node index",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "node_index"
+      }
+    },
+    {
+      "name": "out-of-range root node",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "node_index"
+      }
+    },
+    {
+      "name": "float root node index",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "node_index"
+      }
+    },
+    {
+      "name": "negative child index",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "node_index"
+      }
+    },
+    {
+      "name": "negative mesh index",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "mesh_index"
+      }
+    },
+    {
+      "name": "negative POSITION accessor",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "accessor_index"
+      }
+    },
+    {
+      "name": "negative index accessor",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "accessor_index"
+      }
+    },
+    {
+      "name": "negative bufferView index",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "buffer_view_index"
+      }
+    },
+    {
+      "name": "negative buffer index",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "buffer_index"
+      }
+    },
+    {
+      "name": "negative material index",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "material_index"
+      }
+    },
+    {
+      "name": "float index accessor schema",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "index_schema"
+      }
+    },
+    {
+      "name": "integer position accessor schema",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "position_schema"
+      }
+    },
+    {
+      "name": "zero skin index is still unsupported",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "model_state"
+      }
+    },
+    {
+      "name": "negative accessor offset",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "accessor_offset"
+      }
+    },
+    {
+      "name": "sparse POSITION unsupported",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "accessor_schema"
+      }
+    },
+    {
+      "name": "undersized vertex stride",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "accessor_stride"
+      }
+    },
+    {
+      "name": "projective node matrix",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "node_transform"
+      }
+    },
+    {
+      "name": "nonfinite translation",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "node_transform"
+      }
+    },
+    {
+      "name": "transparent material is not silhouette contract",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "material_contract"
+      }
+    },
+    {
+      "name": "valid matrix translation",
+      "passed": true,
+      "detail": "glTF +Y maps to Blender +Z"
+    },
+    {
+      "name": "valid parent TRS",
+      "passed": true,
+      "detail": "parent composed before Y-up to Z-up"
+    },
+    {
+      "name": "known rectangular projected hole",
+      "passed": true,
+      "detail": {
+        "exact_fixture_cm2": 100,
+        "raster_cm2": 99.22027587890625,
+        "scope": "2D planar fixture, not sculpture manufacturing measurement"
+      }
+    },
+    {
+      "name": "open gap is not enclosed interior",
+      "passed": true,
+      "detail": "open complement connects to image boundary"
+    },
+    {
+      "name": "clipped view rejected",
+      "passed": true,
+      "detail": {
+        "rejected": true,
+        "code": "view_clipping"
+      }
+    },
+    {
+      "name": "optimization cannot remove rejection",
+      "passed": true,
+      "detail": "explicit node_index rejection retained with -O"
+    }
+  ],
+  "failures": []
+}

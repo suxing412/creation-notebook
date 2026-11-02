@@ -1,0 +1,107 @@
+{
+  "coordinate_convention": "SVG x = model Y; SVG y = -model Z",
+  "profile_projection": {
+    "small": {
+      "scale_svg_units_per_m": 970,
+      "origin_svg": [
+        230,
+        232
+      ]
+    },
+    "large": {
+      "scale_svg_units_per_m": 1720,
+      "origin_svg": [
+        380,
+        412
+      ]
+    }
+  },
+  "family_shared_scale": "all small profiles use scale 970 SVG units per metre, origin (230,232)",
+  "records": [
+    {
+      "path": "assets/diagrams/folio-profile.svg",
+      "source": "assets/folio/model-info.json",
+      "source_sha256": "c565097da11d0ae021cd2245076bf6ca0ca218bc78057cece5d20976bc7b1a1d",
+      "units": "m in source; annotated mm",
+      "derivation": "YZ stations.point ± stations.normal × config.thickness / 2",
+      "not_certified": "Not full all-point mesh thickness, fabrication drawings or stress simulation",
+      "bytes": 16650,
+      "svg_sha256": "38dfcc14fb988aa863955dd692f035eb8f3c1ac1384cbdb2c4d9446747f61482"
+    },
+    {
+      "path": "assets/diagrams/folio-small.svg",
+      "source": "assets/folio/model-info.json",
+      "source_sha256": "c565097da11d0ae021cd2245076bf6ca0ca218bc78057cece5d20976bc7b1a1d",
+      "units": "m in source; annotated mm",
+      "derivation": "YZ stations.point ± stations.normal × config.thickness / 2",
+      "not_certified": "Not full all-point mesh thickness, fabrication drawings or stress simulation",
+      "bytes": 14727,
+      "svg_sha256": "787a8ffb86d27b397053d350f460731eb11521647b07d596f12bc3ef28f577ca"
+    },
+    {
+      "path": "assets/diagrams/atlas-profile.svg",
+      "source": "assets/atlas/model-info.json",
+      "source_sha256": "3da81e4ded5dcd53506cc564bb6dd621cccb852f4608c2cddd0c73397d7197a6",
+      "units": "m in source; annotated mm",
+      "derivation": "YZ stations.point ± stations.normal × config.thickness / 2",
+      "not_certified": "Not full all-point mesh thickness, fabrication drawings or stress simulation",
+      "bytes": 15445,
+      "svg_sha256": "263ecc406814b1a1db7fda6c8cbcb6f82a026ef09e56de023bc58c787cd41d41"
+    },
+    {
+      "path": "assets/diagrams/atlas-small.svg",
+      "source": "assets/atlas/model-info.json",
+      "source_sha256": "3da81e4ded5dcd53506cc564bb6dd621cccb852f4608c2cddd0c73397d7197a6",
+      "units": "m in source; annotated mm",
+      "derivation": "YZ stations.point ± stations.normal × config.thickness / 2",
+      "not_certified": "Not full all-point mesh thickness, fabrication drawings or stress simulation",
+      "bytes": 13726,
+      "svg_sha256": "e5e419d1f45b170b4f2d7dbf2dc29f2eff9d24b739b4f128cd890ec34578a246"
+    },
+    {
+      "path": "assets/diagrams/spire-profile.svg",
+      "source": "assets/spire/model-info.json",
+      "source_sha256": "1782ae8c89eaedce3a360b1fd2604685b83aa563ced6af842a45acc9a2b61454",
+      "units": "m in source; annotated mm",
+      "derivation": "YZ stations.point ± stations.normal × config.thickness / 2",
+      "not_certified": "Not full all-point mesh thickness, fabrication drawings or stress simulation",
+      "bytes": 17590,
+      "svg_sha256": "849abe7c605730d390c5dedd7c40e5ab6c8a900c13dccc1012f9f58d5570cf80"
+    },
+    {
+      "path": "assets/diagrams/spire-small.svg",
+      "source": "assets/spire/model-info.json",
+      "source_sha256": "1782ae8c89eaedce3a360b1fd2604685b83aa563ced6af842a45acc9a2b61454",
+      "units": "m in source; annotated mm",
+      "derivation": "YZ stations.point ± stations.normal × config.thickness / 2",
+      "not_certified": "Not full all-point mesh thickness, fabrication drawings or stress simulation",
+      "bytes": 15902,
+      "svg_sha256": "6851e50da1d3b182d22cccaeef63f507f737e41006395cef94072d4ddd57b11d"
+    },
+    {
+      "path": "assets/diagrams/folio-bend.svg",
+      "source": "assets/folio/model-info.json",
+      "source_sha256": "c565097da11d0ae021cd2245076bf6ca0ca218bc78057cece5d20976bc7b1a1d",
+      "units": "m in source; annotated mm",
+      "station_range_inclusive": [
+        118,
+        182
+      ],
+      "source_bend_corner": 3,
+      "projection": {
+        "origin_svg": [
+          310,
+          270
+        ],
+        "center_yz_m": [
+          0.003256165028412459,
+          0.1735768762982791
+        ],
+        "svg_units_per_m": 23157.894736842107
+      },
+      "derivation": "Selected B3 station offsets; center radius and thickness annotations are config/analytic values, not mesh measurements",
+      "bytes": 4754,
+      "svg_sha256": "52d50bdaf0cee2d6bea00c49c700c6cc0a78a304f4d736efeb2b07a12180bcaf"
+    }
+  ]
+}

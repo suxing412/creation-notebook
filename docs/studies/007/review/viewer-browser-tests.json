@@ -1,0 +1,93 @@
+{
+  "date_utc": "2026-11-01",
+  "environment": "Native cloud Chrome; only authorized sites-preview service reused, isolated __modelqa projection",
+  "viewport_desktop_css_px": [
+    1188,
+    761
+  ],
+  "tested_source_sha256": {
+    "style.css": "779c71377317b8093326fbd59fd6fc29217d70f484917f5a39aac4799ad6aa67",
+    "state.js": "23e6f04c7d8bc994a0f8e475e38759eab60eb3d71c2a14a7c0203f7103a15063",
+    "viewer.js": "965e3a2fee8a0afb1db82bb0c2e6a002a9777169aec40116f56cd154f2ca43dc",
+    "index.html": "0c3eba20cf92c2283e014d813bf0379532c7e5821e8f2275364f06c0c992241e",
+    "package.json": "89c47db7851f89caec72da4f215ebc21cf1e294aeef3b45d2583562d846ab035"
+  },
+  "native_browser_cases": [
+    {
+      "case": "Real GLB activation with unavailable WebGL context",
+      "result": "PASS fallback: same image/title/downloads remain; no safety setting changed"
+    },
+    {
+      "case": "Latitude front selection",
+      "result": "PASS matching decoded image, title, URL and GLB link"
+    },
+    {
+      "case": "Back then Forward",
+      "result": "PASS returned Orison beauty then Latitude front with matching image/title"
+    },
+    {
+      "case": "Missing candidate latitude top image",
+      "result": "PASS rejected image transition, retained Latitude front image/title/GLB link/URL and restored selector"
+    },
+    {
+      "case": "Deep link ascend + side",
+      "result": "PASS actual image naturalWidth640 and matching title/view"
+    },
+    {
+      "case": "Keyboard Tab then Enter on Activate",
+      "result": "PASS focused activate and initiated real loading; offline image stayed visible"
+    },
+    {
+      "case": "Cancel then retry",
+      "result": "PASS terminal WebGL-unavailable fallback, no stale image/title swap"
+    }
+  ],
+  "additional_limited_tests": {
+    "narrow_layout": {
+      "method": "390x844 CSS-pixel iframe in native browser; NOT a physical phone or separate mobile-browser session",
+      "document_scroll_width_css_px": 375,
+      "stage_rect_css_px": {
+        "left": 15,
+        "top": 355.016,
+        "width": 345,
+        "height": 345
+      },
+      "primary_buttons_selects_download_targets_height_px": 44,
+      "visual_result": "Title, explanatory text and entire hero image fit within first iframe screen. No horizontal overflow."
+    },
+    "script_blocked_fixture": {
+      "method": "Same static HTML with CSP script-src none; no global browser/GL safety setting changed. Not a claimed browser-preference JavaScript-off test.",
+      "image_ready": true,
+      "static_variant_groups": 3,
+      "static_links": 18,
+      "JS_controls_disabled": true,
+      "body_text_available": true
+    }
+  },
+  "not_verified": [
+    "GPU rendering/materials/object clicks",
+    "dynamic flicker",
+    "real iPhone/touch"
+  ],
+  "screenshots": [
+    "viewer-native-fallback.png",
+    "viewer-narrow-iframe.png"
+  ],
+  "state_race_unit_tests": "viewer-state-tests.json",
+  "scope_note": "Candidate first native pass retained. Final projection retested after all three final assets were imported; see final_retest.",
+  "final_retest": {
+    "actual_final_assets": true,
+    "three_GLTF_loader_report": "three-loader-tests.json",
+    "all_18_images_decoded_at_960_squared": true,
+    "contact_sheet_visually_reviewed": "final-multiview-contact.png",
+    "native_concurrent_route_plus_activate": "Started latitude/top image transition then activated 3D while pending; terminal title, image, 960px natural width and GLB link all latitude/top, GPU failure retained correct image.",
+    "static_link_files_checked": true,
+    "source_sha256": {
+      "style.css": "779c71377317b8093326fbd59fd6fc29217d70f484917f5a39aac4799ad6aa67",
+      "state.js": "23e6f04c7d8bc994a0f8e475e38759eab60eb3d71c2a14a7c0203f7103a15063",
+      "viewer.js": "965e3a2fee8a0afb1db82bb0c2e6a002a9777169aec40116f56cd154f2ca43dc",
+      "index.html": "0c3eba20cf92c2283e014d813bf0379532c7e5821e8f2275364f06c0c992241e",
+      "package.json": "89c47db7851f89caec72da4f215ebc21cf1e294aeef3b45d2583562d846ab035"
+    }
+  }
+}

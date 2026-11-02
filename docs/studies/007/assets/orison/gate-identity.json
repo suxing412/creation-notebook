@@ -1,0 +1,49 @@
+{
+  "asset": "assets/orison",
+  "created_utc": "2026-11-01T23:28:02.032691+00:00",
+  "passed": true,
+  "inputs_stable_during_checks": true,
+  "input_sha256": {
+    "native": "980e11a3c72686abcea0f555ff3aef6d27380abf89af06add28e72945b4f3509",
+    "glb": "68d15df7bfdd59433a0f9070b91165882a93de3f29587f95e020ffcca914f4ed",
+    "info": "7f61fda4a207979e48cfd9dc49fe4059e7568ae66c16c8c4fa2350f51b8e7895",
+    "native_checker": "3c2140f88b6297e70f1a1d9c52f9eb9cc1008e7cf03d3b94f5e8331bb360847d",
+    "glb_checker": "1e5ac51317a144e9a94d3c17507a3ce698f3bd4f973ec37604c81252354bf618",
+    "recipe": "7a4591a35e9cf843906df4eb7e4ef13647a39c474b96dd3251d85dd7b4a3718a",
+    "comparison_checker": "ad91898fd37e4e0b909b85bcaafe222b79e6958d5f72f3a0f620bf560f19ddff"
+  },
+  "checks": {
+    "native": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-locked-orison-v2-native.json",
+      "info_identity_matches": true,
+      "recipe_identity_matches": true
+    },
+    "glb": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-locked-orison-v2-glb.json"
+    },
+    "comparison": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-locked-orison-v2-comparison.json",
+      "glb_identity_matches": true,
+      "glb_checker_identity_matches": true
+    }
+  },
+  "wrapper_sha256": "ea5bca7a2bfdc6c66b61843856c63c5003622697d7f23cf26b2c7783bec62a85"
+}

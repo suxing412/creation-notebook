@@ -1,0 +1,454 @@
+{
+  "date_utc": "2026-11-01",
+  "passed": true,
+  "scope": "Independent phased audit: initial six core pipeline repairs plus two supplementary containment checks; then actual 007 archive protocol and identity validation. Not a final webpage freeze, model-gate rerun, browser/GPU test or manufacturing proof.",
+  "source_sha256": {
+    "web-source/import_model.py": "d695fd6f8a7f2793d53bd374d84c423ca4755ad63d3f6b1a9212f2069e3f0128",
+    "web-source/verify_delivery.py": "60906df0048cac0bd4b4d3f932a6ba11363221c78600c4f52e58580979b66f44",
+    "web-source/freeze.py": "5e52ba2d7a1b1e20487619848c997eecafb3348fed9d0907d855d1fbce3f6498",
+    "web-source/gallery_pipeline.py": "3f05283f0bd9663ac1b775d99606d3faea4f9df96c4ea899b75a2884ca25a475",
+    "web-source/compose.py": "56503549433c02fab383c49d862565f9bc93e1a52c51a5fe5a4bdf8531946601",
+    "web-source/test_import.py": "aadbfa24ace90055fe8395e228ac043cef10a0c68fa252e84e28e1a06045e7c6"
+  },
+  "findings": [
+    {
+      "id": "P01",
+      "severity": "P1",
+      "issue": "private-path scanner matched its own detector literals",
+      "old_evidence": "Read-source deterministic self-match; parent repaired before isolated fixture recheck.",
+      "current": "real checker source passes scanner without source-file exemption"
+    },
+    {
+      "id": "P02",
+      "severity": "P1",
+      "issue": "archive was hashed then independently reopened by path",
+      "old_evidence": "Read-source identity race: bytes at the path could change between checksum and ZipFile open.",
+      "current": "ZipFile consumes the same immutable hashed bytes; disk-path replacement fixture imports approved A, not replacement B"
+    },
+    {
+      "id": "P03",
+      "severity": "P1",
+      "issue": "canonical filename aliases could overwrite checked manifest",
+      "old_evidence": "Executed manifest.json frozen plus ./manifest.json draft fixture: old importer returned success and extracted draft manifest.",
+      "current": "noncanonical spelling is rejected before target changes"
+    },
+    {
+      "id": "P04",
+      "severity": "P1",
+      "issue": "unconstrained model namespaces and mutable parity allow-set",
+      "old_evidence": "Executed root placeholder/model web-review overlap fixtures; old parity append made an otherwise rejected extra file pass.",
+      "current": "model namespace contract plus independently generated import lock reject namespace overlap and parity-set expansion"
+    },
+    {
+      "id": "P05",
+      "severity": "P1",
+      "issue": "overlay could overwrite fresh import provenance with stale reports",
+      "old_evidence": "Executed report-copy stage: fresh identity replaced by stale asset-parity content.",
+      "current": "overlay skips importer-owned parity and model_lock; both remain byte-identical"
+    },
+    {
+      "id": "P06",
+      "severity": "P1",
+      "issue": "freeze and test imports generated forbidden bytecode inside delivery tree",
+      "old_evidence": "Executed old copied freeze entrypoint: verify and verify_delivery pyc files appeared before first expected missing-test error.",
+      "current": "direct freeze entrypoint and projection/import test processes including optimized child create no pyc files"
+    },
+    {
+      "id": "P07",
+      "severity": "P2",
+      "issue": "empty QA directory ignored by file-only delivery traversal",
+      "old_evidence": "Executed complete isolated delivery fixture plus empty qa directory: old checker passed.",
+      "current": "directory-level rejection names the QA directory"
+    },
+    {
+      "id": "P08",
+      "severity": "P1",
+      "issue": "whole-archive copy remained admissible inside allowed source directory",
+      "old_evidence": "Executed source/entire-model-copy.zip fixture: intermediate importer accepted it.",
+      "current": "global archive-suffix rejection blocks it; dedicated import regression passes"
+    }
+  ],
+  "isolated_regressions": [
+    {
+      "case": "alias-manifest",
+      "rejected": true,
+      "previous_target_preserved": true,
+      "message": "Noncanonical ZIP path ./manifest.json"
+    },
+    {
+      "case": "double-slash",
+      "rejected": true,
+      "previous_target_preserved": true,
+      "message": "Noncanonical ZIP path source//bad.py"
+    },
+    {
+      "case": "web-namespace",
+      "rejected": true,
+      "previous_target_preserved": true,
+      "message": "Outside model namespace web-review/asset-parity.json"
+    },
+    {
+      "case": "root-placeholder",
+      "rejected": true,
+      "previous_target_preserved": true,
+      "message": "Outside model namespace draft-placeholder.html"
+    },
+    {
+      "case": "root-duplicate-ZIP",
+      "rejected": true,
+      "previous_target_preserved": true,
+      "message": "Outside model namespace entire-model.zip"
+    },
+    {
+      "case": "empty-QA-dir",
+      "rejected": true,
+      "previous_target_preserved": true,
+      "message": "Outside model namespace qa/"
+    },
+    {
+      "case": "complete fixture incl real scanner source + lock",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "empty QA directory delivery",
+      "rejected": true,
+      "errors": [
+        "Private/temporary directory qa"
+      ]
+    },
+    {
+      "case": "parity laundering inside allowed model directory",
+      "rejected": true,
+      "errors": [
+        "Original import identity/entry set differs from approved lock"
+      ]
+    },
+    {
+      "case": "matching-byte symlink original file",
+      "passed": false,
+      "errors": [
+        "Symlink forbidden README.md"
+      ]
+    },
+    {
+      "case": "duplicate ZIP under source",
+      "accepted": false,
+      "message": "Nested archive excluded from model import source/entire-model-copy.zip"
+    },
+    {
+      "case": "overlay preserves importer-owned metadata",
+      "parity_unchanged": true,
+      "lock_unchanged": true
+    },
+    {
+      "case": "direct freeze imports before expected missing-test error",
+      "exit_code": 1,
+      "stale_marker_removed": true,
+      "pyc_files": []
+    },
+    {
+      "case": "projection/import direct tests and optimized-child no cache",
+      "exit_codes": [
+        0,
+        0
+      ],
+      "pyc_files": []
+    }
+  ],
+  "author_suite_recheck": {
+    "count": 16,
+    "passed": true,
+    "source_sha256": "d695fd6f8a7f2793d53bd374d84c423ca4755ad63d3f6b1a9212f2069e3f0128",
+    "checker_sha256": "aadbfa24ace90055fe8395e228ac043cef10a0c68fa252e84e28e1a06045e7c6",
+    "cases": [
+      {
+        "name": "unapproved ZIP hash",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "parent path traversal",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "raw log entry",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "dot path alias cannot overwrite checked manifest",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "model package cannot occupy web namespace",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "empty QA directory rejected",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "nested archive in otherwise valid model namespace",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "required model files missing",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "unsupported model manifest contract",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "CRC corruption after supplied ZIP hash matches",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "identity report passed must be boolean true",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "identity asset passed must be boolean true",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "identity asset report_identities_current must be boolean true",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "identity variants must be exactly three unique entries",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "disk ZIP replacement after hash cannot change consumed snapshot",
+        "passed": true
+      },
+      {
+        "name": "valid tiny fixture commits after all checks",
+        "passed": true
+      }
+    ]
+  },
+  "not_verified": [
+    "model geometry/native/GLB gates were not recomputed by this auditor; only archived identity binding was checked",
+    "full successful freeze of final webpage deliverable",
+    "native browser",
+    "GPU",
+    "real phones",
+    "200 percent zoom",
+    "screen reader",
+    "physical or manufacturing performance"
+  ],
+  "notes": [
+    "Tiny fixture files and malformed ZIPs were temporary and are not included in delivery.",
+    "The import lock binds the intended transfer set against accidental overlay/parity changes; it is not a cryptographic signature or a guarantee against an actor editing both code and lock.",
+    "The freeze failure control intentionally stops at a missing test. Its expected nonzero exit, marker removal and lack of cache files are targeted observations, not a complete successful freeze.",
+    "The 007 protocol pass binds the approved 296-entry ZIP and preserved model bytes; it does not upgrade archived rendering or geometry claims and does not cover later webpage overlay edits."
+  ],
+  "source_sha256_at_initial_audit": {
+    "web-source/import_model.py": "2c471aebc89ff9361059d0e3437b41baff02c4855016ae91e46b2b287ef1f6bf",
+    "web-source/verify_delivery.py": "d2ad81e405d192d15315bde956098ecfb54a0868b2d0421fc4149bbc9c07fa58",
+    "web-source/freeze.py": "5e52ba2d7a1b1e20487619848c997eecafb3348fed9d0907d855d1fbce3f6498",
+    "web-source/gallery_pipeline.py": "3f05283f0bd9663ac1b775d99606d3faea4f9df96c4ea899b75a2884ca25a475",
+    "web-source/compose.py": "56503549433c02fab383c49d862565f9bc93e1a52c51a5fe5a4bdf8531946601",
+    "web-source/test_import.py": "5e5a107f6da78fdb9e782fc714307a99d03eb1effcff15979271569630b7c891"
+  },
+  "initial_audit_groups": {
+    "six_core_findings": [
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06"
+    ],
+    "supplementary_containment": [
+      "P07",
+      "P08"
+    ],
+    "scope": "Earlier source snapshot and isolated fixtures; preserved as history, not silently attributed to the later 007 manifest protocol."
+  },
+  "author_suite_recheck_before_007_protocol": {
+    "count": 12,
+    "passed": true,
+    "source_sha256": "2c471aebc89ff9361059d0e3437b41baff02c4855016ae91e46b2b287ef1f6bf",
+    "checker_sha256": "5e5a107f6da78fdb9e782fc714307a99d03eb1effcff15979271569630b7c891",
+    "cases": [
+      {
+        "name": "unapproved ZIP hash",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "parent path traversal",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "raw log entry",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "dot path alias cannot overwrite checked manifest",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "model package cannot occupy web namespace",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "empty QA directory rejected",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "nested archive in otherwise valid model namespace",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "required model files missing",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "unfrozen manifest",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "CRC corruption after supplied ZIP hash matches",
+        "rejected": true,
+        "previous_target_preserved": true
+      },
+      {
+        "name": "disk ZIP replacement after hash cannot change consumed snapshot",
+        "passed": true
+      },
+      {
+        "name": "valid tiny fixture commits after all checks",
+        "passed": true
+      }
+    ]
+  },
+  "protocol_adjustment": {
+    "date_utc": "2026-11-01",
+    "contract": "007/version 1.0.0/full manifest records/explicit self-and-archive exclusions/final asset identity evidence, not legacy status marker",
+    "parent_reported_first_attempt": "The author reported the legacy status-based first attempt was safely rejected with the prior dist retained; this audit did not witness that earlier attempt.",
+    "independent_actual_control": {
+      "name": "approved real 007 ZIP control",
+      "passed": true,
+      "entries": 296,
+      "sha256": "cc23d20e7a6248128c0c2eb94450a63dd66221b93a6cc9469c73b99cee900647",
+      "scope": "Read-only full CRC/SHA/manifest/identity validation; no extraction or model recomputation"
+    },
+    "original_imported_entries": {
+      "original_archive_entries": 296,
+      "current_dist_original_entries_byte_identical": true,
+      "mismatches": [],
+      "archive_sha256": "cc23d20e7a6248128c0c2eb94450a63dd66221b93a6cc9469c73b99cee900647",
+      "scope": "Only original imported model entry byte identity; excludes added webpage overlay and any browser claim."
+    },
+    "targeted_results": [
+      {
+        "name": "manifest wrong SHA",
+        "passed": true,
+        "rejected": true,
+        "message": "Original manifest bytes/hash mismatch README.md",
+        "expected_message": "Original manifest bytes/hash mismatch"
+      },
+      {
+        "name": "manifest wrong byte count",
+        "passed": true,
+        "rejected": true,
+        "message": "Original manifest bytes/hash mismatch README.md",
+        "expected_message": "Original manifest bytes/hash mismatch"
+      },
+      {
+        "name": "manifest missing file record",
+        "passed": true,
+        "rejected": true,
+        "message": "Original manifest file set differs from ZIP",
+        "expected_message": "Original manifest file set differs"
+      },
+      {
+        "name": "manifest duplicate file record",
+        "passed": true,
+        "rejected": true,
+        "message": "Original manifest file set differs from ZIP",
+        "expected_message": "Original manifest file set differs"
+      },
+      {
+        "name": "identity old GLB SHA after manifest correctly rehashes changed report",
+        "passed": true,
+        "rejected": true,
+        "message": "Final model input hash mismatch",
+        "expected_message": "Final model input hash mismatch"
+      },
+      {
+        "name": "identity current flag false after report rehash",
+        "passed": true,
+        "rejected": true,
+        "message": "Final model identity not current",
+        "expected_message": "Final model identity not current"
+      },
+      {
+        "name": "identity pass flag false after report rehash",
+        "passed": true,
+        "rejected": true,
+        "message": "Final model identity not current",
+        "expected_message": "Final model identity not current"
+      },
+      {
+        "name": "identity string false is not boolean true",
+        "passed": true,
+        "rejected": true,
+        "message": "Final model identity not current",
+        "expected_message": "Final model identity"
+      },
+      {
+        "name": "identity duplicate variant fourth record",
+        "passed": true,
+        "rejected": true,
+        "message": "Final model identity evidence missing or variant set is not exactly three unique entries",
+        "expected_message": "Final model identity"
+      }
+    ],
+    "source_sha256": {
+      "import_model.py": "d695fd6f8a7f2793d53bd374d84c423ca4755ad63d3f6b1a9212f2069e3f0128",
+      "test_import.py": "aadbfa24ace90055fe8395e228ac043cef10a0c68fa252e84e28e1a06045e7c6"
+    },
+    "archive_unchanged": true,
+    "scope": "007 protocol adjustment checks: actual approved archive read-only control and isolated in-memory malformed records, each identity mutation correctly rehashed in the manifest to reach its own rejection predicate.",
+    "newly_reproduced_and_fixed": [
+      {
+        "issue": "identity passed/current accepted truthy string false",
+        "old_source_sha256": "ee4e5dbc498b6185940b2ad61d6ec8836b464311325eee0b3143a11ea981e7db",
+        "before": "isolated report mutation with correctly rebuilt manifest accepted",
+        "after": "top-level and per-asset passed/current require literal boolean True; dedicated string-false ZIP regressions reject before target change"
+      },
+      {
+        "issue": "variant-set equality allowed a fourth duplicate row",
+        "old_source_sha256": "ee4e5dbc498b6185940b2ad61d6ec8836b464311325eee0b3143a11ea981e7db",
+        "before": "isolated fourth duplicate Orison row with correctly rebuilt manifest accepted",
+        "after": "assets must be a list of exactly three dictionary entries with string, unique Orison/Latitude/Ascend IDs; duplicate regression rejected"
+      }
+    ]
+  }
+}

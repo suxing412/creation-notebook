@@ -1,0 +1,142 @@
+{
+  "family": "ORISON 007 closed periodic analytic-frame rounded-rectangle sweep",
+  "units": "metres",
+  "native_axes": "right-handed Z-up; primary centreline plane XZ with Y undulation",
+  "glb_axis_mapping": "(x,y,z) -> (x,z,-y)",
+  "geometry_mode": "raw native mesh only",
+  "open_parameters": {
+    "radius_x": [
+      0.085,
+      0.18
+    ],
+    "radius_z": [
+      0.1,
+      0.22
+    ],
+    "asymmetry": [
+      -0.16,
+      0.25
+    ],
+    "depth_wave": [
+      0,
+      0.042
+    ],
+    "lean": [
+      -0.03,
+      0.03
+    ],
+    "section_width": [
+      0.035,
+      0.072
+    ],
+    "section_depth": [
+      0.026,
+      0.06
+    ],
+    "corner_radius": [
+      0.006,
+      0.014
+    ],
+    "roll_degrees": [
+      0,
+      30
+    ],
+    "width_modulation": [
+      0,
+      0.27
+    ]
+  },
+  "locked_parameters": {
+    "seed": 0,
+    "recipe_version": "1.0.0",
+    "blender_version": "4.3.2",
+    "stations": 320,
+    "corner_steps_per_quadrant": 8,
+    "profile_vertices": 36,
+    "supported_revisions": [
+      0,
+      1
+    ]
+  },
+  "pure_model_state": {
+    "objects": 1,
+    "object_type": "MESH",
+    "material_slots": 1,
+    "world_matrix": "identity within 1e-8 per entry",
+    "modifiers": "forbidden",
+    "shape_keys": "forbidden",
+    "parent": "forbidden",
+    "constraints": "forbidden",
+    "object_mesh_animation_and_drivers": "forbidden"
+  },
+  "topology": {
+    "connected_components": 1,
+    "watertight": true,
+    "orientable": true,
+    "world_signed_volume": "positive",
+    "euler_characteristic": 0,
+    "genus": 1,
+    "vertices": 11520,
+    "edges": 23040,
+    "quad_faces": 11520,
+    "triangles_after_native_tessellation": 23040,
+    "caps": "none",
+    "last_first_ring_connection": "modulo indices, 36 longitudinal seam edges each incident on 2 faces",
+    "duplicate_endpoint_ring": "forbidden",
+    "assembly_exemptions": "none"
+  },
+  "contract_identity": {
+    "all_world_vertices": "same ordered index coordinates as recipe, distance <=2e-7 m",
+    "all_faces": "equal multiplicity of unoriented index cycles; local winding and positive world volume checked separately",
+    "metadata": "all station centres/tangents/normals/binormals and parameters checked against declared recipe construction"
+  },
+  "frame": {
+    "method": "periodic analytic fixed Y-reference projection with periodic roll; NOT RMF or parallel transport",
+    "endpoint_checks": [
+      "point",
+      "tangent",
+      "normal",
+      "binormal",
+      "section"
+    ],
+    "endpoint_absolute_tolerance": 1e-10,
+    "mesh_ring_profile_fit_m": 2e-07,
+    "mesh_center_fit_m": 2e-07,
+    "mesh_N_B_residual": 2e-05
+  },
+  "sampled_geometry": {
+    "sample_count": 960,
+    "max_curvature_times_local_circumradius": "<0.72",
+    "minimum_reference_sine": 0.65,
+    "minimum_nonlocal_centerline_distance_minus_two_local_radii_m": 0.006,
+    "excluded_local_arc_neighborhood": "<=2.8 times maximum sampled section circumradius",
+    "continuous_proof": false
+  },
+  "numerical_intersections": {
+    "nonadjacent_BVH": "shared-vertex triangle pairs excluded; remaining overlap candidates reject",
+    "near_coplanar": "bidirectional point-to-plane <=5e-8 m, abs normal dot >=1-1e-7, projected SAT positive overlap >1e-8 m",
+    "degenerate_triangle_area_m2": 1e-12,
+    "duplicate_triangle_coordinate_rounding_m": 1e-08
+  },
+  "native_GLB_correspondence": {
+    "actual_binary_decode": true,
+    "oriented_triangle_coordinate_multiset": "exact equality after native-to-glTF axis rotation",
+    "indexed_topology_isomorphism": false,
+    "normal_correspondence": false
+  },
+  "provenance": [
+    "Generic component traversal, BVH, float64 world signed-volume and bidirectional near-coplanar SAT adapted from study-006/source/check.py.",
+    "Generic accessor decode and payload mutation patterns adapted from study-006/source/check_glb.py and test_faults.py; 007 adds stable failure codes and failure identities.",
+    "Periodic seam, frame, genus, curvature/clearance and 007 station-local fault construction are family-specific, not folded-sheet constraints."
+  ],
+  "not_verified": [
+    "continuous parameter domain",
+    "exact symbolic geometry",
+    "adjacent noncoplanar foldover as a general arbitrary-mesh theorem",
+    "manufacture or fabrication tolerances",
+    "loads/stability/ergonomics",
+    "GPU/WebGL rendering",
+    "dynamic flicker/z-fighting",
+    "physical iPhone"
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "baseline": "work/refined-draft",
+  "baseline_sha256": "740262d015a95e3b99cc723b0403ab8b6ad98e1408c41d2b3ab1fc2019718312",
+  "checker_sha256": "ecdd92eeb7f03f6b479a9377c1bc39525e022ae84a3fd0cb30d82f6eaa998fc4",
+  "glb_checker_sha256": "5fa7561e3c23dd7a1059e7d8a8075dc0ca235db098c9f4a80845b5660d926feb",
+  "passed": true,
+  "tests": [
+    {
+      "kind": "native",
+      "case": "reversed-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "inconsistent_winding_edges",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-refined/reversed-face-validation.json",
+      "model_sha256": "99eedca0e234f46a1f7427b4f47cd183dfaab23888f081f8e555e7f0d9a72848"
+    },
+    {
+      "kind": "native",
+      "case": "contained-island",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "invalid_connected_components",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-refined/contained-island-validation.json",
+      "model_sha256": "73962c85b378981bc8268619c8aecb0d35c128bdcccf064d590c10eab2606383"
+    },
+    {
+      "kind": "native",
+      "case": "piercing-prism",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonadjacent_self_intersection_candidates",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 20,
+      "report": "work/gate-faults-refined/piercing-prism-validation.json",
+      "model_sha256": "78c0de9e4a414edc41d9bddf1b1efab16423f19ae19761e393593627676e6edc"
+    },
+    {
+      "kind": "native",
+      "case": "oblique-coplanar",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "coplanar_positive_area_overlaps",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-refined/oblique-coplanar-validation.json",
+      "model_sha256": "13b3c7f2ddfb360f124682d2c7da7f0759d4a0160ab69e17f605c602daded7aa"
+    },
+    {
+      "kind": "native",
+      "case": "missing-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonmanifold_edges",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-refined/missing-face-validation.json",
+      "model_sha256": "5e186c1713c087e436ddc47d2ef123198fea62fec54930c89efa464a93970f5d"
+    },
+    {
+      "kind": "native",
+      "case": "degenerate-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "degenerate_triangles",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-refined/degenerate-face-validation.json",
+      "model_sha256": "7e812bd9cb9c6b773a8a341e5de7865f5b8244c7b08eaff7384fb7bdc7c84dd9"
+    },
+    {
+      "kind": "native",
+      "case": "duplicate-face",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "duplicate_triangles",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-refined/duplicate-face-validation.json",
+      "model_sha256": "af7d3c9777540532e335690391063e8c0f83b4cf86624167db158447b27a2bb9"
+    },
+    {
+      "kind": "native",
+      "case": "crossing-triangles",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "nonadjacent_self_intersection_candidates",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-refined/crossing-triangles-validation.json",
+      "model_sha256": "585c2b088b1c429723b104c737ba9bf79d32d5941aa1f197f90c2f989f65f5ef"
+    },
+    {
+      "kind": "native",
+      "case": "off-recipe-vertex",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "recipe_vertex_envelope_failures",
+      "dedicated_detector_triggered": true,
+      "trigger_count": 1,
+      "report": "work/gate-faults-refined/off-recipe-vertex-validation.json",
+      "model_sha256": "1e8ef89e2586220f622a28d1d61378501e23b60b9d24f2ebab27d8b716b0a41b"
+    },
+    {
+      "kind": "glb",
+      "case": "nan-position",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Nonfinite accessor bytes",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "8dd34dc318b7d35e8f9baa0175eb05e7559d04e370c86f815d4c7581a2cf4133"
+    },
+    {
+      "kind": "glb",
+      "case": "out-of-range-index",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Index exceeds POSITION count",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "8f80b4aac6b4f0a32b969b347aa12fab6613d271354ad624b0ef74c73b472cc4"
+    },
+    {
+      "kind": "glb",
+      "case": "zero-normal",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid normal length",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "19572fdf837303c106c79ff733ed4696688928db81ad3dace0866c68febbc75f"
+    },
+    {
+      "kind": "glb",
+      "case": "undersized-stride",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid accessor stride",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "41cc0bfac31fa8275726b9b6673c2b2cf070d69b14dda44d9f19c269720fd31c"
+    },
+    {
+      "kind": "glb",
+      "case": "accessor-overrun",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Accessor exceeds bufferView",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "fe459b13e04881698a9eabe3277700a0261ec3cb30f3c000893d1de9d17e8193"
+    },
+    {
+      "kind": "glb",
+      "case": "negative-offset",
+      "exit_code": 1,
+      "rejected": true,
+      "dedicated_detector": "Invalid accessor offset",
+      "dedicated_detector_triggered": true,
+      "model_sha256": "2f0c838ba2b228eec60b6ccf9aa8202d8ae7441b24c29a7bb5c71dd9dd591690"
+    }
+  ],
+  "scope": "Actual fault files and actual checker executions. Dedicated detector must trigger; rejection by another defect is not credited."
+}

@@ -1,0 +1,524 @@
+{
+  "title": "造物手记工作法 v2",
+  "version": "2.0.0",
+  "date": "2026-11-01",
+  "kind": "方法整理，不是新作品或新几何配方",
+  "purpose": "让一次真实修复变成有条件、有边界、可复查的下一次制作。",
+  "evidence_policy": "本轮只读审阅已有公开证据；未重新执行旧模型、GPU、浏览器或渲染测试，未新增联网研究。",
+  "groups": [
+    "参数",
+    "几何",
+    "文件身份",
+    "浏览器状态",
+    "相机投影",
+    "发布体积"
+  ],
+  "rules": [
+    {
+      "id": "P01",
+      "group": "参数",
+      "title": "输入可接受，不等于几何已安全",
+      "decision": "把输入域、已生成网格、已验收效果分成三张清单。",
+      "case": "陶瓷翼 swept 的参数均在范围内，初版仍有 4 对尾缘铜管非相邻自交；全族铜边半径从 .023 统一减至 .016 后，三个预设复查通过。006 的 512 个参数盒角点只跑 validator：320 接受、192 拒绝；没有生成 320 个网格。",
+      "adopt": "先锁定造型家族、构造不变量与耦合约束；每个新参数组合重新验几何与多视角。记录被拒组合及修改原因，改全族规则后重跑已有预设。",
+      "avoid": "不把滑块上下限写成安全域证明；不给坏样本隐藏例外，不删除失败检测，不把有限反例回归称为全域证明。",
+      "applicable": "固定构造、固定拓扑或明确变拓扑规则的受限参数化家族。",
+      "not_applicable": "任意导入网格、任意曲面、未验证的新家族；已接受的角点也不能自动推到内部连续域。",
+      "cost": "输入测试便宜；真实网格生成和检查随样本数增长。先检耦合约束再投渲染预算；记录实际样本数而非暗示遍历。",
+      "evidence": [
+        "wing-reflection",
+        "wing-readme",
+        "006-input",
+        "006-review"
+      ]
+    },
+    {
+      "id": "P02",
+      "group": "参数",
+      "title": "同样效果，要锁定的不只是 seed",
+      "decision": "把版本、构造、归一化、材料、光照、色彩管理和相机一起保存。",
+      "case": "陶瓷翼仅接受 Blender 4.3.2 和 seed 0；三个预设换轮廓而不换摄影。相同环境两次 baseline 的 GLB 字节一致。006 固定材料和摄影后，Atlas 仍因表面朝向更亮，不能把同条件误写成同亮度。",
+      "adopt": "写清物理或抽象单位、开放参数、锁定参数、生成器版本、网格分辨率、色彩约定与摄影条件；同环境复现用字节哈希，视觉语言另做人工多视角。",
+      "avoid": "不承诺跨硬件逐像素一致；不为掩盖几何比例而临时换材质、机位或曝光；不把线性 RGB 当 CSS sRGB。",
+      "applicable": "目标是复现同一视觉语言的受约束资产族，且可保存实际摄影场景。",
+      "not_applicable": "跨渲染器光照等价、GPU 色彩一致、制造材料一致，以及未记录环境的复现。",
+      "cost": "保存配置和场景成本低；跨环境回归另计。审美检查不能由一个未经定义的分数替代。",
+      "evidence": [
+        "wing-readme",
+        "wing-version",
+        "wing-repro",
+        "006-reflection"
+      ]
+    },
+    {
+      "id": "G01",
+      "group": "几何",
+      "title": "合法接触，不能豁免同一构件对的其它几何",
+      "decision": "禁止只写 allowedPairs；每对接触必须有有限区域、端点／嵌深和整体包络。",
+      "case": "005 的 pin–diffuser 保留原接触后，加一个 1.4×1.4×12 mm 棱柱仍被旧门禁错误 PASS；在 hub 对象中另加一个完全位于罩体内、远离实际套筒的 0.4 mm 岛也错误 PASS。最终加入单连通、有限销／套筒全顶点包络与接点 Z 窗口后被专用字段拒绝。",
+      "adopt": "先列完整构件对矩阵；分离对拒绝相交与包容，装配对写坐标系、范围、深度、连通数、整体形状约束。用“原合法接触仍在＋旁边新增异常”做反例。",
+      "avoid": "不因 pair 名称允许就整对放行；不把 BVH 零交线当无包容；不拿单连通独自当无自交证明。",
+      "applicable": "能定义销、套筒、嵌件等有限装配语义的家族。005 是 8 件、28 对、9 对指定装配。",
+      "not_applicable": "006 单壳没有装配 pair；灯的半径和 Z 包络不能直接用于折板。制造装配、锁定、防脱和热设计也不由此证明。",
+      "cost": "需要作者先定义几何语义，比名字白名单贵；但能让失败指向具体接点或包络，不必每次人工猜测。",
+      "evidence": [
+        "005-independent",
+        "005-results",
+        "005-reflection",
+        "006-review"
+      ]
+    },
+    {
+      "id": "G02",
+      "group": "几何",
+      "title": "局部绕序与世界朝向，各验一次",
+      "decision": "闭合、总正体积和局部绕序不能互相替代；所有判定先声明坐标系。",
+      "case": "005 反转底座单面，旧总有向体积仍正，曾错误 PASS；最终由 3 条绕序不一致边拒绝。006 用局部 X 镜像＋对象 X 缩放 −1＋全反面保持世界位置，却让局部体积约 +0.000340456822 m³、世界体积约 −0.000340456822 m³；旧门禁真实错误 PASS。",
+      "adopt": "检查二面边的局部一致绕序，再以世界三角计算有向体积。006 另要求 identity 世界矩阵，并用专用世界负体积字段验证反例，而非只靠变换例外拒绝。",
+      "avoid": "不以“闭合＋正局部体积”称世界面朝外；不把新反例表述成原交付件已坏。005 冻结源码未被追改，也不声称它已具有 006 的世界体积修复。",
+      "applicable": "要求闭合、定向、有限世界变换的静态实体模型。",
+      "not_applicable": "开放薄片不适用正实体体积门槛；合法负缩放场景应定义相应朝向规则，而非盲目移植 identity 限制。",
+      "cost": "绕序与世界体积计算通常比渲染便宜；代价在于正确处理坐标系与声明允许状态。",
+      "evidence": [
+        "005-independent",
+        "006-world-before",
+        "006-world-after",
+        "006-faults"
+      ]
+    },
+    {
+      "id": "G03",
+      "group": "几何",
+      "title": "double 不能恢复已经丢掉的 float32 精度",
+      "decision": "容差要绑定尺度、存储精度和正反控制组；称近共面，不称精确证明。",
+      "case": "005 的 float32 单位法向量自点积曾低于 1−1e−8；改双精度后，006 的约 0.227 mm 短边／248.7 mm 长边窄三角仍发生量化：法向 dot≈0.9999999955，双向平面残差约 8.823／12.039 nm。旧专项漏报，但整体因别项拒绝。",
+      "adopt": "006 在本尺度用 cos≥1−1e−7、双向点平面距离≤50 nm、二维 SAT 每轴正重叠阈值 10 nm。原内缩反例专项 0→1；沿法向移开 1 µm 控制组专项为 0。记录角阈值、距离和单位，不混成“面积阈值 10 nm”。",
+      "avoid": "不直接复制这些数值到其它尺度；不把整体拒绝当共面专项覆盖；不把近共面阈值当 GPU z-fighting 阈值。",
+      "applicable": "已知单位、三角尺度和顶点存储精度的数值网格检查，配套真实窄斜面反例。",
+      "not_applicable": "符号几何精确共面、连续曲面相交证明、GPU 深度缓冲行为。BVH 排除共享顶点的限制仍在。",
+      "cost": "双向平面与候选过滤增加少量计算；阈值回归需要保留旧失败和移离控制，不能只不断放宽到“通过”。",
+      "evidence": [
+        "005-independent",
+        "006-quantization",
+        "006-review"
+      ]
+    },
+    {
+      "id": "G04",
+      "group": "几何",
+      "title": "检查 raw mesh，就明确拒绝未支持的显示状态",
+      "decision": "纯模型与摄影场景使用不同契约；没有评估的状态不得默许。",
+      "case": "006 的 Solidify 与 Shape Key 反例添加前后 raw 顶点／面 SHA 完全相同，其它几何缺陷字段为空；最终仍分别由 modifiers_present 与 shape_keys_present 拒绝。纯模型恰好一件壳体，摄影场景则包含地面、相机和灯。",
+      "adopt": "作者声明检查 raw 还是 evaluated geometry；若仅 raw，列出并拒绝 modifier、shape key、constraint、parent、animation／driver 等未支持状态。按家族约束全部顶点和索引关系。",
+      "avoid": "不把 ob.data 没变等同于实际显示没变；不把 006 的顶点恒等约束当任意网格检查器，它会拒绝合法重索引。",
+      "applicable": "约束明确、可控制生成过程的纯静态模型。",
+      "not_applicable": "任意 Blender 动画或修改器栈；需要 evaluated scene 的项目必须另建检查流程，不得在模板中悄悄放开。",
+      "cost": "状态枚举便宜；全面 evaluated 几何审查更贵。选择不支持某类状态时，拒绝比假装兼容可靠。",
+      "evidence": [
+        "006-faults",
+        "006-review",
+        "006-reflection"
+      ]
+    },
+    {
+      "id": "I01",
+      "group": "文件身份",
+      "title": "GLB 声明看起来正确，实际字节仍可能坏",
+      "decision": "从 buffer 解码坐标、法线和索引，不能只读 accessor min／max。",
+      "case": "005 把 POSITION 中一个坐标改成 NaN，或者把实际索引改成 65535，而声明保持不变，旧门禁均错误 PASS。修复后分别由 Nonfinite accessor bytes 和 Index exceeds POSITION count 拒绝。006 增补零法线、过小 stride、越界 bufferView 和负 offset 的实际故障。",
+      "adopt": "对受支持格式验证 offset／stride／对齐／边界，再解码数值、索引范围、法线长度与三角面积；逐项对照声明极值。保留 loader 解析与 payload 检查为两项证据。",
+      "avoid": "不拿能加载或 min／max 合理替代真实字节检查；不称 payload 验收为 GPU 渲染、全拓扑等价或所有 glTF 扩展兼容。",
+      "applicable": "明确支持的 GLB 版本、primitive 与 accessor 形态。",
+      "not_applicable": "未实现的压缩／稀疏／外部资源扩展、GPU 材质效果和原生模型全同构证明。",
+      "cost": "线性解码增加读字节成本，通常比出图便宜；先拒绝坏 payload 可避免将资源浪费在渲染或分发。",
+      "evidence": [
+        "005-independent",
+        "005-payload",
+        "006-faults",
+        "006-review"
+      ]
+    },
+    {
+      "id": "I02",
+      "group": "文件身份",
+      "title": "字节同一，与几何保真是两个命题",
+      "decision": "原件用 SHA-256 冻结；重保存／重导出后按实际变化选择证据。",
+      "case": "005 正式 native／GLB 均与已审资产哈希一致。006 正式 native 重新保存，不与候选字节相同，故按最终 native 自身 SHA 重跑；三个 GLB 与候选相同。F03 的 Folio 重导出从 6072 拆为 6098 顶点，双向最近世界顶点最大误差约 3.332e−8 m。",
+      "adopt": "报告绑定模型、配置、生成器与 checker 身份。组合场景分别记录源／导出数量、世界变换、双向距离和 PBR payload；F03 使用 5e−6 m 几何距离容差。",
+      "avoid": "不强迫重导出顶点数相等；不把点集距离当拓扑索引同一；不借候选的旧通过证明最终已重新保存的文件。",
+      "applicable": "冻结原件的复用、受控重保存，以及明确世界变换的组合场景。",
+      "not_applicable": "单靠点云距离不能保证所有面连接、纹理、动画或外观等价；检查目标改变时需增补指标。",
+      "cost": "哈希成本低；双向几何比对更贵且需容差。代价应由“究竟要保持什么”决定。",
+      "evidence": [
+        "005-identity",
+        "006-identity",
+        "F03-scene",
+        "F03-registry"
+      ]
+    },
+    {
+      "id": "I03",
+      "group": "文件身份",
+      "title": "退出成功，不等于这次检查真的成功",
+      "decision": "要求新报告、显式通过和输入身份；不接受陈旧结果代领成功。",
+      "case": "F03 曾把重导出的顶点拆分当损坏；其检查流程随后明确添加 Blender --python-exit-code 1，并要求生成新报告和 passed。源验证入口先删除预期旧报告，再要求本轮成功标记，防止默认 exit 0 或遗留文件混淆。 该入口见既有源码包内的 desk-atlas-F03/source/verify.py；本轮仅阅读，未执行。",
+      "adopt": "运行前使用独立本轮报告名或清除目标旧报告；记录实际命令、退出码、checker／输入 SHA；执行失败、报告缺失、身份不符或 passed 非 true，均不得进入该层已通过。",
+      "avoid": "不只看进程 exit 0；不把旧报告改日期复用；不靠日志里某个 PASS 字样替代结构化报告的身份和结果。",
+      "applicable": "会由包装器运行 Blender／导出器／离线检查程序的构建流程。",
+      "not_applicable": "报告新鲜本身不说明算法正确；专用反例覆盖和人工评审仍独立存在。",
+      "cost": "少量包装逻辑即可避免昂贵误交付；本页不提供可放行任意模型的脚本，只提供作者必须填的契约。",
+      "evidence": [
+        "F03-review",
+        "F03-qa",
+        "F03-scene",
+        "F03-source"
+      ]
+    },
+    {
+      "id": "B01",
+      "group": "浏览器状态",
+      "title": "图片路由与 3D 会话，分开取消",
+      "decision": "只允许最新路由在图片 decode 成功后提交；3D 的取消不能取消阅读。",
+      "case": "F03 旧状态回归中，在 light 图片待解码时 3D 初始化失败，实际仍留 overview 而 hash 已是 #light。修复后 routeEpoch 与 liveEpoch 分离，挂起章节正常提交；取消旧 parse 后重启，旧资源完成只释放自己，不接管或销毁新会话。",
+      "adopt": "路由加载拥有自己的序列号；图片、标题、热点一起提交。3D 初始化用独立 token／AbortController；提供取消、重试、主动回离线。回退与前进恢复该历史项记录的场景。",
+      "avoid": "不在坏图时给旧图贴新标签；不让 renderer 错误清空路由；不以 stub renderer 的通过声称真实 GPU 生命周期已验。",
+      "applicable": "异步加载图片、模块、配置与可选 3D 的内容站。",
+      "not_applicable": "Node VM 只验证状态逻辑；真实浏览器历史、焦点与 GPU 资源回收需分别验证。",
+      "cost": "增加显式状态与乱序用例，但比事后处理偶发错图更可控。测取消／重启／回退，不只测 happy path。",
+      "evidence": [
+        "F03-state-before",
+        "F03-state-after",
+        "F03-browser"
+      ]
+    },
+    {
+      "id": "B02",
+      "group": "浏览器状态",
+      "title": "先验主任务看得见，再验没有溢出",
+      "decision": "首屏门禁要包含场景、原生目录与关键动作；点击目标与可见圆片分开设计。",
+      "case": "F03 首版桌面约从 y455 才开始，主要区域被截。修订后在 1188×761 视口，场景 y257–694、目录 y168–237、3D 按钮 y648–682 同屏。窄屏即使 44×44 目标不重叠，大圆片仍遮灯罩，遂保留透明目标、可见片减为 19×19 并去光晕。",
+      "adopt": "用真实首屏截图／DOM 量测评估主任务；窄屏检查目标分离，也人工看遮挡。给编号保留完整可访问名称与正文无标注图。",
+      "avoid": "不以 overflow hidden、锁页面高度或只测 scrollWidth 粉饰通过；不把小 iframe 叫真实手机验收。",
+      "applicable": "以场景或图像为主任务、同时必须能导航与阅读的响应式页面。",
+      "not_applicable": "这一组尺寸不是所有页面的规范；44×44 也不自动证明触屏、键盘或读屏器体验。",
+      "cost": "需要至少桌面和窄屏实看；几何对齐与无溢出是低成本筛查，不能代替可读性判断。",
+      "evidence": [
+        "F03-review",
+        "F03-browser"
+      ]
+    },
+    {
+      "id": "B03",
+      "group": "浏览器状态",
+      "title": "无 JS 可读，与 GPU 通过分别记账",
+      "decision": "内容采用原生入口；实时能力不足时，保留可靠的阅读路径。",
+      "case": "F03 禁 JavaScript 的 390 CSS px 原生 iframe 可读三章，3D 控件隐藏，原生目录进入 #fold。真实启用 3D 因环境 GL Disabled 失败，离线图、提示、重试和正文仍可用；从未修改 GL 安全设置。",
+      "adopt": "全文直接在 HTML，热点配同义原生链接；3D 自愿启用，失败回离线；分别记录源码／CPU／原生浏览器／GPU／真机／制造的状态与未验原因。",
+      "avoid": "不把禁 GL 保底通过等同于 WebGL 成功；不拿静态图、CPU Raycaster 或模拟状态机代替动态闪烁、真实点击、触屏性能。",
+      "applicable": "空间表达辅助阅读而非唯一内容通道的网页。",
+      "not_applicable": "纯实时创作工具可能需要不同无 JS 方案，但仍要诚实写能力边界；本案无 GPU 或真实 iPhone 通过证据。",
+      "cost": "静态内容与原生锚点成本低、失效面小；真实设备和 GPU 验收须另列预算与环境。",
+      "evidence": [
+        "F03-browser",
+        "F03-qa",
+        "F03-state-after"
+      ]
+    },
+    {
+      "id": "C01",
+      "group": "相机投影",
+      "title": "画面、相机和热点共用一份空间契约",
+      "decision": "只允许一个明确坐标转换；不以 CSS 百分比修补错误投影。",
+      "case": "F03 使用 Y-up 共享配置并显式转到 Blender Z-up，保存相机帧 1／31／61，纵向 FOV 约 39.6°。实际重开场景与 Three 投影最大 UV 误差约 2.88e−7。早期未切当前 frame 曾令三张输出重复，最终有“三张不同”及实际相机核验。",
+      "adopt": "记录坐标系、世界点、position／target、纵向 FOV、near／far、画面宽高比及内容矩形。F03 图像与场景同为 1.5；圆点中心对世界点，文本另放。离屏热点隐藏而非钳到假位置。",
+      "avoid": "不让 cover 裁剪或独立留边破坏坐标；不以有限路线采样称连续无碰撞；不把 CPU 命中当真实 GPU 点击。",
+      "applicable": "离线海报与实时相机需要语义一致的空间阅读页。",
+      "not_applicable": "换宽高比、相机类型、裁切或单位后须重新渲染与投影校验；照明算法仍不跨引擎等价。",
+      "cost": "共享配置降低维护成本；保存相机重开、跨引擎投影与少量 CPU 光线检查比盲调屏幕坐标更可靠。",
+      "evidence": [
+        "F03-scene",
+        "F03-projection",
+        "F03-review"
+      ]
+    },
+    {
+      "id": "C02",
+      "group": "相机投影",
+      "title": "“这块黑点是什么”，要回到具体面",
+      "decision": "全局 QA 不能替每一个可疑像素作解释；用同相机定位与诊断对照。",
+      "case": "005 接点黑楔经同正交相机首交射线定位为 Pin 2，右凸点为 Pin 1；不是凭总体 PASS 猜成灯光。006 端部亮点用实际像素射线与同几何诊断材质对照，支持局部曲率／法线的镜面高光解释，但端盖厚度边仍是硬边。",
+      "adopt": "先固定相机、分辨率和 ROI，定位命中对象／三角；再做只改诊断材质或隐藏明确构件的对照。注明诊断图不是正常外观，形体前后比较保持机位和曝光。",
+      "avoid": "不把选错 ROI 的记录当最终证据；不以高采样或改色掩盖几何；不把局部射线／站点测量称连续制造公差证明。",
+      "applicable": "静态渲染中可定位的接点、高光、黑线与遮挡疑问。",
+      "not_applicable": "动态深度闪烁、真实 GPU 多次采样和连续表面极值仍需要其它测试。",
+      "cost": "局部诊断通常比全面重建便宜；多一道实际像素定位，能避免凭印象反复改模型。",
+      "evidence": [
+        "005-junction",
+        "005-reflection",
+        "006-reflection",
+        "006-stations"
+      ]
+    },
+    {
+      "id": "D01",
+      "group": "发布体积",
+      "title": "把渲染预算花在要回答的问题上",
+      "decision": "先低成本比较形体，再按证据选择最终采样；不把噪声改进算成几何成功。",
+      "case": "006 先 48 samples 上限／560² 审形体，比较 128 后选择 256／960²；实际记录 adaptive sampling、CPU 和无降噪。F03 最终 512／1440×960 只改善离线样张，不代表实时性能。005 的 1024 主图也不是下一轮必须照抄的数值。",
+      "adopt": "前后几何比较先固定摄影和相同预算；分开记采样上限、实际设置、分辨率、渲染器、设备与降噪状态。图像指标写清含义；只在需要确认细节时增加预算。",
+      "avoid": "不默认堆最高采样；不把高频残差说成无偏噪声估计；不将残余颗粒包装为材质纹理或假称已降噪。",
+      "applicable": "有离线预览、候选选择与最终图三个阶段的制作。",
+      "not_applicable": "不能由离线采样推算移动端速度；没有记录的耗时不填成测量值。本页成本均为定性取舍。",
+      "cost": "按问题递增预算；当前页不重新渲染，也不复制 PNG。复用证据链接比再次打包全部图片轻。",
+      "evidence": [
+        "006-render",
+        "006-reflection",
+        "F03-review",
+        "005-reflection"
+      ]
+    },
+    {
+      "id": "D02",
+      "group": "发布体积",
+      "title": "发布的是证据入口，不是整个工作目录",
+      "decision": "分清体验包、来源包和内部派生物；体积与隐私一起检查。",
+      "case": "F03 的公开包扫描明确排除私有路径、临时文件、外部截图、原始浏览器日志和故障二进制，并核对冻结源、引用与海报元数据。方法页沿用这条边界：仅文本、模板和清单，链接既有证据，不复制模型或图片。",
+      "adopt": "发布前列明每个文件的用途／字节／SHA，检查链接与元数据，扫描路径及残留日志。保留失败的结论、参数、源码和允许公开的报告；坏二进制不伪装成资产。",
+      "avoid": "不为了“完整”把整个 work 或 QA 目录打包；不删除旧错误 PASS 的诚实叙述；不把本页小于 1 MB 说成整个图库的体积。",
+      "applicable": "需要可审计、可学习、可轻量分发的数字资产库。",
+      "not_applicable": "本页不授权重新发布旧作品、外部参考图片或私人内容；站点真实上传体积和访问仍由发布环节核验。",
+      "cost": "文本索引维护成本低；源文件与下载包要分别计字节，重复打包会放大分发体积。此包的预算是所有交付文件合计小于 1,000,000 字节。",
+      "evidence": [
+        "F03-package",
+        "F03-review",
+        "005-independent"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "wing-reflection",
+      "label": "陶瓷翼：范围内参数仍触发自交",
+      "path": "recipes/ceramic-wing-v1/review/reflection.md",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "wing-readme",
+      "label": "陶瓷翼：固定视觉条件与有限参数域",
+      "path": "recipes/ceramic-wing-v1/README.md",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "wing-version",
+      "label": "陶瓷翼：实际版本保护测试",
+      "path": "recipes/ceramic-wing-v1/review/version-guard-tests.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "wing-repro",
+      "label": "陶瓷翼：同环境导出复现",
+      "path": "recipes/ceramic-wing-v1/review/reproducibility.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "005-independent",
+      "label": "005：独立审查与旧错误 PASS 历史",
+      "path": "studies/005/review/independent-review.html",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "005-results",
+      "label": "005：独立有限反例与真实模型结果",
+      "path": "studies/005/review/independent-results.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "005-identity",
+      "label": "005：最终文件同一性",
+      "path": "studies/005/review/independent-asset-identity.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "005-payload",
+      "label": "005：实际 GLB 字节故障回归",
+      "path": "studies/005/review/glb-payload-tests.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "005-reflection",
+      "label": "005：修复与仍有保留的外观",
+      "path": "studies/005/review/reflection.html",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "005-junction",
+      "label": "005：接点像素来源与射线证据",
+      "path": "studies/005/review/junction-feature-evidence.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "006-review",
+      "label": "006：门禁范围、世界体积与正式资产",
+      "path": "studies/006/review/gate-review.md",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "006-reflection",
+      "label": "006：形体、厚度与渲染复盘",
+      "path": "studies/006/review/reflection.html",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "006-quantization",
+      "label": "006：float32 量化旧阈值／新阈值／移离控制组",
+      "path": "studies/006/review/gate-coplanar-quantization-reproduction.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "006-world-before",
+      "label": "006：世界反向反例的真实旧 PASS",
+      "path": "studies/006/review/gate-world-inversion-before.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "006-world-after",
+      "label": "006：世界反向反例的专用字段拒绝",
+      "path": "studies/006/review/gate-world-inversion-after.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "006-faults",
+      "label": "006：18 个故障与专用字段结果",
+      "path": "studies/006/review/gate-fault-tests.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "006-input",
+      "label": "006：108 项输入测试与仅 validator 的角点",
+      "path": "studies/006/review/gate-input-tests.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "006-identity",
+      "label": "006：最终三件文件与锁定检查器身份",
+      "path": "studies/006/review/gate-final-asset-identity.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "006-stations",
+      "label": "006：离散站点厚度与半径",
+      "path": "studies/006/review/gate-station-measurements.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "006-render",
+      "label": "006：采样成本的实测比较",
+      "path": "studies/006/review/render-comparison.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "F03-review",
+      "label": "F03：首版问题、修订与采取／不采取",
+      "path": "fusions/F03/reports/review.html",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "F03-qa",
+      "label": "F03：分层验收范围",
+      "path": "fusions/F03/reports/qa.html",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "F03-scene",
+      "label": "F03：重导出拆点、PBR 与实际相机",
+      "path": "fusions/F03/reports/scene-tests.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "F03-state-before",
+      "label": "F03：3D 失败误取消章节的旧失败",
+      "path": "fusions/F03/reports/independent-state-before.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "F03-state-after",
+      "label": "F03：分离生命周期后的状态回归",
+      "path": "fusions/F03/reports/independent-state-after.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "F03-projection",
+      "label": "F03：跨引擎投影与有限 CPU 光线",
+      "path": "fusions/F03/reports/independent-geometry.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "F03-browser",
+      "label": "F03：最终原生浏览器限定验收",
+      "path": "fusions/F03/reports/final-native-browser.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "F03-package",
+      "label": "F03：公开包扫描与引用检查",
+      "path": "fusions/F03/reports/package-tests.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "F03-registry",
+      "label": "F03：来源登记与原件身份",
+      "path": "fusions/F03/assets/asset-registry.json",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对既有公开文档或报告；未重跑其中的模型、浏览器或渲染测试。"
+    },
+    {
+      "id": "F03-source",
+      "label": "F03 既有源码包（约 12.23 MB；含核验入口）",
+      "path": "fusions/F03/source.zip",
+      "member": "desk-atlas-F03/source/verify.py",
+      "observed_date": "2026-11-01",
+      "observation": "本轮只读核对已有公开 ZIP 内的 source/verify.py；未运行其中的 Blender 或模型测试。"
+    }
+  ],
+  "unverified": [
+    "连续参数全域证明",
+    "任意网格通用正确性",
+    "真实 GPU 材质、动态闪烁与 WebGL 对象点击",
+    "真实 iPhone、触屏性能与读屏器互操作",
+    "制造、公差、载荷、稳定性、光学、电气与热性能"
+  ],
+  "deployment": {
+    "mount": "methods/quality-workflow-v2/",
+    "evidence_base": "../../",
+    "return": "../../index.html",
+    "note": "单独下载可阅读正文；已有证据链接依赖图库部署结构。"
+  }
+}

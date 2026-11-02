@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "orison-007.schema.json",
+  "title": "ORISON 007 constrained periodic sweep configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "seed",
+    "recipe_version",
+    "radius_x",
+    "radius_z",
+    "asymmetry",
+    "depth_wave",
+    "lean",
+    "section_width",
+    "section_depth",
+    "corner_radius",
+    "roll_degrees",
+    "width_modulation"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,30}$"
+    },
+    "seed": {
+      "const": 0,
+      "type": "integer"
+    },
+    "recipe_version": {
+      "const": "1.0.0"
+    },
+    "radius_x": {
+      "type": "number",
+      "minimum": 0.085,
+      "maximum": 0.18,
+      "unit": "metres"
+    },
+    "radius_z": {
+      "type": "number",
+      "minimum": 0.1,
+      "maximum": 0.22,
+      "unit": "metres"
+    },
+    "asymmetry": {
+      "type": "number",
+      "minimum": -0.16,
+      "maximum": 0.25,
+      "unit": "dimensionless"
+    },
+    "depth_wave": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.042,
+      "unit": "metres"
+    },
+    "lean": {
+      "type": "number",
+      "minimum": -0.03,
+      "maximum": 0.03,
+      "unit": "metres"
+    },
+    "section_width": {
+      "type": "number",
+      "minimum": 0.035,
+      "maximum": 0.072,
+      "unit": "metres"
+    },
+    "section_depth": {
+      "type": "number",
+      "minimum": 0.026,
+      "maximum": 0.06,
+      "unit": "metres"
+    },
+    "corner_radius": {
+      "type": "number",
+      "minimum": 0.006,
+      "maximum": 0.014,
+      "unit": "metres"
+    },
+    "roll_degrees": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 30,
+      "unit": "degrees"
+    },
+    "width_modulation": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 0.27,
+      "unit": "dimensionless"
+    }
+  },
+  "x-required-runtime-validation": {
+    "version": "Blender 4.3.2 only",
+    "finite": "NaN and +/-Infinity forbidden; booleans not numbers; Python exact types enforced",
+    "corner_margin": "2*radius < min(width*(1-modulation), depth)-0.004m",
+    "frame_reference": "minimum sampled cross(Y,T) norm >=0.65",
+    "curvature": "sampled maximum curvature*circumradius <0.72",
+    "clearance": "sampled nonlocal centerline distance minus radii >=0.006m; arc exclusion 2.8*max radius",
+    "mesh": "schema/input acceptance never bypasses actual mesh/GLB gates",
+    "scope": "No guarantee of entire continuous box; three presets and recorded finite boundary samples only"
+  }
+}

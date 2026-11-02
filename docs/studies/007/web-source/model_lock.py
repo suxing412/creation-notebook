@@ -1,0 +1,4 @@
+# Generated from the approved original archive; regenerate only through verified reimport.
+APPROVED_ARCHIVE_SHA256 = 'cc23d20e7a6248128c0c2eb94450a63dd66221b93a6cc9469c73b99cee900647'
+APPROVED_MANIFEST_SHA256 = 'a9d2edf3ff51bbf3b5b304fcf762d78d96a58c3b71a6cb11affcd52bf9520de4'
+APPROVED_ENTRYSET_SHA256 = 'c0c331fbfc389dbfa7a2d559e5c784d688cb4fc24e558e0727f0c5dc683ded10'

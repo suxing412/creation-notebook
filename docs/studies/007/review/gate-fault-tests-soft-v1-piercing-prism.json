@@ -1,0 +1,295 @@
+{
+  "degenerate_triangles": [],
+  "duplicate_triangles": [],
+  "nonmanifold_edges": [],
+  "non_positive_world_volume": [],
+  "inconsistent_winding_edges": [],
+  "invalid_connected_components": [
+    {
+      "object": "ORISON | continuous closed sweep",
+      "connected_components": 2,
+      "component_sizes": [
+        11520,
+        8
+      ],
+      "required": 1
+    }
+  ],
+  "nonfinite_coordinates": [],
+  "recipe_vertex_envelope_failures": [
+    {
+      "object": "ORISON | continuous closed sweep",
+      "vertex_count": 11528,
+      "expected": 11520
+    }
+  ],
+  "recipe_topology_failures": [
+    {
+      "object": "ORISON | continuous closed sweep",
+      "actual_polygons": 11526,
+      "expected_polygons": 11520,
+      "identical_unoriented_index_cycles": false
+    }
+  ],
+  "object_contract_failures": [],
+  "material_contract_failures": [],
+  "object_transform_failures": [],
+  "model_state_contract_failures": [],
+  "nonadjacent_self_intersection_candidates": [
+    [
+      "ORISON | continuous closed sweep",
+      5813,
+      23049
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5813,
+      23046
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5813,
+      23047
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5813,
+      23044
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5777,
+      23049
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5777,
+      23046
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5777,
+      23047
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5777,
+      23044
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5776,
+      23049
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5776,
+      23045
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5776,
+      23044
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5705,
+      23049
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5705,
+      23045
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5705,
+      23048
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5704,
+      23045
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5704,
+      23048
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5704,
+      23050
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5704,
+      23051
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5812,
+      23049
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5812,
+      23044
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5812,
+      23048
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5741,
+      23045
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5741,
+      23044
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5741,
+      23048
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5740,
+      23045
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5740,
+      23048
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5740,
+      23050
+    ],
+    [
+      "ORISON | continuous closed sweep",
+      5740,
+      23051
+    ]
+  ],
+  "coplanar_positive_area_overlaps": [],
+  "seam_topology_failures": [],
+  "frame_periodicity_failures": [],
+  "frame_metadata_failures": [],
+  "ring_frame_fit_failures": [],
+  "genus_contract_failures": [
+    {
+      "object": "ORISON | continuous closed sweep",
+      "euler_characteristic": 2,
+      "required": 0
+    }
+  ],
+  "curvature_radius_failures": [],
+  "nonlocal_centerline_clearance_failures": [],
+  "frame_reference_failures": [],
+  "input_contract_failures": [],
+  "checker_version": "007-native-1.0",
+  "checker_sha256": "3c2140f88b6297e70f1a1d9c52f9eb9cc1008e7cf03d3b94f5e8331bb360847d",
+  "recipe_sha256": "7a4591a35e9cf843906df4eb7e4ef13647a39c474b96dd3251d85dd7b4a3718a",
+  "model_sha256": "272d68069e98cff3261e5a89fe03387cc4a0b7daaf90a5b84306b794879d81cd",
+  "file": "piercing-prism.blend",
+  "run_id": "8a2e5811-9285-4b98-a65c-312c443e2458",
+  "created_utc": "2026-11-01T23:17:25.417440+00:00",
+  "blender_version": "4.3.2",
+  "passed": false,
+  "limits": [
+    "Full-vertex/topology identity is a restricted recipe contract, not general geometry proof or reindexing equivalence.",
+    "BVH candidates exclude triangles sharing any vertex; noncoplanar adjacent foldover is not fully independently certified.",
+    "Frame is periodic analytic fixed-reference projection, not RMF. Station profile fits use raw float32 mesh vertices.",
+    "Curvature and nonlocal clearance are finite 960-sample numerical tests. Local arc neighborhoods <=2.8 max circumradius are excluded. No continuous curve, swept-volume or parameter-domain proof.",
+    "Near-coplanar overlaps use bidirectional float64 plane distances and projected SAT, not exact symbolic predicates or dynamic z-fighting validation.",
+    "Exactly one raw mesh object, no modifiers, shape keys, parents, constraints, object/mesh animation or drivers; photographic scene.blend is out of scope.",
+    "No GPU, WebGL, dynamic flicker, physical iPhone, manufacture, load, stability or ergonomics verification."
+  ],
+  "thresholds": {
+    "vertex_distance_m": 2e-07,
+    "frame_fit_m": 2e-07,
+    "frame_axis_residual": 2e-05,
+    "frame_endpoint_residual": 1e-10,
+    "triangle_area_m2": 1e-12,
+    "duplicate_vertex_round_m": 1e-08,
+    "identity_matrix_entry": 1e-08,
+    "coplanar_normal_cosine": 0.9999999,
+    "bidirectional_plane_distance_m": 5e-08,
+    "positive_projected_overlap_m": 1e-08,
+    "spatial_cell_m": 0.012,
+    "curvature_radius_max_exclusive": 0.72,
+    "sampled_nonlocal_clearance_m_min": 0.006
+  },
+  "variant": "orison",
+  "recipe_version": "1.0.0",
+  "info_sha256": "2a2d692e511fb9f6fd3bac11a77ef0e6f0bb708e324f95f961cc5faf74d64261",
+  "periodicity_records": {
+    "endpoint_parameters": [
+      -1.5707963267948966,
+      4.71238898038469
+    ],
+    "maximum_absolute_residuals": {
+      "point": 2.675118468057478e-17,
+      "tangent": 3.608224830031759e-16,
+      "normal": 3.7470027081099033e-16,
+      "binormal": 1.3877787807814457e-16,
+      "section": 0.0
+    },
+    "unique_station_count": 320,
+    "duplicated_endpoint_ring_allowed": false
+  },
+  "independent_sampling": {
+    "samples": 960,
+    "max_curvature_radius_product": 0.3390742832759731,
+    "max_curvature_per_m": 15.223567253581061,
+    "max_section_circumradius_m": 0.032387299519504885,
+    "minimum_reference_sine": 0.9344205311367861,
+    "sampled_nonlocal_clearance_m": 0.02441648469316015,
+    "closest_pair": [
+      503,
+      605
+    ],
+    "tested_nonlocal_pairs": 371028,
+    "local_arc_exclusion_m": 0.09068443865461367,
+    "centerline_length_m": 0.941019698268426,
+    "method": "Independent float64 arithmetic; analytic recipe point/derivatives/profile evaluated on 960 periodic parameters. Not a continuous proof."
+  },
+  "mesh_objects": 1,
+  "triangles": 23052,
+  "minimum_triangle_area_m2": 2.097642584441549e-06,
+  "component_records": [
+    {
+      "object": "ORISON | continuous closed sweep",
+      "component_sizes": [
+        11520,
+        8
+      ],
+      "signed_world_volume_m3": 0.0016953952510322555,
+      "signed_local_volume_m3": 0.00169528930693946,
+      "vertices": 11528,
+      "edges": 23052,
+      "faces": 11526,
+      "euler_characteristic": 2,
+      "genus_if_closed_connected_orientable": null
+    }
+  ],
+  "ring_frame_records": [
+    {
+      "object": "ORISON | continuous closed sweep",
+      "max_profile_fit_residual_m": 9.2177413639863e-08,
+      "max_center_residual_m": 8.948575532196975e-08,
+      "max_normal_binormal_residual": 4.166500302267492e-07,
+      "last_to_first_center_distance_m": 0.0022982861720416588,
+      "seam_connecting_edges": 36,
+      "duplicate_endpoint_ring": false
+    }
+  ],
+  "coplanar_candidate_pairs": 18,
+  "elapsed_seconds": 3.743
+}
