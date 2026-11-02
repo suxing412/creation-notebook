@@ -1,0 +1,26 @@
+[
+  {
+    "case": "span-too-large",
+    "rejected": true,
+    "outputExists": false,
+    "reason": "ValueError: span: expected finite number in [8.5, 11.5]"
+  },
+  {
+    "case": "wrong-seed",
+    "rejected": true,
+    "outputExists": false,
+    "reason": "ValueError: Only deterministic seed 0 supported; no random geometry"
+  },
+  {
+    "case": "unknown-key",
+    "rejected": true,
+    "outputExists": false,
+    "reason": "ValueError: Config keys must exactly match schema"
+  },
+  {
+    "case": "not-a-number",
+    "rejected": true,
+    "outputExists": false,
+    "reason": "ValueError: chord_factor: expected finite number in [0.9, 1.08]"
+  }
+]

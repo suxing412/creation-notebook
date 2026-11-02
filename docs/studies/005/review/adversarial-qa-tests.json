@@ -1,0 +1,240 @@
+{
+  "expected_cases": 13,
+  "cases": [
+    {
+      "case": "allowed-hub-contained-island",
+      "rejected": true,
+      "defect_counts": {
+        "degenerate_triangles": 0,
+        "duplicate_triangles": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "invalid_connected_components": 1,
+        "connector_envelope_failures": 1,
+        "nonadjacent_self_intersection_candidates": 0,
+        "coplanar_positive_area_overlaps": 0,
+        "unexpected_intersection_pairs": 0,
+        "missing_expected_contact_pairs": 0,
+        "unexpected_containment_samples": 0,
+        "assembly_endpoint_failures": 0
+      }
+    },
+    {
+      "case": "coplanar-partial-overlap",
+      "rejected": true,
+      "defect_counts": {
+        "degenerate_triangles": 0,
+        "duplicate_triangles": 0,
+        "nonmanifold_edges": 1,
+        "inconsistent_winding_edges": 0,
+        "invalid_connected_components": 1,
+        "connector_envelope_failures": 0,
+        "nonadjacent_self_intersection_candidates": 0,
+        "coplanar_positive_area_overlaps": 1,
+        "unexpected_intersection_pairs": 0,
+        "missing_expected_contact_pairs": 0,
+        "unexpected_containment_samples": 0,
+        "assembly_endpoint_failures": 0
+      }
+    },
+    {
+      "case": "degenerate-face",
+      "rejected": true,
+      "defect_counts": {
+        "degenerate_triangles": 1,
+        "duplicate_triangles": 0,
+        "nonmanifold_edges": 1,
+        "inconsistent_winding_edges": 0,
+        "invalid_connected_components": 0,
+        "connector_envelope_failures": 0,
+        "nonadjacent_self_intersection_candidates": 0,
+        "coplanar_positive_area_overlaps": 0,
+        "unexpected_intersection_pairs": 0,
+        "missing_expected_contact_pairs": 0,
+        "unexpected_containment_samples": 0,
+        "assembly_endpoint_failures": 0
+      }
+    },
+    {
+      "case": "duplicate-face",
+      "rejected": true,
+      "defect_counts": {
+        "degenerate_triangles": 0,
+        "duplicate_triangles": 1,
+        "nonmanifold_edges": 1,
+        "inconsistent_winding_edges": 0,
+        "invalid_connected_components": 0,
+        "connector_envelope_failures": 0,
+        "nonadjacent_self_intersection_candidates": 0,
+        "coplanar_positive_area_overlaps": 1,
+        "unexpected_intersection_pairs": 0,
+        "missing_expected_contact_pairs": 0,
+        "unexpected_containment_samples": 0,
+        "assembly_endpoint_failures": 0
+      }
+    },
+    {
+      "case": "fully-contained-pin",
+      "rejected": true,
+      "defect_counts": {
+        "degenerate_triangles": 0,
+        "duplicate_triangles": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "invalid_connected_components": 0,
+        "connector_envelope_failures": 1,
+        "nonadjacent_self_intersection_candidates": 0,
+        "coplanar_positive_area_overlaps": 0,
+        "unexpected_intersection_pairs": 0,
+        "missing_expected_contact_pairs": 2,
+        "unexpected_containment_samples": 1,
+        "assembly_endpoint_failures": 2
+      }
+    },
+    {
+      "case": "hub-overreach",
+      "rejected": true,
+      "defect_counts": {
+        "degenerate_triangles": 0,
+        "duplicate_triangles": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "invalid_connected_components": 0,
+        "connector_envelope_failures": 1,
+        "nonadjacent_self_intersection_candidates": 0,
+        "coplanar_positive_area_overlaps": 0,
+        "unexpected_intersection_pairs": 0,
+        "missing_expected_contact_pairs": 1,
+        "unexpected_containment_samples": 0,
+        "assembly_endpoint_failures": 130
+      }
+    },
+    {
+      "case": "missing-pin",
+      "rejected": true,
+      "defect_counts": {
+        "degenerate_triangles": 0,
+        "duplicate_triangles": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "invalid_connected_components": 0,
+        "connector_envelope_failures": 1,
+        "nonadjacent_self_intersection_candidates": 0,
+        "coplanar_positive_area_overlaps": 0,
+        "unexpected_intersection_pairs": 0,
+        "missing_expected_contact_pairs": 2,
+        "unexpected_containment_samples": 0,
+        "assembly_endpoint_failures": 2
+      }
+    },
+    {
+      "case": "oblique-coplanar-overlap",
+      "rejected": true,
+      "defect_counts": {
+        "degenerate_triangles": 0,
+        "duplicate_triangles": 0,
+        "nonmanifold_edges": 1,
+        "inconsistent_winding_edges": 0,
+        "invalid_connected_components": 1,
+        "connector_envelope_failures": 0,
+        "nonadjacent_self_intersection_candidates": 1,
+        "coplanar_positive_area_overlaps": 1,
+        "unexpected_intersection_pairs": 0,
+        "missing_expected_contact_pairs": 0,
+        "unexpected_containment_samples": 0,
+        "assembly_endpoint_failures": 0
+      }
+    },
+    {
+      "case": "open-boundary",
+      "rejected": true,
+      "defect_counts": {
+        "degenerate_triangles": 0,
+        "duplicate_triangles": 0,
+        "nonmanifold_edges": 1,
+        "inconsistent_winding_edges": 0,
+        "invalid_connected_components": 0,
+        "connector_envelope_failures": 0,
+        "nonadjacent_self_intersection_candidates": 0,
+        "coplanar_positive_area_overlaps": 0,
+        "unexpected_intersection_pairs": 0,
+        "missing_expected_contact_pairs": 0,
+        "unexpected_containment_samples": 0,
+        "assembly_endpoint_failures": 0
+      }
+    },
+    {
+      "case": "reversed-base-face",
+      "rejected": true,
+      "defect_counts": {
+        "degenerate_triangles": 0,
+        "duplicate_triangles": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 1,
+        "invalid_connected_components": 0,
+        "connector_envelope_failures": 0,
+        "nonadjacent_self_intersection_candidates": 0,
+        "coplanar_positive_area_overlaps": 0,
+        "unexpected_intersection_pairs": 0,
+        "missing_expected_contact_pairs": 0,
+        "unexpected_containment_samples": 0,
+        "assembly_endpoint_failures": 0
+      }
+    },
+    {
+      "case": "same-pair-extra-prism",
+      "rejected": true,
+      "defect_counts": {
+        "degenerate_triangles": 0,
+        "duplicate_triangles": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "invalid_connected_components": 1,
+        "connector_envelope_failures": 1,
+        "nonadjacent_self_intersection_candidates": 0,
+        "coplanar_positive_area_overlaps": 0,
+        "unexpected_intersection_pairs": 0,
+        "missing_expected_contact_pairs": 0,
+        "unexpected_containment_samples": 0,
+        "assembly_endpoint_failures": 0
+      }
+    },
+    {
+      "case": "self-intersection",
+      "rejected": true,
+      "defect_counts": {
+        "degenerate_triangles": 0,
+        "duplicate_triangles": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "invalid_connected_components": 1,
+        "connector_envelope_failures": 0,
+        "nonadjacent_self_intersection_candidates": 536,
+        "coplanar_positive_area_overlaps": 0,
+        "unexpected_intersection_pairs": 0,
+        "missing_expected_contact_pairs": 0,
+        "unexpected_containment_samples": 0,
+        "assembly_endpoint_failures": 39
+      }
+    },
+    {
+      "case": "unexpected-penetration",
+      "rejected": true,
+      "defect_counts": {
+        "degenerate_triangles": 0,
+        "duplicate_triangles": 0,
+        "nonmanifold_edges": 0,
+        "inconsistent_winding_edges": 0,
+        "invalid_connected_components": 0,
+        "connector_envelope_failures": 0,
+        "nonadjacent_self_intersection_candidates": 0,
+        "coplanar_positive_area_overlaps": 0,
+        "unexpected_intersection_pairs": 1,
+        "missing_expected_contact_pairs": 3,
+        "unexpected_containment_samples": 1,
+        "assembly_endpoint_failures": 3
+      }
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "seed",
+    "span",
+    "chord_factor",
+    "leading_exponent",
+    "tail_factor"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9-]+$"
+    },
+    "seed": {
+      "const": 0
+    },
+    "span": {
+      "type": "number",
+      "minimum": 8.5,
+      "maximum": 11.5
+    },
+    "chord_factor": {
+      "type": "number",
+      "minimum": 0.9,
+      "maximum": 1.08
+    },
+    "leading_exponent": {
+      "type": "number",
+      "minimum": 1.5,
+      "maximum": 1.9
+    },
+    "tail_factor": {
+      "type": "number",
+      "minimum": 0.85,
+      "maximum": 1.15
+    }
+  }
+}

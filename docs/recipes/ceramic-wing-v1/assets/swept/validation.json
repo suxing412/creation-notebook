@@ -1,0 +1,125 @@
+{
+  "method": "Blender BVHTree triangle intersections + cross-object coplanar plane test; duplicate faces by world-space vertices rounded 1e-7",
+  "nonAdjacentSelfIntersectionPairs": {},
+  "objects": 8,
+  "triangles": 18668,
+  "degenerateTriangles": 0,
+  "duplicateTriangleCount": 0,
+  "coplanarCrossObjectPairs": [],
+  "contacts": [
+    {
+      "a": "A | continuous porcelain wing",
+      "b": "B | leading copper seam",
+      "intersectingTrianglePairs": 1039,
+      "coplanarPairs": 0
+    },
+    {
+      "a": "A | continuous porcelain wing",
+      "b": "B | trailing copper seam",
+      "intersectingTrianglePairs": 1050,
+      "coplanarPairs": 0
+    },
+    {
+      "a": "A | continuous porcelain wing",
+      "b": "C | swept copper inlay -1",
+      "intersectingTrianglePairs": 398,
+      "coplanarPairs": 0
+    },
+    {
+      "a": "A | continuous porcelain wing",
+      "b": "C | swept copper inlay 1",
+      "intersectingTrianglePairs": 420,
+      "coplanarPairs": 0
+    },
+    {
+      "a": "A | continuous porcelain wing",
+      "b": "E | tapered ceramic tail",
+      "intersectingTrianglePairs": 72,
+      "coplanarPairs": 0
+    },
+    {
+      "a": "A | continuous porcelain wing",
+      "b": "F | tail copper spine",
+      "intersectingTrianglePairs": 14,
+      "coplanarPairs": 0
+    },
+    {
+      "a": "A | continuous porcelain wing",
+      "b": "G | copper dorsal midrib",
+      "intersectingTrianglePairs": 282,
+      "coplanarPairs": 0
+    },
+    {
+      "a": "B | leading copper seam",
+      "b": "B | trailing copper seam",
+      "intersectingTrianglePairs": 116,
+      "coplanarPairs": 0
+    },
+    {
+      "a": "B | trailing copper seam",
+      "b": "E | tapered ceramic tail",
+      "intersectingTrianglePairs": 42,
+      "coplanarPairs": 0
+    },
+    {
+      "a": "E | tapered ceramic tail",
+      "b": "F | tail copper spine",
+      "intersectingTrianglePairs": 526,
+      "coplanarPairs": 0
+    }
+  ],
+  "limitations": [
+    "Not a boolean-unified fabrication mesh",
+    "Intentional embedded seams and tail root intersect wing skin",
+    "Static mesh tests cannot prove absence of WebGL z-fighting at all camera distances",
+    "BVH test does not certify absence of fully enclosed volumes"
+  ],
+  "nonManifoldEdges": {},
+  "unexpectedContactGroups": [],
+  "missingExpectedContactGroups": [],
+  "allowedContactPairs": [
+    [
+      "A | continuous porcelain wing",
+      "B | leading copper seam"
+    ],
+    [
+      "A | continuous porcelain wing",
+      "B | trailing copper seam"
+    ],
+    [
+      "A | continuous porcelain wing",
+      "C | swept copper inlay -1"
+    ],
+    [
+      "A | continuous porcelain wing",
+      "C | swept copper inlay 1"
+    ],
+    [
+      "A | continuous porcelain wing",
+      "E | tapered ceramic tail"
+    ],
+    [
+      "A | continuous porcelain wing",
+      "F | tail copper spine"
+    ],
+    [
+      "A | continuous porcelain wing",
+      "G | copper dorsal midrib"
+    ],
+    [
+      "B | leading copper seam",
+      "B | trailing copper seam"
+    ],
+    [
+      "B | trailing copper seam",
+      "E | tapered ceramic tail"
+    ],
+    [
+      "E | tapered ceramic tail",
+      "F | tail copper spine"
+    ]
+  ],
+  "blenderVersion": "4.3.2",
+  "passed": true,
+  "contactPolicy": "Pair allowlist inherited from original embedded seam assembly; contact counts remain measured, not zero. Does not certify penetration depth or hidden enclosing volumes."
+}

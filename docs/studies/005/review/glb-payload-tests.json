@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "nan-position",
+      "rejected": true,
+      "final_error": "AssertionError: Nonfinite accessor bytes"
+    },
+    {
+      "case": "out-of-range-index",
+      "rejected": true,
+      "final_error": "AssertionError: Index exceeds POSITION count"
+    },
+    {
+      "case": "stride-overrun",
+      "rejected": true,
+      "final_error": "AssertionError"
+    },
+    {
+      "case": "false-bounds",
+      "rejected": true,
+      "final_error": "AssertionError: Declared accessor max does not match bytes"
+    }
+  ]
+}

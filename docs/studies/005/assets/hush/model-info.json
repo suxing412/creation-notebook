@@ -1,0 +1,76 @@
+{
+  "title": "Vesper / 暮灯",
+  "study": "005",
+  "variant": "hush",
+  "recipe_version": "1.1.0",
+  "seed": 0,
+  "config": {
+    "name": "hush",
+    "recipe_version": "1.1.0",
+    "seed": 0,
+    "shade_width": 0.48,
+    "shade_depth": 0.3,
+    "shade_rise": 0.057,
+    "rim_height": 0.3,
+    "stem_lean": 0.03,
+    "base_width": 0.2,
+    "base_depth": 0.15,
+    "crown_shift": 0.018
+  },
+  "blender_version": "4.3.2",
+  "units": "metres",
+  "mesh_objects": 8,
+  "triangles": 40256,
+  "dimensions_mm": {
+    "width": 487.38,
+    "depth": 304.62,
+    "height": 360.0
+  },
+  "bounds_m": [
+    [
+      -0.22925041615962982,
+      0.25813421607017517
+    ],
+    [
+      -0.1523076891899109,
+      0.1523076891899109
+    ],
+    [
+      0.0,
+      0.36000001430511475
+    ]
+  ],
+  "construction": {
+    "shell_vertical_thickness_mm": 6,
+    "lens_thickness_mm": 4,
+    "lens_inset_ratio": 0.86,
+    "shell_to_lens_rim_vertical_offset_mm": 16.0,
+    "hub_radius_mm": 11,
+    "base_height_mm": 26,
+    "stem_to_base_embed_mm": 4,
+    "stem_to_hub_embed_mm": 4,
+    "pin_radial_embed_mm": 1.3
+  },
+  "validation_status": "static-QA-passed",
+  "realtime_verified": false,
+  "physical_engineering_verified": false,
+  "materials": [
+    "Vesper | mineral warm ivory",
+    "Vesper | dark patinated bronze",
+    "Vesper | warm opal luminous ceramic"
+  ],
+  "phase": "after",
+  "studio": {
+    "renderer": "Cycles CPU",
+    "hero_samples": 1024,
+    "orthographic_samples": 384,
+    "junction_samples": 256,
+    "denoiser": "none; this Blender build has no available Cycles denoiser",
+    "view_transform": "AgX",
+    "exposure": -0.4,
+    "resolution_hero": [
+      900,
+      1000
+    ]
+  }
+}

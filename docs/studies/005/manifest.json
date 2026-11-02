@@ -1,0 +1,226 @@
+{
+  "schema_version": 1,
+  "study": "005",
+  "title": "Vesper / 暮灯",
+  "recipe_version": "1.1.0",
+  "seed": 0,
+  "blender_version": "4.3.2",
+  "status": "frozen-static-verified",
+  "units": "metres",
+  "source_up_axis": "Z",
+  "glb_up_axis": "Y",
+  "original_geometry": true,
+  "external_images": false,
+  "runtime_verified": false,
+  "gpu_verified": false,
+  "iphone_verified": false,
+  "dynamic_z_fighting_verified": false,
+  "variants": [
+    {
+      "id": "hush",
+      "label": "Hush · 低阔",
+      "geometric_difference": "宽罩、低拱、短柱",
+      "dimensions_mm": {
+        "width": 487.38,
+        "depth": 304.62,
+        "height": 360.0
+      },
+      "parameters": {
+        "name": "hush",
+        "recipe_version": "1.1.0",
+        "seed": 0,
+        "shade_width": 0.48,
+        "shade_depth": 0.3,
+        "shade_rise": 0.057,
+        "rim_height": 0.3,
+        "stem_lean": 0.03,
+        "base_width": 0.2,
+        "base_depth": 0.15,
+        "crown_shift": 0.018
+      },
+      "triangles": 40256,
+      "mesh_objects": 8,
+      "materials": 3,
+      "paths": {
+        "model_blend": "assets/hush/model.blend",
+        "model_glb": "assets/hush/model.glb",
+        "scene_blend": "assets/hush/scene.blend",
+        "preview": "assets/hush/beauty.png",
+        "front": "assets/hush/front.png",
+        "side": "assets/hush/side.png",
+        "top": "assets/hush/top.png",
+        "junction": "assets/hush/junction.png",
+        "base_junction": "assets/hush/base-junction.png",
+        "info": "assets/hush/model-info.json",
+        "qa": "assets/hush/validation.json",
+        "glb_qa": "assets/hush/glb-validation.json"
+      },
+      "qa_passed": true,
+      "sampled_shell_diffuser_min_mm": 16.3124,
+      "glb_sha256": "ddb9a99b9d89002d5076cba06ba3264396e5701854693d8621cf86ea10d3be73"
+    },
+    {
+      "id": "poise",
+      "label": "Poise · 均衡",
+      "geometric_difference": "中等罩宽、弧冠与高度",
+      "dimensions_mm": {
+        "width": 416.74,
+        "depth": 325.26,
+        "height": 477.0
+      },
+      "parameters": {
+        "name": "poise",
+        "recipe_version": "1.1.0",
+        "seed": 0,
+        "shade_width": 0.41,
+        "shade_depth": 0.32,
+        "shade_rise": 0.084,
+        "rim_height": 0.39,
+        "stem_lean": 0.045,
+        "base_width": 0.185,
+        "base_depth": 0.145,
+        "crown_shift": 0.014
+      },
+      "triangles": 40256,
+      "mesh_objects": 8,
+      "materials": 3,
+      "paths": {
+        "model_blend": "assets/poise/model.blend",
+        "model_glb": "assets/poise/model.glb",
+        "scene_blend": "assets/poise/scene.blend",
+        "preview": "assets/poise/beauty.png",
+        "front": "assets/poise/front.png",
+        "side": "assets/poise/side.png",
+        "top": "assets/poise/top.png",
+        "junction": "assets/poise/junction.png",
+        "base_junction": "assets/poise/base-junction.png",
+        "info": "assets/poise/model-info.json",
+        "qa": "assets/poise/validation.json",
+        "glb_qa": "assets/poise/glb-validation.json"
+      },
+      "qa_passed": true,
+      "sampled_shell_diffuser_min_mm": 18.2093,
+      "glb_sha256": "53aef1b5fc4ef9d70bef6dae9562d393c80c93016d46bba2b41b67f97cd1a078"
+    },
+    {
+      "id": "reach",
+      "label": "Reach · 窄高",
+      "geometric_difference": "窄罩、高冠、长柱",
+      "dimensions_mm": {
+        "width": 346.53,
+        "depth": 290.47,
+        "height": 631.0
+      },
+      "parameters": {
+        "name": "reach",
+        "recipe_version": "1.1.0",
+        "seed": 0,
+        "shade_width": 0.34,
+        "shade_depth": 0.285,
+        "shade_rise": 0.113,
+        "rim_height": 0.515,
+        "stem_lean": 0.06,
+        "base_width": 0.165,
+        "base_depth": 0.14,
+        "crown_shift": 0.01
+      },
+      "triangles": 40256,
+      "mesh_objects": 8,
+      "materials": 3,
+      "paths": {
+        "model_blend": "assets/reach/model.blend",
+        "model_glb": "assets/reach/model.glb",
+        "scene_blend": "assets/reach/scene.blend",
+        "preview": "assets/reach/beauty.png",
+        "front": "assets/reach/front.png",
+        "side": "assets/reach/side.png",
+        "top": "assets/reach/top.png",
+        "junction": "assets/reach/junction.png",
+        "base_junction": "assets/reach/base-junction.png",
+        "info": "assets/reach/model-info.json",
+        "qa": "assets/reach/validation.json",
+        "glb_qa": "assets/reach/glb-validation.json"
+      },
+      "qa_passed": true,
+      "sampled_shell_diffuser_min_mm": 18.8074,
+      "glb_sha256": "a1421fa2bbd5a2c85df6b404b508be670d79a30d43b8feb5c13576663b8c29a8"
+    }
+  ],
+  "fixed_construction": {
+    "shell_vertical_thickness_mm": 6,
+    "diffuser_vertical_thickness_mm": 4,
+    "diffuser_radial_ratio": 0.86,
+    "reference_rim_offset_mm": 16,
+    "base_height_mm": 26,
+    "pin_count": 3
+  },
+  "renderer": {
+    "engine": "Cycles CPU",
+    "hero_samples": 1024,
+    "orthographic_samples": 384,
+    "junction_samples": 256,
+    "denoiser": "none (not available in this Blender build)",
+    "view_transform": "AgX",
+    "exposure": -0.4,
+    "fixed_camera_views": [
+      "beauty",
+      "front",
+      "side",
+      "top"
+    ],
+    "variant_local_views": [
+      "junction",
+      "base-junction"
+    ],
+    "glb_contains_studio": false
+  },
+  "documentation": {
+    "readme": "README.md",
+    "parameter_schema": "config.schema.json",
+    "source": "source/generate.py",
+    "transactional_cli": "source/run.py",
+    "full_test_cli": "source/test_all.py",
+    "references": "review/reference-notes.md",
+    "reflection": "review/reflection.md",
+    "contract_tests": "review/invalid-input-tests.json",
+    "adversarial_tests": "review/adversarial-qa-tests.json",
+    "reproducibility": "review/reproducibility.json",
+    "before": "review/before.png",
+    "after": "review/after.png",
+    "contact_sheet": "review/contact-sheet.png",
+    "independent_review": "review/independent-review.md",
+    "junction_feature_evidence": "review/junction-feature-evidence.json",
+    "junction_feature_map": "review/junction-feature-map.png",
+    "socket_inspection": "review/socket-inspection.png",
+    "source_archive": "recipe-source.zip"
+  },
+  "limits": [
+    "Static discrete validation only; continuous parameter domain not proved.",
+    "Luminous diffuser is an emissive visual proxy, not a calibrated optical simulation.",
+    "No manufacturing, stability, electrical, thermal, or safety certification.",
+    "Real-time GL/GPU/iPhone/flicker not tested."
+  ],
+  "viewer": {
+    "html": "view.html",
+    "script": "viewer.js",
+    "style": "viewer.css",
+    "vendor": "vendor/",
+    "three_revision": "180",
+    "actual_glb_parse_test": "review/three-loader-tests.json",
+    "gpu_verified": false,
+    "state_tests": "review/viewer-state-tests.json",
+    "browser_render_verified": false
+  },
+  "frozen_at_utc": "2026-11-01T21:07:17.153348+00:00",
+  "source_hashes": {
+    "source/generate.py": "6c7a1c96d0b30bfd7c10fa77b0eb9394dec677e649fb26b15fd9ee8e4578f462",
+    "source/check.py": "faad6c4a1d54b384a5311970ed331ed72ff59171c39789ada27d148552e963ce",
+    "source/check_glb.py": "c14e3d285ea753e60e96a1ac54284cf08a3f1e1916b83b6ba5b344de9859be53",
+    "viewer.js": "56cb67353e2daa0c06321805e1319e22c495fd72fd70b93b019c802d5a4acd2c"
+  },
+  "visual_review": {
+    "fixed_multiview_reviewed": true,
+    "junction_features_identified_by_ray_ids": true,
+    "remaining_issue": "Hero perspective still makes diffuser layer thin; use front/junction evidence, not an unqualified resolved-layer claim."
+  }
+}

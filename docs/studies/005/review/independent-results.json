@@ -1,0 +1,150 @@
+{
+  "checker_sha256": "faad6c4a1d54b384a5311970ed331ed72ff59171c39789ada27d148552e963ce",
+  "glb_checker_sha256": "c14e3d285ea753e60e96a1ac54284cf08a3f1e1916b83b6ba5b344de9859be53",
+  "cases": [
+    {
+      "case": "hush",
+      "expected_pass": true,
+      "model": "study-005/assets/.vesper-staging-040s23kv/model.blend",
+      "model_sha256": "2fdfa7d7448c8c6fbc1fa879c187b33a59341658b1d10ecf66f803a449629c76",
+      "info_sha256": "668a05f22ba6cc351838ab847b872d9985299ad7ce1f3625b5bbed5f755c5de6",
+      "exit_code": 0,
+      "actual_pass": true,
+      "elapsed_seconds": 20.7,
+      "expected_result_observed": true,
+      "triangles": 40256,
+      "nonempty_defects": {},
+      "glb_sha256": "ddb9a99b9d89002d5076cba06ba3264396e5701854693d8621cf86ea10d3be73",
+      "glb_passed": true
+    },
+    {
+      "case": "poise",
+      "expected_pass": true,
+      "model": "study-005/assets/.vesper-staging-1aha_tdu/model.blend",
+      "model_sha256": "1c1ad3d58a9d9d2dd331612d49e2bfc862d1d868d5d37dfb58988b474a1ce791",
+      "info_sha256": "1653d304385c24d370f33c1a56eb3ffea7aebee4b3b2f8a93938d63339470fa7",
+      "exit_code": 0,
+      "actual_pass": true,
+      "elapsed_seconds": 22.1,
+      "expected_result_observed": true,
+      "triangles": 40256,
+      "nonempty_defects": {},
+      "glb_sha256": "53aef1b5fc4ef9d70bef6dae9562d393c80c93016d46bba2b41b67f97cd1a078",
+      "glb_passed": true
+    },
+    {
+      "case": "reach",
+      "expected_pass": true,
+      "model": "study-005/assets/.vesper-staging-smb4p1vv/model.blend",
+      "model_sha256": "4d99db4b5f22dd7a5d569c49bb640a1ecb77bba31b6753fd15719109b3aeeab0",
+      "info_sha256": "0abb7744ca179bdf102673fcb3ee27a0c4b94e91ce6fc15d0f4cd3b37125aae9",
+      "exit_code": 0,
+      "actual_pass": true,
+      "elapsed_seconds": 17.31,
+      "expected_result_observed": true,
+      "triangles": 40256,
+      "nonempty_defects": {},
+      "glb_sha256": "a1421fa2bbd5a2c85df6b404b508be670d79a30d43b8feb5c13576663b8c29a8",
+      "glb_passed": true
+    },
+    {
+      "case": "boundary-low",
+      "expected_pass": true,
+      "model": "study-005/work/boundary-low/model.blend",
+      "model_sha256": "979aa966a881ca0a29b996e2217e7557048d7b3936ef27389273e29cfc51e656",
+      "info_sha256": "22b5b408c4180b19bc6ee650f00902638b61491b8302a7b01b8d673efd0c1bf8",
+      "exit_code": 0,
+      "actual_pass": true,
+      "elapsed_seconds": 26.34,
+      "expected_result_observed": true,
+      "triangles": 40256,
+      "nonempty_defects": {},
+      "glb_sha256": "7043b66b3a5ddf5b3aaa733c9880de828397b013aa80b7d225aad5cbfee08082",
+      "glb_passed": true
+    },
+    {
+      "case": "boundary-high",
+      "expected_pass": true,
+      "model": "study-005/work/boundary-high/model.blend",
+      "model_sha256": "94adf976a68aadf5a602280497b6c8499a601c56ad42ab4d8b9fa150370ec490",
+      "info_sha256": "16c1db2a2b316c424f1db7524a2bb2c360c9edc918f3ae27c4a0a2a0ad96f430",
+      "exit_code": 0,
+      "actual_pass": true,
+      "elapsed_seconds": 21.85,
+      "expected_result_observed": true,
+      "triangles": 40256,
+      "nonempty_defects": {},
+      "glb_sha256": "270878c5c8934670e32ec3837d2e88dc4b1f331f1bc479f2dbd065602708c137",
+      "glb_passed": true
+    },
+    {
+      "case": "same-pair-pin-diffuser-extra-prism",
+      "expected_pass": false,
+      "model": "study-005-independent-review-assets/same-pair-pin-diffuser-extra-prism.blend",
+      "model_sha256": "9cdc846ea414db90d5df64b61ffc43edb609a0a023b41735277e3f845007b786",
+      "info_sha256": "1653d304385c24d370f33c1a56eb3ffea7aebee4b3b2f8a93938d63339470fa7",
+      "exit_code": 1,
+      "actual_pass": false,
+      "elapsed_seconds": 20.33,
+      "expected_result_observed": true,
+      "triangles": 40268,
+      "nonempty_defects": {
+        "invalid_connected_components": 1,
+        "connector_envelope_failures": 1,
+        "contact_region_failures": 1
+      }
+    },
+    {
+      "case": "allowed-hub-shell-contained-island",
+      "expected_pass": false,
+      "model": "study-005-independent-review-assets/allowed-hub-shell-contained-island.blend",
+      "model_sha256": "3b64e64003bbfe9cb2d88bdf1cc1824ab11f867cb68b4b9c5409434f6349f842",
+      "info_sha256": "1653d304385c24d370f33c1a56eb3ffea7aebee4b3b2f8a93938d63339470fa7",
+      "exit_code": 1,
+      "actual_pass": false,
+      "elapsed_seconds": 21.16,
+      "expected_result_observed": true,
+      "triangles": 40268,
+      "nonempty_defects": {
+        "invalid_connected_components": 1,
+        "connector_envelope_failures": 1
+      }
+    },
+    {
+      "case": "reversed-base-face",
+      "expected_pass": false,
+      "model": "study-005-independent-review-assets/reversed-base-face.blend",
+      "model_sha256": "8ed70ed16e9fd6923d04feb7691d234fb4ec4470c7a6d077ef2a93b9d5aef058",
+      "info_sha256": "1653d304385c24d370f33c1a56eb3ffea7aebee4b3b2f8a93938d63339470fa7",
+      "exit_code": 1,
+      "actual_pass": false,
+      "elapsed_seconds": 22.71,
+      "expected_result_observed": true,
+      "triangles": 40256,
+      "nonempty_defects": {
+        "inconsistent_winding_edges": 1
+      },
+      "specific_detector_observed": true
+    },
+    {
+      "case": "oblique-coplanar-overlap",
+      "expected_pass": false,
+      "model": "study-005-independent-review-assets/oblique-coplanar-overlap.blend",
+      "model_sha256": "39ecde473826a257cf7f0339b1972714f5ca47d5cc8311f0effe6ac02bb6c29b",
+      "info_sha256": "1653d304385c24d370f33c1a56eb3ffea7aebee4b3b2f8a93938d63339470fa7",
+      "exit_code": 1,
+      "actual_pass": false,
+      "elapsed_seconds": 17.01,
+      "expected_result_observed": true,
+      "triangles": 40257,
+      "nonempty_defects": {
+        "nonmanifold_edges": 1,
+        "invalid_connected_components": 1,
+        "nonadjacent_self_intersection_candidates": 1,
+        "coplanar_positive_area_overlaps": 1
+      },
+      "specific_detector_observed": true
+    }
+  ],
+  "passed": true
+}

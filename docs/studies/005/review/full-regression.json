@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "glb_payload_tests": 4,
+  "contract_tests": 47,
+  "boundary_tests": [
+    "boundary-low",
+    "boundary-high"
+  ],
+  "reproducibility": {
+    "byte_identical": true,
+    "sha256": "53aef1b5fc4ef9d70bef6dae9562d393c80c93016d46bba2b41b67f97cd1a078"
+  },
+  "adversarial_cases": [
+    {
+      "case": "allowed-hub-contained-island",
+      "rejected": true
+    },
+    {
+      "case": "coplanar-partial-overlap",
+      "rejected": true
+    },
+    {
+      "case": "degenerate-face",
+      "rejected": true
+    },
+    {
+      "case": "duplicate-face",
+      "rejected": true
+    },
+    {
+      "case": "fully-contained-pin",
+      "rejected": true
+    },
+    {
+      "case": "hub-overreach",
+      "rejected": true
+    },
+    {
+      "case": "missing-pin",
+      "rejected": true
+    },
+    {
+      "case": "oblique-coplanar-overlap",
+      "rejected": true
+    },
+    {
+      "case": "open-boundary",
+      "rejected": true
+    },
+    {
+      "case": "reversed-base-face",
+      "rejected": true
+    },
+    {
+      "case": "same-pair-extra-prism",
+      "rejected": true
+    },
+    {
+      "case": "self-intersection",
+      "rejected": true
+    },
+    {
+      "case": "unexpected-penetration",
+      "rejected": true
+    }
+  ],
+  "limits": "Static discrete tests, not a continuous-parameter proof or runtime graphics certification."
+}

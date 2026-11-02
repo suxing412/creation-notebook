@@ -1,0 +1,56 @@
+{
+  "unitCases": [
+    {
+      "version": [
+        4,
+        3,
+        2
+      ],
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "version": [
+        4,
+        3,
+        1
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "version": [
+        4,
+        3,
+        3
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "version": [
+        4,
+        4,
+        0
+      ],
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "version": [
+        5,
+        0,
+        0
+      ],
+      "accepted": false,
+      "expected": false
+    }
+  ],
+  "scope": "Actual guard function extracted by AST; normal Blender CLI tested separately.",
+  "normalCLI": {
+    "blenderVersion": "4.3.2",
+    "pendingUntilFullQA": "pending-full-QA",
+    "fullQAPassed": true,
+    "sameGeometryGLBAsDelivered": true
+  }
+}
