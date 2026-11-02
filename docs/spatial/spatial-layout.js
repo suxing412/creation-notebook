@@ -68,6 +68,15 @@ export function buildDirectoryScene(items,makeLabel=()=>null){
     for(const z of [-.42,.42])add(symbol,'box',dark,[0,.24,z],[1.6,.48,.13]);
     for(const x of [-.48,0,.48])add(symbol,'box',mat,[x,.57,0],[.12,1.14,1.18]);
    }
+   else if(n===14){
+    // One-sided main/sub landmark, no paired east que or gate lintel: abstract index only.
+    add(symbol,'box',dark,[0,.08,0],[1.65,.16,.88]);
+    add(symbol,'box',mat,[-.38,.75,0],[.48,1.34,.46]);
+    add(symbol,'box',mat,[.48,.40,0],[.36,.64,.38]);
+    add(symbol,'box',dark,[-.38,1.46,0],[.74,.12,.68]);
+    add(symbol,'box',dark,[.48,.77,0],[.56,.10,.54]);
+    add(symbol,'box',mat,[-.38,1.56,0],[.58,.08,.54]);
+   }
    else if(n===13){
     // Perimeter, distinct inner courtyard and gatehouse: navigational mark only, NOT original geometry.
     for(const x of [-.77,.77])add(symbol,'box',mat,[x,.29,0],[.13,.58,1.60]);
