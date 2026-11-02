@@ -1,0 +1,138 @@
+{
+  "id": "R01-AB-model-contract-v01",
+  "status": "root-reviewed finite prototype candidate",
+  "frame": {
+    "id": "R01-neutral-design-m-v01",
+    "units": "design_m",
+    "blender_axes": "x east, y local north, z up",
+    "gltf_axes": "x east, y up, z negative local north",
+    "origin": "lot ground-base center",
+    "historical_city_placement": null,
+    "relation_to_frozen_city_frame": null
+  },
+  "lot": {
+    "width": 18,
+    "depth": 24,
+    "ground_top_z": 0.2,
+    "neutral_lane_depth": 4,
+    "lane_is_city_road": false
+  },
+  "variants": [
+    {
+      "id": "A",
+      "name": "低层偏门生活院",
+      "config": "configs/prototypes.json"
+    },
+    {
+      "id": "B",
+      "name": "居住兼储藏作业院",
+      "config": "configs/B.json"
+    }
+  ],
+  "runtime_assets": [
+    {
+      "variant": "A",
+      "lod": 0,
+      "source_sha256": "75b9871280197625db6034a64f788198364179cbb5934332192dcede5c63079a",
+      "glb": "R01-A-LOD0-prototype.glb",
+      "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+      "bytes": 510536,
+      "triangles": 7564,
+      "mesh_nodes": 7,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_hardpacked_activity_ground"
+      ],
+      "removed_tile_mesh_count": 0,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 4.862803962168982e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement."
+    },
+    {
+      "variant": "A",
+      "lod": 1,
+      "source_sha256": "75b9871280197625db6034a64f788198364179cbb5934332192dcede5c63079a",
+      "glb": "R01-A-LOD1-prototype.glb",
+      "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+      "bytes": 92328,
+      "triangles": 1228,
+      "mesh_nodes": 7,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_hardpacked_activity_ground"
+      ],
+      "removed_tile_mesh_count": 396,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 4.862803962168982e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement."
+    },
+    {
+      "variant": "B",
+      "lod": 0,
+      "source_sha256": "65e4e69b74e4db6c4a761690a7752e34d799e9d43c65587e5b2e82fc3b4aeb45",
+      "glb": "R01-B-LOD0-prototype.glb",
+      "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+      "bytes": 626016,
+      "triangles": 9300,
+      "mesh_nodes": 7,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_loading_yard"
+      ],
+      "removed_tile_mesh_count": 0,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 4.862803962168982e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement."
+    },
+    {
+      "variant": "B",
+      "lod": 1,
+      "source_sha256": "65e4e69b74e4db6c4a761690a7752e34d799e9d43c65587e5b2e82fc3b4aeb45",
+      "glb": "R01-B-LOD1-prototype.glb",
+      "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+      "bytes": 112776,
+      "triangles": 1524,
+      "mesh_nodes": 7,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_loading_yard"
+      ],
+      "removed_tile_mesh_count": 486,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 4.862803962168982e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement."
+    }
+  ],
+  "lod_policy": {
+    "default": 0,
+    "lod0_quality_reduced": false,
+    "lod1": "experimental tile-removal only; opt-in; switching distance unmeasured"
+  },
+  "evidence": {
+    "regional_analogy": "Henan Eastern Han Zhangmao courtyard mingqi; not Luoyang city residential foundation",
+    "A_low_storey": "original simplification, not proven commoner standard",
+    "B_layout_and_workbench_bins": "design conjecture, not period furniture evidence"
+  },
+  "limits": [
+    "solid roof attic volume, not complete structural framing",
+    "regular simplified tile rhythm",
+    "hardpacked ground polygon edges remain artificial",
+    "no private well or inferred street network",
+    "seed retained without stochastic variation",
+    "only two default geometries actually validated; numeric endpoint gates are not full-domain geometry proof",
+    "no engine GPU or mobile performance measurements"
+  ],
+  "contact_tolerance_pairs": {
+    "A": 9,
+    "B": 16
+  },
+  "positive_boolean_intersections_above_tolerance": {
+    "A": 0,
+    "B": 0
+  },
+  "handoff": "use explicit engineering placement transform only after root decision; remove presentation lane/ground as needed, never fill unknown historic coordinates with zero"
+}

@@ -1,0 +1,107 @@
+{
+  "id": "R01-D06-v01",
+  "seed": 18017,
+  "frame": {
+    "id": "R01-district-design-m-v01",
+    "units": "design_m",
+    "cityPlacement": null,
+    "relationToFrozenBFrame": null,
+    "blenderAxes": "x east, y local north, z up",
+    "threeAxes": "x east, y up, z negative local north"
+  },
+  "class": "C original design completion, unplaced",
+  "sourceLibrary": {
+    "version": 0,
+    "bytes": 14735415,
+    "sha256": "b8253d44bad2c97e48394b3873894dcc20519ae314372b41dae799f6e04fd8ff"
+  },
+  "lots": [
+    {
+      "id": "R01-N1",
+      "variant": "A",
+      "position": [
+        -20,
+        15
+      ],
+      "rotation": 0
+    },
+    {
+      "id": "R01-N2",
+      "variant": "B",
+      "position": [
+        0,
+        15
+      ],
+      "rotation": 0
+    },
+    {
+      "id": "R01-N3",
+      "variant": "A",
+      "position": [
+        20,
+        15
+      ],
+      "rotation": 0
+    },
+    {
+      "id": "R01-S1",
+      "variant": "B",
+      "position": [
+        -20,
+        -15
+      ],
+      "rotation": 180
+    },
+    {
+      "id": "R01-S2",
+      "variant": "A",
+      "position": [
+        0,
+        -15
+      ],
+      "rotation": 180
+    },
+    {
+      "id": "R01-S3",
+      "variant": "B",
+      "position": [
+        20,
+        -15
+      ],
+      "rotation": 180
+    }
+  ],
+  "streets": {
+    "mainWidth": 6,
+    "sharedPassageWidth": 2,
+    "entryFrom": "west",
+    "groundTop": 0.2,
+    "scope": "original neighbourhood circulation, not surveyed Luoyang street grid",
+    "endPorts": {
+      "west": {
+        "point": [
+          -44,
+          0,
+          0.2
+        ],
+        "width": 6
+      },
+      "east": {
+        "point": [
+          32,
+          0,
+          0.2
+        ],
+        "width": 6
+      },
+      "rule": "Unconnected design ports; future adjoining terrain must match top z=0.2 and explicitly join edges; not floating actual city streets"
+    }
+  },
+  "sourceSiteRemoval": "Remove all 3 contract-removable site nodes per prototype. Shared manifold district terrain supports retained architecture at z=0.2.",
+  "lod": {
+    "near": 0,
+    "overview": 1,
+    "description": "LOD1 removes tile details only; separate experimental prototype, not a GPU performance result"
+  },
+  "cityEntry": "unplaced design-slice action; no geographical pin or city bounding box"
+}

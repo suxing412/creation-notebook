@@ -1,0 +1,1780 @@
+{
+  "schema_version": 1,
+  "project": "Eastern Han Luoyang / evidence skeleton stage1",
+  "snapshot": {
+    "circa_year_ce": 180,
+    "before_event": "185 CE southern-palace fire",
+    "date_precision": "design snapshot not per-building dating"
+  },
+  "frame": {
+    "id": "luoyang-local-schematic-v01",
+    "version": 1,
+    "units": "schematic_m",
+    "absolute_crs": null,
+    "geographic_origin": null,
+    "rotation_to_true_north_deg": null,
+    "display_axes": [
+      "east",
+      "north"
+    ],
+    "origin_definition": {
+      "kind": "engineering_datum",
+      "source_pixel": [
+        258,
+        1385
+      ],
+      "meaning": "chosen at diagram SW inferred closure; not a surveyed point"
+    },
+    "north_definition": "page-up approximate diagram north; not geodetically rotated",
+    "calibration": {
+      "source_id": "gao2023_fig1",
+      "original_raster_dimensions_px": [
+        1284,
+        1800
+      ],
+      "bar_endpoints_px": [
+        [
+          224,
+          1499
+        ],
+        [
+          273,
+          1499
+        ]
+      ],
+      "bar_label_m": 500,
+      "bar_span_px": 49,
+      "meters_per_pixel": 10.204081632653061,
+      "endpoint_pick_uncertainty_px_each": 1,
+      "scale_interval_m_per_px": [
+        9.803921568627452,
+        10.638297872340425
+      ],
+      "feature_pick_uncertainty_px_each_axis": 2,
+      "source_schematic_position_error_m": null,
+      "orientation_error_deg": null,
+      "note": "scale interval reflects raster picking only, not total historical accuracy; diagram and historical uncertainties are unquantified"
+    },
+    "three_conversion": "[east,height,-north]"
+  },
+  "features": [
+    {
+      "id": "city_wall_schematic_B",
+      "name": "城垣示意轮廓",
+      "kind": "wall_extent",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              71.429,
+              3591.837
+            ],
+            [
+              1387.755,
+              3540.816
+            ],
+            [
+              1408.163,
+              3948.98
+            ],
+            [
+              2316.327,
+              3775.51
+            ],
+            [
+              2418.367,
+              3724.49
+            ],
+            [
+              2459.184,
+              3520.408
+            ],
+            [
+              2469.388,
+              2602.041
+            ],
+            [
+              2642.857,
+              2520.408
+            ],
+            [
+              2479.592,
+              663.265
+            ],
+            [
+              2459.184,
+              -30.612
+            ],
+            [
+              0.0,
+              20.408
+            ],
+            [
+              -30.612,
+              2653.061
+            ],
+            [
+              -40.816,
+              2755.102
+            ],
+            [
+              71.429,
+              3591.837
+            ]
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            265,
+            1033
+          ],
+          [
+            394,
+            1038
+          ],
+          [
+            396,
+            998
+          ],
+          [
+            485,
+            1015
+          ],
+          [
+            495,
+            1020
+          ],
+          [
+            499,
+            1040
+          ],
+          [
+            500,
+            1130
+          ],
+          [
+            517,
+            1138
+          ],
+          [
+            501,
+            1320
+          ],
+          [
+            499,
+            1388
+          ],
+          [
+            258,
+            1383
+          ],
+          [
+            255,
+            1125
+          ],
+          [
+            254,
+            1115
+          ],
+          [
+            265,
+            1033
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. South closure is inferred; no uniform physical wall height or battlements modeled.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "south_wall_inferred_B",
+      "name": "南垣推定闭合段",
+      "kind": "wall_inference",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            0.0,
+            20.408
+          ],
+          [
+            2459.184,
+            -30.612
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            258,
+            1383
+          ],
+          [
+            499,
+            1388
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Not a surviving surveyed wall; modern river erosion and text-based position uncertainty.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "north_palace_extent_gao2023_B",
+      "name": "北宫｜2023图中旧示意范围",
+      "kind": "palace_legacy",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              540.816,
+              3479.592
+            ],
+            [
+              1744.898,
+              3448.98
+            ],
+            [
+              1724.49,
+              2051.02
+            ],
+            [
+              510.204,
+              2081.633
+            ],
+            [
+              540.816,
+              3479.592
+            ]
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            311,
+            1044
+          ],
+          [
+            429,
+            1047
+          ],
+          [
+            427,
+            1184
+          ],
+          [
+            308,
+            1181
+          ],
+          [
+            311,
+            1044
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Historical proposal retained separately; pending constraints from newer palace wall findings.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "conflicts_with": [
+        "north_palace_excavated_walls_A_unplaced"
+      ],
+      "usage_status": "comparison_only_pending_latest_constraint"
+    },
+    {
+      "id": "south_palace_candidate_gao2023_B",
+      "name": "南宫｜候选包络",
+      "kind": "palace_candidate",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1020.408,
+              1683.673
+            ],
+            [
+              1989.796,
+              1653.061
+            ],
+            [
+              1959.184,
+              30.612
+            ],
+            [
+              969.388,
+              61.224
+            ],
+            [
+              1020.408,
+              1683.673
+            ]
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            358,
+            1220
+          ],
+          [
+            453,
+            1223
+          ],
+          [
+            450,
+            1382
+          ],
+          [
+            353,
+            1379
+          ],
+          [
+            358,
+            1220
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Figure is one proposal; specific extent and shape disputed. No palace rooms located.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "gate_xia_B",
+      "name": "夏门",
+      "kind": "gate_candidate",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          734.694,
+          3571.429
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          330,
+          1035
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Marker radius is cartographic, not gate width; no gatehouse reconstruction.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "side": "north"
+    },
+    {
+      "id": "gate_gu_B",
+      "name": "谷门",
+      "kind": "gate_candidate",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1693.878,
+          3897.959
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          424,
+          1003
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Marker radius is cartographic, not gate width; no gatehouse reconstruction.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "side": "north"
+    },
+    {
+      "id": "gate_shangxi_B",
+      "name": "上西门",
+      "kind": "gate_candidate",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -20.408,
+          2632.653
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          256,
+          1127
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Marker radius is cartographic, not gate width; no gatehouse reconstruction.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "side": "west"
+    },
+    {
+      "id": "gate_yong_B",
+      "name": "雍门",
+      "kind": "gate_candidate",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0,
+          1397.959
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          258,
+          1248
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Marker radius is cartographic, not gate width; no gatehouse reconstruction.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "side": "west"
+    },
+    {
+      "id": "gate_guangyang_B",
+      "name": "广阳门",
+      "kind": "gate_candidate",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0,
+          489.796
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          258,
+          1337
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Marker radius is cartographic, not gate width; no gatehouse reconstruction.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "side": "west"
+    },
+    {
+      "id": "gate_shangdong_B",
+      "name": "上东门",
+      "kind": "gate_candidate",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2479.592,
+          2591.837
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          501,
+          1131
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Marker radius is cartographic, not gate width; no gatehouse reconstruction.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "side": "east"
+    },
+    {
+      "id": "gate_zhongdong_B",
+      "name": "中东门",
+      "kind": "gate_candidate",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2571.429,
+          1806.122
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          510,
+          1208
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Marker radius is cartographic, not gate width; no gatehouse reconstruction.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "side": "east"
+    },
+    {
+      "id": "gate_xuan_B",
+      "name": "旋门",
+      "kind": "gate_candidate",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2469.388,
+          459.184
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          500,
+          1340
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Marker radius is cartographic, not gate width; no gatehouse reconstruction.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "side": "east"
+    },
+    {
+      "id": "gate_jin_B",
+      "name": "津门",
+      "kind": "gate_candidate",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          387.755,
+          0.0
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          296,
+          1385
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Marker radius is cartographic, not gate width; no gatehouse reconstruction.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "side": "south"
+    },
+    {
+      "id": "gate_xiaoyuan_B",
+      "name": "小苑门",
+      "kind": "gate_candidate",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          897.959,
+          -10.204
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          346,
+          1386
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Marker radius is cartographic, not gate width; no gatehouse reconstruction.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "side": "south"
+    },
+    {
+      "id": "gate_pingcheng_B",
+      "name": "平城门",
+      "kind": "gate_candidate",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1622.449,
+          -30.612
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          417,
+          1388
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Marker radius is cartographic, not gate width; no gatehouse reconstruction.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "side": "south"
+    },
+    {
+      "id": "gate_kaiyang_B",
+      "name": "开阳门",
+      "kind": "gate_candidate",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2010.204,
+          -30.612
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          455,
+          1388
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Marker radius is cartographic, not gate width; no gatehouse reconstruction.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "side": "south"
+    },
+    {
+      "id": "road_northwest_gate_link_B",
+      "name": "示意道路联系",
+      "kind": "road_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -20.408,
+            2632.653
+          ],
+          [
+            520.408,
+            2622.449
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            256,
+            1127
+          ],
+          [
+            309,
+            1128
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Line indicates schematic topology; road width and excavated phase-specific alignment unknown.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "road_northeast_gate_link_B",
+      "name": "示意道路联系",
+      "kind": "road_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1724.49,
+            2622.449
+          ],
+          [
+            2479.592,
+            2591.837
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            427,
+            1128
+          ],
+          [
+            501,
+            1131
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Line indicates schematic topology; road width and excavated phase-specific alignment unknown.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "road_west_spine_B",
+      "name": "示意道路联系",
+      "kind": "road_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            397.959,
+            2622.449
+          ],
+          [
+            387.755,
+            0.0
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            297,
+            1128
+          ],
+          [
+            296,
+            1385
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Line indicates schematic topology; road width and excavated phase-specific alignment unknown.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "road_west_mid_link_B",
+      "name": "示意道路联系",
+      "kind": "road_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            0.0,
+            1397.959
+          ],
+          [
+            397.959,
+            1397.959
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            258,
+            1248
+          ],
+          [
+            297,
+            1248
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Line indicates schematic topology; road width and excavated phase-specific alignment unknown.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "road_middle_cross_B",
+      "name": "示意道路联系",
+      "kind": "road_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            397.959,
+            1846.939
+          ],
+          [
+            2571.429,
+            1806.122
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            297,
+            1204
+          ],
+          [
+            510,
+            1208
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Line indicates schematic topology; road width and excavated phase-specific alignment unknown.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "road_west_south_link_B",
+      "name": "示意道路联系",
+      "kind": "road_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            0.0,
+            489.796
+          ],
+          [
+            897.959,
+            489.796
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            258,
+            1337
+          ],
+          [
+            346,
+            1337
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Line indicates schematic topology; road width and excavated phase-specific alignment unknown.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "road_central_south_spine_B",
+      "name": "示意道路联系",
+      "kind": "road_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            908.163,
+            2061.224
+          ],
+          [
+            897.959,
+            -10.204
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            347,
+            1183
+          ],
+          [
+            346,
+            1386
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Line indicates schematic topology; road width and excavated phase-specific alignment unknown.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "road_east_spine_B",
+      "name": "示意道路联系",
+      "kind": "road_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            2051.02,
+            2591.837
+          ],
+          [
+            2010.204,
+            -1122.449
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            459,
+            1131
+          ],
+          [
+            455,
+            1495
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Line indicates schematic topology; road width and excavated phase-specific alignment unknown.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "road_east_north_link_B",
+      "name": "示意道路联系",
+      "kind": "road_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1693.878,
+            3897.959
+          ],
+          [
+            1693.878,
+            3520.408
+          ],
+          [
+            1836.735,
+            3469.388
+          ],
+          [
+            1826.531,
+            1816.327
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            424,
+            1003
+          ],
+          [
+            424,
+            1040
+          ],
+          [
+            438,
+            1045
+          ],
+          [
+            437,
+            1207
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Line indicates schematic topology; road width and excavated phase-specific alignment unknown.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "road_east_south_link_B",
+      "name": "示意道路联系",
+      "kind": "road_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1959.184,
+            459.184
+          ],
+          [
+            2469.388,
+            459.184
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            450,
+            1340
+          ],
+          [
+            500,
+            1340
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Line indicates schematic topology; road width and excavated phase-specific alignment unknown.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "road_pingcheng_south_link_B",
+      "name": "示意道路联系",
+      "kind": "road_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1622.449,
+            -30.612
+          ],
+          [
+            1612.245,
+            -1224.49
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            417,
+            1388
+          ],
+          [
+            416,
+            1505
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Line indicates schematic topology; road width and excavated phase-specific alignment unknown.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "palaces_connector_B",
+      "name": "两宫复道｜关系示意",
+      "kind": "palace_link",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            1479.592,
+            2051.02
+          ],
+          [
+            1469.388,
+            1673.469
+          ]
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            403,
+            1184
+          ],
+          [
+            402,
+            1221
+          ]
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. No elevated bridge or precise engineering alignment reconstructed.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "ritual_mingtang_B",
+      "name": "明堂",
+      "kind": "ritual_site_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1795.918,
+          -1061.224
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          434,
+          1489
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Site has archaeological/literary basis but this plotted point comes only from schematic; no building footprint represented.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "evidence_basis": "A site existence / B plotted position"
+    },
+    {
+      "id": "ritual_lingtai_B",
+      "name": "灵台",
+      "kind": "ritual_site_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1469.388,
+          -1040.816
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          402,
+          1487
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Site has archaeological/literary basis but this plotted point comes only from schematic; no building footprint represented.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "evidence_basis": "A site existence / B plotted position"
+    },
+    {
+      "id": "ritual_biyong_B",
+      "name": "辟雍",
+      "kind": "ritual_site_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2183.673,
+          -938.776
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          472,
+          1477
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Site has archaeological/literary basis but this plotted point comes only from schematic; no building footprint represented.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "evidence_basis": "A site existence / B plotted position"
+    },
+    {
+      "id": "ritual_taixue_B",
+      "name": "太学",
+      "kind": "ritual_site_relation",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2367.347,
+          -632.653
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          490,
+          1447
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Site has archaeological/literary basis but this plotted point comes only from schematic; no building footprint represented.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {},
+      "evidence_basis": "A site existence / B plotted position"
+    },
+    {
+      "id": "region_jin_B",
+      "name": "金市",
+      "kind": "regional_label",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          214.286,
+          1959.184
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          279,
+          1193
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Regional label only; no surveyed outline, building parcel or extent inferred.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "region_taicang_B",
+      "name": "太仓",
+      "kind": "regional_label",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2285.714,
+          3673.469
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          482,
+          1025
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Regional label only; no surveyed outline, building parcel or extent inferred.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "region_wuku_B",
+      "name": "武库",
+      "kind": "regional_label",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2316.327,
+          3500.0
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          485,
+          1042
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Regional label only; no surveyed outline, building parcel or extent inferred.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "region_yongan_B",
+      "name": "永安宫",
+      "kind": "regional_label",
+      "phase": "Eastern Han circa 180 CE design snapshot, before 185 palace fire",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "schematic_digitized",
+      "placement_mode": "source_schematic",
+      "frame_id": "luoyang-local-schematic-v01",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2193.878,
+          3081.633
+        ]
+      },
+      "source_pixel_geometry": {
+        "type": "Point",
+        "coordinates": [
+          473,
+          1083
+        ]
+      },
+      "uncertainty_note": "Digitized schematic relation, not excavated coordinates. Regional label only; no surveyed outline, building parcel or extent inferred.",
+      "historical_position_error_m": null,
+      "presentation_envelope_m": 75,
+      "representation": "evidence-marker-only",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "north_palace_excavated_walls_A_unplaced",
+      "name": "北宫新发现东/南墙｜未配准",
+      "kind": "unplaced_archaeology",
+      "phase": "Eastern Han circa 180 CE design snapshot",
+      "source_ids": [
+        "henan2023_findings"
+      ],
+      "evidence_class": "A",
+      "geometry_status": "unknown_unplaced",
+      "placement_mode": "none",
+      "frame_id": null,
+      "geometry": null,
+      "source_pixel_geometry": null,
+      "uncertainty_note": "Reported excavated Eastern Han segments; no confirmed geometry or shared control points available; do not substitute old schematic coordinates.",
+      "historical_position_error_m": null,
+      "representation": "list-only-no-world-position",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "wall_surviving_segments_phase_unresolved",
+      "name": "已报道城垣残段｜时相未逐段核清",
+      "kind": "unplaced_archaeology",
+      "phase": "Eastern Han circa 180 CE design snapshot",
+      "source_ids": [
+        "gao2023_text"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "unknown_unplaced",
+      "placement_mode": "none",
+      "frame_id": null,
+      "geometry": null,
+      "source_pixel_geometry": null,
+      "uncertainty_note": "Physical residual lengths are reported, but per-segment Eastern Han phase attribution and control points remain unverified; not complete city sides.",
+      "historical_position_error_m": null,
+      "representation": "list-only-no-world-position",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "ancient_water_corridors_B_unplaced",
+      "name": "约180年古河渠｜未定位",
+      "kind": "unplaced_water",
+      "phase": "Eastern Han circa 180 CE design snapshot",
+      "source_ids": [
+        "huang2026_abstract"
+      ],
+      "evidence_class": "B",
+      "geometry_status": "unknown_unplaced",
+      "placement_mode": "none",
+      "frame_id": null,
+      "geometry": null,
+      "source_pixel_geometry": null,
+      "uncertainty_note": "Gao figure dashed river explicitly labelled present Luo River; excluded from ancient geometry. Abstract establishes phased relations, not river alignment.",
+      "historical_position_error_m": null,
+      "representation": "list-only-no-world-position",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "housing_detail_C_unplaced",
+      "name": "洛阳院落精细模块｜未建",
+      "kind": "unbuilt_detail",
+      "phase": "Eastern Han circa 180 CE design snapshot",
+      "source_ids": [],
+      "evidence_class": "C",
+      "geometry_status": "unknown_unplaced",
+      "placement_mode": "none",
+      "frame_id": null,
+      "geometry": null,
+      "source_pixel_geometry": null,
+      "uncertainty_note": "013 Wu Ezhou is detail-density reference only, not a Luoyang house template; no artificial location assigned.",
+      "historical_position_error_m": null,
+      "representation": "list-only-no-world-position",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "north_palace_interior_unknown",
+      "name": "北宫内部院落｜未知",
+      "kind": "unknown",
+      "phase": "Eastern Han circa 180 CE design snapshot",
+      "source_ids": [],
+      "evidence_class": "U",
+      "geometry_status": "unknown_unplaced",
+      "placement_mode": "none",
+      "frame_id": null,
+      "geometry": null,
+      "source_pixel_geometry": null,
+      "uncertainty_note": "No room/gate/road coordinates transferred from Northern Wei.",
+      "historical_position_error_m": null,
+      "representation": "list-only-no-world-position",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    },
+    {
+      "id": "modern_luo_river_excluded",
+      "name": "图中洛河（今）｜排除",
+      "kind": "excluded_modern",
+      "phase": "modern",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "evidence_class": "X",
+      "geometry_status": "excluded",
+      "placement_mode": "none",
+      "frame_id": null,
+      "geometry": null,
+      "source_pixel_geometry": null,
+      "uncertainty_note": "Explicitly modern in source; not reused as circa180 river.",
+      "architectural_completion": "not_modeled",
+      "design_parameters": {}
+    }
+  ],
+  "source_registry": {
+    "gao2023_fig1": {
+      "title": "高崇文《东汉都城洛阳礼制文化研究》图1（引徐龙国制图）",
+      "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/6434e64ce0ef9.pdf",
+      "page": "printed49",
+      "type": "research schematic, not surveyed GIS",
+      "visually_inspected": true
+    },
+    "gao2023_text": {
+      "title": "同文城垣段文字",
+      "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/6434e64ce0ef9.pdf",
+      "page": "printed49",
+      "type": "published summary of reported survey lengths"
+    },
+    "henan2023_findings": {
+      "title": "2023年度河南省十大考古新发现：汉魏洛阳城宫城",
+      "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=2283",
+      "status": "text finding reported; plan not yet visually verified"
+    },
+    "huang2026_abstract": {
+      "title": "黄学超《汉魏洛阳城周边的水利建设》2026",
+      "url": "https://zgld.cbpt.cnki.net/portal/journal/portal/client/paper/54295f2f542f9053ceb1930fc8765eea",
+      "status": "abstract only, no map"
+    }
+  },
+  "exclusions": [
+    "Northern Wei outer city/ward grid/Yongning Temple",
+    "Cao Wei Taiji Hall and Jinyong city",
+    "later Changhemen and Eastern Ye gate",
+    "Sui Tang city layout",
+    "present Luo River channel"
+  ],
+  "limits": [
+    "all positioned geometries derive from schematic and remain B",
+    "A existence evidence does not upgrade plotted points to surveyed",
+    "unknown geometry remains null; no automatic origin fallback",
+    "nothing here represents completed high-detail city architecture"
+  ]
+}
