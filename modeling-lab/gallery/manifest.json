@@ -471,6 +471,11 @@
         {
           "label": "3D网页组成与评审",
           "path": "research/3d-web-components-2026-11-02.html"
+        },
+        {
+          "label": "PNG/ZIP公开元数据检查门",
+          "path": "research/png-archive-release-gate.html",
+          "publicationKey": "png-archive-release-gate"
         }
       ]
     }
@@ -481,7 +486,7 @@
     "acceptedSpatialWorks": 0,
     "historicalSpatialExperiments": 4,
     "spatialRequirement": "整个页面是可探索的三维空间；布局、导航、内容在空间内，HTML仅按需叠层，不是网页中嵌一个3D窗口。",
-    "spatialPrototypes": 1
+    "spatialPrototypes": 2
   },
   "spaceDesigns": [
     {
@@ -507,7 +512,6 @@
       "seed": 0,
       "status": "空间操作原型修订／待GPU与用户方向验收",
       "acceptance": "prototype-pending-realtime-and-user-review",
-      "publication": "not-published",
       "countsAsAcceptedSpatialDesign": false,
       "sourceSha256": "5418d01cc3e13c88003a04926c3a64a6570677af874f6597de57d196a089d1a1",
       "sourceBytes": 30039611,
@@ -525,6 +529,44 @@
           "source": "spaces/SD01-v02/source-download.html",
           "status": "历史原型·原字节保留"
         }
+      ],
+      "publicationStateSource": "publication-ledger.json",
+      "experienceIntent": "通过转动和插接操作理解连接关系"
+    },
+    {
+      "id": "SD02",
+      "kind": "space-design",
+      "cycle": 2,
+      "pairedStudyIds": [
+        "012",
+        "013"
+      ],
+      "title": "岔径·望场",
+      "subtitle": "从低位入口分岔，在仓前看梯廊、在院门看通隙；主动抬升俯读不同建筑关系",
+      "entry": "spaces/SD02/index.html",
+      "poster": "spaces/SD02/assets/evidence/entry.png",
+      "designReview": "spaces/SD02/review.html",
+      "qa": "spaces/SD02/review.html",
+      "reuse": "spaces/SD02/reuse/index.html",
+      "source": "spaces/SD02/source.zip",
+      "version": "0.1.0-prototype",
+      "seed": 0,
+      "triangles": 14338,
+      "meshes": 424,
+      "triangleScope": "actual bundled source GLBs only;navigation overlay runtime geometry excluded",
+      "experienceIntent": "有限镜头下观察仓前与院门的建筑场所关系",
+      "status": "建筑场所观察原型／待GPU与用户方向验收",
+      "acceptance": "prototype-pending-realtime-and-user-review",
+      "countsAsAcceptedSpatialDesign": false,
+      "publicationStateSource": "publication-ledger.json",
+      "sourceSha256": "a4712cb442d077258ae6dd3e34f3e36e89eca40733a1ca9c6e23ed6ea0f2f99f",
+      "sourceBytes": 7624273,
+      "completeArchiveSha256": "42fc810c9ab95be0a0ad8c3de00618ea3d931bf89960b13a2b2022935059cec8",
+      "limits": [
+        "非历史聚落复原；不同地域年代原件的当代比较场",
+        "固定低位与有限转向、高位俯读；不是自由步行",
+        "GPU主体验、触屏/iPhone、动态闪烁、帧率与用户理解未验",
+        "013B真实迁移仅两个离散组合；不保证任意几何/连续全域"
       ]
     }
   ],
@@ -539,5 +581,6 @@
       "claim": "012看仓楼如何面向开放前场；013看围墙、内屋与院心如何形成内向关系。它们来自不同年代、地域与器物证据，是两种原创转译练习，不是同一历史原型的升级。",
       "reuseBoundary": "可迁移的是参数配置、几何检查和证据分层的方法；仓楼生成器与围合宅院生成器不互称通用。各自只保证已测变体，不能把一件器物的尺度、彩绘或构件制度搬给另一件。"
     }
-  ]
+  ],
+  "featuredId": "SD02"
 }

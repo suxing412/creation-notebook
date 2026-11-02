@@ -34,7 +34,17 @@ export function buildDirectoryScene(items,makeLabel=()=>null){
   const mat=new THREE.MeshStandardMaterial({color:COLOR[node.kind],roughness:.58});materials.push(mat);
   const pedestal=add(group,'box',shared,[0,.22,0],[2.25,.44,2.25]);
   const symbol=new THREE.Group();symbol.position.y=.45;group.add(symbol);
-  if(node.kind==='space-design'){
+  if(node.kind==='space-design'&&node.id==='SD02'){
+   // Abstract fork and two observation destinations; no imported building model.
+   add(symbol,'box',dark,[0,.08,.45],[.16,.16,.90]);
+   add(symbol,'box',dark,[-.28,.08,-.10],[.16,.16,.78],[0,-.65,0]);
+   add(symbol,'box',dark,[.28,.08,-.10],[.16,.16,.78],[0,.65,0]);
+   add(symbol,'box',mat,[-.62,.34,-.53],[.44,.68,.45]);
+   add(symbol,'box',dark,[-.62,.74,-.53],[.62,.12,.62]);
+   for(const x of [.40,.85])add(symbol,'box',mat,[x,.22,-.53],[.10,.44,.60]);
+   add(symbol,'box',mat,[.625,.22,-.79],[.35,.44,.10]);
+   add(symbol,'box',mat,[.625,.38,-.26],[.35,.28,.16]);
+  } else if(node.kind==='space-design'){
    // Courtyard + comb corridor: an abstract PROTOTYPE mark, not the underlying scene.
    add(symbol,'ring',mat,[-.35,.18,0],[.95,.95,.95],[Math.PI/2,0,0]);
    add(symbol,'box',mat,[.36,.14,0],[.9,.16,.28]);
