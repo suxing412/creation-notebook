@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "checker_sha256": "9f1c25509b2363e8255ce3d1d696cbca6f2330827f2ca0ff32a7787ef2c28008",
+  "motion_checker_sha256": "40a7951626282a07532ec2067cd432eb3fa3d5d36a98b517f2a82301a69f5cef",
+  "control_script_sha256": "e2f93220c630483dd06f8b96dfd2eddf6840c361c2153b756f562d0a860691b4",
+  "created_utc": "2026-11-02T03:07:28.961811+00:00",
+  "cases": [
+    {
+      "case": "valid",
+      "expected_code": null,
+      "observed_codes": [],
+      "passed": true,
+      "targeted_condition_observed": true,
+      "model_sha256": "304a82223603cb6f8f61a8913ea3e3927e7a41e194d9d8339fbf0262cc3a2446"
+    },
+    {
+      "case": "oversize_shaft",
+      "expected_code": "shaft_radius",
+      "observed_codes": [
+        "shaft_radius",
+        "radial_clearance"
+      ],
+      "passed": false,
+      "targeted_condition_observed": true,
+      "model_sha256": "fd72a4916170f8c8ad2a3c24c9c8b74887bede3b5f582e3d4b320f47793936e7"
+    },
+    {
+      "case": "collapsed_bore",
+      "expected_code": "bore_radius",
+      "observed_codes": [
+        "bore_radius",
+        "radial_clearance"
+      ],
+      "passed": false,
+      "targeted_condition_observed": true,
+      "model_sha256": "f4139bd3c6216352d9b60048b202da743ba701a378c96051b9cc7438d408867b"
+    },
+    {
+      "case": "layer_collision",
+      "expected_code": "layer_gap",
+      "observed_codes": [
+        "layer_gap",
+        "layer_gap"
+      ],
+      "passed": false,
+      "targeted_condition_observed": true,
+      "model_sha256": "7c92f3499bfc4a7a8a02afa92c935d0abd434ced306fe936930de21ae72f5d0f"
+    },
+    {
+      "case": "actual_mesh_below_ground",
+      "expected_code": "negative_actual_ground_z",
+      "targeted_condition_observed": true,
+      "accepted_pose_count": 7,
+      "failed_pose_count": 7,
+      "model_sha256": "246ff3d94d50173c2c08590738e55f675bcd600a51a22587e589449b2170d8b1"
+    }
+  ]
+}

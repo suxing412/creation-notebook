@@ -1,0 +1,396 @@
+{
+  "degenerate_triangles": [],
+  "duplicate_triangles": [],
+  "nonmanifold_edges": [],
+  "non_positive_world_volume": [],
+  "inconsistent_winding_edges": [],
+  "invalid_connected_components": [],
+  "nonfinite_coordinates": [],
+  "recipe_vertex_envelope_failures": [],
+  "recipe_topology_failures": [],
+  "object_contract_failures": [],
+  "material_contract_failures": [],
+  "object_transform_failures": [],
+  "model_state_contract_failures": [],
+  "nonadjacent_self_intersection_candidates": [],
+  "coplanar_positive_area_overlaps": [],
+  "genus_contract_failures": [],
+  "input_contract_failures": [],
+  "construction_metadata_failures": [],
+  "aperture_loop_failures": [],
+  "aperture_wall_failures": [],
+  "aperture_clearance_failures": [],
+  "thickness_failures": [],
+  "minimum_ligament_failures": [],
+  "checker_version": "008-native-1.0",
+  "checker_sha256": "5ded39d1c74aecd70ff577e0a11efce1a49df39788085286fc8d10d85b6eea7c",
+  "recipe_sha256": "2ce6832921c86a5ad763ffb036d2bbd816b385dce6fce2f8e56272b571659a37",
+  "model_sha256": "ecafa336ecda0b9c562166949430ec2b3d78cf5a3325a52544d0778c7b383a8b",
+  "file": "model.blend",
+  "run_id": "337377da-5f26-4615-b8e4-a4606512de77",
+  "created_utc": "2026-11-02T01:08:13.798325+00:00",
+  "blender_version": "4.3.2",
+  "passed": true,
+  "limits": [
+    "Full-vertex/oriented-face identity is a restricted VEIL recipe contract, not arbitrary geometry or reindexing equivalence.",
+    "BVH candidates exclude triangles sharing any vertex; noncoplanar adjacent foldover is not fully independently certified.",
+    "Near-coplanar overlaps use bidirectional float64 plane distances and projected SAT, not exact symbolic predicates or dynamic z-fighting validation.",
+    "Exactly one raw mesh, no modifiers/shape keys/parents/constraints/object or mesh animation or drivers; photographic scene.blend is out of scope.",
+    "No GPU, WebGL, dynamic flicker, physical iPhone, manufacturing, load or stability verification."
+  ],
+  "thresholds": {
+    "vertex_distance_m": 2e-07,
+    "triangle_area_m2": 1e-12,
+    "duplicate_vertex_round_m": 1e-08,
+    "identity_matrix_entry": 1e-08,
+    "coplanar_normal_cosine": 0.9999999,
+    "bidirectional_plane_distance_m": 5e-08,
+    "positive_projected_overlap_m": 1e-08,
+    "spatial_cell_m": 0.012
+  },
+  "variant": "boundary-low",
+  "recipe_version": "1.0.0",
+  "info_sha256": "8ec14f1de6c58541aa3dbbf22daa13e3d6123f7419ff2f83b3ee946328489782",
+  "mesh_objects": 1,
+  "aperture_records": {
+    "expected_holes": 12,
+    "holes_with_clear_central_ray": 12,
+    "valid_actual_ring_cycles": 120,
+    "rings": [
+      {
+        "hole": 0,
+        "ring_count": 10,
+        "vertices_per_ring": 32,
+        "max_inverse_cylinder_fit_m": 3.649851176498742e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 1,
+        "ring_count": 10,
+        "vertices_per_ring": 32,
+        "max_inverse_cylinder_fit_m": 1.8603188642329904e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 2,
+        "ring_count": 10,
+        "vertices_per_ring": 32,
+        "max_inverse_cylinder_fit_m": 3.649851202519594e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 3,
+        "ring_count": 10,
+        "vertices_per_ring": 32,
+        "max_inverse_cylinder_fit_m": 3.707408918057764e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 4,
+        "ring_count": 10,
+        "vertices_per_ring": 32,
+        "max_inverse_cylinder_fit_m": 3.707408918057764e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 5,
+        "ring_count": 10,
+        "vertices_per_ring": 32,
+        "max_inverse_cylinder_fit_m": 3.707408918057764e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 6,
+        "ring_count": 10,
+        "vertices_per_ring": 32,
+        "max_inverse_cylinder_fit_m": 7.2956085339637156e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 7,
+        "ring_count": 10,
+        "vertices_per_ring": 32,
+        "max_inverse_cylinder_fit_m": 7.2956085339637156e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 8,
+        "ring_count": 10,
+        "vertices_per_ring": 32,
+        "max_inverse_cylinder_fit_m": 7.2956085339637156e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 9,
+        "ring_count": 10,
+        "vertices_per_ring": 32,
+        "max_inverse_cylinder_fit_m": 1.4870800110408644e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 10,
+        "ring_count": 10,
+        "vertices_per_ring": 32,
+        "max_inverse_cylinder_fit_m": 1.4870800110408644e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 11,
+        "ring_count": 10,
+        "vertices_per_ring": 32,
+        "max_inverse_cylinder_fit_m": 1.4870800110408644e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      }
+    ],
+    "genus_target": 12
+  },
+  "thickness_records": {
+    "nominal_shell_m": 0.006,
+    "surface_pair_count": 237,
+    "surface_minimum_m": 0.005999999353662133,
+    "surface_maximum_m": 0.0060000006124028005,
+    "hole_sections": [
+      {
+        "hole": 0,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.005999999029882019,
+        "maximum_normal_separation_m": 0.006000000503263436,
+        "required_m": 0.006
+      },
+      {
+        "hole": 0,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.004799999551323708,
+        "maximum_normal_separation_m": 0.004800000626346446,
+        "required_m": 0.0048000000000000004
+      },
+      {
+        "hole": 1,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.00599999958205899,
+        "maximum_normal_separation_m": 0.006000000342282874,
+        "required_m": 0.006
+      },
+      {
+        "hole": 1,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.00479999937294906,
+        "maximum_normal_separation_m": 0.004800000227987766,
+        "required_m": 0.0048000000000000004
+      },
+      {
+        "hole": 2,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.005999999029882019,
+        "maximum_normal_separation_m": 0.006000000503263436,
+        "required_m": 0.006
+      },
+      {
+        "hole": 2,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.004799999551323708,
+        "maximum_normal_separation_m": 0.004800000626346446,
+        "required_m": 0.0048000000000000004
+      },
+      {
+        "hole": 3,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.005999999029882019,
+        "maximum_normal_separation_m": 0.006000000503263436,
+        "required_m": 0.006
+      },
+      {
+        "hole": 3,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.004799999551323708,
+        "maximum_normal_separation_m": 0.004800000626346446,
+        "required_m": 0.0048000000000000004
+      },
+      {
+        "hole": 4,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.00599999958205899,
+        "maximum_normal_separation_m": 0.006000000342282874,
+        "required_m": 0.006
+      },
+      {
+        "hole": 4,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.00479999937294906,
+        "maximum_normal_separation_m": 0.004800000227987766,
+        "required_m": 0.0048000000000000004
+      },
+      {
+        "hole": 5,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.005999999029882019,
+        "maximum_normal_separation_m": 0.006000000503263436,
+        "required_m": 0.006
+      },
+      {
+        "hole": 5,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.004799999551323708,
+        "maximum_normal_separation_m": 0.004800000626346446,
+        "required_m": 0.0048000000000000004
+      },
+      {
+        "hole": 6,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.005999999029882019,
+        "maximum_normal_separation_m": 0.006000000503263436,
+        "required_m": 0.006
+      },
+      {
+        "hole": 6,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.004799999551323708,
+        "maximum_normal_separation_m": 0.004800000626346446,
+        "required_m": 0.0048000000000000004
+      },
+      {
+        "hole": 7,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.00599999958205899,
+        "maximum_normal_separation_m": 0.006000000342282874,
+        "required_m": 0.006
+      },
+      {
+        "hole": 7,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.00479999937294906,
+        "maximum_normal_separation_m": 0.004800000227987766,
+        "required_m": 0.0048000000000000004
+      },
+      {
+        "hole": 8,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.005999999029882019,
+        "maximum_normal_separation_m": 0.006000000503263436,
+        "required_m": 0.006
+      },
+      {
+        "hole": 8,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.004799999551323708,
+        "maximum_normal_separation_m": 0.004800000626346446,
+        "required_m": 0.0048000000000000004
+      },
+      {
+        "hole": 9,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.005999999029882019,
+        "maximum_normal_separation_m": 0.006000000503263436,
+        "required_m": 0.006
+      },
+      {
+        "hole": 9,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.004799999551323708,
+        "maximum_normal_separation_m": 0.004800000626346446,
+        "required_m": 0.0048000000000000004
+      },
+      {
+        "hole": 10,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.00599999958205899,
+        "maximum_normal_separation_m": 0.006000000342282874,
+        "required_m": 0.006
+      },
+      {
+        "hole": 10,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.00479999937294906,
+        "maximum_normal_separation_m": 0.004800000227987766,
+        "required_m": 0.0048000000000000004
+      },
+      {
+        "hole": 11,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.005999999029882019,
+        "maximum_normal_separation_m": 0.006000000503263436,
+        "required_m": 0.006
+      },
+      {
+        "hole": 11,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.004799999551323708,
+        "maximum_normal_separation_m": 0.004800000626346446,
+        "required_m": 0.0048000000000000004
+      }
+    ]
+  },
+  "ligament_sampling": {
+    "records": [
+      {
+        "side": "front",
+        "sampled_minimum_m": 0.018299996852874756,
+        "conservative_polyline_lower_bound_m": 0.016465644646598415,
+        "nearest_sample_pair": [
+          9,
+          "outer"
+        ],
+        "samples_per_mouth": 128,
+        "subdivisions_per_actual_mesh_edge": 4,
+        "required_lower_bound_m": 0.004
+      },
+      {
+        "side": "back",
+        "sampled_minimum_m": 0.018299996852874756,
+        "conservative_polyline_lower_bound_m": 0.01647518806622779,
+        "nearest_sample_pair": [
+          9,
+          "outer"
+        ],
+        "samples_per_mouth": 128,
+        "subdivisions_per_actual_mesh_edge": 4,
+        "required_lower_bound_m": 0.004
+      }
+    ],
+    "definition": "Euclidean 3D separation of actual front/back mouth polylines to every other mouth and the same-side exterior rim; not developed geodesic, projected gap, minimal internal web thickness or manufacturing strength. Finite polyline samples give an upper estimate; subtract both segment covering radii and 0.2 um to obtain conservative polyline lower bounds.",
+    "excludes": "Bore interior/rounded rim full surface minimum, unsampled smooth analytic continuation and arbitrary adjacent-face folding are not independently proven."
+  },
+  "triangles": 8672,
+  "minimum_triangle_area_m2": 2.8371817103808544e-07,
+  "component_records": [
+    {
+      "object": "VEIL | continuous perforated shell",
+      "component_sizes": [
+        4314
+      ],
+      "signed_world_volume_m3": 0.0003364346083184582,
+      "signed_local_volume_m3": 0.00033643460831845863,
+      "vertices": 4314,
+      "edges": 8672,
+      "faces": 4336,
+      "euler_characteristic": -22,
+      "genus_if_closed_connected_orientable": 12.0
+    }
+  ],
+  "coplanar_candidate_pairs": 558,
+  "elapsed_seconds": 0.869
+}

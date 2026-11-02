@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "created_utc": "2026-11-02T03:12:33.046470+00:00",
+  "checker_sha256": "b736301f6e704ef468903e88f9c511cea3f3c5483c604363d47a7356a703ecef",
+  "control_script_sha256": "8f3b73b39c7951cb7c12c595ded7834e91a3d49b44293d728b1243052a9ca1d9",
+  "valid_source_sha256": "9f588b109845fe58294511bbcf95f3a809546557d6c6e2c348f8cd3abd80ba9d",
+  "cases": [
+    {
+      "case": "valid",
+      "expected_code": null,
+      "observed_code": null,
+      "reader_passed": true,
+      "targeted_condition_observed": true,
+      "sha256": "9f588b109845fe58294511bbcf95f3a809546557d6c6e2c348f8cd3abd80ba9d"
+    },
+    {
+      "case": "header_length",
+      "expected_code": "header",
+      "observed_code": "header",
+      "reader_passed": false,
+      "targeted_condition_observed": true,
+      "sha256": "68d61271577aac35b2191e07d257b6a9671e38cc32f1625483de7a0d9c70907f"
+    },
+    {
+      "case": "view_overrun",
+      "expected_code": "view_bounds",
+      "observed_code": "view_bounds",
+      "reader_passed": false,
+      "targeted_condition_observed": true,
+      "sha256": "330887899fa5701bf8d8f1129f954257efcd3f12da82874155739fe2a7b564af"
+    },
+    {
+      "case": "bad_stride",
+      "expected_code": "stride",
+      "observed_code": "stride",
+      "reader_passed": false,
+      "targeted_condition_observed": true,
+      "sha256": "4088416fcc63af5023a897d6f8642716d12f3b293b2cd3b538ce2c441e8a1466"
+    },
+    {
+      "case": "bad_index",
+      "expected_code": "index_range",
+      "observed_code": "index_range",
+      "reader_passed": false,
+      "targeted_condition_observed": true,
+      "sha256": "349cf2f592315a74cf13401473169baeb3c7902192b5113e4deed866b165e76d"
+    },
+    {
+      "case": "position_nan",
+      "expected_code": "nonfinite",
+      "observed_code": "nonfinite",
+      "reader_passed": false,
+      "targeted_condition_observed": true,
+      "sha256": "86e71d9174bbb7bf425bc7d3ea24e39830df46bc2c2c31c87cca81c69ace4d40"
+    },
+    {
+      "case": "normal_nan",
+      "expected_code": "nonfinite",
+      "observed_code": "nonfinite",
+      "reader_passed": false,
+      "targeted_condition_observed": true,
+      "sha256": "8781b9f76e8417009df1248f8e6debb975afb48c9894980b5229bdf2fa038ac2"
+    },
+    {
+      "case": "bound_mismatch",
+      "expected_code": "bounds",
+      "observed_code": "bounds",
+      "reader_passed": false,
+      "targeted_condition_observed": true,
+      "sha256": "e5ef6f94ad0d4365421ed12bb6c4256204e5ca70c19a42f9b17805b4b40e1ae6"
+    },
+    {
+      "case": "external_buffer",
+      "expected_code": "buffer",
+      "observed_code": "buffer",
+      "reader_passed": false,
+      "targeted_condition_observed": true,
+      "sha256": "ed9705b1d18be6c75e197e173b1333e15f04f309702c12f9f70b0edb2154ece0"
+    }
+  ]
+}

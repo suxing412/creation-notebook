@@ -1,0 +1,527 @@
+{
+  "suggestedVeilPoint": {
+    "target": [
+      -0.11923989901940027,
+      0.2480940818786621,
+      0.14831128737423566
+    ],
+    "triangle": 41344,
+    "score": 0.008854182859261844,
+    "tests": [
+      {
+        "targetDistance": 1.277768529874418,
+        "first": {
+          "model": "veil",
+          "distance": 1.2777685298744175,
+          "point": [
+            -0.11923989901940046,
+            0.24809408187866233,
+            0.1483112873742359
+          ],
+          "face": 41344
+        },
+        "occluded": false
+      },
+      {
+        "targetDistance": 0.5644308829969487,
+        "first": {
+          "model": "veil",
+          "distance": 0.5644308829969487,
+          "point": [
+            -0.11923989901940024,
+            0.2480940818786621,
+            0.14831128737423568
+          ],
+          "face": 41344
+        },
+        "occluded": false
+      }
+    ]
+  },
+  "scope": "One finite geometry-transfer sample via actual Three r180 GLB triangles. No GPU or whole-family proof.",
+  "inputs": {
+    "config": "02c42d242caac5dca196cfcba2a4633a7ad1f8df977d46394933aaed4e522748",
+    "checker": "9aff06e1ca2ffa73689664a6f3cc09478a53a2e181c00296242b233576c9153b",
+    "veil.glb": "09ff5f7b9da8a949cffac59c162235cb67c820812286974fc25944d2b37689f0",
+    "orison.glb": "b6503f73284314a75b4385a8f33db0abf57da5a66fc8e0c79d85e22e3fdcbfbb"
+  },
+  "bounds": [
+    {
+      "id": "veil",
+      "source": "008 / HORIZON",
+      "min": [
+        -0.2688620388507843,
+        0,
+        0.11791628003120422
+      ],
+      "max": [
+        0.2688620388507843,
+        0.3199999928474426,
+        0.1540000001899898
+      ],
+      "dimensions": [
+        0.5377240777015686,
+        0.3199999928474426,
+        0.03608372015878558
+      ]
+    },
+    {
+      "id": "orison",
+      "source": "007 / LATITUDE",
+      "min": [
+        -0.18191012799739836,
+        0,
+        -0.2756806516647339
+      ],
+      "max": [
+        0.20926080584526063,
+        0.2759793996810913,
+        -0.20735037118196487
+      ],
+      "dimensions": [
+        0.391170933842659,
+        0.2759793996810913,
+        0.06833028048276901
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "model": "veil",
+      "sides": [
+        2
+      ]
+    },
+    {
+      "model": "orison",
+      "sides": [
+        2
+      ]
+    }
+  ],
+  "hotspots": [
+    {
+      "camera": "overview",
+      "hotspot": "overview",
+      "targetDistance": 1.2456098907764022,
+      "first": null,
+      "occluded": false,
+      "shellCross": []
+    },
+    {
+      "camera": "overview",
+      "hotspot": "aperture",
+      "targetDistance": 1.277768529874418,
+      "first": {
+        "model": "veil",
+        "distance": 1.2777685298744175,
+        "point": [
+          -0.11923989901940046,
+          0.24809408187866233,
+          0.1483112873742359
+        ],
+        "face": 41344
+      },
+      "occluded": false,
+      "shellCross": []
+    },
+    {
+      "camera": "overview",
+      "hotspot": "around",
+      "targetDistance": 1.7453557195006875,
+      "first": {
+        "model": "veil",
+        "distance": 1.2607973076335186,
+        "point": [
+          -0.15167408562023776,
+          0.2557016068387279,
+          0.14507154376695472
+        ],
+        "face": 39776
+      },
+      "occluded": true,
+      "shellCross": [
+        {
+          "point": [
+            -0.1492625842645755,
+            0.2538045002290368,
+            0.14132978930470186
+          ],
+          "angle": -0.11604353573753659,
+          "insideFootprint": true
+        }
+      ]
+    },
+    {
+      "camera": "aperture",
+      "hotspot": "overview",
+      "targetDistance": 0.5809853698674348,
+      "first": null,
+      "occluded": false,
+      "shellCross": []
+    },
+    {
+      "camera": "aperture",
+      "hotspot": "aperture",
+      "targetDistance": 0.5644308829969487,
+      "first": {
+        "model": "veil",
+        "distance": 0.5644308829969487,
+        "point": [
+          -0.11923989901940024,
+          0.2480940818786621,
+          0.14831128737423568
+        ],
+        "face": 41344
+      },
+      "occluded": false,
+      "shellCross": []
+    },
+    {
+      "camera": "aperture",
+      "hotspot": "around",
+      "targetDistance": 0.9519527910016247,
+      "first": {
+        "model": "orison",
+        "distance": 0.9519527910016247,
+        "point": [
+          0.08980851064125696,
+          0.06572940200567245,
+          -0.22961975798010825
+        ],
+        "face": 1836
+      },
+      "occluded": false,
+      "shellCross": [
+        {
+          "point": [
+            0.053240539132964865,
+            0.140760175026609,
+            0.14890014598704882
+          ],
+          "angle": 0.04131053563593634,
+          "insideFootprint": true
+        }
+      ]
+    },
+    {
+      "camera": "around",
+      "hotspot": "overview",
+      "targetDistance": 1.266753330368624,
+      "first": null,
+      "occluded": false,
+      "shellCross": []
+    },
+    {
+      "camera": "around",
+      "hotspot": "aperture",
+      "targetDistance": 1.0443964435324644,
+      "first": {
+        "model": "veil",
+        "distance": 0.9362618858292949,
+        "point": [
+          -0.013709995737553271,
+          0.2710697425641829,
+          0.15366302532072695
+        ],
+        "face": 57405
+      },
+      "occluded": true,
+      "shellCross": []
+    },
+    {
+      "camera": "around",
+      "hotspot": "around",
+      "targetDistance": 1.0022066165611343,
+      "first": {
+        "model": "orison",
+        "distance": 1.0022066165611354,
+        "point": [
+          0.08980851064125604,
+          0.06572940200567201,
+          -0.22961975798010875
+        ],
+        "face": 1836
+      },
+      "occluded": false,
+      "shellCross": []
+    }
+  ],
+  "inheritedMaskChecks": [
+    {
+      "route": "overview",
+      "recomputed": [
+        "aperture",
+        "overview"
+      ],
+      "inherited": [
+        "aperture",
+        "overview"
+      ],
+      "equal": true
+    },
+    {
+      "route": "aperture",
+      "recomputed": [
+        "aperture",
+        "around",
+        "overview"
+      ],
+      "inherited": [
+        "aperture",
+        "around",
+        "overview"
+      ],
+      "equal": true
+    },
+    {
+      "route": "around",
+      "recomputed": [
+        "around",
+        "overview"
+      ],
+      "inherited": [
+        "around",
+        "overview"
+      ],
+      "equal": true
+    }
+  ],
+  "sampledTriangles": 37,
+  "reanchoringCandidates": [
+    {
+      "target": [
+        0.08980851064125696,
+        0.06572940200567245,
+        -0.22961975798010825
+      ],
+      "triangle": 1836,
+      "tests": [
+        {
+          "route": "overview",
+          "targetDistance": 1.7453557195006875,
+          "first": {
+            "model": "veil",
+            "distance": 1.2607973076335186,
+            "point": [
+              -0.15167408562023776,
+              0.2557016068387279,
+              0.14507154376695472
+            ],
+            "face": 39776
+          },
+          "occluded": true,
+          "shellCross": [
+            {
+              "point": [
+                -0.1492625842645755,
+                0.2538045002290368,
+                0.14132978930470186
+              ],
+              "angle": -0.11604353573753659,
+              "insideFootprint": true
+            }
+          ]
+        },
+        {
+          "route": "aperture",
+          "targetDistance": 0.9519527910016247,
+          "first": {
+            "model": "orison",
+            "distance": 0.9519527910016247,
+            "point": [
+              0.08980851064125696,
+              0.06572940200567245,
+              -0.22961975798010825
+            ],
+            "face": 1836
+          },
+          "occluded": false,
+          "shellCross": [
+            {
+              "point": [
+                0.053240539132964865,
+                0.140760175026609,
+                0.14890014598704882
+              ],
+              "angle": 0.04131053563593634,
+              "insideFootprint": true
+            }
+          ]
+        },
+        {
+          "route": "around",
+          "targetDistance": 1.0022066165611343,
+          "first": {
+            "model": "orison",
+            "distance": 1.0022066165611354,
+            "point": [
+              0.08980851064125604,
+              0.06572940200567201,
+              -0.22961975798010875
+            ],
+            "face": 1836
+          },
+          "occluded": false,
+          "shellCross": []
+        }
+      ]
+    },
+    {
+      "target": [
+        0.09656315982341765,
+        0.06622658173243204,
+        -0.2229733526955048
+      ],
+      "triangle": 1989,
+      "tests": [
+        {
+          "route": "overview",
+          "targetDistance": 1.743412311170004,
+          "first": {
+            "model": "veil",
+            "distance": 1.2645156956296544,
+            "point": [
+              -0.14421931478528383,
+              0.2540517873402998,
+              0.14592698674005786
+            ],
+            "face": 41492
+          },
+          "occluded": true,
+          "shellCross": [
+            {
+              "point": [
+                -0.14177399241126665,
+                0.25214428481785217,
+                0.14218053361771033
+              ],
+              "angle": -0.1101972472772652,
+              "insideFootprint": true
+            }
+          ]
+        },
+        {
+          "route": "aperture",
+          "targetDistance": 0.9460321997071822,
+          "first": {
+            "model": "orison",
+            "distance": 0.9460321997071822,
+            "point": [
+              0.09656315982341765,
+              0.06622658173243204,
+              -0.22297335269550478
+            ],
+            "face": 1989
+          },
+          "occluded": false,
+          "shellCross": [
+            {
+              "point": [
+                0.05767706075016872,
+                0.1402323553923907,
+                0.14870911192680758
+              ],
+              "angle": 0.044755144454592194,
+              "insideFootprint": true
+            }
+          ]
+        },
+        {
+          "route": "around",
+          "targetDistance": 0.9937052815311406,
+          "first": {
+            "model": "orison",
+            "distance": 0.9937052815311407,
+            "point": [
+              0.09656315982341755,
+              0.06622658173243201,
+              -0.22297335269550483
+            ],
+            "face": 1989
+          },
+          "occluded": false,
+          "shellCross": []
+        }
+      ]
+    },
+    {
+      "target": [
+        0.09858097076416014,
+        0.06918585548798242,
+        -0.22566929064691066
+      ],
+      "triangle": 2057,
+      "tests": [
+        {
+          "route": "overview",
+          "targetDistance": 1.7453476047328464,
+          "first": {
+            "model": "veil",
+            "distance": 1.2633574456997372,
+            "point": [
+              -0.14404541533438409,
+              0.25719752542439345,
+              0.14594685827727713
+            ],
+            "face": 54582
+          },
+          "occluded": true,
+          "shellCross": [
+            {
+              "point": [
+                -0.14159903145024766,
+                0.25530181767900745,
+                0.14219988016648022
+              ],
+              "angle": -0.11006070253157542,
+              "insideFootprint": true
+            }
+          ]
+        },
+        {
+          "route": "aperture",
+          "targetDistance": 0.9483014279748669,
+          "first": {
+            "model": "orison",
+            "distance": 0.9483014279748669,
+            "point": [
+              0.09858097076416014,
+              0.0691858554879824,
+              -0.22566929064691066
+            ],
+            "face": 2057
+          },
+          "occluded": false,
+          "shellCross": [
+            {
+              "point": [
+                0.0587158058075896,
+                0.14230529873933,
+                0.14866217191448983
+              ],
+              "angle": 0.045561723262405505,
+              "insideFootprint": true
+            }
+          ]
+        },
+        {
+          "route": "around",
+          "targetDistance": 0.9920276124494019,
+          "first": {
+            "model": "orison",
+            "distance": 0.9920276124494021,
+            "point": [
+              0.09858097076415993,
+              0.06918585548798234,
+              -0.22566929064691077
+            ],
+            "face": 2057
+          },
+          "occluded": false,
+          "shellCross": []
+        }
+      ]
+    }
+  ]
+}

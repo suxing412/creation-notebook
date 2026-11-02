@@ -1,0 +1,382 @@
+{
+  "passed": true,
+  "study": "008",
+  "scope": "Isolated tiny synthetic ZIP fixtures for path safety, CRC, immutable-snapshot consumption, exact manifest and current final-input identity binding, transactional rollback, and explicit delivery-contract evidence binding. Not actual model or browser validation.",
+  "source_sha256": "6b5769d8b97fbdd34301f5542fad508749ed8384a53d495610a84a698c7b0cc7",
+  "checker_sha256": "11f1e98cf13f67fc5b04221ad7c5c76a37b5e7e2386a48bf9146ff2a531bd24c",
+  "delivery_checker_sha256": "ea6446e7d33e84e1fa840b8fc68d2f34b8f879b15f083557f68a730437f9d226",
+  "count": 77,
+  "cases": [
+    {
+      "name": "unapproved hash",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "unsafe path '../escape'",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "unsafe path '/assets/escape'",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "unsafe path './manifest.json'",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "unsafe path 'assets//escape'",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "unsafe path 'assets/./escape'",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "unsafe path 'assets/../escape'",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "unsafe path 'assets\\\\escape'",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "unsafe path '.'",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "unsafe path 'assets/a?b'",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "unsafe path 'assets/a%2fb'",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "unsafe path 'assets/a:b'",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "forbidden path work/raw.log",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "forbidden path source/__pycache__/x.pyc",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "forbidden path review/qa/x.json",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "forbidden path source/x.log",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "forbidden path source/x.pyc",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "forbidden path source/x.blend1",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "forbidden path web-review/asset-parity.json",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "forbidden path web-source/model_lock.py",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "forbidden path assets/copy.zip",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "unknown root file rejected",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "parameter contract dot path alias rejected",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "parameter contract directory alias rejected",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "required parameter contract absent",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "parameter contract manifest hash mismatch rejected",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "duplicate file",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "duplicate directory",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "file directory exact collision",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "case folded collision",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "file directory prefix collision",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "directory payload",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "symlink entry",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "missing manifest",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "CRC corruption after matching archive SHA",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "invalid manifest study",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "invalid manifest version",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "invalid manifest manifest_does_not_hash_itself",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "invalid manifest contains_source_archive_itself",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "invalid manifest final_identity_reports",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "duplicate manifest record",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "boolean manifest bytes",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "unmanifested extra file",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "manifest data hash mismatch",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "identity string passed",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "identity string inputs_stable_during_checks",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "identity wrong asset",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "stale native digest",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "stale checker digest",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "stale wrapper digest",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "missing identity check kind",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "missing identity boolean field",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "false identity boolean field",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "string identity boolean field",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "boolean exit code",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "nonzero exit code",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "subreport different run label",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "invalid native subreport passed",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "invalid native subreport run_id",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "invalid native subreport model_sha256",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "invalid native subreport checker_sha256",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "invalid native subreport info_sha256",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "duplicate JSON key",
+      "rejected": true,
+      "previous_target_and_parity_preserved": true
+    },
+    {
+      "name": "disk replacement cannot change consumed approved snapshot",
+      "passed": true
+    },
+    {
+      "name": "commit rename interruption restores previous target and parity",
+      "passed": true
+    },
+    {
+      "name": "authored webpage destination cannot be replaced by model import",
+      "rejected": true
+    },
+    {
+      "name": "valid fixture replaces old target and parity only after verification",
+      "passed": true
+    },
+    {
+      "name": "required parameter contract imported byte-for-byte with manifest identity",
+      "passed": true
+    },
+    {
+      "name": "exact public web delivery fixture passes",
+      "passed": true
+    },
+    {
+      "name": "undeclared web file rejected",
+      "rejected": true
+    },
+    {
+      "name": "old parity overwrite rejected",
+      "rejected": true
+    },
+    {
+      "name": "old parity and matching lock rejected by independent archive anchor",
+      "rejected": true
+    },
+    {
+      "name": "string passed web report rejected",
+      "rejected": true
+    },
+    {
+      "name": "stale web report source binding rejected",
+      "rejected": true
+    },
+    {
+      "name": "changed original model bytes rejected",
+      "rejected": true
+    },
+    {
+      "name": "pyc contamination rejected",
+      "rejected": true
+    },
+    {
+      "name": "delivery directory symlink rejected without following",
+      "rejected": true
+    }
+  ]
+}

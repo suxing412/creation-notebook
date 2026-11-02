@@ -1,0 +1,261 @@
+{
+  "passed": true,
+  "scope": "Final native Chromium limited page QA",
+  "date_utc": "2026-11-02",
+  "method": "Cloud Chromium through permitted browser tool and one sites-preview. Final page tested at returned local preview URL; temporary iframe and 404 fixtures used identical app source. No GL/settings changes.",
+  "observations": {
+    "desktop": {
+      "allInitialLoaded": true,
+      "controlsBottom": 683.15625,
+      "height": 761,
+      "mainBottom": 597.015625,
+      "scrollWidth": 1173,
+      "width": 1173
+    },
+    "nine": [
+      {
+        "variant": "veil",
+        "view": "beauty",
+        "caption": "透幕 · 整体斜视 / Cycles CPU",
+        "crop": "assets/veil/hole-detail.png",
+        "pressed": [
+          "veil",
+          "beauty"
+        ],
+        "ready": true,
+        "src": "assets/veil/beauty-wide.png",
+        "title": "透幕 / VEIL",
+        "width": "360 mm"
+      },
+      {
+        "variant": "veil",
+        "view": "hole-detail",
+        "caption": "透幕 · 孔缘局部 / Cycles CPU",
+        "crop": "assets/veil/hole-detail.png",
+        "pressed": [
+          "veil",
+          "hole-detail"
+        ],
+        "ready": true,
+        "src": "assets/veil/hole-detail.png",
+        "title": "透幕 / VEIL",
+        "width": "360 mm"
+      },
+      {
+        "variant": "veil",
+        "view": "top",
+        "caption": "透幕 · 俯视正交 / Cycles CPU",
+        "crop": "assets/veil/hole-detail.png",
+        "pressed": [
+          "veil",
+          "top"
+        ],
+        "ready": true,
+        "src": "assets/veil/top.png",
+        "title": "透幕 / VEIL",
+        "width": "360 mm"
+      },
+      {
+        "variant": "horizon",
+        "view": "beauty",
+        "caption": "横幕 · 整体斜视 / Cycles CPU",
+        "crop": "assets/horizon/hole-detail.png",
+        "pressed": [
+          "horizon",
+          "beauty"
+        ],
+        "ready": true,
+        "src": "assets/horizon/beauty-wide.png",
+        "title": "横幕 / HORIZON",
+        "width": "540 mm"
+      },
+      {
+        "variant": "horizon",
+        "view": "hole-detail",
+        "caption": "横幕 · 孔缘局部 / Cycles CPU",
+        "crop": "assets/horizon/hole-detail.png",
+        "pressed": [
+          "horizon",
+          "hole-detail"
+        ],
+        "ready": true,
+        "src": "assets/horizon/hole-detail.png",
+        "title": "横幕 / HORIZON",
+        "width": "540 mm"
+      },
+      {
+        "variant": "horizon",
+        "view": "top",
+        "caption": "横幕 · 俯视正交 / Cycles CPU",
+        "crop": "assets/horizon/hole-detail.png",
+        "pressed": [
+          "horizon",
+          "top"
+        ],
+        "ready": true,
+        "src": "assets/horizon/top.png",
+        "title": "横幕 / HORIZON",
+        "width": "540 mm"
+      },
+      {
+        "variant": "fold",
+        "view": "beauty",
+        "caption": "曲幕 · 整体斜视 / Cycles CPU",
+        "crop": "assets/fold/hole-detail.png",
+        "pressed": [
+          "fold",
+          "beauty"
+        ],
+        "ready": true,
+        "src": "assets/fold/beauty-wide.png",
+        "title": "曲幕 / FOLD",
+        "width": "280 mm"
+      },
+      {
+        "variant": "fold",
+        "view": "hole-detail",
+        "caption": "曲幕 · 孔缘局部 / Cycles CPU",
+        "crop": "assets/fold/hole-detail.png",
+        "pressed": [
+          "fold",
+          "hole-detail"
+        ],
+        "ready": true,
+        "src": "assets/fold/hole-detail.png",
+        "title": "曲幕 / FOLD",
+        "width": "280 mm"
+      },
+      {
+        "variant": "fold",
+        "view": "top",
+        "caption": "曲幕 · 俯视正交 / Cycles CPU",
+        "crop": "assets/fold/hole-detail.png",
+        "pressed": [
+          "fold",
+          "top"
+        ],
+        "ready": true,
+        "src": "assets/fold/top.png",
+        "title": "曲幕 / FOLD",
+        "width": "280 mm"
+      }
+    ],
+    "interaction": {
+      "keyboard": {
+        "focus": "fold",
+        "title": "横幕 / HORIZON"
+      },
+      "back": "assets/horizon/top.png",
+      "forward": "assets/horizon/beauty-wide.png",
+      "rapid": {
+        "src": "assets/veil/top.png",
+        "title": "透幕 / VEIL",
+        "width": "360 mm"
+      }
+    },
+    "deep": {
+      "src": "assets/fold/hole-detail.png",
+      "title": "曲幕 / FOLD",
+      "width": "280 mm"
+    },
+    "mobile": {
+      "mobile": {
+        "height": 900,
+        "scrollWidth": 305,
+        "width": 305
+      },
+      "controls": {
+        "bottom": 599.828125
+      },
+      "frameCSS": {
+        "height": 900,
+        "width": 320
+      }
+    },
+    "nojs": {
+      "nojs": {
+        "enhanced": false
+      },
+      "controlsHidden": "",
+      "staticPlates": 3,
+      "presets": 3,
+      "downloads": 9
+    },
+    "failure": {
+      "retry": true,
+      "src": "../../assets/veil/beauty-wide.png",
+      "status": "横幕 · 整体斜视未载入。仍显示上次完整图版与数值。",
+      "title": "透幕 / VEIL",
+      "width": "360 mm"
+    },
+    "recovery": {
+      "crop": "../../assets/horizon/hole-detail.png",
+      "retryHidden": true,
+      "src": "recoverable-horizon.png",
+      "status": "",
+      "title": "横幕 / HORIZON",
+      "width": "540 mm"
+    },
+    "initialFailure": {
+      "cropUnavailable": "true",
+      "fallbackVisible": true,
+      "frameHidden": true,
+      "status": "透幕 · 整体斜视未载入。正文和下载仍可用。"
+    },
+    "initialRecovery": {
+      "frameHidden": false,
+      "retryHidden": true,
+      "src": "../../assets/veil/beauty-wide.png",
+      "title": "透幕 / VEIL"
+    },
+    "viewer": {
+      "download": "../assets/veil/model.glb",
+      "imageReady": true,
+      "liveHidden": true,
+      "staticVisible": true,
+      "status": "实时不可用：当前环境没有可用的 WebGL 上下文。静态图、正文与下载仍可使用。"
+    }
+  },
+  "input_sha256": {
+    "app.js": "9b13807161e8b0902970130f12dcdae33eabbea9a0ea7c0acf28239d4ad85a09",
+    "assets/fold/beauty-wide.png": "6b224e049caa656a9412064aee37c00a7995d57ba618f67fc7ae9d03851d6f5b",
+    "assets/fold/beauty.png": "d0b923474ad4b1436a698fba41be099396e0a7368f0fb527c76b88cbca5bd448",
+    "assets/fold/front.png": "ab2aea94d55eaf453fa63a28565c4441fdf20e9c0a99c085a44f86630d8eb2aa",
+    "assets/fold/hole-detail.png": "d7010ff8df68319801eadcb561e23fb6d3307fd3c53904b921f944ccd175a49b",
+    "assets/fold/top.png": "1d4df8f7566e364e245a6fc84f3a71a1193d7fe87b05c0b007baa0b217c7db2d",
+    "assets/horizon/beauty-wide.png": "582cdc14cf04a9a0ea7ef698af79923837f545a8907de3adc3e76fb5824a29a6",
+    "assets/horizon/beauty.png": "edbfac323fd7e31dd18a9350007cc5970b1d7a5e046b59471e29aa2d545b51e7",
+    "assets/horizon/front.png": "0ab125daaf633ff024d5c4ee23afb9641302677a1e36d10cafc37dccc8d4abde",
+    "assets/horizon/hole-detail.png": "3bc795a55142d47501b6db2eb532fb96afc1db814f7afb5e0af601f8047a1872",
+    "assets/horizon/top.png": "dc4433b0df30c8f50098f46a0ba9d444b47001b17b7deb430f4c0d3cbad71e0f",
+    "assets/veil/beauty-wide.png": "b491d459dac234085e02444da48996a910e733a973969d5a0c49310b6988a343",
+    "assets/veil/beauty.png": "9990bb2fddbb407f3bca078e4bdf31daebff7d0c066f1fe07a3e14a74cee8d75",
+    "assets/veil/front.png": "06dfba3fb03c34c3fa1021c583fcc68e8ad2d370444f21360d393ebbd814361e",
+    "assets/veil/hole-detail.png": "f20ac8682d92a01cac759359bfa730c6cad8ee2438b514801311325e671b3f91",
+    "assets/veil/top.png": "929f9880abd1a1d5aa511742d2c5c19ad869043104b31f65a80d63958bc295dd",
+    "index.html": "ae43baaa5a3235f96bdb03d17152c5b473c104b62a88c0bb1f1ca3a937afb136",
+    "plate-state.js": "ffdc98ae1284c3382a59c47034ddcd651ef1a26eaea3c73398d4471266c03b74",
+    "style.css": "682145f15a0ade585a01e6515e0476fefc971110cb95eb758c5e90c83c1c5be3",
+    "viewer/index.html": "d04ee431a66045c28e5a8b258426de323e9c46ec719ef347e0ca0c178206ff1f",
+    "viewer/state.js": "9ad2c247218ac0ec7729a42f61e005d769f04a1b66c37708b08fd63b4331d180",
+    "viewer/style.css": "877346eacc5dcd2833f7a0d2eac9eb91f02e1e12ff37277cd03df85d28fdfa65",
+    "viewer/viewer.js": "5c8084649226e79554515bd255add5e64ba4c810674585747e32853256a08d6b",
+    "web-assets/plate-data.json": "5b1202683462bf7e0d9f95976ad3847f39449454673969e50a90c88041414d9c",
+    "web-delivery.json": "70054d93190a3dfb72ab8da741c60986a06ac66f2e54bb15c56c427a51806d0c"
+  },
+  "unverified": [
+    "GPU rendering and realtime 3D appearance",
+    "physical iPhone/Android or touch",
+    "200% browser zoom",
+    "full screen-reader workflow",
+    "physical optical/structural/manufacturing performance"
+  ],
+  "notes": [
+    "320px CSS iframe with actual 305px client content due to scrollbar; not physical-phone testing.",
+    "No-JS uses native sandbox without allow-scripts; it establishes static reading and link presence, not sandboxed download completion.",
+    "404 fixture rewrites only asset location metadata; actual app.js and state module bytes unchanged. Recoverable image copied byte-for-byte from final Horizon wide photo.",
+    "Native rapid-switch smoke test is not forced network reordering; deterministic reversed completion is covered separately by mocked tests.",
+    "Viewer GL context unavailable as expected; static fallback remained readable. This is not GPU validation.",
+    "Record assembly initially missed four observations printed together in tool output. These were recovered from the actual returned readings, and the final freeze now requires all eleven observation groups and exact nine-state coverage. No UI run was invented."
+  ]
+}

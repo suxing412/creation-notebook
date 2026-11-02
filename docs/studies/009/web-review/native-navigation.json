@@ -1,0 +1,33 @@
+[
+  {
+    "case": "Back",
+    "text": "收拢样本",
+    "route": "?variant=poise&pose=folded"
+  },
+  {
+    "case": "Forward",
+    "text": "展开样本",
+    "route": "?variant=poise&pose=extended"
+  },
+  {
+    "case": "keyboard Enter,Space,Tab",
+    "dom": {
+      "focus": "03挺立POISE",
+      "pose": "folded",
+      "variant": "reach"
+    }
+  },
+  {
+    "case": "consecutive variant and pose",
+    "dom": {
+      "angles": [
+        "55°",
+        "-70°",
+        "-25°"
+      ],
+      "pose": "展开样本",
+      "title": "折光 / HINGE"
+    },
+    "route": "?variant=hinge&pose=extended"
+  }
+]

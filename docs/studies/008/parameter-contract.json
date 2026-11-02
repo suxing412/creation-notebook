@@ -1,0 +1,23 @@
+{
+  "family": "VEIL-008-perforated-cylindrical-shell",
+  "recipe_version": "1.0.0",
+  "units": "metres",
+  "blender_version": "4.3.2",
+  "seed": 0,
+  "native_state": "one raw mesh with identity world transform; no modifiers, parent, constraints, shape keys, animation or drivers",
+  "topology": "connected closed orientable; holes H=rows*columns; Euler characteristic 2-2H; genus H",
+  "pair_policy": "No assembly pairs or pair whitelist; all geometry is one connected shell",
+  "normal_policy": "rev1 analytic custom face-corner normals with true roundover geometry; corner vectors are numerically compared after native storage and GLB axis conversion, tolerance in current checker",
+  "ligament_policy": "native report gives actual front/back mouth polyline sample distance and conservative lower bound, no continuous interior solid-thickness guarantee",
+  "input_domain_guarantee": "strict finite input/coupled constraints only; finite sampled meshes do not prove all continuous parameter combinations",
+  "limits": [
+    "No GPU or actual mobile rendering",
+    "No self-standing or manufacturing/structural claim",
+    "BVH shared-vertex exclusion and numerical near-coplanar thresholds remain"
+  ],
+  "production_sampling": {
+    "edge_steps": 16,
+    "hole_loop_vertices": 64,
+    "historical_sampling": "32-point development assets are archived separately; their reports are not production passes"
+  }
+}

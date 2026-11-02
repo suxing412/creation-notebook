@@ -152,7 +152,7 @@ def main():
     here = Path(__file__).resolve().parent
     asset_root = here / 'dist' / 'downloads'
     if not asset_root.is_dir():
-        asset_root = here.parents[1] / 'docs' / 'downloads'
+        asset_root = (here.parent / 'dist' / 'downloads') if (here.parent / 'dist' / 'downloads').is_dir() else here.parents[1] / 'docs' / 'downloads'
     for name in ASSET_NAMES:
         if not (asset_root / name).is_file():
             raise SystemExit('Delivery assets must accompany this tool in the published static downloads directory')

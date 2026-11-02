@@ -1,0 +1,70 @@
+{
+  "scope": "Independent node counterexamples using existing authored mock DOM; no browser/server",
+  "sha256": {
+    "app.js": "529f2a239099e2ff509ba13f91b1b06f70ab2b1e77ee9cf5725effc47c99b0fe",
+    "pose-state.js": "e45dc8540768f3ce4964ceb4087f865ce56d434c0a27b06ed73a98c097bfe979"
+  },
+  "checks": [
+    {
+      "case": "path canonicalization",
+      "input": " ../outside.png",
+      "accepted": false,
+      "resolved": "https://fixture.invalid/studies/outside.png"
+    },
+    {
+      "case": "path canonicalization",
+      "input": "model/.. ",
+      "accepted": false,
+      "resolved": "https://fixture.invalid/studies/009/"
+    },
+    {
+      "case": "path canonicalization",
+      "input": " javascript:alert(1)",
+      "accepted": false,
+      "resolved": "javascript:alert(1)"
+    },
+    {
+      "case": "path canonicalization",
+      "input": " http:outside.invalid",
+      "accepted": false,
+      "resolved": "http://outside.invalid/"
+    },
+    {
+      "case": "retry of initial deep-link failure adds a history entry",
+      "url": "https://fixture.invalid/index.html?variant=reach&pose=folded",
+      "historyPushes": 1
+    },
+    {
+      "case": "failed Back navigation then retry pushes current routed URL, truncating Forward in real history",
+      "before": 2,
+      "after": 3,
+      "url": "https://fixture.invalid/index.html?variant=reach&pose=default"
+    },
+    {
+      "case": "history push failure breaks image/selection state consistency",
+      "image": "reach/default.png",
+      "title": "reach",
+      "stats": "reach-arms",
+      "selection": [
+        [
+          "hinge",
+          "true"
+        ],
+        [
+          "reach",
+          "false"
+        ],
+        [
+          "poise",
+          "false"
+        ]
+      ],
+      "status": "伸展 · 基准姿态载入失败。仍显示上次完整图与对应数值。"
+    },
+    {
+      "case": "clicking already-selected variant adds duplicate history entry",
+      "historyPushes": 1,
+      "url": "https://fixture.invalid/index.html?variant=hinge&pose=default"
+    }
+  ]
+}

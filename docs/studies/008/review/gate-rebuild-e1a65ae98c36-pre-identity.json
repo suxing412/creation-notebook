@@ -1,0 +1,49 @@
+{
+  "asset": "assets/horizon",
+  "created_utc": "2026-11-02T01:28:41.468343+00:00",
+  "passed": true,
+  "inputs_stable_during_checks": true,
+  "input_sha256": {
+    "native": "09d790f515de08b4f93ac6f3c4a488294e4663c194740dc260f22e91d721e538",
+    "glb": "09ff5f7b9da8a949cffac59c162235cb67c820812286974fc25944d2b37689f0",
+    "info": "9fb590e0c349854f205976adb7e67b416c933f2b62d2b9328b10253b36f705ef",
+    "native_checker": "7c022dddc455c992d4766075b59a76fd3acad6d4e2dfba3a41d5359592759671",
+    "glb_checker": "5e682d4a4e74a920adb86f49f15b448f619cdda81fd13d904b950dfff58dce11",
+    "recipe": "0ae15a7cf8eb67d715b682665aa932c1725517da817e568070d2f80307a7a52d",
+    "comparison_checker": "bc5315bb1849db6106f82bf982bc7c69d18decb2a621460673649782404dc629"
+  },
+  "checks": {
+    "native": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-rebuild-e1a65ae98c36-pre-native.json",
+      "info_identity_matches": true,
+      "recipe_identity_matches": true
+    },
+    "glb": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-rebuild-e1a65ae98c36-pre-glb.json"
+    },
+    "comparison": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-rebuild-e1a65ae98c36-pre-comparison.json",
+      "glb_identity_matches": true,
+      "glb_checker_identity_matches": true
+    }
+  },
+  "wrapper_sha256": "5910c837e77e7277dcf5d7406217979a00ae9b08584ada42d262239df2eb73fc"
+}

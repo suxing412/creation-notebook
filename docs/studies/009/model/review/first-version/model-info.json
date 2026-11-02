@@ -1,0 +1,291 @@
+{
+  "study": "009",
+  "title": "HINGE / 折光",
+  "variant": "hinge",
+  "config": {
+    "name": "hinge",
+    "version": "009-hinge-1.0",
+    "seed": 0,
+    "lower_length": 0.235,
+    "upper_length": 0.245,
+    "base_radius": 0.105,
+    "head_radius": 0.065,
+    "shoulder_deg": 76,
+    "elbow_deg": -108,
+    "head_deg": -8
+  },
+  "pose": {
+    "angles_degrees": [
+      76,
+      -108,
+      -8
+    ],
+    "shoulder": [
+      0,
+      0,
+      0.11
+    ],
+    "elbow": [
+      0.0568516454659219,
+      0,
+      0.33801949567485917
+    ],
+    "head_pivot": [
+      0.2646234290242463,
+      0,
+      0.20818927593772396
+    ],
+    "head_center": [
+      0.3586988955546955,
+      -0.009,
+      0.19496783134651774
+    ],
+    "lower_angle": 1.3264502315156905,
+    "upper_angle": -0.5585053606381853,
+    "head_angle": -0.13962634015954636
+  },
+  "recipe_version": "009-hinge-1.0",
+  "blender_version": "4.3.2",
+  "seed": 0,
+  "parts": [
+    {
+      "name": "Base body",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Midnight enamel"
+    },
+    {
+      "name": "Foot 1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Rubber feet"
+    },
+    {
+      "name": "Foot 2",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Rubber feet"
+    },
+    {
+      "name": "Foot 3",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Rubber feet"
+    },
+    {
+      "name": "Fixed upright",
+      "vertices": 3030,
+      "polygons": 3032,
+      "material": "Midnight enamel"
+    },
+    {
+      "name": "Lower arm",
+      "vertices": 3142,
+      "polygons": 3144,
+      "material": "Midnight enamel"
+    },
+    {
+      "name": "Upper arm",
+      "vertices": 3142,
+      "polygons": 3144,
+      "material": "Midnight enamel"
+    },
+    {
+      "name": "Head neck",
+      "vertices": 3118,
+      "polygons": 3123,
+      "material": "Midnight enamel"
+    },
+    {
+      "name": "Shoulder axle",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Shoulder cap -1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Shoulder cap 1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Elbow axle",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Elbow cap -1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Elbow cap 1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Head axle",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Head cap -1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Head cap 1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Head housing",
+      "vertices": 578,
+      "polygons": 672,
+      "material": "Midnight enamel"
+    },
+    {
+      "name": "Diffuser",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Opal diffuser"
+    }
+  ],
+  "bounds_m": [
+    [
+      -0.10499999672174454,
+      0.4243188798427582
+    ],
+    [
+      -0.10499999672174454,
+      0.10499999672174454
+    ],
+    [
+      0.0,
+      0.3530172109603882
+    ]
+  ],
+  "units": "metres",
+  "assembly_contract": {
+    "plate_thickness_m": 0.012,
+    "moving_plate_y_centres_m": [
+      -0.009,
+      0.009
+    ],
+    "nominal_y_clearance_m": 0.006,
+    "bore_radius_m": 0.0045,
+    "axle_radius_m": 0.004,
+    "nominal_radial_clearance_m": 0.0004999999999999996,
+    "fixed_base_embed_region": "Fixed upright / Base body, z <= 0.026 m; inspect local contacts",
+    "head_neck_contact_region": "Head neck / Head housing, local lamp radius <= R and local z within housing upper material; lens contact forbidden",
+    "feet_gap_m": 0.0002
+  },
+  "studio": {
+    "renderer": "Cycles CPU",
+    "samples": 32,
+    "resolution": [
+      720,
+      720
+    ],
+    "seed": 0,
+    "denoising": false,
+    "view_transform": "AgX",
+    "fixed_camera": true,
+    "views": {
+      "beauty": {
+        "location": [
+          0.85,
+          -1.25,
+          0.82
+        ],
+        "target": [
+          0.16,
+          0,
+          0.25
+        ],
+        "ortho_scale": 0.75
+      },
+      "front": {
+        "location": [
+          0.17,
+          -1.4,
+          0.26
+        ],
+        "target": [
+          0.17,
+          0,
+          0.26
+        ],
+        "ortho_scale": 0.73
+      },
+      "side": {
+        "location": [
+          1.4,
+          0,
+          0.27
+        ],
+        "target": [
+          0.17,
+          0,
+          0.27
+        ],
+        "ortho_scale": 0.73
+      },
+      "top": {
+        "location": [
+          0.17,
+          0,
+          1.5
+        ],
+        "target": [
+          0.17,
+          0,
+          0.27
+        ],
+        "ortho_scale": 0.73
+      },
+      "rear": {
+        "location": [
+          -0.65,
+          1.2,
+          0.75
+        ],
+        "target": [
+          0.16,
+          0,
+          0.25
+        ],
+        "ortho_scale": 0.75
+      },
+      "joint": {
+        "location": [
+          0.1868516454659219,
+          -0.24,
+          0.4380194956748592
+        ],
+        "target": [
+          0.0568516454659219,
+          0,
+          0.33801949567485917
+        ],
+        "ortho_scale": 0.11
+      }
+    }
+  },
+  "revision": 0,
+  "gpu_verified": false,
+  "manufacturing_verified": false,
+  "elapsed_seconds": 12.544
+}

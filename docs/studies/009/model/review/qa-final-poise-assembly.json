@@ -1,0 +1,132 @@
+{
+  "checker_version": "009-assembly-1.0",
+  "checker_sha256": "3834a0bc5bacdce33177bfbe38c5bec1be495995b5ffd7fc00ed4dc593ab8a55",
+  "recipe_sha256": "6537fc88ac783ef329ba308117d938d25dcddaffc83707f7cf988fec59e5ff5a",
+  "model_sha256": "49765b45ad9a8d787dde61a2a8db03ac21ee5420baf28bfef885a4c5c3bc1228",
+  "info_sha256": "8c43d5191d59d463fd94813a707655895fe94b31e4ca8ea492d90d3f6df38ad0",
+  "created_utc": "2026-11-02T03:19:48.481377+00:00",
+  "run_id": "e2547252-7d15-49b4-a667-050e3a8b5b40",
+  "passed": true,
+  "failures": [],
+  "bores": [
+    {
+      "object": "Fixed upright",
+      "end_m": 0,
+      "actual_near_bore_vertices": 800,
+      "actual_edge_count": 1500,
+      "minimum_edge_radial_distance_m": 0.004497588814333364,
+      "maximum_near_bore_vertex_radius_m": 0.005150347851517825
+    },
+    {
+      "object": "Fixed upright",
+      "end_m": 0.08,
+      "actual_near_bore_vertices": 800,
+      "actual_edge_count": 1500,
+      "minimum_edge_radial_distance_m": 0.004497585694353614,
+      "maximum_near_bore_vertex_radius_m": 0.005150351875311825
+    },
+    {
+      "object": "Lower arm",
+      "end_m": 0,
+      "actual_near_bore_vertices": 800,
+      "actual_edge_count": 1500,
+      "minimum_edge_radial_distance_m": 0.0044975870641942965,
+      "maximum_near_bore_vertex_radius_m": 0.005150349213488277
+    },
+    {
+      "object": "Lower arm",
+      "end_m": 0.28,
+      "actual_near_bore_vertices": 800,
+      "actual_edge_count": 1500,
+      "minimum_edge_radial_distance_m": 0.004497559976381297,
+      "maximum_near_bore_vertex_radius_m": 0.005150377659686945
+    },
+    {
+      "object": "Upper arm",
+      "end_m": 0,
+      "actual_near_bore_vertices": 800,
+      "actual_edge_count": 1500,
+      "minimum_edge_radial_distance_m": 0.004497574513996795,
+      "maximum_near_bore_vertex_radius_m": 0.0051503692609180755
+    },
+    {
+      "object": "Upper arm",
+      "end_m": 0.21,
+      "actual_near_bore_vertices": 800,
+      "actual_edge_count": 1500,
+      "minimum_edge_radial_distance_m": 0.00449756058962969,
+      "maximum_near_bore_vertex_radius_m": 0.0051503850177980854
+    },
+    {
+      "object": "Head neck",
+      "end_m": 0,
+      "actual_near_bore_vertices": 800,
+      "actual_edge_count": 1500,
+      "minimum_edge_radial_distance_m": 0.004497570231813415,
+      "maximum_near_bore_vertex_radius_m": 0.005150369331979353
+    },
+    {
+      "object": "Head neck",
+      "end_m": 0.095,
+      "actual_near_bore_vertices": 800,
+      "actual_edge_count": 1500,
+      "minimum_edge_radial_distance_m": 0.00449757092137143,
+      "maximum_near_bore_vertex_radius_m": 0.005150369516099675
+    }
+  ],
+  "shafts": [
+    {
+      "object": "Shoulder axle",
+      "maximum_actual_radial_distance_m": 0.004000004831965375,
+      "actual_axial_y_bounds_m": [
+        -0.01850000023841858,
+        0.01850000023841858
+      ]
+    },
+    {
+      "object": "Elbow axle",
+      "maximum_actual_radial_distance_m": 0.00400002289743363,
+      "actual_axial_y_bounds_m": [
+        -0.01850000023841858,
+        0.01850000023841858
+      ]
+    },
+    {
+      "object": "Head axle",
+      "maximum_actual_radial_distance_m": 0.00400002451555367,
+      "actual_axial_y_bounds_m": [
+        -0.01850000023841858,
+        0.01850000023841858
+      ]
+    }
+  ],
+  "minimum_measured_edge_bore_to_maximum_shaft_clearance_m": 0.0004975354608276273,
+  "layer_gaps": [
+    {
+      "objects": [
+        "Lower arm",
+        "Upper arm"
+      ],
+      "measured_y_interval_gap_m": 0.0059999991208314896
+    },
+    {
+      "objects": [
+        "Lower arm",
+        "Fixed upright"
+      ],
+      "measured_y_interval_gap_m": 0.0059999991208314896
+    },
+    {
+      "objects": [
+        "Head neck",
+        "Upper arm"
+      ],
+      "measured_y_interval_gap_m": 0.007999998982995749
+    }
+  ],
+  "limits": [
+    "Bore radius is the minimum radial distance on actual near-bore mesh edges, not a full solid distance oracle; all 8 bore boundaries are sampled by complete mesh edge enumeration.",
+    "Fixed-Y interval separation remains invariant under this declared planar Y-axis rotation, but does not establish separation from other components.",
+    "Positive radial/axial clearance is a digital fit metric, not tolerance, bearing, friction, strength, wiring or manufacturing validation."
+  ]
+}

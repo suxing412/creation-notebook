@@ -1,0 +1,147 @@
+{
+  "passed": true,
+  "scope": "ZIP path/CRC identity and safe fresh import tests; not geometry verification",
+  "count": 35,
+  "cases": [
+    {
+      "name": "valid exact snapshot",
+      "passed": true
+    },
+    {
+      "name": "wrong zip digest",
+      "passed": true
+    },
+    {
+      "name": "reject '/etc/evil'",
+      "passed": true
+    },
+    {
+      "name": "reject '../bad'",
+      "passed": true
+    },
+    {
+      "name": "reject 'a/../b'",
+      "passed": true
+    },
+    {
+      "name": "reject 'a//b'",
+      "passed": true
+    },
+    {
+      "name": "reject './a'",
+      "passed": true
+    },
+    {
+      "name": "reject 'a\\\\b'",
+      "passed": true
+    },
+    {
+      "name": "reject 'a%2fb'",
+      "passed": true
+    },
+    {
+      "name": "reject 'a?x'",
+      "passed": true
+    },
+    {
+      "name": "reject 'a#x'",
+      "passed": true
+    },
+    {
+      "name": "reject 'C:evil'",
+      "passed": true
+    },
+    {
+      "name": "reject '\\x00bad'",
+      "passed": true
+    },
+    {
+      "name": "reject 'é'",
+      "passed": true
+    },
+    {
+      "name": "reject 'a\\x01b'",
+      "passed": true
+    },
+    {
+      "name": "reject '.git/HEAD'",
+      "passed": true
+    },
+    {
+      "name": "reject 'cache/x.pyc'",
+      "passed": true
+    },
+    {
+      "name": "reject 'logs/debug.log'",
+      "passed": true
+    },
+    {
+      "name": "reject duplicate/unlisted 'README.md'",
+      "passed": true
+    },
+    {
+      "name": "reject duplicate/unlisted 'readme.md'",
+      "passed": true
+    },
+    {
+      "name": "reject duplicate/unlisted 'assets'",
+      "passed": true
+    },
+    {
+      "name": "reject duplicate/unlisted 'undeclared'",
+      "passed": true
+    },
+    {
+      "name": "actual stage bytes exact",
+      "passed": true
+    },
+    {
+      "name": "existing stage not overwritten",
+      "passed": true
+    },
+    {
+      "name": "wrong size",
+      "passed": true
+    },
+    {
+      "name": "boolean size",
+      "passed": true
+    },
+    {
+      "name": "wrong entry SHA",
+      "passed": true
+    },
+    {
+      "name": "missing record",
+      "passed": true
+    },
+    {
+      "name": "duplicate record",
+      "passed": true
+    },
+    {
+      "name": "undeclared record",
+      "passed": true
+    },
+    {
+      "name": "duplicate JSON manifest key",
+      "passed": true
+    },
+    {
+      "name": "nonfinite JSON manifest",
+      "passed": true
+    },
+    {
+      "name": "symlink entry",
+      "passed": true
+    },
+    {
+      "name": "directory payload",
+      "passed": true
+    },
+    {
+      "name": "actual CRC corruption",
+      "passed": true
+    }
+  ]
+}

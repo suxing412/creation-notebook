@@ -1,0 +1,144 @@
+{
+  "study": "008",
+  "schema_version": "008-web-delivery-1",
+  "model_archive_sha256": "1333fc7471457aab0cb8f28cfda3b9ef645328699df398679dc5e5ad98d506f5",
+  "allowed_files": [
+    "WEB-FROZEN-SHA256.json",
+    "WEB-README.html",
+    "WEB-README.md",
+    "app.js",
+    "index.html",
+    "model-source.html",
+    "plate-state.js",
+    "style.css",
+    "web-assets/plate-data.json",
+    "web-delivery.json",
+    "web-review/app-unit-checks.json",
+    "web-review/asset-parity.json",
+    "web-review/browser-checks.json",
+    "web-review/browser-qa.html",
+    "web-review/browser-qa.md",
+    "web-review/delivery-contract.json",
+    "web-review/delivery-files.json",
+    "web-review/design-review.html",
+    "web-review/design-review.md",
+    "web-review/final-desktop.jpg",
+    "web-review/image-failure.jpg",
+    "web-review/image-recovery.jpg",
+    "web-review/import-unit-checks.json",
+    "web-review/initial-image-failure.jpg",
+    "web-review/link-checks.json",
+    "web-review/mobile-320.jpg",
+    "web-review/nojs.jpg",
+    "web-review/reference-notes.html",
+    "web-review/reference-notes.md",
+    "web-review/reflection.html",
+    "web-review/reflection.md",
+    "web-review/state-unit-checks.json",
+    "web-review/static-checks.json",
+    "web-review/v1-desktop.jpg",
+    "web-review/viewer-fallback.jpg",
+    "web-source/compose.py",
+    "web-source/freeze.py",
+    "web-source/import_model.py",
+    "web-source/make_qa.py",
+    "web-source/model_lock.py",
+    "web-source/render_reports.py",
+    "web-source/test_app.cjs",
+    "web-source/test_import.py",
+    "web-source/test_state.cjs",
+    "web-source/verify.py",
+    "web-source/verify_delivery.py"
+  ],
+  "required_files": [
+    "WEB-README.html",
+    "WEB-README.md",
+    "app.js",
+    "index.html",
+    "model-source.html",
+    "plate-state.js",
+    "style.css",
+    "web-assets/plate-data.json",
+    "web-delivery.json",
+    "web-review/app-unit-checks.json",
+    "web-review/asset-parity.json",
+    "web-review/browser-checks.json",
+    "web-review/browser-qa.html",
+    "web-review/browser-qa.md",
+    "web-review/delivery-contract.json",
+    "web-review/design-review.html",
+    "web-review/design-review.md",
+    "web-review/final-desktop.jpg",
+    "web-review/image-failure.jpg",
+    "web-review/image-recovery.jpg",
+    "web-review/import-unit-checks.json",
+    "web-review/initial-image-failure.jpg",
+    "web-review/link-checks.json",
+    "web-review/mobile-320.jpg",
+    "web-review/nojs.jpg",
+    "web-review/reference-notes.html",
+    "web-review/reference-notes.md",
+    "web-review/reflection.html",
+    "web-review/reflection.md",
+    "web-review/state-unit-checks.json",
+    "web-review/static-checks.json",
+    "web-review/v1-desktop.jpg",
+    "web-review/viewer-fallback.jpg",
+    "web-source/compose.py",
+    "web-source/freeze.py",
+    "web-source/import_model.py",
+    "web-source/make_qa.py",
+    "web-source/model_lock.py",
+    "web-source/render_reports.py",
+    "web-source/test_app.cjs",
+    "web-source/test_import.py",
+    "web-source/test_state.cjs",
+    "web-source/verify.py",
+    "web-source/verify_delivery.py"
+  ],
+  "required_reports": [
+    {
+      "path": "web-review/state-unit-checks.json",
+      "scope": "Pure transactional state + mocked async order; not native browser or GPU",
+      "bindings": {
+        "state_sha256": "plate-state.js"
+      }
+    },
+    {
+      "path": "web-review/app-unit-checks.json",
+      "scope": "Actual app.js in fake DOM/network/image environment; no claim of native browser, real network timing or GPU",
+      "bindings": {}
+    },
+    {
+      "path": "web-review/import-unit-checks.json",
+      "scope": "Isolated tiny synthetic ZIP fixtures for path safety, CRC, immutable-snapshot consumption, exact manifest and current final-input identity binding, transactional rollback, and explicit delivery-contract evidence binding. Not actual model or browser validation.",
+      "bindings": {
+        "source_sha256": "web-source/import_model.py",
+        "checker_sha256": "web-source/test_import.py",
+        "delivery_checker_sha256": "web-source/verify_delivery.py"
+      }
+    },
+    {
+      "path": "web-review/static-checks.json",
+      "scope": "Authored HTML/CSS, explicit display-data identities and local links. Not full WCAG, native browser, model gates, GPU or manufacturing.",
+      "bindings": {
+        "checker_sha256": "web-source/verify.py"
+      }
+    },
+    {
+      "path": "web-review/link-checks.json",
+      "scope": "Local HTML references; relative gallery exits delegated to parent",
+      "bindings": {}
+    },
+    {
+      "path": "web-review/browser-checks.json",
+      "scope": "Final native Chromium limited page QA",
+      "bindings": {}
+    },
+    {
+      "path": "web-review/asset-parity.json",
+      "scope": "All original model ZIP file entries CRC-read from the approved immutable snapshot and imported byte-for-byte. Transfer identity and final-input report binding only; not independent model quality or browser validation.",
+      "bindings": {}
+    }
+  ]
+}

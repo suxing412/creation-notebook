@@ -1,0 +1,67 @@
+{
+  "inputs_and_checkers_stable": true,
+  "tracked_sha256": {
+    "assets/veil/model.blend": "77b4d3379cc69a879b28f4292b8892f2afb9fbb38ef381abd99d720a955aa59a",
+    "assets/veil/model.glb": "288418a17258eb8a8c4deb03250502b4b580b950b4a2eacdd3ca94bd6747e177",
+    "source/check_glb.py": "5e682d4a4e74a920adb86f49f15b448f619cdda81fd13d904b950dfff58dce11",
+    "source/compare_exports.py": "bc5315bb1849db6106f82bf982bc7c69d18decb2a621460673649782404dc629",
+    "source/test_export_comparison.py": "6b493d6eab28eb39d978b5eaa1b74a6b107dda8547d319212bbb5e826f01b160"
+  },
+  "created_utc": "2026-11-02T01:44:34.889329+00:00",
+  "passed": true,
+  "baseline": "assets/veil",
+  "baseline_native_sha256": "77b4d3379cc69a879b28f4292b8892f2afb9fbb38ef381abd99d720a955aa59a",
+  "baseline_glb_sha256": "288418a17258eb8a8c4deb03250502b4b580b950b4a2eacdd3ca94bd6747e177",
+  "comparison_checker_sha256": "bc5315bb1849db6106f82bf982bc7c69d18decb2a621460673649782404dc629",
+  "test_script_sha256": "6b493d6eab28eb39d978b5eaa1b74a6b107dda8547d319212bbb5e826f01b160",
+  "tests": [
+    {
+      "case": "translated-position-payload",
+      "passed": true,
+      "payload_passed": true,
+      "payload_exit_code": 0,
+      "comparison_rejected": true,
+      "comparison_exit_code": 1,
+      "dedicated_mismatch_triggered": true,
+      "fresh_identities_verified": true,
+      "vertex_coordinate_multisets_equal": false,
+      "vertex_coordinate_sets_equal": false,
+      "dedicated_detector": "exact_oriented_triangle_coordinate_multisets_equal",
+      "corner_normal_mismatch_count": 68480,
+      "payload_report": "gate-export-final64-v1-translated-position-payload-payload.json",
+      "comparison_report": "gate-export-final64-v1-translated-position-payload-comparison.json"
+    },
+    {
+      "case": "reversed-triangle-payload",
+      "passed": true,
+      "payload_passed": true,
+      "payload_exit_code": 0,
+      "comparison_rejected": true,
+      "comparison_exit_code": 1,
+      "dedicated_mismatch_triggered": true,
+      "fresh_identities_verified": true,
+      "vertex_coordinate_multisets_equal": false,
+      "vertex_coordinate_sets_equal": true,
+      "dedicated_detector": "exact_oriented_triangle_coordinate_multisets_equal",
+      "corner_normal_mismatch_count": 1,
+      "payload_report": "gate-export-final64-v1-reversed-triangle-payload-payload.json",
+      "comparison_report": "gate-export-final64-v1-reversed-triangle-payload-comparison.json"
+    },
+    {
+      "case": "reversed-normal-payload",
+      "passed": true,
+      "payload_passed": true,
+      "payload_exit_code": 0,
+      "comparison_rejected": true,
+      "comparison_exit_code": 1,
+      "dedicated_mismatch_triggered": true,
+      "fresh_identities_verified": true,
+      "vertex_coordinate_multisets_equal": false,
+      "vertex_coordinate_sets_equal": true,
+      "dedicated_detector": "corner_normal_failures_count",
+      "corner_normal_mismatch_count": 3,
+      "payload_report": "gate-export-final64-v1-reversed-normal-payload-payload.json",
+      "comparison_report": "gate-export-final64-v1-reversed-normal-payload-comparison.json"
+    }
+  ]
+}

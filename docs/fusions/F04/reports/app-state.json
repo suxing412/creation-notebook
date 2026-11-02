@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "appSHA256": "883e4fa21ef8b20ec13452cd5ae7d79a3ad5da634dfa7e4e7d86a5dad9a39f9a",
+  "scope": "Node VM executes actual app.js with synthetic DOM, Image and import failure. No browser, WebGL or GPU evidence.",
+  "source": "dist/app.js",
+  "results": [
+    {
+      "test": "out-of-order image decode",
+      "passed": true,
+      "rendered": "around"
+    },
+    {
+      "test": "failed image preserves old route, label and poster",
+      "passed": true
+    },
+    {
+      "test": "renderer initialization failure during pending chapter decode",
+      "passed": true,
+      "actual": {
+        "current": "aperture",
+        "routeEpoch": 2,
+        "liveEpoch": 2,
+        "loading": false,
+        "mode": "poster",
+        "gl": false
+      },
+      "hash": "#aperture",
+      "poster": "assets/aperture.png",
+      "status": "Blender CPU 离线视图 · 穿透 · 孔成为取景框。离线画面不代表实时 GPU 验收。"
+    },
+    {
+      "test": "reading entry restores recorded last scene on Back-like history event",
+      "passed": true,
+      "limitation": "Synthetic state/hash event; not native browser history automation."
+    },
+    {
+      "test": "cancel during old GLTF parse, restart, newest commit, then old parse completes",
+      "passed": true,
+      "staleParsedResourcesDisposed": {
+        "geometry": 1,
+        "material": 1
+      },
+      "activeRendererUnaffected": true
+    },
+    {
+      "test": "explicit offline after live commit",
+      "passed": true,
+      "canvasCount": 0,
+      "activeRendererDisposeCalls": 1,
+      "limitation": "Real Three CPU scene with stub renderer and synthetic assets. Does not establish GPU teardown."
+    }
+  ]
+}

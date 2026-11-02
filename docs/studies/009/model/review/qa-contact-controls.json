@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "kind": "metadata predicate controls, not mesh fault controls",
+  "checker_sha256": "d61606c0a82ef0f48abdb7a6cd3e0ce0ccc6a4cb48cdfbffbf539e8ef901e463",
+  "control_script_sha256": "56ffe32c4a7934d474a7cfba3129884a95245e2baa2f6d4530ccd0da2065827d",
+  "input_info_sha256": "b99dc21395413cfec2e10bad27a031cf3c3867f96cc8e3c2ba1a008b3a645f0c",
+  "created_utc": "2026-11-02T03:09:54.714720+00:00",
+  "cases": [
+    {
+      "case": "valid",
+      "expected_code": null,
+      "observed_codes": [],
+      "targeted_condition_observed": true
+    },
+    {
+      "case": "widen_radius",
+      "expected_code": "contact_region_contract",
+      "observed_codes": [
+        "contact_region_contract"
+      ],
+      "targeted_condition_observed": true
+    },
+    {
+      "case": "change_pair",
+      "expected_code": "contact_region_contract",
+      "observed_codes": [
+        "contact_region_contract"
+      ],
+      "targeted_condition_observed": true
+    },
+    {
+      "case": "wrong_pose_center",
+      "expected_code": "pose_metadata",
+      "observed_codes": [
+        "pose_metadata"
+      ],
+      "targeted_condition_observed": true
+    },
+    {
+      "case": "missing_zone",
+      "expected_code": "contact_region_contract",
+      "observed_codes": [
+        "contact_region_contract"
+      ],
+      "targeted_condition_observed": true
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "created_utc": "2026-11-02T01:13:32.452490+00:00",
+  "passed": true,
+  "baseline": "work/refined-corrected",
+  "baseline_native_sha256": "92de3888d53982be7e126a3c8c2b634560768ea81c45012db12529441fb0fd70",
+  "baseline_glb_sha256": "fec16702cfeb16fa77e9cfb5115285e6d70c077fa3759f41ad189a7e803ab1b1",
+  "comparison_checker_sha256": "bc5315bb1849db6106f82bf982bc7c69d18decb2a621460673649782404dc629",
+  "test_script_sha256": "d1f55cd79d96e488bf96bd15afb44bb688cc038aa44507997e66f62da234dfae",
+  "tests": [
+    {
+      "case": "translated-position-payload",
+      "passed": true,
+      "payload_passed": true,
+      "payload_exit_code": 0,
+      "comparison_rejected": true,
+      "comparison_exit_code": 1,
+      "dedicated_mismatch_triggered": true,
+      "fresh_identities_verified": true,
+      "vertex_coordinate_multisets_equal": false,
+      "vertex_coordinate_sets_equal": false,
+      "dedicated_detector": "exact_oriented_triangle_coordinate_multisets_equal",
+      "corner_normal_mismatch_count": 34240,
+      "payload_report": "gate-export-refined-v2-translated-position-payload-payload.json",
+      "comparison_report": "gate-export-refined-v2-translated-position-payload-comparison.json"
+    },
+    {
+      "case": "reversed-triangle-payload",
+      "passed": true,
+      "payload_passed": true,
+      "payload_exit_code": 0,
+      "comparison_rejected": true,
+      "comparison_exit_code": 1,
+      "dedicated_mismatch_triggered": true,
+      "fresh_identities_verified": true,
+      "vertex_coordinate_multisets_equal": false,
+      "vertex_coordinate_sets_equal": true,
+      "dedicated_detector": "exact_oriented_triangle_coordinate_multisets_equal",
+      "corner_normal_mismatch_count": 1,
+      "payload_report": "gate-export-refined-v2-reversed-triangle-payload-payload.json",
+      "comparison_report": "gate-export-refined-v2-reversed-triangle-payload-comparison.json"
+    },
+    {
+      "case": "reversed-normal-payload",
+      "passed": true,
+      "payload_passed": true,
+      "payload_exit_code": 0,
+      "comparison_rejected": true,
+      "comparison_exit_code": 1,
+      "dedicated_mismatch_triggered": true,
+      "fresh_identities_verified": true,
+      "vertex_coordinate_multisets_equal": false,
+      "vertex_coordinate_sets_equal": true,
+      "dedicated_detector": "corner_normal_failures_count",
+      "corner_normal_mismatch_count": 3,
+      "payload_report": "gate-export-refined-v2-reversed-normal-payload-payload.json",
+      "comparison_report": "gate-export-refined-v2-reversed-normal-payload-comparison.json"
+    }
+  ]
+}

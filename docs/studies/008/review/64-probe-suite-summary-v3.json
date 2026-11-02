@@ -1,0 +1,61 @@
+{
+  "status": "EXPERIMENT_NOT_RELEASE",
+  "created_utc": "2026-11-02T01:34:52.402580+00:00",
+  "passed": true,
+  "source_matches_current_production_QA_and_recipe": true,
+  "candidate_identity_report": "64-probe-v3/gate-experimental-edge64-v3-identity.json",
+  "native_and_malformed_payload_fault_report": "64-probe-v3/gate-faults-v3.json",
+  "legal_but_wrong_payload_report": "64-probe-v3/gate-export-comparison-tests-experimental-edge64-v2.json",
+  "input_report": "64-probe-v3/gate-input-v2.json",
+  "actual_bad_native_cases": 23,
+  "actual_malformed_glb_cases": 6,
+  "legal_wrong_glb_cases": 3,
+  "coverage": {
+    "dedicated_native_fields": [
+      "aperture_clearance_failures",
+      "aperture_loop_failures",
+      "aperture_wall_failures",
+      "construction_metadata_failures",
+      "coplanar_positive_area_overlaps",
+      "corner_normal_failures",
+      "degenerate_triangles",
+      "duplicate_triangles",
+      "genus_contract_failures",
+      "inconsistent_winding_edges",
+      "invalid_connected_components",
+      "material_contract_failures",
+      "minimum_ligament_failures",
+      "model_state_contract_failures",
+      "non_positive_world_volume",
+      "nonadjacent_self_intersection_candidates",
+      "nonmanifold_edges",
+      "thickness_failures"
+    ],
+    "not_independently_fault_triggered_native_fields": [
+      "input_contract_failures",
+      "nonfinite_coordinates",
+      "object_contract_failures",
+      "object_transform_failures",
+      "recipe_topology_failures",
+      "recipe_vertex_envelope_failures"
+    ],
+    "branch_limits": [
+      "A field-level hit does not prove every branch in that field.",
+      "corner_normal_failures has a reversed-normal hemisphere probe; native NaN/nonunit-normal injection is not established.",
+      "State faults separately exercise modifier, shape key, parent and object animation, but not every constraint/driver/mesh-animation kind.",
+      "Six named malformed GLB paths are probed; malformed glTF coverage is not exhaustive.",
+      "Input-validator invalid cases are in a separate report, not automatically native input_contract_failures coverage."
+    ]
+  },
+  "development_failures_retained": [
+    {
+      "report": "64-probe-v3/gate-experimental-edge64-v1-identity.json",
+      "reason": "checker changed during the first probe; identity wrapper rejected; not release"
+    },
+    {
+      "report": "64-probe-v3/gate-experimental-edge64-v2-identity.json",
+      "reason": "Prototype dynamic ring count used n, colliding with a normal-vector variable; JSON serialization failed and no native report was produced. Renamed loop_size, then v3 passed. Wrapper correctly rejected missing report."
+    }
+  ],
+  "limits": "These reports test the explicitly identified isolated 64-point candidate and source bytes. They are not final asset identity reports and do not reuse 32-point identities. Bad binaries and logs remain under work/qa, not this public report folder."
+}

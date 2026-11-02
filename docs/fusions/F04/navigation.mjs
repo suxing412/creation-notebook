@@ -1,0 +1,14 @@
+// Desk Atlas public contract: native hashes and one world. No scroll interception.
+export function resolveRoute(hash,routes){let id;try{id=decodeURIComponent(hash.replace(/^#/,''))}catch{return routes[0].id}return routes.some(r=>r.id===id)?id:routes[0].id;}
+export function sampleCamera(a,b,t){const p=Math.max(0,Math.min(1,t)),s=p*p*(3-2*p);return {position:a.position.map((v,i)=>v+(b.position[i]-v)*s),target:a.target.map((v,i)=>v+(b.target[i]-v)*s)};}
+export function project(point,route,fov,aspect){const sub=(a,b)=>a.map((v,i)=>v-b[i]),dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0),norm=v=>{const l=Math.hypot(...v);return v.map(x=>x/l)},cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];const f=norm(sub(route.target,route.position)),right=norm(cross(f,[0,1,0])),up=cross(right,f),p=sub(point,route.position),depth=dot(p,f),h=Math.tan(fov*Math.PI/360)*depth,x=.5+dot(p,right)/(2*h*aspect),y=.5-dot(p,up)/(2*h);return{x,y,depth,visible:depth>0&&x>.04&&x<.96&&y>.08&&y<.92};}
+export function validateConfig(c){
+ const vec=v=>Array.isArray(v)&&v.length===3&&v.every(Number.isFinite),file=(v,ext)=>typeof v==='string'&&new RegExp('^[a-z][a-z0-9-]*\\.'+ext+'$').test(v);
+ if(!c||c.schema!==3||!Array.isArray(c.routes)||c.routes.length!==3||!Array.isArray(c.models)||c.models.length!==2)throw Error('Scene contract');
+ const ids=new Set();for(const r of c.routes){if(ids.has(r.id)||!/^[-a-z]+$/.test(r.id))throw Error('Route identifier');ids.add(r.id);for(const k of ['position','target','hotspot'])if(!vec(r[k]))throw Error('Finite vector');if(Math.hypot(...r.position.map((v,i)=>v-r.target[i]))<.1||Math.hypot(r.position[0]-r.target[0],r.position[2]-r.target[2])<.001)throw Error('Camera singularity');if(!file(r.image,'png')||typeof r.title!=='string'||typeof r.description!=='string'||!Number.isFinite(r.hotspotToleranceM)||r.hotspotToleranceM<0||r.hotspotToleranceM>.001)throw Error('Route content');}
+ for(const r of c.routes)if(!Array.isArray(r.visibleHotspots)||!r.visibleHotspots.every(x=>ids.has(x)))throw Error('Occlusion mask');
+ for(const m of c.models){if(!ids.has(m.route)||m.scale!==1||!Number.isFinite(m.rotationY)||!vec(m.position)||!file(m.file,'glb')||!/^[a-f0-9]{64}$/.test(m.sha256))throw Error('Immutable source transform');}
+ if(![c.fov,c.near,c.far,c.aspect,c.motionMilliseconds].every(Number.isFinite)||!(c.fov>20&&c.fov<60&&c.near>0&&c.far>c.near&&c.aspect>1&&c.motionMilliseconds>=0&&c.motionMilliseconds<=1000))throw Error('Optical contract');
+ if(!file(c.support?.file,'glb')||!file(c.ground?.file,'glb')||!Array.isArray(c.lights)||c.lights.length!==2)throw Error('Display assets');
+ for(const l of c.lights)if(!vec(l.position)||!vec(l.target)||!vec(l.color)||!Number.isFinite(l.realtimeIntensity)||l.realtimeIntensity<0)throw Error('Light contract');return c;
+}

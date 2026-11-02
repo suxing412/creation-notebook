@@ -1,0 +1,226 @@
+{
+  "schema": 3,
+  "title": "孔与隙 / Aperture Atlas",
+  "version": "0.3.0",
+  "seed": 0,
+  "units": "metres",
+  "coordinates": "right-handed Y-up; glTF native",
+  "fov": 40,
+  "near": 0.01,
+  "far": 30,
+  "aspect": 1.6,
+  "motionMilliseconds": 680,
+  "models": [
+    {
+      "id": "veil",
+      "route": "aperture",
+      "file": "veil.glb",
+      "position": [
+        0,
+        0,
+        0.15
+      ],
+      "rotationY": 0,
+      "scale": 1,
+      "source": "008 VEIL",
+      "sha256": "288418a17258eb8a8c4deb03250502b4b580b950b4a2eacdd3ca94bd6747e177"
+    },
+    {
+      "id": "orison",
+      "route": "around",
+      "file": "orison.glb",
+      "position": [
+        0.015,
+        0,
+        -0.24
+      ],
+      "rotationY": 0,
+      "scale": 1,
+      "source": "007 ORISON",
+      "sha256": "68d15df7bfdd59433a0f9070b91165882a93de3f29587f95e020ffcca914f4ed"
+    }
+  ],
+  "support": {
+    "id": "desk",
+    "file": "plinth.glb",
+    "dimensions": [
+      1.12,
+      0.04,
+      0.96
+    ],
+    "position": [
+      0,
+      -0.02,
+      -0.03
+    ],
+    "bevel": 0.009,
+    "color": [
+      0.075,
+      0.105,
+      0.115
+    ],
+    "roughness": 0.68
+  },
+  "ground": {
+    "dimensions": [
+      200,
+      0.04,
+      200
+    ],
+    "position": [
+      0,
+      -0.18,
+      0
+    ],
+    "color": [
+      0.12,
+      0.16,
+      0.18
+    ],
+    "roughness": 0.9,
+    "file": "backdrop.glb",
+    "geometry": "open radial cyclorama display surface",
+    "floorY": -0.18,
+    "width": 20,
+    "coveStartZ": -1.2,
+    "coveRadius": 0.8,
+    "coveSteps": 32,
+    "backHeight": 4,
+    "floorRadius": 1.2,
+    "azimuthSteps": 128
+  },
+  "routes": [
+    {
+      "id": "overview",
+      "index": "01",
+      "title": "先看见遮挡",
+      "short": "遮挡 · 两件物的间距",
+      "position": [
+        -0.78,
+        0.75,
+        1.12
+      ],
+      "target": [
+        0,
+        0.21,
+        -0.04
+      ],
+      "image": "overview.png",
+      "hotspot": [
+        -0.28,
+        0.012,
+        0.25
+      ],
+      "description": "两件独立物体保持固定，前后距离将观看变成一条有深度的路径。",
+      "visibleHotspots": [
+        "overview",
+        "aperture"
+      ],
+      "hotspotToleranceM": 0.0001
+    },
+    {
+      "id": "aperture",
+      "index": "02",
+      "title": "视线穿过，身体留在外面",
+      "short": "穿透 · 孔成为取景框",
+      "position": [
+        0,
+        0.25,
+        0.7
+      ],
+      "target": [
+        0,
+        0.25,
+        -0.12
+      ],
+      "image": "aperture.png",
+      "hotspot": [
+        -0.12,
+        0.43,
+        0.15
+      ],
+      "description": "近处的厚壳切分远处的回环。同一个孔会随视点改变，不能以孔面积代替可见面积。",
+      "visibleHotspots": [
+        "overview",
+        "aperture",
+        "around"
+      ],
+      "hotspotToleranceM": 0.0001
+    },
+    {
+      "id": "around",
+      "index": "03",
+      "title": "绕开，才看见完整",
+      "short": "绕行 · 显露背后的回环",
+      "position": [
+        0.9,
+        0.47,
+        0.2
+      ],
+      "target": [
+        0.015,
+        0.2,
+        -0.15
+      ],
+      "image": "around.png",
+      "hotspot": [
+        0.12453790694475175,
+        0.21051976084709167,
+        -0.23223387567326426
+      ],
+      "description": "沿幕的侧面移动，回环重新连成连续轮廓。改变的是相机，不是物体。",
+      "visibleHotspots": [
+        "overview",
+        "aperture",
+        "around"
+      ],
+      "hotspotToleranceM": 0.0001
+    }
+  ],
+  "lights": [
+    {
+      "id": "window",
+      "position": [
+        -1.3,
+        2,
+        1.1
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "color": [
+        1,
+        0.89,
+        0.76
+      ],
+      "power": 200,
+      "size": 2.2,
+      "realtimeIntensity": 3.8
+    },
+    {
+      "id": "fill",
+      "position": [
+        1.2,
+        1.5,
+        -1.2
+      ],
+      "target": [
+        0,
+        0.1,
+        0
+      ],
+      "color": [
+        0.75,
+        0.84,
+        1
+      ],
+      "power": 140,
+      "size": 1.8,
+      "realtimeIntensity": 2
+    }
+  ],
+  "sourceRecipeHashes": {},
+  "renderContract": "The same glTF meshes, transforms, vertical FOV and chapter cameras drive offline and realtime views. Cycles CPU lighting and Three.js lighting are not photometrically equivalent."
+}

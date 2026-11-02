@@ -1,0 +1,4 @@
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];Q=R/'dist/__qa';Q.mkdir(exist_ok=True)
+(Q/'index.html').write_text('''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>009 原生窄屏与无脚本验收</title><style>body{background:#ccc;margin:18px;font:13px sans-serif}.row{display:flex;gap:25px;align-items:start}.pane{flex:none}iframe{width:320px;height:1000px;border:0}.wide iframe{width:390px}p{max-width:320px}</style><h1>CSS 视口检查，非实体手机</h1><div class="row"><div class="pane"><p>320 CSS px / 脚本启用</p><iframe title="320脚本" id="narrow" src="../index.html"></iframe></div><div class="pane wide"><p>390 CSS px / 脚本启用</p><iframe title="390脚本" src="../index.html"></iframe></div><div class="pane"><p>320 CSS px / sandbox 无脚本</p><iframe title="无脚本" id="nojs" src="../index.html" sandbox="allow-same-origin"></iframe></div></div></html>''')
+print('temporary QA harness ready')

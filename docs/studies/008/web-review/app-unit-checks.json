@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "scope": "Actual app.js in fake DOM/network/image environment; no claim of native browser, real network timing or GPU",
+  "source_sha256": {
+    "app.js": "9b13807161e8b0902970130f12dcdae33eabbea9a0ea7c0acf28239d4ad85a09",
+    "plate-state.js": "ffdc98ae1284c3382a59c47034ddcd651ef1a26eaea3c73398d4471266c03b74"
+  },
+  "cases": [
+    "reversed image completion cannot mix main/crop/title/dimensions/history",
+    "rapid variant then view combines newest intent, not previous displayed preset",
+    "crop 404 rejects whole transaction; retry commits all paired data",
+    "initial 404 has honest fallback and successful retry restores image",
+    "initial auxiliary crop 404 prevents false paired availability and retry restores pair",
+    "metadata HTTP failure retains old identity and retry refetches",
+    "malformed metadata is retryable rather than cached permanently",
+    "late initial error cannot clear a committed new plate",
+    "deep link and popstate select requested preset without creating history entries"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "asset": "assets/fold",
+  "created_utc": "2026-11-02T01:44:46.947268+00:00",
+  "passed": true,
+  "inputs_stable_during_checks": true,
+  "input_sha256": {
+    "native": "a861bc31ee5bfbcd03b16ac4a150b37b75f8eddeac740c84c9eb8a75436e2e09",
+    "glb": "2a3f7ebec1cc9041681d7ac7b70f7215bc66d854c0e44fd6a5a90be98bdfaae6",
+    "info": "a0363b9454c4b6a41688eeeaa344997c79b47fab54f13a05cfe5b6711c6903aa",
+    "native_checker": "7c022dddc455c992d4766075b59a76fd3acad6d4e2dfba3a41d5359592759671",
+    "glb_checker": "5e682d4a4e74a920adb86f49f15b448f619cdda81fd13d904b950dfff58dce11",
+    "recipe": "0ae15a7cf8eb67d715b682665aa932c1725517da817e568070d2f80307a7a52d",
+    "comparison_checker": "bc5315bb1849db6106f82bf982bc7c69d18decb2a621460673649782404dc629"
+  },
+  "checks": {
+    "native": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-locked-fold-v1-native.json",
+      "info_identity_matches": true,
+      "recipe_identity_matches": true
+    },
+    "glb": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-locked-fold-v1-glb.json"
+    },
+    "comparison": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-locked-fold-v1-comparison.json",
+      "glb_identity_matches": true,
+      "glb_checker_identity_matches": true
+    }
+  },
+  "wrapper_sha256": "5910c837e77e7277dcf5d7406217979a00ae9b08584ada42d262239df2eb73fc"
+}

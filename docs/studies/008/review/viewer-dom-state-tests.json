@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "scope": "Actual viewer module executed in Node vm with simulated DOM, Image decode and metadata fetch; no native browser, network, GL context or mobile device.",
+  "cases": [
+    {
+      "name": "Initial image decode commits matching image, UI values, URL and raw model links",
+      "passed": true
+    },
+    {
+      "name": "Image decode failure leaves current model image, label and download URL unchanged",
+      "passed": true
+    },
+    {
+      "name": "Newest successful route wins across actual viewer DOM and history",
+      "passed": true
+    },
+    {
+      "name": "Late old-variant metadata cannot relabel dimensions or alter final download identity",
+      "passed": true
+    },
+    {
+      "name": "Failed Back/Forward image restores URL to the retained successful content",
+      "passed": true
+    },
+    {
+      "name": "Successful Back/Forward restores route without pushing a new history entry",
+      "passed": true
+    },
+    {
+      "name": "Module/3D initialization failure leaves static image and independent route intact",
+      "passed": true
+    },
+    {
+      "name": "Static keyboard view cycling and Escape use the same independent state controller",
+      "passed": true
+    },
+    {
+      "name": "Initial missing image does not enable 3D or fabricate a committed asset",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "viewer/viewer.js": "5c8084649226e79554515bd255add5e64ba4c810674585747e32853256a08d6b",
+    "viewer/state.js": "9ad2c247218ac0ec7729a42f61e005d769f04a1b66c37708b08fd63b4331d180",
+    "viewer/routes.js": "9a25b6b40be2e57103283c7ab4c80b2b5a38cada73d8abe8a47ccf861fb5ed6c",
+    "viewer/camera.js": "b6b0dbf0cfdb41fe4d60a7f081f88e3f803340a120607e6148cee42e4296c67b",
+    "viewer/delivery-links.js": "d5f05b858948c1cfce30fd1ed7282fa8f01b40d89c8612db4f5fc11e77eb98ba",
+    "viewer/index.html": "d04ee431a66045c28e5a8b258426de323e9c46ec719ef347e0ca0c178206ff1f",
+    "source/test_viewer_state_dom.mjs": "3a5f09cd458e058553996d2d911f9092b747c03b5000a26bc43ca9b3e01c9472"
+  }
+}

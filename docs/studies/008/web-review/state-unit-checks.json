@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "scope": "Pure transactional state + mocked async order; not native browser or GPU",
+  "state_sha256": "ffdc98ae1284c3382a59c47034ddcd651ef1a26eaea3c73398d4471266c03b74",
+  "count": 10,
+  "results": [
+    {
+      "name": "initial HTML is not assumed decoded",
+      "passed": true
+    },
+    {
+      "name": "invalid variant/view does not start transaction",
+      "passed": true
+    },
+    {
+      "name": "initial 404 does not fabricate availability",
+      "passed": true
+    },
+    {
+      "name": "late initial success retains current request failure",
+      "passed": true
+    },
+    {
+      "name": "stale success cannot replace new success or dimensions",
+      "passed": true
+    },
+    {
+      "name": "stale success cannot hide latest failure",
+      "passed": true
+    },
+    {
+      "name": "initial late error cannot erase newer success",
+      "passed": true
+    },
+    {
+      "name": "retry after no initial asset succeeds",
+      "passed": true
+    },
+    {
+      "name": "route validates both dimensions of state",
+      "passed": true
+    },
+    {
+      "name": "latest decoded transaction alone can commit",
+      "passed": true
+    }
+  ]
+}

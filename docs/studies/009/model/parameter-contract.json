@@ -1,0 +1,217 @@
+{
+  "study": "009",
+  "recipe_version": "009-hinge-1.0",
+  "recipe_sha256": "6537fc88ac783ef329ba308117d938d25dcddaffc83707f7cf988fec59e5ff5a",
+  "unit": "metres",
+  "coordinate_system": "Blender Z-up; GLB/Three mapping (x,z,-y)",
+  "tested_software": {
+    "blender": "4.3.2",
+    "three_revision": "180",
+    "node": "24.22.1",
+    "python": "3.12"
+  },
+  "seed": 0,
+  "applicable_family": "Three planar revolute joints about Y, two capsule arms and thin disc head, baked rigid named parts",
+  "fixed_invariants": {
+    "plate_y_centres_m": [
+      -0.009,
+      0.009
+    ],
+    "main_plate_thickness_m": 0.012,
+    "neck_plate_thickness_m": 0.008,
+    "bore_radius_m": 0.0045,
+    "shaft_radius_m": 0.004,
+    "plate_edge_bevel_m": 0.00065,
+    "bevel_segments": 3,
+    "radial_segments": 96,
+    "head_neck_length_m": 0.095,
+    "head_offset_below_neck_m": 0.016,
+    "shoulder_pivot_m": [
+      0,
+      0,
+      0.11
+    ],
+    "fixed_studio_material_light_camera": true
+  },
+  "input_ranges_not_proven_domains": {
+    "lower_length": [
+      0.2,
+      0.28
+    ],
+    "upper_length": [
+      0.2,
+      0.29
+    ],
+    "base_radius": [
+      0.085,
+      0.12
+    ],
+    "head_radius": [
+      0.052,
+      0.075
+    ],
+    "shoulder_deg": [
+      55,
+      100
+    ],
+    "elbow_deg": [
+      -125,
+      -70
+    ],
+    "head_deg": [
+      -25,
+      20
+    ]
+  },
+  "coupled_condition": "Conservative head Z envelope must remain >=0.04m; all other checks still required.",
+  "pose_labels": {
+    "default": "该变体默认样本",
+    "folded": "收拢样本，不是完全折叠或收纳极限",
+    "extended": "展开样本，不是最大伸展极限"
+  },
+  "angle_semantics": [
+    "shoulder world angle",
+    "elbow relative angle",
+    "head world absolute angle"
+  ],
+  "tested_presets": [
+    {
+      "id": "hinge",
+      "config": {
+        "name": "hinge",
+        "version": "009-hinge-1.0",
+        "seed": 0,
+        "lower_length": 0.235,
+        "upper_length": 0.245,
+        "base_radius": 0.105,
+        "head_radius": 0.065,
+        "shoulder_deg": 76,
+        "elbow_deg": -108,
+        "head_deg": -8
+      },
+      "motion_requested": 27,
+      "motion_accepted": 25,
+      "motion_rejected_by_coupled_envelope": 2,
+      "motion_failed": 0,
+      "measured_bore_minus_shaft_m": 0.0004975424170210151,
+      "actual_layer_gap_records": [
+        {
+          "objects": [
+            "Lower arm",
+            "Upper arm"
+          ],
+          "measured_y_interval_gap_m": 0.0059999991208314896
+        },
+        {
+          "objects": [
+            "Lower arm",
+            "Fixed upright"
+          ],
+          "measured_y_interval_gap_m": 0.0059999991208314896
+        },
+        {
+          "objects": [
+            "Head neck",
+            "Upper arm"
+          ],
+          "measured_y_interval_gap_m": 0.007999998982995749
+        }
+      ]
+    },
+    {
+      "id": "reach",
+      "config": {
+        "name": "reach",
+        "version": "009-hinge-1.0",
+        "seed": 0,
+        "lower_length": 0.205,
+        "upper_length": 0.285,
+        "base_radius": 0.115,
+        "head_radius": 0.075,
+        "shoulder_deg": 70,
+        "elbow_deg": -95,
+        "head_deg": -5
+      },
+      "motion_requested": 27,
+      "motion_accepted": 22,
+      "motion_rejected_by_coupled_envelope": 5,
+      "motion_failed": 0,
+      "measured_bore_minus_shaft_m": 0.0004975366910107875,
+      "actual_layer_gap_records": [
+        {
+          "objects": [
+            "Lower arm",
+            "Upper arm"
+          ],
+          "measured_y_interval_gap_m": 0.0059999991208314896
+        },
+        {
+          "objects": [
+            "Lower arm",
+            "Fixed upright"
+          ],
+          "measured_y_interval_gap_m": 0.0059999991208314896
+        },
+        {
+          "objects": [
+            "Head neck",
+            "Upper arm"
+          ],
+          "measured_y_interval_gap_m": 0.007999998982995749
+        }
+      ]
+    },
+    {
+      "id": "poise",
+      "config": {
+        "name": "poise",
+        "version": "009-hinge-1.0",
+        "seed": 0,
+        "lower_length": 0.28,
+        "upper_length": 0.21,
+        "base_radius": 0.095,
+        "head_radius": 0.052,
+        "shoulder_deg": 85,
+        "elbow_deg": -100,
+        "head_deg": 12
+      },
+      "motion_requested": 27,
+      "motion_accepted": 27,
+      "motion_rejected_by_coupled_envelope": 0,
+      "motion_failed": 0,
+      "measured_bore_minus_shaft_m": 0.0004975354608276273,
+      "actual_layer_gap_records": [
+        {
+          "objects": [
+            "Lower arm",
+            "Upper arm"
+          ],
+          "measured_y_interval_gap_m": 0.0059999991208314896
+        },
+        {
+          "objects": [
+            "Lower arm",
+            "Fixed upright"
+          ],
+          "measured_y_interval_gap_m": 0.0059999991208314896
+        },
+        {
+          "objects": [
+            "Head neck",
+            "Upper arm"
+          ],
+          "measured_y_interval_gap_m": 0.007999998982995749
+        }
+      ]
+    }
+  ],
+  "scope_limits": [
+    "81 requested finite pose samples, 74 accepted/7 coupled rejects. No continuous-domain claim.",
+    "9 actual native/exported poses have independent static geometry and export identity checks.",
+    "Three pose reuse checks coordinate sets, not export index correspondence.",
+    "No physical equilibrium, friction, stability, full storage, light output, wiring or manufacturing verification.",
+    "GPU and iPhone not tested."
+  ],
+  "failure_history": "review/qa-method-and-failures.md",
+  "reuse_cost_notes": "Run source/run.py into a fresh directory, inspect new native/GLB and assembly reports, then finite motion and CPU views. Changing contact regions/axis layering leaves this family and needs new checks."
+}

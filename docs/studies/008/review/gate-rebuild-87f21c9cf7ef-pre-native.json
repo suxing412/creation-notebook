@@ -1,0 +1,962 @@
+{
+  "degenerate_triangles": [],
+  "duplicate_triangles": [],
+  "nonmanifold_edges": [],
+  "non_positive_world_volume": [],
+  "inconsistent_winding_edges": [],
+  "invalid_connected_components": [],
+  "nonfinite_coordinates": [],
+  "recipe_vertex_envelope_failures": [],
+  "recipe_topology_failures": [],
+  "object_contract_failures": [],
+  "material_contract_failures": [],
+  "object_transform_failures": [],
+  "model_state_contract_failures": [],
+  "nonadjacent_self_intersection_candidates": [],
+  "coplanar_positive_area_overlaps": [],
+  "genus_contract_failures": [],
+  "input_contract_failures": [],
+  "construction_metadata_failures": [],
+  "aperture_loop_failures": [],
+  "aperture_wall_failures": [],
+  "aperture_clearance_failures": [],
+  "thickness_failures": [],
+  "minimum_ligament_failures": [],
+  "corner_normal_failures": [],
+  "checker_version": "008-native-1.2",
+  "checker_sha256": "7c022dddc455c992d4766075b59a76fd3acad6d4e2dfba3a41d5359592759671",
+  "recipe_sha256": "0ae15a7cf8eb67d715b682665aa932c1725517da817e568070d2f80307a7a52d",
+  "model_sha256": "108513baf8b102214c0af677e3f1939b2128c95cce3fd487b944c2dd6d9412f2",
+  "file": "model.blend",
+  "run_id": "027f9cb4-fdfa-4b6c-96b8-1f61d68a07d8",
+  "created_utc": "2026-11-02T01:28:31.166776+00:00",
+  "blender_version": "4.3.2",
+  "passed": true,
+  "limits": [
+    "Full-vertex/oriented-face identity is a restricted VEIL recipe contract, not arbitrary geometry or reindexing equivalence.",
+    "BVH candidates exclude triangles sharing any vertex; noncoplanar adjacent foldover is not fully independently certified.",
+    "Near-coplanar overlaps use bidirectional float64 plane distances and projected SAT, not exact symbolic predicates or dynamic z-fighting validation.",
+    "Exactly one raw mesh, no modifiers/shape keys/parents/constraints/object or mesh animation or drivers; photographic scene.blend is out of scope.",
+    "No GPU, WebGL, dynamic flicker, physical iPhone, manufacturing, load or stability verification."
+  ],
+  "thresholds": {
+    "vertex_distance_m": 2e-07,
+    "triangle_area_m2": 1e-12,
+    "duplicate_vertex_round_m": 1e-08,
+    "identity_matrix_entry": 1e-08,
+    "coplanar_normal_cosine": 0.9999999,
+    "bidirectional_plane_distance_m": 5e-08,
+    "positive_projected_overlap_m": 1e-08,
+    "spatial_cell_m": 0.012
+  },
+  "variant": "fold",
+  "recipe_version": "1.0.0",
+  "info_sha256": "883ff1c5655f6ab5d85b55a0dc1b12aef96678523008e796df27d4b9c813c772",
+  "mesh_objects": 1,
+  "corner_normal_records": [
+    {
+      "object": "VEIL | continuous perforated shell",
+      "corners": 103040,
+      "has_custom_normals": true,
+      "minimum_length": 0.9999998317337001,
+      "maximum_length": 1.0000001916529049,
+      "minimum_dot_geometric_face_normal": 0.9775230539962649,
+      "length_tolerance": 2e-05,
+      "negative_hemisphere_tolerance": 1e-05,
+      "analytic_normal_field_equivalence_independently_verified": false
+    }
+  ],
+  "aperture_records": {
+    "expected_holes": 36,
+    "holes_with_clear_central_ray": 36,
+    "valid_actual_ring_cycles": 360,
+    "rings": [
+      {
+        "hole": 0,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 4.064218760146954e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 1,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.8889603908833763e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 2,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.869852083932755e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 3,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 3.6220185288537987e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 4,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 4.369326348646618e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 5,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 3.7220037173851805e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 6,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 3.7138811487952283e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 7,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 3.724979680611029e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 8,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 7.381623170349405e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 9,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 7.342352094374949e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 10,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 7.4322497132378595e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 11,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 7.437490512351985e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 12,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 7.387226094723864e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 13,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 7.4136524072510035e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 14,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 7.412794308936377e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 15,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 7.445925502905237e-09,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 16,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4852818985139349e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 17,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.484158507376876e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 18,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4813021795290204e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 19,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4874702634545822e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 20,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4834496488841387e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 21,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4871854348702529e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 22,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4813047363379517e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 23,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4893422991407723e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 24,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4823708548855619e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 25,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4716279634133245e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 26,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.488389399922907e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 27,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4863996193603679e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 28,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4873861921629872e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 29,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4484956708041286e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 30,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4663113943533257e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 31,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 1.4827996039357139e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 32,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 2.9668216236164446e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 33,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 2.9754959801620018e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 34,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 2.963425289013999e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      },
+      {
+        "hole": 35,
+        "ring_count": 10,
+        "vertices_per_ring": 64,
+        "max_inverse_cylinder_fit_m": 2.970040794553208e-08,
+        "loop_edge_contract_passed": true,
+        "wall_face_contract_passed": true,
+        "central_ray_clear": true
+      }
+    ],
+    "genus_target": 36
+  },
+  "thickness_records": {
+    "nominal_shell_m": 0.01,
+    "surface_pair_count": 1325,
+    "surface_minimum_m": 0.00999999581836164,
+    "surface_maximum_m": 0.010000005131587386,
+    "hole_sections": [
+      {
+        "hole": 0,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999996284022927,
+        "maximum_normal_separation_m": 0.010000004665926099,
+        "required_m": 0.01
+      },
+      {
+        "hole": 0,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199997315183282,
+        "maximum_normal_separation_m": 0.0072000043001025915,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 1,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998728744686,
+        "maximum_normal_separation_m": 0.010000001464504749,
+        "required_m": 0.01
+      },
+      {
+        "hole": 1,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.0071999994543148205,
+        "maximum_normal_separation_m": 0.0072000006985035725,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 2,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.00999999901978299,
+        "maximum_normal_separation_m": 0.010000000824220479,
+        "required_m": 0.01
+      },
+      {
+        "hole": 2,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199998828582466,
+        "maximum_normal_separation_m": 0.007200000807642937,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 3,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999996051192284,
+        "maximum_normal_separation_m": 0.01000000350177288,
+        "required_m": 0.01
+      },
+      {
+        "hole": 3,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199996383860707,
+        "maximum_normal_separation_m": 0.0072000036016106606,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 4,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.00999999581836164,
+        "maximum_normal_separation_m": 0.010000004665926099,
+        "required_m": 0.01
+      },
+      {
+        "hole": 4,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199997082352638,
+        "maximum_normal_separation_m": 0.0072000043001025915,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 5,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998845160007,
+        "maximum_normal_separation_m": 0.01000000096973963,
+        "required_m": 0.01
+      },
+      {
+        "hole": 5,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.00719999911962077,
+        "maximum_normal_separation_m": 0.007200000778539106,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 6,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998786952347,
+        "maximum_normal_separation_m": 0.010000000998843461,
+        "required_m": 0.01
+      },
+      {
+        "hole": 6,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.0071999988867901266,
+        "maximum_normal_separation_m": 0.007200001098681241,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 7,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999996051192284,
+        "maximum_normal_separation_m": 0.010000004200264812,
+        "required_m": 0.01
+      },
+      {
+        "hole": 7,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199996151030064,
+        "maximum_normal_separation_m": 0.007200004067271948,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 8,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999994654208422,
+        "maximum_normal_separation_m": 0.010000003036111593,
+        "required_m": 0.01
+      },
+      {
+        "hole": 8,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199995685368776,
+        "maximum_normal_separation_m": 0.007200003135949373,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 9,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999999136198312,
+        "maximum_normal_separation_m": 0.010000001289881766,
+        "required_m": 0.01
+      },
+      {
+        "hole": 9,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.0071999988867901266,
+        "maximum_normal_separation_m": 0.007200001331511885,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 10,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998786952347,
+        "maximum_normal_separation_m": 0.010000001231674105,
+        "required_m": 0.01
+      },
+      {
+        "hole": 10,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199999410659075,
+        "maximum_normal_separation_m": 0.007200001331511885,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 11,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998612329364,
+        "maximum_normal_separation_m": 0.010000003734603524,
+        "required_m": 0.01
+      },
+      {
+        "hole": 11,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199996849521995,
+        "maximum_normal_separation_m": 0.007200003834441304,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 12,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999996167607605,
+        "maximum_normal_separation_m": 0.01000000350177288,
+        "required_m": 0.01
+      },
+      {
+        "hole": 12,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199996849521995,
+        "maximum_normal_separation_m": 0.0072000043001025915,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 13,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998525017872,
+        "maximum_normal_separation_m": 0.010000001231674105,
+        "required_m": 0.01
+      },
+      {
+        "hole": 13,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.0071999989449977875,
+        "maximum_normal_separation_m": 0.007200000749435276,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 14,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998790590325,
+        "maximum_normal_separation_m": 0.010000001086154953,
+        "required_m": 0.01
+      },
+      {
+        "hole": 14,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199999503427534,
+        "maximum_normal_separation_m": 0.007200001098681241,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 15,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999996866099536,
+        "maximum_normal_separation_m": 0.010000004433095455,
+        "required_m": 0.01
+      },
+      {
+        "hole": 15,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199996849521995,
+        "maximum_normal_separation_m": 0.007200003368780017,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 16,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999995585530996,
+        "maximum_normal_separation_m": 0.010000003268942237,
+        "required_m": 0.01
+      },
+      {
+        "hole": 16,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199996383860707,
+        "maximum_normal_separation_m": 0.007200002670288086,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 17,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998437706381,
+        "maximum_normal_separation_m": 0.010000000766012818,
+        "required_m": 0.01
+      },
+      {
+        "hole": 17,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199999061413109,
+        "maximum_normal_separation_m": 0.007200000618468039,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 18,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.00999999865598511,
+        "maximum_normal_separation_m": 0.010000001639127731,
+        "required_m": 0.01
+      },
+      {
+        "hole": 18,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199999003205448,
+        "maximum_normal_separation_m": 0.007200001215096563,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 19,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999996516853571,
+        "maximum_normal_separation_m": 0.01000000350177288,
+        "required_m": 0.01
+      },
+      {
+        "hole": 19,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199995219707489,
+        "maximum_normal_separation_m": 0.007200002670288086,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 20,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999996167607605,
+        "maximum_normal_separation_m": 0.01000000350177288,
+        "required_m": 0.01
+      },
+      {
+        "hole": 20,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199996849521995,
+        "maximum_normal_separation_m": 0.0072000043001025915,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 21,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998525017872,
+        "maximum_normal_separation_m": 0.010000001231674105,
+        "required_m": 0.01
+      },
+      {
+        "hole": 21,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.0071999989449977875,
+        "maximum_normal_separation_m": 0.007200000749435276,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 22,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998790590325,
+        "maximum_normal_separation_m": 0.010000001086154953,
+        "required_m": 0.01
+      },
+      {
+        "hole": 22,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199999503427534,
+        "maximum_normal_separation_m": 0.007200001098681241,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 23,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999996866099536,
+        "maximum_normal_separation_m": 0.010000004433095455,
+        "required_m": 0.01
+      },
+      {
+        "hole": 23,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199996849521995,
+        "maximum_normal_separation_m": 0.007200003368780017,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 24,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999994654208422,
+        "maximum_normal_separation_m": 0.010000003036111593,
+        "required_m": 0.01
+      },
+      {
+        "hole": 24,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199995685368776,
+        "maximum_normal_separation_m": 0.007200003135949373,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 25,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999999136198312,
+        "maximum_normal_separation_m": 0.010000001289881766,
+        "required_m": 0.01
+      },
+      {
+        "hole": 25,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.0071999988867901266,
+        "maximum_normal_separation_m": 0.007200001331511885,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 26,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998786952347,
+        "maximum_normal_separation_m": 0.010000001231674105,
+        "required_m": 0.01
+      },
+      {
+        "hole": 26,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199999410659075,
+        "maximum_normal_separation_m": 0.007200001331511885,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 27,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998612329364,
+        "maximum_normal_separation_m": 0.010000003734603524,
+        "required_m": 0.01
+      },
+      {
+        "hole": 27,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199996849521995,
+        "maximum_normal_separation_m": 0.007200003834441304,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 28,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.00999999581836164,
+        "maximum_normal_separation_m": 0.010000004665926099,
+        "required_m": 0.01
+      },
+      {
+        "hole": 28,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199997082352638,
+        "maximum_normal_separation_m": 0.0072000043001025915,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 29,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998845160007,
+        "maximum_normal_separation_m": 0.01000000096973963,
+        "required_m": 0.01
+      },
+      {
+        "hole": 29,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.00719999911962077,
+        "maximum_normal_separation_m": 0.007200000778539106,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 30,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998786952347,
+        "maximum_normal_separation_m": 0.010000000998843461,
+        "required_m": 0.01
+      },
+      {
+        "hole": 30,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.0071999988867901266,
+        "maximum_normal_separation_m": 0.007200001098681241,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 31,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999996051192284,
+        "maximum_normal_separation_m": 0.010000004200264812,
+        "required_m": 0.01
+      },
+      {
+        "hole": 31,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199996151030064,
+        "maximum_normal_separation_m": 0.007200004067271948,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 32,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999996284022927,
+        "maximum_normal_separation_m": 0.010000004665926099,
+        "required_m": 0.01
+      },
+      {
+        "hole": 32,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199997315183282,
+        "maximum_normal_separation_m": 0.0072000043001025915,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 33,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999998728744686,
+        "maximum_normal_separation_m": 0.010000001464504749,
+        "required_m": 0.01
+      },
+      {
+        "hole": 33,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.0071999994543148205,
+        "maximum_normal_separation_m": 0.0072000006985035725,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 34,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.00999999901978299,
+        "maximum_normal_separation_m": 0.010000000824220479,
+        "required_m": 0.01
+      },
+      {
+        "hole": 34,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199998828582466,
+        "maximum_normal_separation_m": 0.007200000807642937,
+        "required_m": 0.0072
+      },
+      {
+        "hole": 35,
+        "section": "mouth",
+        "minimum_normal_separation_m": 0.009999996051192284,
+        "maximum_normal_separation_m": 0.01000000350177288,
+        "required_m": 0.01
+      },
+      {
+        "hole": 35,
+        "section": "straight_bore",
+        "minimum_normal_separation_m": 0.007199996383860707,
+        "maximum_normal_separation_m": 0.0072000036016106606,
+        "required_m": 0.0072
+      }
+    ]
+  },
+  "ligament_sampling": {
+    "records": [
+      {
+        "side": "front",
+        "sampled_minimum_m": 0.007461504079401493,
+        "conservative_polyline_lower_bound_m": 0.006459669634537461,
+        "nearest_sample_pair": [
+          16,
+          "outer"
+        ],
+        "samples_per_mouth": 256,
+        "subdivisions_per_actual_mesh_edge": 4,
+        "required_lower_bound_m": 0.004
+      },
+      {
+        "side": "back",
+        "sampled_minimum_m": 0.007098480127751827,
+        "conservative_polyline_lower_bound_m": 0.006145313841929565,
+        "nearest_sample_pair": [
+          16,
+          "outer"
+        ],
+        "samples_per_mouth": 256,
+        "subdivisions_per_actual_mesh_edge": 4,
+        "required_lower_bound_m": 0.004
+      }
+    ],
+    "definition": "Euclidean 3D separation of actual front/back mouth polylines to every other mouth and the same-side exterior rim; not developed geodesic, projected gap, minimal internal web thickness or manufacturing strength. Finite polyline samples give an upper estimate; subtract both segment covering radii and 0.2 um to obtain conservative polyline lower bounds.",
+    "excludes": "Bore interior/rounded rim full surface minimum, unsampled smooth analytic continuation and arbitrary adjacent-face folding are not independently proven."
+  },
+  "triangles": 51520,
+  "minimum_triangle_area_m2": 3.631772208773195e-07,
+  "component_records": [
+    {
+      "object": "VEIL | continuous perforated shell",
+      "component_sizes": [
+        25690
+      ],
+      "signed_world_volume_m3": 0.0009829598544098329,
+      "signed_local_volume_m3": 0.0009829598544098229,
+      "vertices": 25690,
+      "edges": 51520,
+      "faces": 25760,
+      "euler_characteristic": -70,
+      "genus_if_closed_connected_orientable": 36.0
+    }
+  ],
+  "coplanar_candidate_pairs": 2120,
+  "elapsed_seconds": 6.459
+}

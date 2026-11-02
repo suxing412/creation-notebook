@@ -1,0 +1,27 @@
+{
+  "status": "QA_REGRESSION_REPAIRED_WITH_DEDICATED_RETEST",
+  "created_utc": "2026-11-02T01:24:44.669167+00:00",
+  "passed": true,
+  "old_result": {
+    "report": "gate-faults-v2-ligament-narrowing.json",
+    "overall_rejected": true,
+    "dedicated_ligament_field_hit": false,
+    "internal_error": {
+      "type": "KeyError",
+      "message": "('minimum_ligament_failures', 'corner_normal_failures')"
+    },
+    "checker_sha256": "8cb7f7239eedc7d7ba73f1187e8a6a63bd402dfc3805de12033f286542a88e6b",
+    "retained_exact_bad_checker_snapshot_sha256": "8cb7f7239eedc7d7ba73f1187e8a6a63bd402dfc3805de12033f286542a88e6b"
+  },
+  "repaired_result": {
+    "report": "gate-ligament-qa-regression-repaired-v3.json",
+    "overall_rejected": true,
+    "dedicated_ligament_field_hit": true,
+    "internal_error": null,
+    "checker_sha256": "47eb13f1d3257ae97f2ff8fd9b4efd68516ecb973d20d1f52332464d61148cdf",
+    "model_sha256": "ffc4370adcfa97612ba889cd2f409e000b70db1c4f2b4323237a7f8fbe09864d"
+  },
+  "cause": "A broad source text replacement used to add a normal failure-list key also accidentally turned the ligament append into a tuple subscript. Legal samples never traversed that failure branch. The actual narrowing fault exposed the dedicated-field miss.",
+  "fix": "Restore the single string append key; retain the failing report and exact buggy-source snapshot in work/qa; add an AST regression guard and rerun actual bad meshes.",
+  "limits": "The dedicated repair check is not a replacement for the complete subsequent 64-point family/fault gates."
+}

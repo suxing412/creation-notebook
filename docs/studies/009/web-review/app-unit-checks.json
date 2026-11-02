@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "scope": "Actual app.js in mock DOM/network/image environment; not native browser/GPU",
+  "source_sha256": {
+    "app.js": "a9b10e397eb8287763abde65192867a0ff7cb2d7b80b0be0d64e6785433abab5",
+    "pose-state.js": "2f50cad4153ebad58397341e2cd8133a0bb05fbe220447c827f1603e402e983d"
+  },
+  "cases": [
+    "stale completion cannot mix image/title/arm dimensions/history",
+    "rapid variant and pose combines newest intent",
+    "404 keeps old image and values; retry is atomic",
+    "initial image missing hides unavailable panel and permits retry",
+    "metadata HTTP failure is not permanently cached",
+    "malformed metadata rejects before display and refetches",
+    "late initial failure does not erase newer success",
+    "deep link/popstate select requested pose without pushState loop",
+    "decode failure cannot commit only metadata"
+  ]
+}

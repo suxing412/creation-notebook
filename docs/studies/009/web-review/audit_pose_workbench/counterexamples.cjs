@@ -1,0 +1,15 @@
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'../..'),api=require(root+'/pose-state.js');
+// Reuse the authored harness without executing or altering its test body.
+let harness=fs.readFileSync(root+'/web-source/test_app.cjs','utf8');
+harness=harness.slice(0,harness.indexOf('(async()=>{const cases=[];'));
+const context={require,console,URL,URLSearchParams,__dirname:path.join(root,'web-source'),module:{exports:{}}};vm.createContext(context);vm.runInContext(harness+';module.exports={setup,tick,success};',context);
+const {setup,tick,success}=context.module.exports;const checks=[];
+(async()=>{
+ for(const s of [' ../outside.png','model/.. ',' javascript:alert(1)',' http:outside.invalid'])checks.push({case:'path canonicalization',input:s,accepted:api.localPath(s),resolved:new URL(s,'https://fixture.invalid/studies/009/index.html').href});
+ {const t=setup({search:'?variant=reach&pose=folded'});await tick();t.images[0].onerror();await tick();t.click(t.retry);await tick();await success(t,1);assert.equal(t.history.length,1);checks.push({case:'retry of initial deep-link failure adds a history entry',url:t.history[0],historyPushes:t.history.length});}
+ {const t=setup();t.click(t.variants[1]);await tick();await success(t);t.click(t.variants[2]);await tick();await success(t,1);t.ctx.location.href='https://fixture.invalid/index.html?variant=reach&pose=default';t.ctx.location.search='?variant=reach&pose=default';t.events.popstate();await tick();t.images[2].onerror();await tick();const before=t.history.length;t.click(t.retry);await tick();await success(t,3);assert.equal(t.history.length,before+1);checks.push({case:'failed Back navigation then retry pushes current routed URL, truncating Forward in real history',before,after:t.history.length,url:t.history.at(-1)});}
+ {const t=setup();t.ctx.history.pushState=()=>{throw Error('SecurityError: history unavailable')};t.click(t.variants[1]);await tick();await success(t);assert.match(t.frame.child.src,/reach/);assert.equal(t.variants[0].attrs['aria-pressed'],'true');checks.push({case:'history push failure breaks image/selection state consistency',image:t.frame.child.src,title:t.elements['[data-title]'].textContent,stats:t.elements['[data-stat="arms"]'].textContent,selection:t.variants.map(x=>[x.dataset.variant,x.attrs['aria-pressed']]),status:t.status.textContent});}
+ {const t=setup();t.click(t.variants[0]);await tick();await success(t);assert.equal(t.history.length,1);checks.push({case:'clicking already-selected variant adds duplicate history entry',historyPushes:t.history.length,url:t.history[0]});}
+ const out={scope:'Independent node counterexamples using existing authored mock DOM; no browser/server',sha256:Object.fromEntries(['app.js','pose-state.js'].map(p=>[p,require('node:crypto').createHash('sha256').update(fs.readFileSync(root+'/'+p)).digest('hex')])),checks};fs.writeFileSync(__dirname+'/counterexamples.json',JSON.stringify(out,null,2)+'\n');console.log(JSON.stringify(out,null,2));
+})().catch(e=>{console.error(e);process.exitCode=1});

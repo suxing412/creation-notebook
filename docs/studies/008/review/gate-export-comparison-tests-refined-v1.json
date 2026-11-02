@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-11-02T01:08:16.008073+00:00",
+  "passed": true,
+  "baseline": "work/refined-corrected",
+  "baseline_native_sha256": "92de3888d53982be7e126a3c8c2b634560768ea81c45012db12529441fb0fd70",
+  "baseline_glb_sha256": "fec16702cfeb16fa77e9cfb5115285e6d70c077fa3759f41ad189a7e803ab1b1",
+  "comparison_checker_sha256": "129d79a93d8e0109beff692c448d425989fe12598b231b9f068621c9732e979f",
+  "test_script_sha256": "3d05ae4442cbace2b13b767fc8533597df87b8cd57c65223065ad0a7c40e8d52",
+  "tests": [
+    {
+      "case": "translated-position-payload",
+      "passed": true,
+      "payload_passed": true,
+      "payload_exit_code": 0,
+      "comparison_rejected": true,
+      "comparison_exit_code": 1,
+      "dedicated_geometry_mismatch_triggered": true,
+      "fresh_identities_verified": true,
+      "vertex_coordinate_multisets_equal": false,
+      "payload_report": "gate-export-refined-v1-translated-position-payload-payload.json",
+      "comparison_report": "gate-export-refined-v1-translated-position-payload-comparison.json"
+    },
+    {
+      "case": "reversed-triangle-payload",
+      "passed": true,
+      "payload_passed": true,
+      "payload_exit_code": 0,
+      "comparison_rejected": true,
+      "comparison_exit_code": 1,
+      "dedicated_geometry_mismatch_triggered": true,
+      "fresh_identities_verified": true,
+      "vertex_coordinate_multisets_equal": false,
+      "payload_report": "gate-export-refined-v1-reversed-triangle-payload-payload.json",
+      "comparison_report": "gate-export-refined-v1-reversed-triangle-payload-comparison.json"
+    }
+  ]
+}

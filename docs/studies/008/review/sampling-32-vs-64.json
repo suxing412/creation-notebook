@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "diagnostic_only": true,
+  "checker_sha256": "787c14e8cc54d686491dc3233cd00ff05f6611cf5f7d66a4eeefdaa8932d4395",
+  "rows": [
+    {
+      "asset_label": "veil",
+      "model_sha256": "774cb925cfd52b8dda7bd24bc2efb02f5f3a374c693ebca41de72654127854dd",
+      "info_sha256": "c1b67b7feb5780a1fa39abe216cc6a543d431ad3adf5fd39b215429d1537d8c0",
+      "points_per_hole": 32,
+      "edges_evaluated": 1536,
+      "maximum_sampled_chord_midpoint_error_m": 0.00017652241624364822,
+      "mean_sampled_chord_midpoint_error_m": 0.00010756307096248753,
+      "screen_scale_upper_estimate_px_at_960_detail": 1.0933001264122728,
+      "pixel_estimate_note": "World error divided by orthographic pixel pitch; actual projected direction may be smaller."
+    },
+    {
+      "asset_label": "edge64-probe",
+      "model_sha256": "a1b2d615a8e9a2eee9c7c77ec4028d3c6a36f82171f81b125ea6f1b6fb1905af",
+      "info_sha256": "c5fa2a2242c0aabb6f0fe23581717b9c4fda4c5cb476e2807396bb4f810416c1",
+      "points_per_hole": 64,
+      "edges_evaluated": 3072,
+      "maximum_sampled_chord_midpoint_error_m": 4.553418476378252e-05,
+      "mean_sampled_chord_midpoint_error_m": 2.69552798988579e-05,
+      "screen_scale_upper_estimate_px_at_960_detail": 0.28201817660149175,
+      "pixel_estimate_note": "World error divided by orthographic pixel pitch; actual projected direction may be smaller."
+    }
+  ],
+  "limits": [
+    "Only the midpoint of each actual front-mouth chord is tested against the analytic target.",
+    "Does not measure max over the entire chord, full surface, manufacturing tolerance, or image/GPU aliasing.",
+    "Both geometries are actual native files. Render samples do not change this geometric diagnostic."
+  ]
+}

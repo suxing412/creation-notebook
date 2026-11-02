@@ -1,0 +1,156 @@
+{
+  "checker_sha256": "a007928c437b31416cb47c4d359ab695ada1e52b97cddfa1d687d1a534215c5b",
+  "payload_checker_sha256": "b736301f6e704ef468903e88f9c511cea3f3c5483c604363d47a7356a703ecef",
+  "control_script_sha256": "841e707c03634a5465690a8a2313f739ffd335fc97a1b6c8f1ca2b2b9fd221e1",
+  "created_utc": "2026-11-02T03:12:32.511181+00:00",
+  "passed": true,
+  "cases": [
+    {
+      "case": "valid",
+      "expected_failure": null,
+      "checker_passed": true,
+      "observed_codes": [],
+      "expected_condition_observed": true,
+      "model_sha256": "19919c91767458ab712f3f9a4f1f7358be67819dfa568cf6f23a2fe5fe6b6957",
+      "glb_sha256": "9f588b109845fe58294511bbcf95f3a809546557d6c6e2c348f8cd3abd80ba9d"
+    },
+    {
+      "case": "reverse_one",
+      "expected_failure": "winding",
+      "checker_passed": false,
+      "observed_codes": [
+        "winding"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "a538bee53f7ab103553e7936a9747a43cbec6e082584d3c6a4cb2db49d3042a0",
+      "glb_sha256": "692273bdc4120c464c7dc284514509ebbd039b52b3141fc147effd6b9af11021"
+    },
+    {
+      "case": "reverse_all",
+      "expected_failure": "world_volume",
+      "checker_passed": false,
+      "observed_codes": [
+        "world_volume"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "f665a259cf63e7854bbc1967e2fd40c456785b25ea481a90f1b778332f5ded00",
+      "glb_sha256": "2932cf878593a2c4ee0864ef87367a17640acb3ac13e46d7b201367f799669a3"
+    },
+    {
+      "case": "duplicate_face",
+      "expected_failure": "duplicate_triangle",
+      "checker_passed": false,
+      "observed_codes": [
+        "nonmanifold",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "coplanar_positive_area",
+        "export_geometry_mismatch"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "9b7383258105c82e5903a559f4bbaed27ddfac49755036fc85f2f26564d57f99",
+      "glb_sha256": "0266f98f3efb10321830177655cec506ad8be2a9e388b7cf18c7fb6ddc4577a3"
+    },
+    {
+      "case": "degenerate",
+      "expected_failure": "degenerate",
+      "checker_passed": false,
+      "observed_codes": [
+        "nonmanifold",
+        "degenerate",
+        "export_geometry_mismatch"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "234aa1f4ac65c499148076896b170c3514f54da2fbfb2e29d7d3c0f5e4a4b7c8",
+      "glb_sha256": "7c177e3fd56cbac22f73f1704b994d6bda9cd78da12a6860d473c0e075d811a2"
+    },
+    {
+      "case": "two_components",
+      "expected_failure": "components",
+      "checker_passed": false,
+      "observed_codes": [
+        "components"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "b32b3fbffb2b731e97ce21dd4cb688e56f66f3e1848749866bc3baa3e3b291da",
+      "glb_sha256": "4fd17113f0f5fbb21fc5d19b27dada8b24ba86e8c673cee015f31f97fb94043b"
+    },
+    {
+      "case": "coplanar_duplicate",
+      "expected_failure": "coplanar_positive_area",
+      "checker_passed": false,
+      "observed_codes": [
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "unclassified_interobject_intersections",
+        "coplanar_positive_area"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "7179cc2d7e66915fc7abd96fc070c2299f3ce27795905e3734a85bf3eb949815",
+      "glb_sha256": "9220d53aad0b0359bd053085a21902c4f4298ab937e097d755038bfe7a4fa6d8"
+    },
+    {
+      "case": "crossing",
+      "expected_failure": "unclassified_interobject_intersections",
+      "checker_passed": false,
+      "observed_codes": [
+        "unclassified_interobject_intersections"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "ae2e7c1616e0f3fc5fd11cb7266d5692b00f497df14bac9e9714d104c2886db5",
+      "glb_sha256": "890464e06cffc973f0165f6efc54d878aadb97052a5d8970bf903415bde0a94b"
+    },
+    {
+      "case": "contained",
+      "expected_failure": "unclassified_containment",
+      "checker_passed": false,
+      "observed_codes": [
+        "unclassified_containment"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "0ba1fc17c7c8864e8675f0b9e624bbe5a752e9c891246c2b046b11e92a970b63",
+      "glb_sha256": "315c68ea85c16717719936e490344fd0c14d2fc27066d7ea8b30fd55b0e16b5c"
+    },
+    {
+      "case": "local_region_valid",
+      "expected_failure": null,
+      "checker_passed": true,
+      "observed_codes": [],
+      "expected_condition_observed": true,
+      "model_sha256": "7bff41a3847044930beaabe8d6977f8c3c830edb332fd1d7fba5e0c32158b6fc",
+      "glb_sha256": "67de702d09b0e0ffbba08355384ab1489a2033f38aca6fb0aac3111efdf31ba0"
+    },
+    {
+      "case": "local_region_partial",
+      "expected_failure": "unclassified_interobject_intersections",
+      "checker_passed": false,
+      "observed_codes": [
+        "unclassified_interobject_intersections"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "451798eed4433d78a4efe2ee5e5c6bbdab6c6ac4688ac5c8081dac3ff82ce734",
+      "glb_sha256": "d1bbc1e77e0f7b1438bbe2a9030a9ad28feb7fbb7ac494b8f8f42991ee356ba0"
+    },
+    {
+      "case": "export_wrong",
+      "expected_failure": "export_geometry_mismatch",
+      "checker_passed": false,
+      "observed_codes": [
+        "export_geometry_mismatch"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "c816e7ddab00195fa042f9364da7a3124ab44ebe25169040eeaf6324d3e1b956",
+      "glb_sha256": "903abd855d37f28c8af99e1301537cfb6a95c67bf45e1de55f3e346a4c98936e"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "degenerate_triangles": [],
+  "duplicate_triangles": [],
+  "nonmanifold_edges": [],
+  "non_positive_world_volume": [],
+  "inconsistent_winding_edges": [],
+  "invalid_connected_components": [],
+  "nonfinite_coordinates": [],
+  "recipe_vertex_envelope_failures": [
+    {
+      "object": "VEIL | continuous perforated shell",
+      "off_recipe_vertices": [
+        {
+          "index": 84,
+          "distance_m": 0.008007015995593187
+        }
+      ],
+      "count": 1,
+      "tolerance_m": 2e-07
+    }
+  ],
+  "recipe_topology_failures": [],
+  "object_contract_failures": [],
+  "material_contract_failures": [],
+  "object_transform_failures": [],
+  "model_state_contract_failures": [],
+  "nonadjacent_self_intersection_candidates": [],
+  "coplanar_positive_area_overlaps": [],
+  "genus_contract_failures": [],
+  "input_contract_failures": [],
+  "construction_metadata_failures": [],
+  "aperture_loop_failures": [
+    {
+      "hole": 0,
+      "failures": [
+        {
+          "ring": 0,
+          "vertex": 84,
+          "inverse_cylinder_fit_m": 0.007937847872820408
+        }
+      ],
+      "count": 1
+    }
+  ],
+  "aperture_wall_failures": [],
+  "aperture_clearance_failures": [],
+  "thickness_failures": [
+    {
+      "hole": 0,
+      "section": "mouth",
+      "failures": [
+        {
+          "pair": [
+            84,
+            372
+          ],
+          "actual_normal_separation_m": 0.007999703288078308,
+          "required_m": 0.008,
+          "vector_residual_m": 0.00793775456751332
+        }
+      ],
+      "count": 1
+    }
+  ],
+  "minimum_ligament_failures": [],
+  "corner_normal_failures": [],
+  "checker_version": "008-native-1.1",
+  "checker_sha256": "8cb7f7239eedc7d7ba73f1187e8a6a63bd402dfc3805de12033f286542a88e6b",
+  "recipe_sha256": "2ce6832921c86a5ad763ffb036d2bbd816b385dce6fce2f8e56272b571659a37",
+  "model_sha256": "ffc4370adcfa97612ba889cd2f409e000b70db1c4f2b4323237a7f8fbe09864d",
+  "file": "ligament-narrowing.blend",
+  "run_id": "ad6fe251-e6fc-4b88-85f5-e9e9eac079d7",
+  "created_utc": "2026-11-02T01:21:15.485218+00:00",
+  "blender_version": "4.3.2",
+  "passed": false,
+  "limits": [
+    "Full-vertex/oriented-face identity is a restricted VEIL recipe contract, not arbitrary geometry or reindexing equivalence.",
+    "BVH candidates exclude triangles sharing any vertex; noncoplanar adjacent foldover is not fully independently certified.",
+    "Near-coplanar overlaps use bidirectional float64 plane distances and projected SAT, not exact symbolic predicates or dynamic z-fighting validation.",
+    "Exactly one raw mesh, no modifiers/shape keys/parents/constraints/object or mesh animation or drivers; photographic scene.blend is out of scope.",
+    "No GPU, WebGL, dynamic flicker, physical iPhone, manufacturing, load or stability verification."
+  ],
+  "thresholds": {
+    "vertex_distance_m": 2e-07,
+    "triangle_area_m2": 1e-12,
+    "duplicate_vertex_round_m": 1e-08,
+    "identity_matrix_entry": 1e-08,
+    "coplanar_normal_cosine": 0.9999999,
+    "bidirectional_plane_distance_m": 5e-08,
+    "positive_projected_overlap_m": 1e-08,
+    "spatial_cell_m": 0.012
+  },
+  "variant": "veil",
+  "recipe_version": "1.0.0",
+  "info_sha256": "5fb54d801d8dd078e0987dc196b46fd607d2f4603bb3ff7690391471ecd6b0b2",
+  "mesh_objects": 1,
+  "corner_normal_records": [
+    {
+      "object": "VEIL | continuous perforated shell",
+      "corners": 68480,
+      "has_custom_normals": false,
+      "minimum_length": 0.9999998611404981,
+      "maximum_length": 1.0000001426389482,
+      "minimum_dot_geometric_face_normal": 0.9999997692466422,
+      "length_tolerance": 2e-05,
+      "negative_hemisphere_tolerance": 1e-05,
+      "analytic_normal_field_equivalence_independently_verified": false
+    }
+  ],
+  "internal_error": {
+    "type": "KeyError",
+    "message": "('minimum_ligament_failures', 'corner_normal_failures')"
+  },
+  "elapsed_seconds": 4.927
+}

@@ -1,0 +1,49 @@
+{
+  "asset": "review/baseline-corrected",
+  "created_utc": "2026-11-02T01:13:26.912392+00:00",
+  "passed": true,
+  "inputs_stable_during_checks": true,
+  "input_sha256": {
+    "native": "5b2c9d4a55d98e16c767ddd26d6caeb1df38d346176be4f2147c4422e04fb0bc",
+    "glb": "cdf8ec38bd0d23b8cfde236028729c6afd176049683bed7b262fcd236dffcae1",
+    "info": "bb09a8e330f0a5f116d87dfd73e1753b8b92e2343d6d44dc31c5fd1f25521c63",
+    "native_checker": "8cb7f7239eedc7d7ba73f1187e8a6a63bd402dfc3805de12033f286542a88e6b",
+    "glb_checker": "5e682d4a4e74a920adb86f49f15b448f619cdda81fd13d904b950dfff58dce11",
+    "recipe": "2ce6832921c86a5ad763ffb036d2bbd816b385dce6fce2f8e56272b571659a37",
+    "comparison_checker": "bc5315bb1849db6106f82bf982bc7c69d18decb2a621460673649782404dc629"
+  },
+  "checks": {
+    "native": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-baseline-corrected-v2-native.json",
+      "info_identity_matches": true,
+      "recipe_identity_matches": true
+    },
+    "glb": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-baseline-corrected-v2-glb.json"
+    },
+    "comparison": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-baseline-corrected-v2-comparison.json",
+      "glb_identity_matches": true,
+      "glb_checker_identity_matches": true
+    }
+  },
+  "wrapper_sha256": "5910c837e77e7277dcf5d7406217979a00ae9b08584ada42d262239df2eb73fc"
+}

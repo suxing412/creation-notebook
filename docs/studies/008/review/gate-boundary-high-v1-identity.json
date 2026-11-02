@@ -1,0 +1,49 @@
+{
+  "asset": "work/qa/boundary-high",
+  "created_utc": "2026-11-02T01:08:31.998699+00:00",
+  "passed": true,
+  "inputs_stable_during_checks": true,
+  "input_sha256": {
+    "native": "fff68743019fab751214ae418a725e194d5fb9489af7c6a08ab0ac02d65582ab",
+    "glb": "6448f9ad3be27ebd42990505dc813bd60064504bf1104e96ad6b759d17ada862",
+    "info": "5299668ad0a2550c0b4931a25938922d82bfdceaaf30b6d8852f8aafa6070475",
+    "native_checker": "5ded39d1c74aecd70ff577e0a11efce1a49df39788085286fc8d10d85b6eea7c",
+    "glb_checker": "5e682d4a4e74a920adb86f49f15b448f619cdda81fd13d904b950dfff58dce11",
+    "recipe": "2ce6832921c86a5ad763ffb036d2bbd816b385dce6fce2f8e56272b571659a37",
+    "comparison_checker": "129d79a93d8e0109beff692c448d425989fe12598b231b9f068621c9732e979f"
+  },
+  "checks": {
+    "native": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-boundary-high-v1-native.json",
+      "info_identity_matches": true,
+      "recipe_identity_matches": true
+    },
+    "glb": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-boundary-high-v1-glb.json"
+    },
+    "comparison": {
+      "exit_code": 0,
+      "new_report_exists": true,
+      "explicit_pass": true,
+      "run_id_present": true,
+      "model_identity_matches": true,
+      "checker_identity_matches": true,
+      "report": "gate-boundary-high-v1-comparison.json",
+      "glb_identity_matches": true,
+      "glb_checker_identity_matches": true
+    }
+  },
+  "wrapper_sha256": "5910c837e77e7277dcf5d7406217979a00ae9b08584ada42d262239df2eb73fc"
+}

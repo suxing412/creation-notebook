@@ -1,0 +1,1842 @@
+{
+  "scope": "Exact source-byte hash correspondence, not bit-for-bit regenerated blend/report equivalence. Each replay must pair the report-matching recipe/checker/test versions with the matching original input bytes; timestamps and run IDs naturally differ. A final snapshot is not assigned to earlier report hashes it does not match. Identical family-independent helper source may occur in both32 and64 reports; this never makes their recipe or asset identities interchangeable.",
+  "files": [
+    {
+      "file": "QA_README.md",
+      "sha256": "7f3d32dc85f75ffb13f004ac4f7fc31a0c3659001085eb8ec771e699f4e0ef55",
+      "matching_historical_report_identities": [],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "README.md",
+      "sha256": "2535c6b5fb18cc195f7e1b72e5add2faf8f4e1535172bb91f98c5fc4d08012e7",
+      "matching_historical_report_identities": [],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "check-1.0-corrected32.py",
+      "sha256": "5ded39d1c74aecd70ff577e0a11efce1a49df39788085286fc8d10d85b6eea7c",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-baseline-corrected-v1-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-low-v1-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-horizon-draft-v1-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-duplicate-face.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-pre-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-baseline-corrected-v1-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-boundary-high-v1-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-mirrored-transform-inverted-world.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-aperture-wall-open.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-shape-key-deform.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-piercing-prism.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-hole-filled-genus.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-oblique-offset-control.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-parent-state.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-material-roughness.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-construction-metadata-mismatch.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-v1-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-fold-draft-v1-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-horizon-draft-v1-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-faults-v1-aperture-sealed.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-degenerate-face.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-animation-state.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-pre-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-low-v1-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-fold-draft-v1-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-modifier-solidify.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-crossing-triangles.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v1-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-refined-corrected-v1-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-ligament-narrowing.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-thickness-deformation.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-contained-island.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-oblique-coplanar.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-missing-face.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-reversed-face.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-aperture-loop-mismatch.json",
+          "field": "checker_sha256"
+        }
+      ],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "check-1.0-initial.py",
+      "sha256": "bb6ca476b5a298dea2be602958bac2e79135100534bde4f5137d6214d49f647d",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-first-v1-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-first-v1-native.json",
+          "field": "checker_sha256"
+        }
+      ],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "check-1.1-known-ligament-key-regression.py",
+      "sha256": "8cb7f7239eedc7d7ba73f1187e8a6a63bd402dfc3805de12033f286542a88e6b",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-faults-v2-construction-metadata-mismatch.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-v2-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v2-hole-filled-genus.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-historical-original-v2-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-boundary-high-v2-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-fold-draft-v2-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-fold-draft-v2-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-horizon-draft-v2-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-faults-v2-contained-island.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-pre-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-pre-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v2-aperture-wall-open.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v2-aperture-loop-mismatch.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-horizon-draft-v2-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-low-v2-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v2-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-final-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v2-aperture-sealed.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-pre-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-pre-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-boundary-high-v2-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v2-ligament-narrowing.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-final-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-pre-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-v2-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-refined-corrected-v2-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-final-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-historical-original-v2-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-locked-veil-v2-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v2-reversed-face.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-low-v2-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-faults-v2-thickness-deformation.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v2-piercing-prism.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-pre-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v2-material-roughness.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v2-native-normal-reversed.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-final-identity.json",
+          "field": "input_sha256.native_checker"
+        }
+      ],
+      "status": "KNOWN BUG retained solely for reproduction; never production"
+    },
+    {
+      "file": "check.py",
+      "sha256": "47eb13f1d3257ae97f2ff8fd9b4efd68516ecb973d20d1f52332464d61148cdf",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-rebuild-7ea886fca376-final-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-ligament-qa-regression-repaired-v3.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-final-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-historical-original-archived32-v3-proof.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-historical-original-archived32-v3-native.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-final-identity.json",
+          "field": "input_sha256.native_checker"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-final-native.json",
+          "field": "checker_sha256"
+        }
+      ],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "check_glb-initial.py",
+      "sha256": "98a73972b6b4bef972305af660f24e32a1880514b9083d8f413a1b2f574592d5",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-first-v1-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-first-v1-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-first-v1-comparison.json",
+          "field": "glb_checker_sha256"
+        }
+      ],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "check_glb.py",
+      "sha256": "5e682d4a4e74a920adb86f49f15b448f619cdda81fd13d904b950dfff58dce11",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-baseline-corrected-64-v1-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-caace35d0db8-pre-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-final-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-pre-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-64-v1-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-rebuild-caace35d0db8-final-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-export-refined-v2-reversed-normal-payload-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-boundary-low-v1-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-baseline-corrected-v1-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-2bf55b6c0963-pre-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-locked-veil-v1-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-faults-v1-zero-normal.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-export-refined-v2-translated-position-payload-payload.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-export-final64-v1-translated-position-payload-payload.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-pre-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-baseline-corrected-v1-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-rebuild-e1a65ae98c36-final-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-out-of-range-index.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-2bf55b6c0963-final-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-final-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-87f21c9cf7ef-pre-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-export-final-v2-translated-position-payload-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-undersized-stride.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-export-final64-v1-reversed-triangle-payload-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-horizon-draft-v2-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-final-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-87f21c9cf7ef-pre-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-locked-veil-v1-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-export-final64-v1-reversed-normal-payload-payload.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-fold-draft-v2-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-historical-original-v2-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-export-refined-v1-reversed-triangle-payload-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-v2-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-locked-horizon-v1-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-export-refined-v2-reversed-normal-payload-payload.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-fold-draft-v2-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-fold-draft-v2-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-pre-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-negative-offset.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-64-v1-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-boundary-high-v1-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-pre-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-nan-position.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-final-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-horizon-draft-v2-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-boundary-high-v1-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-fold-draft-v1-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-final-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-horizon-draft-v1-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-boundary-low-v2-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-e1a65ae98c36-final-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-boundary-low-v2-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-v1-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-pre-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-refined-corrected-v1-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-horizon-draft-v1-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-64-v1-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v2-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-2bf55b6c0963-pre-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-v2-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-87f21c9cf7ef-final-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-pre-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-pre-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-refined-corrected-v1-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-final-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-pre-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-v1-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-fold-draft-v1-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-87f21c9cf7ef-final-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-export-refined-v1-translated-position-payload-payload.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-fold-draft-v1-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-e1a65ae98c36-pre-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-faults-v1-accessor-overrun.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-final-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-e1a65ae98c36-pre-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-caace35d0db8-final-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-historical-original-v2-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-caace35d0db8-final-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-87f21c9cf7ef-final-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-64-v1-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-e1a65ae98c36-final-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-v2-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-boundary-low-v1-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v2-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-final-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-export-final64-v1-reversed-normal-payload-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-2bf55b6c0963-final-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-pre-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-2bf55b6c0963-final-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-export-final-v2-translated-position-payload-payload.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v1-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-locked-horizon-v1-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-final-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-low-64-v1-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-e1a65ae98c36-pre-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-pre-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-export-final64-v1-reversed-triangle-payload-payload.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v2-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-caace35d0db8-pre-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-caace35d0db8-pre-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-pre-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-horizon-draft-v1-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-export-refined-v2-translated-position-payload-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-locked-fold-v1-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-locked-horizon-v1-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-v2-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-export-refined-v2-reversed-triangle-payload-payload.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-low-v2-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-rebuild-87f21c9cf7ef-pre-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-export-refined-v1-reversed-triangle-payload-payload.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-export-refined-v2-reversed-triangle-payload-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-export-final-v2-reversed-triangle-payload-payload.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-v2-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-export-final64-v1-translated-position-payload-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-boundary-low-64-v1-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-locked-veil-v1-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-locked-fold-v1-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-boundary-low-v1-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-pre-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-horizon-draft-v2-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-historical-original-v2-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-64-v1-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-locked-fold-v1-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-final-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-export-refined-v1-translated-position-payload-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-locked-veil-v2-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-final-glb.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-low-64-v1-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-final-identity.json",
+          "field": "input_sha256.glb_checker"
+        },
+        {
+          "report": "gate-rebuild-2bf55b6c0963-pre-comparison.json",
+          "field": "glb_checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-v2-comparison.json",
+          "field": "glb_checker_sha256"
+        }
+      ],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "compare_exports-initial.py",
+      "sha256": "129d79a93d8e0109beff692c448d425989fe12598b231b9f068621c9732e979f",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-boundary-low-v1-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-pre-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-baseline-corrected-v1-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-first-v1-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-export-comparison-tests-refined-v1.json",
+          "field": "comparison_checker_sha256"
+        },
+        {
+          "report": "gate-export-refined-v1-reversed-triangle-payload-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-first-v1-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-pre-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-v1-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-v1-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-fold-draft-v1-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-horizon-draft-v1-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-baseline-corrected-v1-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v1-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-fold-draft-v1-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v1-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-horizon-draft-v1-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-low-v1-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-export-refined-v1-translated-position-payload-comparison.json",
+          "field": "checker_sha256"
+        }
+      ],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "compare_exports.py",
+      "sha256": "bc5315bb1849db6106f82bf982bc7c69d18decb2a621460673649782404dc629",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-rebuild-7ea886fca376-final-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-64-v1-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-caace35d0db8-final-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-export-refined-v2-reversed-normal-payload-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-2bf55b6c0963-pre-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-locked-veil-v1-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-final-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-87f21c9cf7ef-pre-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-export-final-v2-translated-position-payload-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-export-final64-v1-reversed-triangle-payload-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-locked-veil-v1-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-fold-draft-v2-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-historical-original-v2-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-export-comparison-tests-final64-v1.json",
+          "field": "comparison_checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-v2-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-locked-horizon-v1-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-fold-draft-v2-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-baseline-corrected-64-v1-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-final-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-horizon-draft-v2-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-e1a65ae98c36-final-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-boundary-low-v2-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-pre-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-baseline-corrected-64-v1-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v2-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-pre-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-pre-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-final-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-pre-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-87f21c9cf7ef-final-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-final-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-e1a65ae98c36-pre-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-caace35d0db8-final-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-87f21c9cf7ef-final-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-e1a65ae98c36-final-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-v2-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-refined-corrected-v2-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-export-comparison-tests-refined-v2.json",
+          "field": "comparison_checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-final-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-export-final64-v1-reversed-normal-payload-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-2bf55b6c0963-final-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-2bf55b6c0963-final-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-locked-horizon-v1-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-e1a65ae98c36-pre-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-caace35d0db8-pre-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-caace35d0db8-pre-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-pre-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-export-refined-v2-translated-position-payload-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-low-v2-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-87f21c9cf7ef-pre-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-export-refined-v2-reversed-triangle-payload-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-v2-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-export-final64-v1-translated-position-payload-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-low-64-v1-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-locked-fold-v1-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-pre-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-horizon-draft-v2-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-historical-original-v2-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-64-v1-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-locked-fold-v1-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-final-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-boundary-low-64-v1-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-final-identity.json",
+          "field": "input_sha256.comparison_checker"
+        },
+        {
+          "report": "gate-rebuild-2bf55b6c0963-pre-comparison.json",
+          "field": "checker_sha256"
+        },
+        {
+          "report": "gate-boundary-high-v2-comparison.json",
+          "field": "checker_sha256"
+        }
+      ],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "generate.py",
+      "sha256": "45252476b9be9b15da726d9213dcf5cf56bbf4050d2346353d657e8e22355834",
+      "matching_historical_report_identities": [],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "recipe-original-invalid.py",
+      "sha256": "f695b183a5a3fab45ed9d8fc78ab412bc667e07227d73c72cc4733ad99a7bbae",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-first-v1-native.json",
+          "field": "recipe_sha256"
+        }
+      ],
+      "status": "KNOWN BUG retained solely for reproduction; never production"
+    },
+    {
+      "file": "recipe.py",
+      "sha256": "2ce6832921c86a5ad763ffb036d2bbd816b385dce6fce2f8e56272b571659a37",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-faults-v2-construction-metadata-mismatch.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-v1-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-boundary-low-v1-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-horizon-draft-v1-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-duplicate-face.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-pre-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-baseline-corrected-v1-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-boundary-high-v1-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-v2-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-mirrored-transform-inverted-world.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-first-v1-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-faults-v1-aperture-wall-open.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v2-hole-filled-genus.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-shape-key-deform.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-historical-original-v2-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-boundary-high-v2-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-faults-v1-piercing-prism.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-hole-filled-genus.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-oblique-offset-control.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-fold-draft-v2-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-fold-draft-v2-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-parent-state.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-material-roughness.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-final-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-faults-v1-construction-metadata-mismatch.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-horizon-draft-v2-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-faults-v2-contained-island.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-boundary-high-v1-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-fold-draft-v1-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-input-v1.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-horizon-draft-v1-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-faults-v1-aperture-sealed.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-degenerate-face.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-animation-state.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-pre-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-pre-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v2-aperture-wall-open.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v2-aperture-loop-mismatch.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-horizon-draft-v2-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-boundary-low-v2-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v2-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-final-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-ligament-qa-regression-repaired-v3.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v2-aperture-sealed.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-pre-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-pre-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-boundary-low-v1-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-pre-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-fold-draft-v1-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-boundary-high-v2-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-modifier-solidify.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-final-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v2-ligament-narrowing.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-final-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-pre-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-crossing-triangles.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-v2-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-refined-corrected-v2-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-final-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-historical-original-v2-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-locked-veil-v2-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v1-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-historical-original-archived32-v3-proof.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v2-reversed-face.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v1-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-historical-original-archived32-v3-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-boundary-low-v2-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-faults-v2-thickness-deformation.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-ligament-narrowing.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-thickness-deformation.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-contained-island.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-oblique-coplanar.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-missing-face.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v2-piercing-prism.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-pre-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v2-material-roughness.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v1-reversed-face.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-faults-v2-native-normal-reversed.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-final-identity.json",
+          "field": "input_sha256.recipe"
+        },
+        {
+          "report": "gate-faults-v1-aperture-loop-mismatch.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-final-native.json",
+          "field": "recipe_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-final-identity.json",
+          "field": "input_sha256.recipe"
+        }
+      ],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "run_gates.py",
+      "sha256": "5910c837e77e7277dcf5d7406217979a00ae9b08584ada42d262239df2eb73fc",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-boundary-high-64-v1-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-boundary-low-v1-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-2bf55b6c0963-pre-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-locked-veil-v1-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-pre-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-v1-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-first-v1-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-historical-original-v2-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-boundary-high-v2-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-fold-draft-v2-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-64-v1-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-final-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-horizon-draft-v2-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-boundary-high-v1-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-fold-draft-v1-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-horizon-draft-v1-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-e1a65ae98c36-final-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-pre-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-pre-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-7ea886fca376-pre-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-87f21c9cf7ef-final-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-caace35d0db8-final-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-baseline-corrected-v2-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v2-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-91553992b4fb-final-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-2bf55b6c0963-final-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-refined-corrected-v1-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-locked-horizon-v1-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-e1a65ae98c36-pre-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-caace35d0db8-pre-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-boundary-low-v2-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-87f21c9cf7ef-pre-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-boundary-low-64-v1-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-locked-fold-v1-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-3cd24b0ef959-final-identity.json",
+          "field": "wrapper_sha256"
+        },
+        {
+          "report": "gate-rebuild-09224e259954-final-identity.json",
+          "field": "wrapper_sha256"
+        }
+      ],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "test_contract.py",
+      "sha256": "be1cae28a4dba5be7091b9e08d85ad8a9dc059f88a1add17309c3f270841d3ba",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-input-v1.json",
+          "field": "test_script_sha256"
+        },
+        {
+          "report": "gate-input-final64-v1.json",
+          "field": "test_script_sha256"
+        }
+      ],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "test_export_comparison-v1.py",
+      "sha256": "3d05ae4442cbace2b13b767fc8533597df87b8cd57c65223065ad0a7c40e8d52",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-export-comparison-tests-refined-v1.json",
+          "field": "test_script_sha256"
+        }
+      ],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "test_export_comparison.py",
+      "sha256": "d1f55cd79d96e488bf96bd15afb44bb688cc038aa44507997e66f62da234dfae",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-export-comparison-tests-refined-v2.json",
+          "field": "test_script_sha256"
+        }
+      ],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "test_faults-v1.py",
+      "sha256": "fb23f8b3a6e7238180ee132ee39d92f959afe187eadc74013c25afc685c12323",
+      "matching_historical_report_identities": [
+        {
+          "report": "gate-faults-v1.json",
+          "field": "test_script_sha256"
+        }
+      ],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    },
+    {
+      "file": "test_faults.py",
+      "sha256": "898a1b44d4aa3cefec4a618b864b51a7ef7762d57201d6e60be8f438be14508a",
+      "matching_historical_report_identities": [],
+      "status": "HISTORICAL_SNAPSHOT_NOT_CURRENT_PRODUCTION"
+    }
+  ]
+}

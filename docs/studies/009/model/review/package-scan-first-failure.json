@@ -1,0 +1,5 @@
+{
+  "passed": false,
+  "cause": "Privacy scanner matched its own banned literal list in source/package.py; the artifact had not been frozen or published.",
+  "fix": "Remove unnecessary account-specific strings from scanner source; build generic path prefixes without embedding a complete matched token. No private file contents were waived."
+}

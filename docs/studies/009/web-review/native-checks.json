@@ -1,0 +1,41 @@
+{
+  "status": "passed-with-explicit-unverified-branches",
+  "date_utc": "2026-11-02",
+  "scope": "Native cloud browser at desktop plus 320/390 CSS iframes. Not mobile/GPU.",
+  "passed": [
+    "9 actual model/pose image and numeric transactions",
+    "Keyboard Enter / Space / Tab",
+    "Back / Forward",
+    "Initial deep link to poise extended",
+    "Consecutive variant and pose changes",
+    "320/390 CSS viewport without horizontal overflow; controls within tested viewport",
+    "Sandbox no-JS baseline plus all 9 static atlas cards and downloads",
+    "Real missing image 404 retains previous decoded image and values",
+    "Initial HTML image 404 hides unavailable numeric panel; retry loads actual default asset",
+    "One real GLB browser download identical to model archive bytes"
+  ],
+  "not_verified": [
+    "Retry after restoring a missing asset in same document: managed preview hot-reloaded before click; not counted as passed",
+    "Real GPU, real phone, dynamic flicker",
+    "200% zoom, full screen reader"
+  ],
+  "unit_only": [
+    "Recovered-image retry semantics",
+    "pushState failure separation",
+    "Retry preserves Back/Forward intent under failures",
+    "384 async settlement permutations"
+  ],
+  "source_sha256": {
+    "app.js": "a9b10e397eb8287763abde65192867a0ff7cb2d7b80b0be0d64e6785433abab5",
+    "pose-state.js": "2f50cad4153ebad58397341e2cd8133a0bb05fbe220447c827f1603e402e983d",
+    "style.css": "3f434a24abc08b6bee43a01eb4e2f5df3db9f2d9df86866aa77adb6c467963b9"
+  },
+  "evidence": [
+    "native-nine-poses.json",
+    "native-navigation.json",
+    "native-narrow.json",
+    "native-resource-recovery.json",
+    "native-initial-retry.json",
+    "native-download.json"
+  ]
+}

@@ -1,0 +1,595 @@
+{
+  "study": "009",
+  "title": "HINGE / 折光",
+  "variant": "reach",
+  "config": {
+    "name": "reach",
+    "version": "009-hinge-1.0",
+    "seed": 0,
+    "lower_length": 0.205,
+    "upper_length": 0.285,
+    "base_radius": 0.115,
+    "head_radius": 0.075,
+    "shoulder_deg": 70,
+    "elbow_deg": -95,
+    "head_deg": -5
+  },
+  "pose": {
+    "angles_degrees": [
+      100,
+      -125,
+      20
+    ],
+    "shoulder": [
+      0,
+      0,
+      0.11
+    ],
+    "elbow": [
+      -0.03559787642172071,
+      0,
+      0.31188558936750266
+    ],
+    "head_pivot": [
+      0.2226998428837245,
+      0,
+      0.1914393847714033
+    ],
+    "neck_end": [
+      0.3119706418583858,
+      -0.009,
+      0.22393129838734183
+    ],
+    "head_center": [
+      0.3174429641515965,
+      -0.009,
+      0.2088962164547673
+    ],
+    "lower_angle": 1.7453292519943295,
+    "upper_angle": -0.43633231299858255,
+    "head_angle": 0.3490658503988659,
+    "head_floor_conservative_bound_m": 0.17196839425591126
+  },
+  "recipe_version": "009-hinge-1.0",
+  "blender_version": "4.3.2",
+  "seed": 0,
+  "parts": [
+    {
+      "name": "Base body",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Midnight enamel"
+    },
+    {
+      "name": "Foot 1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Rubber feet"
+    },
+    {
+      "name": "Foot 2",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Rubber feet"
+    },
+    {
+      "name": "Foot 3",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Rubber feet"
+    },
+    {
+      "name": "Fixed upright",
+      "vertices": 3030,
+      "polygons": 3032,
+      "material": "Midnight enamel"
+    },
+    {
+      "name": "Lower arm",
+      "vertices": 3114,
+      "polygons": 3116,
+      "material": "Midnight enamel"
+    },
+    {
+      "name": "Upper arm",
+      "vertices": 3142,
+      "polygons": 3144,
+      "material": "Midnight enamel"
+    },
+    {
+      "name": "Head neck",
+      "vertices": 3114,
+      "polygons": 3116,
+      "material": "Midnight enamel"
+    },
+    {
+      "name": "Shoulder axle",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Shoulder cap -1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Shoulder cap 1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Elbow axle",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Elbow cap -1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Elbow cap 1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Head axle",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Head cap -1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Head cap 1",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Satin warm metal"
+    },
+    {
+      "name": "Head housing",
+      "vertices": 578,
+      "polygons": 672,
+      "material": "Midnight enamel"
+    },
+    {
+      "name": "Diffuser",
+      "vertices": 386,
+      "polygons": 480,
+      "material": "Opal diffuser"
+    }
+  ],
+  "bounds_m": [
+    [
+      -0.11500000208616257,
+      0.390656054019928
+    ],
+    [
+      -0.11500000208616257,
+      0.11500000208616257
+    ],
+    [
+      0.0,
+      0.3268820345401764
+    ]
+  ],
+  "units": "metres",
+  "assembly_contract": {
+    "plate_thickness_m": 0.012,
+    "moving_plate_y_centres_m": [
+      -0.009,
+      0.009
+    ],
+    "nominal_y_clearance_m": 0.006,
+    "head_neck_thickness_m": 0.008,
+    "head_neck_upper_y_clearance_m": 0.008,
+    "bore_radius_m": 0.0045,
+    "axle_radius_m": 0.004,
+    "nominal_radial_clearance_m": 0.0004999999999999996,
+    "fixed_base_embed_region": "Fixed upright / Base body, z <= 0.026 m; inspect local contacts",
+    "head_neck_contact_region": "Head neck / Head housing, local lamp radius <= R and local z within housing upper material; lens contact forbidden",
+    "feet_embed_m": 0.001
+  },
+  "studio": {
+    "renderer": "Cycles CPU",
+    "samples": 128,
+    "resolution": [
+      960,
+      960
+    ],
+    "seed": 0,
+    "denoising": false,
+    "view_transform": "AgX",
+    "fixed_camera": true,
+    "views": {
+      "beauty": {
+        "location": [
+          0.85,
+          -1.25,
+          0.82
+        ],
+        "target": [
+          0.16,
+          0,
+          0.25
+        ],
+        "ortho_scale": 0.75
+      },
+      "front": {
+        "location": [
+          0.2,
+          -1.4,
+          0.26
+        ],
+        "target": [
+          0.2,
+          0,
+          0.26
+        ],
+        "ortho_scale": 0.82
+      },
+      "side": {
+        "location": [
+          1.4,
+          0,
+          0.27
+        ],
+        "target": [
+          0.17,
+          0,
+          0.27
+        ],
+        "ortho_scale": 0.73
+      },
+      "top": {
+        "location": [
+          0.17,
+          0,
+          1.5
+        ],
+        "target": [
+          0.17,
+          0,
+          0.27
+        ],
+        "ortho_scale": 0.73
+      },
+      "rear": {
+        "location": [
+          -0.65,
+          1.2,
+          0.75
+        ],
+        "target": [
+          0.16,
+          0,
+          0.25
+        ],
+        "ortho_scale": 0.75
+      },
+      "joint": {
+        "location": [
+          0.09440212357827929,
+          -0.24,
+          0.41188558936750264
+        ],
+        "target": [
+          -0.03559787642172071,
+          0,
+          0.31188558936750266
+        ],
+        "ortho_scale": 0.11
+      }
+    }
+  },
+  "revision": 2,
+  "gpu_verified": false,
+  "manufacturing_verified": false,
+  "contact_regions": [
+    {
+      "id": "fixed-upright-mount",
+      "objects": [
+        "Base body",
+        "Fixed upright"
+      ],
+      "kind": "cylinder",
+      "center": [
+        0,
+        0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "axial_min": 0.0049,
+      "axial_max": 0.0261,
+      "radius": 0.022
+    },
+    {
+      "id": "foot-mount-1",
+      "objects": [
+        "Base body",
+        "Foot 1"
+      ],
+      "kind": "cylinder",
+      "center": [
+        0.07475000000000001,
+        0.0,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "axial_min": 0.0049,
+      "axial_max": 0.0061,
+      "radius": 0.0121
+    },
+    {
+      "id": "foot-mount-2",
+      "objects": [
+        "Base body",
+        "Foot 2"
+      ],
+      "kind": "cylinder",
+      "center": [
+        -0.03737499999999999,
+        0.06473539893288681,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "axial_min": 0.0049,
+      "axial_max": 0.0061,
+      "radius": 0.0121
+    },
+    {
+      "id": "foot-mount-3",
+      "objects": [
+        "Base body",
+        "Foot 3"
+      ],
+      "kind": "cylinder",
+      "center": [
+        -0.03737500000000004,
+        -0.06473539893288678,
+        0
+      ],
+      "axis": [
+        0,
+        0,
+        1
+      ],
+      "axial_min": 0.0049,
+      "axial_max": 0.0061,
+      "radius": 0.0121
+    },
+    {
+      "id": "Shoulder-cap--1",
+      "objects": [
+        "Shoulder axle",
+        "Shoulder cap -1"
+      ],
+      "kind": "cylinder",
+      "center": [
+        0,
+        0,
+        0.11
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "axial_min": -0.0186,
+      "axial_max": -0.0169,
+      "radius": 0.0041
+    },
+    {
+      "id": "Shoulder-cap-1",
+      "objects": [
+        "Shoulder axle",
+        "Shoulder cap 1"
+      ],
+      "kind": "cylinder",
+      "center": [
+        0,
+        0,
+        0.11
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "axial_min": 0.0169,
+      "axial_max": 0.0186,
+      "radius": 0.0041
+    },
+    {
+      "id": "Elbow-cap--1",
+      "objects": [
+        "Elbow axle",
+        "Elbow cap -1"
+      ],
+      "kind": "cylinder",
+      "center": [
+        -0.03559787642172071,
+        0,
+        0.31188558936750266
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "axial_min": -0.0186,
+      "axial_max": -0.0169,
+      "radius": 0.0041
+    },
+    {
+      "id": "Elbow-cap-1",
+      "objects": [
+        "Elbow axle",
+        "Elbow cap 1"
+      ],
+      "kind": "cylinder",
+      "center": [
+        -0.03559787642172071,
+        0,
+        0.31188558936750266
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "axial_min": 0.0169,
+      "axial_max": 0.0186,
+      "radius": 0.0041
+    },
+    {
+      "id": "Head-cap--1",
+      "objects": [
+        "Head axle",
+        "Head cap -1"
+      ],
+      "kind": "cylinder",
+      "center": [
+        0.2226998428837245,
+        0,
+        0.1914393847714033
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "axial_min": -0.0186,
+      "axial_max": -0.0169,
+      "radius": 0.0041
+    },
+    {
+      "id": "Head-cap-1",
+      "objects": [
+        "Head axle",
+        "Head cap 1"
+      ],
+      "kind": "cylinder",
+      "center": [
+        0.2226998428837245,
+        0,
+        0.1914393847714033
+      ],
+      "axis": [
+        0,
+        1,
+        0
+      ],
+      "axial_min": 0.0169,
+      "axial_max": 0.0186,
+      "radius": 0.0041
+    },
+    {
+      "id": "neck-in-upper-housing",
+      "objects": [
+        "Head neck",
+        "Head housing"
+      ],
+      "kind": "cylinder",
+      "center": [
+        0.3174429641515965,
+        -0.009,
+        0.2088962164547673
+      ],
+      "axis": [
+        -0.3420201433256687,
+        0,
+        0.9396926207859084
+      ],
+      "axial_min": 0.0078,
+      "axial_max": 0.0121,
+      "radius": 0.0751
+    }
+  ],
+  "rigid_groups": {
+    "fixed": [
+      "Base body",
+      "Fixed upright",
+      "Foot 1",
+      "Foot 2",
+      "Foot 3",
+      "Shoulder axle",
+      "Shoulder cap -1",
+      "Shoulder cap 1"
+    ],
+    "lower": [
+      "Lower arm"
+    ],
+    "upper": [
+      "Upper arm"
+    ],
+    "head": [
+      "Head neck",
+      "Head housing",
+      "Diffuser"
+    ],
+    "elbow_joint": [
+      "Elbow axle",
+      "Elbow cap -1",
+      "Elbow cap 1"
+    ],
+    "head_joint": [
+      "Head axle",
+      "Head cap -1",
+      "Head cap 1"
+    ]
+  },
+  "parameters_are_not_continuous_clearance_proof": true,
+  "elapsed_seconds": 13.501,
+  "front_camera_revision": {
+    "reason": "Fixed frame widened for all finite extended samples; same camera retained across variants and poses",
+    "old": {
+      "location": [
+        0.17,
+        -1.4,
+        0.26
+      ],
+      "target": [
+        0.17,
+        0,
+        0.26
+      ],
+      "ortho_scale": 0.73
+    },
+    "new": {
+      "location": [
+        0.2,
+        -1.4,
+        0.26
+      ],
+      "target": [
+        0.2,
+        0,
+        0.26
+      ],
+      "ortho_scale": 0.82
+    }
+  }
+}

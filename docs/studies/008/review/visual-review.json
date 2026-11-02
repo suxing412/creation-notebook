@@ -1,0 +1,104 @@
+{
+  "author_visual_review_passed_within_scope": true,
+  "viewing_method": "Actual PNG pixels through image-view tool; six-view sheet for silhouette/angle coverage, original 960px hole details and 1584px wide frames inspected separately. Not a human, GPU, physical-device or manufacturing test.",
+  "images": [
+    {
+      "path": "assets/veil/beauty.png",
+      "sha256": "9990bb2fddbb407f3bca078e4bdf31daebff7d0c066f1fe07a3e14a74cee8d75"
+    },
+    {
+      "path": "assets/veil/front.png",
+      "sha256": "06dfba3fb03c34c3fa1021c583fcc68e8ad2d370444f21360d393ebbd814361e"
+    },
+    {
+      "path": "assets/veil/side.png",
+      "sha256": "f8c98ef3c85000bd5de293e55f8797b00f7a006b5843c9df887c4dfe28065fb8"
+    },
+    {
+      "path": "assets/veil/top.png",
+      "sha256": "929f9880abd1a1d5aa511742d2c5c19ad869043104b31f65a80d63958bc295dd"
+    },
+    {
+      "path": "assets/veil/rear.png",
+      "sha256": "de37843bbd324459190c9513aacac49fa2808746a32782dbab07628115dd2add"
+    },
+    {
+      "path": "assets/veil/hole-detail.png",
+      "sha256": "f20ac8682d92a01cac759359bfa730c6cad8ee2438b514801311325e671b3f91"
+    },
+    {
+      "path": "assets/veil/beauty-wide.png",
+      "sha256": "b491d459dac234085e02444da48996a910e733a973969d5a0c49310b6988a343"
+    },
+    {
+      "path": "assets/horizon/beauty.png",
+      "sha256": "edbfac323fd7e31dd18a9350007cc5970b1d7a5e046b59471e29aa2d545b51e7"
+    },
+    {
+      "path": "assets/horizon/front.png",
+      "sha256": "0ab125daaf633ff024d5c4ee23afb9641302677a1e36d10cafc37dccc8d4abde"
+    },
+    {
+      "path": "assets/horizon/side.png",
+      "sha256": "cc57b20370c8568242471a165d12848df6d74dc8b0d3dc64e66824b573328574"
+    },
+    {
+      "path": "assets/horizon/top.png",
+      "sha256": "dc4433b0df30c8f50098f46a0ba9d444b47001b17b7deb430f4c0d3cbad71e0f"
+    },
+    {
+      "path": "assets/horizon/rear.png",
+      "sha256": "1fdaa8ccdf8405b47e91a8a134485d686a04334a4095bc84f240ecd67c96deaf"
+    },
+    {
+      "path": "assets/horizon/hole-detail.png",
+      "sha256": "3bc795a55142d47501b6db2eb532fb96afc1db814f7afb5e0af601f8047a1872"
+    },
+    {
+      "path": "assets/horizon/beauty-wide.png",
+      "sha256": "582cdc14cf04a9a0ea7ef698af79923837f545a8907de3adc3e76fb5824a29a6"
+    },
+    {
+      "path": "assets/fold/beauty.png",
+      "sha256": "d0b923474ad4b1436a698fba41be099396e0a7368f0fb527c76b88cbca5bd448"
+    },
+    {
+      "path": "assets/fold/front.png",
+      "sha256": "ab2aea94d55eaf453fa63a28565c4441fdf20e9c0a99c085a44f86630d8eb2aa"
+    },
+    {
+      "path": "assets/fold/side.png",
+      "sha256": "6808d571c1be0c96cf13da67e98e9d1cba592d3ee758092bdb0b752d0ef7bdee"
+    },
+    {
+      "path": "assets/fold/top.png",
+      "sha256": "1d4df8f7566e364e245a6fc84f3a71a1193d7fe87b05c0b007baa0b217c7db2d"
+    },
+    {
+      "path": "assets/fold/rear.png",
+      "sha256": "958722441c89a90b73bc1d6d757634fe6c4fd855b5ca08d03843a2bd8007a28e"
+    },
+    {
+      "path": "assets/fold/hole-detail.png",
+      "sha256": "d7010ff8df68319801eadcb561e23fb6d3307fd3c53904b921f944ccd175a49b"
+    },
+    {
+      "path": "assets/fold/beauty-wide.png",
+      "sha256": "6b224e049caa656a9412064aee37c00a7995d57ba618f67fc7ae9d03851d6f5b"
+    }
+  ],
+  "observations": [
+    "Three distinct width/height/curvature presets remain at the same world scale and camera, rather than bbox-normalized portraits.",
+    "Front views show complete 6x8, 9x5 and 4x9 aperture grids; top views show genuinely different cylinder curvature.",
+    "Side and rear views remain distinct from the front; no duplicated frame masquerades as a second camera.",
+    "64-point hole contours reduce the coarse 32-point chords; actual quarter-profile rim highlights remain geometric, not a bevel shader.",
+    "The wide frames retain the complete body with top/bottom margins.",
+    "The short Horizon specimen naturally occupies less frame height; this is deliberate fixed-scale photography, not a missing model."
+  ],
+  "known_limits": [
+    "Fine finite polygon sampling and render noise still exist; no continuous surface/per-pixel perfection claim.",
+    "Shared-vertex adjacent-face BVH exclusion and numerical geometry thresholds remain in the checker.",
+    "A visually plausible ground pose does not establish stability or load capacity."
+  ],
+  "second_review_status": "accepted: final three-variant main/detail sheet and 64-point contour improvement; static visual scope only"
+}

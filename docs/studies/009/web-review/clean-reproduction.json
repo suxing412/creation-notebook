@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "scope": "Actual ZIP extracted to a fresh directory; generated webpage and every copied archive file identical; 6 documented checks run from clean source. No fresh browser/GPU verification.",
+  "rebuild_files": 225,
+  "zero_byte_differences": true,
+  "checks": [
+    {
+      "command": "node web-source/test_state.cjs",
+      "exit_code": 0
+    },
+    {
+      "command": "node web-source/test_app.cjs",
+      "exit_code": 0
+    },
+    {
+      "command": "node web-review/audit_pose_workbench/regressions.cjs",
+      "exit_code": 0
+    },
+    {
+      "command": "node web-review/audit_pose_workbench/independent_checks.cjs",
+      "exit_code": 0
+    },
+    {
+      "command": "python web-source/verify.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python web-source/verify_model_binding.py",
+      "exit_code": 0
+    }
+  ]
+}

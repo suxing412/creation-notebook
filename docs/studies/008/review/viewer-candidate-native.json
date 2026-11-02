@@ -1,0 +1,242 @@
+{
+  "phase": "candidate-32-only; not final 64-point acceptance",
+  "passed_within_scope": true,
+  "environment": {
+    "browser": "cloud Chrome cdp",
+    "single_sites_preview": true,
+    "local_only": true,
+    "browser_security_settings_changed": false,
+    "actual_mobile_device": false
+  },
+  "checks": [
+    {
+      "name": "native desktop layout",
+      "client_width": 1173,
+      "scroll_width": 1173,
+      "passed": true
+    },
+    {
+      "name": "native 1280 CSS px iframe layout",
+      "outer_width": 1280,
+      "inner_client_width": 1265,
+      "scroll_width": 1265,
+      "passed": true,
+      "note": "outer frame wider than current cloud viewport; no claim that harness outer page had no scrolling"
+    },
+    {
+      "name": "native 390 CSS px iframe",
+      "outer_width": 390,
+      "inner_client_width": 375,
+      "scroll_width": 375,
+      "control_heights_px": [
+        44,
+        44,
+        44,
+        44,
+        44
+      ],
+      "images_loaded": 4,
+      "passed": true
+    },
+    {
+      "name": "native 320 CSS px iframe after title wrapping fix",
+      "outer_width": 320,
+      "inner_client_width": 305,
+      "scroll_width": 305,
+      "passed": true
+    },
+    {
+      "name": "variant + view selects",
+      "observed": "Fold / 曲幕, hole-detail image, title, dimensions, query and raw Blender/GLB download URLs matched",
+      "passed": true
+    },
+    {
+      "name": "Back / Forward",
+      "observed": "fold beauty restored on Back; fold hole-detail restored on Forward",
+      "passed": true
+    },
+    {
+      "name": "keyboard and active offline",
+      "observed": "ArrowRight at hole-detail wrapped to beauty; offline action retained image and stopped live intent",
+      "passed": true
+    },
+    {
+      "name": "real WebGL initialization failure fallback",
+      "observed": "GL_VENDOR=Disabled; error notice shown; static image and correct fold downloads retained",
+      "passed": true,
+      "GPU_render_passed": false
+    },
+    {
+      "name": "native missing-image failure",
+      "observed": "Only preview copy fold/top.png temporarily withheld; real failed image decode left fold beauty image, labels, download links and URL unchanged; preview file restored",
+      "passed": true
+    },
+    {
+      "name": "native no-JavaScript reading",
+      "setup": "390 CSS px native iframe sandbox=allow-same-origin, no allow-scripts",
+      "inner_client_width": 375,
+      "scroll_width": 375,
+      "all_enhanced_controls_hidden": true,
+      "three_static_groups": true,
+      "all_three_actual_images_loaded": true,
+      "all_three_raw_blend_links": true,
+      "passed": true,
+      "note": "Scrolled and visually inspected static library. Sandbox download restrictions are not claimed as a delivered-file failure or download success."
+    }
+  ],
+  "changes_from_observation": [
+    "At inner width 305, title sentence had an orphan final character. Added <=350 layout so title and subtitle fit side-by-side with explanatory notes beneath; re-inspected native frame. Added narrow-screen note-tail wrap."
+  ],
+  "pending": [
+    "Final 64-point GLB, metadata and PNG binding and fresh native review",
+    "GPU appearance and dynamic z-fighting",
+    "real phone / touch / screenreader interoperability",
+    "actual browser downloaded-file byte verification"
+  ],
+  "source_sha256": {
+    "viewer/README.md": "8b68c083bb3005fe71cacf9701da73a3827f63370bc502b62dd09363c1c44afd",
+    "viewer/camera.js": "b6b0dbf0cfdb41fe4d60a7f081f88e3f803340a120607e6148cee42e4296c67b",
+    "viewer/delivery-links.js": "d5f05b858948c1cfce30fd1ed7282fa8f01b40d89c8612db4f5fc11e77eb98ba",
+    "viewer/index.html": "466a6c48e80a64d9e8291da1f5df788e5ea79bf0d1e49c9920f3fd97d9535d40",
+    "viewer/package.json": "89c47db7851f89caec72da4f215ebc21cf1e294aeef3b45d2583562d846ab035",
+    "viewer/routes.js": "9a25b6b40be2e57103283c7ab4c80b2b5a38cada73d8abe8a47ccf861fb5ed6c",
+    "viewer/state.js": "9ad2c247218ac0ec7729a42f61e005d769f04a1b66c37708b08fd63b4331d180",
+    "viewer/style.css": "877346eacc5dcd2833f7a0d2eac9eb91f02e1e12ff37277cd03df85d28fdfa65",
+    "viewer/sync-delivery.mjs": "50e2a54c1680e7b0f94611f753286d8477f6723283a58fd56f6e7b52e4172da8",
+    "viewer/viewer.js": "5c8084649226e79554515bd255add5e64ba4c810674585747e32853256a08d6b"
+  },
+  "candidate_asset_sha256": {
+    "assets/fold/beauty.png": "b0e070e055b039679d9392c80615e2356d38120ab0c916ff6d6db72a0defb812",
+    "assets/fold/config.json": "e297b3fc22e929ea13bcbd2ec3c439f54bdcf9020a96380ce2d48aeac4684bea",
+    "assets/fold/front.png": "ce1018b0cdd0cdf3b25c50154bc2a9e8dc7dd1e223b099e1b5bea39c5774db80",
+    "assets/fold/hole-detail.png": "097891f38fd1d38771ddccb1c89004addfebfcdb70f7bee01ddecad7c1fe7901",
+    "assets/fold/model-info.json": "2211c9d026803d9bc97cb5614be00ec3ba5d518fc9ff4b454329bf473e48a278",
+    "assets/fold/model.glb": "d55743c6a58acaafe2a01a7bd430f65f3946b349ed71831c08ab4dfbcaa10c21",
+    "assets/fold/rear.png": "41f1f40ee1902c50d0fbd603a5d2244dce6458c48b10a5de7a87992f858272fb",
+    "assets/fold/side.png": "0152a53fe63de62fb649e028eeed3e36ca2590f0ccc0d8bb32776922416a2172",
+    "assets/fold/top.png": "fe7e328e7f2315dab44e2560f473decd16a66ad49cde0f6c55bd3451182066da",
+    "assets/horizon/beauty.png": "714b62a3477f3385f931b475c993439f99505aa40fe9aa44c6dc68ef38977e91",
+    "assets/horizon/config.json": "e2dc915549f8d656e3a3671b962128ff1406c9978a366883863830f48bf15000",
+    "assets/horizon/front.png": "176ff386fabd30d2a231810bda80911d191399f0a0d2b82fdeef90b687ae2737",
+    "assets/horizon/hole-detail.png": "29e022e3c4b52763ec4b15fdb1d7ae9b03cfea18c5404b5032076036d64a9f47",
+    "assets/horizon/model-info.json": "fc001fda1dd7eb8698bc59cc5d5aa67cdbd6dbf419bf7573e280397cb8cf96ba",
+    "assets/horizon/model.glb": "1a458c99f22991273200fafcc9338b5a2fe5c7e72a2b6e597fa6bf05e72f7e5d",
+    "assets/horizon/rear.png": "4dd2c0d13273469d268b1eeaf6df969612558a46a641b02a5dbace8c87981b99",
+    "assets/horizon/side.png": "81696d5d36591fb71f7513e2be182b2678fa1b9d89325dcadb94e8c98a8692ca",
+    "assets/horizon/top.png": "b712df68cc725e38c8930e2403f2d306bb93366036446f3e3d7478943cfdae77",
+    "assets/veil/beauty-wide.png": "142f5fbb3380b59b5a1955b64e23a6b1aefa01264dab667a126e6d8f4b91b0be",
+    "assets/veil/beauty.png": "98e9f2ea3d5dab5967539e9d275113b6cdf46d007f11bde29d6b72bedcf70895",
+    "assets/veil/config.json": "a0550a42166eadadd0fd13c12a9467c3134d2be83ffc9c4c343aa0cdf79862a3",
+    "assets/veil/front.png": "36c609560b06947b3c99c31d70b7eb4e8027b1e3e69eb1acab558753ecda756f",
+    "assets/veil/hole-detail.png": "513189ef35ee9ff940212e933076fefa86f7d5e9e32228ea729464ba41e0fed4",
+    "assets/veil/model-info.json": "1b6b6f0073bd67e72670f7167da49759de1d0384811be4bacc3ac0826d66b70c",
+    "assets/veil/model.glb": "fec16702cfeb16fa77e9cfb5115285e6d70c077fa3759f41ad189a7e803ab1b1",
+    "assets/veil/rear.png": "dd6abf9665c781627c3e6a2e5766b4d8c57f07d318e7450d8517500e6dede56e",
+    "assets/veil/side.png": "1c4df029cc2abed5d6c4077dd672b4cf7fbbfea9a24e0279dc594fec407a4ac4",
+    "assets/veil/top.png": "d92706542874155c57a9c725b338fc702704ad8286c7eae0154694399456a8a5"
+  },
+  "screenshots": {
+    "viewer-candidate-320.png": "8fb1591af7add8c7db5737dd87de2dba1bbd47b0b88e2db363f847b14be4b80e",
+    "viewer-candidate-390.png": "f3f7eb41a80534f9439f39489712b4635457e1fa038a9ad4d924c957a3b3f6cd",
+    "viewer-candidate-no-gl.png": "2cabf3cf0028ab973f5e1f588c147007fdcb61772ea163e174eb7f3dcd366b43",
+    "viewer-candidate-nojs-library.png": "98f70a8a9ed61a8b37631891430d3ff6553c08c28c0f83875c51585ef71e4049",
+    "viewer-candidate-nojs.png": "07e3a440b42e67eeed63c93cd5a3b9e9c0d69967ba7671e93253943099f34b5a"
+  },
+  "postprocessing": {
+    "report": "png-cleanup-final-v1.json",
+    "report_sha256": "4e8ad8d7e9fe32b6c05b07812a53854e6ad6fbe413809377b9e204c0b112e6b5",
+    "note": "Original screenshots SHA fields intentionally retained as capture-time identities. These rows map later lossless metadata cleanup; pixel bytes unchanged.",
+    "images": [
+      {
+        "path": "review/viewer-candidate-320.png",
+        "size": [
+          1173,
+          751
+        ],
+        "mode": "RGB",
+        "pixels_sha256": "ff0666153cdb8f90cfc9f98a8c2bced8659e7f59a9e6c073cebe287b5863d629",
+        "before_file_sha256": "8fb1591af7add8c7db5737dd87de2dba1bbd47b0b88e2db363f847b14be4b80e",
+        "after_file_sha256": "37bd7d831474db5c941f7497343e908c6028044d7269f58cd62f6e943fe6b198",
+        "removed_metadata_keys": [
+          "jfif",
+          "jfif_version",
+          "jfif_unit",
+          "jfif_density"
+        ],
+        "pixel_identical": true
+      },
+      {
+        "path": "review/viewer-candidate-390.png",
+        "size": [
+          1173,
+          751
+        ],
+        "mode": "RGB",
+        "pixels_sha256": "ad9693f23ee1632881c40bbd42e8e2cf28a92b3c702e67210cf18ced05382915",
+        "before_file_sha256": "f3f7eb41a80534f9439f39489712b4635457e1fa038a9ad4d924c957a3b3f6cd",
+        "after_file_sha256": "f7f11670995eb651074ad2944bf8d42a8ce532f97f3df87e8713650b1cb1e07d",
+        "removed_metadata_keys": [
+          "jfif",
+          "jfif_version",
+          "jfif_unit",
+          "jfif_density"
+        ],
+        "pixel_identical": true
+      },
+      {
+        "path": "review/viewer-candidate-no-gl.png",
+        "size": [
+          1173,
+          751
+        ],
+        "mode": "RGB",
+        "pixels_sha256": "4da914ce75ac7e993522aa191e9a97e4ad7519ca753638c5700be9c212073227",
+        "before_file_sha256": "2cabf3cf0028ab973f5e1f588c147007fdcb61772ea163e174eb7f3dcd366b43",
+        "after_file_sha256": "3ebd72a19c624dbd8729b9955fb559cd5a171df306758d55144b45b2a06f26c5",
+        "removed_metadata_keys": [
+          "jfif",
+          "jfif_version",
+          "jfif_unit",
+          "jfif_density"
+        ],
+        "pixel_identical": true
+      },
+      {
+        "path": "review/viewer-candidate-nojs-library.png",
+        "size": [
+          1173,
+          751
+        ],
+        "mode": "RGB",
+        "pixels_sha256": "22ba7ed38fe4b704c2aaf1b656aeaa0979256e3ed61eb76e870b8957a1a655d1",
+        "before_file_sha256": "98f70a8a9ed61a8b37631891430d3ff6553c08c28c0f83875c51585ef71e4049",
+        "after_file_sha256": "6ff033ada51ca27dd416d96f5086b3a9b2623e137c3b9a02b67dcc123b45aa7e",
+        "removed_metadata_keys": [
+          "jfif",
+          "jfif_version",
+          "jfif_unit",
+          "jfif_density"
+        ],
+        "pixel_identical": true
+      },
+      {
+        "path": "review/viewer-candidate-nojs.png",
+        "size": [
+          1173,
+          751
+        ],
+        "mode": "RGB",
+        "pixels_sha256": "fc5b8f01e69fce54d0d7af4dad8e6811e2439e9943b8d2e451483d7f30fe6e7b",
+        "before_file_sha256": "07e3a440b42e67eeed63c93cd5a3b9e9c0d69967ba7671e93253943099f34b5a",
+        "after_file_sha256": "2f132b9bdaca58b74ebab178f92a5705a6d89d348e430a439c0a5cc68e684b26",
+        "removed_metadata_keys": [
+          "jfif",
+          "jfif_version",
+          "jfif_unit",
+          "jfif_density"
+        ],
+        "pixel_identical": true
+      }
+    ]
+  }
+}

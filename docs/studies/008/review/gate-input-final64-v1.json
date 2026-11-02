@@ -1,0 +1,5849 @@
+{
+  "created_utc": "2026-11-02T01:28:19.098117+00:00",
+  "passed": true,
+  "test_script_sha256": "be1cae28a4dba5be7091b9e08d85ad8a9dc059f88a1add17309c3f270841d3ba",
+  "recipe_sha256": "0ae15a7cf8eb67d715b682665aa932c1725517da817e568070d2f80307a7a52d",
+  "base_config_sha256": "a0550a42166eadadd0fd13c12a9467c3134d2be83ffc9c4c343aa0cdf79862a3",
+  "explicit_tests": 183,
+  "tests": [
+    {
+      "case": "width-lower",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "width-upper",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "width-midpoint",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "width-below-lower",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "width: finite numeric value",
+      "error": "ValueError: width: finite numeric value in (0.24, 0.58) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "width-above-upper",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "width: finite numeric value",
+      "error": "ValueError: width: finite numeric value in (0.24, 0.58) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "width-nan",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "width: finite numeric value",
+      "error": "ValueError: width: finite numeric value in (0.24, 0.58) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "width-positive-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "width: finite numeric value",
+      "error": "ValueError: width: finite numeric value in (0.24, 0.58) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "width-negative-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "width: finite numeric value",
+      "error": "ValueError: width: finite numeric value in (0.24, 0.58) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "width-bool-true",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "width: finite numeric value",
+      "error": "ValueError: width: finite numeric value in (0.24, 0.58) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "width-bool-false",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "width: finite numeric value",
+      "error": "ValueError: width: finite numeric value in (0.24, 0.58) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "width-string",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "width: finite numeric value",
+      "error": "ValueError: width: finite numeric value in (0.24, 0.58) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "width-null",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "width: finite numeric value",
+      "error": "ValueError: width: finite numeric value in (0.24, 0.58) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "width-list",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "width: finite numeric value",
+      "error": "ValueError: width: finite numeric value in (0.24, 0.58) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "width-dict",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "width: finite numeric value",
+      "error": "ValueError: width: finite numeric value in (0.24, 0.58) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-lower",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-upper",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-midpoint",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-below-lower",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "height: finite numeric value",
+      "error": "ValueError: height: finite numeric value in (0.28, 0.6) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-above-upper",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "height: finite numeric value",
+      "error": "ValueError: height: finite numeric value in (0.28, 0.6) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-nan",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "height: finite numeric value",
+      "error": "ValueError: height: finite numeric value in (0.28, 0.6) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-positive-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "height: finite numeric value",
+      "error": "ValueError: height: finite numeric value in (0.28, 0.6) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-negative-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "height: finite numeric value",
+      "error": "ValueError: height: finite numeric value in (0.28, 0.6) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-bool-true",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "height: finite numeric value",
+      "error": "ValueError: height: finite numeric value in (0.28, 0.6) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-bool-false",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "height: finite numeric value",
+      "error": "ValueError: height: finite numeric value in (0.28, 0.6) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-string",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "height: finite numeric value",
+      "error": "ValueError: height: finite numeric value in (0.28, 0.6) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-null",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "height: finite numeric value",
+      "error": "ValueError: height: finite numeric value in (0.28, 0.6) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-list",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "height: finite numeric value",
+      "error": "ValueError: height: finite numeric value in (0.28, 0.6) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "height-dict",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "height: finite numeric value",
+      "error": "ValueError: height: finite numeric value in (0.28, 0.6) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-lower",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-upper",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-midpoint",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-below-lower",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "curve_angle_degrees: finite numeric value",
+      "error": "ValueError: curve_angle_degrees: finite numeric value in (12, 90) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-above-upper",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "curve_angle_degrees: finite numeric value",
+      "error": "ValueError: curve_angle_degrees: finite numeric value in (12, 90) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-nan",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "curve_angle_degrees: finite numeric value",
+      "error": "ValueError: curve_angle_degrees: finite numeric value in (12, 90) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-positive-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "curve_angle_degrees: finite numeric value",
+      "error": "ValueError: curve_angle_degrees: finite numeric value in (12, 90) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-negative-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "curve_angle_degrees: finite numeric value",
+      "error": "ValueError: curve_angle_degrees: finite numeric value in (12, 90) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-bool-true",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "curve_angle_degrees: finite numeric value",
+      "error": "ValueError: curve_angle_degrees: finite numeric value in (12, 90) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-bool-false",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "curve_angle_degrees: finite numeric value",
+      "error": "ValueError: curve_angle_degrees: finite numeric value in (12, 90) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-string",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "curve_angle_degrees: finite numeric value",
+      "error": "ValueError: curve_angle_degrees: finite numeric value in (12, 90) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-null",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "curve_angle_degrees: finite numeric value",
+      "error": "ValueError: curve_angle_degrees: finite numeric value in (12, 90) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-list",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "curve_angle_degrees: finite numeric value",
+      "error": "ValueError: curve_angle_degrees: finite numeric value in (12, 90) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "curve_angle_degrees-dict",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "curve_angle_degrees: finite numeric value",
+      "error": "ValueError: curve_angle_degrees: finite numeric value in (12, 90) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-lower",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-upper",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-midpoint",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-below-lower",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "thickness: finite numeric value",
+      "error": "ValueError: thickness: finite numeric value in (0.006, 0.014) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-above-upper",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "thickness: finite numeric value",
+      "error": "ValueError: thickness: finite numeric value in (0.006, 0.014) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-nan",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "thickness: finite numeric value",
+      "error": "ValueError: thickness: finite numeric value in (0.006, 0.014) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-positive-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "thickness: finite numeric value",
+      "error": "ValueError: thickness: finite numeric value in (0.006, 0.014) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-negative-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "thickness: finite numeric value",
+      "error": "ValueError: thickness: finite numeric value in (0.006, 0.014) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-bool-true",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "thickness: finite numeric value",
+      "error": "ValueError: thickness: finite numeric value in (0.006, 0.014) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-bool-false",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "thickness: finite numeric value",
+      "error": "ValueError: thickness: finite numeric value in (0.006, 0.014) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-string",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "thickness: finite numeric value",
+      "error": "ValueError: thickness: finite numeric value in (0.006, 0.014) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-null",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "thickness: finite numeric value",
+      "error": "ValueError: thickness: finite numeric value in (0.006, 0.014) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-list",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "thickness: finite numeric value",
+      "error": "ValueError: thickness: finite numeric value in (0.006, 0.014) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "thickness-dict",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "thickness: finite numeric value",
+      "error": "ValueError: thickness: finite numeric value in (0.006, 0.014) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-lower",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-upper",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-midpoint",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-below-lower",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "columns: finite numeric value",
+      "error": "ValueError: columns: finite numeric value in (3, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-above-upper",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "columns: finite numeric value",
+      "error": "ValueError: columns: finite numeric value in (3, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-nan",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "columns: finite numeric value",
+      "error": "ValueError: columns: finite numeric value in (3, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-positive-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "columns: finite numeric value",
+      "error": "ValueError: columns: finite numeric value in (3, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-negative-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "columns: finite numeric value",
+      "error": "ValueError: columns: finite numeric value in (3, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-bool-true",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "columns: finite numeric value",
+      "error": "ValueError: columns: finite numeric value in (3, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-bool-false",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "columns: finite numeric value",
+      "error": "ValueError: columns: finite numeric value in (3, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-string",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "columns: finite numeric value",
+      "error": "ValueError: columns: finite numeric value in (3, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-null",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "columns: finite numeric value",
+      "error": "ValueError: columns: finite numeric value in (3, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-list",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "columns: finite numeric value",
+      "error": "ValueError: columns: finite numeric value in (3, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-dict",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "columns: finite numeric value",
+      "error": "ValueError: columns: finite numeric value in (3, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-noninteger-type-3.0",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "columns: integer required",
+      "error": "ValueError: columns: integer required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "columns-noninteger-type-3.5",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "columns: integer required",
+      "error": "ValueError: columns: integer required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-lower",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-upper",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-midpoint",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-below-lower",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "rows: finite numeric value",
+      "error": "ValueError: rows: finite numeric value in (4, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-above-upper",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "rows: finite numeric value",
+      "error": "ValueError: rows: finite numeric value in (4, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-nan",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "rows: finite numeric value",
+      "error": "ValueError: rows: finite numeric value in (4, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-positive-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "rows: finite numeric value",
+      "error": "ValueError: rows: finite numeric value in (4, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-negative-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "rows: finite numeric value",
+      "error": "ValueError: rows: finite numeric value in (4, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-bool-true",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "rows: finite numeric value",
+      "error": "ValueError: rows: finite numeric value in (4, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-bool-false",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "rows: finite numeric value",
+      "error": "ValueError: rows: finite numeric value in (4, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-string",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "rows: finite numeric value",
+      "error": "ValueError: rows: finite numeric value in (4, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-null",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "rows: finite numeric value",
+      "error": "ValueError: rows: finite numeric value in (4, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-list",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "rows: finite numeric value",
+      "error": "ValueError: rows: finite numeric value in (4, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-dict",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "rows: finite numeric value",
+      "error": "ValueError: rows: finite numeric value in (4, 10) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-noninteger-type-4.0",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "rows: integer required",
+      "error": "ValueError: rows: integer required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "rows-noninteger-type-4.5",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "rows: integer required",
+      "error": "ValueError: rows: integer required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-lower",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-upper",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-midpoint",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-below-lower",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "aperture_ratio: finite numeric value",
+      "error": "ValueError: aperture_ratio: finite numeric value in (0.46, 0.74) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-above-upper",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "aperture_ratio: finite numeric value",
+      "error": "ValueError: aperture_ratio: finite numeric value in (0.46, 0.74) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-nan",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "aperture_ratio: finite numeric value",
+      "error": "ValueError: aperture_ratio: finite numeric value in (0.46, 0.74) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-positive-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "aperture_ratio: finite numeric value",
+      "error": "ValueError: aperture_ratio: finite numeric value in (0.46, 0.74) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-negative-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "aperture_ratio: finite numeric value",
+      "error": "ValueError: aperture_ratio: finite numeric value in (0.46, 0.74) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-bool-true",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "aperture_ratio: finite numeric value",
+      "error": "ValueError: aperture_ratio: finite numeric value in (0.46, 0.74) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-bool-false",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "aperture_ratio: finite numeric value",
+      "error": "ValueError: aperture_ratio: finite numeric value in (0.46, 0.74) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-string",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "aperture_ratio: finite numeric value",
+      "error": "ValueError: aperture_ratio: finite numeric value in (0.46, 0.74) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-null",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "aperture_ratio: finite numeric value",
+      "error": "ValueError: aperture_ratio: finite numeric value in (0.46, 0.74) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-list",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "aperture_ratio: finite numeric value",
+      "error": "ValueError: aperture_ratio: finite numeric value in (0.46, 0.74) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "aperture_ratio-dict",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "aperture_ratio: finite numeric value",
+      "error": "ValueError: aperture_ratio: finite numeric value in (0.46, 0.74) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-lower",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-upper",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-midpoint",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-below-lower",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "gradient: finite numeric value",
+      "error": "ValueError: gradient: finite numeric value in (0, 0.22) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-above-upper",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "gradient: finite numeric value",
+      "error": "ValueError: gradient: finite numeric value in (0, 0.22) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-nan",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "gradient: finite numeric value",
+      "error": "ValueError: gradient: finite numeric value in (0, 0.22) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-positive-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "gradient: finite numeric value",
+      "error": "ValueError: gradient: finite numeric value in (0, 0.22) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-negative-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "gradient: finite numeric value",
+      "error": "ValueError: gradient: finite numeric value in (0, 0.22) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-bool-true",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "gradient: finite numeric value",
+      "error": "ValueError: gradient: finite numeric value in (0, 0.22) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-bool-false",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "gradient: finite numeric value",
+      "error": "ValueError: gradient: finite numeric value in (0, 0.22) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-string",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "gradient: finite numeric value",
+      "error": "ValueError: gradient: finite numeric value in (0, 0.22) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-null",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "gradient: finite numeric value",
+      "error": "ValueError: gradient: finite numeric value in (0, 0.22) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-list",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "gradient: finite numeric value",
+      "error": "ValueError: gradient: finite numeric value in (0, 0.22) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "gradient-dict",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "gradient: finite numeric value",
+      "error": "ValueError: gradient: finite numeric value in (0, 0.22) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-lower",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-upper",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-midpoint",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-below-lower",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "edge_radius: finite numeric value",
+      "error": "ValueError: edge_radius: finite numeric value in (0.0006, 0.0018) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-above-upper",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "edge_radius: finite numeric value",
+      "error": "ValueError: edge_radius: finite numeric value in (0.0006, 0.0018) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-nan",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "edge_radius: finite numeric value",
+      "error": "ValueError: edge_radius: finite numeric value in (0.0006, 0.0018) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-positive-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "edge_radius: finite numeric value",
+      "error": "ValueError: edge_radius: finite numeric value in (0.0006, 0.0018) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-negative-inf",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "edge_radius: finite numeric value",
+      "error": "ValueError: edge_radius: finite numeric value in (0.0006, 0.0018) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-bool-true",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "edge_radius: finite numeric value",
+      "error": "ValueError: edge_radius: finite numeric value in (0.0006, 0.0018) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-bool-false",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "edge_radius: finite numeric value",
+      "error": "ValueError: edge_radius: finite numeric value in (0.0006, 0.0018) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-string",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "edge_radius: finite numeric value",
+      "error": "ValueError: edge_radius: finite numeric value in (0.0006, 0.0018) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-null",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "edge_radius: finite numeric value",
+      "error": "ValueError: edge_radius: finite numeric value in (0.0006, 0.0018) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-list",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "edge_radius: finite numeric value",
+      "error": "ValueError: edge_radius: finite numeric value in (0.0006, 0.0018) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "edge_radius-dict",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "edge_radius: finite numeric value",
+      "error": "ValueError: edge_radius: finite numeric value in (0.0006, 0.0018) required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "missing-recipe_version",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Exact configuration key set",
+      "error": "ValueError: Exact configuration key set required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "missing-seed",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Exact configuration key set",
+      "error": "ValueError: Exact configuration key set required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "missing-width",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Exact configuration key set",
+      "error": "ValueError: Exact configuration key set required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "missing-height",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Exact configuration key set",
+      "error": "ValueError: Exact configuration key set required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "missing-curve_angle_degrees",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Exact configuration key set",
+      "error": "ValueError: Exact configuration key set required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "missing-thickness",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Exact configuration key set",
+      "error": "ValueError: Exact configuration key set required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "missing-columns",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Exact configuration key set",
+      "error": "ValueError: Exact configuration key set required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "missing-rows",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Exact configuration key set",
+      "error": "ValueError: Exact configuration key set required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "missing-aperture_ratio",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Exact configuration key set",
+      "error": "ValueError: Exact configuration key set required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "missing-gradient",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Exact configuration key set",
+      "error": "ValueError: Exact configuration key set required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "missing-edge_radius",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Exact configuration key set",
+      "error": "ValueError: Exact configuration key set required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "missing-name",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Exact configuration key set",
+      "error": "ValueError: Exact configuration key set required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "extra-key",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Exact configuration key set",
+      "error": "ValueError: Exact configuration key set required",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-name-''",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Invalid name",
+      "error": "ValueError: Invalid name",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-name-'../outside'",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Invalid name",
+      "error": "ValueError: Invalid name",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-name-'x/y'",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Invalid name",
+      "error": "ValueError: Invalid name",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-name-'X'",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Invalid name",
+      "error": "ValueError: Invalid name",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-name-'中文'",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Invalid name",
+      "error": "ValueError: Invalid name",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-name-'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Invalid name",
+      "error": "ValueError: Invalid name",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-name-'bad_name'",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Invalid name",
+      "error": "ValueError: Invalid name",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-name-'a b'",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Invalid name",
+      "error": "ValueError: Invalid name",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "valid-name-a",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "valid-name-valid-name-008",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "valid-name-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-seed-False",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Only integer seed 0",
+      "error": "ValueError: Only integer seed 0 is supported",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-seed-True",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Only integer seed 0",
+      "error": "ValueError: Only integer seed 0 is supported",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-seed-1",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Only integer seed 0",
+      "error": "ValueError: Only integer seed 0 is supported",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-seed--1",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Only integer seed 0",
+      "error": "ValueError: Only integer seed 0 is supported",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-seed-0.0",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Only integer seed 0",
+      "error": "ValueError: Only integer seed 0 is supported",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-seed-'0'",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Only integer seed 0",
+      "error": "ValueError: Only integer seed 0 is supported",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-seed-None",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Only integer seed 0",
+      "error": "ValueError: Only integer seed 0 is supported",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-recipe-version-'0.0.0'",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Recipe version mismatch",
+      "error": "ValueError: Recipe version mismatch",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-recipe-version-'1.0'",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Recipe version mismatch",
+      "error": "ValueError: Recipe version mismatch",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-recipe-version-None",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Recipe version mismatch",
+      "error": "ValueError: Recipe version mismatch",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-recipe-version-1",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Recipe version mismatch",
+      "error": "ValueError: Recipe version mismatch",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-blender-version-(4, 3, 1)",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Only Blender 4.3.2",
+      "error": "ValueError: Only Blender 4.3.2 is validated",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-blender-version-(4, 4, 0)",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Only Blender 4.3.2",
+      "error": "ValueError: Only Blender 4.3.2 is validated",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-blender-version-(5, 0, 0)",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Only Blender 4.3.2",
+      "error": "ValueError: Only Blender 4.3.2 is validated",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-revision-False",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Revision must be integer 0 or 1",
+      "error": "ValueError: Revision must be integer 0 or 1",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-revision-True",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Revision must be integer 0 or 1",
+      "error": "ValueError: Revision must be integer 0 or 1",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-revision--1",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Revision must be integer 0 or 1",
+      "error": "ValueError: Revision must be integer 0 or 1",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-revision-2",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Revision must be integer 0 or 1",
+      "error": "ValueError: Revision must be integer 0 or 1",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-revision-1.0",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Revision must be integer 0 or 1",
+      "error": "ValueError: Revision must be integer 0 or 1",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-revision-'1'",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Revision must be integer 0 or 1",
+      "error": "ValueError: Revision must be integer 0 or 1",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "invalid-revision-None",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Revision must be integer 0 or 1",
+      "error": "ValueError: Revision must be integer 0 or 1",
+      "passed": true,
+      "geometry_constraints_enabled": false
+    },
+    {
+      "case": "valid-revision-0",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": true
+    },
+    {
+      "case": "valid-revision-1",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": true
+    },
+    {
+      "case": "full-validator-insufficient-developed-margin",
+      "expected_acceptance": false,
+      "actual_acceptance": false,
+      "expected_error_fragment": "Developed cell aperture margin",
+      "error": "ValueError: Developed cell aperture margin must be >=5mm",
+      "passed": true,
+      "geometry_constraints_enabled": true
+    },
+    {
+      "case": "full-validator-boundary-high",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": true
+    },
+    {
+      "case": "full-validator-boundary-low",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": true
+    },
+    {
+      "case": "full-validator-fold",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": true
+    },
+    {
+      "case": "full-validator-horizon",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": true
+    },
+    {
+      "case": "full-validator-veil",
+      "expected_acceptance": true,
+      "actual_acceptance": true,
+      "expected_error_fragment": null,
+      "error": null,
+      "passed": true,
+      "geometry_constraints_enabled": true
+    }
+  ],
+  "named_configs": [
+    {
+      "config": "boundary-high.json",
+      "sha256": "4c933d7efcf7b8eecd8a39b47d85a1f68f0120a426ac75c799a964bfb8b69aa1",
+      "diagnostics": {
+        "hole_count": 100,
+        "genus": 100,
+        "minimum_cell_margin_uv_m": 0.008090441045452885,
+        "conservative_uv_ligament_lower_bound_m": 0.008090441045452885,
+        "surface_open_area_ratio": 0.3686313870220878,
+        "cylinder_mid_radius_m": 0.3692394679731972,
+        "inner_radius_m": 0.36223946797319717,
+        "curvature_times_half_thickness": 0.01895788670269703,
+        "sampling_note": "Area is analytic smooth aperture footprint / developed mid-surface rectangle; not triangulated mesh area, projected visibility, porosity, or structural strength."
+      },
+      "independent_geometry_acceptance": true
+    },
+    {
+      "config": "boundary-low.json",
+      "sha256": "54762871c2788ea155315f5c4b93e01105b39f906c573b1cab24069af9cd1c0c",
+      "diagnostics": {
+        "hole_count": 12,
+        "genus": 12,
+        "minimum_cell_margin_uv_m": 0.0183,
+        "conservative_uv_ligament_lower_bound_m": 0.0183,
+        "surface_open_area_ratio": 0.17800488374715023,
+        "cylinder_mid_radius_m": 1.1459155902616462,
+        "inner_radius_m": 1.1429155902616464,
+        "curvature_times_half_thickness": 0.002617993877991495,
+        "sampling_note": "Area is analytic smooth aperture footprint / developed mid-surface rectangle; not triangulated mesh area, projected visibility, porosity, or structural strength."
+      },
+      "independent_geometry_acceptance": true
+    },
+    {
+      "config": "fold.json",
+      "sha256": "e297b3fc22e929ea13bcbd2ec3c439f54bdcf9020a96380ce2d48aeac4684bea",
+      "diagnostics": {
+        "hole_count": 36,
+        "genus": 36,
+        "minimum_cell_margin_uv_m": 0.006315898431832808,
+        "conservative_uv_ligament_lower_bound_m": 0.006315898431832808,
+        "surface_open_area_ratio": 0.4175895672272057,
+        "cylinder_mid_radius_m": 0.20053522829578815,
+        "inner_radius_m": 0.19553522829578815,
+        "curvature_times_half_thickness": 0.02493327502849042,
+        "sampling_note": "Area is analytic smooth aperture footprint / developed mid-surface rectangle; not triangulated mesh area, projected visibility, porosity, or structural strength."
+      },
+      "independent_geometry_acceptance": true
+    },
+    {
+      "config": "horizon.json",
+      "sha256": "e2dc915549f8d656e3a3671b962128ff1406c9978a366883863830f48bf15000",
+      "diagnostics": {
+        "hole_count": 45,
+        "genus": 45,
+        "minimum_cell_margin_uv_m": 0.0063659136981652,
+        "conservative_uv_ligament_lower_bound_m": 0.0063659136981652,
+        "surface_open_area_ratio": 0.4375036636732346,
+        "cylinder_mid_radius_m": 1.2891550390443522,
+        "inner_radius_m": 1.2851550390443522,
+        "curvature_times_half_thickness": 0.00310280755910103,
+        "sampling_note": "Area is analytic smooth aperture footprint / developed mid-surface rectangle; not triangulated mesh area, projected visibility, porosity, or structural strength."
+      },
+      "independent_geometry_acceptance": true
+    },
+    {
+      "config": "veil.json",
+      "sha256": "a0550a42166eadadd0fd13c12a9467c3134d2be83ffc9c4c343aa0cdf79862a3",
+      "diagnostics": {
+        "hole_count": 48,
+        "genus": 48,
+        "minimum_cell_margin_uv_m": 0.00734872400652441,
+        "conservative_uv_ligament_lower_bound_m": 0.00734872400652441,
+        "surface_open_area_ratio": 0.38413868582550187,
+        "cylinder_mid_radius_m": 0.45836623610465854,
+        "inner_radius_m": 0.45436623610465854,
+        "curvature_times_half_thickness": 0.008726646259971648,
+        "sampling_note": "Area is analytic smooth aperture footprint / developed mid-surface rectangle; not triangulated mesh area, projected visibility, porosity, or structural strength."
+      },
+      "independent_geometry_acceptance": true
+    }
+  ],
+  "parameter_box_corners": {
+    "count": 512,
+    "input_accepted": 512,
+    "full_validator_accepted": 276,
+    "actual_meshes_generated": 0,
+    "rows": [
+      {
+        "index": 0,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 1,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 2,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 3,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 4,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 5,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 6,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 7,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 8,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 9,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 10,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 11,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 12,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 13,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 14,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 15,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 16,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 17,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 18,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 19,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 20,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 21,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 22,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 23,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 24,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 25,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 26,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 27,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 28,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 29,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 30,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 31,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 32,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 33,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 34,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 35,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 36,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 37,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 38,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 39,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 40,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 41,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 42,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 43,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 44,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 45,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 46,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 47,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 48,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 49,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 50,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 51,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 52,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 53,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 54,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 55,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 56,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 57,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 58,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 59,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 60,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 61,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 62,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 63,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 64,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 65,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 66,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 67,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 68,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 69,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 70,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 71,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 72,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 73,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 74,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 75,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 76,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 77,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 78,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 79,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 80,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 81,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 82,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 83,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 84,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 85,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 86,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 87,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 88,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 89,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 90,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 91,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 92,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 93,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 94,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 95,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 96,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 97,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 98,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 99,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 100,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 101,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 102,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 103,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 104,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 105,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 106,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 107,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 108,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 109,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 110,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 111,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 112,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 113,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 114,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 115,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 116,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 117,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 118,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 119,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 120,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 121,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 122,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 123,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 124,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 125,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 126,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 127,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 128,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 129,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 130,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 131,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 132,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 133,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 134,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 135,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 136,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 137,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 138,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 139,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 140,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 141,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 142,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 143,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 144,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 145,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 146,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 147,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 148,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 149,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 150,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 151,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 152,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 153,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 154,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 155,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 156,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 157,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 158,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 159,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 160,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 161,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 162,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 163,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 164,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 165,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 166,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 167,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 168,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 169,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 170,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 171,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 172,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 173,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 174,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 175,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 176,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 177,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 178,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 179,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 180,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 181,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 182,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 183,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 184,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 185,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 186,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 187,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 188,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 189,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 190,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 191,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 192,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 193,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 194,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 195,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 196,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 197,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 198,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 199,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 200,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 201,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 202,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 203,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 204,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 205,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 206,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 207,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 208,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 209,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 210,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 211,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 212,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 213,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 214,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 215,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 216,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 217,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 218,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 219,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 220,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 221,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 222,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 223,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 224,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 225,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 226,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 227,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 228,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 229,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 230,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 231,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 232,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 233,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 234,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 235,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 236,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 237,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 238,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 239,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 240,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 241,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 242,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 243,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 244,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 245,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 246,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 247,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 248,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 249,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 250,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 251,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 252,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 253,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 254,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 255,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 256,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 257,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 258,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 259,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 260,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 261,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 262,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 263,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 264,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 265,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 266,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 267,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 268,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 269,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 270,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 271,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 272,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 273,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 274,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 275,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 276,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 277,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 278,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 279,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 280,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 281,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 282,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 283,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 284,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 285,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 286,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 287,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 288,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 289,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 290,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 291,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 292,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 293,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 294,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 295,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 296,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 297,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 298,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 299,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 300,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 301,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 302,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 303,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 304,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 305,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 306,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 307,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 308,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 309,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 310,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 311,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 312,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 313,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 314,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 315,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 316,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 317,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 318,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 319,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 320,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 321,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 322,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 323,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 324,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 325,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 326,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 327,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 328,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 329,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 330,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 331,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 332,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 333,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 334,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 335,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 336,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 337,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 338,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 339,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 340,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 341,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 342,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 343,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 344,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 345,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 346,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 347,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 348,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 349,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 350,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 351,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 352,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 353,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 354,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 355,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 356,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 357,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 358,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 359,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 360,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 361,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 362,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 363,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 364,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 365,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 366,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 367,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 368,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 369,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 370,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 371,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 372,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 373,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 374,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 375,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 376,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 377,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 378,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 379,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 380,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 381,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 382,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 383,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 384,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 385,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 386,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 387,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 388,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 389,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 390,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 391,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 392,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 393,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 394,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 395,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 396,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 397,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 398,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 399,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 400,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 401,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 402,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 403,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 404,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 405,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 406,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 407,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 408,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 409,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 410,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 411,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 412,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 413,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 414,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 415,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 416,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 417,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 418,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 419,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 420,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 421,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 422,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 423,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 424,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 425,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 426,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 427,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 428,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 429,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 430,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 431,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 432,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 433,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 434,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 435,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 436,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 437,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 438,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 439,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 440,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 441,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 442,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 443,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 444,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 445,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 446,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 447,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 448,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 449,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 450,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 451,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 452,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 453,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 454,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 455,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 456,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 457,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 458,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 459,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 460,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 461,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 462,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 463,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 464,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 465,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 466,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 467,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 468,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 469,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 470,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 471,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 472,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 473,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 474,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 475,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 476,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 477,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 478,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 479,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 480,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 481,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 482,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 483,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 484,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 485,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 486,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 487,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 488,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 489,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 490,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 491,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 492,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 493,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 494,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 495,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 496,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 497,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 498,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 499,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 500,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 501,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 502,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 503,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 504,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 505,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 506,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 507,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 508,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 509,
+        "input_layer_accepted": true,
+        "full_validator_accepted": true,
+        "independent_geometric_rule_accepted": true,
+        "passed": true,
+        "rejection": null
+      },
+      {
+        "index": 510,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      },
+      {
+        "index": 511,
+        "input_layer_accepted": true,
+        "full_validator_accepted": false,
+        "independent_geometric_rule_accepted": false,
+        "passed": true,
+        "rejection": "Developed cell aperture margin must be >=5mm"
+      }
+    ]
+  },
+  "limits": [
+    "Finite endpoint/corner/config tests do not prove a continuous parameter domain.",
+    "Corner acceptance is validation of finite formulas only, not actual mesh QA or visual acceptance. Actual boundary-low/high native+GLB gates are separate.",
+    "Within this bounded parameter box the curvature-half-thickness <0.05 and straight-bore >=2mm clauses are implied by stricter bounds; no independent rejection trigger inside the box is claimed.",
+    "Actual minimal internal wall thickness, manufacture, load/stability and GPU are not tested."
+  ]
+}

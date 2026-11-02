@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "scope": "Independent actual-app mock-DOM/network/image regressions; no browser/server/GPU",
+  "source_sha256": {
+    "app.js": "a9b10e397eb8287763abde65192867a0ff7cb2d7b80b0be0d64e6785433abab5",
+    "pose-state.js": "2f50cad4153ebad58397341e2cd8133a0bb05fbe220447c827f1603e402e983d"
+  },
+  "cases": [
+    "four original whitespace path counterexamples rejected",
+    "retry of failed deep-link selection does not push history",
+    "retry of failed Back navigation does not push or truncate Forward",
+    "retry of failed user selection still pushes its successful selection",
+    "history push exception preserves atomic image/values/selection and gives accurate notice",
+    "repeated current selection is an idempotent no-op",
+    "stale image decode completion cannot replace newest committed data",
+    "stale failed image cannot surface retry/error after newer success",
+    "late initial-image success retains failed newest intent and matching fallback data",
+    "newer popstate invalidates pending user-click load and prevents its history push"
+  ]
+}

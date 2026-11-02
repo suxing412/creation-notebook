@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "scope": "Actual source controller + pure routing/camera/delivery helpers in Node with deferred promises; static HTML assertions. Not native browser, GPU or real mobile verification.",
+  "cases": [
+    {
+      "name": "Only the newest image decode commits image, title identity and downloads",
+      "passed": true
+    },
+    {
+      "name": "Failed image never relabels previous image or changes download identity",
+      "passed": true
+    },
+    {
+      "name": "A stale image failure does not change status of the latest successful route",
+      "passed": true
+    },
+    {
+      "name": "Cancel pending parse, then restart: stale scene releases only itself",
+      "passed": true
+    },
+    {
+      "name": "Context loss does not cancel an independent pending image route",
+      "passed": true
+    },
+    {
+      "name": "Offline during pending route commits new image without restarting 3D",
+      "passed": true
+    },
+    {
+      "name": "Repeated activation aborts earlier fetch and only latest parse attaches",
+      "passed": true
+    },
+    {
+      "name": "Destroy invalidates both lifetimes and rejects new work",
+      "passed": true
+    },
+    {
+      "name": "A stale GPU failure cannot cancel an independent pending image route",
+      "passed": true
+    },
+    {
+      "name": "Current GPU initialization failure preserves route and releases parsed scene",
+      "passed": true
+    },
+    {
+      "name": "3D cannot activate before the first successful image commit",
+      "passed": true
+    },
+    {
+      "name": "Activation during image decode is invalidated again at the atomic route commit",
+      "passed": true
+    },
+    {
+      "name": "Late parse from activation during pending route cannot attach after new image commits",
+      "passed": true
+    },
+    {
+      "name": "Requested view, history context and final route identity commit together",
+      "passed": true
+    },
+    {
+      "name": "Views of same variant do not accept old GLB callbacks from the previous camera session",
+      "passed": true
+    },
+    {
+      "name": "Deep-link parsing rejects unknown variants and unsafe view paths",
+      "passed": true
+    },
+    {
+      "name": "Raw Blender delivery labels and paths are independent per variant",
+      "passed": true
+    },
+    {
+      "name": "Camera conversion is metre preserving and uses metadata view, not a replacement scene",
+      "passed": true
+    },
+    {
+      "name": "Static HTML has all real images and 16 raw download entries without requiring JS",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "viewer/state.js": "9ad2c247218ac0ec7729a42f61e005d769f04a1b66c37708b08fd63b4331d180",
+    "viewer/viewer.js": "5c8084649226e79554515bd255add5e64ba4c810674585747e32853256a08d6b",
+    "viewer/routes.js": "9a25b6b40be2e57103283c7ab4c80b2b5a38cada73d8abe8a47ccf861fb5ed6c",
+    "viewer/camera.js": "b6b0dbf0cfdb41fe4d60a7f081f88e3f803340a120607e6148cee42e4296c67b",
+    "viewer/delivery-links.js": "d5f05b858948c1cfce30fd1ed7282fa8f01b40d89c8612db4f5fc11e77eb98ba",
+    "viewer/index.html": "d04ee431a66045c28e5a8b258426de323e9c46ec719ef347e0ca0c178206ff1f",
+    "viewer/style.css": "877346eacc5dcd2833f7a0d2eac9eb91f02e1e12ff37277cd03df85d28fdfa65",
+    "viewer/sync-delivery.mjs": "50e2a54c1680e7b0f94611f753286d8477f6723283a58fd56f6e7b52e4172da8",
+    "source/test_viewer_state.mjs": "5861f1eecb39beb661a3b905f78a89beed65d88437cace627e84b50e674e7570"
+  }
+}

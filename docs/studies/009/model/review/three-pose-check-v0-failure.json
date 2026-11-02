@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "code": "export_index_order_difference",
+  "actual_index": 45,
+  "expected_index": 46,
+  "reason": "Independent pose export did not preserve index ordering. A rigid transform does not guarantee Blender tessellation/export indexing stays identical. Correct test must not claim indexed topology correspondence."
+}

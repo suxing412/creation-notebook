@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "009 bounded input syntax, not geometry certification",
+  "type": "object",
+  "required": [
+    "base_radius",
+    "elbow_deg",
+    "head_deg",
+    "head_radius",
+    "lower_length",
+    "name",
+    "seed",
+    "shoulder_deg",
+    "upper_length",
+    "version"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "lower_length": {
+      "type": "number",
+      "minimum": 0.2,
+      "maximum": 0.28
+    },
+    "upper_length": {
+      "type": "number",
+      "minimum": 0.2,
+      "maximum": 0.29
+    },
+    "base_radius": {
+      "type": "number",
+      "minimum": 0.085,
+      "maximum": 0.12
+    },
+    "head_radius": {
+      "type": "number",
+      "minimum": 0.052,
+      "maximum": 0.075
+    },
+    "shoulder_deg": {
+      "type": "number",
+      "minimum": 55,
+      "maximum": 100
+    },
+    "elbow_deg": {
+      "type": "number",
+      "minimum": -125,
+      "maximum": -70
+    },
+    "head_deg": {
+      "type": "number",
+      "minimum": -25,
+      "maximum": 20
+    },
+    "name": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9-]+$"
+    },
+    "version": {
+      "const": "009-hinge-1.0"
+    },
+    "seed": {
+      "const": 0
+    }
+  },
+  "description": "Python additionally rejects bool/nonfinite values and coupled head floor envelope below 0.04m. Valid syntax does not prove geometry or motion acceptance."
+}

@@ -1,0 +1,20 @@
+import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';import assert from 'node:assert/strict';
+import {GLTFLoader} from '../vendor/addons/loaders/GLTFLoader.js';import {Box3,Vector3,REVISION,OrthographicCamera} from '../vendor/three.module.js';
+import {cameraSpec,validateInfo} from '../viewer/camera.js';
+fs.rmSync(new URL('../review/viewer-three-loader-tests.json',import.meta.url),{force:true});
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),sha=b=>crypto.createHash('sha256').update(b).digest('hex'),rows=[],errors=[];
+assert.equal(REVISION,'180');
+// No fixture substitution: each test reads the final assets/<variant> bytes.
+for(const id of ['veil','horizon','fold']){
+ try{
+  const dir=path.join(root,'assets',id),data=fs.readFileSync(path.join(dir,'model.glb')),metadata=fs.readFileSync(path.join(dir,'model-info.json')),info=validateInfo(JSON.parse(metadata),id),gltf=await new GLTFLoader().parseAsync(data.buffer.slice(data.byteOffset,data.byteOffset+data.byteLength),'');
+  let meshes=0,triangles=0,vertices=0;const materials=[];
+  gltf.scene.updateMatrixWorld(true);gltf.scene.traverse(o=>{if(o.isMesh){meshes++;triangles+=(o.geometry.index?.count||o.geometry.attributes.position.count)/3;vertices+=o.geometry.attributes.position.count;const a=o.geometry.attributes.position;for(let i=0;i<a.count;i++)assert.ok(Number.isFinite(a.getX(i))&&Number.isFinite(a.getY(i))&&Number.isFinite(a.getZ(i)));for(const m of(Array.isArray(o.material)?o.material:[o.material]))materials.push({color_linear:m.color.toArray(),roughness:m.roughness,metalness:m.metalness,side:m.side,transparent:m.transparent});}});
+  const box=new Box3().setFromObject(gltf.scene),dims=box.getSize(new Vector3()).toArray();assert.equal(meshes,info.mesh_objects);assert.equal(meshes,1);assert.equal(triangles,info.triangles);for(const [i,key] of ['width','height','depth'].entries())assert.ok(Math.abs(dims[i]*1000-info.dimensions_mm[key])<.02,`bounds mismatch ${key}`);
+  for(const m of materials){assert.ok(Math.abs(m.roughness-info.material.roughness)<1e-7);assert.equal(m.metalness,info.material.metallic??0);assert.equal(m.transparent,false);for(let i=0;i<3;i++)assert.ok(Math.abs(m.color_linear[i]-info.material.base_color_linear[i])<1e-6);}
+  const cameras={};for(const view of ['beauty','front','side','top','rear','hole-detail']){const spec=cameraSpec(info,view),c=new OrthographicCamera(-spec.scale/2,spec.scale/2,spec.scale/2,-spec.scale/2,.001,20);c.position.fromArray(spec.position);c.up.fromArray(spec.up);c.lookAt(new Vector3().fromArray(spec.target));c.updateMatrixWorld(true);const targetNDC=new Vector3().fromArray(spec.target).project(c).toArray();assert.ok(Math.abs(targetNDC[0])<1e-7&&Math.abs(targetNDC[1])<1e-7);cameras[view]={...spec,target_NDC:targetNDC};}
+  rows.push({variant:id,glb_sha256:sha(data),model_info_sha256:sha(metadata),meshes,vertices,triangles,dimensions_Y_up_m:dims,materials,cameras,passed:true});
+  gltf.scene.traverse(o=>{o.geometry?.dispose();for(const m of(Array.isArray(o.material)?o.material:[o.material]))m?.dispose();});
+ }catch(error){errors.push({variant:id,error:error.message});}
+}
+const files=['source/test_three_loader.mjs','viewer/camera.js','vendor/three.module.js','vendor/three.core.js','vendor/addons/loaders/GLTFLoader.js'];const report={passed:errors.length===0&&rows.length===3,three_revision:REVISION,actual_GLTFLoader_parse:true,GPU_context_created:false,WebGL_render_tested:false,scope:'Actual local Three r180 GLTFLoader parses final GLB bytes in Node; mesh bounds, triangle count and PBR compared to matching metadata. Camera coordinate/projection is CPU only. Not a browser, GPU, pixel-equivalence, topology or mobile test.',variants:rows,errors,source_sha256:Object.fromEntries(files.map(f=>[f,sha(fs.readFileSync(path.join(root,f)))]))};fs.writeFileSync(path.join(root,'review/viewer-three-loader-tests.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({passed:report.passed,variants:rows.map(r=>r.variant),errors},null,2));if(!report.passed)process.exitCode=1;

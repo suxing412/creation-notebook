@@ -1,0 +1,24 @@
+"""008 valid-payload but wrong-export fault probes; bad GLBs stay under work.
+A point-set-only comparator would miss the reversed-triangle probe. Both mutated files must
+PASS payload validation and FAIL the oriented triangle comparison with its dedicated field.
+"""
+import json,struct,hashlib,sys,subprocess,argparse,datetime
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--baseline',required=True);p.add_argument('--label',required=True);a=p.parse_args();base=Path(a.baseline).resolve();out=ROOT/'work'/'qa'/('export-comparison-faults-'+a.label);out.mkdir(parents=True,exist_ok=False);report=ROOT/'review'/('gate-export-comparison-tests-'+a.label+'.json')
+ if report.exists():raise RuntimeError('Existing report label')
+ original=(base/'model.glb').read_bytes();n=struct.unpack_from('<I',original,12)[0];source=json.loads(original[20:20+n]);binary=original[28+n:];prim=source['meshes'][0]['primitives'][0];rows=[]
+ for case in ['translated-position-payload','reversed-triangle-payload']:
+  j=json.loads(json.dumps(source));bb=bytearray(binary)
+  if case=='translated-position-payload':
+   ac=j['accessors'][prim['attributes']['POSITION']];v=j['bufferViews'][ac['bufferView']];start=v.get('byteOffset',0)+ac.get('byteOffset',0);stride=v.get('byteStride',12)
+   for i in range(ac['count']):x=struct.unpack_from('<f',bb,start+i*stride)[0];struct.pack_into('<f',bb,start+i*stride,x+.001)
+   values=[struct.unpack_from('<fff',bb,start+i*stride) for i in range(ac['count'])];ac['min']=[min(x[k] for x in values) for k in range(3)];ac['max']=[max(x[k] for x in values) for k in range(3)]
+  else:
+   ac=j['accessors'][prim['indices']];v=j['bufferViews'][ac['bufferView']];start=v.get('byteOffset',0)+ac.get('byteOffset',0);fmt={5121:'B',5123:'H',5125:'I'}[ac['componentType']];x,y=struct.unpack_from('<'+fmt*2,bb,start);struct.pack_into('<'+fmt*2,bb,start,y,x)
+  jb=json.dumps(j,separators=(',',':')).encode();jb+=b' '*((-len(jb))%4);path=out/(case+'.glb');path.write_bytes(struct.pack('<III',0x46546C67,2,28+len(jb)+len(bb))+struct.pack('<II',len(jb),0x4E4F534A)+jb+struct.pack('<II',len(bb),0x004E4942)+bb);payloadreport=ROOT/'review'/('gate-export-'+a.label+'-'+case+'-payload.json');comparisonreport=ROOT/'review'/('gate-export-'+a.label+'-'+case+'-comparison.json')
+  payload=subprocess.run([sys.executable,str(ROOT/'source/check_glb.py'),str(path),str(payloadreport)],capture_output=True,text=True);(out/(case+'-payload.log')).write_text(payload.stdout+payload.stderr);comparison=subprocess.run(['blender','-b','-t','4','--python-exit-code','1','--python',str(ROOT/'source/compare_exports.py'),'--','--model',str(base/'model.blend'),'--glb',str(path),'--report',str(comparisonreport)],capture_output=True,text=True);(out/(case+'-comparison.log')).write_text(comparison.stdout+comparison.stderr);pr=json.loads(payloadreport.read_text());cr=json.loads(comparisonreport.read_text());hit=cr.get('exact_oriented_triangle_coordinate_multisets_equal') is False and cr.get('missing_triangle_multiplicity',0)>0 and cr.get('extra_triangle_multiplicity',0)>0;fresh=pr.get('model_sha256')==sha(path) and cr.get('model_sha256')==sha(base/'model.blend') and cr.get('glb_sha256')==sha(path) and pr.get('checker_sha256')==sha(ROOT/'source/check_glb.py') and cr.get('checker_sha256')==sha(ROOT/'source/compare_exports.py');passed=payload.returncode==0 and pr.get('passed') is True and comparison.returncode!=0 and cr.get('passed') is False and hit and fresh;rows.append({'case':case,'passed':passed,'payload_passed':pr.get('passed'),'payload_exit_code':payload.returncode,'comparison_rejected':cr.get('passed') is False,'comparison_exit_code':comparison.returncode,'dedicated_geometry_mismatch_triggered':hit,'fresh_identities_verified':fresh,'vertex_coordinate_multisets_equal':cr.get('exact_vertex_coordinate_multisets_equal'),'payload_report':payloadreport.name,'comparison_report':comparisonreport.name})
+ r={'created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'passed':all(q['passed'] for q in rows),'baseline':str(base.relative_to(ROOT)),'baseline_native_sha256':sha(base/'model.blend'),'baseline_glb_sha256':sha(base/'model.glb'),'comparison_checker_sha256':sha(ROOT/'source/compare_exports.py'),'test_script_sha256':sha(__file__),'tests':rows};report.write_text(json.dumps(r,indent=2));print('EXPORT FAULTS',r['passed']);raise SystemExit(0 if r['passed'] else 1)
+if __name__=='__main__':main()
