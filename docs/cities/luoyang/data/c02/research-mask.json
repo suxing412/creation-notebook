@@ -1,0 +1,497 @@
+{
+  "schema_version": 1,
+  "id": "west_residential_expansion_C02_plan",
+  "status": "research_design_mask_no_buildings_generated",
+  "frame_id": "luoyang-local-schematic-v01",
+  "units": "schematic_m",
+  "absolute_crs": null,
+  "archaeological_residential_polygon": null,
+  "outer_candidate": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          480,
+          700
+        ],
+        [
+          720,
+          700
+        ],
+        [
+          720,
+          780
+        ],
+        [
+          780,
+          780
+        ],
+        [
+          780,
+          1180
+        ],
+        [
+          740,
+          1180
+        ],
+        [
+          740,
+          1250
+        ],
+        [
+          480,
+          1250
+        ],
+        [
+          480,
+          700
+        ]
+      ]
+    ]
+  },
+  "new_building_candidate_mask": {
+    "type": "MultiPolygon",
+    "coordinates": [
+      [
+        [
+          [
+            480,
+            700
+          ],
+          [
+            720,
+            700
+          ],
+          [
+            720,
+            780
+          ],
+          [
+            780,
+            780
+          ],
+          [
+            780,
+            1100
+          ],
+          [
+            480,
+            1100
+          ],
+          [
+            480,
+            1060
+          ],
+          [
+            680,
+            1060
+          ],
+          [
+            680,
+            860
+          ],
+          [
+            480,
+            860
+          ],
+          [
+            480,
+            700
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            480,
+            1130
+          ],
+          [
+            780,
+            1130
+          ],
+          [
+            780,
+            1180
+          ],
+          [
+            740,
+            1180
+          ],
+          [
+            740,
+            1250
+          ],
+          [
+            480,
+            1250
+          ],
+          [
+            480,
+            1130
+          ]
+        ]
+      ]
+    ]
+  },
+  "areas_schematic_m2": {
+    "outer": 157400.0,
+    "net_before_new_roads": 108400.0
+  },
+  "exclusions": [
+    {
+      "id": "C01_guard_unchanged",
+      "bbox": [
+        480,
+        860,
+        680,
+        1060
+      ],
+      "reason": "C01 120m frame plus40m engineering reserve; existing objects untouched"
+    },
+    {
+      "id": "unassigned_open_reserve_C",
+      "bbox": [
+        480,
+        1100,
+        780,
+        1130
+      ],
+      "reason": "30m no-new-roof band; NOT a located ancient river; paths may cross"
+    }
+  ],
+  "buffer_policy": {
+    "B_road_centerlines_m": 80,
+    "B_palace_candidates_m": 200,
+    "B_city_boundary_m": 80,
+    "regional_label_points_m": 400,
+    "status": "chosen engineering screening only, not historical uncertainty or real extents"
+  },
+  "checks": [
+    {
+      "id": "city_wall_schematic_B",
+      "boundary_clearance_schematic_m": 487.869,
+      "intersection": false
+    },
+    {
+      "id": "south_wall_inferred_B",
+      "boundary_clearance_schematic_m": 689.402,
+      "intersection": false
+    },
+    {
+      "id": "north_palace_extent_gao2023_B",
+      "boundary_clearance_schematic_m": 825.577,
+      "intersection": false
+    },
+    {
+      "id": "south_palace_candidate_gao2023_B",
+      "boundary_clearance_schematic_m": 211.886,
+      "intersection": false
+    },
+    {
+      "id": "gate_xia_B",
+      "boundary_clearance_schematic_m": 2321.429,
+      "intersection": false
+    },
+    {
+      "id": "gate_gu_B",
+      "boundary_clearance_schematic_m": 2814.528,
+      "intersection": false
+    },
+    {
+      "id": "gate_shangxi_B",
+      "boundary_clearance_schematic_m": 1470.421,
+      "intersection": false
+    },
+    {
+      "id": "gate_yong_B",
+      "boundary_clearance_schematic_m": 502.287,
+      "intersection": false
+    },
+    {
+      "id": "gate_guangyang_B",
+      "boundary_clearance_schematic_m": 524.009,
+      "intersection": false
+    },
+    {
+      "id": "gate_shangdong_B",
+      "boundary_clearance_schematic_m": 2196.977,
+      "intersection": false
+    },
+    {
+      "id": "gate_zhongdong_B",
+      "boundary_clearance_schematic_m": 1897.695,
+      "intersection": false
+    },
+    {
+      "id": "gate_xuan_B",
+      "boundary_clearance_schematic_m": 1719.58,
+      "intersection": false
+    },
+    {
+      "id": "gate_jin_B",
+      "boundary_clearance_schematic_m": 706.052,
+      "intersection": false
+    },
+    {
+      "id": "gate_xiaoyuan_B",
+      "boundary_clearance_schematic_m": 732.161,
+      "intersection": false
+    },
+    {
+      "id": "gate_pingcheng_B",
+      "boundary_clearance_schematic_m": 1161.124,
+      "intersection": false
+    },
+    {
+      "id": "gate_kaiyang_B",
+      "boundary_clearance_schematic_m": 1473.26,
+      "intersection": false
+    },
+    {
+      "id": "road_northwest_gate_link_B",
+      "boundary_clearance_schematic_m": 1372.449,
+      "intersection": false
+    },
+    {
+      "id": "road_northeast_gate_link_B",
+      "boundary_clearance_schematic_m": 1689.034,
+      "intersection": false
+    },
+    {
+      "id": "road_west_spine_B",
+      "boundary_clearance_schematic_m": 87.381,
+      "intersection": false
+    },
+    {
+      "id": "road_west_mid_link_B",
+      "boundary_clearance_schematic_m": 169.182,
+      "intersection": false
+    },
+    {
+      "id": "road_middle_cross_B",
+      "boundary_clearance_schematic_m": 590.411,
+      "intersection": false
+    },
+    {
+      "id": "road_west_south_link_B",
+      "boundary_clearance_schematic_m": 210.204,
+      "intersection": false
+    },
+    {
+      "id": "road_central_south_spine_B",
+      "boundary_clearance_schematic_m": 121.85,
+      "intersection": false
+    },
+    {
+      "id": "road_east_spine_B",
+      "boundary_clearance_schematic_m": 1251.034,
+      "intersection": false
+    },
+    {
+      "id": "road_east_north_link_B",
+      "boundary_clearance_schematic_m": 1224.802,
+      "intersection": false
+    },
+    {
+      "id": "road_east_south_link_B",
+      "boundary_clearance_schematic_m": 1222.047,
+      "intersection": false
+    },
+    {
+      "id": "road_pingcheng_south_link_B",
+      "boundary_clearance_schematic_m": 1161.124,
+      "intersection": false
+    },
+    {
+      "id": "palaces_connector_B",
+      "boundary_clearance_schematic_m": 843.406,
+      "intersection": false
+    },
+    {
+      "id": "ritual_mingtang_B",
+      "boundary_clearance_schematic_m": 2063.858,
+      "intersection": false
+    },
+    {
+      "id": "ritual_lingtai_B",
+      "boundary_clearance_schematic_m": 1895.263,
+      "intersection": false
+    },
+    {
+      "id": "ritual_biyong_B",
+      "boundary_clearance_schematic_m": 2197.254,
+      "intersection": false
+    },
+    {
+      "id": "ritual_taixue_B",
+      "boundary_clearance_schematic_m": 2118.895,
+      "intersection": false
+    },
+    {
+      "id": "region_jin_B",
+      "boundary_clearance_schematic_m": 757.328,
+      "intersection": false
+    },
+    {
+      "id": "region_taicang_B",
+      "boundary_clearance_schematic_m": 2874.445,
+      "intersection": false
+    },
+    {
+      "id": "region_wuku_B",
+      "boundary_clearance_schematic_m": 2747.236,
+      "intersection": false
+    },
+    {
+      "id": "region_yongan_B",
+      "boundary_clearance_schematic_m": 2338.512,
+      "intersection": false
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "luoyang-city-evidence/public/evidence-geometry.json",
+      "sha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7"
+    },
+    {
+      "path": "eastern-han-luoyang-research/city-placement-C01.json",
+      "sha256": "52599ef31ee5b1ffc4553d9c40cd9bae8829ade2c78f56e9534c6bdda4b38d3f"
+    },
+    {
+      "path": "luoyang-c01-d08/source/layout.json",
+      "sha256": "0ba01ddebe973934d15de9980be9ac244c679bb01ae8e8d86f6ffc84ce38d1b5"
+    }
+  ],
+  "unknown_conflicts": [
+    "ancient_water_corridors_B_unplaced",
+    "north_palace_excavated_walls_A_unplaced",
+    "unlocated_offices_religious_or_other_parcels"
+  ],
+  "road_scenarios": [
+    {
+      "id": "T_branch_clusters",
+      "class": "C",
+      "new_centerlines": [
+        [
+          [
+            390.87,
+            800
+          ],
+          [
+            700,
+            800
+          ],
+          [
+            700,
+            1180
+          ]
+        ],
+        [
+          [
+            700,
+            1160
+          ],
+          [
+            560,
+            1160
+          ]
+        ],
+        [
+          [
+            700,
+            1000
+          ],
+          [
+            760,
+            1000
+          ]
+        ]
+      ],
+      "description": "one new B-access at800; short unequal branches; C01 old access preserved"
+    },
+    {
+      "id": "L_offset_loop",
+      "class": "C",
+      "new_centerlines": [
+        [
+          [
+            390.87,
+            800
+          ],
+          [
+            700,
+            800
+          ],
+          [
+            700,
+            1160
+          ],
+          [
+            392.27,
+            1160
+          ]
+        ]
+      ],
+      "description": "two new accesses; unequal blocks around preserved C01, no periodic grid"
+    }
+  ],
+  "new_road_parameters": {
+    "collector_clear_width_m": 6,
+    "branch_clear_width_m": 3.5,
+    "roof_setback_m": 1.5,
+    "status": "design values; B width not inferred"
+  },
+  "density_scenarios": [
+    {
+      "id": "low",
+      "roof_projection_fraction_of_net_mask": [
+        0.12,
+        0.18
+      ]
+    },
+    {
+      "id": "medium",
+      "roof_projection_fraction_of_net_mask": [
+        0.22,
+        0.28
+      ]
+    }
+  ],
+  "density_note": "incremental roofs in net candidate mask only; existing C01 roofs excluded from numerator and denominator; new roads consume mask so geometric fitting may reduce target; not historical occupancy or population",
+  "population": null,
+  "household_count": null,
+  "historical_ward_name": null,
+  "auto_fill_authorized": false,
+  "frozen_inputs_modified": false,
+  "source_evidence": [
+    {
+      "id": "street_pavilion_text",
+      "url": "https://www.shidianguji.com/zh/mid-page/7432049547981111346",
+      "read_status": "full_excerpt_read",
+      "supports": "street management nodes exist",
+      "not_supports": "equal rectilinear wards or node coordinates"
+    },
+    {
+      "id": "houhanshu49",
+      "url": "https://zh.wikisource.org/zh-hans/%E5%BE%8C%E6%BC%A2%E6%9B%B8/%E5%8D%B749",
+      "read_status": "electronic primary text read",
+      "supports": "commercial and transport activity; rhetorical social critique",
+      "not_supports": "land use ratios or population"
+    },
+    {
+      "id": "gao2023",
+      "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/6434e64ce0ef9.pdf",
+      "read_status": "previously visually inspected fig1 print49-50",
+      "supports": "B palace road and government/storage relations",
+      "not_supports": "all unmarked land is housing"
+    },
+    {
+      "id": "lu2024",
+      "url": "https://www.ctwx.tsinghua.edu.cn/info/1072/3084.htm",
+      "read_status": "official bibliography only",
+      "supports": "research lead only",
+      "not_supports": "ward polygons or counts"
+    }
+  ]
+}

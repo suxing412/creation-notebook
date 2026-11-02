@@ -1,10 +1,11 @@
 {
-  "id": "luoyang-project-C01-D08-candidate-v01",
-  "status": "root reviewed CPU candidate; frozen for independent browser/public projection QA; not complete city",
-  "defaultMode": "frozen-stage01-evidence",
+  "id": "luoyang-project-C02-four-clusters-candidate-v01",
+  "status": "C02 candidate frozen for independent browser/public projection QA; root CPU reviewed; not a completed city",
+  "defaultMode": "frozen-evidence-with-C02-four-clusters",
   "modes": [
-    "evidence-with-independent-C01-layer",
-    "r01-unplaced-reference",
+    "C02-current-four-clusters",
+    "C01-D08-history",
+    "C01-D06-history",
     "neutral-technical-reference"
   ],
   "evidence": {
@@ -29,7 +30,9 @@
     "onlySourceSiteRemoved": true,
     "overviewLOD1": "tile-removal experiment",
     "sharedTerrainTriangles": 196,
-    "sourceVersion": 0
+    "sourceVersion": 0,
+    "legacyTechnicalSlice": true,
+    "notActiveProjectLotCount": true
   },
   "validation": {
     "cpuGeometryAndFiniteCameraChecks": true,
@@ -38,7 +41,10 @@
     "realMobile": false,
     "continuousGlobalCollision": false,
     "d08CloudNoGLKeyboardAndHistory": true,
-    "actualRuntimeAssetsBuiltAndDisposedCPU": true
+    "actualRuntimeAssetsBuiltAndDisposedCPU": true,
+    "C02ActualGroundCoplanarAndVolumeOverlapZero": true,
+    "C02CloudNoGLKeyboardCancelHistory": true,
+    "C02FiniteCameraSamples": 92455
   },
   "sourceDelivery": "Full source retained in private archive; public projection preserves geometry and images",
   "publicClassification": "ongoing city project, not numbered finished work",
@@ -86,5 +92,39 @@
       "GPU unverified"
     ],
     "connector": "assets/d08/access-D08.glb for D08; old connector only in D06"
+  },
+  "c02": {
+    "newLots": 36,
+    "existingC01Lots": 8,
+    "currentTotal": 44,
+    "oldD06HistoricalNotAdded": true,
+    "variants": {
+      "A": 18,
+      "B": 14,
+      "TC03": 4
+    },
+    "seed": 18052,
+    "engineeringLimit": 48,
+    "sourceMaskSHA": "d801b5e7c42acc9d32f7689abd15a3b403e515e32b6a6e4fe7080e4ada3e1275",
+    "roofFractionEstimate": 0.053109963099631,
+    "roofFractionBounds": [
+      0.04846291512915129,
+      0.059016605166051665
+    ],
+    "target": [
+      0.12,
+      0.18
+    ],
+    "targetMet": false,
+    "data": "data/c02/layout.json",
+    "partitions": "data/c02/partitions.json",
+    "loading": "overview context8; selected cluster14/9/9/4 plus context8; other clusters position markers only",
+    "maxSelectedLOD0TrianglesIncludingContextEnvironment": 208912,
+    "GPU": false,
+    "ancientWaterConflict": "unresolved",
+    "centralReserveMeaning": "design protection, not excavated void",
+    "goldLines": "design mask annotations, not historical walls",
+    "publicationAuthorizedByThisFile": false,
+    "sourceVersion": 2
   }
 }
