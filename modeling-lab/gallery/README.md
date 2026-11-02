@@ -6,7 +6,7 @@
 
 列表与Three.js空间目录由同一清单生成。3D须用户明确开启，不自动加载原模型；展台是目录符号，非原件。有限CPU数学、无GL降级和CSS窄屏已查，GPU动态/深度闪烁/iPhone未验。
 
-本候选15项归档中12项此前公开核验，008、009、F04尚待部署核验。状态详情和范围见网站publication-ledger.json。无损分卷交付版本使用downloads/delivery-map.json映射与原字节校验；并非删减模型或伪标ZIP。
+截至2026-11-02T04:37:20Z，15项归档的公开入口与内容访问已有核验记录；此状态不等于GPU动态、实时闪烁、全部交互或真机验收。状态详情和范围见网站publication-ledger.json。无损分卷交付版本使用downloads/delivery-map.json映射与原字节校验；并非删减模型或伪标ZIP。
 
 ## 总览自动检查
 
