@@ -58,6 +58,14 @@ export function buildDirectoryScene(items,makeLabel=()=>null){
     for(const z of [-.42,.42])add(symbol,'box',dark,[0,.24,z],[1.6,.48,.13]);
     for(const x of [-.48,0,.48])add(symbol,'box',mat,[x,.57,0],[.12,1.14,1.18]);
    }
+   else if(n===12){
+    // A raised storehouse and a short approach: an abstract index, NOT a reconstruction.
+    add(symbol,'box',mat,[0,.60,0],[.92,.8,.68]);
+    for(const x of [-.30,.30])for(const z of [-.23,.23])add(symbol,'box',dark,[x,.10,z],[.13,.20,.13]);
+    add(symbol,'box',mat,[-.28,1.08,0],[.65,.09,1.02],[0,0,.38]);
+    add(symbol,'box',mat,[.28,1.08,0],[.65,.09,1.02],[0,0,-.38]);
+    for(let i=0;i<3;i++)add(symbol,'box',dark,[0,.045*(3-i),.58+i*.18],[.42,.09*(3-i),.18]);
+   }
    else add(symbol,'box',mat,[0,.55,0],[.8,1.1,.8],[0,.3,0]);
   }
   group.traverse(o=>{if(o.isMesh){o.userData.itemId=node.id;targets.push(o);}});
