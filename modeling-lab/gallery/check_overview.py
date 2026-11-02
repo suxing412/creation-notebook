@@ -6,6 +6,7 @@ R=Path(__file__).resolve().parent;D=(R/'dist') if (R/'dist').is_dir() else ((R.p
 args_parser=argparse.ArgumentParser(description='Check overview links, catalog parity and deterministic rebuild; optionally compare a supplied prior static snapshot.')
 args_parser.add_argument('--baseline',type=Path,help='Prior static snapshot directory; omitted means preservation is NOT checked.')
 args_parser.add_argument('--report',type=Path,default=R/'overview-qa/static-qa.json')
+args_parser.add_argument('--allow-changed',action='append',default=['index.html','manifest.json'],help='Explicitly reviewed baseline-relative file allowed to change; repeat for each file.')
 args=args_parser.parse_args()
 if args.baseline is not None and not args.baseline.is_dir():args_parser.error('--baseline must be an existing static snapshot directory')
 assert D.is_dir(),'Static website directory not found'
@@ -54,6 +55,6 @@ changed=[]
 if args.baseline is not None:
  for p in args.baseline.rglob('*'):
   if p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()!=after.get(str(p.relative_to(args.baseline))):changed.append(str(p.relative_to(args.baseline)))
- assert set(changed)<= {'index.html','manifest.json'},changed
-result={'items':len(ids),'regular':sum(x['kind']=='regular' for x in cat),'fusion':sum(x['kind']=='fusion' for x in cat),'methods':sum(x['kind'] in ('recipe','method') for x in cat),'relativeReferences':refs,'htmlPages':len(list(D.rglob('*.html'))),'rebuildZeroDiff':True,'originalChangedOnly':changed,'assetPreservation':'passed' if args.baseline is not None else 'not_checked: no baseline supplied','browserLimits':'CSS narrow/noJS/noGL only; GPU/iPhone not tested'}
+ assert set(changed)<=set(args.allow_changed),changed
+result={'items':len(ids),'regular':sum(x['kind']=='regular' for x in cat),'fusion':sum(x['kind']=='fusion' for x in cat),'methods':sum(x['kind'] in ('recipe','method') for x in cat),'relativeReferences':refs,'htmlPages':len(list(D.rglob('*.html'))),'rebuildZeroDiff':True,'originalChangedOnly':changed,'assetPreservation':'passed' if args.baseline is not None else 'not_checked: no baseline supplied','browserLimits':'This script checks static output only; browser/GPU/phone evidence is separate.'}
 args.report.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

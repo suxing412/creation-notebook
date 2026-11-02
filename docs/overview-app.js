@@ -1,4 +1,5 @@
 import {validateCatalog} from './catalog-contract.js';
+import {initCatalogFilter} from './catalog-filter-ui.js';
 const entry=document.querySelector('#enter-space'), section=document.querySelector('#space'), canvas=document.querySelector('#space-canvas'), detail=document.querySelector('#selected'), status=document.querySelector('#space-status');
 let api=null, loading=false, generation=0, items=null, chosen=null, renderFailed=false;
 entry.hidden=false;
@@ -35,3 +36,5 @@ entry.addEventListener('click',open);document.querySelector('#close-space').addE
 for(const b of document.querySelectorAll('[data-select]'))b.addEventListener('click',()=>{select(b.dataset.select);if(b.classList.contains('locate'))section.scrollIntoView({block:'start'});});
 window.addEventListener('pagehide',()=>{generation++;loading=false;api?.dispose();api=null;canvas.replaceChildren();entry.disabled=false;});
 window.addEventListener('pageshow',event=>{if(event.persisted){section.hidden=true;for(const b of document.querySelectorAll('.locate'))b.hidden=true;}});
+
+initCatalogFilter(document,window);

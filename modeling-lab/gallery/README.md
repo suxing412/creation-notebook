@@ -2,22 +2,16 @@
 
 把想象做成有形之物，把经验留下来。
 
-总览与作品同步迭代。manifest.json是作品目录；publication-ledger.json记录独立公开核验，不自动猜测上线。每次修改后运行python3 build.py，按网站overview-acceptance.md复检。生成器支持同级dist、上级dist以及仓库modeling-lab/gallery对应docs布局。保留所有静态资产，不只复制生成器。
+当前17项：10模型与介绍页、1空间原型、4历史空间网页实验、2复用方法。空间设计验收成品仍为0。系统化研究为现有方法补充，不增加作品数。
 
-列表与Three.js空间目录由同一清单生成。3D须用户明确开启，不自动加载原模型；展台是目录符号，非原件。有限CPU数学、无GL降级和CSS窄屏已查，GPU动态/深度闪烁/iPhone未验。
+本次修订将SD01升级0.3操作原型，旧0.2目录按原子树保留于spaces/SD01-v02/；发布状态与设计验收独立。新版本及新增研究入口先pending，实际部署和访问核验后再更新publication-ledger.json。previousVersion保留旧公开证据，不代表新修订已核验。
 
-截至2026-11-02T05:47:40Z，16项归档的公开入口与内容访问已有核验记录；010介绍页与181文件源索引已实际访问；此状态不等于GPU动态、实时闪烁、全部交互或真机验收。状态详情和范围见网站publication-ledger.json。无损分卷交付版本使用downloads/delivery-map.json映射与原字节校验；并非删减模型或伪标ZIP。
+manifest.json生成完整静态列表与catalog.json。搜索/类型筛选是渐进增强，无脚本仍有完整卡片。Three目录须明确开启，不自动载全部原模型；目录符号不等于原作品或空间设计验收。
 
-## 总览自动检查
+在完整仓库运行python3 build.py和python3 check_overview.py。检查器支持--baseline独立旧快照，缺省不宣称资产保真；默认仅允许首页与manifest变化，其他审过的路径用--allow-changed逐个指定。
 
-在本目录运行 `python3 check_overview.py`，检查链接、清单/卡片/目录按钮一致及重建零差异。脚本支持仓库 `modeling-lab/gallery/` 到 `docs/` 的布局，不依赖其他工作目录。
+archive_delivery.py将超限完整ZIP分为最多8MiB卷，校验后还原原字节。下载映射位于docs/downloads/delivery-map.json。历史复制的原页面/manifest/parts保持字节，originalSnapshotPath记录原路径，originalPath为历史交付路径。原完整ZIP另行归档，不删除证据或降质。
 
-如需原资产保真检查，显式提供独立保存的旧静态快照：`python3 check_overview.py --baseline /path/to/prior-static-snapshot`。未提供时报告 `assetPreservation: not_checked`，不能当作资产保真通过；路径不存在则失败。允许变化只有根首页及根manifest，其余原文件缺失/改字节会失败。可用 `--report /path/to/report.json` 指定报告位置；报告只供本地验证，不自动发布。
+本次恢复采用精确公开基线+小增量，未伪称本地具有全仓。未涉及文件由原Git tree保留。源包SHA及ZIP CRC核验只证明文件身份，不代表GPU、手机、实时闪烁或用户理解验收。SD01仍待上述验收，19对旧实体包容未验。
 
-## 类别与验收
-
-“模型与介绍页”指模型设计及介绍其本身的网页。新的“3D空间设计”要求整个页面是可探索三维空间，空间承担布局、导航和内容；不是嵌入3D窗口。当前此类验收成品为0。F01–F04保留为4项已公开历史实验，设计状态为待重做，公开状态不撤销。总览的3D目录索引不是此新类别范例。
-
-## SD01 原型接入
-
-目录新增独立spaceDesigns数据，不将新空间原型混入旧fusion历史实验。当前10项模型与介绍页、0项已验收新空间设计、1项SD01原型、4项历史待重做、2项方法；截至2026-11-02T06:20:05Z公开入口访问已核验17/17；SD01因GL禁用进入文字备用，源分卷入口已打开，在线三卷浏览器内重组及完整SHA已通过22346955字节，未点保存，不声称磁盘下载完成。原型方向与实时验收尚未完成，19对实体包容未验，不能宣称全部穿插归零。原型完整源包采用字节分卷与SHA还原，不删减证据。构建禁止生成Python字节缓存，发布清单仍应排除__pycache__、pyc及内部QA。
+仅发布审过的docs及modeling-lab/gallery增量，不发布临时QA、缓存、私有路径或内部日志。

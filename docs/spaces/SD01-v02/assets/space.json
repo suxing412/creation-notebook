@@ -1,0 +1,268 @@
+{
+  "schema": 1,
+  "id": "SD01",
+  "title": "连接工坊",
+  "titleEn": "Jointworks",
+  "version": "0.2.0-candidate",
+  "seed": 0,
+  "units": "metres",
+  "coordinates": "right-handed Y-up / glTF native",
+  "environment": {
+    "file": "environment.glb"
+  },
+  "models": [
+    {
+      "id": "hinge",
+      "file": "hinge.glb",
+      "position": [
+        -0.72,
+        0.22,
+        -0.22
+      ],
+      "rotationY": -0.35,
+      "scale": 1,
+      "sourceSha": "05970c44007d68dfb18627c313035404dfda5661694edd1d2e0ea825fe1f4997",
+      "variant": "hinge",
+      "source": "Study 009 / hinge / model.glb"
+    },
+    {
+      "id": "slot",
+      "file": "slot.glb",
+      "position": [
+        0.72,
+        0.22,
+        -0.22
+      ],
+      "rotationY": 0.22,
+      "scale": 1,
+      "sourceSha": "0fdcc207fa9f0a6b078250bf5cfd9dacc12a066ed23234eaeea5ed43d7ddc309",
+      "variant": "slot",
+      "source": "Study 010 / slot / model.glb"
+    }
+  ],
+  "bounds": {
+    "min": [
+      -1.38,
+      -0.12,
+      -1.0
+    ],
+    "max": [
+      1.38,
+      0.8,
+      1.1
+    ]
+  },
+  "camera": {
+    "position": [
+      2.1,
+      3.0,
+      3.0
+    ],
+    "target": [
+      0,
+      0.3,
+      0
+    ],
+    "fov": 38,
+    "near": 0.02,
+    "far": 30
+  },
+  "regions": [
+    {
+      "id": "plaza",
+      "label": "关系广场",
+      "center": [
+        0,
+        0,
+        0.62
+      ],
+      "focus": [
+        0,
+        0.3,
+        0
+      ],
+      "camera": [
+        2.1,
+        3.0,
+        3.0
+      ],
+      "radius": 1.74,
+      "navigationPoint": [
+        0,
+        0.038,
+        0.62
+      ]
+    },
+    {
+      "id": "hinge",
+      "label": "转动庭",
+      "center": [
+        -0.72,
+        0,
+        -0.22
+      ],
+      "focus": [
+        -0.65,
+        0.3,
+        -0.22
+      ],
+      "camera": [
+        0.12,
+        1.35,
+        0.95
+      ],
+      "radius": 0.53,
+      "navigationPoint": [
+        -0.51,
+        0.038,
+        0.13
+      ]
+    },
+    {
+      "id": "slot",
+      "label": "插接廊",
+      "center": [
+        0.72,
+        0,
+        -0.22
+      ],
+      "focus": [
+        0.72,
+        0.3,
+        -0.22
+      ],
+      "camera": [
+        1.45,
+        1.25,
+        0.85
+      ],
+      "radius": 0.51,
+      "navigationPoint": [
+        0.51,
+        0.038,
+        0.13
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "overview",
+      "position": [
+        2.1,
+        3.0,
+        3.0
+      ],
+      "target": [
+        0,
+        0.3,
+        0
+      ]
+    },
+    {
+      "id": "hinge",
+      "position": [
+        0.12,
+        1.35,
+        0.95
+      ],
+      "target": [
+        -0.65,
+        0.3,
+        -0.22
+      ]
+    },
+    {
+      "id": "slot",
+      "position": [
+        1.45,
+        1.25,
+        0.85
+      ],
+      "target": [
+        0.72,
+        0.3,
+        -0.22
+      ]
+    }
+  ],
+  "contract": {
+    "models": "Unmodified input GLB bytes, rigid placement only; no assembly or lamp motion.",
+    "space": "Original miniature architecture. Not full-scale occupiable building or construction plan.",
+    "paths": "Two spatially distinct routes across the plaza; navigation is camera exploration, not avatar collision simulation."
+  },
+  "worldBounds": {
+    "min": [
+      -1.3799999952316284,
+      -0.10999999940395355,
+      -1.0499999523162842
+    ],
+    "max": [
+      1.3799999952316284,
+      0.5730172395706177,
+      1.065000057220459
+    ]
+  },
+  "worldMaxY": 0.5730172395706177,
+  "zones": [
+    {
+      "id": "plaza",
+      "label": "关系广场",
+      "target": [
+        0,
+        0.3,
+        0
+      ],
+      "camera": [
+        2.1,
+        3.0,
+        3.0
+      ],
+      "minRadius": 2.8
+    },
+    {
+      "id": "hinge",
+      "label": "转动庭",
+      "target": [
+        -0.65,
+        0.3,
+        -0.22
+      ],
+      "camera": [
+        0.12,
+        1.35,
+        0.95
+      ],
+      "minRadius": 1.2
+    },
+    {
+      "id": "slot",
+      "label": "插接廊",
+      "target": [
+        0.72,
+        0.3,
+        -0.22
+      ],
+      "camera": [
+        1.45,
+        1.25,
+        0.85
+      ],
+      "minRadius": 1.2
+    }
+  ],
+  "supports": {
+    "hinge": {
+      "shape": "cylinder",
+      "radius": 0.155,
+      "height": 0.22,
+      "topBevel": 0.008
+    },
+    "slot": {
+      "shape": "box",
+      "width": 0.43,
+      "depth": 0.29,
+      "height": 0.22,
+      "topBevel": 0.012
+    }
+  }
+}

@@ -132,8 +132,13 @@ def apply_projection(root):
             raise ValueError('Full archive identity mismatch')
         if (root / archive['originalPath']).exists():
             raise ValueError('Projected original ZIP path must be absent')
-        page = write_page(root, path.parent, manifest)
-        mappings.append({**archive, 'originalPathPresentInThisDelivery': False, 'downloadPage': page.relative_to(root).as_posix(), 'manifest': path.relative_to(root).as_posix(), 'manifestSha256': sha(path.read_bytes()), 'partCount': len(parts), 'parts': [{**p, 'path': (path.parent / p['file']).relative_to(root).as_posix()} for p in parts]})
+        relocated = (path.parent.parent / Path(archive['originalPath']).name).relative_to(root).as_posix()
+        is_history = relocated != archive['originalPath']
+        page = path.parent.parent / 'source-download.html' if is_history else write_page(root, path.parent, manifest)
+        if not page.is_file():raise ValueError('Historical download page missing')
+        mapped_archive = {**archive, 'originalPath':relocated}
+        if is_history:mapped_archive['originalSnapshotPath']=archive['originalPath']
+        mappings.append({**mapped_archive, 'originalPathPresentInThisDelivery': False, 'downloadPage': page.relative_to(root).as_posix(), 'manifest': path.relative_to(root).as_posix(), 'manifestSha256': sha(path.read_bytes()), 'partCount': len(parts), 'parts': [{**p, 'path': (path.parent / p['file']).relative_to(root).as_posix()} for p in parts]})
     patch_links(root, mappings)
     delivery = {'format': 'github-exact-zip-delivery-map-v1', 'projection': True, 'requestLimitBytes': REQUEST_LIMIT, 'requestMetadataReserveBytes': REQUEST_RESERVE, 'rawArchiveSafeLimitBytes': RAW_SAFE_LIMIT, 'partSizeLimitBytes': PART_BYTES, 'note': 'Only oversized source ZIPs are delivered as exact byte parts. Original source manifests, frozen hash lists and historical reports describe the original full snapshot, not current direct-path availability. Use this map for this delivery. Other models, images, source code and dependencies retain their original bytes.', 'archives': mappings}
     dump(downloads / 'delivery-map.json', delivery)
