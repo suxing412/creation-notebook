@@ -1,0 +1,94 @@
+{
+  "meshes": 48,
+  "triangles": 108090,
+  "zeroAreaAtDoubleAreaTolerance1e-10": 0,
+  "duplicateCoordinateTrianglesWithinMeshRounded7Decimals": 0,
+  "cameraRoutes": [
+    {
+      "from": "hall",
+      "to": "orbit",
+      "samples": 101,
+      "minimumCameraZ": 7.8,
+      "minimumCameraHeight": 4.5
+    },
+    {
+      "from": "hall",
+      "to": "tide",
+      "samples": 101,
+      "minimumCameraZ": 9.5,
+      "minimumCameraHeight": 4.8
+    },
+    {
+      "from": "orbit",
+      "to": "hall",
+      "samples": 101,
+      "minimumCameraZ": 7.8,
+      "minimumCameraHeight": 4.5
+    },
+    {
+      "from": "orbit",
+      "to": "tide",
+      "samples": 101,
+      "minimumCameraZ": 7.8,
+      "minimumCameraHeight": 4.5
+    },
+    {
+      "from": "tide",
+      "to": "hall",
+      "samples": 101,
+      "minimumCameraZ": 9.5,
+      "minimumCameraHeight": 4.8
+    },
+    {
+      "from": "tide",
+      "to": "orbit",
+      "samples": 101,
+      "minimumCameraZ": 7.8,
+      "minimumCameraHeight": 4.5
+    }
+  ],
+  "geometryScope": "Triangle degeneracy and same-mesh exact coordinate duplicates only; not full BVH/self-intersection/coplanar-overlap certification. Original artifact assembly contacts remain inherited. New closed boxes deliberately contact foundation; portal lintels overlap uprights as structural joints. Camera position paths stay at z>=7.8 while exhibit front is z<=0; GPU view/frustum occlusion not tested.",
+  "plinthTopY": 0.8,
+  "artifactBottomY": 1.05,
+  "deliberateSuspensionGap": 0.25,
+  "artifactEnvironmentPositiveAABBOverlaps": [],
+  "newEnvironmentPositiveAABBOverlaps": [
+    [
+      "Portal lintel",
+      "Portal upright",
+      [
+        0.09000000357627869,
+        0.09000000357627869,
+        0.2199999988079071
+      ]
+    ],
+    [
+      "Portal lintel",
+      "Portal upright.001",
+      [
+        0.09000000357627869,
+        0.09000000357627869,
+        0.2199999988079071
+      ]
+    ],
+    [
+      "Portal lintel.001",
+      "Portal upright.002",
+      [
+        0.09000000357627869,
+        0.09000000357627869,
+        0.2199999988079071
+      ]
+    ],
+    [
+      "Portal lintel.001",
+      "Portal upright.003",
+      [
+        0.09000000357627869,
+        0.09000000357627869,
+        0.2199999988079071
+      ]
+    ]
+  ],
+  "aabbScope": "Broad-phase only. Original-artifact internal pairs excluded. Positive overlaps in portal joints are classified intentional; touching floor surfaces excluded by 1e-6 tolerance."
+}
