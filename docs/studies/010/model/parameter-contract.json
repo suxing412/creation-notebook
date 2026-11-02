@@ -1,0 +1,119 @@
+{
+  "recipe": "SLOT half-lap sheet assembly",
+  "version": "1.1.0",
+  "units": "metres",
+  "purpose": "Open-bottom desktop separation / upright paper-book display digital concept",
+  "applicability": {
+    "shape": "Two straight planar longitudinal rails and 3..6 repeated transverse slotted planar dividers, perpendicular layout only",
+    "scale": "Permitted numeric inputs below; only presets and named boundary tuples have been measured",
+    "curvature": "Fixed 18mm top shoulder radius in revision2 and 0.55mm three-segment edge bevel; no arbitrary freeform/warped sheets",
+    "material": "Opaque satin appearance only; not a physical material or strength simulation",
+    "presentation": "Fixed orthographic studio, AgX, neutral ground, CPU128samples960px; actual browser/GPU/phone unverified"
+  },
+  "invariants": [
+    "two rails",
+    "constant sheet thickness within one model",
+    "orthogonal half-lap joints",
+    "slot width equals sheet thickness plus nominal total clearance before bevel",
+    "divider slot top at half rail height plus clearance before final floor alignment",
+    "equal station spacing and fixed edge overhang18mm",
+    "post-bevel each mesh floor aligned to z0",
+    "actual local left/right/top clearance audited independently; no pair exemptions"
+  ],
+  "variables": {
+    "length": [
+      0.25,
+      0.48
+    ],
+    "depth": [
+      0.12,
+      0.23
+    ],
+    "divider_height": [
+      0.1,
+      0.19
+    ],
+    "dividers": [
+      3,
+      6
+    ],
+    "thickness": [
+      0.006,
+      0.012
+    ],
+    "rail_height": [
+      0.05,
+      0.08
+    ],
+    "clearance": [
+      0.0004,
+      0.0012
+    ]
+  },
+  "dependent_constraints": [
+    "divider_height >= rail_height+.035",
+    "length/(dividers+1) >=4*thickness",
+    "exact finite numeric keys; booleans rejected; dividers exact integer"
+  ],
+  "tested_presets": [
+    {
+      "name": "slot",
+      "length": 0.32,
+      "depth": 0.15,
+      "divider_height": 0.125,
+      "dividers": 3,
+      "thickness": 0.008,
+      "rail_height": 0.065,
+      "clearance": 0.0006
+    },
+    {
+      "name": "span",
+      "length": 0.44,
+      "depth": 0.18,
+      "divider_height": 0.11,
+      "dividers": 4,
+      "thickness": 0.008,
+      "rail_height": 0.06,
+      "clearance": 0.0006
+    },
+    {
+      "name": "rise",
+      "length": 0.36,
+      "depth": 0.13,
+      "divider_height": 0.175,
+      "dividers": 5,
+      "thickness": 0.009,
+      "rail_height": 0.07,
+      "clearance": 0.0007
+    }
+  ],
+  "finite_scope": "Three presets plus two joint boundary tuples, not continuous envelope certification. Input acceptance is not geometric validation; every new configuration must run actual-file gates.",
+  "failure_boundaries": [
+    "First explicit triangle caps at lower tuple generated zero-area cap triangles and bevel collapse. Fixed by native concave polygon cap representation before bevel; original failure report retained.",
+    "Below permitted dimensions or insufficient ligaments/shoulder clearance rejected.",
+    "No elastic fit, fasteners, load, tipping, manufacturing tolerance, material durability or real assembly validation.",
+    "Motion is independent sampled +Z poses only; arbitrary rotation/trajectory not supported."
+  ],
+  "reproducibility": {
+    "software": "Blender4.3.2",
+    "seed": 0,
+    "generator": "source/generate.py",
+    "config": "configs/*.json",
+    "wrapper": "source/run.py",
+    "checker_identity": "SHA256 in actual-file reports",
+    "resource_cost": "Elapsed generation/render times in each model-info; machine-dependent, not a cost guarantee"
+  },
+  "quality_gates": [
+    "native closedness/local winding/world directed volume/duplicate and degenerate triangles",
+    "local cross/self overlap and positive-area coplanar detection",
+    "actual GLB structure and oriented world triangle multiset vs native, not merely file exists",
+    "actual ray slot widths, thickness, both side clearances, midlap vertical gap, floor and studio separation",
+    "finite translated poses and independent deliberate bad controls",
+    "CPU multiview human review; separate web and GPU gates"
+  ],
+  "adoption": {
+    "inherited": "009 hash binding, native/actual GLB separation and negative controls; retained for traceability",
+    "new": "Two-sided actual slot surface probes, floor alignment, explicit no contact exemptions",
+    "not_adopted": "009 articulated lamp formula/poses, irrelevant to perpendicular sheet lattice"
+  }
+}

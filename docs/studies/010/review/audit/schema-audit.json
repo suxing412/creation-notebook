@@ -1,0 +1,20 @@
+{
+  "scope": "Metadata validator unit tests; not browser",
+  "passed": true,
+  "source_sha256": "37bfda10ce31278c4d598fcc184eee8779e765ce88ae12203372ec3b3a04c6fc",
+  "cases": [
+    "valid fixture accepted",
+    "missing schema/variants rejected",
+    "unsafe/protocol/traversal/query/fragment/control image paths rejected",
+    "missing variant/view/empty facts/non-string fact/blank title rejected",
+    "route allowlist exact with safe fallback",
+    "META-01 regression: blank alt/caption/fact label/value rejected"
+  ],
+  "findings": [
+    {
+      "id": "META-01",
+      "status": "fixed",
+      "finding": "Required alt/caption and fact label/value now require trimmed nonempty strings."
+    }
+  ]
+}

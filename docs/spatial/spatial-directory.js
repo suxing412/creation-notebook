@@ -30,7 +30,7 @@ export function createSpatialDirectory({container,items,onSelect=()=>{},onStatus
   selected=id;for(const [key,obj]of directory.objects){obj.material.emissive.setHex(key===id?0x365041:0x000000);obj.material.emissiveIntensity=key===id?.3:0;}
   moveTo(cameraPose(directory,aspect,id));if(notify)onSelect(id);return true;
  }
- function reset(){if(disposed)return;selected=null;for(const obj of directory.objects.values())obj.material.emissive.setHex(0);moveTo(cameraPose(directory,aspect));status('ready','全馆目录：左侧形体与网页，中间空间叙事，右侧复用方法。');}
+ function reset(){if(disposed)return;selected=null;for(const obj of directory.objects.values())obj.material.emissive.setHex(0);moveTo(cameraPose(directory,aspect));status('ready','全馆目录：左侧模型与介绍页，中间历史实验待重做，右侧复用方法。');}
  function resize(){if(disposed)return;const rect=container.getBoundingClientRect();const width=Math.max(1,Math.floor(rect.width)),height=Math.max(1,Math.floor(rect.height));aspect=width/height;camera.aspect=aspect;
   const dpr=Math.min(window.devicePixelRatio||1,LIMITS.maxPixelRatio,Math.sqrt(LIMITS.maxDrawingPixels/(width*height)));renderer.setPixelRatio(dpr);renderer.setSize(width,height,false);animation=null;setPose(cameraPose(directory,aspect,selected));invalidate();
  }

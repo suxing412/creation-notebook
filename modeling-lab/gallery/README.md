@@ -6,10 +6,14 @@
 
 列表与Three.js空间目录由同一清单生成。3D须用户明确开启，不自动加载原模型；展台是目录符号，非原件。有限CPU数学、无GL降级和CSS窄屏已查，GPU动态/深度闪烁/iPhone未验。
 
-截至2026-11-02T04:37:20Z，15项归档的公开入口与内容访问已有核验记录；此状态不等于GPU动态、实时闪烁、全部交互或真机验收。状态详情和范围见网站publication-ledger.json。无损分卷交付版本使用downloads/delivery-map.json映射与原字节校验；并非删减模型或伪标ZIP。
+截至2026-11-02T04:37:20Z，此前15项归档的公开入口与内容访问已有核验记录；新增010为第16项，尚待部署核验；此状态不等于GPU动态、实时闪烁、全部交互或真机验收。状态详情和范围见网站publication-ledger.json。无损分卷交付版本使用downloads/delivery-map.json映射与原字节校验；并非删减模型或伪标ZIP。
 
 ## 总览自动检查
 
 在本目录运行 `python3 check_overview.py`，检查链接、清单/卡片/目录按钮一致及重建零差异。脚本支持仓库 `modeling-lab/gallery/` 到 `docs/` 的布局，不依赖其他工作目录。
 
 如需原资产保真检查，显式提供独立保存的旧静态快照：`python3 check_overview.py --baseline /path/to/prior-static-snapshot`。未提供时报告 `assetPreservation: not_checked`，不能当作资产保真通过；路径不存在则失败。允许变化只有根首页及根manifest，其余原文件缺失/改字节会失败。可用 `--report /path/to/report.json` 指定报告位置；报告只供本地验证，不自动发布。
+
+## 类别与验收
+
+“模型与介绍页”指模型设计及介绍其本身的网页。新的“3D空间设计”要求整个页面是可探索三维空间，空间承担布局、导航和内容；不是嵌入3D窗口。当前此类验收成品为0。F01–F04保留为4项已公开历史实验，设计状态为待重做，公开状态不撤销。总览的3D目录索引不是此新类别范例。

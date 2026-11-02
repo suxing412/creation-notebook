@@ -1,0 +1,183 @@
+{
+  "checker_sha256": "e01843a6cf5ff31594304c0a44733d5b43975a4f6ae2e58c92cec4e97b471c78",
+  "payload_checker_sha256": "b736301f6e704ef468903e88f9c511cea3f3c5483c604363d47a7356a703ecef",
+  "control_script_sha256": "ed24e5e0b8e1b1ff01e3342d32f140a1ac6f3aa14fd877c67458e32741576464",
+  "created_utc": "2026-11-02T05:06:09.864830+00:00",
+  "passed": true,
+  "cases": [
+    {
+      "case": "valid",
+      "expected_failure": null,
+      "checker_passed": true,
+      "observed_codes": [],
+      "expected_condition_observed": true,
+      "model_sha256": "b6b024750528b31ea78af3ffe14116511ea83e5d5c88445078dee59e4d428209",
+      "glb_sha256": "9f588b109845fe58294511bbcf95f3a809546557d6c6e2c348f8cd3abd80ba9d"
+    },
+    {
+      "case": "missing_face",
+      "expected_failure": "nonmanifold",
+      "checker_passed": false,
+      "observed_codes": [
+        "nonmanifold"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "b8215a8476ea3bf0950bf53bba128a304a569ea8be395464fdeb732927bf13ff",
+      "glb_sha256": "ffacff2b9d61af35388f039aaea1ce873ea10db5b667234654682a1995f16602"
+    },
+    {
+      "case": "self_crossing",
+      "expected_failure": "self_intersection_candidates",
+      "checker_passed": false,
+      "observed_codes": [
+        "components",
+        "self_intersection_candidates"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "161940a335180c8f6088adb8034c877cdbef2564b3f1dd3ca3d2ea05e3248d72",
+      "glb_sha256": "9a7f1635c19f34b97901d1f2a2b323f329bd72161b5127a8b6919658eadb9569"
+    },
+    {
+      "case": "reverse_one",
+      "expected_failure": "winding",
+      "checker_passed": false,
+      "observed_codes": [
+        "winding"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "2b3bf2a61e00986705cd22bd7b8e336dcae70180d736a77b6c4915e048a7f67d",
+      "glb_sha256": "80bafe99e32bceed65442b489c0984fb4539de73c8e177f1e2f6d8c151530711"
+    },
+    {
+      "case": "reverse_all",
+      "expected_failure": "world_volume",
+      "checker_passed": false,
+      "observed_codes": [
+        "world_volume"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "41bd996fce16a703d7736b2440c8c53465da387b3d2034989d6e4109cb9aec76",
+      "glb_sha256": "669daf3e7df4177588a76db8be468b62c256ca2e9e9e473c40a6737003386317"
+    },
+    {
+      "case": "duplicate_face",
+      "expected_failure": "duplicate_triangle",
+      "checker_passed": false,
+      "observed_codes": [
+        "nonmanifold",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "coplanar_positive_area",
+        "export_geometry_mismatch"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "d6b05fa2f44dee16ca388ee5138ef3a83b5094a5ebdef17ddf168214475bb15c",
+      "glb_sha256": "657b58bef7edecdc48c3c1068bf00b121f79518b71da821f5d2252b4c44d8985"
+    },
+    {
+      "case": "degenerate",
+      "expected_failure": "degenerate",
+      "checker_passed": false,
+      "observed_codes": [
+        "nonmanifold",
+        "degenerate",
+        "export_geometry_mismatch"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "6f243447b4ac4141bd850c337e2e43454415b22faf8d000f383ea6bee6e94810",
+      "glb_sha256": "f0d9ba058876908385e55051004ed932560c1975530df386e60d116ddba10fc8"
+    },
+    {
+      "case": "two_components",
+      "expected_failure": "components",
+      "checker_passed": false,
+      "observed_codes": [
+        "components"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "254dee9e1045fd6361bb137e01adccb369d8e11e3bc9db95c59091de935669f2",
+      "glb_sha256": "b23631e814f641cecce112511b3ae2f4887ca421ec57dea1758d0f3d271702ae"
+    },
+    {
+      "case": "coplanar_duplicate",
+      "expected_failure": "coplanar_positive_area",
+      "checker_passed": false,
+      "observed_codes": [
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "duplicate_triangle",
+        "unclassified_interobject_intersections",
+        "coplanar_positive_area"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "eeeef4b0926abdfc51f3798515c37522715f2ab6d95d364f793a27172789d6cb",
+      "glb_sha256": "1da82bfe4ce00aa23792b1826d71c97f464f56df93efb121b767e54b43c20ddc"
+    },
+    {
+      "case": "crossing",
+      "expected_failure": "unclassified_interobject_intersections",
+      "checker_passed": false,
+      "observed_codes": [
+        "unclassified_interobject_intersections"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "0860921a4d295a17e98227c196a14d76892b207b5ce79a7240aff8fe58e1b7bb",
+      "glb_sha256": "98c1e8c74bcdfaf55de0c71bfe18805b10c8718e6a99efd5c2fe777637463c60"
+    },
+    {
+      "case": "contained",
+      "expected_failure": "unclassified_containment",
+      "checker_passed": false,
+      "observed_codes": [
+        "unclassified_containment"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "8641241ce1243bf8ba72cafc0d5f0fe0057f557dab88b8b1ea3dfb0dfbc2a20f",
+      "glb_sha256": "c1f234863116c8734f15953a597920a307b87fcb5f77bd4f9400e7c1d04864e9"
+    },
+    {
+      "case": "local_region_valid",
+      "expected_failure": "contact_region_contract",
+      "checker_passed": false,
+      "observed_codes": [
+        "contact_region_contract",
+        "unclassified_interobject_intersections"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "b511dc864d44196ef7f1bb39aa841711cf17e55c683cbebbb50af0f5373f7a1d",
+      "glb_sha256": "b5a69964d5dc69fd9cd52b086c675fb023a305b7756a354c31ad1c481ea3be8b"
+    },
+    {
+      "case": "local_region_partial",
+      "expected_failure": "unclassified_interobject_intersections",
+      "checker_passed": false,
+      "observed_codes": [
+        "contact_region_contract",
+        "unclassified_interobject_intersections"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "4ab820aa8e3797cba30052526d3a10238f8a73a8e6a137560e2e8de13cdd627d",
+      "glb_sha256": "036703567ad477dbb9a8fa1d958831057c63c25d7a4152a03da3705b246eba23"
+    },
+    {
+      "case": "export_wrong",
+      "expected_failure": "export_geometry_mismatch",
+      "checker_passed": false,
+      "observed_codes": [
+        "export_geometry_mismatch"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "0bba2b35d96df215cd7fb4e0b4800a7734fc8facb227570f8cf56d0bec5c2e1f",
+      "glb_sha256": "d371d0c3b71dcf09c4b57c69e55730b59c885e1f978d8747d03358884a84a07d"
+    }
+  ]
+}

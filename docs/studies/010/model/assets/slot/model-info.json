@@ -1,0 +1,197 @@
+{
+  "study": "010",
+  "title": "SLOT / 栖格",
+  "variant": "slot",
+  "config": {
+    "name": "slot",
+    "length": 0.32,
+    "depth": 0.15,
+    "divider_height": 0.125,
+    "dividers": 3,
+    "thickness": 0.008,
+    "rail_height": 0.065,
+    "clearance": 0.0006
+  },
+  "recipe_version": "1.1.0",
+  "generator_sha256": "0cb8c34a307819600e7eedf6910ba75b8d64132844856102688e8b7046de94f0",
+  "recipe_sha256": "f3b978618a6d77d54f2c39d34c80a2d8dcd50a3393c422ecea32e76de4a4a0e7",
+  "blender_version": "4.3.2",
+  "seed": 0,
+  "parts": [
+    {
+      "name": "Rail 1",
+      "axis": "x",
+      "center_m": -0.075,
+      "vertices": 384,
+      "polygons": 386,
+      "floor_alignment_m": -0.0
+    },
+    {
+      "name": "Rail 2",
+      "axis": "x",
+      "center_m": 0.075,
+      "vertices": 384,
+      "polygons": 386,
+      "floor_alignment_m": -0.0
+    },
+    {
+      "name": "Divider 1",
+      "axis": "y",
+      "center_m": -0.08,
+      "vertices": 448,
+      "polygons": 424,
+      "floor_alignment_m": -0.0
+    },
+    {
+      "name": "Divider 2",
+      "axis": "y",
+      "center_m": 0.0,
+      "vertices": 448,
+      "polygons": 424,
+      "floor_alignment_m": -0.0
+    },
+    {
+      "name": "Divider 3",
+      "axis": "y",
+      "center_m": 0.07999999999999999,
+      "vertices": 448,
+      "polygons": 424,
+      "floor_alignment_m": -0.0
+    }
+  ],
+  "bounds_m": [
+    [
+      -0.1599999964237213,
+      0.1599999964237213
+    ],
+    [
+      -0.09300000220537186,
+      0.09300000220537186
+    ],
+    [
+      0.0,
+      0.125
+    ]
+  ],
+  "units": "metres",
+  "revision": 2,
+  "contact_regions": [],
+  "assembly_contract": {
+    "slots": "top-open rail / bottom-open transverse panel",
+    "nominal_slot_width": 0.0086,
+    "nominal_total_lateral_clearance": 0.0006,
+    "nominal_midplane_gap": 0.0006,
+    "nominal_profile_bottom_z": 0,
+    "actual_z_bounds_m": [
+      0.0,
+      0.125
+    ],
+    "engineering_validated": false
+  },
+  "studio": {
+    "renderer": "Cycles CPU",
+    "samples": 128,
+    "resolution": [
+      960,
+      960
+    ],
+    "seed": 0,
+    "denoising": false,
+    "view_transform": "AgX",
+    "views": {
+      "beauty": {
+        "location": [
+          0.65,
+          -0.85,
+          0.4
+        ],
+        "target": [
+          0,
+          0,
+          0.07
+        ],
+        "ortho_scale": 0.62
+      },
+      "front": {
+        "location": [
+          0,
+          -1.1,
+          0.12
+        ],
+        "target": [
+          0,
+          0,
+          0.12
+        ],
+        "ortho_scale": 0.54
+      },
+      "side": {
+        "location": [
+          1.1,
+          0,
+          0.12
+        ],
+        "target": [
+          0,
+          0,
+          0.12
+        ],
+        "ortho_scale": 0.54
+      },
+      "top": {
+        "location": [
+          0,
+          0,
+          1.2
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "ortho_scale": 0.54
+      },
+      "joint": {
+        "location": [
+          -0.16,
+          -0.20500000000000002,
+          0.1525
+        ],
+        "target": [
+          -0.08,
+          -0.075,
+          0.0325
+        ],
+        "ortho_scale": 0.09
+      },
+      "joint-exploded": {
+        "location": [
+          -0.16,
+          -0.20500000000000002,
+          0.1525
+        ],
+        "target": [
+          -0.08,
+          -0.075,
+          0.0575
+        ],
+        "ortho_scale": 0.13
+      },
+      "exploded": {
+        "location": [
+          0.65,
+          -0.85,
+          0.62
+        ],
+        "target": [
+          0,
+          0,
+          0.12
+        ],
+        "ortho_scale": 0.68
+      }
+    }
+  },
+  "gpu_verified": false,
+  "elapsed_seconds": 397.266
+}

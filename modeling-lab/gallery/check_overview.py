@@ -34,7 +34,14 @@ for p in D.rglob('*.html'):
 cat=json.loads((D/'catalog.json').read_text());z=Parser();z.feed((D/'index.html').read_text());ids=[x['id'] for x in cat]
 assert len(ids)==len(set(ids))==len(z.works)
 assert set(z.works)==set(ids) and sorted(z.picks)==sorted(ids*2)
-assert z.works[0]==max(x['id'] for x in cat if x['kind']=='regular') and '开启 3D 作品馆' in (D/'index.html').read_text()
+assert z.works[0]==max(x['id'] for x in cat if x['kind']=='regular') and '开启 3D 目录索引' in (D/'index.html').read_text()
+policy=json.loads((R/'manifest.json').read_text())['designPolicy']
+historical=[x for x in cat if x['kind']=='fusion']
+assert policy['acceptedSpatialWorks']==0,'New spatial design acceptance requires an explicit reviewed schema change'
+assert len(historical)==policy['historicalSpatialExperiments']
+assert all(x.get('designStatus')=='按新设计要求待重做' for x in historical)
+assert all(x['publication']=='verified' for x in historical),'Historical publication must not be conflated with redesign status'
+assert '3D空间设计 <span>00</span>' in (D/'index.html').read_text()
 assert not errs,errs
 before={str(p.relative_to(D)):hashlib.sha256(p.read_bytes()).hexdigest() for p in D.rglob('*') if p.is_file()}
 subprocess.run([sys.executable,str(R/'build.py')],check=True,capture_output=True)

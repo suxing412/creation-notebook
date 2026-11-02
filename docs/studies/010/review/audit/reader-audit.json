@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "scope": "Actual production JS in mocked DOM/fetch/Image/history; not real browser, GPU or phone.",
+  "source_sha256": {
+    "app.js": "1f572094f82b4270806ee54cb59c926906d924147defe12340123b17d5d0c171",
+    "reader-state.js": "37bfda10ce31278c4d598fcc184eee8779e765ce88ae12203372ec3b3a04c6fc"
+  },
+  "cases": [
+    "stale triple success cannot overwrite newer triple",
+    "two decoded images plus one failure leave complete old triple; retry commits all",
+    "history exception cannot roll state back after DOM commit",
+    "deep link and failed Back retry preserve non-push history context",
+    "metadataFail is retryable and not cached",
+    "metadataMalformed is retryable and not cached",
+    "decode rejection exposes retry without committing incomplete triple",
+    "COLD-01 regression: unavailable initial trio is not claimed committed; retry establishes first full trio",
+    "metadataHang 15s deadline allows refetch; late response cannot overwrite",
+    "jsonHang 15s deadline allows refetch; late response cannot overwrite",
+    "hanging third image times out, preserves triple, retries; late old image ignored",
+    "never-settling image decode hits same 15s deadline"
+  ],
+  "findings": [
+    {
+      "id": "COLD-01",
+      "status": "fixed",
+      "finding": "Initial committed=null; cold failure explicitly says no validated complete trio; successful retry restores valid selection."
+    }
+  ]
+}

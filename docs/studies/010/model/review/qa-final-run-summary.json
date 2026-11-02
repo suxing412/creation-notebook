@@ -1,0 +1,118 @@
+{
+  "passed": true,
+  "created_utc": "2026-11-02T05:20:42.569463+00:00",
+  "summary_script_sha256": "bc614f419a592002cef49c5b3c48cb336bc6afa6ed3fa2f373f3374a0a958a42",
+  "identity_report": "qa-final-identities.json",
+  "variants": [
+    {
+      "variant": "slot",
+      "passed": true,
+      "model_sha256": "695fdfd38fec0b9587e04aeea53b92f6c221a01b35c0ea4952c432da03b8de70",
+      "glb_sha256": "0fdcc207fa9f0a6b078250bf5cfd9dacc12a066ed23234eaeea5ed43d7ddc309",
+      "info_sha256": "98718eb9e6604934b52b90b0809471ebf6bb8ced71b62e13af273c2ea1caf500",
+      "generator_sha256": "0cb8c34a307819600e7eedf6910ba75b8d64132844856102688e8b7046de94f0",
+      "recipe_sha256": "f3b978618a6d77d54f2c39d34c80a2d8dcd50a3393c422ecea32e76de4a4a0e7",
+      "native_objects": 5,
+      "native_triangle_count": 4204,
+      "joint_count": 6,
+      "motion_sample_count": 36,
+      "midlap_gap_range_m": [
+        0.0006000027060508728,
+        0.0006000027060508728
+      ],
+      "min_studio_ground_clearance_m": 0.0002,
+      "report_files": [
+        "qa-slot-native.json",
+        "qa-slot-assembly.json",
+        "qa-slot-motion.json",
+        "qa-slot-scene.json"
+      ]
+    },
+    {
+      "variant": "span",
+      "passed": true,
+      "model_sha256": "8f9522c48cdec6533a8665b0f1856708b47cf04a0a6b34228dbe67bb95bdbbff",
+      "glb_sha256": "f400ac85833a872ba209d1e16c7494aea4acb73515d042dfac110eb4e5aea0dc",
+      "info_sha256": "240fa3a45381a7258ab50893a7d5f9b15c629734347da579072bcd68d60da012",
+      "generator_sha256": "0cb8c34a307819600e7eedf6910ba75b8d64132844856102688e8b7046de94f0",
+      "recipe_sha256": "f3b978618a6d77d54f2c39d34c80a2d8dcd50a3393c422ecea32e76de4a4a0e7",
+      "native_objects": 6,
+      "native_triangle_count": 5480,
+      "joint_count": 8,
+      "motion_sample_count": 48,
+      "midlap_gap_range_m": [
+        0.0005999989807605743,
+        0.0006000027060508728
+      ],
+      "min_studio_ground_clearance_m": 0.0002,
+      "report_files": [
+        "qa-span-native.json",
+        "qa-span-assembly.json",
+        "qa-span-motion.json",
+        "qa-span-scene.json"
+      ]
+    },
+    {
+      "variant": "rise",
+      "passed": true,
+      "model_sha256": "a9a029da3c5419633dada403ad5e1ea546b674b2c5d440e1d7caeb0cc0723a5a",
+      "glb_sha256": "81861f9d12011a7e6c864e31ea058cb2ac8e7b8fc444124eff43aea8eb6ea9cc",
+      "info_sha256": "1cefd29c50be9c20b80ccdb7922b2038239b415f3962037ee5dbd2920fe2e93d",
+      "generator_sha256": "0cb8c34a307819600e7eedf6910ba75b8d64132844856102688e8b7046de94f0",
+      "recipe_sha256": "f3b978618a6d77d54f2c39d34c80a2d8dcd50a3393c422ecea32e76de4a4a0e7",
+      "native_objects": 7,
+      "native_triangle_count": 6756,
+      "joint_count": 10,
+      "motion_sample_count": 60,
+      "midlap_gap_range_m": [
+        0.000700000673532486,
+        0.000700000673532486
+      ],
+      "min_studio_ground_clearance_m": 0.0002,
+      "report_files": [
+        "qa-rise-native.json",
+        "qa-rise-assembly.json",
+        "qa-rise-motion.json",
+        "qa-rise-scene.json"
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "report": "qa-controls-final.json",
+      "case_count": 14,
+      "expected_outcomes_observed": true,
+      "current_checker_identity": true,
+      "passed": true
+    },
+    {
+      "report": "qa-payload-controls-final.json",
+      "case_count": 9,
+      "expected_outcomes_observed": true,
+      "current_checker_identity": true,
+      "passed": true
+    },
+    {
+      "report": "qa-assembly-controls-final.json",
+      "case_count": 4,
+      "expected_outcomes_observed": true,
+      "current_checker_identity": true,
+      "passed": true
+    },
+    {
+      "report": "qa-scene-controls-final.json",
+      "case_count": 3,
+      "expected_outcomes_observed": true,
+      "current_checker_identity": true,
+      "passed": true
+    }
+  ],
+  "preflight_report": "qa-preflight-summary.json",
+  "preflight_sample_count": 5,
+  "limits": [
+    "Finite sampled geometry and 12 extraction offsets per divider, not continuous-parameter or continuous-motion proof.",
+    "Actual oriented coordinate-triangle equality, not GLB vertex-index topology isomorphism.",
+    "No GPU/WebGL temporal z-fighting, actual iPhone, manufacturing, tolerance, load or stability certification.",
+    "No publication or website deployment assertion."
+  ]
+}

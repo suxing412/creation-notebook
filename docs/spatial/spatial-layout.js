@@ -13,12 +13,12 @@ export function validateItems(items){
 }
 export function layoutItems(items){
  validateItems(items);
- const groups=[{key:'regular',name:'形体与网页',x:-8,cols:3},{key:'fusion',name:'空间叙事',x:3,cols:2},{key:'methods',name:'复用方法',x:11,cols:2}];
+ const groups=[{key:'regular',name:'模型与介绍页',x:-8,cols:3},{key:'fusion',name:'历史实验待重做',x:3,cols:2},{key:'methods',name:'复用方法',x:11,cols:2}];
  const nodes=[];
  for(const group of groups){
   const members=items.filter(x=>group.key==='methods'?['recipe','method'].includes(x.kind):x.kind===group.key);
   const rows=Math.ceil(members.length/group.cols);
-  members.forEach((item,i)=>nodes.push({...item,position:[group.x+(i%group.cols-(group.cols-1)/2)*3.1,0,(Math.floor(i/group.cols)-(rows-1)/2)*3.7],zone:group.key}));
+  members.forEach((item,i)=>{const row=Math.floor(i/group.cols),rowCount=Math.min(group.cols,members.length-row*group.cols);nodes.push({...item,position:[group.x+(i%group.cols-(rowCount-1)/2)*3.1,0,(row-(rows-1)/2)*3.7],zone:group.key});});
  }
  return {nodes,groups};
 }
@@ -48,6 +48,11 @@ export function buildDirectoryScene(items,makeLabel=()=>null){
    else if(n===6){for(let i=0;i<3;i++)add(symbol,'box',mat,[-.48+i*.48,.62,0],[.52,1.2,.1],[0,(i%2?1:-1)*.45,0]);}
    else if(n===8){for(let i=0;i<4;i++)add(symbol,'box',mat,[-.54+i*.36,.62,0],[.12,1.2,.12]);for(let i=0;i<3;i++)add(symbol,'box',mat,[0,.1+i*.5,0],[1.2,.1,.12]);}
    else if(n===9){add(symbol,'box',mat,[-.25,.45,0],[.12,.85,.12],[0,0,-.2]);add(symbol,'box',mat,[.13,.85,0],[.8,.12,.12],[0,0,-.35]);add(symbol,'cylinder',mat,[.52,.7,0],[.48,.1,.48]);}
+   else if(n===10){
+    // SLOT: two low rails and three tall dividers; slots deliberately omitted in this index symbol.
+    for(const z of [-.42,.42])add(symbol,'box',dark,[0,.24,z],[1.6,.48,.13]);
+    for(const x of [-.48,0,.48])add(symbol,'box',mat,[x,.57,0],[.12,1.14,1.18]);
+   }
    else add(symbol,'box',mat,[0,.55,0],[.8,1.1,.8],[0,.3,0]);
   }
   group.traverse(o=>{if(o.isMesh){o.userData.itemId=node.id;targets.push(o);}});

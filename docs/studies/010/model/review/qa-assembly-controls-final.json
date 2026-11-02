@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "valid",
+      "expected_failure": null,
+      "observed_codes": [],
+      "expected_condition_observed": true,
+      "model_sha256": "29e6ed2804e1e1c536cd46fdf9f80f1fee984523593f3ed0d29b706f56dbc6c2",
+      "motion_passed": true,
+      "motion_expected_observed": true,
+      "passed": true
+    },
+    {
+      "case": "divider_x_offset",
+      "expected_failure": "assembly_alignment",
+      "observed_codes": [
+        "assembly_alignment",
+        "assembly_alignment",
+        "assembly_alignment",
+        "assembly_alignment"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "ccfc54c26ae9a7e6e74af053c4ec60851b34d926175f15d151e8c2cdbf76463e",
+      "motion_passed": false,
+      "motion_expected_observed": true,
+      "passed": true
+    },
+    {
+      "case": "lower_below_studio",
+      "expected_failure": "studio_ground_intersection",
+      "observed_codes": [
+        "ground_alignment",
+        "studio_ground_intersection",
+        "midlap_clearance_minimum",
+        "assembly_dimension",
+        "midlap_clearance_minimum",
+        "assembly_dimension"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "c8801ebf078057c9b7994591c81a6513075af35d2918fe81b0106844a47e035d",
+      "passed": true
+    },
+    {
+      "case": "filled_joint",
+      "expected_failure": "assembly_dimension",
+      "observed_codes": [
+        "midlap_clearance_minimum",
+        "assembly_dimension",
+        "midlap_clearance_minimum",
+        "assembly_dimension"
+      ],
+      "expected_condition_observed": true,
+      "model_sha256": "eefda7bdd19c141904bb3ba0e2dc48756bbf69b98f86c089768d2b7cf97404e6",
+      "passed": true
+    }
+  ],
+  "source_model_sha256": "2ba81dbbd81b0a3b0b7ea234286771b0de25a96bd9c3212797315c11d7a5d275",
+  "info_sha256": "70d9b839bc654ee0022278b5c36a69ab278268ebd7b914f4665ca5f9f4b547bd",
+  "assembly_checker_sha256": "4e44f104e733786eaf8319c0a2924b467cca7f58fc5b7a08f4097c593f46debb",
+  "motion_checker_sha256": "a38c5cc594858db63cdb5e14034ebd9130f383d0ee6a718ad666119c2d674c38",
+  "control_script_sha256": "76575b7f163ec7ca5e9602b8f35259e8bbb1dbfa5c78ca1300413152aec39821",
+  "created_utc": "2026-11-02T05:06:44.470775+00:00"
+}

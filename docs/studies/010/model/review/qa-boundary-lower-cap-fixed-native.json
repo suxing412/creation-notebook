@@ -1,0 +1,136 @@
+{
+  "checker_version": "010-native-1.1",
+  "checker_sha256": "e01843a6cf5ff31594304c0a44733d5b43975a4f6ae2e58c92cec4e97b471c78",
+  "payload_checker_sha256": "b736301f6e704ef468903e88f9c511cea3f3c5483c604363d47a7356a703ecef",
+  "run_id": "17e99c59-69d0-4cc5-be8e-9828bd8621e3",
+  "created_utc": "2026-11-02T05:06:16.905016+00:00",
+  "model_sha256": "2ba81dbbd81b0a3b0b7ea234286771b0de25a96bd9c3212797315c11d7a5d275",
+  "glb_sha256": "d41d44877d0d0b341a9a2a3337190d954fa872a4b086a31c532c0dc31263a888",
+  "info_sha256": "70d9b839bc654ee0022278b5c36a69ab278268ebd7b914f4665ca5f9f4b547bd",
+  "passed": true,
+  "failures": [],
+  "objects": [
+    {
+      "name": "Divider 1",
+      "vertices": 448,
+      "polygons": 424,
+      "triangles": 892,
+      "nonmanifold_edges": 0,
+      "inconsistent_edges": 0,
+      "signed_world_volume_m3": 9.071434629578399e-05,
+      "component_count": 1,
+      "euler_characteristic": 2,
+      "minimum_triangle_area_m2": 1.585700305955784e-08
+    },
+    {
+      "name": "Divider 2",
+      "vertices": 448,
+      "polygons": 424,
+      "triangles": 892,
+      "nonmanifold_edges": 0,
+      "inconsistent_edges": 0,
+      "signed_world_volume_m3": 9.071438753757373e-05,
+      "component_count": 1,
+      "euler_characteristic": 2,
+      "minimum_triangle_area_m2": 1.5857482576856224e-08
+    },
+    {
+      "name": "Divider 3",
+      "vertices": 448,
+      "polygons": 424,
+      "triangles": 892,
+      "nonmanifold_edges": 0,
+      "inconsistent_edges": 0,
+      "signed_world_volume_m3": 9.071434628622479e-05,
+      "component_count": 1,
+      "euler_characteristic": 2,
+      "minimum_triangle_area_m2": 1.5857352647729725e-08
+    },
+    {
+      "name": "Rail 1",
+      "vertices": 384,
+      "polygons": 386,
+      "triangles": 764,
+      "nonmanifold_edges": 0,
+      "inconsistent_edges": 0,
+      "signed_world_volume_m3": 7.200413985577958e-05,
+      "component_count": 1,
+      "euler_characteristic": 2,
+      "minimum_triangle_area_m2": 1.585750143190474e-08
+    },
+    {
+      "name": "Rail 2",
+      "vertices": 384,
+      "polygons": 386,
+      "triangles": 764,
+      "nonmanifold_edges": 0,
+      "inconsistent_edges": 0,
+      "signed_world_volume_m3": 7.20041398432133e-05,
+      "component_count": 1,
+      "euler_characteristic": 2,
+      "minimum_triangle_area_m2": 1.5857119379493467e-08
+    }
+  ],
+  "decoded_glb": {
+    "sha256": "d41d44877d0d0b341a9a2a3337190d954fa872a4b086a31c532c0dc31263a888",
+    "bytes": 115480,
+    "mesh_count": 5,
+    "node_count": 5,
+    "accessors_checked": 15,
+    "triangles": 4204,
+    "runtime_render_verified": false
+  },
+  "export_comparison": [
+    {
+      "object": "Divider 1",
+      "native_triangles": 892,
+      "export_triangles": 892,
+      "missing": 0,
+      "extra": 0,
+      "exact_oriented_coordinate_multisets_equal": true
+    },
+    {
+      "object": "Divider 2",
+      "native_triangles": 892,
+      "export_triangles": 892,
+      "missing": 0,
+      "extra": 0,
+      "exact_oriented_coordinate_multisets_equal": true
+    },
+    {
+      "object": "Divider 3",
+      "native_triangles": 892,
+      "export_triangles": 892,
+      "missing": 0,
+      "extra": 0,
+      "exact_oriented_coordinate_multisets_equal": true
+    },
+    {
+      "object": "Rail 1",
+      "native_triangles": 764,
+      "export_triangles": 764,
+      "missing": 0,
+      "extra": 0,
+      "exact_oriented_coordinate_multisets_equal": true
+    },
+    {
+      "object": "Rail 2",
+      "native_triangles": 764,
+      "export_triangles": 764,
+      "missing": 0,
+      "extra": 0,
+      "exact_oriented_coordinate_multisets_equal": true
+    }
+  ],
+  "bvh_self_candidates": [],
+  "unclassified_pair_candidates": [],
+  "coplanar_overlaps": [],
+  "locally_accepted_intersections": [],
+  "contact_regions_used": [],
+  "limits": [
+    "Float64 numerical triangles and float32 Blender BVH; not exact computational predicates.",
+    "Vertex/edge topology is not compared across GLB split vertices; actual oriented coordinate triangle multiplicities are.",
+    "No-boundary components tested by three-ray parity; ambiguous parity rejects. Surface contact classification uses numerical tolerances.",
+    "No shader equivalence, GPU rendering, real phone, physical stability, load, electrical or manufacture verification."
+  ]
+}

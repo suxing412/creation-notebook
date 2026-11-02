@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "command": "python source/run.py --config configs/slot.json --output fresh-slot --geometry-only --threads 2",
+  "wrapper_sha256": "b8de8367a895aef3d4f8cc52de1db47662fae132ce15d6f2bd75b4dc0fa217ed",
+  "reports": [
+    {
+      "report": "native-export-audit.json",
+      "passed": true,
+      "model_sha256": "e8d04da73828572c8c7dfa3a03c688968bb9124d3095fbfda7b11b532a0b2650",
+      "checker_sha256": "e01843a6cf5ff31594304c0a44733d5b43975a4f6ae2e58c92cec4e97b471c78"
+    },
+    {
+      "report": "assembly-audit.json",
+      "passed": true,
+      "model_sha256": "e8d04da73828572c8c7dfa3a03c688968bb9124d3095fbfda7b11b532a0b2650",
+      "checker_sha256": "4e44f104e733786eaf8319c0a2924b467cca7f58fc5b7a08f4097c593f46debb"
+    }
+  ],
+  "scope": "Actual wrapper invoked in fresh directory, native and exported file audited; render not repeated by this wrapper smoke test."
+}

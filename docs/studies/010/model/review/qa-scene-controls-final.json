@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "valid",
+      "expected_failure": null,
+      "observed_codes": [],
+      "passed": true,
+      "scene_sha256": "77710cc8920f831cd013d2d6a6b444e2e4859b81ccd1bd43e730daf3569c09dd"
+    },
+    {
+      "case": "raised_ground",
+      "expected_failure": "scene_ground_intersection",
+      "observed_codes": [
+        "scene_ground_position",
+        "scene_ground_intersection"
+      ],
+      "passed": true,
+      "scene_sha256": "3f92c2696022b17e685d42c6820adcbc1b8eca0f37c687d9d230b0f72c3f5552"
+    },
+    {
+      "case": "shifted_divider",
+      "expected_failure": "scene_model_geometry",
+      "observed_codes": [
+        "scene_model_geometry"
+      ],
+      "passed": true,
+      "scene_sha256": "ed8f2cc240310b6e4920a4fc39522ed6668eacf20b126445fd95d23b59b1c1cf"
+    }
+  ],
+  "checker_sha256": "ef1b8d59579f5d121335fb22b56f1819fbb405b92a9efd1fb6d7e834e1791047",
+  "native_helper_sha256": "e01843a6cf5ff31594304c0a44733d5b43975a4f6ae2e58c92cec4e97b471c78",
+  "control_script_sha256": "62dd64fb088262f9595152528240fc7b562e1ec44cbbeab2d08f4a989104f611",
+  "source_scene_sha256": "9dfeb2094bcd06935cf3c58e38d978c374f9bd1db99248b8c1e2448021cce5b3",
+  "source_model_sha256": "695fdfd38fec0b9587e04aeea53b92f6c221a01b35c0ea4952c432da03b8de70",
+  "created_utc": "2026-11-02T05:15:52.050547+00:00"
+}

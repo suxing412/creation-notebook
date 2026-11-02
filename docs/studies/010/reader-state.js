@@ -1,0 +1,10 @@
+/* Atomic three-image transaction: a failed or stale request cannot relabel visible art. */
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.SlotReader=api;})(typeof window!=='undefined'?window:this,function(){
+'use strict';
+const variants=['slot','span','rise'],views=['beauty','exploded','joint'];
+function valid(k){return variants.includes(k);}
+function route(search){const k=new URLSearchParams(search).get('variant');return valid(k)?k:'slot';}
+function localPath(s){return typeof s==='string'&&s.length>0&&!/\s/.test(s)&&!/^[a-z][\w+.-]*:/i.test(s)&&!s.startsWith('/')&&!/[\\%?#\x00-\x1f]/.test(s)&&s.split('/').every(p=>p&&p!=='.'&&p!=='..');}
+function validateData(d){if(!d||d.schema!=='slot-reader-1'||!d.variants)throw Error('Invalid schema');for(const k of variants){const a=d.variants[k];if(!a||typeof a.title!=='string'||!a.title.trim()||!Array.isArray(a.facts)||!a.facts.length||a.facts.some(x=>!x||typeof x.label!=='string'||typeof x.value!=='string'||!x.label.trim()||!x.value.trim())||!a.views)throw Error('Invalid variant');for(const v of views){const b=a.views[v];if(!b||!localPath(b.image)||typeof b.alt!=='string'||typeof b.caption!=='string'||!b.alt.trim()||!b.caption.trim())throw Error('Invalid view');}}return d;}
+function controller({load,commit,render,initial=null}){let serial=0,state={committed:initial,pending:null,error:null};const emit=()=>render({...state,pending:state.pending&&{...state.pending},error:state.error&&{...state.error}});return{snapshot:()=>JSON.parse(JSON.stringify(state)),async request(key,context={}){if(!valid(key))return false;const id=++serial;state.pending={id,key,context};state.error=null;emit();try{const payload=await load(key);if(!state.pending||state.pending.id!==id)return false;commit(key,payload,context);state={committed:key,pending:null,error:null};emit();return true;}catch(e){if(state.pending&&state.pending.id===id){state.pending=null;state.error={key,context};emit();}return false;}}};}
+return{variants,views,valid,route,localPath,validateData,controller};});

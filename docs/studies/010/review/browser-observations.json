@@ -1,0 +1,131 @@
+{
+  "date": "2026-11-02",
+  "cases": [
+    {
+      "allThree": true,
+      "case": "keyboard span",
+      "pressed": "true",
+      "title": "横展 / SPAN"
+    },
+    {
+      "allThree": true,
+      "case": "click rise",
+      "title": "高序 / RISE"
+    },
+    {
+      "case": "Back restores span",
+      "title": "横展 / SPAN"
+    },
+    {
+      "case": "CSS narrow/noJS",
+      "frames": [
+        {
+          "label": "320 CSS px",
+          "result": {
+            "scroll": 305,
+            "staticBlocks": 4,
+            "visibleControls": 3,
+            "width": 305
+          }
+        },
+        {
+          "label": "390 CSS px",
+          "result": {
+            "scroll": 375,
+            "staticBlocks": 4,
+            "visibleControls": 3,
+            "width": 375
+          }
+        },
+        {
+          "label": "390 CSS px no script",
+          "result": {
+            "scroll": 375,
+            "staticBlocks": 4,
+            "visibleControls": 0,
+            "width": 375
+          }
+        }
+      ]
+    },
+    {
+      "case": "noJS keyboard disclosure",
+      "open": ""
+    },
+    {
+      "case": "actual missing third image",
+      "retry": true,
+      "src": [
+        "model/assets/slot/beauty.png",
+        "model/assets/slot/exploded.png",
+        "model/assets/slot/joint-exploded.png"
+      ],
+      "status": "读取失败，未替换上一组内容。可重试或使用下方静态图版。",
+      "title": "栖格 / SLOT"
+    },
+    {
+      "allThree": true,
+      "case": "same-session retry after real file restored",
+      "title": "横展 / SPAN"
+    },
+    {
+      "case": "cold metadata and all images missing",
+      "pressed": [
+        "false",
+        "false",
+        "false"
+      ],
+      "retry": true,
+      "status": "首组读取失败，尚无已确认完整图组。请重试；下方静态图版也可能因网络不可用。"
+    },
+    {
+      "allThree": true,
+      "case": "cold retry establishes deep-linked rise",
+      "title": "高序 / RISE"
+    },
+    {
+      "case": "corrected actual CSS viewport widths",
+      "frames": [
+        {
+          "label": "320 CSS px",
+          "result": {
+            "scroll": 320,
+            "staticBlocks": 4,
+            "visibleControls": 3,
+            "width": 320
+          }
+        },
+        {
+          "label": "390 CSS px",
+          "result": {
+            "scroll": 390,
+            "staticBlocks": 4,
+            "visibleControls": 3,
+            "width": 390
+          }
+        },
+        {
+          "label": "390 CSS px no script",
+          "result": {
+            "scroll": 390,
+            "staticBlocks": 4,
+            "visibleControls": 0,
+            "width": 390
+          }
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "CSS iframe widths are not physical phone tests",
+    "No GPU or realtime flicker acceptance",
+    "History exception and stalled-resource deadlines covered in mock tests, not forced in real browser"
+  ],
+  "passed": true,
+  "source_sha256": {
+    "app.js": "1f572094f82b4270806ee54cb59c926906d924147defe12340123b17d5d0c171",
+    "reader-state.js": "37bfda10ce31278c4d598fcc184eee8779e765ce88ae12203372ec3b3a04c6fc",
+    "style.css": "07345830a78efa3afa77cb6132c0838c3d64b642e4d47100d31489bb86c1ab5f"
+  },
+  "note": "首次iframe外宽少15px因浏览器滚动条，已修正为实际内容320/390px并复检；所有手机结论仍未验证。"
+}

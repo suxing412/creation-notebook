@@ -1,0 +1,203 @@
+{
+  "study": "010",
+  "title": "SLOT / 栖格",
+  "variant": "span",
+  "config": {
+    "name": "span",
+    "length": 0.44,
+    "depth": 0.18,
+    "divider_height": 0.11,
+    "dividers": 4,
+    "thickness": 0.008,
+    "rail_height": 0.06,
+    "clearance": 0.0006
+  },
+  "recipe_version": "1.0.0",
+  "blender_version": "4.3.2",
+  "seed": 0,
+  "parts": [
+    {
+      "name": "Rail 1",
+      "axis": "x",
+      "center_m": -0.09,
+      "vertices": 480,
+      "polygons": 516,
+      "floor_alignment_m": 1.2286880519241095e-05
+    },
+    {
+      "name": "Rail 2",
+      "axis": "x",
+      "center_m": 0.09,
+      "vertices": 480,
+      "polygons": 516,
+      "floor_alignment_m": 1.2286880519241095e-05
+    },
+    {
+      "name": "Divider 1",
+      "axis": "y",
+      "center_m": -0.132,
+      "vertices": 448,
+      "polygons": 490,
+      "floor_alignment_m": 1.6515514289494604e-05
+    },
+    {
+      "name": "Divider 2",
+      "axis": "y",
+      "center_m": -0.04400000000000001,
+      "vertices": 448,
+      "polygons": 490,
+      "floor_alignment_m": 1.6515514289494604e-05
+    },
+    {
+      "name": "Divider 3",
+      "axis": "y",
+      "center_m": 0.04400000000000001,
+      "vertices": 448,
+      "polygons": 490,
+      "floor_alignment_m": 1.6515514289494604e-05
+    },
+    {
+      "name": "Divider 4",
+      "axis": "y",
+      "center_m": 0.13199999999999998,
+      "vertices": 448,
+      "polygons": 490,
+      "floor_alignment_m": 1.6515514289494604e-05
+    }
+  ],
+  "bounds_m": [
+    [
+      -0.2199999988079071,
+      0.2199999988079071
+    ],
+    [
+      -0.1080000028014183,
+      0.1080000028014183
+    ],
+    [
+      0.0,
+      0.11001651734113693
+    ]
+  ],
+  "units": "metres",
+  "revision": 2,
+  "contact_regions": [],
+  "assembly_contract": {
+    "slots": "top-open rail / bottom-open transverse panel",
+    "nominal_slot_width": 0.0086,
+    "nominal_total_lateral_clearance": 0.0006,
+    "nominal_midplane_gap": 0.0006,
+    "nominal_profile_bottom_z": 0,
+    "actual_z_bounds_m": [
+      0.0,
+      0.11001651734113693
+    ],
+    "engineering_validated": false
+  },
+  "studio": {
+    "renderer": "Cycles CPU",
+    "samples": 128,
+    "resolution": [
+      960,
+      960
+    ],
+    "seed": 0,
+    "denoising": false,
+    "view_transform": "AgX",
+    "views": {
+      "beauty": {
+        "location": [
+          0.65,
+          -0.85,
+          0.4
+        ],
+        "target": [
+          0,
+          0,
+          0.07
+        ],
+        "ortho_scale": 0.62
+      },
+      "front": {
+        "location": [
+          0,
+          -1.1,
+          0.12
+        ],
+        "target": [
+          0,
+          0,
+          0.12
+        ],
+        "ortho_scale": 0.54
+      },
+      "side": {
+        "location": [
+          1.1,
+          0,
+          0.12
+        ],
+        "target": [
+          0,
+          0,
+          0.12
+        ],
+        "ortho_scale": 0.54
+      },
+      "top": {
+        "location": [
+          0,
+          0,
+          1.2
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "ortho_scale": 0.54
+      },
+      "joint": {
+        "location": [
+          -0.21200000000000002,
+          -0.22,
+          0.15
+        ],
+        "target": [
+          -0.132,
+          -0.09,
+          0.03
+        ],
+        "ortho_scale": 0.09
+      },
+      "joint-exploded": {
+        "location": [
+          -0.21200000000000002,
+          -0.22,
+          0.15
+        ],
+        "target": [
+          -0.132,
+          -0.09,
+          0.055
+        ],
+        "ortho_scale": 0.13
+      },
+      "exploded": {
+        "location": [
+          0.65,
+          -0.85,
+          0.62
+        ],
+        "target": [
+          0,
+          0,
+          0.12
+        ],
+        "ortho_scale": 0.68
+      }
+    }
+  },
+  "gpu_verified": false,
+  "elapsed_seconds": 443.849
+}

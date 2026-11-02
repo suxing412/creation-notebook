@@ -60,7 +60,7 @@ body=body.replace('已收录 <b>02</b>',f'已收录 <b>{len(regular):02}</b>').r
 (D/'index.html').write_text(shell('作品集',body).replace('伊苏里亚造物手记','造物手记 · Creation Notebook').replace('伊苏里亚 <small>造物手记</small>','造物手记 <small>Creation Notebook</small>'))
 for f in D.rglob('*.md'):
  if f.name.startswith('overview-'):continue
- if f.is_relative_to(D/'studies'/'009') or f.is_relative_to(D/'studies'/'008') or f.is_relative_to(D/'studies'/'007') or 'methods' in f.relative_to(D).parts or 'fusions' in f.relative_to(D).parts or f.is_relative_to(D/'studies'/'005') or (f.is_relative_to(D/'studies'/'006') and f!=D/'studies'/'006'/'review'/'reflection.md'): continue  # Preserve the frozen fusion report implementation.
+ if f.is_relative_to(D/'studies'/'010') or f.is_relative_to(D/'studies'/'009') or f.is_relative_to(D/'studies'/'008') or f.is_relative_to(D/'studies'/'007') or 'methods' in f.relative_to(D).parts or 'fusions' in f.relative_to(D).parts or f.is_relative_to(D/'studies'/'005') or (f.is_relative_to(D/'studies'/'006') and f!=D/'studies'/'006'/'review'/'reflection.md'): continue  # Preserve the frozen fusion report implementation.
  base=os.path.relpath(D,f.parent).replace(os.sep,'/')+'/'
  (f.with_suffix('.html')).write_text(shell(f.stem,'<main id="main" class="report"><a class="back" href="'+base+'">← 作品集</a>'+md(f.read_text())+'<p class="report-download"><a href="'+f.name+'" download>下载 Markdown 原文 ↓</a></p></main>',base))
 (D/'manifest.json').write_text((ROOT/'manifest.json').read_text())
