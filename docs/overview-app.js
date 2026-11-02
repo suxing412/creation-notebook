@@ -24,10 +24,10 @@ async function open(){
   const module=await import('./spatial/spatial-directory.js');
   if(token!==generation)return;
   api=module.createSpatialDirectory({container:canvas,items,onSelect:id=>select(id,false),onStatus:s=>{if(s.state==='unavailable')renderFailed=true;if(s.state!=='disposed'||!renderFailed)say(s.message);if(s.state==='disposed'){api=null;entry.disabled=false;entry.textContent='重新开启 3D 目录索引 ↗';document.querySelector('#reset-space').disabled=true;canvas.hidden=true;}}});
-  if(!chosen||!select(chosen))select(items.filter(x=>x.kind==='regular').at(-1)?.id||items[0].id);
+  if(!chosen||!select(chosen))select(items.filter(x=>x.kind==='space-design').at(-1)?.id||items.filter(x=>x.kind==='regular').at(-1)?.id||items[0].id);
   for(const b of document.querySelectorAll('.locate'))b.hidden=false;
   say('点击展台或下方目录按钮。几何是目录符号，不是原模型；实时GPU效果尚待设备验收。');
- }catch(error){if(token!==generation)return;api?.dispose();api=null;canvas.replaceChildren();canvas.hidden=true;document.querySelector('#reset-space').disabled=true;say(items?'此处无法开启实时3D。下方目录按钮与完整列表仍可使用。':'空间目录资源加载失败。请关闭此区域，使用下方完整作品列表。');for(const b of section.querySelectorAll('[data-select]'))b.disabled=!items;if(items&&(!chosen||!select(chosen)))select(items.filter(x=>x.kind==='regular').at(-1)?.id||items[0].id);entry.textContent='重试 3D 目录索引 ↗';}
+ }catch(error){if(token!==generation)return;api?.dispose();api=null;canvas.replaceChildren();canvas.hidden=true;document.querySelector('#reset-space').disabled=true;say(items?'此处无法开启实时3D。下方目录按钮与完整列表仍可使用。':'空间目录资源加载失败。请关闭此区域，使用下方完整作品列表。');for(const b of section.querySelectorAll('[data-select]'))b.disabled=!items;if(items&&(!chosen||!select(chosen)))select(items.filter(x=>x.kind==='space-design').at(-1)?.id||items.filter(x=>x.kind==='regular').at(-1)?.id||items[0].id);entry.textContent='重试 3D 目录索引 ↗';}
  finally{if(token===generation){loading=false;entry.disabled=false;}}
 }
 function close(){generation++;loading=false;api?.dispose();api=null;canvas.replaceChildren();section.hidden=true;entry.disabled=false;for(const b of document.querySelectorAll('.locate'))b.hidden=true;entry.focus();}

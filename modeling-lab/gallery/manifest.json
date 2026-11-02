@@ -416,6 +416,44 @@
     "spatialLabel": "3D空间设计",
     "acceptedSpatialWorks": 0,
     "historicalSpatialExperiments": 4,
-    "spatialRequirement": "整个页面是可探索的三维空间；布局、导航、内容在空间内，HTML仅按需叠层，不是网页中嵌一个3D窗口。"
-  }
+    "spatialRequirement": "整个页面是可探索的三维空间；布局、导航、内容在空间内，HTML仅按需叠层，不是网页中嵌一个3D窗口。",
+    "spatialPrototypes": 1
+  },
+  "spaceDesigns": [
+    {
+      "id": "SD01",
+      "kind": "space-design",
+      "cycle": 1,
+      "pairedStudyIds": [
+        "009",
+        "010"
+      ],
+      "title": "连接工坊",
+      "subtitle": "圆庭、梳齿廊与中央分叉组成可探索的微型空间",
+      "entry": "spaces/SD01/index.html",
+      "poster": "spaces/SD01/assets/overview.png",
+      "designReview": "spaces/SD01/review/index.html",
+      "qa": "spaces/SD01/review/index.html",
+      "reuse": "spaces/SD01/review/index.html",
+      "source": "spaces/SD01/source-download.html",
+      "triangles": 56904,
+      "meshes": 49,
+      "triangleScope": "55368 static imported scene + 1536 runtime navigation-symbol triangles",
+      "version": "0.2.0-candidate",
+      "seed": 0,
+      "status": "新空间设计原型／待实时与用户方向验收",
+      "acceptance": "prototype-pending-realtime-and-user-review",
+      "publication": "not-published",
+      "countsAsAcceptedSpatialDesign": false,
+      "sourceSha256": "2bfd57670f1b639e1f7d16b687c3ad6d8468c1d110ddc7f505068fa4d734aa83",
+      "sourceBytes": 22346955,
+      "limits": [
+        "GPU主体验、真实输入/触屏/iPhone未验",
+        "19对实体包容未验；不声称全部穿插归零",
+        "CPU/模拟生命周期/真实无GL备用模式各自限定，不可互相替代"
+      ],
+      "sourceDelivery": "exact-byte-parts",
+      "sourceOriginalPath": "spaces/SD01/source.zip"
+    }
+  ]
 }

@@ -5,7 +5,7 @@ export function validateItems(items){
  const ids=new Set();
  for(const item of items){
   if(!item||typeof item.id!=='string'||! /^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/.test(item.id)||ids.has(item.id))throw new Error('目录编号无效或重复');
-  if(!['regular','fusion','recipe','method'].includes(item.kind))throw new Error('未知目录类型');
+  if(!['regular','fusion','space-design','recipe','method'].includes(item.kind))throw new Error('未知目录类型');
   if(typeof item.name!=='string'||!item.name.trim()||item.name.length>120)throw new Error('目录名称无效');
   ids.add(item.id);
  }
@@ -13,7 +13,7 @@ export function validateItems(items){
 }
 export function layoutItems(items){
  validateItems(items);
- const groups=[{key:'regular',name:'模型与介绍页',x:-8,cols:3},{key:'fusion',name:'历史实验待重做',x:3,cols:2},{key:'methods',name:'复用方法',x:11,cols:2}];
+ const groups=[{key:'regular',name:'模型与介绍页',x:-8,cols:3},{key:'fusion',name:'历史实验待重做',x:3,cols:2},{key:'space-design',name:'新空间原型 · 待验收',x:7,cols:1},{key:'methods',name:'复用方法',x:11,cols:2}];
  const nodes=[];
  for(const group of groups){
   const members=items.filter(x=>group.key==='methods'?['recipe','method'].includes(x.kind):x.kind===group.key);
@@ -22,7 +22,7 @@ export function layoutItems(items){
  }
  return {nodes,groups};
 }
-const COLOR={regular:0x728f87,fusion:0xb97755,recipe:0x9388a5,method:0x9388a5};
+const COLOR={regular:0x728f87,fusion:0xb97755,'space-design':0x3e7899,recipe:0x9388a5,method:0x9388a5};
 export function buildDirectoryScene(items,makeLabel=()=>null){
  const {nodes,groups}=layoutItems(items), scene=new THREE.Scene(); scene.background=new THREE.Color(0xe8e5dc);
  const geo={box:new THREE.BoxGeometry(1,1,1),cylinder:new THREE.CylinderGeometry(.5,.5,1,24),ring:new THREE.TorusGeometry(.5,.10,8,24),sphere:new THREE.SphereGeometry(.5,12,8)};
@@ -34,7 +34,12 @@ export function buildDirectoryScene(items,makeLabel=()=>null){
   const mat=new THREE.MeshStandardMaterial({color:COLOR[node.kind],roughness:.58});materials.push(mat);
   const pedestal=add(group,'box',shared,[0,.22,0],[2.25,.44,2.25]);
   const symbol=new THREE.Group();symbol.position.y=.45;group.add(symbol);
-  if(node.kind==='fusion'){
+  if(node.kind==='space-design'){
+   // Courtyard + comb corridor: an abstract PROTOTYPE mark, not the underlying scene.
+   add(symbol,'ring',mat,[-.35,.18,0],[.95,.95,.95],[Math.PI/2,0,0]);
+   add(symbol,'box',mat,[.36,.14,0],[.9,.16,.28]);
+   for(const x of [.12,.4,.68])for(const z of [-.28,.28])add(symbol,'box',mat,[x,.35,z],[.1,.42,.32]);
+  } else if(node.kind==='fusion'){
    add(symbol,'box',mat,[-.52,.65,0],[.16,1.3,.22]);add(symbol,'box',mat,[.52,.65,0],[.16,1.3,.22]);add(symbol,'box',mat,[0,1.22,0],[1.2,.16,.22]);add(symbol,'box',mat,[0,.2,.25],[1.35,.1,1.2]);
   } else if(['recipe','method'].includes(node.kind)){
    for(let i=0;i<3;i++)add(symbol,'box',mat,[i*.06,.2+i*.25,0],[1.25,.12,.95],[0,i*.15,0]);

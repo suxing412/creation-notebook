@@ -41,10 +41,13 @@ assert policy['acceptedSpatialWorks']==0,'New spatial design acceptance requires
 assert len(historical)==policy['historicalSpatialExperiments']
 assert all(x.get('designStatus')=='按新设计要求待重做' for x in historical)
 assert all(x['publication']=='verified' for x in historical),'Historical publication must not be conflated with redesign status'
-assert '3D空间设计 <span>00</span>' in (D/'index.html').read_text()
+prototypes=[x for x in cat if x['kind']=='space-design']
+assert len(prototypes)==policy['spatialPrototypes']
+assert all(x['countsAsAcceptedSpatialDesign'] is False and x['acceptance']=='prototype-pending-realtime-and-user-review' for x in prototypes)
+assert '0 已验收 · '+str(len(prototypes))+' 原型' in (D/'index.html').read_text()
 assert not errs,errs
 before={str(p.relative_to(D)):hashlib.sha256(p.read_bytes()).hexdigest() for p in D.rglob('*') if p.is_file()}
-subprocess.run([sys.executable,str(R/'build.py')],check=True,capture_output=True)
+subprocess.run([sys.executable,'-B',str(R/'build.py')],check=True,capture_output=True)
 after={str(p.relative_to(D)):hashlib.sha256(p.read_bytes()).hexdigest() for p in D.rglob('*') if p.is_file()}
 assert before==after,'rebuild changed output'
 changed=[]

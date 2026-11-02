@@ -11,7 +11,7 @@ export function createSpatialDirectory({container,items,onSelect=()=>{},onStatus
  catch(cause){status('unavailable','此环境无法启用实时3D；普通作品目录仍可完整使用。');const error=new Error('实时3D不可用',{cause});error.code='WEBGL_UNAVAILABLE';throw error;}
  renderer.setClearColor(0xe8e5dc);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
  const canvas=renderer.domElement;canvas.setAttribute('aria-label','三维作品目录，展台是目录符号，不是原模型；使用旁侧普通列表也可选择全部作品。');canvas.setAttribute('role','img');canvas.style.cssText='display:block;width:100%;height:100%;touch-action:pan-y;';
- function label(id,kind){const c=document.createElement('canvas');c.width=256;c.height=64;const ctx=c.getContext('2d');if(!ctx)throw new Error('编号绘制不可用');ctx.fillStyle='#f2eee5';ctx.fillRect(0,0,256,64);ctx.fillStyle='#253e36';ctx.font='600 27px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(id.length>16?id.slice(0,15)+'…':id,128,32);const map=new THREE.CanvasTexture(c);map.colorSpace=THREE.SRGBColorSpace;const mat=new THREE.SpriteMaterial({map,depthTest:true,depthWrite:false});const sprite=new THREE.Sprite(mat);sprite.scale.set(1.8,.45,1);return sprite;}
+ function label(id,kind){const c=document.createElement('canvas');c.width=256;c.height=64;const ctx=c.getContext('2d');if(!ctx)throw new Error('编号绘制不可用');ctx.fillStyle='#f2eee5';ctx.fillRect(0,0,256,64);ctx.fillStyle='#253e36';ctx.font='600 27px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(id.length>16?id.slice(0,15)+'…':id,128,kind==='space-design'?22:32);if(kind==='space-design'){ctx.font='600 16px sans-serif';ctx.fillStyle='#71562e';ctx.fillText('原型 · 未验收',128,49);}const map=new THREE.CanvasTexture(c);map.colorSpace=THREE.SRGBColorSpace;const mat=new THREE.SpriteMaterial({map,depthTest:true,depthWrite:false});const sprite=new THREE.Sprite(mat);sprite.scale.set(1.8,.45,1);return sprite;}
  let directory;
  try{directory=buildDirectoryScene(items,label);}catch(error){renderer.dispose();throw error;}
  const camera=new THREE.PerspectiveCamera(44,1,.1,500),raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2(),target=new THREE.Vector3();
@@ -30,7 +30,7 @@ export function createSpatialDirectory({container,items,onSelect=()=>{},onStatus
   selected=id;for(const [key,obj]of directory.objects){obj.material.emissive.setHex(key===id?0x365041:0x000000);obj.material.emissiveIntensity=key===id?.3:0;}
   moveTo(cameraPose(directory,aspect,id));if(notify)onSelect(id);return true;
  }
- function reset(){if(disposed)return;selected=null;for(const obj of directory.objects.values())obj.material.emissive.setHex(0);moveTo(cameraPose(directory,aspect));status('ready','全馆目录：左侧模型与介绍页，中间历史实验待重做，右侧复用方法。');}
+ function reset(){if(disposed)return;selected=null;for(const obj of directory.objects.values())obj.material.emissive.setHex(0);moveTo(cameraPose(directory,aspect));status('ready','全馆四区：模型与介绍页、历史实验待重做、新空间原型（未验收）、复用方法。');}
  function resize(){if(disposed)return;const rect=container.getBoundingClientRect();const width=Math.max(1,Math.floor(rect.width)),height=Math.max(1,Math.floor(rect.height));aspect=width/height;camera.aspect=aspect;
   const dpr=Math.min(window.devicePixelRatio||1,LIMITS.maxPixelRatio,Math.sqrt(LIMITS.maxDrawingPixels/(width*height)));renderer.setPixelRatio(dpr);renderer.setSize(width,height,false);animation=null;setPose(cameraPose(directory,aspect,selected));invalidate();
  }
