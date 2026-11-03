@@ -69,7 +69,7 @@ projects=''
 project_publication=ledger.get('projects',{}).get('luoyang',{}).get('state','pending')
 for project in m.get('ongoingProjects',[]):
  update=project.get('researchUpdates')
- if update:projects+='<section class="architecture-reading"><p class="eyebrow">LATEST RESEARCH / NOT PUBLISHED</p><h2>街区研究进展</h2><p><b>全城证据：42项标记＝36 B示意＋6未定位/排除；证据标记不等于建筑完成。</b><br>另有44个C设计院落；不能换算全城完成率。下一阶段：现有街区→巷→主路→一门一段城垣。<a href="cities/luoyang/research/2026-11-03/#city-coverage">区域覆盖与里程碑 ↗</a></p><p>'+e(update['label'])+'</p><a href="'+e(update['entry'])+'">查看全部街区研究 ↗</a>'+research_links(project)+'</section>'
+ if update:projects+='<section class="architecture-reading"><p class="eyebrow">LATEST RESEARCH / PUBLIC RESEARCH CANDIDATE</p><h2>街区研究进展</h2><p><b>全城证据：42项标记＝36 B示意＋6未定位/排除；证据标记不等于建筑完成。</b><br>另有44个C设计院落；不能换算全城完成率。下一阶段：现有街区→巷→主路→一门一段城垣。<a href="cities/luoyang/research/2026-11-03/#city-coverage">区域覆盖与里程碑 ↗</a></p><p>'+e(update['label'])+'</p><a href="'+e(update['entry'])+'">查看全部街区研究 ↗</a>'+research_links(project)+'</section>'
  projects+='<section id="'+e(project['id'])+'" class="architecture-reading ongoing-project"><p class="eyebrow">CITY PROJECT / IN PROGRESS</p><h2>'+e(project['title'])+' <small>进行中</small></h2><p class="fine">'+('公开已核验' if project_publication=='verified' else '公开待核验')+'</p><p>'+e(project['description'])+'</p><p class="fine">'+e(project['boundary'])+'</p><div class="links"><a class="primary" href="'+e(project['path'])+'">进入城市项目 ↗</a><a href="'+e(project['evidence'])+'">证据与范围说明 ↗</a></div><p class="fine">本入口独立于下方作品归档，不新增完成作品或空间验收计数。</p></section>'
 latest=regular[0]; published=sum(x['publication']=='verified' for x in items)
 publication_note=('全部条目的公开入口与内容访问均已有核验记录。' if published==len(items) else '其余入口在归档中可用，公开部署仍待核验。')
