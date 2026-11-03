@@ -1,0 +1,16 @@
+export function bindDetailTabs(doc=document){
+ const scene=doc.querySelector('.realtime-experience');if(!scene)return;
+ const originalTitle=doc.querySelector('h1')?.textContent||'作品详情';
+ const oldLinks=[...doc.querySelectorAll('a[href]')];const library=oldLinks.find(a=>/model-library\/(?:index\.html)?$/.test(a.href))?.href||new URL('./',import.meta.url).href;
+ const style=doc.createElement('link');style.rel='stylesheet';style.href=new URL('./detail-tabs.css',import.meta.url).href;doc.head.append(style);
+ const intro=doc.createElement('div');intro.id='detail-introduction';intro.className='detail-introduction';intro.setAttribute('role','tabpanel');intro.setAttribute('aria-labelledby','tab-introduction');
+ for(const node of [...doc.body.childNodes])if(node.nodeType!==1||!['SCRIPT','LINK','STYLE'].includes(node.tagName))intro.append(node);
+ const bar=doc.createElement('div');bar.className='detail-tabbar';const back=doc.createElement('a');back.href=library;back.className='detail-back';back.textContent='← 模型库';const title=doc.createElement('span');title.className='detail-work-title';title.textContent=originalTitle;const list=doc.createElement('div');list.className='detail-tablist';list.setAttribute('role','tablist');list.setAttribute('aria-label','作品详情');const browse=doc.createElement('button'),describe=doc.createElement('button');browse.id='tab-browse';describe.id='tab-introduction';browse.textContent='3D浏览';describe.textContent='作品介绍';for(const b of [browse,describe]){b.type='button';b.setAttribute('role','tab');list.append(b)}const exit=doc.createElement('button');exit.className='detail-exit';exit.textContent='退出浏览';exit.type='button';
+ const panel=doc.createElement('div');panel.id='detail-browse';panel.className='detail-browse';panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',browse.id);panel.append(scene);for(const caption of intro.querySelectorAll('figcaption'))caption.textContent=caption.textContent.replace('实时场景在上方','实时场景位于3D浏览页签');browse.setAttribute('aria-controls',panel.id);describe.setAttribute('aria-controls',intro.id);bar.append(back,title,list,exit);doc.body.append(bar,panel,intro);
+ function choose(mode,focus=false,update=true){const is3d=mode==='browse';doc.body.classList.toggle('detail-browsing',is3d);doc.body.classList.add('detail-tabs-enabled');intro.hidden=is3d;panel.hidden=!is3d;exit.hidden=!is3d;browse.setAttribute('aria-selected',String(is3d));describe.setAttribute('aria-selected',String(!is3d));browse.tabIndex=is3d?0:-1;describe.tabIndex=is3d?-1:0;if(update)history.replaceState(null,'',is3d?'#browse':'#introduction');if(focus)(is3d?browse:describe).focus();}
+ browse.onclick=()=>choose('browse');describe.onclick=()=>choose('introduction');exit.onclick=()=>choose('introduction',true);
+ list.onkeydown=e=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;e.preventDefault();choose(e.key==='Home'?'browse':e.key==='End'?'introduction':browse.getAttribute('aria-selected')==='true'?'introduction':'browse',true)};
+ doc.addEventListener('keydown',e=>{if(e.key==='Escape'&&doc.body.classList.contains('detail-browsing')){choose('introduction',true)}});
+ addEventListener('hashchange',()=>choose(location.hash==='#browse'?'browse':'introduction',false,false));
+ choose(!location.hash||location.hash==='#browse'?'browse':'introduction',false,false);
+}
