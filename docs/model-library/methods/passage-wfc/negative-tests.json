@@ -1,0 +1,160 @@
+{
+  "locked_conflict": {
+    "seed": 0,
+    "solver_status": "contradiction",
+    "failure_position": [
+      2,
+      1
+    ],
+    "work_units": 14,
+    "domain_contractions": 4,
+    "removed_states": 12,
+    "decisions": 0,
+    "layout": [
+      null,
+      null,
+      null,
+      null,
+      "end2",
+      null,
+      null,
+      null,
+      null
+    ],
+    "unresolved_domains": [
+      [
+        "elbow0",
+        "end2",
+        "end3"
+      ],
+      [
+        "elbow1",
+        "elbow2",
+        "end0",
+        "tee2"
+      ],
+      [
+        "elbow3",
+        "end1",
+        "end2"
+      ],
+      [
+        "end0",
+        "end2",
+        "straight0"
+      ],
+      [
+        "end2"
+      ],
+      [],
+      [
+        "elbow1",
+        "end0",
+        "end3"
+      ],
+      [
+        "straight0",
+        "tee1",
+        "tee3"
+      ],
+      [
+        "elbow2",
+        "end0",
+        "end1"
+      ]
+    ]
+  },
+  "height_mismatch": [
+    {
+      "kind": "P",
+      "width": 1.6,
+      "floor": 0.2,
+      "normal": [
+        1,
+        0
+      ],
+      "clear_height": 2.2,
+      "position": [
+        2,
+        0,
+        0.2
+      ]
+    },
+    {
+      "kind": "P",
+      "width": 1.6,
+      "floor": 0.3,
+      "normal": [
+        -1,
+        0
+      ],
+      "clear_height": 2.2,
+      "position": [
+        2,
+        0,
+        0.3
+      ]
+    }
+  ],
+  "broken_layout": [
+    "elbow0",
+    "tee2",
+    "elbow3",
+    "tee1",
+    "end0",
+    "elbow2",
+    "elbow1",
+    "tee0",
+    "end1"
+  ],
+  "broken_validation": {
+    "valid": false,
+    "errors": [
+      "mismatch:3->4",
+      "mismatch:4->1",
+      "mismatch:5->4",
+      "isolated_component"
+    ],
+    "reachable_tiles": 8,
+    "edges": [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        8
+      ]
+    ],
+    "topology_invariant": {
+      "degree_histogram": {
+        "0": 1,
+        "1": 2,
+        "2": 6
+      },
+      "edges": 7,
+      "cycle_rank_if_connected": -1
+    },
+    "topology_class": "{\"cycle_rank_if_connected\": -1, \"degree_histogram\": {\"0\": 1, \"1\": 2, \"2\": 6}, \"edges\": 7}"
+  }
+}

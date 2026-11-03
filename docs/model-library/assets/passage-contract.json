@@ -1,0 +1,94 @@
+{
+  "id": "passage-interface-study-v01",
+  "logicalAssetGroups": 1,
+  "presets": 4,
+  "status": "independent research candidate; not public; not historical; not city integrated",
+  "origin": "local tile center base",
+  "units": "design_m",
+  "BlenderAxes": "+X east,+Y north,+Z up",
+  "glTFAxes": "+X east,+Y up,-Z north",
+  "tileBoundsBlenderXY": [
+    -2,
+    -2,
+    2,
+    2
+  ],
+  "socketWidth": 1.6,
+  "floorZ": 0.2,
+  "reservedClearHeight": 2.2,
+  "panelHeightAboveFloor": 1.2,
+  "assets": [
+    {
+      "id": "straight",
+      "file": "assets/straight.glb",
+      "sha256": "39767266011d616c7acbbacce4165fbf1f4dd696e7164e57f716945e9be28957",
+      "bytes": 11216,
+      "open_ports": [
+        "N",
+        "S"
+      ]
+    },
+    {
+      "id": "elbow",
+      "file": "assets/elbow.glb",
+      "sha256": "addf39f351b32764704e627b3bf0edbaefe6fc6e8e351d0944059e7e7f53b780",
+      "bytes": 11196,
+      "open_ports": [
+        "N",
+        "E"
+      ]
+    },
+    {
+      "id": "tee",
+      "file": "assets/tee.glb",
+      "sha256": "5afd5a73a5eba42f7e3de580964bd4b1dce1efaf0f058b7c46cca2a484ebde6d",
+      "bytes": 12648,
+      "open_ports": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    {
+      "id": "end",
+      "file": "assets/end.glb",
+      "sha256": "c69cccc8a4033b8b9615cd0056cda92f2d08f7bf6abaca7d8588ff4aa8282b6d",
+      "bytes": 9712,
+      "open_ports": [
+        "S"
+      ]
+    }
+  ],
+  "socketAnchorsBlender": {
+    "N": [
+      0,
+      2,
+      0.2
+    ],
+    "E": [
+      2,
+      0,
+      0.2
+    ],
+    "S": [
+      0,
+      -2,
+      0.2
+    ],
+    "W": [
+      -2,
+      0,
+      0.2
+    ]
+  },
+  "joining": "P opposite P, matching width/floor/center and opposite normal; X only X",
+  "geometryScope": "solid thin floor and inset wood panels, no roof; corner gaps smaller than 0.6 trial body diameter",
+  "limitations": [
+    "axis aligned test primitives only",
+    "panel physical obstacle is not engine collision controller",
+    "no archaeology attribution",
+    "not yet WFC solved",
+    "blend is display assembly at grid offsets; GLBs retain local center origins",
+    "no GPU/mobile/engine acceptance"
+  ]
+}

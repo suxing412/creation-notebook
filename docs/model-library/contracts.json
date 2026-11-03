@@ -200,17 +200,796 @@
     "autoAppliedToCity": false
   },
   "eaves-shell": {
-    "testedSamplesOnly": [
-      "A",
-      "B"
+    "id": "eaves-two-sample-library-contract-v1",
+    "releaseStatus": "next-version candidate; frozen publish batch not touched",
+    "logicalModelGroups": 1,
+    "samples": 2,
+    "LODAssets": 6,
+    "geometryChanged": false,
+    "cityChanged": false,
+    "assets": [
+      {
+        "variant": "A",
+        "lod": 0,
+        "arcSegments": 16,
+        "sourceSHA256": "582767de1dcdd28735ae7aecbdcd14d1b5bdce191ed5edd3dbfdb16030b6889a",
+        "file": "A-LOD0.glb",
+        "binarySHA256": "d57824ff27d313a9c3917d8451ddc9d1b98c21c72ca48f60ad3e363364a877c0",
+        "unchangedOriginalBytes": true,
+        "nodes": 44,
+        "triangles": 5808,
+        "attributesPresent": [
+          "NORMAL",
+          "POSITION"
+        ],
+        "materials": [
+          {
+            "doubleSided": true,
+            "name": "design_unpainted_gray_tile",
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.23999999463558197,
+                0.2800000011920929,
+                0.2800000011920929,
+                1
+              ],
+              "metallicFactor": 0,
+              "roughnessFactor": 0.8399999737739563
+            }
+          }
+        ],
+        "images": [],
+        "boundsMin": [
+          -0.8395000100135803,
+          -0.00800000037997961,
+          -1.159999966621399
+        ],
+        "boundsMax": [
+          0.8395000100135803,
+          0.5109999775886536,
+          0.0
+        ],
+        "config": {
+          "lanes": 6,
+          "pitch": 0.28,
+          "slope": 0.3,
+          "panRise": 0.025,
+          "coverRise": 0.055,
+          "coverBase": 0.042
+        },
+        "origin": "front/eave cross-section center, ideal shell baseline y(up)=0; actual lower skin extends below baseline",
+        "axes": "+X across rows,+Y height,-Z upslope (Blender +Y upslope); design meters",
+        "slopeRisePerRun": 0.3,
+        "pitchDegrees": 16.69924423399362,
+        "longitudinalTileLength": 0.35,
+        "longitudinalStep": 0.27,
+        "nominalOverlap": 0.08,
+        "rowRise": 0.022,
+        "panThickness": 0.008,
+        "coverThickness": 0.009,
+        "transversePanGap": 0.001,
+        "rowCount": 4,
+        "finiteEndpointSamples": [
+          {
+            "edge": "eave",
+            "planeLocalGLTFZ": 0,
+            "boundsMin": [
+              -0.8395000100135803,
+              -0.00800000037997961,
+              0.0
+            ],
+            "boundsMax": [
+              0.8395000100135803,
+              0.09700000286102295,
+              0.0
+            ],
+            "scope": "sampled actual mesh endpoint extent, not load-bearing socket"
+          },
+          {
+            "edge": "upslope",
+            "planeLocalGLTFZ": -1.16,
+            "boundsMin": [
+              -0.8395000100135803,
+              0.4059999883174896,
+              -1.159999966621399
+            ],
+            "boundsMax": [
+              0.8395000100135803,
+              0.5109999775886536,
+              -1.159999966621399
+            ],
+            "scope": "sampled actual mesh endpoint extent, not load-bearing socket"
+          }
+        ],
+        "negativeDeterminantNodes": 0,
+        "placementTests": [
+          {
+            "translation": [
+              0,
+              0,
+              0
+            ],
+            "yaw": 0,
+            "inverseOrientedTriangleErrorMeters": 0.0,
+            "determinant": 1.0
+          },
+          {
+            "translation": [
+              120,
+              3,
+              -240
+            ],
+            "yaw": 90,
+            "inverseOrientedTriangleErrorMeters": 1.1102230246251565e-16,
+            "determinant": 1.0
+          }
+        ],
+        "interfaces": {
+          "supportSocket": null,
+          "eaveTermination": null,
+          "ridgeConnection": null,
+          "waterproofing": null,
+          "directWFCCompatibility": null
+        },
+        "limits": [
+          "Open cover-tile cavity is not a mesh-hole claim; solid shell rim closure retained.",
+          "Neutral backing exists only as study aid, not in selected GLB or historical roof construction.",
+          "Two finite geometries; no continuous slope/curvature/width validation.",
+          "No automatic whole-roof/city placement or WFC assembly."
+        ]
+      },
+      {
+        "variant": "A",
+        "lod": 1,
+        "arcSegments": 8,
+        "sourceSHA256": "1ee5f7183bf3ca1bdcfbe71f8807fe5c477c072bd7c73b1f68583eb0b268dd85",
+        "file": "A-LOD1.glb",
+        "binarySHA256": "6dafcdb5fbdc384a26398a2b17797511183a25748fe9e64b66e17a78bdb10f0a",
+        "unchangedOriginalBytes": true,
+        "nodes": 44,
+        "triangles": 2992,
+        "attributesPresent": [
+          "NORMAL",
+          "POSITION"
+        ],
+        "materials": [
+          {
+            "doubleSided": true,
+            "name": "design_unpainted_gray_tile",
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.23999999463558197,
+                0.2800000011920929,
+                0.2800000011920929,
+                1
+              ],
+              "metallicFactor": 0,
+              "roughnessFactor": 0.8399999737739563
+            }
+          }
+        ],
+        "images": [],
+        "boundsMin": [
+          -0.8395000100135803,
+          -0.00800000037997961,
+          -1.159999966621399
+        ],
+        "boundsMax": [
+          0.8395000100135803,
+          0.5109999775886536,
+          0.0
+        ],
+        "config": {
+          "lanes": 6,
+          "pitch": 0.28,
+          "slope": 0.3,
+          "panRise": 0.025,
+          "coverRise": 0.055,
+          "coverBase": 0.042
+        },
+        "origin": "front/eave cross-section center, ideal shell baseline y(up)=0; actual lower skin extends below baseline",
+        "axes": "+X across rows,+Y height,-Z upslope (Blender +Y upslope); design meters",
+        "slopeRisePerRun": 0.3,
+        "pitchDegrees": 16.69924423399362,
+        "longitudinalTileLength": 0.35,
+        "longitudinalStep": 0.27,
+        "nominalOverlap": 0.08,
+        "rowRise": 0.022,
+        "panThickness": 0.008,
+        "coverThickness": 0.009,
+        "transversePanGap": 0.001,
+        "rowCount": 4,
+        "finiteEndpointSamples": [
+          {
+            "edge": "eave",
+            "planeLocalGLTFZ": 0,
+            "boundsMin": [
+              -0.8395000100135803,
+              -0.00800000037997961,
+              0.0
+            ],
+            "boundsMax": [
+              0.8395000100135803,
+              0.09700000286102295,
+              0.0
+            ],
+            "scope": "sampled actual mesh endpoint extent, not load-bearing socket"
+          },
+          {
+            "edge": "upslope",
+            "planeLocalGLTFZ": -1.16,
+            "boundsMin": [
+              -0.8395000100135803,
+              0.4059999883174896,
+              -1.159999966621399
+            ],
+            "boundsMax": [
+              0.8395000100135803,
+              0.5109999775886536,
+              -1.159999966621399
+            ],
+            "scope": "sampled actual mesh endpoint extent, not load-bearing socket"
+          }
+        ],
+        "negativeDeterminantNodes": 0,
+        "placementTests": [
+          {
+            "translation": [
+              0,
+              0,
+              0
+            ],
+            "yaw": 0,
+            "inverseOrientedTriangleErrorMeters": 0.0,
+            "determinant": 1.0
+          },
+          {
+            "translation": [
+              120,
+              3,
+              -240
+            ],
+            "yaw": 90,
+            "inverseOrientedTriangleErrorMeters": 1.1102230246251565e-16,
+            "determinant": 1.0
+          }
+        ],
+        "interfaces": {
+          "supportSocket": null,
+          "eaveTermination": null,
+          "ridgeConnection": null,
+          "waterproofing": null,
+          "directWFCCompatibility": null
+        },
+        "limits": [
+          "Open cover-tile cavity is not a mesh-hole claim; solid shell rim closure retained.",
+          "Neutral backing exists only as study aid, not in selected GLB or historical roof construction.",
+          "Two finite geometries; no continuous slope/curvature/width validation.",
+          "No automatic whole-roof/city placement or WFC assembly."
+        ]
+      },
+      {
+        "variant": "A",
+        "lod": 2,
+        "arcSegments": 4,
+        "sourceSHA256": "5ac415792de71ca2b7ba86394d945263276ed616d7dcd0484475f29f905e14a3",
+        "file": "A-LOD2.glb",
+        "binarySHA256": "19489c276e131e745e8e4ea4451b6b71024219d5f49ef69db592c6ed5e7df9ae",
+        "unchangedOriginalBytes": true,
+        "nodes": 44,
+        "triangles": 1584,
+        "attributesPresent": [
+          "NORMAL",
+          "POSITION"
+        ],
+        "materials": [
+          {
+            "doubleSided": true,
+            "name": "design_unpainted_gray_tile",
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.23999999463558197,
+                0.2800000011920929,
+                0.2800000011920929,
+                1
+              ],
+              "metallicFactor": 0,
+              "roughnessFactor": 0.8399999737739563
+            }
+          }
+        ],
+        "images": [],
+        "boundsMin": [
+          -0.8395000100135803,
+          -0.00800000037997961,
+          -1.159999966621399
+        ],
+        "boundsMax": [
+          0.8395000100135803,
+          0.5109999775886536,
+          0.0
+        ],
+        "config": {
+          "lanes": 6,
+          "pitch": 0.28,
+          "slope": 0.3,
+          "panRise": 0.025,
+          "coverRise": 0.055,
+          "coverBase": 0.042
+        },
+        "origin": "front/eave cross-section center, ideal shell baseline y(up)=0; actual lower skin extends below baseline",
+        "axes": "+X across rows,+Y height,-Z upslope (Blender +Y upslope); design meters",
+        "slopeRisePerRun": 0.3,
+        "pitchDegrees": 16.69924423399362,
+        "longitudinalTileLength": 0.35,
+        "longitudinalStep": 0.27,
+        "nominalOverlap": 0.08,
+        "rowRise": 0.022,
+        "panThickness": 0.008,
+        "coverThickness": 0.009,
+        "transversePanGap": 0.001,
+        "rowCount": 4,
+        "finiteEndpointSamples": [
+          {
+            "edge": "eave",
+            "planeLocalGLTFZ": 0,
+            "boundsMin": [
+              -0.8395000100135803,
+              -0.00800000037997961,
+              0.0
+            ],
+            "boundsMax": [
+              0.8395000100135803,
+              0.09700000286102295,
+              0.0
+            ],
+            "scope": "sampled actual mesh endpoint extent, not load-bearing socket"
+          },
+          {
+            "edge": "upslope",
+            "planeLocalGLTFZ": -1.16,
+            "boundsMin": [
+              -0.8395000100135803,
+              0.4059999883174896,
+              -1.159999966621399
+            ],
+            "boundsMax": [
+              0.8395000100135803,
+              0.5109999775886536,
+              -1.159999966621399
+            ],
+            "scope": "sampled actual mesh endpoint extent, not load-bearing socket"
+          }
+        ],
+        "negativeDeterminantNodes": 0,
+        "placementTests": [
+          {
+            "translation": [
+              0,
+              0,
+              0
+            ],
+            "yaw": 0,
+            "inverseOrientedTriangleErrorMeters": 0.0,
+            "determinant": 1.0
+          },
+          {
+            "translation": [
+              120,
+              3,
+              -240
+            ],
+            "yaw": 90,
+            "inverseOrientedTriangleErrorMeters": 1.1102230246251565e-16,
+            "determinant": 1.0
+          }
+        ],
+        "interfaces": {
+          "supportSocket": null,
+          "eaveTermination": null,
+          "ridgeConnection": null,
+          "waterproofing": null,
+          "directWFCCompatibility": null
+        },
+        "limits": [
+          "Open cover-tile cavity is not a mesh-hole claim; solid shell rim closure retained.",
+          "Neutral backing exists only as study aid, not in selected GLB or historical roof construction.",
+          "Two finite geometries; no continuous slope/curvature/width validation.",
+          "No automatic whole-roof/city placement or WFC assembly."
+        ]
+      },
+      {
+        "variant": "B",
+        "lod": 0,
+        "arcSegments": 16,
+        "sourceSHA256": "da3c41454cdb408daabfd3f25160f3068963a3337183dc266bac16d77e294547",
+        "file": "B-LOD0.glb",
+        "binarySHA256": "07b9cc398009343479fe036b9b7e4604e4048fce288e298f3f134963987abf06",
+        "unchangedOriginalBytes": true,
+        "nodes": 52,
+        "triangles": 6864,
+        "attributesPresent": [
+          "NORMAL",
+          "POSITION"
+        ],
+        "materials": [
+          {
+            "doubleSided": true,
+            "name": "design_unpainted_gray_tile",
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.23999999463558197,
+                0.2800000011920929,
+                0.2800000011920929,
+                1
+              ],
+              "metallicFactor": 0,
+              "roughnessFactor": 0.8399999737739563
+            }
+          }
+        ],
+        "images": [],
+        "boundsMin": [
+          -0.909500002861023,
+          -0.00800000037997961,
+          -1.159999966621399
+        ],
+        "boundsMax": [
+          0.909500002861023,
+          0.6209999918937683,
+          0.0
+        ],
+        "config": {
+          "lanes": 7,
+          "pitch": 0.26,
+          "slope": 0.4,
+          "panRise": 0.022,
+          "coverRise": 0.05,
+          "coverBase": 0.041
+        },
+        "origin": "front/eave cross-section center, ideal shell baseline y(up)=0; actual lower skin extends below baseline",
+        "axes": "+X across rows,+Y height,-Z upslope (Blender +Y upslope); design meters",
+        "slopeRisePerRun": 0.4,
+        "pitchDegrees": 21.80140948635181,
+        "longitudinalTileLength": 0.35,
+        "longitudinalStep": 0.27,
+        "nominalOverlap": 0.08,
+        "rowRise": 0.022,
+        "panThickness": 0.008,
+        "coverThickness": 0.009,
+        "transversePanGap": 0.001,
+        "rowCount": 4,
+        "finiteEndpointSamples": [
+          {
+            "edge": "eave",
+            "planeLocalGLTFZ": 0,
+            "boundsMin": [
+              -0.909500002861023,
+              -0.00800000037997961,
+              0.0
+            ],
+            "boundsMax": [
+              0.909500002861023,
+              0.09099999815225601,
+              0.0
+            ],
+            "scope": "sampled actual mesh endpoint extent, not load-bearing socket"
+          },
+          {
+            "edge": "upslope",
+            "planeLocalGLTFZ": -1.16,
+            "boundsMin": [
+              -0.909500002861023,
+              0.5220000147819519,
+              -1.159999966621399
+            ],
+            "boundsMax": [
+              0.909500002861023,
+              0.6209999918937683,
+              -1.159999966621399
+            ],
+            "scope": "sampled actual mesh endpoint extent, not load-bearing socket"
+          }
+        ],
+        "negativeDeterminantNodes": 0,
+        "placementTests": [
+          {
+            "translation": [
+              0,
+              0,
+              0
+            ],
+            "yaw": 0,
+            "inverseOrientedTriangleErrorMeters": 0.0,
+            "determinant": 1.0
+          },
+          {
+            "translation": [
+              120,
+              3,
+              -240
+            ],
+            "yaw": 90,
+            "inverseOrientedTriangleErrorMeters": 1.1102230246251565e-16,
+            "determinant": 1.0
+          }
+        ],
+        "interfaces": {
+          "supportSocket": null,
+          "eaveTermination": null,
+          "ridgeConnection": null,
+          "waterproofing": null,
+          "directWFCCompatibility": null
+        },
+        "limits": [
+          "Open cover-tile cavity is not a mesh-hole claim; solid shell rim closure retained.",
+          "Neutral backing exists only as study aid, not in selected GLB or historical roof construction.",
+          "Two finite geometries; no continuous slope/curvature/width validation.",
+          "No automatic whole-roof/city placement or WFC assembly."
+        ]
+      },
+      {
+        "variant": "B",
+        "lod": 1,
+        "arcSegments": 8,
+        "sourceSHA256": "689893526b2fe10222547e03c69190c1c2ce514f301333f7b9537944b4259f0f",
+        "file": "B-LOD1.glb",
+        "binarySHA256": "21e7be9ce137078018c5f122ea60d0b84bfbc1ec9079d0eb88cd2647497901c0",
+        "unchangedOriginalBytes": true,
+        "nodes": 52,
+        "triangles": 3536,
+        "attributesPresent": [
+          "NORMAL",
+          "POSITION"
+        ],
+        "materials": [
+          {
+            "doubleSided": true,
+            "name": "design_unpainted_gray_tile",
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.23999999463558197,
+                0.2800000011920929,
+                0.2800000011920929,
+                1
+              ],
+              "metallicFactor": 0,
+              "roughnessFactor": 0.8399999737739563
+            }
+          }
+        ],
+        "images": [],
+        "boundsMin": [
+          -0.909500002861023,
+          -0.00800000037997961,
+          -1.159999966621399
+        ],
+        "boundsMax": [
+          0.909500002861023,
+          0.6209999918937683,
+          0.0
+        ],
+        "config": {
+          "lanes": 7,
+          "pitch": 0.26,
+          "slope": 0.4,
+          "panRise": 0.022,
+          "coverRise": 0.05,
+          "coverBase": 0.041
+        },
+        "origin": "front/eave cross-section center, ideal shell baseline y(up)=0; actual lower skin extends below baseline",
+        "axes": "+X across rows,+Y height,-Z upslope (Blender +Y upslope); design meters",
+        "slopeRisePerRun": 0.4,
+        "pitchDegrees": 21.80140948635181,
+        "longitudinalTileLength": 0.35,
+        "longitudinalStep": 0.27,
+        "nominalOverlap": 0.08,
+        "rowRise": 0.022,
+        "panThickness": 0.008,
+        "coverThickness": 0.009,
+        "transversePanGap": 0.001,
+        "rowCount": 4,
+        "finiteEndpointSamples": [
+          {
+            "edge": "eave",
+            "planeLocalGLTFZ": 0,
+            "boundsMin": [
+              -0.909500002861023,
+              -0.00800000037997961,
+              0.0
+            ],
+            "boundsMax": [
+              0.909500002861023,
+              0.09099999815225601,
+              0.0
+            ],
+            "scope": "sampled actual mesh endpoint extent, not load-bearing socket"
+          },
+          {
+            "edge": "upslope",
+            "planeLocalGLTFZ": -1.16,
+            "boundsMin": [
+              -0.909500002861023,
+              0.5220000147819519,
+              -1.159999966621399
+            ],
+            "boundsMax": [
+              0.909500002861023,
+              0.6209999918937683,
+              -1.159999966621399
+            ],
+            "scope": "sampled actual mesh endpoint extent, not load-bearing socket"
+          }
+        ],
+        "negativeDeterminantNodes": 0,
+        "placementTests": [
+          {
+            "translation": [
+              0,
+              0,
+              0
+            ],
+            "yaw": 0,
+            "inverseOrientedTriangleErrorMeters": 0.0,
+            "determinant": 1.0
+          },
+          {
+            "translation": [
+              120,
+              3,
+              -240
+            ],
+            "yaw": 90,
+            "inverseOrientedTriangleErrorMeters": 1.1102230246251565e-16,
+            "determinant": 1.0
+          }
+        ],
+        "interfaces": {
+          "supportSocket": null,
+          "eaveTermination": null,
+          "ridgeConnection": null,
+          "waterproofing": null,
+          "directWFCCompatibility": null
+        },
+        "limits": [
+          "Open cover-tile cavity is not a mesh-hole claim; solid shell rim closure retained.",
+          "Neutral backing exists only as study aid, not in selected GLB or historical roof construction.",
+          "Two finite geometries; no continuous slope/curvature/width validation.",
+          "No automatic whole-roof/city placement or WFC assembly."
+        ]
+      },
+      {
+        "variant": "B",
+        "lod": 2,
+        "arcSegments": 4,
+        "sourceSHA256": "1dad7e6e552dbc48e5a5ea5ad36ee45a436202c3b132a5c65d7008299363670c",
+        "file": "B-LOD2.glb",
+        "binarySHA256": "9428d5b42aab3f61bd2cd33ff4c79458a83297df094f706410820b0747e37574",
+        "unchangedOriginalBytes": true,
+        "nodes": 52,
+        "triangles": 1872,
+        "attributesPresent": [
+          "NORMAL",
+          "POSITION"
+        ],
+        "materials": [
+          {
+            "doubleSided": true,
+            "name": "design_unpainted_gray_tile",
+            "pbrMetallicRoughness": {
+              "baseColorFactor": [
+                0.23999999463558197,
+                0.2800000011920929,
+                0.2800000011920929,
+                1
+              ],
+              "metallicFactor": 0,
+              "roughnessFactor": 0.8399999737739563
+            }
+          }
+        ],
+        "images": [],
+        "boundsMin": [
+          -0.909500002861023,
+          -0.00800000037997961,
+          -1.159999966621399
+        ],
+        "boundsMax": [
+          0.909500002861023,
+          0.6209999918937683,
+          0.0
+        ],
+        "config": {
+          "lanes": 7,
+          "pitch": 0.26,
+          "slope": 0.4,
+          "panRise": 0.022,
+          "coverRise": 0.05,
+          "coverBase": 0.041
+        },
+        "origin": "front/eave cross-section center, ideal shell baseline y(up)=0; actual lower skin extends below baseline",
+        "axes": "+X across rows,+Y height,-Z upslope (Blender +Y upslope); design meters",
+        "slopeRisePerRun": 0.4,
+        "pitchDegrees": 21.80140948635181,
+        "longitudinalTileLength": 0.35,
+        "longitudinalStep": 0.27,
+        "nominalOverlap": 0.08,
+        "rowRise": 0.022,
+        "panThickness": 0.008,
+        "coverThickness": 0.009,
+        "transversePanGap": 0.001,
+        "rowCount": 4,
+        "finiteEndpointSamples": [
+          {
+            "edge": "eave",
+            "planeLocalGLTFZ": 0,
+            "boundsMin": [
+              -0.909500002861023,
+              -0.00800000037997961,
+              0.0
+            ],
+            "boundsMax": [
+              0.909500002861023,
+              0.09099999815225601,
+              0.0
+            ],
+            "scope": "sampled actual mesh endpoint extent, not load-bearing socket"
+          },
+          {
+            "edge": "upslope",
+            "planeLocalGLTFZ": -1.16,
+            "boundsMin": [
+              -0.909500002861023,
+              0.5220000147819519,
+              -1.159999966621399
+            ],
+            "boundsMax": [
+              0.909500002861023,
+              0.6209999918937683,
+              -1.159999966621399
+            ],
+            "scope": "sampled actual mesh endpoint extent, not load-bearing socket"
+          }
+        ],
+        "negativeDeterminantNodes": 0,
+        "placementTests": [
+          {
+            "translation": [
+              0,
+              0,
+              0
+            ],
+            "yaw": 0,
+            "inverseOrientedTriangleErrorMeters": 0.0,
+            "determinant": 1.0
+          },
+          {
+            "translation": [
+              120,
+              3,
+              -240
+            ],
+            "yaw": 90,
+            "inverseOrientedTriangleErrorMeters": 1.1102230246251565e-16,
+            "determinant": 1.0
+          }
+        ],
+        "interfaces": {
+          "supportSocket": null,
+          "eaveTermination": null,
+          "ridgeConnection": null,
+          "waterproofing": null,
+          "directWFCCompatibility": null
+        },
+        "limits": [
+          "Open cover-tile cavity is not a mesh-hole claim; solid shell rim closure retained.",
+          "Neutral backing exists only as study aid, not in selected GLB or historical roof construction.",
+          "Two finite geometries; no continuous slope/curvature/width validation.",
+          "No automatic whole-roof/city placement or WFC assembly."
+        ]
+      }
     ],
-    "LODArcSegments": [
-      16,
-      8,
-      4
-    ],
-    "endSupportUnresolved": true,
-    "units": "design meters"
+    "boundsOfEvidence": "design parameters and inherited finite static checks; endpoint bearing and drainage unresolved"
   },
   "storage-functional": {
     "default": "organized full group; city original absolute version unchanged",
@@ -231,5 +1010,99 @@
     ],
     "externalConnection": false,
     "modernFunctionalOverlayNotHistorical": true
+  },
+  "passage-interface": {
+    "id": "passage-interface-study-v01",
+    "logicalAssetGroups": 1,
+    "presets": 4,
+    "status": "independent research candidate; not public; not historical; not city integrated",
+    "origin": "local tile center base",
+    "units": "design_m",
+    "BlenderAxes": "+X east,+Y north,+Z up",
+    "glTFAxes": "+X east,+Y up,-Z north",
+    "tileBoundsBlenderXY": [
+      -2,
+      -2,
+      2,
+      2
+    ],
+    "socketWidth": 1.6,
+    "floorZ": 0.2,
+    "reservedClearHeight": 2.2,
+    "panelHeightAboveFloor": 1.2,
+    "assets": [
+      {
+        "id": "straight",
+        "file": "assets/straight.glb",
+        "sha256": "39767266011d616c7acbbacce4165fbf1f4dd696e7164e57f716945e9be28957",
+        "bytes": 11216,
+        "open_ports": [
+          "N",
+          "S"
+        ]
+      },
+      {
+        "id": "elbow",
+        "file": "assets/elbow.glb",
+        "sha256": "addf39f351b32764704e627b3bf0edbaefe6fc6e8e351d0944059e7e7f53b780",
+        "bytes": 11196,
+        "open_ports": [
+          "N",
+          "E"
+        ]
+      },
+      {
+        "id": "tee",
+        "file": "assets/tee.glb",
+        "sha256": "5afd5a73a5eba42f7e3de580964bd4b1dce1efaf0f058b7c46cca2a484ebde6d",
+        "bytes": 12648,
+        "open_ports": [
+          "N",
+          "E",
+          "W"
+        ]
+      },
+      {
+        "id": "end",
+        "file": "assets/end.glb",
+        "sha256": "c69cccc8a4033b8b9615cd0056cda92f2d08f7bf6abaca7d8588ff4aa8282b6d",
+        "bytes": 9712,
+        "open_ports": [
+          "S"
+        ]
+      }
+    ],
+    "socketAnchorsBlender": {
+      "N": [
+        0,
+        2,
+        0.2
+      ],
+      "E": [
+        2,
+        0,
+        0.2
+      ],
+      "S": [
+        0,
+        -2,
+        0.2
+      ],
+      "W": [
+        -2,
+        0,
+        0.2
+      ]
+    },
+    "joining": "P opposite P, matching width/floor/center and opposite normal; X only X",
+    "geometryScope": "solid thin floor and inset wood panels, no roof; corner gaps smaller than 0.6 trial body diameter",
+    "limitations": [
+      "axis aligned test primitives only",
+      "panel physical obstacle is not engine collision controller",
+      "no archaeology attribution",
+      "not yet WFC solved",
+      "blend is display assembly at grid offsets; GLBs retain local center origins",
+      "no GPU/mobile/engine acceptance"
+    ]
   }
 }
