@@ -1,0 +1,106 @@
+{
+  "status": "built-two-finite-geometric-variants",
+  "units": "meters",
+  "origin": "well-mouth center at exterior ground z=0",
+  "axes": {
+    "native": "X lateral,Y depth,Z up",
+    "glTF": "X lateral,Y up,Z negative nativeY"
+  },
+  "seed": 0,
+  "cityPlacement": null,
+  "prohibition": "No actual Luoyang site or per-courtyard frequency inferred. No city ground punching. Short liner depth is cutaway C design, not aquifer depth.",
+  "variants": [
+    {
+      "id": "A",
+      "roof": "hipped candidate",
+      "mouth": "square framed opening",
+      "innerOpening": 0.9,
+      "wallThickness": 0.14,
+      "rimHeight": 0.68,
+      "shortLinerDepth": 0.65,
+      "postSpan": [
+        1.8,
+        1.8
+      ],
+      "eaveHeight": 2.45,
+      "roofHeight": 0.65
+    },
+    {
+      "id": "B",
+      "roof": "gable candidate",
+      "mouth": "circular folded-rim opening",
+      "innerDiameter": 1.05,
+      "wallThickness": 0.16,
+      "rimHeight": 0.6,
+      "shortLinerDepth": 0.7,
+      "postSpan": [
+        2.0,
+        1.6
+      ],
+      "eaveHeight": 2.5,
+      "roofHeight": 0.7
+    }
+  ],
+  "parameterEvidence": "All metric sizes are bounded test assumptions, not artifact-to-building scale conversion. Shapes pending final source record.",
+  "plannedChecks": [
+    "true mouth opening and absent false floor",
+    "post to beam contacts per joint",
+    "pulley axle seating and groove/rope clearance",
+    "roof support and sheltered reachable hand area",
+    "native vs GLB oriented triangles",
+    "topology/volume/duplicates/degenerate",
+    "two geometrically distinct variants and low LOD"
+  ],
+  "LOD": "LOD0 close; LOD1 reduced curved segments/roof subdivision, same silhouette and true opening; no automatic city use",
+  "limits": "Static geometry; no structural engineering or rope mechanics simulation; GPU/mobile not tested",
+  "references": "inputs/reference-contract.json",
+  "variantClarification": "A circular bore with square crossed timber collar, not square underground shaft",
+  "assets": [
+    {
+      "file": "assets/well-A-LOD0.glb",
+      "bytes": 1710964,
+      "sha256": "6bc463f8638df55c7e07282641d3d66d07d23ce9af8cd72a5e211be9772a38ab"
+    },
+    {
+      "file": "assets/well-A-LOD1.glb",
+      "bytes": 1346488,
+      "sha256": "e9252de34398ef8049876aadaf60f2e4c7c9d9aebc35cd40f34b9fca55fd3255"
+    },
+    {
+      "file": "assets/well-B-LOD0.glb",
+      "bytes": 1681036,
+      "sha256": "adf2f51a029289e8afbed8a583b1195bd22b815739b72f1c19e08bf693d55139"
+    },
+    {
+      "file": "assets/well-B-LOD1.glb",
+      "bytes": 1310032,
+      "sha256": "e4acc416db1024a28606a556c9c0b827482fb3da2d2232ecf00a83ea014aa9dd"
+    }
+  ],
+  "groundComponent": "Nodes demonstration_apron_opening are a removable display apron. Other short liner extends below z=0; city ground must be deliberately opened, never placed over solid terrain.",
+  "designAcceptance": "research candidate, not historical or user visual acceptance",
+  "futurePlacementOpening": {
+    "status": "required future C terrain integration, not performed",
+    "A": {
+      "innerBoreRadius": 0.45,
+      "outerLinerRadius": 0.59,
+      "nominalTerrainCutRadius": 0.59,
+      "depthBelowGround": 0.65
+    },
+    "B": {
+      "innerBoreRadius": 0.525,
+      "outerLinerRadius": 0.685,
+      "nominalTerrainCutRadius": 0.685,
+      "depthBelowGround": 0.7
+    },
+    "rule": "Use actual shaft projection at placement transform, not visual texture patch. Cut entire existing terrain thickness to maintain open bore; deeper terrain vs truncated liner needs separate design and QA. Nominal radii are not historical measurements.",
+    "removeNodes": [
+      "A_LOD0__demonstration_apron_opening",
+      "A_LOD1__demonstration_apron_opening",
+      "B_LOD0__demonstration_apron_opening",
+      "B_LOD1__demonstration_apron_opening"
+    ],
+    "displayApron": "removable annular demonstration ground, not a historic pedestal",
+    "collision": "No automatic collision/terrain subtraction is shipped."
+  }
+}
