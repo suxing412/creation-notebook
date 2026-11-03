@@ -1,9 +1,10 @@
 {
-  "id": "luoyang-project-C02-four-clusters-candidate-v01",
-  "status": "C02 candidate frozen for independent browser/public projection QA; root CPU reviewed; not a completed city",
-  "defaultMode": "frozen-evidence-with-C02-four-clusters",
+  "id": "luoyang-project-C02-fixed-pairs-candidate-v01",
+  "status": "release candidate; public visit verification pending; finite geometry checks only",
+  "defaultMode": "frozen-evidence-with-C02-fixed-pairs",
   "modes": [
-    "C02-current-four-clusters",
+    "C02-fixed-geometry-pairs-current",
+    "C02-original-four-clusters-history",
     "C01-D08-history",
     "C01-D06-history",
     "neutral-technical-reference"
@@ -44,9 +45,10 @@
     "actualRuntimeAssetsBuiltAndDisposedCPU": true,
     "C02ActualGroundCoplanarAndVolumeOverlapZero": true,
     "C02CloudNoGLKeyboardCancelHistory": true,
-    "C02FiniteCameraSamples": 92455
+    "C02FiniteCameraSamples": 92455,
+    "C02VCloudBrowser": "actual no-GL navigation only; see private QA record"
   },
-  "sourceDelivery": "Full source retained in private archive; public projection preserves geometry and images",
+  "sourceDelivery": "full source in Library; do not duplicate complete ZIP in Pages",
   "publicClassification": "ongoing city project, not numbered finished work",
   "publicationAuthorizedByThisFile": false,
   "c01": {
@@ -99,32 +101,57 @@
     "currentTotal": 44,
     "oldD06HistoricalNotAdded": true,
     "variants": {
-      "A": 18,
-      "B": 14,
-      "TC03": 4
+      "B": 7,
+      "A": 9,
+      "TC03": 2,
+      "A2": 9,
+      "B2": 7,
+      "TC03-2": 2
     },
     "seed": 18052,
     "engineeringLimit": 48,
     "sourceMaskSHA": "d801b5e7c42acc9d32f7689abd15a3b403e515e32b6a6e4fe7080e4ada3e1275",
-    "roofFractionEstimate": 0.053109963099631,
+    "roofFractionEstimate": 0.051005627306273074,
     "roofFractionBounds": [
-      0.04846291512915129,
-      0.059016605166051665
+      0.046320295202952035,
+      0.056782472324723256
     ],
     "target": [
       0.12,
       0.18
     ],
     "targetMet": false,
-    "data": "data/c02/layout.json",
-    "partitions": "data/c02/partitions.json",
+    "data": "data/c02v/layout.json",
+    "partitions": "data/c02v/partitions.json",
     "loading": "overview context8; selected cluster14/9/9/4 plus context8; other clusters position markers only",
-    "maxSelectedLOD0TrianglesIncludingContextEnvironment": 208912,
+    "maxSelectedLOD0TrianglesIncludingContextEnvironment": 217932,
     "GPU": false,
     "ancientWaterConflict": "unresolved",
     "centralReserveMeaning": "design protection, not excavated void",
     "goldLines": "design mask annotations, not historical walls",
     "publicationAuthorizedByThisFile": false,
-    "sourceVersion": 2
+    "sourceVersion": 1,
+    "stageHistory": "?c02stage=original",
+    "oneStageAtATime": true,
+    "B2StoreApproach": {
+      "destination": "waiting point before first stair, NOT store interior",
+      "fixed_height_access_to_store_interior": false,
+      "step_front_x": 2.72,
+      "endpoint": [
+        2.2,
+        5
+      ],
+      "box_front_edge_x": 2.6,
+      "gap_to_first_step_m": 0.12,
+      "ascent_status": "unverified; needs elevation-aware route/feet/steps handling"
+    },
+    "newSharedPrototypeBytes": 2329376
+  },
+  "researchUpdates": {
+    "entry": "research/2026-11-03/",
+    "state": "archived-unpublished-not-design-accepted",
+    "newCourtyards": 0,
+    "newWorks": 0,
+    "replacesRuntimeGround": false
   }
 }

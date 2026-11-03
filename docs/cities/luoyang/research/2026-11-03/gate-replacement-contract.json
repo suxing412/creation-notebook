@@ -1,0 +1,213 @@
+{
+  "status": "single gate quality study; not auto-applied",
+  "sourcePrototypeSHA256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+  "testedInstance": "C02-010",
+  "localGateAnchor": [
+    -3.5,
+    -10.6,
+    0
+  ],
+  "removeOnlyOriginalGateRoof": {
+    "localPrototypeBounds": [
+      -5.4,
+      -12.15,
+      -1.6,
+      -9.05
+    ],
+    "zRange": [
+      2.65,
+      3.53
+    ]
+  },
+  "preserveBodyAndArchivedOriginal": true,
+  "geometrySelection": "coordinate-welded component membership used only for selection; original triangles retained unchanged; no clipped face fragments",
+  "lodPolicy": {
+    "near": "new gate, load only when needed; no confirmed distance threshold",
+    "middle": "6-segment arc candidate; GPU unverified",
+    "far": "original-gate.glb actual archived style,1148 triangles; do not load full roof across entire city"
+  },
+  "instances": [
+    {
+      "id": "C02-005",
+      "prototype": "B",
+      "eligibility": "not calibrated; do not replace",
+      "candidateAnchor": [
+        517.5,
+        793.15,
+        0
+      ],
+      "rotationDegrees": 180,
+      "scale": 1
+    },
+    {
+      "id": "C02-006",
+      "prototype": "B2",
+      "eligibility": "not calibrated; do not replace",
+      "candidateAnchor": [
+        540.5,
+        792.15,
+        0
+      ],
+      "rotationDegrees": 180,
+      "scale": 1
+    },
+    {
+      "id": "C02-007",
+      "prototype": "A",
+      "eligibility": "not calibrated; do not replace",
+      "candidateAnchor": [
+        593.5,
+        793.15,
+        0
+      ],
+      "rotationDegrees": 180,
+      "scale": 1
+    },
+    {
+      "id": "C02-008",
+      "prototype": "TC03",
+      "eligibility": "not calibrated; do not replace",
+      "candidateAnchor": [
+        661.5,
+        805.15,
+        0
+      ],
+      "rotationDegrees": 180,
+      "scale": 1
+    },
+    {
+      "id": "C02-009",
+      "prototype": "B",
+      "eligibility": "not calibrated; do not replace",
+      "candidateAnchor": [
+        504.5,
+        806.85,
+        0
+      ],
+      "rotationDegrees": 0,
+      "scale": 1
+    },
+    {
+      "id": "C02-010",
+      "prototype": "A2",
+      "eligibility": "A2 same-source candidate; instance integration not yet tested",
+      "candidateAnchor": [
+        527.5,
+        807.85,
+        0
+      ],
+      "rotationDegrees": 0,
+      "scale": 1
+    },
+    {
+      "id": "C02-011",
+      "prototype": "A",
+      "eligibility": "not calibrated; do not replace",
+      "candidateAnchor": [
+        550.5,
+        806.85,
+        0
+      ],
+      "rotationDegrees": 0,
+      "scale": 1
+    },
+    {
+      "id": "C02-012",
+      "prototype": "TC03-2",
+      "eligibility": "not calibrated; do not replace",
+      "candidateAnchor": [
+        566.5,
+        794.85,
+        0
+      ],
+      "rotationDegrees": 0,
+      "scale": 1
+    },
+    {
+      "id": "C02-013",
+      "prototype": "A2",
+      "eligibility": "A2 same-source candidate; instance integration not yet tested",
+      "candidateAnchor": [
+        608.5,
+        806.85,
+        0
+      ],
+      "rotationDegrees": 0,
+      "scale": 1
+    },
+    {
+      "id": "C02-032",
+      "prototype": "B2",
+      "eligibility": "not calibrated; do not replace",
+      "candidateAnchor": [
+        559.4,
+        754.5,
+        0
+      ],
+      "rotationDegrees": 90,
+      "scale": 1
+    },
+    {
+      "id": "C02-014",
+      "prototype": "A",
+      "eligibility": "not calibrated; do not replace",
+      "candidateAnchor": [
+        587.5,
+        739.4,
+        0
+      ],
+      "rotationDegrees": 180,
+      "scale": 1
+    },
+    {
+      "id": "C02-015",
+      "prototype": "A2",
+      "eligibility": "A2 same-source candidate; instance integration not yet tested",
+      "candidateAnchor": [
+        610.5,
+        739.4,
+        0
+      ],
+      "rotationDegrees": 180,
+      "scale": 1
+    },
+    {
+      "id": "C02-016",
+      "prototype": "B",
+      "eligibility": "not calibrated; do not replace",
+      "candidateAnchor": [
+        609.5,
+        750.6,
+        0
+      ],
+      "rotationDegrees": 0,
+      "scale": 1
+    },
+    {
+      "id": "C02-017",
+      "prototype": "A",
+      "eligibility": "not calibrated; do not replace",
+      "candidateAnchor": [
+        660.6,
+        821.5,
+        0
+      ],
+      "rotationDegrees": 90,
+      "scale": 1
+    }
+  ],
+  "invalidations": [
+    "different prototype SHA",
+    "different roof or gateway proportions",
+    "different terrain altitude without alignment check",
+    "nonunit scale",
+    "changed gateway collider/navigation",
+    "no original retained"
+  ],
+  "limits": [
+    "C support stack is design, not East Han construction proof",
+    "only one integrated gate tested",
+    "other 13 instances not integrated",
+    "no GPU/iPhone/frame-rate claim"
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "market-functional": {
+    "completeLocalCandidate": "assets/market-A-N2-local.glb",
+    "localOriginContract": "assets/market-origin-contract.json",
+    "doNotCoLoadCompleteWithBaseOrN2": true,
+    "rawBuffersAllCentered": false,
+    "baseSHA256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+    "removeN2WithinBaseOnly": [
+      "N2_floor",
+      "N2_sidewall",
+      "N2_sidewall.001",
+      "N2_rearwall",
+      "N2_rearwall.001",
+      "N2_rear_lintel",
+      "N2_frontpost",
+      "N2_frontpost.001",
+      "N2_frontpost.002",
+      "N2_frontbeam",
+      "N2_gable_-3.87",
+      "N2_gable_3.87",
+      "N2_frontstep",
+      "N2_rearstep",
+      "N2_counter",
+      "N2_counterleg",
+      "N2_counterleg.001",
+      "N2_counter.001",
+      "N2_counterleg.002",
+      "N2_counterleg.003",
+      "N2_shelfpost",
+      "N2_shelfpost.001",
+      "N2_shelfpost.002",
+      "N2_shelfpost.003",
+      "N2_store_shelf",
+      "N2_store_shelf.001",
+      "N2_store_shelf.002",
+      "N2_closed_stock",
+      "N2_closed_stock.001",
+      "N2_closed_stock.002"
+    ],
+    "preserveSharedRoofs": true,
+    "removeRoutesForBOnly": [
+      "route_public",
+      "route_east",
+      "route_rearN",
+      "route_rearS",
+      "route_exitPublic",
+      "route_exitN",
+      "route_exitS"
+    ],
+    "absoluteGLTF": true,
+    "extraTranslation": [
+      0,
+      0,
+      0
+    ],
+    "order": "load base, remove exact N2 nodes, add N2; only B remove exact original routes then add B; never apply removal against replacement roots"
+  },
+  "courtyard-family": {
+    "perTypeContract": "assets/courtyard-six-contract.json",
+    "placementsWithInverses": "assets/courtyard-placements-inverses.json",
+    "origin": "A/B/A2/B2 center; TC03/TC03-2 southwest corner; preserve originals",
+    "variantSizes": [
+      {
+        "variant": "A",
+        "boundsGLTF": {
+          "min": [
+            -9.000001442103981,
+            0.19999992847442627,
+            -12.000004007252741
+          ],
+          "max": [
+            9.00000307373233,
+            4.489999771118164,
+            12.150002228177572
+          ]
+        },
+        "sizeGLTF": [
+          18.00000451583631,
+          4.289999842643738,
+          24.15000623543031
+        ],
+        "scope": "actual LOD1 building nodes only, removable site excluded; schematic meters, not historical measurements"
+      },
+      {
+        "variant": "B",
+        "boundsGLTF": {
+          "min": [
+            -9.000001442103981,
+            0.19999992847442627,
+            -12.000004007252741
+          ],
+          "max": [
+            9.00000307373233,
+            5.519999980926514,
+            12.150002228177572
+          ]
+        },
+        "sizeGLTF": [
+          18.00000451583631,
+          5.320000052452087,
+          24.15000623543031
+        ],
+        "scope": "actual LOD1 building nodes only, removable site excluded; schematic meters, not historical measurements"
+      },
+      {
+        "variant": "TC03",
+        "boundsGLTF": {
+          "min": [
+            -2.452049130852174e-06,
+            0.19999992847442627,
+            -36.000006146917684
+          ],
+          "max": [
+            28.00000616707146,
+            4.539999961853027,
+            4
+          ]
+        },
+        "sizeGLTF": [
+          28.000008619120592,
+          4.340000033378601,
+          40.000006146917684
+        ],
+        "scope": "actual LOD1 building nodes only, removable site excluded; schematic meters, not historical measurements"
+      },
+      {
+        "variant": "A2",
+        "boundsGLTF": {
+          "min": [
+            -9.000001442103981,
+            0.19999992847442627,
+            -12.000004007252741
+          ],
+          "max": [
+            9.00000307373233,
+            4.489999771118164,
+            12.150002228177572
+          ]
+        },
+        "sizeGLTF": [
+          18.00000451583631,
+          4.289999842643738,
+          24.15000623543031
+        ],
+        "scope": "actual LOD1 building nodes only, removable site excluded; schematic meters, not historical measurements"
+      },
+      {
+        "variant": "B2",
+        "boundsGLTF": {
+          "min": [
+            -9.000001442103981,
+            0.19999992847442627,
+            -12.000004007252741
+          ],
+          "max": [
+            9.00000307373233,
+            5.269999980926514,
+            12.150002228177572
+          ]
+        },
+        "sizeGLTF": [
+          18.00000451583631,
+          5.070000052452087,
+          24.15000623543031
+        ],
+        "scope": "actual LOD1 building nodes only, removable site excluded; schematic meters, not historical measurements"
+      },
+      {
+        "variant": "TC03-2",
+        "boundsGLTF": {
+          "min": [
+            -2.452049130852174e-06,
+            0.19999992847442627,
+            -36.000006146917684
+          ],
+          "max": [
+            28.00000616707146,
+            4.539999961853027,
+            0.1500020907331816
+          ]
+        },
+        "sizeGLTF": [
+          28.000008619120592,
+          4.340000033378601,
+          36.150008237650866
+        ],
+        "scope": "actual LOD1 building nodes only, removable site excluded; schematic meters, not historical measurements"
+      }
+    ],
+    "LODMeaning": "0 source detail;1 tile-filtered independently preserved; no measured GPU threshold",
+    "cityContract": "44 matrices, original/calt exclusive; same near IDs removed from far first"
+  },
+  "gate-roof-study": {
+    "testedInstance": "C02-010",
+    "correction": "original GLB already centered at gatehouse ground center; [-3.5,-10.6] was source courtyard anchor, not exported GLB origin",
+    "localOriginContract": "assets/gate-origin-contract.json",
+    "roundtrip": "assets/gate-origin-roundtrip.json",
+    "blenderReadback": "assets/gate-origin-blender-readback.json",
+    "unchangedEnvelopeFromOldRoof": false,
+    "autoAppliedToCity": false
+  },
+  "eaves-shell": {
+    "testedSamplesOnly": [
+      "A",
+      "B"
+    ],
+    "LODArcSegments": [
+      16,
+      8,
+      4
+    ],
+    "endSupportUnresolved": true,
+    "units": "design meters"
+  },
+  "storage-functional": {
+    "default": "organized full group; city original absolute version unchanged",
+    "localOriginContract": "assets/storage-origin-contract.json",
+    "roundtrip": "assets/storage-origin-roundtrip.json",
+    "blenderReadback": "assets/storage-origin-blender-readback.json",
+    "localVersionUsesRootCompensation": true,
+    "rawBuffersAllCentered": false,
+    "absoluteGLTFOriginal": true,
+    "extraTranslation": [
+      0,
+      0,
+      0
+    ],
+    "avoidDuplicates": [
+      "isolated A",
+      "isolated B"
+    ],
+    "externalConnection": false,
+    "modernFunctionalOverlayNotHistorical": true
+  }
+}

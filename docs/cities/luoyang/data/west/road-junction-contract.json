@@ -1,0 +1,44 @@
+{
+  "id": "west-road-junction-C01",
+  "compatibleWidth": 6,
+  "exclusiveWithOldTerrainAndRoad": true,
+  "unload": [
+    "route-corridor.glb",
+    "main-road-corridors/assets/corridor-6m.glb"
+  ],
+  "load": [
+    "assets/joined-route-terrain.glb",
+    "assets/corridor-6m.glb"
+  ],
+  "unchanged": [
+    "connection-terrain.glb",
+    "44 courtyard placements",
+    "Guangyang gate body",
+    "B42",
+    "other deferred road cuts"
+  ],
+  "coordinates": "absolute glTF X east Y up Z negative north",
+  "extraTranslation": [
+    0,
+    0,
+    0
+  ],
+  "assets": [
+    {
+      "path": "assets/corridor-6m.glb",
+      "bytes": 6832,
+      "sha256": "d047e206ed331c36a9afefe2a675f1abc93d97d8697872de67882e3ad9eb1b48"
+    },
+    {
+      "path": "assets/joined-route-terrain.glb",
+      "bytes": 4408140,
+      "sha256": "f872935883fc6b4e3279c6465635411d13c2d810f50b7ad43def09ca4543d104"
+    }
+  ],
+  "CPUOnly": true,
+  "notWholeNetworkConnected": true,
+  "counts": {
+    "courtyards": 44,
+    "works": 21
+  }
+}

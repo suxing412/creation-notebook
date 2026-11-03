@@ -1,0 +1,1 @@
+const s=document.getElementById('category');s.onchange=()=>{let n=0;document.querySelectorAll('[data-category]').forEach(e=>{e.hidden=s.value!=='all'&&e.dataset.category!==s.value;if(!e.hidden)n++});document.getElementById('count').textContent='显示'+n+'个模型资产组'};

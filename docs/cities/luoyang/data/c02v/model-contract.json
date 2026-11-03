@@ -1,0 +1,384 @@
+{
+  "id": "C02V-six-fixed-presets-runtime-v02-scope-correction",
+  "status": "six fixed preset integration; research metadata correction; unpublished",
+  "frame": {
+    "id": "R01-neutral-design-m-v01",
+    "units": "design_m",
+    "blender_axes": "x east, y local north, z up",
+    "gltf_axes": "x east, y up, z negative local north",
+    "origin": "lot ground-base center",
+    "historical_city_placement": null,
+    "relation_to_frozen_city_frame": null
+  },
+  "runtime_assets": [
+    {
+      "variant": "A",
+      "lod": 0,
+      "source_sha256": "75b9871280197625db6034a64f788198364179cbb5934332192dcede5c63079a",
+      "glb": "R01-A-LOD0-prototype.glb",
+      "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+      "bytes": 510536,
+      "triangles": 7564,
+      "mesh_nodes": 7,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_hardpacked_activity_ground"
+      ],
+      "removed_tile_mesh_count": 0,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 4.862803962168982e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement.",
+      "url": "./assets/r01/R01-A-LOD0-prototype.glb"
+    },
+    {
+      "variant": "A",
+      "lod": 1,
+      "source_sha256": "75b9871280197625db6034a64f788198364179cbb5934332192dcede5c63079a",
+      "glb": "R01-A-LOD1-prototype.glb",
+      "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+      "bytes": 92328,
+      "triangles": 1228,
+      "mesh_nodes": 7,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_hardpacked_activity_ground"
+      ],
+      "removed_tile_mesh_count": 396,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 4.862803962168982e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement.",
+      "url": "./assets/r01/R01-A-LOD1-prototype.glb"
+    },
+    {
+      "variant": "B",
+      "lod": 0,
+      "source_sha256": "65e4e69b74e4db6c4a761690a7752e34d799e9d43c65587e5b2e82fc3b4aeb45",
+      "glb": "R01-B-LOD0-prototype.glb",
+      "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+      "bytes": 626016,
+      "triangles": 9300,
+      "mesh_nodes": 7,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_loading_yard"
+      ],
+      "removed_tile_mesh_count": 0,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 4.862803962168982e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement.",
+      "url": "./assets/r01/R01-B-LOD0-prototype.glb"
+    },
+    {
+      "variant": "B",
+      "lod": 1,
+      "source_sha256": "65e4e69b74e4db6c4a761690a7752e34d799e9d43c65587e5b2e82fc3b4aeb45",
+      "glb": "R01-B-LOD1-prototype.glb",
+      "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+      "bytes": 112776,
+      "triangles": 1524,
+      "mesh_nodes": 7,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_loading_yard"
+      ],
+      "removed_tile_mesh_count": 486,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 4.862803962168982e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement.",
+      "url": "./assets/r01/R01-B-LOD1-prototype.glb"
+    },
+    {
+      "variant": "TC03",
+      "lod": 0,
+      "source_sha256": "8e9a787bc8351f443c3741ace9eafd144c226a4e5aa818328033f7a1f9882234",
+      "glb": "TC03-LOD0-prototype.glb",
+      "sha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+      "bytes": 981664,
+      "triangles": 14628,
+      "mesh_nodes": 10,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane"
+      ],
+      "removed_tile_mesh_count": 0,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 6.8770432335441e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement.",
+      "url": "./assets/d08/TC03-LOD0-prototype.glb"
+    },
+    {
+      "variant": "TC03",
+      "lod": 1,
+      "source_sha256": "8e9a787bc8351f443c3741ace9eafd144c226a4e5aa818328033f7a1f9882234",
+      "glb": "TC03-LOD1-prototype.glb",
+      "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+      "bytes": 164300,
+      "triangles": 2244,
+      "mesh_nodes": 10,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane"
+      ],
+      "removed_tile_mesh_count": 774,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 6.031566044839565e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement.",
+      "url": "./assets/d08/TC03-LOD1-prototype.glb"
+    },
+    {
+      "variant": "A2",
+      "lod": 0,
+      "source_sha256": "98257941229f0e87555423e1eb6b2ee66771aa2fc04bce7c575c4f314b9829aa",
+      "glb": "A2-LOD0-prototype.glb",
+      "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+      "bytes": 447064,
+      "triangles": 6600,
+      "mesh_nodes": 7,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_hardpacked_activity_ground"
+      ],
+      "removed_tile_mesh_count": 0,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 4.862803962168982e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement.",
+      "url": "./assets/c02v/A2-LOD0-prototype.glb"
+    },
+    {
+      "variant": "A2",
+      "lod": 1,
+      "source_sha256": "98257941229f0e87555423e1eb6b2ee66771aa2fc04bce7c575c4f314b9829aa",
+      "glb": "A2-LOD1-prototype.glb",
+      "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+      "bytes": 92220,
+      "triangles": 1224,
+      "mesh_nodes": 7,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_hardpacked_activity_ground"
+      ],
+      "removed_tile_mesh_count": 336,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 4.862803962168982e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement.",
+      "url": "./assets/c02v/A2-LOD1-prototype.glb"
+    },
+    {
+      "variant": "B2",
+      "lod": 0,
+      "source_sha256": "c07134612b5f2e226470a13a4f10a37c819305284b0f1699f406dbbeb0e19fe8",
+      "glb": "B2-LOD0-prototype.glb",
+      "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+      "bytes": 569280,
+      "triangles": 8444,
+      "mesh_nodes": 7,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_loading_yard"
+      ],
+      "removed_tile_mesh_count": 0,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 4.862803962168982e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement.",
+      "url": "./assets/c02v/B2-LOD0-prototype.glb"
+    },
+    {
+      "variant": "B2",
+      "lod": 1,
+      "source_sha256": "c07134612b5f2e226470a13a4f10a37c819305284b0f1699f406dbbeb0e19fe8",
+      "glb": "B2-LOD1-prototype.glb",
+      "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+      "bytes": 113064,
+      "triangles": 1532,
+      "mesh_nodes": 7,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_loading_yard"
+      ],
+      "removed_tile_mesh_count": 432,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 4.862803962168982e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement.",
+      "url": "./assets/c02v/B2-LOD1-prototype.glb"
+    },
+    {
+      "variant": "TC03-2",
+      "lod": 0,
+      "source_sha256": "b2ddd438cb575fc462cd2722c24aacd9cff5295f09fc04e317ebd2d1fe01fefd",
+      "glb": "TC03-2-LOD0-prototype.glb",
+      "sha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+      "bytes": 943548,
+      "triangles": 14048,
+      "mesh_nodes": 10,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_front_apron",
+        "designed_side_passage",
+        "designed_rear_work_ground"
+      ],
+      "removed_tile_mesh_count": 0,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 6.031566044839565e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement.",
+      "url": "./assets/c02v/TC03-2-LOD0-prototype.glb"
+    },
+    {
+      "variant": "TC03-2",
+      "lod": 1,
+      "source_sha256": "b2ddd438cb575fc462cd2722c24aacd9cff5295f09fc04e317ebd2d1fe01fefd",
+      "glb": "TC03-2-LOD1-prototype.glb",
+      "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+      "bytes": 164200,
+      "triangles": 2240,
+      "mesh_nodes": 10,
+      "removable_site_nodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_front_apron",
+        "designed_side_passage",
+        "designed_rear_work_ground"
+      ],
+      "removed_tile_mesh_count": 738,
+      "oriented_triangle_multiset_equal": true,
+      "max_vertex_distance_m": 6.031566044839565e-06,
+      "scope": "LOD0 exact geometry preservation across material merge and actual GLB reimport; LOD1 equality only against explicitly tile-filtered source. Not GPU draw-call or performance measurement.",
+      "url": "./assets/c02v/TC03-2-LOD1-prototype.glb"
+    }
+  ],
+  "lod_policy": {
+    "default": 0,
+    "lod0_quality_reduced": false,
+    "lod1": "experimental tile-removal only; opt-in; switching distance unmeasured"
+  },
+  "variants": [
+    {
+      "id": "A",
+      "runtimeAssetLODs": [
+        0,
+        1
+      ],
+      "validationScope": "asset-specific finite checks only; do not inherit R01 A/B contact tolerances"
+    },
+    {
+      "id": "B",
+      "runtimeAssetLODs": [
+        0,
+        1
+      ],
+      "validationScope": "asset-specific finite checks only; do not inherit R01 A/B contact tolerances"
+    },
+    {
+      "id": "TC03",
+      "runtimeAssetLODs": [
+        0,
+        1
+      ],
+      "validationScope": "asset-specific finite checks only; do not inherit R01 A/B contact tolerances"
+    },
+    {
+      "id": "A2",
+      "runtimeAssetLODs": [
+        0,
+        1
+      ],
+      "validationScope": "asset-specific finite checks only; do not inherit R01 A/B contact tolerances"
+    },
+    {
+      "id": "B2",
+      "runtimeAssetLODs": [
+        0,
+        1
+      ],
+      "validationScope": "asset-specific finite checks only; do not inherit R01 A/B contact tolerances"
+    },
+    {
+      "id": "TC03-2",
+      "runtimeAssetLODs": [
+        0,
+        1
+      ],
+      "validationScope": "asset-specific finite checks only; do not inherit R01 A/B contact tolerances"
+    }
+  ],
+  "sourceContracts": {
+    "R01_AB": {
+      "appliesTo": [
+        "A",
+        "B"
+      ],
+      "sourceFileSHA256": "ca713fbad55fb2068e439fab2e5c615691516bc7b5b2cebadbc81093fd00ccbf",
+      "inheritedLocalContract": {
+        "lot": {
+          "width": 18,
+          "depth": 24,
+          "ground_top_z": 0.2,
+          "neutral_lane_depth": 4,
+          "lane_is_city_road": false
+        },
+        "variants": [
+          {
+            "id": "A",
+            "name": "低层偏门生活院",
+            "config": "configs/prototypes.json"
+          },
+          {
+            "id": "B",
+            "name": "居住兼储藏作业院",
+            "config": "configs/B.json"
+          }
+        ],
+        "evidence": {
+          "regional_analogy": "Henan Eastern Han Zhangmao courtyard mingqi; not Luoyang city residential foundation",
+          "A_low_storey": "original simplification, not proven commoner standard",
+          "B_layout_and_workbench_bins": "design conjecture, not period furniture evidence"
+        },
+        "limits": [
+          "solid roof attic volume, not complete structural framing",
+          "regular simplified tile rhythm",
+          "hardpacked ground polygon edges remain artificial",
+          "no private well or inferred street network",
+          "seed retained without stochastic variation",
+          "only two default geometries actually validated; numeric endpoint gates are not full-domain geometry proof",
+          "no engine GPU or mobile performance measurements"
+        ],
+        "contact_tolerance_pairs": {
+          "A": 9,
+          "B": 16
+        },
+        "positive_boolean_intersections_above_tolerance": {
+          "A": 0,
+          "B": 0
+        },
+        "handoff": "use explicit engineering placement transform only after root decision; remove presentation lane/ground as needed, never fill unknown historic coordinates with zero"
+      }
+    },
+    "TC03_and_variants": {
+      "appliesTo": [
+        "TC03",
+        "A2",
+        "B2",
+        "TC03-2"
+      ],
+      "scope": "see per-asset hashes and reports in archived producer sources; no aggregate contact-zero assertion"
+    }
+  },
+  "limits": [
+    "Six fixed geometries, not a continuous parameter domain proof.",
+    "Local A/B lot size and contact results apply only to A/B source contracts.",
+    "GPU, physical mobile, complete indoor routes and continuous global collision unverified."
+  ],
+  "provenance": {
+    "priorIntegrationContractSHA256": "c98a6e35c3107cdc34705221638b955cc6f4a2c9fd0e49ff6e4ee48e69ede833",
+    "change": "metadata scope only; runtime_assets byte values unchanged",
+    "publicationAuthorizedByThisFile": false
+  }
+}

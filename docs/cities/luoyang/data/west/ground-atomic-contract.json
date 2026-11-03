@@ -1,0 +1,59 @@
+{
+  "version": "C-ground-stitch-v1",
+  "status": "research-candidate-with-quantified-numerical-risk",
+  "asset": "assets/network-ground-stitched.glb",
+  "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+  "triangles": 128342,
+  "atomic": true,
+  "allNodesRequired": [
+    "C_stitch_primary",
+    "C_stitch_west",
+    "C_stitch_patch"
+  ],
+  "extraTranslation": [
+    0,
+    0,
+    0
+  ],
+  "modeRestriction": [
+    "C-alt",
+    "6m",
+    "wall-A-direct"
+  ],
+  "replaceResources": [
+    "corridor-6m-market-link.glb",
+    "joined-route-terrain.glb",
+    "access-D08.glb"
+  ],
+  "keep": [
+    {
+      "path": "inputs/retained.glb",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc"
+    },
+    {
+      "path": "inputs/south.glb",
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e"
+    },
+    {
+      "path": "inputs/D08.glb",
+      "translation": [
+        580,
+        0,
+        -960
+      ],
+      "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a"
+    }
+  ],
+  "GPU": false,
+  "doNotClaim": "individual primitive closed / all overlaps zero / collision validated / historical ground"
+}

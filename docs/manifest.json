@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "studies": [
     {
       "id": "001",
@@ -310,7 +310,7 @@
       "pending": "GPU、动态闪烁、iPhone仍未验；同场景CPU渲染不等于实时验收，有限替换不证明任意几何可复用。",
       "designCase": "./fusions/F04/reports/review.html",
       "qaReport": "./fusions/F04/reports/qa.html",
-      "source": "./fusions/F04/source.zip",
+      "source": "./fusions/F04/source-download.html",
       "scene": "./fusions/F04/assets/aperture-atlas.blend",
       "designStatus": "按新设计要求待重做",
       "historicalExperiment": true
@@ -425,6 +425,34 @@
       "source": "studies/013/source-download.html",
       "designStatus": "模型介绍原型／非历史实证复原",
       "webStatus": "静态优先；按需模型观察与无GL备用分层，GPU/真机未验"
+    },
+    {
+      "id": "014",
+      "kind": "regular",
+      "name": "阙影·标界",
+      "english": "QUE / BOUNDARY",
+      "category": "东汉四川雅安石阙启发 · 单侧主子阙形体研究",
+      "path": "studies/014/",
+      "image": "studies/014/assets/A-front.png",
+      "alt": "阙影·标界A方案，单侧主子阙与道路，Blender CPU静态图，非精确复原",
+      "description": "主子相依，道路从旁。三案比较主子体比例、阶折基台与道路侧向关系；只研究单侧标界，不拼成城门。",
+      "qa": "三正常配置及四实建极值，共7个有限测试；接触容差对2/1/2另列，模型与导出几何身份分别检查。",
+      "pending": "低模形体研究非历史精确复原、非全参数证明。A/C形体相近，C主要改变路径；GPU、手机与游戏预算未验。",
+      "version": "014-form-v04-review",
+      "architecturalType": "单侧主子阙 · 道路标界",
+      "evidenceContext": {
+        "period": "东汉 · 建安十四年（209）主参考",
+        "region": "四川 · 雅安",
+        "level": "高颐西阙启发原创形体；不含东阙、墓室或城门，不是测绘复原",
+        "url": "studies/014/#evidence"
+      },
+      "webPrototype": "studies/014/",
+      "modelView": "studies/014/viewer.html",
+      "designCase": "studies/014/#revision",
+      "modelReflection": "studies/014/#revision",
+      "source": "studies/014/source-download.html",
+      "designStatus": "低模形体研究／非历史精确复原",
+      "webStatus": "静态图录与按需模型观察；GPU/真机未验"
     }
   ],
   "recipes": [
@@ -576,11 +604,29 @@
       "title": "看空间关系，不把历史混成一种风格",
       "ids": [
         "012",
-        "013"
+        "013",
+        "014"
       ],
-      "claim": "012看仓楼如何面向开放前场；013看围墙、内屋与院心如何形成内向关系。它们来自不同年代、地域与器物证据，是两种原创转译练习，不是同一历史原型的升级。",
-      "reuseBoundary": "可迁移的是参数配置、几何检查和证据分层的方法；仓楼生成器与围合宅院生成器不互称通用。各自只保证已测变体，不能把一件器物的尺度、彩绘或构件制度搬给另一件。"
+      "claim": "012看仓楼如何面向开放前场；013看围墙、内屋与院心形成内向关系；014看单侧主子阙如何标示边界。三件来自不同年代、地域与媒介证据，是原创转译练习，不是同一种历史建筑的升级或同处一地的复原。",
+      "reuseBoundary": "可迁移的是配置、几何检查和证据分层的方法，不是跨建筑通用生成器。各自只覆盖明确测试的变体；不能把陶明器、彩绘或石阙的尺度与构件制度相互搬用。"
     }
   ],
-  "featuredId": "SD02"
+  "featuredId": "014",
+  "ongoingProjects": [
+    {
+      "id": "city-luoyang",
+      "title": "洛阳 · 证据之城",
+      "path": "cities/luoyang/",
+      "evidence": "cities/luoyang/project-notes.html",
+      "description": "C02四簇36新院中的18院换入固定几何变体：9A2、7B2、2TC03-2；与18原型及既有C01八院组成当前44院。三类各有原＋新两个固定点，不是参数全集；原C02与C01独立历史回看，不累计88院。",
+      "boundary": "进行中：屋顶覆盖估计5.10%（原C02 5.31%），尚未达到12–18%设计档。B2路径仅到台阶前等待，不称可入储间。金线非历史里墙，留白非考古空地；36B示意/6null与古水未知保持。C设计非历史实址，GPU与真实手机未验，作品计数不增。",
+      "researchUpdates": {
+        "registry": "cities/luoyang/research/2026-11-03/research-status.json",
+        "entry": "cities/luoyang/research/2026-11-03/",
+        "label": "最新街区研究 · 已归档 / 发布候选·实访待核验 / 样板未验收",
+        "newCourtyards": 0,
+        "newWorks": 0
+      }
+    }
+  ]
 }

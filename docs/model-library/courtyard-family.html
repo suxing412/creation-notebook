@@ -1,0 +1,609 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>住宅院落模块组 · 造物手记</title><link rel="stylesheet" href="library.css"><body><header><a href="../">← 造物手记总览</a>　<a href="./">可复用模型库</a></header><main><p class="eyebrow">院落 / 研究候选 · 未完成设计验收</p><h1>住宅院落模块组</h1><p>六原型、十二LOD文件；44城中实例以相同逻辑ID引用，不是44份模型。</p><img class="hero" src="assets/courtyard.png" alt="静态CPU研究图，非实时3D"><p class="notice">坐标/原点：逐型保留原点：A/B/A2/B2为18×24地块中心地面；TC03/TC03-2为28×36地块西南角地面，不能统一当中心。12文件本来局部化，本版不平移/不加根/不改原字节。glTF +X东/+Y高/-Z北。</p><h2>来源版本</h2><p>C02V六型原字节 + six-presets-contract-v1 + far44 v0</p><h2>城市实际引用</h2><p>已引用：C01/C02共44院；可选远景LOD1，南14近层互斥。</p><h2>可复用范围与未解决项</h2><p>逐型门锚点与有效44实例核对，&gt;1mm冲突0；不是门扇扫掠/碰撞导航验收。屋顶AABB不是精确覆盖，墙AABB不是墙线/开口；各removableSiteNodes独立保留。规则socket/导航等未知仍null，未实现WFC。六固定型有限验证不证明参数全集/GPU/承载/历史住宅复原。</p><h2>有限变体与版本</h2><details><summary>展开逐型参数、边界与限制</summary><pre>[
+  {
+    &quot;name&quot;: &quot;A&quot;,
+    &quot;origin&quot;: &quot;lot center base z0&quot;,
+    &quot;lotBoundsBlenderXY&quot;: [
+      -9.0,
+      -12.0,
+      9.0,
+      12.0
+    ],
+    &quot;buildingBounds&quot;: {
+      &quot;all&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -9.000001442103981,
+          0.0,
+          -12.000003053578297
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          9.000003053578553,
+          4.489999771118164,
+          16.0
+        ],
+        &quot;triangles&quot;: 1228
+      },
+      &quot;building&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -9.000001442103981,
+          0.19999992847442627,
+          -12.000003053578297
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          9.000003053578553,
+          4.489999771118164,
+          12.15000062930713
+        ],
+        &quot;triangles&quot;: 1156
+      },
+      &quot;roof&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -9.000001442103981,
+          2.4000000953674316,
+          -12.000003053578297
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          9.000003053578553,
+          4.489999771118164,
+          12.15000062930713
+        ],
+        &quot;triangles&quot;: 100
+      },
+      &quot;wallMaterialGeometry&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -8.999999806284904,
+          0.19999992847442627,
+          -12.0
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          8.999999046325684,
+          3.2200000286102295,
+          12.0
+        ],
+        &quot;triangles&quot;: 624
+      }
+    },
+    &quot;entrance&quot;: {
+      &quot;outer_gate_wall_anchor&quot;: [
+        4.8,
+        -12,
+        0.2
+      ],
+      &quot;neutral_lane_edge&quot;: [
+        4.8,
+        -16,
+        0.2
+      ],
+      &quot;outward_direction&quot;: [
+        0,
+        -1
+      ],
+      &quot;gate_center&quot;: [
+        4.8,
+        -10.6,
+        0.2
+      ],
+      &quot;gate_width_between_open_leaves&quot;: 2.13
+    },
+    &quot;removableSiteNodes&quot;: [
+      &quot;site_lot&quot;,
+      &quot;site_neutral_lane&quot;,
+      &quot;designed_hardpacked_activity_ground&quot;
+    ],
+    &quot;rulesInterface&quot;: {
+      &quot;wallBoundsMeaning&quot;: &quot;AABB of merged wall material only; not wall graph or openings&quot;,
+      &quot;edgeSockets&quot;: null,
+      &quot;doorSweptVolume&quot;: null,
+      &quot;continuousNavigation&quot;: null,
+      &quot;globalConnectivity&quot;: null,
+      &quot;WFCImplemented&quot;: false
+    },
+    &quot;LODs&quot;: [
+      0,
+      1
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;B&quot;,
+    &quot;origin&quot;: &quot;lot center base z0&quot;,
+    &quot;lotBoundsBlenderXY&quot;: [
+      -9.0,
+      -12.0,
+      9.0,
+      12.0
+    ],
+    &quot;buildingBounds&quot;: {
+      &quot;all&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -9.000001442103981,
+          0.0,
+          -12.000003053578297
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          9.000003053578553,
+          5.519999980926514,
+          16.0
+        ],
+        &quot;triangles&quot;: 1524
+      },
+      &quot;building&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -9.000001442103981,
+          0.19999992847442627,
+          -12.000003053578297
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          9.000003053578553,
+          5.519999980926514,
+          12.15000191915233
+        ],
+        &quot;triangles&quot;: 1440
+      },
+      &quot;roof&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -9.000001442103981,
+          2.4000000953674316,
+          -12.000003053578297
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          9.000003053578553,
+          5.519999980926514,
+          12.15000191915233
+        ],
+        &quot;triangles&quot;: 120
+      },
+      &quot;wallMaterialGeometry&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -8.999999806284904,
+          0.19999992847442627,
+          -12.0
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          8.999999046325684,
+          4.25,
+          12.0
+        ],
+        &quot;triangles&quot;: 648
+      }
+    },
+    &quot;entrance&quot;: {
+      &quot;outer_gate_wall_anchor&quot;: [
+        -4.8,
+        -12,
+        0.2
+      ],
+      &quot;neutral_lane_edge&quot;: [
+        -4.8,
+        -16,
+        0.2
+      ],
+      &quot;outward_direction&quot;: [
+        0,
+        -1
+      ],
+      &quot;gate_between_open_leaves&quot;: 2.13
+    },
+    &quot;removableSiteNodes&quot;: [
+      &quot;site_lot&quot;,
+      &quot;site_neutral_lane&quot;,
+      &quot;designed_loading_yard&quot;
+    ],
+    &quot;rulesInterface&quot;: {
+      &quot;wallBoundsMeaning&quot;: &quot;AABB of merged wall material only; not wall graph or openings&quot;,
+      &quot;edgeSockets&quot;: null,
+      &quot;doorSweptVolume&quot;: null,
+      &quot;continuousNavigation&quot;: null,
+      &quot;globalConnectivity&quot;: null,
+      &quot;WFCImplemented&quot;: false
+    },
+    &quot;LODs&quot;: [
+      0,
+      1
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;TC03&quot;,
+    &quot;origin&quot;: &quot;southwest lot corner base z0&quot;,
+    &quot;lotBoundsBlenderXY&quot;: [
+      0,
+      0,
+      28,
+      36
+    ],
+    &quot;buildingBounds&quot;: {
+      &quot;all&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -2.452049130852174e-06,
+          0.0,
+          -36.000006079738256
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          28.00000614691794,
+          4.539999961853027,
+          4.0
+        ],
+        &quot;triangles&quot;: 2244
+      },
+      &quot;building&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -2.452049130852174e-06,
+          0.19999992847442627,
+          -36.000006079738256
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          28.00000614691794,
+          4.539999961853027,
+          4.0
+        ],
+        &quot;triangles&quot;: 2220
+      },
+      &quot;roof&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -2.452049130852174e-06,
+          2.0,
+          -36.000006079738256
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          28.00000614691794,
+          4.539999961853027,
+          0.15000113678544125
+        ],
+        &quot;triangles&quot;: 164
+      },
+      &quot;wallMaterialGeometry&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          0.0,
+          0.19999992847442627,
+          -36.0
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          28.0,
+          3.2699999809265137,
+          0.0
+        ],
+        &quot;triangles&quot;: 1116
+      }
+    },
+    &quot;entrance&quot;: {
+      &quot;outer_gate_wall_anchor&quot;: [
+        9,
+        0,
+        0.2
+      ],
+      &quot;neutral_lane_edge&quot;: [
+        9,
+        -4,
+        0.2
+      ],
+      &quot;outward_direction&quot;: [
+        0,
+        -1
+      ],
+      &quot;inner_gate_anchor&quot;: [
+        24.5,
+        23.36,
+        0.2
+      ]
+    },
+    &quot;removableSiteNodes&quot;: [
+      &quot;site_lot&quot;,
+      &quot;site_neutral_lane&quot;
+    ],
+    &quot;rulesInterface&quot;: {
+      &quot;wallBoundsMeaning&quot;: &quot;AABB of merged wall material only; not wall graph or openings&quot;,
+      &quot;edgeSockets&quot;: null,
+      &quot;doorSweptVolume&quot;: null,
+      &quot;continuousNavigation&quot;: null,
+      &quot;globalConnectivity&quot;: null,
+      &quot;WFCImplemented&quot;: false
+    },
+    &quot;LODs&quot;: [
+      0,
+      1
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;A2&quot;,
+    &quot;origin&quot;: &quot;lot center base z0&quot;,
+    &quot;lotBoundsBlenderXY&quot;: [
+      -9.0,
+      -12.0,
+      9.0,
+      12.0
+    ],
+    &quot;buildingBounds&quot;: {
+      &quot;all&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -9.000001442103981,
+          0.0,
+          -12.000003053578297
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          9.000003053578553,
+          4.489999771118164,
+          16.0
+        ],
+        &quot;triangles&quot;: 1224
+      },
+      &quot;building&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -9.000001442103981,
+          0.19999992847442627,
+          -12.000003053578297
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          9.000003053578553,
+          4.489999771118164,
+          12.150001744485792
+        ],
+        &quot;triangles&quot;: 1156
+      },
+      &quot;roof&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -9.000001442103981,
+          2.4000000953674316,
+          -12.000003053578297
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          9.000003053578553,
+          4.489999771118164,
+          12.150001744485792
+        ],
+        &quot;triangles&quot;: 100
+      },
+      &quot;wallMaterialGeometry&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -8.999999806284904,
+          0.19999992847442627,
+          -12.0
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          8.999999046325684,
+          3.2200000286102295,
+          12.0
+        ],
+        &quot;triangles&quot;: 624
+      }
+    },
+    &quot;entrance&quot;: {
+      &quot;outer_gate_wall_anchor&quot;: [
+        -3.5,
+        -12,
+        0.2
+      ],
+      &quot;neutral_lane_edge&quot;: [
+        -3.5,
+        -16,
+        0.2
+      ],
+      &quot;outward_direction&quot;: [
+        0,
+        -1
+      ],
+      &quot;gate_center&quot;: [
+        -3.5,
+        -10.6,
+        0.2
+      ],
+      &quot;gate_width_between_open_leaves&quot;: 2.13
+    },
+    &quot;removableSiteNodes&quot;: [
+      &quot;site_lot&quot;,
+      &quot;site_neutral_lane&quot;,
+      &quot;designed_hardpacked_activity_ground&quot;
+    ],
+    &quot;rulesInterface&quot;: {
+      &quot;wallBoundsMeaning&quot;: &quot;AABB of merged wall material only; not wall graph or openings&quot;,
+      &quot;edgeSockets&quot;: null,
+      &quot;doorSweptVolume&quot;: null,
+      &quot;continuousNavigation&quot;: null,
+      &quot;globalConnectivity&quot;: null,
+      &quot;WFCImplemented&quot;: false
+    },
+    &quot;LODs&quot;: [
+      0,
+      1
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;B2&quot;,
+    &quot;origin&quot;: &quot;lot center base z0&quot;,
+    &quot;lotBoundsBlenderXY&quot;: [
+      -9.0,
+      -12.0,
+      9.0,
+      12.0
+    ],
+    &quot;buildingBounds&quot;: {
+      &quot;all&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -9.000001442103981,
+          0.0,
+          -12.000003053578297
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          9.000003053578553,
+          5.269999980926514,
+          16.0
+        ],
+        &quot;triangles&quot;: 1532
+      },
+      &quot;building&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -9.000001442103981,
+          0.19999992847442627,
+          -12.000003053578297
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          9.000003053578553,
+          5.269999980926514,
+          12.15000191915233
+        ],
+        &quot;triangles&quot;: 1440
+      },
+      &quot;roof&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -9.000001442103981,
+          2.4000000953674316,
+          -12.000003053578297
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          9.000003053578553,
+          5.269999980926514,
+          12.15000191915233
+        ],
+        &quot;triangles&quot;: 120
+      },
+      &quot;wallMaterialGeometry&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -8.999999806284904,
+          0.19999992847442627,
+          -12.0
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          8.999999046325684,
+          4.25,
+          12.0
+        ],
+        &quot;triangles&quot;: 648
+      }
+    },
+    &quot;entrance&quot;: {
+      &quot;outer_gate_wall_anchor&quot;: [
+        -4.8,
+        -12,
+        0.2
+      ],
+      &quot;neutral_lane_edge&quot;: [
+        -4.8,
+        -16,
+        0.2
+      ],
+      &quot;outward_direction&quot;: [
+        0,
+        -1
+      ],
+      &quot;gate_between_open_leaves&quot;: 2.13
+    },
+    &quot;removableSiteNodes&quot;: [
+      &quot;site_lot&quot;,
+      &quot;site_neutral_lane&quot;,
+      &quot;designed_loading_yard&quot;
+    ],
+    &quot;rulesInterface&quot;: {
+      &quot;wallBoundsMeaning&quot;: &quot;AABB of merged wall material only; not wall graph or openings&quot;,
+      &quot;edgeSockets&quot;: null,
+      &quot;doorSweptVolume&quot;: null,
+      &quot;continuousNavigation&quot;: null,
+      &quot;globalConnectivity&quot;: null,
+      &quot;WFCImplemented&quot;: false
+    },
+    &quot;LODs&quot;: [
+      0,
+      1
+    ]
+  },
+  {
+    &quot;name&quot;: &quot;TC03-2&quot;,
+    &quot;origin&quot;: &quot;southwest lot corner base z0&quot;,
+    &quot;lotBoundsBlenderXY&quot;: [
+      0,
+      0,
+      28,
+      36
+    ],
+    &quot;buildingBounds&quot;: {
+      &quot;all&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -2.452049130852174e-06,
+          0.0,
+          -36.000006079738256
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          28.00000614691794,
+          4.539999961853027,
+          4.0
+        ],
+        &quot;triangles&quot;: 2240
+      },
+      &quot;building&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -2.452049130852174e-06,
+          0.19999992847442627,
+          -36.000006079738256
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          28.00000614691794,
+          4.539999961853027,
+          0.15000113678544125
+        ],
+        &quot;triangles&quot;: 2108
+      },
+      &quot;roof&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          -2.452049130852174e-06,
+          2.0,
+          -36.000006079738256
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          28.00000614691794,
+          4.539999961853027,
+          0.15000113678544125
+        ],
+        &quot;triangles&quot;: 164
+      },
+      &quot;wallMaterialGeometry&quot;: {
+        &quot;boundsMinGLTF&quot;: [
+          0.0,
+          0.19999992847442627,
+          -36.0
+        ],
+        &quot;boundsMaxGLTF&quot;: [
+          28.0,
+          3.2699999809265137,
+          0.0
+        ],
+        &quot;triangles&quot;: 1116
+      }
+    },
+    &quot;entrance&quot;: {
+      &quot;outer_gate_wall_anchor&quot;: [
+        9,
+        0,
+        0.2
+      ],
+      &quot;neutral_lane_edge&quot;: [
+        9,
+        -4,
+        0.2
+      ],
+      &quot;outward_direction&quot;: [
+        0,
+        -1
+      ],
+      &quot;inner_gate_anchor&quot;: [
+        24,
+        21.86,
+        0.2
+      ]
+    },
+    &quot;removableSiteNodes&quot;: [
+      &quot;site_lot&quot;,
+      &quot;site_neutral_lane&quot;,
+      &quot;designed_front_apron&quot;,
+      &quot;designed_side_passage&quot;,
+      &quot;designed_rear_work_ground&quot;
+    ],
+    &quot;rulesInterface&quot;: {
+      &quot;wallBoundsMeaning&quot;: &quot;AABB of merged wall material only; not wall graph or openings&quot;,
+      &quot;edgeSockets&quot;: null,
+      &quot;doorSweptVolume&quot;: null,
+      &quot;continuousNavigation&quot;: null,
+      &quot;globalConnectivity&quot;: null,
+      &quot;WFCImplemented&quot;: false
+    },
+    &quot;LODs&quot;: [
+      0,
+      1
+    ]
+  }
+]</pre></details><p><a href="contracts.json">读取精确复用契约（按本条ID检索）</a></p><h2>实际资产文件</h2><p>SHA可核验；独立GLB不自动执行城市补丁。完整原生源另有私有归档，本页不暴露内部ID或临时下载地址。</p><ul><li><a href="../cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb">A · LOD0</a> · 510536B <details><summary>SHA256</summary><code>93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2</code></details></li><li><a href="../cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb">A · LOD1</a> · 92328B <details><summary>SHA256</summary><code>0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445</code></details></li><li><a href="../cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb">B · LOD0</a> · 626016B <details><summary>SHA256</summary><code>a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed</code></details></li><li><a href="../cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb">B · LOD1</a> · 112776B <details><summary>SHA256</summary><code>25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6</code></details></li><li><a href="../cities/luoyang/assets/d08/TC03-LOD0-prototype.glb">TC03 · LOD0</a> · 981664B <details><summary>SHA256</summary><code>367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148</code></details></li><li><a href="../cities/luoyang/assets/d08/TC03-LOD1-prototype.glb">TC03 · LOD1</a> · 164300B <details><summary>SHA256</summary><code>8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa</code></details></li><li><a href="../cities/luoyang/assets/c02v/A2-LOD0-prototype.glb">A2 · LOD0</a> · 447064B <details><summary>SHA256</summary><code>19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7</code></details></li><li><a href="../cities/luoyang/assets/c02v/A2-LOD1-prototype.glb">A2 · LOD1</a> · 92220B <details><summary>SHA256</summary><code>277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d</code></details></li><li><a href="../cities/luoyang/assets/c02v/B2-LOD0-prototype.glb">B2 · LOD0</a> · 569280B <details><summary>SHA256</summary><code>d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7</code></details></li><li><a href="../cities/luoyang/assets/c02v/B2-LOD1-prototype.glb">B2 · LOD1</a> · 113064B <details><summary>SHA256</summary><code>8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db</code></details></li><li><a href="../cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb">TC03-2 · LOD0</a> · 943548B <details><summary>SHA256</summary><code>bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152</code></details></li><li><a href="../cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb">TC03-2 · LOD1</a> · 164200B <details><summary>SHA256</summary><code>d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1</code></details></li></ul><h2>六型原点与实例纠正</h2><p>早期概括“统一地块中心”不适用于TC两型；此次保留原GLB，仅明确逐型契约，城市门位不改。</p><p><a href="assets/courtyard-six-contract.json">逐型入口/包围/规则未知项</a> · <a href="assets/courtyard-placements-inverses.json">原44/C-alt44互斥变换及逆矩阵</a> · <a href="assets/courtyard-blender-import-comparison.json">12文件Blender实际读回</a></p><div class="grid"><figure><img class="hero" src="assets/courtyard-A-LOD1.png" alt="A静态CPU LOD1预览"><figcaption>A · LOD1 CPU，非LOD0近景/GPU</figcaption></figure><figure><img class="hero" src="assets/courtyard-B-LOD1.png" alt="B静态CPU LOD1预览"><figcaption>B · LOD1 CPU，非LOD0近景/GPU</figcaption></figure><figure><img class="hero" src="assets/courtyard-A2-LOD1.png" alt="A2静态CPU LOD1预览"><figcaption>A2 · LOD1 CPU，非LOD0近景/GPU</figcaption></figure><figure><img class="hero" src="assets/courtyard-B2-LOD1.png" alt="B2静态CPU LOD1预览"><figcaption>B2 · LOD1 CPU，非LOD0近景/GPU</figcaption></figure><figure><img class="hero" src="assets/courtyard-TC03-LOD1.png" alt="TC03静态CPU LOD1预览"><figcaption>TC03 · LOD1 CPU，非LOD0近景/GPU</figcaption></figure><figure><img class="hero" src="assets/courtyard-TC03-2-LOD1.png" alt="TC03-2静态CPU LOD1预览"><figcaption>TC03-2 · LOD1 CPU，非LOD0近景/GPU</figcaption></figure></div><h2>按需单文件3D检查</h2><p>本检查器不等于城市组装；N2和B路是补丁，不自动加到基础组。禁用GL时仍可读CPU图和资料。</p><label>GLB文件 <select id="asset-select"><option value="../cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb">A · LOD0</option><option value="../cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb">A · LOD1</option><option value="../cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb">B · LOD0</option><option value="../cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb">B · LOD1</option><option value="../cities/luoyang/assets/d08/TC03-LOD0-prototype.glb">TC03 · LOD0</option><option value="../cities/luoyang/assets/d08/TC03-LOD1-prototype.glb">TC03 · LOD1</option><option value="../cities/luoyang/assets/c02v/A2-LOD0-prototype.glb">A2 · LOD0</option><option value="../cities/luoyang/assets/c02v/A2-LOD1-prototype.glb">A2 · LOD1</option><option value="../cities/luoyang/assets/c02v/B2-LOD0-prototype.glb">B2 · LOD0</option><option value="../cities/luoyang/assets/c02v/B2-LOD1-prototype.glb">B2 · LOD1</option><option value="../cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb">TC03-2 · LOD0</option><option value="../cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb">TC03-2 · LOD1</option></select></label> <button id="load3d">加载所选GLB</button> <button id="close3d">关闭/释放</button><p id="viewer-status" role="status">尚未请求模型。</p><div class="viewer" id="viewer" hidden></div></main><footer>独立资产先入库，再由城市引用版本。研究候选不等于可直接投产；GPU/手机未验。</footer><script type="importmap">{"imports":{"three":"../fusions/F01/vendor/three.module.js"}}</script><script type="module" src="inspect.mjs"></script></body></html>

@@ -1,0 +1,195 @@
+{
+  "id": "LUOYANG-ROAD-CORRIDOR-PRECONSTRAINTS-01",
+  "checked_at": "2026-11-03",
+  "frozen_sha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+  "scope": "11道路联系+1两宫联系；制作风险分组，不改变原证据等级，不代表完整街网。",
+  "sources": [
+    {
+      "id": "gao2023_fig1",
+      "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/6434e64ce0ef9.pdf",
+      "location": "印刷页49图1；冻结描点沿用",
+      "status": "研究示意关系，非逐段道路发掘图。"
+    },
+    {
+      "id": "gao2023_ritual_route_text",
+      "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/6434e64ce0ef9.pdf",
+      "location": "印刷页48摘要及50南郊礼制段；本轮复读",
+      "summary": "作者论述南宫端门经平城门通南郊礼制建筑的礼仪交通关系；这是功能支持，不提供当前折线的实测中心线/路宽。"
+    },
+    {
+      "id": "xu2019_phase_separation",
+      "url": "https://www.cssn.cn/lsx/lsx_kgx/202210/t20221024_5552600.shtml",
+      "location": "原已核魏晋布局变化与中轴段",
+      "summary": "曹魏以后的单宫和南北中轴不可反推成180年全城公共主轴。"
+    }
+  ],
+  "classification_counts": {
+    "C_corridor_trial": 5,
+    "relation_only": 2,
+    "hold_palace_interface": 5
+  },
+  "rows": [
+    {
+      "feature_id": "road_northwest_gate_link_B",
+      "kind": "road_relation",
+      "classification": "hold_palace_interface",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "geometry_role": "B schematic topology, not surveyed centreline",
+      "excavated_alignment_verified": false,
+      "width_evidence": null,
+      "reason_and_action": "东端贴近旧北宫西界；不得用旧图端点造东汉宫门。接近宫域部分悬置，外围段需独立C片段声明才可试。"
+    },
+    {
+      "feature_id": "road_northeast_gate_link_B",
+      "kind": "road_relation",
+      "classification": "hold_palace_interface",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "geometry_role": "B schematic topology, not surveyed centreline",
+      "excavated_alignment_verified": false,
+      "width_evidence": null,
+      "reason_and_action": "西端触旧北宫东界，且新宫墙未配准。不能据线端造东掖门；已核东掖门魏晋始建结论不适用180年。"
+    },
+    {
+      "feature_id": "road_west_spine_B",
+      "kind": "road_relation",
+      "classification": "C_corridor_trial",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "geometry_role": "B schematic topology, not surveyed centreline",
+      "excavated_alignment_verified": false,
+      "width_evidence": null,
+      "reason_and_action": "西侧南北联系，接既有44院/广阳C路线。复用已有段，新增段须查院落占地；不能声称发掘街道。"
+    },
+    {
+      "feature_id": "road_west_mid_link_B",
+      "kind": "road_relation",
+      "classification": "C_corridor_trial",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "geometry_role": "B schematic topology, not surveyed centreline",
+      "excavated_alignment_verified": false,
+      "width_evidence": null,
+      "reason_and_action": "雍门至西干道的示意联系，先做门—路可读性；门点与墙切口差异保留C连接。"
+    },
+    {
+      "feature_id": "road_middle_cross_B",
+      "kind": "road_relation",
+      "classification": "C_corridor_trial",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "geometry_role": "B schematic topology, not surveyed centreline",
+      "excavated_alignment_verified": false,
+      "width_evidence": null,
+      "reason_and_action": "两宫间东西示意联系；遇两宫复道线交叉需局部暂停，不自定桥上桥下或平交。"
+    },
+    {
+      "feature_id": "road_west_south_link_B",
+      "kind": "road_relation",
+      "classification": "C_corridor_trial",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "geometry_role": "B schematic topology, not surveyed centreline",
+      "excavated_alignment_verified": false,
+      "width_evidence": null,
+      "reason_and_action": "广阳南支联系，复用既有C接续不重叠；不自动延长进入南宫。"
+    },
+    {
+      "feature_id": "road_central_south_spine_B",
+      "kind": "road_relation",
+      "classification": "hold_palace_interface",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "geometry_role": "B schematic topology, not surveyed centreline",
+      "excavated_alignment_verified": false,
+      "width_evidence": null,
+      "reason_and_action": "北端贴旧北宫南界、南段邻南宫西侧；不能等同北魏铜驼/阊阖门轴线，宫缘/入口未定位先悬置。"
+    },
+    {
+      "feature_id": "road_east_spine_B",
+      "kind": "road_relation",
+      "classification": "relation_only",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "geometry_role": "B schematic topology, not surveyed centreline",
+      "excavated_alignment_verified": false,
+      "width_evidence": null,
+      "reason_and_action": "该线跨城内外并邻南宫东侧与官署/南郊功能区；本轮先关系线，不将整段等宽刷成已确认大道。后续仅独立标识的避障C分段可试。"
+    },
+    {
+      "feature_id": "road_east_north_link_B",
+      "kind": "road_relation",
+      "classification": "hold_palace_interface",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "geometry_role": "B schematic topology, not surveyed centreline",
+      "excavated_alignment_verified": false,
+      "width_evidence": null,
+      "reason_and_action": "谷门向北宫东缘折行仅研究图关系；新东墙未配准，不能以旧边界验证安全。"
+    },
+    {
+      "feature_id": "road_east_south_link_B",
+      "kind": "road_relation",
+      "classification": "hold_palace_interface",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "geometry_role": "B schematic topology, not surveyed centreline",
+      "excavated_alignment_verified": false,
+      "width_evidence": null,
+      "reason_and_action": "西端与南宫候选东边缘位置不协调；不把关系线当可穿墙的公共街道，先悬置宫缘接头。"
+    },
+    {
+      "feature_id": "road_pingcheng_south_link_B",
+      "kind": "road_relation",
+      "classification": "C_corridor_trial",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "geometry_role": "B schematic topology, not surveyed centreline",
+      "excavated_alignment_verified": false,
+      "width_evidence": null,
+      "reason_and_action": "平城门向南的礼仪交通功能另有高文文本支持，但当前具体线位/长度/宽度仍B/C，禁止北延成贯穿南宫的公共主轴。"
+    },
+    {
+      "feature_id": "palaces_connector_B",
+      "kind": "palace_link",
+      "classification": "relation_only",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "geometry_role": "B schematic topology, not surveyed centreline",
+      "excavated_alignment_verified": false,
+      "width_evidence": null,
+      "reason_and_action": "两宫联系不是普通公共路。冻结名称两宫复道仅继承研究示意；本轮原PDF文本检索未读得复道细节，不能造高架桥、桥墩、坡道或让行公共交通。"
+    }
+  ],
+  "C_corridor_rules": [
+    "全部宽度、路肩、坡度、排水与铺面细节均C；不得把显示包络75m当道路宽度。",
+    "C允许意味着有条件试验，不等于路线已史实确认；父级B线不改，派生段单列ID/范围/宽度。",
+    "遇44院/现有C模型占地、宫域、门点线偏差或两宫连线交叉先切断并标待决，不能删院/改B/穿宫求连通。",
+    "旧宫域只能用于提示碰撞风险，不能作为无碰撞即符合新考古的证明；新北宫A未配准仍是文字约束。",
+    "两宫间联系线与中部东西路的相交只说明二维示意交会；不推出地面平交或高架跨越。",
+    "可继续制作已允许的无冲突段；宫缘悬置不阻塞西侧整体结构。",
+    "采用土路视觉可作为C统一语言；不默认三股御道分隔墙铺遍每条道路。",
+    "全城视角应显示C已建走廊/关系线/待决接头三类状态，不能将中断自动隐藏或宣称全网连通。"
+  ],
+  "acceptance": [
+    "42原feature及hash保持",
+    "派生C路段清单对应原feature并记录裁切原因",
+    "所有道路宽度标C、没有历史米值假精度",
+    "既有路线去重与院落局部碰撞检查",
+    "宫间联系未被实体化为公共大道或擅造桥",
+    "页面和无GL模式同样说明非完整街网"
+  ]
+}

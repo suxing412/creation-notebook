@@ -1,0 +1,252 @@
+{
+  "id": "LUOYANG-C-CITY-WALL-CONSTRAINTS-01",
+  "checked_at": "2026-11-03",
+  "status": "制作前约束；非建模验收",
+  "frozen_baseline": {
+    "sha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+    "features": 42,
+    "modify": false
+  },
+  "sources": [
+    {
+      "id": "xu2019_wall_technology",
+      "url": "https://www.cssn.cn/lsx/lsx_kgx/202210/t20221024_5552600.shtml",
+      "title": "徐龙国《汉魏两晋南北朝都城模式及其演变》，中原文物2019(1)",
+      "read": "2026-11-03复读机构转载全文；墙体段159–163及洛阳段121。",
+      "summary": "综述支持北方汉城夯土材料与版筑语言；汉长安高宽例不能作洛阳尺寸。洛阳马面属于魏晋以后，本版不采用。",
+      "limits": "综述非本墙段发掘剖面；不能据此确定洛阳各侧墙高、厚、坡或墙顶构造。"
+    },
+    {
+      "id": "gao2023_fig1",
+      "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/6434e64ce0ef9.pdf",
+      "title": "高崇文2023《东汉都城洛阳礼制文化研究》图1",
+      "read": "沿用已核图1及冻结描点，不新描图。",
+      "summary": "B类城市关系示意，南垣为推定闭合；十二门点和轮廓并非测绘配准数据。",
+      "limits": "显示包络75m不是墙宽、门宽或历史误差置信区间。"
+    }
+  ],
+  "adopt": [
+    "土质连续墙体，轻微层理仅作C材质表现，不给夯层厚度史实值。",
+    "不采用全墙包砖、魏晋马面、瓮城及明清垛楼；不做当代遗址残垣外观冒称180年常态。",
+    "断面可采用底宽顶窄C几何，以满足读形与接续；高、底宽、顶宽、收分坡率全部单列设计参数。",
+    "本轮不追加护城河/壕沟；综述一般论不能推出冻结城垣四周具体水工。",
+    "广阳现有候选不重建；其他11门只表示通行开口/门位未建，不复制广阳上部。"
+  ],
+  "C_only_parameters": [
+    "wall_height",
+    "base_width",
+    "top_width",
+    "wall_offset_from_B",
+    "corner_join",
+    "layer_texture_scale",
+    "gate_gap_width",
+    "gate_gap_height",
+    "gate_projection_rule",
+    "ground_elevation"
+  ],
+  "geometry_contract": [
+    "B城垣、南闭合线、12门点均不修改；C体量保留source_feature_id和设计版本。",
+    "最近线段投影只是C候选；保存原B点、投影点、线段、差值，不能将投影反写B或标修正门址。",
+    "南垣推定段显示与其他段不同说明，不以封闭实体暗示完整考古证实。",
+    "B转折是示意折线，不保证真实墙角；C圆接/斜接只记录为网格处理。",
+    "十二门缺口不得被连续墙封住；广阳与既有短墙去重必须在C层进行，保留原资产映射。",
+    "检查转角自交、共面重复、底座接触、门位通行和远近层级；不据CPU验证声称GPU验收。"
+  ],
+  "projection_method": "二维欧氏最近点逐段计算，t裁剪[0,1]；单位为冻结schematic_m，非测绘误差。",
+  "gate_projection_diagnostics": [
+    {
+      "feature_id": "gate_xia_B",
+      "name": "夏门",
+      "B_point": [
+        734.694,
+        3571.429
+      ],
+      "nearest_segment_zero_based": 0,
+      "C_projection_only": [
+        734.488869,
+        3566.136697
+      ],
+      "B_point_to_polyline_distance_schematic_m": 5.296277,
+      "segment_fraction": 0.503720104,
+      "purpose": "模型切口候选计算，非历史门址纠正；B点不移动"
+    },
+    {
+      "feature_id": "gate_gu_B",
+      "name": "谷门",
+      "B_point": [
+        1693.878,
+        3897.959
+      ],
+      "nearest_segment_zero_based": 2,
+      "C_projection_only": [
+        1693.223055,
+        3894.530178
+      ],
+      "B_point_to_polyline_distance_schematic_m": 3.490812,
+      "segment_fraction": 0.313886099,
+      "purpose": "模型切口候选计算，非历史门址纠正；B点不移动"
+    },
+    {
+      "feature_id": "gate_shangxi_B",
+      "name": "上西门",
+      "B_point": [
+        -20.408,
+        2632.653
+      ],
+      "nearest_segment_zero_based": 10,
+      "C_projection_only": [
+        -30.373352,
+        2632.537125
+      ],
+      "B_point_to_polyline_distance_schematic_m": 9.966026,
+      "segment_fraction": 0.992204109,
+      "purpose": "模型切口候选计算，非历史门址纠正；B点不移动"
+    },
+    {
+      "feature_id": "gate_yong_B",
+      "name": "雍门",
+      "B_point": [
+        0.0,
+        1397.959
+      ],
+      "nearest_segment_zero_based": 10,
+      "C_projection_only": [
+        -16.015742,
+        1397.772772
+      ],
+      "B_point_to_polyline_distance_schematic_m": 16.016824,
+      "segment_fraction": 0.523185081,
+      "purpose": "模型切口候选计算，非历史门址纠正；B点不移动"
+    },
+    {
+      "feature_id": "gate_guangyang_B",
+      "name": "广阳门",
+      "B_point": [
+        0.0,
+        489.796
+      ],
+      "nearest_segment_zero_based": 10,
+      "C_projection_only": [
+        -5.457219,
+        489.732544
+      ],
+      "B_point_to_polyline_distance_schematic_m": 5.457588,
+      "segment_fraction": 0.178270568,
+      "purpose": "模型切口候选计算，非历史门址纠正；B点不移动"
+    },
+    {
+      "feature_id": "gate_shangdong_B",
+      "name": "上东门",
+      "B_point": [
+        2479.592,
+        2591.837
+      ],
+      "nearest_segment_zero_based": 6,
+      "C_projection_only": [
+        2481.673266,
+        2596.259661
+      ],
+      "B_point_to_polyline_distance_schematic_m": 4.887903,
+      "segment_fraction": 0.070821102,
+      "purpose": "模型切口候选计算，非历史门址纠正；B点不移动"
+    },
+    {
+      "feature_id": "gate_zhongdong_B",
+      "name": "中东门",
+      "B_point": [
+        2571.429,
+        1806.122
+      ],
+      "nearest_segment_zero_based": 7,
+      "C_projection_only": [
+        2579.996535,
+        1805.368812
+      ],
+      "B_point_to_polyline_distance_schematic_m": 8.600578,
+      "segment_fraction": 0.385021072,
+      "purpose": "模型切口候选计算，非历史门址纠正；B点不移动"
+    },
+    {
+      "feature_id": "gate_xuan_B",
+      "name": "旋门",
+      "B_point": [
+        2469.388,
+        459.184
+      ],
+      "nearest_segment_zero_based": 8,
+      "C_projection_only": [
+        2473.586029,
+        459.060529
+      ],
+      "B_point_to_polyline_distance_schematic_m": 4.199845,
+      "segment_fraction": 0.294294912,
+      "purpose": "模型切口候选计算，非历史门址纠正；B点不移动"
+    },
+    {
+      "feature_id": "gate_jin_B",
+      "name": "津门",
+      "B_point": [
+        387.755,
+        0.0
+      ],
+      "nearest_segment_zero_based": 9,
+      "C_projection_only": [
+        388.011389,
+        12.358037
+      ],
+      "B_point_to_polyline_distance_schematic_m": 12.360696,
+      "segment_fraction": 0.842219456,
+      "purpose": "模型切口候选计算，非历史门址纠正；B点不移动"
+    },
+    {
+      "feature_id": "gate_xiaoyuan_B",
+      "name": "小苑门",
+      "B_point": [
+        897.959,
+        -10.204
+      ],
+      "nearest_segment_zero_based": 9,
+      "C_projection_only": [
+        898.207486,
+        1.773141
+      ],
+      "B_point_to_polyline_distance_schematic_m": 11.979719,
+      "segment_fraction": 0.634753851,
+      "purpose": "模型切口候选计算，非历史门址纠正；B点不移动"
+    },
+    {
+      "feature_id": "gate_pingcheng_B",
+      "name": "平城门",
+      "B_point": [
+        1622.449,
+        -30.612
+      ],
+      "nearest_segment_zero_based": 9,
+      "C_projection_only": [
+        1622.808998,
+        -13.259963
+      ],
+      "B_point_to_polyline_distance_schematic_m": 17.355771,
+      "segment_fraction": 0.340102653,
+      "purpose": "模型切口候选计算，非历史门址纠正；B点不移动"
+    },
+    {
+      "feature_id": "gate_kaiyang_B",
+      "name": "开阳门",
+      "B_point": [
+        2010.204,
+        -30.612
+      ],
+      "nearest_segment_zero_based": 9,
+      "C_projection_only": [
+        2010.39717,
+        -21.301146
+      ],
+      "B_point_to_polyline_distance_schematic_m": 9.312858,
+      "segment_fraction": 0.182494206,
+      "purpose": "模型切口候选计算，非历史门址纠正；B点不移动"
+    }
+  ],
+  "unread_original_report": "1998《汉魏洛阳故城城垣试掘》原报告未读；本轮未新增段别断面证据。",
+  "classification": "B提供关系轮廓；C提供可见体量；不改变42证据数或B/A等级。"
+}

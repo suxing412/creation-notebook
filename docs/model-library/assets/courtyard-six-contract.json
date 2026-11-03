@@ -1,0 +1,2066 @@
+{
+  "id": "courtyard-six-presets-contract-v1",
+  "logicalAssetGroups": 1,
+  "presets": 6,
+  "GLBCount": 12,
+  "newGeometry": false,
+  "cityEdited": false,
+  "originPolicy": "preserve per-type native local origins, do not normalize TC03 corner to R01 center",
+  "assets": [
+    {
+      "variant": "A",
+      "lod": 0,
+      "file": "R01-A-LOD0-prototype.glb",
+      "sourceSHA256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+      "bytes": 510536,
+      "binaryChunkSHA256": "a939099ca16fab998cab235066cf2d5792cdc232a41a9016b81935f83803f5f9",
+      "triangles": 7564,
+      "nodes": 7,
+      "images": 0,
+      "attributesPresent": [
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ],
+      "assetByteUnchanged": true,
+      "origin": "lot center base z0",
+      "units": "design_m",
+      "axes": "+X east,+Y up,-Z north",
+      "isAlreadyLocal": true,
+      "noRecenterOrRootInserted": true,
+      "lotBoundsBlenderXY": [
+        -9.0,
+        -12.0,
+        9.0,
+        12.0
+      ],
+      "producerPreset": {
+        "id": "A",
+        "name": "低层偏门生活院",
+        "lot_width": 18,
+        "lot_depth": 24,
+        "wall_thickness": 0.35,
+        "gate_x": 4.8,
+        "main_width": 9.6,
+        "main_depth": 4.8,
+        "side_width": 7.2,
+        "side_depth": 3.6,
+        "eave": 0.5,
+        "seed": 18017,
+        "status": "A whitebox and local-detail review",
+        "main_x": -1.2,
+        "main_y": 7.3,
+        "side_x": -5.9,
+        "side_y": -0.3,
+        "layout": "A-original"
+      },
+      "entrance": {
+        "outer_gate_wall_anchor": [
+          4.8,
+          -12,
+          0.2
+        ],
+        "neutral_lane_edge": [
+          4.8,
+          -16,
+          0.2
+        ],
+        "outward_direction": [
+          0,
+          -1
+        ],
+        "gate_center": [
+          4.8,
+          -10.6,
+          0.2
+        ],
+        "gate_width_between_open_leaves": 2.13
+      },
+      "entranceValidation": "producer declaration; metadata transformed, no new clearance certification",
+      "removableSiteNodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_hardpacked_activity_ground"
+      ],
+      "bounds": {
+        "all": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.0,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            4.489999771118164,
+            16.0
+          ],
+          "triangles": 7564
+        },
+        "building": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.19999992847442627,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            4.489999771118164,
+            12.15000062930713
+          ],
+          "triangles": 7492
+        },
+        "roof": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            2.4000000953674316,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            4.489999771118164,
+            12.15000062930713
+          ],
+          "triangles": 6436
+        },
+        "wallMaterialGeometry": {
+          "boundsMinGLTF": [
+            -8.999999806284904,
+            0.19999992847442627,
+            -12.0
+          ],
+          "boundsMaxGLTF": [
+            8.999999046325684,
+            3.2200000286102295,
+            12.0
+          ],
+          "triangles": 624
+        }
+      },
+      "worldOrientedTriangleSHA256": "12dc0c60dc7660a62591c914e2180be280238aa62c4fda69b37fa84d616658df",
+      "negativeDeterminantNodes": 0,
+      "finitePlacementTests": [
+        {
+          "mode": "original",
+          "id": "C02-019",
+          "rotationDegrees": 180,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "original",
+          "id": "C02-023",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-019",
+          "rotationDegrees": 180,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-023",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        }
+      ],
+      "rulesInterface": {
+        "wallBoundsMeaning": "AABB of merged wall material only; not wall graph or openings",
+        "edgeSockets": null,
+        "doorSweptVolume": null,
+        "continuousNavigation": null,
+        "globalConnectivity": null,
+        "WFCImplemented": false
+      }
+    },
+    {
+      "variant": "A",
+      "lod": 1,
+      "file": "R01-A-LOD1-prototype.glb",
+      "sourceSHA256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+      "bytes": 92328,
+      "binaryChunkSHA256": "281fe070f1194950f49b76fe9feaf79ccabbe1ecba2c1354f664315711899f0f",
+      "triangles": 1228,
+      "nodes": 7,
+      "images": 0,
+      "attributesPresent": [
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ],
+      "assetByteUnchanged": true,
+      "origin": "lot center base z0",
+      "units": "design_m",
+      "axes": "+X east,+Y up,-Z north",
+      "isAlreadyLocal": true,
+      "noRecenterOrRootInserted": true,
+      "lotBoundsBlenderXY": [
+        -9.0,
+        -12.0,
+        9.0,
+        12.0
+      ],
+      "producerPreset": {
+        "id": "A",
+        "name": "低层偏门生活院",
+        "lot_width": 18,
+        "lot_depth": 24,
+        "wall_thickness": 0.35,
+        "gate_x": 4.8,
+        "main_width": 9.6,
+        "main_depth": 4.8,
+        "side_width": 7.2,
+        "side_depth": 3.6,
+        "eave": 0.5,
+        "seed": 18017,
+        "status": "A whitebox and local-detail review",
+        "main_x": -1.2,
+        "main_y": 7.3,
+        "side_x": -5.9,
+        "side_y": -0.3,
+        "layout": "A-original"
+      },
+      "entrance": {
+        "outer_gate_wall_anchor": [
+          4.8,
+          -12,
+          0.2
+        ],
+        "neutral_lane_edge": [
+          4.8,
+          -16,
+          0.2
+        ],
+        "outward_direction": [
+          0,
+          -1
+        ],
+        "gate_center": [
+          4.8,
+          -10.6,
+          0.2
+        ],
+        "gate_width_between_open_leaves": 2.13
+      },
+      "entranceValidation": "producer declaration; metadata transformed, no new clearance certification",
+      "removableSiteNodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_hardpacked_activity_ground"
+      ],
+      "bounds": {
+        "all": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.0,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            4.489999771118164,
+            16.0
+          ],
+          "triangles": 1228
+        },
+        "building": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.19999992847442627,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            4.489999771118164,
+            12.15000062930713
+          ],
+          "triangles": 1156
+        },
+        "roof": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            2.4000000953674316,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            4.489999771118164,
+            12.15000062930713
+          ],
+          "triangles": 100
+        },
+        "wallMaterialGeometry": {
+          "boundsMinGLTF": [
+            -8.999999806284904,
+            0.19999992847442627,
+            -12.0
+          ],
+          "boundsMaxGLTF": [
+            8.999999046325684,
+            3.2200000286102295,
+            12.0
+          ],
+          "triangles": 624
+        }
+      },
+      "worldOrientedTriangleSHA256": "5bb09fdaff055318952c8bfeae8b2330cf3777fcf7fcd821693d712164ac2dc3",
+      "negativeDeterminantNodes": 0,
+      "finitePlacementTests": [
+        {
+          "mode": "original",
+          "id": "C02-019",
+          "rotationDegrees": 180,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "original",
+          "id": "C02-023",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-019",
+          "rotationDegrees": 180,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-023",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        }
+      ],
+      "rulesInterface": {
+        "wallBoundsMeaning": "AABB of merged wall material only; not wall graph or openings",
+        "edgeSockets": null,
+        "doorSweptVolume": null,
+        "continuousNavigation": null,
+        "globalConnectivity": null,
+        "WFCImplemented": false
+      }
+    },
+    {
+      "variant": "B",
+      "lod": 0,
+      "file": "R01-B-LOD0-prototype.glb",
+      "sourceSHA256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+      "bytes": 626016,
+      "binaryChunkSHA256": "782fdc5cc83e208b5e6aa8a7da48459ea02a326255ccca3b73c60174ce370870",
+      "triangles": 9300,
+      "nodes": 7,
+      "images": 0,
+      "attributesPresent": [
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ],
+      "assetByteUnchanged": true,
+      "origin": "lot center base z0",
+      "units": "design_m",
+      "axes": "+X east,+Y up,-Z north",
+      "isAlreadyLocal": true,
+      "noRecenterOrRootInserted": true,
+      "lotBoundsBlenderXY": [
+        -9.0,
+        -12.0,
+        9.0,
+        12.0
+      ],
+      "producerPreset": {
+        "id": "B",
+        "name": "居住兼储藏作业院",
+        "lot_width": 18,
+        "lot_depth": 24,
+        "wall_thickness": 0.35,
+        "gate_x": -4.8,
+        "store_height": 3.6,
+        "eave": 0.4,
+        "seed": 18018,
+        "frame_id": "R01-neutral-design-m-v01",
+        "historical_city_placement": null,
+        "design_scope": "west offset gate, rear low dwelling, east taller store, west open work canopy, loading yard. No private well or city placement.",
+        "store_width": 9.0,
+        "store_x": 5.6,
+        "store_y": 3.3,
+        "canopy_width": 6.8,
+        "canopy_depth": 3.8,
+        "canopy_x": -5.8,
+        "canopy_y": -2.5,
+        "canopy_angle": 1.5707963267948966,
+        "layout": "B-original"
+      },
+      "entrance": {
+        "outer_gate_wall_anchor": [
+          -4.8,
+          -12,
+          0.2
+        ],
+        "neutral_lane_edge": [
+          -4.8,
+          -16,
+          0.2
+        ],
+        "outward_direction": [
+          0,
+          -1
+        ],
+        "gate_between_open_leaves": 2.13
+      },
+      "entranceValidation": "producer declaration; metadata transformed, no new clearance certification",
+      "removableSiteNodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_loading_yard"
+      ],
+      "bounds": {
+        "all": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.0,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            5.519999980926514,
+            16.0
+          ],
+          "triangles": 9300
+        },
+        "building": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.19999992847442627,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            5.519999980926514,
+            12.15000191915233
+          ],
+          "triangles": 9216
+        },
+        "roof": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            2.4000000953674316,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            5.519999980926514,
+            12.15000191915233
+          ],
+          "triangles": 7896
+        },
+        "wallMaterialGeometry": {
+          "boundsMinGLTF": [
+            -8.999999806284904,
+            0.19999992847442627,
+            -12.0
+          ],
+          "boundsMaxGLTF": [
+            8.999999046325684,
+            4.25,
+            12.0
+          ],
+          "triangles": 648
+        }
+      },
+      "worldOrientedTriangleSHA256": "802f9744d762fe00906069b988f882d61011219a6072a4d836ac33320b1281aa",
+      "negativeDeterminantNodes": 0,
+      "finitePlacementTests": [
+        {
+          "mode": "original",
+          "id": "C02-018",
+          "rotationDegrees": 180,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "original",
+          "id": "C02-025",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-018",
+          "rotationDegrees": 180,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-025",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        }
+      ],
+      "rulesInterface": {
+        "wallBoundsMeaning": "AABB of merged wall material only; not wall graph or openings",
+        "edgeSockets": null,
+        "doorSweptVolume": null,
+        "continuousNavigation": null,
+        "globalConnectivity": null,
+        "WFCImplemented": false
+      }
+    },
+    {
+      "variant": "B",
+      "lod": 1,
+      "file": "R01-B-LOD1-prototype.glb",
+      "sourceSHA256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+      "bytes": 112776,
+      "binaryChunkSHA256": "576a6651f53465552b408aeb0f5533e50fab2f8c844388d77428b6da34b043d5",
+      "triangles": 1524,
+      "nodes": 7,
+      "images": 0,
+      "attributesPresent": [
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ],
+      "assetByteUnchanged": true,
+      "origin": "lot center base z0",
+      "units": "design_m",
+      "axes": "+X east,+Y up,-Z north",
+      "isAlreadyLocal": true,
+      "noRecenterOrRootInserted": true,
+      "lotBoundsBlenderXY": [
+        -9.0,
+        -12.0,
+        9.0,
+        12.0
+      ],
+      "producerPreset": {
+        "id": "B",
+        "name": "居住兼储藏作业院",
+        "lot_width": 18,
+        "lot_depth": 24,
+        "wall_thickness": 0.35,
+        "gate_x": -4.8,
+        "store_height": 3.6,
+        "eave": 0.4,
+        "seed": 18018,
+        "frame_id": "R01-neutral-design-m-v01",
+        "historical_city_placement": null,
+        "design_scope": "west offset gate, rear low dwelling, east taller store, west open work canopy, loading yard. No private well or city placement.",
+        "store_width": 9.0,
+        "store_x": 5.6,
+        "store_y": 3.3,
+        "canopy_width": 6.8,
+        "canopy_depth": 3.8,
+        "canopy_x": -5.8,
+        "canopy_y": -2.5,
+        "canopy_angle": 1.5707963267948966,
+        "layout": "B-original"
+      },
+      "entrance": {
+        "outer_gate_wall_anchor": [
+          -4.8,
+          -12,
+          0.2
+        ],
+        "neutral_lane_edge": [
+          -4.8,
+          -16,
+          0.2
+        ],
+        "outward_direction": [
+          0,
+          -1
+        ],
+        "gate_between_open_leaves": 2.13
+      },
+      "entranceValidation": "producer declaration; metadata transformed, no new clearance certification",
+      "removableSiteNodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_loading_yard"
+      ],
+      "bounds": {
+        "all": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.0,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            5.519999980926514,
+            16.0
+          ],
+          "triangles": 1524
+        },
+        "building": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.19999992847442627,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            5.519999980926514,
+            12.15000191915233
+          ],
+          "triangles": 1440
+        },
+        "roof": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            2.4000000953674316,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            5.519999980926514,
+            12.15000191915233
+          ],
+          "triangles": 120
+        },
+        "wallMaterialGeometry": {
+          "boundsMinGLTF": [
+            -8.999999806284904,
+            0.19999992847442627,
+            -12.0
+          ],
+          "boundsMaxGLTF": [
+            8.999999046325684,
+            4.25,
+            12.0
+          ],
+          "triangles": 648
+        }
+      },
+      "worldOrientedTriangleSHA256": "53366620577abd106ad1b458ffc72b96c0d279511ffbb42a7545acbdac35f5f1",
+      "negativeDeterminantNodes": 0,
+      "finitePlacementTests": [
+        {
+          "mode": "original",
+          "id": "C02-018",
+          "rotationDegrees": 180,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "original",
+          "id": "C02-025",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-018",
+          "rotationDegrees": 180,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-025",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        }
+      ],
+      "rulesInterface": {
+        "wallBoundsMeaning": "AABB of merged wall material only; not wall graph or openings",
+        "edgeSockets": null,
+        "doorSweptVolume": null,
+        "continuousNavigation": null,
+        "globalConnectivity": null,
+        "WFCImplemented": false
+      }
+    },
+    {
+      "variant": "TC03",
+      "lod": 0,
+      "file": "TC03-LOD0-prototype.glb",
+      "sourceSHA256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+      "bytes": 981664,
+      "binaryChunkSHA256": "19f32c19a5c74282554f58f543ffb62d97321f262f25443ec2dc7d748b5b0002",
+      "triangles": 14628,
+      "nodes": 10,
+      "images": 0,
+      "attributesPresent": [
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ],
+      "assetByteUnchanged": true,
+      "origin": "southwest lot corner base z0",
+      "units": "design_m",
+      "axes": "+X east,+Y up,-Z north",
+      "isAlreadyLocal": true,
+      "noRecenterOrRootInserted": true,
+      "lotBoundsBlenderXY": [
+        0,
+        0,
+        28,
+        36
+      ],
+      "producerPreset": {
+        "id": "TC03",
+        "lot_width": 28,
+        "lot_depth": 36,
+        "wall_thickness": 0.5,
+        "gate_x": 9,
+        "main_width": 18,
+        "main_depth": 5,
+        "main_height": 2.85,
+        "side_gate_width": 1.5,
+        "side_gate_x": 24.5,
+        "eave": 0.5,
+        "seed": 18043,
+        "frame": "TC03-neutral-design-m-v01",
+        "historical_city_placement": null,
+        "design_evidence_class": "C",
+        "main_x": 12.5,
+        "main_y": 21,
+        "west_y": 11.5,
+        "west_length": 8,
+        "kitchen_y": 31.5,
+        "storage_x": 23,
+        "layout": "TC03-original"
+      },
+      "entrance": {
+        "outer_gate_wall_anchor": [
+          9,
+          0,
+          0.2
+        ],
+        "neutral_lane_edge": [
+          9,
+          -4,
+          0.2
+        ],
+        "outward_direction": [
+          0,
+          -1
+        ],
+        "inner_gate_anchor": [
+          24.5,
+          23.36,
+          0.2
+        ]
+      },
+      "entranceValidation": "producer declaration; metadata transformed, no new clearance certification",
+      "removableSiteNodes": [
+        "site_lot",
+        "site_neutral_lane"
+      ],
+      "bounds": {
+        "all": {
+          "boundsMinGLTF": [
+            -2.452049130852174e-06,
+            0.0,
+            -36.000006079738256
+          ],
+          "boundsMaxGLTF": [
+            28.00000614691794,
+            4.539999961853027,
+            4.0
+          ],
+          "triangles": 14628
+        },
+        "building": {
+          "boundsMinGLTF": [
+            -2.452049130852174e-06,
+            0.19999992847442627,
+            -36.000006079738256
+          ],
+          "boundsMaxGLTF": [
+            28.00000614691794,
+            4.539999961853027,
+            4.0
+          ],
+          "triangles": 14604
+        },
+        "roof": {
+          "boundsMinGLTF": [
+            -2.452049130852174e-06,
+            2.0,
+            -36.000006079738256
+          ],
+          "boundsMaxGLTF": [
+            28.00000614691794,
+            4.539999961853027,
+            0.15000113678544125
+          ],
+          "triangles": 12548
+        },
+        "wallMaterialGeometry": {
+          "boundsMinGLTF": [
+            0.0,
+            0.19999992847442627,
+            -36.0
+          ],
+          "boundsMaxGLTF": [
+            28.0,
+            3.2699999809265137,
+            0.0
+          ],
+          "triangles": 1116
+        }
+      },
+      "worldOrientedTriangleSHA256": "461a60642c8195948c1281a47addf62484b386a8f81ef2f59204f3b0d16de3b2",
+      "negativeDeterminantNodes": 0,
+      "finitePlacementTests": [
+        {
+          "mode": "original",
+          "id": "C02-020",
+          "rotationDegrees": 0,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "original",
+          "id": "C02-008",
+          "rotationDegrees": 180,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-020",
+          "rotationDegrees": 0,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-008",
+          "rotationDegrees": 180,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        }
+      ],
+      "rulesInterface": {
+        "wallBoundsMeaning": "AABB of merged wall material only; not wall graph or openings",
+        "edgeSockets": null,
+        "doorSweptVolume": null,
+        "continuousNavigation": null,
+        "globalConnectivity": null,
+        "WFCImplemented": false
+      }
+    },
+    {
+      "variant": "TC03",
+      "lod": 1,
+      "file": "TC03-LOD1-prototype.glb",
+      "sourceSHA256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+      "bytes": 164300,
+      "binaryChunkSHA256": "c670b0d3361fbf881cc3800b8c8d727ffd35a54b078da185e9add30183b9dc99",
+      "triangles": 2244,
+      "nodes": 10,
+      "images": 0,
+      "attributesPresent": [
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ],
+      "assetByteUnchanged": true,
+      "origin": "southwest lot corner base z0",
+      "units": "design_m",
+      "axes": "+X east,+Y up,-Z north",
+      "isAlreadyLocal": true,
+      "noRecenterOrRootInserted": true,
+      "lotBoundsBlenderXY": [
+        0,
+        0,
+        28,
+        36
+      ],
+      "producerPreset": {
+        "id": "TC03",
+        "lot_width": 28,
+        "lot_depth": 36,
+        "wall_thickness": 0.5,
+        "gate_x": 9,
+        "main_width": 18,
+        "main_depth": 5,
+        "main_height": 2.85,
+        "side_gate_width": 1.5,
+        "side_gate_x": 24.5,
+        "eave": 0.5,
+        "seed": 18043,
+        "frame": "TC03-neutral-design-m-v01",
+        "historical_city_placement": null,
+        "design_evidence_class": "C",
+        "main_x": 12.5,
+        "main_y": 21,
+        "west_y": 11.5,
+        "west_length": 8,
+        "kitchen_y": 31.5,
+        "storage_x": 23,
+        "layout": "TC03-original"
+      },
+      "entrance": {
+        "outer_gate_wall_anchor": [
+          9,
+          0,
+          0.2
+        ],
+        "neutral_lane_edge": [
+          9,
+          -4,
+          0.2
+        ],
+        "outward_direction": [
+          0,
+          -1
+        ],
+        "inner_gate_anchor": [
+          24.5,
+          23.36,
+          0.2
+        ]
+      },
+      "entranceValidation": "producer declaration; metadata transformed, no new clearance certification",
+      "removableSiteNodes": [
+        "site_lot",
+        "site_neutral_lane"
+      ],
+      "bounds": {
+        "all": {
+          "boundsMinGLTF": [
+            -2.452049130852174e-06,
+            0.0,
+            -36.000006079738256
+          ],
+          "boundsMaxGLTF": [
+            28.00000614691794,
+            4.539999961853027,
+            4.0
+          ],
+          "triangles": 2244
+        },
+        "building": {
+          "boundsMinGLTF": [
+            -2.452049130852174e-06,
+            0.19999992847442627,
+            -36.000006079738256
+          ],
+          "boundsMaxGLTF": [
+            28.00000614691794,
+            4.539999961853027,
+            4.0
+          ],
+          "triangles": 2220
+        },
+        "roof": {
+          "boundsMinGLTF": [
+            -2.452049130852174e-06,
+            2.0,
+            -36.000006079738256
+          ],
+          "boundsMaxGLTF": [
+            28.00000614691794,
+            4.539999961853027,
+            0.15000113678544125
+          ],
+          "triangles": 164
+        },
+        "wallMaterialGeometry": {
+          "boundsMinGLTF": [
+            0.0,
+            0.19999992847442627,
+            -36.0
+          ],
+          "boundsMaxGLTF": [
+            28.0,
+            3.2699999809265137,
+            0.0
+          ],
+          "triangles": 1116
+        }
+      },
+      "worldOrientedTriangleSHA256": "a46db33a2edc19081e5dbdf90838e683b50469c897563004eb8f985b6e390716",
+      "negativeDeterminantNodes": 0,
+      "finitePlacementTests": [
+        {
+          "mode": "original",
+          "id": "C02-020",
+          "rotationDegrees": 0,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "original",
+          "id": "C02-008",
+          "rotationDegrees": 180,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-020",
+          "rotationDegrees": 0,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-008",
+          "rotationDegrees": 180,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        }
+      ],
+      "rulesInterface": {
+        "wallBoundsMeaning": "AABB of merged wall material only; not wall graph or openings",
+        "edgeSockets": null,
+        "doorSweptVolume": null,
+        "continuousNavigation": null,
+        "globalConnectivity": null,
+        "WFCImplemented": false
+      }
+    },
+    {
+      "variant": "A2",
+      "lod": 0,
+      "file": "A2-LOD0-prototype.glb",
+      "sourceSHA256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+      "bytes": 447064,
+      "binaryChunkSHA256": "8c8968a4fce7f4952be5df048fef4bbe107412aec6183962c87e0787f5f0e754",
+      "triangles": 6600,
+      "nodes": 7,
+      "images": 0,
+      "attributesPresent": [
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ],
+      "assetByteUnchanged": true,
+      "origin": "lot center base z0",
+      "units": "design_m",
+      "axes": "+X east,+Y up,-Z north",
+      "isAlreadyLocal": true,
+      "noRecenterOrRootInserted": true,
+      "lotBoundsBlenderXY": [
+        -9.0,
+        -12.0,
+        9.0,
+        12.0
+      ],
+      "producerPreset": {
+        "id": "A2",
+        "name": "西偏门短侧屋生活院",
+        "lot_width": 18,
+        "lot_depth": 24,
+        "wall_thickness": 0.35,
+        "gate_x": -3.5,
+        "main_width": 8.4,
+        "main_depth": 4.8,
+        "side_width": 5.4,
+        "side_depth": 3.6,
+        "eave": 0.5,
+        "seed": 18027,
+        "status": "finite geometry variant pending review",
+        "main_x": 0.6,
+        "main_y": 7.3,
+        "side_x": -5.9,
+        "side_y": 0.6,
+        "layout": "A2"
+      },
+      "entrance": {
+        "outer_gate_wall_anchor": [
+          -3.5,
+          -12,
+          0.2
+        ],
+        "neutral_lane_edge": [
+          -3.5,
+          -16,
+          0.2
+        ],
+        "outward_direction": [
+          0,
+          -1
+        ],
+        "gate_center": [
+          -3.5,
+          -10.6,
+          0.2
+        ],
+        "gate_width_between_open_leaves": 2.13
+      },
+      "entranceValidation": "producer declaration; metadata transformed, no new clearance certification",
+      "removableSiteNodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_hardpacked_activity_ground"
+      ],
+      "bounds": {
+        "all": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.0,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            4.489999771118164,
+            16.0
+          ],
+          "triangles": 6600
+        },
+        "building": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.19999992847442627,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            4.489999771118164,
+            12.150001744485792
+          ],
+          "triangles": 6532
+        },
+        "roof": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            2.4000000953674316,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            4.489999771118164,
+            12.150001744485792
+          ],
+          "triangles": 5476
+        },
+        "wallMaterialGeometry": {
+          "boundsMinGLTF": [
+            -8.999999806284904,
+            0.19999992847442627,
+            -12.0
+          ],
+          "boundsMaxGLTF": [
+            8.999999046325684,
+            3.2200000286102295,
+            12.0
+          ],
+          "triangles": 624
+        }
+      },
+      "worldOrientedTriangleSHA256": "e0f7d6e3f75c1ecbd94a72e0486feaa5dcc90f307a0a0cb3ef065236831aad21",
+      "negativeDeterminantNodes": 0,
+      "finitePlacementTests": [
+        {
+          "mode": "original",
+          "id": "C02-021",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "original",
+          "id": "C02-024",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-021",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-024",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        }
+      ],
+      "rulesInterface": {
+        "wallBoundsMeaning": "AABB of merged wall material only; not wall graph or openings",
+        "edgeSockets": null,
+        "doorSweptVolume": null,
+        "continuousNavigation": null,
+        "globalConnectivity": null,
+        "WFCImplemented": false
+      }
+    },
+    {
+      "variant": "A2",
+      "lod": 1,
+      "file": "A2-LOD1-prototype.glb",
+      "sourceSHA256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+      "bytes": 92220,
+      "binaryChunkSHA256": "faa0b07e2214e260fa76667ae1986ea52d19817ab44068af43876ccd73ba03e2",
+      "triangles": 1224,
+      "nodes": 7,
+      "images": 0,
+      "attributesPresent": [
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ],
+      "assetByteUnchanged": true,
+      "origin": "lot center base z0",
+      "units": "design_m",
+      "axes": "+X east,+Y up,-Z north",
+      "isAlreadyLocal": true,
+      "noRecenterOrRootInserted": true,
+      "lotBoundsBlenderXY": [
+        -9.0,
+        -12.0,
+        9.0,
+        12.0
+      ],
+      "producerPreset": {
+        "id": "A2",
+        "name": "西偏门短侧屋生活院",
+        "lot_width": 18,
+        "lot_depth": 24,
+        "wall_thickness": 0.35,
+        "gate_x": -3.5,
+        "main_width": 8.4,
+        "main_depth": 4.8,
+        "side_width": 5.4,
+        "side_depth": 3.6,
+        "eave": 0.5,
+        "seed": 18027,
+        "status": "finite geometry variant pending review",
+        "main_x": 0.6,
+        "main_y": 7.3,
+        "side_x": -5.9,
+        "side_y": 0.6,
+        "layout": "A2"
+      },
+      "entrance": {
+        "outer_gate_wall_anchor": [
+          -3.5,
+          -12,
+          0.2
+        ],
+        "neutral_lane_edge": [
+          -3.5,
+          -16,
+          0.2
+        ],
+        "outward_direction": [
+          0,
+          -1
+        ],
+        "gate_center": [
+          -3.5,
+          -10.6,
+          0.2
+        ],
+        "gate_width_between_open_leaves": 2.13
+      },
+      "entranceValidation": "producer declaration; metadata transformed, no new clearance certification",
+      "removableSiteNodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_hardpacked_activity_ground"
+      ],
+      "bounds": {
+        "all": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.0,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            4.489999771118164,
+            16.0
+          ],
+          "triangles": 1224
+        },
+        "building": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.19999992847442627,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            4.489999771118164,
+            12.150001744485792
+          ],
+          "triangles": 1156
+        },
+        "roof": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            2.4000000953674316,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            4.489999771118164,
+            12.150001744485792
+          ],
+          "triangles": 100
+        },
+        "wallMaterialGeometry": {
+          "boundsMinGLTF": [
+            -8.999999806284904,
+            0.19999992847442627,
+            -12.0
+          ],
+          "boundsMaxGLTF": [
+            8.999999046325684,
+            3.2200000286102295,
+            12.0
+          ],
+          "triangles": 624
+        }
+      },
+      "worldOrientedTriangleSHA256": "fc1cb3d53e40aa2f84795747cc4b5a3c7f1be2a0b509e3d1a36b20f72b0a0ddb",
+      "negativeDeterminantNodes": 0,
+      "finitePlacementTests": [
+        {
+          "mode": "original",
+          "id": "C02-021",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "original",
+          "id": "C02-024",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-021",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-024",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        }
+      ],
+      "rulesInterface": {
+        "wallBoundsMeaning": "AABB of merged wall material only; not wall graph or openings",
+        "edgeSockets": null,
+        "doorSweptVolume": null,
+        "continuousNavigation": null,
+        "globalConnectivity": null,
+        "WFCImplemented": false
+      }
+    },
+    {
+      "variant": "B2",
+      "lod": 0,
+      "file": "B2-LOD0-prototype.glb",
+      "sourceSHA256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+      "bytes": 569280,
+      "binaryChunkSHA256": "694becf96ed11e2d63a21bced59407235d4401c2c70ae320b6bfbd4f83100b83",
+      "triangles": 8444,
+      "nodes": 7,
+      "images": 0,
+      "attributesPresent": [
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ],
+      "assetByteUnchanged": true,
+      "origin": "lot center base z0",
+      "units": "design_m",
+      "axes": "+X east,+Y up,-Z north",
+      "isAlreadyLocal": true,
+      "noRecenterOrRootInserted": true,
+      "lotBoundsBlenderXY": [
+        -9.0,
+        -12.0,
+        9.0,
+        12.0
+      ],
+      "producerPreset": {
+        "id": "B2",
+        "name": "居住兼储藏作业院",
+        "lot_width": 18,
+        "lot_depth": 24,
+        "wall_thickness": 0.35,
+        "gate_x": -4.8,
+        "store_height": 3.6,
+        "eave": 0.4,
+        "seed": 18028,
+        "frame_id": "R01-neutral-design-m-v01",
+        "historical_city_placement": null,
+        "design_scope": "west offset gate, rear low dwelling, east taller store, west open work canopy, loading yard. No private well or city placement.",
+        "store_width": 7.2,
+        "store_x": 5.6,
+        "store_y": 5.0,
+        "canopy_width": 5.4,
+        "canopy_depth": 4.4,
+        "canopy_x": -2.5,
+        "canopy_y": -2.5,
+        "canopy_angle": 0.0,
+        "layout": "B2"
+      },
+      "entrance": {
+        "outer_gate_wall_anchor": [
+          -4.8,
+          -12,
+          0.2
+        ],
+        "neutral_lane_edge": [
+          -4.8,
+          -16,
+          0.2
+        ],
+        "outward_direction": [
+          0,
+          -1
+        ],
+        "gate_between_open_leaves": 2.13
+      },
+      "entranceValidation": "producer declaration; metadata transformed, no new clearance certification",
+      "removableSiteNodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_loading_yard"
+      ],
+      "bounds": {
+        "all": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.0,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            5.269999980926514,
+            16.0
+          ],
+          "triangles": 8444
+        },
+        "building": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.19999992847442627,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            5.269999980926514,
+            12.15000191915233
+          ],
+          "triangles": 8352
+        },
+        "roof": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            2.4000000953674316,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            5.269999980926514,
+            12.15000191915233
+          ],
+          "triangles": 7032
+        },
+        "wallMaterialGeometry": {
+          "boundsMinGLTF": [
+            -8.999999806284904,
+            0.19999992847442627,
+            -12.0
+          ],
+          "boundsMaxGLTF": [
+            8.999999046325684,
+            4.25,
+            12.0
+          ],
+          "triangles": 648
+        }
+      },
+      "worldOrientedTriangleSHA256": "2c0d4b9c92b0f2ce05d04c9fdd0612bfb41e1d6666e4f8029370e24740c3f744",
+      "negativeDeterminantNodes": 0,
+      "finitePlacementTests": [
+        {
+          "mode": "original",
+          "id": "C02-022",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "original",
+          "id": "C02-002",
+          "rotationDegrees": 0,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-022",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-002",
+          "rotationDegrees": 0,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        }
+      ],
+      "rulesInterface": {
+        "wallBoundsMeaning": "AABB of merged wall material only; not wall graph or openings",
+        "edgeSockets": null,
+        "doorSweptVolume": null,
+        "continuousNavigation": null,
+        "globalConnectivity": null,
+        "WFCImplemented": false
+      }
+    },
+    {
+      "variant": "B2",
+      "lod": 1,
+      "file": "B2-LOD1-prototype.glb",
+      "sourceSHA256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+      "bytes": 113064,
+      "binaryChunkSHA256": "b6360395abe4b6d5e31ee06c4b3c3f5b9e8a6f87a200113362231cfcaedd1038",
+      "triangles": 1532,
+      "nodes": 7,
+      "images": 0,
+      "attributesPresent": [
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ],
+      "assetByteUnchanged": true,
+      "origin": "lot center base z0",
+      "units": "design_m",
+      "axes": "+X east,+Y up,-Z north",
+      "isAlreadyLocal": true,
+      "noRecenterOrRootInserted": true,
+      "lotBoundsBlenderXY": [
+        -9.0,
+        -12.0,
+        9.0,
+        12.0
+      ],
+      "producerPreset": {
+        "id": "B2",
+        "name": "居住兼储藏作业院",
+        "lot_width": 18,
+        "lot_depth": 24,
+        "wall_thickness": 0.35,
+        "gate_x": -4.8,
+        "store_height": 3.6,
+        "eave": 0.4,
+        "seed": 18028,
+        "frame_id": "R01-neutral-design-m-v01",
+        "historical_city_placement": null,
+        "design_scope": "west offset gate, rear low dwelling, east taller store, west open work canopy, loading yard. No private well or city placement.",
+        "store_width": 7.2,
+        "store_x": 5.6,
+        "store_y": 5.0,
+        "canopy_width": 5.4,
+        "canopy_depth": 4.4,
+        "canopy_x": -2.5,
+        "canopy_y": -2.5,
+        "canopy_angle": 0.0,
+        "layout": "B2"
+      },
+      "entrance": {
+        "outer_gate_wall_anchor": [
+          -4.8,
+          -12,
+          0.2
+        ],
+        "neutral_lane_edge": [
+          -4.8,
+          -16,
+          0.2
+        ],
+        "outward_direction": [
+          0,
+          -1
+        ],
+        "gate_between_open_leaves": 2.13
+      },
+      "entranceValidation": "producer declaration; metadata transformed, no new clearance certification",
+      "removableSiteNodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_loading_yard"
+      ],
+      "bounds": {
+        "all": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.0,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            5.269999980926514,
+            16.0
+          ],
+          "triangles": 1532
+        },
+        "building": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            0.19999992847442627,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            5.269999980926514,
+            12.15000191915233
+          ],
+          "triangles": 1440
+        },
+        "roof": {
+          "boundsMinGLTF": [
+            -9.000001442103981,
+            2.4000000953674316,
+            -12.000003053578297
+          ],
+          "boundsMaxGLTF": [
+            9.000003053578553,
+            5.269999980926514,
+            12.15000191915233
+          ],
+          "triangles": 120
+        },
+        "wallMaterialGeometry": {
+          "boundsMinGLTF": [
+            -8.999999806284904,
+            0.19999992847442627,
+            -12.0
+          ],
+          "boundsMaxGLTF": [
+            8.999999046325684,
+            4.25,
+            12.0
+          ],
+          "triangles": 648
+        }
+      },
+      "worldOrientedTriangleSHA256": "bbd9529b467c48e7d5ea499ad00b263b4c4a1ae33a6b775743900f878368b7c8",
+      "negativeDeterminantNodes": 0,
+      "finitePlacementTests": [
+        {
+          "mode": "original",
+          "id": "C02-022",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "original",
+          "id": "C02-002",
+          "rotationDegrees": 0,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-022",
+          "rotationDegrees": 270,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-002",
+          "rotationDegrees": 0,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        }
+      ],
+      "rulesInterface": {
+        "wallBoundsMeaning": "AABB of merged wall material only; not wall graph or openings",
+        "edgeSockets": null,
+        "doorSweptVolume": null,
+        "continuousNavigation": null,
+        "globalConnectivity": null,
+        "WFCImplemented": false
+      }
+    },
+    {
+      "variant": "TC03-2",
+      "lod": 0,
+      "file": "TC03-2-LOD0-prototype.glb",
+      "sourceSHA256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+      "bytes": 943548,
+      "binaryChunkSHA256": "cf597dc0a216b103068b8047287e4daf0f0f7aed853f0e2302c302f2e5a5fb53",
+      "triangles": 14048,
+      "nodes": 10,
+      "images": 0,
+      "attributesPresent": [
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ],
+      "assetByteUnchanged": true,
+      "origin": "southwest lot corner base z0",
+      "units": "design_m",
+      "axes": "+X east,+Y up,-Z north",
+      "isAlreadyLocal": true,
+      "noRecenterOrRootInserted": true,
+      "lotBoundsBlenderXY": [
+        0,
+        0,
+        28,
+        36
+      ],
+      "producerPreset": {
+        "id": "TC03-2",
+        "lot_width": 28,
+        "lot_depth": 36,
+        "wall_thickness": 0.5,
+        "gate_x": 9,
+        "main_width": 17,
+        "main_depth": 5,
+        "main_height": 2.85,
+        "side_gate_width": 1.5,
+        "side_gate_x": 24,
+        "eave": 0.5,
+        "seed": 18053,
+        "frame": "TC03-neutral-design-m-v01",
+        "historical_city_placement": null,
+        "design_evidence_class": "C",
+        "main_x": 12,
+        "main_y": 19.5,
+        "west_y": 10.5,
+        "west_length": 7,
+        "kitchen_y": 30.5,
+        "storage_x": 22.5,
+        "layout": "TC03-2"
+      },
+      "entrance": {
+        "outer_gate_wall_anchor": [
+          9,
+          0,
+          0.2
+        ],
+        "neutral_lane_edge": [
+          9,
+          -4,
+          0.2
+        ],
+        "outward_direction": [
+          0,
+          -1
+        ],
+        "inner_gate_anchor": [
+          24,
+          21.86,
+          0.2
+        ]
+      },
+      "entranceValidation": "producer declaration; metadata transformed, no new clearance certification",
+      "removableSiteNodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_front_apron",
+        "designed_side_passage",
+        "designed_rear_work_ground"
+      ],
+      "bounds": {
+        "all": {
+          "boundsMinGLTF": [
+            -2.452049130852174e-06,
+            0.0,
+            -36.000006079738256
+          ],
+          "boundsMaxGLTF": [
+            28.00000614691794,
+            4.539999961853027,
+            4.0
+          ],
+          "triangles": 14048
+        },
+        "building": {
+          "boundsMinGLTF": [
+            -2.452049130852174e-06,
+            0.19999992847442627,
+            -36.000006079738256
+          ],
+          "boundsMaxGLTF": [
+            28.00000614691794,
+            4.539999961853027,
+            0.15000113678544125
+          ],
+          "triangles": 13916
+        },
+        "roof": {
+          "boundsMinGLTF": [
+            -2.452049130852174e-06,
+            2.0,
+            -36.000006079738256
+          ],
+          "boundsMaxGLTF": [
+            28.00000614691794,
+            4.539999961853027,
+            0.15000113678544125
+          ],
+          "triangles": 11972
+        },
+        "wallMaterialGeometry": {
+          "boundsMinGLTF": [
+            0.0,
+            0.19999992847442627,
+            -36.0
+          ],
+          "boundsMaxGLTF": [
+            28.0,
+            3.2699999809265137,
+            0.0
+          ],
+          "triangles": 1116
+        }
+      },
+      "worldOrientedTriangleSHA256": "d2f3e69293100f367ff80789fb3b92f7053489efb46ed4c76204fbac5707e7ed",
+      "negativeDeterminantNodes": 0,
+      "finitePlacementTests": [
+        {
+          "mode": "original",
+          "id": "C02-003",
+          "rotationDegrees": 90,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "original",
+          "id": "C02-012",
+          "rotationDegrees": 0,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-003",
+          "rotationDegrees": 90,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-012",
+          "rotationDegrees": 0,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        }
+      ],
+      "rulesInterface": {
+        "wallBoundsMeaning": "AABB of merged wall material only; not wall graph or openings",
+        "edgeSockets": null,
+        "doorSweptVolume": null,
+        "continuousNavigation": null,
+        "globalConnectivity": null,
+        "WFCImplemented": false
+      }
+    },
+    {
+      "variant": "TC03-2",
+      "lod": 1,
+      "file": "TC03-2-LOD1-prototype.glb",
+      "sourceSHA256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+      "bytes": 164200,
+      "binaryChunkSHA256": "aaca306f0ee39741b64ac4631a98d3c9909b56b692883f2b22751625e54eef9c",
+      "triangles": 2240,
+      "nodes": 10,
+      "images": 0,
+      "attributesPresent": [
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0"
+      ],
+      "assetByteUnchanged": true,
+      "origin": "southwest lot corner base z0",
+      "units": "design_m",
+      "axes": "+X east,+Y up,-Z north",
+      "isAlreadyLocal": true,
+      "noRecenterOrRootInserted": true,
+      "lotBoundsBlenderXY": [
+        0,
+        0,
+        28,
+        36
+      ],
+      "producerPreset": {
+        "id": "TC03-2",
+        "lot_width": 28,
+        "lot_depth": 36,
+        "wall_thickness": 0.5,
+        "gate_x": 9,
+        "main_width": 17,
+        "main_depth": 5,
+        "main_height": 2.85,
+        "side_gate_width": 1.5,
+        "side_gate_x": 24,
+        "eave": 0.5,
+        "seed": 18053,
+        "frame": "TC03-neutral-design-m-v01",
+        "historical_city_placement": null,
+        "design_evidence_class": "C",
+        "main_x": 12,
+        "main_y": 19.5,
+        "west_y": 10.5,
+        "west_length": 7,
+        "kitchen_y": 30.5,
+        "storage_x": 22.5,
+        "layout": "TC03-2"
+      },
+      "entrance": {
+        "outer_gate_wall_anchor": [
+          9,
+          0,
+          0.2
+        ],
+        "neutral_lane_edge": [
+          9,
+          -4,
+          0.2
+        ],
+        "outward_direction": [
+          0,
+          -1
+        ],
+        "inner_gate_anchor": [
+          24,
+          21.86,
+          0.2
+        ]
+      },
+      "entranceValidation": "producer declaration; metadata transformed, no new clearance certification",
+      "removableSiteNodes": [
+        "site_lot",
+        "site_neutral_lane",
+        "designed_front_apron",
+        "designed_side_passage",
+        "designed_rear_work_ground"
+      ],
+      "bounds": {
+        "all": {
+          "boundsMinGLTF": [
+            -2.452049130852174e-06,
+            0.0,
+            -36.000006079738256
+          ],
+          "boundsMaxGLTF": [
+            28.00000614691794,
+            4.539999961853027,
+            4.0
+          ],
+          "triangles": 2240
+        },
+        "building": {
+          "boundsMinGLTF": [
+            -2.452049130852174e-06,
+            0.19999992847442627,
+            -36.000006079738256
+          ],
+          "boundsMaxGLTF": [
+            28.00000614691794,
+            4.539999961853027,
+            0.15000113678544125
+          ],
+          "triangles": 2108
+        },
+        "roof": {
+          "boundsMinGLTF": [
+            -2.452049130852174e-06,
+            2.0,
+            -36.000006079738256
+          ],
+          "boundsMaxGLTF": [
+            28.00000614691794,
+            4.539999961853027,
+            0.15000113678544125
+          ],
+          "triangles": 164
+        },
+        "wallMaterialGeometry": {
+          "boundsMinGLTF": [
+            0.0,
+            0.19999992847442627,
+            -36.0
+          ],
+          "boundsMaxGLTF": [
+            28.0,
+            3.2699999809265137,
+            0.0
+          ],
+          "triangles": 1116
+        }
+      },
+      "worldOrientedTriangleSHA256": "48165b674b20cce56429f94787ae164e4f9fc5a61f7ff94a2b4e624963255d37",
+      "negativeDeterminantNodes": 0,
+      "finitePlacementTests": [
+        {
+          "mode": "original",
+          "id": "C02-003",
+          "rotationDegrees": 90,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "original",
+          "id": "C02-012",
+          "rotationDegrees": 0,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-003",
+          "rotationDegrees": 90,
+          "inverseMaxErrorMeters": 1.1368683772161603e-13,
+          "determinant": 1.0
+        },
+        {
+          "mode": "calt",
+          "id": "C02-012",
+          "rotationDegrees": 0,
+          "inverseMaxErrorMeters": 5.684341886080802e-14,
+          "determinant": 1.0
+        }
+      ],
+      "rulesInterface": {
+        "wallBoundsMeaning": "AABB of merged wall material only; not wall graph or openings",
+        "edgeSockets": null,
+        "doorSweptVolume": null,
+        "continuousNavigation": null,
+        "globalConnectivity": null,
+        "WFCImplemented": false
+      }
+    }
+  ],
+  "legacyGateConflicts": [],
+  "limitations": [
+    "No new geometry or WFC execution",
+    "Original44 and C-alt44 mutually exclusive, exactly14 changed placements retained",
+    "LOD1 tile-removal not near geometry equality or runtime distance policy",
+    "Merged roof AABB includes wall caps; not accurate covered area",
+    "Unknown collision/socket/navigation constraints remain null",
+    "No new archaeology/GPU/mobile/Unity/Godot acceptance"
+  ]
+}

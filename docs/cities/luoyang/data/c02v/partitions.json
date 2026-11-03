@@ -1,0 +1,132 @@
+{
+  "frame": "luoyang-local-schematic-v01",
+  "partitions": [
+    {
+      "id": "south",
+      "bounds": [
+        492,
+        710,
+        710,
+        852
+      ],
+      "lotIds": [
+        "C02-005",
+        "C02-006",
+        "C02-007",
+        "C02-008",
+        "C02-009",
+        "C02-010",
+        "C02-011",
+        "C02-012",
+        "C02-013",
+        "C02-032",
+        "C02-014",
+        "C02-015",
+        "C02-016",
+        "C02-017"
+      ],
+      "sharedPrototypeRefs": [
+        "A",
+        "A2",
+        "B",
+        "B2",
+        "TC03",
+        "TC03-2"
+      ],
+      "loadPolicy": "coordinates only; resolve shared LOD assets once per stage; no per-lot GLB"
+    },
+    {
+      "id": "north",
+      "bounds": [
+        485,
+        1131,
+        775,
+        1245
+      ],
+      "lotIds": [
+        "C02-001",
+        "C02-002",
+        "C02-027",
+        "C02-028",
+        "C02-029",
+        "C02-030",
+        "C02-031",
+        "C02-003",
+        "C02-004"
+      ],
+      "sharedPrototypeRefs": [
+        "A",
+        "A2",
+        "B",
+        "B2",
+        "TC03-2"
+      ],
+      "loadPolicy": "coordinates only; resolve shared LOD assets once per stage; no per-lot GLB"
+    },
+    {
+      "id": "east",
+      "bounds": [
+        685,
+        865,
+        775,
+        1095
+      ],
+      "lotIds": [
+        "C02-018",
+        "C02-019",
+        "C02-020",
+        "C02-021",
+        "C02-022",
+        "C02-023",
+        "C02-024",
+        "C02-025",
+        "C02-026"
+      ],
+      "sharedPrototypeRefs": [
+        "A",
+        "A2",
+        "B",
+        "B2",
+        "TC03"
+      ],
+      "loadPolicy": "coordinates only; resolve shared LOD assets once per stage; no per-lot GLB"
+    },
+    {
+      "id": "upper_strip",
+      "bounds": [
+        485,
+        1061,
+        675,
+        1098
+      ],
+      "lotIds": [
+        "C02-033",
+        "C02-034",
+        "C02-035",
+        "C02-036"
+      ],
+      "sharedPrototypeRefs": [
+        "A2",
+        "B",
+        "B2"
+      ],
+      "loadPolicy": "coordinates only; resolve shared LOD assets once per stage; no per-lot GLB"
+    }
+  ],
+  "defaultNearLOD": 0,
+  "farLOD": 1,
+  "LOD1": "separate tile-removal experiment; no GPU threshold proven",
+  "generationStage": {
+    "notRuntimeIntegratedYet": true,
+    "scope": "historical coordinate partition generator state, before city-shell integration"
+  },
+  "integrationState": {
+    "cpuActualLoaderIntegrated": true,
+    "evidenceSHA256": "d1b20c0981032b1b80add8504fd4ff0e7c58b0b77270de4b6a6ce60c39cbb28e",
+    "evidencePath": "research/2026-11-03/c02-loader-check.json",
+    "gpuVerified": false,
+    "realMobileVerified": false,
+    "maxSelectedLOD0TrianglesIncludingContextEnvironment": 217932,
+    "publicationVerified": false
+  }
+}

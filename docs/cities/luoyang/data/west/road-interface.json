@@ -1,0 +1,92 @@
+{
+  "id": "C-main-road-corridors-01",
+  "classification": "massing corridor trial, not complete ancient street network",
+  "assets": [
+    {
+      "path": "assets/corridor-10m.glb",
+      "sha256": "bd79de9518a706e34dd834277860810c248b12ac557d3ba14c7c11ff1bc9dbbf",
+      "bytes": 6468
+    },
+    {
+      "path": "assets/corridor-6m.glb",
+      "sha256": "17f3219792c90d9fb5ae50a91629b4706a61706240b877a470d9fde648f1fd6e",
+      "bytes": 6832
+    }
+  ],
+  "defaultWidth": 6,
+  "exclusiveWidths": [
+    6,
+    10
+  ],
+  "coordinateSystem": "absolute glTF X east Y up Z negative north",
+  "extraTranslation": [
+    0,
+    0,
+    0
+  ],
+  "compatibleContext": "city wall A + Guangyang direct + C-alt01 southern14",
+  "deferredRelations": "inputs/road-corridor-preconstraints.json",
+  "cutSegments": "plan.json",
+  "collisionCoverage": "inputs/coverage44.json",
+  "reuseOldRouteUnchanged": true,
+  "junctionSeamsPending": true,
+  "cityCourtyards": 44,
+  "works": 21,
+  "GPUValidated": false,
+  "observedCPUImages": "default6m only;10m has geometry checks only",
+  "runtimeAssets": [
+    {
+      "width": 10,
+      "url": "./assets/main-roads/corridor-10m.glb",
+      "sha256": "bd79de9518a706e34dd834277860810c248b12ac557d3ba14c7c11ff1bc9dbbf"
+    },
+    {
+      "width": 10,
+      "url": "./assets/west/route-corridor.glb",
+      "sha256": "ec883eaff95f335e2ba57fe763793be941fd3ac0db55c921ca0910ef702bb9c7"
+    },
+    {
+      "width": 6,
+      "url": "./assets/ground-atomic/network-ground-stitched.glb",
+      "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+      "atomic": true
+    },
+    {
+      "width": 6,
+      "url": "./assets/ground-atomic/retained.glb",
+      "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+      "translation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "width": 6,
+      "url": "./assets/ground-atomic/south.glb",
+      "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+      "translation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "width": 6,
+      "url": "./assets/ground-atomic/D08.glb",
+      "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+      "translation": [
+        580,
+        0,
+        -960
+      ]
+    },
+    {
+      "width": 10,
+      "url": "./assets/ground-atomic/south.glb",
+      "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e"
+    }
+  ],
+  "junctionRevision": "6m C north entry only;10m keeps former gap",
+  "marketLink": "151 schematic metre C branch only; market prototype loaded only on selection"
+}

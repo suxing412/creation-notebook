@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-03",
+  "purpose": "全城证据缺口与区域扩建里程碑；不是骨架修订",
+  "baseline": {
+    "asset": "v12/dist/data/evidence/evidence-geometry.json",
+    "sha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+    "features": 42,
+    "placed_B": 36,
+    "null": 6,
+    "total_class_counts": {
+      "B": 38,
+      "A": 1,
+      "C": 1,
+      "U": 1,
+      "X": 1
+    },
+    "architectural_completion_not_modeled": 42,
+    "frame": "schematic_m; no verified geographic origin/CRS",
+    "model_design_courtyards": 44,
+    "new_courtyards_by_partition": {
+      "south": 14,
+      "north": 9,
+      "east": 9,
+      "upper_strip": 4
+    },
+    "context_courtyards": 8
+  },
+  "priority_basis": "先复用现有资产建立可探索空间与道路连接，再依证据补区域；是制作依赖排序，不宣称城西历史证据最确定。北宫研究与城西制作并行。",
+  "milestones": [
+    {
+      "region": "P0｜全城覆盖账本",
+      "current": "42项证据；36个B级示意几何＋6个null；全部architectural_completion=not_modeled",
+      "next": "总览分开显示证据标记、已建C级院落、待建区域；冻结骨架不动",
+      "acceptance": "42项ID/状态/hash一致；不把示意线、点和院落数量换算为全城完成率"
+    },
+    {
+      "region": "P1｜城西街区→干道→一门一段城垣",
+      "current": "已有44院为设计推测；v12新增36院分南14/北9/东9/上带4，另8院上下文；西侧道路和城门只有B级关系",
+      "next": "停止新增无关微细节；接通院门—巷—主路的实际连续可走路线，选择一座西门和短城垣做C级样板；先做空间、净空、尺度对照",
+      "acceptance": "路线可达；院落近看保留质量；道路/门宽/墙高均为试验参数；一个样板不得宣称12门均复原；不占宫城候选或来源冲突保留区"
+    },
+    {
+      "region": "P1研究｜北宫新旧框架冲突",
+      "current": "旧研究北宫多边形B；2023东汉北宫墙A有报告但无本项目验证定位，故仍null",
+      "next": "优先找原始发掘简报/分期平面与共同控制点；建立旧说/新发现对照，暂不填殿堂",
+      "acceptance": "证据可溯源、分期清楚、共同坐标可验证才另版提修订；不擅移动当前36几何或6null"
+    },
+    {
+      "region": "P2｜城垣、其余门与环城道路",
+      "current": "城垣示意轮廓、南垣推定线、12门点；残存墙段分期未解决",
+      "next": "从已验一门一段推广模块；逐段登记确定/推定/未知，不沿完整轮廓铺一模一样的门楼",
+      "acceptance": "每门独立来源与C设计参数；南垣非现存测绘；不将遗存长度误作完整边长"
+    },
+    {
+      "region": "P2｜南宫与两宫交通",
+      "current": "南宫候选范围有争议；两宫连线仅关系；宫内房间未知",
+      "next": "先保留候选包络与通行关系，再做明确标C的入口局部；不要先填整片宫殿",
+      "acceptance": "180年为研究快照，不是逐殿建造日期；185火灾前提不能直接决定宫内平面；连线不直接变成架空复道工程"
+    },
+    {
+      "region": "P2研究｜道路与古水系",
+      "current": "11道路关系线，无历史路宽与完整分期；古水道B仍null；现代洛河X排除",
+      "next": "先做带年代的引水/排水拓扑和道路—水系冲突清单；原报告核验后再考虑几何",
+      "acceptance": "不能把现代河道、北魏水道或魏晋铜驼街轴线前推180年；抽象关系不能直接刻河槽"
+    },
+    {
+      "region": "P3｜金市及仓储等功能区",
+      "current": "金市/太仓/武库/永安仅4个区域点，无边界或建筑地块",
+      "next": "先做功能/尺度需求研究；可独立开发C级市场局部模块，不先占用整块历史市区",
+      "acceptance": "金市点的75m展示包络不是市面积；不得用北魏大市/牛马市布局代替东汉；铺位/货棚密度明确设计假设"
+    },
+    {
+      "region": "P3｜邻区逐块扩展",
+      "current": "44院不能代表全城住宅比例；真实东汉洛阳住宅地块/密度证据不足",
+      "next": "依道路连接扩邻区，用不同几何院型、地块适配和共享构件；远景按需加载、近景不降原件质量",
+      "acceptance": "每区有覆盖边界/来源层/设计层/验收；有限样本不证明全城参数范围；无GPU条件不承诺帧率"
+    }
+  ],
+  "new_source_review": [
+    {
+      "title": "郭晓涛：经涂九轨——道路考古的价值",
+      "date": "2024-12-13",
+      "url": "https://cssn.cn/skgz/bwyc/202412/t20241213_5822215.shtml",
+      "read": "原站全文",
+      "observation": "作者以道路说明城址建筑联系；铜驼街—阊阖门—太极殿轴线明确属魏晋至北魏。",
+      "application": "支持先道路连接的研究/制作方法，不给180年新坐标或道路宽度。",
+      "geometry_revision": false
+    },
+    {
+      "title": "2023年度河南省五大考古新发现：汉魏洛阳城宫城",
+      "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=2283",
+      "read": "既有基线来源，原机构文字；本轮未新增可验证分期定位图",
+      "application": "保留北宫新旧冲突，不将A未定位墙段自动套旧B多边形。",
+      "geometry_revision": false
+    },
+    {
+      "title": "黄学超：洛阳古代水系相关研究",
+      "date": "2026-07-10",
+      "url": "https://zgld.cbpt.cnki.net/portal/journal/portal/client/paper/54295f2f542f9053ceb1930fc8765eea",
+      "read": "原期刊摘要/参考文献；全文/图未读",
+      "observation": "摘要分东汉、魏、晋、北魏水利变化；中英文摘要城东/城西表述不一致。",
+      "application": "只作分期水系研究入口，不据摘要刻出古河道；应核全文。",
+      "geometry_revision": false
+    }
+  ],
+  "unread_targets": [
+    {
+      "title": "钱国祥《东汉洛阳都城的空间格局复原研究》",
+      "bibliography": "《华夏考古》2022年第3期",
+      "read": "检索见机构论文参考文献，原文及图未读",
+      "verification_url": "https://zysh.cbpt.cnki.net/portal/journal/portal/client/paper/3171ea63e5707f3a8a8975292ef1a71e",
+      "target": "城门/道路/南北宫研究；不可据题名改几何"
+    },
+    {
+      "title": "偃师市文管局《汉魏洛阳城东阳渠、鸿池陂考古勘察简报》",
+      "bibliography": "《华夏考古》2011年第1期；黄2026引文页22–23不是已核全文页码",
+      "read": "仅见原期刊参考文献，原文/图未读",
+      "target": "水系分期和控制点"
+    },
+    {
+      "title": "《洛阳汉唐漕运水系考古调查》",
+      "bibliography": "《洛阳考古》2016年第4期",
+      "read": "仅见黄2026参考文献，原文/图未读",
+      "target": "区分年代河段，不当180年统一水系图"
+    }
+  ],
+  "decision": "本轮无足够新坐标/分期证据修改冻结42项。没有新增全城建模完成量。",
+  "limits": [
+    "约180年是设计研究快照，非精确全城瞬时复原",
+    "v12归档与正在制作的南组修订分别记录",
+    "本表不是工期承诺；GPU与真实交互未由本研究验收",
+    "未读取外部原图并公开复制"
+  ]
+}

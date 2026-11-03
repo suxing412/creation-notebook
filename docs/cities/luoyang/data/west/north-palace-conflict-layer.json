@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "id": "north-palace-conflict-layer-v01",
+  "checked_at": "2026-11-03",
+  "purpose": "独立说明层；不修改冻结42项、不生成北宫建筑",
+  "frozen_baseline": {
+    "file": "dist/data/evidence/evidence-geometry.json",
+    "sha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+    "feature_count": 42,
+    "placed_B_count": 36,
+    "null_count": 6
+  },
+  "layers": [
+    {
+      "id": "legacy_B",
+      "feature_ref": "north_palace_extent_gao2023_B",
+      "phase": "东汉约180研究快照中的旧研究示意",
+      "source_ids": [
+        "gao2023_fig1"
+      ],
+      "label": "旧研究北宫范围 B｜仅供对照",
+      "geometry_policy": "reference_frozen_geometry_only",
+      "render": "dashed_outline_optional_no_extrusion",
+      "default_visible": false,
+      "limits": [
+        "不能显示为测绘城墙或已完成宫城",
+        "开启时同时显示新考古未配准提示",
+        "坐标仅示意米，误差未知；不得把轮廓内填成宫殿布局"
+      ]
+    },
+    {
+      "id": "excavated_A_unregistered",
+      "feature_ref": "north_palace_excavated_walls_A_unplaced",
+      "phase": "报道识别东汉墙段；不能直接锁定约180年每段使用状态",
+      "source_ids": [
+        "henan2023_findings"
+      ],
+      "label": "新发现东/南墙 A｜未配准",
+      "geometry_policy": "none",
+      "geometry": null,
+      "render": "text_card_only",
+      "default_visible": true,
+      "limits": [
+        "A是项目继承的出土证据类别，不代表本轮已阅原始报告或已定位",
+        "文字报告称利用台地冲沟内侧，范围与后期大致相近但各段移动",
+        "不能以北魏轮廓替换旧B，也不能在旧B东/南边上描A线"
+      ]
+    },
+    {
+      "id": "interior_unknown",
+      "feature_ref": "north_palace_interior_unknown",
+      "phase": "东汉",
+      "source_ids": [],
+      "label": "北宫内部 U｜尚无本项目核验平面",
+      "geometry_policy": "none",
+      "geometry": null,
+      "render": "text_card_only",
+      "default_visible": true,
+      "limits": [
+        "不复制北魏太极殿、宫门、道路、仓窖为东汉建筑"
+      ]
+    },
+    {
+      "id": "later_gate_exclusion",
+      "feature_ref": null,
+      "phase": "东掖门始建魏晋、北魏使用语境",
+      "source_ids": [
+        "people20260325_interview"
+      ],
+      "label": "东掖门｜后期遗迹，不纳入东汉门址",
+      "geometry_policy": "none",
+      "geometry": null,
+      "render": "phase_exclusion_card_only",
+      "default_visible": true,
+      "limits": [
+        "2025发掘结论排除该处东汉宫门可能，不代表东汉北宫东侧全无门",
+        "无配准点，不在世界场景放红色禁止点或精确禁建圈",
+        "不能将双阙三门道殿堂式东掖门前推180年"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "gao2023_fig1",
+      "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/6434e64ce0ef9.pdf",
+      "title": "高崇文《东汉都城洛阳礼制文化研究》图1引徐龙国",
+      "date": "2023",
+      "read_status": "既有冻结图数字化来源；本轮读冻结数据，不重复改图",
+      "type": "复原研究图"
+    },
+    {
+      "id": "henan2023_findings",
+      "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=2283",
+      "title": "2023年度河南省十大考古新发现揭晓，汉魏洛阳故城宫城项",
+      "date": "2024",
+      "read_status": "本轮原机构页面直接请求502/503；可读取搜索索引宫城原文段，未取得原始分期平面/图",
+      "type": "考古机构成果简讯，不等于原始发掘报告",
+      "observation": "报告新发现或与北宫宫墙相关的遗迹；描述东/南墙沿台地冲沟内侧，东汉与后期宫城范围大致相同但墙线不同。",
+      "limits": "概括程度不足以建立新坐标或认定墙线完全重合。"
+    },
+    {
+      "id": "people20260325_interview",
+      "url": "https://paper.people.com.cn/rmrb/pc/attachement/202603/25/b1bd9321-522d-4a9b-98f7-f691ba2d9eef.pdf",
+      "title": "张文豪：汉魏洛阳城田野考古成果“上新”",
+      "date": "2026-03-25",
+      "page": 11,
+      "type": "原始采访报道，直接采访考古队长刘涛；不是原始发掘报告",
+      "read_status": "原版PDF文字175–242行已读；截图缓存失败；该报道未提供可用于本项目配准的宫城平面",
+      "observation": "2025发掘确认东掖门始建魏晋，排除该处东汉宫门。报道另有北魏仓窖/白马寺坊门。",
+      "limits": "不能把后期门制及仓窖/坊门复制到180年；不能用报道的北魏坊门宽推东汉街巷。"
+    }
+  ],
+  "assertions": [
+    {
+      "id": "extent_conflict",
+      "status": "qualitative_conflict_unresolved",
+      "a": "north_palace_extent_gao2023_B",
+      "b": "north_palace_excavated_walls_A_unplaced",
+      "text": "旧研究范围与新发掘约束应并列。尚未配准，不能计算偏移量、重叠面积或精确差异红区。"
+    },
+    {
+      "id": "scope_not_identity",
+      "status": "supported_in_report",
+      "text": "范围大致相近不等于东汉、魏晋、北魏城墙逐段重合，也不等于宫门和宫内建筑相同。"
+    },
+    {
+      "id": "gate_phase_correction",
+      "status": "supported_by_original_interview",
+      "text": "后期东掖门应标始建魏晋，不能只笼统写北魏，更不能前推东汉。"
+    },
+    {
+      "id": "freeze",
+      "status": "unchanged",
+      "text": "本轮只补冲突/分期说明，42项和36B+6null保持原字节。"
+    }
+  ],
+  "ui_contract": {
+    "data_separation": "本JSON为旁挂说明层，不merge进冻结features，不新增作品数",
+    "toggle_label": "旧北宫示意范围（B，仅供对照）",
+    "non_spatial_panel_label": "北宫证据待核",
+    "always_show_when_B_visible": [
+      "新东/南墙A尚未配准",
+      "内部布局未知",
+      "东掖门为魏晋以后"
+    ],
+    "style": "旧B虚线+文字，不仅靠颜色；新A卡片无地图pin/leader line/world coordinate",
+    "noGL": "同一文字卡与来源可读；B轮廓可文字说明",
+    "counts": "证据层42/36B已置/6未置；此说明项不计新增地点/模型/作品",
+    "loading_failure": "说明数据失败时旧B保持关闭，显示可重试和来源链接，不退回确定北宫字样",
+    "acceptance": [
+      "冻结hash一致",
+      "A/U/后期排除层全部geometry=null或none",
+      "B关闭时不残留宫域填充/实体",
+      "切换有键盘名称与可见状态文字",
+      "不显示修正后北宫面积/偏移量",
+      "所有后期形制说明带年代"
+    ]
+  },
+  "next_evidence_gate": [
+    "取得新发掘墙段的原始分期平面/说明",
+    "核实可共同定位的控制点、尺度及坐标转换",
+    "逐段记录日期/叠压/修补关系，而不是把大致范围当一张180年全城图",
+    "任何几何修订另立版本、保留旧图对照，先交复核"
+  ],
+  "unverified_leads": [
+    {
+      "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=2810",
+      "topic": "2025年度考古工作汇报，或有东汉砌砖水道信息",
+      "read_status": "原机构页工具不可访问且HTTP503；本轮仅在转刊看见，未作为已核新A添加",
+      "action": "待原机构全文/图可读再提，不能现在画东汉水道"
+    }
+  ],
+  "research_limits": "未看到可配准原始新墙图；原机构访问失败不代表发现不存在。没有新增城内建筑完成量。"
+}

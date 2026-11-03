@@ -1,0 +1,210 @@
+{
+  "id": "market-A-N2-local-v1",
+  "logicalModelGroups": 1,
+  "defaultCandidate": "assets/market-A-N2-local.glb",
+  "sourceSHA": {
+    "base": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+    "N2": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+    "B": "43d7799f85feccb0d6f1e0412c46853e6b3339535e38a9b806e8c5d3898f845e"
+  },
+  "removeBaseN2Exactly": [
+    "N2_floor",
+    "N2_sidewall",
+    "N2_sidewall.001",
+    "N2_rearwall",
+    "N2_rearwall.001",
+    "N2_rear_lintel",
+    "N2_frontpost",
+    "N2_frontpost.001",
+    "N2_frontpost.002",
+    "N2_frontbeam",
+    "N2_gable_-3.87",
+    "N2_gable_3.87",
+    "N2_frontstep",
+    "N2_rearstep",
+    "N2_counter",
+    "N2_counterleg",
+    "N2_counterleg.001",
+    "N2_counter.001",
+    "N2_counterleg.002",
+    "N2_counterleg.003",
+    "N2_shelfpost",
+    "N2_shelfpost.001",
+    "N2_shelfpost.002",
+    "N2_shelfpost.003",
+    "N2_store_shelf",
+    "N2_store_shelf.001",
+    "N2_store_shelf.002",
+    "N2_closed_stock",
+    "N2_closed_stock.001",
+    "N2_closed_stock.002"
+  ],
+  "preservedSharedRoofNames": [
+    "north_shared_roofbed_-1",
+    "north_shared_roofbed_1",
+    "south_shared_roofbed_-1",
+    "south_shared_roofbed_1"
+  ],
+  "N2ActiveNodeCount": 54,
+  "defaultANodeCount": 524,
+  "defaultIsLocalLibraryCandidateNotCityChange": true,
+  "optionalB": {
+    "asset": "assets/optional-B-routes-local.glb",
+    "removeBeforeAddExactly": [
+      "route_public",
+      "route_east",
+      "route_rearN",
+      "route_rearS",
+      "route_exitPublic",
+      "route_exitN",
+      "route_exitS"
+    ],
+    "addedNodes": [
+      "flowB_public",
+      "flowB_east_south",
+      "flowB_entry",
+      "flowB_rear_south",
+      "flowB_west_service",
+      "flowB_rear_north"
+    ],
+    "defaultEnabled": false,
+    "neverLoadBothRoutes": true
+  },
+  "actualAnchor": [
+    214.28599548339844,
+    0.0,
+    -1959.1839599609375
+  ],
+  "nominalAnchor": [
+    214.286,
+    0,
+    -1959.184
+  ],
+  "actualMinusNominalMeters": [
+    -4.516601563864242e-06,
+    0.0,
+    4.003906246907718e-05
+  ],
+  "axes": "+X design east,+Y up,-Z design north; schematic meters",
+  "placementColumnMajor": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    214.28599548339844,
+    0.0,
+    -1959.1839599609375,
+    1
+  ],
+  "inversePlacementColumnMajor": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    -214.28599548339844,
+    -0.0,
+    1959.1839599609375,
+    1
+  ],
+  "bufferSegments": [
+    {
+      "source": "base",
+      "offset": 0,
+      "bytes": 726600,
+      "sha256": "83859437ab9f1f96889496162c57b6e473b7e0083626b81906567ebd051a54ad"
+    },
+    {
+      "source": "N2",
+      "offset": 726600,
+      "bytes": 36312,
+      "sha256": "5e388c3d25231b57c2bd825a6611b6efab4734098e8c997c4cbc23be8cb702d6"
+    }
+  ],
+  "checks": [
+    {
+      "asset": "market-A-N2",
+      "sha256": "493798b8f09f594bb2ed3015b0db273e15badd3c7a62a99f9bdda1738880c707",
+      "triangles": 18296,
+      "activeMeshNodes": 524,
+      "negativeDeterminantNodes": 0,
+      "binaryChunkEqual": true,
+      "allAccessorsUVNormalsIndicesUnchanged": true,
+      "materialsExactEqual": true,
+      "imageCount": 0,
+      "placements": [
+        {
+          "translation": [
+            214.28599548339844,
+            0.0,
+            -1959.1839599609375
+          ],
+          "yaw": 0,
+          "orientedTriangleMaxErrorMeters": 0.0
+        },
+        {
+          "translation": [
+            120,
+            3,
+            -240
+          ],
+          "yaw": 90,
+          "orientedTriangleMaxErrorMeters": 0.0
+        }
+      ]
+    },
+    {
+      "asset": "optional-B-routes",
+      "sha256": "40f3fef9a52af742e2df71a684a4a61c7c21d9ea79760cb6b894bf27c371de56",
+      "triangles": 72,
+      "activeMeshNodes": 6,
+      "negativeDeterminantNodes": 0,
+      "binaryChunkEqual": true,
+      "allAccessorsUVNormalsIndicesUnchanged": true,
+      "materialsExactEqual": true,
+      "imageCount": 0,
+      "placements": [
+        {
+          "translation": [
+            214.28599548339844,
+            0.0,
+            -1959.1839599609375
+          ],
+          "yaw": 0,
+          "orientedTriangleMaxErrorMeters": 0.0
+        },
+        {
+          "translation": [
+            120,
+            3,
+            -240
+          ],
+          "yaw": 90,
+          "orientedTriangleMaxErrorMeters": 0.0
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "No city defaults changed; do not load base alongside assembled candidate.",
+    "Raw mesh POSITION buffers preserved, root-localized not all-vertex rebaked.",
+    "No images exist in these GLBs; materials preserved, not a PBR texture upgrade.",
+    "No new history/structural/contact/GPU/Unity/Godot acceptance.",
+    "A retains shared entry conflict; B optional routing design not historical regulation."
+  ]
+}

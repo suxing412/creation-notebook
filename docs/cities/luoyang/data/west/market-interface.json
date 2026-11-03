@@ -1,0 +1,60 @@
+{
+  "id": "jin-market-C01-with-link",
+  "status": "functional prototype, not near-detail complete or archaeological market",
+  "compatible": "wallA + direct + C-alt + 6m + west-road-junction",
+  "replace": [
+    {
+      "old": "luoyang-west-road-junction/assets/corridor-6m.glb",
+      "new": "assets/corridor-6m-market-link.glb"
+    }
+  ],
+  "add": [
+    "assets/market-cluster.glb"
+  ],
+  "keep": [
+    "joined-route-terrain.glb",
+    "south14 connection-terrain.glb",
+    "all 44 courtyard placements/prototypes",
+    "Guangyang direct gate/walls",
+    "other wallA segments",
+    "B42 and unknown layers"
+  ],
+  "exclusive": "Never overlay old and new 6m corridor; unsupported 10m/original layout must not load linked market",
+  "coordinates": "absolute glTF X east/Y up/Z negative north",
+  "translation": [
+    0,
+    0,
+    0
+  ],
+  "cameraTargets": {
+    "market": [
+      214.286,
+      2,
+      -1959.184
+    ],
+    "link": [
+      320,
+      1,
+      -1959.184
+    ]
+  },
+  "countsUnchanged": {
+    "courtyards": 44,
+    "works": 21
+  },
+  "assets": [
+    {
+      "path": "assets/market-cluster.glb",
+      "bytes": 1031928,
+      "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8"
+    },
+    {
+      "path": "assets/corridor-6m-market-link.glb",
+      "bytes": 8272,
+      "sha256": "b46dd450d7e8636b744d2dcd1d0cee8e98352025b7cda57b2cd0938a3da149bf"
+    }
+  ],
+  "BRegionalLabel": "region_jin_B unchanged; no boundary inferred from 75m envelope",
+  "unbuilt": "remaining city unknown/background is not reconstructed empty urban space; market unallocated land explicitly unassigned",
+  "validation": "CPU mesh/finite paths only; no GPU/browser rendering approval"
+}

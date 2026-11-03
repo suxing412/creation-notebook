@@ -1,0 +1,124 @@
+{
+  "id": "LUOYANG-JIN-MARKET-C-PRECEDENTS-01",
+  "checked_at": "2026-11-03",
+  "frozen_feature": {
+    "id": "region_jin_B",
+    "name": "金市",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        214.286,
+        1959.184
+      ]
+    },
+    "source_id": "gao2023_fig1",
+    "scope": "仅区域标签，无市界/地块；75m为显示包络，不是市面积或半径。"
+  },
+  "naming": {
+    "adopt": "金市候选附近·市肆C样板",
+    "avoid": "西市=金市的无保留等同",
+    "evidence": "徐2019沿用金市、南市、马市并说明金市在城内。宋艳萍论文搜索摘要援引西晋陆机《洛阳记》金市位于城西；该段尚未成功定位全文，不作为东汉同名定论。方位“西侧”不自动生成正式名称“西市”。",
+    "later_exclusion": "唐长安西市又称金市的材料，不能用于东汉洛阳名称等同。"
+  },
+  "sources": [
+    {
+      "id": "gao2023_fig1",
+      "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/6434e64ce0ef9.pdf",
+      "read": "沿用冻结研究图与描点",
+      "usable": "金市关系位置B；没有实测边界。"
+    },
+    {
+      "id": "xu2019_market",
+      "url": "https://www.cssn.cn/lsx/lsx_kgx/202210/t20221024_5552600.shtml",
+      "read": "已读原机构综述",
+      "usable": "金市在城内，南市南郊，马市东郊；不确定建筑平面。"
+    },
+    {
+      "id": "nmc_market_brick",
+      "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202110/t20211028_251942.shtml",
+      "title": "中国国家博物馆：市楼画像砖",
+      "read": "馆藏原页文字已读，图像未实际看到；网页未提供本轮可核具体出土地点/精确年代字段。",
+      "observed_text": "馆文描述门垣、市门、市楼、悬鼓及交易活动；解释围界、出入与市场管理。",
+      "transfer": "抽取有边界的交易空间与朴素入口；不要求样板就是整个市，不把所有市场定为一门或同形。",
+      "limits": "画像与馆文解释不是洛阳金市施工图；不能推出面积、店数、楼高或均一规则。"
+    },
+    {
+      "id": "sichuan_wine_shop",
+      "url": "https://artsandculture.google.com/story/kwXhEJTp4eK4LA?hl=zh-CN",
+      "title": "四川博物院原馆展页：四川汉代社会的发展与繁荣",
+      "read": "馆方托管展页文字已读；羊尊酒肆图像未实际看成功。",
+      "period_region": "页面标25/220；四川，不是洛阳同地域",
+      "observed_text": "售酒者在案内持量器、递器皿，外侧顾客交易。",
+      "transfer": "酒肆案台、容器与交易前沿关系的跨地域类比。",
+      "limits": "不等比放大、不由器形倒推真实店面尺寸。"
+    },
+    {
+      "id": "song2023_commerce",
+      "url": "https://dflt.qdu.edu.cn/__local/8/2F/38/2B9E72E1AD4E7008154A35CA324_84088A6D_7FE219.pdf",
+      "title": "宋艳萍《汉代人视阈中的商业》，东方论坛2023(4):43–61",
+      "read": "实际读取页56–59文字；图5–11引用四川画像砖；PDF截图失败，不能声称本轮实际读图。",
+      "observed_text": "作者辨列肆、空地行商、商铺案台及商品；若干品种判断带推测。",
+      "transfer": "固定店肆与流动摊位共存，可用作不同于住宅的行为组织。",
+      "limits": "四川跨地域类比；图像有艺术压缩，非测绘市图；不复刻十字四门整齐棋盘为金市史实。"
+    }
+  ],
+  "proposal": {
+    "classification": "C design, not historical reconstruction",
+    "scope": "有限非住宅样板，不是整个金市",
+    "sample_envelope": {
+      "width": 60,
+      "depth": 44,
+      "unit": "schematic_m",
+      "status": "maker提议，C研究包络未历史验证"
+    },
+    "components": [
+      {
+        "kind": "single_storey_shop",
+        "count": "4–6",
+        "role": "屋盖下案台/售卖前沿，一部分后侧储货",
+        "basis": "商铺/案台有画像文字类比；建筑层数、屋盖和尺寸为C简化"
+      },
+      {
+        "kind": "movable_stall",
+        "count": "2–3",
+        "role": "长案/低垫面与交易停留区",
+        "basis": "行商与摊位类比；具体货品为C"
+      },
+      {
+        "kind": "plain_boundary_and_entry",
+        "role": "低围界＋普通矩形出入口，入口不挡通行",
+        "basis": "围界/市门关系；本样板门数非整市复原"
+      },
+      {
+        "kind": "goods_service_yard",
+        "role": "少量篮筐、陶罐、袋包与装卸净空；不放大量现代木箱",
+        "basis": "为商业行为作C功能推测，不能声称画像证明独立后院"
+      },
+      {
+        "kind": "management_marker_optional",
+        "role": "小管理屋或文字标注，不造高楼作为必要条件",
+        "basis": "管理职能有馆文说明，当前只作市的一角"
+      }
+    ],
+    "layout": "避免两排完全对称现代商街；保留主通行带、店前停留、少量摊位与后侧服务空地，不将住宅庭院换牌匾冒充市场。",
+    "access": "东向支路到西干道约151m仅maker C候选；先查道路/门/宫/院冲突，新北宫未配准不可宣称排除全部历史冲突。",
+    "avoid": [
+      "现代玻璃橱窗/连续招牌街/牌楼",
+      "后世行会牌匾/明清商号立面",
+      "每肆同一住宅模板",
+      "把金市B点改成样板矩形史实界",
+      "因名市井而强加水井",
+      "把画像市门方位等同洛阳方位"
+    ],
+    "parameters": "店数、摊数、宽深、高度、顶坡、通道宽、货品比例、入口数、货场均需独立C配置与seed，当前范围未测试。"
+  },
+  "acceptance": [
+    "冻结42/hash不改；不新增已证史实数量",
+    "店面交易面/后勤面/通行空间有不同功能",
+    "门扇和摊案净空、屋面接点、重复面和穿模检查",
+    "俯视与近看能区别住宅，不依靠巨大楼塔",
+    "所有图源仅引用链接，外部原图不入包",
+    "真实视觉/GPU验收未做须明确"
+  ],
+  "limitations": "本轮未核直接洛阳金市发掘建筑图，也未实际读成功参考图像；已读文本允许制作可追踪的C功能小样，不冒称复原。"
+}

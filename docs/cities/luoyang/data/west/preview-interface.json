@@ -1,0 +1,105 @@
+{
+  "id": "C-west-connection-cloud-preview",
+  "coordinateContract": {
+    "native": "Blender east X,north Y,up Z",
+    "GLB": "three X=east,Y=up,Z=-north; already placed in absolute schematic coordinates",
+    "applyAdditionalTranslation": false
+  },
+  "assetLoading": {
+    "route": "assets/route-corridor.glb",
+    "gate": "assets/guangyang-C-form.glb",
+    "loadOnlyOnConnectionEntry": true,
+    "reuseExistingPrototypeCache": true,
+    "doNotDuplicateAll44": true
+  },
+  "contextLayer": "C-alt01 south14 transforms in inputs/alt14-placement.json; other30 and frozenB42 unchanged",
+  "cameras": [
+    {
+      "id": "city",
+      "label": "全城B骨架",
+      "position": [
+        3300,
+        3000,
+        1000
+      ],
+      "target": [
+        1200,
+        0,
+        -1800
+      ]
+    },
+    {
+      "id": "connection",
+      "label": "C连接切片",
+      "position": [
+        800,
+        500,
+        -350
+      ],
+      "target": [
+        330,
+        0,
+        -650
+      ]
+    },
+    {
+      "id": "district",
+      "label": "南组14院",
+      "position": [
+        590,
+        220,
+        -680
+      ],
+      "target": [
+        590,
+        0,
+        -790
+      ]
+    },
+    {
+      "id": "junction",
+      "label": "街区接干道",
+      "position": [
+        450,
+        75,
+        -735
+      ],
+      "target": [
+        390.86781554,
+        0.2,
+        -800
+      ]
+    },
+    {
+      "id": "gate",
+      "label": "广阳B点·C门体",
+      "position": [
+        -52,
+        32,
+        -430
+      ],
+      "target": [
+        0,
+        3,
+        -489.796
+      ]
+    }
+  ],
+  "mandatoryLabels": [
+    "B只约束位置与关系，C门体为推测设计",
+    "淮阳于庄庄园明器年代有争议，非城市门直接证据",
+    "一道8m不是史实定案",
+    "空白未建，不是古代空地；地形阶梯边缘是切片裁切",
+    "屋面为轮廓级占位；上层楼梯/门扇未建",
+    "GPU/手机/动态导航未验"
+  ],
+  "validation": {
+    "frozenBHash": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+    "features": 42,
+    "placed": 36,
+    "null": 6,
+    "courtyards": 44,
+    "standaloneWorks": 21
+  },
+  "handoff": "integration worker sole runtime writer; this folder does not modify city entry"
+}
