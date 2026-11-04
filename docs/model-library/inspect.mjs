@@ -146,7 +146,9 @@ async function load() {
     const box = new T.Box3().setFromObject(root);
     const center = box.getCenter(new T.Vector3());
     const radius = Math.max(box.getSize(new T.Vector3()).length(), 0.1);
-    const camera = new T.PerspectiveCamera(42, 1, Math.max(radius / 10000, 0.001), radius * 100);
+    // Keep depth precision proportional to the model, including thin overlapping
+    // floors. The near plane is 0.5% of its diagonal, leaving close inspection room.
+    const camera = new T.PerspectiveCamera(42, 1, radius / 200, radius * 100);
     controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     const viewDirection = new T.Vector3(0.8, 0.55, 0.8).normalize();
@@ -190,7 +192,10 @@ async function load() {
     shadowCamera.near = radius * 0.1;
     shadowCamera.far = radius * 4;
     shadowCamera.updateProjectionMatrix();
-    keyLight.shadow.normalBias = radius * 0.001;
+    // Cover the PCF filter footprint in world units. A fixed fraction of model
+    // size can be smaller than one shadow texel and leave stripes on flat faces.
+    const shadowTexel = (shadowCamera.right - shadowCamera.left) / keyLight.shadow.mapSize.x;
+    keyLight.shadow.normalBias = shadowTexel * 2;
     keyLight.shadow.bias = -0.0001;
     scene.add(keyLight, keyLight.target);
     const fill = new T.DirectionalLight(0xdce8ff, 0.5);
