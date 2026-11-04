@@ -2,6 +2,22 @@
 
 把想象做成有形之物，把经验留下来。
 
+## 当前维护方式（四入口网站）
+
+现行源码为 `docs/index.html`、三个 `*-library/index.html` 及共用的 `docs/notebook.css` / `docs/notebook-design.css` / `docs/notebook.js`，无需模板构建。`notebook-design.css` 是只作用于四入口的手账主题。`docs/notebook-index.json` 记录完整库索引；`docs/model-library/registry.json` 只记录城市相关资产子集，不能用它的数量替代整个模型库。
+
+- `python modeling-lab/gallery/build.py`：默认调用静态入口检查，不生成或修改 `docs/`。
+- `python modeling-lab/gallery/check_overview.py`：只读检查四入口本地文件引用、页面内锚点、重复 ID、筛选节点及卡片数量；不访问外网、不调用构建器。
+- `--report <path>` 可显式保存检查 JSON；`--baseline <old-docs>` 与逐文件 `--allow-changed <path>` 可额外检查旧快照文件身份。没有基线时不宣称资产保真。
+- `python modeling-lab/gallery/build.py --legacy`：仅为旧总览生成提供的显式命令；现行库入口存在时拒绝运行。需要恢复历史生成时，使用独立旧版检出或包含必要旧资料的 `modeling-lab/gallery/dist/` 快照。不要直接执行两个旧生成器覆盖新版首页。
+- `python modeling-lab/gallery/check_overview.py --legacy`：只读检查旧总览与 `catalog.json` 的结构对应，不再触发重建。
+
+浏览器交互、响应式版面、GPU、真机与设计验收需要分别检查。本工具不会因静态检查通过而提升已有发布/设计状态。
+
+## 以下为历史构建与交付记录
+
+下文的构建方式、阶段数量和验收结果属于当时版本，不作为当前四入口页面的生成命令或新版本验收证据。
+
 当前20项：12模型与介绍页、2空间原型、4历史空间网页实验、2复用方法。空间设计验收成品仍为0。系统化研究为现有方法补充，不增加作品数。
 
 本次修订将SD01升级0.3操作原型，旧0.2目录按原子树保留于spaces/SD01-v02/；发布状态与设计验收独立。截至2026-11-02T10:01Z，17项当前公开入口已有核验记录；SD01 v0.3与新增系统化研究入口绑定内容提交a4e889ae98b1b9290dfa8c14aeb4488a7402ca5c及Pages41424824774成功。根代理实际访问总览搜索/清空、SD01无GL备用/离散样本、旧v0.2、方法HTML及4卷源包重组完整SHA。previousVersion保留旧公开证据。公开可访问不代表GPU、手机、用户理解或设计验收。

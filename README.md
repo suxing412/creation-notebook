@@ -4,7 +4,7 @@
 
 三维造物、网页实验与可复用方法的独立静态作品集。
 
-**当前收录：7 轮常规（001–007）、3 轮融合（F01–F03）、1 套陶瓷翼几何配方，以及造物手记工作法 v2。** 制作过程、检查证据与尚未验证的边界随作品保留。
+**当前入口：1 个大型项目、20 个模型家族、13 个模型介绍网页、2 个空间原型与 4 个历史空间实验。** 分类及数量见 `docs/notebook-index.json`；发布状态与设计验收分别记录。制作过程、检查证据与尚未验证的边界随作品保留。
 
 ## 目录
 
@@ -16,13 +16,25 @@
 
 005/006 源 ZIP 使用带 SHA-256 校验的原字节分卷；通过作品页的源码下载入口还原完整 ZIP。007 保留全部 354 个原始文件，不用精简版本替代。已有报告中的验收日期与限制仍有效，不表示本次重新验证了模型/GPU/手机。
 
-## 构建与维护
+## 本地预览与维护
+
+当前站点为直接维护 HTML/CSS/JavaScript 的静态站，无需安装依赖或生成页面。四个入口分别为 `docs/index.html`、`docs/model-library/index.html`、`docs/web-library/index.html`、`docs/space-library/index.html`，共用基础样式 `docs/notebook.css`、手账主题 `docs/notebook-design.css` 与交互 `docs/notebook.js`。手账主题只作用于这四个入口，作品详情保留各自设计。库内容索引保存在 `docs/notebook-index.json`。
+
+在仓库根目录启动本地预览：
+
+```sh
+python -m http.server 8000 --directory docs --bind 127.0.0.1
+```
+
+然后打开 `http://127.0.0.1:8000/`。维护后执行静态入口检查：
 
 ```sh
 python modeling-lab/gallery/build.py
 ```
 
-只需 Python 3 标准库。构建不访问私有工作区，不需要账户密钥；详情见 [工具说明](modeling-lab/gallery/README.md)。站内使用相对 URL，允许部署到 GitHub Pages 的项目子路径。
+该命令现在只检查现有页面，不重建或覆写首页。也可直接运行 `python modeling-lab/gallery/check_overview.py`；检查范围为四个入口的本地引用、重复 ID、筛选节点及目录数量，不代表浏览器交互、GPU、真机或设计验收。只需 Python 3 标准库，不需要账户密钥。
+
+旧目录生成器保留显式命令 `python modeling-lab/gallery/build.py --legacy`，仅用于独立的旧版检出或准备好的 `modeling-lab/gallery/dist/` 旧版快照；检测到现行库入口时会拒绝覆盖。不要直接执行 `build_legacy.py` 或 `build_overview.py` 维护新版首页。详情见 [工具说明](modeling-lab/gallery/README.md)。新增站内链接使用相对 URL，以兼容 GitHub Pages 项目子路径；部分历史页面仍保留已发布站点的绝对 URL。
 
 ## GitHub Pages 设置（由仓库所有者执行）
 
