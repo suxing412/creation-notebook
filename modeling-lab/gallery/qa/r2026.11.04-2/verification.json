@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-11-04T03:27:25.264052+00:00",
+  "batch": "r2026.11.04-2",
+  "prototype": "docs/prototypes/luoyang-m0/",
+  "scope": "One existing residential courtyard A model; independent M0 style comparison",
+  "modelSha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+  "checks": {
+    "moduleSyntax": "bootstrap, renderer and shaders passed node --check",
+    "existingCatalogues": "20 models, 13 websites, 6 spaces, 209 local references passed",
+    "responsiveThumbnails": "39 source images passed --check",
+    "originalLuoyangDiffFromR1": [],
+    "samples": "Four distinct hashes; visually verified ink/pencil and hull/edge from native viewport screenshots",
+    "desktopInteractions": [
+      "compare and single method switching",
+      "ink and pencil switching",
+      "keyboard orbit and reset",
+      "line-width and paper sliders",
+      "resize from 1440x1500 to 1280x960",
+      "close and reopen twice"
+    ],
+    "failureRecovery": "Exact model request returned intentional HTTP 503 once; poster fallback and retry verified",
+    "mobile375": {
+      "state": "poster",
+      "canvasHidden": true,
+      "controlsHidden": true,
+      "posterLoaded": true,
+      "horizontalOverflow": false,
+      "startButtonHeight": 44,
+      "bodyBytes": 194912,
+      "threeOrModelRequests": []
+    },
+    "renderMetrics": {
+      "eachMethodDrawCalls": 15,
+      "eachMethodSubmittedTriangles": 15130,
+      "compareDrawCalls": 30,
+      "compareSubmittedTriangles": 30260,
+      "modelBytes": 510536,
+      "desktopBeforeInteractionBodyMBRounded": 3.01
+    },
+    "console": "One expected warning from intentional HTTP 503 recovery test; no subsequent observed errors"
+  },
+  "reviewFixes": {
+    "W7": "Increase camera near-plane precision and use two shadow-texel normal bias; A/B/TC03 checked at desktop and mobile widths, metal lighting checked",
+    "W8": "Crop scrollbars from five webpage screenshots and regenerate responsive thumbnails",
+    "W9": "Mark binary asset extensions in .gitattributes; 25 bin assets match HEAD bytes"
+  },
+  "pending": [
+    "Producer choice of visual style",
+    "Claude review of this tag",
+    "Full-city 300 draw-call and 1.5 million triangle budgets",
+    "Integrated-GPU 30 fps and real-phone testing"
+  ],
+  "visualTradeoff": "Screen-space edges simplify subpixel folds; some stair-step edge aliasing remains visible at single-pixel width."
+}

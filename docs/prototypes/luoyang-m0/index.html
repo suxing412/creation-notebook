@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f0e5">
+  <meta name="description" content="洛阳手记的画风试验。用同一座住宅院落比较两种描边方式、墨线实色与铅笔淡彩。">
+  <title>洛阳 · 试一笔画风 — 造物手记</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {"imports":{"three":"../../fusions/F01/vendor/three.module.js"}}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到画风试验</a>
+  <header class="site-header">
+    <a class="brand" href="../../index.html" aria-label="返回造物手记">
+      <span class="brand-stamp" aria-hidden="true">造</span>
+      <span>造物手记<small>CREATION NOTEBOOK</small></span>
+    </a>
+    <nav aria-label="本页导航">
+      <a href="#samples">看四张样张</a>
+      <a href="../../model-library/courtyard-family.html">查看研究模型 <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="introduction" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow"><span aria-hidden="true">✳</span> LUOYANG / A STUDY IN LINE &amp; PAPER</p>
+        <h1 id="page-title">一座城，<br>先从一笔开始。</h1>
+      </div>
+      <div class="intro-note">
+        <span class="note-label">画风试验 · 待选</span>
+        <p>把同一座院落放在纸上，<br>比较勾边、设色与纸面的质感。<br>转动一下，再看屋檐和转角。</p>
+        <p class="scope-note">样本取自现有住宅院落 A 方案，属于研究推测模型。这里切换的是画法样张，史料分级随内容资料绑定。</p>
+      </div>
+    </section>
+
+    <section class="experiment" aria-labelledby="experiment-title">
+      <div class="experiment-heading">
+        <div>
+          <p class="eyebrow">01 / THE DRAWING DESK</p>
+          <h2 id="experiment-title">在同一个视角里，比一比。</h2>
+        </div>
+        <div class="viewer-actions">
+          <button id="start3d" class="primary-button" type="button">打开 3D <span aria-hidden="true">↗</span></button>
+          <button id="close3d" class="quiet-button" type="button" hidden>收起 3D</button>
+        </div>
+      </div>
+
+      <div id="stage" class="drawing-stage" data-state="poster" data-method="compare">
+        <img id="poster" src="assets/ink-hull.webp" width="900" height="626" alt="用于画风比较的住宅院落 A 方案全景" fetchpriority="high">
+        <canvas id="scene" aria-label="住宅院落画风比较，可拖动旋转、滚轮或双指缩放" aria-describedby="stage-help" tabindex="0" hidden></canvas>
+        <div id="method-labels" class="method-labels" aria-hidden="true">
+          <div class="method-label label-hull"><b>A</b><span>轮廓勾线<small>反向外壳</small></span></div>
+          <div class="method-label label-edge"><b>B</b><span>屏幕勾线<small>边缘检测</small></span></div>
+        </div>
+        <div class="drawing-caption"><span>住宅院落 · 同一模型</span><span class="live-caption">同一视角 · 两侧同步</span></div>
+      </div>
+
+      <div class="stage-message">
+        <p id="status" role="status" aria-live="polite">可以先看画面，也可以打开三维比较。</p>
+        <p id="stage-help">拖动转动 · 滚轮缩放 · 双指缩放</p>
+      </div>
+      <p id="error" class="error-message" role="alert" hidden></p>
+
+      <fieldset id="live-controls" class="live-interface" disabled>
+        <legend class="visually-hidden">画风与观察设置</legend>
+        <div class="control-group method-control">
+          <span class="control-label" id="method-group-label">观察方式</span>
+          <div class="button-group" role="group" aria-labelledby="method-group-label">
+            <button type="button" data-method="compare" aria-pressed="true">并排比较</button>
+            <button type="button" data-method="hull" aria-pressed="false">只看 A</button>
+            <button type="button" data-method="edge" aria-pressed="false">只看 B</button>
+          </div>
+        </div>
+        <div class="control-group brush-control">
+          <span class="control-label" id="brush-group-label">画法样张</span>
+          <div class="button-group" role="group" aria-labelledby="brush-group-label">
+            <button type="button" data-brush="ink" aria-pressed="true"><i class="brush-mark ink-mark" aria-hidden="true"></i>墨线实色</button>
+            <button type="button" data-brush="pencil" aria-pressed="false"><i class="brush-mark pencil-mark" aria-hidden="true"></i>铅笔淡彩</button>
+          </div>
+        </div>
+        <div class="range-group">
+          <label for="line-width">线条粗细 <output id="line-width-value" for="line-width">1.4</output></label>
+          <input id="line-width" type="range" min="0.5" max="3.5" value="1.4" step="0.1">
+        </div>
+        <div class="range-group">
+          <label for="paper-strength">纸纹轻重 <output id="paper-strength-value" for="paper-strength">35%</output></label>
+          <input id="paper-strength" type="range" min="0" max="1" value="0.35" step="0.05">
+        </div>
+        <button id="reset-view" class="quiet-button" type="button">复位视角 <span aria-hidden="true">↺</span></button>
+      </fieldset>
+
+      <noscript>
+        <style>#start3d, .live-interface, #stage-help { display: none; }</style>
+        <p class="no-script-note">可以直接查看下面的四张样张与笔触说明。</p>
+      </noscript>
+
+      <div class="comparison-notes">
+        <p><span class="method-letter">A</span><strong>先读轮廓</strong>沿形体外侧添一层墨线，观察屋檐、墙角和建筑相接处。</p>
+        <p><span class="method-letter">B</span><strong>再读折线</strong>从画面的深浅与朝向变化提取线条，观察屋面、门洞和内外转折。</p>
+      </div>
+    </section>
+
+    <section id="samples" class="sample-section" aria-labelledby="samples-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 / FOUR PAGES, ONE COURTYARD</p>
+          <h2 id="samples-title">四张样张，放在一起看。</h2>
+        </div>
+        <p>同一模型与机位，<br>把区别留给线条和颜色。</p>
+      </div>
+      <div class="sample-grid">
+        <figure class="sample-sheet">
+          <div class="sample-image"><span class="sample-index" aria-hidden="true">A · 01</span><img data-sample="ink-hull" src="assets/ink-hull.webp" alt="住宅院落 A 方案，反向外壳描边与墨线实色的画风样张" width="600" height="450" loading="lazy" decoding="async"></div>
+          <figcaption><div><span class="sample-method">反向外壳</span><h3>墨线实色</h3></div><span class="sample-character">轮廓与体块</span></figcaption>
+          <p>深色轮廓配上平涂，先看清房屋和庭院的形状。</p>
+        </figure>
+        <figure class="sample-sheet">
+          <div class="sample-image"><span class="sample-index" aria-hidden="true">B · 01</span><img data-sample="ink-edge" src="assets/ink-edge.webp" alt="住宅院落 A 方案，边缘检测描边与墨线实色的画风样张" width="600" height="450" loading="lazy" decoding="async"></div>
+          <figcaption><div><span class="sample-method">边缘检测</span><h3>墨线实色</h3></div><span class="sample-character">细部与转折</span></figcaption>
+          <p>让画面中的转折也留下墨迹，比较屋顶与门洞的清晰度。</p>
+        </figure>
+        <figure class="sample-sheet pencil-sheet">
+          <div class="sample-image"><span class="sample-index" aria-hidden="true">A · 02</span><img data-sample="pencil-hull" src="assets/pencil-hull.webp" alt="住宅院落 A 方案，反向外壳描边与铅笔淡彩的画风样张" width="600" height="450" loading="lazy" decoding="async"></div>
+          <figcaption><div><span class="sample-method">反向外壳</span><h3>铅笔淡彩</h3></div><span class="sample-character">轻线与留白</span></figcaption>
+          <p>把线条和设色放轻，让院落像一页仍在推敲的手绘记录。</p>
+        </figure>
+        <figure class="sample-sheet pencil-sheet">
+          <div class="sample-image"><span class="sample-index" aria-hidden="true">B · 02</span><img data-sample="pencil-edge" src="assets/pencil-edge.webp" alt="住宅院落 A 方案，边缘检测描边与铅笔淡彩的画风样张" width="600" height="450" loading="lazy" decoding="async"></div>
+          <figcaption><div><span class="sample-method">边缘检测</span><h3>铅笔淡彩</h3></div><span class="sample-character">淡彩与纸纹</span></figcaption>
+          <p>用细而浅的线保留结构，让淡彩透出纸面质感。</p>
+        </figure>
+      </div>
+      <aside class="choice-note"><span aria-hidden="true">✳</span><p>挑画风时，先看喜欢的笔触，<br>再看转动之后，屋檐和转角是否依然清楚。</p></aside>
+    </section>
+
+    <section class="research-section" aria-label="模型资料与技术对照">
+      <details>
+        <summary>展开模型资料与技术对照 <span aria-hidden="true">＋</span></summary>
+        <div class="research-content">
+          <div>
+            <p class="eyebrow">ABOUT THIS STUDY</p>
+            <h3>这张试验纸上有什么</h3>
+            <p>模型来自住宅院落模块组的 A 方案。两种描边共用模型、相机和色板，墨线实色与铅笔淡彩都在这个样本上比较。</p>
+            <p>当前院落属于研究推测模型。画风选择完成后，再由内容资料为具体建筑绑定史料等级与推测依据。</p>
+            <a href="../../model-library/courtyard-family.html">查看院落模型与研究说明 <span aria-hidden="true">↗</span></a>
+          </div>
+          <div>
+            <p class="eyebrow">RENDERING NOTES</p>
+            <h3>两种描边的做法</h3>
+            <p><strong>反向外壳</strong>把模型沿法线略微扩展，绘制背面的线色。线条跟随形体，轮廓粗细与形体接缝需要一起观察。</p>
+            <p><strong>边缘检测</strong>读取画面中的深度与法线变化，在后处理阶段提取边缘。线条更容易包含内部转折，远近变化时要观察稳定性。</p>
+            <p>纸纹由网页程序生成，平涂与淡彩使用同一套屋面、墙体和地面色板。淡彩让颜料透出纸色，建筑之间的遮挡关系继续保留。</p>
+          </div>
+          <div class="metrics-column">
+            <p class="eyebrow">MEASURED IN THIS SESSION</p>
+            <h3>当前原型的渲染记录</h3>
+            <pre id="metrics" tabindex="0" aria-label="当前原型的渲染记录">打开三维比较后显示本次测量。</pre>
+            <p class="metrics-scope">记录范围为当前院落原型。完整洛阳城的电脑端预算为鸟瞰绘制调用不超过 300、三角形不超过 150 万、集成显卡达到每秒 30 帧，进入可交互前下载量不超过 8 MB。近景街区另计，每区不超过 10 MB。</p>
+          </div>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-hand">把一笔试好，再接着画。</p>
+    <a href="../../index.html">返回造物手记 <span aria-hidden="true">↗</span></a>
+  </footer>
+  <script type="module" src="bootstrap.mjs"></script>
+</body>
+</html>

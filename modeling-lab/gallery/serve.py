@@ -10,6 +10,7 @@ import time
 
 class PreviewHandler(SimpleHTTPRequestHandler):
     request_report = None
+    fail_once = set()
     report_lock = threading.Lock()
     extensions_map = {
         **SimpleHTTPRequestHandler.extensions_map,
@@ -19,6 +20,16 @@ class PreviewHandler(SimpleHTTPRequestHandler):
         '.webp': 'image/webp',
         '.glb': 'model/gltf-binary',
     }
+
+    def do_GET(self):
+        path = self.path.split('?', 1)[0]
+        with self.report_lock:
+            fail = path in self.fail_once
+            self.fail_once.discard(path)
+        if fail:
+            self.send_error(503, 'Intentional one-shot preview failure')
+            return
+        super().do_GET()
 
     def send_response(self, code, message=None):
         self.response_code = code
@@ -51,8 +62,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--port', type=int, default=8765)
     parser.add_argument('--report', type=Path, help='Append served response sizes to this JSONL file.')
+    parser.add_argument('--fail-once', action='append', default=[], help='Return HTTP 503 once for an exact URL path, for recovery checks.')
     args = parser.parse_args()
     PreviewHandler.request_report = args.report
+    PreviewHandler.fail_once = set(args.fail_once)
     site = Path(__file__).resolve().parents[2] / 'docs'
     handler = partial(PreviewHandler, directory=str(site))
     server = ThreadingHTTPServer(('127.0.0.1', args.port), handler)
