@@ -1,0 +1,145 @@
+{
+  "original_source_zip": {
+    "filename": "luoyang-taixue-entry-repair-v3.2-source.zip",
+    "sha256": "0f4fdd0ceada1793da6c81d400a9f940a69ce42202bd4725c9cd7d92f1d88815"
+  },
+  "published_projection_zip": {
+    "filename": "luoyang-taixue-A-v3.2-public-projection-v1.zip",
+    "sha256": "83556f30e8e88c56f8578b84afba00fe81d4c611cadb23acd30d7e3cbf4e671d"
+  },
+  "existing_original_to_public_rows": [
+    {
+      "source_path": "city/taixue-v32-mid-delta.blend",
+      "source_sha256": "eb6de7c4268cf15836943072ffb5797a6b9fda2597bfe3ec20a0565ede56b49a",
+      "projection_path": null,
+      "disposition": "excluded",
+      "reason": "Old city delta requires its exact original city base and is not activated."
+    },
+    {
+      "source_path": "models/taixue-A-LOD0.blend",
+      "source_sha256": "d789d4da21b15c7dde7dc6c767b99e2b8e7bd55b18c855ca346335c5601f32eb",
+      "projection_path": "models/taixue-A-LOD0.blend",
+      "projection_sha256": "af30bc1251283fe13f9d0c8d2ca00e35ad4c6b0a95686a74504d5832dd7f8722",
+      "disposition": "native-scene-only-projection",
+      "reason": "Changes detailed in README and QA; source bytes are unmodified."
+    },
+    {
+      "source_path": "models/taixue-A-LOD1.blend",
+      "source_sha256": "96f07679e6425f62f99bb917d4ad9db483cf1ad160f0fd65b64c76a099b4b36e",
+      "projection_path": "models/taixue-A-LOD1.blend",
+      "projection_sha256": "0e1fe2ba0a8a788c3604b85495476f19ab150900d1478a732c41e85eaac69296",
+      "disposition": "native-scene-only-projection",
+      "reason": "Changes detailed in README and QA; source bytes are unmodified."
+    },
+    {
+      "source_path": "models/taixue-A-LOD2.blend",
+      "source_sha256": "0a4990cc464345b88369c3d7b7fb77c126b73a0e5980892eb47afd0a6347d728",
+      "projection_path": "models/taixue-A-LOD2.blend",
+      "projection_sha256": "3cd8b6e490ae7e3db50f73aa78af7f859d2224860f67c87486629e12e8006ae7",
+      "disposition": "native-scene-only-projection",
+      "reason": "Changes detailed in README and QA; source bytes are unmodified."
+    },
+    {
+      "source_path": "qa/build.json",
+      "source_sha256": "6d2eb751500f59992b8c76dbd0b2851c576652741aaf2ceec37feda31fdb830b",
+      "projection_path": null,
+      "disposition": "excluded",
+      "reason": "Not required for the standalone public model; replaced by selected evidence, current checks, or concise public documentation."
+    },
+    {
+      "source_path": "qa/city-contact.json",
+      "source_sha256": "d364532c083796251071bccc1fbcd005d76192b5f4dadbf375d99ca5991133a5",
+      "projection_path": null,
+      "disposition": "excluded",
+      "reason": "Not required for the standalone public model; replaced by selected evidence, current checks, or concise public documentation."
+    },
+    {
+      "source_path": "qa/current-city-taixue.json",
+      "source_sha256": "e28642c8b45cd8466f1982908986495669f2400a1d128ee35b63e85f081f3c1c",
+      "projection_path": null,
+      "disposition": "excluded",
+      "reason": "Not required for the standalone public model; replaced by selected evidence, current checks, or concise public documentation."
+    },
+    {
+      "source_path": "qa/entry-volume.json",
+      "source_sha256": "4564988178560023dbe796d61f51fc313b94396654d7dfaa15c7607b4e309ab1",
+      "projection_path": "qa/original-entry-volume.json",
+      "projection_sha256": "4564988178560023dbe796d61f51fc313b94396654d7dfaa15c7607b4e309ab1",
+      "disposition": "exact-byte-copy",
+      "reason": null
+    },
+    {
+      "source_path": "qa/glb-readback.json",
+      "source_sha256": "3fb7a2b5768c00031250bde85edd91b4ecf64b731d1a1bb00ee9dd239369ffab",
+      "projection_path": "qa/glb-readback.json",
+      "projection_sha256": "3fb7a2b5768c00031250bde85edd91b4ecf64b731d1a1bb00ee9dd239369ffab",
+      "disposition": "exact-byte-copy",
+      "reason": null
+    },
+    {
+      "source_path": "qa/metadata-check.json",
+      "source_sha256": "71bd29d81e2b95089f1ad2439534a28cd372a900e8716ae64b4e3fafee5f17ef",
+      "projection_path": null,
+      "disposition": "excluded",
+      "reason": "Not required for the standalone public model; replaced by selected evidence, current checks, or concise public documentation."
+    },
+    {
+      "source_path": "qa/nonstair-preserved.json",
+      "source_sha256": "8dd2bb935b9e58111ecaf4b4d264204c83f0501e1a8121fe2fbcdd12bb98d625",
+      "projection_path": "qa/original-nonstair-preserved.json",
+      "projection_sha256": "8dd2bb935b9e58111ecaf4b4d264204c83f0501e1a8121fe2fbcdd12bb98d625",
+      "disposition": "exact-byte-copy",
+      "reason": null
+    },
+    {
+      "source_path": "qa/original-structure.json",
+      "source_sha256": "a72236f3f34e4b26151349d216c7166e9968a0929d874b5f02a562a34675512b",
+      "projection_path": null,
+      "disposition": "excluded",
+      "reason": "Not required for the standalone public model; replaced by selected evidence, current checks, or concise public documentation."
+    },
+    {
+      "source_path": "qa/png-sanitization.json",
+      "source_sha256": "c4307eb6dfc890d074e2417921d48a826192fb6d302d79aa9b5ede6dc6ad8cc7",
+      "projection_path": null,
+      "disposition": "excluded",
+      "reason": "Not required for the standalone public model; replaced by selected evidence, current checks, or concise public documentation."
+    },
+    {
+      "source_path": "qa/state-verified.json",
+      "source_sha256": "12c2141cca982cd4f622051eaf6c5bbfc73a9a873a4ab2d90fcf5a2caae654f7",
+      "projection_path": null,
+      "disposition": "excluded",
+      "reason": "Not required for the standalone public model; replaced by selected evidence, current checks, or concise public documentation."
+    }
+  ],
+  "reference_reports": [
+    {
+      "path": "qa/native-projection-equivalence.json",
+      "sha256": "54283defab37faf6cf3a00223ebaafcabbe32438028a0684ab1c94429e2e6308"
+    },
+    {
+      "path": "qa/native-material-and-scene-check.json",
+      "sha256": "11a99107de7f5a900d6fbe080f831be46b60e0535dcb9409552f21d67d769b94"
+    },
+    {
+      "path": "qa/entry-volume.json",
+      "sha256": "b68a9aa03b3d10bfa700e6fb251426f1a75623f71b320f108743e626dc0b7715"
+    },
+    {
+      "path": "qa/glb-readback.json",
+      "sha256": "3fb7a2b5768c00031250bde85edd91b4ecf64b731d1a1bb00ee9dd239369ffab"
+    },
+    {
+      "path": "source-to-projection.json",
+      "sha256": "f401a7162a0c94a221631fbd9926521fb5c27903374aa5a6d6ec54066d5456fa"
+    }
+  ],
+  "interpretation": [
+    "Original entry-volume QA references the original GLB hashes. The published GLBs are byte-identical, so those asset hashes remain valid.",
+    "Current qa/entry-volume.json was rerun against the published GLBs; it is separate from qa/original-entry-volume.json.",
+    "Original nonstair QA is historical repair evidence, not by itself proof of the native UI projection.",
+    "The native bridge explicitly joins original .blend SHA to published .blend SHA via unchanged geometry, topology, UV, matrices and packed images; material graph and active-scene checks supplement it.",
+    "This supplement reruns the native generation and compares the new files against both the original input and published native reference. The regenerated .blend hashes can differ while checked content remains exactly equal."
+  ]
+}
