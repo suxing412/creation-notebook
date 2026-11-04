@@ -1,0 +1,80 @@
+{
+  "checkedAt": "2026-11-04T07:39:08.318358+00:00",
+  "batch": "r2026.11.04-3",
+  "scope": "M0 W10 edge rendering and W12 catalogue zoom safety",
+  "reviewBaseline": "r2026.11.04-2 / a1c9fd6",
+  "producerSelection": "B edge detection, recorded in dddb6aa",
+  "W10": {
+    "implementation": "Two-times CSS-resolution normal/depth/composition with four-sample linear resolve; matched single-sample geometry and depth; lower normal crease threshold",
+    "displayPixelRatio": 1,
+    "internalPixelRatio": 2,
+    "visualChecks": [
+      "platform perimeter continuous",
+      "wall base continuous",
+      "gate posts continuous",
+      "roof-ridge direction visible",
+      "ink and pencil samples",
+      "low-angle zoom",
+      "compare/single switching",
+      "1440x1200 to 1000x1100 resize",
+      "close and reopen",
+      "375px mobile explicit open and close"
+    ],
+    "drawCalls": 16,
+    "submittedTriangles": 15132,
+    "compareTotalDrawCalls": 31,
+    "desktopBeforeInteractionBodyMBRounded": 3.01,
+    "freshTabConsoleErrors": []
+  },
+  "W12": {
+    "implementation": "Bound pan target within R/4 of model center and orbit distance to R+R/4+2near",
+    "geometricLowerBound": "Every point in the model bounding sphere has view depth at least 2near",
+    "closestDistances": {
+      "001": 4.95081,
+      "courtyardA": 21.32844,
+      "TC03": 31.13837
+    },
+    "browserChecks": [
+      "001 repeated wheel zoom and keyboard plus at limit",
+      "001 orbit at closest distance",
+      "courtyard A wheel zoom, plus, orbit",
+      "A to TC03 switching then 375px resize and repeated keyboard zoom"
+    ],
+    "limits": "Viewport cropping remains possible at close zoom. This bound protects the near clipping plane."
+  },
+  "mobile": {
+    "viewport": [
+      375,
+      900
+    ],
+    "bodyBytes": 195320,
+    "threeOrModelRequests": [],
+    "poster": "ink-edge.webp",
+    "noHorizontalOverflow": true,
+    "explicitOpenMethod": "edge"
+  },
+  "groundPatch": {
+    "source": "R01-A-LOD0-prototype.glb mesh designed_hardpacked_activity_ground",
+    "baseTopY": 0.200000003,
+    "activityGroundTopY": 0.215000004,
+    "materials": [
+      "C_yard",
+      "C_compacted_activity_ground"
+    ],
+    "finding": "The irregular diagonal patch follows authored geometry and palette separation."
+  },
+  "staticChecks": [
+    "node --check for modified modules",
+    "209 catalogue local references passed",
+    "39 responsive thumbnail sources passed",
+    "four distinct verified sample hashes",
+    "original docs/cities/luoyang diff empty"
+  ],
+  "pending": [
+    "W11 pencil contrast and warm graphite colour awaiting producer choice",
+    "Isuria M0 whole-city concept and content-side brush samples",
+    "Claude review of this batch",
+    "M1 after M0 acceptance",
+    "Full-city budgets and physical integrated-GPU/mobile frame-rate testing"
+  ]
+}

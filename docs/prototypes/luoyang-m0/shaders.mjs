@@ -76,6 +76,7 @@ export const pageFragment = /* glsl */ `
   uniform bool pencil;
   uniform vec3 paper;
   uniform vec3 ink;
+  uniform vec3 upDirection;
   varying vec2 vUv;
 
   float hash(vec2 p) {
@@ -96,8 +97,6 @@ export const pageFragment = /* glsl */ `
     return position.xyz / position.w;
   }
   vec3 decodeNormal(vec4 sampleValue) {
-    // MSAA resolves silhouette pixels against transparent black. Remove that
-    // coverage before decoding the geometry normal.
     return normalize(sampleValue.rgb / max(sampleValue.a, 0.0001) * 2.0 - 1.0);
   }
   float boundary(vec4 centerNormal, vec3 centerPosition, float centerDepth, vec2 offset) {
@@ -108,10 +107,9 @@ export const pageFragment = /* glsl */ `
     vec3 a = decodeNormal(centerNormal);
     vec3 b = decodeNormal(neighbour);
     float normalJump = length(a - b);
-    // Both face regions must survive beyond roughly one CSS pixel. A thin
-    // riser between almost coplanar ground patches has matching normals on
-    // these outer samples, so it cannot turn into a dotted diagonal ink line.
-    vec2 support = normalize(offset) * max(1.25 * pixelRatio, length(offset));
+    // Probe half a CSS pixel beyond the edge. This identifies near-horizontal
+    // slivers without vetoing periodic roof ribs that repeat the same normal.
+    vec2 support = normalize(offset) * max(0.5 * pixelRatio, 1.0);
     vec4 farA = texture2D(normalMap, clamp(vUv - support / resolution, vec2(0.0), vec2(1.0)));
     vec4 farB = texture2D(normalMap, clamp(uv + support / resolution, vec2(0.0), vec2(1.0)));
     float supportedFaces = step(0.95, farA.a) * step(0.95, farB.a);
@@ -121,13 +119,13 @@ export const pageFragment = /* glsl */ `
     // plane. Its plane residual stays zero, avoiding black ground at low angles.
     bool broadSurface = supportedFaces > 0.5 && supportedJump < 0.25;
     vec3 planeNormal = broadSurface ? decodeNormal(farA) : a;
-    float depthJump = abs(dot(neighbourPosition - centerPosition, planeNormal)) / max(centerDepth, 0.001);
-    // Reserve ink for structural creases (roughly 47–74 degrees). Fine roof
-    // corrugation remains legible through flat colour bands without becoming
-    // alternating screen-space ink blocks when it falls below pixel size.
-    float crease = smoothstep(0.8, 1.2, normalJump)
-      * smoothstep(0.8, 1.2, supportedJump) * supportedFaces;
-    float stepEdge = smoothstep(0.0025, 0.008, depthJump);
+    float planeDistance = abs(dot(neighbourPosition - centerPosition, planeNormal));
+    float pixelFootprint = 2.0 * centerDepth * cameraProjectionInverse[1][1] / resolution.y;
+    float depthLow = max(centerDepth * 0.0008, pixelFootprint * 0.6);
+    float depthHigh = max(centerDepth * 0.0025, pixelFootprint * 1.8);
+    float crease = smoothstep(0.25, 0.6, normalJump);
+    if (broadSurface && dot(decodeNormal(farA), upDirection) > 0.97) crease = 0.0;
+    float stepEdge = smoothstep(depthLow, depthHigh, planeDistance);
     return max(silhouette, max(crease, stepEdge) * bothCovered);
   }
   void main() {
@@ -151,16 +149,29 @@ export const pageFragment = /* glsl */ `
       edge = max(edge, boundary(normal, position, depth, vec2(-radius, 0.0)));
       edge = max(edge, boundary(normal, position, depth, vec2(0.0, radius)));
       edge = max(edge, boundary(normal, position, depth, vec2(0.0, -radius)));
-      edge = max(edge, boundary(normal, position, depth, vec2(radius, radius) * 0.7071));
-      edge = max(edge, boundary(normal, position, depth, vec2(-radius, radius) * 0.7071));
-      edge = max(edge, boundary(normal, position, depth, vec2(radius, -radius) * 0.7071));
-      edge = max(edge, boundary(normal, position, depth, vec2(-radius, -radius) * 0.7071));
       float strokeOpacity = pencil ? 0.44 + grain * 0.24 : 0.86;
       outputColour = mix(outputColour, ink, edge * strokeOpacity);
     }
     // Grain is anchored to paper coordinates and never uses frame time.
     outputColour *= 1.0 + grain * paperStrength * (pencil ? 0.075 : 0.035);
     gl_FragColor = vec4(outputColour, 1.0);
+    #include <colorspace_fragment>
+  }
+`;
+
+// Supersampled edge compositing is resolved in linear space. The tap positions
+// cover the final output pixel, including non-integer source/output DPR ratios.
+export const resolveFragment = /* glsl */ `
+  uniform sampler2D imageMap;
+  uniform vec2 outputResolution;
+  varying vec2 vUv;
+  void main() {
+    vec2 quarterPixel = 0.25 / outputResolution;
+    vec3 colour = texture2D(imageMap, vUv + vec2(-quarterPixel.x, -quarterPixel.y)).rgb;
+    colour += texture2D(imageMap, vUv + vec2(quarterPixel.x, -quarterPixel.y)).rgb;
+    colour += texture2D(imageMap, vUv + vec2(-quarterPixel.x, quarterPixel.y)).rgb;
+    colour += texture2D(imageMap, vUv + vec2(quarterPixel.x, quarterPixel.y)).rgb;
+    gl_FragColor = vec4(colour * 0.25, 1.0);
     #include <colorspace_fragment>
   }
 `;

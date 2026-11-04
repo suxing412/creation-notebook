@@ -16,7 +16,7 @@ const modelUrl = new URL('../../cities/luoyang/assets/r01/R01-A-LOD0-prototype.g
 const query = new URLSearchParams(location.search);
 const validMethod = ['compare', 'hull', 'edge'].includes(query.get('method'));
 const options = {
-  method: validMethod ? query.get('method') : mobile.matches ? 'hull' : 'compare',
+  method: validMethod ? query.get('method') : mobile.matches ? 'edge' : 'compare',
   brush: query.get('brush') === 'pencil' ? 'pencil' : 'ink',
   lineWidth: Number(lineWidthInput.value),
   paperStrength: Number(paperStrengthInput.value),
@@ -66,6 +66,9 @@ function updateMetrics() {
     }
     if (lastMetrics.bufferWidth && lastMetrics.bufferHeight) {
       lines.push(`绘制缓冲：${integer(lastMetrics.bufferWidth)} × ${integer(lastMetrics.bufferHeight)} · 像素比 ${Number(lastMetrics.pixelRatio).toFixed(2)}`);
+    }
+    if (lastMetrics.methods?.edge && lastMetrics.edgeBufferWidth && lastMetrics.edgeBufferHeight) {
+      lines.push(`描边内部缓冲 · ${integer(lastMetrics.edgeBufferWidth)} × ${integer(lastMetrics.edgeBufferHeight)} · 线性降采样抗锯齿`);
     }
     if (Number.isFinite(lastMetrics.downloadBytes)) lines.push(`院落模型：${megabytes(lastMetrics.downloadBytes)}`);
   } else {
@@ -148,7 +151,7 @@ async function start(manual = false) {
   if (manual) {
     explicitlyOpened = true;
     deliberatelyClosed = false;
-    if (mobile.matches && !validMethod && !lastMetrics) options.method = 'hull';
+    if (mobile.matches && !validMethod && !lastMetrics) options.method = 'edge';
   }
   const current = ++generation;
   const currentController = new AbortController();

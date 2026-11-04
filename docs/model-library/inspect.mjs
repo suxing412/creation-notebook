@@ -151,6 +151,11 @@ async function load() {
     const camera = new T.PerspectiveCamera(42, 1, radius / 200, radius * 100);
     controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
+    const modelRadius = radius * 0.5;
+    controls.maxTargetRadius = modelRadius * 0.25;
+    // Include allowed panning in the closest distance, so the whole bounding
+    // sphere stays beyond the near plane from every orbit direction.
+    controls.minDistance = modelRadius + controls.maxTargetRadius + camera.near * 2;
     const viewDirection = new T.Vector3(0.8, 0.55, 0.8).normalize();
     function getFitDistance(aspect) {
       const verticalHalfFov = T.MathUtils.degToRad(camera.fov) / 2;
@@ -161,6 +166,7 @@ async function load() {
     let fitDistance = getFitDistance(camera.aspect);
     function reset() {
       camera.position.copy(center).addScaledVector(viewDirection, fitDistance);
+      controls.cursor.copy(center);
       controls.target.copy(center);
       controls.update();
     }

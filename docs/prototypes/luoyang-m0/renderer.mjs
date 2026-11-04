@@ -3,7 +3,7 @@ import { GLTFLoader } from '../../fusions/F01/vendor/addons/loaders/GLTFLoader.j
 import { OrbitControls } from '../../fusions/F01/vendor/addons/controls/OrbitControls.js';
 import {
   surfaceVertex, surfaceFragment, normalFragment,
-  hullVertex, hullFragment, pageVertex, pageFragment
+  hullVertex, hullFragment, pageVertex, pageFragment, resolveFragment
 } from './shaders.mjs';
 
 const DEFAULT_MODEL = new URL('../../cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb', import.meta.url);
@@ -63,8 +63,11 @@ export async function createPrototype({
   let root;
   let colourTarget;
   let geometryTarget;
+  let compositionTarget;
   let hullMaterial;
   let paperMaterial;
+  let resolveMaterial;
+  let paperQuad;
   let scene;
   let hulls;
   let normalMaterial;
@@ -73,6 +76,7 @@ export async function createPrototype({
   const light = new THREE.Vector3(-0.6, 1, 0.75).normalize();
   const viewLight = new THREE.Vector3();
   const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+  let internalPixelRatio = 2;
 
   function trackObject(object) {
     object.traverse(node => {
@@ -141,30 +145,38 @@ export async function createPrototype({
   }
 
   function replaceTargets(bufferWidth, bufferHeight) {
-    const samples = Math.min(4, renderer.capabilities.maxSamples || 0);
     const nextColour = new THREE.WebGLRenderTarget(bufferWidth, bufferHeight, {
-      minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter, samples
+      minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter
     });
     const nextGeometry = new THREE.WebGLRenderTarget(bufferWidth, bufferHeight, {
-      minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter, samples
+      minFilter: THREE.NearestFilter, magFilter: THREE.NearestFilter
+    });
+    const nextComposition = new THREE.WebGLRenderTarget(bufferWidth, bufferHeight, {
+      minFilter: THREE.LinearFilter, magFilter: THREE.LinearFilter,
+      depthBuffer: false, stencilBuffer: false
     });
     nextColour.texture.colorSpace = THREE.NoColorSpace;
     nextGeometry.texture.colorSpace = THREE.NoColorSpace;
+    nextComposition.texture.colorSpace = THREE.NoColorSpace;
     nextGeometry.depthTexture = new THREE.DepthTexture(bufferWidth, bufferHeight, THREE.UnsignedIntType);
 
     // r180 setSize disposes GPU attachments while retaining texture objects.
-    // Fresh targets and sampler identities also refresh the resolved MSAA depth
-    // attachments when moving between split/single views or browser sizes.
+    // Fresh targets and sampler identities refresh depth attachments when
+    // moving between split/single views or browser sizes.
     renderer.setRenderTarget(null);
-    const oldTargets = [colourTarget, geometryTarget];
+    const oldTargets = [colourTarget, geometryTarget, compositionTarget];
     colourTarget = nextColour;
     geometryTarget = nextGeometry;
+    compositionTarget = nextComposition;
     resources.add(colourTarget);
     resources.add(geometryTarget);
+    resources.add(compositionTarget);
     paperMaterial.uniforms.colourMap.value = colourTarget.texture;
     paperMaterial.uniforms.normalMap.value = geometryTarget.texture;
     paperMaterial.uniforms.depthMap.value = geometryTarget.depthTexture;
+    resolveMaterial.uniforms.imageMap.value = compositionTarget.texture;
     paperMaterial.uniformsNeedUpdate = true;
+    resolveMaterial.uniformsNeedUpdate = true;
     for (const target of oldTargets) {
       if (!target) continue;
       resources.delete(target);
@@ -188,11 +200,16 @@ export async function createPrototype({
     const offset = camera.position.clone().sub(controls.target);
     camera.position.copy(controls.target).add(offset.multiplyScalar(fitDistance(camera.aspect) / oldDistance));
     renderer.setSize(width, height, false);
-    const bufferWidth = Math.max(1, Math.round(panelWidth * pixelRatio));
-    const bufferHeight = Math.max(1, Math.round(height * pixelRatio));
+    const maximumTargetSize = Math.min(4096, renderer.capabilities.maxTextureSize);
+    internalPixelRatio = Math.min(2, maximumTargetSize / Math.max(panelWidth, height));
+    const bufferWidth = Math.max(1, Math.round(panelWidth * internalPixelRatio));
+    const bufferHeight = Math.max(1, Math.round(height * internalPixelRatio));
     replaceTargets(bufferWidth, bufferHeight);
     hullMaterial.uniforms.resolution.value.set(bufferWidth, bufferHeight);
+    hullMaterial.uniforms.lineWidth.value = options.lineWidth * internalPixelRatio;
     paperMaterial.uniforms.resolution.value.set(bufferWidth, bufferHeight);
+    paperMaterial.uniforms.pixelRatio.value = internalPixelRatio;
+    paperMaterial.uniforms.lineWidth.value = options.lineWidth * internalPixelRatio;
     requestRender();
   }
 
@@ -215,11 +232,25 @@ export async function createPrototype({
       scene.overrideMaterial = null;
     }
     paperMaterial.uniforms.detectEdges.value = method === 'edge';
+    paperQuad.material = paperMaterial;
+    if (method === 'edge') {
+      // The complete edge result is drawn at 2x CSS resolution, then resolved.
+      // Normal and depth targets stay single-sampled so each pair describes
+      // the same visible surface rather than an averaged normal and one depth.
+      renderer.setRenderTarget(compositionTarget);
+      renderer.setScissorTest(false);
+      renderer.render(paperScene, paperCamera);
+      resolveMaterial.uniforms.outputResolution.value.set(
+        Math.round(viewportWidth * pixelRatio), Math.round(height * pixelRatio)
+      );
+      paperQuad.material = resolveMaterial;
+    }
     renderer.setRenderTarget(null);
     renderer.setViewport(x, 0, viewportWidth, height);
     renderer.setScissor(x, 0, viewportWidth, height);
     renderer.setScissorTest(true);
     renderer.render(paperScene, paperCamera);
+    paperQuad.material = paperMaterial;
     return { drawCalls: renderer.info.render.calls, triangles: renderer.info.render.triangles };
   }
 
@@ -229,6 +260,7 @@ export async function createPrototype({
     const started = performance.now();
     camera.updateMatrixWorld();
     viewLight.copy(light).transformDirection(camera.matrixWorldInverse);
+    paperMaterial.uniforms.upDirection.value.set(0, 1, 0).transformDirection(camera.matrixWorldInverse);
     for (const material of flatMaterials) material.uniforms.lightDirection.value.copy(viewLight);
     const methods = {};
     if (options.method === 'compare') {
@@ -241,7 +273,9 @@ export async function createPrototype({
     renderer.setViewport(0, 0, width, height);
     lastMetrics = {
       methods, downloadBytes, renderMs: performance.now() - started,
-      pixelRatio, bufferWidth: canvas.width, bufferHeight: canvas.height,
+      pixelRatio, internalPixelRatio, bufferWidth: canvas.width, bufferHeight: canvas.height,
+      edgeBufferWidth: geometryTarget.width, edgeBufferHeight: geometryTarget.height,
+      edgeAntialiasing: 'supersampled-linear-resolve',
       brush: options.brush, method: options.method, contextLost: false
     };
     onMetrics(lastMetrics);
@@ -259,8 +293,8 @@ export async function createPrototype({
     if (['compare', 'hull', 'edge'].includes(changes.method)) options.method = changes.method;
     if (Number.isFinite(changes.lineWidth)) options.lineWidth = THREE.MathUtils.clamp(changes.lineWidth, 0.4, 3.5);
     if (Number.isFinite(changes.paperStrength)) options.paperStrength = THREE.MathUtils.clamp(changes.paperStrength, 0, 1);
-    hullMaterial.uniforms.lineWidth.value = options.lineWidth * pixelRatio;
-    paperMaterial.uniforms.lineWidth.value = options.lineWidth * pixelRatio;
+    hullMaterial.uniforms.lineWidth.value = options.lineWidth * internalPixelRatio;
+    paperMaterial.uniforms.lineWidth.value = options.lineWidth * internalPixelRatio;
     paperMaterial.uniforms.paperStrength.value = options.paperStrength;
     paperMaterial.uniforms.pencil.value = options.brush === 'pencil';
     resize();
@@ -380,14 +414,24 @@ export async function createPrototype({
         cameraNear: { value: camera.near }, cameraFar: { value: camera.far },
         cameraProjectionInverse: { value: camera.projectionMatrixInverse },
         detectEdges: { value: false }, pencil: { value: false },
-        paper: { value: new THREE.Color('#f2ead7') }, ink: { value: new THREE.Color('#4b5148') }
+        paper: { value: new THREE.Color('#f2ead7') }, ink: { value: new THREE.Color('#4b5148') },
+        upDirection: { value: new THREE.Vector3(0, 1, 0) }
       }
     });
     resources.add(paperMaterial);
+    resolveMaterial = new THREE.ShaderMaterial({
+      vertexShader: pageVertex, fragmentShader: resolveFragment, depthTest: false, depthWrite: false,
+      uniforms: {
+        imageMap: { value: null },
+        outputResolution: { value: new THREE.Vector2(1, 1) }
+      }
+    });
+    resources.add(resolveMaterial);
     const paperGeometry = new THREE.PlaneGeometry(2, 2);
     resources.add(paperGeometry);
     paperScene = new THREE.Scene();
-    paperScene.add(new THREE.Mesh(paperGeometry, paperMaterial));
+    paperQuad = new THREE.Mesh(paperGeometry, paperMaterial);
+    paperScene.add(paperQuad);
     resize();
     reset();
     resizeObserver = new ResizeObserver(resize);
