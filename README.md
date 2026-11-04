@@ -21,3 +21,4 @@
 - `state.json`：上次评审到哪个版本、还有哪些问题没修
 - `tools/`：检查脚本（只用 Python 标准库加 Pillow）
 - `evidence/<版本>/`：截图、拼图和模型指标
+- `plans/`：Claude 提出、经制作人同意的改进方案（例如 [洛阳城页面重做](plans/luoyang-redesign.md)）
