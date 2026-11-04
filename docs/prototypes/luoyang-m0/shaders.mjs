@@ -135,7 +135,7 @@ export const pageFragment = /* glsl */ `
     vec3 paperColour = paper * (1.0 + grain * paperStrength * 0.10);
     // A transparent pigment layer over paper keeps the nearest-surface
     // occlusion intact. It deliberately does not reveal hidden room interiors.
-    float pigmentOpacity = pencil ? 0.56 : 1.0;
+    float pigmentOpacity = pencil ? 0.74 : 1.0;
     // Filtering an opaque pixel against transparent black premultiplies RGB
     // by coverage already; multiplying by colour.a again creates dark fringes.
     vec3 outputColour = paperColour * (1.0 - colour.a * pigmentOpacity) + colour.rgb * pigmentOpacity;
@@ -149,7 +149,7 @@ export const pageFragment = /* glsl */ `
       edge = max(edge, boundary(normal, position, depth, vec2(-radius, 0.0)));
       edge = max(edge, boundary(normal, position, depth, vec2(0.0, radius)));
       edge = max(edge, boundary(normal, position, depth, vec2(0.0, -radius)));
-      float strokeOpacity = pencil ? 0.44 + grain * 0.24 : 0.86;
+      float strokeOpacity = pencil ? 0.65 + grain * 0.24 : 0.86;
       outputColour = mix(outputColour, ink, edge * strokeOpacity);
     }
     // Grain is anchored to paper coordinates and never uses frame time.

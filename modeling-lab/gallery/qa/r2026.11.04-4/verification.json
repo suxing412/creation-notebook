@@ -1,0 +1,67 @@
+{
+  "checkedAt": "2026-11-04T08:37:27.385585+00:00",
+  "batch": "r2026.11.04-4",
+  "scope": "W11 producer-approved pencil contrast and W14 selection-record clarity",
+  "reviewBaseline": "r2026.11.04-3 / 96070e9",
+  "producerDecision": "2026-11-04: moderately strengthen pencil pigment and lines; B edge detection remains selected",
+  "W11": {
+    "pigmentOpacity": {
+      "before": 0.56,
+      "after": 0.74
+    },
+    "edgeStrokeOpacity": {
+      "before": 0.44,
+      "after": 0.65
+    },
+    "strokeColour": "#5b5147",
+    "inkRestoration": "#4b5148",
+    "visualChecks": [
+      "B and A compared at actual 300px sample width",
+      "wall, main house and gate remain distinguishable",
+      "pencil-to-ink switching restores solid pigment and green ink",
+      "four real-render samples recaptured at identical reset camera, 1000x1100, display DPR 1"
+    ],
+    "comparison": "W11-before-after-300px.jpg"
+  },
+  "W14": {
+    "implementation": "First-screen text records date and purpose of preserving the A/B selection comparison",
+    "mobileEvidence": "W14-mobile-selection-record.jpg"
+  },
+  "mobile": {
+    "viewport": [
+      375,
+      900
+    ],
+    "firstLoadBodyBytes": 174695,
+    "threeOrModelRequests": [],
+    "noHorizontalOverflow": true,
+    "explicitOpenMethod": "edge",
+    "checks": [
+      "poster first",
+      "explicit open",
+      "switch to pencil",
+      "close to poster"
+    ],
+    "drawCalls": 16,
+    "submittedTriangles": 15132,
+    "beforeInteractionBodyMBRounded": 2.99,
+    "consoleWarningsOrErrors": []
+  },
+  "staticChecks": [
+    "modified modules parse",
+    "sample dimensions and source/output hashes match",
+    "renderer/shader LF-normalized hashes match",
+    "source model hash unchanged",
+    "original Luoyang page diff empty"
+  ],
+  "limits": [
+    "Browser checks use desktop IAB with mobile viewport emulation, not physical phone hardware",
+    "Full-city performance budgets and integrated GPU FPS remain unmeasured"
+  ],
+  "pending": [
+    "Claude review of this batch",
+    "Isuria M0 whole-city concept and content-side brush samples",
+    "W13 catalogue detail zoom usability remains a separate follow-up",
+    "M1 begins after full M0 acceptance"
+  ]
+}

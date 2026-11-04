@@ -296,7 +296,11 @@ export async function createPrototype({
     hullMaterial.uniforms.lineWidth.value = options.lineWidth * internalPixelRatio;
     paperMaterial.uniforms.lineWidth.value = options.lineWidth * internalPixelRatio;
     paperMaterial.uniforms.paperStrength.value = options.paperStrength;
-    paperMaterial.uniforms.pencil.value = options.brush === 'pencil';
+    const pencil = options.brush === 'pencil';
+    paperMaterial.uniforms.pencil.value = pencil;
+    const strokeColour = pencil ? '#5b5147' : '#4b5148';
+    hullMaterial.uniforms.ink.value.set(strokeColour);
+    paperMaterial.uniforms.ink.value.set(strokeColour);
     resize();
     requestRender();
   }
