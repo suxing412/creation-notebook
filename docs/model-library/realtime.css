@@ -25,3 +25,18 @@
 .scene-background{min-width:0;margin:16px 0 0;padding:16px 0 0;border:0;border-top:1px solid #c8d1c6}.scene-background legend{float:left;width:100%;margin:0 0 12px;font-size:11px;font-weight:600;letter-spacing:.08em}.background-presets{display:flex;gap:8px;clear:both}.scene-tools .background-presets label{position:relative;width:32px;height:32px;min-height:32px;margin:0;display:block;cursor:pointer}.background-presets input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:pointer}.background-presets span{display:block;width:32px;height:32px;border:1px solid #7e8f80;box-sizing:border-box}.background-presets input:checked+span{outline:2px solid #284d3b;outline-offset:3px}.background-presets input:focus-visible+span{outline:3px solid #b58325;outline-offset:3px}.scene-tools .background-custom{display:flex;flex-direction:row;align-items:center;justify-content:space-between;margin:16px 0 10px;gap:8px;font-size:11px;letter-spacing:0}.background-custom input{width:48px;height:32px;padding:2px;border:1px solid #a2b09f;background:transparent;cursor:pointer}.background-custom input:focus-visible{outline:3px solid #b58325;outline-offset:3px}.scene-background small{display:block;font-size:10px;font-weight:400;line-height:1.6;color:#607164}.scene-stage[data-light-background=true] .scene-top,.scene-stage[data-light-background=true] #scene-badge{color:#203b30;text-shadow:0 1px 5px #ffffffd9}.scene-stage[data-light-background=true] .scene-top>span:last-child{color:#2e473b}@media(max-width:700px){.scene-background{grid-column:1/-1;margin-top:6px}.scene-tools .background-presets label{width:38px;height:38px}.background-presets span{width:38px;height:38px}}
 @media(min-width:701px){.scene-stage{height:auto;min-height:clamp(390px,68vh,620px)}.scene-sidebar{padding-top:20px;padding-bottom:16px}.scene-tools label{margin-bottom:10px}.scene-background{margin-top:10px;padding-top:12px}#viewer-status{margin-top:14px;padding-top:12px}}
 .scene-stage>.scene-poster{position:absolute;inset:0}
+
+/* Colour choices have the same touch target as the other viewer controls. */
+.scene-tools .background-presets label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
+}
+
+.background-custom input {
+  min-width: 44px;
+  min-height: 44px;
+}

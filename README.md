@@ -23,7 +23,7 @@
 在仓库根目录启动本地预览：
 
 ```sh
-python -m http.server 8000 --directory docs --bind 127.0.0.1
+python modeling-lab/gallery/serve.py --port 8000
 ```
 
 然后打开 `http://127.0.0.1:8000/`。维护后执行静态入口检查：
@@ -33,6 +33,17 @@ python modeling-lab/gallery/build.py
 ```
 
 该命令现在只检查现有页面，不重建或覆写首页。也可直接运行 `python modeling-lab/gallery/check_overview.py`；检查范围为四个入口的本地引用、重复 ID、筛选节点及目录数量，不代表浏览器交互、GPU、真机或设计验收。只需 Python 3 标准库，不需要账户密钥。
+
+预览服务为 `.mjs`、WOFF2 和 GLB 提供对应的内容类型。需要测量加载量时，可用 `--report <临时JSONL路径>` 记录每次响应的正文与头部字节数。
+
+四入口封面使用 300/600 宽的 WebP，来源和摘要保存在 `docs/thumbnails/manifest.json`。更新封面或新增网页截图后，在安装 Pillow 的环境运行以下命令。
+
+```sh
+python modeling-lab/gallery/build_thumbnails.py --write-pages
+python modeling-lab/gallery/build_thumbnails.py --check
+```
+
+标题使用自托管的霞鹜文楷子集。修改标题或便签后，按 [字体维护说明](docs/fonts/README.md) 更新字集。协作职责、W/C 问题归属及批次 tag 流程见 [协作约定](AGENTS.md)。
 
 旧目录生成器保留显式命令 `python modeling-lab/gallery/build.py --legacy`，仅用于独立的旧版检出或准备好的 `modeling-lab/gallery/dist/` 旧版快照；检测到现行库入口时会拒绝覆盖。不要直接执行 `build_legacy.py` 或 `build_overview.py` 维护新版首页。详情见 [工具说明](modeling-lab/gallery/README.md)。新增站内链接使用相对 URL，以兼容 GitHub Pages 项目子路径；部分历史页面仍保留已发布站点的绝对 URL。
 

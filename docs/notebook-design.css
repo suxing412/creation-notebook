@@ -1,5 +1,12 @@
 /* The notebook skin is scoped to the four catalogue entrances. */
-:is(.home-page,.library-page){--paper:#f7f3ea;--ink:#333832;--muted:#73766b;--line:#d9d6c8;--accent:#b34e33;--green:#4a5f49;--hand:'KaiTi','STKaiti','Kaiti SC','FangSong',serif;background-color:var(--paper);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23746b55' opacity='.045' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");font-family:'Microsoft YaHei','PingFang SC',system-ui,sans-serif;font-size:15px;line-height:1.8}
+@font-face {
+  font-family: 'Notebook WenKai';
+  src: url('fonts/notebook-hand.woff2?v=68290896') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+:is(.home-page,.library-page){--paper:#f7f3ea;--ink:#333832;--muted:#73766b;--line:#d9d6c8;--accent:#b34e33;--green:#4a5f49;--hand:'Notebook WenKai','KaiTi','STKaiti','Kaiti SC','FangSong',serif;background-color:var(--paper);background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23746b55' opacity='.045' filter='url(%23n)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");font-family:'Microsoft YaHei','PingFang SC',system-ui,sans-serif;font-size:15px;line-height:1.8}
 :is(.home-page,.library-page) a{transition:color .18s ease,background .18s ease}
 :is(.home-page,.library-page) main{max-width:1320px;padding:0 48px 64px;margin:auto}
 :is(.home-page,.library-page) h1,:is(.home-page,.library-page) h2{font-family:var(--hand);font-weight:600;letter-spacing:0;line-height:1.35}
@@ -90,4 +97,40 @@
   .library-page .card-notes summary,.library-page .card-notes p{font-size:12px}
   .library-page .related{padding:0 13px 15px;font-size:12px}
   .work-note p{font-size:12px}
+}
+
+/* Keep navigation and filtering usable with a fingertip at every breakpoint. */
+.site-header nav a,
+.filter-tabs button {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.library-page .filters input,
+.library-page .filters select {
+  min-height: 44px;
+}
+
+@media (max-width: 480px) {
+  .site-header nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px 8px;
+    font-size: 12px;
+  }
+
+  .site-header nav a {
+    padding: 0 4px;
+  }
+
+  .filter-tabs {
+    gap: 4px;
+  }
+
+  .filter-tabs button {
+    padding: 8px 10px;
+  }
 }
