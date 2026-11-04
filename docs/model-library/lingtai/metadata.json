@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "title": "灵台类型 C · 北殿瓦作修订",
+  "status": "independent-display-study",
+  "historicalClass": "C",
+  "cityPlacement": null,
+  "units": "metres",
+  "axes": "glTF X east / Y up / Z south",
+  "models": [
+    {
+      "file": "https://raw.githubusercontent.com/suxing412/creation-notebook/main/modeling-lab/content/luoyang/lingtai-quality-v1/display/lingtai-A-quality-LOD1.gltf",
+      "sourceGlb": "lingtai-A-quality-LOD1.glb",
+      "sourceSha256": "515ffbbbac8c6da5f726a87dfb2b61f50bce62da04275a6fccfdb4244f94a7ce",
+      "sourceBytes": 3307564,
+      "triangles": 21332,
+      "meshes": 737,
+      "uvPrimitives": 737,
+      "materials": 4,
+      "embeddedSourceImages": 10,
+      "losslessProjection": true
+    },
+    {
+      "file": "https://raw.githubusercontent.com/suxing412/creation-notebook/main/modeling-lab/content/luoyang/lingtai-quality-v1/display/lingtai-A-quality.gltf",
+      "sourceGlb": "lingtai-A-quality.glb",
+      "sourceSha256": "f5fdc18ac6c4fa85dafa291225c234fccaef01837f32a1a4494b7ca7dce6e081",
+      "sourceBytes": 25848260,
+      "triangles": 380236,
+      "meshes": 738,
+      "uvPrimitives": 738,
+      "materials": 4,
+      "embeddedSourceImages": 10,
+      "losslessProjection": true
+    }
+  ],
+  "covers": [
+    {
+      "file": "cover-whole.png",
+      "sha256": "55164b02035de105d52d8114831a07b99c599e2b448154c3dfe34120b0aa2092",
+      "bytes": 1491428,
+      "sourceSha256": "d80183e322589f342c17c87c5d7d586387fc60724ee4f6309aa043480467eb1e",
+      "pixelsUnchanged": true,
+      "removedMetadataChunks": [
+        "eXIf"
+      ],
+      "render": "CPU Cycles, existing final native scene",
+      "matchesModel": "lingtai-A-quality.glb",
+      "notLODPreview": true
+    }
+  ],
+  "limitations": [
+    "C 类研究性类型方案，所有尺度与构造安排均为假设，不是约公元 180 年的实测复原。",
+    "仅供独立展示；未放入城市，不代表游戏资源验收通过。",
+    "CPU 封面不等于实时 GPU 效果；GPU、手机、碰撞和完整运行性能未验证。",
+    "瓦件未布尔合并，有限接触检测不证明完整无穿模、承重或榫卯正确。",
+    "高精度近景成本较高，近景和 LOD、A/B 方案必须互斥加载。",
+    "台顶用途与设施未知，暂未增造。北殿细瓦与其他廊的细节程度不一致。",
+    "世界坐标焊接后瓦接触边存在 3248 条非二邻边；不得声称整体流形。"
+  ],
+  "verification": {
+    "actualGlbContractShaMatched": true,
+    "allPrimitiveIndicesInRange": true,
+    "allPositionsAndUVsFinite": true,
+    "allPrimitivesHaveUV0": true,
+    "embeddedImagesSelfContained": true,
+    "privateMetadataScanPassed": true,
+    "geometryAndImagePixelsUnchanged": true,
+    "gpuVerified": false,
+    "sourceGlbExactlyReconstructed": true
+  }
+}

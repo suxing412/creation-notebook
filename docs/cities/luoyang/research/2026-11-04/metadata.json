@@ -1,0 +1,67 @@
+{
+  "title": "洛阳已有研究场景阶段预览",
+  "date": "2026-11-04",
+  "status": "既有平行候选的公开预览，不是全部平行成果合成的唯一最新版",
+  "city": {
+    "source": "luoyang-C032-workyard-slice/native/city-C032-south.blend",
+    "sha256": "3b6b97d3d883b1ef19972ecd4771acf71d51458de94627b71ec3fde0757312bf",
+    "parentSource": "luoyang-south-unified-modes-v2/native/city-south-unified-modes-v2.blend",
+    "parentSHA256": "d081c0187da769bfdb800cd4142bc48835315e8396667f1f21a2c6c3c64882dd",
+    "cover": "city-C032-whole-CPU.png",
+    "detail": "C032-neighborhood-CPU.png",
+    "courtyardInstances": 44,
+    "newCourtyards": 0,
+    "change": "仅既有 C02-032 接续 B2 south 屋面节奏与材质细节；其余 2657 网格的世界有向三角保持不变。",
+    "render": "新全城图直接读取此原生文件，CPU Cycles 16 samples；仅在内存修改相机与渲染设置，未保存或修改原件。既有显示/隐藏状态保留。",
+    "excluded": [
+      "未把 TC03 平行屋面版本并入此城",
+      "未把所有独立建筑研究与近景资产统一组装",
+      "未将四院封边展示地形替换全城地形",
+      "隐藏的开阳接续、明堂及太学通路不因此次预览自动启用",
+      "未包含后续 C032 门窗的 12 个对象增量"
+    ],
+    "interpretation": "大片无模型区域是未建或未知范围，不是古代空地。城墙/道路含体量与关系试验，不能称整城完成或连续通行。"
+  },
+  "fourCourt": {
+    "source": "luoyang-four-court-sealed-display/assets/four-court-sealed-display.glb",
+    "sourceSHA256": "af1b94c7de471946fdbd84078aabbccf8f17c8d2519cb474c93be9a9a5681f2d",
+    "gltf": "modeling-lab/content/luoyang/four-court-display/four-court-display.gltf",
+    "cover": "four-court-sealed-CPU.png",
+    "street": "four-court-street-CPU.png",
+    "scope": "四院独立近景展示，不是全城；80×75 示意米展示窗口，不代表历史街坊边界。",
+    "projection": "49 meshes / 50 primitives / 198 bufferViews / 18 images；所有 bufferView 与嵌入图像逐字节保持，材质/变换/索引/几何 JSON 不改，仅拆分外部缓冲以满足单文件 10MiB 上限。",
+    "qa": "最终源 GLB 结构及安装地形报告 SHA 匹配；地形 22236 三角，退化/绕序/同向重复/非二邻边检测均为 0。",
+    "qaLimit": "独立 ground-intersections 报告引用较早候选 SHA，不作为最终 GLB 新自交验收；未重做全建筑穿插检查。"
+  },
+  "historicalBoundary": "C 表示设计/工程/关系假说，不等于考古定址或精确复原。明器资料只支持类型关联，不支持每个洛阳地块的真实平面。",
+  "notAccepted": [
+    "013 完整近景质量",
+    "GPU 性能",
+    "手机运行",
+    "游戏引擎导入",
+    "整城碰撞或导航",
+    "全部历史位置与形制"
+  ],
+  "images": [
+    {
+      "file": "C032-neighborhood-CPU.png",
+      "sha256": "a5e2ab853dac640c0373669b2bf9633d18e15d11c349d3ed508ba25925aa263f",
+      "pngTextAndExifRemoved": true
+    },
+    {
+      "file": "city-C032-whole-CPU.png",
+      "sha256": "ec53369ad483c2eba5ddc2db66183ed0dd787a55c040acc4542512c5e8ea3d03",
+      "pngTextAndExifRemoved": true
+    },
+    {
+      "file": "four-court-sealed-CPU.png",
+      "sha256": "9a96223aebb92723b09d531709bf2bba2f079dde8af5ca1ab154591c98634658",
+      "pngTextAndExifRemoved": true
+    },
+    {
+      "file": "four-court-street-CPU.png",
+      "sha256": "9c83a35c7b4375375c5a466f897af04958de2c976d9915c88950b52833aa01d7",
+      "pngTextAndExifRemoved": true
+    }
+  ]
+}
