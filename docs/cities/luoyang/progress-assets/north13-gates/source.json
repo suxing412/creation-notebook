@@ -1,0 +1,2464 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+  "scope": "13 existing north courtyard lots and five gate design candidates",
+  "verification": "Source ZIP and part SHA256 matched. Selected GLB files read with ZIP CRC, validated as self-contained glTF2 with UV0, then copied byte-for-byte. GPU and city alignment remain unverified.",
+  "packages": [
+    {
+      "package": "luoyang-kaiyang-gate-study-v1",
+      "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+      "sourceArchiveDirectory": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1",
+      "zipSHA256": "bad99bb9f5b301b5b6a3450931511caec385df3da8b5ffc5b94b1664eb598c23",
+      "zipBytes": 11451229,
+      "sourceCandidateOnly": true,
+      "sourceHiddenDeltas": true,
+      "displayMode": "independent-study",
+      "placement": {
+        "base_sha256": "eabb2a902d671adf9017f9835ce1d1d9673985f33d793acdce067cd435540134",
+        "requires_previous_overlay_sha256": "660cdf37adddebbad7b3b9e0b3ab1f7d859b9bb3104d2d14a032761a61b96b84",
+        "B_point_unchanged": [
+          2010.204,
+          -30.612
+        ],
+        "engineering_origin_from_existing_wall_caps": [
+          2010.3973388671875,
+          -21.3011474609375,
+          0.17000000178813934
+        ],
+        "offset_from_B_m": [
+          0.1933388671875491,
+          9.310852539062498
+        ],
+        "rotation_z_rad": -0.020743634087871412,
+        "new_ids": [
+          "kaiyang-K-static_earth",
+          "kaiyang-K-static_tile",
+          "kaiyang-K-static_timber"
+        ],
+        "hide_only_ids": [],
+        "remove_on_rollback": [
+          "kaiyang-K-static_earth",
+          "kaiyang-K-static_tile",
+          "kaiyang-K-static_timber"
+        ],
+        "delta_sha256": "ee0fee04692cb1750677a255f5e8686f7a403ff49d1cd454f2320d481f4c0408",
+        "model_sha256": "f876be9ee9ccecd8bbed1305800f2f91128c66488995e53049421ba7262a0612",
+        "contacts": [
+          {
+            "wall": "C_wall_A_05",
+            "side": -1,
+            "max_world_float_residual_m": 0.00012208521275181014,
+            "scope": "outer cap only, not whole object pair exemption",
+            "gate_inner_contact_plane_x": -12.4,
+            "gate_inner_contact_rect_yz": [
+              -5.0,
+              5.0,
+              0,
+              5.0
+            ]
+          },
+          {
+            "wall": "C_wall_A_04",
+            "side": 1,
+            "max_world_float_residual_m": 0.00012208521366119385,
+            "scope": "outer cap only, not whole object pair exemption",
+            "gate_inner_contact_plane_x": 12.4,
+            "gate_inner_contact_rect_yz": [
+              -5.0,
+              5.0,
+              0,
+              5.0
+            ]
+          }
+        ],
+        "activation": false,
+        "limits": [
+          "Origin and orientation derived from current C wall geometry, not historical precision; south-wall gate location not excavated",
+          "No new roads, no wall edits, no whole-city activation",
+          "Gate contains static fully-open door leaves, not a tested hinge rig",
+          "Upper access remains unknown",
+          "No threshold inserted; existing terrain/approach support is not validated, hidden trial only"
+        ]
+      },
+      "models": [
+        {
+          "file": "luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb",
+          "bytes": 495712,
+          "sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8",
+          "lod": 1,
+          "triangles": 1964,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 9,
+          "primitiveLocalBounds": {
+            "min": [
+              -13.600000381469727,
+              0,
+              -6.310879707336426
+            ],
+            "max": [
+              13.600000381469727,
+              10.230000495910645,
+              6.310879707336426
+            ]
+          },
+          "copiedWithoutChanges": true
+        },
+        {
+          "file": "luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb",
+          "bytes": 55280,
+          "sha256": "13ff78a7a1fe9159ed577d715ff30c75cf3d0e8f6d2d47311968f660986ed801",
+          "lod": 2,
+          "triangles": 740,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 0,
+          "primitiveLocalBounds": {
+            "min": [
+              -13.600000381469727,
+              0,
+              -6.300000190734863
+            ],
+            "max": [
+              13.600000381469727,
+              10.230000495910645,
+              6.300000190734863
+            ]
+          },
+          "copiedWithoutChanges": true
+        }
+      ]
+    },
+    {
+      "package": "luoyang-north-four-courts-v2",
+      "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+      "sourceArchiveDirectory": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-north-four-courts-v2",
+      "zipSHA256": "e24f386fd14e03649f262b14d3670fe64da803899c198a428c418ff0c7419779",
+      "zipBytes": 20390490,
+      "sourceCandidateOnly": true,
+      "sourceHiddenDeltas": true,
+      "displayMode": "independent-study",
+      "placement": {
+        "base_sha256": "eabb2a902d671adf9017f9835ce1d1d9673985f33d793acdce067cd435540134",
+        "targets": [
+          {
+            "id": "C02-033",
+            "variant": "B2",
+            "position": [
+              639.10105,
+              1080.2
+            ],
+            "rotationDegrees": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "matrixGLTFColumnMajor": [
+              1.0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1.0,
+              0,
+              639.10105,
+              0,
+              -1080.2,
+              1
+            ],
+            "sourceGroup": "C02_36",
+            "changedByCalt": false
+          },
+          {
+            "id": "C02-034",
+            "variant": "B",
+            "position": [
+              601.89119,
+              1080.2
+            ],
+            "rotationDegrees": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "matrixGLTFColumnMajor": [
+              1.0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1.0,
+              0,
+              601.89119,
+              0,
+              -1080.2,
+              1
+            ],
+            "sourceGroup": "C02_36",
+            "changedByCalt": false
+          },
+          {
+            "id": "C02-035",
+            "variant": "A2",
+            "position": [
+              548.32284,
+              1080.2
+            ],
+            "rotationDegrees": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "matrixGLTFColumnMajor": [
+              1.0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1.0,
+              0,
+              548.32284,
+              0,
+              -1080.2,
+              1
+            ],
+            "sourceGroup": "C02_36",
+            "changedByCalt": false
+          },
+          {
+            "id": "C02-036",
+            "variant": "B2",
+            "position": [
+              520.56271,
+              1080.2
+            ],
+            "rotationDegrees": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "matrixGLTFColumnMajor": [
+              1.0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1.0,
+              0,
+              520.56271,
+              0,
+              -1080.2,
+              1
+            ],
+            "sourceGroup": "C02_36",
+            "changedByCalt": false
+          }
+        ],
+        "records": [
+          {
+            "LOD": 0,
+            "source_native_sha256": {
+              "B2": "c3ab9790d77de15c1d4854f66098a7c951ac398f1090d2eff88d6cd06e639ad2",
+              "B": "fd6ba3feb79605ede67222975c030d963adf1568e8d307e6b5c9fb493c6e1b4e",
+              "A2": "7b82cdcd69a0996c5b124e8e7b2c25ae41db7807ccc447a53fa73d220851329f"
+            },
+            "delta_sha256": "295d035d0e500841a9899496cb967242b4743815168471fb9e6287151e46cc00",
+            "objects": 12,
+            "shared_meshes": 9,
+            "new_ids": [
+              "C02-033__v2__court-B2-static_timber",
+              "C02-033__v2__court-B2-static_tile",
+              "C02-033__v2__court-B2-static_earth",
+              "C02-034__v2__court-B-static_timber",
+              "C02-034__v2__court-B-static_tile",
+              "C02-034__v2__court-B-static_earth",
+              "C02-035__v2__court-A2-static_timber",
+              "C02-035__v2__court-A2-static_tile",
+              "C02-035__v2__court-A2-static_earth",
+              "C02-036__v2__court-B2-static_timber",
+              "C02-036__v2__court-B2-static_tile",
+              "C02-036__v2__court-B2-static_earth"
+            ],
+            "old_states": {
+              "C02-033__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-033__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-033__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-033__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-034__architecture_C_floor_plinth": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-034__architecture_C_plain_timber": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-034__architecture_C_roof_rhythm_not_glaze_copy": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-034__architecture_C_whitebox_earth_wall": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-035__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-035__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-035__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-035__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-036__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-036__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-036__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-036__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              }
+            }
+          },
+          {
+            "LOD": 1,
+            "source_native_sha256": {
+              "B2": "5c6f18e15d5b2aae9ed813addf1e84ecbc9bafe975a55422481c46ae1532a951",
+              "B": "c5172e004ec2dffa09278116e75dd0f4b4194880949d1c474dc4dadb481df6e3",
+              "A2": "ebc43a006361625b5ccbb077db6036c1156fe4e5d96cbed1fa9a3de41fd32cca"
+            },
+            "delta_sha256": "419917ba99f3dfdf5f9e82d6d963b9ecf17c90a5f33504eadd92a7cc47be1d32",
+            "objects": 12,
+            "shared_meshes": 9,
+            "new_ids": [
+              "C02-033__v2__court-B2-static_timber",
+              "C02-033__v2__court-B2-static_tile",
+              "C02-033__v2__court-B2-static_earth",
+              "C02-034__v2__court-B-static_timber",
+              "C02-034__v2__court-B-static_tile",
+              "C02-034__v2__court-B-static_earth",
+              "C02-035__v2__court-A2-static_timber",
+              "C02-035__v2__court-A2-static_tile",
+              "C02-035__v2__court-A2-static_earth",
+              "C02-036__v2__court-B2-static_timber",
+              "C02-036__v2__court-B2-static_tile",
+              "C02-036__v2__court-B2-static_earth"
+            ],
+            "old_states": {
+              "C02-033__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-033__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-033__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-033__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-034__architecture_C_floor_plinth": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-034__architecture_C_plain_timber": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-034__architecture_C_roof_rhythm_not_glaze_copy": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-034__architecture_C_whitebox_earth_wall": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-035__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-035__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-035__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-035__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-036__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-036__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-036__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-036__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              }
+            }
+          },
+          {
+            "LOD": 2,
+            "source_native_sha256": {
+              "B2": "414bda682742712de4ff268ed585b2c53936a7994368b201d42cacc3c26e5f23",
+              "B": "e6ff6482c612607a9cbbdacaa63b2b4db0de1a33234c610f0e0aef024df88705",
+              "A2": "92cbd95394ecb5ac3e47934fcab99d367f2754bce276acd4d922e2af73b80a71"
+            },
+            "delta_sha256": "406cfaa420551042481392fdb035876a5f3cbdca9b2eb2a9eb2b4e89131fa911",
+            "objects": 12,
+            "shared_meshes": 9,
+            "new_ids": [
+              "C02-033__v2__court-B2-static_timber",
+              "C02-033__v2__court-B2-static_tile",
+              "C02-033__v2__court-B2-static_earth",
+              "C02-034__v2__court-B-static_timber",
+              "C02-034__v2__court-B-static_tile",
+              "C02-034__v2__court-B-static_earth",
+              "C02-035__v2__court-A2-static_timber",
+              "C02-035__v2__court-A2-static_tile",
+              "C02-035__v2__court-A2-static_earth",
+              "C02-036__v2__court-B2-static_timber",
+              "C02-036__v2__court-B2-static_tile",
+              "C02-036__v2__court-B2-static_earth"
+            ],
+            "old_states": {
+              "C02-033__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-033__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-033__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-033__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-034__architecture_C_floor_plinth": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-034__architecture_C_plain_timber": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-034__architecture_C_roof_rhythm_not_glaze_copy": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-034__architecture_C_whitebox_earth_wall": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-035__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-035__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-035__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-035__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-036__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-036__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-036__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-036__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              }
+            }
+          }
+        ],
+        "active": false,
+        "exclusive": "Select exactly one LOD delta; hide exactly original sixteen objects. Remove new twelve and restore old states to roll back.",
+        "new_courtyards": 0,
+        "coordinates_changed": false
+      },
+      "models": [
+        {
+          "file": "luoyang-north-four-courts-v2/models/court-A2-LOD1.glb",
+          "bytes": 752352,
+          "sha256": "d76580bbb5a7c89391152f32bd65b81595fbc300d6da69b2c6e819fff9d941c2",
+          "lod": 1,
+          "triangles": 3844,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 9,
+          "primitiveLocalBounds": {
+            "min": [
+              -9.000001907348633,
+              0.19999992847442627,
+              -12.00000286102295
+            ],
+            "max": [
+              9.00000286102295,
+              4.489999771118164,
+              12.150002479553223
+            ]
+          },
+          "copiedWithoutChanges": true
+        },
+        {
+          "file": "luoyang-north-four-courts-v2/models/court-A2-LOD2.glb",
+          "bytes": 121516,
+          "sha256": "4691c63041231344e7309643c94c84938bb403b2a4ae68b595e6399b37214589",
+          "lod": 2,
+          "triangles": 1156,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 0,
+          "primitiveLocalBounds": {
+            "min": [
+              -9.000001907348633,
+              0.19999992847442627,
+              -12.00000286102295
+            ],
+            "max": [
+              9.00000286102295,
+              4.489999771118164,
+              12.150002479553223
+            ]
+          },
+          "copiedWithoutChanges": true
+        },
+        {
+          "file": "luoyang-north-four-courts-v2/models/court-B-LOD1.glb",
+          "bytes": 903708,
+          "sha256": "2be52632e16e43290ef96aae7479cd7c1faa413b2090cd2af162652a8bb16d9c",
+          "lod": 1,
+          "triangles": 5328,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 9,
+          "primitiveLocalBounds": {
+            "min": [
+              -9.000001907348633,
+              0.19999992847442627,
+              -12.00000286102295
+            ],
+            "max": [
+              9.00000286102295,
+              5.519999980926514,
+              12.150002479553223
+            ]
+          },
+          "copiedWithoutChanges": true
+        },
+        {
+          "file": "luoyang-north-four-courts-v2/models/court-B-LOD2.glb",
+          "bytes": 150468,
+          "sha256": "641b05a535a266dce29c8c966cccb576e522b65a4586e95e8cfe1fb30fb69952",
+          "lod": 2,
+          "triangles": 1440,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 0,
+          "primitiveLocalBounds": {
+            "min": [
+              -9.000001907348633,
+              0.19999992847442627,
+              -12.00000286102295
+            ],
+            "max": [
+              9.00000286102295,
+              5.519999980926514,
+              12.150002479553223
+            ]
+          },
+          "copiedWithoutChanges": true
+        },
+        {
+          "file": "luoyang-north-four-courts-v2/models/court-B2-LOD1.glb",
+          "bytes": 859632,
+          "sha256": "95b66c5d994cac56d38327896bfe3b370fb4a3daaf643b0250c225cd8e83795e",
+          "lod": 1,
+          "triangles": 4896,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 9,
+          "primitiveLocalBounds": {
+            "min": [
+              -9.000001907348633,
+              0.19999992847442627,
+              -12.00000286102295
+            ],
+            "max": [
+              9.00000286102295,
+              5.269999980926514,
+              12.150002479553223
+            ]
+          },
+          "copiedWithoutChanges": true
+        },
+        {
+          "file": "luoyang-north-four-courts-v2/models/court-B2-LOD2.glb",
+          "bytes": 150456,
+          "sha256": "b9651fa3ef9bc449131da9eadf86c1fa985ef798d5badc675a81c30174181380",
+          "lod": 2,
+          "triangles": 1440,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 0,
+          "primitiveLocalBounds": {
+            "min": [
+              -9.000001907348633,
+              0.19999992847442627,
+              -12.00000286102295
+            ],
+            "max": [
+              9.00000286102295,
+              5.269999980926514,
+              12.150002479553223
+            ]
+          },
+          "copiedWithoutChanges": true
+        }
+      ]
+    },
+    {
+      "package": "luoyang-north-perimeter-v1",
+      "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+      "sourceArchiveDirectory": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-north-perimeter-v1",
+      "zipSHA256": "9b172032fcfa1fa3b2fc5fe81818029415a58d3525228c513292bbf1fa122a5c",
+      "zipBytes": 13798907,
+      "sourceCandidateOnly": true,
+      "sourceHiddenDeltas": true,
+      "displayMode": "independent-study",
+      "placement": {
+        "base_sha256": "eabb2a902d671adf9017f9835ce1d1d9673985f33d793acdce067cd435540134",
+        "targets": [
+          {
+            "id": "C02-001",
+            "variant": "A2",
+            "position": [
+              679.1392,
+              1176.2
+            ],
+            "rotationDegrees": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "matrixGLTFColumnMajor": [
+              1.0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1.0,
+              0,
+              679.1392,
+              0,
+              -1176.2,
+              1
+            ],
+            "sourceGroup": "C02_36",
+            "changedByCalt": false
+          },
+          {
+            "id": "C02-002",
+            "variant": "B2",
+            "position": [
+              633.97426,
+              1176.2
+            ],
+            "rotationDegrees": 0,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "matrixGLTFColumnMajor": [
+              1.0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1.0,
+              0,
+              633.97426,
+              0,
+              -1176.2,
+              1
+            ],
+            "sourceGroup": "C02_36",
+            "changedByCalt": false
+          },
+          {
+            "id": "C02-031",
+            "variant": "A2",
+            "position": [
+              636.2,
+              1205.0107
+            ],
+            "rotationDegrees": 270,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "matrixGLTFColumnMajor": [
+              0,
+              0,
+              1.0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              -1.0,
+              0,
+              0,
+              0,
+              636.2,
+              0,
+              -1205.0107,
+              1
+            ],
+            "sourceGroup": "C02_36",
+            "changedByCalt": false
+          },
+          {
+            "id": "C02-003",
+            "variant": "TC03-2",
+            "position": [
+              615.8,
+              1164.95544
+            ],
+            "rotationDegrees": 90,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "matrixGLTFColumnMajor": [
+              0,
+              0,
+              -1.0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1.0,
+              0,
+              0,
+              0,
+              615.8,
+              0,
+              -1164.95544,
+              1
+            ],
+            "sourceGroup": "C02_36",
+            "changedByCalt": false
+          },
+          {
+            "id": "C02-004",
+            "variant": "B2",
+            "position": [
+              717.45,
+              1157.81935
+            ],
+            "rotationDegrees": 270,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "matrixGLTFColumnMajor": [
+              0,
+              0,
+              1.0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              -1.0,
+              0,
+              0,
+              0,
+              717.45,
+              0,
+              -1157.81935,
+              1
+            ],
+            "sourceGroup": "C02_36",
+            "changedByCalt": false
+          }
+        ],
+        "records": [
+          {
+            "LOD": 0,
+            "source_native_sha256": {
+              "TC03-2": "903a68bfe02d10549c435ed43c3f1d385c0d97e0bfa61075ee7d5bf8326aef72",
+              "B2": "c3ab9790d77de15c1d4854f66098a7c951ac398f1090d2eff88d6cd06e639ad2",
+              "A2": "7b82cdcd69a0996c5b124e8e7b2c25ae41db7807ccc447a53fa73d220851329f"
+            },
+            "delta_sha256": "fcfcb29df1f2f580d42b88e9bf0b49db6b7c7257151bf6287d113c826c2b18f1",
+            "objects": 16,
+            "shared_meshes": 10,
+            "new_ids": [
+              "C02-001__perimeter__court-A2-static_timber",
+              "C02-001__perimeter__court-A2-static_tile",
+              "C02-001__perimeter__court-A2-static_earth",
+              "C02-002__perimeter__court-B2-static_timber",
+              "C02-002__perimeter__court-B2-static_tile",
+              "C02-002__perimeter__court-B2-static_earth",
+              "C02-031__perimeter__court-A2-static_timber",
+              "C02-031__perimeter__court-A2-static_tile",
+              "C02-031__perimeter__court-A2-static_earth",
+              "C02-003__perimeter__court-TC03-2-static_timber",
+              "C02-003__perimeter__court-TC03-2-static_tile",
+              "C02-003__perimeter__court-TC03-2-static_stone",
+              "C02-003__perimeter__court-TC03-2-static_earth",
+              "C02-004__perimeter__court-B2-static_timber",
+              "C02-004__perimeter__court-B2-static_tile",
+              "C02-004__perimeter__court-B2-static_earth"
+            ],
+            "old_states": {
+              "C02-001__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-001__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-001__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-001__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-002__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-002__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-002__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-002__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_drain_stone.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_roof_rhythm.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-004__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-004__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-004__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-004__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-031__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-031__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-031__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-031__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              }
+            }
+          },
+          {
+            "LOD": 1,
+            "source_native_sha256": {
+              "TC03-2": "12c4df3d54b736ea4b9a450415770ad8f5a5d1f065ffd00c150936992ffbb541",
+              "B2": "5c6f18e15d5b2aae9ed813addf1e84ecbc9bafe975a55422481c46ae1532a951",
+              "A2": "ebc43a006361625b5ccbb077db6036c1156fe4e5d96cbed1fa9a3de41fd32cca"
+            },
+            "delta_sha256": "b9b9aaff3a6fb9c8b7f4ece80ea86894c2e2ba636c68fed9c8fccf16df38389a",
+            "objects": 16,
+            "shared_meshes": 10,
+            "new_ids": [
+              "C02-001__perimeter__court-A2-static_timber",
+              "C02-001__perimeter__court-A2-static_tile",
+              "C02-001__perimeter__court-A2-static_earth",
+              "C02-002__perimeter__court-B2-static_timber",
+              "C02-002__perimeter__court-B2-static_tile",
+              "C02-002__perimeter__court-B2-static_earth",
+              "C02-031__perimeter__court-A2-static_timber",
+              "C02-031__perimeter__court-A2-static_tile",
+              "C02-031__perimeter__court-A2-static_earth",
+              "C02-003__perimeter__court-TC03-2-static_timber",
+              "C02-003__perimeter__court-TC03-2-static_tile",
+              "C02-003__perimeter__court-TC03-2-static_stone",
+              "C02-003__perimeter__court-TC03-2-static_earth",
+              "C02-004__perimeter__court-B2-static_timber",
+              "C02-004__perimeter__court-B2-static_tile",
+              "C02-004__perimeter__court-B2-static_earth"
+            ],
+            "old_states": {
+              "C02-001__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-001__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-001__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-001__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-002__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-002__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-002__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-002__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_drain_stone.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_roof_rhythm.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-004__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-004__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-004__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-004__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-031__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-031__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-031__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-031__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              }
+            }
+          },
+          {
+            "LOD": 2,
+            "source_native_sha256": {
+              "TC03-2": "74b0ea661e9696ffbcf205c05bb20569482740cd04c2c43521fd23bc07f1221e",
+              "B2": "414bda682742712de4ff268ed585b2c53936a7994368b201d42cacc3c26e5f23",
+              "A2": "92cbd95394ecb5ac3e47934fcab99d367f2754bce276acd4d922e2af73b80a71"
+            },
+            "delta_sha256": "1b9d54406d29a77cc623d94fc02efbffc51b02f4ed3b564ffa886b562c4833cb",
+            "objects": 16,
+            "shared_meshes": 10,
+            "new_ids": [
+              "C02-001__perimeter__court-A2-static_timber",
+              "C02-001__perimeter__court-A2-static_tile",
+              "C02-001__perimeter__court-A2-static_earth",
+              "C02-002__perimeter__court-B2-static_timber",
+              "C02-002__perimeter__court-B2-static_tile",
+              "C02-002__perimeter__court-B2-static_earth",
+              "C02-031__perimeter__court-A2-static_timber",
+              "C02-031__perimeter__court-A2-static_tile",
+              "C02-031__perimeter__court-A2-static_earth",
+              "C02-003__perimeter__court-TC03-2-static_timber",
+              "C02-003__perimeter__court-TC03-2-static_tile",
+              "C02-003__perimeter__court-TC03-2-static_stone",
+              "C02-003__perimeter__court-TC03-2-static_earth",
+              "C02-004__perimeter__court-B2-static_timber",
+              "C02-004__perimeter__court-B2-static_tile",
+              "C02-004__perimeter__court-B2-static_earth"
+            ],
+            "old_states": {
+              "C02-001__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-001__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-001__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-001__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-002__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-002__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-002__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-002__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_drain_stone.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-003__architecture_C_roof_rhythm.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-004__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-004__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-004__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-004__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-031__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-031__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-031__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-031__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              }
+            }
+          }
+        ],
+        "active": false,
+        "exclusive": "Select exactly one LOD delta; hide exactly original twenty-one objects. Remove new sixteen and restore old states to roll back.",
+        "new_courtyards": 0,
+        "coordinates_changed": false,
+        "preview_dependencies": [
+          {
+            "id": "[private source identity omitted; use adjacent SHA256]",
+            "sha256": "009693572530a22d6b465145d267a9927a292ae48a504c40ada02946e0736e38"
+          },
+          {
+            "id": "[private source identity omitted; use adjacent SHA256]",
+            "sha256": "c3e66adcc8084e666fe8a5420425141a3851137829773c37ebb7adb0f0bcd2e8"
+          }
+        ]
+      },
+      "models": [
+        {
+          "file": "luoyang-north-perimeter-v1/models/court-TC03-2-LOD1.glb",
+          "bytes": 1178612,
+          "sha256": "9003d00a45b4866385fbd6092a5c2f3b99438c9a4f3714543b9a107cdaac4024",
+          "lod": 1,
+          "triangles": 8012,
+          "meshes": 4,
+          "primitives": 4,
+          "materials": 4,
+          "embeddedImages": 9,
+          "primitiveLocalBounds": {
+            "min": [
+              -2.4482617391186068e-06,
+              0.19999992847442627,
+              -36.000003814697266
+            ],
+            "max": [
+              28.0000057220459,
+              4.539999961853027,
+              0.15000060200691223
+            ]
+          },
+          "copiedWithoutChanges": true
+        },
+        {
+          "file": "luoyang-north-perimeter-v1/models/court-TC03-2-LOD2.glb",
+          "bytes": 219732,
+          "sha256": "b8dda6789f4f9dcfddf1a1da430f43aa25ab6a56a0cb894ea139339a646a6905",
+          "lod": 2,
+          "triangles": 2108,
+          "meshes": 4,
+          "primitives": 4,
+          "materials": 4,
+          "embeddedImages": 0,
+          "primitiveLocalBounds": {
+            "min": [
+              -2.4482617391186068e-06,
+              0.19999992847442627,
+              -36.000003814697266
+            ],
+            "max": [
+              28.0000057220459,
+              4.539999961853027,
+              0.15000060200691223
+            ]
+          },
+          "copiedWithoutChanges": true
+        }
+      ]
+    },
+    {
+      "package": "luoyang-north-second-row-v1",
+      "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+      "sourceArchiveDirectory": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-north-second-row-v1",
+      "zipSHA256": "401e8c643754caa62cb0bdda96e30d1d94c4d0881ae85e2f186b19c100da937a",
+      "zipBytes": 12982558,
+      "sourceCandidateOnly": true,
+      "sourceHiddenDeltas": true,
+      "displayMode": "independent-study",
+      "placement": {
+        "base_sha256": "eabb2a902d671adf9017f9835ce1d1d9673985f33d793acdce067cd435540134",
+        "targets": [
+          {
+            "id": "C02-027",
+            "variant": "A",
+            "position": [
+              671.07752,
+              1143.8
+            ],
+            "rotationDegrees": 180,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "matrixGLTFColumnMajor": [
+              -1.0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              -1.0,
+              0,
+              671.07752,
+              0,
+              -1143.8,
+              1
+            ],
+            "sourceGroup": "C02_36",
+            "changedByCalt": false
+          },
+          {
+            "id": "C02-028",
+            "variant": "A2",
+            "position": [
+              634.03585,
+              1143.8
+            ],
+            "rotationDegrees": 180,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "matrixGLTFColumnMajor": [
+              -1.0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              -1.0,
+              0,
+              634.03585,
+              0,
+              -1143.8,
+              1
+            ],
+            "sourceGroup": "C02_36",
+            "changedByCalt": false
+          },
+          {
+            "id": "C02-029",
+            "variant": "B",
+            "position": [
+              608.78268,
+              1143.8
+            ],
+            "rotationDegrees": 180,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "matrixGLTFColumnMajor": [
+              -1.0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              -1.0,
+              0,
+              608.78268,
+              0,
+              -1143.8,
+              1
+            ],
+            "sourceGroup": "C02_36",
+            "changedByCalt": false
+          },
+          {
+            "id": "C02-030",
+            "variant": "A",
+            "position": [
+              575.35019,
+              1143.8
+            ],
+            "rotationDegrees": 180,
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "matrixGLTFColumnMajor": [
+              -1.0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              -1.0,
+              0,
+              575.35019,
+              0,
+              -1143.8,
+              1
+            ],
+            "sourceGroup": "C02_36",
+            "changedByCalt": false
+          }
+        ],
+        "records": [
+          {
+            "LOD": 0,
+            "source_native_sha256": {
+              "A": "bc5d8f544cf35a2190f77a1d36ce1eccbdd3f78c8935ee4b015716b6b7343ca6",
+              "B": "fd6ba3feb79605ede67222975c030d963adf1568e8d307e6b5c9fb493c6e1b4e",
+              "A2": "7b82cdcd69a0996c5b124e8e7b2c25ae41db7807ccc447a53fa73d220851329f"
+            },
+            "delta_sha256": "8cfd54e2f0c6d2ff4542dcb4cebed0ba5c88d79d9c22b29a7ab0aced4e092777",
+            "objects": 12,
+            "shared_meshes": 9,
+            "new_ids": [
+              "C02-027__row2__court-A-static_timber",
+              "C02-027__row2__court-A-static_tile",
+              "C02-027__row2__court-A-static_earth",
+              "C02-028__row2__court-A2-static_timber",
+              "C02-028__row2__court-A2-static_tile",
+              "C02-028__row2__court-A2-static_earth",
+              "C02-029__row2__court-B-static_timber",
+              "C02-029__row2__court-B-static_tile",
+              "C02-029__row2__court-B-static_earth",
+              "C02-030__row2__court-A-static_timber",
+              "C02-030__row2__court-A-static_tile",
+              "C02-030__row2__court-A-static_earth"
+            ],
+            "old_states": {
+              "C02-027__architecture_C_floor_plinth": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-027__architecture_C_plain_timber": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-027__architecture_C_roof_rhythm_not_glaze_copy": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-027__architecture_C_whitebox_earth_wall": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-028__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-028__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-028__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-028__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-029__architecture_C_floor_plinth": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-029__architecture_C_plain_timber": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-029__architecture_C_roof_rhythm_not_glaze_copy": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-029__architecture_C_whitebox_earth_wall": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-030__architecture_C_floor_plinth": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-030__architecture_C_plain_timber": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-030__architecture_C_roof_rhythm_not_glaze_copy": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-030__architecture_C_whitebox_earth_wall": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              }
+            }
+          },
+          {
+            "LOD": 1,
+            "source_native_sha256": {
+              "A": "e9a83f630b9c71158dd7041d6c66f248a47513b76e264877d53e4e2dc9a04f53",
+              "B": "c5172e004ec2dffa09278116e75dd0f4b4194880949d1c474dc4dadb481df6e3",
+              "A2": "ebc43a006361625b5ccbb077db6036c1156fe4e5d96cbed1fa9a3de41fd32cca"
+            },
+            "delta_sha256": "acf074b469b88fe0561c0d3acada2a6ae7eac8593ffa801ab838340962aa3c53",
+            "objects": 12,
+            "shared_meshes": 9,
+            "new_ids": [
+              "C02-027__row2__court-A-static_timber",
+              "C02-027__row2__court-A-static_tile",
+              "C02-027__row2__court-A-static_earth",
+              "C02-028__row2__court-A2-static_timber",
+              "C02-028__row2__court-A2-static_tile",
+              "C02-028__row2__court-A2-static_earth",
+              "C02-029__row2__court-B-static_timber",
+              "C02-029__row2__court-B-static_tile",
+              "C02-029__row2__court-B-static_earth",
+              "C02-030__row2__court-A-static_timber",
+              "C02-030__row2__court-A-static_tile",
+              "C02-030__row2__court-A-static_earth"
+            ],
+            "old_states": {
+              "C02-027__architecture_C_floor_plinth": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-027__architecture_C_plain_timber": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-027__architecture_C_roof_rhythm_not_glaze_copy": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-027__architecture_C_whitebox_earth_wall": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-028__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-028__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-028__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-028__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-029__architecture_C_floor_plinth": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-029__architecture_C_plain_timber": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-029__architecture_C_roof_rhythm_not_glaze_copy": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-029__architecture_C_whitebox_earth_wall": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-030__architecture_C_floor_plinth": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-030__architecture_C_plain_timber": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-030__architecture_C_roof_rhythm_not_glaze_copy": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-030__architecture_C_whitebox_earth_wall": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              }
+            }
+          },
+          {
+            "LOD": 2,
+            "source_native_sha256": {
+              "A": "2b01c5e770b0ebd8d174cf459d76968a49b540e54a6904df09dfc9bc15fe39bf",
+              "B": "e6ff6482c612607a9cbbdacaa63b2b4db0de1a33234c610f0e0aef024df88705",
+              "A2": "92cbd95394ecb5ac3e47934fcab99d367f2754bce276acd4d922e2af73b80a71"
+            },
+            "delta_sha256": "1206e24a8cd3271d3973a7a0af3a3890180e803ecb2c5a034a0e559153cadc5b",
+            "objects": 12,
+            "shared_meshes": 9,
+            "new_ids": [
+              "C02-027__row2__court-A-static_timber",
+              "C02-027__row2__court-A-static_tile",
+              "C02-027__row2__court-A-static_earth",
+              "C02-028__row2__court-A2-static_timber",
+              "C02-028__row2__court-A2-static_tile",
+              "C02-028__row2__court-A2-static_earth",
+              "C02-029__row2__court-B-static_timber",
+              "C02-029__row2__court-B-static_tile",
+              "C02-029__row2__court-B-static_earth",
+              "C02-030__row2__court-A-static_timber",
+              "C02-030__row2__court-A-static_tile",
+              "C02-030__row2__court-A-static_earth"
+            ],
+            "old_states": {
+              "C02-027__architecture_C_floor_plinth": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-027__architecture_C_plain_timber": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-027__architecture_C_roof_rhythm_not_glaze_copy": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-027__architecture_C_whitebox_earth_wall": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-028__architecture_C_floor_plinth.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-028__architecture_C_plain_timber.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-028__architecture_C_roof_rhythm_not_glaze_copy.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-028__architecture_C_whitebox_earth_wall.001": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-029__architecture_C_floor_plinth": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-029__architecture_C_plain_timber": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-029__architecture_C_roof_rhythm_not_glaze_copy": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-029__architecture_C_whitebox_earth_wall": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-030__architecture_C_floor_plinth": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-030__architecture_C_plain_timber": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-030__architecture_C_roof_rhythm_not_glaze_copy": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              },
+              "C02-030__architecture_C_whitebox_earth_wall": {
+                "hide_render": false,
+                "hide_set": false,
+                "hide_viewport": false
+              }
+            }
+          }
+        ],
+        "active": false,
+        "exclusive": "Select exactly one LOD delta; hide exactly original sixteen objects. Remove new twelve and restore old states to roll back.",
+        "new_courtyards": 0,
+        "coordinates_changed": false,
+        "optional_preview_dependency": {
+          "package_library_file_id": "[private source identity omitted; use adjacent SHA256]",
+          "package_sha256": "009693572530a22d6b465145d267a9927a292ae48a504c40ada02946e0736e38",
+          "purpose": "B/A2 models and separately switchable previous row for eight-courtyard preview"
+        }
+      },
+      "models": [
+        {
+          "file": "luoyang-north-second-row-v1/models/court-A-LOD1.glb",
+          "bytes": 801292,
+          "sha256": "245c20b6385dcee4c55ca300f7e2420b07ca883b5e91b5dcd5a93e5b5a561e6a",
+          "lod": 1,
+          "triangles": 4324,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 9,
+          "primitiveLocalBounds": {
+            "min": [
+              -9.000001907348633,
+              0.19999992847442627,
+              -12.00000286102295
+            ],
+            "max": [
+              9.00000286102295,
+              4.489999771118164,
+              12.15000057220459
+            ]
+          },
+          "copiedWithoutChanges": true
+        },
+        {
+          "file": "luoyang-north-second-row-v1/models/court-A-LOD2.glb",
+          "bytes": 121496,
+          "sha256": "8e098a5f382448c20d07422f30543e6d3234112bc1fc9327d6ae6860a6cff94d",
+          "lod": 2,
+          "triangles": 1156,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 0,
+          "primitiveLocalBounds": {
+            "min": [
+              -9.000001907348633,
+              0.19999992847442627,
+              -12.00000286102295
+            ],
+            "max": [
+              9.00000286102295,
+              4.489999771118164,
+              12.15000057220459
+            ]
+          },
+          "copiedWithoutChanges": true
+        }
+      ]
+    },
+    {
+      "package": "luoyang-pingcheng-gate-study-v1",
+      "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+      "sourceArchiveDirectory": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-pingcheng-gate-study-v1",
+      "zipSHA256": "19646f31c10acb3fbc90cbf19c84cdecc7acb40f6b5aec1635a52397958043ac",
+      "zipBytes": 11418194,
+      "sourceCandidateOnly": true,
+      "sourceHiddenDeltas": true,
+      "displayMode": "independent-study",
+      "placement": {
+        "base_sha256": "eabb2a902d671adf9017f9835ce1d1d9673985f33d793acdce067cd435540134",
+        "requires_previous_overlay_sha256": "660cdf37adddebbad7b3b9e0b3ab1f7d859b9bb3104d2d14a032761a61b96b84",
+        "B_point_unchanged": [
+          1622.449,
+          -30.612
+        ],
+        "engineering_origin_from_existing_wall_caps": [
+          1622.80908203125,
+          -13.259963035583496,
+          0.17000000178813934
+        ],
+        "offset_from_B_m": [
+          0.3600820312499309,
+          17.352036964416502
+        ],
+        "rotation_z_rad": -0.0207437532713328,
+        "new_ids": [
+          "pingcheng-P-static_earth",
+          "pingcheng-P-static_tile",
+          "pingcheng-P-static_timber"
+        ],
+        "hide_only_ids": [],
+        "remove_on_rollback": [
+          "pingcheng-P-static_earth",
+          "pingcheng-P-static_tile",
+          "pingcheng-P-static_timber"
+        ],
+        "delta_sha256": "bfd7a9ddd0752906ea3d7d625bb60477c0c3b4d7676812d0be7eabe8c621c327",
+        "model_sha256": "8f3c6fd1563170b9a9c7d9c1d18b75b82cd520a9eea8ceee4b6b9eebe8d4c1a6",
+        "contacts": [
+          {
+            "wall": "C_wall_A_06",
+            "side": -1,
+            "max_world_float_residual_m": 0.0001221038355096334,
+            "scope": "outer cap only, not whole object pair exemption",
+            "gate_inner_contact_plane_x": -12.8,
+            "gate_inner_contact_rect_yz": [
+              -5.0,
+              5.0,
+              0,
+              5.0
+            ]
+          },
+          {
+            "wall": "C_wall_A_05",
+            "side": 1,
+            "max_world_float_residual_m": 1.9073486328125e-06,
+            "scope": "outer cap only, not whole object pair exemption",
+            "gate_inner_contact_plane_x": 12.8,
+            "gate_inner_contact_rect_yz": [
+              -5.0,
+              5.0,
+              0,
+              5.0
+            ]
+          }
+        ],
+        "activation": false,
+        "historical_state": "177/178 damage accounts differ; circa180 repair status unknown; intact-form hypothesis only",
+        "access_state": "central lane fixed closed as C display choice, not documented daily traffic rule",
+        "limits": [
+          "Origin and orientation derived from current C wall geometry, not historical precision; south-wall gate location not excavated",
+          "No new roads, no wall edits, no whole-city activation",
+          "Gate contains closed central and open side leaves, all static; no tested hinge rig",
+          "Upper access remains unknown",
+          "No threshold inserted; existing terrain/approach support is not validated, hidden trial only"
+        ]
+      },
+      "models": [
+        {
+          "file": "luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb",
+          "bytes": 476264,
+          "sha256": "7d995a1b95026cb3d626bf6ad6bdd01edcf89d7c5baab87ffff341360d51f102",
+          "lod": 1,
+          "triangles": 1708,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 9,
+          "primitiveLocalBounds": {
+            "min": [
+              -14.061697959899902,
+              0,
+              -6.350925445556641
+            ],
+            "max": [
+              14.061697959899902,
+              10.24000072479248,
+              6.350925445556641
+            ]
+          },
+          "copiedWithoutChanges": true
+        },
+        {
+          "file": "luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD2.glb",
+          "bytes": 42072,
+          "sha256": "e6f289f78dc05c2d0c5ea6ef11726748be6b35ffb68315a5b7fc1186f3c5551e",
+          "lod": 2,
+          "triangles": 548,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 0,
+          "primitiveLocalBounds": {
+            "min": [
+              -14,
+              0,
+              -6.300000190734863
+            ],
+            "max": [
+              14,
+              10.24000072479248,
+              6.300000190734863
+            ]
+          },
+          "copiedWithoutChanges": true
+        }
+      ]
+    },
+    {
+      "package": "luoyang-shangxi-gate-study-v1",
+      "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+      "sourceArchiveDirectory": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-shangxi-gate-study-v1",
+      "zipSHA256": "cc7265a7b6e31340a7894c64e9d0fbf190e8dfb64a4e46cdaa15d003196c7f2f",
+      "zipBytes": 11602401,
+      "sourceCandidateOnly": true,
+      "sourceHiddenDeltas": true,
+      "displayMode": "independent-study",
+      "placement": {
+        "base_sha256": "eabb2a902d671adf9017f9835ce1d1d9673985f33d793acdce067cd435540134",
+        "requires_previous_overlay_sha256": "660cdf37adddebbad7b3b9e0b3ab1f7d859b9bb3104d2d14a032761a61b96b84",
+        "B_point_unchanged": [
+          -20.408,
+          2632.653
+        ],
+        "engineering_origin_from_existing_wall_caps": [
+          -30.373355865478516,
+          2632.537353515625,
+          0.17000000178813934
+        ],
+        "offset_from_B_m": [
+          -9.965355865478514,
+          -0.11564648437479264
+        ],
+        "rotation_z_rad": 1.5824236196572303,
+        "new_ids": [
+          "shangxi-X-static_earth",
+          "shangxi-X-static_tile",
+          "shangxi-X-static_timber"
+        ],
+        "hide_only_ids": [],
+        "remove_on_rollback": [
+          "shangxi-X-static_earth",
+          "shangxi-X-static_tile",
+          "shangxi-X-static_timber"
+        ],
+        "delta_sha256": "9ae64fd9af5e927b0149305caa9d6e2d12865c4ab630da8324b370363c6388ef",
+        "model_sha256": "05b1534356f51ec880a1c9e1f99b903f4f8221caa74154c18837b8f6dfc0ccbf",
+        "contacts": [
+          {
+            "wall": "C_wall_A_10",
+            "side": -1,
+            "max_world_float_residual_m": 0.0002441704255036203,
+            "scope": "outer cap only, not whole object pair exemption",
+            "gate_inner_contact_plane_x": -12.2,
+            "gate_inner_contact_rect_yz": [
+              -4.25,
+              4.25,
+              0,
+              5.3
+            ]
+          },
+          {
+            "wall": "C_wall_A_11",
+            "side": 1,
+            "max_world_float_residual_m": 0.0002441704255036203,
+            "scope": "outer cap only, not whole object pair exemption",
+            "gate_inner_contact_plane_x": 12.2,
+            "gate_inner_contact_rect_yz": [
+              -4.25,
+              4.25,
+              0,
+              5.3
+            ]
+          }
+        ],
+        "activation": false,
+        "limits": [
+          "Origin and orientation derived from current C wall geometry, not historical precision",
+          "No new roads, no wall edits, no whole-city activation",
+          "Gate contains static fully-open door leaves, not a tested hinge rig",
+          "Upper access remains unknown",
+          "No threshold inserted; existing terrain/approach support is not validated, hidden trial only"
+        ]
+      },
+      "models": [
+        {
+          "file": "luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD1.glb",
+          "bytes": 481044,
+          "sha256": "00a2eb67b73bac04f267e24540f6fd2e6bf26689e4c0783783d664566bc24312",
+          "lod": 1,
+          "triangles": 1784,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 9,
+          "primitiveLocalBounds": {
+            "min": [
+              -13.46119213104248,
+              0,
+              -5.751530647277832
+            ],
+            "max": [
+              13.46119213104248,
+              11.34000015258789,
+              5.751530647277832
+            ]
+          },
+          "copiedWithoutChanges": true
+        },
+        {
+          "file": "luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD2.glb",
+          "bytes": 41236,
+          "sha256": "99047569c6248c99e0601924613ad9e9c710d25248ac661fd29a2bae84665862",
+          "lod": 2,
+          "triangles": 536,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 0,
+          "primitiveLocalBounds": {
+            "min": [
+              -13.399999618530273,
+              0,
+              -5.699999809265137
+            ],
+            "max": [
+              13.399999618530273,
+              11.34000015258789,
+              5.699999809265137
+            ]
+          },
+          "copiedWithoutChanges": true
+        }
+      ]
+    },
+    {
+      "package": "luoyang-yong-gate-study-v1",
+      "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+      "sourceArchiveDirectory": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-yong-gate-study-v1",
+      "zipSHA256": "4a9a05714ff88d5f6b66ba9aada8605cca8292c7af73c13ae9386421980af113",
+      "zipBytes": 11354466,
+      "sourceCandidateOnly": true,
+      "sourceHiddenDeltas": true,
+      "displayMode": "independent-study",
+      "placement": {
+        "base_sha256": "eabb2a902d671adf9017f9835ce1d1d9673985f33d793acdce067cd435540134",
+        "requires_previous_overlay_sha256": "660cdf37adddebbad7b3b9e0b3ab1f7d859b9bb3104d2d14a032761a61b96b84",
+        "B_point_unchanged": [
+          0.0,
+          1397.959
+        ],
+        "engineering_origin_from_existing_wall_caps": [
+          -16.0157413482666,
+          1397.772705078125,
+          0.17000000178813934
+        ],
+        "offset_from_B_m": [
+          -16.0157413482666,
+          -0.18629492187506003
+        ],
+        "rotation_z_rad": 1.5824235600565508,
+        "new_ids": [
+          "yong-Y-static_earth",
+          "yong-Y-static_tile",
+          "yong-Y-static_timber"
+        ],
+        "hide_only_ids": [],
+        "remove_on_rollback": [
+          "yong-Y-static_earth",
+          "yong-Y-static_tile",
+          "yong-Y-static_timber"
+        ],
+        "delta_sha256": "2bbd57e497fb91a1e4470e05ecbee2ecce7009fd0befd549f858c9307d7d45d1",
+        "model_sha256": "0c7dbfb52834a92f91812909c374e9a13003cc7d75b44fdd133fc8501e9d4714",
+        "contacts": [
+          {
+            "wall": "gate-city-static_wall_plus",
+            "side": -1,
+            "max_world_float_residual_m": 0.00012208521275181014,
+            "scope": "outer cap only, not whole object pair exemption",
+            "gate_inner_contact_plane_x": -11.4,
+            "gate_inner_contact_rect_yz": [
+              -4.5,
+              4.5,
+              0,
+              5.0
+            ]
+          },
+          {
+            "wall": "C_wall_A_10",
+            "side": 1,
+            "max_world_float_residual_m": 1.9073486328125e-06,
+            "scope": "outer cap only, not whole object pair exemption",
+            "gate_inner_contact_plane_x": 11.4,
+            "gate_inner_contact_rect_yz": [
+              -4.5,
+              4.5,
+              0,
+              5.0
+            ]
+          }
+        ],
+        "activation": false,
+        "limits": [
+          "Origin and orientation derived from current C wall geometry, not historical precision",
+          "No new roads, no wall edits, no whole-city activation",
+          "Gate contains static fully-open door leaves, not a tested hinge rig",
+          "Upper access remains unknown",
+          "No threshold inserted; existing terrain/approach support is not validated, hidden trial only"
+        ],
+        "requires_refined_A10_delta_sha256": "22c9338513aeb3b8cb844eceb2fccda16ceedc899780bf647f24c35f8ff868a3",
+        "requires_gatewall_v21_overlay_sha256": "e3853a93c8e71fc11ab29f976cd20951d2d194d5098c00dd634f50e6683af8a1",
+        "historical_oblique_road_relation": "unknown; no ancient angle inferred from C wall caps"
+      },
+      "models": [
+        {
+          "file": "luoyang-yong-gate-study-v1/models/yong-Y-LOD1.glb",
+          "bytes": 501844,
+          "sha256": "c277f7e31d764384979e4712fef95472fb8749f930b5a75a54028e106939652c",
+          "lod": 1,
+          "triangles": 1988,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 9,
+          "primitiveLocalBounds": {
+            "min": [
+              -12.600000381469727,
+              0,
+              -5.811703681945801
+            ],
+            "max": [
+              12.600000381469727,
+              10.230000495910645,
+              5.811703681945801
+            ]
+          },
+          "copiedWithoutChanges": true
+        },
+        {
+          "file": "luoyang-yong-gate-study-v1/models/yong-Y-LOD2.glb",
+          "bytes": 58612,
+          "sha256": "7406a24cf7124fcde7409a30f2961251a873a64ea9a3ab6a3e9e206085ad6074",
+          "lod": 2,
+          "triangles": 788,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 0,
+          "primitiveLocalBounds": {
+            "min": [
+              -12.600000381469727,
+              0,
+              -5.800000190734863
+            ],
+            "max": [
+              12.600000381469727,
+              10.230000495910645,
+              5.800000190734863
+            ]
+          },
+          "copiedWithoutChanges": true
+        }
+      ]
+    },
+    {
+      "package": "luoyang-zhongdong-gate-study-v1.1",
+      "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+      "sourceArchiveDirectory": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-zhongdong-gate-study-v1.1",
+      "zipSHA256": "257e4df2eef6e9cf51e1073d11bca4d52500d976f9a3e0accc31f744b5f50302",
+      "zipBytes": 27951694,
+      "sourceCandidateOnly": true,
+      "sourceHiddenDeltas": true,
+      "displayMode": "independent-study",
+      "placement": {
+        "base_sha256": "eabb2a902d671adf9017f9835ce1d1d9673985f33d793acdce067cd435540134",
+        "requires_previous_overlay_sha256": "660cdf37adddebbad7b3b9e0b3ab1f7d859b9bb3104d2d14a032761a61b96b84",
+        "B_point_unchanged": [
+          2571.429,
+          1806.122
+        ],
+        "engineering_origin_from_existing_wall_caps": [
+          2579.99658203125,
+          1805.36865234375,
+          0.17000000178813934
+        ],
+        "offset_from_B_m": [
+          8.567582031249913,
+          -0.7533476562500709
+        ],
+        "rotation_z_rad": -1.658486072053181,
+        "new_ids": [
+          "zhongdong-Z-static_earth",
+          "zhongdong-Z-static_tile",
+          "zhongdong-Z-static_timber"
+        ],
+        "hide_only_ids": [],
+        "remove_on_rollback": [
+          "zhongdong-Z-static_earth",
+          "zhongdong-Z-static_tile",
+          "zhongdong-Z-static_timber"
+        ],
+        "delta_sha256": "c54cd3b70aaa32e263ef72e20240d4a55926aa19796edefe220d6494a67322eb",
+        "model_sha256": "627213277ba487ee00b85fad421c70ccb6b222aebe8b17f0001b54c5f3d69f59",
+        "contacts": [
+          {
+            "wall": "C_wall_A_02",
+            "side": -1,
+            "max_world_float_residual_m": 0.0001220703125,
+            "scope": "outer cap only, not whole object pair exemption",
+            "gate_inner_contact_plane_x": -11.6,
+            "gate_inner_contact_rect_yz": [
+              -4.0,
+              4.0,
+              0,
+              5.2
+            ]
+          },
+          {
+            "wall": "C_wall_A_03",
+            "side": 1,
+            "max_world_float_residual_m": 0.0001220703125,
+            "scope": "outer cap only, not whole object pair exemption",
+            "gate_inner_contact_plane_x": 11.6,
+            "gate_inner_contact_rect_yz": [
+              -4.0,
+              4.0,
+              0,
+              5.2
+            ]
+          }
+        ],
+        "activation": false,
+        "limits": [
+          "Origin and orientation derived from current C wall geometry, not historical precision",
+          "No new roads, no wall edits, no whole-city activation",
+          "Gate contains static fully-open door leaves, not a tested hinge rig",
+          "Upper access remains unknown",
+          "No threshold inserted; existing terrain/approach support is not validated, hidden trial only"
+        ]
+      },
+      "models": [
+        {
+          "file": "luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD1.glb",
+          "bytes": 1343084,
+          "sha256": "a78b7c84c1757e94a2ce9e455370c5003b22b999a5cc254b39374461c7808e0f",
+          "lod": 1,
+          "triangles": 15208,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 9,
+          "primitiveLocalBounds": {
+            "min": [
+              -12.600000381469727,
+              0,
+              -5
+            ],
+            "max": [
+              12.600000381469727,
+              10.458000183105469,
+              5
+            ]
+          },
+          "copiedWithoutChanges": true
+        },
+        {
+          "file": "luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD2.glb",
+          "bytes": 51936,
+          "sha256": "cefa53325287e76d6506463f1d01227a9bcb30ce32f21c5b37afd17c176c7038",
+          "lod": 2,
+          "triangles": 752,
+          "meshes": 3,
+          "primitives": 3,
+          "materials": 3,
+          "embeddedImages": 0,
+          "primitiveLocalBounds": {
+            "min": [
+              -12.600000381469727,
+              0,
+              -5
+            ],
+            "max": [
+              12.600000381469727,
+              10.458000183105469,
+              5
+            ]
+          },
+          "copiedWithoutChanges": true
+        }
+      ]
+    }
+  ]
+}

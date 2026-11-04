@@ -1,1 +1,116 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>洛阳 · 证据之城 / 阶段 01</title><link rel="stylesheet" href="shell.css"><script type="importmap">{"imports":{"three":"./../../fusions/F01/vendor/three.module.js"}}</script></head><body><main id="stage" aria-label="正在载入空间"><canvas id="scene" aria-label="正在准备空间显示" tabindex="0"></canvas><section id="fallback" hidden aria-label="二维备用观察"><svg id="map" viewBox="-105 -105 210 210" aria-label="中性九分区位置图"></svg><figure id="still" hidden><img alt="013源模型的CPU近看参考，不代表当前实时镜头"><figcaption>CPU 源模型参考 · 非实时三维镜头</figcaption></figure></section></main><header><p class="eyebrow">EASTERN HAN / EVIDENCE STAGE 01</p><h1>洛阳 · 证据之城</h1><p>正在准备冻结证据与C01设计阶段 · 非完整城池</p></header><aside id="mode" role="status">正在准备显示环境…</aside><nav id="navigation" aria-label="层级导航"><div class="bar"><a href="research/2026-11-03/">街区研究记录 · 已公开·研究候选预览</a><button id="back" disabled>← 返回</button><button id="home">全场</button><strong id="breadcrumb">全场位置图</strong><button id="cancel" hidden>取消载入</button><button id="retry" hidden>重试</button><button id="exit">退出 / 释放</button></div><div id="choices" aria-label="可选择的位置"></div><p id="status" role="status" aria-live="polite">读取分区清单…</p><details><summary>试验范围与操作</summary><p>选择分区才载入 013 共享源几何；全场矩形只是位置标记，不是建筑 LOD。拖动旋转，滚轮或双指缩放；也可只用按钮和键盘 Tab / Enter。Esc 返回。近看采用架空观察，不保证任意穿行安全。返回恢复进入前镜头。</p><p>模型是孙吴陶院落释读，仅作局部质量参照，不代表东汉洛阳。工程单位不等于历史米制。研究坐标未知保持 null，未导入此中性布局。GPU、真实设备性能与全城容量尚未验证。</p></details></nav><script type="module" src="boot.mjs"></script><noscript><style>header,#navigation,#mode,#stage{display:none}body{overflow:auto}</style><section style="max-width:850px;margin:40px auto;padding:24px;line-height:1.7"><h1>洛阳城市项目 · 进行中</h1><p id="storage-noscript">太仓候选附近·仓储作业C样板：<a href="assets/west/storage-organized.png">静态CPU参考</a> · <a href="data/west/storage-precedents.json">文字来源与限制</a>。外联未建，宫缘关系仍悬置；72×52是C研究包络，不是太仓实测范围。只装完整一组，不叠A/B单仓或现代讲解地面层；未达013质量。</p><p id="west-noscript">静态CPU图，不是实时3D：<a href="assets/west/gate-direct-near.png">广阳direct C门近景</a> · <a href="assets/west/south14-overall.png">C-alt南14院</a> · <a href="assets/west/whole-route.png">城西连接全貌</a>。均为设计研究，不是历史定案。</p><p id="north-noscript">北宫：旧B范围仅供对照；新东/南墙A未配准，内部未知；东掖门始建魏晋，不纳入东汉门址。<a href="data/west/north-palace-conflict-layer.json">查看分层来源与限制</a>。静态旧图不能冒充新墙定位。</p><p id="wall-noscript">土垣C体量静态参考：<a href="assets/west/wall-city-direct-A.png">A全城direct后CPU图</a> · <a href="assets/west/wall-corner-B.png">B墙角CPU图（非全城）</a>。高厚全C、南垣推定，12门点非12门楼，A已做direct C转接，B仍未接合；A全城图为direct转接后参考。</p><p id="road-noscript">主路C试验：<a href="assets/west/roads-6m.png">6m静态CPU图</a>；10m仅几何检查无CPU图。5条件联系派生7段，余7关系不实体化，两宫复道不造桥，接头待决。<a href="data/west/road-preconstraints.json">逐条来源与前置分类</a>。</p><p id="market-noscript">金市候选附近·市肆C样板：<a href="assets/west/market-connected.png">v1带支路CPU图（N2前）</a> · <a href="assets/west/market-N2-slg.png">A默认与N2 CPU图</a> · <a href="assets/west/market-flow-comparison.png">人货A/B对照</a>。N2正式屋顶保留，剖图只是渲染呈现；B仅可选绕行，北货路47→130示意米，外路仍共用，非交通仿真。仅5店3摊功能原型，非完整金市/西市，未达013近景质量；B仅点，60×44不是市界。<a href="data/west/market-precedents.json">文字类比与图像未观察限制</a>。</p><p><a href="research/2026-11-03/">最新街区研究 · 已公开·研究候选预览</a></p><p>西连接候选需要脚本；无脚本请看下方研究/来源与CPU图，不冒充实时空间。</p><p>脚本未启用，交互空间不可用。当前包含阶段01证据骨架（36项B示意、6项未定位）与C02四簇36新院（其中18个固定几何变体替换）＋C01八院＝44当前设计实例（旧六院历史不累计）；不代表完整洛阳城，C02/C01均为可迁移设计落位，非考古定位；原始未知住宅条目保持未知。</p><p><a href="assets/evidence/evidence-plan.png">打开原创证据释读图</a> · <a href="assets/c02v/C02-plan.png">打开城市与样段CPU区域图</a> · <a href="assets/c02v/C02-birdseye.png">打开四簇CPU鸟瞰</a></p><p>静态图不是实时GPU；来源示意不是实测GIS，未知对象不会放到原点。启用脚本后可查询证据、进入独立样段并返回。</p><p><a href="../../">返回造物手记总览</a></p></section></noscript></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f0e5">
+  <meta name="description" content="洛阳建城手记。从城垣走进已建街区，查看住宅、市肆、仓储与礼制建筑的建设进度和研究记录。">
+  <title>洛阳 · 建城手记</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {"imports":{"three":"../../fusions/F01/vendor/three.module.js"}}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#city">跳到当前城景</a>
+  <header class="site-header">
+    <a class="brand" href="../../index.html" aria-label="返回造物手记">
+      <span class="brand-stamp" aria-hidden="true">造</span>
+      <span>造物手记<small>CREATION NOTEBOOK</small></span>
+    </a>
+    <div class="page-title">
+      <h1>洛阳<span>·</span>建城手记</h1>
+      <p>从城垣，走进已建街区。</p>
+    </div>
+    <div class="header-actions">
+      <span class="build-state"><i aria-hidden="true"></i>持续建城中</span>
+      <button id="open-research" class="text-button" type="button" aria-controls="research-drawer" aria-expanded="false">研究手记 <span aria-hidden="true">↗</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section id="city" class="workbench" aria-label="洛阳当前建城进度">
+      <aside class="chapter-sidebar" aria-labelledby="directory-title">
+        <div class="directory-heading"><p class="eyebrow">PAGES OF A GROWING CITY</p><h2 id="directory-title">翻开六章</h2><span class="directory-line" aria-hidden="true"></span></div>
+        <nav class="chapter-nav" aria-label="建城章节">
+          <button type="button" data-chapter="walls" aria-pressed="false"><span class="chapter-number">01</span><span class="chapter-button-copy"><strong>城垣与城门</strong><small data-chapter-status="walls">已入城</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" data-chapter="residential" aria-pressed="true"><span class="chapter-number">02</span><span class="chapter-button-copy"><strong>住宅街区</strong><small data-chapter-status="residential">已入城</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" data-chapter="market" aria-pressed="false"><span class="chapter-number">03</span><span class="chapter-button-copy"><strong>市肆</strong><small data-chapter-status="market">已入城</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" data-chapter="storage" aria-pressed="false"><span class="chapter-number">04</span><span class="chapter-button-copy"><strong>仓储作业</strong><small data-chapter-status="storage">已入城</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" data-chapter="ritual" aria-pressed="false"><span class="chapter-number">05</span><span class="chapter-button-copy"><strong>礼制建筑</strong><small data-chapter-status="ritual">已建模</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+          <button type="button" data-chapter="terrain" aria-pressed="false"><span class="chapter-number">06</span><span class="chapter-button-copy"><strong>道路与地形</strong><small data-chapter-status="terrain">已入城</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+        </nav>
+        <p class="directory-note">沿着已经做出的东西，<br>一页一页，走进城中。</p>
+        <div class="revision-note"><span>这一版的城</span><span id="revision-label">持续更新</span></div>
+      </aside>
+
+      <div class="city-sheet">
+        <div class="view-heading">
+          <div><p class="eyebrow">THE CITY, AS IT GROWS</p><h2 id="view-title">南侧 · 已建住宅街区</h2></div>
+          <div class="viewer-actions"><button id="start3d" class="primary-button" type="button">打开 3D <span aria-hidden="true">↗</span></button><button id="close3d" class="quiet-button" type="button" hidden>回到图文</button></div>
+        </div>
+        <p id="view-description" class="view-description">先看南侧已经布置的 14 座院落，再按章节查看城门、市肆与仓储的现有模型。</p>
+
+        <div id="stage" class="city-stage" data-state="poster" data-level="district">
+          <img id="poster" src="assets/city-poster.webp" width="1400" height="1000" alt="洛阳南侧已建住宅街区的十四座院落与街道渲染记录" fetchpriority="high">
+          <canvas id="scene" aria-label="洛阳已建街区，可拖动旋转、滚轮或双指缩放，并点选建筑" aria-describedby="scene-help" tabindex="0" hidden></canvas>
+          <div id="map-labels" class="map-labels" aria-hidden="true"></div>
+          <div class="sheet-coordinate" aria-hidden="true"><span>雒阳</span><small>LUOYANG / HAN</small></div>
+          <div id="evidence-legend" class="evidence-legend" hidden><span><i class="legend-ink" aria-hidden="true"></i>有据</span><span><i class="legend-pencil" aria-hidden="true"></i>推测</span><span><i class="legend-blank" aria-hidden="true"></i>未知</span></div>
+          <p id="scene-help" class="scene-help">拖动转动 · 滚轮缩放 · 点选建筑看便签</p>
+
+          <aside id="place-note" class="place-note" aria-labelledby="place-title" hidden>
+            <div class="note-topline"><span id="place-progress" class="progress-badge">建设记录</span><button id="close-note" class="icon-button" type="button" aria-label="收起建筑便签">×</button></div>
+            <p class="eyebrow">A PLACE IN THE CITY</p>
+            <h3 id="place-title">一处建筑的手记</h3>
+            <p id="place-summary">点选建筑后，这里会展开它的用途与建设进度。</p>
+            <p class="place-tier-row">史料等级 <span id="place-tier">待读取</span></p>
+            <details id="place-details"><summary>看看依据与推测 <span aria-hidden="true">＋</span></summary><p id="place-basis"></p><ul id="place-sources"></ul></details>
+          </aside>
+        </div>
+
+        <div class="view-bottom">
+          <fieldset id="view-controls" disabled>
+            <legend class="visually-hidden">观察城市的尺度</legend>
+            <div class="camera-levels" role="group" aria-label="观察尺度"><button type="button" data-level="city" aria-pressed="false"><span class="level-mark" aria-hidden="true">城</span>全城鸟瞰</button><button type="button" data-level="district" aria-pressed="true"><span class="level-mark" aria-hidden="true">区</span>已建街区</button><button type="button" data-level="courtyard" aria-pressed="false"><span class="level-mark" aria-hidden="true">院</span>走进院落</button></div>
+            <button id="reset-view" class="quiet-button reset-view" type="button">回到西城 <span aria-hidden="true">↺</span></button>
+            <label class="tier-switch"><input id="show-tiers" type="checkbox"><span class="switch-track" aria-hidden="true"></span><span>显示史料等级</span></label>
+          </fieldset>
+          <div class="scene-status"><p id="status" role="status" aria-live="polite">当前城景已放在纸上，可以继续翻阅下面的建设记录。</p><span class="scene-caption">从南侧住宅开始</span></div>
+          <p id="error" class="error-message" role="alert" hidden></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="progress-strip" aria-labelledby="progress-title"><span class="progress-symbol" aria-hidden="true">✳</span><div><h2 id="progress-title">这一版，先看见已经做出的城。</h2><p id="progress-summary">从南侧 14 座院落开始，按章节查看已建城门、市肆、仓储与研究模型。</p></div><a href="#chapters">翻阅建设记录 <span aria-hidden="true">↓</span></a></section>
+
+    <section id="chapters" class="chapter-records" aria-labelledby="chapters-title">
+      <div class="section-heading"><div><p class="eyebrow">SIX CHAPTERS / WORK IN PROGRESS</p><h2 id="chapters-title">这座城，正长到哪里。</h2></div><p>每一章都留下现有模型，<br>也留下继续建设的线索。</p></div>
+      <p class="record-image-note">六章配图为已有模型渲染记录。</p>
+      <div class="chapter-grid">
+        <article id="chapter-walls" class="chapter-card"><div class="chapter-image"><img data-chapter-image="walls" src="assets/chapter-1.webp" width="800" height="600" alt="当前城垣与城门模型的建造进度" loading="lazy" decoding="async"><span class="image-page">01 / 城垣与城门</span></div><div class="chapter-card-copy"><span class="progress-badge" data-record-status="walls">已入城</span><h3>从城门，认出城的边界。</h3><p data-record-description="walls">沿已布置的城墙与门楼观察边界，再回到街区，看城门怎样与道路相接。</p><button type="button" data-open-chapter="walls">看看城门一带 <span aria-hidden="true">↗</span></button></div></article>
+        <article id="chapter-residential" class="chapter-card"><div class="chapter-image"><img data-chapter-image="residential" src="assets/chapter-2.webp" width="800" height="600" alt="当前西城住宅院落与街道的布置" loading="lazy" decoding="async"><span class="image-page">02 / 住宅街区</span></div><div class="chapter-card-copy"><span class="progress-badge" data-record-status="residential">已入城</span><h3>一方院落，接着另一方。</h3><p data-record-description="residential">现有住宅原型已在街区中布置。近看门前、院心与沿边房屋，远看院落如何连成片。</p><button type="button" data-open-chapter="residential">走进住宅街区 <span aria-hidden="true">↗</span></button></div></article>
+        <article id="chapter-market" class="chapter-card"><div class="chapter-image"><img data-chapter-image="market" src="assets/chapter-3.webp" width="800" height="600" alt="已建市肆中的店铺、摊位与通行区域" loading="lazy" decoding="async"><span class="image-page">03 / 市肆</span></div><div class="chapter-card-copy"><span class="progress-badge" data-record-status="market">已入城</span><h3>街边，开始有了买卖。</h3><p data-record-description="market">店铺和摊位组成一处市肆。沿街读它的入口、货物和留给人行的地方。</p><button type="button" data-open-chapter="market">看看市肆 <span aria-hidden="true">↗</span></button></div></article>
+        <article id="chapter-storage" class="chapter-card"><div class="chapter-image"><img data-chapter-image="storage" src="assets/chapter-4.webp" width="800" height="600" alt="已建仓储模型及仓前收纳和作业场地" loading="lazy" decoding="async"><span class="image-page">04 / 仓储作业</span></div><div class="chapter-card-copy"><span class="progress-badge" data-record-status="storage">已入城</span><h3>仓房之外，还有一片前场。</h3><p data-record-description="storage">仓体、收纳棚与作业区域一同保留，观察货物抵达、暂存和搬运的空间关系。</p><button type="button" data-open-chapter="storage">走到仓前 <span aria-hidden="true">↗</span></button></div></article>
+        <article id="chapter-ritual" class="chapter-card"><div class="chapter-image"><img data-chapter-image="ritual" src="assets/chapter-5.webp" width="800" height="600" alt="已交付的灵台建筑研究模型全貌" loading="lazy" decoding="async"><span class="image-page">05 / 礼制建筑</span></div><div class="chapter-card-copy"><span class="progress-badge" data-record-status="ritual">已建模</span><h3>把新的地标，记进城中。</h3><p data-record-description="ritual">灵台与太学长堂已有研究模型。这里记录它们的形体与当前接入进度，继续补上城市中的关系。</p><button type="button" data-open-chapter="ritual">翻看地标进度 <span aria-hidden="true">↗</span></button></div></article>
+        <article id="chapter-terrain" class="chapter-card"><div class="chapter-image"><img data-chapter-image="terrain" src="assets/chapter-6.webp" width="800" height="600" alt="连接现有街区的道路与地形模型" loading="lazy" decoding="async"><span class="image-page">06 / 道路与地形</span></div><div class="chapter-card-copy"><span class="progress-badge" data-record-status="terrain">已入城</span><h3>让分散的建筑，有路相连。</h3><p data-record-description="terrain">从地面和道路读城市的骨架，查看现有模型怎样接入同一个街区。</p><button type="button" data-open-chapter="terrain">沿道路看看 <span aria-hidden="true">↗</span></button></div></article>
+      </div>
+    </section>
+
+    <section class="reading-note"><span class="note-star" aria-hidden="true">✳</span><div><h2>城在继续建，依据也一起留下。</h2><p>“已入城”记录已经布置到城景中的模型，“已建模”记录已经交付的独立资产。史料中的有据、推测与未知，在建筑便签和研究手记里分别展开。</p></div><button type="button" data-open-research>翻开研究手记 <span aria-hidden="true">↗</span></button></section>
+    <noscript><style>#start3d, #view-controls, .chapter-sidebar, .chapter-card button, #open-research, [data-open-research], #scene-help { display: none; } .workbench { grid-template-columns: 1fr; }</style><p class="no-script-note">可以直接阅读当前城景海报与六章图文记录。</p></noscript>
+  </main>
+
+  <aside id="research-drawer" class="research-drawer" aria-labelledby="research-title" hidden>
+    <div class="drawer-heading"><div><p class="eyebrow">THE NOTES BEHIND THE CITY</p><h2 id="research-title">研究手记</h2></div><button id="close-research" class="icon-button" type="button" aria-label="收起研究手记">×</button></div>
+    <p class="drawer-intro">这是一份持续建设的东汉洛阳城市研究。现有模型、布局推测和待补的内容，都随版本留下记录。</p>
+    <section><h3>先分清两件事</h3><p>建设进度记录模型做到哪里。史料等级记录依据从哪里来。</p><dl class="evidence-key"><div><dt><i class="legend-ink" aria-hidden="true"></i>有据</dt><dd>位置、范围或形制有来源支持，可展开查看具体依据。</dd></div><div><dt><i class="legend-pencil" aria-hidden="true"></i>推测</dt><dd>在已有资料上补全的布局与形制，同时记录推测理由。</dd></div><div><dt><i class="legend-blank" aria-hidden="true"></i>未知</dt><dd>资料尚不足以确定，保留空白并记录待查问题。</dd></div></dl></section>
+    <section><h3>当前内容与依据</h3><div id="research-content"><p>点选城景中的建筑，可查看对应的建设记录、来源和推测理由。</p></div><ul id="research-sources" class="research-sources"></ul></section>
+    <details class="technical-notes"><summary>渲染与加载记录 <span aria-hidden="true">＋</span></summary><pre id="metrics" aria-label="当前渲染与加载记录">打开三维城景后显示本次记录。</pre><p>电脑端目标为鸟瞰绘制调用不超过 300、三角形不超过 150 万，进入可交互前下载不超过 8 MB。手机先提供海报与图文，可主动打开三维浏览。</p></details>
+    <a class="archive-link" href="../../cities/luoyang/v1/">翻阅旧版建城档案 <span aria-hidden="true">↗</span></a>
+  </aside>
+
+  <footer><span class="footer-hand">从一方院落，到一座城。</span><a href="../../index.html">回到造物手记 <span aria-hidden="true">↗</span></a></footer>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>
