@@ -1,0 +1,74 @@
+{
+  "status": "partial",
+  "covers": [
+    {
+      "file": "C5-cover-refresh/after/market-cover.png",
+      "status": "framing_candidate",
+      "bboxAreaFraction": 0.6192
+    },
+    {
+      "file": "C5-cover-refresh/after/storage-cover.png",
+      "status": "framing_candidate",
+      "bboxAreaFraction": 0.6192
+    },
+    {
+      "file": "C5-cover-refresh/after/que-cover.png",
+      "status": "notaccepted",
+      "bboxAreaFraction": 0.4386
+    }
+  ],
+  "sourceBindings": [
+    {
+      "name": "market",
+      "source": "C5-cover-refresh/inputs/market-C2-C4-display.glb",
+      "declaredSHA256": "725715a76def625894a40cdad42b1f30157d21073f416d8ea2238718525e9add",
+      "actualSHA256": "725715a76def625894a40cdad42b1f30157d21073f416d8ea2238718525e9add",
+      "match": true,
+      "presentationOnlyHiddenNodes": [
+        "boundary_static_batch_0",
+        "sample_groundstatic_batch_5",
+        "route_static_batch_6"
+      ]
+    },
+    {
+      "name": "storage",
+      "source": "C5-cover-refresh/inputs/storage-C2.glb",
+      "declaredSHA256": "40669acd8f65a8c067da7e872fc0e5a3847acc44b36ac439465baba0d7e227ce",
+      "actualSHA256": "40669acd8f65a8c067da7e872fc0e5a3847acc44b36ac439465baba0d7e227ce",
+      "match": true,
+      "presentationOnlyHiddenNodes": [
+        "sample_ground"
+      ]
+    },
+    {
+      "name": "que",
+      "source": "C5-cover-refresh/inputs/que-A.glb",
+      "declaredSHA256": "4d8f414f95c58189618514e4241ab5486a96a2c48ae94650dbf1c863c6b2a030",
+      "actualSHA256": "4d8f414f95c58189618514e4241ab5486a96a2c48ae94650dbf1c863c6b2a030",
+      "match": true,
+      "presentationOnlyHiddenNodes": [
+        "C_continuous_terrain_and_tread"
+      ]
+    }
+  ],
+  "limits": [
+    "014 recommended cover only 43.86% bbox area, below 60–70%; high-angle alternative is not an accepted replacement.",
+    "Market/storage acceptance is framing only, not geometry/history/GPU acceptance.",
+    "Sources are C2/C4 organized candidates; no inference that current main model equals those candidates.",
+    "Presentation hides documented terrain/route/boundary nodes; downloadable source geometry remains unchanged."
+  ],
+  "omittedNotAcceptedImages": [
+    {
+      "file": "que-cover.png",
+      "sha256": "cbbc8ab17ae7933ef7ae015e86d7076af2cd48a3c4b2f3dc56ccb4d0cda3e4a8",
+      "notPublished": true,
+      "reason": "014 framing is not accepted; high-angle alternative not selected"
+    },
+    {
+      "file": "que-high-angle-alternative.png",
+      "sha256": "525a0b55c7405b8c611377a6f5af5dc9d622574180a765e740d16a52de8e6aa3",
+      "notPublished": true,
+      "reason": "014 framing is not accepted; high-angle alternative not selected"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "deliverables": [
+    "C7-C8-metadata-audit-v1/metadata-candidate.json",
+    "C7-C8-metadata-audit-v1/codex-metadata-json-patches.json",
+    "C7-C8-metadata-audit-v1/gate-five-download-reconciliation.json"
+  ],
+  "baseCommit": "a63af753e2fa71793a5d4a4ac4ae4a2d99ce437e",
+  "assetCount": 78,
+  "verificationCounts": {
+    "exact_public_git_blob_bytes": 39,
+    "unavailable": 39
+  },
+  "limits": [
+    "39/78 sources with actual binary bytes; unavailable bounds remain null.",
+    "unit meter is glTF convention, not physical real dimensions or authenticated scale.",
+    "All intended real sizes unspecified; never infer size from design examples or rescale assets.",
+    "AABB is static active-scene triangle bounds, not motion/collision/clearance/historical measurement.",
+    "C8 five files have distinct SHA; two paired BIN/geometries match with identity root wrappers, not byte-identical files.",
+    "Snapshots and fixed-index patches are stale; must recheck current IDs and source blobs."
+  ]
+}

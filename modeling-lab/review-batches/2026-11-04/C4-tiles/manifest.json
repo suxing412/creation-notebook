@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "status": "content-only research candidates; not public-site replacement or user acceptance",
+  "sourceBatch": "c4-tile-batch-v2",
+  "assets": [
+    {
+      "bytes": 593692,
+      "sha256": "97b05d55efa02aa7b2ede2ee7c18375804c49ddd103f52aa70fdc09f98c8212c",
+      "role": "recommended-static-display-candidate",
+      "storedPrimitives": 1,
+      "nodeReferencedPrimitives": 1,
+      "storedTriangles": 5808,
+      "nodeReferencedTriangles": 5808,
+      "materials": 1,
+      "images": 0,
+      "file": "assets/eaves-A-LOD0-C2-C4.glb"
+    },
+    {
+      "bytes": 306456,
+      "sha256": "3886e13e509be9612625822b21659bfdc9d521a8ea5c6ff23bb81f335e72d670",
+      "role": "recommended-static-display-candidate",
+      "storedPrimitives": 1,
+      "nodeReferencedPrimitives": 1,
+      "storedTriangles": 2992,
+      "nodeReferencedTriangles": 2992,
+      "materials": 1,
+      "images": 0,
+      "file": "assets/eaves-A-LOD1-C2-C4.glb"
+    },
+    {
+      "bytes": 162836,
+      "sha256": "be46e9f85b2bab5efaba69b529c2d90b1ea78757e58acc75b3bcc6fdf0ff60bf",
+      "role": "recommended-static-display-candidate",
+      "storedPrimitives": 1,
+      "nodeReferencedPrimitives": 1,
+      "storedTriangles": 1584,
+      "nodeReferencedTriangles": 1584,
+      "materials": 1,
+      "images": 0,
+      "file": "assets/eaves-A-LOD2-C2-C4.glb"
+    },
+    {
+      "bytes": 701404,
+      "sha256": "58c26bd60e93753ed18d9e559f17a7e2c7e639afd2ee484a83ea576a83d7ca55",
+      "role": "recommended-static-display-candidate",
+      "storedPrimitives": 1,
+      "nodeReferencedPrimitives": 1,
+      "storedTriangles": 6864,
+      "nodeReferencedTriangles": 6864,
+      "materials": 1,
+      "images": 0,
+      "file": "assets/eaves-B-LOD0-C2-C4.glb"
+    },
+    {
+      "bytes": 361948,
+      "sha256": "79d0c9bdeedfdb7e027f2220b90758832382bcc6a09d7ac1594a4bbf7cb8b967",
+      "role": "recommended-static-display-candidate",
+      "storedPrimitives": 1,
+      "nodeReferencedPrimitives": 1,
+      "storedTriangles": 3536,
+      "nodeReferencedTriangles": 3536,
+      "materials": 1,
+      "images": 0,
+      "file": "assets/eaves-B-LOD1-C2-C4.glb"
+    },
+    {
+      "bytes": 192212,
+      "sha256": "a07ccd8ba91ffb8d953ada444a453f42aa7a07e87cc8c8c387f86d7c1b443b16",
+      "role": "recommended-static-display-candidate",
+      "storedPrimitives": 1,
+      "nodeReferencedPrimitives": 1,
+      "storedTriangles": 1872,
+      "nodeReferencedTriangles": 1872,
+      "materials": 1,
+      "images": 0,
+      "file": "assets/eaves-B-LOD2-C2-C4.glb"
+    }
+  ],
+  "reproduction": {
+    "zipSha256": "64e6b5636def47e3363508fdb393f6f4c60cbef863b224eb851899020eedb308",
+    "zipBytes": 3942359,
+    "parts": [
+      {
+        "file": "reproduction.zip",
+        "bytes": 3942359,
+        "sha256": "64e6b5636def47e3363508fdb393f6f4c60cbef863b224eb851899020eedb308"
+      }
+    ],
+    "restore": "Concatenate ordered parts if split, verify zipSha256, extract into this directory beside assets/.",
+    "restorationActuallyVerified": true,
+    "sourceScriptCount": 3,
+    "originalCheckerHashBindingsVerified": [
+      {
+        "report": "qa/eaves-A-LOD1-C4-validation.json",
+        "matchingOriginalChecker": [
+          "source/verify.py"
+        ]
+      },
+      {
+        "report": "qa/eaves-B-LOD0-C4-validation.json",
+        "matchingOriginalChecker": [
+          "source/verify.py"
+        ]
+      },
+      {
+        "report": "qa/eaves-B-LOD1-C4-validation.json",
+        "matchingOriginalChecker": [
+          "source/verify.py"
+        ]
+      },
+      {
+        "report": "qa/eaves-A-LOD2-C4-validation.json",
+        "matchingOriginalChecker": [
+          "source/verify.py"
+        ]
+      },
+      {
+        "report": "qa/eaves-B-LOD2-C4-validation.json",
+        "matchingOriginalChecker": [
+          "source/verify.py"
+        ]
+      },
+      {
+        "report": "qa/eaves-A-LOD0-C4-validation.json",
+        "matchingOriginalChecker": [
+          "source/verify.py"
+        ]
+      }
+    ]
+  },
+  "checks": {
+    "sourceScriptsByteUnchanged": true,
+    "oldQaNotRerunOrReattributed": true,
+    "imagesPixelExact": true,
+    "noGeometryMutation": true
+  },
+  "limitations": [
+    "C2 UV0 is repeating world-axis box projection, not unique baked/lightmap UV; axis transitions seam and curved slopes compress.",
+    "C2 metre unit is project unit, not archaeological survey; instance scaling changes world texel scale.",
+    "C4 batching is static only; per-part node identity/selection changes and consumer code must use mapping.",
+    "C4 market bakes translations to float32 with maximum recorded error 4.172325134277344e-7 metres; exact rollback uses baseline.",
+    "Market retains unreferenced meshes with local-unit UV and unknown world placement.",
+    "No GPU/mobile/runtime/collision or complete historical accuracy acceptance."
+  ]
+}

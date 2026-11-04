@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "status": "content-only research candidates; not public-site replacement or user acceptance",
+  "sourceBatch": "c4-market-batch",
+  "assets": [
+    {
+      "bytes": 1917088,
+      "sha256": "725715a76def625894a40cdad42b1f30157d21073f416d8ea2238718525e9add",
+      "role": "recommended-static-display-candidate",
+      "storedPrimitives": 14,
+      "nodeReferencedPrimitives": 11,
+      "storedTriangles": 18664,
+      "nodeReferencedTriangles": 18296,
+      "materials": 10,
+      "images": 0,
+      "file": "assets/market-C2-C4-display.glb"
+    },
+    {
+      "bytes": 1916208,
+      "sha256": "5c365b75e2b84e5ac08c58b409efcf0c0026a638fe67bfe8194527f5574ede17",
+      "role": "research-comparison-only",
+      "storedPrimitives": 13,
+      "nodeReferencedPrimitives": 10,
+      "storedTriangles": 18664,
+      "nodeReferencedTriangles": 18296,
+      "materials": 10,
+      "images": 0,
+      "file": "assets/market-C2-C4.glb"
+    }
+  ],
+  "reproduction": {
+    "zipSha256": "bf3f29bbe289ba00269e42484a64ff43060bb850fc79d5cd5751c8b00898a548",
+    "zipBytes": 2614115,
+    "parts": [
+      {
+        "file": "reproduction.zip",
+        "bytes": 2614115,
+        "sha256": "bf3f29bbe289ba00269e42484a64ff43060bb850fc79d5cd5751c8b00898a548"
+      }
+    ],
+    "restore": "Concatenate ordered parts if split, verify zipSha256, extract into this directory beside assets/.",
+    "restorationActuallyVerified": true,
+    "sourceScriptCount": 7,
+    "originalCheckerHashBindingsVerified": [
+      {
+        "report": "qa/C4-display-validation.json",
+        "matchingOriginalChecker": [
+          "source/verify-display.py"
+        ]
+      },
+      {
+        "report": "qa/C4-validation.json",
+        "matchingOriginalChecker": [
+          "source/verify.py"
+        ]
+      }
+    ]
+  },
+  "checks": {
+    "sourceScriptsByteUnchanged": true,
+    "oldQaNotRerunOrReattributed": true,
+    "imagesPixelExact": true,
+    "noGeometryMutation": true
+  },
+  "limitations": [
+    "C2 UV0 is repeating world-axis box projection, not unique baked/lightmap UV; axis transitions seam and curved slopes compress.",
+    "C2 metre unit is project unit, not archaeological survey; instance scaling changes world texel scale.",
+    "C4 batching is static only; per-part node identity/selection changes and consumer code must use mapping.",
+    "C4 market bakes translations to float32 with maximum recorded error 4.172325134277344e-7 metres; exact rollback uses baseline.",
+    "Market retains unreferenced meshes with local-unit UV and unknown world placement.",
+    "No GPU/mobile/runtime/collision or complete historical accuracy acceptance."
+  ]
+}
