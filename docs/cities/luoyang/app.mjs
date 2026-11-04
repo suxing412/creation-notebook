@@ -21,7 +21,7 @@ let lastMetrics = null;
 let drawerOpener = null;
 
 const chapterDescriptions = {
-  walls: '沿着已建的城垣，近看广阳门与相邻墙段。城门位置和建筑形制的依据可在便签中展开。',
+  walls: '沿着已建城垣近看广阳门，再单独打开旄门等六座城门研究模型。位置和形制的依据可在便签中展开。',
   residential: '44 座院落已经布置在城中。先看南侧的 14 座，点选一座，再走近看屋檐与门前。',
   market: '五间店铺、三处摊位，以及交易和储货空间，组成目前已建的市肆样板。',
   storage: '已建仓房、收纳棚和作业场地组成一处完整的仓储研究组。',
@@ -261,9 +261,9 @@ document.addEventListener('keydown', event => {
   }
 });
 
-$('#revision-label').textContent = '2026.11.04';
-$('#progress-summary').textContent = '44 座已入城院落 · 五店三摊与仓储 · 北侧新院与五门研究 · 灵台与太学';
-document.querySelector('[data-chapter-status="walls"]').textContent = '城垣已入城 · 五门新研究';
+$('#revision-label').textContent = '2026.11.05';
+$('#progress-summary').textContent = '44 座已入城院落 · 五店三摊与仓储 · 北侧新院与六门研究 · 灵台与太学';
+document.querySelector('[data-chapter-status="walls"]').textContent = '城垣已入城 · 六门新研究';
 document.querySelector('[data-chapter-status="residential"]').textContent = '44 院已入城 · 北院新研究';
 for (const [id, text] of Object.entries(chapterDescriptions)) {
   document.querySelector(`[data-record-description="${id}"]`).textContent = text;

@@ -1085,6 +1085,28 @@ const assetRecords = [
         ]
       }
     }
+  },
+  {
+    "id": "study-mao-gate",
+    "path": "progress-assets/mao-gate/mao-C-LOD0.glb",
+    "bytes": 2140916,
+    "sha256": "d8fbad038b582634084f0248d2e4b23f13f41d850b83f64ec4cfcc3b90264388",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -14.883401870727539,
+        -0.1599999964237213,
+        -6.558533191680908
+      ],
+      "max": [
+        16.950000762939453,
+        10.864999771118164,
+        6.558533191680908
+      ]
+    },
+    "sourceCommit": "0e891604d47abeacc9ed1733b9be486d2d65e9af",
+    "sourceContract": "progress-assets/mao-gate/source.json",
+    "lod": 0
   }
 ];
 
@@ -3544,7 +3566,8 @@ export const chapters = [
       "research-north13-pingcheng-P",
       "research-north13-shangxi-X",
       "research-north13-yong-Y",
-      "research-north13-zhongdong-Z"
+      "research-north13-zhongdong-Z",
+      "research-mao-gate"
     ]
   },
   {
@@ -4154,6 +4177,33 @@ export const researchModels = [
       ]
     },
     "deliveryStatus": "已交付 · 待合入城景"
+  },
+  {
+    "id": "research-mao-gate",
+    "asset": "study-mao-gate",
+    "title": "旄门 · 已建研究候选",
+    "summary": "三洞门楼与登临附件的完整近景研究模型。可转动查看门洞、屋面和上层连接。",
+    "chapter": "walls",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "旄门名及三洞类比来自交付研究资料，形制与尺寸属于设计推测。登临附件为工程提案，城市落位与城墙、道路接续待核。当前展示完整静态模型。",
+    "sourceCommit": "0e891604d47abeacc9ed1733b9be486d2d65e9af",
+    "sourceContract": "progress-assets/mao-gate/source.json",
+    "bounds": {
+      "min": [
+        -14.883401870727539,
+        -0.1599999964237213,
+        -6.558533191680908
+      ],
+      "max": [
+        16.950000762939453,
+        10.864999771118164,
+        6.558533191680908
+      ]
+    },
+    "deliveryStatus": "已交付 · 待合入城景"
   }
 ];
 
@@ -4172,9 +4222,9 @@ export const provenance = {
     "builtGateBodies": 1,
     "marketShops": 5,
     "marketStalls": 3,
-    "independentResearchModels": 13,
+    "independentResearchModels": 14,
     "deliveredNorthCourtyardResearchTypes": 5,
-    "deliveredGateResearchCandidates": 5
+    "deliveredGateResearchCandidates": 6
   },
   "sourceContracts": [
     {
@@ -4216,6 +4266,10 @@ export const provenance = {
     {
       "path": "progress-assets/north13-gates/source.json",
       "sha256": "9b07b7349ef536cd0b0a15c9bfa7134d2af7cc95e8dc402b7e2bea14d20719c1"
+    },
+    {
+      "path": "progress-assets/mao-gate/source.json",
+      "sha256": "9b3a402731826629e74cd2936079b41e210643917dcda87091aad53454ac9798"
     }
   ],
   "initialModelBytes": 1913020,
