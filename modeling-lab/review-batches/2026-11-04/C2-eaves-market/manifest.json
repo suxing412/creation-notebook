@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "status": "content-only research candidates; not public-site replacement or user acceptance",
+  "sourceBatch": "C2-eaves-market-v6",
+  "assets": [
+    {
+      "bytes": 903452,
+      "sha256": "25ee6c8bb5a142396d1880fdae95a44ef3e0650ed00976170cfe1a29a9059849",
+      "role": "recommended-C2-baseline-for-C4",
+      "storedPrimitives": 44,
+      "nodeReferencedPrimitives": 44,
+      "storedTriangles": 5808,
+      "nodeReferencedTriangles": 5808,
+      "materials": 1,
+      "images": 0,
+      "file": "assets/eaves-A-LOD0-C2.glb"
+    },
+    {
+      "bytes": 497144,
+      "sha256": "683ddcd6cc25f1647420f2263b26cd9757888488d317830225621b594a8681ce",
+      "role": "recommended-C2-baseline-for-C4",
+      "storedPrimitives": 44,
+      "nodeReferencedPrimitives": 44,
+      "storedTriangles": 2992,
+      "nodeReferencedTriangles": 2992,
+      "materials": 1,
+      "images": 0,
+      "file": "assets/eaves-A-LOD1-C2.glb"
+    },
+    {
+      "bytes": 293704,
+      "sha256": "9a13771895ae3d1cd50194dbfa26026edfaa0a2162b63b2f7745596d09aa4026",
+      "role": "recommended-C2-baseline-for-C4",
+      "storedPrimitives": 44,
+      "nodeReferencedPrimitives": 44,
+      "storedTriangles": 1584,
+      "nodeReferencedTriangles": 1584,
+      "materials": 1,
+      "images": 0,
+      "file": "assets/eaves-A-LOD2-C2.glb"
+    },
+    {
+      "bytes": 1067704,
+      "sha256": "36e25d0b9e011007a6f236d8f62f31600d7851085f2fadb64314b3c686a8e02b",
+      "role": "recommended-C2-baseline-for-C4",
+      "storedPrimitives": 52,
+      "nodeReferencedPrimitives": 52,
+      "storedTriangles": 6864,
+      "nodeReferencedTriangles": 6864,
+      "materials": 1,
+      "images": 0,
+      "file": "assets/eaves-B-LOD0-C2.glb"
+    },
+    {
+      "bytes": 587612,
+      "sha256": "5bcf919f1f355002f09034bb099ae7e72b4fc7f1f682dcc45a4616bd9f5b1476",
+      "role": "recommended-C2-baseline-for-C4",
+      "storedPrimitives": 52,
+      "nodeReferencedPrimitives": 52,
+      "storedTriangles": 3536,
+      "nodeReferencedTriangles": 3536,
+      "materials": 1,
+      "images": 0,
+      "file": "assets/eaves-B-LOD1-C2.glb"
+    },
+    {
+      "bytes": 347296,
+      "sha256": "70aa04b706453e324ea7c549298b77628755f22e01820b66c9382a883f4b376d",
+      "role": "recommended-C2-baseline-for-C4",
+      "storedPrimitives": 52,
+      "nodeReferencedPrimitives": 52,
+      "storedTriangles": 1872,
+      "nodeReferencedTriangles": 1872,
+      "materials": 1,
+      "images": 0,
+      "file": "assets/eaves-B-LOD2-C2.glb"
+    },
+    {
+      "bytes": 3537624,
+      "sha256": "2acbed3717f3d398533f7a44e0650470ce541dbf81ab8d22153dc73e14840972",
+      "role": "recommended-C2-baseline-for-C4",
+      "storedPrimitives": 554,
+      "nodeReferencedPrimitives": 524,
+      "storedTriangles": 18664,
+      "nodeReferencedTriangles": 18296,
+      "materials": 10,
+      "images": 0,
+      "file": "assets/market-A-N2-C2-including-orphans.glb"
+    }
+  ],
+  "reproduction": {
+    "zipSha256": "810a8681c6a90ec4a8385c834ae3894b93f51691734c9914756f0c1424cdf5f1",
+    "zipBytes": 2515564,
+    "parts": [
+      {
+        "file": "reproduction.zip",
+        "bytes": 2515564,
+        "sha256": "810a8681c6a90ec4a8385c834ae3894b93f51691734c9914756f0c1424cdf5f1"
+      }
+    ],
+    "restore": "Concatenate ordered parts if split, verify zipSha256, extract into this directory beside assets/.",
+    "restorationActuallyVerified": true,
+    "sourceScriptCount": 7,
+    "originalCheckerHashBindingsVerified": []
+  },
+  "checks": {
+    "sourceScriptsByteUnchanged": true,
+    "oldQaNotRerunOrReattributed": true,
+    "imagesPixelExact": true,
+    "noGeometryMutation": true
+  },
+  "limitations": [
+    "C2 UV0 is repeating world-axis box projection, not unique baked/lightmap UV; axis transitions seam and curved slopes compress.",
+    "C2 metre unit is project unit, not archaeological survey; instance scaling changes world texel scale.",
+    "C4 batching is static only; per-part node identity/selection changes and consumer code must use mapping.",
+    "C4 market bakes translations to float32 with maximum recorded error 4.172325134277344e-7 metres; exact rollback uses baseline.",
+    "Market retains unreferenced meshes with local-unit UV and unknown world placement.",
+    "No GPU/mobile/runtime/collision or complete historical accuracy acceptance."
+  ]
+}

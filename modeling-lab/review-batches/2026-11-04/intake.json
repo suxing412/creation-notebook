@@ -1,0 +1,92 @@
+{
+  "schema": "numbered-review-content-intake-v1",
+  "date": "2026-11-04",
+  "baseCommit": "a63af753e2fa71793a5d4a4ac4ae4a2d99ce437e",
+  "destination": "luoyang-content only",
+  "mainMerged": false,
+  "frontendIntegrated": false,
+  "scope": "Versioned content candidates and reproducibility evidence, no frontend source changes",
+  "reviewItems": {
+    "C2": {
+      "status": "scoped candidates, not entire library completed",
+      "packages": [
+        "C2-courtyards",
+        "C2-buildings",
+        "C2-eaves-market"
+      ],
+      "notes": [
+        "Six courtyard prototypes both LODs use strict project-meter box UV.",
+        "Building v5 covers active scenes; market v6 also patches 30 unreferenced meshes without instantiating them.",
+        "UV tiling overlaps and seams are deliberate; not unique lightmap UV; no physical historical scale proof."
+      ]
+    },
+    "C3": {
+      "status": "well A/B candidate only",
+      "packages": [
+        "C3"
+      ],
+      "notes": [
+        "256/128 textures are earlier explicitly recorded lossy LOD candidates, not lossless packing. No additional quality reduction during publication.",
+        "Six primitives is a structural count; no measured GPU draw-call/fps acceptance."
+      ]
+    },
+    "C4": {
+      "status": "scoped static batching candidates, not full library completed",
+      "packages": [
+        "C4-market",
+        "C4-tiles"
+      ],
+      "notes": [
+        "Market display variant retains independently hideable ground/route/boundary groups;14 stored,11 active primitives.",
+        "Tiles use C4 v2 on strict C2 v6 UV input. Do not install old C4 v1.",
+        "Static batching changes per-object selection; use mapping, retain baseline for rollback."
+      ]
+    },
+    "C5": {
+      "status": "partial; 014 notaccepted",
+      "packages": [
+        "C5"
+      ],
+      "notes": [
+        "Market/storage framing candidates have61.92% bbox area.",
+        "014 has43.86%, below60–70% target; not an accepted replacement.",
+        "No cover at existing docs path replaced by this branch-only batch.",
+        "Unaccepted 014 cover binary excluded from public batch; original retained privately."
+      ]
+    },
+    "C6": {
+      "status": "data proposal pending current-ID integration",
+      "packages": [
+        "C6"
+      ],
+      "notes": [
+        "Added aesthetic classification does not certify geometry/history or change legacy counts."
+      ]
+    },
+    "C7": {
+      "status": "partial binary audit",
+      "packages": [
+        "C7-C8"
+      ],
+      "notes": [
+        "39/78 exact source bytes measured;39 unknown bounds remain null. All intendedRealSize null.",
+        "meter is glTF coordinate convention, not authenticated real dimensions; do not rescale."
+      ]
+    },
+    "C8": {
+      "status": "download identity reconciled; UI pending",
+      "packages": [
+        "C7-C8"
+      ],
+      "notes": [
+        "Five gate files have distinct bytes. Two pairs share BIN and world oriented geometry but differ by identity wrapper; do not delete as exact duplicates."
+      ]
+    }
+  },
+  "integrationRules": [
+    "Recheck latest main IDs and source SHA before applying data patches. Never replace entire live index with snapshots.",
+    "Do not overwrite C2 and C4 candidates into each other. Choose a version and preserve input/output mappings.",
+    "No game-ready, GPU/mobile/engine verification or completed historical reconstruction claim.",
+    "C1 previous main cover correction is outside this batch; previous originals remain in Git history."
+  ]
+}

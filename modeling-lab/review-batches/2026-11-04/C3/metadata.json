@@ -1,0 +1,65 @@
+{
+  "deliverables": [
+    "well-lod-optimization/assets/well-A-LOD1-batched-256.glb",
+    "well-lod-optimization/assets/well-A-LOD1-batched-128.glb",
+    "well-lod-optimization/assets/well-B-LOD1-batched-256.glb",
+    "well-lod-optimization/assets/well-B-LOD1-batched-128.glb",
+    "well-lod-optimization/qa/metrics.json",
+    "well-lod-optimization/qa/topology.json",
+    "well-lod-optimization/qa/bore-rays.json",
+    "well-lod-optimization/qa/invalid-inputs.json",
+    "well-lod-optimization/qa/well-lod-comparison.png"
+  ],
+  "sourceBindings": [
+    {
+      "file": "well-lod-optimization/baseline/assets/well-A-LOD1.glb",
+      "sha256MatchesMetrics": true,
+      "bytes": 1346488,
+      "primitives": 78,
+      "triangles": 3216
+    },
+    {
+      "file": "well-lod-optimization/assets/well-A-LOD1-batched-256.glb",
+      "sha256MatchesMetrics": true,
+      "bytes": 574012,
+      "primitives": 6,
+      "triangles": 3216
+    },
+    {
+      "file": "well-lod-optimization/assets/well-A-LOD1-batched-128.glb",
+      "sha256MatchesMetrics": true,
+      "bytes": 314372,
+      "primitives": 6,
+      "triangles": 3216
+    },
+    {
+      "file": "well-lod-optimization/baseline/assets/well-B-LOD1.glb",
+      "sha256MatchesMetrics": true,
+      "bytes": 1310032,
+      "primitives": 60,
+      "triangles": 2784
+    },
+    {
+      "file": "well-lod-optimization/assets/well-B-LOD1-batched-256.glb",
+      "sha256MatchesMetrics": true,
+      "bytes": 544672,
+      "primitives": 6,
+      "triangles": 2784
+    },
+    {
+      "file": "well-lod-optimization/assets/well-B-LOD1-batched-128.glb",
+      "sha256MatchesMetrics": true,
+      "bytes": 285032,
+      "primitives": 6,
+      "triangles": 2784
+    }
+  ],
+  "limits": [
+    "Lossy 256/128 texture candidates, encoded-space Lanczos basecolor; not lossless deduplication.",
+    "Same oriented triangles/material/UV/normals to six decimals, not bit-exact geometry.",
+    "Static batching loses per-part animation/selection.",
+    "6 primitives is structural count, not measured draw calls; GPU/mobile/engine untested.",
+    "Suggested 240/120 screen-pixel thresholds are trial starts, not accepted switching criteria.",
+    "Do not publish full baseline ZIP or original package without separate sanitization."
+  ]
+}

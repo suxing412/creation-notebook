@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "status": "content-only research candidates; not public-site replacement or user acceptance",
+  "sourceBatch": "C2-building-batch-v5",
+  "assets": [
+    {
+      "bytes": 1386268,
+      "sha256": "a469e917e3c3d7745348717f17773c9a8e983f2aed42131098bc5a26333bec71",
+      "role": "recommended-C2-candidate",
+      "storedPrimitives": 3,
+      "nodeReferencedPrimitives": 3,
+      "storedTriangles": 1148,
+      "nodeReferencedTriangles": 1148,
+      "materials": 3,
+      "images": 9,
+      "file": "assets/gate-far-local-C2.glb"
+    },
+    {
+      "bytes": 3763832,
+      "sha256": "f2523c6456fbd7bac11b907fb25d33bc3b7d64740ca9aed395f8bbeaca0a38ef",
+      "role": "recommended-C2-candidate",
+      "storedPrimitives": 342,
+      "nodeReferencedPrimitives": 342,
+      "storedTriangles": 17124,
+      "nodeReferencedTriangles": 17124,
+      "materials": 5,
+      "images": 6,
+      "file": "assets/gate-middle-local-C2.glb"
+    },
+    {
+      "bytes": 6005644,
+      "sha256": "d5000ec4392d87cc1ea0825d3350bba7d985674d516e0f0c13d8405b11e0a21c",
+      "role": "recommended-C2-candidate",
+      "storedPrimitives": 342,
+      "nodeReferencedPrimitives": 342,
+      "storedTriangles": 32676,
+      "nodeReferencedTriangles": 32676,
+      "materials": 5,
+      "images": 6,
+      "file": "assets/gate-near-local-C2.glb"
+    },
+    {
+      "bytes": 3475244,
+      "sha256": "05ba8710dda20f5c8569b41105b93dedf39cb8e7cda8ca079e01edd73057467a",
+      "role": "superseded-C2-baseline",
+      "storedPrimitives": 554,
+      "nodeReferencedPrimitives": 524,
+      "storedTriangles": 18664,
+      "nodeReferencedTriangles": 18296,
+      "materials": 10,
+      "images": 0,
+      "file": "assets/market-A-N2-local-C2.glb"
+    },
+    {
+      "bytes": 2989288,
+      "sha256": "40669acd8f65a8c067da7e872fc0e5a3847acc44b36ac439465baba0d7e227ce",
+      "role": "recommended-C2-candidate",
+      "storedPrimitives": 241,
+      "nodeReferencedPrimitives": 241,
+      "storedTriangles": 9508,
+      "nodeReferencedTriangles": 9508,
+      "materials": 4,
+      "images": 9,
+      "file": "assets/storage-group-organized-local-C2.glb"
+    },
+    {
+      "bytes": 1467136,
+      "sha256": "500856380299a32359e766c7747a72a26398b4909fa71f08636a0147083c02a6",
+      "role": "recommended-C2-candidate",
+      "storedPrimitives": 100,
+      "nodeReferencedPrimitives": 100,
+      "storedTriangles": 3848,
+      "nodeReferencedTriangles": 3848,
+      "materials": 3,
+      "images": 6,
+      "file": "assets/warehouse-A-organized-local-C2.glb"
+    },
+    {
+      "bytes": 1678716,
+      "sha256": "35627720ad500e738b4cd8f37de4d213c0129f0cf5fb64328093d1b993f3c84d",
+      "role": "recommended-C2-candidate",
+      "storedPrimitives": 125,
+      "nodeReferencedPrimitives": 125,
+      "storedTriangles": 4948,
+      "nodeReferencedTriangles": 4948,
+      "materials": 3,
+      "images": 6,
+      "file": "assets/warehouse-B-organized-local-C2.glb"
+    }
+  ],
+  "reproduction": {
+    "zipSha256": "b803ea67f12ea0d953755fe76140471e3c97a90c4b23ec6b0aebc4bf02403d6d",
+    "zipBytes": 13420309,
+    "parts": [
+      {
+        "file": "reproduction.zip.part001",
+        "bytes": 9437184,
+        "sha256": "b4480d72bc2239c2c9e8d8b7b0fef7514b840ef517ef9f7de1400af3af675680"
+      },
+      {
+        "file": "reproduction.zip.part002",
+        "bytes": 3983125,
+        "sha256": "d820c09e3643bef91e4f8f35296e5e280aae1a35a2e3f63aa05078ff811df91f"
+      }
+    ],
+    "restore": "Concatenate ordered parts if split, verify zipSha256, extract into this directory beside assets/.",
+    "restorationActuallyVerified": true,
+    "sourceScriptCount": 4,
+    "originalCheckerHashBindingsVerified": []
+  },
+  "checks": {
+    "sourceScriptsByteUnchanged": true,
+    "oldQaNotRerunOrReattributed": true,
+    "imagesPixelExact": true,
+    "noGeometryMutation": true
+  },
+  "limitations": [
+    "C2 UV0 is repeating world-axis box projection, not unique baked/lightmap UV; axis transitions seam and curved slopes compress.",
+    "C2 metre unit is project unit, not archaeological survey; instance scaling changes world texel scale.",
+    "C4 batching is static only; per-part node identity/selection changes and consumer code must use mapping.",
+    "C4 market bakes translations to float32 with maximum recorded error 4.172325134277344e-7 metres; exact rollback uses baseline.",
+    "Market retains unreferenced meshes with local-unit UV and unknown world placement.",
+    "No GPU/mobile/runtime/collision or complete historical accuracy acceptance."
+  ]
+}
