@@ -1,0 +1,54 @@
+{
+  "status": "prepared-not-published",
+  "scope": "Taixue A only. B unchanged and not certified by this projection.",
+  "source_repository": "suxing412/creation-notebook",
+  "source_commit": "aeeff013",
+  "city_data_git_blob": "9e7c237f8e0c2e19cbecfc7059ae63045e6871f4",
+  "city_data_sha256": "332c077be94166f39d8ae438e7ef696a80163892bdab9dd12d522f2645ca8f6b",
+  "asset_id": "study-taixue-A",
+  "instance_id": "research-taixue-A",
+  "old_asset": {
+    "path": "progress-assets/taixue-long-hall-v1/display/hall-A-LOD1.gltf",
+    "sha256": "1403135d7a082f511fc5696d4fc10e5b19234b21e1086d566ecb33d7cdbddba7",
+    "source_glb_sha256": "3f7e20e3bb37402a6707746378af9032b0fdf842ee14b8080b0dc455f8b1e6bc"
+  },
+  "proposed_asset": {
+    "package_file": "models/taixue-A-LOD1.glb",
+    "format": "glb",
+    "bytes": 638660,
+    "sha256": "413c2f35ec264dfbc6f24c1ceab9a0f8ce492c975b50e34fd5320ad25be391f2",
+    "bounds": {
+      "min": [
+        -18.799999237060547,
+        0.0,
+        -3.799999952316284
+      ],
+      "max": [
+        18.799999237060547,
+        6.130000114440918,
+        4.849999904632568
+      ]
+    },
+    "external_dependencies": []
+  },
+  "space": "local-study",
+  "cityPlacement": null,
+  "initial": false,
+  "cover": {
+    "package_file": "preview/after-whole.png",
+    "sha256": "6c94c8a1dae8ee8774c8af294cfc213f18cb11c38aeba39a0659bf2a1a394d44",
+    "bytes": 892426
+  },
+  "unchanged_B": {
+    "asset_id": "study-taixue-B",
+    "path": "progress-assets/taixue-long-hall-v1/display/hall-B-LOD1.gltf",
+    "source_glb_sha256": "eea1607b4d87653e09c69c36c79bc75c38ca7bb07da1ef0769c9b3c7b61a03b4"
+  },
+  "integration_notes": [
+    "Replace only the A asset reference and its byte/hash/bounds/cover metadata in a separately authorized website change.",
+    "Keep cityPlacement null and local-study; do not activate the old city delta.",
+    "The repaired standalone GLB omits the old display support-ground mesh; use its actual bounds rather than the old 46 by 18 m display bounds.",
+    "Only one LOD should be displayed at once. LOD1 is the existing website tier.",
+    "This package does not modify or publish the website, main, or a branch."
+  ]
+}

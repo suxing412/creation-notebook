@@ -1,0 +1,3932 @@
+{
+  "schema": "candidate-city-visible-adapter-v1",
+  "deploymentStatus": "not published; no public prefix selected; JSON does not run renderer",
+  "rendererReference": {
+    "repositoryRevision": "aeeff013",
+    "revisionSource": "parent-provided fixed revision; local renderer bytes independently SHA pinned",
+    "rendererFile": "city-renderer.mjs",
+    "rendererSha256": "de31a317bf8c687b6edeaf105f54fac7494babe89aa6f5eb1d242b2010b9b36c",
+    "cityDataSha256": "332c077be94166f39d8ae438e7ef696a80163892bdab9dd12d522f2645ca8f6b"
+  },
+  "sourceMotherSha256": "1e8c4d2ce19827bb8ab5ff24a662fd4f3909aa5c6074fc9a90623a103b73b01b",
+  "contentChunkManifestSha256": "5612ea341545df34bea7ea16d790f1bd221fd06468a089201df4a812c2a7a0fd",
+  "coordinateContract": {
+    "units": "metres",
+    "gltfUp": "Y",
+    "sourceUp": "Z",
+    "conversion": "[x,y,z] native -> [x,z,-y] glTF",
+    "outerTransform": "identity; never reapply source world matrix or recenter per chunk"
+  },
+  "assetURLContract": {
+    "status": "unresolved",
+    "relativePathBase": "root of restored city-visible-web-handoff-v1-public package",
+    "adapterStep": "Once a verified public prefix is chosen, set each runtime asset.url = new URL(asset.relativePath, publicPrefixEndingSlash).href. Do not pass relativePath-only assets directly into loadAsset."
+  },
+  "layer": {
+    "id": "visible-current-city-C",
+    "initial": false,
+    "tier": "C",
+    "nodeIds": [
+      "visible-current-node-C_gate_local_ground",
+      "visible-current-node-C_ground_network__C_stitch_patch",
+      "visible-current-node-C_ground_network__C_stitch_primary",
+      "visible-current-node-C_ground_network__C_stitch_west",
+      "visible-current-node-C_ground_network__conditional_link_A",
+      "visible-current-node-C_residential_ground__C02_retained_outside_south_Calt_domain",
+      "visible-current-node-C_residential_ground__D08_shared_terrain",
+      "visible-current-node-C_residential_ground__single_closed_terrain_after",
+      "visible-current-node-biyong_C_relationship",
+      "visible-current-node-city_gate_gu-G",
+      "visible-current-node-city_gate_kaiyang-K",
+      "visible-current-node-city_gate_pingcheng-P",
+      "visible-current-node-city_gate_shangdong-S",
+      "visible-current-node-city_gate_shangxi-X",
+      "visible-current-node-city_gate_west_threeway-01",
+      "visible-current-node-city_gate_west_threeway-02-fragment-001",
+      "visible-current-node-city_gate_west_threeway-02-fragment-002",
+      "visible-current-node-city_gate_west_threeway-02-fragment-003",
+      "visible-current-node-city_gate_west_threeway-03",
+      "visible-current-node-city_gate_xia-B-01",
+      "visible-current-node-city_gate_xia-B-02-fragment-001",
+      "visible-current-node-city_gate_xia-B-02-fragment-002",
+      "visible-current-node-city_gate_xia-B-02-fragment-003",
+      "visible-current-node-city_gate_xia-B-02-fragment-004",
+      "visible-current-node-city_gate_yong-Y",
+      "visible-current-node-city_gate_zhongdong-Z",
+      "visible-current-node-city_wall_C_profiles",
+      "visible-current-node-granary_C_with_ground",
+      "visible-current-node-lingtai_C_with_east_access",
+      "visible-current-node-market_frontage_well_routes",
+      "visible-current-node-northeast_C_access",
+      "visible-current-node-res_D08_eight",
+      "visible-current-node-res_detail_011-01",
+      "visible-current-node-res_detail_011-02",
+      "visible-current-node-res_detail_012-01",
+      "visible-current-node-res_detail_012-02",
+      "visible-current-node-res_detail_012-03",
+      "visible-current-node-res_detail_032",
+      "visible-current-node-res_east_nine",
+      "visible-current-node-res_north_infill_three",
+      "visible-current-node-res_north_twelve",
+      "visible-current-node-res_south_006_010",
+      "visible-current-node-res_south_nine",
+      "visible-current-node-res_workyard_034",
+      "visible-current-node-taixue_C_with_support",
+      "visible-current-node-wuku_C_with_support-01",
+      "visible-current-node-wuku_C_with_support-02"
+    ],
+    "replacesLegacyCityNodeIds": [
+      "C02-018",
+      "C02-019",
+      "C02-020",
+      "C02-021",
+      "C02-022",
+      "C02-023",
+      "C02-024",
+      "C02-025",
+      "C02-026",
+      "C02-001",
+      "C02-002",
+      "C02-027",
+      "C02-028",
+      "C02-029",
+      "C02-030",
+      "C02-031",
+      "C02-003",
+      "C02-004",
+      "C02-005",
+      "C02-006",
+      "C02-007",
+      "C02-008",
+      "C02-009",
+      "C02-010",
+      "C02-011",
+      "C02-012",
+      "C02-013",
+      "C02-032",
+      "C02-014",
+      "C02-015",
+      "C02-016",
+      "C02-017",
+      "C02-033",
+      "C02-034",
+      "C02-035",
+      "C02-036",
+      "FROZEN-D08-S1",
+      "FROZEN-D08-S2",
+      "FROZEN-D08-S3",
+      "FROZEN-D08-S4",
+      "FROZEN-D08-M",
+      "FROZEN-D08-E",
+      "FROZEN-D08-NW",
+      "FROZEN-D08-NE",
+      "wall-A-wall-00",
+      "wall-A-wall-01",
+      "wall-A-wall-02",
+      "wall-A-wall-03",
+      "wall-A-wall-04",
+      "wall-A-wall-05",
+      "wall-A-wall-06",
+      "wall-A-wall-07",
+      "wall-A-wall-10",
+      "wall-A-wall-11",
+      "wall-direct-gate-body-only",
+      "wall-direct-wall-08",
+      "wall-direct-wall-09",
+      "ground-network-ground-stitched",
+      "ground-retained",
+      "ground-south",
+      "ground-D08",
+      "market-main",
+      "market-N2",
+      "storage-main"
+    ],
+    "preserveResearchModelIds": [
+      "research-lingtai",
+      "research-taixue-A",
+      "research-taixue-B",
+      "research-north13-kaiyang-K",
+      "research-north13-court-A2",
+      "research-north13-court-B",
+      "research-north13-court-B2",
+      "research-north13-court-TC03-2",
+      "research-north13-court-A",
+      "research-north13-pingcheng-P",
+      "research-north13-shangxi-X",
+      "research-north13-yong-Y",
+      "research-north13-zhongdong-Z",
+      "research-mao-gate"
+    ],
+    "mutualExclusion": "Exactly one city layer active; legacy64 and this candidate layer cannot co-render. Full106MiB baseline also excluded.",
+    "implementationStatus": "declarative only; web side must implement layer swap and cancel stale requests. Renderer does not natively consume this layer or atomicGroup contract."
+  },
+  "assets": [
+    {
+      "id": "visible-current-asset-C_gate_local_ground",
+      "relativePath": "chunks/C_gate_local_ground.glb",
+      "bytes": 733372,
+      "sha256": "6002f5a6dcc6653dc6cf081e77236dbd281e60ab9e88574a91eceb96afb6ceb6",
+      "bounds": {
+        "min": [
+          -23.10595703125,
+          0.01000000536441803,
+          -1405.653564453125
+        ],
+        "max": [
+          2019.0406494140625,
+          0.21199999749660492,
+          28.475950241088867
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-C_ground_network__C_stitch_patch",
+      "relativePath": "chunks/C_ground_network__C_stitch_patch.glb",
+      "bytes": 57372,
+      "sha256": "e08d99320a6eee52d717390c610205b1049b9e1a781d830bbef8f845852e70a6",
+      "bounds": {
+        "min": [
+          377.0,
+          0.0,
+          -836.0116577148438
+        ],
+        "max": [
+          405.0,
+          0.20999999344348907,
+          -833.945556640625
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-C_ground_network__C_stitch_primary",
+      "relativePath": "chunks/C_ground_network__C_stitch_primary.glb",
+      "bytes": 27388,
+      "sha256": "2b89e8586c53378c19b9b9311791377e229f6a436cdc4cae16930ca05dae1386",
+      "bounds": {
+        "min": [
+          43.100006103515625,
+          0.0,
+          -2622.460693359375
+        ],
+        "max": [
+          2528.385498046875,
+          0.20999999344348907,
+          1224.515625
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-C_ground_network__C_stitch_west",
+      "relativePath": "chunks/C_ground_network__C_stitch_west.glb",
+      "bytes": 3536796,
+      "sha256": "e0a4bcaefa6bdd345fe8903609ce5c9a8f464d707cae137337d06e3ebd45c03c",
+      "bounds": {
+        "min": [
+          -39.0,
+          0.0,
+          -834.0545043945312
+        ],
+        "max": [
+          486.0,
+          0.20999999344348907,
+          -438.0
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-C_ground_network__conditional_link_A",
+      "relativePath": "chunks/C_ground_network__conditional_link_A.glb",
+      "bytes": 2544,
+      "sha256": "32bfcf8d553dccddca6be89bd04d09c413849037e436d06846ea2587bfc7770f",
+      "bounds": {
+        "min": [
+          384.9227294921875,
+          0.1599999964237213,
+          -43.1116943359375
+        ],
+        "max": [
+          1625.71044921875,
+          0.20999999344348907,
+          -7.97430419921875
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-C_residential_ground__C02_retained_outside_south_Calt_domain",
+      "relativePath": "chunks/C_residential_ground__C02_retained_outside_south_Calt_domain.glb",
+      "bytes": 629824,
+      "sha256": "481ea75b4dd885be66adc5a183afa3d6a02cb33782087f7cf43bab3e4cc75648",
+      "bounds": {
+        "min": [
+          480.0,
+          0.0,
+          -1250.0
+        ],
+        "max": [
+          780.0,
+          0.20999999344348907,
+          -700.0
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-C_residential_ground__D08_shared_terrain",
+      "relativePath": "chunks/C_residential_ground__D08_shared_terrain.glb",
+      "bytes": 6776,
+      "sha256": "d3bc1f1ab0161950883df76b10d9bd6ee5d2243a53cd947ec97f6b3e4bd321b8",
+      "bounds": {
+        "min": [
+          520.0,
+          0.0,
+          -1015.0
+        ],
+        "max": [
+          640.0,
+          0.20000000298023224,
+          -929.0
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-C_residential_ground__single_closed_terrain_after",
+      "relativePath": "chunks/C_residential_ground__single_closed_terrain_after.glb",
+      "bytes": 2623644,
+      "sha256": "5327a04070d04ef495bc25e4158399cfa62eebd7dca538c4efeea30e578c3430",
+      "bounds": {
+        "min": [
+          486.0,
+          0.0,
+          -852.0
+        ],
+        "max": [
+          710.0,
+          0.20999999344348907,
+          -706.0
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-biyong_C_relationship",
+      "relativePath": "chunks/biyong_C_relationship.glb",
+      "bytes": 2863488,
+      "sha256": "1bd1c446f26cf5551bbbf71c4948869ab216334e50886e9253535ccd0b78ffa1",
+      "bounds": {
+        "min": [
+          2105.47314453125,
+          -1.0,
+          860.5759887695312
+        ],
+        "max": [
+          2261.873046875,
+          9.960000038146973,
+          1016.9760131835938
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_gu-G",
+      "relativePath": "chunks/city_gate_gu-G.glb",
+      "bytes": 1253568,
+      "sha256": "97c4837931dbc99d02a525b7f60e79d0557713ecef153d8e16aa844361f6cfce",
+      "bounds": {
+        "min": [
+          1676.381591796875,
+          0.0,
+          -3903.425537109375
+        ],
+        "max": [
+          1710.064697265625,
+          10.32800006866455,
+          -3885.635009765625
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_kaiyang-K",
+      "relativePath": "chunks/city_gate_kaiyang-K.glb",
+      "bytes": 497444,
+      "sha256": "e96a85f207dc7925869591690f56f72a56b19f672d300061b9d2e02c1a82eea8",
+      "bounds": {
+        "min": [
+          1994.3177490234375,
+          0.17000000178813934,
+          14.720409393310547
+        ],
+        "max": [
+          2026.4769287109375,
+          10.40000057220459,
+          27.881885528564453
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_pingcheng-P",
+      "relativePath": "chunks/city_gate_pingcheng-P.glb",
+      "bytes": 477996,
+      "sha256": "a5ba112333e5cee1b390ed48ec1b2706eacc1272fcbcbecea5a1cc9acbcdae1f",
+      "bounds": {
+        "min": [
+          1606.7296142578125,
+          0.17000000178813934,
+          6.621291160583496
+        ],
+        "max": [
+          1638.888671875,
+          10.410000801086426,
+          19.898635864257812
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_shangdong-S",
+      "relativePath": "chunks/city_gate_shangdong-S.glb",
+      "bytes": 1258792,
+      "sha256": "8aeba750d1e8865350d023978ab0bddded20ce82b942f9cc45a2ebebebf86d34",
+      "bounds": {
+        "min": [
+          2465.361328125,
+          0.16999998688697815,
+          -2606.894775390625
+        ],
+        "max": [
+          2497.928955078125,
+          11.32800006866455,
+          -2585.458740234375
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_shangxi-X",
+      "relativePath": "chunks/city_gate_shangxi-X.glb",
+      "bytes": 482804,
+      "sha256": "8f445a22800361d2aa1d4dec85c9cd352838af2c32ecb68673893629545cc89f",
+      "bounds": {
+        "min": [
+          -36.27958679199219,
+          0.17000000178813934,
+          -2648.582763671875
+        ],
+        "max": [
+          -24.467126846313477,
+          11.510000228881836,
+          -2616.4921875
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_west_threeway-01",
+      "relativePath": "chunks/city_gate_west_threeway-01.glb",
+      "bytes": 344664,
+      "sha256": "d37a88ebc8b12564247cbc9630fe00d39bb56eb9f8e2b3ad7435e60ca4838b60",
+      "bounds": {
+        "min": [
+          -5.000000476837158,
+          5.199999809265137,
+          -500.7959899902344
+        ],
+        "max": [
+          5.000000476837158,
+          10.429999351501465,
+          -478.5959777832031
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_west_threeway-02-fragment-001",
+      "relativePath": "chunks/city_gate_west_threeway-02-fragment-001.glb",
+      "bytes": 5417256,
+      "sha256": "52d88469cbff5e28b8ab57c7ce1172d1af245c384e550c4f9fb63543963572f2",
+      "bounds": {
+        "min": [
+          -5.000000476837158,
+          8.439882278442383,
+          -500.7959899902344
+        ],
+        "max": [
+          0.10000048577785492,
+          10.557999610900879,
+          -478.7959899902344
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_west_threeway-02-fragment-002",
+      "relativePath": "chunks/city_gate_west_threeway-02-fragment-002.glb",
+      "bytes": 5411596,
+      "sha256": "6d1b7e397d693bdfd60c06b1a30ac2b8922fb80ee99e7d47f6be1c3f38264508",
+      "bounds": {
+        "min": [
+          -1.260000467300415,
+          8.439882278442383,
+          -500.7754821777344
+        ],
+        "max": [
+          5.000000476837158,
+          10.485578536987305,
+          -478.8164978027344
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_west_threeway-02-fragment-003",
+      "relativePath": "chunks/city_gate_west_threeway-02-fragment-003.glb",
+      "bytes": 3848668,
+      "sha256": "9fddd6c3aad6746b3f73cc24583d6939c6b8095f772073418304b4d6c271fd45",
+      "bounds": {
+        "min": [
+          0.07999952137470245,
+          9.391881942749023,
+          -500.7754821777344
+        ],
+        "max": [
+          2.6200003623962402,
+          10.485578536987305,
+          -478.8164978027344
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_west_threeway-03",
+      "relativePath": "chunks/city_gate_west_threeway-03.glb",
+      "bytes": 408400,
+      "sha256": "dbd08b16ef1efcf4e5c5a061e753c9ccefa518c24b86d8eeff9476b9f6f7c78f",
+      "bounds": {
+        "min": [
+          -4.000000476837158,
+          0.17500005662441254,
+          -499.7959899902344
+        ],
+        "max": [
+          7.1999993324279785,
+          10.34999942779541,
+          -452.7959899902344
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_xia-B-01",
+      "relativePath": "chunks/city_gate_xia-B-01.glb",
+      "bytes": 733612,
+      "sha256": "9563ec11100b36245db3c4f4dc76fc40e7b0e052845ad0be7eb0e5e0c108be55",
+      "bounds": {
+        "min": [
+          718.345947265625,
+          0.0,
+          -3576.55517578125
+        ],
+        "max": [
+          750.6317138671875,
+          10.699999809265137,
+          -3555.71826171875
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_xia-B-02-fragment-001",
+      "relativePath": "chunks/city_gate_xia-B-02-fragment-001.glb",
+      "bytes": 5087016,
+      "sha256": "6688db0137259a14f2300beba7967f614be4ed8cd51f0c61e4b6b62c1d518136",
+      "bounds": {
+        "min": [
+          722.4052734375,
+          8.609882354736328,
+          -3566.701416015625
+        ],
+        "max": [
+          746.4837646484375,
+          10.82800006866455,
+          -3560.1806640625
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_xia-B-02-fragment-002",
+      "relativePath": "chunks/city_gate_xia-B-02-fragment-002.glb",
+      "bytes": 5110408,
+      "sha256": "6f6b863502efe23590ba43bec9f99cd2ecfd9748ee01f1412e4bad10d5d3ac53",
+      "bounds": {
+        "min": [
+          722.5501098632812,
+          8.609882354736328,
+          -3572.0927734375
+        ],
+        "max": [
+          746.572509765625,
+          10.75326919555664,
+          -3563.578125
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_xia-B-02-fragment-003",
+      "relativePath": "chunks/city_gate_xia-B-02-fragment-003.glb",
+      "bytes": 5117656,
+      "sha256": "156e961ceba9157c6b31d84e9d8e9d24def4f1b781f5adb933e608ae2eddeabb",
+      "bounds": {
+        "min": [
+          722.6306762695312,
+          9.147616386413574,
+          -3570.638671875
+        ],
+        "max": [
+          746.5066528320312,
+          10.659279823303223,
+          -3565.996337890625
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_xia-B-02-fragment-004",
+      "relativePath": "chunks/city_gate_xia-B-02-fragment-004.glb",
+      "bytes": 849436,
+      "sha256": "7994ce07c7f72ed3835a8077ec55eb7c9c12d4c10d4651365ed5b1b92f95b05a",
+      "bounds": {
+        "min": [
+          722.6213989257812,
+          10.44579792022705,
+          -3566.99658203125
+        ],
+        "max": [
+          746.375,
+          10.75326919555664,
+          -3565.756591796875
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_yong-Y",
+      "relativePath": "chunks/city_gate_yong-Y.glb",
+      "bytes": 503584,
+      "sha256": "b8d51de80f2f5ab97c0431a5824da4ae62908e76f87c78b061f562f6863a9a41",
+      "bounds": {
+        "min": [
+          -21.96308708190918,
+          0.17000000178813934,
+          -1413.818115234375
+        ],
+        "max": [
+          -10.06839656829834,
+          10.40000057220459,
+          -1381.7274169921875
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_gate_zhongdong-Z",
+      "relativePath": "chunks/city_gate_zhongdong-Z.glb",
+      "bytes": 1315816,
+      "sha256": "3f44caa5fce59e13e3077db61e7229fe065202ac302805bba44b6d9173609c41",
+      "bounds": {
+        "min": [
+          2573.912353515625,
+          0.17000000178813934,
+          -1821.657470703125
+        ],
+        "max": [
+          2586.080810546875,
+          10.628000259399414,
+          -1789.079833984375
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-city_wall_C_profiles",
+      "relativePath": "chunks/city_wall_C_profiles.glb",
+      "bytes": 6937620,
+      "sha256": "e42d9f50499f3391cbb20c63b3be99fcd0af0bd6c06ff716aba63820ba221278",
+      "bounds": {
+        "min": [
+          -44.842735290527344,
+          0.16999998688697815,
+          -3953.771484375
+        ],
+        "max": [
+          2647.0859375,
+          6.200000286102295,
+          34.69339370727539
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-granary_C_with_ground",
+      "relativePath": "chunks/granary_C_with_ground.glb",
+      "bytes": 1993888,
+      "sha256": "156999f1dfe0df0634c72af4f4390a279b53827243a7df0c823b15656cb6ec91",
+      "bounds": {
+        "min": [
+          2249.714111328125,
+          0.0,
+          -3699.468994140625
+        ],
+        "max": [
+          2321.714111328125,
+          5.150000095367432,
+          -3647.468994140625
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-lingtai_C_with_east_access",
+      "relativePath": "chunks/lingtai_C_with_east_access.glb",
+      "bytes": 1950252,
+      "sha256": "77d5fd1134c70dfb3ce56314ddfbfd0ed9fb4c53a79d16b6eb5d96001e47247f",
+      "bounds": {
+        "min": [
+          1435.387939453125,
+          -0.30000001192092896,
+          1006.8160400390625
+        ],
+        "max": [
+          1610.8232421875,
+          6.0,
+          1074.8160400390625
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-market_frontage_well_routes",
+      "relativePath": "chunks/market_frontage_well_routes.glb",
+      "bytes": 3695576,
+      "sha256": "0193ebc0cfe200292defd595ff4f4011b2b2d05388d4f53e7b4c3a19a255b4c5",
+      "bounds": {
+        "min": [
+          184.28599548339844,
+          -0.44999998807907104,
+          -1981.1839599609375
+        ],
+        "max": [
+          244.28599548339844,
+          5.13012170791626,
+          -1937.1839599609375
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-northeast_C_access",
+      "relativePath": "chunks/northeast_C_access.glb",
+      "bytes": 413628,
+      "sha256": "58f2f58a464183e20d5489b13902f62f2570573cb8bf96fb237df781027d076e",
+      "bounds": {
+        "min": [
+          2284.214111328125,
+          -0.18000000715255737,
+          -3647.468994140625
+        ],
+        "max": [
+          2317.826904296875,
+          0.20000000298023224,
+          -3484.5
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-res_D08_eight",
+      "relativePath": "chunks/res_D08_eight.glb",
+      "bytes": 356840,
+      "sha256": "cd62856b13508011092a2d9d092adad46c9cc70764a496cf25da9552063d3278",
+      "bounds": {
+        "min": [
+          534.0,
+          0.19999992847442627,
+          -1011.0
+        ],
+        "max": [
+          638.0,
+          5.519999980926514,
+          -933.0
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-res_detail_011-01",
+      "relativePath": "chunks/res_detail_011-01.glb",
+      "bytes": 6112892,
+      "sha256": "f267faa1324f8ed2e5e9d564e83a525b80140278d86ff470f9169e8d407f2b99",
+      "bounds": {
+        "min": [
+          545.0,
+          0.19999992847442627,
+          -829.4500122070312
+        ],
+        "max": [
+          563.0,
+          4.627999782562256,
+          -805.2999877929688
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-res_detail_011-02",
+      "relativePath": "chunks/res_detail_011-02.glb",
+      "bytes": 8509868,
+      "sha256": "a2deb6736ac9507e1a80106e03c4b7555b05b967d31d968820c08ff3ca617d9d",
+      "bounds": {
+        "min": [
+          547.6204833984375,
+          0.20000000298023224,
+          -827.6500244140625
+        ],
+        "max": [
+          560.6849975585938,
+          4.552596569061279,
+          -805.6499633789062
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-res_detail_012-01",
+      "relativePath": "chunks/res_detail_012-01.glb",
+      "bytes": 2042124,
+      "sha256": "95ea522b14d44e14171e6cd21789afd0fc245768004c72a151b4b6ab21b2c4b3",
+      "bounds": {
+        "min": [
+          570.0,
+          0.19999992847442627,
+          -841.4500122070312
+        ],
+        "max": [
+          598.0,
+          4.677999973297119,
+          -805.2999877929688
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-res_detail_012-02",
+      "relativePath": "chunks/res_detail_012-02.glb",
+      "bytes": 10433892,
+      "sha256": "c86be54e2af049b47d0c4aa51a4661aa6e7007e9c102d75469f9457735267462",
+      "bounds": {
+        "min": [
+          573.04052734375,
+          3.2699999809265137,
+          -827.9500122070312
+        ],
+        "max": [
+          590.95947265625,
+          4.60073709487915,
+          -821.9500122070312
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-res_detail_012-03",
+      "relativePath": "chunks/res_detail_012-03.glb",
+      "bytes": 862908,
+      "sha256": "90a08e50ad3cf941a32046e63962718298dad480018f7733c15c4fafc908e381",
+      "bounds": {
+        "min": [
+          574.8499755859375,
+          0.20000000298023224,
+          -835.1549682617188
+        ],
+        "max": [
+          597.0,
+          4.46999979019165,
+          -805.6499633789062
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-res_detail_032",
+      "relativePath": "chunks/res_detail_032.glb",
+      "bytes": 2186016,
+      "sha256": "3d40924144f6d85850903fc57c1736cd62052dae42f7cb43147a35003f1dbd7e",
+      "bounds": {
+        "min": [
+          536.7999877929688,
+          0.19999992847442627,
+          -767.0
+        ],
+        "max": [
+          560.9500122070312,
+          5.269999980926514,
+          -749.0
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-res_east_nine",
+      "relativePath": "chunks/res_east_nine.glb",
+      "bytes": 5704072,
+      "sha256": "4e0f138263eb4526b0f9a5d9543b8a907e4fa0ddd539fe2ee4783e9afe7ea4ac",
+      "bounds": {
+        "min": [
+          705.2999877929688,
+          0.19999992847442627,
+          -1093.5819091796875
+        ],
+        "max": [
+          766.9893798828125,
+          5.519999980926514,
+          -884.64306640625
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-res_north_infill_three",
+      "relativePath": "chunks/res_north_infill_three.glb",
+      "bytes": 2789256,
+      "sha256": "8198048d2d519727056dfdd9ebef69cc0d7b4c742966ca0f2b0e688b67a84154",
+      "bounds": {
+        "min": [
+          577.0,
+          0.19999992847442627,
+          -1246.0
+        ],
+        "max": [
+          647.0,
+          5.128161907196045,
+          -1221.8499755859375
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-res_north_twelve",
+      "relativePath": "chunks/res_north_twelve.glb",
+      "bytes": 7702672,
+      "sha256": "ac142fc7ae93731b1599d7508ccca7ab23ebf58e22216b30400ae734ed9de08f",
+      "bounds": {
+        "min": [
+          511.56268310546875,
+          0.19999992847442627,
+          -1214.0107421875
+        ],
+        "max": [
+          729.4500122070312,
+          5.519999980926514,
+          -1068.0499267578125
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-res_south_006_010",
+      "relativePath": "chunks/res_south_006_010.glb",
+      "bytes": 2905800,
+      "sha256": "70e120b25cd5b12b0260077e1deedeb4998d01db7c0c656f0bbbb38f4c740fc0",
+      "bounds": {
+        "min": [
+          522.0,
+          0.19999992847442627,
+          -830.4500122070312
+        ],
+        "max": [
+          546.0,
+          5.269999980926514,
+          -769.5499877929688
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-res_south_nine",
+      "relativePath": "chunks/res_south_nine.glb",
+      "bytes": 4856784,
+      "sha256": "d8b761d890af4c12e5dbc03d7cae0cfa3be1d82176c7586b2b22c763e90fe02e",
+      "bounds": {
+        "min": [
+          499.0,
+          0.19999992847442627,
+          -834.0
+        ],
+        "max": [
+          662.1500244140625,
+          5.519999980926514,
+          -716.7999877929688
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-res_workyard_034",
+      "relativePath": "chunks/res_workyard_034.glb",
+      "bytes": 1849736,
+      "sha256": "6ed43d99447cda1db2daccc6209e28d039bf66fad62d2abd33df7ac6cef5bb5f",
+      "bounds": {
+        "min": [
+          592.8911743164062,
+          0.19999992847442627,
+          -1092.199951171875
+        ],
+        "max": [
+          610.8911743164062,
+          5.128161907196045,
+          -1068.0499267578125
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-taixue_C_with_support",
+      "relativePath": "chunks/taixue_C_with_support.glb",
+      "bytes": 1049832,
+      "sha256": "d2c085a3b2329a179fc459d54014976b444547b7483db305770ae04942c98d3d",
+      "bounds": {
+        "min": [
+          2344.346923828125,
+          -0.4000000059604645,
+          623.6530151367188
+        ],
+        "max": [
+          2390.346923828125,
+          6.130000114440918,
+          641.6530151367188
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-wuku_C_with_support-01",
+      "relativePath": "chunks/wuku_C_with_support-01.glb",
+      "bytes": 1278740,
+      "sha256": "29709e25f77f6becaf2566555a4d55b0525e244f73ede92ae344a78cc1a57b37",
+      "bounds": {
+        "min": [
+          2307.326904296875,
+          -0.4000000059604645,
+          -3510.0
+        ],
+        "max": [
+          2329.326904296875,
+          5.900000095367432,
+          -3490.0
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    },
+    {
+      "id": "visible-current-asset-wuku_C_with_support-02",
+      "relativePath": "chunks/wuku_C_with_support-02.glb",
+      "bytes": 10108456,
+      "sha256": "34160b9d5c1ec0add696c2a7aec272c882d2ed68d4344b1d7d3b96d7da749429",
+      "bounds": {
+        "min": [
+          2311.177001953125,
+          3.910370349884033,
+          -3505.14990234375
+        ],
+        "max": [
+          2321.476806640625,
+          6.03000020980835,
+          -3494.85009765625
+        ]
+      },
+      "tier": "C",
+      "lodClaim": "current visible mixed-source near export only",
+      "urlResolutionRequired": true
+    }
+  ],
+  "nodes": [
+    {
+      "id": "visible-current-node-C_gate_local_ground",
+      "asset": "visible-current-asset-C_gate_local_ground",
+      "title": "C_gate_local_ground / C_gate_local_ground",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "C_gate_local_ground",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          -23.10595703125,
+          0.01000000536441803,
+          -1405.653564453125
+        ],
+        "max": [
+          2019.0406494140625,
+          0.21199999749660492,
+          28.475950241088867
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "yong_ground_trial_v1",
+        "pingcheng_ground_trial_v1",
+        "kaiyang_ground_trial_v1"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-C_ground_network__C_stitch_patch",
+      "asset": "visible-current-asset-C_ground_network__C_stitch_patch",
+      "title": "C_ground_network__C_stitch_patch / C_ground_network__C_stitch_patch",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "C_ground_network__C_stitch_patch",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          377.0,
+          0.0,
+          -836.0116577148438
+        ],
+        "max": [
+          405.0,
+          0.20999999344348907,
+          -833.945556640625
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C_stitch_patch"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-C_ground_network__C_stitch_primary",
+      "asset": "visible-current-asset-C_ground_network__C_stitch_primary",
+      "title": "C_ground_network__C_stitch_primary / C_ground_network__C_stitch_primary",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "C_ground_network__C_stitch_primary",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          43.100006103515625,
+          0.0,
+          -2622.460693359375
+        ],
+        "max": [
+          2528.385498046875,
+          0.20999999344348907,
+          1224.515625
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C_stitch_primary"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-C_ground_network__C_stitch_west",
+      "asset": "visible-current-asset-C_ground_network__C_stitch_west",
+      "title": "C_ground_network__C_stitch_west / C_ground_network__C_stitch_west",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "C_ground_network__C_stitch_west",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          -39.0,
+          0.0,
+          -834.0545043945312
+        ],
+        "max": [
+          486.0,
+          0.20999999344348907,
+          -438.0
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C_stitch_west"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-C_ground_network__conditional_link_A",
+      "asset": "visible-current-asset-C_ground_network__conditional_link_A",
+      "title": "C_ground_network__conditional_link_A / C_ground_network__conditional_link_A",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "C_ground_network__conditional_link_A",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          384.9227294921875,
+          0.1599999964237213,
+          -43.1116943359375
+        ],
+        "max": [
+          1625.71044921875,
+          0.20999999344348907,
+          -7.97430419921875
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "conditional_link_A"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-C_residential_ground__C02_retained_outside_south_Calt_domain",
+      "asset": "visible-current-asset-C_residential_ground__C02_retained_outside_south_Calt_domain",
+      "title": "C_residential_ground__C02_retained_outside_south_Calt_domain / C_residential_ground__C02_retained_outside_south_Calt_domain",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "C_residential_ground__C02_retained_outside_south_Calt_domain",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          480.0,
+          0.0,
+          -1250.0
+        ],
+        "max": [
+          780.0,
+          0.20999999344348907,
+          -700.0
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C02_retained_outside_south_Calt_domain"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-C_residential_ground__D08_shared_terrain",
+      "asset": "visible-current-asset-C_residential_ground__D08_shared_terrain",
+      "title": "C_residential_ground__D08_shared_terrain / C_residential_ground__D08_shared_terrain",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "C_residential_ground__D08_shared_terrain",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          520.0,
+          0.0,
+          -1015.0
+        ],
+        "max": [
+          640.0,
+          0.20000000298023224,
+          -929.0
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "D08_shared_terrain"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-C_residential_ground__single_closed_terrain_after",
+      "asset": "visible-current-asset-C_residential_ground__single_closed_terrain_after",
+      "title": "C_residential_ground__single_closed_terrain_after / C_residential_ground__single_closed_terrain_after",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "C_residential_ground__single_closed_terrain_after",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          486.0,
+          0.0,
+          -852.0
+        ],
+        "max": [
+          710.0,
+          0.20999999344348907,
+          -706.0
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "single_closed_terrain_after"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-biyong_C_relationship",
+      "asset": "visible-current-asset-biyong_C_relationship",
+      "title": "biyong_C_relationship / biyong_C_relationship",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "biyong_C_relationship",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          2105.47314453125,
+          -1.0,
+          860.5759887695312
+        ],
+        "max": [
+          2261.873046875,
+          9.960000038146973,
+          1016.9760131835938
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "biyong-layout__A_crossing_0_-1",
+        "biyong-layout__A_square_water_symbol",
+        "biyong-layout__A_island",
+        "C_BIYONG_ENTRY_LOD0__biyong-enclosure-A-v2-static_earth",
+        "C_BIYONG_ENTRY_LOD0__biyong-A-static_earth",
+        "C_BIYONG_ENTRY_LOD0__biyong-A-static_tile",
+        "C_BIYONG_ENTRY_LOD0__biyong-A-static_timber",
+        "biyong-layout__A_crossing_1_-1",
+        "biyong-layout__A_crossing_1_1",
+        "biyong-layout__A_crossing_0_1"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-city_gate_gu-G",
+      "asset": "visible-current-asset-city_gate_gu-G",
+      "title": "city_gate_gu-G / city_gate_gu-G",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_gu-G",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          1676.381591796875,
+          0.0,
+          -3903.425537109375
+        ],
+        "max": [
+          1710.064697265625,
+          10.32800006866455,
+          -3885.635009765625
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "gu-G-static_earth",
+        "gu-G-static_tile",
+        "gu-G-static_timber"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-city_gate_kaiyang-K",
+      "asset": "visible-current-asset-city_gate_kaiyang-K",
+      "title": "city_gate_kaiyang-K / city_gate_kaiyang-K",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_kaiyang-K",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          1994.3177490234375,
+          0.17000000178813934,
+          14.720409393310547
+        ],
+        "max": [
+          2026.4769287109375,
+          10.40000057220459,
+          27.881885528564453
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "kaiyang-K-static_earth",
+        "kaiyang-K-static_tile",
+        "kaiyang-K-static_timber"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-city_gate_pingcheng-P",
+      "asset": "visible-current-asset-city_gate_pingcheng-P",
+      "title": "city_gate_pingcheng-P / city_gate_pingcheng-P",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_pingcheng-P",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          1606.7296142578125,
+          0.17000000178813934,
+          6.621291160583496
+        ],
+        "max": [
+          1638.888671875,
+          10.410000801086426,
+          19.898635864257812
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "pingcheng-P-static_earth",
+        "pingcheng-P-static_tile",
+        "pingcheng-P-static_timber"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-city_gate_shangdong-S",
+      "asset": "visible-current-asset-city_gate_shangdong-S",
+      "title": "city_gate_shangdong-S / city_gate_shangdong-S",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_shangdong-S",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          2465.361328125,
+          0.16999998688697815,
+          -2606.894775390625
+        ],
+        "max": [
+          2497.928955078125,
+          11.32800006866455,
+          -2585.458740234375
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "shangdong-S-static_earth",
+        "shangdong-S-static_timber",
+        "shangdong-S-static_tile"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-city_gate_shangxi-X",
+      "asset": "visible-current-asset-city_gate_shangxi-X",
+      "title": "city_gate_shangxi-X / city_gate_shangxi-X",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_shangxi-X",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          -36.27958679199219,
+          0.17000000178813934,
+          -2648.582763671875
+        ],
+        "max": [
+          -24.467126846313477,
+          11.510000228881836,
+          -2616.4921875
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "shangxi-X-static_tile",
+        "shangxi-X-static_earth",
+        "shangxi-X-static_timber"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-city_gate_west_threeway-01",
+      "asset": "visible-current-asset-city_gate_west_threeway-01",
+      "title": "city_gate_west_threeway / city_gate_west_threeway-01",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_west_threeway",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          -5.000000476837158,
+          5.199999809265137,
+          -500.7959899902344
+        ],
+        "max": [
+          5.000000476837158,
+          10.429999351501465,
+          -478.5959777832031
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "gate-city-static_wood"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-city_gate_west_threeway-02-fragment-001",
+      "asset": "visible-current-asset-city_gate_west_threeway-02-fragment-001",
+      "title": "city_gate_west_threeway / city_gate_west_threeway-02-fragment-001",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_west_threeway",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          -5.000000476837158,
+          8.439882278442383,
+          -500.7959899902344
+        ],
+        "max": [
+          0.10000048577785492,
+          10.557999610900879,
+          -478.7959899902344
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "gate-city-static_tile"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。",
+      "atomicGroupId": "visible-current-atomic-gate-city-static_tile",
+      "fragmentIndex": 0,
+      "fragmentCount": 3,
+      "sourcePrimitiveIndex": 0,
+      "sourceTriangleRange": [
+        0,
+        70000
+      ]
+    },
+    {
+      "id": "visible-current-node-city_gate_west_threeway-02-fragment-002",
+      "asset": "visible-current-asset-city_gate_west_threeway-02-fragment-002",
+      "title": "city_gate_west_threeway / city_gate_west_threeway-02-fragment-002",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_west_threeway",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          -1.260000467300415,
+          8.439882278442383,
+          -500.7754821777344
+        ],
+        "max": [
+          5.000000476837158,
+          10.485578536987305,
+          -478.8164978027344
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "gate-city-static_tile"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。",
+      "atomicGroupId": "visible-current-atomic-gate-city-static_tile",
+      "fragmentIndex": 1,
+      "fragmentCount": 3,
+      "sourcePrimitiveIndex": 0,
+      "sourceTriangleRange": [
+        70000,
+        140000
+      ]
+    },
+    {
+      "id": "visible-current-node-city_gate_west_threeway-02-fragment-003",
+      "asset": "visible-current-asset-city_gate_west_threeway-02-fragment-003",
+      "title": "city_gate_west_threeway / city_gate_west_threeway-02-fragment-003",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_west_threeway",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          0.07999952137470245,
+          9.391881942749023,
+          -500.7754821777344
+        ],
+        "max": [
+          2.6200003623962402,
+          10.485578536987305,
+          -478.8164978027344
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "gate-city-static_tile"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。",
+      "atomicGroupId": "visible-current-atomic-gate-city-static_tile",
+      "fragmentIndex": 2,
+      "fragmentCount": 3,
+      "sourcePrimitiveIndex": 0,
+      "sourceTriangleRange": [
+        140000,
+        188772
+      ]
+    },
+    {
+      "id": "visible-current-node-city_gate_west_threeway-03",
+      "asset": "visible-current-asset-city_gate_west_threeway-03",
+      "title": "city_gate_west_threeway / city_gate_west_threeway-03",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_west_threeway",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          -4.000000476837158,
+          0.17500005662441254,
+          -499.7959899902344
+        ],
+        "max": [
+          7.1999993324279785,
+          10.34999942779541,
+          -452.7959899902344
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "gate-city-static_earth"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-city_gate_xia-B-01",
+      "asset": "visible-current-asset-city_gate_xia-B-01",
+      "title": "city_gate_xia-B / city_gate_xia-B-01",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_xia-B",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          718.345947265625,
+          0.0,
+          -3576.55517578125
+        ],
+        "max": [
+          750.6317138671875,
+          10.699999809265137,
+          -3555.71826171875
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "xia-B-static_earth",
+        "xia-B-static_timber"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-city_gate_xia-B-02-fragment-001",
+      "asset": "visible-current-asset-city_gate_xia-B-02-fragment-001",
+      "title": "city_gate_xia-B / city_gate_xia-B-02-fragment-001",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_xia-B",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          722.4052734375,
+          8.609882354736328,
+          -3566.701416015625
+        ],
+        "max": [
+          746.4837646484375,
+          10.82800006866455,
+          -3560.1806640625
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "xia-B-static_tile"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。",
+      "atomicGroupId": "visible-current-atomic-xia-B-static_tile",
+      "fragmentIndex": 0,
+      "fragmentCount": 4,
+      "sourcePrimitiveIndex": 0,
+      "sourceTriangleRange": [
+        0,
+        70000
+      ]
+    },
+    {
+      "id": "visible-current-node-city_gate_xia-B-02-fragment-002",
+      "asset": "visible-current-asset-city_gate_xia-B-02-fragment-002",
+      "title": "city_gate_xia-B / city_gate_xia-B-02-fragment-002",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_xia-B",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          722.5501098632812,
+          8.609882354736328,
+          -3572.0927734375
+        ],
+        "max": [
+          746.572509765625,
+          10.75326919555664,
+          -3563.578125
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "xia-B-static_tile"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。",
+      "atomicGroupId": "visible-current-atomic-xia-B-static_tile",
+      "fragmentIndex": 1,
+      "fragmentCount": 4,
+      "sourcePrimitiveIndex": 0,
+      "sourceTriangleRange": [
+        70000,
+        140000
+      ]
+    },
+    {
+      "id": "visible-current-node-city_gate_xia-B-02-fragment-003",
+      "asset": "visible-current-asset-city_gate_xia-B-02-fragment-003",
+      "title": "city_gate_xia-B / city_gate_xia-B-02-fragment-003",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_xia-B",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          722.6306762695312,
+          9.147616386413574,
+          -3570.638671875
+        ],
+        "max": [
+          746.5066528320312,
+          10.659279823303223,
+          -3565.996337890625
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "xia-B-static_tile"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。",
+      "atomicGroupId": "visible-current-atomic-xia-B-static_tile",
+      "fragmentIndex": 2,
+      "fragmentCount": 4,
+      "sourcePrimitiveIndex": 0,
+      "sourceTriangleRange": [
+        140000,
+        210000
+      ]
+    },
+    {
+      "id": "visible-current-node-city_gate_xia-B-02-fragment-004",
+      "asset": "visible-current-asset-city_gate_xia-B-02-fragment-004",
+      "title": "city_gate_xia-B / city_gate_xia-B-02-fragment-004",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_xia-B",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          722.6213989257812,
+          10.44579792022705,
+          -3566.99658203125
+        ],
+        "max": [
+          746.375,
+          10.75326919555664,
+          -3565.756591796875
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "xia-B-static_tile"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。",
+      "atomicGroupId": "visible-current-atomic-xia-B-static_tile",
+      "fragmentIndex": 3,
+      "fragmentCount": 4,
+      "sourcePrimitiveIndex": 0,
+      "sourceTriangleRange": [
+        210000,
+        217996
+      ]
+    },
+    {
+      "id": "visible-current-node-city_gate_yong-Y",
+      "asset": "visible-current-asset-city_gate_yong-Y",
+      "title": "city_gate_yong-Y / city_gate_yong-Y",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_yong-Y",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          -21.96308708190918,
+          0.17000000178813934,
+          -1413.818115234375
+        ],
+        "max": [
+          -10.06839656829834,
+          10.40000057220459,
+          -1381.7274169921875
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "yong-Y-static_tile",
+        "yong-Y-static_earth",
+        "yong-Y-static_timber"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-city_gate_zhongdong-Z",
+      "asset": "visible-current-asset-city_gate_zhongdong-Z",
+      "title": "city_gate_zhongdong-Z / city_gate_zhongdong-Z",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_gate_zhongdong-Z",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          2573.912353515625,
+          0.17000000178813934,
+          -1821.657470703125
+        ],
+        "max": [
+          2586.080810546875,
+          10.628000259399414,
+          -1789.079833984375
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "zhongdong-Z-static_tile",
+        "zhongdong-Z-static_earth",
+        "zhongdong-Z-static_timber"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-city_wall_C_profiles",
+      "asset": "visible-current-asset-city_wall_C_profiles",
+      "title": "city_wall_C_profiles / city_wall_C_profiles",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "city_wall_C_profiles",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          -44.842735290527344,
+          0.16999998688697815,
+          -3953.771484375
+        ],
+        "max": [
+          2647.0859375,
+          6.200000286102295,
+          34.69339370727539
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C_wall_A_11",
+        "C_wall_A_10_earth_refined_v1",
+        "gate-city-static_wall_plus",
+        "gate-city-static_wall_minus",
+        "C_wall_A_07",
+        "C_wall_A_00",
+        "C_wall_A_06",
+        "C_wall_A_05_refined_v1",
+        "C_wall_A_01",
+        "C_wall_A_04",
+        "C_wall_A_03",
+        "C_wall_A_02"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-granary_C_with_ground",
+      "asset": "visible-current-asset-granary_C_with_ground",
+      "title": "granary_C_with_ground / granary_C_with_ground",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "granary_C_with_ground",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          2249.714111328125,
+          0.0,
+          -3699.468994140625
+        ],
+        "max": [
+          2321.714111328125,
+          5.150000095367432,
+          -3647.468994140625
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "sample_ground.001",
+        "C_GRANARY_V2_L0__granary-group-static_tile",
+        "C_GRANARY_V2_L0__granary-group-static_timber",
+        "C_GRANARY_V2_L0__granary-group-static_paper__cargo_proxy"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-lingtai_C_with_east_access",
+      "asset": "visible-current-asset-lingtai_C_with_east_access",
+      "title": "lingtai_C_with_east_access / lingtai_C_with_east_access",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "lingtai_C_with_east_access",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          1435.387939453125,
+          -0.30000001192092896,
+          1006.8160400390625
+        ],
+        "max": [
+          1610.8232421875,
+          6.0,
+          1074.8160400390625
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C_LINGTAI_ENTRY_V21_LOD1_lingtai-A-static_earth.001",
+        "C_LINGTAI_ENTRY_V21_LOD1_lingtai-A-static_timber.001",
+        "C_LINGTAI_ENTRY_V21_LOD1_lingtai-A-static_tile.001",
+        "C_LINGTAI_ENTRY_V21_LOD1_lingtai-A-static_path.001",
+        "C_access_A"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-market_frontage_well_routes",
+      "asset": "visible-current-asset-market_frontage_well_routes",
+      "title": "market_frontage_well_routes / market_frontage_well_routes",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "market_frontage_well_routes",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          184.28599548339844,
+          -0.44999998807907104,
+          -1981.1839599609375
+        ],
+        "max": [
+          244.28599548339844,
+          5.13012170791626,
+          -1937.1839599609375
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C_market_ground_well_A",
+        "boundary_west",
+        "boundary_-21.7",
+        "boundary_21.7",
+        "route_public",
+        "route_rearS",
+        "route_rearN",
+        "C_MARKET_ENTRY_V21_LOD0__layout__LY_P01_tile__PBR",
+        "C_MARKET_ENTRY_V21_LOD0__layout__LY_P01_timber__PBR",
+        "A_LOD0__eave_tie",
+        "A_LOD0__roof_deck_0",
+        "A_LOD0__roof_deck_2",
+        "A_LOD0__tile_cover_hip",
+        "A_LOD0__tile_cover_hip.001",
+        "A_LOD0__tile_cover_hip.003",
+        "A_LOD0__tile_cover_hip.005",
+        "A_LOD0__roof_deck_1",
+        "A_LOD0__tile_cover_hip.007",
+        "A_LOD0__tile_cover_hip.009",
+        "A_LOD0__tile_cover_hip.010",
+        "A_LOD0__tile_cover_hip.011",
+        "A_LOD0__eave_tie.001",
+        "A_LOD0__tile_cover_hip.002",
+        "A_LOD0__tile_cover_hip.008",
+        "A_LOD0__tile_cover_front",
+        "A_LOD0__post_foot_-1",
+        "A_LOD0__cross_head",
+        "A_LOD0__tile_cover_front.028",
+        "A_LOD0__main_post_-1",
+        "A_LOD0__tile_cover_hip.004",
+        "A_LOD0__tile_cover_hip.006",
+        "A_LOD0__tile_cover_front.002",
+        "A_LOD0__tile_cover_front.001",
+        "A_LOD0__tile_cover_front.029",
+        "A_LOD0__tile_cover_front.030",
+        "A_LOD0__rim_long_-1",
+        "A_LOD0__tile_cover_front.005",
+        "A_LOD0__tile_cover_front.004",
+        "A_LOD0__tile_cover_front.003",
+        "A_LOD0__tile_cover_front.031",
+        "A_LOD0__tile_cover_front.032",
+        "A_LOD0__tile_cover_front.033",
+        "A_LOD0__short_liner",
+        "A_LOD0__circular_collar",
+        "A_LOD0__rim_cross_-1",
+        "A_LOD0__rim_cross_1",
+        "A_LOD0__ridge_riser_-1",
+        "A_LOD0__ridge_cap",
+        "A_LOD0__rafter",
+        "A_LOD0__rafter.001",
+        "A_LOD0__ridge_support",
+        "A_LOD0__tile_cover_front.009",
+        "A_LOD0__tile_cover_front.008",
+        "A_LOD0__tile_cover_front.007",
+        "A_LOD0__tile_cover_front.006",
+        "A_LOD0__tile_cover_front.034",
+        "A_LOD0__tile_cover_front.035",
+        "A_LOD0__tile_cover_front.036",
+        "A_LOD0__tile_cover_front.037",
+        "A_LOD0__wheel_axle",
+        "A_LOD0__tile_cover_front.013",
+        "A_LOD0__tile_cover_front.012",
+        "A_LOD0__tile_cover_front.011",
+        "A_LOD0__tile_cover_front.010",
+        "A_LOD0__tile_cover_front.038",
+        "A_LOD0__tile_cover_front.039",
+        "A_LOD0__tile_cover_front.040",
+        "A_LOD0__tile_cover_front.041",
+        "A_LOD0__wheel_cheek_-1",
+        "A_LOD0__drawing_container",
+        "A_LOD0__container_lug",
+        "A_LOD0__container_bridle",
+        "A_LOD0__container_bottom",
+        "A_LOD0__wheel_grooved_ring",
+        "A_LOD0__wheel_hub",
+        "A_LOD0__wheel_spoke.002",
+        "A_LOD0__wheel_spoke.003",
+        "A_LOD0__wheel_spoke.001",
+        "A_LOD0__wheel_spoke",
+        "A_LOD0__rope_C_static",
+        "A_LOD0__container_bridle.001",
+        "A_LOD0__tile_cover_front.017",
+        "A_LOD0__tile_cover_front.016",
+        "A_LOD0__tile_cover_front.015",
+        "A_LOD0__tile_cover_front.014",
+        "A_LOD0__tile_cover_front.042",
+        "A_LOD0__tile_cover_front.043",
+        "A_LOD0__tile_cover_front.044",
+        "A_LOD0__tile_cover_front.045",
+        "A_LOD0__container_lug.001",
+        "A_LOD0__wheel_cheek_1",
+        "A_LOD0__tile_cover_front.021",
+        "A_LOD0__tile_cover_front.020",
+        "A_LOD0__tile_cover_front.019",
+        "A_LOD0__tile_cover_front.018",
+        "A_LOD0__tile_cover_front.046",
+        "A_LOD0__tile_cover_front.047",
+        "A_LOD0__tile_cover_front.048",
+        "A_LOD0__tile_cover_front.049",
+        "A_LOD0__rafter.002",
+        "A_LOD0__rafter.003",
+        "A_LOD0__ridge_riser_1",
+        "A_LOD0__roof_deck_3",
+        "A_LOD0__tile_cover_front.024",
+        "A_LOD0__tile_cover_front.023",
+        "A_LOD0__tile_cover_front.022",
+        "A_LOD0__tile_cover_front.050",
+        "A_LOD0__tile_cover_front.051",
+        "A_LOD0__tile_cover_front.052",
+        "A_LOD0__rim_long_1",
+        "A_LOD0__tile_cover_hip.016",
+        "A_LOD0__tile_cover_hip.018",
+        "A_LOD0__tile_cover_front.026",
+        "A_LOD0__tile_cover_front.025",
+        "A_LOD0__tile_cover_front.053",
+        "A_LOD0__tile_cover_front.054",
+        "A_LOD0__post_foot_1",
+        "A_LOD0__tile_cover_hip.014",
+        "A_LOD0__tile_cover_hip.020",
+        "A_LOD0__main_post_1",
+        "A_LOD0__tile_cover_front.027",
+        "A_LOD0__tile_cover_front.055",
+        "A_LOD0__tile_cover_hip.013",
+        "A_LOD0__tile_cover_hip.022",
+        "A_LOD0__tile_cover_hip.017",
+        "A_LOD0__tile_cover_hip.019",
+        "A_LOD0__tile_cover_hip.015",
+        "A_LOD0__tile_cover_hip.021",
+        "A_LOD0__tile_cover_hip.012",
+        "A_LOD0__tile_cover_hip.023",
+        "C_MARKET_ENTRY_V21_LOD0__layout__LY_P01_earth__PBR",
+        "route_east",
+        "route_exitS",
+        "route_exitPublic",
+        "route_exitN",
+        "boundary_east_-9",
+        "boundary_east_9"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-northeast_C_access",
+      "asset": "visible-current-asset-northeast_C_access",
+      "title": "northeast_C_access / northeast_C_access",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "northeast_C_access",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          2284.214111328125,
+          -0.18000000715255737,
+          -3647.468994140625
+        ],
+        "max": [
+          2317.826904296875,
+          0.20000000298023224,
+          -3484.5
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C_NE_APPROACH_LOCAL"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-res_D08_eight",
+      "asset": "visible-current-asset-res_D08_eight",
+      "title": "res_D08_eight / res_D08_eight",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "res_D08_eight",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          534.0,
+          0.19999992847442627,
+          -1011.0
+        ],
+        "max": [
+          638.0,
+          5.519999980926514,
+          -933.0
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "FROZEN-D08-S1__architecture_C_whitebox_earth_wall",
+        "FROZEN-D08-S1__architecture_C_roof_rhythm_not_glaze_copy",
+        "FROZEN-D08-NW__architecture_C_roof_rhythm",
+        "FROZEN-D08-NW__architecture_C_earth_wall",
+        "FROZEN-D08-NW__architecture_C_plinth",
+        "FROZEN-D08-S1__architecture_C_plain_timber",
+        "FROZEN-D08-NW__architecture_C_plain_timber",
+        "FROZEN-D08-S1__architecture_C_floor_plinth",
+        "FROZEN-D08-NW__designed_front_apron",
+        "FROZEN-D08-NW__designed_rear_work_ground",
+        "FROZEN-D08-NW__designed_side_passage",
+        "FROZEN-D08-S2__architecture_C_whitebox_earth_wall",
+        "FROZEN-D08-S2__architecture_C_roof_rhythm_not_glaze_copy",
+        "FROZEN-D08-S2__architecture_C_floor_plinth",
+        "FROZEN-D08-S2__architecture_C_plain_timber",
+        "FROZEN-D08-NW__architecture_C_drain_stone",
+        "FROZEN-D08-M__architecture_C_roof_rhythm_not_glaze_copy",
+        "FROZEN-D08-M__architecture_C_whitebox_earth_wall",
+        "FROZEN-D08-M__architecture_C_floor_plinth",
+        "FROZEN-D08-M__architecture_C_plain_timber",
+        "FROZEN-D08-S3__architecture_C_whitebox_earth_wall",
+        "FROZEN-D08-S3__architecture_C_roof_rhythm_not_glaze_copy",
+        "FROZEN-D08-S3__architecture_C_plain_timber",
+        "FROZEN-D08-S3__architecture_C_floor_plinth",
+        "FROZEN-D08-NE__architecture_C_roof_rhythm",
+        "FROZEN-D08-NE__architecture_C_earth_wall",
+        "FROZEN-D08-NE__architecture_C_plinth",
+        "FROZEN-D08-NE__architecture_C_plain_timber",
+        "FROZEN-D08-NE__designed_front_apron",
+        "FROZEN-D08-NE__designed_rear_work_ground",
+        "FROZEN-D08-S4__architecture_C_whitebox_earth_wall",
+        "FROZEN-D08-S4__architecture_C_roof_rhythm_not_glaze_copy",
+        "FROZEN-D08-S4__architecture_C_floor_plinth",
+        "FROZEN-D08-S4__architecture_C_plain_timber",
+        "FROZEN-D08-NE__designed_side_passage",
+        "FROZEN-D08-NE__architecture_C_drain_stone",
+        "FROZEN-D08-E__architecture_C_roof_rhythm_not_glaze_copy",
+        "FROZEN-D08-E__architecture_C_whitebox_earth_wall",
+        "FROZEN-D08-E__architecture_C_floor_plinth",
+        "FROZEN-D08-E__architecture_C_plain_timber"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-res_detail_011-01",
+      "asset": "visible-current-asset-res_detail_011-01",
+      "title": "res_detail_011 / res_detail_011-01",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "res_detail_011",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          545.0,
+          0.19999992847442627,
+          -829.4500122070312
+        ],
+        "max": [
+          563.0,
+          4.627999782562256,
+          -805.2999877929688
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C02-011__A_enhanced_earth",
+        "C02-011__A_enhanced_tile",
+        "C02-011__side_C_substrate_1",
+        "C02-011__side_tile_shells_C",
+        "C02-011__side_C_gable_infill_-1",
+        "C02-011__side_C_wallplate_1",
+        "C02-011__side_C_gable_infill_1",
+        "C02-011__main_C_substrate_-1",
+        "C02-011__main_simple_ridge_C",
+        "C02-011__main_C_substrate_1"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-res_detail_011-02",
+      "asset": "visible-current-asset-res_detail_011-02",
+      "title": "res_detail_011 / res_detail_011-02",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "res_detail_011",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          547.6204833984375,
+          0.20000000298023224,
+          -827.6500244140625
+        ],
+        "max": [
+          560.6849975585938,
+          4.552596569061279,
+          -805.6499633789062
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C02-011__main_tile_shells_C",
+        "C02-011__side_simple_ridge_C",
+        "C02-011__main_C_gable_infill_-1",
+        "C02-011__side_C_substrate_-1",
+        "C02-011__main_C_wallplate_-1",
+        "C02-011__main_C_wallplate_1",
+        "C02-011__A_enhanced_wood",
+        "C02-011__side_C_wallplate_-1",
+        "C02-011__main_C_gable_infill_1",
+        "C_STOVE_01_v2__A_timber",
+        "C_STOVE_01_v2__A_earth",
+        "C_MILL_01__A_wood_bed_C",
+        "C_MILL_01__A_stand_post_C",
+        "C_MILL_01__A_stand_post_C.001",
+        "C_MILL_01__A_stand_cross_tie_C",
+        "C_MILL_01__A_stand_apron_C",
+        "C_MILL_01__A_stand_apron_C.001",
+        "C_MILL_01__A_collection_floor_C",
+        "C_MILL_01__A_collection_lip_C",
+        "C_MILL_01__A_lower_stone_C",
+        "C_MILL_01__A_upper_stone_C",
+        "C_MILL_01__A_feed_ring_C",
+        "C_MILL_01__A_feed_divider_C",
+        "C_MILL_01__A_static_spindle_C",
+        "C_MILL_01__A_handle_static_C",
+        "C_MILL_01__A_stand_post_C.002",
+        "C_MILL_01__A_stand_post_C.003",
+        "C_MILL_01__A_stand_cross_tie_C.001"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-res_detail_012-01",
+      "asset": "visible-current-asset-res_detail_012-01",
+      "title": "res_detail_012 / res_detail_012-01",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "res_detail_012",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          570.0,
+          0.19999992847442627,
+          -841.4500122070312
+        ],
+        "max": [
+          598.0,
+          4.677999973297119,
+          -805.2999877929688
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C02-012__architecture_C_roof_rhythm.001",
+        "C02-012__architecture_C_earth_wall.001",
+        "C02-012__architecture_C_plinth.001",
+        "C02-012_ROOF__main_C_substrate_-1",
+        "C02-012_ROOF__main_simple_ridge_C",
+        "C02-012_ROOF__main_C_substrate_1"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-res_detail_012-02",
+      "asset": "visible-current-asset-res_detail_012-02",
+      "title": "res_detail_012 / res_detail_012-02",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "res_detail_012",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          573.04052734375,
+          3.2699999809265137,
+          -827.9500122070312
+        ],
+        "max": [
+          590.95947265625,
+          4.60073709487915,
+          -821.9500122070312
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C02-012_ROOF__main_tile_shells_C",
+        "C02-012_ROOF__main_C_gable_infill_-1",
+        "C02-012_ROOF__main_C_wallplate_-1",
+        "C02-012_ROOF__main_C_wallplate_1"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-res_detail_012-03",
+      "asset": "visible-current-asset-res_detail_012-03",
+      "title": "res_detail_012 / res_detail_012-03",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "res_detail_012",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          574.8499755859375,
+          0.20000000298023224,
+          -835.1549682617188
+        ],
+        "max": [
+          597.0,
+          4.46999979019165,
+          -805.6499633789062
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C012_ENTRY_V2_LOD0_retained_timber",
+        "C02-012_ROOF__main_C_gable_infill_1",
+        "C012_ENTRY_V2_LOD0_door_module",
+        "C02-012__architecture_C_drain_stone.001"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-res_detail_032",
+      "asset": "visible-current-asset-res_detail_032",
+      "title": "res_detail_032 / res_detail_032",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "res_detail_032",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          536.7999877929688,
+          0.19999992847442627,
+          -767.0
+        ],
+        "max": [
+          560.9500122070312,
+          5.269999980926514,
+          -749.0
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C02-032__architecture_C_whitebox_earth_wall.001",
+        "C02-032__architecture_C_roof_rhythm_not_glaze_copy.001",
+        "C02-032__architecture_C_floor_plinth.001",
+        "C032_ENTRY_V2_LOD0_retained_host_timber",
+        "C032_ENTRY_V2_LOD0_paired_module",
+        "C032_facade_door_jamb_-1",
+        "C032_facade_door_head",
+        "C032_facade_door_jamb_1",
+        "C032_facade_window_jamb_-1",
+        "C032_facade_window_rail_1.03",
+        "C032_facade_window_rail_1.77",
+        "C032_facade_window_jamb_1",
+        "C032_facade_window_vertical_0",
+        "C032_facade_window_vertical_1",
+        "C032_facade_window_vertical_2"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-res_east_nine",
+      "asset": "visible-current-asset-res_east_nine",
+      "title": "res_east_nine / res_east_nine",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "res_east_nine",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          705.2999877929688,
+          0.19999992847442627,
+          -1093.5819091796875
+        ],
+        "max": [
+          766.9893798828125,
+          5.519999980926514,
+          -884.64306640625
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C02-021__east__court-A2-static_tile",
+        "C02-022__east__court-B2-static_tile",
+        "C02-023__east__court-A-static_tile",
+        "C02-024__east__court-A2-static_tile",
+        "C02-025__east__court-B-static_tile",
+        "C02-026__east__court-A-static_tile",
+        "C02-021__east__court-A2-static_earth",
+        "C02-022__east__court-B2-static_earth",
+        "C02-023__east__court-A-static_earth",
+        "C02-024__east__court-A2-static_earth",
+        "C02-025__east__court-B-static_earth",
+        "C02-026__east__court-A-static_earth",
+        "C02-021__east__court-A2-static_timber",
+        "C02-022__east__court-B2-static_timber",
+        "C02-023__east__court-A-static_timber",
+        "C02-024__east__court-A2-static_timber",
+        "C02-025__east__court-B-static_timber",
+        "C02-026__east__court-A-static_timber",
+        "C02-018__east__court-B-static_earth",
+        "C02-018__east__court-B-static_tile",
+        "C02-018__east__court-B-static_timber",
+        "C02-019__east__court-A-static_earth",
+        "C02-019__east__court-A-static_tile",
+        "C02-020__east__court-TC03-static_tile",
+        "C02-020__east__court-TC03-static_earth",
+        "C02-019__east__court-A-static_timber",
+        "C02-020__east__court-TC03-static_timber",
+        "C02-020__designed_front_apron",
+        "C02-020__designed_rear_work_ground",
+        "C02-020__designed_side_passage",
+        "C02-020__east__court-TC03-static_stone"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-res_north_infill_three",
+      "asset": "visible-current-asset-res_north_infill_three",
+      "title": "res_north_infill_three / res_north_infill_three",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "res_north_infill_three",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          577.0,
+          0.19999992847442627,
+          -1246.0
+        ],
+        "max": [
+          647.0,
+          5.128161907196045,
+          -1221.8499755859375
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C_NORTH_INFILL_01__opposed_rooms_tile",
+        "C_NORTH_INFILL_01__opposed_rooms_earth",
+        "C_NORTH_INFILL_01__opposed_rooms_timber",
+        "C_NORTH_INFILL_02__compact_work_tile",
+        "C_NORTH_INFILL_02__compact_work_earth",
+        "C_NORTH_INFILL_02__compact_work_timber",
+        "C_NORTH_INFILL_03__workyard_tile",
+        "C_NORTH_INFILL_03__workyard_earth",
+        "C_NORTH_INFILL_03__workyard_timber",
+        "C_NORTH_INFILL_03__workyard_stone",
+        "C_NORTH_INFILL_03__pestle__pestle_timber_moving"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-res_north_twelve",
+      "asset": "visible-current-asset-res_north_twelve",
+      "title": "res_north_twelve / res_north_twelve",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "res_north_twelve",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          511.56268310546875,
+          0.19999992847442627,
+          -1214.0107421875
+        ],
+        "max": [
+          729.4500122070312,
+          5.519999980926514,
+          -1068.0499267578125
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C02-036__v2__court-B2-static_tile",
+        "C02-036__v2__court-B2-static_earth",
+        "C02-036__v2__court-B2-static_timber",
+        "C02-035__v2__court-A2-static_tile",
+        "C02-035__v2__court-A2-static_earth",
+        "C02-035__v2__court-A2-static_timber",
+        "C02-030__row2__court-A-static_earth",
+        "C02-030__row2__court-A-static_tile",
+        "C02-030__row2__court-A-static_timber",
+        "C02-003__perimeter__court-TC03-2-static_earth",
+        "C02-003__perimeter__court-TC03-2-static_tile",
+        "C02-003__perimeter__court-TC03-2-static_timber",
+        "C02-003__perimeter__court-TC03-2-static_stone",
+        "C02-029__row2__court-B-static_earth",
+        "C02-029__row2__court-B-static_tile",
+        "C02-029__row2__court-B-static_timber",
+        "C02-031__perimeter__court-A2-static_tile",
+        "C02-031__perimeter__court-A2-static_earth",
+        "C02-031__perimeter__court-A2-static_timber",
+        "C02-002__perimeter__court-B2-static_tile",
+        "C02-002__perimeter__court-B2-static_earth",
+        "C02-028__row2__court-A2-static_earth",
+        "C02-028__row2__court-A2-static_tile",
+        "C02-002__perimeter__court-B2-static_timber",
+        "C02-033__v2__court-B2-static_tile",
+        "C02-033__v2__court-B2-static_earth",
+        "C02-028__row2__court-A2-static_timber",
+        "C02-033__v2__court-B2-static_timber",
+        "C02-027__row2__court-A-static_earth",
+        "C02-027__row2__court-A-static_tile",
+        "C02-027__row2__court-A-static_timber",
+        "C02-001__perimeter__court-A2-static_tile",
+        "C02-001__perimeter__court-A2-static_earth",
+        "C02-001__perimeter__court-A2-static_timber",
+        "C02-004__perimeter__court-B2-static_tile",
+        "C02-004__perimeter__court-B2-static_earth",
+        "C02-004__perimeter__court-B2-static_timber"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-res_south_006_010",
+      "asset": "visible-current-asset-res_south_006_010",
+      "title": "res_south_006_010 / res_south_006_010",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "res_south_006_010",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          522.0,
+          0.19999992847442627,
+          -830.4500122070312
+        ],
+        "max": [
+          546.0,
+          5.269999980926514,
+          -769.5499877929688
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C02-010__architecture_C_roof_rhythm_not_glaze_copy.001",
+        "C02-010__architecture_C_whitebox_earth_wall.001",
+        "C02-010__architecture_C_floor_plinth.001",
+        "C02-010__architecture_C_plain_timber.001",
+        "C02-006__architecture_C_whitebox_earth_wall.001",
+        "C02-006__architecture_C_roof_rhythm_not_glaze_copy.001",
+        "C02-010_LIVING__C_TRANSITION_roof_board",
+        "C02-010_LIVING__C_TRANSITION_beam",
+        "C02-010_LIVING__C_TRANSITION_beam.001",
+        "C02-010_LIVING__C_TRANSITION_tile_shells",
+        "C02-010_LIVING__C_TRANSITION_post",
+        "C02-010_LIVING__C_TRANSITION_post.002",
+        "C02-006__architecture_C_floor_plinth.001",
+        "C02-006__architecture_C_plain_timber.001",
+        "C02-010_LIVING__C_TRANSITION_post.001",
+        "C02-010_LIVING__C_TRANSITION_post.003"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-res_south_nine",
+      "asset": "visible-current-asset-res_south_nine",
+      "title": "res_south_nine / res_south_nine",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "res_south_nine",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          499.0,
+          0.19999992847442627,
+          -834.0
+        ],
+        "max": [
+          662.1500244140625,
+          5.519999980926514,
+          -716.7999877929688
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C02-009__south_infill__court-B-static_tile",
+        "C02-009__south_infill__court-B-static_earth",
+        "C02-009__south_infill__court-B-static_timber",
+        "C02-005__south_infill__court-B-static_earth",
+        "C02-005__south_infill__court-B-static_tile",
+        "C02-005__south_infill__court-B-static_timber",
+        "C02-014__south_infill__court-A-static_earth",
+        "C02-014__south_infill__court-A-static_tile",
+        "C02-014__south_infill__court-A-static_timber",
+        "C02-007__south_infill__court-A-static_earth",
+        "C02-007__south_infill__court-A-static_tile",
+        "C02-007__south_infill__court-A-static_timber",
+        "C02-015__south_infill__court-A2-static_earth",
+        "C02-015__south_infill__court-A2-static_tile",
+        "C02-013__south_infill__court-A2-static_tile",
+        "C02-013__south_infill__court-A2-static_earth",
+        "C02-015__south_infill__court-A2-static_timber",
+        "C02-016__south_infill__court-B-static_tile",
+        "C02-016__south_infill__court-B-static_earth",
+        "C02-016__south_infill__court-B-static_timber",
+        "C02-013__south_infill__court-A2-static_timber",
+        "C02-008__south_infill__court-TC03-static_earth",
+        "C02-008__south_infill__court-TC03-static_tile",
+        "C02-008__south_infill__court-TC03-static_stone",
+        "C02-008__designed_side_passage",
+        "C02-008__south_infill__court-TC03-static_timber",
+        "C02-008__designed_front_apron",
+        "C02-017__south_infill__court-A-static_earth",
+        "C02-017__south_infill__court-A-static_tile",
+        "C02-008__designed_rear_work_ground",
+        "C02-017__south_infill__court-A-static_timber"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-res_workyard_034",
+      "asset": "visible-current-asset-res_workyard_034",
+      "title": "res_workyard_034 / res_workyard_034",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "res_workyard_034",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          592.8911743164062,
+          0.19999992847442627,
+          -1092.199951171875
+        ],
+        "max": [
+          610.8911743164062,
+          5.128161907196045,
+          -1068.0499267578125
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C02-034__workyard_trial__workyard_tile",
+        "C02-034__workyard_trial__workyard_earth",
+        "C02-034__workyard_trial__workyard_timber",
+        "C02-034__workyard_trial__workyard_stone",
+        "C02-034__workyard_trial__pestle__pestle_timber_moving"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-taixue_C_with_support",
+      "asset": "visible-current-asset-taixue_C_with_support",
+      "title": "taixue_C_with_support / taixue_C_with_support",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "taixue_C_with_support",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          2344.346923828125,
+          -0.4000000059604645,
+          623.6530151367188
+        ],
+        "max": [
+          2390.346923828125,
+          6.130000114440918,
+          641.6530151367188
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C_TAIXUE_ISOLATED_SUPPORT_PATCH",
+        "taixue-A-static_earth.001_v32",
+        "taixue-A-static_tile.001_v32",
+        "taixue-A-static_timber.001_v32",
+        "taixue-A-static_fiber.001_v32"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-wuku_C_with_support-01",
+      "asset": "visible-current-asset-wuku_C_with_support-01",
+      "title": "wuku_C_with_support / wuku_C_with_support-01",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "wuku_C_with_support",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          2307.326904296875,
+          -0.4000000059604645,
+          -3510.0
+        ],
+        "max": [
+          2329.326904296875,
+          5.900000095367432,
+          -3490.0
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C_WUKU_ISOLATED_SUPPORT_PATCH",
+        "C_WUKU_ENTRY22_LOD0__wuku-B-static_earth.001",
+        "C_WUKU_ENTRY22_LOD0__wuku-B-static_timber.001"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    },
+    {
+      "id": "visible-current-node-wuku_C_with_support-02",
+      "asset": "visible-current-asset-wuku_C_with_support-02",
+      "title": "wuku_C_with_support / wuku_C_with_support-02",
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "chapter": "wuku_C_with_support",
+      "initial": false,
+      "tier": "C",
+      "bounds": {
+        "min": [
+          2311.177001953125,
+          3.910370349884033,
+          -3505.14990234375
+        ],
+        "max": [
+          2321.476806640625,
+          6.03000020980835,
+          -3494.85009765625
+        ]
+      },
+      "layerId": "visible-current-city-C",
+      "sourceNodeIds": [
+        "C_WUKU_ENTRY22_LOD0__wuku-B-static_tile.001"
+      ],
+      "basis": "当前母版的可见几何交接；落位、形态及分组保留C推测，不代表古代已建全城。"
+    }
+  ],
+  "groups": [
+    {
+      "id": "C_gate_local_ground",
+      "nodeIds": [
+        "visible-current-node-C_gate_local_ground"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "C_ground_network__C_stitch_patch",
+      "nodeIds": [
+        "visible-current-node-C_ground_network__C_stitch_patch"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "C_ground_network__C_stitch_primary",
+      "nodeIds": [
+        "visible-current-node-C_ground_network__C_stitch_primary"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "C_ground_network__C_stitch_west",
+      "nodeIds": [
+        "visible-current-node-C_ground_network__C_stitch_west"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "C_ground_network__conditional_link_A",
+      "nodeIds": [
+        "visible-current-node-C_ground_network__conditional_link_A"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "C_residential_ground__C02_retained_outside_south_Calt_domain",
+      "nodeIds": [
+        "visible-current-node-C_residential_ground__C02_retained_outside_south_Calt_domain"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "C_residential_ground__D08_shared_terrain",
+      "nodeIds": [
+        "visible-current-node-C_residential_ground__D08_shared_terrain"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "C_residential_ground__single_closed_terrain_after",
+      "nodeIds": [
+        "visible-current-node-C_residential_ground__single_closed_terrain_after"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "biyong_C_relationship",
+      "nodeIds": [
+        "visible-current-node-biyong_C_relationship"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "city_gate_gu-G",
+      "nodeIds": [
+        "visible-current-node-city_gate_gu-G"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "city_gate_kaiyang-K",
+      "nodeIds": [
+        "visible-current-node-city_gate_kaiyang-K"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "city_gate_pingcheng-P",
+      "nodeIds": [
+        "visible-current-node-city_gate_pingcheng-P"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "city_gate_shangdong-S",
+      "nodeIds": [
+        "visible-current-node-city_gate_shangdong-S"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "city_gate_shangxi-X",
+      "nodeIds": [
+        "visible-current-node-city_gate_shangxi-X"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "city_gate_west_threeway",
+      "nodeIds": [
+        "visible-current-node-city_gate_west_threeway-01",
+        "visible-current-node-city_gate_west_threeway-02-fragment-001",
+        "visible-current-node-city_gate_west_threeway-02-fragment-002",
+        "visible-current-node-city_gate_west_threeway-02-fragment-003",
+        "visible-current-node-city_gate_west_threeway-03"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "city_gate_xia-B",
+      "nodeIds": [
+        "visible-current-node-city_gate_xia-B-01",
+        "visible-current-node-city_gate_xia-B-02-fragment-001",
+        "visible-current-node-city_gate_xia-B-02-fragment-002",
+        "visible-current-node-city_gate_xia-B-02-fragment-003",
+        "visible-current-node-city_gate_xia-B-02-fragment-004"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "city_gate_yong-Y",
+      "nodeIds": [
+        "visible-current-node-city_gate_yong-Y"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "city_gate_zhongdong-Z",
+      "nodeIds": [
+        "visible-current-node-city_gate_zhongdong-Z"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "city_wall_C_profiles",
+      "nodeIds": [
+        "visible-current-node-city_wall_C_profiles"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "granary_C_with_ground",
+      "nodeIds": [
+        "visible-current-node-granary_C_with_ground"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "lingtai_C_with_east_access",
+      "nodeIds": [
+        "visible-current-node-lingtai_C_with_east_access"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "market_frontage_well_routes",
+      "nodeIds": [
+        "visible-current-node-market_frontage_well_routes"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "northeast_C_access",
+      "nodeIds": [
+        "visible-current-node-northeast_C_access"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "res_D08_eight",
+      "nodeIds": [
+        "visible-current-node-res_D08_eight"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "res_detail_011",
+      "nodeIds": [
+        "visible-current-node-res_detail_011-01",
+        "visible-current-node-res_detail_011-02"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "res_detail_012",
+      "nodeIds": [
+        "visible-current-node-res_detail_012-01",
+        "visible-current-node-res_detail_012-02",
+        "visible-current-node-res_detail_012-03"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "res_detail_032",
+      "nodeIds": [
+        "visible-current-node-res_detail_032"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "res_east_nine",
+      "nodeIds": [
+        "visible-current-node-res_east_nine"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "res_north_infill_three",
+      "nodeIds": [
+        "visible-current-node-res_north_infill_three"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "res_north_twelve",
+      "nodeIds": [
+        "visible-current-node-res_north_twelve"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "res_south_006_010",
+      "nodeIds": [
+        "visible-current-node-res_south_006_010"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "res_south_nine",
+      "nodeIds": [
+        "visible-current-node-res_south_nine"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "res_workyard_034",
+      "nodeIds": [
+        "visible-current-node-res_workyard_034"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "taixue_C_with_support",
+      "nodeIds": [
+        "visible-current-node-taixue_C_with_support"
+      ],
+      "historicalZoneClaim": false
+    },
+    {
+      "id": "wuku_C_with_support",
+      "nodeIds": [
+        "visible-current-node-wuku_C_with_support-01",
+        "visible-current-node-wuku_C_with_support-02"
+      ],
+      "historicalZoneClaim": false
+    }
+  ],
+  "atomicGroups": [
+    {
+      "id": "visible-current-atomic-gate-city-static_tile",
+      "sourceNodeId": "gate-city-static_tile",
+      "nodeIds": [
+        "visible-current-node-city_gate_west_threeway-02-fragment-001",
+        "visible-current-node-city_gate_west_threeway-02-fragment-002",
+        "visible-current-node-city_gate_west_threeway-02-fragment-003"
+      ],
+      "loadPolicy": "all-or-none; web integration must implement group activation, cancellation, failure rollback and unload",
+      "standaloneFragmentClosureClaim": false
+    },
+    {
+      "id": "visible-current-atomic-xia-B-static_tile",
+      "sourceNodeId": "xia-B-static_tile",
+      "nodeIds": [
+        "visible-current-node-city_gate_xia-B-02-fragment-001",
+        "visible-current-node-city_gate_xia-B-02-fragment-002",
+        "visible-current-node-city_gate_xia-B-02-fragment-003",
+        "visible-current-node-city_gate_xia-B-02-fragment-004"
+      ],
+      "loadPolicy": "all-or-none; web integration must implement group activation, cancellation, failure rollback and unload",
+      "standaloneFragmentClosureClaim": false
+    }
+  ],
+  "limits": [
+    "No near/far/all-cityLOD fields supplied.",
+    "No initial auto-load; all47 nodes initialfalse.",
+    "Current renderer uses custom pigment projection, not original PBR textures/animation.",
+    "No historical evidence upgrade, no complete historical city claim, no deployment/GPU proof."
+  ]
+}
