@@ -21,12 +21,24 @@ let lastMetrics = null;
 let drawerOpener = null;
 
 const chapterDescriptions = {
-  walls: '沿着已建城垣近看广阳门，再单独打开旄门等六座城门研究模型。位置和形制的依据可在便签中展开。',
+  walls: '沿着已建城垣近看广阳门。另有旄门等六座城门研究候选，可独立打开，查看形制与依据。',
   residential: '44 座院落已经布置在城中。先看南侧的 14 座，点选一座，再走近看屋檐与门前。',
   market: '五间店铺、三处摊位，以及交易和储货空间，组成目前已建的市肆样板。',
   storage: '已建仓房、收纳棚和作业场地组成一处完整的仓储研究组。',
-  ritual: '灵台与太学已有独立研究模型。在这里转动细看它们，城市落位仍在研究中。',
+  ritual: '灵台与太学作为研究候选独立展示。在这里转动细看它们，城市落位仍在研究中。',
   terrain: '查看已经制作的道路与地面，沿现有连接从城门走向住宅街区。',
+};
+
+const studyHeadings = {
+  walls: '城门研究 · 独立查看',
+  residential: '北侧院落研究 · 独立查看',
+  ritual: '礼制研究 · 独立查看',
+};
+
+const chapterProgress = {
+  walls: '城垣已入城 · 六门研究候选',
+  residential: '44 院已入城 · 北院研究候选',
+  ritual: '研究候选',
 };
 
 function setStatus(message) { $('#status').textContent = message; }
@@ -58,14 +70,19 @@ function updateMetrics() {
   ].join('\n');
 }
 
+function studyTitle(node) {
+  return `${node.title.replace(/\s*·\s*(?:已建)?研究候选$/, '')} · 研究候选`;
+}
+
 function showNote(node) {
   selected = node;
   const residences = manifest.nodes.filter(item => item.chapter === 'residential');
   const index = residences.findIndex(item => item.id === node.id);
   const title = index >= 0 ? `住宅院落 · 第 ${index + 1} 院` : node.chapter === 'terrain' ? '道路与地面' : node.title.replace(/^N2 /, '市肆 ');
-  $('#place-title').textContent = title;
-  $('#place-summary').textContent = node.summary || chapterDescriptions[node.chapter] || '已交付的建筑研究模型，可转动观察。';
-  $('#place-progress').textContent = node.space === 'local-study' ? '已建模 · 独立研究' : '已入城';
+  const isStudy = node.space === 'local-study';
+  $('#place-title').textContent = isStudy ? studyTitle(node) : title;
+  $('#place-summary').textContent = node.summary || (isStudy ? '这是一份独立查看的研究候选。城市落位与形制依据可在下方研究记录中查看。' : chapterDescriptions[node.chapter]) || '已交付的建筑研究模型，可转动观察。';
+  $('#place-progress').textContent = isStudy ? '研究候选' : '已入城';
   $('#place-tier').textContent = node.tier || '推测';
   $('#place-basis').textContent = node.basis || '';
   const sources = $('#place-sources');
@@ -91,25 +108,32 @@ function renderStudyChoices() {
     choices = document.createElement('div');
     choices.id = 'study-choices';
     choices.className = 'study-choices';
-    choices.setAttribute('aria-label', '已建研究模型');
+    choices.setAttribute('role', 'group');
+    choices.setAttribute('aria-labelledby', 'study-choices-title');
     $('#view-description').after(choices);
   }
   choices.replaceChildren();
   const chapter = chapterMap.get(currentChapter);
-  for (const id of chapter?.researchModelIds || []) {
-    const node = manifest.researchModels.find(item => item.id === id);
-    if (!node) continue;
+  const studies = (chapter?.researchModelIds || [])
+    .map(id => manifest.researchModels.find(item => item.id === id))
+    .filter(Boolean);
+  choices.hidden = studies.length === 0;
+  if (choices.hidden) return;
+  const heading = document.createElement('p');
+  heading.id = 'study-choices-title';
+  heading.textContent = studyHeadings[currentChapter] || '研究候选 · 独立查看';
+  choices.append(heading);
+  for (const node of studies) {
     const button = document.createElement('button');
     button.type = 'button';
-    button.textContent = node.title;
+    button.textContent = studyTitle(node);
     button.addEventListener('click', () => runNavigation(async isCurrent => {
-      await viewer.focusResearchModel(id, currentChapter);
+      await viewer.focusResearchModel(node.id, currentChapter);
       if (!isCurrent()) return;
       setLevel('courtyard');
     }));
     choices.append(button);
   }
-  choices.hidden = !choices.childElementCount;
 }
 
 function updateChapter(id) {
@@ -262,9 +286,10 @@ document.addEventListener('keydown', event => {
 });
 
 $('#revision-label').textContent = '2026.11.05';
-$('#progress-summary').textContent = '44 座已入城院落 · 五店三摊与仓储 · 北侧新院与六门研究 · 灵台与太学';
-document.querySelector('[data-chapter-status="walls"]').textContent = '城垣已入城 · 六门新研究';
-document.querySelector('[data-chapter-status="residential"]').textContent = '44 院已入城 · 北院新研究';
+$('#progress-summary').textContent = '44 座已入城院落 · 五店三摊与仓储。另有北侧院落、六座城门、灵台与太学的研究候选。';
+for (const [id, text] of Object.entries(chapterProgress)) {
+  document.querySelectorAll(`[data-chapter-status="${id}"], [data-record-status="${id}"]`).forEach(label => { label.textContent = text; });
+}
 for (const [id, text] of Object.entries(chapterDescriptions)) {
   document.querySelector(`[data-record-description="${id}"]`).textContent = text;
 }

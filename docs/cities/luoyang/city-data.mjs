@@ -600,11 +600,11 @@ const assetRecords = [
   },
   {
     "id": "study-lingtai",
-    "path": "progress-assets/lingtai-quality-v1/display/lingtai-A-quality-LOD1.gltf",
-    "format": "gltf",
-    "bytes": 571077,
-    "sha256": "c27d581371f6eb6956983674802a6006c0f665d5dd5dcb6f36089d6fbc130220",
-    "bundleBytes": 3306104,
+    "path": "progress-assets/flat/study-lingtai-c1b58de1bff4.glb",
+    "format": "glb",
+    "bytes": 2071760,
+    "sha256": "c1b58de1bff44b80a8675302101435443b16acbe902d88f4526c10edbb6dfe85",
+    "bundleBytes": 2071760,
     "sourceGlbSha256": "515ffbbbac8c6da5f726a87dfb2b61f50bce62da04275a6fccfdb4244f94a7ce",
     "excludeNodes": [],
     "bounds": {
@@ -622,41 +622,61 @@ const assetRecords = [
     "sourceRepositoryPath": "modeling-lab/content/luoyang/lingtai-quality-v1/display/lingtai-A-quality-LOD1.gltf",
     "metadataPage": "model-library/lingtai/metadata.json",
     "units": "metres",
-    "axes": "glTF X east / Y up / Z south"
+    "axes": "glTF X east / Y up / Z south",
+    "sourceAsset": {
+      "path": "progress-assets/lingtai-quality-v1/display/lingtai-A-quality-LOD1.gltf",
+      "bytes": 571077,
+      "sha256": "c27d581371f6eb6956983674802a6006c0f665d5dd5dcb6f36089d6fbc130220",
+      "bundleBytes": 3306104,
+      "format": "gltf"
+    },
+    "projectionSourceContract": "progress-assets/flat/source.json"
   },
   {
     "id": "study-taixue-A",
-    "path": "progress-assets/taixue-long-hall-v1/display/hall-A-LOD1.gltf",
-    "format": "gltf",
-    "bytes": 111804,
-    "sha256": "1403135d7a082f511fc5696d4fc10e5b19234b21e1086d566ecb33d7cdbddba7",
-    "bundleBytes": 1435585,
-    "sourceGlbSha256": "3f7e20e3bb37402a6707746378af9032b0fdf842ee14b8080b0dc455f8b1e6bc",
+    "path": "progress-assets/flat/study-taixue-A-ee4163421d16.glb",
+    "format": "glb",
+    "bytes": 248276,
+    "sha256": "ee4163421d1652b9301b8d50c7fe9f04ed09440000683b9a207ddf3f1600dda3",
+    "bundleBytes": 248276,
+    "sourceGlbSha256": "413c2f35ec264dfbc6f24c1ceab9a0f8ce492c975b50e34fd5320ad25be391f2",
     "excludeNodes": [],
     "bounds": {
       "min": [
-        -23.0,
-        -0.4,
-        -9.0
+        -18.799999237060547,
+        0.0,
+        -3.799999952316284
       ],
       "max": [
-        23.0,
-        6.13,
-        9.0
+        18.799999237060547,
+        6.130000114440918,
+        4.849999904632568
       ]
     },
-    "sourceRepositoryPath": "modeling-lab/content/luoyang/taixue-long-hall-v1/display/hall-A-LOD1.gltf",
-    "metadataPage": "model-library/taixue/metadata.json",
+    "sourceRepositoryPath": "modeling-lab/review-batches/2026-11-04-taixue-A-v3.2/models/taixue-A-LOD1.glb",
+    "metadataPage": "cities/luoyang/progress-assets/taixue-A-v3.2/source.json",
     "units": "metres",
-    "axes": "glTF X east / Y up / Z south"
+    "axes": "glTF X east / Y up / Z south",
+    "sourceCommit": "95db183586d30d7e4c8e7574f267507bbbcdd9e3",
+    "sourceContract": "progress-assets/taixue-A-v3.2/source.json",
+    "sourceVersion": "3.2",
+    "lod": 1,
+    "sourceAsset": {
+      "path": "progress-assets/taixue-A-v3.2/models/taixue-A-LOD1.glb",
+      "bytes": 638660,
+      "sha256": "413c2f35ec264dfbc6f24c1ceab9a0f8ce492c975b50e34fd5320ad25be391f2",
+      "bundleBytes": 638660,
+      "format": "glb"
+    },
+    "projectionSourceContract": "progress-assets/flat/source.json"
   },
   {
     "id": "study-taixue-B",
-    "path": "progress-assets/taixue-long-hall-v1/display/hall-B-LOD1.gltf",
-    "format": "gltf",
-    "bytes": 127935,
-    "sha256": "fa828ef0ee2188fbae5149fc8c85dd7df1d8dfc4c2e6cacaaf19903908ecf089",
-    "bundleBytes": 1485940,
+    "path": "progress-assets/flat/study-taixue-B-11b01e4948be.glb",
+    "format": "glb",
+    "bytes": 373040,
+    "sha256": "11b01e4948be0e0e229116b9eaa939f6b932058a0d3513ac676012188a260c57",
+    "bundleBytes": 373040,
     "sourceGlbSha256": "eea1607b4d87653e09c69c36c79bc75c38ca7bb07da1ef0769c9b3c7b61a03b4",
     "excludeNodes": [],
     "bounds": {
@@ -674,14 +694,22 @@ const assetRecords = [
     "sourceRepositoryPath": "modeling-lab/content/luoyang/taixue-long-hall-v1/display/hall-B-LOD1.gltf",
     "metadataPage": "model-library/taixue/metadata.json",
     "units": "metres",
-    "axes": "glTF X east / Y up / Z south"
+    "axes": "glTF X east / Y up / Z south",
+    "sourceAsset": {
+      "path": "progress-assets/taixue-long-hall-v1/display/hall-B-LOD1.gltf",
+      "bytes": 127935,
+      "sha256": "fa828ef0ee2188fbae5149fc8c85dd7df1d8dfc4c2e6cacaaf19903908ecf089",
+      "bundleBytes": 1485940,
+      "format": "gltf"
+    },
+    "projectionSourceContract": "progress-assets/flat/source.json"
   },
   {
     "id": "study-north13-kaiyang-K",
-    "path": "progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb",
+    "path": "progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb",
     "format": "glb",
-    "bytes": 495712,
-    "sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8",
+    "bytes": 138768,
+    "sha256": "94693c58dd6308153c5900b0bb9698eff138811f39369f54f545b9034417e71e",
     "excludeNodes": [],
     "bounds": {
       "min": [
@@ -715,14 +743,22 @@ const assetRecords = [
           6.300000190734863
         ]
       }
-    }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb",
+      "bytes": 495712,
+      "sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8",
+      "format": "glb"
+    },
+    "bundleBytes": 138768,
+    "projectionSourceContract": "progress-assets/flat/source.json"
   },
   {
     "id": "study-north13-court-A2",
-    "path": "progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-A2-LOD1.glb",
+    "path": "progress-assets/flat/study-north13-court-A2-db02f24fde89.glb",
     "format": "glb",
-    "bytes": 752352,
-    "sha256": "d76580bbb5a7c89391152f32bd65b81595fbc300d6da69b2c6e819fff9d941c2",
+    "bytes": 395408,
+    "sha256": "db02f24fde899b73d5902b41391a7a5e6db64affac25b7cc609de3d46a3b0994",
     "excludeNodes": [],
     "bounds": {
       "min": [
@@ -756,14 +792,22 @@ const assetRecords = [
           12.150002479553223
         ]
       }
-    }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-A2-LOD1.glb",
+      "bytes": 752352,
+      "sha256": "d76580bbb5a7c89391152f32bd65b81595fbc300d6da69b2c6e819fff9d941c2",
+      "format": "glb"
+    },
+    "bundleBytes": 395408,
+    "projectionSourceContract": "progress-assets/flat/source.json"
   },
   {
     "id": "study-north13-court-B",
-    "path": "progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD1.glb",
+    "path": "progress-assets/flat/study-north13-court-B-6f7f84af4e7f.glb",
     "format": "glb",
-    "bytes": 903708,
-    "sha256": "2be52632e16e43290ef96aae7479cd7c1faa413b2090cd2af162652a8bb16d9c",
+    "bytes": 546768,
+    "sha256": "6f7f84af4e7f57920dc1182b747a7081bca9d15b2d595d3ec80593f60e022282",
     "excludeNodes": [],
     "bounds": {
       "min": [
@@ -797,14 +841,22 @@ const assetRecords = [
           12.150002479553223
         ]
       }
-    }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD1.glb",
+      "bytes": 903708,
+      "sha256": "2be52632e16e43290ef96aae7479cd7c1faa413b2090cd2af162652a8bb16d9c",
+      "format": "glb"
+    },
+    "bundleBytes": 546768,
+    "projectionSourceContract": "progress-assets/flat/source.json"
   },
   {
     "id": "study-north13-court-B2",
-    "path": "progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B2-LOD1.glb",
+    "path": "progress-assets/flat/study-north13-court-B2-7d3758ce668d.glb",
     "format": "glb",
-    "bytes": 859632,
-    "sha256": "95b66c5d994cac56d38327896bfe3b370fb4a3daaf643b0250c225cd8e83795e",
+    "bytes": 502688,
+    "sha256": "7d3758ce668d06541694e7e17d947d5b380a0974311c57eba7968284214c6ac2",
     "excludeNodes": [],
     "bounds": {
       "min": [
@@ -838,14 +890,22 @@ const assetRecords = [
           12.150002479553223
         ]
       }
-    }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B2-LOD1.glb",
+      "bytes": 859632,
+      "sha256": "95b66c5d994cac56d38327896bfe3b370fb4a3daaf643b0250c225cd8e83795e",
+      "format": "glb"
+    },
+    "bundleBytes": 502688,
+    "projectionSourceContract": "progress-assets/flat/source.json"
   },
   {
     "id": "study-north13-court-TC03-2",
-    "path": "progress-assets/north13-gates/luoyang-north-perimeter-v1/models/court-TC03-2-LOD1.glb",
+    "path": "progress-assets/flat/study-north13-court-TC03-2-98bedd183667.glb",
     "format": "glb",
-    "bytes": 1178612,
-    "sha256": "9003d00a45b4866385fbd6092a5c2f3b99438c9a4f3714543b9a107cdaac4024",
+    "bytes": 821660,
+    "sha256": "98bedd1836674388e9aee3794af12def4235d566324dae877c6ab7baee0c3a05",
     "excludeNodes": [],
     "bounds": {
       "min": [
@@ -879,14 +939,22 @@ const assetRecords = [
           0.15000060200691223
         ]
       }
-    }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-north-perimeter-v1/models/court-TC03-2-LOD1.glb",
+      "bytes": 1178612,
+      "sha256": "9003d00a45b4866385fbd6092a5c2f3b99438c9a4f3714543b9a107cdaac4024",
+      "format": "glb"
+    },
+    "bundleBytes": 821660,
+    "projectionSourceContract": "progress-assets/flat/source.json"
   },
   {
     "id": "study-north13-court-A",
-    "path": "progress-assets/north13-gates/luoyang-north-second-row-v1/models/court-A-LOD1.glb",
+    "path": "progress-assets/flat/study-north13-court-A-19a42b6b0b1c.glb",
     "format": "glb",
-    "bytes": 801292,
-    "sha256": "245c20b6385dcee4c55ca300f7e2420b07ca883b5e91b5dcd5a93e5b5a561e6a",
+    "bytes": 444348,
+    "sha256": "19a42b6b0b1cc1f204e112fc9d63b626895bf0f9b94922cac6ab2bd1cb810ff4",
     "excludeNodes": [],
     "bounds": {
       "min": [
@@ -920,14 +988,22 @@ const assetRecords = [
           12.15000057220459
         ]
       }
-    }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-north-second-row-v1/models/court-A-LOD1.glb",
+      "bytes": 801292,
+      "sha256": "245c20b6385dcee4c55ca300f7e2420b07ca883b5e91b5dcd5a93e5b5a561e6a",
+      "format": "glb"
+    },
+    "bundleBytes": 444348,
+    "projectionSourceContract": "progress-assets/flat/source.json"
   },
   {
     "id": "study-north13-pingcheng-P",
-    "path": "progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb",
+    "path": "progress-assets/flat/study-north13-pingcheng-P-c8ab88f4b326.glb",
     "format": "glb",
-    "bytes": 476264,
-    "sha256": "7d995a1b95026cb3d626bf6ad6bdd01edcf89d7c5baab87ffff341360d51f102",
+    "bytes": 119320,
+    "sha256": "c8ab88f4b326e0c24346b97e7429cdf3d43d463a53b918017c21cf0428d74f11",
     "excludeNodes": [],
     "bounds": {
       "min": [
@@ -961,14 +1037,22 @@ const assetRecords = [
           6.300000190734863
         ]
       }
-    }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb",
+      "bytes": 476264,
+      "sha256": "7d995a1b95026cb3d626bf6ad6bdd01edcf89d7c5baab87ffff341360d51f102",
+      "format": "glb"
+    },
+    "bundleBytes": 119320,
+    "projectionSourceContract": "progress-assets/flat/source.json"
   },
   {
     "id": "study-north13-shangxi-X",
-    "path": "progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD1.glb",
+    "path": "progress-assets/flat/study-north13-shangxi-X-9a892e7f27f7.glb",
     "format": "glb",
-    "bytes": 481044,
-    "sha256": "00a2eb67b73bac04f267e24540f6fd2e6bf26689e4c0783783d664566bc24312",
+    "bytes": 124096,
+    "sha256": "9a892e7f27f7b8faf8cc95cdd22b66a77da5ef5e2cf03636d40f79ac8d26f851",
     "excludeNodes": [],
     "bounds": {
       "min": [
@@ -1002,14 +1086,22 @@ const assetRecords = [
           5.699999809265137
         ]
       }
-    }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD1.glb",
+      "bytes": 481044,
+      "sha256": "00a2eb67b73bac04f267e24540f6fd2e6bf26689e4c0783783d664566bc24312",
+      "format": "glb"
+    },
+    "bundleBytes": 124096,
+    "projectionSourceContract": "progress-assets/flat/source.json"
   },
   {
     "id": "study-north13-yong-Y",
-    "path": "progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD1.glb",
+    "path": "progress-assets/flat/study-north13-yong-Y-1983dab58385.glb",
     "format": "glb",
-    "bytes": 501844,
-    "sha256": "c277f7e31d764384979e4712fef95472fb8749f930b5a75a54028e106939652c",
+    "bytes": 144900,
+    "sha256": "1983dab583853beb9b2a905227c9b63526b3696811b049466ccf471db58ba164",
     "excludeNodes": [],
     "bounds": {
       "min": [
@@ -1043,14 +1135,22 @@ const assetRecords = [
           5.800000190734863
         ]
       }
-    }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD1.glb",
+      "bytes": 501844,
+      "sha256": "c277f7e31d764384979e4712fef95472fb8749f930b5a75a54028e106939652c",
+      "format": "glb"
+    },
+    "bundleBytes": 144900,
+    "projectionSourceContract": "progress-assets/flat/source.json"
   },
   {
     "id": "study-north13-zhongdong-Z",
-    "path": "progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD1.glb",
+    "path": "progress-assets/flat/study-north13-zhongdong-Z-856cfff1f015.glb",
     "format": "glb",
-    "bytes": 1343084,
-    "sha256": "a78b7c84c1757e94a2ce9e455370c5003b22b999a5cc254b39374461c7808e0f",
+    "bytes": 957224,
+    "sha256": "856cfff1f015f8ce3c216cb9908a82dc9038846fa94170255730142f19693d3c",
     "excludeNodes": [],
     "bounds": {
       "min": [
@@ -1084,13 +1184,21 @@ const assetRecords = [
           5
         ]
       }
-    }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD1.glb",
+      "bytes": 1343084,
+      "sha256": "a78b7c84c1757e94a2ce9e455370c5003b22b999a5cc254b39374461c7808e0f",
+      "format": "glb"
+    },
+    "bundleBytes": 957224,
+    "projectionSourceContract": "progress-assets/flat/source.json"
   },
   {
     "id": "study-mao-gate",
-    "path": "progress-assets/mao-gate/mao-C-LOD0.glb",
-    "bytes": 2140916,
-    "sha256": "d8fbad038b582634084f0248d2e4b23f13f41d850b83f64ec4cfcc3b90264388",
+    "path": "progress-assets/flat/study-mao-gate-0ae54089b66a.glb",
+    "bytes": 1150620,
+    "sha256": "0ae54089b66a54f17db78c53ce9164b2bb99e6292b466c4c7c90f498385063e8",
     "excludeNodes": [],
     "bounds": {
       "min": [
@@ -1106,7 +1214,15 @@ const assetRecords = [
     },
     "sourceCommit": "0e891604d47abeacc9ed1733b9be486d2d65e9af",
     "sourceContract": "progress-assets/mao-gate/source.json",
-    "lod": 0
+    "lod": 0,
+    "sourceAsset": {
+      "path": "progress-assets/mao-gate/mao-C-LOD0.glb",
+      "bytes": 2140916,
+      "sha256": "d8fbad038b582634084f0248d2e4b23f13f41d850b83f64ec4cfcc3b90264388"
+    },
+    "format": "glb",
+    "bundleBytes": 1150620,
+    "projectionSourceContract": "progress-assets/flat/source.json"
   }
 ];
 
@@ -3863,26 +3979,31 @@ export const researchModels = [
   {
     "id": "research-taixue-A",
     "asset": "study-taixue-A",
-    "title": "太学长堂 · A方案",
+    "title": "太学长堂 · A方案入口修订",
     "chapter": "ritual",
     "space": "local-study",
     "cityPlacement": null,
     "initial": false,
     "tier": "推测",
-    "basis": "依据已交付的独立类型研究模型观察形体。原 metadata 的 cityPlacement 为空，当前以自身局部米坐标单独展示。",
+    "basis": "已交付的太学长堂 A v3.2 入口修订模型，踏步调整至柱间开间。长堂尺度、席位与路线属于设计推测，当前以局部米坐标单独展示。",
     "bounds": {
       "min": [
-        -23.0,
-        -0.4,
-        -9.0
+        -18.799999237060547,
+        0.0,
+        -3.799999952316284
       ],
       "max": [
-        23.0,
-        6.13,
-        9.0
+        18.799999237060547,
+        6.130000114440918,
+        4.849999904632568
       ]
     },
-    "coverPath": "model-library/taixue/cover-A-whole.png"
+    "coverPath": "cities/luoyang/progress-assets/taixue-A-v3.2/after-whole.webp",
+    "description": "踏步调整到柱间开间，保留长堂的柱网、梁架、屋顶与席位。",
+    "sourceCommit": "95db183586d30d7e4c8e7574f267507bbbcdd9e3",
+    "sourceContract": "progress-assets/taixue-A-v3.2/source.json",
+    "sourceVersion": "3.2",
+    "deliveryStatus": "A方案入口已修订 · 独立研究"
   },
   {
     "id": "research-taixue-B",
@@ -4270,6 +4391,15 @@ export const provenance = {
     {
       "path": "progress-assets/mao-gate/source.json",
       "sha256": "9b3a402731826629e74cd2936079b41e210643917dcda87091aad53454ac9798"
+    },
+    {
+      "path": "progress-assets/taixue-A-v3.2/source.json",
+      "sha256": "5f2a8078e2faa3c32c070c607bf65b96f191d638a4b1ef13710d3e9d972ed76d",
+      "sourceCommit": "95db183586d30d7e4c8e7574f267507bbbcdd9e3"
+    },
+    {
+      "path": "progress-assets/flat/source.json",
+      "sha256": "ddd1445c1dddabc7f2134b4dc0c3fae37484e619099ea549a4104bf483b486c1"
     }
   ],
   "initialModelBytes": 1913020,
@@ -4279,7 +4409,17 @@ export const provenance = {
     "城垣和门位使用示意关系，形体与住宅落位属于设计推测。",
     "北宫新墙与古水系仍未配准，相关几何保留空缺。"
   ],
-  "researchGeometryPolicy": "Independent local model views. cityPlacement=null is preserved; delivered gate candidates with activation=false are not activated in the city."
+  "researchGeometryPolicy": "Independent local model views. cityPlacement=null is preserved; delivered gate candidates with activation=false are not activated in the city.",
+  "studyReplacements": [
+    {
+      "assetId": "study-taixue-A",
+      "instanceId": "research-taixue-A",
+      "sourceVersion": "3.2",
+      "sourceCommit": "95db183586d30d7e4c8e7574f267507bbbcdd9e3",
+      "sourceContract": "progress-assets/taixue-A-v3.2/source.json",
+      "cityPlacement": null
+    }
+  ]
 };
 
 export const manifest = { assets, nodes, chapters, initialCamera, overview, researchModels, provenance };

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "taixue-A-v3.2-independent-web-study",
+  "sourceCommit": "95db183586d30d7e4c8e7574f267507bbbcdd9e3",
+  "sourceDirectory": "modeling-lab/review-batches/2026-11-04-taixue-A-v3.2",
+  "sourceContract": {
+    "path": "modeling-lab/review-batches/2026-11-04-taixue-A-v3.2/web-replacement-contract.json",
+    "sha256": "b8b2ae08837a5d3ffc61d03894804f2f9d8a7363d04e7cff4a36b854d1df84c1",
+    "targetWebCommit": "aeeff013"
+  },
+  "scope": "Taixue A entrance repair v3.2; independent local model display.",
+  "assetId": "study-taixue-A",
+  "instanceId": "research-taixue-A",
+  "space": "local-study",
+  "cityPlacement": null,
+  "initial": false,
+  "historicalClass": "C",
+  "units": "metres",
+  "axes": "glTF X east / Y up / Z south",
+  "model": {
+    "file": "models/taixue-A-LOD1.glb",
+    "sourceFile": "models/taixue-A-LOD1.glb",
+    "bytes": 638660,
+    "sha256": "413c2f35ec264dfbc6f24c1ceab9a0f8ce492c975b50e34fd5320ad25be391f2",
+    "bounds": {
+      "min": [
+        -18.799999237060547,
+        0.0,
+        -3.799999952316284
+      ],
+      "max": [
+        18.799999237060547,
+        6.130000114440918,
+        4.849999904632568
+      ]
+    },
+    "externalDependencies": [],
+    "copiedWithoutChanges": true
+  },
+  "cover": {
+    "file": "after-whole.webp",
+    "width": 1000,
+    "height": 750,
+    "bytes": 22914,
+    "sha256": "49ca9fd72e2fbc0a1e324ff3a0735b7c2ba2da099ff508179bef3de94de158f1",
+    "sourceFile": "preview/after-whole.png",
+    "sourceBytes": 892426,
+    "sourceSha256": "6c94c8a1dae8ee8774c8af294cfc213f18cb11c38aeba39a0659bf2a1a394d44",
+    "conversion": {
+      "format": "WebP",
+      "quality": 85,
+      "method": 6,
+      "resize": false,
+      "crop": false
+    }
+  },
+  "replaces": {
+    "path": "progress-assets/taixue-long-hall-v1/display/hall-A-LOD1.gltf",
+    "sha256": "1403135d7a082f511fc5696d4fc10e5b19234b21e1086d566ecb33d7cdbddba7",
+    "source_glb_sha256": "3f7e20e3bb37402a6707746378af9032b0fdf842ee14b8080b0dc455f8b1e6bc"
+  },
+  "otherStudy": {
+    "id": "study-taixue-B",
+    "status": "existing separate B study; outside the A v3.2 repair scope"
+  },
+  "limits": [
+    "Standalone model excludes the former display support ground. Bounds follow the replacement contract.",
+    "Content checks cover the supplied finite entrance samples. GPU, phone, structure and historical interpretation retain their existing verification scope.",
+    "The old city delta is not activated by this standalone web replacement."
+  ]
+}

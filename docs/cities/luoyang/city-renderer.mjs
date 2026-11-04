@@ -147,11 +147,43 @@ function pigmentFor(material) {
   const name = material?.name || '';
   if (/roof|tile|瓦|屋面/i.test(name)) return '#879e98';
   if (/timber|wood|door|柱|木/i.test(name)) return '#846349';
-  if (/earth_wall|wall|夯土|墙/i.test(name)) return '#c2a17d';
+  if (/earth|wall|夯土|墙/i.test(name)) return '#c2a17d';
   if (/floor|plinth|stone|台基|石/i.test(name)) return '#afa58c';
   if (/water|river|渠|水/i.test(name)) return '#a5b9b4';
   if (/ground|yard|terrain|road|soil|site|地面|道路/i.test(name)) return '#d0bf9a';
-  return material?.color ? `#${material.color.getHexString(THREE.SRGBColorSpace)}` : '#bba98c';
+  const projectedPigment = material?.userData?.notebookPigment;
+  if (/^#[0-9a-f]{6}$/i.test(projectedPigment) && projectedPigment.toLowerCase() !== '#ffffff') return projectedPigment;
+  const colour = material?.color;
+  // A textured glTF material often has an implicit white baseColorFactor.
+  // The flat renderer cannot use that white as the material's visible pigment.
+  const hasPigment = colour && Math.min(colour.r, colour.g, colour.b) < 0.999;
+  return hasPigment ? `#${colour.getHexString(THREE.SRGBColorSpace)}` : '#bba98c';
+}
+
+function fitOverviewPose(box, aspect, fov, direction) {
+  if (box.isEmpty()) return null;
+  const center = box.getCenter(new THREE.Vector3());
+  const backward = direction.clone().normalize();
+  const right = new THREE.Vector3(0, 1, 0).cross(backward).normalize();
+  const up = backward.clone().cross(right).normalize();
+  // Keep 6.5% of the frame free on each side. Fit all eight corners in
+  // perspective, including their different distances from the camera.
+  const usableFrame = 1 - 2 * 0.065;
+  const verticalSlope = Math.tan(THREE.MathUtils.degToRad(fov) / 2) * usableFrame;
+  const horizontalSlope = verticalSlope * aspect;
+  let distance = 1;
+  for (const x of [box.min.x, box.max.x]) {
+    for (const y of [box.min.y, box.max.y]) {
+      for (const z of [box.min.z, box.max.z]) {
+        const offset = new THREE.Vector3(x, y, z).sub(center);
+        const depth = offset.dot(backward);
+        distance = Math.max(distance,
+          depth + Math.abs(offset.dot(right)) / horizontalSlope,
+          depth + Math.abs(offset.dot(up)) / verticalSlope);
+      }
+    }
+  }
+  return { target: center.toArray(), position: center.clone().addScaledVector(backward, distance).toArray() };
 }
 
 function releaseSource(root) {
@@ -215,6 +247,7 @@ export async function createCityRenderer({
   let selectedId = null;
   let nearId = null;
   let activeChapter = 'city';
+  let overviewActive = false;
   let studyId = null;
   let pointerStart = null;
   let flight = null;
@@ -426,6 +459,7 @@ export async function createCityRenderer({
     renderer.setSize(width, height, false);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
+    if (overviewActive) applyPose(overviewPose(), true);
     internalPixelRatio = Math.min(2, Math.min(4096, renderer.capabilities.maxTextureSize) / Math.max(width, height));
     const targetWidth = Math.max(1, Math.round(width * internalPixelRatio));
     const targetHeight = Math.max(1, Math.round(height * internalPixelRatio));
@@ -517,10 +551,20 @@ export async function createCityRenderer({
     return { target: sphere.center.toArray(), position: sphere.center.clone().add(direction.normalize().multiplyScalar(distance)).toArray() };
   }
 
+  function overviewPose() {
+    const box = new THREE.Box3().setFromObject(modelGroup);
+    const sourcePose = manifest.overview?.camera;
+    const direction = sourcePose?.position && sourcePose?.target
+      ? new THREE.Vector3().fromArray(sourcePose.position).sub(new THREE.Vector3().fromArray(sourcePose.target))
+      : new THREE.Vector3(0.8, 1.2, 1);
+    return fitOverviewPose(box, camera.aspect, camera.fov, direction);
+  }
+
   function applyPose(pose, immediate = false) {
     if (!pose?.position || !pose?.target) return false;
     const position = new THREE.Vector3().fromArray(pose.position);
     const target = new THREE.Vector3().fromArray(pose.target);
+    if (overviewActive) controls.maxDistance = Math.max(20000, position.distanceTo(target) * 1.1);
     if (immediate || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       flight = null;
       camera.position.copy(position);
@@ -559,6 +603,7 @@ export async function createCityRenderer({
     if (!ready) return false;
     cityIds = nextIds;
     studyId = null;
+    overviewActive = false;
     activeChapter = id;
     const ids = chapter.nodeIds || manifest.nodes.filter(node => node.chapter === id).map(node => node.id);
     const bounds = nodeBounds(ids);
@@ -577,6 +622,7 @@ export async function createCityRenderer({
     if (!await rebuild(id, nextIds)) return false;
     cityIds = nextIds;
     studyId = null;
+    overviewActive = false;
     selectedId = id;
     activeChapter = node.chapter || activeChapter;
     const box = nodeBounds([id]);
@@ -589,9 +635,8 @@ export async function createCityRenderer({
     if (!await rebuild(null, cityIds)) return false;
     studyId = null;
     activeChapter = 'city';
-    const box = new THREE.Box3().setFromObject(modelGroup);
-    const pose = manifest.overview?.camera || (!box.isEmpty() ? fitPose(box) : null);
-    return applyPose(pose, immediate);
+    overviewActive = true;
+    return applyPose(overviewPose(), immediate);
   }
 
   async function focusResearchModel(id, chapterId = 'ritual') {
@@ -600,6 +645,7 @@ export async function createCityRenderer({
     onStatus('正在打开独立研究模型…');
     if (!await rebuild(id, new Set([id]))) return false;
     studyId = id;
+    overviewActive = false;
     activeChapter = chapterId;
     selectedId = id;
     const bounds = nodeBounds([id]);
@@ -638,6 +684,7 @@ export async function createCityRenderer({
     if (event.key.toLowerCase() === 'r') { event.preventDefault(); resetView(); return; }
     if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', '+', '=', '-'].includes(event.key)) return;
     event.preventDefault();
+    overviewActive = false;
     flight = null;
     const offset = camera.position.clone().sub(controls.target);
     if (event.key.startsWith('Arrow')) {
@@ -652,7 +699,7 @@ export async function createCityRenderer({
     requestRender();
   }
 
-  function onControlStart() { flight = null; }
+  function onControlStart() { flight = null; overviewActive = false; }
   function onAbort() { dispose(); }
   function onContextLost(event) {
     event.preventDefault();
@@ -717,7 +764,10 @@ export async function createCityRenderer({
     checkActive();
     resize();
     await resetView(true);
-    if (manifest.initialCamera) applyPose(manifest.initialCamera, true);
+    if (manifest.initialCamera) {
+      overviewActive = false;
+      applyPose(manifest.initialCamera, true);
+    }
     observer = new ResizeObserver(resize);
     observer.observe(canvas.parentElement);
     window.addEventListener('resize', resize);
