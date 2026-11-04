@@ -375,7 +375,9 @@ def main():
             for record, content in built:
                 if (OUTPUT / record['file']).read_bytes() != content:
                     raise ValueError(f'Saved projection differs: {record["id"]}')
-            if (OUTPUT / 'source.json').read_bytes() != manifest_bytes:
+            # Git checkouts may convert text to CRLF; the generated GLBs stay byte-exact.
+            saved_manifest = (OUTPUT / 'source.json').read_text(encoding='utf-8')
+            if saved_manifest != manifest_bytes.decode('utf-8'):
                 raise ValueError('Saved source manifest differs')
         elif not args.dry_run:
             OUTPUT.mkdir(parents=True, exist_ok=True)

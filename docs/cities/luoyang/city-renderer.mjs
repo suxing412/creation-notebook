@@ -636,7 +636,9 @@ export async function createCityRenderer({
     studyId = null;
     activeChapter = 'city';
     overviewActive = true;
-    return applyPose(overviewPose(), immediate);
+    const moved = applyPose(overviewPose(), immediate);
+    if (moved) onStatus('拖动环顾，滚轮拉近，点选已有建筑查看手记。');
+    return moved;
   }
 
   async function focusResearchModel(id, chapterId = 'ritual') {

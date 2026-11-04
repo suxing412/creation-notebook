@@ -159,6 +159,14 @@ async function openViewer() {
   const signal = controller.signal;
   canvas = canvas.cloneNode(false);
   $('#scene').replaceWith(canvas);
+  canvas.addEventListener('keydown', event => {
+    if (event.key.toLowerCase() !== 'r') return;
+    const overviewButton = $('button[data-level="city"]');
+    if (!viewer || stage.dataset.state !== 'ready' || overviewButton.matches(':disabled')) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    overviewButton.click();
+  }, { capture: true });
   stage.dataset.state = 'loading';
   $('#error').hidden = true;
   $('#start3d').hidden = true;
