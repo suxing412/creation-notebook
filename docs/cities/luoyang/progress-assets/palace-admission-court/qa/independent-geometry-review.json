@@ -1,0 +1,3462 @@
+{
+  "method": "Independent direct GLB JSON/binary accessor decoding; scene matrix evaluation, directed triangle matching with position/normal/UV and embedded texture hashes. No parent QA used as proof.",
+  "source_hashes": [
+    {
+      "path": "inputs/deyang-A-LOD0.glb",
+      "locked": "7736998077a8414fe9a9dcfa8b6bce161519d2ff1d2ed5ef9440a244f061b5ae",
+      "package_matches": true,
+      "original_exists": true,
+      "original_matches": true
+    },
+    {
+      "path": "inputs/sidehall-A-LOD0.glb",
+      "locked": "bd000b1bf36419eebe884dbe1c92368f30ceab7597290aa6eafdbdbd971e32c2",
+      "package_matches": true,
+      "original_exists": true,
+      "original_matches": true
+    },
+    {
+      "path": "inputs/guard-slice-open-LOD0.glb",
+      "locked": "1ffc1c3118766d418dd5fbb08b5f4a9b8790643465cc29a1d7c76f0bb28e53f3",
+      "package_matches": true,
+      "original_exists": true,
+      "original_matches": true
+    },
+    {
+      "path": "inputs/guard-slice-closed-LOD0.glb",
+      "locked": "48c511c54010cc00b5a6262dc280cab2b1d0a7c13050d847fc5856e264ce82cd",
+      "package_matches": true,
+      "original_exists": true,
+      "original_matches": true
+    },
+    {
+      "path": "inputs/deyang-A-LOD1.glb",
+      "locked": "6f605ed7d79a091468e4bdc3b0e29315d4d05008f895290ad1ce3cb032553460",
+      "package_matches": true,
+      "original_exists": true,
+      "original_matches": true
+    },
+    {
+      "path": "inputs/sidehall-A-LOD1.glb",
+      "locked": "547935049e53cee8d8a8c7613154365696065256722cf09f52914dc3dd3dddd1",
+      "package_matches": true,
+      "original_exists": true,
+      "original_matches": true
+    },
+    {
+      "path": "inputs/guard-slice-open-LOD1.glb",
+      "locked": "42b7883dc066e1c12cff334dcc4f06705abed51a7bd1f8e42640eb388a2ffb86",
+      "package_matches": true,
+      "original_exists": true,
+      "original_matches": true
+    },
+    {
+      "path": "inputs/guard-slice-closed-LOD1.glb",
+      "locked": "a359265f37452cae18ab078b4b7945d8bb347c941637a12b68caf449adb94af8",
+      "package_matches": true,
+      "original_exists": true,
+      "original_matches": true
+    },
+    {
+      "path": "inputs/deyang-A-LOD2.glb",
+      "locked": "134b0375590b7440197dfd9a639d853ecfaa1e69023b4ab928a5ae738e2d452d",
+      "package_matches": true,
+      "original_exists": true,
+      "original_matches": true
+    },
+    {
+      "path": "inputs/sidehall-A-LOD2.glb",
+      "locked": "b4c64f499c9c706649e637a9f379bf5328dbf386f9161cc50db346907c612973",
+      "package_matches": true,
+      "original_exists": true,
+      "original_matches": true
+    },
+    {
+      "path": "inputs/guard-slice-open-LOD2.glb",
+      "locked": "6eb2c56efc5a87a4f8e15bc5958e5b51ff327410b931d52bd44bd9f484ecdf6c",
+      "package_matches": true,
+      "original_exists": true,
+      "original_matches": true
+    },
+    {
+      "path": "inputs/guard-slice-closed-LOD2.glb",
+      "locked": "bf47d91d784b224fcfc0bbe81997c6e5a9a81c68375641134e29e396d9e5d63d",
+      "package_matches": true,
+      "original_exists": true,
+      "original_matches": true
+    }
+  ],
+  "models": [
+    {
+      "path": "models/palace-admission-court-open-LOD0.glb",
+      "sha256": "59c8b758a5a2523105eac0e516e9961bf769bd5e422ba2913d292492ed45c4b0",
+      "bytes": 2578472,
+      "source_preservation": [
+        {
+          "pass": true,
+          "triangles": 436,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 1608,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 6616,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 780,
+          "max_position_error_m": 6.406321372054435e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 2052,
+          "max_position_error_m": 6.123094408394536e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 5624,
+          "max_position_error_m": 6.676060998245248e-06,
+          "max_normal_error": 3.371747940408886e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 780,
+          "max_position_error_m": 3.2031606096438736e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 2052,
+          "max_position_error_m": 3.061547150906563e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 5624,
+          "max_position_error_m": 3.338030410304782e-06,
+          "max_normal_error": 1.6858739676348837e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 60,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 980,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 1368,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 60,
+          "max_position_error_m": 5.057622010085083e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 980,
+          "max_position_error_m": 4.804741271513535e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 1368,
+          "max_position_error_m": 4.877860040330972e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 48,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 2016,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 1368,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 12,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-ground-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 216,
+          "max_position_error_m": 1.5859670554618788e-06,
+          "max_normal_error": 1.685873971535301e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-leaf_L-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 216,
+          "max_position_error_m": 1.5859670554618788e-06,
+          "max_normal_error": 1.685873971535301e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-leaf_R-timber"
+        }
+      ],
+      "role_bounds": {
+        "hall": [
+          [
+            -17.5,
+            -16.579999923706055,
+            0.0
+          ],
+          [
+            17.5,
+            12.5,
+            12.539999961853027
+          ]
+        ],
+        "west_gallery": [
+          [
+            -29.80878244433358,
+            -51.80000119267329,
+            0.0
+          ],
+          [
+            -18.09999847164003,
+            -12.199998807326711,
+            6.329999923706055
+          ]
+        ],
+        "east_gallery": [
+          [
+            18.0999999467795,
+            -51.8000002148672,
+            0.0
+          ],
+          [
+            29.808779173064085,
+            -12.1999997851328,
+            6.329999923706055
+          ]
+        ],
+        "guard": [
+          [
+            -10.0,
+            -65.0,
+            -0.20000000298023224
+          ],
+          [
+            10.0,
+            -51.0,
+            4.28000020980835
+          ]
+        ],
+        "new_ground": [
+          [
+            -34.0,
+            -67.0,
+            -0.20000000298023224
+          ],
+          [
+            34.0,
+            20.0,
+            0.0
+          ]
+        ]
+      },
+      "instanced_triangles": 34328,
+      "mesh_instances": 22,
+      "unique_meshes": 16,
+      "material_definitions": 9,
+      "embedded_images": 9,
+      "source_geometry_nodes_below_ground": [
+        {
+          "name": "guard__guard-slice-east-earth",
+          "min_z": -0.10000000149011612,
+          "bounds": [
+            [
+              2.3999998256276402,
+              -61.00000001685869,
+              -0.10000000149011612
+            ],
+            [
+              7.000000570800925,
+              -54.99999985066762,
+              2.5999999046325684
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-ground-earth",
+          "min_z": -0.20000000298023224,
+          "bounds": [
+            [
+              -10.0,
+              -65.0,
+              -0.20000000298023224
+            ],
+            [
+              10.0,
+              -51.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-portal-earth",
+          "min_z": -0.03999999910593033,
+          "bounds": [
+            [
+              -2.140000104904175,
+              -57.45999997854233,
+              -0.03999999910593033
+            ],
+            [
+              2.140000104904175,
+              -55.74000000953674,
+              0.03999999910593033
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-west-earth",
+          "min_z": -0.10000000149011612,
+          "bounds": [
+            [
+              -7.000001047637923,
+              -61.00000001685845,
+              -0.10000000149011612
+            ],
+            [
+              -2.3999998256278414,
+              -54.999999373830704,
+              2.5999999046325684
+            ]
+          ]
+        }
+      ],
+      "new_ground": {
+        "triangles": 64,
+        "welded_vertices": 32,
+        "welded_edges": 96,
+        "closed_two_manifold_edges": true,
+        "consistent_winding": true,
+        "signed_volume_m3": 1127.200016796589,
+        "expected_volume_m3": 1127.2,
+        "top_area_m2": 5636.0,
+        "expected_top_area_m2": 5636,
+        "euler_characteristic": 0
+      },
+      "ground_seam_coverage": {
+        "hole_positive_area_overlap_m2": 0.0,
+        "new_ground_self_overlap_m2": 0.0,
+        "old_and_new_ground_top_overlap_m2": 0.0,
+        "combined_top_area_m2": 5916.0,
+        "outer_rectangle_area_m2": 5916,
+        "all_top_vertices_within_outer_rectangle": true,
+        "new_inner_boundary_segments": [
+          [
+            [
+              -10.0,
+              -51.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              -10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -65.0
+            ]
+          ]
+        ],
+        "original_ground_boundary_segments": [
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -65.0
+            ]
+          ],
+          [
+            [
+              10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -51.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              -10.0,
+              -51.0
+            ]
+          ]
+        ],
+        "boundary_segments_exactly_match_at_1_micrometre": true,
+        "top_z_both_m": 0.0,
+        "bottom_z_both_m": -0.20000000298023224,
+        "note": "Separate closed solids share coincident vertical interface faces, as a butt joint; no positive-volume overlap and no coplanar top overlap."
+      },
+      "intersections": {
+        "four_source_modules_pairwise_AABB_separation": [
+          {
+            "a": "hall",
+            "b": "west_gallery",
+            "separating_axis_gap_m": 0.5999984716400313,
+            "disjoint": true
+          },
+          {
+            "a": "hall",
+            "b": "east_gallery",
+            "separating_axis_gap_m": 0.5999999467795014,
+            "disjoint": true
+          },
+          {
+            "a": "hall",
+            "b": "guard",
+            "separating_axis_gap_m": 34.420000076293945,
+            "disjoint": true
+          },
+          {
+            "a": "west_gallery",
+            "b": "east_gallery",
+            "separating_axis_gap_m": 36.19999841841953,
+            "disjoint": true
+          },
+          {
+            "a": "west_gallery",
+            "b": "guard",
+            "separating_axis_gap_m": 8.099998471640031,
+            "disjoint": true
+          },
+          {
+            "a": "east_gallery",
+            "b": "guard",
+            "separating_axis_gap_m": 8.099999946779501,
+            "disjoint": true
+          }
+        ],
+        "all_below_zero_source_geometry_fits_inside_ground_hole": true,
+        "hall_and_gallery_min_z_m": 0.0,
+        "new_ground_max_z_m": 0.0,
+        "new_positive_volume_intersections": 0,
+        "proof": "Strict source-module AABB separation. Hall/gallery entirely at z>=0, new slab at z<=0. All guard geometry with negative z lies within exact cutout. Ground interior disjointness proven through planar clipping and matching seam edges. Existing intra-module contacts/intersections retained, not reclassified as new."
+      },
+      "budgets": {
+        "source_sum_plus_new_ground": 34328,
+        "new_triangles_only": 64,
+        "matches_additive_count": true,
+        "image_dimensions_px": [
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ]
+        ],
+        "material_definitions": 9,
+        "unique_material_payloads": 3,
+        "new_ground_uses_existing_material": true,
+        "note": "No explicit aggregate maximum was specified in composition config. Verified additive source budget and decreasing LOD counts, not target-platform FPS/draw calls. 9 material definitions are retained, with 3 unique material/texture payloads; do not describe this as 3 material definitions or 3 draw calls."
+      },
+      "pass": true
+    },
+    {
+      "path": "models/palace-admission-court-closed-LOD0.glb",
+      "sha256": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+      "bytes": 2578388,
+      "source_preservation": [
+        {
+          "pass": true,
+          "triangles": 436,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 1608,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 6616,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 780,
+          "max_position_error_m": 6.406321372054435e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 2052,
+          "max_position_error_m": 6.123094408394536e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 5624,
+          "max_position_error_m": 6.676060998245248e-06,
+          "max_normal_error": 3.371747940408886e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 780,
+          "max_position_error_m": 3.2031606096438736e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 2052,
+          "max_position_error_m": 3.061547150906563e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 5624,
+          "max_position_error_m": 3.338030410304782e-06,
+          "max_normal_error": 1.6858739676348837e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 60,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 980,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 1368,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 60,
+          "max_position_error_m": 5.057622010085083e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 980,
+          "max_position_error_m": 4.804741271513535e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 1368,
+          "max_position_error_m": 4.877860040330972e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 48,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 2016,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 1368,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 12,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-ground-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 216,
+          "max_position_error_m": 1.5497207641601562e-06,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-leaf_L-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 216,
+          "max_position_error_m": 1.5497207641601562e-06,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-leaf_R-timber"
+        }
+      ],
+      "role_bounds": {
+        "hall": [
+          [
+            -17.5,
+            -16.579999923706055,
+            0.0
+          ],
+          [
+            17.5,
+            12.5,
+            12.539999961853027
+          ]
+        ],
+        "west_gallery": [
+          [
+            -29.80878244433358,
+            -51.80000119267329,
+            0.0
+          ],
+          [
+            -18.09999847164003,
+            -12.199998807326711,
+            6.329999923706055
+          ]
+        ],
+        "east_gallery": [
+          [
+            18.0999999467795,
+            -51.8000002148672,
+            0.0
+          ],
+          [
+            29.808779173064085,
+            -12.1999997851328,
+            6.329999923706055
+          ]
+        ],
+        "guard": [
+          [
+            -10.0,
+            -65.0,
+            -0.20000000298023224
+          ],
+          [
+            10.0,
+            -51.0,
+            4.28000020980835
+          ]
+        ],
+        "new_ground": [
+          [
+            -34.0,
+            -67.0,
+            -0.20000000298023224
+          ],
+          [
+            34.0,
+            20.0,
+            0.0
+          ]
+        ]
+      },
+      "instanced_triangles": 34328,
+      "mesh_instances": 22,
+      "unique_meshes": 16,
+      "material_definitions": 9,
+      "embedded_images": 9,
+      "source_geometry_nodes_below_ground": [
+        {
+          "name": "guard__guard-slice-east-earth",
+          "min_z": -0.10000000149011612,
+          "bounds": [
+            [
+              2.3999998256276402,
+              -61.00000001685869,
+              -0.10000000149011612
+            ],
+            [
+              7.000000570800925,
+              -54.99999985066762,
+              2.5999999046325684
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-ground-earth",
+          "min_z": -0.20000000298023224,
+          "bounds": [
+            [
+              -10.0,
+              -65.0,
+              -0.20000000298023224
+            ],
+            [
+              10.0,
+              -51.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-portal-earth",
+          "min_z": -0.03999999910593033,
+          "bounds": [
+            [
+              -2.140000104904175,
+              -57.45999997854233,
+              -0.03999999910593033
+            ],
+            [
+              2.140000104904175,
+              -55.74000000953674,
+              0.03999999910593033
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-west-earth",
+          "min_z": -0.10000000149011612,
+          "bounds": [
+            [
+              -7.000001047637923,
+              -61.00000001685845,
+              -0.10000000149011612
+            ],
+            [
+              -2.3999998256278414,
+              -54.999999373830704,
+              2.5999999046325684
+            ]
+          ]
+        }
+      ],
+      "new_ground": {
+        "triangles": 64,
+        "welded_vertices": 32,
+        "welded_edges": 96,
+        "closed_two_manifold_edges": true,
+        "consistent_winding": true,
+        "signed_volume_m3": 1127.200016796589,
+        "expected_volume_m3": 1127.2,
+        "top_area_m2": 5636.0,
+        "expected_top_area_m2": 5636,
+        "euler_characteristic": 0
+      },
+      "ground_seam_coverage": {
+        "hole_positive_area_overlap_m2": 0.0,
+        "new_ground_self_overlap_m2": 0.0,
+        "old_and_new_ground_top_overlap_m2": 0.0,
+        "combined_top_area_m2": 5916.0,
+        "outer_rectangle_area_m2": 5916,
+        "all_top_vertices_within_outer_rectangle": true,
+        "new_inner_boundary_segments": [
+          [
+            [
+              -10.0,
+              -51.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              -10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -65.0
+            ]
+          ]
+        ],
+        "original_ground_boundary_segments": [
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -65.0
+            ]
+          ],
+          [
+            [
+              10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -51.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              -10.0,
+              -51.0
+            ]
+          ]
+        ],
+        "boundary_segments_exactly_match_at_1_micrometre": true,
+        "top_z_both_m": 0.0,
+        "bottom_z_both_m": -0.20000000298023224,
+        "note": "Separate closed solids share coincident vertical interface faces, as a butt joint; no positive-volume overlap and no coplanar top overlap."
+      },
+      "intersections": {
+        "four_source_modules_pairwise_AABB_separation": [
+          {
+            "a": "hall",
+            "b": "west_gallery",
+            "separating_axis_gap_m": 0.5999984716400313,
+            "disjoint": true
+          },
+          {
+            "a": "hall",
+            "b": "east_gallery",
+            "separating_axis_gap_m": 0.5999999467795014,
+            "disjoint": true
+          },
+          {
+            "a": "hall",
+            "b": "guard",
+            "separating_axis_gap_m": 34.420000076293945,
+            "disjoint": true
+          },
+          {
+            "a": "west_gallery",
+            "b": "east_gallery",
+            "separating_axis_gap_m": 36.19999841841953,
+            "disjoint": true
+          },
+          {
+            "a": "west_gallery",
+            "b": "guard",
+            "separating_axis_gap_m": 8.099998471640031,
+            "disjoint": true
+          },
+          {
+            "a": "east_gallery",
+            "b": "guard",
+            "separating_axis_gap_m": 8.099999946779501,
+            "disjoint": true
+          }
+        ],
+        "all_below_zero_source_geometry_fits_inside_ground_hole": true,
+        "hall_and_gallery_min_z_m": 0.0,
+        "new_ground_max_z_m": 0.0,
+        "new_positive_volume_intersections": 0,
+        "proof": "Strict source-module AABB separation. Hall/gallery entirely at z>=0, new slab at z<=0. All guard geometry with negative z lies within exact cutout. Ground interior disjointness proven through planar clipping and matching seam edges. Existing intra-module contacts/intersections retained, not reclassified as new."
+      },
+      "budgets": {
+        "source_sum_plus_new_ground": 34328,
+        "new_triangles_only": 64,
+        "matches_additive_count": true,
+        "image_dimensions_px": [
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ],
+          [
+            512,
+            512
+          ]
+        ],
+        "material_definitions": 9,
+        "unique_material_payloads": 3,
+        "new_ground_uses_existing_material": true,
+        "note": "No explicit aggregate maximum was specified in composition config. Verified additive source budget and decreasing LOD counts, not target-platform FPS/draw calls. 9 material definitions are retained, with 3 unique material/texture payloads; do not describe this as 3 material definitions or 3 draw calls."
+      },
+      "pass": true
+    },
+    {
+      "path": "models/palace-admission-court-open-LOD1.glb",
+      "sha256": "d95bd22f9317683ece8b8d14a6d4a6719522e47c8410f976e064708890148281",
+      "bytes": 1126584,
+      "source_preservation": [
+        {
+          "pass": true,
+          "triangles": 436,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 1608,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 3312,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 780,
+          "max_position_error_m": 6.406321372054435e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 1188,
+          "max_position_error_m": 6.123094408394536e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 792,
+          "max_position_error_m": 6.676060998245248e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 780,
+          "max_position_error_m": 3.2031606096438736e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 1188,
+          "max_position_error_m": 3.061547150906563e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 792,
+          "max_position_error_m": 3.338030410304782e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 60,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 564,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 264,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 60,
+          "max_position_error_m": 5.057622010085083e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 564,
+          "max_position_error_m": 4.804741271513535e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 264,
+          "max_position_error_m": 4.877860040330972e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 48,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 1088,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 264,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 12,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-ground-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 148,
+          "max_position_error_m": 1.5859670554618788e-06,
+          "max_normal_error": 1.685873971535301e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-leaf_L-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 148,
+          "max_position_error_m": 1.5859670554618788e-06,
+          "max_normal_error": 1.685873971535301e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-leaf_R-timber"
+        }
+      ],
+      "role_bounds": {
+        "hall": [
+          [
+            -17.5,
+            -16.579999923706055,
+            0.0
+          ],
+          [
+            17.5,
+            12.5,
+            12.539999961853027
+          ]
+        ],
+        "west_gallery": [
+          [
+            -29.80878216060122,
+            -51.80000119267329,
+            0.0
+          ],
+          [
+            -18.09999847164003,
+            -12.199998807326711,
+            6.329999923706055
+          ]
+        ],
+        "east_gallery": [
+          [
+            18.0999999467795,
+            -51.8000002148672,
+            0.0
+          ],
+          [
+            29.808779031197904,
+            -12.1999997851328,
+            6.329999923706055
+          ]
+        ],
+        "guard": [
+          [
+            -10.0,
+            -65.0,
+            -0.20000000298023224
+          ],
+          [
+            10.0,
+            -51.0,
+            4.28000020980835
+          ]
+        ],
+        "new_ground": [
+          [
+            -34.0,
+            -67.0,
+            -0.20000000298023224
+          ],
+          [
+            34.0,
+            20.0,
+            0.0
+          ]
+        ]
+      },
+      "instanced_triangles": 14424,
+      "mesh_instances": 22,
+      "unique_meshes": 16,
+      "material_definitions": 9,
+      "embedded_images": 9,
+      "source_geometry_nodes_below_ground": [
+        {
+          "name": "guard__guard-slice-east-earth",
+          "min_z": -0.10000000149011612,
+          "bounds": [
+            [
+              2.3999998256276402,
+              -61.00000001685869,
+              -0.10000000149011612
+            ],
+            [
+              7.000000570800925,
+              -54.99999985066762,
+              2.5999999046325684
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-ground-earth",
+          "min_z": -0.20000000298023224,
+          "bounds": [
+            [
+              -10.0,
+              -65.0,
+              -0.20000000298023224
+            ],
+            [
+              10.0,
+              -51.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-portal-earth",
+          "min_z": -0.03999999910593033,
+          "bounds": [
+            [
+              -2.140000104904175,
+              -57.45999997854233,
+              -0.03999999910593033
+            ],
+            [
+              2.140000104904175,
+              -55.74000000953674,
+              0.03999999910593033
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-west-earth",
+          "min_z": -0.10000000149011612,
+          "bounds": [
+            [
+              -7.000001047637923,
+              -61.00000001685845,
+              -0.10000000149011612
+            ],
+            [
+              -2.3999998256278414,
+              -54.999999373830704,
+              2.5999999046325684
+            ]
+          ]
+        }
+      ],
+      "new_ground": {
+        "triangles": 64,
+        "welded_vertices": 32,
+        "welded_edges": 96,
+        "closed_two_manifold_edges": true,
+        "consistent_winding": true,
+        "signed_volume_m3": 1127.200016796589,
+        "expected_volume_m3": 1127.2,
+        "top_area_m2": 5636.0,
+        "expected_top_area_m2": 5636,
+        "euler_characteristic": 0
+      },
+      "ground_seam_coverage": {
+        "hole_positive_area_overlap_m2": 0.0,
+        "new_ground_self_overlap_m2": 0.0,
+        "old_and_new_ground_top_overlap_m2": 0.0,
+        "combined_top_area_m2": 5916.0,
+        "outer_rectangle_area_m2": 5916,
+        "all_top_vertices_within_outer_rectangle": true,
+        "new_inner_boundary_segments": [
+          [
+            [
+              -10.0,
+              -51.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              -10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -65.0
+            ]
+          ]
+        ],
+        "original_ground_boundary_segments": [
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -65.0
+            ]
+          ],
+          [
+            [
+              10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -51.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              -10.0,
+              -51.0
+            ]
+          ]
+        ],
+        "boundary_segments_exactly_match_at_1_micrometre": true,
+        "top_z_both_m": 0.0,
+        "bottom_z_both_m": -0.20000000298023224,
+        "note": "Separate closed solids share coincident vertical interface faces, as a butt joint; no positive-volume overlap and no coplanar top overlap."
+      },
+      "intersections": {
+        "four_source_modules_pairwise_AABB_separation": [
+          {
+            "a": "hall",
+            "b": "west_gallery",
+            "separating_axis_gap_m": 0.5999984716400313,
+            "disjoint": true
+          },
+          {
+            "a": "hall",
+            "b": "east_gallery",
+            "separating_axis_gap_m": 0.5999999467795014,
+            "disjoint": true
+          },
+          {
+            "a": "hall",
+            "b": "guard",
+            "separating_axis_gap_m": 34.420000076293945,
+            "disjoint": true
+          },
+          {
+            "a": "west_gallery",
+            "b": "east_gallery",
+            "separating_axis_gap_m": 36.19999841841953,
+            "disjoint": true
+          },
+          {
+            "a": "west_gallery",
+            "b": "guard",
+            "separating_axis_gap_m": 8.099998471640031,
+            "disjoint": true
+          },
+          {
+            "a": "east_gallery",
+            "b": "guard",
+            "separating_axis_gap_m": 8.099999946779501,
+            "disjoint": true
+          }
+        ],
+        "all_below_zero_source_geometry_fits_inside_ground_hole": true,
+        "hall_and_gallery_min_z_m": 0.0,
+        "new_ground_max_z_m": 0.0,
+        "new_positive_volume_intersections": 0,
+        "proof": "Strict source-module AABB separation. Hall/gallery entirely at z>=0, new slab at z<=0. All guard geometry with negative z lies within exact cutout. Ground interior disjointness proven through planar clipping and matching seam edges. Existing intra-module contacts/intersections retained, not reclassified as new."
+      },
+      "budgets": {
+        "source_sum_plus_new_ground": 14424,
+        "new_triangles_only": 64,
+        "matches_additive_count": true,
+        "image_dimensions_px": [
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ]
+        ],
+        "material_definitions": 9,
+        "unique_material_payloads": 3,
+        "new_ground_uses_existing_material": true,
+        "note": "No explicit aggregate maximum was specified in composition config. Verified additive source budget and decreasing LOD counts, not target-platform FPS/draw calls. 9 material definitions are retained, with 3 unique material/texture payloads; do not describe this as 3 material definitions or 3 draw calls."
+      },
+      "pass": true
+    },
+    {
+      "path": "models/palace-admission-court-closed-LOD1.glb",
+      "sha256": "455a12153d4132d2b653cdf8bbcf4b4994a5c33451efc1ec16119ebbf21453d2",
+      "bytes": 1126500,
+      "source_preservation": [
+        {
+          "pass": true,
+          "triangles": 436,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 1608,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 3312,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 780,
+          "max_position_error_m": 6.406321372054435e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 1188,
+          "max_position_error_m": 6.123094408394536e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 792,
+          "max_position_error_m": 6.676060998245248e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 780,
+          "max_position_error_m": 3.2031606096438736e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 1188,
+          "max_position_error_m": 3.061547150906563e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 792,
+          "max_position_error_m": 3.338030410304782e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 60,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 564,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 264,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 60,
+          "max_position_error_m": 5.057622010085083e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 564,
+          "max_position_error_m": 4.804741271513535e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 264,
+          "max_position_error_m": 4.877860040330972e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 48,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 1088,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 264,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 12,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-ground-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 148,
+          "max_position_error_m": 1.5497207641601562e-06,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-leaf_L-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 148,
+          "max_position_error_m": 1.5497207641601562e-06,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-leaf_R-timber"
+        }
+      ],
+      "role_bounds": {
+        "hall": [
+          [
+            -17.5,
+            -16.579999923706055,
+            0.0
+          ],
+          [
+            17.5,
+            12.5,
+            12.539999961853027
+          ]
+        ],
+        "west_gallery": [
+          [
+            -29.80878216060122,
+            -51.80000119267329,
+            0.0
+          ],
+          [
+            -18.09999847164003,
+            -12.199998807326711,
+            6.329999923706055
+          ]
+        ],
+        "east_gallery": [
+          [
+            18.0999999467795,
+            -51.8000002148672,
+            0.0
+          ],
+          [
+            29.808779031197904,
+            -12.1999997851328,
+            6.329999923706055
+          ]
+        ],
+        "guard": [
+          [
+            -10.0,
+            -65.0,
+            -0.20000000298023224
+          ],
+          [
+            10.0,
+            -51.0,
+            4.28000020980835
+          ]
+        ],
+        "new_ground": [
+          [
+            -34.0,
+            -67.0,
+            -0.20000000298023224
+          ],
+          [
+            34.0,
+            20.0,
+            0.0
+          ]
+        ]
+      },
+      "instanced_triangles": 14424,
+      "mesh_instances": 22,
+      "unique_meshes": 16,
+      "material_definitions": 9,
+      "embedded_images": 9,
+      "source_geometry_nodes_below_ground": [
+        {
+          "name": "guard__guard-slice-east-earth",
+          "min_z": -0.10000000149011612,
+          "bounds": [
+            [
+              2.3999998256276402,
+              -61.00000001685869,
+              -0.10000000149011612
+            ],
+            [
+              7.000000570800925,
+              -54.99999985066762,
+              2.5999999046325684
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-ground-earth",
+          "min_z": -0.20000000298023224,
+          "bounds": [
+            [
+              -10.0,
+              -65.0,
+              -0.20000000298023224
+            ],
+            [
+              10.0,
+              -51.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-portal-earth",
+          "min_z": -0.03999999910593033,
+          "bounds": [
+            [
+              -2.140000104904175,
+              -57.45999997854233,
+              -0.03999999910593033
+            ],
+            [
+              2.140000104904175,
+              -55.74000000953674,
+              0.03999999910593033
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-west-earth",
+          "min_z": -0.10000000149011612,
+          "bounds": [
+            [
+              -7.000001047637923,
+              -61.00000001685845,
+              -0.10000000149011612
+            ],
+            [
+              -2.3999998256278414,
+              -54.999999373830704,
+              2.5999999046325684
+            ]
+          ]
+        }
+      ],
+      "new_ground": {
+        "triangles": 64,
+        "welded_vertices": 32,
+        "welded_edges": 96,
+        "closed_two_manifold_edges": true,
+        "consistent_winding": true,
+        "signed_volume_m3": 1127.200016796589,
+        "expected_volume_m3": 1127.2,
+        "top_area_m2": 5636.0,
+        "expected_top_area_m2": 5636,
+        "euler_characteristic": 0
+      },
+      "ground_seam_coverage": {
+        "hole_positive_area_overlap_m2": 0.0,
+        "new_ground_self_overlap_m2": 0.0,
+        "old_and_new_ground_top_overlap_m2": 0.0,
+        "combined_top_area_m2": 5916.0,
+        "outer_rectangle_area_m2": 5916,
+        "all_top_vertices_within_outer_rectangle": true,
+        "new_inner_boundary_segments": [
+          [
+            [
+              -10.0,
+              -51.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              -10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -65.0
+            ]
+          ]
+        ],
+        "original_ground_boundary_segments": [
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -65.0
+            ]
+          ],
+          [
+            [
+              10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -51.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              -10.0,
+              -51.0
+            ]
+          ]
+        ],
+        "boundary_segments_exactly_match_at_1_micrometre": true,
+        "top_z_both_m": 0.0,
+        "bottom_z_both_m": -0.20000000298023224,
+        "note": "Separate closed solids share coincident vertical interface faces, as a butt joint; no positive-volume overlap and no coplanar top overlap."
+      },
+      "intersections": {
+        "four_source_modules_pairwise_AABB_separation": [
+          {
+            "a": "hall",
+            "b": "west_gallery",
+            "separating_axis_gap_m": 0.5999984716400313,
+            "disjoint": true
+          },
+          {
+            "a": "hall",
+            "b": "east_gallery",
+            "separating_axis_gap_m": 0.5999999467795014,
+            "disjoint": true
+          },
+          {
+            "a": "hall",
+            "b": "guard",
+            "separating_axis_gap_m": 34.420000076293945,
+            "disjoint": true
+          },
+          {
+            "a": "west_gallery",
+            "b": "east_gallery",
+            "separating_axis_gap_m": 36.19999841841953,
+            "disjoint": true
+          },
+          {
+            "a": "west_gallery",
+            "b": "guard",
+            "separating_axis_gap_m": 8.099998471640031,
+            "disjoint": true
+          },
+          {
+            "a": "east_gallery",
+            "b": "guard",
+            "separating_axis_gap_m": 8.099999946779501,
+            "disjoint": true
+          }
+        ],
+        "all_below_zero_source_geometry_fits_inside_ground_hole": true,
+        "hall_and_gallery_min_z_m": 0.0,
+        "new_ground_max_z_m": 0.0,
+        "new_positive_volume_intersections": 0,
+        "proof": "Strict source-module AABB separation. Hall/gallery entirely at z>=0, new slab at z<=0. All guard geometry with negative z lies within exact cutout. Ground interior disjointness proven through planar clipping and matching seam edges. Existing intra-module contacts/intersections retained, not reclassified as new."
+      },
+      "budgets": {
+        "source_sum_plus_new_ground": 14424,
+        "new_triangles_only": 64,
+        "matches_additive_count": true,
+        "image_dimensions_px": [
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ],
+          [
+            256,
+            256
+          ]
+        ],
+        "material_definitions": 9,
+        "unique_material_payloads": 3,
+        "new_ground_uses_existing_material": true,
+        "note": "No explicit aggregate maximum was specified in composition config. Verified additive source budget and decreasing LOD counts, not target-platform FPS/draw calls. 9 material definitions are retained, with 3 unique material/texture payloads; do not describe this as 3 material definitions or 3 draw calls."
+      },
+      "pass": true
+    },
+    {
+      "path": "models/palace-admission-court-open-LOD2.glb",
+      "sha256": "01b2017fac9d8ee6190726d233973c9b048936ce76b3ec7da8fb91aedec3a33d",
+      "bytes": 278700,
+      "source_preservation": [
+        {
+          "pass": true,
+          "triangles": 436,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 456,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 32,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 780,
+          "max_position_error_m": 6.406321372054435e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 468,
+          "max_position_error_m": 6.123094408394536e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 32,
+          "max_position_error_m": 6.676060998245248e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 780,
+          "max_position_error_m": 3.2031606096438736e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 468,
+          "max_position_error_m": 3.061547150906563e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 32,
+          "max_position_error_m": 3.338030410304782e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 60,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 356,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 32,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 60,
+          "max_position_error_m": 5.057622010085083e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 356,
+          "max_position_error_m": 4.804741271513535e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 32,
+          "max_position_error_m": 4.804741271513535e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 48,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 624,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 32,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 12,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-ground-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 108,
+          "max_position_error_m": 1.572480080369587e-06,
+          "max_normal_error": 1.685873971535301e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-leaf_L-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 108,
+          "max_position_error_m": 1.572480080369587e-06,
+          "max_normal_error": 1.685873971535301e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-leaf_R-timber"
+        }
+      ],
+      "role_bounds": {
+        "hall": [
+          [
+            -17.5,
+            -16.579999923706055,
+            0.0
+          ],
+          [
+            17.5,
+            12.5,
+            12.539999961853027
+          ]
+        ],
+        "west_gallery": [
+          [
+            -29.800006866795197,
+            -51.80000119267329,
+            0.0
+          ],
+          [
+            -18.09999847164003,
+            -12.199998807326711,
+            6.329999923706055
+          ]
+        ],
+        "east_gallery": [
+          [
+            18.0999999467795,
+            -51.8000002148672,
+            0.0
+          ],
+          [
+            29.80000352876511,
+            -12.1999997851328,
+            6.329999923706055
+          ]
+        ],
+        "guard": [
+          [
+            -10.0,
+            -65.0,
+            -0.20000000298023224
+          ],
+          [
+            10.0,
+            -51.0,
+            4.28000020980835
+          ]
+        ],
+        "new_ground": [
+          [
+            -34.0,
+            -67.0,
+            -0.20000000298023224
+          ],
+          [
+            34.0,
+            20.0,
+            0.0
+          ]
+        ]
+      },
+      "instanced_triangles": 5376,
+      "mesh_instances": 22,
+      "unique_meshes": 16,
+      "material_definitions": 9,
+      "embedded_images": 0,
+      "source_geometry_nodes_below_ground": [
+        {
+          "name": "guard__guard-slice-east-earth",
+          "min_z": -0.10000000149011612,
+          "bounds": [
+            [
+              2.3999998256276402,
+              -61.00000001685869,
+              -0.10000000149011612
+            ],
+            [
+              7.000000570800925,
+              -54.99999985066762,
+              2.5999999046325684
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-ground-earth",
+          "min_z": -0.20000000298023224,
+          "bounds": [
+            [
+              -10.0,
+              -65.0,
+              -0.20000000298023224
+            ],
+            [
+              10.0,
+              -51.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-portal-earth",
+          "min_z": -0.03999999910593033,
+          "bounds": [
+            [
+              -2.140000104904175,
+              -57.45999997854233,
+              -0.03999999910593033
+            ],
+            [
+              2.140000104904175,
+              -55.74000000953674,
+              0.03999999910593033
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-west-earth",
+          "min_z": -0.10000000149011612,
+          "bounds": [
+            [
+              -7.000001047637923,
+              -61.00000001685845,
+              -0.10000000149011612
+            ],
+            [
+              -2.3999998256278414,
+              -54.999999373830704,
+              2.5999999046325684
+            ]
+          ]
+        }
+      ],
+      "new_ground": {
+        "triangles": 64,
+        "welded_vertices": 32,
+        "welded_edges": 96,
+        "closed_two_manifold_edges": true,
+        "consistent_winding": true,
+        "signed_volume_m3": 1127.200016796589,
+        "expected_volume_m3": 1127.2,
+        "top_area_m2": 5636.0,
+        "expected_top_area_m2": 5636,
+        "euler_characteristic": 0
+      },
+      "ground_seam_coverage": {
+        "hole_positive_area_overlap_m2": 0.0,
+        "new_ground_self_overlap_m2": 0.0,
+        "old_and_new_ground_top_overlap_m2": 0.0,
+        "combined_top_area_m2": 5916.0,
+        "outer_rectangle_area_m2": 5916,
+        "all_top_vertices_within_outer_rectangle": true,
+        "new_inner_boundary_segments": [
+          [
+            [
+              -10.0,
+              -51.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              -10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -65.0
+            ]
+          ]
+        ],
+        "original_ground_boundary_segments": [
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -65.0
+            ]
+          ],
+          [
+            [
+              10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -51.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              -10.0,
+              -51.0
+            ]
+          ]
+        ],
+        "boundary_segments_exactly_match_at_1_micrometre": true,
+        "top_z_both_m": 0.0,
+        "bottom_z_both_m": -0.20000000298023224,
+        "note": "Separate closed solids share coincident vertical interface faces, as a butt joint; no positive-volume overlap and no coplanar top overlap."
+      },
+      "intersections": {
+        "four_source_modules_pairwise_AABB_separation": [
+          {
+            "a": "hall",
+            "b": "west_gallery",
+            "separating_axis_gap_m": 0.5999984716400313,
+            "disjoint": true
+          },
+          {
+            "a": "hall",
+            "b": "east_gallery",
+            "separating_axis_gap_m": 0.5999999467795014,
+            "disjoint": true
+          },
+          {
+            "a": "hall",
+            "b": "guard",
+            "separating_axis_gap_m": 34.420000076293945,
+            "disjoint": true
+          },
+          {
+            "a": "west_gallery",
+            "b": "east_gallery",
+            "separating_axis_gap_m": 36.19999841841953,
+            "disjoint": true
+          },
+          {
+            "a": "west_gallery",
+            "b": "guard",
+            "separating_axis_gap_m": 8.099998471640031,
+            "disjoint": true
+          },
+          {
+            "a": "east_gallery",
+            "b": "guard",
+            "separating_axis_gap_m": 8.099999946779501,
+            "disjoint": true
+          }
+        ],
+        "all_below_zero_source_geometry_fits_inside_ground_hole": true,
+        "hall_and_gallery_min_z_m": 0.0,
+        "new_ground_max_z_m": 0.0,
+        "new_positive_volume_intersections": 0,
+        "proof": "Strict source-module AABB separation. Hall/gallery entirely at z>=0, new slab at z<=0. All guard geometry with negative z lies within exact cutout. Ground interior disjointness proven through planar clipping and matching seam edges. Existing intra-module contacts/intersections retained, not reclassified as new."
+      },
+      "budgets": {
+        "source_sum_plus_new_ground": 5376,
+        "new_triangles_only": 64,
+        "matches_additive_count": true,
+        "image_dimensions_px": [],
+        "material_definitions": 9,
+        "unique_material_payloads": 3,
+        "new_ground_uses_existing_material": true,
+        "note": "No explicit aggregate maximum was specified in composition config. Verified additive source budget and decreasing LOD counts, not target-platform FPS/draw calls. 9 material definitions are retained, with 3 unique material/texture payloads; do not describe this as 3 material definitions or 3 draw calls."
+      },
+      "pass": true
+    },
+    {
+      "path": "models/palace-admission-court-closed-LOD2.glb",
+      "sha256": "108e28a567dcef237868b2414332ae51925686d256891736355a5b40d9c0101d",
+      "bytes": 278616,
+      "source_preservation": [
+        {
+          "pass": true,
+          "triangles": 436,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 456,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 32,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "hall",
+          "source_node": "deyang-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 780,
+          "max_position_error_m": 6.406321372054435e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 468,
+          "max_position_error_m": 6.123094408394536e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 32,
+          "max_position_error_m": 6.676060998245248e-06,
+          "max_normal_error": 3.371747940237833e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "west_gallery",
+          "source_node": "sidehall-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 780,
+          "max_position_error_m": 3.2031606096438736e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_earth"
+        },
+        {
+          "pass": true,
+          "triangles": 468,
+          "max_position_error_m": 3.061547150906563e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_timber"
+        },
+        {
+          "pass": true,
+          "triangles": 32,
+          "max_position_error_m": 3.338030410304782e-06,
+          "max_normal_error": 1.6858739675923087e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "east_gallery",
+          "source_node": "sidehall-A-static_tile"
+        },
+        {
+          "pass": true,
+          "triangles": 60,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 356,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 32,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-west-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 60,
+          "max_position_error_m": 5.057622010085083e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 356,
+          "max_position_error_m": 4.804741271513535e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 32,
+          "max_position_error_m": 4.804741271513535e-07,
+          "max_normal_error": 1.685873972645524e-07,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-east-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 48,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 624,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 32,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-portal-tile"
+        },
+        {
+          "pass": true,
+          "triangles": 12,
+          "max_position_error_m": 0.0,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-ground-earth"
+        },
+        {
+          "pass": true,
+          "triangles": 108,
+          "max_position_error_m": 1.5497207641601562e-06,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-leaf_L-timber"
+        },
+        {
+          "pass": true,
+          "triangles": 108,
+          "max_position_error_m": 1.5497207641601562e-06,
+          "max_normal_error": 0.0,
+          "max_uv_error": 0.0,
+          "bijection": true,
+          "material_and_texture_payload_equal": true,
+          "role": "guard",
+          "source_node": "guard-slice-leaf_R-timber"
+        }
+      ],
+      "role_bounds": {
+        "hall": [
+          [
+            -17.5,
+            -16.579999923706055,
+            0.0
+          ],
+          [
+            17.5,
+            12.5,
+            12.539999961853027
+          ]
+        ],
+        "west_gallery": [
+          [
+            -29.800006866795197,
+            -51.80000119267329,
+            0.0
+          ],
+          [
+            -18.09999847164003,
+            -12.199998807326711,
+            6.329999923706055
+          ]
+        ],
+        "east_gallery": [
+          [
+            18.0999999467795,
+            -51.8000002148672,
+            0.0
+          ],
+          [
+            29.80000352876511,
+            -12.1999997851328,
+            6.329999923706055
+          ]
+        ],
+        "guard": [
+          [
+            -10.0,
+            -65.0,
+            -0.20000000298023224
+          ],
+          [
+            10.0,
+            -51.0,
+            4.28000020980835
+          ]
+        ],
+        "new_ground": [
+          [
+            -34.0,
+            -67.0,
+            -0.20000000298023224
+          ],
+          [
+            34.0,
+            20.0,
+            0.0
+          ]
+        ]
+      },
+      "instanced_triangles": 5376,
+      "mesh_instances": 22,
+      "unique_meshes": 16,
+      "material_definitions": 9,
+      "embedded_images": 0,
+      "source_geometry_nodes_below_ground": [
+        {
+          "name": "guard__guard-slice-east-earth",
+          "min_z": -0.10000000149011612,
+          "bounds": [
+            [
+              2.3999998256276402,
+              -61.00000001685869,
+              -0.10000000149011612
+            ],
+            [
+              7.000000570800925,
+              -54.99999985066762,
+              2.5999999046325684
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-ground-earth",
+          "min_z": -0.20000000298023224,
+          "bounds": [
+            [
+              -10.0,
+              -65.0,
+              -0.20000000298023224
+            ],
+            [
+              10.0,
+              -51.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-portal-earth",
+          "min_z": -0.03999999910593033,
+          "bounds": [
+            [
+              -2.140000104904175,
+              -57.45999997854233,
+              -0.03999999910593033
+            ],
+            [
+              2.140000104904175,
+              -55.74000000953674,
+              0.03999999910593033
+            ]
+          ]
+        },
+        {
+          "name": "guard__guard-slice-west-earth",
+          "min_z": -0.10000000149011612,
+          "bounds": [
+            [
+              -7.000001047637923,
+              -61.00000001685845,
+              -0.10000000149011612
+            ],
+            [
+              -2.3999998256278414,
+              -54.999999373830704,
+              2.5999999046325684
+            ]
+          ]
+        }
+      ],
+      "new_ground": {
+        "triangles": 64,
+        "welded_vertices": 32,
+        "welded_edges": 96,
+        "closed_two_manifold_edges": true,
+        "consistent_winding": true,
+        "signed_volume_m3": 1127.200016796589,
+        "expected_volume_m3": 1127.2,
+        "top_area_m2": 5636.0,
+        "expected_top_area_m2": 5636,
+        "euler_characteristic": 0
+      },
+      "ground_seam_coverage": {
+        "hole_positive_area_overlap_m2": 0.0,
+        "new_ground_self_overlap_m2": 0.0,
+        "old_and_new_ground_top_overlap_m2": 0.0,
+        "combined_top_area_m2": 5916.0,
+        "outer_rectangle_area_m2": 5916,
+        "all_top_vertices_within_outer_rectangle": true,
+        "new_inner_boundary_segments": [
+          [
+            [
+              -10.0,
+              -51.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              -10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -65.0
+            ]
+          ]
+        ],
+        "original_ground_boundary_segments": [
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -65.0
+            ]
+          ],
+          [
+            [
+              10.0,
+              -65.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -51.0
+            ],
+            [
+              10.0,
+              -51.0
+            ]
+          ],
+          [
+            [
+              -10.0,
+              -65.0
+            ],
+            [
+              -10.0,
+              -51.0
+            ]
+          ]
+        ],
+        "boundary_segments_exactly_match_at_1_micrometre": true,
+        "top_z_both_m": 0.0,
+        "bottom_z_both_m": -0.20000000298023224,
+        "note": "Separate closed solids share coincident vertical interface faces, as a butt joint; no positive-volume overlap and no coplanar top overlap."
+      },
+      "intersections": {
+        "four_source_modules_pairwise_AABB_separation": [
+          {
+            "a": "hall",
+            "b": "west_gallery",
+            "separating_axis_gap_m": 0.5999984716400313,
+            "disjoint": true
+          },
+          {
+            "a": "hall",
+            "b": "east_gallery",
+            "separating_axis_gap_m": 0.5999999467795014,
+            "disjoint": true
+          },
+          {
+            "a": "hall",
+            "b": "guard",
+            "separating_axis_gap_m": 34.420000076293945,
+            "disjoint": true
+          },
+          {
+            "a": "west_gallery",
+            "b": "east_gallery",
+            "separating_axis_gap_m": 36.19999841841953,
+            "disjoint": true
+          },
+          {
+            "a": "west_gallery",
+            "b": "guard",
+            "separating_axis_gap_m": 8.099998471640031,
+            "disjoint": true
+          },
+          {
+            "a": "east_gallery",
+            "b": "guard",
+            "separating_axis_gap_m": 8.099999946779501,
+            "disjoint": true
+          }
+        ],
+        "all_below_zero_source_geometry_fits_inside_ground_hole": true,
+        "hall_and_gallery_min_z_m": 0.0,
+        "new_ground_max_z_m": 0.0,
+        "new_positive_volume_intersections": 0,
+        "proof": "Strict source-module AABB separation. Hall/gallery entirely at z>=0, new slab at z<=0. All guard geometry with negative z lies within exact cutout. Ground interior disjointness proven through planar clipping and matching seam edges. Existing intra-module contacts/intersections retained, not reclassified as new."
+      },
+      "budgets": {
+        "source_sum_plus_new_ground": 5376,
+        "new_triangles_only": 64,
+        "matches_additive_count": true,
+        "image_dimensions_px": [],
+        "material_definitions": 9,
+        "unique_material_payloads": 3,
+        "new_ground_uses_existing_material": true,
+        "note": "No explicit aggregate maximum was specified in composition config. Verified additive source budget and decreasing LOD counts, not target-platform FPS/draw calls. 9 material definitions are retained, with 3 unique material/texture payloads; do not describe this as 3 material definitions or 3 draw calls."
+      },
+      "pass": true
+    }
+  ],
+  "visual_review": {
+    "preview": "previews/overview-open-LOD0.png",
+    "sha256": "9a54891655c0ec92af307174e11790fadc66feb145b41d074fa39e8c07e9f1f1",
+    "observations": "Overview inspected. New broad court links separated hall, opposing gallery instances and small guard slice; no obvious floating source modules or new surface overlap. Render alone is not the geometric proof.",
+    "limitations": "Single open-pose overview; route volume/support checked separately by parent. No native Blender portability or historic reconstruction certification."
+  },
+  "pass": true,
+  "limits": [
+    "Finite open/closed states only; continuous door sweep is not audited here.",
+    "Reused source internal overlaps are not repaired or independently certified.",
+    "Numerical source-match tolerance 20 micrometres in combined position/normal/UV directed-triangle metric; all actual errors separately recorded.",
+    "No target GPU frame rate, draw calls, gait, structural safety or historical plan certification."
+  ]
+}
