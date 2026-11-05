@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="theme.css">
 <link rel="stylesheet" href="eras.css">
 <link rel="stylesheet" href="project.css">
+<link rel="stylesheet" href="viewer-ui.css">
 <script type="importmap">{"imports": {"three": "../docs/fusions/F01/vendor/three.module.js", "three/addons/": "../docs/fusions/F01/vendor/addons/"}}</script>
 </head>
 <body>
@@ -98,49 +99,20 @@ const showLive = () => {
   setMode('live', '网页实况', '可以直接在框里浏览和操作');
   main.querySelectorAll('.thumbs button').forEach(b => b.setAttribute('aria-pressed', false));
 };
-// inspection tools: view mode, light, background — remembered for this browser
-const VIEWS = [['shaded', '实体'], ['clay', '白模'], ['wire', '线框'], ['normal', '法线']];
-const BGS = [['#2a2926', '墨'], ['#efe9dd', '纸'], ['#f8f8f6', '白'], ['#8e8b85', '灰'], ['#0c0c0d', '黑']];
-let look = { view: 'shaded', key: 2.2, az: 35, el: 52, env: 0.9, bg: '#2a2926', open: false };
-try { Object.assign(look, JSON.parse(localStorage.getItem('lab-viewer') || '{}')); } catch {}
-const saveLook = () => { try { localStorage.setItem('lab-viewer', JSON.stringify(look)); } catch {} };
-const toolsHTML = () => `<div class="vw-tools" data-fold="${look.open}">
-  <button class="vw-fold" aria-expanded="${look.open}">${look.open ? '收起调节' : '调节视图'}</button>
-  <div class="vw-group" role="group" aria-label="视图"><span>视图</span>${VIEWS.map(([k, t]) => `<button data-view="${k}" aria-pressed="${look.view === k}">${t}</button>`).join('')}</div>
-  <div class="vw-group" aria-label="光照"><span>光照</span>
-    <label>主光<input type="range" data-k="key" min="0" max="5" step="0.1" value="${look.key}"></label>
-    <label>方向<input type="range" data-k="az" min="0" max="360" step="5" value="${look.az}"></label>
-    <label>高度<input type="range" data-k="el" min="8" max="85" step="1" value="${look.el}"></label>
-    <label>环境<input type="range" data-k="env" min="0" max="2" step="0.05" value="${look.env}"></label>
-    <button data-reset-light>复位</button></div>
-  <div class="vw-group" role="group" aria-label="背景"><span>背景</span>${BGS.map(([c, t]) => `<button class="sw" data-bg="${c}" aria-pressed="${look.bg === c}" title="${t}" aria-label="背景：${t}"><i style="background:${c}"></i></button>`).join('')}</div>
-</div>`;
-function bindTools() {
-  const box = stage.querySelector('.vw-tools'); if (!box) return;
-  const sync = () => { box.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', b.dataset.view === look.view)); box.querySelectorAll('[data-bg]').forEach(b => b.setAttribute('aria-pressed', b.dataset.bg === look.bg)); box.querySelectorAll('input[data-k]').forEach(r => { r.value = look[r.dataset.k]; }); };
-  box.addEventListener('click', e => {
-    const b = e.target.closest('button'); if (!b) return;
-    if (b.classList.contains('vw-fold')) { look.open = !look.open; box.dataset.fold = look.open; b.textContent = look.open ? '收起调节' : '调节视图'; b.setAttribute('aria-expanded', look.open); }
-    else if (b.dataset.view) look.view = b.dataset.view;
-    else if (b.dataset.bg) look.bg = b.dataset.bg;
-    else if ('resetLight' in b.dataset) Object.assign(look, { key: 2.2, az: 35, el: 52, env: 0.9 });
-    viewer?.set(look); sync(); saveLook();
-  });
-  box.addEventListener('input', e => { const r = e.target.closest('input[data-k]'); if (!r) return; look[r.dataset.k] = +r.value; viewer?.set(look); saveLook(); });
-}
 async function open3d(i = sel ? +sel.value : 0) {
   const my = ++token; closeViewer(); if (sel) sel.value = i;
   stage.innerHTML = `<div class="viewer-host" id="vh"></div><div class="pv-status" id="vs">正在加载模型…</div>`;
-  setMode('3d', glbs[i].label, '拖动旋转 · 滚轮缩放 · R 复位');
+  setMode('3d', glbs[i].label, '拖动旋转 · 右键平移 · 滚轮缩放');
   main.querySelectorAll('.thumbs button').forEach(b => b.setAttribute('aria-pressed', false));
   try {
     const { createViewer } = await import('./viewer.mjs');
     const v = await createViewer(document.getElementById('vh'));
     if (my !== token) { v.dispose(); return; }
-    viewer = v; viewer.set(look); await viewer.load(glbs[i].url);
+    const ui = await import('./viewer-ui.mjs');
+    viewer = v; viewer.set(ui.savedLook()); await viewer.load(glbs[i].url);
     if (my !== token) return;
     document.getElementById('vs').textContent = '';
-    stage.insertAdjacentHTML('beforeend', toolsHTML()); bindTools();
+    ui.mountViewerUI(stage, viewer, { name: a.id + '-' + String(glbs[i].label).replace(/[^\w.-]+/g, '_') });
   } catch (err) {
     if (my !== token) return;
     // 3D is the default view; when it cannot load, fall back to the preview image and say why
