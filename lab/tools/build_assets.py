@@ -32,6 +32,10 @@ FIELDS = {'spec', 'id', 'category', 'kind', 'title', 'english', 'summary', 'stat
           'scene', 'chapters', 'progress', 'evidence', 'journal', 'members'}
 PROJ = SPEC.get('project', {})
 NOTE_KEYS = ('已完成的检查', '限制与待解决')
+SOURCE = re.compile(r'\.(blend|blend1|zip|part\d{3}|psd|exr|fbx|max|ma|mb|c4d|spp|kra)$', re.I)
+COMPRESSED = {'EXT_meshopt_compression', 'KHR_meshopt_compression', 'KHR_draco_mesh_compression'}
+ARCH_PATH = os.path.join(DOCS, 'asset-spec', 'source-archive.json')
+ARCHIVED = set(json.load(open(ARCH_PATH, encoding='utf-8'))['files']) if os.path.exists(ARCH_PATH) else set()
 
 
 def rel_docs(card_dir, p):
@@ -63,9 +67,9 @@ def glb_info(rel):
     full = os.path.join(DOCS, rel)
     st = os.stat(full)
     key = f'{rel}:{st.st_size}:{int(st.st_mtime)}'
-    if key not in cache:
+    if key not in cache or 'extUsed' not in cache[key]:
         a = audit(full)
-        cache[key] = {k: a.get(k) for k in ('bytes', 'triangles', 'vertices', 'primitives', 'materials', 'images', 'size', 'primsNoUV')}
+        cache[key] = {k: a.get(k) for k in ('bytes', 'triangles', 'vertices', 'primitives', 'materials', 'images', 'size', 'primsNoUV', 'extUsed')}
     return cache[key]
 
 
@@ -137,6 +141,9 @@ def check_card(path):
         if os.path.splitext(r)[1].lower() not in LIM['imageTypes']:
             E.append(f'{what}只能是 {" / ".join(LIM["imageTypes"])}：{p}')
             return None
+        mb = os.path.getsize(os.path.join(DOCS, r)) / 1e6
+        if not r.lower().endswith('.webp') and mb > LIM.get('imageWebpWarnMB', 1):
+            W.append(f'{what}是 {mb:.1f} MB 的 {os.path.splitext(r)[1][1:].upper()}，建议转成 WebP：{p}')
         return r
     cover = image(c['cover'], '封面') if c.get('cover') else None
     if not c.get('cover'):
@@ -184,6 +191,8 @@ def check_card(path):
             E.append(f'GLB 超过 {LIM["glbMaxMB"]} MB：{p}（{mb:.1f} MB）')
         elif mb > LIM['glbWarnMB']:
             W.append(f'GLB 偏大：{p}（{mb:.1f} MB，建议 ≤ {LIM["glbWarnMB"]} MB）')
+        if mb > LIM.get('glbCompressWarnMB', 1) and not COMPRESSED & set(info.get('extUsed') or []):
+            W.append(f'GLB 没有压缩（{mb:.1f} MB）：{p}；建议用 gltfpack -cc 做 meshopt 压缩')
         tri = info.get('triangles') or 0
         if tri > LIM['trianglesMax']:
             E.append(f'面数超过 {LIM["trianglesMax"]:,}：{p}（{tri:,}）')
@@ -336,6 +345,12 @@ def main():
                       'errors': E, 'warnings': W})
         if a:
             assets.append(a)
+    repo_errors = []
+    for dp, dn, fn in os.walk(DOCS):
+        for f in fn:
+            r = os.path.relpath(os.path.join(dp, f), DOCS).replace('\\', '/')
+            if SOURCE.search(f) and r not in ARCHIVED:
+                repo_errors.append(f'{r}：源文件不进仓库，请上传到这一批 tag 的 GitHub Release（见规范「源文件」）')
     ids = {a['id'] for a in assets}
     by_card = {it['card']: it for it in items}
     for a in assets:
@@ -363,7 +378,7 @@ def main():
     report = {'generated': datetime.datetime.now().astimezone().isoformat(timespec='seconds'), 'spec': SPEC['spec'],
               'counts': {'cards': len(items), 'published': len(public), 'drafts': len(assets) - len(public), 'withErrors': n_err,
                          'withWarnings': sum(1 for it in items if it['warnings'])},
-              'orphans': orphans, 'items': items}
+              'orphans': orphans, 'repoErrors': repo_errors, 'items': items}
     json.dump(report, open(os.path.join(LAB, 'data', 'report.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f'{len(items)} cards · {len(public)} on the site · {len(assets) - len(public)} drafts · {n_err} with errors · '
           f'{report["counts"]["withWarnings"]} with warnings')
@@ -372,7 +387,9 @@ def main():
             print(f'  ERROR {it["card"]}: {e}')
     for o in orphans:
         print(f'  WARN  {o}: 没有任何卡片引用这个 GLB')
-    if '--check' in sys.argv and n_err:
+    for e in repo_errors:
+        print(f'  ERROR {e}')
+    if '--check' in sys.argv and (n_err or repo_errors):
         sys.exit(1)
 
 

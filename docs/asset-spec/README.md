@@ -63,6 +63,8 @@ docs/library/models/m-bronze-lamp/
 - 单个 GLB 超过 15 MB，或面数超过 50 万；
 - 网页设计没有 page。
 
+- `docs/` 里出现新的源文件（`.blend`、源码 ZIP 及分卷、`.psd`、`.exr`、`.fbx` 等，见第 7 节）。
+
 **提醒**照常上网页，但会列在检查报告里，评审时会看：
 
 - 缺英文名或封面描述；
@@ -72,17 +74,19 @@ docs/library/models/m-bronze-lamp/
 - GLB 大于 5 MB，或面数高于 15 万；
 - kind 不在分类表里，或 related 指向不存在的 id；
 - 新资产没有放在标准目录；
-- 标准目录里有 GLB，但没有任何卡片引用它。
+- 标准目录里有 GLB，但没有任何卡片引用它；
+- 展示图是大于 1 MB 的 PNG 或 JPG（建议转 WebP）；
+- GLB 大于 1 MB 却没有用 meshopt 压缩（建议 `gltfpack -cc`）。
 
 门槛的具体数字都在 `categories.json` 的 `limits` 里，网站和检查脚本都从这里读取。
 
 ## 4. 提交流程
 
-1. 在 `docs/library/<分类>/<id>/` 里放好文件，从 `template.json` 复制一份写成卡片。
+1. 在 `docs/library/<分类>/<id>/` 里放好文件，从 `template.json` 复制一份写成卡片。源文件不放进来，留到第 5 步。
 2. 运行检查：`python -I lab/tools/build_assets.py --check`。有错误时会逐条列出，并以非零状态退出。
 3. 检查通过后提交。提交说明写清楚是哪件资产，例如 `Add m-bronze-lamp: bronze lamp LOD0/LOD1`。
 4. 推送到 main。部署接好之后，每次推送都会自动重跑检查并发布；检查不通过时，网站保持上一版。
-5. 一批工作完成后，照旧打 `rYYYY.MM.DD-N` tag，Claude 按版本评审。
+5. 一批工作完成后，照旧打 `rYYYY.MM.DD-N` tag，把这一批的源文件上传到同名 GitHub Release（见第 7 节）。Claude 按版本评审。
 
 ## 5. 加分类
 
@@ -117,3 +121,17 @@ docs/library/models/m-bronze-lamp/
 - `dispose()`：释放资源。
 
 用户点选建筑时，模块调用 `onSelect({ title, summary, status, tier, basis })`，页面会弹出这处建筑的便签。场景打不开时，页面退回显示封面海报。洛阳的实现见 `docs/cities/luoyang/scene.mjs`。
+
+## 7. 源文件与体积
+
+网站只放给人看的东西：展示图、GLB 和网页。GitHub Pages 整站上限 1 GB，部署时一旦超过上限就会失败，线上停在上一版。
+
+- **源文件不提交进仓库。** `.blend`、源码 ZIP 及其分卷、`.psd`、`.exr`、`.fbx` 这类文件，改为上传到这一批 tag 的 GitHub Release：
+  ```
+  gh release create rYYYY.MM.DD-N --title "rYYYY.MM.DD-N" --notes "这一批的源文件" model.blend source.zip
+  gh release upload rYYYY.MM.DD-N another.blend    # 这个 tag 已经有 Release 时，用这一条追加
+  ```
+  在 `docs/` 里提交新的源文件，检查会报错。
+- **旧源文件已经归档。** 仓库里原有的源文件都放进了 Release `sources-2026.11.05`，分卷也已还原成校验过的完整 ZIP。部署时这些文件不会发布，页面上的下载链接会自动改成 Release 的地址。对照表在 `source-archive.json`，由 `lab/tools/archive_sources.py` 生成。
+- **展示图用 WebP。** PNG 和 JPG 超过 1 MB 时检查会提醒。
+- **GLB 用 meshopt 压缩**，命令是 `gltfpack -i in.glb -o out.glb -cc`。资产库的查看器和洛阳城景都能读取压缩后的 GLB；超过 1 MB 且没有压缩的 GLB，检查会提醒。

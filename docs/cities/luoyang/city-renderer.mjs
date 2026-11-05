@@ -2,6 +2,7 @@ import * as THREE from '../../fusions/F01/vendor/three.module.js';
 import { GLTFLoader } from '../../fusions/F01/vendor/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from '../../fusions/F01/vendor/addons/controls/OrbitControls.js';
 import { mergeGeometries } from '../../fusions/F01/vendor/addons/utils/BufferGeometryUtils.js';
+import { MeshoptDecoder } from '../../vendor/meshopt_decoder.module.js';
 import { pageVertex, resolveFragment } from '../../prototypes/luoyang-m0/shaders.mjs';
 
 const surfaceVertex = /* glsl */ `
@@ -295,7 +296,7 @@ export async function createCityRenderer({
       const bytes = await response.arrayBuffer();
       downloadBytes += bytes.byteLength;
       checkActive();
-      const parsed = await new GLTFLoader().parseAsync(bytes, new URL('.', url).href);
+      const parsed = await new GLTFLoader().setMeshoptDecoder(MeshoptDecoder).parseAsync(bytes, new URL('.', url).href);
       // External glTF buffers/images are requested by GLTFLoader. Their exact
       // source-file total is recorded in the projection manifest.
       const bundleBytes = useNear ? asset.nearBundleBytes : asset.bundleBytes;

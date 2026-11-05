@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { MeshoptDecoder } from '../docs/vendor/meshopt_decoder.module.js'; // meshopt-compressed GLBs (gltfpack -cc)
 
 export const DEFAULT_LOOK = {
   view: 'shaded', preset: 'studio',
@@ -67,7 +68,7 @@ export async function createViewer(host) {
   };
   const look = { ...DEFAULT_LOOK };
   let root = null, home = null, raf = 0, token = 0, fit = { c: new THREE.Vector3(), r: 1, s: new THREE.Vector3(), min: new THREE.Vector3() }, onChange = null, info = null;
-  const loader = new GLTFLoader();
+  const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
   const size = () => { const { clientWidth: w, clientHeight: h } = host; if (!w || !h) return; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); };
   const ro = new ResizeObserver(size); ro.observe(host); size();
 
