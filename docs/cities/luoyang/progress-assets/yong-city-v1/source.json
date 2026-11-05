@@ -1,0 +1,171 @@
+{
+  "schema": "luoyang-yong-city-assembly-v1",
+  "version": "1.1",
+  "sourceCommit": "d4190c816739ca53291220ebd7f6f3480f9ef8d0",
+  "geometryBaselineCommit": "e4b5f564f7cafba8c7f01999612c68c824fd5eb9",
+  "familyId": "m-luoyang-yong-gate",
+  "evidenceTier": "C",
+  "cityPlacementMatrixGLTFColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+  ],
+  "nativeBlenderPlacementMatrixRowMajor": [
+    [
+      -0.01162686012685299,
+      -0.9999324083328247,
+      0.0,
+      -16.0157413482666
+    ],
+    [
+      0.9999324083328247,
+      -0.01162686012685299,
+      0.0,
+      1397.772705078125
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.17000000178813934
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "placementBasis": "Engineering placement derived from actual existing west wall ends; inherited B schematic point is unchanged, not archaeological control.",
+  "gateBody": {
+    "path": "../../../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+    "bytes": 1570856,
+    "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+    "unchanged": true
+  },
+  "newAnnexFiles": [
+    {
+      "path": "yong-apron-LOD0.glb",
+      "bytes": 388208,
+      "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+      "triangles": 68,
+      "meshInstances": 3,
+      "images": 3,
+      "textureDimensions": [
+        512,
+        512
+      ]
+    },
+    {
+      "path": "yong-apron-LOD1.glb",
+      "bytes": 143604,
+      "sha256": "7ad8346bc6b0e19a05cef678be6b9bd2c83daf009d8bcaa1d67faef23bca90db",
+      "triangles": 68,
+      "meshInstances": 3,
+      "images": 3,
+      "textureDimensions": [
+        256,
+        256
+      ]
+    },
+    {
+      "path": "yong-apron-LOD2.glb",
+      "bytes": 7564,
+      "sha256": "fb8a5f2f93aace63e0229cdc4a9c65d0c1450bb80bf8965e75da0fd92cad529a",
+      "triangles": 68,
+      "meshInstances": 3,
+      "images": 0,
+      "textureDimensions": null
+    }
+  ],
+  "reusedAdapterSource": {
+    "relativeHistoricalSource": "luoyang-yong-gate-study-v1/city/yong-Y-mid-hidden-trial.blend",
+    "sha256": "2bbd57e497fb91a1e4470e05ecbee2ecce7009fd0befd549f858c9307d7d45d1",
+    "triangleRanges": [
+      [
+        192,
+        203
+      ],
+      [
+        204,
+        215
+      ]
+    ],
+    "geometryAndCornerUVRetained": true,
+    "materialCaveat": "Each LOD uses its matching public gate material; only LOD1 matches the historical middle texture resolution. No all-LOD material byte-identity claim."
+  },
+  "counts": {
+    "gateFamiliesAddedToCity": 1,
+    "newCityNodes": 2,
+    "oldCityNodesPreserved": 64,
+    "oldResidentialInstancesPreserved": 44,
+    "totalGateFamilies": 12
+  },
+  "loading": {
+    "initial": true,
+    "automaticLOD": false,
+    "addedInitialBytes": 1959064,
+    "initialModelBytesAfter": 3872084,
+    "oldInitialModelBytes": 1913020,
+    "newBodyTriangles": 8228,
+    "newAnnexTriangles": 68,
+    "newSourceGeometryTriangles": 8296,
+    "defaultProjectCamera": "Adapter still starts at residential chapter; full city or Yong chapter reveals new gate. No frontend change."
+  },
+  "checks": {
+    "fullThreeLODPathChecks": 30,
+    "fourPierFootprintAreaM2": 100.79998111724854,
+    "twoWingFootprintAreaM2": 78.19942469597754,
+    "currentWallMaxContactResidualM": 7.594674658059497e-05,
+    "currentCityGroundConflict": "No current-city boundary triangles intersect the 0.25mm-inset triangular apron prisms. Surface intersection check, not solid Boolean collision.",
+    "browserGpuVerified": false
+  },
+  "sources": [
+    {
+      "title": "后汉书·志第二十七·百官四",
+      "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs126.html",
+      "locator": "雒阳城十二门条及注五",
+      "quote": "雍门处中，位月在酉",
+      "supports": "Gate name and relative western position.",
+      "doesNotSupport": "Dimensions, three-lane detailed plan, paving, porch or engineering coordinates."
+    },
+    {
+      "title": "水经注·卷十六·穀水（四库全书本）",
+      "url": "https://zh.wikisource.org/zh-hans/水經注_(四庫全書本)/卷16",
+      "locator": "谷水南经西阳门段",
+      "quote": "旧门在南，太和中以故门邪出，故徙是门东对东阳门",
+      "supports": "A retrospective northern-Wei account of relocation and oblique old entrance, not a measured Han plan.",
+      "doesNotSupport": "The exact old angle or an AD180 right-angle road axis."
+    },
+    {
+      "title": "文化瀍河：汉魏洛阳故城（下）",
+      "url": "https://www.thepaper.cn/newsDetail_forward_24443356",
+      "date": "2023-08-30",
+      "scope": "Secondary archaeological summary; not original excavation plans.",
+      "supports": "Reports probable Yong gate as second western gap and a surviving inner-road segment; distinguishes Northern Wei West-Yang gate farther north.",
+      "doesNotSupport": "Registration into this project, inherited B point accuracy, gate threshold/paving levels or C path construction."
+    }
+  ],
+  "limits": [
+    "All new apron shape, height, thickness and route widths are C engineering design, not measured historical paving or structural foundations.",
+    "Current external street remains disconnected; approx 49.6–68.8m from apron ports to actual existing road, depending on port.",
+    "Upper access remains missing and fixed open doors are not an animation rig.",
+    "CPU PBR captures differ from current flat city shader. Browser launch is unavailable in the current cloud sandbox.",
+    "Current two wall interfaces fit but do not establish archaeological exactness or every whole-city collision.",
+    "Initial visibility means included in model set, not a changed opening camera."
+  ],
+  "rollback": "Restore the three changed files (city-data.mjs, p-luoyang.asset.json and m-luoyang-yong-gate.asset.json) from the declared base commit, then remove the seven files under progress-assets/yong-city-v1 and refresh. This also restores provenance counts/byte figures. If later work modifies these files, reverse only this batch semantically instead of overwriting newer changes. All original GLBs and old test strips remain unchanged."
+}

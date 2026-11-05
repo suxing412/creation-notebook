@@ -1223,7 +1223,45 @@ const assetRecords = [
     "format": "glb",
     "bundleBytes": 1150620,
     "projectionSourceContract": "progress-assets/flat/source.json"
-  }
+  },
+{
+  "id": "yong-gate-near",
+  "path": "../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+  "bytes": 1570856,
+  "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+  "bounds": {
+    "min": [
+      -12.600000381469727,
+      0.0,
+      -5.811703681945801
+    ],
+    "max": [
+      12.600000381469727,
+      10.230000495910645,
+      5.811703681945801
+    ]
+  },
+  "sourceContract": "progress-assets/yong-city-v1/source.json"
+},
+{
+  "id": "yong-gate-apron",
+  "path": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+  "bytes": 388208,
+  "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+  "bounds": {
+    "min": [
+      -15.99994945526123,
+      -0.20000000298023224,
+      -9.5
+    ],
+    "max": [
+      16.00006103515625,
+      6.029999732971191,
+      9.5
+    ]
+  },
+  "sourceContract": "progress-assets/yong-city-v1/source.json"
+}
 ];
 
 export const assets = assetRecords.map(({ path, nearPath, ...asset }) => ({
@@ -1234,6 +1272,86 @@ export const assets = assetRecords.map(({ path, nearPath, ...asset }) => ({
 }));
 
 export const nodes = [
+{
+  "id": "yong-gate-body",
+  "asset": "yong-gate-near",
+  "chapter": "walls",
+  "title": "雍门 · C级设计候选",
+  "summary": "原位接入既有西墙关系处；两翼接墙与三门道汇流地面已核验。位置和形制均保留设计推测，门外接街仍待建。",
+  "matrix": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+  ],
+  "bounds": {
+    "min": [
+      -21.970934601541217,
+      0.17000000178813934,
+      -1410.439289595516
+    ],
+    "max": [
+      -10.060548094991987,
+      10.400000497698784,
+      -1385.106120560734
+    ]
+  },
+  "initial": true,
+  "tier": "C",
+  "basis": "雍门名与西侧相对方位有文献；本次工程位置由现有C墙端推得，不是实测古门位。未把北魏西阳门轴线前推至东汉。"
+},
+{
+  "id": "yong-gate-interface",
+  "asset": "yong-gate-apron",
+  "chapter": "walls",
+  "title": "雍门接墙与汇流地面",
+  "summary": "原位接入既有西墙关系处；两翼接墙与三门道汇流地面已核验。位置和形制均保留设计推测，门外接街仍待建。",
+  "matrix": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+  ],
+  "bounds": {
+    "min": [
+      -25.663923039269804,
+      -0.030000001192092896,
+      -1413.8181577197688
+    ],
+    "max": [
+      -6.367559657263401,
+      6.199999734759331,
+      -1381.7273649513559
+    ]
+  },
+  "initial": true,
+  "tier": "C",
+  "basis": "雍门名与西侧相对方位有文献；本次工程位置由现有C墙端推得，不是实测古门位。未把北魏西阳门轴线前推至东汉。"
+},
   {
     "id": "C02-018",
     "asset": "courtyard-B",
@@ -3625,6 +3743,33 @@ export const nodes = [
 ];
 
 export const chapters = [
+{
+  "camera": {
+    "position": [
+      21.644511224702,
+      25.17000000178814,
+      -1427.2125656045973
+    ],
+    "target": [
+      -16.0157413482666,
+      4.170000001788139,
+      -1397.772705078125
+    ]
+  },
+  "id": "yong-gate",
+  "title": "雍门与通口",
+  "subtitle": "完整近档 · 两翼接墙 · C级设计落位",
+  "nodeIds": [
+    "yong-gate-body",
+    "yong-gate-interface"
+  ],
+  "loadNodeIds": [
+    "yong-gate-body",
+    "yong-gate-interface"
+  ],
+  "tier": "C",
+  "basis": "两翼复用旧试放几何，新增连续地坪；保留原门体近景。当前墙端匹配不证明历史精度，外部道路尚未连接。"
+},
   {
     "id": "walls",
     "title": "城墙与城门",
@@ -4339,8 +4484,8 @@ export const provenance = {
   },
   "counts": {
     "courtyards": 44,
-    "cityWallAssets": 13,
-    "builtGateBodies": 1,
+    "cityWallAssets": 15,
+    "builtGateBodies": 2,
     "marketShops": 5,
     "marketStalls": 3,
     "independentResearchModels": 14,
@@ -4402,8 +4547,8 @@ export const provenance = {
       "sha256": "ddd1445c1dddabc7f2134b4dc0c3fae37484e619099ea549a4104bf483b486c1"
     }
   ],
-  "initialModelBytes": 1913020,
-  "allCityModelBytes": 11629564,
+  "initialModelBytes": 3872084,
+  "allCityModelBytes": 13466348,
   "limits": [
     "所有实例数量来自现有交付记录。",
     "城垣和门位使用示意关系，形体与住宅落位属于设计推测。",
