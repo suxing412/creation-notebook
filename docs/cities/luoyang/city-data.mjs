@@ -1360,6 +1360,129 @@ const assetRecords = [
         -835.9883422851562
       ]
     }
+  },
+  {
+    "path": "../../library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD2.glb",
+    "bytes": 87196,
+    "sha256": "44366ced8b71c5a3cbd417f8aacfafa095f92012e13f2a989735a8aac1e5ce67",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        5.029999732971191,
+        12.150002479553223
+      ]
+    },
+    "id": "north-three-opposed_rooms-far",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "nearPath": "../../library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD0.glb",
+    "nearBytes": 1512104,
+    "nearSha256": "21ffb5af02cef43552a8fd41173297569e5dac7173d0e76f09a0ef408b99a9ce"
+  },
+  {
+    "path": "../../library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD0.glb",
+    "bytes": 1512104,
+    "sha256": "21ffb5af02cef43552a8fd41173297569e5dac7173d0e76f09a0ef408b99a9ce",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        5.128161907196045,
+        12.150002479553223
+      ]
+    },
+    "id": "north-three-opposed_rooms-near",
+    "sourceContract": "progress-assets/north-three-v1/source.json"
+  },
+  {
+    "path": "../../library/models/m-luoyang-court-layout-kit/files/compact_work-LOD2.glb",
+    "bytes": 73328,
+    "sha256": "84426f9142947741f0944ed4772d4008dfa2f687241618306503230ac593bba0",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        4.730000019073486,
+        12.150002479553223
+      ]
+    },
+    "id": "north-three-compact_work-far",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "nearPath": "../../library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb",
+    "nearBytes": 1446320,
+    "nearSha256": "e799b5880cd12a5c9255f1c2cadbb49051032027d1781e8e6dd3c27dd48c7ce2"
+  },
+  {
+    "path": "../../library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb",
+    "bytes": 1446320,
+    "sha256": "e799b5880cd12a5c9255f1c2cadbb49051032027d1781e8e6dd3c27dd48c7ce2",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        4.829568386077881,
+        12.150002479553223
+      ]
+    },
+    "id": "north-three-compact_work-near",
+    "sourceContract": "progress-assets/north-three-v1/source.json"
+  },
+  {
+    "path": "../../library/models/m-luoyang-workyard-shed/files/workyard-LOD2.glb",
+    "bytes": 167792,
+    "sha256": "574d81d91d3898bf9de5e3d46b2b7d8532dd2c1b52d4ac35f7132898a1babda0",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        5.029999732971191,
+        12.150002479553223
+      ]
+    },
+    "id": "north-three-workyard-far",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "nearPath": "../../library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
+    "nearBytes": 1850040,
+    "nearSha256": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e"
+  },
+  {
+    "path": "../../library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
+    "bytes": 1850040,
+    "sha256": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        5.128161907196045,
+        12.150002479553223
+      ]
+    },
+    "id": "north-three-workyard-near",
+    "sourceContract": "progress-assets/north-three-v1/source.json"
   }
 ];
 
@@ -3696,7 +3819,7 @@ export const nodes = [
       0
     ],
     "chapter": "terrain",
-    "initial": false,
+    "initial": true,
     "tier": "推测",
     "basis": "C-alt、6 米道路、A/direct 城墙的既有地面组合。network-ground-stitched 三个原子节点整体显示，D08 保留交付规定的单次平移。",
     "sourceContract": "data/west/ground-atomic-contract.json",
@@ -4038,6 +4161,273 @@ export const nodes = [
       ]
     },
     "summary": "无损提取现有primary的209三角连通分量，范围约1.4×1.8千米，非50米短片。完整道路章加载原network后替换本片；默认显示不等于完整网络。"
+  },
+  {
+    "id": "C_NORTH_INFILL_01",
+    "asset": "north-three-opposed_rooms-far",
+    "title": "住宅院落 45 · 北缘新增",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      586,
+      0,
+      -1234,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "C",
+    "basis": "沿用已建18×24米院落组合，在既有住宅试验区地面上新增C级设计落位。东汉陶院落只作功能组合比较，不证明洛阳古代宅址、院数或尺寸。",
+    "sourceGroup": "north_three_infill_C",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "variant": "opposed_rooms",
+    "bounds": {
+      "min": [
+        576.9999980926514,
+        0.19999992847442627,
+        -1246.000002861023
+      ],
+      "max": [
+        595.000002861023,
+        5.128161907196045,
+        -1221.8499975204468
+      ]
+    },
+    "summary": "住宅试验区北缘新增三院之一；全城用现有远档，进入北缘三院章节加载完整近档。未达到013近景质量或连续人体通行认证。"
+  },
+  {
+    "id": "C_NORTH_INFILL_01-near",
+    "asset": "north-three-opposed_rooms-near",
+    "title": "住宅院落 45 · 北缘新增",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      586,
+      0,
+      -1234,
+      1
+    ],
+    "chapter": "north-three",
+    "initial": false,
+    "tier": "C",
+    "basis": "沿用已建18×24米院落组合，在既有住宅试验区地面上新增C级设计落位。东汉陶院落只作功能组合比较，不证明洛阳古代宅址、院数或尺寸。",
+    "sourceGroup": "north_three_infill_C",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "variant": "opposed_rooms",
+    "bounds": {
+      "min": [
+        576.9999980926514,
+        0.19999992847442627,
+        -1246.000002861023
+      ],
+      "max": [
+        595.000002861023,
+        5.128161907196045,
+        -1221.8499975204468
+      ]
+    },
+    "summary": "住宅试验区北缘新增三院之一；全城用现有远档，进入北缘三院章节加载完整近档。未达到013近景质量或连续人体通行认证。",
+    "replaces": [
+      "C_NORTH_INFILL_01"
+    ]
+  },
+  {
+    "id": "C_NORTH_INFILL_02",
+    "asset": "north-three-compact_work-far",
+    "title": "住宅院落 46 · 北缘新增",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      612,
+      0,
+      -1234,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "C",
+    "basis": "沿用已建18×24米院落组合，在既有住宅试验区地面上新增C级设计落位。东汉陶院落只作功能组合比较，不证明洛阳古代宅址、院数或尺寸。",
+    "sourceGroup": "north_three_infill_C",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "variant": "compact_work",
+    "bounds": {
+      "min": [
+        602.9999980926514,
+        0.19999992847442627,
+        -1246.000002861023
+      ],
+      "max": [
+        621.000002861023,
+        4.829568386077881,
+        -1221.8499975204468
+      ]
+    },
+    "summary": "住宅试验区北缘新增三院之一；全城用现有远档，进入北缘三院章节加载完整近档。未达到013近景质量或连续人体通行认证。"
+  },
+  {
+    "id": "C_NORTH_INFILL_02-near",
+    "asset": "north-three-compact_work-near",
+    "title": "住宅院落 46 · 北缘新增",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      612,
+      0,
+      -1234,
+      1
+    ],
+    "chapter": "north-three",
+    "initial": false,
+    "tier": "C",
+    "basis": "沿用已建18×24米院落组合，在既有住宅试验区地面上新增C级设计落位。东汉陶院落只作功能组合比较，不证明洛阳古代宅址、院数或尺寸。",
+    "sourceGroup": "north_three_infill_C",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "variant": "compact_work",
+    "bounds": {
+      "min": [
+        602.9999980926514,
+        0.19999992847442627,
+        -1246.000002861023
+      ],
+      "max": [
+        621.000002861023,
+        4.829568386077881,
+        -1221.8499975204468
+      ]
+    },
+    "summary": "住宅试验区北缘新增三院之一；全城用现有远档，进入北缘三院章节加载完整近档。未达到013近景质量或连续人体通行认证。",
+    "replaces": [
+      "C_NORTH_INFILL_02"
+    ]
+  },
+  {
+    "id": "C_NORTH_INFILL_03",
+    "asset": "north-three-workyard-far",
+    "title": "住宅院落 47 · 北缘新增",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      638,
+      0,
+      -1234,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "C",
+    "basis": "沿用已建18×24米院落组合，在既有住宅试验区地面上新增C级设计落位。东汉陶院落只作功能组合比较，不证明洛阳古代宅址、院数或尺寸。",
+    "sourceGroup": "north_three_infill_C",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "variant": "workyard",
+    "bounds": {
+      "min": [
+        628.9999980926514,
+        0.19999992847442627,
+        -1246.000002861023
+      ],
+      "max": [
+        647.000002861023,
+        5.128161907196045,
+        -1221.8499975204468
+      ]
+    },
+    "summary": "住宅试验区北缘新增三院之一；全城用现有远档，进入北缘三院章节加载完整近档。未达到013近景质量或连续人体通行认证。"
+  },
+  {
+    "id": "C_NORTH_INFILL_03-near",
+    "asset": "north-three-workyard-near",
+    "title": "住宅院落 47 · 北缘新增",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      638,
+      0,
+      -1234,
+      1
+    ],
+    "chapter": "north-three",
+    "initial": false,
+    "tier": "C",
+    "basis": "沿用已建18×24米院落组合，在既有住宅试验区地面上新增C级设计落位。东汉陶院落只作功能组合比较，不证明洛阳古代宅址、院数或尺寸。",
+    "sourceGroup": "north_three_infill_C",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "variant": "workyard",
+    "bounds": {
+      "min": [
+        628.9999980926514,
+        0.19999992847442627,
+        -1246.000002861023
+      ],
+      "max": [
+        647.000002861023,
+        5.128161907196045,
+        -1221.8499975204468
+      ]
+    },
+    "summary": "住宅试验区北缘新增三院之一；全城用现有远档，进入北缘三院章节加载完整近档。未达到013近景质量或连续人体通行认证。",
+    "replaces": [
+      "C_NORTH_INFILL_03"
+    ]
   }
 ];
 
@@ -4135,7 +4525,7 @@ export const chapters = [
   {
     "id": "residential",
     "title": "住宅院落",
-    "subtitle": "44 座已落位院落 · 六种原型",
+    "subtitle": "47 座已落位院落 · 原44院与北缘3院",
     "nodeIds": [
       "C02-018",
       "C02-019",
@@ -4180,7 +4570,10 @@ export const chapters = [
       "FROZEN-D08-M",
       "FROZEN-D08-E",
       "FROZEN-D08-NW",
-      "FROZEN-D08-NE"
+      "FROZEN-D08-NE",
+      "C_NORTH_INFILL_01",
+      "C_NORTH_INFILL_02",
+      "C_NORTH_INFILL_03"
     ],
     "loadNodeIds": [
       "C02-018",
@@ -4226,7 +4619,11 @@ export const chapters = [
       "FROZEN-D08-M",
       "FROZEN-D08-E",
       "FROZEN-D08-NW",
-      "FROZEN-D08-NE"
+      "FROZEN-D08-NE",
+      "C_NORTH_INFILL_01",
+      "C_NORTH_INFILL_02",
+      "C_NORTH_INFILL_03",
+      "ground-retained"
     ],
     "camera": {
       "position": [
@@ -4241,7 +4638,7 @@ export const chapters = [
       ]
     },
     "tier": "推测",
-    "basis": "36 个 C02 院与 8 个 D08 院共用原交付矩阵。C-alt 只调整南组 14 院，全部规模来自现有实例记录。",
+    "basis": "原36个C02与8个D08院的矩阵不变；北缘新增三种已交付组合，共47个C级设计落位。全部不是考古院址/院数复原。",
     "researchModelIds": [
       "research-north13-court-A2",
       "research-north13-court-B",
@@ -4359,6 +4756,36 @@ export const chapters = [
     },
     "tier": "推测",
     "basis": "按现有原子地面合同展示完整四文件组合，保留道路关系与设计地面。古河渠位置仍未配准。"
+  },
+  {
+    "id": "north-three",
+    "title": "住宅北缘三院",
+    "subtitle": "三屋对置、紧凑作业与足碓院 · C级落位",
+    "nodeIds": [
+      "C_NORTH_INFILL_01-near",
+      "C_NORTH_INFILL_02-near",
+      "C_NORTH_INFILL_03-near"
+    ],
+    "loadNodeIds": [
+      "C_NORTH_INFILL_01-near",
+      "C_NORTH_INFILL_02-near",
+      "C_NORTH_INFILL_03-near",
+      "ground-retained"
+    ],
+    "camera": {
+      "position": [
+        684,
+        52,
+        -1178
+      ],
+      "target": [
+        612,
+        2,
+        -1234
+      ]
+    },
+    "tier": "C",
+    "basis": "复用已交付三种院落及原retained整片地面；不改变旧44院或待部署13院。模型地面连续不代表历史巷道复原。"
   }
 ];
 
@@ -4789,7 +5216,7 @@ export const provenance = {
     "rotationToTrueNorth": null
   },
   "counts": {
-    "courtyards": 44,
+    "courtyards": 47,
     "cityWallAssets": 15,
     "builtGateBodies": 2,
     "marketShops": 5,
@@ -4851,12 +5278,16 @@ export const provenance = {
     {
       "path": "progress-assets/flat/source.json",
       "sha256": "ddd1445c1dddabc7f2134b4dc0c3fae37484e619099ea549a4104bf483b486c1"
+    },
+    {
+      "path": "progress-assets/north-three-v1/source.json",
+      "sha256": "d2cadd21e9b5fc9a3f7cee23927681a957118734c93a047cecab1038cc39c249"
     }
   ],
-  "initialModelBytes": 1990588,
-  "allCityModelBytes": 13926792,
+  "initialModelBytes": 2948644,
+  "allCityModelBytes": 19063572,
   "limits": [
-    "所有实例数量来自现有交付记录。",
+    "原44院与新增3院均为有记录的C级设计落位，数量不对应古代宅址。",
     "城垣和门位使用示意关系，形体与住宅落位属于设计推测。",
     "北宫新墙与古水系仍未配准，相关几何保留空缺。"
   ],
