@@ -5,11 +5,11 @@
   "kind": "器物",
   "title": "折页",
   "english": "FOLIO",
-  "summary": "用一片连续厚壳组织前唇、斜面、回折与支承。Atlas、Folio、Spire 改变宽高与折角；独立网页解释参数、折面和接地证据。",
+  "summary": "按阅读/陈列支架构想：用一片连续厚壳折出前唇、斜面、回折与支承。Atlas 低宽、Folio 折页、Spire 高窄三个变体改变宽高与折角，不是换色。",
   "status": "已发布",
   "statusNote": "已公开 · 研究档案",
   "cover": "assets/folio/beauty.png",
-  "coverAlt": "一片连续暖白厚壳折成前托、阅读斜面和后足的折页Folio变体，真实Blender离线渲染",
+  "coverAlt": "浅灰背景上，一片银色缎面铝板折成的阅读支架，从右前方斜看：底部是向上翻起的前唇托槽，中间是倾斜的阅读面，顶部圆弧回折成后腿并落到后足；真实 Blender 离线渲染",
   "gallery": [
     "assets/atlas/beauty.png",
     "assets/spire/beauty.png",
@@ -23,24 +23,25 @@
   ],
   "files": [
     {
-      "path": "assets/atlas/model.glb",
-      "label": "atlas"
+      "path": "assets/folio/model.glb",
+      "label": "Folio · 折页（宽 250 mm，折点高 190 mm，斜面 65°）"
     },
     {
-      "path": "assets/folio/model.glb",
-      "label": "folio"
+      "path": "assets/atlas/model.glb",
+      "label": "Atlas · 低宽（宽 305 mm，折点高 135 mm，斜面 56°）"
     },
     {
       "path": "assets/spire/model.glb",
-      "label": "spire"
+      "label": "Spire · 高窄（宽 185 mm，折点高 235 mm，斜面 74°）"
     }
   ],
   "notes": {
-    "已完成的检查": "三正式模型共21视图、有限门禁与最终资产身份已复核；保留门禁漏检及修复历史，不用单纯报数替代检查。",
-    "限制与待解决": "三变体面数分别10,988 / 12,044 / 13,004；有限测试不证明整个参数域或物理承载、制造、GPU、真机性能。"
+    "已完成的检查": "三个正式变体各从 7 个角度看过，模型检查和最终文件身份都已复核。原记录：三正式模型共21视图、有限门禁与最终资产身份已复核；保留门禁漏检及修复历史，不用单纯报数替代检查。",
+    "限制与待解决": "这是数字造型研究，还没做制造、承重和防倾覆验证，网页实时显示也没核对过。原记录：有限测试不证明整个参数域或物理承载、制造、GPU、真机性能。另：三件模型都没做过 GPU/WebGL 实时渲染核对，而资产库详情页默认打开的就是实时 3D；端盖厚度方向的边是硬边，不是全方向圆角；防倾覆同样未验证。"
   },
   "related": [
-    "w-006"
+    "w-006",
+    "s-f03"
   ],
   "legacyPath": true
 }

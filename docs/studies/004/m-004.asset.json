@@ -11,23 +11,23 @@
   "cover": "assets/beauty.png",
   "coverAlt": "岩岸上的浅色双拱观测所，阶梯与望远镜平台连接，真实 Blender 离线渲染",
   "gallery": [
-    "assets/arrival-after.png",
+    "assets/entry.png",
     "assets/front.png",
     "assets/dusk.png",
     "assets/rear.png",
     "assets/side.png",
     "assets/top.png",
-    "assets/entry.png"
+    "assets/arrival-after.png"
   ],
   "files": [
     {
       "path": "assets/limen.glb",
-      "label": "limen.glb"
+      "label": "完整模型 · 单一精度"
     }
   ],
   "notes": {
-    "已完成的检查": "修正拱洞与穿阶岩体；32,643 条立板射线中的异常由 96 降至 0，昼夜静态切换已检查。",
-    "限制与待解决": "72 组有意装配接触保留；未做建筑规范、结构受力或真实 WebGL 验证。"
+    "已完成的检查": "拱洞和台阶穿进岩石的地方已修正，逐条射线复查后台阶立面不再被岩石挡住；白天和傍晚两种光照都已检查。原记录：修正拱洞与穿阶岩体；32,643 条立板射线中的异常由 96 降至 0，昼夜静态切换已检查。",
+    "限制与待解决": "部分构件之间有意贴合保留；建筑没有按规范或受力做过校核，网页实时显示也没验证。原记录：72 组有意装配接触保留；未做建筑规范、结构受力或真实 WebGL 验证。另：下方抵达台悬挑在岩缘外、底面高出地面约 0.3 m（作者 QA 亦记“下平台前伸部分仍属于概念连接”）；35/63 个图元无 UV；未做 LOD。"
   },
   "related": [
     "w-004"

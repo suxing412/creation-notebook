@@ -5,7 +5,7 @@
   "kind": "器物",
   "title": "暮灯",
   "english": "VESPER",
-  "summary": "让同一设计语言产生低阔、均衡与修长三种几何，而不是只换颜色。独立产品规格图录比较结构、参数和修订证据。",
+  "summary": "同一设计语言做出低阔、均衡、窄高三种几何，而不是只换颜色。参数化桌灯：偏心椭圆软罩、内缩环形透光体、S 曲线支柱与圆角椭圆底座，共 8 个闭合构件。",
   "status": "已发布",
   "statusNote": "已公开 · 研究档案",
   "cover": "assets/poise/beauty.png",
@@ -17,30 +17,32 @@
     "assets/poise/front.png",
     "assets/reach/front.png",
     "assets/hush/side.png",
-    "assets/hush/top.png",
     "assets/poise/side.png",
-    "assets/poise/top.png"
+    "assets/reach/side.png",
+    "assets/poise/junction.png",
+    "assets/poise/base-junction.png"
   ],
   "files": [
     {
-      "path": "assets/hush/model.glb",
-      "label": "hush"
+      "path": "assets/poise/model.glb",
+      "label": "Poise · 均衡"
     },
     {
-      "path": "assets/poise/model.glb",
-      "label": "poise"
+      "path": "assets/hush/model.glb",
+      "label": "Hush · 低阔"
     },
     {
       "path": "assets/reach/model.glb",
-      "label": "reach"
+      "label": "Reach · 窄高"
     }
   ],
   "notes": {
-    "已完成的检查": "三组实际模型、固定摄影棚与门禁检查齐全；保留门禁漏检的修复历史。产品图录与独立观察器已完成所述静态局部验收。",
-    "限制与待解决": "有限配置与测试不证明完整参数域安全；光学、电气、热学、制造、真实GPU与手机仍未验证。"
+    "已完成的检查": "三个变体各 8 个构件都是封闭实体，构件两两之间该贴合还是该分开都逐对查过。三件 validation.json：每件 28 对构件逐对判定，9 对按设计接触、19 对必须分离，全部通过；退化面、重复面、非流形边、自交候选、共面重叠均为 0。原记录（与网页卡 w-005 同文）：三组实际模型、固定摄影棚与门禁检查齐全；保留门禁漏检的修复历史。产品图录与独立观察器已完成所述静态局部验收。",
+    "限制与待解决": "这是外观与结构研究，不是能通电的灯具：无 UV、无贴图；透光体的发光只是视觉代理，没有校准光谱或亮度；没有线缆和开关；罩下中心孔内的定位销设计上允许露出；网页实时显示（WebGL、GPU）和手机尚未验证。原记录（与网页卡 w-005 同文）：有限配置与测试不证明完整参数域安全；光学、电气、热学、制造、真实GPU与手机仍未验证。"
   },
   "related": [
-    "w-005"
+    "w-005",
+    "s-f03"
   ],
   "legacyPath": true
 }

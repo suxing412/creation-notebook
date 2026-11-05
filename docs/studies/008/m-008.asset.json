@@ -9,34 +9,34 @@
   "status": "已发布",
   "statusNote": "已公开 · 研究档案",
   "cover": "assets/veil/beauty-wide.png",
-  "coverAlt": "透幕连续弯曲厚壳与真实贯穿孔洞，Blender Cycles CPU离线渲染",
+  "coverAlt": "灰色渐变背景前，一块向后微弯的暖白厚板斜立着，板上整齐排着 6×8 个圆孔；真实 Blender 离线渲染",
   "gallery": [
+    "assets/veil/hole-detail.png",
+    "assets/veil/top.png",
+    "assets/veil/rear.png",
+    "assets/veil/front.png",
     "assets/fold/beauty-wide.png",
-    "assets/fold/beauty.png",
     "assets/horizon/beauty-wide.png",
-    "assets/horizon/beauty.png",
-    "assets/veil/beauty.png",
     "assets/fold/front.png",
     "assets/horizon/front.png",
-    "assets/veil/front.png",
     "assets/fold/hole-detail.png"
   ],
   "files": [
     {
-      "path": "assets/fold/model.glb",
-      "label": "fold"
+      "path": "assets/veil/model.glb",
+      "label": "透幕 Veil · 6×8 孔 · 45°"
     },
     {
       "path": "assets/horizon/model.glb",
-      "label": "horizon"
+      "label": "横幕 Horizon · 9×5 孔 · 24°"
     },
     {
-      "path": "assets/veil/model.glb",
-      "label": "veil"
+      "path": "assets/fold/model.glb",
+      "label": "曲幕 Fold · 4×9 孔 · 80°"
     }
   ],
   "notes": {
-    "已完成的检查": "三组64点正式几何与导出身份绑定复查；保留孔壁绕序及32点孔缘修订、输入边界和异常反例。",
+    "已完成的检查": "三种变体都是单件封闭网格，每个孔有 64 段孔缘、前后各 4 段倒圆；首版孔壁朝向错误已修正，失败记录保留在 review/。原记录：三组64点正式几何与导出身份绑定复查；保留孔壁绕序及32点孔缘修订、输入边界和异常反例。",
     "限制与待解决": "有限采样不证明全部参数域安全；真实GPU、动态闪烁、手机、实体自立、光学及结构性能未验。"
   },
   "related": [

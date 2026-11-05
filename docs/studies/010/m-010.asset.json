@@ -9,35 +9,34 @@
   "status": "已发布",
   "statusNote": "已公开 · 研究档案",
   "cover": "model/assets/slot/beauty.png",
-  "coverAlt": "栖格两根陶土色纵轨与三块浅色横隔板，真实Blender CPU图，开放底部数字概念",
+  "coverAlt": "栖格 slot 款低俯视：两根珊瑚陶土色矮纵轨穿过三块顶角圆润的奶白隔板，接点处可见半搭接台阶，浅灰背景。",
   "gallery": [
     "model/assets/rise/beauty.png",
+    "model/assets/rise/joint-exploded.png",
+    "model/assets/rise/exploded.png",
     "model/assets/span/beauty.png",
-    "model/assets/rise/front.png",
-    "model/assets/slot/front.png",
-    "model/assets/span/front.png",
     "model/assets/rise/joint.png",
-    "model/assets/rise/side.png",
     "model/assets/rise/top.png",
-    "model/assets/slot/joint.png"
+    "model/assets/rise/side.png",
+    "model/assets/rise/front.png"
   ],
   "files": [
     {
-      "path": "model/assets/rise/model.glb",
-      "label": "rise"
+      "path": "model/assets/slot/model.glb",
+      "label": "slot · 3 块隔板 · 长 320 × 高 125 mm"
     },
     {
-      "path": "model/assets/slot/model.glb",
-      "label": "slot"
+      "path": "model/assets/rise/model.glb",
+      "label": "rise · 5 块隔板 · 长 360 × 高 175 mm"
     },
     {
       "path": "model/assets/span/model.glb",
-      "label": "span"
+      "label": "span · 4 块隔板 · 长 440 × 高 110 mm"
     }
   ],
   "notes": {
-    "已完成的检查": "三款原生/导出、逐接点、有限运动与场景4门共12报告完成身份绑定；完整146原件不变。",
-    "限制与待解决": "有限样本不是连续轨迹或制造保证；真实GPU、手机、承载、防倾覆未验。"
+    "已完成的检查": "每款过四道检查，共 12 份报告，每份都记下所查文件的 SHA-256：一、Blender 原生模型自检，并核对导出 GLB 与原生模型的三角形逐一一致；二、逐个接点测槽宽和两侧净空（rise 每侧 0.35 mm、竖向中缝 0.7 mm；slot、span 每侧 0.30 mm、中缝 0.6 mm），所有部件底面齐平；三、每块隔板单独竖直抽出，在 12 个高度做碰撞采样；四、核对灯光场景文件里的模型与原生一致，地面在模型下方 0.2 mm。研究包 model/ 下的 146 个文件都没有改动。原记录：三款原生/导出、逐接点、有限运动与场景4门共12报告完成身份绑定；完整146原件不变。",
+    "限制与待解决": "抽出检查只在 12 个高度采样，不是连续运动证明，也不保证实物能加工装配；没有在真实 GPU 和手机上看过；承重和防倾倒都没测。原记录：有限样本不是连续轨迹或制造保证；真实GPU、手机、承载、防倾覆未验。"
   },
   "related": [
     "w-010"

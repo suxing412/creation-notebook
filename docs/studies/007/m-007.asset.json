@@ -9,35 +9,38 @@
   "status": "已发布",
   "statusNote": "已公开 · 研究档案",
   "cover": "assets/orison/beauty.png",
-  "coverAlt": "回环雕塑的偏心开口与连续暖白闭合体块，真实 Blender CPU 离线渲染",
+  "coverAlt": "回环 Orison：暖白哑光的偏心水滴形闭合环，上宽下窄，以下端一点立在浅灰渐变背景前，脚下有一小块接触阴影。",
   "gallery": [
     "assets/ascend/beauty.png",
     "assets/latitude/beauty.png",
-    "assets/ascend/front.png",
-    "assets/latitude/front.png",
     "assets/orison/front.png",
-    "assets/ascend/rear.png",
+    "assets/latitude/front.png",
+    "assets/ascend/front.png",
+    "assets/orison/side.png",
+    "assets/latitude/side.png",
     "assets/ascend/side.png",
     "assets/ascend/top.png",
-    "assets/latitude/rear.png"
+    "assets/ascend/seam-detail.png",
+    "review/crown-after/crown-detail.png",
+    "assets/ascend/rear.png"
   ],
   "files": [
     {
-      "path": "assets/ascend/model.glb",
-      "label": "ascend"
+      "path": "assets/orison/model.glb",
+      "label": "回环 Orison · 偏心直立（基线）"
     },
     {
       "path": "assets/latitude/model.glb",
-      "label": "latitude"
+      "label": "横境 Latitude · 宽低"
     },
     {
-      "path": "assets/orison/model.glb",
-      "label": "orison"
+      "path": "assets/ascend/model.glb",
+      "label": "上行 Ascend · 窄高"
     }
   ],
   "notes": {
-    "已完成的检查": "三正式变体与最终资产身份已复查；保留接缝、冠部修订、反例和逐视图证据，网页将形体与投影观察分开。",
-    "限制与待解决": "有限测试不等于连续参数域证明；GPU、动态闪烁、实体手机与物理自立、烧制及制造性能未验。"
+    "已完成的检查": "三件变体都确认是一整件封闭、无破面的网格，导出的 GLB 与原模型三角面完全一致；接缝、冠部修改前后对比、反例和各角度图都留在研究档案里。原记录：三正式变体与最终资产身份已复查；保留接缝、冠部修订、反例和逐视图证据，网页将形体与投影观察分开。",
+    "限制与待解决": "只验证了这三组和两组边界参数，不代表任意参数都成立；没在真机和 GPU 上测过实时显示；这是数字陈列姿态：重心水平偏离最低点约 10–13 mm，底部弧面的曲率半径远小于重心高度，实物单点立不住，需要底座或支架；也没验证烧制或加工。原记录：有限测试不等于连续参数域证明；GPU、动态闪烁、实体手机与物理自立、烧制及制造性能未验。"
   },
   "related": [
     "w-007"

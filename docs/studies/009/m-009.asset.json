@@ -5,63 +5,66 @@
   "kind": "器物",
   "title": "折光",
   "english": "HINGE",
-  "summary": "用三种臂长与尺度组合研究可见转轴、局部装配接触和有限姿态净空。",
+  "summary": "三种臂长和尺寸搭配的折臂桌灯，研究看得见的转轴、构件之间的局部接触，以及几个抽样姿态下构件之间留出的空隙。",
   "status": "已发布",
   "statusNote": "已公开 · 研究档案",
   "cover": "model/assets/hinge/beauty.png",
-  "coverAlt": "折光双铰折臂桌灯的真实Blender CPU图，几何概念模型非制造产品",
+  "coverAlt": "折光桌灯斜侧视：浅青色圆形底座上立着短立柱，两节扁长灯臂由三个浅金色圆轴帽相连，末端是圆盘形灯头，浅灰背景。",
   "gallery": [
     "model/assets/poise/beauty.png",
     "model/assets/reach/beauty.png",
+    "model/assets/hinge/joint.png",
     "model/assets/hinge/front.png",
-    "model/assets/hinge/poses/extended/front.png",
     "model/assets/hinge/poses/folded/front.png",
+    "model/assets/hinge/poses/extended/front.png",
+    "model/assets/reach/front.png",
+    "model/assets/reach/poses/folded/front.png",
+    "model/assets/reach/poses/extended/front.png",
     "model/assets/poise/front.png",
-    "model/assets/poise/poses/extended/front.png",
     "model/assets/poise/poses/folded/front.png",
-    "model/assets/reach/front.png"
+    "model/assets/poise/poses/extended/front.png"
   ],
   "files": [
     {
       "path": "model/assets/hinge/model.glb",
-      "label": "hinge"
-    },
-    {
-      "path": "model/assets/hinge/poses/extended/model.glb",
-      "label": "hinge/poses/extended"
+      "label": "折光 Hinge · 基准姿态"
     },
     {
       "path": "model/assets/hinge/poses/folded/model.glb",
-      "label": "hinge/poses/folded"
+      "label": "折光 Hinge · 收拢样本"
     },
     {
-      "path": "model/assets/poise/model.glb",
-      "label": "poise"
-    },
-    {
-      "path": "model/assets/poise/poses/extended/model.glb",
-      "label": "poise/poses/extended"
-    },
-    {
-      "path": "model/assets/poise/poses/folded/model.glb",
-      "label": "poise/poses/folded"
+      "path": "model/assets/hinge/poses/extended/model.glb",
+      "label": "折光 Hinge · 展开样本"
     },
     {
       "path": "model/assets/reach/model.glb",
-      "label": "reach"
-    },
-    {
-      "path": "model/assets/reach/poses/extended/model.glb",
-      "label": "reach/poses/extended"
+      "label": "伸展 Reach · 基准姿态"
     },
     {
       "path": "model/assets/reach/poses/folded/model.glb",
-      "label": "reach/poses/folded"
+      "label": "伸展 Reach · 收拢样本"
+    },
+    {
+      "path": "model/assets/reach/poses/extended/model.glb",
+      "label": "伸展 Reach · 展开样本"
+    },
+    {
+      "path": "model/assets/poise/model.glb",
+      "label": "挺立 Poise · 基准姿态"
+    },
+    {
+      "path": "model/assets/poise/poses/folded/model.glb",
+      "label": "挺立 Poise · 收拢样本"
+    },
+    {
+      "path": "model/assets/poise/poses/extended/model.glb",
+      "label": "挺立 Poise · 展开样本"
     }
   ],
   "notes": {
-    "已完成的检查": "九个实际模型、导出一致性及有限运动样本完成绑定检查；31针对性控制含5个有效对照。",
-    "限制与待解决": "有限运动样本不证明连续全域；真实GPU、手机、稳定性、照度和制造性能未验。"
+    "已完成的检查": "三种比例各三个姿态共九个模型都实际检查过：导出的 GLB 与原模型三角面一致，转轴孔边到轴销至少留约 0.5 mm 间隙，并在一组有限的角度组合上抽查了运动时是否碰撞；另做了 31 项专门测试，其中 5 项确认正常文件能通过、26 项确认故意做坏的文件会被拦下。原记录：九个实际模型、导出一致性及有限运动样本完成绑定检查；31针对性控制含5个有效对照。",
+    "限制与待解决": "只抽查了有限几个姿态，不代表任意角度都不碰撞；活动件按数字间隙建模、互不接触，不是能直接制造的轴和紧固件；默认姿态在底座、脚垫、轴帽、灯头上壳的嵌接处各有 2407–2435 个三角相交候选，并非所有穿插都已归零；没在真实 GPU 和手机上看过，稳定性、照度和制造性能都没验证。原记录：有限运动样本不证明连续全域；真实GPU、手机、稳定性、照度和制造性能未验。"
   },
   "related": [
     "w-009"
