@@ -78,7 +78,11 @@ def updated(rels):
     if not rels:
         return None
     out = subprocess.run(['git', '-C', ROOT, 'log', '-1', '--format=%cI', '--', *['docs/' + r for r in rels]], capture_output=True, text=True).stdout.strip()
-    return out or None
+    if out:
+        return out
+    # not committed yet (e.g. built mid-merge): the newest file time stands in, so new work still sorts first
+    times = [os.path.getmtime(os.path.join(DOCS, r)) for r in rels if os.path.exists(os.path.join(DOCS, r))]
+    return datetime.datetime.fromtimestamp(max(times)).astimezone().isoformat(timespec='seconds') if times else None
 
 
 def check_card(path):
