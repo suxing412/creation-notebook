@@ -372,7 +372,7 @@ def main():
     public = [a for a in assets if a['public']]
     json.dump(cache, open(CACHE_PATH, 'w', encoding='utf-8'))
     out = {'generatedFrom': 'docs/**/*.asset.json', 'spec': SPEC['spec'],
-           'categories': [{k: c[k] for k in ('id', 'zh', 'en', 'desc')} for c in SPEC['categories']], 'assets': public}
+           'categories': [{**{k: c[k] for k in ('id', 'zh', 'en', 'desc')}, 'sort': c.get('sort', 'default')} for c in SPEC['categories']], 'assets': public}
     json.dump(out, open(os.path.join(LAB, 'data', 'assets.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     n_err = sum(1 for it in items if it['errors'])
     report = {'generated': datetime.datetime.now().astimezone().isoformat(timespec='seconds'), 'spec': SPEC['spec'],

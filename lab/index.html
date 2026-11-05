@@ -11,13 +11,62 @@
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="theme.css">
 <link rel="stylesheet" href="eras.css">
+<link rel="stylesheet" href="boot.css">
+<script>
+// pick this visit's era before first paint, so the opening screen already wears the skin of the box that will open
+(() => { const E = ['ancient', 'early', 'modern', 'future'], home = !location.hash.slice(1); let e = null;
+  try { e = home ? null : sessionStorage.getItem('lab-era'); } catch {}
+  if (!E.includes(e)) e = home ? E[Math.floor(Math.random() * 4)] : 'ancient';
+  try { sessionStorage.setItem('lab-era', e); } catch {}
+  document.documentElement.dataset.era = window.__era0 = e; })();
+</script>
 <script type="importmap">{"imports": {"three": "../docs/fusions/F01/vendor/three.module.js", "three/addons/": "../docs/fusions/F01/vendor/addons/"}}</script>
 </head>
 <body>
+<div class="boot" id="boot" role="status" aria-live="polite" aria-label="正在打开造物之匣">
+  <div class="boot-in">
+    <svg class="boot-box" viewBox="20 22 160 136" aria-hidden="true">
+      <defs><radialGradient id="boot-glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffd27a" stop-opacity=".95"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient></defs>
+      <g style="--d:0s">
+        <path class="face f-l" d="M32 80 L100 114 L100 152 L32 118 Z"/><path class="face f-r" d="M100 114 L168 80 L168 118 L100 152 Z"/>
+        <path class="ln" pathLength="1" d="M32 80 L100 114 L100 152 L32 118 Z"/><path class="ln" pathLength="1" d="M100 114 L168 80 L168 118 L100 152"/>
+      </g>
+      <ellipse class="glow" cx="100" cy="82" rx="78" ry="40"/>
+      <g class="lid" style="--d:.25s">
+        <path class="face f-l" d="M26 67 L100 104 L100 116 L26 79 Z"/><path class="face f-r" d="M100 104 L174 67 L174 79 L100 116 Z"/><path class="face f-top" d="M100 30 L174 67 L100 104 L26 67 Z"/>
+        <path class="ln" pathLength="1" d="M100 30 L174 67 L100 104 L26 67 Z"/><path class="ln" pathLength="1" d="M26 67 L26 79 L100 116 L174 79 L174 67"/><path class="ln" pathLength="1" d="M100 104 L100 116"/>
+        <path class="ln trim" pathLength="1" style="--d:.6s" d="M26 73 L100 110 L174 73"/>
+        <path class="slip" d="M107 60.2 L86.3 70.6 L93 73.9 L113.7 63.5 Z"/>
+      </g>
+    </svg>
+    <h1>造物之匣</h1><div class="boot-en">Creation Notebook · Asset library</div>
+    <div class="boot-bar"><i></i></div>
+    <ol class="boot-steps"><li>取目录</li><li>载引擎</li><li>搭小城</li><li>开匣</li></ol>
+  </div>
+</div>
+<script>
+// the opening screen follows the real steps: catalogue → engine → town → open; it never stays longer than 30 s
+window.__boot = (() => {
+  const el = document.getElementById('boot'), t0 = performance.now(), reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let n = -1, closing = false, faded = false, after = [];
+  const mark = i => { n = i; el.querySelectorAll('.boot-steps li').forEach((li, k) => { li.classList.toggle('done', k < i); li.classList.toggle('now', k === i); }); };
+  const step = i => { if (closing || i <= n) return; mark(i); el.style.setProperty('--p', ((i + .85) / 4).toFixed(3)); };
+  // done(then): finish the bar, lift the lid, fade out; then() runs as the fade starts (or at once if it already faded)
+  const done = then => {
+    if (then) faded ? then() : after.push(then);
+    if (closing) return; closing = true;
+    setTimeout(() => { mark(3); el.style.setProperty('--p', 1); el.classList.add('open');
+      setTimeout(() => { faded = true; el.classList.add('out'); after.forEach(f => f()); after = []; setTimeout(() => el.remove(), 700); }, reduce ? 0 : 480);
+    }, Math.max(0, 900 - (performance.now() - t0)));
+  };
+  step(0); setTimeout(() => done(), 30000); return { step, done };
+})();
+</script>
 <main id="main"></main>
 <script type="module">
 import { data, esc, size, tris, date, img, card, specs, header } from './lib.js';
 const d = await data;
+__boot.step(1);
 const main = document.getElementById('main');
 const H = header(d, '', { onSearch: q => { if (route().view !== 'list' || route().id !== 'all') { location.hash = 'all'; } state.q = q; renderList(); } });
 const state = { q: '', kind: '', sort: 'default', view: (() => { try { return localStorage.getItem('lab-view') || 'grid'; } catch { return 'grid'; } })() };
@@ -29,7 +78,8 @@ const route = () => { const h = location.hash.slice(1); return !h ? { view: 'ove
 async function renderOverview() {
   const files = d.assets.reduce((s, a) => s + a.files.length, 0), bytes = d.assets.reduce((s, a) => s + a.bytes, 0);
   // every visit starts in a random era at a random time of day
-  const ERA_IDS = ['ancient', 'early', 'modern', 'future'], era = ERA_IDS[Math.floor(Math.random() * 4)], tod0 = Math.random();
+  const ERA_IDS = ['ancient', 'early', 'modern', 'future'], era = window.__era0 || ERA_IDS[Math.floor(Math.random() * 4)], tod0 = Math.random();
+  window.__era0 = null; // later visits to the overview in this page pick a fresh era
   main.innerHTML = `<section class="ov" aria-label="资产总览（3D 小城）">
     <div class="ov-sky" aria-hidden="true"><i></i><i></i></div>
     <div class="ov-canvas" style="position:absolute;inset:0"></div>
@@ -46,11 +96,11 @@ async function renderOverview() {
       <div><b>${size(bytes)}</b><span class="meta">模型体积</span></div>
       <div><b>${d.categories.length}</b><span class="meta">分类</span></div></div>
     <nav class="ov-nav" aria-label="走到分类"><button data-go="-1" aria-label="上一个分类">‹</button><button data-go="home" aria-pressed="true">全城</button>${d.categories.map(c => `<button data-go="${c.id}" aria-pressed="false">${esc(c.zh)}</button>`).join('')}<button data-go="+1" aria-label="下一个分类">›</button></nav>
-    <div class="ov-loading">正在建城…</div>
   </section>
   <section class="ov-fallback" id="ov-2d" hidden></section>`;
   try {
     const { mountOverview } = await import('./city3d.mjs');
+    __boot.step(2);
     if (route().view !== 'overview') return;
     const sec = main.querySelector('.ov'), cardBox = document.getElementById('ov-card'), nav = main.querySelector('.ov-nav');
     let cur = null;
@@ -92,7 +142,7 @@ async function renderOverview() {
     const clockEl = document.getElementById('ov-clock'), nightBtn = document.getElementById('ov-night');
     let isNight = null;
     ov = await mountOverview(sec, d, {
-      era, tod: tod0,
+      era, tod: tod0, paused: true,
       onBusy: busy => { const box = main.querySelector('.ov-era'); box?.classList.toggle('busy', busy); box?.setAttribute('aria-busy', busy); },
       onTime: (tod, nk, warm) => {
         sec.style.setProperty('--night', nk.toFixed(3)); sec.style.setProperty('--warm', warm.toFixed(3));
@@ -133,13 +183,14 @@ async function renderOverview() {
         setTimeout(() => cardBox.classList.add('show'), 30);
       },
     });
+    __boot.done(() => ov?.play());
     nightBtn.onclick = () => { nightBtn.classList.remove('spin'); void nightBtn.offsetWidth; nightBtn.classList.add('spin'); ov.skipTo(isNight ? 0.5 : 0.0); };
     const eraBox = main.querySelector('.ov-era');
     eraBox.onclick = e => { const b = e.target.closest('[data-era]'); if (!b) return; if (!ov.setEra(b.dataset.era) && ov.busy) { eraBox.classList.remove('nope'); void eraBox.offsetWidth; eraBox.classList.add('nope'); } };
     nav.onclick = e => { const b = e.target.closest('[data-go]'); if (!b) return; const g = b.dataset.go, ids = d.categories.map(c => c.id);
       if (g === 'home') { ov.home(); setNav(''); } else if (g === '-1' || g === '+1') { const i = cur ? ids.indexOf(cur.id) : -1; const id = ids[(i + (g === '+1' ? 1 : -1) + ids.length) % ids.length]; ov.focus(id); setNav(id); } else { ov.focus(g); setNav(g); } };
   } catch (err) {
-    console.error(err);
+    console.error(err); __boot.done();
     main.querySelector('.ov').remove();
     const fb = document.getElementById('ov-2d'); fb.hidden = false;
     fb.innerHTML = `<p class="meta">这台设备无法显示 3D 总览，下面是列表版。</p>` + d.categories.map(c => {
@@ -196,8 +247,8 @@ function render() {
     const [id, qs] = r.id.split('?'); const q = new URLSearchParams(qs || '').get('q');
     if (q !== null) { state.q = q; H.search.value = q; }
     if (!d.categories.some(c => c.id === id) && id !== 'all') { location.hash = ''; return; }
-    H.setCurrent(id === 'all' ? '' : id); state.kind = ''; cur = renderListShell(id); renderList();
-    scrollTo(0, 0);
+    H.setCurrent(id === 'all' ? '' : id); state.kind = ''; state.sort = d.categories.find(x => x.id === id)?.sort || 'default'; cur = renderListShell(id); renderList();
+    scrollTo(0, 0); __boot.done();
   }
 }
 addEventListener('hashchange', render);

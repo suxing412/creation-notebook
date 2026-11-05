@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>投稿规范 · 造物手记</title>
+<title>提交规范 · 造物手记</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+SC:wght@500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
@@ -11,7 +11,9 @@
 <link rel="stylesheet" href="theme.css">
 <link rel="stylesheet" href="eras.css">
 <style>
-  .spec-wrap { max-width: 1120px; }
+  /* one centred 1120px column; the head's rule still runs full width */
+  #main { --side: max(var(--gutter), calc((100% - 1120px) / 2)); }
+  #main > .cat-head, #main > .spec-nav, #main > .sect { padding-left: var(--side); padding-right: var(--side); }
   .spec-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 0 var(--gutter) 26px; font-size: 14px; }
   .spec-nav a { color: var(--ink-2); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
   .spec-nav a:hover { color: var(--ink); border-color: var(--ink); }
@@ -108,7 +110,7 @@ const WARN = [
 const byId = Object.fromEntries((rep?.items ?? []).map(i => [i.id, i]));
 const main = document.getElementById('main');
 main.innerHTML = `
-<header class="cat-head"><div><div class="meta">Submission spec · v${spec.spec}</div><h1>投稿规范</h1>
+<header class="cat-head"><div><div class="meta">Submission spec · v${spec.spec}</div><h1>提交规范</h1>
   <p>造物之匣里的每一件数字资产，都由一张卡片 <code>&lt;id&gt;.asset.json</code> 描述。卡片写对、推送，网页就自动收录；写错了，检查会拦下并说明哪里不对。</p></div></header>
 <nav class="spec-nav" aria-label="本页目录"><a href="#where">放在哪里</a><a href="#card">卡片格式</a><a href="#cats">分类与类型</a><a href="#status">状态</a><a href="#rules">质量下限</a><a href="#proj">大型项目</a><a href="#src">源文件</a><a href="#flow">提交流程</a><a href="#report">检查报告</a></nav>
 

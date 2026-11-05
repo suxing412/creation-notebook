@@ -7,4 +7,4 @@
 - Claude 只评审已打 tag 的版本。推送 tag 后通常约 30 分钟内产生评审，读取该 tag 的评审文件并核对其提交 SHA。
 - 任何协作者都不向 `reviews` 分支提交，不 force push `main`。
 - `D:/GitHub/creation-notebook-review/` 下的两个 Git worktree 是评审专用目录。不得删除、prune 或修改其工作状态。
-- **资产投稿规范**（`docs/asset-spec/README.md`）：每件资产一张卡片 `<id>.asset.json`；新资产放在 `docs/library/<分类>/<id>/`。提交前运行 `python -I lab/tools/build_assets.py --check`，有错误不提交。分类和门槛只在 `docs/asset-spec/categories.json` 里改。
+- **资产提交规范**（`docs/asset-spec/README.md`）：每件资产一张卡片 `<id>.asset.json`；新资产放在 `docs/library/<分类>/<id>/`。提交前运行 `python -I lab/tools/build_assets.py --check`，有错误不提交。分类和门槛只在 `docs/asset-spec/categories.json` 里改。

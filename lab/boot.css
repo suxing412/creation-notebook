@@ -1,0 +1,76 @@
+/* =====================================================================
+   Opening screen (index.html #boot). Plain HTML + CSS so it paints before any script loads.
+   The box is drawn in line, the steps follow what is really loading, and at the end the lid lifts
+   and a warm light spills out — the 3D box then opens on the same beat.
+   Skinned by html[data-era], which an inline script sets before first paint.
+   ===================================================================== */
+.boot { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; background: var(--paper);
+  color: var(--ink); transition: opacity .55s ease, visibility 0s linear .55s; --p: 0; }
+.boot.out { opacity: 0; visibility: hidden; pointer-events: none; }
+.boot-in { display: grid; justify-items: center; gap: 22px; width: min(360px, calc(100vw - 32px)); text-align: center; }
+
+/* the box drawing */
+.boot-box { width: min(200px, 52vw); height: auto; overflow: visible; }
+.boot-box .ln { fill: none; stroke: var(--ink); stroke-width: 1.3; stroke-linejoin: round; stroke-linecap: round;
+  stroke-dasharray: 1; stroke-dashoffset: 1; animation: boot-draw 1.1s var(--ease) forwards; animation-delay: var(--d, 0s); }
+.boot-box .face { opacity: 0; animation: boot-fill .6s ease forwards; animation-delay: calc(var(--d, 0s) + .5s); }
+.boot-box .f-top { fill: var(--card); } .boot-box .f-l { fill: var(--paper-2); } .boot-box .f-r { fill: var(--tile); }
+.boot-box .slip { fill: var(--seal); opacity: 0; animation: boot-fill .4s ease 1.2s forwards; }
+.boot-box .lid { transform-box: view-box; transform-origin: 26px 79px; transition: transform .5s cubic-bezier(.3, 1.4, .5, 1); }
+.boot-box .glow { fill: url(#boot-glow); opacity: 0; transition: opacity .45s ease; }
+.boot.open .boot-box .lid { transform: translate(-2px, -16px) rotate(-7deg); }
+.boot.open .boot-box .glow { opacity: 1; }
+@keyframes boot-draw { to { stroke-dashoffset: 0; } }
+@keyframes boot-fill { to { opacity: 1; } }
+
+/* title */
+.boot h1 { margin: 0; font: 600 22px/1.2 var(--serif); letter-spacing: .5em; padding-left: .5em; }
+.boot .boot-en { margin-top: -14px; font: 500 10px/1.4 var(--mono); letter-spacing: .3em; color: var(--muted); text-transform: uppercase; }
+
+/* progress: a hairline that creeps toward the next step, and the four real steps under it */
+.boot-bar { position: relative; width: 100%; height: 1px; background: var(--line); }
+.boot-bar i { position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--p) * 100%); background: var(--ink);
+  transition: width 5s cubic-bezier(.1, .6, .15, 1); }
+.boot.open .boot-bar i { transition-duration: .35s; }
+.boot-steps { display: flex; justify-content: space-between; width: 100%; margin: -10px 0 0; padding: 0; list-style: none;
+  font: 500 11px/1.4 var(--mono); letter-spacing: .12em; color: var(--muted); }
+.boot-steps li { transition: color .3s; }
+.boot-steps li::before { content: ""; display: inline-block; width: 5px; height: 5px; margin: 0 6px 2px 0; vertical-align: middle;
+  border: 1px solid currentColor; border-radius: 50%; transition: background .3s; }
+.boot-steps li.now { color: var(--ink); }
+.boot-steps li.now::before { animation: boot-pulse 1s ease-in-out infinite; }
+.boot-steps li.done { color: var(--ink-2); }
+.boot-steps li.done::before { background: currentColor; }
+@keyframes boot-pulse { 50% { background: currentColor; } }
+
+/* ---- eras ---- */
+html[data-era="early"] .boot-box .ln { stroke-width: 1.6; }
+html[data-era="early"] .boot-box .trim { stroke: var(--gold); }
+html[data-era="early"] .boot h1 { letter-spacing: .6em; }
+html[data-era="early"] .boot-bar { height: 3px; background: none; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+html[data-era="early"] .boot-bar i { background: var(--gold); }
+html[data-era="early"] .boot-steps li::before { border-radius: 0; transform: rotate(45deg); }
+
+html[data-era="modern"] .boot-box .ln { stroke-width: 2.4; stroke-linejoin: miter; stroke-linecap: square; }
+html[data-era="modern"] .boot-box .f-top { fill: #fff; }
+html[data-era="modern"] .boot h1 { font-family: var(--sans); font-weight: 700; letter-spacing: .08em; padding-left: .08em; font-size: 26px; }
+html[data-era="modern"] .boot-bar { height: 4px; background: var(--paper-2); }
+html[data-era="modern"] .boot-bar i { background: var(--seal); }
+html[data-era="modern"] .boot-steps { letter-spacing: .04em; font-weight: 600; }
+html[data-era="modern"] .boot-steps li::before { border-radius: 0; }
+
+html[data-era="future"] .boot { background: radial-gradient(120% 80% at 70% 0%, #f6fbff, var(--paper)); }
+html[data-era="future"] .boot-box .ln { stroke: #1a8fd0; filter: drop-shadow(0 0 3px rgba(46, 199, 255, .7)); }
+html[data-era="future"] .boot-box .face { fill-opacity: .55; }
+html[data-era="future"] .boot h1 { font-family: var(--mono); font-weight: 500; letter-spacing: .3em; }
+html[data-era="future"] .boot-bar i { background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+html[data-era="future"] .boot-steps li.now::before, html[data-era="future"] .boot-steps li.done::before { box-shadow: 0 0 6px var(--gold); }
+
+@media (prefers-reduced-motion: reduce) {
+  .boot-box .ln { animation: none; stroke-dashoffset: 0; }
+  .boot-box .face, .boot-box .slip { animation: none; opacity: 1; }
+  .boot-box .lid, .boot-bar i { transition: none; }
+  .boot-steps li.now::before { animation: none; background: currentColor; }
+}
+.boot-box .trim { opacity: .45; }
+html[data-era="early"] .boot-box .trim { opacity: 1; }

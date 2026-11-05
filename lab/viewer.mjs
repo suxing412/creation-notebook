@@ -10,7 +10,7 @@ export const DEFAULT_LOOK = {
   view: 'shaded', preset: 'studio',
   key: 2.2, keyColor: '#fff4e6', az: 35, el: 52,
   fill: 0, fillColor: '#cfd9ea', env: 0.9, exposure: 1,
-  bg: '#2a2926', shadow: true, grid: false, bbox: false, spin: true,
+  bg: '#2a2926', shadow: true, grid: false, bbox: false, spin: false,
 };
 export const LIGHT_PRESETS = {
   studio: { label: '影棚', key: 2.2, keyColor: '#fff4e6', az: 35, el: 52, fill: 0, fillColor: '#cfd9ea', env: 0.9, exposure: 1 },

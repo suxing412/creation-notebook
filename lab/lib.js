@@ -37,7 +37,7 @@ export function header(d, current, { onSearch } = {}) {
   document.body.insertAdjacentHTML('afterbegin', `<a class="skip" href="#main">跳到内容</a>
   <header class="app-head">
     <div class="row"><a class="brand" href="index.html"><i class="seal" aria-hidden="true">造</i><b>造物手记</b><span>造物之匣 · 数字资产库</span></a>
-      <a class="spec-link" href="spec.html"${current === 'spec' ? ' aria-current="page"' : ''}>投稿规范</a>
+      <a class="spec-link" href="spec.html"${current === 'spec' ? ' aria-current="page"' : ''}>提交规范</a>
       <label class="gsearch"><input id="gsearch" type="search" placeholder="搜索全部资产" aria-label="搜索全部资产"></label></div>
     <nav class="tabs" aria-label="资产分类">${tabs.map(t => `<a class="tab" href="index.html${t.id ? '#' + t.id : ''}" data-tab="${t.id}"${t.id === current ? ' aria-current="page"' : ''}>${esc(t.zh)}<small>${t.n}</small></a>`).join('')}</nav>
   </header>`);

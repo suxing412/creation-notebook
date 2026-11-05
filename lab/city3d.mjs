@@ -11,6 +11,7 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { esc } from './lib.js';
 import { ERAS, TYPOLOGY, TYPOLOGY_ZH, BUILDING_NAME, buildTown, palette, nightGlow } from './city-kit.mjs';
 import { createFx } from './city-fx.mjs';
+import { createMiniature } from './miniature.mjs';
 
 const inOut = t => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 const outBack = t => { const c = 1.4; return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2); };
@@ -18,7 +19,7 @@ const inCubic = t => t * t * t;
 const CENTER = new THREE.Vector3(0, 0, 1);
 const PLATE_Y = 17.4; // town floor on the wooden stand, ~5 below the box rim (the town sits inside the box)
 
-export async function mountOverview(root, d, { onZone, onEra, onTime, onBusy, era: era0 = 'ancient', tod: tod0 = 0.5 } = {}) {
+export async function mountOverview(root, d, { onZone, onEra, onTime, onBusy, era: era0 = 'ancient', tod: tod0 = 0.5, paused = false } = {}) {
   let switching = false, boxStyle = null, dressSwap = null, dressTick = null; // an era transition is playing: further switches are refused until it settles
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const host = root.querySelector('.ov-canvas');
@@ -30,6 +31,7 @@ export async function mountOverview(root, d, { onZone, onEra, onTime, onBusy, er
   renderer.domElement.setAttribute('aria-hidden', 'true');
   host.append(renderer.domElement);
   const el = renderer.domElement;
+  const mini = createMiniature(renderer); // tilt-shift band + a little colour: the box reads as a small thing on a table
 
   const scene = new THREE.Scene();
   const pmrem = new THREE.PMREMGenerator(renderer);
@@ -47,7 +49,7 @@ export async function mountOverview(root, d, { onZone, onEra, onTime, onBusy, er
   const types = [...cats.map(x => ({ key: x.c.id, type: x.type })), { key: '__reserve', type: 'plot' }];
 
   // ---- camera: orbit pivots on the town centre ----
-  const camera = new THREE.PerspectiveCamera(30, 1, 0.5, 700);
+  const camera = new THREE.PerspectiveCamera(40, 1, 0.5, 700); // a wider lens seen from closer: stronger perspective, a smaller-feeling box
   const controls = new OrbitControls(camera, el);
   controls.enableDamping = true; controls.dampingFactor = 0.08; controls.enableZoom = true; controls.zoomSpeed = 0.7; controls.enablePan = false;
   controls.minPolarAngle = 0.35; controls.maxPolarAngle = 1.5; // low enough to look under the floating island controls.rotateSpeed = 0.6;
@@ -104,7 +106,7 @@ export async function mountOverview(root, d, { onZone, onEra, onTime, onBusy, er
   const flyTo = (to, dur = 1.3, arc = 0, ctrl = null) => { controls.minDistance = 0; controls.maxDistance = Infinity; fly = { from: { pos: camera.position.clone(), target: controls.target.clone() }, to: { pos: to.pos.clone(), target: to.target.clone() }, t: 0, dur, arc, ctrl }; return fly; };
   const resize = () => {
     const w = host.clientWidth, h = host.clientHeight; if (!w || !h) return;
-    renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+    renderer.setSize(w, h, false); mini.setSize(); camera.aspect = w / h; camera.updateProjectionMatrix();
     home = homeView(); minD = fit(34) * 0.42; maxD = fit(34) * 1.35; if (!fly) limits();
   };
   resize();
@@ -474,7 +476,7 @@ export async function mountOverview(root, d, { onZone, onEra, onTime, onBusy, er
   };
 
   // ---------- opening sequence ----------
-  let intro = !reduce, timeScale = 1;
+  let intro = !reduce, timeScale = 1, held = paused; // held: frozen behind the opening screen until play()
   const INTRO = { hold: 0.6, open: 1.5, dive: 3.2, float: 1.7 };
   const FLOAT_AT = INTRO.hold + INTRO.open * 0.6;
   setEra(era0, { wait: reduce ? 0 : FLOAT_AT + INTRO.float * 0.7 });
@@ -491,7 +493,7 @@ export async function mountOverview(root, d, { onZone, onEra, onTime, onBusy, er
     tween(0.01, INTRO.hold + INTRO.open * 0.7, () => {}, () => { flyTo(home, INTRO.dive, 0, new THREE.Vector3(18, 104, 52)); });
     tween(0.01, INTRO.hold + INTRO.open * 0.7 + INTRO.dive, () => {}, () => { intro = false; timeScale = 1; controls.enabled = true; });
     camera.position.set(86, 74, 150); controls.target.set(0, TOP * 0.45, 0);
-    const skip = () => { if (intro) timeScale = 6; };
+    const skip = () => { if (intro && !held) timeScale = 6; };
     el.addEventListener('pointerdown', skip); el.addEventListener('wheel', skip, { passive: true }); addEventListener('keydown', skip);
   }
   const ro = new ResizeObserver(() => { resize(); const want = active >= 0 ? zoneView(active) : home; if (fly) fly.to = want; else if (active >= 0) { camera.position.copy(want.pos); controls.target.copy(want.target); } }); ro.observe(host);
@@ -642,7 +644,7 @@ export async function mountOverview(root, d, { onZone, onEra, onTime, onBusy, er
     dressTick?.(t, dt);
     fx?.update(t, dt);
     for (let i = fading.length - 1; i >= 0; i--) { const f = fading[i]; f.update(t, dt); if (f.done) { f.dispose(); fading.splice(i, 1); } }
-    controls.update(); renderer.render(scene, camera);
+    controls.update(); mini.render(scene, camera, controls.target);
     for (let k = bubbles.length - 1; k >= 0; k--) {
       const b = bubbles[k]; b.obj.getWorldPosition(v);
       const jumped = b.last && b.last.distanceToSquared(v) > 9; // the speaker moved too far in one frame: drop the bubble
@@ -659,13 +661,15 @@ export async function mountOverview(root, d, { onZone, onEra, onTime, onBusy, er
       node.style.pointerEvents = active >= 0 ? 'none' : '';
     });
   }
-  function tick() { raf = requestAnimationFrame(tick); step(Math.min(clock.getDelta(), 0.05) * timeScale); }
+  function tick() { raf = requestAnimationFrame(tick); const dt = Math.min(clock.getDelta(), 0.05); if (!held) step(dt * timeScale); else if (!rendered) { step(0); rendered = true; } }
+  let rendered = false;
   tick();
   root.querySelector('.ov-loading')?.remove();
-  window.__ov = { settle: (n = 80) => { for (let i = 0; i < n; i++) step(0.05); }, camera, controls, get fx() { return fx; }, get lid() { return lid; }, get intro() { return intro; }, get info() { return renderer.info.render; }, get scene() { return scene; }, set tod(v) { tod = v; applyTime(); }, set fade(v) { devFade = v; } }; // dev hook: advance frames when the tab is hidden
+  window.__ov = { mini, settle: (n = 80) => { for (let i = 0; i < n; i++) step(0.05); }, camera, controls, get fx() { return fx; }, get lid() { return lid; }, get intro() { return intro; }, get info() { return renderer.info.render; }, get scene() { return scene; }, set tod(v) { tod = v; applyTime(); }, set fade(v) { devFade = v; } }; // dev hook: advance frames when the tab is hidden
 
   return {
+    play() { held = false; clock.getDelta(); },
     eras: ERAS, setEra: id => { if (switching || intro || id === era) return false; setEra(id); return true; }, get busy() { return switching || intro; }, get tod() { return tod; }, skipTo(target) { if (reduce) { tod = target; applyTime(); } else ffTarget = target; }, home: () => focus(-1), focus: id => focus(cats.findIndex(x => x.c.id === id)),
-    dispose() { cancelAnimationFrame(raf); ro.disconnect(); removeEventListener('keydown', onKey); controls.dispose(); fx?.dispose(); fading.forEach(f => f.dispose()); if (town) disposeGroup(town.group); pmrem.dispose(); envTex.dispose(); ringGeo.dispose(); ringMat.dispose(); ring2.material.dispose(); renderer.dispose(); el.remove(); cur.remove(); },
+    dispose() { cancelAnimationFrame(raf); mini.dispose(); ro.disconnect(); removeEventListener('keydown', onKey); controls.dispose(); fx?.dispose(); fading.forEach(f => f.dispose()); if (town) disposeGroup(town.group); pmrem.dispose(); envTex.dispose(); ringGeo.dispose(); ringMat.dispose(); ring2.material.dispose(); renderer.dispose(); el.remove(); cur.remove(); },
   };
 }
