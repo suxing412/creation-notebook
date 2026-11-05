@@ -1,0 +1,40 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-northern-altar",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "北郊方坛四陛",
+  "english": "NORTHERN ALTAR FOUR APPROACHES",
+  "summary": "依据“方坛四陛”关系制作局部C级尺寸试案；四梯与坛体连成一体，保留未知围营和祠舍，不代表北郊全场或已定址。",
+  "status": "待审",
+  "statusNote": "已建模；独立关系研究，未入城。",
+  "cover": "cover.webp",
+  "coverAlt": "土色方坛的四边各有居中的登坛阶梯，未附加围墙或祠舍。",
+  "gallery": [
+    "shots/LOD0-plan.webp",
+    "shots/LOD0-stairs.webp",
+    "shots/LOD1-overview.webp",
+    "shots/LOD2-overview.webp"
+  ],
+  "files": [
+    {
+      "path": "files/northern-altar-C-LOD0.glb",
+      "label": "LOD0 · 512像素纹理"
+    },
+    {
+      "path": "files/northern-altar-C-LOD1.glb",
+      "label": "LOD1 · 256像素纹理"
+    },
+    {
+      "path": "files/northern-altar-C-LOD2.glb",
+      "label": "LOD2 · 64像素纹理"
+    }
+  ],
+  "related": [
+    "p-luoyang"
+  ],
+  "notes": {
+    "已完成的检查": "实际GLB与原生有向几何一致，闭合连通实体、非退化UV、四梯支承与采样高度、纹理成本、三档回读预览和来源分级已核。纹理随GLB嵌入，无外部运行依赖。",
+    "限制与待解决": "“方坛四陛”有传世文献依据；20米边长、1.2米坛高、阶梯尺寸及土质外观为C级假设。三档几何相同，仅降低纹理成本；重复UV不是唯一烘焙图集。未绘中外营和祠舍，未知不等于不存在。阶梯入口不是北郊场域门；未定址，不认证180年形制、人体通行或结构安全。"
+  }
+}

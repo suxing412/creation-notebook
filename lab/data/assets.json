@@ -297,7 +297,7 @@
      "unit": "座",
      "chapter": "walls",
      "focus": "research:research-mao-gate",
-     "note": "开阳门、平城门、上西门、雍门、中东门与旄门，各自独立研究，尚未落位。"
+     "note": "开阳门、平城门、上西门、雍门、中东门与旄门共六座独立研究，尚未落位；旄门补齐独立资产卡，不增计第七座门。"
     },
     {
      "title": "住宅院落",
@@ -361,6 +361,33 @@
      "chapter": null,
      "focus": null,
      "note": "门卫切片、庭地、两侧廊与殿阶的未定位C级连接方案；复用原件不另计新建筑。"
+    },
+    {
+     "title": "太学门外观经空间",
+     "status": "已建模",
+     "count": 1,
+     "unit": "组",
+     "chapter": "ritual",
+     "focus": null,
+     "note": "覆屋、围护、南口与街道接口的独立C级关系试案；碑位留空，设施归属及180年状态待考，未入城。"
+    },
+    {
+     "title": "北郊方坛四陛",
+     "status": "已建模",
+     "count": 1,
+     "unit": "组",
+     "chapter": "ritual",
+     "focus": null,
+     "note": "方坛四陛的局部C级尺度研究；围营和祠舍保持未知，不代表整个北郊，未定址。"
+    },
+    {
+     "title": "宫墙水道三段接口",
+     "status": "已建模",
+     "count": 1,
+     "unit": "组",
+     "chapter": "terrain",
+     "focus": null,
+     "note": "三部分水道的未定位C级连接试案；尺寸、流向、用途和180年在用性未定。"
     }
    ],
    "evidence": [
@@ -378,6 +405,12 @@
     }
    ],
    "journal": [
+    {
+     "date": "2026-11-05",
+     "batch": null,
+     "title": "补齐四组独立研究模型卡",
+     "text": "旄门补齐独立查看入口，观经空间、北郊方坛与水道接口按已建模记录。所有成果仍未落城；既有城门家族不重复计数。本批附注 tag 与同名 Release 待补。"
+    },
     {
      "date": "2026-11-05",
      "batch": "r2026.11.05-4",
@@ -416,11 +449,264 @@
     "m-gate-roof-study",
     "m-eaves-shell",
     "m-passage-interface",
-    "m-luoyang-palace-admission-court"
+    "m-luoyang-palace-admission-court",
+    "m-luoyang-mao-gate",
+    "m-luoyang-stoneclassic-access-court",
+    "m-luoyang-palace-waterway-interface",
+    "m-luoyang-northern-altar"
    ],
    "bytes": 0,
    "triangles": 0,
    "textured": false
+  },
+  {
+   "id": "m-luoyang-mao-gate",
+   "category": "models",
+   "kind": "城市构件",
+   "title": "旄门",
+   "english": "MAO GATE",
+   "summary": "东城南门的未定位C级研究家族，包含保留完整登临的轻量展示LOD1与原近景LOD0。仅调整独立展示，不新增城门或改变城景。",
+   "alt": "旄门轻量LOD1的三分之四正面渲染：夯土门台开三条通道，顶部设屋面及栏杆，右侧完整登临阶梯保留。",
+   "cover": {
+    "small": {
+     "src": "media/library-models-m-luoyang-mao-gate-cover-720.webp",
+     "w": 720,
+     "h": 540
+    },
+    "large": {
+     "src": "media/library-models-m-luoyang-mao-gate-cover-1800.webp",
+     "w": 1280,
+     "h": 960
+    },
+    "original": "../docs/library/models/m-luoyang-mao-gate/cover.webp"
+   },
+   "coverIsShot": false,
+   "gallery": [
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-mao-gate-shots-rear-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-mao-gate-shots-rear-1800.webp",
+      "w": 1280,
+      "h": 960
+     },
+     "original": "../docs/library/models/m-luoyang-mao-gate/shots/rear.webp"
+    }
+   ],
+   "files": [
+    {
+     "label": "LOD1 · 轻量展示候选",
+     "path": "library/models/m-luoyang-mao-gate/files/mao-C-display-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-mao-gate/files/mao-C-display-LOD1.glb",
+     "format": "GLB",
+     "bytes": 374184,
+     "triangles": 5816,
+     "vertices": 10404,
+     "primitives": 5,
+     "materials": 3,
+     "images": 0,
+     "size": [
+      31.833,
+      11.025,
+      13.11
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "LOD0 · 原近景保留（可回退）",
+     "path": "cities/luoyang/progress-assets/mao-gate/mao-C-LOD0.glb",
+     "url": "../docs/cities/luoyang/progress-assets/mao-gate/mao-C-LOD0.glb",
+     "format": "GLB",
+     "bytes": 2140916,
+     "triangles": 18168,
+     "vertices": 32373,
+     "primitives": 5,
+     "materials": 3,
+     "images": 9,
+     "size": [
+      31.833,
+      11.025,
+      13.117
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    }
+   ],
+   "page": null,
+   "notes": {
+    "已完成的检查": "候选几何与UV有效字节逐项比对原LOD1，标准PBR均色独立核算，三门道与完整登临附件保留。正常有限通行区域和足下支承通过，真实阻挡负对照有效；CPU前后视图及独立重建已核。",
+    "限制与待解决": "门名有文献依据，三洞、尺度、上部及登临仍是未定位C级候选。轻量LOD减少屋面细节并去除纹理，不替代近景原件。城景加载和网页没有切换，现网C11未关闭；未测浏览器、GPU、步态或结构安全。",
+    "版本与回退": "默认文件为新的轻量候选；原LOD0仍使用原路径、未复制替换。需要旧近景时可选第二个文件，或在后续获准交付中恢复旧版为默认。仍按一个旄门家族计数。"
+   },
+   "stats": {},
+   "state": "待审",
+   "status": "待审 · 已建模；独立资产库待审，未入城。",
+   "public": true,
+   "updated": null,
+   "related": [
+    "p-luoyang"
+   ],
+   "card": "library/models/m-luoyang-mao-gate/m-luoyang-mao-gate.asset.json",
+   "bytes": 2515100,
+   "triangles": 18168,
+   "textured": true
+  },
+  {
+   "id": "m-luoyang-northern-altar",
+   "category": "models",
+   "kind": "城市构件",
+   "title": "北郊方坛四陛",
+   "english": "NORTHERN ALTAR FOUR APPROACHES",
+   "summary": "依据“方坛四陛”关系制作局部C级尺寸试案；四梯与坛体连成一体，保留未知围营和祠舍，不代表北郊全场或已定址。",
+   "alt": "土色方坛的四边各有居中的登坛阶梯，未附加围墙或祠舍。",
+   "cover": {
+    "small": {
+     "src": "media/library-models-m-luoyang-northern-altar-cover-720.webp",
+     "w": 720,
+     "h": 540
+    },
+    "large": {
+     "src": "media/library-models-m-luoyang-northern-altar-cover-1800.webp",
+     "w": 1200,
+     "h": 900
+    },
+    "original": "../docs/library/models/m-luoyang-northern-altar/cover.webp"
+   },
+   "coverIsShot": false,
+   "gallery": [
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-northern-altar-shots-LOD0-plan-720.webp",
+      "w": 720,
+      "h": 720
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-northern-altar-shots-LOD0-plan-1800.webp",
+      "w": 1100,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-northern-altar/shots/LOD0-plan.webp"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-northern-altar-shots-LOD0-stairs-720.webp",
+      "w": 720,
+      "h": 480
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-northern-altar-shots-LOD0-stairs-1800.webp",
+      "w": 1200,
+      "h": 800
+     },
+     "original": "../docs/library/models/m-luoyang-northern-altar/shots/LOD0-stairs.webp"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-northern-altar-shots-LOD1-overview-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-northern-altar-shots-LOD1-overview-1800.webp",
+      "w": 1200,
+      "h": 900
+     },
+     "original": "../docs/library/models/m-luoyang-northern-altar/shots/LOD1-overview.webp"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-northern-altar-shots-LOD2-overview-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-northern-altar-shots-LOD2-overview-1800.webp",
+      "w": 1200,
+      "h": 900
+     },
+     "original": "../docs/library/models/m-luoyang-northern-altar/shots/LOD2-overview.webp"
+    }
+   ],
+   "files": [
+    {
+     "label": "LOD0 · 512像素纹理",
+     "path": "library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD0.glb",
+     "format": "GLB",
+     "bytes": 425760,
+     "triangles": 268,
+     "vertices": 376,
+     "primitives": 1,
+     "materials": 1,
+     "images": 3,
+     "size": [
+      26,
+      1.2,
+      26
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "LOD1 · 256像素纹理",
+     "path": "library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD1.glb",
+     "format": "GLB",
+     "bytes": 164836,
+     "triangles": 268,
+     "vertices": 376,
+     "primitives": 1,
+     "materials": 1,
+     "images": 3,
+     "size": [
+      26,
+      1.2,
+      26
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "LOD2 · 64像素纹理",
+     "path": "library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD2.glb",
+     "format": "GLB",
+     "bytes": 25644,
+     "triangles": 268,
+     "vertices": 376,
+     "primitives": 1,
+     "materials": 1,
+     "images": 3,
+     "size": [
+      26,
+      1.2,
+      26
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    }
+   ],
+   "page": null,
+   "notes": {
+    "已完成的检查": "实际GLB与原生有向几何一致，闭合连通实体、非退化UV、四梯支承与采样高度、纹理成本、三档回读预览和来源分级已核。纹理随GLB嵌入，无外部运行依赖。",
+    "限制与待解决": "“方坛四陛”有传世文献依据；20米边长、1.2米坛高、阶梯尺寸及土质外观为C级假设。三档几何相同，仅降低纹理成本；重复UV不是唯一烘焙图集。未绘中外营和祠舍，未知不等于不存在。阶梯入口不是北郊场域门；未定址，不认证180年形制、人体通行或结构安全。"
+   },
+   "stats": {},
+   "state": "待审",
+   "status": "待审 · 已建模；独立关系研究，未入城。",
+   "public": true,
+   "updated": null,
+   "related": [
+    "p-luoyang"
+   ],
+   "card": "library/models/m-luoyang-northern-altar/m-luoyang-northern-altar.asset.json",
+   "bytes": 616240,
+   "triangles": 268,
+   "textured": true
   },
   {
    "id": "m-luoyang-palace-admission-court",
@@ -631,6 +917,318 @@
    "bytes": 7967260,
    "triangles": 23464,
    "textured": true
+  },
+  {
+   "id": "m-luoyang-palace-waterway-interface",
+   "category": "models",
+   "kind": "城市构件",
+   "title": "宫墙水道三段接口",
+   "english": "PALACE WATERWAY INTERFACE STUDY",
+   "summary": "据东汉青砖水道三部分的发掘纪要，制作城内段、竖井段、城外段的C级连接试案。尺寸、连接和盖板均为推测，未定位。",
+   "alt": "灰色砖质通道在中部方形竖井两侧延伸；形制和尺寸为C级设计，非出土遗迹复原。",
+   "cover": {
+    "small": {
+     "src": "media/library-models-m-luoyang-palace-waterway-interface-cover-720.webp",
+     "w": 720,
+     "h": 440
+    },
+    "large": {
+     "src": "media/library-models-m-luoyang-palace-waterway-interface-cover-1800.webp",
+     "w": 1800,
+     "h": 1100
+    },
+    "original": "../docs/library/models/m-luoyang-palace-waterway-interface/cover.webp"
+   },
+   "coverIsShot": false,
+   "gallery": [
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-palace-waterway-interface-shots-02-modern-inspection-720.webp",
+      "w": 720,
+      "h": 440
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-palace-waterway-interface-shots-02-modern-inspection-1800.webp",
+      "w": 1800,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-palace-waterway-interface/shots/02-modern-inspection.webp"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-palace-waterway-interface-shots-03-full-far-720.webp",
+      "w": 720,
+      "h": 440
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-palace-waterway-interface-shots-03-full-far-1800.webp",
+      "w": 1800,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-palace-waterway-interface/shots/03-full-far.webp"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-palace-waterway-interface-shots-04-horizontal-port-720.webp",
+      "w": 720,
+      "h": 440
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-palace-waterway-interface-shots-04-horizontal-port-1800.webp",
+      "w": 1800,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-palace-waterway-interface/shots/04-horizontal-port.webp"
+    }
+   ],
+   "files": [
+    {
+     "label": "近景 · 完整C设计",
+     "path": "library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-near.glb",
+     "url": "../docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-near.glb",
+     "format": "GLB",
+     "bytes": 1518404,
+     "triangles": 18420,
+     "vertices": 40488,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      6.6,
+      1.98,
+      1.518
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "中景 · 完整C设计",
+     "path": "library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-mid.glb",
+     "url": "../docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-mid.glb",
+     "format": "GLB",
+     "bytes": 133976,
+     "triangles": 1740,
+     "vertices": 3480,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      6.6,
+      1.98,
+      1.512
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "远景 · 完整C设计",
+     "path": "library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-far.glb",
+     "url": "../docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-far.glb",
+     "format": "GLB",
+     "bytes": 17200,
+     "triangles": 204,
+     "vertices": 408,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      6.6,
+      1.98,
+      1.5
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "现代数字拆解 · 非古代装置",
+     "path": "library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-inspection-near.glb",
+     "url": "../docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-inspection-near.glb",
+     "format": "GLB",
+     "bytes": 1416232,
+     "triangles": 18420,
+     "vertices": 40488,
+     "primitives": 8,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      6.6,
+      2.19,
+      2.618
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    }
+   ],
+   "page": null,
+   "notes": {
+    "已完成的检查": "三档真实LOD、米制UV和同材质合批；实际GLB水口/空腔有限体积检查、加宽负对照、逐面合批对照、原生重开及实际模型CPU预览。完整未改官方检查器另在隔离副本验证。",
+    "限制与待解决": "据考古网署名且注明汇报人审阅的转载纪要，原发布不可读；只有东汉、青砖和三部分列举有报道。尺寸、具体连接、盖板、流向、引排水用途和180年在用性未知。现代拆解不是古代可拆装机构；未入城，不认证水密、流量、人行、结构或GPU。"
+   },
+   "stats": {},
+   "state": "待审",
+   "status": "待审 · 已建模；独立资产库待审，未入城。",
+   "public": true,
+   "updated": null,
+   "related": [
+    "p-luoyang"
+   ],
+   "card": "library/models/m-luoyang-palace-waterway-interface/m-luoyang-palace-waterway-interface.asset.json",
+   "bytes": 3085812,
+   "triangles": 18420,
+   "textured": false
+  },
+  {
+   "id": "m-luoyang-stoneclassic-access-court",
+   "category": "models",
+   "kind": "城市构件",
+   "title": "太学门外观经空间",
+   "english": "STONE CLASSICS ACCESS STUDY",
+   "summary": "据门外观摹及注引覆屋、围护、南口的传世记载制作公共访问关系试案。所有形体和路线为C；碑位留空，未定址，设施归属与年代待考。",
+   "alt": "灰瓦覆屋位于围护空间内，南侧开口连向有限街道样段；碑位留空，所有可见形体均为C级设计。",
+   "cover": {
+    "small": {
+     "src": "media/library-models-m-luoyang-stoneclassic-access-court-cover-720.webp",
+     "w": 720,
+     "h": 540
+    },
+    "large": {
+     "src": "media/library-models-m-luoyang-stoneclassic-access-court-cover-1800.webp",
+     "w": 1600,
+     "h": 1200
+    },
+    "original": "../docs/library/models/m-luoyang-stoneclassic-access-court/cover.webp"
+   },
+   "coverIsShot": false,
+   "gallery": [
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-stoneclassic-access-court-shots-02-interior-complete-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-stoneclassic-access-court-shots-02-interior-complete-1800.webp",
+      "w": 1600,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-stoneclassic-access-court/shots/02-interior-complete.webp"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-stoneclassic-access-court-shots-03-far-overview-720.webp",
+      "w": 720,
+      "h": 528
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-stoneclassic-access-court-shots-03-far-overview-1800.webp",
+      "w": 1500,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-stoneclassic-access-court/shots/03-far-overview.webp"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-stoneclassic-access-court-shots-04-entrance-complete-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-stoneclassic-access-court-shots-04-entrance-complete-1800.webp",
+      "w": 1600,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-stoneclassic-access-court/shots/04-entrance-complete.webp"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-stoneclassic-access-court-shots-06-middle-overview-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-stoneclassic-access-court-shots-06-middle-overview-1800.webp",
+      "w": 1600,
+      "h": 1200
+     },
+     "original": "../docs/library/models/m-luoyang-stoneclassic-access-court/shots/06-middle-overview.webp"
+    }
+   ],
+   "files": [
+    {
+     "label": "近景 · 完整C方案",
+     "path": "library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_near.glb",
+     "url": "../docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_near.glb",
+     "format": "GLB",
+     "bytes": 8977644,
+     "triangles": 83084,
+     "vertices": 249252,
+     "primitives": 4,
+     "materials": 4,
+     "images": 0,
+     "size": [
+      40.0,
+      6.84,
+      34.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "中景 · 聚合瓦面",
+     "path": "library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_middle.glb",
+     "url": "../docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_middle.glb",
+     "format": "GLB",
+     "bytes": 1934304,
+     "triangles": 17868,
+     "vertices": 53604,
+     "primitives": 4,
+     "materials": 4,
+     "images": 0,
+     "size": [
+      40.0,
+      6.84,
+      34.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "远景 · 保留主形与入口",
+     "path": "library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_far.glb",
+     "url": "../docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_far.glb",
+     "format": "GLB",
+     "bytes": 178124,
+     "triangles": 1608,
+     "vertices": 4824,
+     "primitives": 4,
+     "materials": 4,
+     "images": 0,
+     "size": [
+      40.0,
+      6.82,
+      34.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    }
+   ],
+   "page": null,
+   "notes": {
+    "已完成的检查": "三档LOD、米制UV、4材质合批；实际完整GLB入口净空、地面覆盖与支承、柱/门负对照、空白区域遮覆采样，以及原生重开、干净重建和最终实渲。未改官方检查器在完整隔离副本另验。",
+    "限制与待解决": "覆屋/围护来自唐注所存谢承佚文，设施归属和年代未独立确证；不采用同段三体与后世碑尺寸。形体、路线、公众入内、街向均为C；不建完整碑，不认定180年状态。UV为重复投影，明示0.1毫米数值容差，非独占图集；盖条留16毫米显示偏置，未验逐瓦接触、全面近景瓦作、结构、人群或GPU。"
+   },
+   "stats": {},
+   "state": "待审",
+   "status": "待审 · 已建模；独立资产库待审，未入城。",
+   "public": true,
+   "updated": null,
+   "related": [
+    "p-luoyang"
+   ],
+   "card": "library/models/m-luoyang-stoneclassic-access-court/m-luoyang-stoneclassic-access-court.asset.json",
+   "bytes": 11090072,
+   "triangles": 83084,
+   "textured": false
   },
   {
    "id": "m-courtyard-family",
