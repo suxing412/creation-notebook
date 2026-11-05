@@ -5,7 +5,8 @@
 - docs/ goes to the site root as before, except source files (.blend, source ZIPs and parts, …): those live in the
   GitHub Release listed in docs/asset-spec/source-archive.json, and links to them in HTML pages point there.
 - Part-download pages get a note with a direct link to the whole, verified ZIP in the release.
-- lab/ (the asset library) goes to /lab/, with its "../docs/" references pointed at the site root.
+- lab/ (the asset library) goes to the site root and replaces the old docs/index.html homepage; its "../docs/"
+  references become root-relative. The old /lab/ pages stay as redirects to the same page at the root.
 - Fails if the site would exceed the GitHub Pages size limit, so a too-large site is never half-published.
 """
 import json, os, re, shutil, sys
@@ -74,13 +75,25 @@ def main():
         dn[:] = [d for d in dn if d != 'tools']
         for f in fn:
             src = os.path.join(dp, f)
-            dst = os.path.join(OUT, 'lab', os.path.relpath(src, LAB))
+            rel = os.path.relpath(src, LAB).replace(os.sep, '/')
+            dst = os.path.join(OUT, rel)
+            if os.path.exists(dst) and rel != 'index.html':
+                sys.exit(f'library file {rel} would overwrite docs/{rel} at the site root')
+            if os.path.exists(dst):
+                total -= os.path.getsize(dst)
             os.makedirs(os.path.dirname(dst), exist_ok=True)
             if f.endswith(('.html', '.mjs', '.js', '.json', '.css')):
-                open(dst, 'w', encoding='utf-8').write(open(src, encoding='utf-8').read().replace('../docs/', '../'))
+                open(dst, 'w', encoding='utf-8').write(open(src, encoding='utf-8').read().replace('../docs/', './'))
             else:
                 shutil.copy2(src, dst)
             total += os.path.getsize(dst)
+            if dp == LAB and f.endswith('.html'):  # old /lab/ address → same page at the root, query and hash kept
+                stub = os.path.join(OUT, 'lab', f)
+                os.makedirs(os.path.dirname(stub), exist_ok=True)
+                open(stub, 'w', encoding='utf-8').write(
+                    f'<!doctype html><meta charset="utf-8"><title>造物之匣</title>'
+                    f'<script>location.replace("../{f}" + location.search + location.hash)</script>'
+                    f'<a href="../{f}">造物之匣已搬到站点首页</a>')
     open(os.path.join(OUT, '.nojekyll'), 'w').close()
     print(f'site {total / 1e6:.0f} MB · {skipped} source files left out (in release {arch.get("tag")})')
     for u in unmapped:

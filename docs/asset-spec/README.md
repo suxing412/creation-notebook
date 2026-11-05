@@ -2,7 +2,7 @@
 
 资产库里的每一件数字资产（项目、模型、网页、空间，以及以后新增的分类）都用一张**卡片** `<id>.asset.json` 来描述。卡片写对、推送，网站就会自动收录；卡片写错，检查会拦下来，并逐条说明哪里不对。
 
-网页版（规则、分类和检查报告都是实时的）：本地 `http://localhost:8780/lab/spec.html`，部署后在站点的「投稿规范」。
+网页版（规则、分类和检查报告都是实时的）：本地 `http://localhost:8780/lab/spec.html`，线上在 https://suxing412.github.io/creation-notebook/spec.html 。
 
 ## 1. 放在哪里
 
