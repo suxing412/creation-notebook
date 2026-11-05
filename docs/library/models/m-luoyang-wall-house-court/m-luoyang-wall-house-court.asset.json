@@ -1,0 +1,38 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-wall-house-court",
+  "category": "models",
+  "kind": "建筑",
+  "title": "墙房相接住宅样例",
+  "english": "WALL HOUSE COURT STUDY",
+  "summary": "住屋山墙与院墙相接的固定C级住宅关系样例，近中远三档，保留真实入口与内部空场。",
+  "status": "待审",
+  "statusNote": "已建模；独立资产待审，不改城市场景。",
+  "cover": "cover.webp",
+  "coverAlt": "墙房相接住宅样例实际模型CPU预览；C级设计，非遗址原状。",
+  "gallery": [
+    "shots/01.webp",
+    "shots/02.webp"
+  ],
+  "files": [
+    {
+      "path": "files/wall-house-LOD0.glb",
+      "label": "wall · house · LOD0"
+    },
+    {
+      "path": "files/wall-house-LOD1.glb",
+      "label": "wall · house · LOD1"
+    },
+    {
+      "path": "files/wall-house-LOD2.glb",
+      "label": "wall · house · LOD2"
+    }
+  ],
+  "related": [
+    "p-luoyang"
+  ],
+  "notes": {
+    "已完成的检查": "GLB回读与有限路径检查；补充审计将每档8对重复土体面逐面归为墙顶与山墙底的反向内部接触。 图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
+    "限制与待解决": "反向接面保留闭合构件，不称零重复或全场无穿插；完整碰撞和近景细节仍未验收，非洛阳实测住宅或城市自动替换。"
+  }
+}

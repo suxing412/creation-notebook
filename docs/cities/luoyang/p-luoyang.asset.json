@@ -24,9 +24,9 @@
       "id": "walls",
       "title": "城垣与城门",
       "status": "已入城",
-      "statusNote": "城垣已入城 · 六座城门已建模",
+      "statusNote": "城垣已入城 · 十一门独立研究",
       "line": "从城门，认出城的边界。",
-      "text": "沿已布置的城墙与门楼观察边界，再回到街区，看城门怎样与道路相接。旄门等六座城门有独立的研究模型。",
+      "text": "沿已布置的城墙与门楼观察边界，再回到街区，看城门怎样与道路相接。十二门家族已有独立资产入口，候选研究与城市现有门楼分开记录。",
       "image": "progress-assets/mao-gate/mao-cover.webp",
       "focus": "walls"
     },
@@ -90,11 +90,11 @@
     {
       "title": "城门研究",
       "status": "已建模",
-      "count": 6,
+      "count": 11,
       "unit": "座",
       "chapter": "walls",
       "focus": "research:research-mao-gate",
-      "note": "开阳门、平城门、上西门、雍门、中东门与旄门共六座独立研究，尚未落位；旄门补齐独立资产卡，不增计第七座门。"
+      "note": "夏门、谷门、上东门、中东门、旄门、上西门、雍门、津门、小苑门、平城门与开阳门共十一门独立候选，尚未落位。另有广阳门A-v2独立比较卡，仍属既有广阳门家族；合计十二门家族，不增计城中门数。"
     },
     {
       "title": "住宅院落",
@@ -139,7 +139,7 @@
       "unit": "件",
       "chapter": "ritual",
       "focus": "research:research-lingtai",
-      "note": "灵台类型研究、太学长堂 A/B 方案；城市位置等待资料配准。"
+      "note": "灵台类型研究、太学长堂A/B共三件；灵台与A补齐独立中远档卡，近景仍待体积优化，不重复增加计数；城市位置待配准。"
     },
     {
       "title": "道路与地面",
@@ -295,6 +295,83 @@
       "count": 1,
       "unit": "组",
       "note": "独立C级研究模型，变体、姿态和LOD合计一组；未入城，不新增城市建筑实例。"
+    },
+    {
+      "title": "市肆模块与组装",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "note": "独立C研究模型，变体和LOD合计一组；未入城，不增加已放置的城市实例。"
+    },
+    {
+      "title": "普通住屋与门房四型",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "note": "独立C研究模型，变体和LOD合计一组；未入城，不增加已放置的城市实例。"
+    },
+    {
+      "title": "普通院落两种组装",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "note": "独立C研究模型，变体和LOD合计一组；未入城，不增加已放置的城市实例。"
+    },
+    {
+      "title": "八铺四棚店前线",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "note": "独立C研究模型，变体和LOD合计一组；未入城，不增加已放置的城市实例。"
+    },
+    {
+      "title": "开敞作业棚与足碓院",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "note": "独立C研究模型，变体和LOD合计一组；未入城，不增加已放置的城市实例。"
+    },
+    {
+      "title": "墙房相接住宅样例",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "note": "独立C研究模型，变体和LOD合计一组；未入城，不增加已放置的城市实例。"
+    },
+    {
+      "title": "辟雍礼堂与围护",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "note": "独立C研究模型，变体和LOD合计一组；未入城，不增加已放置的城市实例。"
+    },
+    {
+      "title": "武库收纳与点验",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "note": "独立C研究模型，变体和LOD合计一组；未入城，不增加已放置的城市实例。"
+    },
+    {
+      "title": "明堂形制假说",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "note": "独立C研究模型，变体和LOD合计一组；未入城，不增加已放置的城市实例。"
+    },
+    {
+      "title": "南郊圆坛八陛",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "note": "独立C研究模型，变体和LOD合计一组；未入城，不增加已放置的城市实例。"
+    },
+    {
+      "title": "复道服务登临节点",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "note": "独立C研究模型，变体和LOD合计一组；未入城，不增加已放置的城市实例。"
     }
   ],
   "evidence": [
@@ -312,6 +389,21 @@
     }
   ],
   "journal": [
+    {
+      "date": "2026-11-05",
+      "title": "补齐礼制与功能建筑独立卡",
+      "text": "灵台、太学A、明堂、辟雍、南郊坛、武库与复道登临节点建立独立卡；灵台/太学高细LOD0仍超预算，仅收实际渲染的中远档。所有新增卡不改变城市落位，附注tag与源文件Release待补。"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "补齐住屋与市肆组合独立卡",
+      "text": "归并四型住屋、两种院落组装、作业棚院、墙房关系、铺型和店前线；版本、姿态与LOD不重复计件。所有新增卡不改变城市落位，附注tag与源文件Release待补。"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "补齐十二门独立资产入口",
+      "text": "新增十一张门名研究卡，旄门复用既有卡；广阳门保留当前城景，只增A-v2独立比较入口。五门暂收LOD1/2，其余保留可用三档，原高细版原件不动。所有门名、版本与附件按家族去重，不新增城市落位。本批附注tag与同名Release待补。"
+    },
     {
       "date": "2026-11-05",
       "title": "补齐宫廷空间独立模型卡",
@@ -388,7 +480,31 @@
     "m-luoyang-yutang-halls",
     "m-luoyang-palace-paired-que",
     "m-luoyang-palace-sidehall",
-    "m-luoyang-deyang-hall"
+    "m-luoyang-deyang-hall",
+    "m-luoyang-guangyang-gate",
+    "m-luoyang-xia-gate",
+    "m-luoyang-gu-gate",
+    "m-luoyang-shangdong-gate",
+    "m-luoyang-zhongdong-gate",
+    "m-luoyang-shangxi-gate",
+    "m-luoyang-yong-gate",
+    "m-luoyang-jin-gate",
+    "m-luoyang-xiaoyuan-gate",
+    "m-luoyang-pingcheng-gate",
+    "m-luoyang-kaiyang-gate",
+    "m-luoyang-market-modular-assembly",
+    "m-luoyang-ordinary-house-types",
+    "m-luoyang-court-layout-kit",
+    "m-luoyang-market-frontage",
+    "m-luoyang-workyard-shed",
+    "m-luoyang-wall-house-court",
+    "m-luoyang-biyong",
+    "m-luoyang-wuku",
+    "m-luoyang-taixue-a",
+    "m-luoyang-mingtang",
+    "m-luoyang-lingtai",
+    "m-luoyang-southern-altar",
+    "m-luoyang-gallery-access"
   ],
   "notes": {
     "已完成的检查": "源文件、资源引用、模型身份、矩阵与预算的静态检查。",

@@ -1,0 +1,39 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-pingcheng-gate",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "平城门",
+  "english": "PINGCHENG GATE",
+  "summary": "平城门受控门厅 C 级比较候选，近中远三档；完整建筑状态是假设，不认定180年已修复。",
+  "status": "待审",
+  "statusNote": "已建模；独立资产待审，未入城。",
+  "cover": "cover.webp",
+  "coverAlt": "平城门候选模型的CPU三分之四视图：三孔门厅、短脊四坡屋盖，中央门叶关闭而两侧开启。",
+  "gallery": [
+    "shots/detail.webp"
+  ],
+  "files": [
+    {
+      "path": "../../../cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb",
+      "label": "LOD1 · 中景展示候选"
+    },
+    {
+      "path": "files/pingcheng-P-LOD0.glb",
+      "label": "LOD0 · 近景候选"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD2.glb",
+      "label": "LOD2 · 远景简化候选"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "已逐一核对所选GLB版本、字节数和SHA256，复用文件与现有公开路径逐字节一致。模型可独立解析，贴图内嵌；本卡图像来自该版模型的既有CPU渲染。",
+    "限制与待解决": "文献分别有177、178年损坏记载，不能据此认定180年修复。中央闭门与侧道开启仅为设计展示，不是历史日常规则；中央通行应阻断，无上楼梯或门叶动画。 本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
+    "证据等级": "门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。",
+    "版本与展示": "选用 P-v1，按一个门名家族计数；默认展示LOD1。近、中、远三档均保留，LOD与开闭姿态不重复计件。"
+  },
+  "related": [
+    "p-luoyang"
+  ]
+}

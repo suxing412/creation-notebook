@@ -1,0 +1,43 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-gallery-access",
+  "category": "models",
+  "kind": "建筑",
+  "title": "复道服务登临节点",
+  "english": "GALLERY ACCESS NODE",
+  "summary": "供高架复道A片段比较使用的平台与木梯，含三个展示LOD及独立静态碰撞候选。它是局部服务登临试验，不代表已确定的宫廷礼仪通路。",
+  "status": "待审",
+  "statusNote": "已建模，未入城 · 独立研究模型",
+  "cover": "cover.webp",
+  "coverAlt": "独立登临平台与木梯的实际原生CPU渲染。",
+  "gallery": [
+    "shots/access-A-LOD1-CPU.webp",
+    "shots/access-A-LOD2-CPU.webp"
+  ],
+  "files": [
+    {
+      "path": "files/access-A-LOD0.glb",
+      "label": "access-A-LOD0"
+    },
+    {
+      "path": "files/access-A-LOD1.glb",
+      "label": "access-A-LOD1"
+    },
+    {
+      "path": "files/access-A-LOD2.glb",
+      "label": "access-A-LOD2"
+    },
+    {
+      "path": "files/access-A-collision-candidate.glb",
+      "label": "access-A-collision-candidate"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "三档实际导出有向几何、UV、原始闭合构件与有限楼板支持、头部净空核验；接触共享边与局部嵌合保留报告。CPU图仅显示独立节点，运行件自包含。",
+    "限制与待解决": "三档梯级数不同，静态碰撞候选固定近景级数，尚未游戏引擎验收，不能从渲染LOD自动推导碰撞。2.4米宽压力点超出梯面；仅与A层高匹配，B不能直接套用。绝对城市位置为空，未解决既有复道城市柱脚地表问题，无结构、连续人体、GPU或手机认证。"
+  },
+  "related": [
+    "p-luoyang",
+    "m-luoyang-palace-gallery"
+  ]
+}

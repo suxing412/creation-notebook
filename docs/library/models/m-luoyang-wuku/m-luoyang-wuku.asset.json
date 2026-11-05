@@ -1,0 +1,50 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-wuku",
+  "category": "models",
+  "kind": "建筑",
+  "title": "武库收纳与点验",
+  "english": "ARMORY STORAGE STUDY",
+  "summary": "前棚A与侧棚B的独立收纳、点验空间研究。B采用最终门框枢轴修订，A保留原v2；容量盒为功能占位，不是兵器库存复原。",
+  "status": "待审",
+  "statusNote": "已建模，未入城 · 独立研究模型",
+  "cover": "cover.webp",
+  "coverAlt": "B方案武库最终150度开门姿态的实际原生CPU总览。",
+  "gallery": [
+    "shots/after-entry-CPU.webp",
+    "shots/A-LOD0-whole.webp"
+  ],
+  "files": [
+    {
+      "path": "files/wuku-B-LOD0.glb",
+      "label": "wuku-B-LOD0"
+    },
+    {
+      "path": "files/wuku-B-LOD1.glb",
+      "label": "wuku-B-LOD1"
+    },
+    {
+      "path": "files/wuku-B-LOD2.glb",
+      "label": "wuku-B-LOD2"
+    },
+    {
+      "path": "files/wuku-A-LOD0.glb",
+      "label": "wuku-A-LOD0"
+    },
+    {
+      "path": "files/wuku-A-LOD1.glb",
+      "label": "wuku-A-LOD1"
+    },
+    {
+      "path": "files/wuku-A-LOD2.glb",
+      "label": "wuku-A-LOD2"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "B三档实际GLB与原生有向几何、UV、材质负载核对，原非门构件保持；指定150度门态的入口、台阶与侧棚路线检查通过，另保留有限开闭姿态和负例。A三档沿用v2实际导出检查，图像与版本绑定。",
+    "限制与待解决": "只有B固定150度是本轮核验通行态；若干中间角度占用侧向路线，未导出动画或运行时联锁。独立文件不含外地面，外到达支承缺失不能写成完整可走场景。A旧试放曾有台阶支承问题，不借B结论覆盖A。几何与尺度均C推测，不是武器制造模型，无防盗、承载、连续运动、GPU或手机认证，未入城。"
+  },
+  "related": [
+    "p-luoyang"
+  ]
+}

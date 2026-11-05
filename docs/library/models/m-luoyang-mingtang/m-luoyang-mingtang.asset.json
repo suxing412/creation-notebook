@@ -1,0 +1,51 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-mingtang",
+  "category": "models",
+  "kind": "建筑",
+  "title": "明堂形制假说",
+  "english": "MINGTANG FORM STUDY",
+  "summary": "重屋、九房等文献概念启发的一组明堂A/B方案，各三档LOD。九格布局、四侧入口、叠檐、柱列及全部尺度是C解释，不是考古复原。",
+  "status": "待审",
+  "statusNote": "已建模，未入城 · 独立研究模型",
+  "cover": "cover.webp",
+  "coverAlt": "明堂A方案的实际原生CPU渲染，显示叠檐和四侧台基。",
+  "gallery": [
+    "shots/B-LOD0-whole.webp",
+    "shots/A-LOD1-whole.webp",
+    "shots/A-LOD2-whole.webp"
+  ],
+  "files": [
+    {
+      "path": "files/mingtang-A-LOD0.glb",
+      "label": "mingtang-A-LOD0"
+    },
+    {
+      "path": "files/mingtang-A-LOD1.glb",
+      "label": "mingtang-A-LOD1"
+    },
+    {
+      "path": "files/mingtang-A-LOD2.glb",
+      "label": "mingtang-A-LOD2"
+    },
+    {
+      "path": "files/mingtang-B-LOD0.glb",
+      "label": "mingtang-B-LOD0"
+    },
+    {
+      "path": "files/mingtang-B-LOD1.glb",
+      "label": "mingtang-B-LOD1"
+    },
+    {
+      "path": "files/mingtang-B-LOD2.glb",
+      "label": "mingtang-B-LOD2"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "六份GLB实际回读与原生有向三角、UV相符，指定范围退化、重复几何和零面积UV检查通过。四向门道有限支持和净高射线通过；同资产CPU图无损转WebP。",
+    "限制与待解决": "“重屋”不被裁定为可步行二楼，不添加未证楼梯或环水；未采用北魏台基尺寸作为东汉事实。有限平台内射线不覆盖全部台阶、连续运动、人流和构件相交；未做结构、GPU或手机验收。A/B互斥，未入城，不增加已确定历史建筑。"
+  },
+  "related": [
+    "p-luoyang"
+  ]
+}

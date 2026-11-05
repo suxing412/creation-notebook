@@ -1,0 +1,39 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-xiaoyuan-gate",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "小苑门",
+  "english": "XIAOYUAN GATE",
+  "summary": "小苑门单道门楼 C 级候选，三档完整模型均含后梯与主体；门道数量、尺寸和绝对位置未定。",
+  "status": "待审",
+  "statusNote": "已建模；独立资产待审，未入城。",
+  "cover": "cover.webp",
+  "coverAlt": "小苑门候选模型的CPU三分之四视图：单孔夯土门台、四坡上屋、围护及后部登临梯。",
+  "gallery": [
+    "shots/detail.webp"
+  ],
+  "files": [
+    {
+      "path": "files/xiaoyuan-LOD1.glb",
+      "label": "LOD1 · 中景展示候选"
+    },
+    {
+      "path": "files/xiaoyuan-LOD0.glb",
+      "label": "LOD0 · 近景候选"
+    },
+    {
+      "path": "files/xiaoyuan-LOD2.glb",
+      "label": "LOD2 · 远景简化候选"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "已逐一核对所选GLB版本、字节数和SHA256，复用文件与现有公开路径逐字节一致。模型可独立解析，贴图内嵌；本卡图像来自该版模型的既有CPU渲染。",
+    "限制与待解决": "单道布局是可替换的设计选择，非由门名推出。只上架含主体和后梯的完整三档，不将core、stairs拆成独立作品；未验证外部地形道路接续。 本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
+    "证据等级": "门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。",
+    "版本与展示": "选用 C-candidate-v1-final，按一个门名家族计数；默认展示LOD1。近、中、远三档均保留，LOD与开闭姿态不重复计件。"
+  },
+  "related": [
+    "p-luoyang"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-taixue-a",
+  "category": "models",
+  "kind": "建筑",
+  "title": "太学长堂 A",
+  "english": "TAIXUE HALL A",
+  "summary": "太学长堂A方案的入口修订中远景模型，保持既有柱网与形体。布局和尺寸为设计推测，城市位置未配准；高细近景另待体积优化。",
+  "status": "待审",
+  "statusNote": "已建模，未入城 · 独立研究模型",
+  "cover": "cover.webp",
+  "coverAlt": "太学A方案LOD1实际GLB的独立CPU总览。",
+  "gallery": [
+    "shots/taixue-LOD1-reverse.webp"
+  ],
+  "files": [
+    {
+      "path": "../../../cities/luoyang/progress-assets/taixue-A-v3.2/models/taixue-A-LOD1.glb",
+      "label": "taixue-A-LOD1"
+    },
+    {
+      "path": "files/taixue-A-LOD2.glb",
+      "label": "taixue-A-LOD2"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "沿用v3.2实际导出及入口检查，原LOD1与远端现有运行件逐字节相同，不重复上传。中远两档自包含，UV、贴图与文件哈希核对；封面直接由实际LOD1导入渲染。",
+    "限制与待解决": "只收LOD1/LOD2，27,855,752字节的高细LOD0仍超过单文件门槛，不用近景图伪装当前下载。入口有限路线不代表全场无碰撞、结构安全或历史尺度认证。与B为同一太学研究系列的两方案，不新增城市坐标；未入城，GPU与手机未验。"
+  },
+  "related": [
+    "p-luoyang",
+    "m-luoyang-stoneclassic-access-court"
+  ]
+}
