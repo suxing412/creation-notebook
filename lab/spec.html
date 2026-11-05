@@ -112,7 +112,7 @@ const main = document.getElementById('main');
 main.innerHTML = `
 <header class="cat-head"><div><div class="meta">Submission spec · v${spec.spec}</div><h1>提交规范</h1>
   <p>造物之匣里的每一件数字资产，都由一张卡片 <code>&lt;id&gt;.asset.json</code> 描述。卡片写对、推送，网页就自动收录；写错了，检查会拦下并说明哪里不对。</p></div></header>
-<nav class="spec-nav" aria-label="本页目录"><a href="#where">放在哪里</a><a href="#card">卡片格式</a><a href="#cats">分类与类型</a><a href="#status">状态</a><a href="#rules">质量下限</a><a href="#proj">大型项目</a><a href="#src">源文件</a><a href="#flow">提交流程</a><a href="#report">检查报告</a></nav>
+<nav class="spec-nav" aria-label="本页目录"><a href="#where">放在哪里</a><a href="#card">卡片格式</a><a href="#cats">分类与类型</a><a href="#status">状态</a><a href="#rules">质量下限</a><a href="#proj">大型项目</a><a href="#src">原件与源文件</a><a href="#flow">提交流程</a><a href="#report">检查报告</a></nav>
 
 <section class="sect spec-wrap" id="where"><h2>一 · 放在哪里</h2>
   <p class="lead">新资产一件一个文件夹，放在 <code>docs/library/&lt;分类&gt;/&lt;id&gt;/</code>。卡片、封面、图集、模型都放在这个文件夹里，卡片里的路径一律写<b>相对卡片自己</b>的路径。</p>
@@ -173,13 +173,12 @@ ${TEMPLATE}</pre>
   <p class="lead" style="margin-top:12px">章节与进度的 status：${(spec.project?.progressStatuses || []).map(x => `<code>${x}</code>`).join(' ')}。每交付一批，都要在 <code>progress</code> 里更新对应条目，并在 <code>journal</code> 最前面加一条记录。</p>
 </section>
 
-<section class="sect spec-wrap" id="src"><h2>七 · 源文件</h2>
-  <p class="lead">网站只放给人看的东西：展示图、GLB、网页。<b>.blend、源码 ZIP、.psd、.exr、.fbx 这类源文件不提交进仓库</b>，改为上传到这一批 tag 的 GitHub Release；卡片和页面里需要下载时，就链接 Release 的地址。仓库里已有的旧源文件已经归档到 Release <code>sources-2026.11.05</code>，网站上的下载链接会自动指过去。</p>
-  <pre class="code"><span class="c"># 一批做完、打好 tag 之后</span>
-gh release create rYYYY.MM.DD-N --title "rYYYY.MM.DD-N" --notes "这一批的源文件" model.blend source.zip
-<span class="c"># 这个 tag 已经有 Release 了，就追加上传</span>
-gh release upload rYYYY.MM.DD-N model.blend</pre>
-  <p class="lead" style="margin-top:12px">网站体积上限是 1 GB；部署时超过上限会直接失败，线上停在上一版。展示图请用 WebP，GLB 请用 meshopt 压缩（<code>gltfpack -i in.glb -o out.glb -cc</code>）。资产库的查看器和洛阳城景都能读取压缩后的 GLB。</p>
+<section class="sect spec-wrap" id="src"><h2>七 · 原件与源文件</h2>
+  <p class="lead">网站只负责展示：放展示图、GLB、网页，<b>不提供下载，原件一律到 GitHub Release 里取</b>。每个 <code>rYYYY.MM.DD-N</code> tag 对应一个同名 Release。推送 tag 后会自动建好这个 Release，把这一批新增或改动的 GLB 原件放进去：未压缩，与仓库里的文件逐字节相同，附清单 <code>originals.json</code>，列出路径、体积和 SHA-256。所以带新模型的批次必须打 tag。</p>
+  <p class="lead" style="margin-top:12px"><b>.blend、源码 ZIP、.psd、.exr、.fbx 这类源文件不提交进仓库</b>，上传到同一个 Release。仓库里原有的旧源文件已经归档到 Release <code>sources-2026.11.05</code>。</p>
+  <pre class="code"><span class="c"># 推送 tag、等 Release 自动建好之后</span>
+gh release upload rYYYY.MM.DD-N model.blend source.zip</pre>
+  <p class="lead" style="margin-top:12px">网站体积上限是 1 GB，部署时超过上限会直接失败，线上停在上一版。部署会自动瘦身，仓库里保留原件：GLB 用 meshopt 压缩，PNG 转成 WebP。洛阳城景目录除外，它会核对文件哈希，所以原样发布；城景要更小，就自己用 <code>gltfpack -i in.glb -o out.glb -cc</code> 压缩，并同步更新哈希。</p>
 </section>
 
 <section class="sect spec-wrap" id="flow"><h2>八 · 提交流程</h2>
@@ -188,7 +187,7 @@ gh release upload rYYYY.MM.DD-N model.blend</pre>
     <li>运行检查：<code>python -I lab/tools/build_assets.py --check</code>。有错误会逐条列出，并以非零退出。</li>
     <li>只剩提醒或全绿，就提交；提交说明写清是哪件资产，例如 <code>Add m-bronze-lamp: bronze lamp LOD0/LOD1</code>。</li>
     <li>推送到 main。部署接好之后，推送会自动重跑这项检查并发布；检查不过，网站保持上一版。</li>
-    <li>一批做完照旧打 <code>rYYYY.MM.DD-N</code> tag，把这一批的源文件上传到同名 Release；Claude 按版本评审。</li>
+    <li>一批做完照旧打 <code>rYYYY.MM.DD-N</code> tag 并推送（带新模型的批次必须打）。同名 Release 会自动建好，收下这一批的 GLB 原件；再把这一批的源文件传上去。Claude 按版本评审。</li>
   </ol>
 </section>
 

@@ -75,8 +75,8 @@ docs/library/models/m-bronze-lamp/
 - kind 不在分类表里，或 related 指向不存在的 id；
 - 新资产没有放在标准目录；
 - 标准目录里有 GLB，但没有任何卡片引用它；
-- 展示图是大于 1 MB 的 PNG 或 JPG（建议转 WebP）；
-- GLB 大于 1 MB 却没有用 meshopt 压缩（建议 `gltfpack -cc`）。
+- 展示图是大于 1 MB 的 JPG，或城景目录里大于 1 MB 的 PNG（建议转 WebP）；
+- 城景目录里的 GLB 大于 1 MB 却没有用 meshopt 压缩（建议 `gltfpack -cc`）。
 
 门槛的具体数字都在 `categories.json` 的 `limits` 里，网站和检查脚本都从这里读取。
 
@@ -86,7 +86,10 @@ docs/library/models/m-bronze-lamp/
 2. 运行检查：`python -I lab/tools/build_assets.py --check`。有错误时会逐条列出，并以非零状态退出。
 3. 检查通过后提交。提交说明写清楚是哪件资产，例如 `Add m-bronze-lamp: bronze lamp LOD0/LOD1`。
 4. 推送到 main。部署接好之后，每次推送都会自动重跑检查并发布；检查不通过时，网站保持上一版。
-5. 一批工作完成后，照旧打 `rYYYY.MM.DD-N` tag，把这一批的源文件上传到同名 GitHub Release（见第 7 节）。Claude 按版本评审。
+5. 一批工作完成后，照旧打 `rYYYY.MM.DD-N` tag 并推送。**每批新模型都必须有这个 tag**，原件只在它的 Release 里：
+   - 推送 tag 后，部署流程会自动建好同名 Release，把这一批新增或改动的 GLB 原件放进去，附清单 `originals.json`；
+   - 这一批的源文件由你上传到同一个 Release（见第 7 节）；
+   - Claude 按版本评审。
 
 ## 5. 加分类
 
@@ -124,14 +127,30 @@ docs/library/models/m-bronze-lamp/
 
 ## 7. 源文件与体积
 
-网站只放给人看的东西：展示图、GLB 和网页。GitHub Pages 整站上限 1 GB，部署时一旦超过上限就会失败，线上停在上一版。
+网站只负责展示：放展示图、GLB 和网页，不提供下载。原件一律到 GitHub Release 里取。GitHub Pages 整站上限 1 GB，部署时一旦超过上限就会失败，线上停在上一版。
 
-- **源文件不提交进仓库。** `.blend`、源码 ZIP 及其分卷、`.psd`、`.exr`、`.fbx` 这类文件，改为上传到这一批 tag 的 GitHub Release：
+- **原件在批次 Release 里。** 每个 `rYYYY.MM.DD-N` tag 对应一个同名 Release，由 `.github/workflows/originals.yml` 自动创建：
+  - 里面放这一批（上一个 r tag 之后）新增或改动的 GLB，未压缩，与仓库里提交的文件逐字节相同；
+  - 文件名是 `docs/` 下的路径，把 `/` 写成 `__`，例如 `library__models__m-bronze-lamp__files__lamp-LOD0.glb`；
+  - `originals.json` 列出每个文件的路径、体积和 SHA-256。
+
+  要取某件资产的原件，先找它最近一次改动所在的批次，再到那个 Release 里下载。手动运行这个工作流，会补齐所有还没有原件清单的 r tag。
+
+- **源文件不提交进仓库。** `.blend`、源码 ZIP 及其分卷、`.psd`、`.exr`、`.fbx` 这类文件，上传到这一批 tag 的 Release。Release 在推送 tag 后会自动建好，等它出现再追加：
   ```
-  gh release create rYYYY.MM.DD-N --title "rYYYY.MM.DD-N" --notes "这一批的源文件" model.blend source.zip
-  gh release upload rYYYY.MM.DD-N another.blend    # 这个 tag 已经有 Release 时，用这一条追加
+  gh release upload rYYYY.MM.DD-N model.blend source.zip
   ```
   在 `docs/` 里提交新的源文件，检查会报错。
 - **旧源文件已经归档。** 仓库里原有的源文件都放进了 Release `sources-2026.11.05`，分卷也已还原成校验过的完整 ZIP。部署时这些文件不会发布，页面上的下载链接会自动改成 Release 的地址。对照表在 `source-archive.json`，由 `lab/tools/archive_sources.py` 生成。
-- **展示图用 WebP。** PNG 和 JPG 超过 1 MB 时检查会提醒。
-- **GLB 用 meshopt 压缩**，命令是 `gltfpack -i in.glb -o out.glb -cc`。资产库的查看器和洛阳城景都能读取压缩后的 GLB；超过 1 MB 且没有压缩的 GLB，检查会提醒。
+- **部署时自动瘦身，仓库里留原件。** 发布网站时，`lab/tools/slim_site.py` 会做三件事：
+  - GLB 用 meshopt 压缩（`gltfpack -cc`），内嵌贴图转成 WebP；
+  - PNG 转成 WebP，页面里的引用跟着改；
+  - 内容完全相同的 three.js 副本只发布一份。
+
+  仓库里的文件保持原样，所以提交时不必自己压缩。资产库里显示的体积是发布后的大小。下面几类文件会原样发布：
+  - `docs/cities/`、`docs/prototypes/` 里的文件，以及城景代码里点名的模型（城景会核对 SHA-256，还会按节点名替换模型）；
+  - 已经压缩过的 GLB；
+  - 被 .gltf 引用的贴图。
+
+  城景要更小，就自己用 `gltfpack -i in.glb -o out.glb -cc` 压缩，并同步更新登记的哈希。
+- **新图仍然建议直接存成 WebP。** JPG，以及城景目录里的 PNG，超过 1 MB 时检查会提醒。

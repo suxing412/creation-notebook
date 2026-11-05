@@ -78,7 +78,7 @@ main.innerHTML = `<article class="ad">
 
 ${glbs.length ? `<section class="ad-sect"><h2>文件<small>${glbs.length}</small></h2><div class="tablewrap"><table class="list"><thead><tr><th>文件</th><th>路径</th><th class="n">体积</th><th class="n">面数</th><th class="n">贴图</th><th class="n">包围盒（米）</th><th></th></tr></thead><tbody>
   ${glbs.map((f, i) => `<tr><td><b style="font-family:var(--serif)">${esc(f.label)}</b></td><td style="font:12px var(--mono);color:var(--muted)">${esc(f.path)}</td><td class="n">${size(f.bytes)}</td><td class="n">${tris(f.triangles)}</td><td class="n">${f.images || '—'}</td><td class="n">${f.size ? f.size.map(n => +n.toFixed(2)).join(' × ') : '—'}</td>
-  <td class="n"><button class="btn" data-open="${i}" style="min-height:32px;display:inline-flex;padding:0 10px">3D</button> <a class="dl-link" href="${f.url}" download>下载</a></td></tr>`).join('')}</tbody></table></div></section>` : ''}
+  <td class="n"><button class="btn" data-open="${i}" style="min-height:32px;display:inline-flex;padding:0 10px">3D</button></td></tr>`).join('')}</tbody></table></div></section>` : ''}
 ${related.length ? `<section class="ad-sect"><h2>关联资产<small>${related.length}</small></h2><div class="cards">${related.map(card).join('')}</div></section>` : ''}
 </article>`;
 
