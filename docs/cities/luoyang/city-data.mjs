@@ -1224,44 +1224,143 @@ const assetRecords = [
     "bundleBytes": 1150620,
     "projectionSourceContract": "progress-assets/flat/source.json"
   },
-{
-  "id": "yong-gate-near",
-  "path": "../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
-  "bytes": 1570856,
-  "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
-  "bounds": {
-    "min": [
-      -12.600000381469727,
-      0.0,
-      -5.811703681945801
-    ],
-    "max": [
-      12.600000381469727,
-      10.230000495910645,
-      5.811703681945801
-    ]
+  {
+    "id": "yong-gate-near",
+    "path": "../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+    "bytes": 1570856,
+    "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+    "bounds": {
+      "min": [
+        -12.600000381469727,
+        0.0,
+        -5.811703681945801
+      ],
+      "max": [
+        12.600000381469727,
+        10.230000495910645,
+        5.811703681945801
+      ]
+    },
+    "sourceContract": "progress-assets/yong-city-v1/source.json"
   },
-  "sourceContract": "progress-assets/yong-city-v1/source.json"
-},
-{
-  "id": "yong-gate-apron",
-  "path": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
-  "bytes": 388208,
-  "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
-  "bounds": {
-    "min": [
-      -15.99994945526123,
-      -0.20000000298023224,
-      -9.5
-    ],
-    "max": [
-      16.00006103515625,
-      6.029999732971191,
-      9.5
-    ]
+  {
+    "id": "yong-gate-apron",
+    "path": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "bytes": 388208,
+    "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "bounds": {
+      "min": [
+        -15.99994945526123,
+        -0.20000000298023224,
+        -9.5
+      ],
+      "max": [
+        16.00006103515625,
+        6.029999732971191,
+        9.5
+      ]
+    },
+    "sourceContract": "progress-assets/yong-city-v1/source.json"
   },
-  "sourceContract": "progress-assets/yong-city-v1/source.json"
-}
+  {
+    "id": "yong-gate-far",
+    "path": "progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD2.glb",
+    "bytes": 58612,
+    "sha256": "7406a24cf7124fcde7409a30f2961251a873a64ea9a3ab6a3e9e206085ad6074",
+    "bounds": {
+      "min": [
+        -12.600000381469727,
+        0.0,
+        -5.800000190734863
+      ],
+      "max": [
+        12.600000381469727,
+        10.230000495910645,
+        5.800000190734863
+      ]
+    },
+    "nearPath": "../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+    "nearBytes": 1570856,
+    "nearSha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e"
+  },
+  {
+    "id": "yong-apron-far",
+    "path": "progress-assets/yong-city-v1/yong-apron-LOD2.glb",
+    "bytes": 7564,
+    "sha256": "fb8a5f2f93aace63e0229cdc4a9c65d0c1450bb80bf8965e75da0fd92cad529a",
+    "bounds": {
+      "min": [
+        -15.99994945526123,
+        -0.20000000298023224,
+        -9.5
+      ],
+      "max": [
+        16.00006103515625,
+        6.029999732971191,
+        9.5
+      ]
+    },
+    "nearPath": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "nearBytes": 388208,
+    "nearSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb"
+  },
+  {
+    "id": "yong-road-link-far",
+    "path": "progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
+    "bytes": 2252,
+    "sha256": "2a32c700d401af623701a2ec84523ea2d7688fc9b5d128f22cae542a85b7b844",
+    "bounds": {
+      "min": [
+        -2.0767815113067627,
+        -0.20000000298023224,
+        9.5
+      ],
+      "max": [
+        1.5001014471054077,
+        0.03999999165534973,
+        59.13047409057617
+      ]
+    },
+    "nearPath": "progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+    "nearBytes": 382876,
+    "nearSha256": "456a7dd54a5fd623ab17d9823ab1a12701bd764bdd219ec8884e9538536cd93d"
+  },
+  {
+    "id": "yong-road-link-near",
+    "path": "progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+    "bytes": 382876,
+    "sha256": "456a7dd54a5fd623ab17d9823ab1a12701bd764bdd219ec8884e9538536cd93d",
+    "bounds": {
+      "min": [
+        -2.0767815113067627,
+        -0.20000000298023224,
+        9.5
+      ],
+      "max": [
+        1.5001014471054077,
+        0.03999999165534973,
+        59.13047409057617
+      ]
+    }
+  },
+  {
+    "id": "yong-road-receiver",
+    "path": "progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
+    "bytes": 9140,
+    "sha256": "e5baa0df8fd28e117b4ef997cab0d962b0834a4c9664bb1ed73b7746d2488e38",
+    "bounds": {
+      "min": [
+        43.100006103515625,
+        0.0,
+        -2622.460693359375
+      ],
+      "max": [
+        1445.49072265625,
+        0.20999999344348907,
+        -835.9883422851562
+      ]
+    }
+  }
 ];
 
 export const assets = assetRecords.map(({ path, nearPath, ...asset }) => ({
@@ -1272,86 +1371,92 @@ export const assets = assetRecords.map(({ path, nearPath, ...asset }) => ({
 }));
 
 export const nodes = [
-{
-  "id": "yong-gate-body",
-  "asset": "yong-gate-near",
-  "chapter": "walls",
-  "title": "雍门 · C级设计候选",
-  "summary": "原位接入既有西墙关系处；两翼接墙与三门道汇流地面已核验。位置和形制均保留设计推测，门外接街仍待建。",
-  "matrix": [
-    -0.01162686012685299,
-    0.0,
-    -0.9999324083328247,
-    0.0,
-    0.0,
-    1.0,
-    0.0,
-    0.0,
-    0.9999324083328247,
-    0.0,
-    -0.01162686012685299,
-    0.0,
-    -16.0157413482666,
-    0.17000000178813934,
-    -1397.772705078125,
-    1.0
-  ],
-  "bounds": {
-    "min": [
-      -21.970934601541217,
+  {
+    "id": "yong-gate-body",
+    "asset": "yong-gate-near",
+    "chapter": "walls",
+    "title": "雍门 · C级设计候选",
+    "summary": "与既有城墙、三门道地坪和约49.6米C级接街组合；不代表历史道路复原或全城交通完成。",
+    "matrix": [
+      -0.01162686012685299,
+      0.0,
+      -0.9999324083328247,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.9999324083328247,
+      0.0,
+      -0.01162686012685299,
+      0.0,
+      -16.0157413482666,
       0.17000000178813934,
-      -1410.439289595516
+      -1397.772705078125,
+      1.0
     ],
-    "max": [
-      -10.060548094991987,
-      10.400000497698784,
-      -1385.106120560734
+    "bounds": {
+      "min": [
+        -21.970934601541217,
+        0.17000000178813934,
+        -1410.439289595516
+      ],
+      "max": [
+        -10.060548094991987,
+        10.400000497698784,
+        -1385.106120560734
+      ]
+    },
+    "initial": false,
+    "tier": "C",
+    "basis": "雍门名与西侧相对方位有文献；本次工程位置由现有C墙端推得，不是实测古门位。未把北魏西阳门轴线前推至东汉。",
+    "replaces": [
+      "yong-gate-body-far"
     ]
   },
-  "initial": true,
-  "tier": "C",
-  "basis": "雍门名与西侧相对方位有文献；本次工程位置由现有C墙端推得，不是实测古门位。未把北魏西阳门轴线前推至东汉。"
-},
-{
-  "id": "yong-gate-interface",
-  "asset": "yong-gate-apron",
-  "chapter": "walls",
-  "title": "雍门接墙与汇流地面",
-  "summary": "原位接入既有西墙关系处；两翼接墙与三门道汇流地面已核验。位置和形制均保留设计推测，门外接街仍待建。",
-  "matrix": [
-    -0.01162686012685299,
-    0.0,
-    -0.9999324083328247,
-    0.0,
-    0.0,
-    1.0,
-    0.0,
-    0.0,
-    0.9999324083328247,
-    0.0,
-    -0.01162686012685299,
-    0.0,
-    -16.0157413482666,
-    0.17000000178813934,
-    -1397.772705078125,
-    1.0
-  ],
-  "bounds": {
-    "min": [
-      -25.663923039269804,
-      -0.030000001192092896,
-      -1413.8181577197688
+  {
+    "id": "yong-gate-interface",
+    "asset": "yong-gate-apron",
+    "chapter": "walls",
+    "title": "雍门接墙与汇流地面",
+    "summary": "与既有城墙、三门道地坪和约49.6米C级接街组合；不代表历史道路复原或全城交通完成。",
+    "matrix": [
+      -0.01162686012685299,
+      0.0,
+      -0.9999324083328247,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.9999324083328247,
+      0.0,
+      -0.01162686012685299,
+      0.0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1.0
     ],
-    "max": [
-      -6.367559657263401,
-      6.199999734759331,
-      -1381.7273649513559
+    "bounds": {
+      "min": [
+        -25.663923039269804,
+        -0.030000001192092896,
+        -1413.8181577197688
+      ],
+      "max": [
+        -6.367559657263401,
+        6.199999734759331,
+        -1381.7273649513559
+      ]
+    },
+    "initial": false,
+    "tier": "C",
+    "basis": "雍门名与西侧相对方位有文献；本次工程位置由现有C墙端推得，不是实测古门位。未把北魏西阳门轴线前推至东汉。",
+    "replaces": [
+      "yong-gate-interface-far"
     ]
   },
-  "initial": true,
-  "tier": "C",
-  "basis": "雍门名与西侧相对方位有文献；本次工程位置由现有C墙端推得，不是实测古门位。未把北魏西阳门轴线前推至东汉。"
-},
   {
     "id": "C02-018",
     "asset": "courtyard-B",
@@ -3576,7 +3681,10 @@ export const nodes = [
         0.21,
         1224.515625
       ]
-    }
+    },
+    "replaces": [
+      "yong-road-receiver"
+    ]
   },
   {
     "id": "ground-retained",
@@ -3739,37 +3847,230 @@ export const nodes = [
         -3647.468994
       ]
     }
+  },
+  {
+    "id": "yong-gate-body-far",
+    "asset": "yong-gate-far",
+    "chapter": "walls",
+    "title": "雍门 · C级设计候选 · 全城远档",
+    "summary": "当前全城远档显示；进入雍门章节时由完整近档替换。位置和形制仍为C级设计。",
+    "matrix": [
+      -0.01162686012685299,
+      0.0,
+      -0.9999324083328247,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.9999324083328247,
+      0.0,
+      -0.01162686012685299,
+      0.0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1.0
+    ],
+    "bounds": {
+      "min": [
+        -21.970934601541217,
+        0.17000000178813934,
+        -1410.439289595516
+      ],
+      "max": [
+        -10.060548094991987,
+        10.400000497698784,
+        -1385.106120560734
+      ]
+    },
+    "initial": true,
+    "tier": "C",
+    "basis": "雍门名与西侧相对方位有文献；本次工程位置由现有C墙端推得，不是实测古门位。未把北魏西阳门轴线前推至东汉。"
+  },
+  {
+    "id": "yong-gate-interface-far",
+    "asset": "yong-apron-far",
+    "chapter": "walls",
+    "title": "雍门接墙与汇流地面 · 全城远档",
+    "summary": "当前全城远档显示；进入雍门章节时由完整近档替换。位置和形制仍为C级设计。",
+    "matrix": [
+      -0.01162686012685299,
+      0.0,
+      -0.9999324083328247,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.9999324083328247,
+      0.0,
+      -0.01162686012685299,
+      0.0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1.0
+    ],
+    "bounds": {
+      "min": [
+        -25.663923039269804,
+        -0.030000001192092896,
+        -1413.8181577197688
+      ],
+      "max": [
+        -6.367559657263401,
+        6.199999734759331,
+        -1381.7273649513559
+      ]
+    },
+    "initial": true,
+    "tier": "C",
+    "basis": "雍门名与西侧相对方位有文献；本次工程位置由现有C墙端推得，不是实测古门位。未把北魏西阳门轴线前推至东汉。"
+  },
+  {
+    "id": "yong-road-link",
+    "asset": "yong-road-link-far",
+    "chapter": "terrain",
+    "title": "雍门内侧接街 · C级设计",
+    "summary": "约49.6米C级工程接驳；默认远档与近档几何一致，仅材质细节不同。连接到现有主路的真实接点，不证明全城网络连通。",
+    "matrix": [
+      -0.01162686012685299,
+      0.0,
+      -0.9999324083328247,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.9999324083328247,
+      0.0,
+      -0.01162686012685299,
+      0.0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1.0
+    ],
+    "bounds": {
+      "min": [
+        -6.533824938806351,
+        -0.030000001192092896,
+        -1399.3831603020778
+      ],
+      "max": [
+        43.10000704347841,
+        0.20999999344348907,
+        -1396.3831601723928
+      ]
+    },
+    "initial": true,
+    "tier": "C",
+    "basis": "真实已建地面边界与净空的工程匹配；无历史道路测绘定位证据。"
+  },
+  {
+    "id": "yong-road-link-near",
+    "asset": "yong-road-link-near",
+    "chapter": "terrain",
+    "title": "雍门内侧接街 · C级设计",
+    "summary": "约49.6米C级工程接驳；默认远档与近档几何一致，仅材质细节不同。连接到现有主路的真实接点，不证明全城网络连通。",
+    "matrix": [
+      -0.01162686012685299,
+      0.0,
+      -0.9999324083328247,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.9999324083328247,
+      0.0,
+      -0.01162686012685299,
+      0.0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1.0
+    ],
+    "bounds": {
+      "min": [
+        -6.533824938806351,
+        -0.030000001192092896,
+        -1399.3831603020778
+      ],
+      "max": [
+        43.10000704347841,
+        0.20999999344348907,
+        -1396.3831601723928
+      ]
+    },
+    "initial": false,
+    "tier": "C",
+    "basis": "真实已建地面边界与净空的工程匹配；无历史道路测绘定位证据。",
+    "replaces": [
+      "yong-road-link"
+    ]
+  },
+  {
+    "id": "yong-road-receiver",
+    "asset": "yong-road-receiver",
+    "title": "雍门所接主路连通片 · C级现有模型",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "terrain",
+    "initial": true,
+    "tier": "C",
+    "basis": "来自既有C-alt六米道路模型的209三角连通分量，无损抽取而非新增历史道路。GLB内平移保留，城市实例为恒等变换；原network仍遵守三节点整体加载合同。",
+    "sourceContract": "progress-assets/yong-road-link-v2/source.json",
+    "bounds": {
+      "min": [
+        43.100006103515625,
+        0.0,
+        -2622.460693359375
+      ],
+      "max": [
+        1445.49072265625,
+        0.20999999344348907,
+        -835.9883422851562
+      ]
+    },
+    "summary": "无损提取现有primary的209三角连通分量，范围约1.4×1.8千米，非50米短片。完整道路章加载原network后替换本片；默认显示不等于完整网络。"
   }
 ];
 
 export const chapters = [
-{
-  "camera": {
-    "position": [
-      21.644511224702,
-      25.17000000178814,
-      -1427.2125656045973
+  {
+    "camera": {
+      "position": [
+        21.644511224702,
+        25.17000000178814,
+        -1427.2125656045973
+      ],
+      "target": [
+        -16.0157413482666,
+        4.170000001788139,
+        -1397.772705078125
+      ]
+    },
+    "id": "yong-gate",
+    "title": "雍门与通口",
+    "subtitle": "近档按章加载 · 内侧接街 · C级设计落位",
+    "nodeIds": [
+      "yong-gate-body",
+      "yong-gate-interface"
     ],
-    "target": [
-      -16.0157413482666,
-      4.170000001788139,
-      -1397.772705078125
-    ]
+    "loadNodeIds": [
+      "yong-gate-body",
+      "yong-gate-interface",
+      "yong-road-link-near",
+      "yong-road-receiver"
+    ],
+    "tier": "C",
+    "basis": "两翼复用旧试放几何并配连续地坪，约49.6米C级接驳已连至既有主路分量。墙端匹配和模型连续不证明历史道路位置、完整交通网络或结构安全。"
   },
-  "id": "yong-gate",
-  "title": "雍门与通口",
-  "subtitle": "完整近档 · 两翼接墙 · C级设计落位",
-  "nodeIds": [
-    "yong-gate-body",
-    "yong-gate-interface"
-  ],
-  "loadNodeIds": [
-    "yong-gate-body",
-    "yong-gate-interface"
-  ],
-  "tier": "C",
-  "basis": "两翼复用旧试放几何，新增连续地坪；保留原门体近景。当前墙端匹配不证明历史精度，外部道路尚未连接。"
-},
   {
     "id": "walls",
     "title": "城墙与城门",
@@ -4031,13 +4332,18 @@ export const chapters = [
       "ground-network-ground-stitched",
       "ground-retained",
       "ground-south",
-      "ground-D08"
+      "ground-D08",
+      "yong-road-link",
+      "yong-road-link-near",
+      "yong-road-receiver"
     ],
     "loadNodeIds": [
       "ground-network-ground-stitched",
       "ground-retained",
       "ground-south",
-      "ground-D08"
+      "ground-D08",
+      "yong-road-link-near",
+      "yong-road-receiver"
     ],
     "camera": {
       "position": [
@@ -4547,8 +4853,8 @@ export const provenance = {
       "sha256": "ddd1445c1dddabc7f2134b4dc0c3fae37484e619099ea549a4104bf483b486c1"
     }
   ],
-  "initialModelBytes": 3872084,
-  "allCityModelBytes": 13466348,
+  "initialModelBytes": 1990588,
+  "allCityModelBytes": 13926792,
   "limits": [
     "所有实例数量来自现有交付记录。",
     "城垣和门位使用示意关系，形体与住宅落位属于设计推测。",
