@@ -9,14 +9,41 @@
   "status": "待审",
   "statusNote": "按新设计要求待重做",
   "cover": "assets/overview.png",
+  "coverAlt": "斜上方看一张浅褐色桌面全景：左侧暮灯、右侧银灰色折页，中间保留工作空处。",
   "gallery": [
     "assets/fold.png",
     "assets/light.png"
   ],
-  "files": "auto",
+  "files": [
+    {
+      "path": "assets/poise.glb",
+      "label": "暮灯 · 005 原件"
+    },
+    {
+      "path": "assets/folio.glb",
+      "label": "折页 · 006 原件"
+    },
+    {
+      "path": "assets/desk.glb",
+      "label": "桌面 · 底板"
+    },
+    {
+      "path": "assets/desk-atlas.glb",
+      "label": "整套桌面场景 · 含地面（与前三件重复）"
+    }
+  ],
+  "page": "index.html",
   "notes": {
     "已完成的检查": "CPU 几何、跨引擎相机对应、原生导航与后退、GL 失败降级已完成限定检查，并经独立复核。",
-    "限制与待解决": "真实 GPU 图像、动态深度闪烁、iPhone 性能及物理光照均未验证；离线同场景不是实时验收。"
+    "限制与待解决": "真实 GPU 图像、动态深度闪烁、iPhone 性能及物理光照均未验证；离线同场景不是实时验收。",
+    "完整作品": "完整作品是带「留白 / 光 / 面」三个章节的空间网页，在 fusions/F03/index.html；详情页目前只显示模型和图片。",
+    "来源": "暮灯、折页为 005/006 冻结原件，逐字节未改（SHA-256 与 studies/005/assets/poise/model.glb、studies/006/assets/folio/model.glb 相同）。desk-atlas.glb 是整套场景（暮灯 + 折页 + 桌面 + 地面），内容与另三件重复，暂排在最后。"
   },
+  "related": [
+    "m-005",
+    "m-006",
+    "w-005",
+    "w-006"
+  ],
   "legacyPath": true
 }

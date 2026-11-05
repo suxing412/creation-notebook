@@ -5,18 +5,48 @@
   "kind": "历史实验",
   "title": "孔与隙",
   "english": "APERTURE ATLAS",
-  "summary": "固定两件物，让遮挡、穿孔与绕行成为同一空间的阅读路径。有限几何替换由独立复用页说明，完整原生变体保存在源包。",
+  "summary": "弧形背景幕前，一块 6×8 圆孔的弧形孔板立在泪滴形回环前方；换个位置看，回环从被遮挡、透过孔洞看到，到绕到侧面看见完整轮廓。",
   "status": "待审",
   "statusNote": "按新设计要求待重做",
   "cover": "assets/overview.png",
+  "coverAlt": "深色台面上，米色弧形圆孔板立在前方，后面象牙色的泪滴形回环从板的左侧露出一段，其余部分透过孔洞可见，背景是灰蓝色弧形幕。",
   "gallery": [
     "assets/aperture.png",
     "assets/around.png"
   ],
-  "files": "auto",
+  "files": [
+    {
+      "path": "assets/veil.glb",
+      "label": "孔幕 VEIL · 6×8 圆孔弧形孔板"
+    },
+    {
+      "path": "assets/orison.glb",
+      "label": "回环 ORISON"
+    },
+    {
+      "path": "assets/aperture-atlas.glb",
+      "label": "整场 · 孔幕＋回环＋台面＋背景幕（四件合并）"
+    },
+    {
+      "path": "assets/plinth.glb",
+      "label": "台面"
+    },
+    {
+      "path": "assets/backdrop.glb",
+      "label": "弧形背景幕"
+    }
+  ],
   "notes": {
-    "已完成的检查": "CPU几何、跨引擎相机、原生导航与无GL降级已完成限定检查；Latitude与Horizon实际几何替换复验。",
-    "限制与待解决": "GPU、动态闪烁、iPhone仍未验；同场景CPU渲染不等于实时验收，有限替换不证明任意几何可复用。"
+    "已完成的检查": "网页实验里的取景、镜头切换、导航和不支持 3D 时的退回画面都做过限定检查；复用页里换成另一组形体后也复验过。细节：CPU几何、跨引擎相机、原生导航与无GL降级已完成限定检查；Latitude与Horizon实际几何替换复验。",
+    "限制与待解决": "还没在真实显卡和 iPhone 上验收；能换一组形体，不代表任意形体都能直接替换。细节：GPU、动态闪烁、iPhone仍未验；同场景CPU渲染不等于实时验收，有限替换不证明任意几何可复用。",
+    "文件检查": "五个文件都以米为单位、Y 轴朝上；孔幕、回环和台面都是封闭的实体，背景幕是一张朝内的开放曲面。细节：逐边检查孔幕、回环、台面每条边恰好被两个三角形共用、绕序一致、体积为正；背景幕有 128 条开放边界，有向体积为负（法线朝内）；veil.glb、orison.glb 的 SHA-256 与 scene.json 登记一致。aperture-atlas.glb 是另外四件的合并件，100,524 面 = 68,480 + 23,040 + 8,576 + 428，所以页头的文件数和总体积把同一份内容算了两次。",
+    "来源与复用": "孔幕和回环就是「透幕」「回环」两件作品的原件，可以在那两张卡里看到更多变体。细节：veil.glb、orison.glb 与 m-008、m-007 的 veil、orison 模型 SHA-256 相同。备注里的 Latitude（横向回环）和 Horizon（宽低孔幕）是复用页 fusions/F04/reuse.html 里用来替换的另一组形体，即 m-007 的 latitude 与 m-008 的 horizon 变体，不在本卡的文件里。完整源包已归档到 Release sources-2026.11.05（fusions--F04--source.zip）。"
   },
+  "related": [
+    "m-007",
+    "m-008",
+    "w-007",
+    "w-008"
+  ],
   "legacyPath": true
 }

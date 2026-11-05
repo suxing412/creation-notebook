@@ -4,36 +4,50 @@
   "category": "models",
   "kind": "城市构件",
   "title": "板筒瓦薄壳模块",
-  "english": "",
-  "summary": "两种浅槽曲率、坡度与宽度试样，各三档LOD；非六个作品。",
-  "status": "已发布",
-  "statusNote": "已公开 · 研究候选",
+  "english": "PAN-AND-COVER TILE SHELL MODULE",
+  "summary": "参照汉代瓦件做的门楼檐口板瓦+筒瓦局部薄壳试样：A（6垄、垄距0.28米、坡0.3）与B（7垄、垄距0.26米、坡0.4）各三档；未含瓦当与承托，仅供研究。",
+  "status": "归档",
+  "statusNote": "研究试样 · 未完成设计验收 · 未装门楼",
   "cover": "../cities/luoyang/research/2026-11-03/eaves-A-near.png",
+  "coverAlt": "斜上方看一小片灰色瓦面：凹形板瓦逐排搭接，上面压着五条半圆筒瓦，前端筒瓦敞口、没有瓦当。瓦面下的棕色底板只是研究时垫的衬底，不属于模型。",
+  "gallery": [
+    "../cities/luoyang/research/2026-11-03/eaves-B-near.png",
+    "../cities/luoyang/research/2026-11-03/eaves-A-middle.png",
+    "../cities/luoyang/research/2026-11-03/eaves-B-middle.png"
+  ],
   "files": [
     {
       "path": "assets/eaves-A.glb",
-      "label": "A"
+      "label": "A 型（6垄·坡0.3） · 近景"
     },
     {
       "path": "assets/eaves-A-LOD1.glb",
-      "label": "A-LOD1"
+      "label": "A 型 · 中景"
     },
     {
       "path": "assets/eaves-A-LOD2.glb",
-      "label": "A-LOD2"
+      "label": "A 型 · 远景"
     },
     {
       "path": "assets/eaves-B.glb",
-      "label": "B"
+      "label": "B 型（7垄·坡0.4） · 近景"
     },
     {
       "path": "assets/eaves-B-LOD1.glb",
-      "label": "B-LOD1"
+      "label": "B 型 · 中景"
     },
     {
       "path": "assets/eaves-B-LOD2.glb",
-      "label": "B-LOD2"
+      "label": "B 型 · 远景"
     }
   ],
+  "related": [
+    "p-luoyang",
+    "m-gate-roof-study"
+  ],
+  "notes": {
+    "已完成的检查": "两种瓦面各三档共六个文件都查过：没有破面、重叠面或断开的边，面朝向一致、体积为正，导出前后形状一致，瓦片之间没有互相穿插。（六档退化面、重复面、非流形边均为0，卷绕一致、体积为正，导出前后有向三角一致，BVH相交候选对为0。）",
+    "限制与待解决": "此前状态标为「已发布」，高于实际进度，现改为归档。这是一小片研究用瓦面，还不能直接铺成整座屋顶。（檐端筒瓦敞口，未建瓦当；每排沿法向整体抬约21毫米，板瓦层间空约12.5–12.8毫米，筒瓦离本排板瓦约24毫米，同排板瓦留1毫米缝；筒瓦无瓦舌，接头台阶约21毫米；以上间隙数字为2026-11建模评审量得。无UV和贴图，法线为逐面平直；两侧边垄无筒瓦，不能直接并排拼接；支承、檐端收束、脊线、防水与WFC接口未定；尺寸是设计参数，0.35米是瓦长的水平投影；原点在檐口截面中心，下表皮低于基线8毫米。封面与图集为研究渲染，棕色底板仅为研究辅助，不在GLB里。）"
+  },
   "legacyPath": true
 }

@@ -2,14 +2,14 @@
   "spec": 1,
   "id": "m-luoyang-inner-door-components",
   "category": "models",
-  "kind": "构件",
-  "title": "住宅内门修订组件",
+  "kind": "城市构件",
+  "title": "住宅内门组件（单扇/双扇）",
   "english": "INNER DOOR COMPONENTS",
-  "summary": "住宅单扇与双扇内门的最终枢接修订组件，各含三档静态90度开门模型。只展示新增门叶、承接件与止挡，不含院落、原框墙或城市坐标；构造与尺寸均为C设计。",
+  "summary": "住宅里的单扇与双扇内门，各有三档、都停在开门90度的静态姿态。只含门叶、上下承接件与止挡，不含院落、门框墙或城市坐标；尺寸与构造为推测设计，非考古实测。",
   "status": "待审",
   "statusNote": "已建模，未入城 · 独立研究模型",
   "cover": "cover.webp",
-  "coverAlt": "实际单扇内门运行组件导入后的独立CPU总览，未显示原院落门框。",
+  "coverAlt": "灰底上一扇深褐色单扇内门斜开着，门叶一侧是立轴，上下各有一块枢块；右边单独立着一根细长的闭门止挡；画面里没有门框和墙。",
   "gallery": [
     "shots/single-door-reverse.webp",
     "shots/paired-door-overview.webp",
@@ -18,32 +18,33 @@
   "files": [
     {
       "path": "files/single-door-LOD0.glb",
-      "label": "single-door-LOD0"
+      "label": "单扇 · 近景"
     },
     {
       "path": "files/single-door-LOD1.glb",
-      "label": "single-door-LOD1"
+      "label": "单扇 · 中景"
     },
     {
       "path": "files/single-door-LOD2.glb",
-      "label": "single-door-LOD2"
+      "label": "单扇 · 远景"
     },
     {
       "path": "files/paired-door-LOD0.glb",
-      "label": "paired-door-LOD0"
+      "label": "双扇 · 近景"
     },
     {
       "path": "files/paired-door-LOD1.glb",
-      "label": "paired-door-LOD1"
+      "label": "双扇 · 中景"
     },
     {
       "path": "files/paired-door-LOD2.glb",
-      "label": "paired-door-LOD2"
+      "label": "双扇 · 远景"
     }
   ],
   "notes": {
-    "已完成的检查": "采用最终修订三档；原生与实际导出有向几何、UV及有限枢接姿态检查已绑定。发布投影仅净化内部节点名称，非名称JSON及BIN逐字节相同。独立图由实际发布GLB导入渲染，不添加宿主构件。",
-    "限制与待解决": "各三档仅为新增门组件，不是整院三档。静态90度开门是有限通行检查使用状态，其他已测姿态仍阻挡原通行带；没有动画、运行时联锁、门闩、连续人体、承重或GPU/手机验收。单扇闭合仍有缝，双扇接点数值余量不是结构公差或考古精度；独立件不含原框墙，不证明任意洞口适配。未入城，不增加住宅实例。"
+    "已完成的检查": "门叶、承接件和止挡的形状、贴图坐标和开门姿态都按最终版核对过，网上展示的就是这一版文件。（采用最终修订三档；原生与实际导出有向几何、UV及有限枢接姿态检查已绑定。发布投影仅净化内部节点名称，非名称JSON及BIN逐字节相同。独立图由实际发布GLB导入渲染，不添加宿主构件。）",
+    "限制与待解决": "这是只停在开门90度的单独门件，不会动，也还没放进城里的院子。（各三档仅为新增门组件，不是整院三档。静态90度开门是有限通行检查使用状态，其他已测姿态仍阻挡原通行带；没有动画、运行时联锁、门闩、连续人体、承重或GPU/手机验收。单扇闭合仍有缝，双扇接点数值余量不是结构公差或考古精度；独立件不含原框墙，不证明任意洞口适配。未入城，不增加住宅实例。）",
+    "版本说明": "本卡原名「住宅内门修订组件」，是枢接方式修订后的最终版；改名只为说清对象，模型未变。"
   },
   "related": [
     "p-luoyang"

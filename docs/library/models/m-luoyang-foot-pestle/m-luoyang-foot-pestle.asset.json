@@ -9,7 +9,7 @@
   "status": "待审",
   "statusNote": "已建模；独立模型待审，不改变城市场景。",
   "cover": "cover.webp",
-  "coverAlt": "足碓与踏台的实际模型CPU预览；形体和尺寸为C级设计。",
+  "coverAlt": "斜上方看足碓：左边是两级台阶和带扶栏的木踏台，中间一根长杠杆架在支座的横轴上，右端的木杵落进白色石臼。",
   "gallery": [
     "shots/01.webp",
     "shots/02.webp"
@@ -17,15 +17,15 @@
   "files": [
     {
       "path": "files/foot-pestle-LOD0.glb",
-      "label": "foot · pestle · LOD0"
+      "label": "足碓 · 近景（贴图）"
     },
     {
       "path": "files/foot-pestle-LOD1.glb",
-      "label": "foot · pestle · LOD1"
+      "label": "足碓 · 中景（低分辨率贴图）"
     },
     {
       "path": "files/foot-pestle-LOD2.glb",
-      "label": "foot · pestle · LOD2"
+      "label": "足碓 · 远景（纯色，杠杆不可单独动）"
     }
   ],
   "related": [
@@ -33,6 +33,7 @@
   ],
   "notes": {
     "已完成的检查": "三档实际GLB回读、UV及有限静态姿态检查；远档仅静态。 图为同版原生模型CPU实渲，原生与最终GLB几何一致性另验；不是GLB直渲或浏览器实测。",
-    "限制与待解决": "只验证固定比例及有限姿态，未验证连续运动、力学、操作安全、生产率、GPU或手机；未定位城市。"
+    "限制与待解决": "只验证固定比例及有限姿态，未验证连续运动、力学、操作安全、生产率、GPU或手机；未定位城市。",
+    "证据等级": "卡片里说的「C 级」，意思是这件东西的形体和尺寸按功能推测设计，没有直接的实物或图像依据。"
   }
 }

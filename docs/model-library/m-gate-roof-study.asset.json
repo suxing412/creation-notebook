@@ -3,33 +3,47 @@
   "id": "m-gate-roof-study",
   "category": "models",
   "kind": "城市构件",
-  "title": "完整单门楼屋面研究",
-  "english": "",
-  "summary": "原单门楼资产的局部原点契约验证：不新增模型、不改城市。三档共享同一地面中心，无二次减城市坐标。",
-  "status": "已发布",
-  "statusNote": "已公开 · 研究候选",
+  "title": "C02-010 院门屋面研究",
+  "english": "C02-010 GATEHOUSE ROOF STUDY",
+  "summary": "C02-010（A2 院落）院门的屋面质量样例：保留原夯土墙、门扇和门楣，新做两坡筒板瓦屋面与素脊；近中远三档共用门楼地面中心原点，未入城。",
+  "status": "待审",
+  "statusNote": "研究候选 · 未完成设计验收 · 未入城",
   "cover": "../cities/luoyang/research/2026-11-03/gate-after-near.png",
+  "coverAlt": "斜上方看一座小院门：两道土黄色墙垛夹着门道，左边立一扇木门板，墙头架着门楣；上方是两坡灰瓦屋面，筒瓦和板瓦一垄垄交替铺开，屋脊压一道平直脊条；右侧山面下方敞开，能看到托脊的短柱。",
+  "gallery": [
+    "../cities/luoyang/research/2026-11-03/gate-after-middle.png",
+    "../cities/luoyang/research/2026-11-03/gate-after-macro.png",
+    "../cities/luoyang/research/2026-11-03/gate-before-near.png"
+  ],
   "files": [
     {
       "path": "assets/gate-roof.glb",
-      "label": "近景候选"
+      "label": "新屋面 · 近景候选"
     },
     {
       "path": "assets/gate-original.glb",
-      "label": "原门楼保留"
+      "label": "原门楼 · 保留对照"
     },
     {
       "path": "assets/gate-near-local.glb",
-      "label": "local-origin-v1 · near"
+      "label": "局部原点版 · 近景"
     },
     {
       "path": "assets/gate-middle-local.glb",
-      "label": "local-origin-v1 · middle"
+      "label": "局部原点版 · 中景"
     },
     {
       "path": "assets/gate-far-local.glb",
-      "label": "local-origin-v1 · far"
+      "label": "局部原点版 · 远景（沿用原屋面）"
     }
+  ],
+  "notes": {
+    "已完成的检查": "新屋面的几何和摆放都逐项检查过，没有发现破面、穿插或错位。新做的 340 个网格全部闭合、无退化面，与原有构件之间没有真正的穿插面（gate-geometry-contact-export.json）；逐片板瓦压在承托层上的最小间隙约 −0.13 µm，在 0.01 mm 容差内（gate-bearing-gap.json）。local-origin-v1 只给原文件套一层恒等父节点，近中远三档在两种摆放（原城市位置 527.5/807.85、平移加 90° 旋转）下往返误差为零；Blender 4.3.2 读回后三角形逐个一致。",
+    "限制与待解决": "图集最后一张为改版前的原屋面，供对照。此前状态标为「已发布」，高于实际进度，现改为待审。这是一件单门研究样例，不是历史复原，也还没有放进城里。承托层和脊柱是 C 级设计，不是史料中的构造；两端山面透空，檐口没有瓦当；342 个网格尚未合批；735 处贴面接触候选保留未处理。远景档沿用原门楼屋面，屋脊比近、中景低约 23.5 cm。模型底在 y≈0.2，三档共用门楼地面中心原点，不按各档单独贴底。GPU 与手机未验证。对象是 C02-010 院落的院门，不是广阳城门；城市场景没有替换。"
+  },
+  "related": [
+    "m-eaves-shell",
+    "m-courtyard-family"
   ],
   "legacyPath": true
 }

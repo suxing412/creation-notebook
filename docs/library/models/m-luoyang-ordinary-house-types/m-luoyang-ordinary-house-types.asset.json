@@ -5,11 +5,11 @@
   "kind": "建筑",
   "title": "普通住屋与门房四型",
   "english": "ORDINARY HOUSE TYPES",
-  "summary": "H64、H72、H96住屋与G10门房四种固定配置；合并最新独立整屋，不重复按LOD计成品。",
+  "summary": "四种普通房屋样式：H64、H72、H96 三种住屋（外廓宽约 7.3、8.1、10.5 m）和 G10 门房（宽约 10.9 m），各有近中远三档；均为设计推测，非遗址原状。",
   "status": "待审",
   "statusNote": "已建模；独立资产待审，不改城市场景。",
   "cover": "cover.webp",
-  "coverAlt": "普通住屋与门房四型实际模型CPU预览；C级设计，非遗址原状。",
+  "coverAlt": "斜上方看 H64 住屋：近方形的一间小屋，土黄色墙体，两坡筒板瓦顶，正面中间一道敞开的门洞，前檐两角各立一根木柱。",
   "gallery": [
     "shots/01.webp",
     "shots/02.webp"
@@ -17,51 +17,51 @@
   "files": [
     {
       "path": "files/G10-LOD0.glb",
-      "label": "G10 · LOD0"
+      "label": "G10 门房 · 宽约 10.9 m · 近景"
     },
     {
       "path": "files/H64-LOD0.glb",
-      "label": "H64 · LOD0"
+      "label": "H64 住屋 · 宽约 7.3 m · 近景"
     },
     {
       "path": "files/H72-v1.1-LOD0.glb",
-      "label": "H72 · v1.1 · LOD0"
+      "label": "H72 住屋 · 宽约 8.1 m · 近景（v1.1）"
     },
     {
       "path": "files/H96-LOD0.glb",
-      "label": "H96 · LOD0"
+      "label": "H96 住屋 · 宽约 10.5 m · 近景"
     },
     {
       "path": "files/G10-LOD1.glb",
-      "label": "G10 · LOD1"
+      "label": "G10 门房 · 宽约 10.9 m · 中景"
     },
     {
       "path": "files/G10-LOD2.glb",
-      "label": "G10 · LOD2"
+      "label": "G10 门房 · 宽约 10.9 m · 远景（无贴图）"
     },
     {
       "path": "files/H64-LOD1.glb",
-      "label": "H64 · LOD1"
+      "label": "H64 住屋 · 宽约 7.3 m · 中景"
     },
     {
       "path": "files/H64-LOD2.glb",
-      "label": "H64 · LOD2"
+      "label": "H64 住屋 · 宽约 7.3 m · 远景（无贴图）"
     },
     {
       "path": "files/H72-v1.1-LOD1.glb",
-      "label": "H72 · v1.1 · LOD1"
+      "label": "H72 住屋 · 宽约 8.1 m · 中景（v1.1）"
     },
     {
       "path": "files/H72-v1.1-LOD2.glb",
-      "label": "H72 · v1.1 · LOD2"
+      "label": "H72 住屋 · 宽约 8.1 m · 远景（v1.1，无贴图）"
     },
     {
       "path": "files/H96-LOD1.glb",
-      "label": "H96 · LOD1"
+      "label": "H96 住屋 · 宽约 10.5 m · 中景"
     },
     {
       "path": "files/H96-LOD2.glb",
-      "label": "H96 · LOD2"
+      "label": "H96 住屋 · 宽约 10.5 m · 远景（无贴图）"
     }
   ],
   "related": [
@@ -69,6 +69,7 @@
   ],
   "notes": {
     "已完成的检查": "整屋与模块复装、门口净空、局部承托和有向几何/UV检查，限定已测配置。 图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
-    "限制与待解决": "H64/H96用近景构件包v1，H72用近景结构v1.1，G10保留原模块库版本。住屋核心不含外地坪和中阶；需组装层另验，不是完整檩椽、人体、承载或防水认证。"
+    "限制与待解决": "H64/H96用近景构件包v1，H72用近景结构v1.1，G10保留原模块库版本。住屋核心不含外地坪和中阶；需组装层另验，不是完整檩椽、人体、承载或防水认证。",
+    "版本与计数": "四型合在一张卡里，用的都是最新的独立整屋版本；同一型的近中远三档算一件，不按档重复计数。（原记：合并最新独立整屋，不重复按LOD计成品。）"
   }
 }

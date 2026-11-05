@@ -9,7 +9,7 @@
   "status": "待审",
   "statusNote": "已建模，未入城 · 独立研究模型",
   "cover": "cover.webp",
-  "coverAlt": "A方案德阳殿空间研究的实际原生模型CPU渲染。",
+  "coverAlt": "德阳殿 A 方案斜俯视：单檐四坡灰瓦大屋顶，前檐一排木柱形成开敞柱廊，侧面是分段土墙，夯土台基前方伸出一道踏道。",
   "gallery": [
     "shots/deyang-B-LOD0-CPU.webp",
     "shots/deyang-A-LOD1-CPU.webp",
@@ -18,34 +18,35 @@
   "files": [
     {
       "path": "files/deyang-A-LOD0.glb",
-      "label": "deyang-A-LOD0"
+      "label": "A 方案 · 近景"
     },
     {
       "path": "files/deyang-A-LOD1.glb",
-      "label": "deyang-A-LOD1"
+      "label": "A 方案 · 中景"
     },
     {
       "path": "files/deyang-A-LOD2.glb",
-      "label": "deyang-A-LOD2"
+      "label": "A 方案 · 远景"
     },
     {
       "path": "files/deyang-B-LOD0.glb",
-      "label": "deyang-B-LOD0"
+      "label": "B 方案 · 近景"
     },
     {
       "path": "files/deyang-B-LOD1.glb",
-      "label": "deyang-B-LOD1"
+      "label": "B 方案 · 中景"
     },
     {
       "path": "files/deyang-B-LOD2.glb",
-      "label": "deyang-B-LOD2"
+      "label": "B 方案 · 远景"
     }
   ],
   "notes": {
-    "已完成的检查": "六份实际GLB与对应原生有向几何、米制UV及嵌入贴图核对；近景保留原件非展示地板几何。中央通道与踏面有限射线检查通过。原生CPU图与导出一致性链保留，图像转WebP像素不变。",
-    "限制与待解决": "A/B和各LOD互斥，不作两座已建历史宫殿计数。只支持名称与功能语境，不是考古复原。6米横向压力样本仍碰柱，未穷尽全殿碰撞、结构、承重与真实人体步态。城市位置为空；未入城，无GPU、手机或游戏引擎验收。"
+    "已完成的检查": "白话说明：六个模型文件都与原始建模文件逐一核对过形状、贴图坐标和内嵌贴图；殿内中央通道和台阶踏面做过抽样检查，能走通。原记录：六份实际GLB与对应原生有向几何、米制UV及嵌入贴图核对；近景保留原件非展示地板几何。中央通道与踏面有限射线检查通过。原生CPU图与导出一致性链保留，图像转WebP像素不变。",
+    "限制与待解决": "白话说明：A、B 是同一座殿的两种互斥设想，不是两座殿；外包尺寸 A 约面阔 35 m、高 12.5 m、进深 29.1 m，B 约面阔 40.6 m、高 13.6 m、进深 28.9 m。A 方案三档已作为宫院通行组合（m-luoyang-palace-admission-court）的殿身输入，该组合的几何复核按 SHA256 锁定了这三个文件，改动 A 方案会影响那边。原记录：A/B和各LOD互斥，不作两座已建历史宫殿计数。只支持名称与功能语境，不是考古复原。6米横向压力样本仍碰柱，未穷尽全殿碰撞、结构、承重与真实人体步态。城市位置为空；未入城，无GPU、手机或游戏引擎验收。"
   },
   "related": [
-    "p-luoyang"
+    "p-luoyang",
+    "m-luoyang-palace-admission-court"
   ]
 }

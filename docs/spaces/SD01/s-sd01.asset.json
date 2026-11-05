@@ -4,8 +4,8 @@
   "category": "spaces",
   "kind": "空间原型",
   "title": "连接工坊",
-  "english": "SPATIAL DESIGN PROTOTYPE",
-  "summary": "在转动庭比较三个灯臂样本，在插接廊逐级提起中间隔板",
+  "english": "JOINTWORKS",
+  "summary": "在转动庭切换一盏折臂灯的初始、收拢、展开三个姿态，在插接廊逐级提起中间隔板",
   "status": "待审",
   "statusNote": "空间操作原型修订／待GPU与用户方向验收",
   "cover": "assets/overview.png",
@@ -20,14 +20,40 @@
     "assets/hinge-extended.png",
     "assets/hinge-folded.png"
   ],
-  "files": "auto",
+  "files": [
+    {
+      "path": "assets/jointworks.glb",
+      "label": "完整场景 · 整体展示（场地、折臂灯与插接隔板）"
+    },
+    {
+      "path": "assets/environment.glb",
+      "label": "场地环境 · 单独查看（不含展品）"
+    },
+    {
+      "path": "assets/hinge.glb",
+      "label": "折臂灯初始姿态 · 单件查看"
+    },
+    {
+      "path": "assets/hinge-folded.glb",
+      "label": "折臂灯收拢姿态 · 单件查看"
+    },
+    {
+      "path": "assets/hinge-extended.glb",
+      "label": "折臂灯展开姿态 · 单件查看"
+    },
+    {
+      "path": "assets/slot.glb",
+      "label": "插接隔板组 · 单件查看"
+    }
+  ],
   "notes": {
-    "已完成的检查": "检查范围及身份见原型评审；CPU/模拟/无GL备用模式各自限定。",
-    "限制与待解决": "GPU主体验、真实输入/触屏/iPhone未验；19对实体包容未验；不声称全部穿插归零；CPU/模拟生命周期/真实无GL备用模式各自限定，不可互相替代"
+    "已完成的检查": "全库评审回读合并展示件的46个网格：全部闭合、无退化面、法线朝外，米制、Y朝上。灯的三个姿态（hinge、hinge-folded、hinge-extended）和插接件slot，与m-009/m-010源文件SHA-256逐字节一致；jointworks.glb是底座、灯和插接件的合并展示件，网页原型不加载它。修订复盘见 spaces/SD01/review/index.html。技术记录：检查范围及身份见原型评审；CPU/模拟/无GL备用模式各自限定。",
+    "限制与待解决": "GPU下的主体验、真实触屏和iPhone都还没验。场景环境里58处跨构件相接的候选中，39处确认是正常接触或嵌接；另外19处没发现表面相交，但是否有构件被另一件整个包在里面尚未核实（逐对清单本卡未列出，见 review/v02.html）。已知待修：入口门槛块伸出岛板前沿约15毫米、底面悬空；外圈回廊转角缺一小块，接斜段处有V形缺口。技术记录：GPU主体验、真实输入/触屏/iPhone未验；19对实体包容未验；不声称全部穿插归零；CPU/模拟生命周期/真实无GL备用模式各自限定，不可互相替代"
   },
   "related": [
     "m-009",
     "m-010"
   ],
-  "legacyPath": true
+  "legacyPath": true,
+  "coverAlt": "浅色岛板上三处展区：左后方粉色环墙围着青色圆台和折臂灯，右后方梳齿廊的青色展台上插着三块浅色隔板，前方Y形广场通向入口门槛和两根门柱。"
 }

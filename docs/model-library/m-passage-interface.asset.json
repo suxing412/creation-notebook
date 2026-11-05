@@ -4,28 +4,40 @@
   "category": "models",
   "kind": "城市构件",
   "title": "通行接口试件 · WFC方法研究",
-  "english": "",
+  "english": "PASSAGE INTERFACE TILES · WFC STUDY",
   "summary": "直、弯、T、端头四预设构成一个试件组；盒状地坪与挡板无顶通行试验，不是汉代廊房或建筑成品，不与住宅近景精度同级。",
   "status": "已发布",
-  "statusNote": "已公开 · 研究候选",
+  "statusNote": "已公开 · 研究候选 · 未完成设计验收 · 未接入洛阳",
   "cover": "assets/passage-modules-cpu.png",
+  "coverAlt": "斜俯视：2×2 错落排开的四块方形地坪，矮挡板分别围出直通、转弯、三岔和端头开口。",
+  "gallery": [
+    "methods/passage-wfc/previews/seed-7-cpu.png",
+    "methods/passage-wfc/previews/seed-15-cpu.png",
+    "methods/passage-wfc/previews/seed-18-cpu.png"
+  ],
   "files": [
     {
       "path": "assets/passage-straight.glb",
-      "label": "straight"
+      "label": "直通 · 北/南开口"
     },
     {
       "path": "assets/passage-elbow.glb",
-      "label": "elbow"
+      "label": "转弯 · 北/东开口"
     },
     {
       "path": "assets/passage-tee.glb",
-      "label": "tee"
+      "label": "三岔 · 北/东/西开口"
     },
     {
       "path": "assets/passage-end.glb",
-      "label": "end"
+      "label": "端头 · 南开口"
     }
   ],
+  "notes": {
+    "已完成的检查": "四个试件能按开口拼成通路，拼错、断路或高低不齐时程序也能查出来。每个GLB先核SHA再实例化；组合用四个原GLB做90度旋转与平移装配，世界轴对齐盒体（AABB）未见正重叠；组合GLB再次独立导入，检查焊接1e-6后的非流形、退化、正体积及正重叠。8 项约束与负例检查全部通过：传播矛盾被拒、0.1 标高差被拒、预算中止、断路或接口错误可检出、固定 20 个 seed 结果可复现、传播确实发生、局部全部求解、全局失败可检出。CPU 渲染都已目视查看。",
+    "组合结果": "20 次自动组合里只有 3 次整体连通，失败的结果也都保留了。固定 seed 0–19，3×3 格，固定南入口、北出口与外边界，不锁内部通路；20/20 满足局部 socket 配对，独立全局验证 17 个断连，仅 seed 7、15、18 通过。图集依次为：seed 7（9 条内部边，环路秩 1）、seed 15（8 条内部边，环路秩 0）、seed 18（8 条内部边，环路秩 0），三者图拓扑互不同构。",
+    "限制与待解决": "这是做组合方法试验用的盒状模块，不是汉代廊房或建筑成品，也没有接入洛阳。1.6米接口、0.2米地坪、2.2米净高预留均为C试验参数。限定轴对齐盒体检查不是结构/全碰撞/引擎验收。相邻挡板为两层内缩板，不是共用墙；没有动态/角色碰撞测试。求解器只传播类型/方向，尚未在混合尺寸库中做数值约束搜索。17/20 的失败说明下一步需要全局路径约束或有界回溯。GPU、手机、实时闪烁或游戏引擎都未验收；设计验收未完成。",
+    "文件说明": "研究页在 methods/passage-wfc/。assets/passage-contract.json 按原字节保留，其中 status「not public」、limitations「not yet WFC solved」以及 file「assets/straight.glb」都是制作时的历史状态，不代表现在的发布记录；文件名对应关系见 methods/passage-wfc/public-layout-map.json。"
+  },
   "legacyPath": true
 }

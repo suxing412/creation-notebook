@@ -4,28 +4,38 @@
   "category": "models",
   "kind": "建筑",
   "title": "井栏与井架",
-  "english": "",
-  "summary": "A四坡亭与井字栏、B两坡亭与圆折沿；一个双方案家族，四GLB不是四件作品。",
+  "english": "WELL CURB AND FRAME",
+  "summary": "参照汉代井亭明器的馆藏介绍类比设计的两种井：A 四坡亭配井字木栏，B 两坡亭配圆折沿井口，各有近景和简化两档；尺寸和提水机构都是 C 级（推测性）假设。",
   "status": "待审",
-  "statusNote": "新增候选 · 尚未公开",
+  "statusNote": "新增候选 · 尚未入城",
   "cover": "qa/A-LOD0-whole.png",
+  "coverAlt": "四坡亭覆盖开放井口，两侧木架托起提水轮绳，井栏围绕井口排列",
+  "gallery": [
+    "qa/A-LOD0-opening.png",
+    "qa/A-LOD0-mechanism.png",
+    "qa/B-LOD0-opening.png"
+  ],
   "files": [
     {
       "path": "assets/well-A-LOD0.glb",
-      "label": "well-A-LOD0"
+      "label": "A 四坡亭 · 近景"
     },
     {
       "path": "assets/well-A-LOD1.glb",
-      "label": "well-A-LOD1"
+      "label": "A 四坡亭 · 中景（简化版）"
     },
     {
       "path": "assets/well-B-LOD0.glb",
-      "label": "well-B-LOD0"
+      "label": "B 两坡亭 · 近景"
     },
     {
       "path": "assets/well-B-LOD1.glb",
-      "label": "well-B-LOD1"
+      "label": "B 两坡亭 · 中景（简化版）"
     }
   ],
+  "notes": {
+    "已完成的检查": "导出模型与原模型一致，每个构件都是封闭实体；井口真的是空的，没有假地板堵住；柱、梁、脊的接点对齐，水桶、井栏和轮子支架之间没有多余穿插。详细记录（README）：原生/实际GLB逐物件闭合、无退化，5位小数有向三角集合一致；5条井口射线实际通过，无假地板堵口。两侧柱—横梁—抬脊立件—脊撑实际边界接点高差0。容器对栏/井壁与轮对侧托的选定实际布尔交体0；绳槽约2.1e-14立方米数值残留，不称绝对0。轴进入侧托约0.000147立方米/侧，是明确局部支承嵌接，不是整对豁免。10个容器竖向行程包络只是静态设计净空，不是动画或人体通行实测。四失败输入均被拒绝。",
+    "限制与待解决": "轮轴受力、绳子运动和屋脊细节都还是简化的，也没在浏览器和手机上验收。包围盒偏大，是因为包含了约 3.3 米宽的演示地坪和地面下 0.65/0.70 米的短井壁；演示地坪可以去掉，井深和水面没有做。详细记录（README）：轮轴孔摩擦、承载、绳动力学未验。屋面有简化平瓦面和凸瓦列，脊与泛水仍简化；各固体拼缝、轮绳接点GPU动态闪烁未验。不是全构件间穿插归零结论。CPU图是真实生成几何，不等于Three/GPU、iPhone或最终设计验收。"
+  },
   "legacyPath": true
 }

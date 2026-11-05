@@ -147,7 +147,7 @@
    "state": "建设中",
    "status": "建设中 · 从城垣，走进已建街区",
    "public": true,
-   "updated": "2026-11-05T16:12:22+08:00",
+   "updated": "2026-11-05T16:15:03+08:00",
    "related": [],
    "card": "cities/luoyang/p-luoyang.asset.json",
    "scene": "../docs/cities/luoyang/scene.mjs",
@@ -927,8 +927,8 @@
    "kind": "城市构件",
    "title": "八宅三铺街区 A1",
    "english": "A1 EIGHT COURTS THREE SHOPS",
-   "summary": "八院三铺的C级布局研究，保留局部台阶精度修复。提供无损编码的LOD1及原LOD2，近景LOD0暂不入库；三档属于同一街区家族。",
-   "alt": "八院三铺街区v3的独立LOD1实渲，两排院落与三间沿街店铺连接公共通行地面。",
+   "summary": "八座院落与三间沿街店铺组成的街区布局研究，形体与尺寸为设计推测，含台阶处的精度修复。LOD0–LOD2 三档同属一个街区；本卡提供中景 LOD1（无损压缩）与远景 LOD2，近景 LOD0 文件过大暂不入库。",
+   "alt": "斜俯视：八座院落排成前后两排，每院两三座瓦顶房屋；左端是三间相连的沿街店铺，院落之间和前侧连着一条长长的土色通行地面。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-a1-neighborhood-cover-720.webp",
@@ -973,7 +973,7 @@
    ],
    "files": [
     {
-     "label": "LOD1 · 无损法线/UV压缩版",
+     "label": "街区 · 中景（LOD1，细瓦屋面；法线/UV 无损压缩）",
      "path": "library/models/m-luoyang-a1-neighborhood/files/A1-v3-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-a1-neighborhood/files/A1-v3-LOD1.glb",
      "format": "GLB",
@@ -994,7 +994,7 @@
      ]
     },
     {
-     "label": "LOD2 · 原始远景版",
+     "label": "街区 · 远景（LOD2，简化屋面）",
      "path": "library/models/m-luoyang-a1-neighborhood/files/A1-v3-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-a1-neighborhood/files/A1-v3-LOD2.glb",
      "format": "GLB",
@@ -1015,9 +1015,10 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "三档v3的936段入口运动、318段路线在指定内缩测试下严格命中0，支承/转向检查通过，几何及UV与修复前绑定核对。发布LOD1仅重编码法线与UV，解码逐字节一致，位置/索引/贴图及节点变换保持；已用当前实际Three加载器对比全部属性、索引、矩阵与纹理绑定。图为最终v3等价几何的独立CPU实渲，没有借用旧版城中上下文。",
-    "限制与待解决": "模型布局与放置均为C级设计，未入城。不得重新烘焙大世界float32，否则原513处微量命中会回来；保留局部顶点和节点变换。0命中仅针对各边内缩10微米的既定身体测试，未提供真人余量、完整步态、结构或GPU认证。LOD1要求EXT_meshopt_compression解码器；官方审计可读真实位置/索引，法线/UV另以解码等价独核。LOD0当前可保真编码仍超过单文件15 MB限额，未列入下载；不得将本卡称完整近景交付。",
-    "预览与版本": "封面与反向图使用LOD1，第三图使用LOD2。LOD1压缩前后几何、UV、法线、贴图和节点变换等价，不是减面版；不另增建筑家族，不把原版/西缝v2/台阶v3重复计件。"
+    "已完成的检查": "三档模型都做过行人入口和行走路线的碰撞检查，没有发现穿模，台阶承托和转向也通过；中景文件只是压缩了存储，打开后与压缩前完全一致。细节：三档v3的936段入口运动、318段路线在指定内缩测试下严格命中0，支承/转向检查通过，几何及UV与修复前绑定核对。发布LOD1仅重编码法线与UV，解码逐字节一致，位置/索引/贴图及节点变换保持；已用当前实际Three加载器对比全部属性、索引、矩阵与纹理绑定。图为最终v3等价几何的独立CPU实渲，没有借用旧版城中上下文。",
+    "限制与待解决": "布局和摆放都是设计推测，还没放进城里；碰撞检查只在规定测试条件下成立，不代表真人行走、结构或显卡性能已验证；近景文件太大，暂未提供。细节：模型布局与放置均为C级设计，未入城。不得重新烘焙大世界float32，否则原513处微量命中会回来；保留局部顶点和节点变换。0命中仅针对各边内缩10微米的既定身体测试，未提供真人余量、完整步态、结构或GPU认证。LOD1要求EXT_meshopt_compression解码器；官方审计可读真实位置/索引，法线/UV另以解码等价独核。LOD0当前可保真编码仍超过单文件15 MB限额，未列入下载；不得将本卡称完整近景交付。",
+    "预览与版本": "封面和反向图用的是中景模型，另一张总览图用的是远景模型；中景只压缩了文件，细节没有减少。细节：封面与反向图使用LOD1，第三图使用LOD2。LOD1压缩前后几何、UV、法线、贴图和节点变换等价，不是减面版；不另增建筑家族，不把原版/西缝v2/台阶v3重复计件。",
+    "坐标与原点": "模型保留在洛阳城景里的原位坐标，离坐标原点约 1.3 公里，单独查看时以包围盒居中。细节：两档包围盒约为 x 395.6–600 m、y 0–5.1 m、z −1310 至 −1250 m，中心约 (497.8, 2.5, −1280)。夯土节点的平移落在各院附近（如 C01 为 450, 0, −1272），瓦面和木构节点平移为 (0,0,0)、顶点直接写成世界坐标；详情页查看器按包围盒中心取景，不需要另行平移。不要为此改动顶点（见「限制与待解决」中的精度说明）；以后的新件建议每栋建筑一个局部原点，再用父节点做世界平移。"
    },
    "stats": {},
    "state": "待审",
@@ -1039,8 +1040,8 @@
    "kind": "城市构件",
    "title": "B2门窗开口套件",
    "english": "B2 DOOR AND WINDOW KIT",
-   "summary": "匹配既有B2开口的门窗C套件；三棂开门与五棂关门是两个互斥静态状态，不是两件作品。",
-   "alt": "B2门窗开口套件实际模型CPU预览；C级设计。",
+   "summary": "按既有B2门窗开口做的一套门窗构件：开门配三棂窗、关门配五棂窗，是同一套件的两个固定状态，不是两件作品；形体为推测设计（C级）。",
+   "alt": "开门状态：门框里两扇板门向内打开约75°，右侧是一扇三根直棂的方窗，灰色背景。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-b2-facade-kit-cover-720.webp",
@@ -1072,7 +1073,7 @@
    ],
    "files": [
     {
-     "label": "closed · dense",
+     "label": "关门 · 五棂窗",
      "path": "library/models/m-luoyang-b2-facade-kit/files/closed-dense.glb",
      "url": "../docs/library/models/m-luoyang-b2-facade-kit/files/closed-dense.glb",
      "format": "GLB",
@@ -1091,7 +1092,7 @@
      "extUsed": []
     },
     {
-     "label": "open · light",
+     "label": "开门 · 三棂窗",
      "path": "library/models/m-luoyang-b2-facade-kit/files/open-light.glb",
      "url": "../docs/library/models/m-luoyang-b2-facade-kit/files/open-light.glb",
      "format": "GLB",
@@ -1112,8 +1113,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "GLB实际回读、有向几何、UV、逐体闭合与有限身体样点；开态通过，闭态按预期阻断。",
-    "限制与待解决": "仅固定1.3×2.1米门洞和0.8×0.8米窗洞；非连续动画或任意角度认证。没有LOD或同材质合批，宿主墙厚、地坪和周边须重验。"
+    "已完成的检查": "回读了两份模型文件，确认每个构件（关门态14个、开门态12个）都是闭合的盒体、法线朝外、贴图坐标完整；用人体样点测试，开门态两扇之间净宽约0.77米可以通过，关门态不能通过。技术记录：GLB实际回读、有向几何、UV、逐体闭合与有限身体样点；开态通过，闭态按预期阻断（指人体样点过不去，不表示门缝密闭）。",
+    "限制与待解决": "只做了固定尺寸的一个门洞和一个窗洞，门只有全开、全关两种静态，不能转到任意角度。尺寸：门外框1.3×2.1米，净洞约1.14×2.02米；窗外框0.8×0.8米，窗台高1.0米；开门角约75°。已知待修：关门态门扇离门框左右、两扇中缝各约2厘米，离地约3厘米，正面看会透光。技术记录：仅固定1.3×2.1米门洞和0.8×0.8米窗洞；非连续动画或任意角度认证。没有LOD或同材质合批，宿主墙厚、地坪和周边须重验。"
    },
    "stats": {},
    "state": "待审",
@@ -1134,8 +1135,8 @@
    "kind": "建筑",
    "title": "辟雍礼堂与围护",
    "english": "BIYONG HALL AND ENCLOSURE",
-   "summary": "开放礼堂A入口修订与独立围护三档，按一个辟雍研究家族归档。上部、柱网和尺寸均为C设计；两件分别下载，不表示环水、跨水与外岸已经接通。",
-   "alt": "辟雍开放礼堂入口修订后的实际原生CPU渲染。",
+   "summary": "辟雍中心的开放礼堂（台基 36.8 m 见方，四面六级踏道）与一段 L 形夯土围墙，各三档 LOD。尺寸与柱网是设计推测，不是考古复原；环水、跨水与外岸衔接尚未完成。",
+   "alt": "斜俯视：方形夯土台基上的开放式四坡顶礼堂，屋檐下立一圈木柱，台基边缘可见两处踏道。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-biyong-cover-720.webp",
@@ -1167,7 +1168,7 @@
    ],
    "files": [
     {
-     "label": "biyong-A-LOD0",
+     "label": "礼堂 · 近景（LOD0）",
      "path": "library/models/m-luoyang-biyong/files/biyong-A-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-biyong/files/biyong-A-LOD0.glb",
      "format": "GLB",
@@ -1186,7 +1187,7 @@
      "extUsed": []
     },
     {
-     "label": "biyong-A-LOD1",
+     "label": "礼堂 · 中景（LOD1）",
      "path": "library/models/m-luoyang-biyong/files/biyong-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-biyong/files/biyong-A-LOD1.glb",
      "format": "GLB",
@@ -1205,7 +1206,7 @@
      "extUsed": []
     },
     {
-     "label": "biyong-A-LOD2",
+     "label": "礼堂 · 远景（LOD2）",
      "path": "library/models/m-luoyang-biyong/files/biyong-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-biyong/files/biyong-A-LOD2.glb",
      "format": "GLB",
@@ -1224,7 +1225,7 @@
      "extUsed": []
     },
     {
-     "label": "enclosure-L-LOD0",
+     "label": "围墙转角 · 近景（LOD0）",
      "path": "library/models/m-luoyang-biyong/files/enclosure-L-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD0.glb",
      "format": "GLB",
@@ -1243,7 +1244,7 @@
      "extUsed": []
     },
     {
-     "label": "enclosure-L-LOD1",
+     "label": "围墙转角 · 中景（LOD1）",
      "path": "library/models/m-luoyang-biyong/files/enclosure-L-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD1.glb",
      "format": "GLB",
@@ -1262,7 +1263,7 @@
      "extUsed": []
     },
     {
-     "label": "enclosure-L-LOD2",
+     "label": "围墙转角 · 远景（LOD2）",
      "path": "library/models/m-luoyang-biyong/files/enclosure-L-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD2.glb",
      "format": "GLB",
@@ -1283,8 +1284,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "礼堂三档实际导出与原生有向几何相符，四轴入口路线体与离散踏面支持通过；远档保留真实六阶。围护沿用v2最终自包含模型。两部分各自绑定源检查，模型不含城市依赖。",
-    "限制与待解决": "礼堂和围护是独立部件，不把同一原点叠载视为完整装配；局部试配必须遵循另行核验的变换。环水、跨水板、外岸衔接未完成验收。柱顶与坡屋面的构造仍简化，无历史柱网、荷载、基础、完整人体或GPU认证；未入城。"
+    "已完成的检查": "礼堂三档和围墙都单独核对过，可以各自打开，不依赖城市文件。礼堂三档导出的模型与原始建模文件的几何（含面朝向）一致，四面入口的通行检查和每一级踏步的落脚检查通过；远景档也保留了真实的六级台阶。原记录：礼堂三档实际导出与原生有向几何相符，四轴入口路线体与离散踏面支持通过；远档保留真实六阶。围护沿用v2最终自包含模型。两部分各自绑定源检查，模型不含城市依赖。",
+    "限制与待解决": "礼堂和围墙是两件独立模型，水面、跨水桥板和外岸都还没有做完，也没有放进城里。原记录：礼堂和围护是独立部件，不把同一原点叠载视为完整装配；局部试配必须遵循另行核验的变换。环水、跨水板、外岸衔接未完成验收。柱顶与坡屋面的构造仍简化，无历史柱网、荷载、基础、完整人体或GPU认证；未入城。"
    },
    "stats": {},
    "state": "待审",
@@ -1306,7 +1307,7 @@
    "title": "庖厨炉灶 A/B",
    "english": "COOKING STOVE STUDY",
    "summary": "单孔方火口与双孔弧顶火口两种C级灶体，各三档；炉腔、锅孔和占位容器为实际几何。",
-   "alt": "庖厨炉灶 A/B的实际模型CPU预览；形体和尺寸为C级设计。",
+   "alt": "A 型灶体斜俯视：长方形土灶，顶面嵌一只带沿的圆釜，正面开一个方形灶门，左侧连着一张深色木台面。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-cooking-stove-cover-720.webp",
@@ -1338,7 +1339,7 @@
    ],
    "files": [
     {
-     "label": "stove · A · LOD0",
+     "label": "A 单孔方火口 · 近景",
      "path": "library/models/m-luoyang-cooking-stove/files/stove-A-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD0.glb",
      "format": "GLB",
@@ -1357,26 +1358,7 @@
      "extUsed": []
     },
     {
-     "label": "stove · B · LOD0",
-     "path": "library/models/m-luoyang-cooking-stove/files/stove-B-LOD0.glb",
-     "url": "../docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD0.glb",
-     "format": "GLB",
-     "bytes": 1032792,
-     "triangles": 5652,
-     "vertices": 9475,
-     "primitives": 2,
-     "materials": 2,
-     "images": 6,
-     "size": [
-      2.425,
-      0.82,
-      0.95
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "stove · A · LOD1",
+     "label": "A 单孔方火口 · 中景",
      "path": "library/models/m-luoyang-cooking-stove/files/stove-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD1.glb",
      "format": "GLB",
@@ -1395,7 +1377,7 @@
      "extUsed": []
     },
     {
-     "label": "stove · A · LOD2",
+     "label": "A 单孔方火口 · 远景",
      "path": "library/models/m-luoyang-cooking-stove/files/stove-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD2.glb",
      "format": "GLB",
@@ -1414,7 +1396,26 @@
      "extUsed": []
     },
     {
-     "label": "stove · B · LOD1",
+     "label": "B 双孔弧顶火口 · 近景",
+     "path": "library/models/m-luoyang-cooking-stove/files/stove-B-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD0.glb",
+     "format": "GLB",
+     "bytes": 1032792,
+     "triangles": 5652,
+     "vertices": 9475,
+     "primitives": 2,
+     "materials": 2,
+     "images": 6,
+     "size": [
+      2.425,
+      0.82,
+      0.95
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "B 双孔弧顶火口 · 中景",
      "path": "library/models/m-luoyang-cooking-stove/files/stove-B-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD1.glb",
      "format": "GLB",
@@ -1433,7 +1434,7 @@
      "extUsed": []
     },
     {
-     "label": "stove · B · LOD2",
+     "label": "B 双孔弧顶火口 · 远景",
      "path": "library/models/m-luoyang-cooking-stove/files/stove-B-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD2.glb",
      "format": "GLB",
@@ -1477,8 +1478,8 @@
    "kind": "建筑",
    "title": "普通院落两种组装",
    "english": "COURT LAYOUT KIT",
-   "summary": "同一有限院落外框下的三屋对置与紧凑作业两种C布局，各三档，保留组合差异。",
-   "alt": "普通院落两种组装实际模型CPU预览；C级设计，非遗址原状。",
+   "summary": "同一院墙内的两种普通院落布局：正堂加两厢相对的「三屋对置」，以及正堂、一座厢房加敞棚的「紧凑作业院」，各有近、中、远三档，属推测性（C级）设计。",
+   "alt": "斜俯视：黄土院墙围成长方形院子，左前角是一座小门屋，后部是带门窗的正堂，院子两侧各有一座两坡顶厢房相对。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-court-layout-kit-cover-720.webp",
@@ -1510,26 +1511,7 @@
    ],
    "files": [
     {
-     "label": "compact_work · LOD0",
-     "path": "library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb",
-     "url": "../docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb",
-     "format": "GLB",
-     "bytes": 1446320,
-     "triangles": 6516,
-     "vertices": 12924,
-     "primitives": 3,
-     "materials": 3,
-     "images": 9,
-     "size": [
-      18.0,
-      4.63,
-      24.15
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "opposed_rooms · LOD0",
+     "label": "三屋对置 · 近景",
      "path": "library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD0.glb",
      "format": "GLB",
@@ -1548,45 +1530,7 @@
      "extUsed": []
     },
     {
-     "label": "compact_work · LOD1",
-     "path": "library/models/m-luoyang-court-layout-kit/files/compact_work-LOD1.glb",
-     "url": "../docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD1.glb",
-     "format": "GLB",
-     "bytes": 551984,
-     "triangles": 2444,
-     "vertices": 5532,
-     "primitives": 3,
-     "materials": 3,
-     "images": 9,
-     "size": [
-      18.0,
-      4.63,
-      24.15
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "compact_work · LOD2",
-     "path": "library/models/m-luoyang-court-layout-kit/files/compact_work-LOD2.glb",
-     "url": "../docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD2.glb",
-     "format": "GLB",
-     "bytes": 73328,
-     "triangles": 928,
-     "vertices": 2004,
-     "primitives": 3,
-     "materials": 3,
-     "images": 0,
-     "size": [
-      18.0,
-      4.53,
-      24.15
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "opposed_rooms · LOD1",
+     "label": "三屋对置 · 中景",
      "path": "library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD1.glb",
      "format": "GLB",
@@ -1605,7 +1549,7 @@
      "extUsed": []
     },
     {
-     "label": "opposed_rooms · LOD2",
+     "label": "三屋对置 · 远景",
      "path": "library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD2.glb",
      "format": "GLB",
@@ -1622,21 +1566,79 @@
      ],
      "primsNoUV": 0,
      "extUsed": []
+    },
+    {
+     "label": "紧凑作业院 · 近景",
+     "path": "library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb",
+     "format": "GLB",
+     "bytes": 1446320,
+     "triangles": 6516,
+     "vertices": 12924,
+     "primitives": 3,
+     "materials": 3,
+     "images": 9,
+     "size": [
+      18.0,
+      4.63,
+      24.15
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "紧凑作业院 · 中景",
+     "path": "library/models/m-luoyang-court-layout-kit/files/compact_work-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD1.glb",
+     "format": "GLB",
+     "bytes": 551984,
+     "triangles": 2444,
+     "vertices": 5532,
+     "primitives": 3,
+     "materials": 3,
+     "images": 9,
+     "size": [
+      18.0,
+      4.63,
+      24.15
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "紧凑作业院 · 远景",
+     "path": "library/models/m-luoyang-court-layout-kit/files/compact_work-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD2.glb",
+     "format": "GLB",
+     "bytes": 73328,
+     "triangles": 928,
+     "vertices": 2004,
+     "primitives": 3,
+     "materials": 3,
+     "images": 0,
+     "size": [
+      18.0,
+      4.53,
+      24.15
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
     }
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "实际GLB与原生几何匹配，有限路径射线及分离检查；原内部反向接口按范围记录。 图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
-    "限制与待解决": "沿用本包冻结住屋版本，不冒称已套用最新近景四型。非WFC或连续参数域，合批不是单一布尔实体；未穷尽内部接触、连续人体或GPU检查。 入城是设计装配状态，不代表古代宅址考据、013近景质量、动态/结构或GPU验收。",
-    "城市装配": "本家族现有组合新增2处C级院落落位，已计入洛阳47院总数。原44院不动；默认远档，北缘三院章加载近档。复用原GLB，无新增模型文件或独立附件卡。"
+    "已完成的检查": "导出模型与原模型几何一致，院内通路和各屋间距做过有限检查；图片是离线渲染预览，没有做浏览器或显卡上的验收。原记录：实际GLB与原生几何匹配，有限路径射线及分离检查；原内部反向接口按范围记录。 图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
+    "限制与待解决": "院里的屋子沿用当时冻结的旧版住屋，不是最新的近景版；三屋对置的正堂、厢房和紧凑作业院的正堂，外形尺寸分别与「普通住屋与门房四型」里的 H96、H72、H64 对得上（屋面外包相同，高差在 2 厘米以内）。院落只是两种固定组合，不是可任意生成的系统，也不代表古代宅址考据。原记录：沿用本包冻结住屋版本，不冒称已套用最新近景四型。非WFC或连续参数域，合批不是单一布尔实体；未穷尽内部接触、连续人体或GPU检查。 入城是设计装配状态，不代表古代宅址考据、013近景质量、动态/结构或GPU验收。",
+    "城市装配": "这两种院落已在洛阳住宅试验区北缘新放了 2 处，计入全城 47 座院落。原记录：本家族现有组合新增2处C级院落落位，已计入洛阳47院总数。原44院不动；默认远档，北缘三院章加载近档。复用原GLB，无新增模型文件或独立附件卡。"
    },
    "stats": {},
    "state": "待审",
    "status": "待审 · 已有组合已接入住宅试验区北缘；原型质量继续待审。",
    "public": true,
-   "updated": "2026-11-05T15:48:39+08:00",
+   "updated": "2026-11-05T15:57:31+08:00",
    "related": [
-    "p-luoyang"
+    "p-luoyang",
+    "m-luoyang-ordinary-house-types"
    ],
    "card": "library/models/m-luoyang-court-layout-kit/m-luoyang-court-layout-kit.asset.json",
    "bytes": 4251112,
@@ -1650,7 +1652,7 @@
    "title": "德阳殿空间研究",
    "english": "DEYANG HALL STUDY",
    "summary": "德阳殿名与朝会功能启发的两种独立殿堂方案，各有近中远三档。全部形体、柱网与尺度为设计推测，未确定北宫中的位置。",
-   "alt": "A方案德阳殿空间研究的实际原生模型CPU渲染。",
+   "alt": "德阳殿 A 方案斜俯视：单檐四坡灰瓦大屋顶，前檐一排木柱形成开敞柱廊，侧面是分段土墙，夯土台基前方伸出一道踏道。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-deyang-hall-cover-720.webp",
@@ -1708,7 +1710,7 @@
    ],
    "files": [
     {
-     "label": "deyang-A-LOD0",
+     "label": "A 方案 · 近景",
      "path": "library/models/m-luoyang-deyang-hall/files/deyang-A-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD0.glb",
      "format": "GLB",
@@ -1727,7 +1729,7 @@
      "extUsed": []
     },
     {
-     "label": "deyang-A-LOD1",
+     "label": "A 方案 · 中景",
      "path": "library/models/m-luoyang-deyang-hall/files/deyang-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD1.glb",
      "format": "GLB",
@@ -1746,7 +1748,7 @@
      "extUsed": []
     },
     {
-     "label": "deyang-A-LOD2",
+     "label": "A 方案 · 远景",
      "path": "library/models/m-luoyang-deyang-hall/files/deyang-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD2.glb",
      "format": "GLB",
@@ -1765,7 +1767,7 @@
      "extUsed": []
     },
     {
-     "label": "deyang-B-LOD0",
+     "label": "B 方案 · 近景",
      "path": "library/models/m-luoyang-deyang-hall/files/deyang-B-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-deyang-hall/files/deyang-B-LOD0.glb",
      "format": "GLB",
@@ -1784,7 +1786,7 @@
      "extUsed": []
     },
     {
-     "label": "deyang-B-LOD1",
+     "label": "B 方案 · 中景",
      "path": "library/models/m-luoyang-deyang-hall/files/deyang-B-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-deyang-hall/files/deyang-B-LOD1.glb",
      "format": "GLB",
@@ -1803,7 +1805,7 @@
      "extUsed": []
     },
     {
-     "label": "deyang-B-LOD2",
+     "label": "B 方案 · 远景",
      "path": "library/models/m-luoyang-deyang-hall/files/deyang-B-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-deyang-hall/files/deyang-B-LOD2.glb",
      "format": "GLB",
@@ -1824,8 +1826,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "六份实际GLB与对应原生有向几何、米制UV及嵌入贴图核对；近景保留原件非展示地板几何。中央通道与踏面有限射线检查通过。原生CPU图与导出一致性链保留，图像转WebP像素不变。",
-    "限制与待解决": "A/B和各LOD互斥，不作两座已建历史宫殿计数。只支持名称与功能语境，不是考古复原。6米横向压力样本仍碰柱，未穷尽全殿碰撞、结构、承重与真实人体步态。城市位置为空；未入城，无GPU、手机或游戏引擎验收。"
+    "已完成的检查": "白话说明：六个模型文件都与原始建模文件逐一核对过形状、贴图坐标和内嵌贴图；殿内中央通道和台阶踏面做过抽样检查，能走通。原记录：六份实际GLB与对应原生有向几何、米制UV及嵌入贴图核对；近景保留原件非展示地板几何。中央通道与踏面有限射线检查通过。原生CPU图与导出一致性链保留，图像转WebP像素不变。",
+    "限制与待解决": "白话说明：A、B 是同一座殿的两种互斥设想，不是两座殿；外包尺寸 A 约面阔 35 m、高 12.5 m、进深 29.1 m，B 约面阔 40.6 m、高 13.6 m、进深 28.9 m。A 方案三档已作为宫院通行组合（m-luoyang-palace-admission-court）的殿身输入，该组合的几何复核按 SHA256 锁定了这三个文件，改动 A 方案会影响那边。原记录：A/B和各LOD互斥，不作两座已建历史宫殿计数。只支持名称与功能语境，不是考古复原。6米横向压力样本仍碰柱，未穷尽全殿碰撞、结构、承重与真实人体步态。城市位置为空；未入城，无GPU、手机或游戏引擎验收。"
    },
    "stats": {},
    "state": "待审",
@@ -1833,7 +1835,8 @@
    "public": true,
    "updated": "2026-11-05T15:38:47+08:00",
    "related": [
-    "p-luoyang"
+    "p-luoyang",
+    "m-luoyang-palace-admission-court"
    ],
    "card": "library/models/m-luoyang-deyang-hall/m-luoyang-deyang-hall.asset.json",
    "bytes": 4952668,
@@ -1846,8 +1849,8 @@
    "kind": "城市构件",
    "title": "夯土墙身家族",
    "english": "RAMMED EARTH WALL FAMILY",
-   "summary": "A/B短段、兼容C长段与西垣A10中远档合为一个C级夯土墙身家族，不含门楼或防御设施。",
-   "alt": "夯土墙身家族实际模型CPU预览；C级设计。",
+   "summary": "一组推测设计的夯土墙身：A、B两段短墙（长16米、24米，底宽14米），兼容长段C（约356米），以及西垣A10段（约1.2千米，只有中景、远景两档）；不含门楼或防御设施。",
+   "alt": "浅色地面上两段梯形收分的夯土短墙，左边较短的是A段（16米），右边较长的是B段（24米），侧面有一道道水平夯层色带。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-earthwall-family-cover-720.webp",
@@ -1892,7 +1895,7 @@
    ],
    "files": [
     {
-     "label": "earthwall · A · LOD0",
+     "label": "A 短段 16 米 · 近景",
      "path": "library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD0.glb",
      "format": "GLB",
@@ -1911,45 +1914,7 @@
      "extUsed": []
     },
     {
-     "label": "earthwall · B · LOD0",
-     "path": "library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD0.glb",
-     "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD0.glb",
-     "format": "GLB",
-     "bytes": 585316,
-     "triangles": 4352,
-     "vertices": 12676,
-     "primitives": 1,
-     "materials": 1,
-     "images": 0,
-     "size": [
-      24.0,
-      8.0,
-      14.055
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "earthwall · C · LOD0",
-     "path": "library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD0.glb",
-     "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD0.glb",
-     "format": "GLB",
-     "bytes": 4783356,
-     "triangles": 33920,
-     "vertices": 99428,
-     "primitives": 1,
-     "materials": 1,
-     "images": 0,
-     "size": [
-      355.672,
-      6.03,
-      8.0
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "earthwall · A · LOD1",
+     "label": "A 短段 16 米 · 中景",
      "path": "library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD1.glb",
      "format": "GLB",
@@ -1968,7 +1933,7 @@
      "extUsed": []
     },
     {
-     "label": "earthwall · A · LOD2",
+     "label": "A 短段 16 米 · 远景",
      "path": "library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD2.glb",
      "format": "GLB",
@@ -1987,7 +1952,26 @@
      "extUsed": []
     },
     {
-     "label": "earthwall · B · LOD1",
+     "label": "B 短段 24 米 · 近景",
+     "path": "library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD0.glb",
+     "format": "GLB",
+     "bytes": 585316,
+     "triangles": 4352,
+     "vertices": 12676,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      24.0,
+      8.0,
+      14.055
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "B 短段 24 米 · 中景",
      "path": "library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD1.glb",
      "format": "GLB",
@@ -2006,7 +1990,7 @@
      "extUsed": []
     },
     {
-     "label": "earthwall · B · LOD2",
+     "label": "B 短段 24 米 · 远景",
      "path": "library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD2.glb",
      "format": "GLB",
@@ -2025,7 +2009,26 @@
      "extUsed": []
     },
     {
-     "label": "earthwall · C · LOD1",
+     "label": "C 长段 356 米 · 近景",
+     "path": "library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD0.glb",
+     "format": "GLB",
+     "bytes": 4783356,
+     "triangles": 33920,
+     "vertices": 99428,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      355.672,
+      6.03,
+      8.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "C 长段 356 米 · 中景",
      "path": "library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD1.glb",
      "format": "GLB",
@@ -2044,7 +2047,7 @@
      "extUsed": []
     },
     {
-     "label": "earthwall · C · LOD2",
+     "label": "C 长段 356 米 · 远景",
      "path": "library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD2.glb",
      "format": "GLB",
@@ -2063,7 +2066,7 @@
      "extUsed": []
     },
     {
-     "label": "westwall10 · LOD1",
+     "label": "西垣 A10 段 1.2 千米 · 中景",
      "path": "library/models/m-luoyang-earthwall-family/files/westwall10-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-earthwall-family/files/westwall10-LOD1.glb",
      "format": "GLB",
@@ -2082,7 +2085,7 @@
      "extUsed": []
     },
     {
-     "label": "westwall10 · LOD2",
+     "label": "西垣 A10 段 1.2 千米 · 远景",
      "path": "library/models/m-luoyang-earthwall-family/files/westwall10-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-earthwall-family/files/westwall10-LOD2.glb",
      "format": "GLB",
@@ -2126,7 +2129,7 @@
    "title": "足碓与踏台",
    "english": "FOOT PESTLE STUDY",
    "summary": "足踏杠杆、扶栏、杵臼及踏台的C级独立模块；近中远三档保持功能轮廓。",
-   "alt": "足碓与踏台的实际模型CPU预览；形体和尺寸为C级设计。",
+   "alt": "斜上方看足碓：左边是两级台阶和带扶栏的木踏台，中间一根长杠杆架在支座的横轴上，右端的木杵落进白色石臼。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-foot-pestle-cover-720.webp",
@@ -2171,7 +2174,7 @@
    ],
    "files": [
     {
-     "label": "foot · pestle · LOD0",
+     "label": "足碓 · 近景（贴图）",
      "path": "library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD0.glb",
      "format": "GLB",
@@ -2190,7 +2193,7 @@
      "extUsed": []
     },
     {
-     "label": "foot · pestle · LOD1",
+     "label": "足碓 · 中景（低分辨率贴图）",
      "path": "library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD1.glb",
      "format": "GLB",
@@ -2209,7 +2212,7 @@
      "extUsed": []
     },
     {
-     "label": "foot · pestle · LOD2",
+     "label": "足碓 · 远景（纯色，杠杆不可单独动）",
      "path": "library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD2.glb",
      "format": "GLB",
@@ -2231,7 +2234,8 @@
    "page": null,
    "notes": {
     "已完成的检查": "三档实际GLB回读、UV及有限静态姿态检查；远档仅静态。 图为同版原生模型CPU实渲，原生与最终GLB几何一致性另验；不是GLB直渲或浏览器实测。",
-    "限制与待解决": "只验证固定比例及有限姿态，未验证连续运动、力学、操作安全、生产率、GPU或手机；未定位城市。"
+    "限制与待解决": "只验证固定比例及有限姿态，未验证连续运动、力学、操作安全、生产率、GPU或手机；未定位城市。",
+    "证据等级": "卡片里说的「C 级」，意思是这件东西的形体和尺寸按功能推测设计，没有直接的实物或图像依据。"
    },
    "stats": {},
    "state": "待审",
@@ -2253,7 +2257,7 @@
    "title": "复道服务登临节点",
    "english": "GALLERY ACCESS NODE",
    "summary": "供高架复道A片段比较使用的平台与木梯，含三个展示LOD及独立静态碰撞候选。它是局部服务登临试验，不代表已确定的宫廷礼仪通路。",
-   "alt": "独立登临平台与木梯的实际原生CPU渲染。",
+   "alt": "斜俯视：四根圆木柱托起一座木平台，柱下垫方形础石，平台边缘设栏杆；平台一侧接一段两侧带扶手的长直跑木梯，背景为浅灰色。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-gallery-access-cover-720.webp",
@@ -2298,7 +2302,7 @@
    ],
    "files": [
     {
-     "label": "access-A-LOD0",
+     "label": "登临节点 · 近景（LOD0）",
      "path": "library/models/m-luoyang-gallery-access/files/access-A-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-gallery-access/files/access-A-LOD0.glb",
      "format": "GLB",
@@ -2317,7 +2321,7 @@
      "extUsed": []
     },
     {
-     "label": "access-A-LOD1",
+     "label": "登临节点 · 中景（LOD1）",
      "path": "library/models/m-luoyang-gallery-access/files/access-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-gallery-access/files/access-A-LOD1.glb",
      "format": "GLB",
@@ -2336,7 +2340,7 @@
      "extUsed": []
     },
     {
-     "label": "access-A-LOD2",
+     "label": "登临节点 · 远景（LOD2）",
      "path": "library/models/m-luoyang-gallery-access/files/access-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-gallery-access/files/access-A-LOD2.glb",
      "format": "GLB",
@@ -2355,7 +2359,7 @@
      "extUsed": []
     },
     {
-     "label": "access-A-collision-candidate",
+     "label": "登临节点 · 静态碰撞候选（不用于显示）",
      "path": "library/models/m-luoyang-gallery-access/files/access-A-collision-candidate.glb",
      "url": "../docs/library/models/m-luoyang-gallery-access/files/access-A-collision-candidate.glb",
      "format": "GLB",
@@ -2376,8 +2380,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "三档实际导出有向几何、UV、原始闭合构件与有限楼板支持、头部净空核验；接触共享边与局部嵌合保留报告。CPU图仅显示独立节点，运行件自包含。",
-    "限制与待解决": "三档梯级数不同，静态碰撞候选固定近景级数，尚未游戏引擎验收，不能从渲染LOD自动推导碰撞。2.4米宽压力点超出梯面；仅与A层高匹配，B不能直接套用。绝对城市位置为空，未解决既有复道城市柱脚地表问题，无结构、连续人体、GPU或手机认证。"
+    "已完成的检查": "三档模型都检查了几何朝向、贴图坐标、构件是否闭合、楼板承托和头顶净空；构件之间的接触和局部嵌合情况记录在报告里。细节：三档实际导出有向几何、UV、原始闭合构件与有限楼板支持、头部净空核验；接触共享边与局部嵌合保留报告。CPU图仅显示独立节点，运行件自包含。",
+    "限制与待解决": "三档的梯级数不同：LOD0/LOD1 为 20 级，LOD2 并成 10 级；碰撞候选固定 20 级，不能拿显示模型代替碰撞模型。它还没在游戏引擎里验收，只适配 A 层高，也还没放进城里。细节：三档梯级数不同，静态碰撞候选固定近景级数，尚未游戏引擎验收，不能从渲染LOD自动推导碰撞。2.4米宽压力点超出梯面；仅与A层高匹配，B不能直接套用。绝对城市位置为空，未解决既有复道城市柱脚地表问题，无结构、连续人体、GPU或手机认证。"
    },
    "stats": {},
    "state": "待审",
@@ -2400,7 +2404,7 @@
    "title": "谷门",
    "english": "GU GATE",
    "summary": "谷门关系处的紧凑三道门候选，独立中远景可用；厚门墩、上屋和尺寸均为 C 级设计推测。",
-   "alt": "谷门候选模型的CPU三分之四视图：较厚门墩、三条门道、静态全开门扇与双坡上屋。",
+   "alt": "谷门候选模型的四分之三视角：较厚门墩、三条门道、静态全开门扇与双坡上屋。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-gu-gate-cover-720.webp",
@@ -2432,7 +2436,7 @@
    ],
    "files": [
     {
-     "label": "LOD1 · 中景展示候选",
+     "label": "完整门楼 · 中景（默认展示候选）",
      "path": "library/models/m-luoyang-gu-gate/files/gu-G-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-gu-gate/files/gu-G-LOD1.glb",
      "format": "GLB",
@@ -2451,7 +2455,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 远景简化候选",
+     "label": "完整门楼 · 远景（简化候选）",
      "path": "library/models/m-luoyang-gu-gate/files/gu-G-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-gu-gate/files/gu-G-LOD2.glb",
      "format": "GLB",
@@ -2473,7 +2477,7 @@
    "page": null,
    "notes": {
     "已完成的检查": "已逐一核对所选GLB版本、字节数和SHA256，复用文件与现有公开路径逐字节一致。模型可独立解析，贴图内嵌；本卡图像来自该版模型的既有CPU渲染。",
-    "限制与待解决": "城市试放保持隐藏；冻结示意点与接墙工程原点的差异未抹平。门扇静止，登临未知；局部接触、屋脊端盖与木构嵌合保留，不宣称全场无交叠。 本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
+    "限制与待解决": "城市试放保持隐藏；冻结示意点与接墙工程原点的差异未抹平。门扇静止，登临未知；局部接触、屋脊端盖与木构嵌合保留，不宣称全场无交叠。本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
     "证据等级": "门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。",
     "版本与展示": "选用 G-v1，按一个门名家族计数；默认展示LOD1。原LOD0为13,213,712字节，因超过本次单次Base64传输承载未上架；原件完整保留。所列LOD1/2降低细节，不是完整高细版。"
    },
@@ -2497,7 +2501,7 @@
    "title": "广阳门",
    "english": "GUANGYANG GATE",
    "summary": "三道城门 A-v2 类型研究，供广阳门家族独立比较；仅上架中远景，不替换城中现有适配版。",
-   "alt": "广阳门候选模型的CPU三分之四视图：夯土三门道、通长双坡上屋及两侧短墙。",
+   "alt": "广阳门候选模型的四分之三视图：夯土三门道、通长双坡上屋及两侧短墙。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-guangyang-gate-cover-720.webp",
@@ -2529,7 +2533,7 @@
    ],
    "files": [
     {
-     "label": "LOD1 · 中景展示候选",
+     "label": "完整门楼 · 中景（默认展示候选）",
      "path": "library/models/m-luoyang-guangyang-gate/files/gate-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-guangyang-gate/files/gate-A-LOD1.glb",
      "format": "GLB",
@@ -2548,7 +2552,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 远景简化候选",
+     "label": "完整门楼 · 远景（简化候选）",
      "path": "library/models/m-luoyang-guangyang-gate/files/gate-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-guangyang-gate/files/gate-A-LOD2.glb",
      "format": "GLB",
@@ -2570,7 +2574,7 @@
    "page": null,
    "notes": {
     "已完成的检查": "已逐一核对所选GLB版本、字节数和SHA256，复用文件与现有公开路径逐字节一致。模型可独立解析，贴图内嵌；本卡图像来自该版模型的既有CPU渲染。",
-    "限制与待解决": "这是既有A家族的独立升级，不等同当前城中贴地、渐变墙接口版本。上层通路、门扇与防御结构未解决，不可用平底短墙覆盖现有城景。 本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
+    "限制与待解决": "这是既有A家族的独立升级，不等同当前城中贴地、渐变墙接口版本。上层通路、门扇与防御结构未解决，不可用平底短墙覆盖现有城景。本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
     "证据等级": "门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。",
     "版本与展示": "选用 A-v2.0.0，按一个门名家族计数；默认展示LOD1。原LOD0为14,081,828字节，因超过本次单次Base64传输承载未上架；原件完整保留。所列LOD1/2降低细节，不是完整高细版。"
    },
@@ -2594,7 +2598,7 @@
    "title": "人力石磨 A/B",
    "english": "HAND MILL STUDY",
    "summary": "两种承磨台与手柄静态配置，各有近景和简化档；进料孔、轴套及侧磨杆孔为几何空洞。",
-   "alt": "人力石磨 A/B的实际模型CPU预览；形体和尺寸为C级设计。",
+   "alt": "A 型斜俯视：高脚方木台上叠放上下两扇石磨，磨顶进料口中间有一道隔梁，外围一圈木制接粉槽，侧面伸出一根木手柄，整体放在浅色展示底板上。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-hand-mill-cover-720.webp",
@@ -2639,7 +2643,7 @@
    ],
    "files": [
     {
-     "label": "hand · mill · A",
+     "label": "A 高方台 · 近景",
      "path": "library/models/m-luoyang-hand-mill/files/hand-mill-A.glb",
      "url": "../docs/library/models/m-luoyang-hand-mill/files/hand-mill-A.glb",
      "format": "GLB",
@@ -2658,7 +2662,7 @@
      "extUsed": []
     },
     {
-     "label": "hand · mill · B",
+     "label": "B 矮长台 · 近景",
      "path": "library/models/m-luoyang-hand-mill/files/hand-mill-B.glb",
      "url": "../docs/library/models/m-luoyang-hand-mill/files/hand-mill-B.glb",
      "format": "GLB",
@@ -2677,7 +2681,7 @@
      "extUsed": []
     },
     {
-     "label": "hand · mill · A · LOD1",
+     "label": "A 高方台 · 中景（简化档）",
      "path": "library/models/m-luoyang-hand-mill/files/hand-mill-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-hand-mill/files/hand-mill-A-LOD1.glb",
      "format": "GLB",
@@ -2696,7 +2700,7 @@
      "extUsed": []
     },
     {
-     "label": "hand · mill · B · LOD1",
+     "label": "B 矮长台 · 中景（简化档）",
      "path": "library/models/m-luoyang-hand-mill/files/hand-mill-B-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-hand-mill/files/hand-mill-B-LOD1.glb",
      "format": "GLB",
@@ -2717,8 +2721,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "最终GLB开孔、承托、局部构件接触与底面采样检查；保留失败版本之外的最终模型。 图为同版原生模型CPU实渲，原生与最终GLB几何一致性另验；不是GLB直渲或浏览器实测。",
-    "限制与待解决": "地区类型启发的C组合，不是文物复制或洛阳确址；展示间隔非制粉工作间隙，无动画、力学、完整人体或GPU认证。"
+    "已完成的检查": "简单说：磨上的进料孔、轴孔和侧手柄孔是真开通的，石磨被木台稳稳托住，各部件贴合、底部落地；图片在制作软件里渲染，不是网页里直接截的。原始记录：最终GLB开孔、承托、局部构件接触与底面采样检查；保留失败版本之外的最终模型。 图为同版原生模型CPU实渲，原生与最终GLB几何一致性另验；不是GLB直渲或浏览器实测。",
+    "限制与待解决": "简单说：造型参考地区出土类型拼合推测而成，不是某件文物的复制，也不对应洛阳的具体地点；模型是静止的，不会转动，也没有在显卡、网页上做过性能验收。原始记录：地区类型启发的C组合，不是文物复制或洛阳确址；展示间隔非制粉工作间隙，无动画、力学、完整人体或GPU认证。"
    },
    "stats": {},
    "state": "待审",
@@ -2736,11 +2740,11 @@
   {
    "id": "m-luoyang-house-roof",
    "category": "models",
-   "kind": "构件",
+   "kind": "城市构件",
    "title": "住宅主屋面",
    "english": "HOUSE MAIN ROOF",
    "summary": "一组住宅主堂屋面近中景：近景保留实体板瓦浅槽、筒瓦凸背与搭接，中景保留简化旧实体屋面。两档属于同一逻辑屋顶，不能叠载，也不是两座独立建筑。",
-   "alt": "实际近景主屋面GLB的独立CPU总览，含真实瓦片几何。",
+   "alt": "灰底斜视：一面青灰色两坡屋面，筒瓦顺坡成列排开，正脊平直，两端山面露出三角形断面。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-house-roof-cover-720.webp",
@@ -2772,7 +2776,7 @@
    ],
    "files": [
     {
-     "label": "TC03-main-roof-kit",
+     "label": "主屋面 · 近景（实体瓦件）",
      "path": "library/models/m-luoyang-house-roof/files/TC03-main-roof-kit.glb",
      "url": "../docs/library/models/m-luoyang-house-roof/files/TC03-main-roof-kit.glb",
      "format": "GLB",
@@ -2791,7 +2795,7 @@
      "extUsed": []
     },
     {
-     "label": "TC03-roof-medium",
+     "label": "主屋面 · 中景（简化屋面）",
      "path": "library/models/m-luoyang-house-roof/files/TC03-roof-medium.glb",
      "url": "../docs/library/models/m-luoyang-house-roof/files/TC03-roof-medium.glb",
      "format": "GLB",
@@ -2812,8 +2816,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "沿用最终实际GLB检查，近景145,380三角、中景5,012三角；文件原字节保留且贴图自包含。近景预览直接导入实际运行件渲染；只展示屋面，不加入院落。",
-    "限制与待解决": "中景不是细瓦壳的物理等价物，只供渲染比较，不能自动替换碰撞与导航。包络差异可能产生切换跳变，离线选择器并未部署到网页。建筑尺度和瓦件应用为C设计；有限接点与瓦件检查仍有微小残差，不是完整结构、防水、GPU或手机验收。未入城，未替换原屋面。"
+    "已完成的检查": "近景和中景两档都用最终导出文件检查过，贴图打包在文件里，封面直接用近景文件渲染。原记录：沿用最终实际GLB检查，近景145,380三角、中景5,012三角；文件原字节保留且贴图自包含。近景预览直接导入实际运行件渲染；只展示屋面，不加入院落。",
+    "限制与待解决": "中景只供远一点看时替换显示，不能当碰撞和寻路用；屋面尺度和瓦件做法是推测性设计；还没放进城里。原记录：中景不是细瓦壳的物理等价物，只供渲染比较，不能自动替换碰撞与导航。包络差异可能产生切换跳变，离线选择器并未部署到网页。建筑尺度和瓦件应用为C级（推测性）设计；有限接点与瓦件检查仍有微小残差，不是完整结构、防水、GPU或手机验收。未入城，未替换原屋面。"
    },
    "stats": {},
    "state": "待审",
@@ -2835,7 +2839,7 @@
    "title": "低墙生活分区单元",
    "english": "HOUSEHOLD SERVICE ENCLOSURE",
    "summary": "低墙、开放门洞、半遮蔽瓦顶及木槽组成的C级独立生活单元，近中远三档。",
-   "alt": "低墙生活分区单元的实际模型CPU预览；形体和尺寸为C级设计。",
+   "alt": "斜俯视：低矮土墙围成方院，前角留出门洞；后半院几根木柱撑起两坡筒瓦棚，院内靠前墙放着一只木槽。形体和尺寸为设计推测。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-household-service-cover-720.webp",
@@ -2853,7 +2857,7 @@
    "gallery": [],
    "files": [
     {
-     "label": "service · enclosure · LOD0",
+     "label": "完整单元 · 近景（512² PBR 贴图）",
      "path": "library/models/m-luoyang-household-service/files/service-enclosure-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-household-service/files/service-enclosure-LOD0.glb",
      "format": "GLB",
@@ -2872,7 +2876,7 @@
      "extUsed": []
     },
     {
-     "label": "service · enclosure · LOD1",
+     "label": "完整单元 · 中景（瓦垄简化，256² 贴图）",
      "path": "library/models/m-luoyang-household-service/files/service-enclosure-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-household-service/files/service-enclosure-LOD1.glb",
      "format": "GLB",
@@ -2891,7 +2895,7 @@
      "extUsed": []
     },
     {
-     "label": "service · enclosure · LOD2",
+     "label": "完整单元 · 远景（纯色，无瓦垄）",
      "path": "library/models/m-luoyang-household-service/files/service-enclosure-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-household-service/files/service-enclosure-LOD2.glb",
      "format": "GLB",
@@ -2931,11 +2935,11 @@
   {
    "id": "m-luoyang-inner-door-components",
    "category": "models",
-   "kind": "构件",
-   "title": "住宅内门修订组件",
+   "kind": "城市构件",
+   "title": "住宅内门组件（单扇/双扇）",
    "english": "INNER DOOR COMPONENTS",
-   "summary": "住宅单扇与双扇内门的最终枢接修订组件，各含三档静态90度开门模型。只展示新增门叶、承接件与止挡，不含院落、原框墙或城市坐标；构造与尺寸均为C设计。",
-   "alt": "实际单扇内门运行组件导入后的独立CPU总览，未显示原院落门框。",
+   "summary": "住宅里的单扇与双扇内门，各有三档、都停在开门90度的静态姿态。只含门叶、上下承接件与止挡，不含院落、门框墙或城市坐标；尺寸与构造为推测设计，非考古实测。",
+   "alt": "灰底上一扇深褐色单扇内门斜开着，门叶一侧是立轴，上下各有一块枢块；右边单独立着一根细长的闭门止挡；画面里没有门框和墙。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-inner-door-components-cover-720.webp",
@@ -2993,7 +2997,7 @@
    ],
    "files": [
     {
-     "label": "single-door-LOD0",
+     "label": "单扇 · 近景",
      "path": "library/models/m-luoyang-inner-door-components/files/single-door-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-inner-door-components/files/single-door-LOD0.glb",
      "format": "GLB",
@@ -3012,7 +3016,7 @@
      "extUsed": []
     },
     {
-     "label": "single-door-LOD1",
+     "label": "单扇 · 中景",
      "path": "library/models/m-luoyang-inner-door-components/files/single-door-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-inner-door-components/files/single-door-LOD1.glb",
      "format": "GLB",
@@ -3031,7 +3035,7 @@
      "extUsed": []
     },
     {
-     "label": "single-door-LOD2",
+     "label": "单扇 · 远景",
      "path": "library/models/m-luoyang-inner-door-components/files/single-door-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-inner-door-components/files/single-door-LOD2.glb",
      "format": "GLB",
@@ -3050,7 +3054,7 @@
      "extUsed": []
     },
     {
-     "label": "paired-door-LOD0",
+     "label": "双扇 · 近景",
      "path": "library/models/m-luoyang-inner-door-components/files/paired-door-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD0.glb",
      "format": "GLB",
@@ -3069,7 +3073,7 @@
      "extUsed": []
     },
     {
-     "label": "paired-door-LOD1",
+     "label": "双扇 · 中景",
      "path": "library/models/m-luoyang-inner-door-components/files/paired-door-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD1.glb",
      "format": "GLB",
@@ -3088,7 +3092,7 @@
      "extUsed": []
     },
     {
-     "label": "paired-door-LOD2",
+     "label": "双扇 · 远景",
      "path": "library/models/m-luoyang-inner-door-components/files/paired-door-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD2.glb",
      "format": "GLB",
@@ -3109,8 +3113,9 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "采用最终修订三档；原生与实际导出有向几何、UV及有限枢接姿态检查已绑定。发布投影仅净化内部节点名称，非名称JSON及BIN逐字节相同。独立图由实际发布GLB导入渲染，不添加宿主构件。",
-    "限制与待解决": "各三档仅为新增门组件，不是整院三档。静态90度开门是有限通行检查使用状态，其他已测姿态仍阻挡原通行带；没有动画、运行时联锁、门闩、连续人体、承重或GPU/手机验收。单扇闭合仍有缝，双扇接点数值余量不是结构公差或考古精度；独立件不含原框墙，不证明任意洞口适配。未入城，不增加住宅实例。"
+    "已完成的检查": "门叶、承接件和止挡的形状、贴图坐标和开门姿态都按最终版核对过，网上展示的就是这一版文件。（采用最终修订三档；原生与实际导出有向几何、UV及有限枢接姿态检查已绑定。发布投影仅净化内部节点名称，非名称JSON及BIN逐字节相同。独立图由实际发布GLB导入渲染，不添加宿主构件。）",
+    "限制与待解决": "这是只停在开门90度的单独门件，不会动，也还没放进城里的院子。（各三档仅为新增门组件，不是整院三档。静态90度开门是有限通行检查使用状态，其他已测姿态仍阻挡原通行带；没有动画、运行时联锁、门闩、连续人体、承重或GPU/手机验收。单扇闭合仍有缝，双扇接点数值余量不是结构公差或考古精度；独立件不含原框墙，不证明任意洞口适配。未入城，不增加住宅实例。）",
+    "版本说明": "本卡原名「住宅内门修订组件」，是枢接方式修订后的最终版；改名只为说清对象，模型未变。"
    },
    "stats": {},
    "state": "待审",
@@ -3132,7 +3137,7 @@
    "title": "津门",
    "english": "JIN GATE",
    "summary": "津门三道转枢门 C 级独立候选，三档均保留六扇独立门叶与开合动画；未入城。",
-   "alt": "津门候选模型的CPU三分之四视图：三条门道及六扇向内开启的木门，四坡屋盖为不可登临的屋架区。",
+   "alt": "斜上方看津门：一座长条形门楼，土黄色墙体向上收窄，正面开三条带深色门框的门道，门前各铺一块低平地坪，上方盖灰色四坡瓦顶。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-jin-gate-cover-720.webp",
@@ -3164,7 +3169,7 @@
    ],
    "files": [
     {
-     "label": "LOD1 · 中景展示候选 · 六叶开合动画",
+     "label": "完整门楼 · 中景（默认展示候选，六叶门扇开合动画）",
      "path": "library/models/m-luoyang-jin-gate/files/jin-C-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-jin-gate/files/jin-C-LOD1.glb",
      "format": "GLB",
@@ -3183,7 +3188,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD0 · 近景候选 · 六叶开合动画",
+     "label": "完整门楼 · 近景（候选，六叶门扇开合动画）",
      "path": "library/models/m-luoyang-jin-gate/files/jin-C-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-jin-gate/files/jin-C-LOD0.glb",
      "format": "GLB",
@@ -3202,7 +3207,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 远景简化候选 · 六叶开合动画",
+     "label": "完整门楼 · 远景（简化候选，六叶门扇开合动画）",
      "path": "library/models/m-luoyang-jin-gate/files/jin-C-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-jin-gate/files/jin-C-LOD2.glb",
      "format": "GLB",
@@ -3225,7 +3230,7 @@
    "notes": {
     "已完成的检查": "已逐一核对所选GLB版本、字节数和SHA256，复用文件与现有公开路径逐字节一致。模型可独立解析，贴图内嵌；本卡图像来自该版模型的既有CPU渲染。三档原有一个约4秒开合动画、六个门叶节点均保留；封面为开门静态渲染，不代表网页动画实测。",
     "限制与待解决": "门洞、机构与尺寸均为C设计。门限是0.12米实体台阶；无锁闩、防上提保持件、结构荷载或完整人体步态认证。上部不提供登临，城市墙路接口未知。 本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
-    "证据等级": "门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。",
+    "证据等级": "门名和它在城墙上的大致位置有研究依据，门楼本身长什么样是设计出来的。门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。津门位于南垣（B 级示意定位，来源：高崇文 2023 图 1），记录见 docs/cities/luoyang/data/evidence/evidence-geometry.json 的 gate_jin_B；门楼与屋面形制没有研究依据，属 C 设计。",
     "版本与展示": "选用 C-v1-revision03，按一个门名家族计数；默认展示LOD1。近、中、远三档均保留，LOD与开闭姿态不重复计件。"
    },
    "stats": {},
@@ -3248,7 +3253,7 @@
    "title": "开阳门",
    "english": "KAIYANG GATE",
    "summary": "开阳门中室双廊式三道门 C 级候选，近中远三档齐备；基址与约180年建筑形态仍待考。",
-   "alt": "开阳门候选模型的CPU三分之四视图：三孔门台、中央守室、两侧开廊与连续双坡屋盖。",
+   "alt": "开阳门候选模型的四分之三俯视：夯土门台开三条门道，门道内可见门扇；门台上一圈立柱围成开廊，顶上是通长的双坡屋盖。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-kaiyang-gate-cover-720.webp",
@@ -3280,7 +3285,7 @@
    ],
    "files": [
     {
-     "label": "LOD1 · 中景展示候选",
+     "label": "完整门楼 · 中景（默认展示候选）",
      "path": "cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb",
      "url": "../docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb",
      "format": "GLB",
@@ -3299,7 +3304,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD0 · 近景候选",
+     "label": "完整门楼 · 近景（候选）",
      "path": "library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb",
      "format": "GLB",
@@ -3318,7 +3323,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 远景简化候选",
+     "label": "完整门楼 · 远景（简化候选）",
      "path": "cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb",
      "url": "../docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb",
      "format": "GLB",
@@ -3337,7 +3342,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 局部门下地面 LOD1（不含门体）",
+     "label": "门下地面附件 · 中景（不含门体）",
      "path": "library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD1.glb",
      "format": "GLB",
@@ -3356,7 +3361,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 局部门下地面 LOD0（不含门体）",
+     "label": "门下地面附件 · 近景（不含门体）",
      "path": "library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD0.glb",
      "format": "GLB",
@@ -3375,7 +3380,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 局部门下地面 LOD2（不含门体）",
+     "label": "门下地面附件 · 远景（不含门体）",
      "path": "library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD2.glb",
      "format": "GLB",
@@ -3422,7 +3427,7 @@
    "title": "灵台类型与踏步研究",
    "english": "LINGTAI ACCESS STUDY",
    "summary": "灵台类型的中远景独立研究，含五处内收踏步修订。台体、院落、柱网和尺寸均为C推测；近景原件超体积门槛，本卡不以中景冒充高细近景。",
-   "alt": "实际灵台LOD1运行文件的独立CPU总览，非高细LOD0。",
+   "alt": "斜俯视的灵台院落：中央夯土方台，正面一道直跑踏步通上台顶，方台四周环绕木构廊屋，外围一圈矮院墙。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-lingtai-cover-720.webp",
@@ -3454,7 +3459,7 @@
    ],
    "files": [
     {
-     "label": "lingtai-A-LOD1",
+     "label": "A 型 · 中景（带贴图）",
      "path": "library/models/m-luoyang-lingtai/files/lingtai-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD1.glb",
      "format": "GLB",
@@ -3473,7 +3478,7 @@
      "extUsed": []
     },
     {
-     "label": "lingtai-A-LOD2",
+     "label": "A 型 · 远景（纯色）",
      "path": "library/models/m-luoyang-lingtai/files/lingtai-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD2.glb",
      "format": "GLB",
@@ -3516,8 +3521,8 @@
    "kind": "城市构件",
    "title": "旄门",
    "english": "MAO GATE",
-   "summary": "东城南门的未定位C级研究家族，包含保留完整登临的轻量展示LOD1与原近景LOD0。仅调整独立展示，不新增城门或改变城景。",
-   "alt": "旄门轻量LOD1的三分之四正面渲染：夯土门台开三条通道，顶部设屋面及栏杆，右侧完整登临阶梯保留。",
+   "summary": "东汉雒阳城东面南门旄门（文献也写作秏门、耗门）的推测复原：夯土墩台开三条门道，台上建庑殿顶门楼，侧面附登临阶梯。提供轻量版和近景完整版，未放进城中。",
+   "alt": "四分之三正面斜视：夯土门台开三条门道，台上是带栏杆的庑殿顶门楼，右侧一道带扶手的登临阶梯。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-mao-gate-cover-720.webp",
@@ -3549,7 +3554,7 @@
    ],
    "files": [
     {
-     "label": "LOD1 · 轻量展示候选",
+     "label": "轻量版 · 中景（LOD1，无贴图，屋面简化）",
      "path": "library/models/m-luoyang-mao-gate/files/mao-C-display-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-mao-gate/files/mao-C-display-LOD1.glb",
      "format": "GLB",
@@ -3568,7 +3573,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD0 · 原近景保留（可回退）",
+     "label": "完整版 · 近景（LOD0，带夯土、木、瓦贴图，可回退）",
      "path": "cities/luoyang/progress-assets/mao-gate/mao-C-LOD0.glb",
      "url": "../docs/cities/luoyang/progress-assets/mao-gate/mao-C-LOD0.glb",
      "format": "GLB",
@@ -3589,9 +3594,9 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "候选几何与UV有效字节逐项比对原LOD1，标准PBR均色独立核算，三门道与完整登临附件保留。正常有限通行区域和足下支承通过，真实阻挡负对照有效；CPU前后视图及独立重建已核。",
-    "限制与待解决": "门名有文献依据，三洞、尺度、上部及登临仍是未定位C级候选。轻量LOD减少屋面细节并去除纹理，不替代近景原件。城景加载和网页没有切换，现网C11未关闭；未测浏览器、GPU、步态或结构安全。",
-    "版本与回退": "默认文件为新的轻量候选；原LOD0仍使用原路径、未复制替换。需要旧近景时可选第二个文件，或在后续获准交付中恢复旧版为默认。仍按一个旄门家族计数。"
+    "已完成的检查": "轻量版和原来的版本逐项比对过，三条门道和登临阶梯都保留，人可以走的范围和落脚处也检查过，故意设置的阻挡也能被正确识别。原记录：候选几何与UV有效字节逐项比对原LOD1，标准PBR均色独立核算，三门道与完整登临附件保留。正常有限通行区域和足下支承通过，真实阻挡负对照有效；CPU前后视图及独立重建已核。",
+    "限制与待解决": "门名有文献依据（也写作秏门、耗门），门道数量、尺寸和门楼形式都是推测设计；轻量版去掉了贴图、屋面也做了简化，不能代替近景完整版；模型还没有放进城里，城景和网页这一轮都没有切换，线上网站的一项问题（编号 C11）仍未关闭。原记录：门名有文献依据，三洞、尺度、上部及登临仍是未定位C级候选。轻量LOD减少屋面细节并去除纹理，不替代近景原件。城景加载和网页没有切换，现网C11未关闭；未测浏览器、GPU、步态或结构安全。",
+    "版本与回退": "详情页默认打开轻量版，想看带贴图的近景完整版可以选第二个文件；两个文件算同一件旄门作品。原记录：默认文件为新的轻量候选；原LOD0仍使用原路径、未复制替换。需要旧近景时可选第二个文件，或在后续获准交付中恢复旧版为默认。仍按一个旄门家族计数。"
    },
    "stats": {},
    "state": "待审",
@@ -3612,8 +3617,8 @@
    "kind": "建筑",
    "title": "八铺四棚店前线",
    "english": "MARKET STREET FRONTAGE",
-   "summary": "八铺四棚的独立C级店前线组装，v2.1仅修订柜台侧向入口，保留原布局与朝向。",
-   "alt": "八铺四棚店前线实际模型CPU预览；C级设计，非遗址原状。",
+   "summary": "一段市街的店铺：两排各四间土墙瓦顶铺面隔街相对，另有四座小棚，属推测性设计，非遗址原状。v2.1 只修改柜台侧面的入口，原布局与朝向不变。",
+   "alt": "斜俯视的一段街：两排各四间土墙瓦顶店铺隔街相对，远排正面敞开、可见柜台，近排露出后墙；街两端共有四座小木棚。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-market-frontage-cover-720.webp",
@@ -3645,7 +3650,7 @@
    ],
    "files": [
     {
-     "label": "street_frontage · LOD0",
+     "label": "整段街 · 近景",
      "path": "library/models/m-luoyang-market-frontage/files/street_frontage-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0.glb",
      "format": "GLB",
@@ -3664,7 +3669,7 @@
      "extUsed": []
     },
     {
-     "label": "street_frontage · LOD1",
+     "label": "整段街 · 中景",
      "path": "library/models/m-luoyang-market-frontage/files/street_frontage-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD1.glb",
      "format": "GLB",
@@ -3683,7 +3688,7 @@
      "extUsed": []
     },
     {
-     "label": "street_frontage · LOD2",
+     "label": "整段街 · 远景",
      "path": "library/models/m-luoyang-market-frontage/files/street_frontage-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD2.glb",
      "format": "GLB",
@@ -3704,8 +3709,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "三档实际GLB/原生几何UV一致，72段有限入口包络及支承采样通过；原布局与其余构件保留。 图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
-    "限制与待解决": "不新增八种铺型，不替代旧五店三摊家族；不是全城升级。起步高差、连续步态、棚使用、内部包含及GPU未验；历史布局和尺寸均为C。"
+    "已完成的检查": "简单说：三个精度档的模型都核对过，柜台侧面入口的通过空间和地面支撑做了抽样检查，原有布局和其他构件没动；图片是制作软件里的渲染，不是网页或显卡实测。原始记录：三档实际GLB/原生几何UV一致，72段有限入口包络及支承采样通过；原布局与其余构件保留。 图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
+    "限制与待解决": "简单说：这一版不新增铺子种类，也不取代旧的五店三摊；只是一段独立街段，没有推广到全城。台阶起步、人连续走动、棚子的使用都还没验证，历史布局和尺寸属推测。原始记录：不新增八种铺型，不替代旧五店三摊家族；不是全城升级。起步高差、连续步态、棚使用、内部包含及GPU未验；历史布局和尺寸均为C。"
    },
    "stats": {},
    "state": "待审",
@@ -3726,8 +3731,8 @@
    "kind": "建筑",
    "title": "市肆模块与组装",
    "english": "MARKET MODULES AND ASSEMBLY",
-   "summary": "S84/S86入口修订完整铺型，加一个采用修订模块的三铺组合样例；各三档。",
-   "alt": "市肆模块与组装实际模型CPU预览；C级设计，非遗址原状。",
+   "summary": "市肆铺面模块：浅铺 S84、深铺 S86 两种单铺（入口已修订，柜台不再挡路），加一个三铺两摊的组合样例；每种都有近、中、远三档。",
+   "alt": "灰底斜视：一间深进深的单铺，三面黄土墙，两坡筒瓦屋顶，前口敞开，两根角柱加一根中柱，铺内一条长柜台，后壁有搁板。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-market-modular-assembly-cover-720.webp",
@@ -3772,45 +3777,7 @@
    ],
    "files": [
     {
-     "label": "S84 · LOD0",
-     "path": "library/models/m-luoyang-market-modular-assembly/files/S84-LOD0.glb",
-     "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD0.glb",
-     "format": "GLB",
-     "bytes": 1113880,
-     "triangles": 1956,
-     "vertices": 3384,
-     "primitives": 3,
-     "materials": 3,
-     "images": 9,
-     "size": [
-      8.9,
-      4.33,
-      4.9
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "S86 · LOD0",
-     "path": "library/models/m-luoyang-market-modular-assembly/files/S86-LOD0.glb",
-     "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD0.glb",
-     "format": "GLB",
-     "bytes": 1118984,
-     "triangles": 2036,
-     "vertices": 3528,
-     "primitives": 3,
-     "materials": 3,
-     "images": 9,
-     "size": [
-      8.9,
-      4.93,
-      6.9
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "generated_788bb4c4f5f9f6c3 · LOD0",
+     "label": "三铺两摊组合 · 近景",
      "path": "library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD0.glb",
      "format": "GLB",
@@ -3829,83 +3796,7 @@
      "extUsed": []
     },
     {
-     "label": "S84 · LOD1",
-     "path": "library/models/m-luoyang-market-modular-assembly/files/S84-LOD1.glb",
-     "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD1.glb",
-     "format": "GLB",
-     "bytes": 401756,
-     "triangles": 604,
-     "vertices": 1176,
-     "primitives": 3,
-     "materials": 3,
-     "images": 9,
-     "size": [
-      8.9,
-      4.33,
-      4.9
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "S84 · LOD2",
-     "path": "library/models/m-luoyang-market-modular-assembly/files/S84-LOD2.glb",
-     "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD2.glb",
-     "format": "GLB",
-     "bytes": 15644,
-     "triangles": 176,
-     "vertices": 336,
-     "primitives": 3,
-     "materials": 3,
-     "images": 0,
-     "size": [
-      8.9,
-      4.23,
-      4.9
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "S86 · LOD1",
-     "path": "library/models/m-luoyang-market-modular-assembly/files/S86-LOD1.glb",
-     "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD1.glb",
-     "format": "GLB",
-     "bytes": 405996,
-     "triangles": 668,
-     "vertices": 1296,
-     "primitives": 3,
-     "materials": 3,
-     "images": 9,
-     "size": [
-      8.9,
-      4.93,
-      6.9
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "S86 · LOD2",
-     "path": "library/models/m-luoyang-market-modular-assembly/files/S86-LOD2.glb",
-     "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD2.glb",
-     "format": "GLB",
-     "bytes": 16504,
-     "triangles": 188,
-     "vertices": 360,
-     "primitives": 3,
-     "materials": 3,
-     "images": 0,
-     "size": [
-      8.9,
-      4.83,
-      6.9
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "generated_788bb4c4f5f9f6c3 · LOD1",
+     "label": "三铺两摊组合 · 中景",
      "path": "library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD1.glb",
      "format": "GLB",
@@ -3924,7 +3815,7 @@
      "extUsed": []
     },
     {
-     "label": "generated_788bb4c4f5f9f6c3 · LOD2",
+     "label": "三铺两摊组合 · 远景",
      "path": "library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD2.glb",
      "format": "GLB",
@@ -3941,12 +3832,127 @@
      ],
      "primsNoUV": 0,
      "extUsed": []
+    },
+    {
+     "label": "深铺 S86（面阔8米、进深6米）· 近景",
+     "path": "library/models/m-luoyang-market-modular-assembly/files/S86-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD0.glb",
+     "format": "GLB",
+     "bytes": 1118984,
+     "triangles": 2036,
+     "vertices": 3528,
+     "primitives": 3,
+     "materials": 3,
+     "images": 9,
+     "size": [
+      8.9,
+      4.93,
+      6.9
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "深铺 S86（面阔8米、进深6米）· 中景",
+     "path": "library/models/m-luoyang-market-modular-assembly/files/S86-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD1.glb",
+     "format": "GLB",
+     "bytes": 405996,
+     "triangles": 668,
+     "vertices": 1296,
+     "primitives": 3,
+     "materials": 3,
+     "images": 9,
+     "size": [
+      8.9,
+      4.93,
+      6.9
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "深铺 S86（面阔8米、进深6米）· 远景",
+     "path": "library/models/m-luoyang-market-modular-assembly/files/S86-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD2.glb",
+     "format": "GLB",
+     "bytes": 16504,
+     "triangles": 188,
+     "vertices": 360,
+     "primitives": 3,
+     "materials": 3,
+     "images": 0,
+     "size": [
+      8.9,
+      4.83,
+      6.9
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "浅铺 S84（面阔8米、进深4米）· 近景",
+     "path": "library/models/m-luoyang-market-modular-assembly/files/S84-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD0.glb",
+     "format": "GLB",
+     "bytes": 1113880,
+     "triangles": 1956,
+     "vertices": 3384,
+     "primitives": 3,
+     "materials": 3,
+     "images": 9,
+     "size": [
+      8.9,
+      4.33,
+      4.9
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "浅铺 S84（面阔8米、进深4米）· 中景",
+     "path": "library/models/m-luoyang-market-modular-assembly/files/S84-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD1.glb",
+     "format": "GLB",
+     "bytes": 401756,
+     "triangles": 604,
+     "vertices": 1176,
+     "primitives": 3,
+     "materials": 3,
+     "images": 9,
+     "size": [
+      8.9,
+      4.33,
+      4.9
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "浅铺 S84（面阔8米、进深4米）· 远景",
+     "path": "library/models/m-luoyang-market-modular-assembly/files/S84-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD2.glb",
+     "format": "GLB",
+     "bytes": 15644,
+     "triangles": 176,
+     "vertices": 336,
+     "primitives": 3,
+     "materials": 3,
+     "images": 0,
+     "size": [
+      8.9,
+      4.23,
+      4.9
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
     }
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "柜台缩短后的有限侧入口包络、支承点及原生/GLB一致性检查；三铺例两次生成字节一致。 图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
-    "限制与待解决": "v1.1修订替代旧柜台堵路方案，不替代旧五店三摊家族。仅固定样例通过，非全部参数、连续人体或城市准入认证；0.22米起步高差未验。"
+    "已完成的检查": "柜台缩短后，侧面入口能走进铺内；支撑和导出一致性都查过，组合样例两次生成结果完全相同。图片是离线渲染预览，没有做浏览器或显卡上的验收。原记录：柜台缩短后的有限侧入口包络、支承点及原生/GLB一致性检查；三铺例两次生成字节一致。 图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
+    "限制与待解决": "这一版替换了旧的柜台挡路做法，但不替换旧的五店三摊家族；只验证了这几个固定样例，入口 0.22 米的起步高差还没查。原记录：v1.1修订替代旧柜台堵路方案，不替代旧五店三摊家族。仅固定样例通过，非全部参数、连续人体或城市准入认证；0.22米起步高差未验。",
+    "图片与组合构成": "封面是深铺 S86 的近景；两张图集分别是三铺两摊组合样例的前斜视和后斜视。评审按俯视图估算组合构成：左铺即 S86，右铺即 S84；中铺约为 6×6 米墙体、檐高约 3.0 米，带后部储物隔间和 1.8 米门洞，是第三种铺型；前方两座摊棚为约 2.2×1.9 米柱网。中铺和摊棚出自哪个模块待创作者补充，目前没有单独文件。形制为C级（推测性）设计，非遗址原状。"
    },
    "stats": {},
    "state": "待审",
@@ -3967,8 +3973,8 @@
    "kind": "建筑",
    "title": "明堂形制假说",
    "english": "MINGTANG FORM STUDY",
-   "summary": "重屋、九房等文献概念启发的一组明堂A/B方案，各三档LOD。九格布局、四侧入口、叠檐、柱列及全部尺度是C解释，不是考古复原。",
-   "alt": "明堂A方案的实际原生CPU渲染，显示叠檐和四侧台基。",
+   "summary": "重屋、九房等文献概念启发的一组明堂 A/B 方案，各有近、中、远三档。九格布局、四侧入口、叠檐、柱列及全部尺度都是推测性解释，不是考古复原。",
+   "alt": "明堂 A 方案斜俯视：方形夯土台基，可见两面各有一道踏道和门洞，台上建筑一圈木柱土墙，顶上是上下两重灰瓦四坡屋面。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-mingtang-cover-720.webp",
@@ -4026,7 +4032,7 @@
    ],
    "files": [
     {
-     "label": "mingtang-A-LOD0",
+     "label": "A 方案 · 近景",
      "path": "library/models/m-luoyang-mingtang/files/mingtang-A-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD0.glb",
      "format": "GLB",
@@ -4045,7 +4051,7 @@
      "extUsed": []
     },
     {
-     "label": "mingtang-A-LOD1",
+     "label": "A 方案 · 中景",
      "path": "library/models/m-luoyang-mingtang/files/mingtang-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD1.glb",
      "format": "GLB",
@@ -4064,7 +4070,7 @@
      "extUsed": []
     },
     {
-     "label": "mingtang-A-LOD2",
+     "label": "A 方案 · 远景（无贴图）",
      "path": "library/models/m-luoyang-mingtang/files/mingtang-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD2.glb",
      "format": "GLB",
@@ -4083,7 +4089,7 @@
      "extUsed": []
     },
     {
-     "label": "mingtang-B-LOD0",
+     "label": "B 方案 · 近景",
      "path": "library/models/m-luoyang-mingtang/files/mingtang-B-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD0.glb",
      "format": "GLB",
@@ -4102,7 +4108,7 @@
      "extUsed": []
     },
     {
-     "label": "mingtang-B-LOD1",
+     "label": "B 方案 · 中景",
      "path": "library/models/m-luoyang-mingtang/files/mingtang-B-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD1.glb",
      "format": "GLB",
@@ -4121,7 +4127,7 @@
      "extUsed": []
     },
     {
-     "label": "mingtang-B-LOD2",
+     "label": "B 方案 · 远景（无贴图）",
      "path": "library/models/m-luoyang-mingtang/files/mingtang-B-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD2.glb",
      "format": "GLB",
@@ -4142,8 +4148,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "六份GLB实际回读与原生有向三角、UV相符，指定范围退化、重复几何和零面积UV检查通过。四向门道有限支持和净高射线通过；同资产CPU图无损转WebP。",
-    "限制与待解决": "“重屋”不被裁定为可步行二楼，不添加未证楼梯或环水；未采用北魏台基尺寸作为东汉事实。有限平台内射线不覆盖全部台阶、连续运动、人流和构件相交；未做结构、GPU或手机验收。A/B互斥，未入城，不增加已确定历史建筑。"
+    "已完成的检查": "白话说明：六个模型文件都与原始建模文件核对过形状和贴图坐标，没有坏面或重复面；四个方向的门道抽样检查过能通行、净高够。原记录：六份GLB实际回读与原生有向三角、UV相符，指定范围退化、重复几何和零面积UV检查通过。四向门道有限支持和净高射线通过；同资产CPU图无损转WebP。",
+    "限制与待解决": "白话说明：A、B 是互斥的两种设想，只算一座建筑；两者外包尺寸不同，A 约 33.3 × 33.3 m、高约 10.9 m，B 约 29.0 × 29.0 m、高约 10.1 m（开间、台高等设计参数待创作者补记）。“重屋”没有被做成可上人的二楼。原记录：“重屋”不被裁定为可步行二楼，不添加未证楼梯或环水；未采用北魏台基尺寸作为东汉事实。有限平台内射线不覆盖全部台阶、连续运动、人流和构件相交；未做结构、GPU或手机验收。A/B互斥，未入城，不增加已确定历史建筑。"
    },
    "stats": {},
    "state": "待审",
@@ -4164,8 +4170,8 @@
    "kind": "城市构件",
    "title": "北郊方坛四陛",
    "english": "NORTHERN ALTAR FOUR APPROACHES",
-   "summary": "依据“方坛四陛”关系制作局部C级尺寸试案；四梯与坛体连成一体，保留未知围营和祠舍，不代表北郊全场或已定址。",
-   "alt": "土色方坛的四边各有居中的登坛阶梯，未附加围墙或祠舍。",
+   "summary": "依据“方坛四陛”关系制作的局部C级尺寸试案；四梯与坛体连成一体；围营和祠舍未知、未建模，不代表北郊全场，也未定址。",
+   "alt": "浅米色方坛的四边各有居中的登坛阶梯，未附加围墙或祠舍。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-northern-altar-cover-720.webp",
@@ -4236,7 +4242,7 @@
    ],
    "files": [
     {
-     "label": "LOD0 · 512像素纹理",
+     "label": "方坛 · 近景（512 像素纹理）",
      "path": "library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD0.glb",
      "format": "GLB",
@@ -4255,7 +4261,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD1 · 256像素纹理",
+     "label": "方坛 · 中景（256 像素纹理）",
      "path": "library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD1.glb",
      "format": "GLB",
@@ -4274,7 +4280,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 64像素纹理",
+     "label": "方坛 · 远景（64 像素纹理）",
      "path": "library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD2.glb",
      "format": "GLB",
@@ -4296,7 +4302,7 @@
    "page": null,
    "notes": {
     "已完成的检查": "实际GLB与原生有向几何一致，闭合连通实体、非退化UV、四梯支承与采样高度、纹理成本、三档回读预览和来源分级已核。纹理随GLB嵌入，无外部运行依赖。",
-    "限制与待解决": "“方坛四陛”有传世文献依据；20米边长、1.2米坛高、阶梯尺寸及土质外观为C级假设。三档几何相同，仅降低纹理成本；重复UV不是唯一烘焙图集。未绘中外营和祠舍，未知不等于不存在。阶梯入口不是北郊场域门；未定址，不认证180年形制、人体通行或结构安全。"
+    "限制与待解决": "“方坛四陛”有传世文献依据；坛身20米见方、连四陛总宽26米，1.2米坛高、阶梯尺寸及土质外观为C级假设。三档几何相同，仅降低纹理成本；重复UV不是唯一烘焙图集。未绘中外营和祠舍，未知不等于不存在。阶梯入口不是北郊场域门；未定址，不认证180年形制、人体通行或结构安全。"
    },
    "stats": {},
    "state": "待审",
@@ -4317,8 +4323,8 @@
    "kind": "建筑",
    "title": "普通住屋与门房四型",
    "english": "ORDINARY HOUSE TYPES",
-   "summary": "H64、H72、H96住屋与G10门房四种固定配置；合并最新独立整屋，不重复按LOD计成品。",
-   "alt": "普通住屋与门房四型实际模型CPU预览；C级设计，非遗址原状。",
+   "summary": "四种普通房屋样式：H64、H72、H96 三种住屋（外廓宽约 7.3、8.1、10.5 m）和 G10 门房（宽约 10.9 m），各有近中远三档；均为设计推测，非遗址原状。",
+   "alt": "斜上方看 H64 住屋：近方形的一间小屋，土黄色墙体，两坡筒板瓦顶，正面中间一道敞开的门洞，前檐两角各立一根木柱。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-ordinary-house-types-cover-720.webp",
@@ -4363,7 +4369,7 @@
    ],
    "files": [
     {
-     "label": "G10 · LOD0",
+     "label": "G10 门房 · 宽约 10.9 m · 近景",
      "path": "library/models/m-luoyang-ordinary-house-types/files/G10-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-ordinary-house-types/files/G10-LOD0.glb",
      "format": "GLB",
@@ -4382,7 +4388,7 @@
      "extUsed": []
     },
     {
-     "label": "H64 · LOD0",
+     "label": "H64 住屋 · 宽约 7.3 m · 近景",
      "path": "library/models/m-luoyang-ordinary-house-types/files/H64-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-ordinary-house-types/files/H64-LOD0.glb",
      "format": "GLB",
@@ -4401,7 +4407,7 @@
      "extUsed": []
     },
     {
-     "label": "H72 · v1.1 · LOD0",
+     "label": "H72 住屋 · 宽约 8.1 m · 近景（v1.1）",
      "path": "library/models/m-luoyang-ordinary-house-types/files/H72-v1.1-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-ordinary-house-types/files/H72-v1.1-LOD0.glb",
      "format": "GLB",
@@ -4420,7 +4426,7 @@
      "extUsed": []
     },
     {
-     "label": "H96 · LOD0",
+     "label": "H96 住屋 · 宽约 10.5 m · 近景",
      "path": "library/models/m-luoyang-ordinary-house-types/files/H96-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-ordinary-house-types/files/H96-LOD0.glb",
      "format": "GLB",
@@ -4439,7 +4445,7 @@
      "extUsed": []
     },
     {
-     "label": "G10 · LOD1",
+     "label": "G10 门房 · 宽约 10.9 m · 中景",
      "path": "library/models/m-luoyang-ordinary-house-types/files/G10-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-ordinary-house-types/files/G10-LOD1.glb",
      "format": "GLB",
@@ -4458,7 +4464,7 @@
      "extUsed": []
     },
     {
-     "label": "G10 · LOD2",
+     "label": "G10 门房 · 宽约 10.9 m · 远景（无贴图）",
      "path": "library/models/m-luoyang-ordinary-house-types/files/G10-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-ordinary-house-types/files/G10-LOD2.glb",
      "format": "GLB",
@@ -4477,7 +4483,7 @@
      "extUsed": []
     },
     {
-     "label": "H64 · LOD1",
+     "label": "H64 住屋 · 宽约 7.3 m · 中景",
      "path": "library/models/m-luoyang-ordinary-house-types/files/H64-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-ordinary-house-types/files/H64-LOD1.glb",
      "format": "GLB",
@@ -4496,7 +4502,7 @@
      "extUsed": []
     },
     {
-     "label": "H64 · LOD2",
+     "label": "H64 住屋 · 宽约 7.3 m · 远景（无贴图）",
      "path": "library/models/m-luoyang-ordinary-house-types/files/H64-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-ordinary-house-types/files/H64-LOD2.glb",
      "format": "GLB",
@@ -4515,7 +4521,7 @@
      "extUsed": []
     },
     {
-     "label": "H72 · v1.1 · LOD1",
+     "label": "H72 住屋 · 宽约 8.1 m · 中景（v1.1）",
      "path": "library/models/m-luoyang-ordinary-house-types/files/H72-v1.1-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-ordinary-house-types/files/H72-v1.1-LOD1.glb",
      "format": "GLB",
@@ -4534,7 +4540,7 @@
      "extUsed": []
     },
     {
-     "label": "H72 · v1.1 · LOD2",
+     "label": "H72 住屋 · 宽约 8.1 m · 远景（v1.1，无贴图）",
      "path": "library/models/m-luoyang-ordinary-house-types/files/H72-v1.1-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-ordinary-house-types/files/H72-v1.1-LOD2.glb",
      "format": "GLB",
@@ -4553,7 +4559,7 @@
      "extUsed": []
     },
     {
-     "label": "H96 · LOD1",
+     "label": "H96 住屋 · 宽约 10.5 m · 中景",
      "path": "library/models/m-luoyang-ordinary-house-types/files/H96-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-ordinary-house-types/files/H96-LOD1.glb",
      "format": "GLB",
@@ -4572,7 +4578,7 @@
      "extUsed": []
     },
     {
-     "label": "H96 · LOD2",
+     "label": "H96 住屋 · 宽约 10.5 m · 远景（无贴图）",
      "path": "library/models/m-luoyang-ordinary-house-types/files/H96-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-ordinary-house-types/files/H96-LOD2.glb",
      "format": "GLB",
@@ -4594,7 +4600,8 @@
    "page": null,
    "notes": {
     "已完成的检查": "整屋与模块复装、门口净空、局部承托和有向几何/UV检查，限定已测配置。 图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
-    "限制与待解决": "H64/H96用近景构件包v1，H72用近景结构v1.1，G10保留原模块库版本。住屋核心不含外地坪和中阶；需组装层另验，不是完整檩椽、人体、承载或防水认证。"
+    "限制与待解决": "H64/H96用近景构件包v1，H72用近景结构v1.1，G10保留原模块库版本。住屋核心不含外地坪和中阶；需组装层另验，不是完整檩椽、人体、承载或防水认证。",
+    "版本与计数": "四型合在一张卡里，用的都是最新的独立整屋版本；同一型的近中远三档算一件，不按档重复计数。（原记：合并最新独立整屋，不重复按LOD计成品。）"
    },
    "stats": {},
    "state": "待审",
@@ -4616,7 +4623,7 @@
    "title": "无名宫院通行组合",
    "english": "UNNAMED PALACE ADMISSION COURT",
    "summary": "门卫、庭地、侧廊与殿阶的未定位C级连接试案。复用既有原件，新增实体地面并检查通行接口，不认定实名宫殿布局。",
-   "alt": "无名门卫通口位于前方，两侧廊庑分列庭地两边，后方殿堂设正面台阶，所有建筑位于同一实体支承面。",
+   "alt": "斜俯视：前方一座小门屋，两侧长条廊庑夹着土色庭地，后方一座四坡顶殿堂，正面设台阶。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-palace-admission-court-cover-720.webp",
@@ -4687,7 +4694,7 @@
    ],
    "files": [
     {
-     "label": "LOD0 · 开门",
+     "label": "开门 · 近景",
      "path": "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD0.glb",
      "format": "GLB",
@@ -4706,7 +4713,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD1 · 开门",
+     "label": "开门 · 中景",
      "path": "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD1.glb",
      "format": "GLB",
@@ -4725,7 +4732,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 开门",
+     "label": "开门 · 远景",
      "path": "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD2.glb",
      "format": "GLB",
@@ -4744,7 +4751,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD0 · 闭门",
+     "label": "闭门 · 近景",
      "path": "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0.glb",
      "format": "GLB",
@@ -4763,7 +4770,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD1 · 闭门",
+     "label": "闭门 · 中景",
      "path": "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD1.glb",
      "format": "GLB",
@@ -4782,7 +4789,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 闭门",
+     "label": "闭门 · 远景",
      "path": "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD2.glb",
      "format": "GLB",
@@ -4803,8 +4810,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "六份实际GLB的原件几何、UV、材质与贴图字节比对；新增地面闭合和接缝检查；每份99个有限通行区域、18,487个支承点及73条接口邻接。闭门和殿柱负对照有效，输入独立重建结果与交付GLB字节一致。原生文件打包贴图经异地重开验证。",
-    "限制与待解决": "全部空间尺寸与布置为C级设计。《后汉书》仅支持准入与值守功能，不证明此连续路线。来源殿堂的德阳名称仅作追溯，不是本组合的历史身份。未入城、无完整围墙；未认证步态、连续门扇动画、结构安全或GPU性能。"
+    "已完成的检查": "六个模型文件都与所用原件逐一比对过，几何、贴图都没变；新加的庭地检查过是否闭合、与门卫地面之间有无重叠或空缝；每个文件里划定的通行区域、落脚点和接口都核验过能走通，没有落脚失败；关门状态和殿柱处的反例确实被检出为阻挡，说明检查有效；用原始输入重新生成的六个文件与交付文件完全一致。原生文件包为 luoyang-palace-admission-court-v1.zip（含三档 Blender 原生文件、输入、配置、重建与检查脚本、贴图和渲染图），不在本网站目录内；本卡模型随 r2026.11.05-4 批次收录，该批说明写明这一段的源文件由创作者补传到对应 Release。细节：六份实际GLB的原件几何、UV、材质与贴图字节比对；新增地面闭合和接缝检查；每份99个有限通行区域、18,487个支承点及73条接口邻接。闭门和殿柱负对照有效，输入独立重建结果与交付GLB字节一致。原生文件打包贴图经异地重开验证。",
+    "限制与待解决": "这是一套设计推测的连接方案，不代表某座有名可考的宫院，还没放进城里。细节：全部空间尺寸与布置为C级设计。《后汉书》仅支持准入与值守功能，不证明此连续路线。来源殿堂的德阳名称仅作追溯，不是本组合的历史身份。未入城、无完整围墙；未认证步态、连续门扇动画、结构安全或GPU性能。"
    },
    "stats": {},
    "state": "待审",
@@ -4825,8 +4832,8 @@
    "kind": "建筑",
    "title": "高架复道局部模块",
    "english": "PALACE GALLERY MODULES",
-   "summary": "两种高架复道局部片段，各含三档LOD，研究柱架、楼板与三条并行通行带。并非建成整条两宫复道，也不把三条通行带称作三层。",
-   "alt": "A型高架复道局部模块的实际原生CPU渲染。",
+   "summary": "两种高架复道局部片段：A型三开间、B型两开间，各有近中远三档，研究柱架、楼板与三条并行通行带。不是建成的整条两宫复道，三条通行带也不是三层。",
+   "alt": "斜视的三开间高架复道片段：成排木柱立在方形柱础上，托起楼板和开窗洞的木板围墙，上覆两坡屋顶，一端敞开。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-palace-gallery-cover-720.webp",
@@ -4884,7 +4891,7 @@
    ],
    "files": [
     {
-     "label": "gallery-A-LOD0",
+     "label": "A 型三开间 12.9 米 · 近景",
      "path": "library/models/m-luoyang-palace-gallery/files/gallery-A-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-palace-gallery/files/gallery-A-LOD0.glb",
      "format": "GLB",
@@ -4903,7 +4910,7 @@
      "extUsed": []
     },
     {
-     "label": "gallery-A-LOD1",
+     "label": "A 型三开间 12.9 米 · 中景",
      "path": "library/models/m-luoyang-palace-gallery/files/gallery-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-palace-gallery/files/gallery-A-LOD1.glb",
      "format": "GLB",
@@ -4922,7 +4929,7 @@
      "extUsed": []
     },
     {
-     "label": "gallery-A-LOD2",
+     "label": "A 型三开间 12.9 米 · 远景",
      "path": "library/models/m-luoyang-palace-gallery/files/gallery-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-palace-gallery/files/gallery-A-LOD2.glb",
      "format": "GLB",
@@ -4941,7 +4948,7 @@
      "extUsed": []
     },
     {
-     "label": "gallery-B-LOD0",
+     "label": "B 型两开间 9.9 米 · 近景",
      "path": "library/models/m-luoyang-palace-gallery/files/gallery-B-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-palace-gallery/files/gallery-B-LOD0.glb",
      "format": "GLB",
@@ -4960,7 +4967,7 @@
      "extUsed": []
     },
     {
-     "label": "gallery-B-LOD1",
+     "label": "B 型两开间 9.9 米 · 中景",
      "path": "library/models/m-luoyang-palace-gallery/files/gallery-B-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-palace-gallery/files/gallery-B-LOD1.glb",
      "format": "GLB",
@@ -4979,7 +4986,7 @@
      "extUsed": []
     },
     {
-     "label": "gallery-B-LOD2",
+     "label": "B 型两开间 9.9 米 · 远景",
      "path": "library/models/m-luoyang-palace-gallery/files/gallery-B-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-palace-gallery/files/gallery-B-LOD2.glb",
      "format": "GLB",
@@ -5000,8 +5007,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "六份GLB实际回读与原生有向三角匹配，米制UV和贴图逐档核对；指定局部楼板支持与2米头部射线通过。近景几何只排除原展示底板；图片为同资产CPU图，WebP像素无损。",
-    "限制与待解决": "端口在高起楼板高度，不能直接作为地面可达通路。宽2.2米压力样本碰柱，聚合共享边及反向屋脊端盖保留，不宣称无共面或全模型无穿插。所有尺寸与走线为C推测，城市候选柱脚支承未解决，因此未入城；无结构、车辆、GPU或手机认证。"
+    "已完成的检查": "六份模型文件都回读核对过：几何与Blender原模型一致，贴图坐标和贴图逐档检查；指定楼板段的支撑和2米净高测试通过。技术记录：六份GLB实际回读与原生有向三角匹配（与Blender原模型逐个三角面及朝向一致），米制UV和贴图逐档核对；指定局部楼板支持与2米头部射线（在离地2米的头部高度发射线检查是否碰头）通过。近景几何只排除原展示底板；图片为同资产CPU图，WebP像素无损。",
+    "限制与待解决": "两型尺寸不同：A型长12.9米、进深约7.65米、楼面高4.0米，三开间；B型长9.9米、进深约8.25米、楼面高3.5米，两开间。两型楼面高差0.5米、进深也不同，不能直接首尾相接。片段端口在楼板高度，不能当地面通路；尺寸和走线都是推测，未入城。技术记录：端口在高起楼板高度，不能直接作为地面可达通路。宽2.2米压力样本碰柱，聚合共享边（合并后的网格里多个面共用同一条边）及反向屋脊端盖保留，不宣称无共面或全模型无穿插。所有尺寸与走线为C推测（没有直接考古依据的推测设计），城市候选柱脚支承未解决，因此未入城；无结构、车辆、GPU或手机认证。"
    },
    "stats": {},
    "state": "待审",
@@ -5023,19 +5030,19 @@
    "title": "宫门值守核验切片",
    "english": "PALACE GUARD CHECKPOINT",
    "summary": "值守单元与双侧核验通口的一组独立功能研究，提供三档以及开闭静态姿态和动画。宫门实名、位置、房屋数量与尺度均未确定。",
-   "alt": "宫门值守切片的实际开门态CPU渲染，两侧核验单元围绕中央通口。",
+   "alt": "开门状态的背面斜俯视：中央门屋两扇门向后敞开，左右各一座四坡顶值守亭，亭下有桌凳，整组立在一块长方形地坪上。",
    "cover": {
     "small": {
-     "src": "media/library-models-m-luoyang-palace-guard-cover-720.webp",
+     "src": "media/library-models-m-luoyang-palace-guard-shots-guard-C-slice-rear-CPU-720.webp",
      "w": 720,
      "h": 540
     },
     "large": {
-     "src": "media/library-models-m-luoyang-palace-guard-cover-1800.webp",
+     "src": "media/library-models-m-luoyang-palace-guard-shots-guard-C-slice-rear-CPU-1800.webp",
      "w": 1280,
      "h": 960
     },
-    "original": "../docs/library/models/m-luoyang-palace-guard/cover.webp"
+    "original": "../docs/library/models/m-luoyang-palace-guard/shots/guard-C-slice_rear-CPU.webp"
    },
    "coverIsShot": false,
    "gallery": [
@@ -5064,24 +5071,11 @@
       "h": 960
      },
      "original": "../docs/library/models/m-luoyang-palace-guard/shots/guard-C-unit_work-CPU.webp"
-    },
-    {
-     "small": {
-      "src": "media/library-models-m-luoyang-palace-guard-shots-guard-C-slice-rear-CPU-720.webp",
-      "w": 720,
-      "h": 540
-     },
-     "large": {
-      "src": "media/library-models-m-luoyang-palace-guard-shots-guard-C-slice-rear-CPU-1800.webp",
-      "w": 1280,
-      "h": 960
-     },
-     "original": "../docs/library/models/m-luoyang-palace-guard/shots/guard-C-slice_rear-CPU.webp"
     }
    ],
    "files": [
     {
-     "label": "guard-slice-LOD0",
+     "label": "切片开闭动画 · 近景（LOD0）",
      "path": "library/models/m-luoyang-palace-guard/files/guard-slice-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-palace-guard/files/guard-slice-LOD0.glb",
      "format": "GLB",
@@ -5100,7 +5094,7 @@
      "extUsed": []
     },
     {
-     "label": "guard-slice-LOD1",
+     "label": "切片开闭动画 · 中景（LOD1）",
      "path": "library/models/m-luoyang-palace-guard/files/guard-slice-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-palace-guard/files/guard-slice-LOD1.glb",
      "format": "GLB",
@@ -5119,7 +5113,7 @@
      "extUsed": []
     },
     {
-     "label": "guard-slice-LOD2",
+     "label": "切片开闭动画 · 远景（LOD2）",
      "path": "library/models/m-luoyang-palace-guard/files/guard-slice-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-palace-guard/files/guard-slice-LOD2.glb",
      "format": "GLB",
@@ -5138,7 +5132,7 @@
      "extUsed": []
     },
     {
-     "label": "guard-slice-closed-LOD0",
+     "label": "切片闭门静态 · 近景（LOD0）",
      "path": "library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD0.glb",
      "format": "GLB",
@@ -5157,7 +5151,7 @@
      "extUsed": []
     },
     {
-     "label": "guard-slice-closed-LOD1",
+     "label": "切片闭门静态 · 中景（LOD1）",
      "path": "library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD1.glb",
      "format": "GLB",
@@ -5176,7 +5170,7 @@
      "extUsed": []
     },
     {
-     "label": "guard-slice-closed-LOD2",
+     "label": "切片闭门静态 · 远景（LOD2）",
      "path": "library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD2.glb",
      "format": "GLB",
@@ -5195,7 +5189,7 @@
      "extUsed": []
     },
     {
-     "label": "guard-slice-open-LOD0",
+     "label": "切片开门静态 · 近景（LOD0）",
      "path": "library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD0.glb",
      "format": "GLB",
@@ -5214,7 +5208,7 @@
      "extUsed": []
     },
     {
-     "label": "guard-slice-open-LOD1",
+     "label": "切片开门静态 · 中景（LOD1）",
      "path": "library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD1.glb",
      "format": "GLB",
@@ -5233,7 +5227,7 @@
      "extUsed": []
     },
     {
-     "label": "guard-slice-open-LOD2",
+     "label": "切片开门静态 · 远景（LOD2）",
      "path": "library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD2.glb",
      "format": "GLB",
@@ -5252,7 +5246,7 @@
      "extUsed": []
     },
     {
-     "label": "guard-unit-LOD0",
+     "label": "单体值守亭 · 近景（LOD0）",
      "path": "library/models/m-luoyang-palace-guard/files/guard-unit-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-palace-guard/files/guard-unit-LOD0.glb",
      "format": "GLB",
@@ -5271,7 +5265,7 @@
      "extUsed": []
     },
     {
-     "label": "guard-unit-LOD1",
+     "label": "单体值守亭 · 中景（LOD1）",
      "path": "library/models/m-luoyang-palace-guard/files/guard-unit-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-palace-guard/files/guard-unit-LOD1.glb",
      "format": "GLB",
@@ -5290,7 +5284,7 @@
      "extUsed": []
     },
     {
-     "label": "guard-unit-LOD2",
+     "label": "单体值守亭 · 远景（LOD2）",
      "path": "library/models/m-luoyang-palace-guard/files/guard-unit-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-palace-guard/files/guard-unit-LOD2.glb",
      "format": "GLB",
@@ -5334,8 +5328,8 @@
    "kind": "建筑",
    "title": "宫前土木对阙",
    "english": "PALACE PAIRED QUE",
-   "summary": "成对收分土台、木构上屋与屋盖构成的宫前对阙研究，含近中远三档。它是独立土木类型方案，不是既有石阙改名，也没有确定宫门地址。",
-   "alt": "宫前成对土木阙的实际原生CPU渲染。",
+   "summary": "成对收分土台、木构上屋与屋盖构成的宫前对阙研究，含近中远三档；是独立的土木阙方案，尚未确定宫门地址。",
+   "alt": "斜俯视下的一对宫前阙：上小下大的收分夯土台，台身露出成排纴木头，台顶立一圈木构上屋，覆深灰两坡瓦顶。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-palace-paired-que-cover-720.webp",
@@ -5380,7 +5374,7 @@
    ],
    "files": [
     {
-     "label": "palaceque-Q-LOD0",
+     "label": "对阙 · 近景",
      "path": "library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD0.glb",
      "format": "GLB",
@@ -5399,7 +5393,7 @@
      "extUsed": []
     },
     {
-     "label": "palaceque-Q-LOD1",
+     "label": "对阙 · 中景",
      "path": "library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD1.glb",
      "format": "GLB",
@@ -5418,7 +5412,7 @@
      "extUsed": []
     },
     {
-     "label": "palaceque-Q-LOD2",
+     "label": "对阙 · 远景（无贴图）",
      "path": "library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD2.glb",
      "format": "GLB",
@@ -5439,8 +5433,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "三档正式GLB保持原件字节；依据同包实际导出回读、米制UV和有限几何检查记录核对版本。真实CPU图按档展示，转WebP时移除元数据且像素保持。",
-    "限制与待解决": "具体外形、尺度、木构承托与位置均为C设计，不是具体东汉宫阙或北魏阊阖门复原。局部前庭组合不代表全城激活。未证明所有构件无穿插、历史正确性、承载、完整人物通行或GPU性能；城市绝对位置仍未知。"
+    "已完成的检查": "简单说：三档模型文件是原件、没有改动，尺寸按米制，几何完整性核对过；图片按档各渲染一张，转格式时只去掉附加信息，画面不变。原始记录：三档正式GLB保持原件字节；依据同一批导出文件的重新读取、米制UV和有限几何检查记录核对版本。真实CPU图按档展示，转WebP时移除元数据且像素保持。",
+    "限制与待解决": "简单说：外形、尺寸、木构承托和位置都是推测，不是某座真实宫阙的复原，在城里的位置也还没定。原始记录：具体外形、尺度、木构承托与位置均为推测设计，不是具体东汉宫阙或北魏阊阖门复原。未证明所有构件无穿插、历史正确性、承载、完整人物通行或GPU性能；城市绝对位置仍未知。"
    },
    "stats": {},
    "state": "待审",
@@ -5461,8 +5455,8 @@
    "kind": "建筑",
    "title": "宫廷侧廊庑",
    "english": "PALACE SIDE HALL",
-   "summary": "八间侧廊庑的独立三档模型。入口踏步移至柱间并对齐房门，保留原柱网、屋架与远景瓦色；具体形制和布局为设计推测。",
-   "alt": "入口修订后的侧廊庑整体CPU渲染。",
+   "summary": "八间侧廊庑的独立三档模型：前廊后室，两坡悬山顶，左起第五间前有一组三级踏步，已移到柱间、对齐房门；保留原柱网、屋架与远景瓦色，具体形制和布局为设计推测。",
+   "alt": "灰底斜俯视：一座长条形两坡顶廊庑，前檐一排木柱，檐下是前廊和后部房间，左起第五间前有一组踏步。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-palace-sidehall-cover-720.webp",
@@ -5494,7 +5488,7 @@
    ],
    "files": [
     {
-     "label": "sidehall-A-LOD0",
+     "label": "A 方案 · 近景",
      "path": "library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD0.glb",
      "format": "GLB",
@@ -5513,7 +5507,7 @@
      "extUsed": []
     },
     {
-     "label": "sidehall-A-LOD1",
+     "label": "A 方案 · 中景",
      "path": "library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD1.glb",
      "format": "GLB",
@@ -5532,7 +5526,7 @@
      "extUsed": []
     },
     {
-     "label": "sidehall-A-LOD2",
+     "label": "A 方案 · 远景（纯色，无贴图）",
      "path": "library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD2.glb",
      "format": "GLB",
@@ -5553,8 +5547,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "三档实际GLB与原生有向三角、米制UV一致，木瓦几何和非踏步土构保持；远档保留三步真实台阶。指定阶梯至檐廊、八间房门的0.8米宽、1.8米高路线体及离散支承检查通过。整体和入口图均来自修订后模型。",
-    "限制与待解决": "偏移入口与相应台阶尺寸仅为C功能设计，不是汉代规制。仅指定路径，不是完整人体步态、实体包含、疏散或全部路线认证。原生组合图不代表已入城；绝对城市坐标为空。无历史形制定案、结构承载、GPU或手机验收。"
+    "已完成的检查": "三档导出文件与原模型几何一致；0.8 米宽、1.8 米高的人行通道可以从踏步走上檐廊、到达八间房门，沿途有落脚支撑。原记录：三档实际GLB与原生有向三角、米制UV一致，木瓦几何和非踏步土构保持；远档保留三步真实台阶。指定阶梯至檐廊、八间房门的0.8米宽、1.8米高路线体及离散支承检查通过。整体和入口图均来自修订后模型。",
+    "限制与待解决": "入口位置是为通行方便做的设计，不是汉代规制；只查了指定路线，没做完整的人体或疏散检查；还没放进城里。原记录：偏移入口与相应台阶尺寸仅为C功能设计，不是汉代规制。仅指定路径，不是完整人体步态、实体包含、疏散或全部路线认证。原生组合图不代表已入城；绝对城市坐标为空。无历史形制定案、结构承载、GPU或手机验收。"
    },
    "stats": {},
    "state": "待审",
@@ -5576,7 +5570,7 @@
    "title": "宫墙水道三段接口",
    "english": "PALACE WATERWAY INTERFACE STUDY",
    "summary": "据东汉青砖水道三部分的发掘纪要，制作城内段、竖井段、城外段的C级连接试案。尺寸、连接和盖板均为推测，未定位。",
-   "alt": "灰色砖质通道在中部方形竖井两侧延伸；形制和尺寸为C级设计，非出土遗迹复原。",
+   "alt": "灰色砖质通道在中部方形竖井两侧延伸；形制和尺寸为推测设计，非出土遗迹复原。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-palace-waterway-interface-cover-720.webp",
@@ -5634,7 +5628,7 @@
    ],
    "files": [
     {
-     "label": "近景 · 完整C设计",
+     "label": "完整组装 · 近景",
      "path": "library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-near.glb",
      "url": "../docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-near.glb",
      "format": "GLB",
@@ -5653,7 +5647,7 @@
      "extUsed": []
     },
     {
-     "label": "中景 · 完整C设计",
+     "label": "完整组装 · 中景",
      "path": "library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-mid.glb",
      "url": "../docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-mid.glb",
      "format": "GLB",
@@ -5672,7 +5666,7 @@
      "extUsed": []
     },
     {
-     "label": "远景 · 完整C设计",
+     "label": "完整组装 · 远景",
      "path": "library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-far.glb",
      "url": "../docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-far.glb",
      "format": "GLB",
@@ -5691,7 +5685,7 @@
      "extUsed": []
     },
     {
-     "label": "现代数字拆解 · 非古代装置",
+     "label": "现代拆解示意 · 近景（非古代装置）",
      "path": "library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-inspection-near.glb",
      "url": "../docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-inspection-near.glb",
      "format": "GLB",
@@ -5712,8 +5706,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "三档真实LOD、米制UV和同材质合批；实际GLB水口/空腔有限体积检查、加宽负对照、逐面合批对照、原生重开及实际模型CPU预览。完整未改官方检查器另在隔离副本验证。",
-    "限制与待解决": "据考古网署名且注明汇报人审阅的转载纪要，原发布不可读；只有东汉、青砖和三部分列举有报道。尺寸、具体连接、盖板、流向、引排水用途和180年在用性未知。现代拆解不是古代可拆装机构；未入城，不认证水密、流量、人行、结构或GPU。"
+    "已完成的检查": "白话说明：近、中、远三档是逐级简化的真模型，贴图按实际米数铺设；检查过水口和内部空腔确实相通，并用对照版本确认这项检查有效；模型重新打开、与预览图一致，另在独立副本上跑过未改动的官方检查程序。原记录：三档真实LOD、米制UV和同材质合批；实际GLB水口/空腔有限体积检查、加宽负对照、逐面合批对照、原生重开及实际模型CPU预览。完整未改官方检查器另在隔离副本验证。",
+    "限制与待解决": "白话说明：考古报道只说明这是东汉青砖水道、分三部分，其余尺寸、连接方式、盖板和用途都是推测；拆解版只是现代展示用，古代并不能拆装。原记录：据考古网署名且注明汇报人审阅的转载纪要，原发布不可读；只有东汉、青砖和三部分列举有报道。尺寸、具体连接、盖板、流向、引排水用途和180年在用性未知。现代拆解不是古代可拆装机构；未入城，不认证水密、流量、人行、结构或GPU。"
    },
    "stats": {},
    "state": "待审",
@@ -5734,8 +5728,8 @@
    "kind": "城市构件",
    "title": "平城门",
    "english": "PINGCHENG GATE",
-   "summary": "平城门受控门厅 C 级比较候选，近中远三档；完整建筑状态是假设，不认定180年已修复。",
-   "alt": "平城门候选模型的CPU三分之四视图：三孔门厅、短脊四坡屋盖，中央门叶关闭而两侧开启。",
+   "summary": "东汉洛阳平城门的三门道门楼设计候选，近中远三档；完整建筑状态是推测，文献记有177、178年损坏，180年是否已修复未定。",
+   "alt": "平城门候选模型的四分之三视图：三门道夯土门台、短脊四坡瓦顶，中央门叶关闭，两侧门道开启。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-pingcheng-gate-cover-720.webp",
@@ -5767,7 +5761,7 @@
    ],
    "files": [
     {
-     "label": "LOD1 · 中景展示候选",
+     "label": "完整门楼 · 中景（默认展示候选）",
      "path": "cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb",
      "url": "../docs/cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb",
      "format": "GLB",
@@ -5786,7 +5780,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD0 · 近景候选",
+     "label": "完整门楼 · 近景（候选）",
      "path": "library/models/m-luoyang-pingcheng-gate/files/pingcheng-P-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-P-LOD0.glb",
      "format": "GLB",
@@ -5805,7 +5799,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 远景简化候选",
+     "label": "完整门楼 · 远景（简化候选）",
      "path": "cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD2.glb",
      "url": "../docs/cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD2.glb",
      "format": "GLB",
@@ -5824,7 +5818,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 局部门下地面 LOD1（不含门体）",
+     "label": "门下地面附件 · 中景（不含门体）",
      "path": "library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD1.glb",
      "format": "GLB",
@@ -5843,7 +5837,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 局部门下地面 LOD0（不含门体）",
+     "label": "门下地面附件 · 近景（不含门体）",
      "path": "library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD0.glb",
      "format": "GLB",
@@ -5862,7 +5856,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 局部门下地面 LOD2（不含门体）",
+     "label": "门下地面附件 · 远景（不含门体）",
      "path": "library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD2.glb",
      "format": "GLB",
@@ -5887,7 +5881,7 @@
     "限制与待解决": "文献分别有177、178年损坏记载，不能据此认定180年修复。中央闭门与侧道开启仅为设计展示，不是历史日常规则；中央通行应阻断，无上楼梯或门叶动画。 本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
     "证据等级": "门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。",
     "版本与展示": "选用 P-v1，按一个门名家族计数；默认展示LOD1。近、中、远三档均保留，LOD与开闭姿态不重复计件。",
-    "地面附件范围": "另附两条1.8×20米侧门测试带及四片接旧路的局部地面，门体、旧斜路不在这些附件内。三档原件局部配对均无表面相交；单独附件在原方案3114个脚下样点中有565个依赖旧路，不能作为完整独立通行包。中门关闭状态不变。 地面厚度约0.2米，尺度、高程和微起伏均为C工程试验；这是行走测试地面，不是承重地基、考古铺地或结构安全验收。选择附件仅显示地面，不自动叠加到城门或城景。"
+    "地面附件范围": "门下地面附件只是行走测试用的局部地面，单独使用时约两成落脚点要靠旧路，不能当完整通道。（另附两条1.8×20米侧门测试带及四片接旧路的局部地面，门体、旧斜路不在这些附件内。三档原件局部配对均无表面相交；单独附件在原方案3114个脚下样点中有565个依赖旧路，不能作为完整独立通行包。中门关闭状态不变。 地面厚度约0.2米，尺度、高程和微起伏均为C工程试验；这是行走测试地面，不是承重地基、考古铺地或结构安全验收。选择附件仅显示地面，不自动叠加到城门或城景。）"
    },
    "stats": {},
    "state": "待审",
@@ -5909,7 +5903,7 @@
    "title": "连续住宅生活片区",
    "english": "RESIDENTIAL LIFE BLOCK",
    "summary": "13院、26屋的连续布局候选，复用既有住宅原型及近景构件，组织院内与公共通行空间。三档为同一片区，不是13件新作品或新的建筑家族。",
-   "alt": "连续住宅生活片区独立模型的CPU渲染，展示13院的建筑、院墙与通行地面。",
+   "alt": "斜俯视：一片 L 形的土色通行地面上分布着 13 座小院，每院两座两坡瓦顶房屋，四周围着矮院墙。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-residential-life-cover-720.webp",
@@ -5941,7 +5935,7 @@
    ],
    "files": [
     {
-     "label": "LOD0 · 近景",
+     "label": "生活片区 · 近景",
      "path": "library/models/m-luoyang-residential-life/files/life-block-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-residential-life/files/life-block-LOD0.glb",
      "format": "GLB",
@@ -5960,7 +5954,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD1 · 中景",
+     "label": "生活片区 · 中景",
      "path": "library/models/m-luoyang-residential-life/files/life-block-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-residential-life/files/life-block-LOD1.glb",
      "format": "GLB",
@@ -5979,7 +5973,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 远景",
+     "label": "生活片区 · 远景",
      "path": "library/models/m-luoyang-residential-life/files/life-block-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-residential-life/files/life-block-LOD2.glb",
      "format": "GLB",
@@ -6001,7 +5995,8 @@
    "page": null,
    "notes": {
     "已完成的检查": "三档最终运行模型的来源几何与逐角UV复核；90个入口、1,080段入口运动、231段院内连接、45段公共带检查及174,522个支承点未检出侵入或缺支承。26屋共975对、13院共234对包围盒分离检查通过。13处近景房屋替换保留既有位置、墙阶与地坪，40个建筑层节点及材料关系经核对。",
-    "限制与待解决": "全部布局与绝对位置仍属C类设计推测，不是约公元180年洛阳住宅的实测复原。只提供自包含运行GLB，不含可编辑源工程；灶与侧板为另卡独立附层，本下载不含该层。GLB采用米制Y-up及既有示意坐标，保留节点变换，不重复施加城市位置或轴转换。三档互斥加载，未入城；有限刚体通行检查不证明人体步态、无障碍、结构安全、全域共面或GPU性能。近景实例展开506,828三角，未测浏览器帧率、显存或实际绘制调用。"
+    "限制与待解决": "全部布局与绝对位置仍属C类设计推测，不是约公元180年洛阳住宅的实测复原。只提供自包含运行GLB，不含可编辑源工程；灶与侧板为另卡独立附层，本下载不含该层。GLB采用米制Y-up及既有示意坐标，保留节点变换，不重复施加城市位置或轴转换。三档互斥加载，未入城；有限刚体通行检查不证明人体步态、无障碍、结构安全、全域共面或GPU性能。近景实例展开506,828三角，未测浏览器帧率、显存或实际绘制调用。",
+    "面数说明": "属性表里的面数（116,108 / 59,460 / 2,004）只算不重复的网格；同一网格在 40 个节点间复用，实际渲染时近、中、远三档展开后约 50.7 万 / 26 万 / 8,584 三角（506,828 / 259,700 / 8,584）。"
    },
    "stats": {},
    "state": "待审",
@@ -6023,8 +6018,8 @@
    "kind": "城市构件",
    "title": "院内备食关系",
    "english": "COURTYARD PREPARATION RELATION",
-   "summary": "复用既有灶体与侧备食板，研究一处院内备食位置及其工作、后退与通行关系。两节点放置附层，不是新灶型或新建筑家族；位置和尺寸均为设计推测。",
-   "alt": "灶体与侧备食板的独立CPU渲染；模型本身不含地面。",
+   "summary": "复用庖厨炉灶A（stove-A）三档的原样几何与贴图，研究一处院内备食位置及其工作、后退与通行关系。按住宅W2院原位摆放的灶与侧板两件，不是新灶型或新建筑家族；位置和尺寸均为设计推测。",
+   "alt": "斜视：长方土灶正面开方形火门，灶面坐一口带腰沿的釜；左后方是一张木腿备食板，灰色背景，没有地面。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-residential-preparation-cover-720.webp",
@@ -6056,7 +6051,7 @@
    ],
    "files": [
     {
-     "label": "LOD0 · 近景",
+     "label": "灶与侧板 · 近景",
      "path": "library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD0.glb",
      "format": "GLB",
@@ -6075,7 +6070,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD1 · 中景",
+     "label": "灶与侧板 · 中景",
      "path": "library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD1.glb",
      "format": "GLB",
@@ -6094,7 +6089,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 远景",
+     "label": "灶与侧板 · 远景",
      "path": "library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD2.glb",
      "format": "GLB",
@@ -6125,7 +6120,8 @@
    "updated": "2026-11-05T15:16:32+08:00",
    "related": [
     "p-luoyang",
-    "m-luoyang-residential-life"
+    "m-luoyang-residential-life",
+    "m-luoyang-cooking-stove"
    ],
    "card": "library/models/m-luoyang-residential-preparation/m-luoyang-residential-preparation.asset.json",
    "bytes": 1214084,
@@ -6138,8 +6134,8 @@
    "kind": "建筑",
    "title": "圈厕关系 A",
    "english": "SERVICE COURT STUDY",
-   "summary": "高台厕、围圈与楼梯的C级空间关系样本；三档保留真实门口、地板孔和支承构件。",
-   "alt": "圈厕关系 A的实际模型CPU预览；形体和尺寸为C级设计。",
+   "summary": "高台厕屋、圆形围圈与楼梯的空间关系样本，形体和尺寸为推测设计（C级）；近中远三档都保留真实的门口、地板孔和支承构件。",
+   "alt": "斜视的圈厕：圆形土墙围出一圈，墙头盖深灰墙帽，前方留一道缺口；后侧一座两坡瓦顶的小厕屋由木柱架在圈墙上方，一道土台阶通到厕屋山墙上的门。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-service-court-cover-720.webp",
@@ -6184,7 +6180,7 @@
    ],
    "files": [
     {
-     "label": "service · A · LOD0",
+     "label": "圈厕 A · 近景",
      "path": "library/models/m-luoyang-service-court/files/service-A-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-service-court/files/service-A-LOD0.glb",
      "format": "GLB",
@@ -6203,7 +6199,7 @@
      "extUsed": []
     },
     {
-     "label": "service · A · LOD1",
+     "label": "圈厕 A · 中景",
      "path": "library/models/m-luoyang-service-court/files/service-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-service-court/files/service-A-LOD1.glb",
      "format": "GLB",
@@ -6222,7 +6218,7 @@
      "extUsed": []
     },
     {
-     "label": "service · A · LOD2",
+     "label": "圈厕 A · 远景",
      "path": "library/models/m-luoyang-service-court/files/service-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-service-court/files/service-A-LOD2.glb",
      "format": "GLB",
@@ -6243,8 +6239,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "三档实际GLB几何回读、UV及有限门口、孔口和台阶检查。 图为同版原生模型CPU实渲，原生与最终GLB几何一致性另验；不是GLB直渲或浏览器实测。",
-    "限制与待解决": "参考跨地域明器类型，全部米制尺寸与形体为C选择；保留既有局部屋脊接触，不认证卫生、动物、连续人体、结构或GPU。"
+    "已完成的检查": "三档模型都回读检查了几何和贴图坐标，并逐处查了门口、地板孔和台阶。图片是Blender原模型的渲染，不是在网页里实拍。技术记录：三档实际GLB几何回读、UV及有限门口、孔口和台阶检查。图为同版原生模型CPU实渲，原生与最终GLB几何一致性另验；不是GLB直渲或浏览器实测。",
+    "限制与待解决": "形体和尺寸参考各地出土的陶制明器（随葬模型）推定。屋脊已知待修：屋脊块底面比屋面高约1–4厘米，脊下有一条贯通约2.4米的透光缝，三档都有；近景档只有顶排筒瓦上端插进脊块底部，属局部接触，被脊块遮住。没有测过卫生功能、牲畜活动、人体连续动线、结构受力和网页GPU表现。技术记录：参考跨地域明器类型，全部米制尺寸与形体为C选择；保留既有局部屋脊接触，不认证卫生、动物、连续人体、结构或GPU。"
    },
    "stats": {},
    "state": "待审",
@@ -6266,7 +6262,7 @@
    "title": "上东门",
    "english": "SHANGDONG GATE",
    "summary": "上东门宽门台与两端露台型候选；提供中远景，全部具体形体为 C 级设计，未入城。",
-   "alt": "上东门候选模型的CPU三分之四视图：三孔宽门台、较窄上屋与两端露台。",
+   "alt": "上东门候选模型的四分之三视图：三孔宽门台、较窄上屋与两端露台。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-shangdong-gate-cover-720.webp",
@@ -6298,7 +6294,7 @@
    ],
    "files": [
     {
-     "label": "LOD1 · 中景展示候选",
+     "label": "完整门楼 · 中景（默认展示候选）",
      "path": "library/models/m-luoyang-shangdong-gate/files/shangdong-S-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-shangdong-gate/files/shangdong-S-LOD1.glb",
      "format": "GLB",
@@ -6317,7 +6313,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 远景简化候选",
+     "label": "完整门楼 · 远景（简化候选）",
      "path": "library/models/m-luoyang-shangdong-gate/files/shangdong-S-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-shangdong-gate/files/shangdong-S-LOD2.glb",
      "format": "GLB",
@@ -6339,9 +6335,9 @@
    "page": null,
    "notes": {
     "已完成的检查": "已逐一核对所选GLB版本、字节数和SHA256，复用文件与现有公开路径逐字节一致。模型可独立解析，贴图内嵌；本卡图像来自该版模型的既有CPU渲染。",
-    "限制与待解决": "不是把北魏建春门改写成东汉实测。地形支撑、接近路径及登临未解决，隐藏试放不等于城市激活，门扇没有运动验证。 本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
+    "限制与待解决": "不是把北魏建春门改写成东汉实测。地形支撑、接近路径及登临未解决，隐藏试放不等于城市激活，门扇没有运动验证。本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
     "证据等级": "门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。",
-    "版本与展示": "选用 S-v1，按一个门名家族计数；默认展示LOD1。原LOD0为17,189,672字节，因超过单个GLB 15,000,000字节限额及超过本次单次Base64传输承载未上架；原件完整保留。所列LOD1/2降低细节，不是完整高细版。"
+    "版本与展示": "选用 S-v1，按一个门名家族计数；默认展示LOD1。原LOD0为17,189,672字节（约17.2 MB），超过单个GLB 15,000,000字节（15 MB）的上限，未上架；原件完整保留。所列LOD1/2降低细节，不是完整高细版。"
    },
    "stats": {},
    "state": "待审",
@@ -6363,7 +6359,7 @@
    "title": "上西门",
    "english": "SHANGXI GATE",
    "summary": "上西门四坡短脊屋盖的三道门 C 级类型研究，三档独立模型齐备，尚未落位。",
-   "alt": "上西门候选模型的CPU三分之四视图：三孔土木门体、通长上层与四坡短脊屋盖。",
+   "alt": "上西门候选模型的四分之三斜视图：三孔土木门体、通长上层与四坡短脊屋盖。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-shangxi-gate-cover-720.webp",
@@ -6395,7 +6391,7 @@
    ],
    "files": [
     {
-     "label": "LOD1 · 中景展示候选",
+     "label": "完整门楼 · 中景（默认展示候选）",
      "path": "cities/luoyang/progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD1.glb",
      "url": "../docs/cities/luoyang/progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD1.glb",
      "format": "GLB",
@@ -6414,7 +6410,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD0 · 近景候选",
+     "label": "完整门楼 · 近景（候选）",
      "path": "library/models/m-luoyang-shangxi-gate/files/shangxi-X-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-shangxi-gate/files/shangxi-X-LOD0.glb",
      "format": "GLB",
@@ -6433,7 +6429,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 远景简化候选",
+     "label": "完整门楼 · 远景（简化候选）",
      "path": "cities/luoyang/progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD2.glb",
      "url": "../docs/cities/luoyang/progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD2.glb",
      "format": "GLB",
@@ -6479,7 +6475,7 @@
    "title": "南郊圆坛八陛",
    "english": "SOUTHERN ALTAR STUDY",
    "summary": "圆坛八处阶道、中坛和双重围界的一组文献类型研究。A/B为两种尺寸和围界假说，八陛并非八层台；未定位，不是约180年遗址实测复原。",
-   "alt": "南郊圆坛A方案的实际CPU渲染，显示八处登坛阶道与双围界。",
+   "alt": "南郊圆坛A方案斜视图：两层圆坛，下坛八面出阶、上坛四阶，外围两重圆形营墙四面开门。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-southern-altar-cover-720.webp",
@@ -6537,26 +6533,7 @@
    ],
    "files": [
     {
-     "label": "south-altar-A-LOD1",
-     "path": "library/models/m-luoyang-southern-altar/files/south-altar-A-LOD1.glb",
-     "url": "../docs/library/models/m-luoyang-southern-altar/files/south-altar-A-LOD1.glb",
-     "format": "GLB",
-     "bytes": 916616,
-     "triangles": 2472,
-     "vertices": 3708,
-     "primitives": 35,
-     "materials": 2,
-     "images": 6,
-     "size": [
-      66.0,
-      2.89,
-      66.0
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "south-altar-A",
+     "label": "A 圆形双重围墙 · 近景（完整）",
      "path": "library/models/m-luoyang-southern-altar/files/south-altar-A.glb",
      "url": "../docs/library/models/m-luoyang-southern-altar/files/south-altar-A.glb",
      "format": "GLB",
@@ -6575,26 +6552,26 @@
      "extUsed": []
     },
     {
-     "label": "south-altar-B-LOD1",
-     "path": "library/models/m-luoyang-southern-altar/files/south-altar-B-LOD1.glb",
-     "url": "../docs/library/models/m-luoyang-southern-altar/files/south-altar-B-LOD1.glb",
+     "label": "A 圆形双重围墙 · 中景（简化）",
+     "path": "library/models/m-luoyang-southern-altar/files/south-altar-A-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-southern-altar/files/south-altar-A-LOD1.glb",
      "format": "GLB",
-     "bytes": 898812,
-     "triangles": 2242,
-     "vertices": 3351,
-     "primitives": 29,
+     "bytes": 916616,
+     "triangles": 2472,
+     "vertices": 3708,
+     "primitives": 35,
      "materials": 2,
      "images": 6,
      "size": [
-      74.0,
-      3.2,
-      74.0
+      66.0,
+      2.89,
+      66.0
      ],
      "primsNoUV": 0,
      "extUsed": []
     },
     {
-     "label": "south-altar-B",
+     "label": "B 方形双重围墙 · 近景（完整）",
      "path": "library/models/m-luoyang-southern-altar/files/south-altar-B.glb",
      "url": "../docs/library/models/m-luoyang-southern-altar/files/south-altar-B.glb",
      "format": "GLB",
@@ -6611,12 +6588,31 @@
      ],
      "primsNoUV": 0,
      "extUsed": []
+    },
+    {
+     "label": "B 方形双重围墙 · 中景（简化）",
+     "path": "library/models/m-luoyang-southern-altar/files/south-altar-B-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-southern-altar/files/south-altar-B-LOD1.glb",
+     "format": "GLB",
+     "bytes": 898812,
+     "triangles": 2242,
+     "vertices": 3351,
+     "primitives": 29,
+     "materials": 2,
+     "images": 6,
+     "size": [
+      74.0,
+      3.2,
+      74.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
     }
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "采用清理修订后的最终四份GLB，实际回读有向几何、有限台阶条带、门口净空与支承检查绑定文件哈希。阶与所属坛体并合，正式模型完整保留，CPU图无损净化。",
-    "限制与待解决": "具体尺寸、中央坛四阶、圆/方围界和门框均C设计，不将两案当成两种已证汉制。遗址未发现，不与曹魏圜丘或明清天坛混同。含独立展示地面，未来场景须互斥并重验；无神位、祭仪定案、结构、完整人体或GPU验收。"
+    "已完成的检查": "四个文件都复查过朝向、台阶、门洞净空和支撑。原记录：采用清理修订后的最终四份GLB，实际回读有向几何、有限台阶条带、门口净空与支承检查绑定文件哈希。阶与所属坛体并合，正式模型完整保留，CPU图无损净化。",
+    "限制与待解决": "尺寸、上坛四阶、圆形或方形围墙和门框都是推测性设计，A、B 两案不代表两种已证实的汉制；遗址尚未发现。原记录：具体尺寸、中央坛四阶、圆/方围界和门框均C设计（推测性设计：具体做法没有直接的文献或考古依据），不将两案当成两种已证汉制。遗址未发现，不与曹魏圜丘或明清天坛混同。含独立展示地面，未来场景须互斥并重验；无神位、祭仪定案、结构、完整人体或GPU验收。"
    },
    "stats": {},
    "state": "待审",
@@ -6638,7 +6634,7 @@
    "title": "厩棚与饲槽 A/B",
    "english": "STABLE AND TROUGH STUDY",
    "summary": "三开间与四开间厩棚、饲槽的独立C级功能模块，保留各自构件和自制材质。",
-   "alt": "厩棚与饲槽 A/B的实际模型CPU预览；形体和尺寸为C级设计。",
+   "alt": "三开间厩棚（A 型）斜俯视：前排四根方木柱撑起两坡灰瓦顶，前面和两山敞开，棚内靠后每间各放一只木饲槽。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-stable-cover-720.webp",
@@ -6670,7 +6666,7 @@
    ],
    "files": [
     {
-     "label": "A",
+     "label": "A 型 · 三开间（面阔 9.1 m）",
      "path": "library/models/m-luoyang-stable/files/A.glb",
      "url": "../docs/library/models/m-luoyang-stable/files/A.glb",
      "format": "GLB",
@@ -6689,7 +6685,7 @@
      "extUsed": []
     },
     {
-     "label": "B",
+     "label": "B 型 · 四开间（面阔 12.7 m）",
      "path": "library/models/m-luoyang-stable/files/B.glb",
      "url": "../docs/library/models/m-luoyang-stable/files/B.glb",
      "format": "GLB",
@@ -6710,8 +6706,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "最终GLB回读及有限平面通行包络检查；A/B为互斥设计变体。 图为同版原生模型CPU实渲，原生与最终GLB几何一致性另验；不是GLB直渲或浏览器实测。",
-    "限制与待解决": "以汉墓陶庄园说明作功能比较，非洛阳马厩复原；局部嵌接沿用，未认证动物尺度、连续碰撞、承载、GPU或手机。"
+    "已完成的检查": "白话说明：导出的模型重新读回核对过；在平面上抽查了棚内通道留出的宽度；A、B 是二选一的两种设计。原记录：最终GLB回读及有限平面通行包络检查；A/B为互斥设计变体。图为同版原生模型CPU实渲，原生与最终GLB几何一致性另验；不是GLB直渲或浏览器实测。",
+    "限制与待解决": "白话说明：形制参照汉墓陶庄园模型的功能，不是洛阳某座马厩的复原；个别构件之间仍有局部插接，也没有按马匹实际尺寸、承重或在手机上验证。原记录：以汉墓陶庄园说明作功能比较，非洛阳马厩复原；局部嵌接沿用，未认证动物尺度、连续碰撞、承载、GPU或手机。"
    },
    "stats": {},
    "state": "待审",
@@ -6732,8 +6728,8 @@
    "kind": "城市构件",
    "title": "太学门外观经空间",
    "english": "STONE CLASSICS ACCESS STUDY",
-   "summary": "据门外观摹及注引覆屋、围护、南口的传世记载制作公共访问关系试案。所有形体和路线为C；碑位留空，未定址，设施归属与年代待考。",
-   "alt": "灰瓦覆屋位于围护空间内，南侧开口连向有限街道样段；碑位留空，所有可见形体均为C级设计。",
+   "summary": "依据传世记载里的门外观摹，以及注文引述的覆屋、围护和南面入口，推测做出的公众前来观看的空间试案；形体和路线都是推测设计，碑位留空，未定址，设施归属与年代待考。",
+   "alt": "土色地台上一座灰瓦两坡顶的敞开覆屋，由两排木柱撑起，四面围着木栏，南面栏上开一道门框；覆屋下空着，没有放碑。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-stoneclassic-access-court-cover-720.webp",
@@ -6804,7 +6800,7 @@
    ],
    "files": [
     {
-     "label": "近景 · 完整C方案",
+     "label": "完整方案 · 近景",
      "path": "library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_near.glb",
      "url": "../docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_near.glb",
      "format": "GLB",
@@ -6823,7 +6819,7 @@
      "extUsed": []
     },
     {
-     "label": "中景 · 聚合瓦面",
+     "label": "瓦面合并 · 中景",
      "path": "library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_middle.glb",
      "url": "../docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_middle.glb",
      "format": "GLB",
@@ -6842,7 +6838,7 @@
      "extUsed": []
     },
     {
-     "label": "远景 · 保留主形与入口",
+     "label": "保留主形与入口 · 远景",
      "path": "library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_far.glb",
      "url": "../docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_far.glb",
      "format": "GLB",
@@ -6863,8 +6859,9 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "三档LOD、米制UV、4材质合批；实际完整GLB入口净空、地面覆盖与支承、柱/门负对照、空白区域遮覆采样，以及原生重开、干净重建和最终实渲。未改官方检查器在完整隔离副本另验。",
-    "限制与待解决": "覆屋/围护来自唐注所存谢承佚文，设施归属和年代未独立确证；不采用同段三体与后世碑尺寸。形体、路线、公众入内、街向均为C；不建完整碑，不认定180年状态。UV为重复投影，明示0.1毫米数值容差，非独占图集；盖条留16毫米显示偏置，未验逐瓦接触、全面近景瓦作、结构、人群或GPU。"
+    "已完成的检查": "三档模型都查过：入口能走人、地面和柱子落得住、该空的地方是空的，重新打开和重建后结果一致。（三档LOD、米制UV、4材质合批；实际完整GLB入口净空、地面覆盖与支承、柱/门负对照、空白区域遮覆采样，以及原生重开、干净重建和最终实渲。未改官方检查器在完整隔离副本另验。）",
+    "限制与待解决": "覆屋和围护的记载来源有限，形体、路线都是推测，没有做完整石碑，也不代表180年的实况。（覆屋/围护来自唐注所存谢承佚文，设施归属和年代未独立确证；不采用同段三体与后世碑尺寸。形体、路线、公众入内、街向均为C；不建完整碑，不认定180年状态。UV为重复投影，明示0.1毫米数值容差，非独占图集；盖条留16毫米显示偏置，未验逐瓦接触、全面近景瓦作、结构、人群或GPU。）",
+    "证据等级": "本卡里的「C」指C级：在已有资料上推测补出的设计，不是考古实测或复原；覆屋、围护、南口这些关系来自传世记载，具体形体和尺寸都是推测。"
    },
    "stats": {},
    "state": "待审",
@@ -6872,7 +6869,8 @@
    "public": true,
    "updated": "2026-11-05T15:01:28+08:00",
    "related": [
-    "p-luoyang"
+    "p-luoyang",
+    "m-luoyang-taixue-a"
    ],
    "card": "library/models/m-luoyang-stoneclassic-access-court/m-luoyang-stoneclassic-access-court.asset.json",
    "bytes": 11090072,
@@ -6885,8 +6883,8 @@
    "kind": "建筑",
    "title": "太学长堂 A",
    "english": "TAIXUE HALL A",
-   "summary": "太学长堂A方案的入口修订中远景模型，保持既有柱网与形体。布局和尺寸为设计推测，城市位置未配准；高细近景另待体积优化。",
-   "alt": "太学A方案LOD1实际GLB的独立CPU总览。",
+   "summary": "十二开间的长堂：前檐敞开、背面砌墙，灰色两坡顶，台基前出三座踏步。本版只修订入口，柱网和形体不变；布局和尺寸为设计推测，城市位置未配准，高细近景另待体积优化。",
+   "alt": "灰底斜俯视：一座十二开间的长堂，前檐柱廊敞开，灰色两坡悬山顶，土黄色台基前出三座踏步。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-taixue-a-cover-720.webp",
@@ -6918,7 +6916,7 @@
    ],
    "files": [
     {
-     "label": "taixue-A-LOD1",
+     "label": "长堂 · 中景（贴图、坐席）",
      "path": "cities/luoyang/progress-assets/taixue-A-v3.2/models/taixue-A-LOD1.glb",
      "url": "../docs/cities/luoyang/progress-assets/taixue-A-v3.2/models/taixue-A-LOD1.glb",
      "format": "GLB",
@@ -6937,7 +6935,7 @@
      "extUsed": []
     },
     {
-     "label": "taixue-A-LOD2",
+     "label": "长堂 · 远景（纯色，无坐席）",
      "path": "library/models/m-luoyang-taixue-a/files/taixue-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-taixue-a/files/taixue-A-LOD2.glb",
      "format": "GLB",
@@ -6959,7 +6957,7 @@
    "page": null,
    "notes": {
     "已完成的检查": "沿用v3.2实际导出及入口检查，原LOD1与远端现有运行件逐字节相同，不重复上传。中远两档自包含，UV、贴图与文件哈希核对；封面直接由实际LOD1导入渲染。",
-    "限制与待解决": "只收LOD1/LOD2，27,855,752字节的高细LOD0仍超过单文件门槛，不用近景图伪装当前下载。入口有限路线不代表全场无碰撞、结构安全或历史尺度认证。与B为同一太学研究系列的两方案，不新增城市坐标；未入城，GPU与手机未验。"
+    "限制与待解决": "这一版只收中景和远景两档，近景太大，暂时放不进来；还没有入城。只收LOD1/LOD2，27,855,752字节的高细LOD0仍超过单文件门槛，不用近景图伪装当前下载。入口有限路线不代表全场无碰撞、结构安全或历史尺度认证。与B为同一太学研究系列的两方案，不新增城市坐标；未入城，GPU与手机未验。B 方案目前只出现在城景的研究资料里，还没有自己的资产卡。"
    },
    "stats": {},
    "state": "待审",
@@ -6982,7 +6980,7 @@
    "title": "砖瓦窑 A/B",
    "english": "TILE KILN STUDY",
    "summary": "前操作区、低火膛、较高窑床与后排烟口的两种C级窑体样本，各有近景和简化档。",
-   "alt": "砖瓦窑 A/B的实际模型CPU预览；形体和尺寸为C级设计。",
+   "alt": "砖瓦窑 A 斜视：前方是下沉的操作坑和台阶，拱顶火膛口通向方形窑室，右侧晾坯台上摆着六块坯，整体放在浅色展示地坪上。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-tile-kiln-cover-720.webp",
@@ -7027,7 +7025,7 @@
    ],
    "files": [
     {
-     "label": "kiln · A",
+     "label": "A 纵长窑室 · 近景（LOD0）",
      "path": "library/models/m-luoyang-tile-kiln/files/kiln-A.glb",
      "url": "../docs/library/models/m-luoyang-tile-kiln/files/kiln-A.glb",
      "format": "GLB",
@@ -7046,7 +7044,7 @@
      "extUsed": []
     },
     {
-     "label": "kiln · B",
+     "label": "B 横宽窑室 · 近景（LOD0）",
      "path": "library/models/m-luoyang-tile-kiln/files/kiln-B.glb",
      "url": "../docs/library/models/m-luoyang-tile-kiln/files/kiln-B.glb",
      "format": "GLB",
@@ -7065,7 +7063,7 @@
      "extUsed": []
     },
     {
-     "label": "kiln · A · LOD1",
+     "label": "A 纵长窑室 · 中景（LOD1，去垫条与坯）",
      "path": "library/models/m-luoyang-tile-kiln/files/kiln-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-tile-kiln/files/kiln-A-LOD1.glb",
      "format": "GLB",
@@ -7084,7 +7082,7 @@
      "extUsed": []
     },
     {
-     "label": "kiln · B · LOD1",
+     "label": "B 横宽窑室 · 中景（LOD1，去垫条与坯）",
      "path": "library/models/m-luoyang-tile-kiln/files/kiln-B-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-tile-kiln/files/kiln-B-LOD1.glb",
      "format": "GLB",
@@ -7106,7 +7104,8 @@
    "page": null,
    "notes": {
     "已完成的检查": "最终实际GLB回读、孔道及局部接触检查；交付完整窑壳，不把剖切展示计作新成品。 图为同版原生模型CPU实渲，原生与最终GLB几何一致性另验；不是GLB直渲或浏览器实测。",
-    "限制与待解决": "非具体遗址或180年窑场复原；尺寸及三后烟道为C选择。展示地坪与坑位需重新适配，未认证热工、承载、城市落位或GPU。"
+    "限制与待解决": "非具体遗址或180年窑场复原；尺寸及三后烟道为C选择。展示地坪与坑位需重新适配，未认证热工、承载、城市落位或GPU。",
+    "尺寸": "页面属性表显示的 16×19 m 是展示地坪，不是窑本身的大小。细节：A 窑室外廓 4.4×5.0 m、顶高 2.5 m，操作坑 3.8×3.2 m，晾坯台在右；B 窑室外廓 5.0×4.3 m、顶高 2.5 m，操作坑 4.8×2.6 m，晾坯台在左；火膛与坑底面在 −0.8 m；展示地坪 16×19×1 m。封面拍的是 A，图集第一张拍的是 B。"
    },
    "stats": {},
    "state": "待审",
@@ -7127,8 +7126,8 @@
    "kind": "建筑",
    "title": "墙房相接住宅样例",
    "english": "WALL HOUSE COURT STUDY",
-   "summary": "住屋山墙与院墙相接的固定C级住宅关系样例，近中远三档，保留真实入口与内部空场。",
-   "alt": "墙房相接住宅样例实际模型CPU预览；C级设计，非遗址原状。",
+   "summary": "住屋山墙与院墙相接的住宅关系样例，推测设计（C级），近中远三档，保留真实入口与院内空场。",
+   "alt": "高位斜俯视：夯土院墙围合，前面一座住屋跨在前院墙上，后面一座住屋右端接一座开敞棚，屋顶都是两坡瓦顶。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-wall-house-court-cover-720.webp",
@@ -7173,7 +7172,7 @@
    ],
    "files": [
     {
-     "label": "wall · house · LOD0",
+     "label": "墙房相接院 · 近景",
      "path": "library/models/m-luoyang-wall-house-court/files/wall-house-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-wall-house-court/files/wall-house-LOD0.glb",
      "format": "GLB",
@@ -7192,7 +7191,7 @@
      "extUsed": []
     },
     {
-     "label": "wall · house · LOD1",
+     "label": "墙房相接院 · 中景",
      "path": "library/models/m-luoyang-wall-house-court/files/wall-house-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-wall-house-court/files/wall-house-LOD1.glb",
      "format": "GLB",
@@ -7211,7 +7210,7 @@
      "extUsed": []
     },
     {
-     "label": "wall · house · LOD2",
+     "label": "墙房相接院 · 远景",
      "path": "library/models/m-luoyang-wall-house-court/files/wall-house-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-wall-house-court/files/wall-house-LOD2.glb",
      "format": "GLB",
@@ -7232,8 +7231,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "GLB回读与有限路径检查；补充审计将每档8对重复土体面逐面归为墙顶与山墙底的反向内部接触。 图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
-    "限制与待解决": "反向接面保留闭合构件，不称零重复或全场无穿插；完整碰撞和近景细节仍未验收，非洛阳实测住宅或城市自动替换。"
+    "已完成的检查": "回读了模型文件并检查了几条走动路线；每档有8对土体面重叠，逐面查过，都是墙顶与山墙底背对背贴合的内部接触。图片是Blender原模型渲染并与导出文件核对，不是浏览器实测。技术记录：GLB回读与有限路径检查；补充审计将每档8对重复土体面逐面归为墙顶与山墙底的反向内部接触。图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
+    "限制与待解决": "已知缺陷待修：两座住屋的前后檐墙都没砌到屋面，墙顶和屋面板之间有一道通长约0.4米的空缝；开敞棚屋面比4根柱顶高约0.2米、悬空，柱间也没有梁檩；三处屋面都没有正脊，脊线上露出筒瓦端头。完整碰撞和近景细节未验收；不是洛阳实测住宅，也不会自动替换城里的住宅。技术记录：反向接面保留闭合构件，不称零重复或全场无穿插；完整碰撞和近景细节仍未验收，非洛阳实测住宅或城市自动替换。"
    },
    "stats": {},
    "state": "待审",
@@ -7254,8 +7253,8 @@
    "kind": "建筑",
    "title": "开敞作业棚与足碓院",
    "english": "WORKSHED AND PESTLE COURT",
-   "summary": "独立开敞棚与含足碓的完整双屋作业院，各三档；棚和场所同一家族，不另计足碓类型。",
-   "alt": "开敞作业棚与足碓院实际模型CPU预览；C级设计，非遗址原状。",
+   "summary": "独立开敞作业棚，以及一座含两屋、门屋和足碓棚的夯土围墙作业院，各三档 LOD；形制与尺寸均为推测设计。",
+   "alt": "斜俯视：夯土围墙围出的院子，后部一座大屋、左侧一座小屋、左前角一座门屋，右前方开敞棚下有一套足碓。推测设计，非遗址原状。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-workyard-shed-cover-720.webp",
@@ -7287,26 +7286,7 @@
    ],
    "files": [
     {
-     "label": "workshed · LOD0",
-     "path": "library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb",
-     "url": "../docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb",
-     "format": "GLB",
-     "bytes": 721404,
-     "triangles": 1764,
-     "vertices": 3084,
-     "primitives": 2,
-     "materials": 2,
-     "images": 6,
-     "size": [
-      8.1,
-      4.13,
-      4.9
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "workyard · LOD0",
+     "label": "足碓院 · 近景（LOD0，含两屋、门屋、足碓棚）",
      "path": "library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
      "format": "GLB",
@@ -7325,45 +7305,7 @@
      "extUsed": []
     },
     {
-     "label": "workshed · LOD1",
-     "path": "library/models/m-luoyang-workyard-shed/files/workshed-LOD1.glb",
-     "url": "../docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD1.glb",
-     "format": "GLB",
-     "bytes": 262480,
-     "triangles": 564,
-     "vertices": 1116,
-     "primitives": 2,
-     "materials": 2,
-     "images": 6,
-     "size": [
-      8.1,
-      4.13,
-      4.9
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "workshed · LOD2",
-     "path": "library/models/m-luoyang-workyard-shed/files/workshed-LOD2.glb",
-     "url": "../docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD2.glb",
-     "format": "GLB",
-     "bytes": 19776,
-     "triangles": 252,
-     "vertices": 492,
-     "primitives": 2,
-     "materials": 2,
-     "images": 0,
-     "size": [
-      8.1,
-      4.03,
-      4.9
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "workyard · LOD1",
+     "label": "足碓院 · 中景（LOD1，含两屋、门屋、足碓棚）",
      "path": "library/models/m-luoyang-workyard-shed/files/workyard-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD1.glb",
      "format": "GLB",
@@ -7382,7 +7324,7 @@
      "extUsed": []
     },
     {
-     "label": "workyard · LOD2",
+     "label": "足碓院 · 远景（LOD2，含两屋、门屋、足碓棚）",
      "path": "library/models/m-luoyang-workyard-shed/files/workyard-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD2.glb",
      "format": "GLB",
@@ -7399,19 +7341,76 @@
      ],
      "primsNoUV": 0,
      "extUsed": []
+    },
+    {
+     "label": "独立作业棚 · 近景（LOD0，无足碓）",
+     "path": "library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb",
+     "format": "GLB",
+     "bytes": 721404,
+     "triangles": 1764,
+     "vertices": 3084,
+     "primitives": 2,
+     "materials": 2,
+     "images": 6,
+     "size": [
+      8.1,
+      4.13,
+      4.9
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "独立作业棚 · 中景（LOD1，无足碓）",
+     "path": "library/models/m-luoyang-workyard-shed/files/workshed-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD1.glb",
+     "format": "GLB",
+     "bytes": 262480,
+     "triangles": 564,
+     "vertices": 1116,
+     "primitives": 2,
+     "materials": 2,
+     "images": 6,
+     "size": [
+      8.1,
+      4.13,
+      4.9
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "独立作业棚 · 远景（LOD2，无足碓）",
+     "path": "library/models/m-luoyang-workyard-shed/files/workshed-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD2.glb",
+     "format": "GLB",
+     "bytes": 19776,
+     "triangles": 252,
+     "vertices": 492,
+     "primitives": 2,
+     "materials": 2,
+     "images": 0,
+     "size": [
+      8.1,
+      4.03,
+      4.9
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
     }
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "GLB回读、棚屋承托、跨家族分离及有限0/4/8度静态姿态检查。 图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
-    "限制与待解决": "沿用冻结住屋及足碓组合，不是最新住屋替换。棚形、场所用途及全部尺寸为C；保留闭合接面，不认证连续运动、人体、结构、GPU或城市部署。 入城是设计装配状态，不代表古代宅址考据、013近景质量、动态/结构或GPU验收。",
-    "城市装配": "本家族现有组合新增1处C级院落落位，已计入洛阳47院总数。原44院不动；默认远档，北缘三院章加载近档。复用原GLB，无新增模型文件或独立附件卡。"
+    "已完成的检查": "模型能正常读回，棚屋落在地面上，两件互不干扰，足碓几个固定角度也检查过；图片不是浏览器实时截图。GLB回读、棚屋承托、跨家族分离及有限0/4/8度静态姿态检查。图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
+    "限制与待解决": "院子和棚的形制、用途、尺寸都是推测设计；评审还看到几处要改模型才能解决的问题。沿用冻结住屋及足碓组合，不是最新住屋替换。棚形、场所用途及全部尺寸为C；保留闭合接面，不认证连续运动、人体、结构、GPU或城市部署。入城是设计装配状态，不代表古代宅址考据、013近景质量、动态/结构或GPU验收。评审看到：屋顶没有正脊；檐口与墙顶之间有空缝；整院模型底面在 0.2 m 高处，比地面抬高 0.2 m。",
+    "城市装配": "这组院子已有一处放进洛阳住宅试验区北缘。本家族现有组合新增1处C级院落落位，已计入洛阳47院总数。原44院不动；默认远档，北缘三院章加载近档。复用原GLB，无新增模型文件或独立附件卡。棚和院子算同一家族，足碓不另计一种类型。"
    },
    "stats": {},
    "state": "待审",
    "status": "待审 · 已有组合已接入住宅试验区北缘；原型质量继续待审。",
    "public": true,
-   "updated": "2026-11-05T15:48:39+08:00",
+   "updated": "2026-11-05T15:57:31+08:00",
    "related": [
     "p-luoyang",
     "m-luoyang-foot-pestle"
@@ -7427,8 +7426,8 @@
    "kind": "建筑",
    "title": "武库收纳与点验",
    "english": "ARMORY STORAGE STUDY",
-   "summary": "前棚A与侧棚B的独立收纳、点验空间研究。B采用最终门框枢轴修订，A保留原v2；容量盒为功能占位，不是兵器库存复原。",
-   "alt": "B方案武库最终150度开门姿态的实际原生CPU总览。",
+   "summary": "武库库房的两种推测布局：A 为 12×7 m 库房加前棚，B 为 9×9 m 库房加侧棚，棚下设点验台。B 修订了门轴，150° 开门姿态通过核验；A 保留早期 v2。容量盒只是功能占位，不复原兵器库存。",
+   "alt": "B 方案斜俯视：瓦顶库房坐在土台基上，正面双扇门向外大开，门前有台阶；右侧山墙外另立一座平顶侧棚，棚下摆着一张点验台。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-wuku-cover-720.webp",
@@ -7473,7 +7472,7 @@
    ],
    "files": [
     {
-     "label": "wuku-B-LOD0",
+     "label": "B 侧棚 · 近景",
      "path": "library/models/m-luoyang-wuku/files/wuku-B-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-wuku/files/wuku-B-LOD0.glb",
      "format": "GLB",
@@ -7492,7 +7491,7 @@
      "extUsed": []
     },
     {
-     "label": "wuku-B-LOD1",
+     "label": "B 侧棚 · 中景",
      "path": "library/models/m-luoyang-wuku/files/wuku-B-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-wuku/files/wuku-B-LOD1.glb",
      "format": "GLB",
@@ -7511,7 +7510,7 @@
      "extUsed": []
     },
     {
-     "label": "wuku-B-LOD2",
+     "label": "B 侧棚 · 远景",
      "path": "library/models/m-luoyang-wuku/files/wuku-B-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-wuku/files/wuku-B-LOD2.glb",
      "format": "GLB",
@@ -7530,7 +7529,7 @@
      "extUsed": []
     },
     {
-     "label": "wuku-A-LOD0",
+     "label": "A 前棚（v2）· 近景",
      "path": "library/models/m-luoyang-wuku/files/wuku-A-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-wuku/files/wuku-A-LOD0.glb",
      "format": "GLB",
@@ -7549,7 +7548,7 @@
      "extUsed": []
     },
     {
-     "label": "wuku-A-LOD1",
+     "label": "A 前棚（v2）· 中景",
      "path": "library/models/m-luoyang-wuku/files/wuku-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-wuku/files/wuku-A-LOD1.glb",
      "format": "GLB",
@@ -7568,7 +7567,7 @@
      "extUsed": []
     },
     {
-     "label": "wuku-A-LOD2",
+     "label": "A 前棚（v2）· 远景",
      "path": "library/models/m-luoyang-wuku/files/wuku-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-wuku/files/wuku-A-LOD2.glb",
      "format": "GLB",
@@ -7589,8 +7588,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "B三档实际GLB与原生有向几何、UV、材质负载核对，原非门构件保持；指定150度门态的入口、台阶与侧棚路线检查通过，另保留有限开闭姿态和负例。A三档沿用v2实际导出检查，图像与版本绑定。",
-    "限制与待解决": "只有B固定150度是本轮核验通行态；若干中间角度占用侧向路线，未导出动画或运行时联锁。独立文件不含外地面，外到达支承缺失不能写成完整可走场景。A旧试放曾有台阶支承问题，不借B结论覆盖A。几何与尺度均C推测，不是武器制造模型，无防盗、承载、连续运动、GPU或手机认证，未入城。"
+    "已完成的检查": "简单说：B 的三档模型都与源模型逐项核对过，只改了门，其他构件没动；门开到 150° 时，入口、台阶和去侧棚的路线都能走通，另外保留了几种开关门姿态和走不通的反例作对照。A 沿用早期 v2 的检查结果。原始记录：B三档实际GLB与原生有向几何、UV、材质负载核对，原非门构件保持；指定150度门态的入口、台阶与侧棚路线检查通过，另保留有限开闭姿态和负例。A三档沿用v2实际导出检查，图像与版本绑定。",
+    "限制与待解决": "简单说：只有 B 门开到 150° 这一种状态确认能通行，有些中间角度会挡住侧面路线；模型不会自动开关门，也不含外面的地面，不能当完整可走的场景。A 早期试放时台阶支撑有问题，不能用 B 的结论代替。尺寸和形体都是推测。原始记录：只有B固定150度是本轮核验通行态；若干中间角度占用侧向路线，未导出动画或运行时联锁。独立文件不含外地面，外到达支承缺失不能写成完整可走场景。A旧试放曾有台阶支承问题，不借B结论覆盖A。几何与尺度均C推测，不是武器制造模型，无防盗、承载、连续运动、GPU或手机认证，未入城。"
    },
    "stats": {},
    "state": "待审",
@@ -7611,8 +7610,8 @@
    "kind": "城市构件",
    "title": "夏门",
    "english": "XIA GATE",
-   "summary": "夏门关系处三道门 B 型候选，保留独立中远景资产；形制与尺寸为 C 级设计推测，未入城。",
-   "alt": "夏门候选模型的CPU三分之四视图：三孔夯土门台与通长双坡上屋。",
+   "summary": "夏门三门道 B 型候选：四座夯土墩承托木平台，上覆通长两坡顶敞廊；保留独立的中景、远景两档，形制与尺寸为 C 级（推测性）设计，未入城。",
+   "alt": "夏门 B 型候选的四分之三视图：四座夯土墩夹三道平顶门道，上承木平台与通长两坡顶敞廊。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-xia-gate-cover-720.webp",
@@ -7644,7 +7643,7 @@
    ],
    "files": [
     {
-     "label": "LOD1 · 中景展示候选",
+     "label": "完整门楼 · 中景（默认展示候选）",
      "path": "library/models/m-luoyang-xia-gate/files/gate-B-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-xia-gate/files/gate-B-LOD1.glb",
      "format": "GLB",
@@ -7663,7 +7662,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 远景简化候选",
+     "label": "完整门楼 · 远景（简化候选）",
      "path": "library/models/m-luoyang-xia-gate/files/gate-B-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-xia-gate/files/gate-B-LOD2.glb",
      "format": "GLB",
@@ -7684,10 +7683,10 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "已逐一核对所选GLB版本、字节数和SHA256，复用文件与现有公开路径逐字节一致。模型可独立解析，贴图内嵌；本卡图像来自该版模型的既有CPU渲染。",
-    "限制与待解决": "源件接触共享边与屋脊内部反向端盖仍保留，不宣称整体单一流形或重复三角为零。上层登临和城市接续未验收。 本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
+    "已完成的检查": "上架的两个文件都核对过版本和内容，能单独打开，贴图打包在文件里。原记录：已逐一核对所选GLB版本、字节数和SHA256，复用文件与现有公开路径逐字节一致。模型可独立解析，贴图内嵌；本卡图像来自该版模型的既有CPU渲染。",
+    "限制与待解决": "模型局部还有共用边和屋脊内部的反向面没清理；上层登临和城市接续没有建模。原记录：源件接触共享边与屋脊内部反向端盖仍保留，不宣称整体单一流形或重复三角为零。上层登临和城市接续未建模（无楼梯或马道，两端无城墙接茬）。 本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
     "证据等级": "门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。",
-    "版本与展示": "选用 B-library-v1，按一个门名家族计数；默认展示LOD1。原LOD0为16,054,944字节，因超过单个GLB 15,000,000字节限额及超过本次单次Base64传输承载未上架；原件完整保留。所列LOD1/2降低细节，不是完整高细版。"
+    "版本与展示": "选用 B-library-v1，按一个门名家族计数；默认展示LOD1。原LOD0为16,054,944字节，因超过单个GLB 15,000,000字节限额及超过本次单次Base64传输承载未上架；原件完整保留。所列LOD1/2降低细节，不是完整高细版。LOD1 只比 LOD2 多出檐口瓦片和贴图，夯土与木构网格相同。"
    },
    "stats": {},
    "state": "待审",
@@ -7709,7 +7708,7 @@
    "title": "小苑门",
    "english": "XIAOYUAN GATE",
    "summary": "小苑门单道门楼 C 级候选，三档完整模型均含后梯与主体；门道数量、尺寸和绝对位置未定。",
-   "alt": "小苑门候选模型的CPU三分之四视图：单孔夯土门台、四坡上屋、围护及后部登临梯。",
+   "alt": "小苑门斜俯视：夯土门台正中开一个门洞，门扇向内打开；台顶四周有矮墙围护，中间是一座四坡顶小屋，门台侧后方架着带栏杆的木梯通向台顶。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-xiaoyuan-gate-cover-720.webp",
@@ -7741,7 +7740,7 @@
    ],
    "files": [
     {
-     "label": "LOD1 · 中景展示候选",
+     "label": "完整门楼 · 中景（门扇开启 · 默认展示候选）",
      "path": "library/models/m-luoyang-xiaoyuan-gate/files/xiaoyuan-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-xiaoyuan-gate/files/xiaoyuan-LOD1.glb",
      "format": "GLB",
@@ -7760,7 +7759,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD0 · 近景候选",
+     "label": "完整门楼 · 近景（门扇开启 · 候选）",
      "path": "library/models/m-luoyang-xiaoyuan-gate/files/xiaoyuan-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-xiaoyuan-gate/files/xiaoyuan-LOD0.glb",
      "format": "GLB",
@@ -7779,7 +7778,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 远景简化候选",
+     "label": "完整门楼 · 远景（门扇开启 · 简化候选）",
      "path": "library/models/m-luoyang-xiaoyuan-gate/files/xiaoyuan-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-xiaoyuan-gate/files/xiaoyuan-LOD2.glb",
      "format": "GLB",
@@ -7825,7 +7824,7 @@
    "title": "雍门",
    "english": "YONG GATE",
    "summary": "雍门双端室与前廊式三道门C级候选，已接入既有西墙并以约49.6米内侧接街连到当前道路；历史门位与形制仍属推测。",
-   "alt": "雍门候选模型的CPU三分之四视图：三孔门台、上层双端室、有顶前廊与双坡瓦顶。",
+   "alt": "雍门候选模型的四分之三视图：三门道夯土门台、上层双端室与有顶前廊、两坡悬山瓦顶。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-yong-gate-cover-720.webp",
@@ -7922,7 +7921,7 @@
    ],
    "files": [
     {
-     "label": "LOD1 · 中景展示候选",
+     "label": "完整门楼 · 中景（默认展示候选）",
      "path": "cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD1.glb",
      "url": "../docs/cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD1.glb",
      "format": "GLB",
@@ -7941,7 +7940,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD0 · 近景候选",
+     "label": "完整门楼 · 近景（候选）",
      "path": "library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
      "format": "GLB",
@@ -7960,7 +7959,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 远景简化候选",
+     "label": "完整门楼 · 远景（简化候选）",
      "path": "cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD2.glb",
      "url": "../docs/cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD2.glb",
      "format": "GLB",
@@ -7979,7 +7978,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 局部门下地面 LOD1（不含门体）",
+     "label": "门下地面附件 · 中景（不含门体）",
      "path": "library/models/m-luoyang-yong-gate/files/yong-ground-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-yong-gate/files/yong-ground-LOD1.glb",
      "format": "GLB",
@@ -7998,7 +7997,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 局部门下地面 LOD0（不含门体）",
+     "label": "门下地面附件 · 近景（不含门体）",
      "path": "library/models/m-luoyang-yong-gate/files/yong-ground-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-yong-gate/files/yong-ground-LOD0.glb",
      "format": "GLB",
@@ -8017,7 +8016,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 局部门下地面 LOD2（不含门体）",
+     "label": "门下地面附件 · 远景（不含门体）",
      "path": "library/models/m-luoyang-yong-gate/files/yong-ground-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-yong-gate/files/yong-ground-LOD2.glb",
      "format": "GLB",
@@ -8036,7 +8035,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 接墙两翼与汇流地面 LOD0 · 近景（不含门体）",
+     "label": "接墙两翼与汇流地面附件 · 近景（不含门体）",
      "path": "cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD0.glb",
      "url": "../docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD0.glb",
      "format": "GLB",
@@ -8055,7 +8054,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 接墙两翼与汇流地面 LOD1 · 中景（不含门体）",
+     "label": "接墙两翼与汇流地面附件 · 中景（不含门体）",
      "path": "cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD1.glb",
      "url": "../docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD1.glb",
      "format": "GLB",
@@ -8074,7 +8073,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 接墙两翼与汇流地面 LOD2 · 远景（不含门体）",
+     "label": "接墙两翼与汇流地面附件 · 远景（不含门体）",
      "path": "cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD2.glb",
      "url": "../docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD2.glb",
      "format": "GLB",
@@ -8093,7 +8092,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 内侧接街 LOD1（雍门配套，不含门体）",
+     "label": "内侧接街附件 · 中景（雍门配套，不含门体）",
      "path": "cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD1.glb",
      "url": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD1.glb",
      "format": "GLB",
@@ -8112,7 +8111,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 内侧接街 LOD0（雍门配套，不含门体）",
+     "label": "内侧接街附件 · 近景（雍门配套，不含门体）",
      "path": "cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
      "url": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
      "format": "GLB",
@@ -8131,7 +8130,7 @@
      "extUsed": []
     },
     {
-     "label": "附件 · 内侧接街 LOD2（雍门配套，不含门体）",
+     "label": "内侧接街附件 · 远景（雍门配套，不含门体）",
      "path": "cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
      "url": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
      "format": "GLB",
@@ -8150,7 +8149,7 @@
      "extUsed": []
     },
     {
-     "label": "装配附件 · 既有主路209三角接收片（原路派生，非新建道路）",
+     "label": "主路接收片附件 · 装配用（由原有主路派生，不是新建道路）",
      "path": "cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
      "url": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
      "format": "GLB",
@@ -8184,7 +8183,7 @@
    "state": "待审",
    "status": "待审 · 已入城 · 远档默认可见 · 完整近档按章加载",
    "public": true,
-   "updated": "2026-11-05T20:03:58+08:00",
+   "updated": "2026-11-05T20:28:24+08:00",
    "related": [
     "p-luoyang"
    ],
@@ -8199,8 +8198,8 @@
    "kind": "建筑",
    "title": "玉堂前后殿关系",
    "english": "YUTANG PAIRED HALLS",
-   "summary": "前殿、庭、后殿与两侧低廊的一组空间研究，A/B为两种真实长短配置。文献支持殿名与庭的关系，轴线、屋顶和全部尺寸仍为设计推测。",
-   "alt": "玉堂前后殿A配置的实际CPU渲染，前后殿以庭和两侧低廊联系。",
+   "summary": "前殿、庭、后殿与两侧低廊的一组空间研究，分 A（庭长 25 m）、B（庭长 20 m）两种配置。文献支持殿名与庭的关系，轴线、屋顶和全部尺寸仍为设计推测。",
+   "alt": "斜俯视一组宫殿院落：前后两座灰色四坡瓦顶大殿，中间是长方形土黄色庭院，两侧各一条低矮柱廊把前后殿连起来，前殿前出踏步，后殿正面开一个门洞。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-yutang-halls-cover-720.webp",
@@ -8258,7 +8257,7 @@
    ],
    "files": [
     {
-     "label": "yutang-A-LOD0",
+     "label": "A 配置（庭长 25 m） · 近景",
      "path": "library/models/m-luoyang-yutang-halls/files/yutang-A-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD0.glb",
      "format": "GLB",
@@ -8277,7 +8276,7 @@
      "extUsed": []
     },
     {
-     "label": "yutang-A-LOD1",
+     "label": "A 配置（庭长 25 m） · 中景",
      "path": "library/models/m-luoyang-yutang-halls/files/yutang-A-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD1.glb",
      "format": "GLB",
@@ -8296,7 +8295,7 @@
      "extUsed": []
     },
     {
-     "label": "yutang-A-LOD2",
+     "label": "A 配置（庭长 25 m） · 远景（无贴图）",
      "path": "library/models/m-luoyang-yutang-halls/files/yutang-A-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD2.glb",
      "format": "GLB",
@@ -8315,7 +8314,7 @@
      "extUsed": []
     },
     {
-     "label": "yutang-B-LOD0",
+     "label": "B 配置（庭长 20 m） · 近景",
      "path": "library/models/m-luoyang-yutang-halls/files/yutang-B-LOD0.glb",
      "url": "../docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD0.glb",
      "format": "GLB",
@@ -8334,7 +8333,7 @@
      "extUsed": []
     },
     {
-     "label": "yutang-B-LOD1",
+     "label": "B 配置（庭长 20 m） · 中景",
      "path": "library/models/m-luoyang-yutang-halls/files/yutang-B-LOD1.glb",
      "url": "../docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD1.glb",
      "format": "GLB",
@@ -8353,7 +8352,7 @@
      "extUsed": []
     },
     {
-     "label": "yutang-B-LOD2",
+     "label": "B 配置（庭长 20 m） · 远景（无贴图）",
      "path": "library/models/m-luoyang-yutang-halls/files/yutang-B-LOD2.glb",
      "url": "../docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD2.glb",
      "format": "GLB",
@@ -8374,8 +8373,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "六份实际GLB与原生有向几何、UV相符，限定检查未见退化和重复三角；各源构件闭合。A/B廊庭支持、头部净空与屋面有限样点核验通过。两种配置的CPU图及像素不变转换留有证据。",
-    "限制与待解决": "保留嘉德异文，不作历史形制或约180年精确复原。聚合土构接触共享边仍存在；有限样点不证明全三角无穿插、连续人物碰撞、风雨密封或结构承载。仍是空间原型，近景细部未达最终目标；宫内位置为空、未入城，GPU和手机未验。"
+    "已完成的检查": "A、B 两种配置各三档模型都逐项核对过，没有发现破面或重复面。六份实际GLB与原生有向几何、UV相符，限定检查未见退化和重复三角；各源构件闭合。A/B廊庭支持、头部净空与屋面有限样点核验通过。两种配置的CPU图及像素不变转换留有证据。",
+    "限制与待解决": "这仍是空间原型，不是历史复原，还没定在宫城里的具体位置，也没有入城。目前已知的问题：墙顶和屋面板之间留着约 0.5 m 的缝；柱头没有斗栱，屋面下没有梁架；殿顶两端的山面没有铺瓦垄。保留嘉德异文，不作历史形制或约180年精确复原。聚合土构接触共享边仍存在；有限样点不证明全三角无穿插、连续人物碰撞、风雨密封或结构承载。仍是空间原型，近景细部未达最终目标；宫内位置为空、未入城，GPU和手机未验。"
    },
    "stats": {},
    "state": "待审",
@@ -8396,8 +8395,8 @@
    "kind": "城市构件",
    "title": "中东门",
    "english": "ZHONGDONG GATE",
-   "summary": "中东门通长上屋式 v1.1 候选；提供中远景，沿用已修屋脊折板，未改变城市落位。",
-   "alt": "中东门候选模型的CPU三分之四视图：三孔门台及通长双坡上屋，不设端部露台。",
+   "summary": "中东门门楼候选模型（v1.1）：四座夯土墩夹出三条门道，门扇全开，上有通长敞廊和双坡瓦顶，两端为土山墙。本卡提供中景和远景两档，沿用已修正的屋脊折板，城中位置不变。",
+   "alt": "四分之三俯视：四座土墩夹三条门道，门扇全开，上为通长敞廊和双坡瓦顶，两端是土山墙。",
    "cover": {
     "small": {
      "src": "media/library-models-m-luoyang-zhongdong-gate-cover-720.webp",
@@ -8429,7 +8428,7 @@
    ],
    "files": [
     {
-     "label": "LOD1 · 中景展示候选",
+     "label": "完整门楼 · 中景（默认展示候选）",
      "path": "cities/luoyang/progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD1.glb",
      "url": "../docs/cities/luoyang/progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD1.glb",
      "format": "GLB",
@@ -8448,7 +8447,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 远景简化候选",
+     "label": "完整门楼 · 远景（简化候选）",
      "path": "cities/luoyang/progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD2.glb",
      "url": "../docs/cities/luoyang/progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD2.glb",
      "format": "GLB",
@@ -8469,10 +8468,10 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "已逐一核对所选GLB版本、字节数和SHA256，复用文件与现有公开路径逐字节一致。模型可独立解析，贴图内嵌；本卡图像来自该版模型的既有CPU渲染。",
-    "限制与待解决": "v1.1将两片坡板改为单一闭合折板；本次不回退旧v1。上层入口、地形和道路支持未知，门扇固定全开；城中试放继续隐藏。 本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
-    "证据等级": "门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。",
-    "版本与展示": "选用 Z-v1.1，按一个门名家族计数；默认展示LOD1。原LOD0为16,169,408字节，因超过单个GLB 15,000,000字节限额及超过本次单次Base64传输承载未上架；原件完整保留。所列LOD1/2降低细节，不是完整高细版。"
+    "已完成的检查": "两个模型文件都核对过版本和完整性，可以单独打开。细节：已逐一核对所选GLB版本、字节数和SHA256，复用文件与现有公开路径逐字节一致。模型可独立解析，LOD1 贴图内嵌（LOD2 不带贴图）；本卡图像来自该版模型的既有CPU渲染。",
+    "限制与待解决": "上层怎么上去、地形和道路都还没定，门扇固定为全开，也还没放进城里。细节：v1.1将两片坡板改为单一闭合折板；本次不回退旧v1。上层入口、地形和道路支持未知，门扇固定全开；城中试放继续隐藏。本次整理不新增城市落位或历史证据；未新增GPU、手机、浏览器、结构安全或全场碰撞验收。",
+    "证据等级": "门名和方位有文献依据，模型的具体形态是设计推测。细节：门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。",
+    "版本与展示": "网页默认显示中景；近景文件超过单文件体积上限，没有上架，原件完整保留。细节：选用 Z-v1.1，按一个门名家族计数；默认展示LOD1。原LOD0为16,169,408字节，因超过单个GLB 15,000,000字节限额未上架；原件完整保留。所列LOD1/2降低细节，不是完整高细版。"
    },
    "stats": {},
    "state": "待审",
@@ -8493,8 +8492,8 @@
    "kind": "城市构件",
    "title": "住宅院落模块组",
    "english": "COURTYARD PROTOTYPE FAMILY",
-   "summary": "六院落原型的C2双LOD，加A2/B2有限功能预设与A/TC03完整院落屋面修订；分支不叠加，不新增家族。",
-   "alt": "原六院落家族外观，C2修订保持原几何和材质，仅更新米制UV。",
+   "summary": "东汉雒阳普通住宅院落的六种原型，每种有近景、中景两档（C2 修订版）；另附 A2、B2 的功能预设，以及 A 院、TC03 院的屋面改版。各分支互不叠加，不新增院落类型。",
+   "alt": "A 型住宅院落斜俯视：前墙一角设带小瓦顶的门屋，院内有一座一门两窗的正房和一座一门一窗的厢房，四周夯土院墙围合，门外是一段街面。",
    "cover": {
     "small": {
      "src": "media/model-library-assets-courtyard-720.webp",
@@ -8604,7 +8603,7 @@
    ],
    "files": [
     {
-     "label": "A · LOD0 · C2",
+     "label": "A 型 · 近景（C2）",
      "path": "model-library/updates/m-courtyard-family/files/A-LOD0-C2.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/A-LOD0-C2.glb",
      "format": "GLB",
@@ -8623,7 +8622,7 @@
      "extUsed": []
     },
     {
-     "label": "A2 · LOD0 · C2",
+     "label": "A2 型 · 近景（C2）",
      "path": "model-library/updates/m-courtyard-family/files/A2-LOD0-C2.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/A2-LOD0-C2.glb",
      "format": "GLB",
@@ -8642,7 +8641,7 @@
      "extUsed": []
     },
     {
-     "label": "B · LOD0 · C2",
+     "label": "B 型 · 近景（C2）",
      "path": "model-library/updates/m-courtyard-family/files/B-LOD0-C2.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/B-LOD0-C2.glb",
      "format": "GLB",
@@ -8661,7 +8660,7 @@
      "extUsed": []
     },
     {
-     "label": "B2 · LOD0 · C2",
+     "label": "B2 型 · 近景（C2）",
      "path": "model-library/updates/m-courtyard-family/files/B2-LOD0-C2.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/B2-LOD0-C2.glb",
      "format": "GLB",
@@ -8680,7 +8679,7 @@
      "extUsed": []
     },
     {
-     "label": "TC03 · 2 · LOD0 · C2",
+     "label": "TC03-2 型 · 近景（C2）",
      "path": "model-library/updates/m-courtyard-family/files/TC03-2-LOD0-C2.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/TC03-2-LOD0-C2.glb",
      "format": "GLB",
@@ -8699,7 +8698,7 @@
      "extUsed": []
     },
     {
-     "label": "TC03 · LOD0 · C2",
+     "label": "TC03 型 · 近景（C2）",
      "path": "model-library/updates/m-courtyard-family/files/TC03-LOD0-C2.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/TC03-LOD0-C2.glb",
      "format": "GLB",
@@ -8718,7 +8717,7 @@
      "extUsed": []
     },
     {
-     "label": "A · LOD1 · C2",
+     "label": "A 型 · 中景（C2）",
      "path": "model-library/updates/m-courtyard-family/files/A-LOD1-C2.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/A-LOD1-C2.glb",
      "format": "GLB",
@@ -8737,7 +8736,7 @@
      "extUsed": []
     },
     {
-     "label": "A2 · LOD1 · C2",
+     "label": "A2 型 · 中景（C2）",
      "path": "model-library/updates/m-courtyard-family/files/A2-LOD1-C2.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/A2-LOD1-C2.glb",
      "format": "GLB",
@@ -8756,7 +8755,7 @@
      "extUsed": []
     },
     {
-     "label": "B · LOD1 · C2",
+     "label": "B 型 · 中景（C2）",
      "path": "model-library/updates/m-courtyard-family/files/B-LOD1-C2.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/B-LOD1-C2.glb",
      "format": "GLB",
@@ -8775,7 +8774,7 @@
      "extUsed": []
     },
     {
-     "label": "B2 · LOD1 · C2",
+     "label": "B2 型 · 中景（C2）",
      "path": "model-library/updates/m-courtyard-family/files/B2-LOD1-C2.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/B2-LOD1-C2.glb",
      "format": "GLB",
@@ -8794,7 +8793,7 @@
      "extUsed": []
     },
     {
-     "label": "TC03 · 2 · LOD1 · C2",
+     "label": "TC03-2 型 · 中景（C2）",
      "path": "model-library/updates/m-courtyard-family/files/TC03-2-LOD1-C2.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/TC03-2-LOD1-C2.glb",
      "format": "GLB",
@@ -8813,7 +8812,7 @@
      "extUsed": []
     },
     {
-     "label": "TC03 · LOD1 · C2",
+     "label": "TC03 型 · 中景（C2）",
      "path": "model-library/updates/m-courtyard-family/files/TC03-LOD1-C2.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/TC03-LOD1-C2.glb",
      "format": "GLB",
@@ -8832,7 +8831,7 @@
      "extUsed": []
     },
     {
-     "label": "前C2功能变体 · A2 · deep",
+     "label": "A2 型 · 深廊（前C2功能变体）",
      "path": "model-library/updates/m-courtyard-family/files/A2-deep.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/A2-deep.glb",
      "format": "GLB",
@@ -8851,7 +8850,7 @@
      "extUsed": []
     },
     {
-     "label": "前C2功能变体 · A2 · shallow",
+     "label": "A2 型 · 浅廊（前C2功能变体）",
      "path": "model-library/updates/m-courtyard-family/files/A2-shallow.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/A2-shallow.glb",
      "format": "GLB",
@@ -8870,7 +8869,7 @@
      "extUsed": []
     },
     {
-     "label": "前C2功能变体 · baseline",
+     "label": "B2 型 · 基准预设（前C2功能变体）",
      "path": "model-library/updates/m-courtyard-family/files/baseline.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/baseline.glb",
      "format": "GLB",
@@ -8889,7 +8888,7 @@
      "extUsed": []
     },
     {
-     "label": "前C2功能变体 · north",
+     "label": "B2 型 · 北向预设（前C2功能变体）",
      "path": "model-library/updates/m-courtyard-family/files/north.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/north.glb",
      "format": "GLB",
@@ -8908,7 +8907,7 @@
      "extUsed": []
     },
     {
-     "label": "前C2功能变体 · south",
+     "label": "B2 型 · 南向预设（前C2功能变体）",
      "path": "model-library/updates/m-courtyard-family/files/south.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/files/south.glb",
      "format": "GLB",
@@ -8927,7 +8926,7 @@
      "extUsed": []
     },
     {
-     "label": "前C2屋面分支 · A院主屋与厢房近景v2 · 完整院落",
+     "label": "A 院 · 主屋与厢房屋面近景 v2（前C2屋面分支）",
      "path": "model-library/updates/m-courtyard-family/roof-revisions/files/courtyard-A-roofs-v2.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/roof-revisions/files/courtyard-A-roofs-v2.glb",
      "format": "GLB",
@@ -8946,7 +8945,7 @@
      "extUsed": []
     },
     {
-     "label": "前C2屋面分支 · TC03主堂屋面v1 · 完整院落",
+     "label": "TC03 院 · 主堂屋面 v1（几何对应 TC03-2 底版，待确认 · 前C2屋面分支）",
      "path": "model-library/updates/m-courtyard-family/roof-revisions/files/courtyard-TC03-roof-v1.glb",
      "url": "../docs/model-library/updates/m-courtyard-family/roof-revisions/files/courtyard-TC03-roof-v1.glb",
      "format": "GLB",
@@ -8965,7 +8964,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · A · LOD0",
+     "label": "旧版对照 · A 型 · 近景",
      "path": "cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb",
      "url": "../docs/cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb",
      "format": "GLB",
@@ -8984,7 +8983,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · A · LOD1",
+     "label": "旧版对照 · A 型 · 中景",
      "path": "cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb",
      "url": "../docs/cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb",
      "format": "GLB",
@@ -9003,7 +9002,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · B · LOD0",
+     "label": "旧版对照 · B 型 · 近景",
      "path": "cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb",
      "url": "../docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb",
      "format": "GLB",
@@ -9022,7 +9021,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · B · LOD1",
+     "label": "旧版对照 · B 型 · 中景",
      "path": "cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb",
      "url": "../docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb",
      "format": "GLB",
@@ -9041,7 +9040,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · TC03 · LOD0",
+     "label": "旧版对照 · TC03 型 · 近景",
      "path": "cities/luoyang/assets/d08/TC03-LOD0-prototype.glb",
      "url": "../docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb",
      "format": "GLB",
@@ -9060,7 +9059,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · TC03 · LOD1",
+     "label": "旧版对照 · TC03 型 · 中景",
      "path": "cities/luoyang/assets/d08/TC03-LOD1-prototype.glb",
      "url": "../docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb",
      "format": "GLB",
@@ -9079,7 +9078,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · A2 · LOD0",
+     "label": "旧版对照 · A2 型 · 近景",
      "path": "cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
      "url": "../docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
      "format": "GLB",
@@ -9098,7 +9097,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · A2 · LOD1",
+     "label": "旧版对照 · A2 型 · 中景",
      "path": "cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
      "url": "../docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
      "format": "GLB",
@@ -9117,7 +9116,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · B2 · LOD0",
+     "label": "旧版对照 · B2 型 · 近景",
      "path": "cities/luoyang/assets/c02v/B2-LOD0-prototype.glb",
      "url": "../docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb",
      "format": "GLB",
@@ -9136,7 +9135,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · B2 · LOD1",
+     "label": "旧版对照 · B2 型 · 中景",
      "path": "cities/luoyang/assets/c02v/B2-LOD1-prototype.glb",
      "url": "../docs/cities/luoyang/assets/c02v/B2-LOD1-prototype.glb",
      "format": "GLB",
@@ -9155,7 +9154,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · TC03-2 · LOD0",
+     "label": "旧版对照 · TC03-2 型 · 近景",
      "path": "cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb",
      "url": "../docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb",
      "format": "GLB",
@@ -9174,7 +9173,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · TC03-2 · LOD1",
+     "label": "旧版对照 · TC03-2 型 · 中景",
      "path": "cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb",
      "url": "../docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb",
      "format": "GLB",
@@ -9195,8 +9194,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "十二文件与原版世界有向几何精确一致、材质JSON不变；实际GLB有限UV及非退化面检查。 另收A2完整浅/深廊、B2现细节北/基准/南三预设，其各自固定配置与有限路线独立检查。 两份完整屋面分支均绑定最终GLB与原生有向三角、既有CPU整院图；新增屋面单构件闭合，有限接点及32瓦件配对检查。",
-    "限制与待解决": "盒投影为可重复平铺UV，允许重叠和轴向接缝，不是烘焙UV或曲面等距展开；未做动态LOD/GPU或全城替换。封面保留原几何外观，检查用棋盘材质不进入模型。 五份功能变体是前C2分支，未套全部最新UV修订；浅廊局部残差及旧屋内部接触保留。 A/TC03屋面分支是前C2独立完整院落版本，不与当前C2叠加，也未套全部最新UV修订。原土墙/木构/排水接触拓扑及瓦行相切残差保留；A院32支撑点与局部瓦片检查不代表全院零接触、承载或防水验收。TC03旧窄内门仍未修复，不能把独立门组件的最新验收借给本整院。"
+    "已完成的检查": "白话说明：C2 是第二轮修订，只把贴图坐标改成按米铺设，十二个近景、中景文件的形状和材质都与原版一致；另外收录的五个功能预设和两份屋面改版，也各自单独做过检查。原记录：十二文件与原版世界有向几何精确一致、材质JSON不变；实际GLB有限UV及非退化面检查。另收A2完整浅/深廊、B2现细节北/基准/南三预设（文件 north / baseline / south），其各自固定配置与有限路线独立检查。两份完整屋面分支均绑定最终GLB与原生有向三角、既有CPU整院图；新增屋面单构件闭合，有限接点及32瓦件配对检查。",
+    "限制与待解决": "白话说明：贴图是可重复平铺的简易方式，不是精细展开；功能预设和屋面改版都早于 C2，没有套上最新贴图修订，也不能与 C2 叠加使用；屋面检查只覆盖抽查的接点，不代表整院不漏水、能承重。TC03 屋面分支按几何比对看起来对应 TC03-2 底版（地块、台基、木构坐标与网格名都与 TC03-2 一致），但原记录写的是 TC03，创作者确认前本卡仍标为 TC03 院；A 院屋面分支不含地块和街面地面层，因此未标「完整院落」。原记录：盒投影为可重复平铺UV，允许重叠和轴向接缝，不是烘焙UV或曲面等距展开；未做动态LOD/GPU或全城替换。封面保留原几何外观，检查用棋盘材质不进入模型。五份功能变体是前C2分支，未套全部最新UV修订；浅廊局部残差及旧屋内部接触保留。A/TC03屋面分支是前C2独立完整院落版本，不与当前C2叠加，也未套全部最新UV修订。原土墙/木构/排水接触拓扑及瓦行相切残差保留；A院32支撑点与局部瓦片检查不代表全院零接触、承载或防水验收。TC03旧窄内门仍未修复，不能把独立门组件的最新验收借给本整院。"
    },
    "stats": {},
    "state": "待审",
@@ -9216,9 +9215,9 @@
    "category": "models",
    "kind": "城市构件",
    "title": "板筒瓦薄壳模块",
-   "english": "",
-   "summary": "两种浅槽曲率、坡度与宽度试样，各三档LOD；非六个作品。",
-   "alt": "",
+   "english": "PAN-AND-COVER TILE SHELL MODULE",
+   "summary": "参照汉代瓦件做的门楼檐口板瓦+筒瓦局部薄壳试样：A（6垄、垄距0.28米、坡0.3）与B（7垄、垄距0.26米、坡0.4）各三档；未含瓦当与承托，仅供研究。",
+   "alt": "斜上方看一小片灰色瓦面：凹形板瓦逐排搭接，上面压着五条半圆筒瓦，前端筒瓦敞口、没有瓦当。瓦面下的棕色底板只是研究时垫的衬底，不属于模型。",
    "cover": {
     "small": {
      "src": "media/cities-luoyang-research-2026-11-03-eaves-A-near-720.webp",
@@ -9233,10 +9232,50 @@
     "original": "../docs/cities/luoyang/research/2026-11-03/eaves-A-near.png"
    },
    "coverIsShot": false,
-   "gallery": [],
+   "gallery": [
+    {
+     "small": {
+      "src": "media/cities-luoyang-research-2026-11-03-eaves-B-near-720.webp",
+      "w": 720,
+      "h": 524
+     },
+     "large": {
+      "src": "media/cities-luoyang-research-2026-11-03-eaves-B-near-1800.webp",
+      "w": 1100,
+      "h": 800
+     },
+     "original": "../docs/cities/luoyang/research/2026-11-03/eaves-B-near.png"
+    },
+    {
+     "small": {
+      "src": "media/cities-luoyang-research-2026-11-03-eaves-A-middle-720.webp",
+      "w": 720,
+      "h": 524
+     },
+     "large": {
+      "src": "media/cities-luoyang-research-2026-11-03-eaves-A-middle-1800.webp",
+      "w": 1100,
+      "h": 800
+     },
+     "original": "../docs/cities/luoyang/research/2026-11-03/eaves-A-middle.png"
+    },
+    {
+     "small": {
+      "src": "media/cities-luoyang-research-2026-11-03-eaves-B-middle-720.webp",
+      "w": 720,
+      "h": 524
+     },
+     "large": {
+      "src": "media/cities-luoyang-research-2026-11-03-eaves-B-middle-1800.webp",
+      "w": 1100,
+      "h": 800
+     },
+     "original": "../docs/cities/luoyang/research/2026-11-03/eaves-B-middle.png"
+    }
+   ],
    "files": [
     {
-     "label": "A",
+     "label": "A 型（6垄·坡0.3） · 近景",
      "path": "model-library/assets/eaves-A.glb",
      "url": "../docs/model-library/assets/eaves-A.glb",
      "format": "GLB",
@@ -9255,7 +9294,7 @@
      "extUsed": []
     },
     {
-     "label": "A-LOD1",
+     "label": "A 型 · 中景",
      "path": "model-library/assets/eaves-A-LOD1.glb",
      "url": "../docs/model-library/assets/eaves-A-LOD1.glb",
      "format": "GLB",
@@ -9274,7 +9313,7 @@
      "extUsed": []
     },
     {
-     "label": "A-LOD2",
+     "label": "A 型 · 远景",
      "path": "model-library/assets/eaves-A-LOD2.glb",
      "url": "../docs/model-library/assets/eaves-A-LOD2.glb",
      "format": "GLB",
@@ -9293,7 +9332,7 @@
      "extUsed": []
     },
     {
-     "label": "B",
+     "label": "B 型（7垄·坡0.4） · 近景",
      "path": "model-library/assets/eaves-B.glb",
      "url": "../docs/model-library/assets/eaves-B.glb",
      "format": "GLB",
@@ -9312,7 +9351,7 @@
      "extUsed": []
     },
     {
-     "label": "B-LOD1",
+     "label": "B 型 · 中景",
      "path": "model-library/assets/eaves-B-LOD1.glb",
      "url": "../docs/model-library/assets/eaves-B-LOD1.glb",
      "format": "GLB",
@@ -9331,7 +9370,7 @@
      "extUsed": []
     },
     {
-     "label": "B-LOD2",
+     "label": "B 型 · 远景",
      "path": "model-library/assets/eaves-B-LOD2.glb",
      "url": "../docs/model-library/assets/eaves-B-LOD2.glb",
      "format": "GLB",
@@ -9351,13 +9390,19 @@
     }
    ],
    "page": null,
-   "notes": {},
+   "notes": {
+    "已完成的检查": "两种瓦面各三档共六个文件都查过：没有破面、重叠面或断开的边，面朝向一致、体积为正，导出前后形状一致，瓦片之间没有互相穿插。（六档退化面、重复面、非流形边均为0，卷绕一致、体积为正，导出前后有向三角一致，BVH相交候选对为0。）",
+    "限制与待解决": "此前状态标为「已发布」，高于实际进度，现改为归档。这是一小片研究用瓦面，还不能直接铺成整座屋顶。（檐端筒瓦敞口，未建瓦当；每排沿法向整体抬约21毫米，板瓦层间空约12.5–12.8毫米，筒瓦离本排板瓦约24毫米，同排板瓦留1毫米缝；筒瓦无瓦舌，接头台阶约21毫米；以上间隙数字为2026-11建模评审量得。无UV和贴图，法线为逐面平直；两侧边垄无筒瓦，不能直接并排拼接；支承、檐端收束、脊线、防水与WFC接口未定；尺寸是设计参数，0.35米是瓦长的水平投影；原点在檐口截面中心，下表皮低于基线8毫米。封面与图集为研究渲染，棕色底板仅为研究辅助，不在GLB里。）"
+   },
    "stats": {},
-   "state": "已发布",
-   "status": "已发布 · 已公开 · 研究候选",
+   "state": "归档",
+   "status": "归档 · 研究试样 · 未完成设计验收 · 未装门楼",
    "public": true,
    "updated": "2026-11-03T14:21:25+08:00",
-   "related": [],
+   "related": [
+    "p-luoyang",
+    "m-gate-roof-study"
+   ],
    "card": "model-library/m-eaves-shell.asset.json",
    "bytes": 1017948,
    "triangles": 6864,
@@ -9367,10 +9412,10 @@
    "id": "m-gate-roof-study",
    "category": "models",
    "kind": "城市构件",
-   "title": "完整单门楼屋面研究",
-   "english": "",
-   "summary": "原单门楼资产的局部原点契约验证：不新增模型、不改城市。三档共享同一地面中心，无二次减城市坐标。",
-   "alt": "",
+   "title": "C02-010 院门屋面研究",
+   "english": "C02-010 GATEHOUSE ROOF STUDY",
+   "summary": "C02-010（A2 院落）院门的屋面质量样例：保留原夯土墙、门扇和门楣，新做两坡筒板瓦屋面与素脊；近中远三档共用门楼地面中心原点，未入城。",
+   "alt": "斜上方看一座小院门：两道土黄色墙垛夹着门道，左边立一扇木门板，墙头架着门楣；上方是两坡灰瓦屋面，筒瓦和板瓦一垄垄交替铺开，屋脊压一道平直脊条；右侧山面下方敞开，能看到托脊的短柱。",
    "cover": {
     "small": {
      "src": "media/cities-luoyang-research-2026-11-03-gate-after-near-720.webp",
@@ -9385,10 +9430,50 @@
     "original": "../docs/cities/luoyang/research/2026-11-03/gate-after-near.png"
    },
    "coverIsShot": false,
-   "gallery": [],
+   "gallery": [
+    {
+     "small": {
+      "src": "media/cities-luoyang-research-2026-11-03-gate-after-middle-720.webp",
+      "w": 720,
+      "h": 480
+     },
+     "large": {
+      "src": "media/cities-luoyang-research-2026-11-03-gate-after-middle-1800.webp",
+      "w": 1200,
+      "h": 800
+     },
+     "original": "../docs/cities/luoyang/research/2026-11-03/gate-after-middle.png"
+    },
+    {
+     "small": {
+      "src": "media/cities-luoyang-research-2026-11-03-gate-after-macro-720.webp",
+      "w": 720,
+      "h": 480
+     },
+     "large": {
+      "src": "media/cities-luoyang-research-2026-11-03-gate-after-macro-1800.webp",
+      "w": 1200,
+      "h": 800
+     },
+     "original": "../docs/cities/luoyang/research/2026-11-03/gate-after-macro.png"
+    },
+    {
+     "small": {
+      "src": "media/cities-luoyang-research-2026-11-03-gate-before-near-720.webp",
+      "w": 720,
+      "h": 480
+     },
+     "large": {
+      "src": "media/cities-luoyang-research-2026-11-03-gate-before-near-1800.webp",
+      "w": 1200,
+      "h": 800
+     },
+     "original": "../docs/cities/luoyang/research/2026-11-03/gate-before-near.png"
+    }
+   ],
    "files": [
     {
-     "label": "近景候选",
+     "label": "新屋面 · 近景候选",
      "path": "model-library/assets/gate-roof.glb",
      "url": "../docs/model-library/assets/gate-roof.glb",
      "format": "GLB",
@@ -9407,7 +9492,7 @@
      "extUsed": []
     },
     {
-     "label": "原门楼保留",
+     "label": "原门楼 · 保留对照",
      "path": "model-library/assets/gate-original.glb",
      "url": "../docs/model-library/assets/gate-original.glb",
      "format": "GLB",
@@ -9426,7 +9511,7 @@
      "extUsed": []
     },
     {
-     "label": "local-origin-v1 · near",
+     "label": "局部原点版 · 近景",
      "path": "model-library/assets/gate-near-local.glb",
      "url": "../docs/model-library/assets/gate-near-local.glb",
      "format": "GLB",
@@ -9445,7 +9530,7 @@
      "extUsed": []
     },
     {
-     "label": "local-origin-v1 · middle",
+     "label": "局部原点版 · 中景",
      "path": "model-library/assets/gate-middle-local.glb",
      "url": "../docs/model-library/assets/gate-middle-local.glb",
      "format": "GLB",
@@ -9464,7 +9549,7 @@
      "extUsed": []
     },
     {
-     "label": "local-origin-v1 · far",
+     "label": "局部原点版 · 远景（沿用原屋面）",
      "path": "model-library/assets/gate-far-local.glb",
      "url": "../docs/model-library/assets/gate-far-local.glb",
      "format": "GLB",
@@ -9484,13 +9569,19 @@
     }
    ],
    "page": null,
-   "notes": {},
+   "notes": {
+    "已完成的检查": "新屋面的几何和摆放都逐项检查过，没有发现破面、穿插或错位。新做的 340 个网格全部闭合、无退化面，与原有构件之间没有真正的穿插面（gate-geometry-contact-export.json）；逐片板瓦压在承托层上的最小间隙约 −0.13 µm，在 0.01 mm 容差内（gate-bearing-gap.json）。local-origin-v1 只给原文件套一层恒等父节点，近中远三档在两种摆放（原城市位置 527.5/807.85、平移加 90° 旋转）下往返误差为零；Blender 4.3.2 读回后三角形逐个一致。",
+    "限制与待解决": "图集最后一张为改版前的原屋面，供对照。此前状态标为「已发布」，高于实际进度，现改为待审。这是一件单门研究样例，不是历史复原，也还没有放进城里。承托层和脊柱是 C 级设计，不是史料中的构造；两端山面透空，檐口没有瓦当；342 个网格尚未合批；735 处贴面接触候选保留未处理。远景档沿用原门楼屋面，屋脊比近、中景低约 23.5 cm。模型底在 y≈0.2，三档共用门楼地面中心原点，不按各档单独贴底。GPU 与手机未验证。对象是 C02-010 院落的院门，不是广阳城门；城市场景没有替换。"
+   },
    "stats": {},
-   "state": "已发布",
-   "status": "已发布 · 已公开 · 研究候选",
+   "state": "待审",
+   "status": "待审 · 研究候选 · 未完成设计验收 · 未入城",
    "public": true,
    "updated": "2026-11-03T14:21:25+08:00",
-   "related": [],
+   "related": [
+    "m-eaves-shell",
+    "m-courtyard-family"
+   ],
    "card": "model-library/m-gate-roof-study.asset.json",
    "bytes": 8565620,
    "triangles": 32676,
@@ -9502,8 +9593,8 @@
    "kind": "城市构件",
    "title": "市肆功能组",
    "english": "MARKET FUNCTIONAL FAMILY",
-   "summary": "既有五店三摊家族增加v2完整三档，保留商业组团逻辑；与八铺四棚店前线为不同组合。",
-   "alt": "市肆功能组实际模型CPU预览；C级设计。",
+   "summary": "市肆功能组：五间店铺加三座摊棚，v2新做近、中、远完整三档，保留原有商业组团的布局；与「八铺四棚店前线」是两套不同的组合。",
+   "alt": "斜俯视的两排长条店屋：一排店前摆着三座白顶棚摊和摊桌，另一排门外堆着货箱，屋顶都是两坡瓦顶。",
    "cover": {
     "small": {
      "src": "media/model-library-updates-m-market-functional-cover-720.webp",
@@ -9548,7 +9639,7 @@
    ],
    "files": [
     {
-     "label": "v2 · market · LOD0",
+     "label": "五店三摊 v2 · 近景",
      "path": "model-library/updates/m-market-functional/files/market-LOD0.glb",
      "url": "../docs/model-library/updates/m-market-functional/files/market-LOD0.glb",
      "format": "GLB",
@@ -9567,7 +9658,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · market · LOD1",
+     "label": "五店三摊 v2 · 中景",
      "path": "model-library/updates/m-market-functional/files/market-LOD1.glb",
      "url": "../docs/model-library/updates/m-market-functional/files/market-LOD1.glb",
      "format": "GLB",
@@ -9586,7 +9677,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · market · LOD2",
+     "label": "五店三摊 v2 · 远景",
      "path": "model-library/updates/m-market-functional/files/market-LOD2.glb",
      "url": "../docs/model-library/updates/m-market-functional/files/market-LOD2.glb",
      "format": "GLB",
@@ -9605,7 +9696,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · 独立完整A+N2 local-v1（不叠base/N2）",
+     "label": "旧版对照 · 独立完整 A+N2 版（不推荐使用）",
      "path": "model-library/assets/market-A-N2-local.glb",
      "url": "../docs/model-library/assets/market-A-N2-local.glb",
      "format": "GLB",
@@ -9624,7 +9715,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · 局部B补丁：先精确卸7个A路径",
+     "label": "旧版对照 · 局部 B 补丁（不推荐使用）",
      "path": "model-library/assets/optional-B-routes-local.glb",
      "url": "../docs/model-library/assets/optional-B-routes-local.glb",
      "format": "GLB",
@@ -9643,7 +9734,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · v1基础组（不含N2补丁）",
+     "label": "旧版对照 · v1 基础组（不推荐使用）",
      "path": "cities/luoyang/assets/market/market-cluster.glb",
      "url": "../docs/cities/luoyang/assets/market/market-cluster.glb",
      "format": "GLB",
@@ -9662,7 +9753,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · N2补丁：必须先精确卸原30节点",
+     "label": "旧版对照 · N2 补丁（不推荐使用）",
      "path": "cities/luoyang/assets/market/N2-replacement.glb",
      "url": "../docs/cities/luoyang/assets/market/N2-replacement.glb",
      "format": "GLB",
@@ -9681,7 +9772,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · B补丁：必须先精确卸A的7路径",
+     "label": "旧版对照 · B 补丁（不推荐使用）",
      "path": "cities/luoyang/assets/market/flowB-routes.glb",
      "url": "../docs/cities/luoyang/assets/market/flowB-routes.glb",
      "format": "GLB",
@@ -9702,8 +9793,9 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "三档GLB/原生几何UV回读、源构件闭合检查；48个反向内部接面逐处分类保留。",
-    "限制与待解决": "原6米试探带最北侧穿过摊桌，每档19个失败射线保留；缩为y=-3至2.5的有限采样才无障碍。非连续导航、全碰撞、独立店门交互或GPU认证，形体与布局为C。"
+    "已完成的检查": "三档模型都回读核对了几何和贴图坐标，源构件都是闭合的；构件之间有48处背对背贴合、藏在内部的接触面，逐处分类后保留。技术记录：三档GLB/原生几何UV回读、源构件闭合检查；48个反向内部接面逐处分类保留。",
+    "限制与待解决": "按原定6米宽的通行试探带检查，最北一侧会碰到摊桌，每档有19条检测射线被挡，结果如实保留；把试探带缩窄后才没有障碍。没做连续导航、完整碰撞、店门开关交互和GPU测试，形体与布局是推测设计（C级）。技术记录：原6米试探带最北侧穿过摊桌，每档19个失败射线保留；缩为y=-3至2.5（Blender坐标的y轴，是水平方向而非高度；导出GLB为Y朝上，这一轴对应GLB的水平z轴，方向相反）的有限采样才无障碍。非连续导航、全碰撞、独立店门交互或GPU认证，形体与布局为C。",
+    "旧版对照文件": "五个旧版对照文件只供对比，不推荐使用。独立完整 A+N2 版不要与 v1 基础组或 N2 补丁叠加加载；v1 基础组不含 N2 补丁；加载 N2 补丁前要先精确卸下原有的 30 个节点；加载 B 补丁或局部 B 补丁前要先精确卸下 A 的 7 条路径。原记录（旧文件名称）：旧版对照 · 独立完整A+N2 local-v1（不叠base/N2）；旧版对照 · 局部B补丁：先精确卸7个A路径；旧版对照 · v1基础组（不含N2补丁）；旧版对照 · N2补丁：必须先精确卸原30节点；旧版对照 · B补丁：必须先精确卸A的7路径。"
    },
    "stats": {},
    "state": "待审",
@@ -9711,7 +9803,8 @@
    "public": true,
    "updated": "2026-11-05T16:23:51+08:00",
    "related": [
-    "p-luoyang"
+    "p-luoyang",
+    "m-luoyang-market-frontage"
    ],
    "card": "model-library/m-market-functional.asset.json",
    "bytes": 6640920,
@@ -9723,9 +9816,9 @@
    "category": "models",
    "kind": "城市构件",
    "title": "通行接口试件 · WFC方法研究",
-   "english": "",
+   "english": "PASSAGE INTERFACE TILES · WFC STUDY",
    "summary": "直、弯、T、端头四预设构成一个试件组；盒状地坪与挡板无顶通行试验，不是汉代廊房或建筑成品，不与住宅近景精度同级。",
-   "alt": "",
+   "alt": "斜俯视：2×2 错落排开的四块方形地坪，矮挡板分别围出直通、转弯、三岔和端头开口。",
    "cover": {
     "small": {
      "src": "media/model-library-assets-passage-modules-cpu-720.webp",
@@ -9740,10 +9833,50 @@
     "original": "../docs/model-library/assets/passage-modules-cpu.png"
    },
    "coverIsShot": false,
-   "gallery": [],
+   "gallery": [
+    {
+     "small": {
+      "src": "media/model-library-methods-passage-wfc-previews-seed-7-cpu-720.webp",
+      "w": 720,
+      "h": 680
+     },
+     "large": {
+      "src": "media/model-library-methods-passage-wfc-previews-seed-7-cpu-1800.webp",
+      "w": 900,
+      "h": 850
+     },
+     "original": "../docs/model-library/methods/passage-wfc/previews/seed-7-cpu.png"
+    },
+    {
+     "small": {
+      "src": "media/model-library-methods-passage-wfc-previews-seed-15-cpu-720.webp",
+      "w": 720,
+      "h": 680
+     },
+     "large": {
+      "src": "media/model-library-methods-passage-wfc-previews-seed-15-cpu-1800.webp",
+      "w": 900,
+      "h": 850
+     },
+     "original": "../docs/model-library/methods/passage-wfc/previews/seed-15-cpu.png"
+    },
+    {
+     "small": {
+      "src": "media/model-library-methods-passage-wfc-previews-seed-18-cpu-720.webp",
+      "w": 720,
+      "h": 680
+     },
+     "large": {
+      "src": "media/model-library-methods-passage-wfc-previews-seed-18-cpu-1800.webp",
+      "w": 900,
+      "h": 850
+     },
+     "original": "../docs/model-library/methods/passage-wfc/previews/seed-18-cpu.png"
+    }
+   ],
    "files": [
     {
-     "label": "straight",
+     "label": "直通 · 北/南开口",
      "path": "model-library/assets/passage-straight.glb",
      "url": "../docs/model-library/assets/passage-straight.glb",
      "format": "GLB",
@@ -9762,7 +9895,7 @@
      "extUsed": []
     },
     {
-     "label": "elbow",
+     "label": "转弯 · 北/东开口",
      "path": "model-library/assets/passage-elbow.glb",
      "url": "../docs/model-library/assets/passage-elbow.glb",
      "format": "GLB",
@@ -9781,7 +9914,7 @@
      "extUsed": []
     },
     {
-     "label": "tee",
+     "label": "三岔 · 北/东/西开口",
      "path": "model-library/assets/passage-tee.glb",
      "url": "../docs/model-library/assets/passage-tee.glb",
      "format": "GLB",
@@ -9800,7 +9933,7 @@
      "extUsed": []
     },
     {
-     "label": "end",
+     "label": "端头 · 南开口",
      "path": "model-library/assets/passage-end.glb",
      "url": "../docs/model-library/assets/passage-end.glb",
      "format": "GLB",
@@ -9820,10 +9953,15 @@
     }
    ],
    "page": null,
-   "notes": {},
+   "notes": {
+    "已完成的检查": "四个试件能按开口拼成通路，拼错、断路或高低不齐时程序也能查出来。每个GLB先核SHA再实例化；组合用四个原GLB做90度旋转与平移装配，世界轴对齐盒体（AABB）未见正重叠；组合GLB再次独立导入，检查焊接1e-6后的非流形、退化、正体积及正重叠。8 项约束与负例检查全部通过：传播矛盾被拒、0.1 标高差被拒、预算中止、断路或接口错误可检出、固定 20 个 seed 结果可复现、传播确实发生、局部全部求解、全局失败可检出。CPU 渲染都已目视查看。",
+    "组合结果": "20 次自动组合里只有 3 次整体连通，失败的结果也都保留了。固定 seed 0–19，3×3 格，固定南入口、北出口与外边界，不锁内部通路；20/20 满足局部 socket 配对，独立全局验证 17 个断连，仅 seed 7、15、18 通过。图集依次为：seed 7（9 条内部边，环路秩 1）、seed 15（8 条内部边，环路秩 0）、seed 18（8 条内部边，环路秩 0），三者图拓扑互不同构。",
+    "限制与待解决": "这是做组合方法试验用的盒状模块，不是汉代廊房或建筑成品，也没有接入洛阳。1.6米接口、0.2米地坪、2.2米净高预留均为C试验参数。限定轴对齐盒体检查不是结构/全碰撞/引擎验收。相邻挡板为两层内缩板，不是共用墙；没有动态/角色碰撞测试。求解器只传播类型/方向，尚未在混合尺寸库中做数值约束搜索。17/20 的失败说明下一步需要全局路径约束或有界回溯。GPU、手机、实时闪烁或游戏引擎都未验收；设计验收未完成。",
+    "文件说明": "研究页在 methods/passage-wfc/。assets/passage-contract.json 按原字节保留，其中 status「not public」、limitations「not yet WFC solved」以及 file「assets/straight.glb」都是制作时的历史状态，不代表现在的发布记录；文件名对应关系见 methods/passage-wfc/public-layout-map.json。"
+   },
    "stats": {},
    "state": "已发布",
-   "status": "已发布 · 已公开 · 研究候选",
+   "status": "已发布 · 已公开 · 研究候选 · 未完成设计验收 · 未接入洛阳",
    "public": true,
    "updated": "2026-11-03T15:19:54+08:00",
    "related": [],
@@ -9838,8 +9976,8 @@
    "kind": "城市构件",
    "title": "仓储作业功能组",
    "english": "STORAGE OPERATIONS FAMILY",
-   "summary": "既有两仓与收货区保留v2组装和分件三档，并补原位完整组三档；城景仅接完整近档，中远档独立备选，不重复计建筑。",
-   "alt": "从最终近档GLB导入后CPU渲染的仓储功能组；包括两座低仓、收货棚、计验区和原地坪，均为C级设计。",
+   "summary": "两座架空瓦顶木仓、一座四柱收货棚与计验案台组成的仓储作业组，属推测性功能设计，不是洛阳太仓的发掘复原；含完整组与分件，各三档。",
+   "alt": "斜俯视：大片素土地坪中部，两座架空的瓦顶木仓（各有一段木台阶通向门口）和一座四柱收货棚，棚下有案台，棚旁放着几袋粮。",
    "cover": {
     "small": {
      "src": "media/cities-luoyang-progress-assets-granary-city-v1-cover-720.webp",
@@ -9962,7 +10100,7 @@
    ],
    "files": [
     {
-     "label": "原位完整组 LOD0（三档互斥）",
+     "label": "原位完整组 · 近景（含 72×52 m 原地坪；三档互斥）",
      "path": "cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
      "url": "../docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
      "format": "GLB",
@@ -9981,7 +10119,7 @@
      "extUsed": []
     },
     {
-     "label": "原位完整组 LOD1（三档互斥）",
+     "label": "原位完整组 · 中景（含 72×52 m 原地坪；三档互斥）",
      "path": "cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb",
      "url": "../docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb",
      "format": "GLB",
@@ -10000,7 +10138,7 @@
      "extUsed": []
     },
     {
-     "label": "原位完整组 LOD2（三档互斥）",
+     "label": "原位完整组 · 远景（含 72×52 m 原地坪；三档互斥）",
      "path": "cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD2.glb",
      "url": "../docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD2.glb",
      "format": "GLB",
@@ -10019,7 +10157,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · granary · group · LOD0",
+     "label": "v2 完整组（无地坪）· 近景",
      "path": "model-library/updates/m-storage-functional/files/granary-group-LOD0.glb",
      "url": "../docs/model-library/updates/m-storage-functional/files/granary-group-LOD0.glb",
      "format": "GLB",
@@ -10038,7 +10176,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · granary · A · LOD0",
+     "label": "v2 分件 · A 仓（9×6 m）· 近景",
      "path": "model-library/updates/m-storage-functional/files/granary-A-LOD0.glb",
      "url": "../docs/model-library/updates/m-storage-functional/files/granary-A-LOD0.glb",
      "format": "GLB",
@@ -10057,7 +10195,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · granary · B · LOD0",
+     "label": "v2 分件 · B 仓（12×5 m）· 近景",
      "path": "model-library/updates/m-storage-functional/files/granary-B-LOD0.glb",
      "url": "../docs/model-library/updates/m-storage-functional/files/granary-B-LOD0.glb",
      "format": "GLB",
@@ -10076,7 +10214,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · granary · receiving · LOD0",
+     "label": "v2 分件 · 收货棚 · 近景",
      "path": "model-library/updates/m-storage-functional/files/granary-receiving-LOD0.glb",
      "url": "../docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD0.glb",
      "format": "GLB",
@@ -10095,7 +10233,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · granary · group · LOD1",
+     "label": "v2 完整组（无地坪）· 中景",
      "path": "model-library/updates/m-storage-functional/files/granary-group-LOD1.glb",
      "url": "../docs/model-library/updates/m-storage-functional/files/granary-group-LOD1.glb",
      "format": "GLB",
@@ -10114,7 +10252,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · granary · group · LOD2",
+     "label": "v2 完整组（无地坪）· 远景",
      "path": "model-library/updates/m-storage-functional/files/granary-group-LOD2.glb",
      "url": "../docs/model-library/updates/m-storage-functional/files/granary-group-LOD2.glb",
      "format": "GLB",
@@ -10133,7 +10271,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · granary · A · LOD1",
+     "label": "v2 分件 · A 仓（9×6 m）· 中景",
      "path": "model-library/updates/m-storage-functional/files/granary-A-LOD1.glb",
      "url": "../docs/model-library/updates/m-storage-functional/files/granary-A-LOD1.glb",
      "format": "GLB",
@@ -10152,7 +10290,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · granary · A · LOD2",
+     "label": "v2 分件 · A 仓（9×6 m）· 远景",
      "path": "model-library/updates/m-storage-functional/files/granary-A-LOD2.glb",
      "url": "../docs/model-library/updates/m-storage-functional/files/granary-A-LOD2.glb",
      "format": "GLB",
@@ -10171,7 +10309,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · granary · B · LOD1",
+     "label": "v2 分件 · B 仓（12×5 m）· 中景",
      "path": "model-library/updates/m-storage-functional/files/granary-B-LOD1.glb",
      "url": "../docs/model-library/updates/m-storage-functional/files/granary-B-LOD1.glb",
      "format": "GLB",
@@ -10190,7 +10328,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · granary · B · LOD2",
+     "label": "v2 分件 · B 仓（12×5 m）· 远景",
      "path": "model-library/updates/m-storage-functional/files/granary-B-LOD2.glb",
      "url": "../docs/model-library/updates/m-storage-functional/files/granary-B-LOD2.glb",
      "format": "GLB",
@@ -10209,7 +10347,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · granary · receiving · LOD1",
+     "label": "v2 分件 · 收货棚 · 中景",
      "path": "model-library/updates/m-storage-functional/files/granary-receiving-LOD1.glb",
      "url": "../docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD1.glb",
      "format": "GLB",
@@ -10228,7 +10366,7 @@
      "extUsed": []
     },
     {
-     "label": "v2 · granary · receiving · LOD2",
+     "label": "v2 分件 · 收货棚 · 远景",
      "path": "model-library/updates/m-storage-functional/files/granary-receiving-LOD2.glb",
      "url": "../docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD2.glb",
      "format": "GLB",
@@ -10247,7 +10385,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · organized v1完整组（不叠A/B单仓）",
+     "label": "旧版对照（不推荐使用）· organized v1 完整组（不叠 A/B 单仓）",
      "path": "cities/luoyang/assets/storage/storage-group-organized.glb",
      "url": "../docs/cities/luoyang/assets/storage/storage-group-organized.glb",
      "format": "GLB",
@@ -10266,7 +10404,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · origin-v1 · 完整物理组",
+     "label": "旧版对照（不推荐使用）· origin-v1 完整物理组",
      "path": "model-library/assets/storage-group-organized-local.glb",
      "url": "../docs/model-library/assets/storage-group-organized-local.glb",
      "format": "GLB",
@@ -10285,7 +10423,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · origin-v1 · A单仓（不可叠组）",
+     "label": "旧版对照（不推荐使用）· origin-v1 A 仓单件（不可叠组）",
      "path": "model-library/assets/warehouse-A-organized-local.glb",
      "url": "../docs/model-library/assets/warehouse-A-organized-local.glb",
      "format": "GLB",
@@ -10304,7 +10442,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · origin-v1 · B单仓（不可叠组）",
+     "label": "旧版对照（不推荐使用）· origin-v1 B 仓单件（不可叠组）",
      "path": "model-library/assets/warehouse-B-organized-local.glb",
      "url": "../docs/model-library/assets/warehouse-B-organized-local.glb",
      "format": "GLB",
@@ -10323,7 +10461,7 @@
      "extUsed": []
     },
     {
-     "label": "旧版对照 · origin-v1 · 现代讲解层（非物理铺地）",
+     "label": "旧版对照（不推荐使用）· origin-v1 现代讲解层（非物理铺地）",
      "path": "model-library/assets/optional-functional-overlay-local.glb",
      "url": "../docs/model-library/assets/optional-functional-overlay-local.glb",
      "format": "GLB",
@@ -10351,7 +10489,7 @@
    },
    "stats": {},
    "state": "待审",
-   "status": "待审 · 完整近档已原位接入；新增版本待审，中远档独立备选。",
+   "status": "待审 · 完整组近档已原位接入城景；新增版本待审，中远档独立备选。保留 v2 组装与分件三档，不重复计建筑。",
    "public": true,
    "updated": "2026-11-05T16:37:25+08:00",
    "related": [
@@ -10367,9 +10505,9 @@
    "category": "models",
    "kind": "建筑",
    "title": "井栏与井架",
-   "english": "",
-   "summary": "A四坡亭与井字栏、B两坡亭与圆折沿；一个双方案家族，四GLB不是四件作品。",
-   "alt": "",
+   "english": "WELL CURB AND FRAME",
+   "summary": "参照汉代井亭明器的馆藏介绍类比设计的两种井：A 四坡亭配井字木栏，B 两坡亭配圆折沿井口，各有近景和简化两档；尺寸和提水机构都是 C 级（推测性）假设。",
+   "alt": "四坡亭覆盖开放井口，两侧木架托起提水轮绳，井栏围绕井口排列",
    "cover": {
     "small": {
      "src": "media/model-library-well-study-qa-A-LOD0-whole-720.webp",
@@ -10384,10 +10522,50 @@
     "original": "../docs/model-library/well-study/qa/A-LOD0-whole.png"
    },
    "coverIsShot": false,
-   "gallery": [],
+   "gallery": [
+    {
+     "small": {
+      "src": "media/model-library-well-study-qa-A-LOD0-opening-720.webp",
+      "w": 720,
+      "h": 660
+     },
+     "large": {
+      "src": "media/model-library-well-study-qa-A-LOD0-opening-1800.webp",
+      "w": 1200,
+      "h": 1100
+     },
+     "original": "../docs/model-library/well-study/qa/A-LOD0-opening.png"
+    },
+    {
+     "small": {
+      "src": "media/model-library-well-study-qa-A-LOD0-mechanism-720.webp",
+      "w": 720,
+      "h": 660
+     },
+     "large": {
+      "src": "media/model-library-well-study-qa-A-LOD0-mechanism-1800.webp",
+      "w": 1200,
+      "h": 1100
+     },
+     "original": "../docs/model-library/well-study/qa/A-LOD0-mechanism.png"
+    },
+    {
+     "small": {
+      "src": "media/model-library-well-study-qa-B-LOD0-opening-720.webp",
+      "w": 720,
+      "h": 660
+     },
+     "large": {
+      "src": "media/model-library-well-study-qa-B-LOD0-opening-1800.webp",
+      "w": 1200,
+      "h": 1100
+     },
+     "original": "../docs/model-library/well-study/qa/B-LOD0-opening.png"
+    }
+   ],
    "files": [
     {
-     "label": "well-A-LOD0",
+     "label": "A 四坡亭 · 近景",
      "path": "model-library/well-study/assets/well-A-LOD0.glb",
      "url": "../docs/model-library/well-study/assets/well-A-LOD0.glb",
      "format": "GLB",
@@ -10406,7 +10584,7 @@
      "extUsed": []
     },
     {
-     "label": "well-A-LOD1",
+     "label": "A 四坡亭 · 中景（简化版）",
      "path": "model-library/well-study/assets/well-A-LOD1.glb",
      "url": "../docs/model-library/well-study/assets/well-A-LOD1.glb",
      "format": "GLB",
@@ -10425,7 +10603,7 @@
      "extUsed": []
     },
     {
-     "label": "well-B-LOD0",
+     "label": "B 两坡亭 · 近景",
      "path": "model-library/well-study/assets/well-B-LOD0.glb",
      "url": "../docs/model-library/well-study/assets/well-B-LOD0.glb",
      "format": "GLB",
@@ -10444,7 +10622,7 @@
      "extUsed": []
     },
     {
-     "label": "well-B-LOD1",
+     "label": "B 两坡亭 · 中景（简化版）",
      "path": "model-library/well-study/assets/well-B-LOD1.glb",
      "url": "../docs/model-library/well-study/assets/well-B-LOD1.glb",
      "format": "GLB",
@@ -10464,10 +10642,13 @@
     }
    ],
    "page": null,
-   "notes": {},
+   "notes": {
+    "已完成的检查": "导出模型与原模型一致，每个构件都是封闭实体；井口真的是空的，没有假地板堵住；柱、梁、脊的接点对齐，水桶、井栏和轮子支架之间没有多余穿插。详细记录（README）：原生/实际GLB逐物件闭合、无退化，5位小数有向三角集合一致；5条井口射线实际通过，无假地板堵口。两侧柱—横梁—抬脊立件—脊撑实际边界接点高差0。容器对栏/井壁与轮对侧托的选定实际布尔交体0；绳槽约2.1e-14立方米数值残留，不称绝对0。轴进入侧托约0.000147立方米/侧，是明确局部支承嵌接，不是整对豁免。10个容器竖向行程包络只是静态设计净空，不是动画或人体通行实测。四失败输入均被拒绝。",
+    "限制与待解决": "轮轴受力、绳子运动和屋脊细节都还是简化的，也没在浏览器和手机上验收。包围盒偏大，是因为包含了约 3.3 米宽的演示地坪和地面下 0.65/0.70 米的短井壁；演示地坪可以去掉，井深和水面没有做。详细记录（README）：轮轴孔摩擦、承载、绳动力学未验。屋面有简化平瓦面和凸瓦列，脊与泛水仍简化；各固体拼缝、轮绳接点GPU动态闪烁未验。不是全构件间穿插归零结论。CPU图是真实生成几何，不等于Three/GPU、iPhone或最终设计验收。"
+   },
    "stats": {},
    "state": "待审",
-   "status": "待审 · 新增候选 · 尚未公开",
+   "status": "待审 · 新增候选 · 尚未入城",
    "public": true,
    "updated": "2026-11-03T16:16:52+08:00",
    "related": [],
@@ -12834,8 +13015,8 @@
    "kind": "建筑",
    "title": "阙影·标界",
    "english": "QUE / BOUNDARY",
-   "summary": "主子相依，道路从旁。三案比较主子体比例、阶折基台与道路侧向关系；只研究单侧标界，不拼成城门。",
-   "alt": "阙影·标界A方案，单侧主子阙与道路，Blender CPU静态图，非精确复原",
+   "summary": "以雅安高颐西阙为参照的墓阙形体研究：主阙与子阙相依，道路从旁经过。三案比较主子阙比例、阶折基台与道路侧向关系；只研究单侧标界，不拼成城门。",
+   "alt": "斜俯视：一块坡地上，方形基台立着一高一矮两座相连的阙身，各顶一个四坡阙顶，高的在后、矮的在前侧；右边一条浅色道路斜穿而过。",
    "cover": {
     "small": {
      "src": "media/studies-014-assets-A-front-720.webp",
@@ -12971,7 +13152,7 @@
    ],
    "files": [
     {
-     "label": "que-A.glb",
+     "label": "A · 近半高 · 直抵",
      "path": "studies/014/assets/que-A.glb",
      "url": "../docs/studies/014/assets/que-A.glb",
      "format": "GLB",
@@ -12990,7 +13171,7 @@
      "extUsed": []
     },
     {
-     "label": "que-B.glb",
+     "label": "B · 高子体试验 · 阶折基台",
      "path": "studies/014/assets/que-B.glb",
      "url": "../docs/studies/014/assets/que-B.glb",
      "format": "GLB",
@@ -13009,7 +13190,7 @@
      "extUsed": []
     },
     {
-     "label": "que-C.glb",
+     "label": "C · 低子体 · 侧路折入",
      "path": "studies/014/assets/que-C.glb",
      "url": "../docs/studies/014/assets/que-C.glb",
      "format": "GLB",
@@ -13030,8 +13211,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "三正常配置及四实建极值，共7个有限测试；接触容差对2/1/2另列，模型与导出几何身份分别检查。",
-    "限制与待解决": "低模形体研究非历史精确复原、非全参数证明。A/C形体相近，C主要改变路径；GPU、手机与游戏预算未验。"
+    "已完成的检查": "A、B、C 三案和 4 组极端参数都实际建出来检查过：形体封闭，导出的 GLB 与原模型三角面一致，没有超出容差的穿插；A、C 各 2 处、B 1 处贴面接触单独列出。原记录：三正常配置及四实建极值，共7个有限测试；接触容差对2/1/2另列，模型与导出几何身份分别检查。",
+    "限制与待解决": "这是低精度的形体研究，不是历史精确复原；阙身过渡的四层是光滑倒锥，没有做石刻和仿木支承；尺寸是美术尺度，不是实测米。原记录：低模形体研究非历史精确复原、非全参数证明。A/C形体相近，C主要改变路径；GPU、手机与游戏预算未验。"
    },
    "stats": {},
    "state": "已发布",
@@ -13780,8 +13961,8 @@
    "kind": "历史实验",
    "title": "轨与翼",
    "english": "SPATIAL INDEX",
-   "summary": "让空间承担导航，而不只是容纳模型。序厅、星轨与潮翼三章，始终保留等价的文字阅读路径。",
-   "alt": "",
+   "summary": "把 001 星轨和 002 潮翼放进同一座低模展厅：左右两座展台各配金色门框与展墙标牌，中央立一块青绿色索引碑，前方一条浅色步道串起两件展品。",
+   "alt": "展厅正面视角：左侧深青展台上是金属星轨圣器，右侧米色展台上是陶瓷潮翼，两侧各有金色门框和标牌「01 / ORBIT」「02 / TIDE」，中间立着一块青绿色索引碑，前方是一条横贯的浅色步道。",
    "cover": {
     "small": {
      "src": "media/fusions-F01-assets-hall-720.webp",
@@ -13849,15 +14030,21 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "完成导航、URL 状态与后退同步，以及 320 / 390 / 768 宽、无 JavaScript 的局部浏览器检查。",
-    "限制与待解决": "真实 WebGL 相机运动、物理手机、200% 缩放与完整辅助技术验收仍待完成。"
+    "已完成的检查": "白话说明：展厅模型导出后检查过没有坏面和重复面；粗略碰撞排查只发现门框横梁与立柱的接头互相嵌入，这是有意的装配。几何：导出 GLB 共 48 个网格、108,090 个三角面，零面积三角面 0，同网格重复坐标三角面 0；原模型与新展厅之间的 AABB 广相位正体积重叠候选 0，新展厅内部只剩 4 对门框横梁／立柱接头（见 reports/geometry.json、reports/qa.md）。配套网页：完成导航、URL 状态与后退同步，以及 320 / 390 / 768 宽、无 JavaScript 的局部浏览器检查。",
+    "限制与待解决": "白话说明：展品故意悬在展台上方 0.25 m，是概念展示，不是装配失误；门框接头有重叠；001 晶核被遮挡、002 尾根嵌接是两件原作品已公开的限制，本次没有修。几何检查只覆盖坏面与重复面，不是全部自交或共面重叠的完备证明。配套网页：真实 WebGL 相机运动、物理手机、200% 缩放与完整辅助技术验收仍待完成。",
+    "配套网页": "这件作品原本是网页实验：让空间承担导航，而不只是容纳模型。网页分序厅、星轨与潮翼三章，始终保留等价的文字阅读路径，页面在 fusions/F01/index.html；本详情页只展示其中的展厅模型和渲染图。"
    },
    "stats": {},
    "state": "待审",
    "status": "待审 · 按新设计要求待重做",
    "public": true,
    "updated": "2026-11-02T10:24:40+08:00",
-   "related": [],
+   "related": [
+    "m-001",
+    "m-002",
+    "w-001",
+    "w-002"
+   ],
    "card": "fusions/F01/s-f01.asset.json",
    "bytes": 2060024,
    "triangles": 108090,
@@ -13870,7 +14057,7 @@
    "title": "观测的尺度",
    "english": "SCALES OF SEEING",
    "summary": "从机械近景走向海岸建筑。抵达、结构、观测三个位置，组织尺度、支点与空间路径三个问题。",
-   "alt": "",
+   "alt": "灰色概念基面上，左边悬空竖着黑色带金线的环形光阑「玄瞳」，中间露出叶片；右边灰蓝色岩块上是浅色双拱观测所「岬界」，带扶手楼梯和装着望远镜的平台。",
    "cover": {
     "small": {
      "src": "media/fusions-F02-assets-arrival-720.webp",
@@ -13915,7 +14102,26 @@
    ],
    "files": [
     {
-     "label": "iris.glb",
+     "label": "组合场景 · 整体展示（玄瞳、岬界与概念基面）",
+     "path": "fusions/F02/assets/scales-scene.glb",
+     "url": "../docs/fusions/F02/assets/scales-scene.glb",
+     "format": "GLB",
+     "bytes": 2471608,
+     "triangles": 78300,
+     "vertices": 75240,
+     "primitives": 182,
+     "materials": 13,
+     "images": 0,
+     "size": [
+      34.0,
+      6.81,
+      32.0
+     ],
+     "primsNoUV": 40,
+     "extUsed": []
+    },
+    {
+     "label": "玄瞳副本 · 单件查看",
      "path": "fusions/F02/assets/iris.glb",
      "url": "../docs/fusions/F02/assets/iris.glb",
      "format": "GLB",
@@ -13934,7 +14140,7 @@
      "extUsed": []
     },
     {
-     "label": "limen.glb",
+     "label": "岬界副本 · 单件查看",
      "path": "fusions/F02/assets/limen.glb",
      "url": "../docs/fusions/F02/assets/limen.glb",
      "format": "GLB",
@@ -13951,38 +14157,24 @@
      ],
      "primsNoUV": 35,
      "extUsed": []
-    },
-    {
-     "label": "scales-scene.glb",
-     "path": "fusions/F02/assets/scales-scene.glb",
-     "url": "../docs/fusions/F02/assets/scales-scene.glb",
-     "format": "GLB",
-     "bytes": 2471608,
-     "triangles": 78300,
-     "vertices": 75240,
-     "primitives": 182,
-     "materials": 13,
-     "images": 0,
-     "size": [
-      34.0,
-      6.81,
-      32.0
-     ],
-     "primsNoUV": 40,
-     "extUsed": []
     }
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "导航、后退与键盘；320 / 390 / 768 窄宽和无脚本；图像 404 保图恢复、配置 404 文字降级已作限定浏览器检查。",
-    "限制与待解决": "真实 WebGL 场景、实体手机、200% 缩放和完整辅助技术仍未验；临时渲染器清理仅经代码检查。"
+    "已完成的检查": "组合后的模型和网页都查过：模型没有破面和重叠面，三组物体之间互不重叠，从原作搬进来的位置误差极小。（模型：182个网格、78,300三角面，退化0、同网格重复三角0；虹膜、观测所、概念基面三组AABB正体积交集候选0；与原作003/004的变换后顶点最大误差约1.5e-6，阈值5e-6。网页：导航、后退与键盘；320 / 390 / 768 窄宽和无脚本；图像 404 保图恢复、配置 404 文字降级已作限定浏览器检查。）",
+    "限制与待解决": "虹膜悬在空中是有意的概念并置；观测所离基面还有一点缝，待修；尺度是概念设计单位，不是真实米数；还没在真实显卡和手机上验收。（虹膜固定在27.5°，无动画；scene.json 单位为 conceptual design units；观测所离基面约0.20–0.45个设计单位，评审量得，待改模型修。真实 WebGL 场景、实体手机、200% 缩放和完整辅助技术仍未验；临时渲染器清理仅经代码检查。）"
    },
    "stats": {},
    "state": "待审",
    "status": "待审 · 按新设计要求待重做",
    "public": true,
    "updated": "2026-11-02T11:09:10+08:00",
-   "related": [],
+   "related": [
+    "m-003",
+    "m-004",
+    "w-003",
+    "w-004"
+   ],
    "card": "fusions/F02/s-f02.asset.json",
    "bytes": 4801332,
    "triangles": 78300,
@@ -13995,7 +14187,7 @@
    "title": "案上秩序",
    "english": "ORDER ON THE DESK",
    "summary": "一盏灯、一片折面与留白，让同一张桌面成为阅读目录。三个章节共享真实场景，而不只是把两件作品拼成海报。",
-   "alt": "",
+   "alt": "斜上方看一张浅褐色桌面全景：左侧暮灯、右侧银灰色折页，中间保留工作空处。",
    "cover": {
     "small": {
      "src": "media/fusions-F03-assets-overview-720.webp",
@@ -14040,66 +14232,7 @@
    ],
    "files": [
     {
-     "label": "desk-atlas.glb",
-     "path": "fusions/F03/assets/desk-atlas.glb",
-     "url": "../docs/fusions/F03/assets/desk-atlas.glb",
-     "format": "GLB",
-     "bytes": 964752,
-     "triangles": 52740,
-     "vertices": 26529,
-     "primitives": 11,
-     "materials": 6,
-     "images": 0,
-     "size": [
-      200.0,
-      0.677,
-      200.0
-     ],
-     "primsNoUV": 9,
-     "extUsed": [
-      "KHR_materials_emissive_strength"
-     ]
-    },
-    {
-     "label": "desk.glb",
-     "path": "fusions/F03/assets/desk.glb",
-     "url": "../docs/fusions/F03/assets/desk.glb",
-     "format": "GLB",
-     "bytes": 12352,
-     "triangles": 428,
-     "vertices": 265,
-     "primitives": 1,
-     "materials": 1,
-     "images": 0,
-     "size": [
-      1.42,
-      0.04,
-      0.84
-     ],
-     "primsNoUV": 0,
-     "extUsed": []
-    },
-    {
-     "label": "folio.glb",
-     "path": "fusions/F03/assets/folio.glb",
-     "url": "../docs/fusions/F03/assets/folio.glb",
-     "format": "GLB",
-     "bytes": 219200,
-     "triangles": 12044,
-     "vertices": 6072,
-     "primitives": 1,
-     "materials": 1,
-     "images": 0,
-     "size": [
-      0.25,
-      0.183,
-      0.273
-     ],
-     "primsNoUV": 1,
-     "extUsed": []
-    },
-    {
-     "label": "poise.glb",
+     "label": "暮灯 · 005 原件",
      "path": "fusions/F03/assets/poise.glb",
      "url": "../docs/fusions/F03/assets/poise.glb",
      "format": "GLB",
@@ -14118,19 +14251,85 @@
      "extUsed": [
       "KHR_materials_emissive_strength"
      ]
+    },
+    {
+     "label": "折页 · 006 原件",
+     "path": "fusions/F03/assets/folio.glb",
+     "url": "../docs/fusions/F03/assets/folio.glb",
+     "format": "GLB",
+     "bytes": 219200,
+     "triangles": 12044,
+     "vertices": 6072,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      0.25,
+      0.183,
+      0.273
+     ],
+     "primsNoUV": 1,
+     "extUsed": []
+    },
+    {
+     "label": "桌面 · 底板",
+     "path": "fusions/F03/assets/desk.glb",
+     "url": "../docs/fusions/F03/assets/desk.glb",
+     "format": "GLB",
+     "bytes": 12352,
+     "triangles": 428,
+     "vertices": 265,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      1.42,
+      0.04,
+      0.84
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "整套桌面场景 · 含地面（与前三件重复）",
+     "path": "fusions/F03/assets/desk-atlas.glb",
+     "url": "../docs/fusions/F03/assets/desk-atlas.glb",
+     "format": "GLB",
+     "bytes": 964752,
+     "triangles": 52740,
+     "vertices": 26529,
+     "primitives": 11,
+     "materials": 6,
+     "images": 0,
+     "size": [
+      200.0,
+      0.677,
+      200.0
+     ],
+     "primsNoUV": 9,
+     "extUsed": [
+      "KHR_materials_emissive_strength"
+     ]
     }
    ],
-   "page": null,
+   "page": "../docs/fusions/F03/index.html",
    "notes": {
     "已完成的检查": "CPU 几何、跨引擎相机对应、原生导航与后退、GL 失败降级已完成限定检查，并经独立复核。",
-    "限制与待解决": "真实 GPU 图像、动态深度闪烁、iPhone 性能及物理光照均未验证；离线同场景不是实时验收。"
+    "限制与待解决": "真实 GPU 图像、动态深度闪烁、iPhone 性能及物理光照均未验证；离线同场景不是实时验收。",
+    "完整作品": "完整作品是带「留白 / 光 / 面」三个章节的空间网页，在 fusions/F03/index.html；详情页目前只显示模型和图片。",
+    "来源": "暮灯、折页为 005/006 冻结原件，逐字节未改（SHA-256 与 studies/005/assets/poise/model.glb、studies/006/assets/folio/model.glb 相同）。desk-atlas.glb 是整套场景（暮灯 + 折页 + 桌面 + 地面），内容与另三件重复，暂排在最后。"
    },
    "stats": {},
    "state": "待审",
    "status": "待审 · 按新设计要求待重做",
    "public": true,
    "updated": "2026-11-02T11:46:50+08:00",
-   "related": [],
+   "related": [
+    "m-005",
+    "m-006",
+    "w-005",
+    "w-006"
+   ],
    "card": "fusions/F03/s-f03.asset.json",
    "bytes": 1926848,
    "triangles": 52740,
@@ -14142,8 +14341,8 @@
    "kind": "历史实验",
    "title": "孔与隙",
    "english": "APERTURE ATLAS",
-   "summary": "固定两件物，让遮挡、穿孔与绕行成为同一空间的阅读路径。有限几何替换由独立复用页说明，完整原生变体保存在源包。",
-   "alt": "",
+   "summary": "弧形背景幕前，一块 6×8 圆孔的弧形孔板立在泪滴形回环前方；换个位置看，回环从被遮挡、透过孔洞看到，到绕到侧面看见完整轮廓。",
+   "alt": "深色台面上，米色弧形圆孔板立在前方，后面象牙色的泪滴形回环从板的左侧露出一段，其余部分透过孔洞可见，背景是灰蓝色弧形幕。",
    "cover": {
     "small": {
      "src": "media/fusions-F04-assets-overview-720.webp",
@@ -14188,45 +14387,26 @@
    ],
    "files": [
     {
-     "label": "aperture-atlas.glb",
-     "path": "fusions/F04/assets/aperture-atlas.glb",
-     "url": "../docs/fusions/F04/assets/aperture-atlas.glb",
+     "label": "孔幕 VEIL · 6×8 圆孔弧形孔板",
+     "path": "fusions/F04/assets/veil.glb",
+     "url": "../docs/fusions/F04/assets/veil.glb",
      "format": "GLB",
-     "bytes": 1837916,
-     "triangles": 100524,
-     "vertices": 51188,
-     "primitives": 4,
-     "materials": 4,
-     "images": 0,
-     "size": [
-      4.0,
-      4.18,
-      4.0
-     ],
-     "primsNoUV": 3,
-     "extUsed": []
-    },
-    {
-     "label": "backdrop.glb",
-     "path": "fusions/F04/assets/backdrop.glb",
-     "url": "../docs/fusions/F04/assets/backdrop.glb",
-     "format": "GLB",
-     "bytes": 156992,
-     "triangles": 8576,
-     "vertices": 4353,
+     "bytes": 1253244,
+     "triangles": 68480,
+     "vertices": 35050,
      "primitives": 1,
      "materials": 1,
      "images": 0,
      "size": [
-      4.0,
-      4.18,
-      4.0
+      0.354,
+      0.5,
+      0.043
      ],
      "primsNoUV": 1,
      "extUsed": []
     },
     {
-     "label": "orison.glb",
+     "label": "回环 ORISON",
      "path": "fusions/F04/assets/orison.glb",
      "url": "../docs/fusions/F04/assets/orison.glb",
      "format": "GLB",
@@ -14245,7 +14425,26 @@
      "extUsed": []
     },
     {
-     "label": "plinth.glb",
+     "label": "整场 · 孔幕＋回环＋台面＋背景幕（四件合并）",
+     "path": "fusions/F04/assets/aperture-atlas.glb",
+     "url": "../docs/fusions/F04/assets/aperture-atlas.glb",
+     "format": "GLB",
+     "bytes": 1837916,
+     "triangles": 100524,
+     "vertices": 51188,
+     "primitives": 4,
+     "materials": 4,
+     "images": 0,
+     "size": [
+      4.0,
+      4.18,
+      4.0
+     ],
+     "primsNoUV": 3,
+     "extUsed": []
+    },
+    {
+     "label": "台面",
      "path": "fusions/F04/assets/plinth.glb",
      "url": "../docs/fusions/F04/assets/plinth.glb",
      "format": "GLB",
@@ -14264,20 +14463,20 @@
      "extUsed": []
     },
     {
-     "label": "veil.glb",
-     "path": "fusions/F04/assets/veil.glb",
-     "url": "../docs/fusions/F04/assets/veil.glb",
+     "label": "弧形背景幕",
+     "path": "fusions/F04/assets/backdrop.glb",
+     "url": "../docs/fusions/F04/assets/backdrop.glb",
      "format": "GLB",
-     "bytes": 1253244,
-     "triangles": 68480,
-     "vertices": 35050,
+     "bytes": 156992,
+     "triangles": 8576,
+     "vertices": 4353,
      "primitives": 1,
      "materials": 1,
      "images": 0,
      "size": [
-      0.354,
-      0.5,
-      0.043
+      4.0,
+      4.18,
+      4.0
      ],
      "primsNoUV": 1,
      "extUsed": []
@@ -14285,15 +14484,22 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "CPU几何、跨引擎相机、原生导航与无GL降级已完成限定检查；Latitude与Horizon实际几何替换复验。",
-    "限制与待解决": "GPU、动态闪烁、iPhone仍未验；同场景CPU渲染不等于实时验收，有限替换不证明任意几何可复用。"
+    "已完成的检查": "网页实验里的取景、镜头切换、导航和不支持 3D 时的退回画面都做过限定检查；复用页里换成另一组形体后也复验过。细节：CPU几何、跨引擎相机、原生导航与无GL降级已完成限定检查；Latitude与Horizon实际几何替换复验。",
+    "限制与待解决": "还没在真实显卡和 iPhone 上验收；能换一组形体，不代表任意形体都能直接替换。细节：GPU、动态闪烁、iPhone仍未验；同场景CPU渲染不等于实时验收，有限替换不证明任意几何可复用。",
+    "文件检查": "五个文件都以米为单位、Y 轴朝上；孔幕、回环和台面都是封闭的实体，背景幕是一张朝内的开放曲面。细节：逐边检查孔幕、回环、台面每条边恰好被两个三角形共用、绕序一致、体积为正；背景幕有 128 条开放边界，有向体积为负（法线朝内）；veil.glb、orison.glb 的 SHA-256 与 scene.json 登记一致。aperture-atlas.glb 是另外四件的合并件，100,524 面 = 68,480 + 23,040 + 8,576 + 428，所以页头的文件数和总体积把同一份内容算了两次。",
+    "来源与复用": "孔幕和回环就是「透幕」「回环」两件作品的原件，可以在那两张卡里看到更多变体。细节：veil.glb、orison.glb 与 m-008、m-007 的 veil、orison 模型 SHA-256 相同。备注里的 Latitude（横向回环）和 Horizon（宽低孔幕）是复用页 fusions/F04/reuse.html 里用来替换的另一组形体，即 m-007 的 latitude 与 m-008 的 horizon 变体，不在本卡的文件里。完整源包已归档到 Release sources-2026.11.05（fusions--F04--source.zip）。"
    },
    "stats": {},
    "state": "待审",
    "status": "待审 · 按新设计要求待重做",
    "public": true,
    "updated": "2026-11-02T12:32:25+08:00",
-   "related": [],
+   "related": [
+    "m-007",
+    "m-008",
+    "w-007",
+    "w-008"
+   ],
    "card": "fusions/F04/s-f04.asset.json",
    "bytes": 3676428,
    "triangles": 100524,
@@ -14304,9 +14510,9 @@
    "category": "spaces",
    "kind": "空间原型",
    "title": "连接工坊",
-   "english": "SPATIAL DESIGN PROTOTYPE",
-   "summary": "在转动庭比较三个灯臂样本，在插接廊逐级提起中间隔板",
-   "alt": "",
+   "english": "JOINTWORKS",
+   "summary": "在转动庭切换一盏折臂灯的初始、收拢、展开三个姿态，在插接廊逐级提起中间隔板",
+   "alt": "浅色岛板上三处展区：左后方粉色环墙围着青色圆台和折臂灯，右后方梳齿廊的青色展台上插着三块浅色隔板，前方Y形广场通向入口门槛和两根门柱。",
    "cover": {
     "small": {
      "src": "media/spaces-SD01-assets-overview-720.webp",
@@ -14442,83 +14648,7 @@
    ],
    "files": [
     {
-     "label": "environment.glb",
-     "path": "spaces/SD01/assets/environment.glb",
-     "url": "../docs/spaces/SD01/assets/environment.glb",
-     "format": "GLB",
-     "bytes": 608700,
-     "triangles": 14388,
-     "vertices": 17901,
-     "primitives": 22,
-     "materials": 5,
-     "images": 0,
-     "size": [
-      2.76,
-      0.39,
-      2.115
-     ],
-     "primsNoUV": 2,
-     "extUsed": []
-    },
-    {
-     "label": "hinge-extended.glb",
-     "path": "spaces/SD01/assets/hinge-extended.glb",
-     "url": "../docs/spaces/SD01/assets/hinge-extended.glb",
-     "format": "GLB",
-     "bytes": 729176,
-     "triangles": 36776,
-     "vertices": 24362,
-     "primitives": 19,
-     "materials": 4,
-     "images": 0,
-     "size": [
-      0.618,
-      0.318,
-      0.21
-     ],
-     "primsNoUV": 19,
-     "extUsed": []
-    },
-    {
-     "label": "hinge-folded.glb",
-     "path": "spaces/SD01/assets/hinge-folded.glb",
-     "url": "../docs/spaces/SD01/assets/hinge-folded.glb",
-     "format": "GLB",
-     "bytes": 729184,
-     "triangles": 36776,
-     "vertices": 24362,
-     "primitives": 19,
-     "materials": 4,
-     "images": 0,
-     "size": [
-      0.445,
-      0.356,
-      0.21
-     ],
-     "primsNoUV": 19,
-     "extUsed": []
-    },
-    {
-     "label": "hinge.glb",
-     "path": "spaces/SD01/assets/hinge.glb",
-     "url": "../docs/spaces/SD01/assets/hinge.glb",
-     "format": "GLB",
-     "bytes": 729180,
-     "triangles": 36776,
-     "vertices": 24362,
-     "primitives": 19,
-     "materials": 4,
-     "images": 0,
-     "size": [
-      0.527,
-      0.353,
-      0.21
-     ],
-     "primsNoUV": 19,
-     "extUsed": []
-    },
-    {
-     "label": "jointworks.glb",
+     "label": "完整场景 · 整体展示（场地、折臂灯与插接隔板）",
      "path": "spaces/SD01/assets/jointworks.glb",
      "url": "../docs/spaces/SD01/assets/jointworks.glb",
      "format": "GLB",
@@ -14537,7 +14667,83 @@
      "extUsed": []
     },
     {
-     "label": "slot.glb",
+     "label": "场地环境 · 单独查看（不含展品）",
+     "path": "spaces/SD01/assets/environment.glb",
+     "url": "../docs/spaces/SD01/assets/environment.glb",
+     "format": "GLB",
+     "bytes": 608700,
+     "triangles": 14388,
+     "vertices": 17901,
+     "primitives": 22,
+     "materials": 5,
+     "images": 0,
+     "size": [
+      2.76,
+      0.39,
+      2.115
+     ],
+     "primsNoUV": 2,
+     "extUsed": []
+    },
+    {
+     "label": "折臂灯初始姿态 · 单件查看",
+     "path": "spaces/SD01/assets/hinge.glb",
+     "url": "../docs/spaces/SD01/assets/hinge.glb",
+     "format": "GLB",
+     "bytes": 729180,
+     "triangles": 36776,
+     "vertices": 24362,
+     "primitives": 19,
+     "materials": 4,
+     "images": 0,
+     "size": [
+      0.527,
+      0.353,
+      0.21
+     ],
+     "primsNoUV": 19,
+     "extUsed": []
+    },
+    {
+     "label": "折臂灯收拢姿态 · 单件查看",
+     "path": "spaces/SD01/assets/hinge-folded.glb",
+     "url": "../docs/spaces/SD01/assets/hinge-folded.glb",
+     "format": "GLB",
+     "bytes": 729184,
+     "triangles": 36776,
+     "vertices": 24362,
+     "primitives": 19,
+     "materials": 4,
+     "images": 0,
+     "size": [
+      0.445,
+      0.356,
+      0.21
+     ],
+     "primsNoUV": 19,
+     "extUsed": []
+    },
+    {
+     "label": "折臂灯展开姿态 · 单件查看",
+     "path": "spaces/SD01/assets/hinge-extended.glb",
+     "url": "../docs/spaces/SD01/assets/hinge-extended.glb",
+     "format": "GLB",
+     "bytes": 729176,
+     "triangles": 36776,
+     "vertices": 24362,
+     "primitives": 19,
+     "materials": 4,
+     "images": 0,
+     "size": [
+      0.618,
+      0.318,
+      0.21
+     ],
+     "primsNoUV": 19,
+     "extUsed": []
+    },
+    {
+     "label": "插接隔板组 · 单件查看",
      "path": "spaces/SD01/assets/slot.glb",
      "url": "../docs/spaces/SD01/assets/slot.glb",
      "format": "GLB",
@@ -14558,8 +14764,8 @@
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "检查范围及身份见原型评审；CPU/模拟/无GL备用模式各自限定。",
-    "限制与待解决": "GPU主体验、真实输入/触屏/iPhone未验；19对实体包容未验；不声称全部穿插归零；CPU/模拟生命周期/真实无GL备用模式各自限定，不可互相替代"
+    "已完成的检查": "全库评审回读合并展示件的46个网格：全部闭合、无退化面、法线朝外，米制、Y朝上。灯的三个姿态（hinge、hinge-folded、hinge-extended）和插接件slot，与m-009/m-010源文件SHA-256逐字节一致；jointworks.glb是底座、灯和插接件的合并展示件，网页原型不加载它。修订复盘见 spaces/SD01/review/index.html。技术记录：检查范围及身份见原型评审；CPU/模拟/无GL备用模式各自限定。",
+    "限制与待解决": "GPU下的主体验、真实触屏和iPhone都还没验。场景环境里58处跨构件相接的候选中，39处确认是正常接触或嵌接；另外19处没发现表面相交，但是否有构件被另一件整个包在里面尚未核实（逐对清单本卡未列出，见 review/v02.html）。已知待修：入口门槛块伸出岛板前沿约15毫米、底面悬空；外圈回廊转角缺一小块，接斜段处有V形缺口。技术记录：GPU主体验、真实输入/触屏/iPhone未验；19对实体包容未验；不声称全部穿插归零；CPU/模拟生命周期/真实无GL备用模式各自限定，不可互相替代"
    },
    "stats": {},
    "state": "待审",
@@ -14580,9 +14786,9 @@
    "category": "spaces",
    "kind": "空间原型",
    "title": "岔径·望场",
-   "english": "SPATIAL DESIGN PROTOTYPE",
-   "summary": "从低位入口分岔，在仓前看梯廊、在院门看通隙；主动抬升俯读不同建筑关系",
-   "alt": "",
+   "english": "SD02 · SPATIAL STUDY",
+   "summary": "从低位入口分岔，在仓前看梯廊、在院门看门洞；主动抬升俯读内屋、院心与通隙",
+   "alt": "入口低位远望：左边是带侧梯的高仓，右边是围墙院和门楼，中间一座小丘，脚下的路在岔口分成两条支路。",
    "cover": {
     "small": {
      "src": "media/spaces-SD02-assets-evidence-entry-720.webp",
@@ -14597,29 +14803,63 @@
     "original": "../docs/spaces/SD02/assets/evidence/entry.png"
    },
    "coverIsShot": false,
-   "gallery": [],
-   "files": [
+   "gallery": [
     {
-     "label": "courtyard-A.glb",
-     "path": "spaces/SD02/assets/courtyard-A.glb",
-     "url": "../docs/spaces/SD02/assets/courtyard-A.glb",
-     "format": "GLB",
-     "bytes": 293452,
-     "triangles": 3044,
-     "vertices": 5850,
-     "primitives": 219,
-     "materials": 5,
-     "images": 0,
-     "size": [
-      14.0,
-      3.51,
-      15.2
-     ],
-     "primsNoUV": 153,
-     "extUsed": []
+     "small": {
+      "src": "media/spaces-SD02-assets-evidence-granary-low-720.webp",
+      "w": 720,
+      "h": 480
+     },
+     "large": {
+      "src": "media/spaces-SD02-assets-evidence-granary-low-1800.webp",
+      "w": 750,
+      "h": 500
+     },
+     "original": "../docs/spaces/SD02/assets/evidence/granary-low.png"
     },
     {
-     "label": "environment.glb",
+     "small": {
+      "src": "media/spaces-SD02-assets-evidence-courtyard-low-720.webp",
+      "w": 720,
+      "h": 480
+     },
+     "large": {
+      "src": "media/spaces-SD02-assets-evidence-courtyard-low-1800.webp",
+      "w": 750,
+      "h": 500
+     },
+     "original": "../docs/spaces/SD02/assets/evidence/courtyard-low.png"
+    },
+    {
+     "small": {
+      "src": "media/spaces-SD02-assets-evidence-runtime-courtyard-720.webp",
+      "w": 720,
+      "h": 480
+     },
+     "large": {
+      "src": "media/spaces-SD02-assets-evidence-runtime-courtyard-1800.webp",
+      "w": 750,
+      "h": 500
+     },
+     "original": "../docs/spaces/SD02/assets/evidence/runtime-courtyard.png"
+    },
+    {
+     "small": {
+      "src": "media/spaces-SD02-assets-evidence-reuse-B-720.webp",
+      "w": 600,
+      "h": 400
+     },
+     "large": {
+      "src": "media/spaces-SD02-assets-evidence-reuse-B-1800.webp",
+      "w": 600,
+      "h": 400
+     },
+     "original": "../docs/spaces/SD02/assets/evidence/reuse-B.png"
+    }
+   ],
+   "files": [
+    {
+     "label": "SD02 连续地景 · 含两处地台浅槽",
      "path": "spaces/SD02/assets/environment.glb",
      "url": "../docs/spaces/SD02/assets/environment.glb",
      "format": "GLB",
@@ -14638,7 +14878,7 @@
      "extUsed": []
     },
     {
-     "label": "granary-A.glb",
+     "label": "012 高仓 A · 原件副本（同 m-012）",
      "path": "spaces/SD02/assets/granary-A.glb",
      "url": "../docs/spaces/SD02/assets/granary-A.glb",
      "format": "GLB",
@@ -14655,12 +14895,32 @@
      ],
      "primsNoUV": 171,
      "extUsed": []
+    },
+    {
+     "label": "013 围院 A · 原件副本（同 m-013）",
+     "path": "spaces/SD02/assets/courtyard-A.glb",
+     "url": "../docs/spaces/SD02/assets/courtyard-A.glb",
+     "format": "GLB",
+     "bytes": 293452,
+     "triangles": 3044,
+     "vertices": 5850,
+     "primitives": 219,
+     "materials": 5,
+     "images": 0,
+     "size": [
+      14.0,
+      3.51,
+      15.2
+     ],
+     "primsNoUV": 153,
+     "extUsed": []
     }
    ],
    "page": null,
    "notes": {
-    "已完成的检查": "检查范围及身份见原型评审；CPU/模拟/无GL备用模式各自限定。",
-    "限制与待解决": "非历史聚落复原；不同地域年代原件的当代比较场；固定低位与有限转向、高位俯读；不是自由步行；GPU主体验、触屏/iPhone、动态闪烁、帧率与用户理解未验；013B真实迁移仅两个离散组合；不保证任意几何/连续全域"
+    "已完成的检查": "静态渲染、运行逻辑和浏览器降级都检查过，但还没有在真实显卡上验收主体验。CPU：环境闭合、地台浅槽齐平承接原地台、实际GLB有向三角一致；高位投影及低位近面/下降段有限样本。运行时逻辑：取消、迟到资源、快速选路、回退、重试和资源释放。浏览器：无GL备用、帮助/焦点、重试、窄屏、极小视口与无脚本可读性。检查范围及身份详见原型评审；CPU/模拟/无GL备用模式各自限定。",
+    "限制与待解决": "这是把两座不同来源的建筑放在一起比较观看的空间试验，不是历史村落复原，也不能自由走动。非历史聚落复原；不同地域年代原件的当代比较场；固定低位与有限转向、高位俯读；不是自由步行；GPU主体验、触屏/iPhone、动态闪烁、帧率与用户理解未验；不保证任意几何/连续全域。另做过一次迁移实验：把 013 的 B 型院落换进来，重算浅槽、路线和观察位后，只验证了 A、B 两种固定组合，没有做成可切换功能；图集最后一张即这次 013 B 方案迁移实验。",
+    "单位与来源": "单位为原创美术单位、非历史尺寸，两件建筑按各自原件比例并置。012 高仓 A 和 013 围院 A 与 studies/012、studies/013 的同名文件 SHA-256 完全一致，是原件副本；详情页显示的最高面数来自 012 高仓。"
    },
    "stats": {},
    "state": "待审",

@@ -5,52 +5,54 @@
   "kind": "城市构件",
   "title": "市肆功能组",
   "english": "MARKET FUNCTIONAL FAMILY",
-  "summary": "既有五店三摊家族增加v2完整三档，保留商业组团逻辑；与八铺四棚店前线为不同组合。",
+  "summary": "市肆功能组：五间店铺加三座摊棚，v2新做近、中、远完整三档，保留原有商业组团的布局；与「八铺四棚店前线」是两套不同的组合。",
   "status": "待审",
   "statusNote": "既有家族修订待审，不改变城市场景。",
   "cover": "updates/m-market-functional/cover.webp",
   "files": [
     {
       "path": "updates/m-market-functional/files/market-LOD0.glb",
-      "label": "v2 · market · LOD0"
+      "label": "五店三摊 v2 · 近景"
     },
     {
       "path": "updates/m-market-functional/files/market-LOD1.glb",
-      "label": "v2 · market · LOD1"
+      "label": "五店三摊 v2 · 中景"
     },
     {
       "path": "updates/m-market-functional/files/market-LOD2.glb",
-      "label": "v2 · market · LOD2"
+      "label": "五店三摊 v2 · 远景"
     },
     {
       "path": "assets/market-A-N2-local.glb",
-      "label": "旧版对照 · 独立完整A+N2 local-v1（不叠base/N2）"
+      "label": "旧版对照 · 独立完整 A+N2 版（不推荐使用）"
     },
     {
       "path": "assets/optional-B-routes-local.glb",
-      "label": "旧版对照 · 局部B补丁：先精确卸7个A路径"
+      "label": "旧版对照 · 局部 B 补丁（不推荐使用）"
     },
     {
       "path": "../cities/luoyang/assets/market/market-cluster.glb",
-      "label": "旧版对照 · v1基础组（不含N2补丁）"
+      "label": "旧版对照 · v1 基础组（不推荐使用）"
     },
     {
       "path": "../cities/luoyang/assets/market/N2-replacement.glb",
-      "label": "旧版对照 · N2补丁：必须先精确卸原30节点"
+      "label": "旧版对照 · N2 补丁（不推荐使用）"
     },
     {
       "path": "../cities/luoyang/assets/market/flowB-routes.glb",
-      "label": "旧版对照 · B补丁：必须先精确卸A的7路径"
+      "label": "旧版对照 · B 补丁（不推荐使用）"
     }
   ],
   "legacyPath": true,
-  "coverAlt": "市肆功能组实际模型CPU预览；C级设计。",
+  "coverAlt": "斜俯视的两排长条店屋：一排店前摆着三座白顶棚摊和摊桌，另一排门外堆着货箱，屋顶都是两坡瓦顶。",
   "related": [
-    "p-luoyang"
+    "p-luoyang",
+    "m-luoyang-market-frontage"
   ],
   "notes": {
-    "已完成的检查": "三档GLB/原生几何UV回读、源构件闭合检查；48个反向内部接面逐处分类保留。",
-    "限制与待解决": "原6米试探带最北侧穿过摊桌，每档19个失败射线保留；缩为y=-3至2.5的有限采样才无障碍。非连续导航、全碰撞、独立店门交互或GPU认证，形体与布局为C。"
+    "已完成的检查": "三档模型都回读核对了几何和贴图坐标，源构件都是闭合的；构件之间有48处背对背贴合、藏在内部的接触面，逐处分类后保留。技术记录：三档GLB/原生几何UV回读、源构件闭合检查；48个反向内部接面逐处分类保留。",
+    "限制与待解决": "按原定6米宽的通行试探带检查，最北一侧会碰到摊桌，每档有19条检测射线被挡，结果如实保留；把试探带缩窄后才没有障碍。没做连续导航、完整碰撞、店门开关交互和GPU测试，形体与布局是推测设计（C级）。技术记录：原6米试探带最北侧穿过摊桌，每档19个失败射线保留；缩为y=-3至2.5（Blender坐标的y轴，是水平方向而非高度；导出GLB为Y朝上，这一轴对应GLB的水平z轴，方向相反）的有限采样才无障碍。非连续导航、全碰撞、独立店门交互或GPU认证，形体与布局为C。",
+    "旧版对照文件": "五个旧版对照文件只供对比，不推荐使用。独立完整 A+N2 版不要与 v1 基础组或 N2 补丁叠加加载；v1 基础组不含 N2 补丁；加载 N2 补丁前要先精确卸下原有的 30 个节点；加载 B 补丁或局部 B 补丁前要先精确卸下 A 的 7 条路径。原记录（旧文件名称）：旧版对照 · 独立完整A+N2 local-v1（不叠base/N2）；旧版对照 · 局部B补丁：先精确卸7个A路径；旧版对照 · v1基础组（不含N2补丁）；旧版对照 · N2补丁：必须先精确卸原30节点；旧版对照 · B补丁：必须先精确卸A的7路径。"
   },
   "gallery": [
     "updates/m-market-functional/shots/01.webp",

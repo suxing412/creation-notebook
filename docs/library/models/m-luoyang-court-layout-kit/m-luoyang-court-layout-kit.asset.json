@@ -5,46 +5,47 @@
   "kind": "建筑",
   "title": "普通院落两种组装",
   "english": "COURT LAYOUT KIT",
-  "summary": "同一有限院落外框下的三屋对置与紧凑作业两种C布局，各三档，保留组合差异。",
+  "summary": "同一院墙内的两种普通院落布局：正堂加两厢相对的「三屋对置」，以及正堂、一座厢房加敞棚的「紧凑作业院」，各有近、中、远三档，属推测性（C级）设计。",
   "status": "待审",
   "statusNote": "已有组合已接入住宅试验区北缘；原型质量继续待审。",
   "cover": "cover.webp",
-  "coverAlt": "普通院落两种组装实际模型CPU预览；C级设计，非遗址原状。",
+  "coverAlt": "斜俯视：黄土院墙围成长方形院子，左前角是一座小门屋，后部是带门窗的正堂，院子两侧各有一座两坡顶厢房相对。",
   "gallery": [
     "shots/01.webp"
   ],
   "files": [
     {
-      "path": "files/compact_work-LOD0.glb",
-      "label": "compact_work · LOD0"
-    },
-    {
       "path": "files/opposed_rooms-LOD0.glb",
-      "label": "opposed_rooms · LOD0"
-    },
-    {
-      "path": "files/compact_work-LOD1.glb",
-      "label": "compact_work · LOD1"
-    },
-    {
-      "path": "files/compact_work-LOD2.glb",
-      "label": "compact_work · LOD2"
+      "label": "三屋对置 · 近景"
     },
     {
       "path": "files/opposed_rooms-LOD1.glb",
-      "label": "opposed_rooms · LOD1"
+      "label": "三屋对置 · 中景"
     },
     {
       "path": "files/opposed_rooms-LOD2.glb",
-      "label": "opposed_rooms · LOD2"
+      "label": "三屋对置 · 远景"
+    },
+    {
+      "path": "files/compact_work-LOD0.glb",
+      "label": "紧凑作业院 · 近景"
+    },
+    {
+      "path": "files/compact_work-LOD1.glb",
+      "label": "紧凑作业院 · 中景"
+    },
+    {
+      "path": "files/compact_work-LOD2.glb",
+      "label": "紧凑作业院 · 远景"
     }
   ],
   "related": [
-    "p-luoyang"
+    "p-luoyang",
+    "m-luoyang-ordinary-house-types"
   ],
   "notes": {
-    "已完成的检查": "实际GLB与原生几何匹配，有限路径射线及分离检查；原内部反向接口按范围记录。 图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
-    "限制与待解决": "沿用本包冻结住屋版本，不冒称已套用最新近景四型。非WFC或连续参数域，合批不是单一布尔实体；未穷尽内部接触、连续人体或GPU检查。 入城是设计装配状态，不代表古代宅址考据、013近景质量、动态/结构或GPU验收。",
-    "城市装配": "本家族现有组合新增2处C级院落落位，已计入洛阳47院总数。原44院不动；默认远档，北缘三院章加载近档。复用原GLB，无新增模型文件或独立附件卡。"
+    "已完成的检查": "导出模型与原模型几何一致，院内通路和各屋间距做过有限检查；图片是离线渲染预览，没有做浏览器或显卡上的验收。原记录：实际GLB与原生几何匹配，有限路径射线及分离检查；原内部反向接口按范围记录。 图像为冻结原生CPU预览并以导出一致性核对，或注明的实际GLB实渲，非浏览器/GPU验收。",
+    "限制与待解决": "院里的屋子沿用当时冻结的旧版住屋，不是最新的近景版；三屋对置的正堂、厢房和紧凑作业院的正堂，外形尺寸分别与「普通住屋与门房四型」里的 H96、H72、H64 对得上（屋面外包相同，高差在 2 厘米以内）。院落只是两种固定组合，不是可任意生成的系统，也不代表古代宅址考据。原记录：沿用本包冻结住屋版本，不冒称已套用最新近景四型。非WFC或连续参数域，合批不是单一布尔实体；未穷尽内部接触、连续人体或GPU检查。 入城是设计装配状态，不代表古代宅址考据、013近景质量、动态/结构或GPU验收。",
+    "城市装配": "这两种院落已在洛阳住宅试验区北缘新放了 2 处，计入全城 47 座院落。原记录：本家族现有组合新增2处C级院落落位，已计入洛阳47院总数。原44院不动；默认远档，北缘三院章加载近档。复用原GLB，无新增模型文件或独立附件卡。"
   }
 }
