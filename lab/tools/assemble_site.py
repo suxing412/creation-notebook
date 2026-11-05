@@ -7,6 +7,8 @@
 - Part-download pages get a note with a direct link to the whole, verified ZIP in the release.
 - lab/ (the asset library) goes to the site root and replaces the old docs/index.html homepage; its "../docs/"
   references become root-relative. The old /lab/ pages stay as redirects to the same page at the root.
+- Then lab/tools/slim_site.py makes the published copy smaller (meshopt GLBs, WebP pictures, one copy of three.js);
+  needs GLTFPACK (the gltfpack command) and Pillow. SLIM=0 skips it for a quick local build.
 - Fails if the site would exceed the GitHub Pages size limit, so a too-large site is never half-published.
 """
 import json, os, re, shutil, sys
@@ -94,6 +96,16 @@ def main():
                     f'<!doctype html><meta charset="utf-8"><title>造物之匣</title>'
                     f'<script>location.replace("../{f}" + location.search + location.hash)</script>'
                     f'<a href="../{f}">造物之匣已搬到站点首页</a>')
+    if os.environ.get('SLIM', '1') != '0':
+        sys.path.insert(0, HERE)
+        import slim_site
+        stats, skipped_scopes = slim_site.slim(OUT)
+        print(f'slimmed: {stats["glb"][0]} GLB -{stats["glb"][1] / 1e6:.0f} MB · {stats["png"][0]} PNG→WebP -{stats["png"][1] / 1e6:.0f} MB'
+              f' · {stats["vendor"][0]} duplicate three.js copies -{stats["vendor"][1] / 1e6:.0f} MB')
+        for sc in skipped_scopes:
+            print(f'  note: PNGs in {sc} kept (built paths + a file that must not change)')
+        print(f'before slimming {total / 1e6:.0f} MB')
+        total = sum(os.path.getsize(os.path.join(dp, f)) for dp, dn, fn in os.walk(OUT) for f in fn)
     open(os.path.join(OUT, '.nojekyll'), 'w').close()
     print(f'site {total / 1e6:.0f} MB · {skipped} source files left out (in release {arch.get("tag")})')
     for u in unmapped:

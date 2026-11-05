@@ -34,6 +34,7 @@ PROJ = SPEC.get('project', {})
 NOTE_KEYS = ('已完成的检查', '限制与待解决')
 SOURCE = re.compile(r'\.(blend|blend1|zip|part\d{3}|psd|exr|fbx|max|ma|mb|c4d|spp|kra)$', re.I)
 COMPRESSED = {'EXT_meshopt_compression', 'KHR_meshopt_compression', 'KHR_draco_mesh_compression'}
+KEPT_AS_IS = ('cities/', 'prototypes/')  # the deploy publishes these folders byte-for-byte (their scenes verify hashes)
 ARCH_PATH = os.path.join(DOCS, 'asset-spec', 'source-archive.json')
 ARCHIVED = set(json.load(open(ARCH_PATH, encoding='utf-8'))['files']) if os.path.exists(ARCH_PATH) else set()
 
@@ -146,7 +147,8 @@ def check_card(path):
             E.append(f'{what}只能是 {" / ".join(LIM["imageTypes"])}：{p}')
             return None
         mb = os.path.getsize(os.path.join(DOCS, r)) / 1e6
-        if not r.lower().endswith('.webp') and mb > LIM.get('imageWebpWarnMB', 1):
+        # the deploy turns PNGs into WebP (lab/tools/slim_site.py), except in folders it must leave byte-for-byte
+        if not r.lower().endswith('.webp') and mb > LIM.get('imageWebpWarnMB', 1) and (r.startswith(KEPT_AS_IS) or r.lower().endswith(('.jpg', '.jpeg'))):
             W.append(f'{what}是 {mb:.1f} MB 的 {os.path.splitext(r)[1][1:].upper()}，建议转成 WebP：{p}')
         return r
     cover = image(c['cover'], '封面') if c.get('cover') else None
@@ -195,8 +197,8 @@ def check_card(path):
             E.append(f'GLB 超过 {LIM["glbMaxMB"]} MB：{p}（{mb:.1f} MB）')
         elif mb > LIM['glbWarnMB']:
             W.append(f'GLB 偏大：{p}（{mb:.1f} MB，建议 ≤ {LIM["glbWarnMB"]} MB）')
-        if mb > LIM.get('glbCompressWarnMB', 1) and not COMPRESSED & set(info.get('extUsed') or []):
-            W.append(f'GLB 没有压缩（{mb:.1f} MB）：{p}；建议用 gltfpack -cc 做 meshopt 压缩')
+        if mb > LIM.get('glbCompressWarnMB', 1) and not COMPRESSED & set(info.get('extUsed') or []) and r.startswith(KEPT_AS_IS):
+            W.append(f'GLB 没有压缩（{mb:.1f} MB）：{p}；城景目录部署时不自动压缩，可用 gltfpack -cc 压缩后同步更新校验哈希')
         tri = info.get('triangles') or 0
         if tri > LIM['trianglesMax']:
             E.append(f'面数超过 {LIM["trianglesMax"]:,}：{p}（{tri:,}）')

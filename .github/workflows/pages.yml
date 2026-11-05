@@ -1,7 +1,8 @@
 # Publish the site on every push to main.
-# docs/ stays at the site root exactly as before (all existing URLs keep working);
-# the asset library (lab/) is published at /lab/, with its "../docs/" references pointed at the root.
+# docs/ goes to the site root (existing URLs keep working); the asset library (lab/) is the homepage, old /lab/ pages redirect.
 # Source files (.blend, source ZIPs) are not published: they are in a GitHub Release, see lab/tools/assemble_site.py.
+# The published copy is slimmed (lab/tools/slim_site.py): meshopt GLBs, WebP pictures, one copy of three.js.
+# The repository keeps the originals.
 name: Deploy site
 
 on:
@@ -31,9 +32,27 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install the slimming tools
+        # gltfpack (meshoptimizer, MIT) pinned by version and by the registry's sha512; Pillow for WebP
+        run: |
+          npm install --prefix "$RUNNER_TEMP/gltfpack" --no-audit --no-fund --ignore-scripts gltfpack@1.3.0
+          got=$(node -p "require('$RUNNER_TEMP/gltfpack/package-lock.json').packages['node_modules/gltfpack'].integrity")
+          test "$got" = "sha512-YGt2vPUa3OZuGh4IqbKdorwPyr9PcKKVRHtxOcfrHz3c83EFA6WOJVQMzRej6gPbCWcVnrZ8RDKduxaGclW/xQ==" || { echo "gltfpack integrity mismatch: $got"; exit 1; }
+          python -m pip install --disable-pip-version-check pillow==12.3.0
+
+      - uses: actions/cache@v4
+        # packed GLBs and WebP pictures by content hash, so a push only re-encodes what changed
+        with:
+          path: .site-cache
+          key: site-slim-${{ github.sha }}
+          restore-keys: site-slim-
+
       - name: Assemble the site
         # docs/ minus source files (they live in the GitHub Release named in docs/asset-spec/source-archive.json),
-        # plus the asset library at /lab/; fails above the 1 GB Pages limit so the live site stays on the last good build
+        # plus the asset library at the root, slimmed; fails above the 1 GB Pages limit or if a reference would break,
+        # so the live site stays on the last good build
+        env:
+          GLTFPACK: node ${{ runner.temp }}/gltfpack/node_modules/gltfpack/cli.js
         run: python -I lab/tools/assemble_site.py _site
 
       - uses: actions/configure-pages@v5
