@@ -1,0 +1,339 @@
+{
+ "seat": "LY-064",
+ "baseline_commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "repo": "D:/GitHub/creation-notebook-lab",
+ "city_load_search": "grep for palaceque|paired-que|palace-admission|palace-guard over docs/cities/luoyang/*.mjs, v1/*.mjs, data/*, index.html: no hits. city-data.mjs references library/models only once (yong-Y-LOD0.glb, line 1229). Re-checked 2026-11-05 at bce3211: git grep palaceque|paired-que|对阙 hits only p-luoyang.asset.json (lines 289/479/550, membership/text) and lab/data/assets.json (catalogue); no city loader.",
+ "inputs": [
+  {
+   "role": "reused que, near LOD",
+   "path": "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD0.glb",
+   "sha256": "a022d9870594f986658be288528048ca3ea6ca69c576b46a5b1aef700e0ca23d",
+   "bytes": 1588776,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "native": "missing (no .blend / source ZIP found in repo or D:/GitHub/creation-notebook-待传)"
+  },
+  {
+   "role": "reused que, mid LOD",
+   "path": "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD1.glb",
+   "sha256": "09839d70748ea5c5ac6c3281c4c10655859e179b9c40046f1428478d8f27a68c",
+   "bytes": 465904,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "native": "missing"
+  },
+  {
+   "role": "reused que, far LOD",
+   "path": "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD2.glb",
+   "sha256": "9b75671b3d12f393c5b9649611f96cb84eec161042a4fae2bc35cd0fbdd01a8b",
+   "bytes": 49052,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "native": "missing"
+  },
+  {
+   "role": "que asset card",
+   "path": "docs/library/models/m-luoyang-palace-paired-que/m-luoyang-palace-paired-que.asset.json",
+   "sha256": "39dffd3b9e55deb3f4d04dabe03a2894bd354bb5f936a2dfaa862ab4f22adc57",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "que cover",
+   "path": "docs/library/models/m-luoyang-palace-paired-que/cover.webp",
+   "sha256": "51d80f5a649a7e9952a7376078be2eee8f411ceeb293438fc18299f9b307c161",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "que CPU shot LOD1",
+   "path": "docs/library/models/m-luoyang-palace-paired-que/shots/palaceque-Q-LOD1-CPU.webp",
+   "sha256": "7cb089603add31c7b7408c05011483cb0aa11a9c5652448c1d818b5d60c6ebfa",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "que CPU shot LOD2",
+   "path": "docs/library/models/m-luoyang-palace-paired-que/shots/palaceque-Q-LOD2-CPU.webp",
+   "sha256": "a8ff2389d9d85de1f05bffa42540d07e5ea410325cc8a892f7f1481347e88467",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "candidate docking neighbour (court ground new_court_support_C, front edge z=+67)",
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD0.glb",
+   "sha256": "59c8b758a5a2523105eac0e516e9961bf769bd5e422ba2913d292492ed45c4b0",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "note": "other poses/LODs hashed below"
+  },
+  {
+   "role": "admission-court source record",
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/source.json",
+   "sha256": "d02c1d8e2333161495363e8e4d85feb91cb22d8f6d1a4c829b8557a0809f2fb3",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "admission-court port band outer_ground_join (Blender y -66.5..-65 = glTF z 65..66.5, floor 0)",
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/finite-routes.json",
+   "sha256": "0fba7079c9cc825b8d1208247eb526a4069a41a76a67060361bb2a78d4378f38",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "guard slice reference",
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD0.glb",
+   "sha256": "1ffc1c3118766d418dd5fbb08b5f4a9b8790643465cc29a1d7c76f0bb28e53f3",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "shared city data (read-only, must not change)",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "loadedInCity": true,
+   "loaderCode": "city entry; contains no que reference"
+  },
+  {
+   "role": "shared city app (read-only)",
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "loadedInCity": true,
+   "loaderCode": "contains no que reference"
+  },
+  {
+   "role": "project card (read-only; que listed as member only)",
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "loadedInCity": false,
+   "loaderCode": "members[] line 550, title line 289; membership is not loading"
+  },
+  {
+   "role": "task pool",
+   "path": "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md",
+   "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7"
+  },
+  {
+   "role": "task board",
+   "path": "D:/GitHub/creation-notebook-workpacks/taskboard.json",
+   "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4"
+  },
+  {
+   "role": "candidate docking neighbour, other pose/LOD (needed for T2/T3b at matching LOD)",
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD1.glb",
+   "sha256": "d95bd22f9317683ece8b8d14a6d4a6719522e47c8410f976e064708890148281",
+   "bytes": 1126584,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "candidate docking neighbour, other pose/LOD (needed for T2/T3b at matching LOD)",
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD2.glb",
+   "sha256": "01b2017fac9d8ee6190726d233973c9b048936ce76b3ec7da8fb91aedec3a33d",
+   "bytes": 278700,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "candidate docking neighbour, other pose/LOD (needed for T2/T3b at matching LOD)",
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0.glb",
+   "sha256": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+   "bytes": 2578388,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "candidate docking neighbour, other pose/LOD (needed for T2/T3b at matching LOD)",
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD1.glb",
+   "sha256": "455a12153d4132d2b653cdf8bbcf4b4994a5c33451efc1ec16119ebbf21453d2",
+   "bytes": 1126500,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "candidate docking neighbour, other pose/LOD (needed for T2/T3b at matching LOD)",
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD2.glb",
+   "sha256": "108e28a567dcef237868b2414332ae51925686d256891736355a5b40d9c0101d",
+   "bytes": 278616,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "guard slice / unit reference (read-only)",
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-LOD0.glb",
+   "sha256": "b06ba866692f54a2129d9673eb4ec73106d49323daa438246a772a3135b2c75e",
+   "bytes": 1390736,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "guard slice / unit reference (read-only)",
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-LOD1.glb",
+   "sha256": "8d1e93d5e7907d671990665c8ed0c273015c5a7cefb4fa4c57f6f52dad8e587a",
+   "bytes": 539568,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "guard slice / unit reference (read-only)",
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-LOD2.glb",
+   "sha256": "173a925cd066b2f072f4b1e4b55db9c2faa9605d99b5ec8f4b4cd06dda23cc41",
+   "bytes": 107592,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "guard slice / unit reference (read-only)",
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD0.glb",
+   "sha256": "48c511c54010cc00b5a6262dc280cab2b1d0a7c13050d847fc5856e264ce82cd",
+   "bytes": 1386564,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "guard slice / unit reference (read-only)",
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD1.glb",
+   "sha256": "a359265f37452cae18ab078b4b7945d8bb347c941637a12b68caf449adb94af8",
+   "bytes": 535400,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "guard slice / unit reference (read-only)",
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD2.glb",
+   "sha256": "bf47d91d784b224fcfc0bbe81997c6e5a9a81c68375641134e29e396d9e5d63d",
+   "bytes": 103424,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "guard slice / unit reference (read-only)",
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD1.glb",
+   "sha256": "42b7883dc066e1c12cff334dcc4f06705abed51a7bd1f8e42640eb388a2ffb86",
+   "bytes": 535508,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "guard slice / unit reference (read-only)",
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD2.glb",
+   "sha256": "6eb2c56efc5a87a4f8e15bc5958e5b51ff327410b931d52bd44bd9f484ecdf6c",
+   "bytes": 103536,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "guard slice / unit reference (read-only)",
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-unit-LOD0.glb",
+   "sha256": "34c1a9474825554cfa4781e639b8d7ff0101be45b9f55029276a4835066b298d",
+   "bytes": 1145796,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "guard slice / unit reference (read-only)",
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-unit-LOD1.glb",
+   "sha256": "7f72684b511b763b50b791478b1b0d45636418677bd668da78be1d32f9654b79",
+   "bytes": 420180,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "guard slice / unit reference (read-only)",
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-unit-LOD2.glb",
+   "sha256": "c5dc809c123203ac35430cd375de07b2028c7aad1b816ee53c2044c245acee68",
+   "bytes": 35532,
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "admission-court README (states native package luoyang-palace-admission-court-v1.zip is not in public dir)",
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/README.md",
+   "sha256": "59072e245440a54a9c5781b9aaad235d341aebb577ccec78522867d1090cddd5",
+   "loadedInCity": false,
+   "loaderCode": null
+  }
+ ],
+ "prepArtifacts": [
+  {
+   "path": "scripts/measure_que.py",
+   "sha256": "2859b689a70cb5d0ee582ac7b3276fbfb10ff52108df6af7837fdc3fed0b1aff"
+  },
+  {
+   "path": "scripts/probe_support.py",
+   "sha256": "a596142f80111e29cb8e26c9dc474e77ffa142ddfa584c507792de40ad6c52af"
+  },
+  {
+   "path": "scripts/volume_overlap.py",
+   "sha256": "500aeab80b5c88aea3ade7b91ff245d32aec0c3cc1c92458a0edf21e2dacd7e9"
+  },
+  {
+   "path": "scripts/profile_gallery_edge.py",
+   "sha256": "3ba8a32ca0d28d911a55ba87e7331722688196daeb85159833dbbed1c45ae717"
+  },
+  {
+   "path": "specs/que-lanes-and-court.json",
+   "sha256": "46caf6960d9ec0ffb896f70c7c63d3d7458c6dd8756dbd335ef3dd9a797ce7cc"
+  },
+  {
+   "path": "out/que-measure.json",
+   "sha256": "930fc35f354de3abffaf394c423ae6f25e78870f94dc7a638ddf945f6dd3d74f"
+  },
+  {
+   "path": "out/neighbour-measure.json",
+   "sha256": "c2c4be381b58a965f46e273dd1b9a6807f0eac9c9cf52013d9cfc37ab7b7d58c"
+  },
+  {
+   "path": "out/probe-court-tz72.json",
+   "sha256": "7ee1f2cd3681826d323ed8a0966094a25fad318545fda0d62a8c6fecc86b8a32"
+  },
+  {
+   "path": "out/probe-court-tz66.json",
+   "sha256": "d9b52b0626855ba8a5d04d82d6cead33a6d687b248203e66d35337d99ea8ef4d"
+  },
+  {
+   "path": "out/probe-court-tz62.5.json",
+   "sha256": "65c0dc87a35d347693d6504fd9a8836d532e37d880bd96e2a1282e2d102f4d07"
+  },
+  {
+   "path": "out/probe-court-tz40.json",
+   "sha256": "322c7d64fa55cf06891bc737016aa47aa0a676385fe16d6b9c2d75b75a5faf70"
+  },
+  {
+   "path": "out/volume-overlap.json",
+   "sha256": "628d98a26d322404e424d8e089005713e0c338c0aa02ee3d5618699b1e0ef1d7"
+  },
+  {
+   "path": "out/gallery-edge-profile.json",
+   "sha256": "bcbce3664f7dd295958bb0fe1a73d3b5a0fbeddd7471e418c24b64f04cd7980b"
+  }
+ ],
+ "missing": [
+  {
+   "what": "native .blend + generator for palaceque-Q (LY_P01 materials)",
+   "use": "only if que itself had to be edited; LY-064 keeps que bytes unchanged, so not blocking",
+   "rebuildFromGLB": "yes for geometry (simple frustum + timber + roof); texture payloads extractable from GLB; would have to be labelled rebuilt-from-GLB"
+  },
+  {
+   "what": "LY-006 port/ownership template",
+   "use": "port IDs, who owns admission-court front edge z=+67",
+   "rebuildFromGLB": "no"
+  },
+  {
+   "what": "LY-010 selected scheme",
+   "use": "whether forecourt is standalone or docks to admission court",
+   "rebuildFromGLB": "no"
+  },
+  {
+   "what": "possible local forecourt combination for the que inside the private delivery package (card note mentions 局部前庭组合); not found in repo or D:/GitHub/creation-notebook-待传",
+   "use": "if it exists and passes T2/T3, LY-064 becomes reuse instead of new build",
+   "rebuildFromGLB": "no (it is not in any public GLB); coordinator must confirm"
+  },
+  {
+   "what": "admission-court native package luoyang-palace-admission-court-v1.zip",
+   "use": "only if forecourt is fused into court ground mesh; preferred route is a separate piece docking at the z=+67 port",
+   "rebuildFromGLB": "ground slab geometry yes, but its owner is not LY-064"
+  }
+ ]
+}

@@ -1,0 +1,739 @@
+{
+ "base": {
+  "rev": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "inputs": {
+   "docs/cities/luoyang/data/evidence/evidence-geometry.json": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+   "docs/cities/luoyang/research/2026-11-03/city-milestones.json": "23b30e705ed780f676eb7fc69a8c06a08524d04dfd34021f93859a5aa370ccfd",
+   "docs/cities/luoyang/p-luoyang.asset.json": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "docs/cities/luoyang/city-data.mjs": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "docs/cities/luoyang/app.mjs": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "docs/cities/luoyang/index.html": "cfbf73763675397dde8f5ab08bb13f6b51fbcfa9954227552e32be756666b1bf",
+   "docs/cities/luoyang/v1/evidence-view.mjs": "fcf2079fd635f7f76553dbd1d23b8feaa688f77e278b4edb6e4154fab74c8fac",
+   "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "docs/cities/luoyang/data/west/road-plan.json": "0bc4528cbf354a18c5a74f9bbf4574bfc0ea0ee817516736e9d15ef5dca6881a",
+   "docs/cities/luoyang/data/west/ground-atomic-contract.json": "7f26720bf40fc8cd7f7d0b445398d889fcc70c407f7cc7e26e4acd0eb6332367",
+   "docs/library/models/m-luoyang-palace-waterway-interface/m-luoyang-palace-waterway-interface.asset.json": "c0f4284053039e0aa7ae871cb955a6d0cb3163b41b691edb49ef71ec94f0a836"
+  },
+  "glbs": {
+   "docs/library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb": {
+    "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb": {
+    "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb": {
+    "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb": {
+    "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/c02v/B2-LOD1-prototype.glb": {
+    "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb": {
+    "sha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+    "waterNamed": [
+     "nodes[9]=architecture_C_drain_stone.001",
+     "meshes[9]=C_shallow_drain_floor.001",
+     "materials[6]=C_drain_stone.001"
+    ]
+   },
+   "docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb": {
+    "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+    "waterNamed": [
+     "nodes[9]=architecture_C_drain_stone.001",
+     "meshes[9]=C_shallow_drain_floor.001",
+     "materials[6]=C_drain_stone.001"
+    ]
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-00.glb": {
+    "sha256": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-01.glb": {
+    "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-02.glb": {
+    "sha256": "8a17587a995e6851a1c4c7e0844f79cb880cf70348edb55dfb62891434b2afa9",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-03.glb": {
+    "sha256": "cd4cb2b629c15cbf1eaaada61eca546fc96a034a1a53802acd9d7ebeb84e4762",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-04.glb": {
+    "sha256": "50d8c7aa2c7d7dce95a894edf05bc1ecd2dbc73fbcd633e1c67f36065fd893ae",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-05.glb": {
+    "sha256": "4e000b0c34b26504ff30b7c4c9748ede9f1b84819dcc75301b57caca85f261ae",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-06.glb": {
+    "sha256": "d7d3cc79fe7ea85cda3147c90531dfb7403789405f4af0671baef7d6ba89993e",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-07.glb": {
+    "sha256": "e7db9cff3eed1e7fe088a5199a5479d483ba68a2f440624cb68f6848373be550",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-10.glb": {
+    "sha256": "afb20f8e3b19dfd85a65bf1462dea09225336d336c272425fad4d7491e3cfde9",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-11.glb": {
+    "sha256": "2cfa846184cf28e36cacb832250b5d2afcdbdc6968c81c3f09957ed968e21ecd",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/direct/gate-body-only.glb": {
+    "sha256": "cdba2d5c3bbf14bbf9c6ed59e3fcadf174c13e882a5ccb1522b81bc9949d5058",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/direct/wall-08.glb": {
+    "sha256": "221b8dc8c5702bbd9980e72e291e61f54a0544ccb05a8923bb53d0f9a62a8a90",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/direct/wall-09.glb": {
+    "sha256": "d4fb5c1cbf3c08ff18f9dcf1b25cab67e44a36a00ade3b8b67fb5eb3679c31be",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb": {
+    "sha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+    "waterNamed": [
+     "nodes[9]=architecture_C_drain_stone",
+     "meshes[9]=C_shallow_drain_floor",
+     "materials[6]=C_drain_stone"
+    ]
+   },
+   "docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb": {
+    "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+    "waterNamed": [
+     "nodes[9]=architecture_C_drain_stone",
+     "meshes[9]=C_shallow_drain_floor",
+     "materials[6]=C_drain_stone"
+    ]
+   },
+   "docs/cities/luoyang/assets/ground-atomic/D08.glb": {
+    "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb": {
+    "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/ground-atomic/retained.glb": {
+    "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/ground-atomic/south.glb": {
+    "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/market/N2-replacement.glb": {
+    "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/market/market-cluster.glb": {
+    "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb": {
+    "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb": {
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb": {
+    "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb": {
+    "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+    "waterNamed": []
+   },
+   "modeling-lab/review-batches/2026-11-04-taixue-A-v3.2/models/taixue-A-LOD1.glb": {
+    "sha256": "413c2f35ec264dfbc6f24c1ceab9a0f8ce492c975b50e34fd5320ad25be391f2",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-lingtai-c1b58de1bff4.glb": {
+    "sha256": "c1b58de1bff44b80a8675302101435443b16acbe902d88f4526c10edbb6dfe85",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-mao-gate-0ae54089b66a.glb": {
+    "sha256": "0ae54089b66a54f17db78c53ce9164b2bb99e6292b466c4c7c90f498385063e8",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-court-A-19a42b6b0b1c.glb": {
+    "sha256": "19a42b6b0b1cc1f204e112fc9d63b626895bf0f9b94922cac6ab2bd1cb810ff4",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-court-A2-db02f24fde89.glb": {
+    "sha256": "db02f24fde899b73d5902b41391a7a5e6db64affac25b7cc609de3d46a3b0994",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-court-B-6f7f84af4e7f.glb": {
+    "sha256": "6f7f84af4e7f57920dc1182b747a7081bca9d15b2d595d3ec80593f60e022282",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-court-B2-7d3758ce668d.glb": {
+    "sha256": "7d3758ce668d06541694e7e17d947d5b380a0974311c57eba7968284214c6ac2",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-court-TC03-2-98bedd183667.glb": {
+    "sha256": "98bedd1836674388e9aee3794af12def4235d566324dae877c6ab7baee0c3a05",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb": {
+    "sha256": "94693c58dd6308153c5900b0bb9698eff138811f39369f54f545b9034417e71e",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-pingcheng-P-c8ab88f4b326.glb": {
+    "sha256": "c8ab88f4b326e0c24346b97e7429cdf3d43d463a53b918017c21cf0428d74f11",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-shangxi-X-9a892e7f27f7.glb": {
+    "sha256": "9a892e7f27f7b8faf8cc95cdd22b66a77da5ef5e2cf03636d40f79ac8d26f851",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-yong-Y-1983dab58385.glb": {
+    "sha256": "1983dab583853beb9b2a905227c9b63526b3696811b049466ccf471db58ba164",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-zhongdong-Z-856cfff1f015.glb": {
+    "sha256": "856cfff1f015f8ce3c216cb9908a82dc9038846fa94170255730142f19693d3c",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-taixue-A-ee4163421d16.glb": {
+    "sha256": "ee4163421d1652b9301b8d50c7fe9f04ed09440000683b9a207ddf3f1600dda3",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-taixue-B-11b01e4948be.glb": {
+    "sha256": "11b01e4948be0e0e229116b9eaa939f6b932058a0d3513ac676012188a260c57",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb": {
+    "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/mao-gate/mao-C-LOD0.glb": {
+    "sha256": "d8fbad038b582634084f0248d2e4b23f13f41d850b83f64ec4cfcc3b90264388",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb": {
+    "sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb": {
+    "sha256": "13ff78a7a1fe9159ed577d715ff30c75cf3d0e8f6d2d47311968f660986ed801",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-A2-LOD1.glb": {
+    "sha256": "d76580bbb5a7c89391152f32bd65b81595fbc300d6da69b2c6e819fff9d941c2",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-A2-LOD2.glb": {
+    "sha256": "4691c63041231344e7309643c94c84938bb403b2a4ae68b595e6399b37214589",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD1.glb": {
+    "sha256": "2be52632e16e43290ef96aae7479cd7c1faa413b2090cd2af162652a8bb16d9c",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD2.glb": {
+    "sha256": "641b05a535a266dce29c8c966cccb576e522b65a4586e95e8cfe1fb30fb69952",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B2-LOD1.glb": {
+    "sha256": "95b66c5d994cac56d38327896bfe3b370fb4a3daaf643b0250c225cd8e83795e",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B2-LOD2.glb": {
+    "sha256": "b9651fa3ef9bc449131da9eadf86c1fa985ef798d5badc675a81c30174181380",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-perimeter-v1/models/court-TC03-2-LOD1.glb": {
+    "sha256": "9003d00a45b4866385fbd6092a5c2f3b99438c9a4f3714543b9a107cdaac4024",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-perimeter-v1/models/court-TC03-2-LOD2.glb": {
+    "sha256": "b8dda6789f4f9dcfddf1a1da430f43aa25ab6a56a0cb894ea139339a646a6905",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-second-row-v1/models/court-A-LOD1.glb": {
+    "sha256": "245c20b6385dcee4c55ca300f7e2420b07ca883b5e91b5dcd5a93e5b5a561e6a",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-second-row-v1/models/court-A-LOD2.glb": {
+    "sha256": "8e098a5f382448c20d07422f30543e6d3234112bc1fc9327d6ae6860a6cff94d",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb": {
+    "sha256": "7d995a1b95026cb3d626bf6ad6bdd01edcf89d7c5baab87ffff341360d51f102",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD2.glb": {
+    "sha256": "e6f289f78dc05c2d0c5ea6ef11726748be6b35ffb68315a5b7fc1186f3c5551e",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD1.glb": {
+    "sha256": "00a2eb67b73bac04f267e24540f6fd2e6bf26689e4c0783783d664566bc24312",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD2.glb": {
+    "sha256": "99047569c6248c99e0601924613ad9e9c710d25248ac661fd29a2bae84665862",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD1.glb": {
+    "sha256": "c277f7e31d764384979e4712fef95472fb8749f930b5a75a54028e106939652c",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD2.glb": {
+    "sha256": "7406a24cf7124fcde7409a30f2961251a873a64ea9a3ab6a3e9e206085ad6074",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD1.glb": {
+    "sha256": "a78b7c84c1757e94a2ce9e455370c5003b22b999a5cc254b39374461c7808e0f",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD2.glb": {
+    "sha256": "cefa53325287e76d6506463f1d01227a9bcb30ce32f21c5b37afd17c176c7038",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/taixue-A-v3.2/models/taixue-A-LOD1.glb": {
+    "sha256": "413c2f35ec264dfbc6f24c1ceab9a0f8ce492c975b50e34fd5320ad25be391f2",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD0.glb": {
+    "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "waterNamed": []
+   }
+  },
+  "waterSentencesCityData": [
+   "\"basis\": \"按现有原子地面合同展示完整四文件组合，保留道路关系与设计地面。古河渠位置仍未配准。\"",
+   "\"北宫新墙与古水系仍未配准，相关几何保留空缺。\""
+  ],
+  "summary": {
+   "glbReferenced": 71,
+   "glbUnresolved": 0,
+   "glbWithWaterNames": [
+    "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb",
+    "docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb",
+    "docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb",
+    "docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb"
+   ],
+   "glbWithRiverCanalNames": [],
+   "appLoadsEvidenceGeometry": false
+  }
+ },
+ "new": {
+  "rev": "cad338ba683f7277aea098f45c8feb6c915a847c",
+  "inputs": {
+   "docs/cities/luoyang/data/evidence/evidence-geometry.json": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+   "docs/cities/luoyang/research/2026-11-03/city-milestones.json": "23b30e705ed780f676eb7fc69a8c06a08524d04dfd34021f93859a5aa370ccfd",
+   "docs/cities/luoyang/p-luoyang.asset.json": "f43d1496c85ff6c148f1c45e97fb5bcaefb2f06e1a258670d689d3b4f2b6f668",
+   "docs/cities/luoyang/city-data.mjs": "d8933a32a6a133b38bc8ae5591bd0b350d206f9c884e1a6c4a1adabf5fc6daf3",
+   "docs/cities/luoyang/app.mjs": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "docs/cities/luoyang/index.html": "cfbf73763675397dde8f5ab08bb13f6b51fbcfa9954227552e32be756666b1bf",
+   "docs/cities/luoyang/v1/evidence-view.mjs": "fcf2079fd635f7f76553dbd1d23b8feaa688f77e278b4edb6e4154fab74c8fac",
+   "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "docs/cities/luoyang/data/west/road-plan.json": "0bc4528cbf354a18c5a74f9bbf4574bfc0ea0ee817516736e9d15ef5dca6881a",
+   "docs/cities/luoyang/data/west/ground-atomic-contract.json": "7f26720bf40fc8cd7f7d0b445398d889fcc70c407f7cc7e26e4acd0eb6332367",
+   "docs/library/models/m-luoyang-palace-waterway-interface/m-luoyang-palace-waterway-interface.asset.json": "c0f4284053039e0aa7ae871cb955a6d0cb3163b41b691edb49ef71ec94f0a836"
+  },
+  "glbs": {
+   "docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb": {
+    "sha256": "e799b5880cd12a5c9255f1c2cadbb49051032027d1781e8e6dd3c27dd48c7ce2",
+    "waterNamed": []
+   },
+   "docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD2.glb": {
+    "sha256": "84426f9142947741f0944ed4772d4008dfa2f687241618306503230ac593bba0",
+    "waterNamed": []
+   },
+   "docs/library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD0.glb": {
+    "sha256": "21ffb5af02cef43552a8fd41173297569e5dac7173d0e76f09a0ef408b99a9ce",
+    "waterNamed": []
+   },
+   "docs/library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD2.glb": {
+    "sha256": "44366ced8b71c5a3cbd417f8aacfafa095f92012e13f2a989735a8aac1e5ce67",
+    "waterNamed": []
+   },
+   "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb": {
+    "sha256": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e",
+    "waterNamed": []
+   },
+   "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD2.glb": {
+    "sha256": "574d81d91d3898bf9de5e3d46b2b7d8532dd2c1b52d4ac35f7132898a1babda0",
+    "waterNamed": []
+   },
+   "docs/library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb": {
+    "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb": {
+    "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb": {
+    "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb": {
+    "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/c02v/B2-LOD1-prototype.glb": {
+    "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb": {
+    "sha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+    "waterNamed": [
+     "nodes[9]=architecture_C_drain_stone.001",
+     "meshes[9]=C_shallow_drain_floor.001",
+     "materials[6]=C_drain_stone.001"
+    ]
+   },
+   "docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb": {
+    "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+    "waterNamed": [
+     "nodes[9]=architecture_C_drain_stone.001",
+     "meshes[9]=C_shallow_drain_floor.001",
+     "materials[6]=C_drain_stone.001"
+    ]
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-00.glb": {
+    "sha256": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-01.glb": {
+    "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-02.glb": {
+    "sha256": "8a17587a995e6851a1c4c7e0844f79cb880cf70348edb55dfb62891434b2afa9",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-03.glb": {
+    "sha256": "cd4cb2b629c15cbf1eaaada61eca546fc96a034a1a53802acd9d7ebeb84e4762",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-04.glb": {
+    "sha256": "50d8c7aa2c7d7dce95a894edf05bc1ecd2dbc73fbcd633e1c67f36065fd893ae",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-05.glb": {
+    "sha256": "4e000b0c34b26504ff30b7c4c9748ede9f1b84819dcc75301b57caca85f261ae",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-06.glb": {
+    "sha256": "d7d3cc79fe7ea85cda3147c90531dfb7403789405f4af0671baef7d6ba89993e",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-07.glb": {
+    "sha256": "e7db9cff3eed1e7fe088a5199a5479d483ba68a2f440624cb68f6848373be550",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-10.glb": {
+    "sha256": "afb20f8e3b19dfd85a65bf1462dea09225336d336c272425fad4d7491e3cfde9",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/A/wall-11.glb": {
+    "sha256": "2cfa846184cf28e36cacb832250b5d2afcdbdc6968c81c3f09957ed968e21ecd",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/direct/gate-body-only.glb": {
+    "sha256": "cdba2d5c3bbf14bbf9c6ed59e3fcadf174c13e882a5ccb1522b81bc9949d5058",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/direct/wall-08.glb": {
+    "sha256": "221b8dc8c5702bbd9980e72e291e61f54a0544ccb05a8923bb53d0f9a62a8a90",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/city-wall/direct/wall-09.glb": {
+    "sha256": "d4fb5c1cbf3c08ff18f9dcf1b25cab67e44a36a00ade3b8b67fb5eb3679c31be",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb": {
+    "sha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+    "waterNamed": [
+     "nodes[9]=architecture_C_drain_stone",
+     "meshes[9]=C_shallow_drain_floor",
+     "materials[6]=C_drain_stone"
+    ]
+   },
+   "docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb": {
+    "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+    "waterNamed": [
+     "nodes[9]=architecture_C_drain_stone",
+     "meshes[9]=C_shallow_drain_floor",
+     "materials[6]=C_drain_stone"
+    ]
+   },
+   "docs/cities/luoyang/assets/ground-atomic/D08.glb": {
+    "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb": {
+    "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/ground-atomic/retained.glb": {
+    "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/ground-atomic/south.glb": {
+    "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/market/N2-replacement.glb": {
+    "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/market/market-cluster.glb": {
+    "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb": {
+    "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb": {
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb": {
+    "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb": {
+    "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+    "waterNamed": []
+   },
+   "modeling-lab/review-batches/2026-11-04-taixue-A-v3.2/models/taixue-A-LOD1.glb": {
+    "sha256": "413c2f35ec264dfbc6f24c1ceab9a0f8ce492c975b50e34fd5320ad25be391f2",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-lingtai-c1b58de1bff4.glb": {
+    "sha256": "c1b58de1bff44b80a8675302101435443b16acbe902d88f4526c10edbb6dfe85",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-mao-gate-0ae54089b66a.glb": {
+    "sha256": "0ae54089b66a54f17db78c53ce9164b2bb99e6292b466c4c7c90f498385063e8",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-court-A-19a42b6b0b1c.glb": {
+    "sha256": "19a42b6b0b1cc1f204e112fc9d63b626895bf0f9b94922cac6ab2bd1cb810ff4",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-court-A2-db02f24fde89.glb": {
+    "sha256": "db02f24fde899b73d5902b41391a7a5e6db64affac25b7cc609de3d46a3b0994",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-court-B-6f7f84af4e7f.glb": {
+    "sha256": "6f7f84af4e7f57920dc1182b747a7081bca9d15b2d595d3ec80593f60e022282",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-court-B2-7d3758ce668d.glb": {
+    "sha256": "7d3758ce668d06541694e7e17d947d5b380a0974311c57eba7968284214c6ac2",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-court-TC03-2-98bedd183667.glb": {
+    "sha256": "98bedd1836674388e9aee3794af12def4235d566324dae877c6ab7baee0c3a05",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb": {
+    "sha256": "94693c58dd6308153c5900b0bb9698eff138811f39369f54f545b9034417e71e",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-pingcheng-P-c8ab88f4b326.glb": {
+    "sha256": "c8ab88f4b326e0c24346b97e7429cdf3d43d463a53b918017c21cf0428d74f11",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-shangxi-X-9a892e7f27f7.glb": {
+    "sha256": "9a892e7f27f7b8faf8cc95cdd22b66a77da5ef5e2cf03636d40f79ac8d26f851",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-yong-Y-1983dab58385.glb": {
+    "sha256": "1983dab583853beb9b2a905227c9b63526b3696811b049466ccf471db58ba164",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-north13-zhongdong-Z-856cfff1f015.glb": {
+    "sha256": "856cfff1f015f8ce3c216cb9908a82dc9038846fa94170255730142f19693d3c",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-taixue-A-ee4163421d16.glb": {
+    "sha256": "ee4163421d1652b9301b8d50c7fe9f04ed09440000683b9a207ddf3f1600dda3",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/flat/study-taixue-B-11b01e4948be.glb": {
+    "sha256": "11b01e4948be0e0e229116b9eaa939f6b932058a0d3513ac676012188a260c57",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb": {
+    "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/mao-gate/mao-C-LOD0.glb": {
+    "sha256": "d8fbad038b582634084f0248d2e4b23f13f41d850b83f64ec4cfcc3b90264388",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb": {
+    "sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb": {
+    "sha256": "13ff78a7a1fe9159ed577d715ff30c75cf3d0e8f6d2d47311968f660986ed801",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-A2-LOD1.glb": {
+    "sha256": "d76580bbb5a7c89391152f32bd65b81595fbc300d6da69b2c6e819fff9d941c2",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-A2-LOD2.glb": {
+    "sha256": "4691c63041231344e7309643c94c84938bb403b2a4ae68b595e6399b37214589",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD1.glb": {
+    "sha256": "2be52632e16e43290ef96aae7479cd7c1faa413b2090cd2af162652a8bb16d9c",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD2.glb": {
+    "sha256": "641b05a535a266dce29c8c966cccb576e522b65a4586e95e8cfe1fb30fb69952",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B2-LOD1.glb": {
+    "sha256": "95b66c5d994cac56d38327896bfe3b370fb4a3daaf643b0250c225cd8e83795e",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B2-LOD2.glb": {
+    "sha256": "b9651fa3ef9bc449131da9eadf86c1fa985ef798d5badc675a81c30174181380",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-perimeter-v1/models/court-TC03-2-LOD1.glb": {
+    "sha256": "9003d00a45b4866385fbd6092a5c2f3b99438c9a4f3714543b9a107cdaac4024",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-perimeter-v1/models/court-TC03-2-LOD2.glb": {
+    "sha256": "b8dda6789f4f9dcfddf1a1da430f43aa25ab6a56a0cb894ea139339a646a6905",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-second-row-v1/models/court-A-LOD1.glb": {
+    "sha256": "245c20b6385dcee4c55ca300f7e2420b07ca883b5e91b5dcd5a93e5b5a561e6a",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-second-row-v1/models/court-A-LOD2.glb": {
+    "sha256": "8e098a5f382448c20d07422f30543e6d3234112bc1fc9327d6ae6860a6cff94d",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb": {
+    "sha256": "7d995a1b95026cb3d626bf6ad6bdd01edcf89d7c5baab87ffff341360d51f102",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD2.glb": {
+    "sha256": "e6f289f78dc05c2d0c5ea6ef11726748be6b35ffb68315a5b7fc1186f3c5551e",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD1.glb": {
+    "sha256": "00a2eb67b73bac04f267e24540f6fd2e6bf26689e4c0783783d664566bc24312",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD2.glb": {
+    "sha256": "99047569c6248c99e0601924613ad9e9c710d25248ac661fd29a2bae84665862",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD1.glb": {
+    "sha256": "c277f7e31d764384979e4712fef95472fb8749f930b5a75a54028e106939652c",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD2.glb": {
+    "sha256": "7406a24cf7124fcde7409a30f2961251a873a64ea9a3ab6a3e9e206085ad6074",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD1.glb": {
+    "sha256": "a78b7c84c1757e94a2ce9e455370c5003b22b999a5cc254b39374461c7808e0f",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD2.glb": {
+    "sha256": "cefa53325287e76d6506463f1d01227a9bcb30ce32f21c5b37afd17c176c7038",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/taixue-A-v3.2/models/taixue-A-LOD1.glb": {
+    "sha256": "413c2f35ec264dfbc6f24c1ceab9a0f8ce492c975b50e34fd5320ad25be391f2",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD0.glb": {
+    "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD2.glb": {
+    "sha256": "fb8a5f2f93aace63e0229cdc4a9c65d0c1450bb80bf8965e75da0fd92cad529a",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb": {
+    "sha256": "456a7dd54a5fd623ab17d9823ab1a12701bd764bdd219ec8884e9538536cd93d",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb": {
+    "sha256": "2a32c700d401af623701a2ec84523ea2d7688fc9b5d128f22cae542a85b7b844",
+    "waterNamed": []
+   },
+   "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb": {
+    "sha256": "e5baa0df8fd28e117b4ef997cab0d962b0834a4c9664bb1ed73b7746d2488e38",
+    "waterNamed": []
+   }
+  },
+  "waterSentencesCityData": [
+   "\"basis\": \"按现有原子地面合同展示完整四文件组合，保留道路关系与设计地面。古河渠位置仍未配准。\"",
+   "\"北宫新墙与古水系仍未配准，相关几何保留空缺。\""
+  ],
+  "summary": {
+   "glbReferenced": 81,
+   "glbUnresolved": 0,
+   "glbWithWaterNames": [
+    "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb",
+    "docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb",
+    "docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb",
+    "docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb"
+   ],
+   "glbWithRiverCanalNames": [],
+   "appLoadsEvidenceGeometry": false
+  }
+ },
+ "diff": {
+  "inputsChanged": {
+   "docs/cities/luoyang/p-luoyang.asset.json": [
+    "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+    "f43d1496c85ff6c148f1c45e97fb5bcaefb2f06e1a258670d689d3b4f2b6f668"
+   ],
+   "docs/cities/luoyang/city-data.mjs": [
+    "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+    "d8933a32a6a133b38bc8ae5591bd0b350d206f9c884e1a6c4a1adabf5fc6daf3"
+   ]
+  },
+  "glbAdded": [
+   "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD2.glb",
+   "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+   "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
+   "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
+   "docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb",
+   "docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD2.glb",
+   "docs/library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD0.glb",
+   "docs/library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD2.glb",
+   "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
+   "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD2.glb"
+  ],
+  "glbRemoved": [],
+  "waterNamedGlbAdded": [],
+  "riverCanalGlbAdded": [],
+  "waterSentencesAdded": [],
+  "waterSentencesRemoved": []
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "seat": "LY-043",
+ "inputsFound": [
+  "docs/cities/luoyang/city-data.mjs e4115705（:88-112 courtyard-A2 的 path、nearPath、excludeNodes；:2322 C02-010；A2 被 9 院共用）",
+  "docs/cities/luoyang/city-renderer.mjs fa0a8dcb（:286-357 loadAsset 远档和近档，:309 excludeNodes，:416 近档只给聚焦院，:616 focusCourtyard）",
+  "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb 277e9e73（城景远档）/ A2-LOD0-prototype.glb 19b05202（近档）",
+  "R01-A 0827fa49/93b70de2，R01-B 25f018fa/a8d94bb3，TC03 8daea250/367a7d25，B2 83282373/d99affca，TC03-2 d2432b7c/bf6287a5（LOD1/LOD0）",
+  "docs/library/models/m-luoyang-wall-house-court/files/wall-house-LOD0/1/2.glb 5c20fa8b/86f66c69/5f95176f；卡片 bd35a7f9（待审，不入城）",
+  "docs/library/models/m-luoyang-earthwall-family/files/earthwall-A/B/C、westwall10（3f755fcc 等，城垣尺度，不入城）",
+  "docs/model-library/updates/m-courtyard-family/files/A2-LOD0-C2.glb e9981a07 / A2-LOD1-C2.glb f3f31774（盒体集合和城景 A2 完全相同）",
+  "docs/cities/luoyang/research/2026-11-03/composition-review.md、reference-review.md 67dd8e34（类比证据和明器换算禁令）",
+  "workpacks/LY-041/prep/prep-status.json（选院建议 C02-010，未冻结）",
+  "复核 2026-11-05 23:21：lab HEAD 仍为 bce3211，46 个输入中 45 个 SHA 一致；三个测量脚本重跑结果与存档一致（selftest 字节相同 bfda602f，allPass=true）"
+ ],
+ "inputsMissing": [
+  "院落原型（r01、c02v、d08）的原生 .blend 或生成器：仓库里没有。只有确实要新造端接件时才用得上。可以从 GLB 重建：城景原型 earth、plinth、timber 的三角 100% 是精确的轴对齐闭合盒体（A2 有 52、6、30 个盒体，覆盖 624、72、360 个三角）。",
+  "墙房样例的原生 .blend：仓库里没有。用途是改山墙或院墙端头时保留原作意图。部分可以从 GLB 重建：316 个 earth 三角里 252 个可以重建成 21 个盒体；64 个山尖三角和全部木柱三角不是盒体，只能按 GLB 网格保留，作者意图重建不出来。",
+  "LY-041 和 LY-010 冻结的选院（现在只是建议 C02-010）以及 calt 与 original 的取舍。",
+  "LY-006 对 A2 共享原型节点（architecture_C_whitebox_earth_wall.001 等）的所有权，以及「单院 overlay」接口。",
+  "LY-002 证据表：东汉洛阳住宅的山墙和院墙怎么相接，现在没有原始证据。",
+  "LY-007 材质基线和 LY-008 交付检查器：如有新件要用到，现在还没交付。"
+ ],
+ "gaps": [
+  "C02-010（A2）没有端接缺口，LOD0 和 LOD1 盒体集合相同：院墙环 5 个盒体，4 个转角都是面接触，各 0.77 m²，等于端面全面积；侵入和包含 0（417 对近邻盒体）；开放边 0；同向重复面 0；法线和绕序相反 0；屋面 5,476 个三角落进墙体内部 0。",
+  "A2 的住屋和院墙之间没有端接：西屋台基离西墙 0.95 m，北屋后墙离北墙 1.95 m；门道木柱和门楣离墙 0.30 到 0.3785 m，是分离的。",
+  "门墩接墙：每处面接触 0.33 m²，墙端在街面一侧露出 0.44 m²（2.2 × 0.20）。这是闭合的外露端面，属于设计露头，不是孔洞，也没有删面。",
+  "全部 6 个城景变体（A、B、B2、TC03、TC03-2，两档）：侵入 0，开放边 0。住屋最近离墙分别是 A/A2 0.95 m、B/B2 1.25 m、TC03/TC03-2 2.0 m。",
+  "TC03 和 TC03-2 是城景里唯一存在「住屋与院墙相接」的变体：院内隔墙（高 0.2 到 2.0）两端分别顶住院墙（0.504 m²）和住屋后墙（台基 0.0616 + 墙 0.4424 = 0.504 m²），都是全覆盖。另有 2 处只在竖直棱线上接触，经查角块被后墙盒体占满，不是缺口。",
+  "墙房样例（三档相同）：院墙端各自顶住南屋台基 0.077 m² 和侧墙 0.658 m²，合计 0.735 m²，全覆盖；4 个转角各 0.735 m²；侵入 0；山尖底和墙顶的反向接面有 4 块矩形，等于 8 个三角对，和卡片上的「8 对」一致。",
+  "夯土墙族是城垣尺度（高 8 m、厚 14 m 或长 355 m），不能直接当院墙端接件用。",
+  "自检：正例 1 个、负例 5 个全部通过。删面：开放边 4，盒体 52→51；推入 0.05 m：侵入 0.0165 m³；拉开 0.02 m：间隙 0.02；复制面：同向重复 1；翻转绕序：法线相反 2。"
+ ],
+ "reuseCandidate": "C02-010（A2，城景 LOD1 277e9e73 / LOD0 19b05202）现有院墙转角、门墩接墙全部是闭合面接触，没有侵入，没有删面，而且住屋和院墙不相接，所以没有可补的端接或角部缺口。按任务池应判「复用，无缺口，不新造」。交付物只有逐区域接面清单、检查器、自检负例和 SHA 绑定，证据在 prep/junctions-summary.json 和 selftest-junctions.json。墙房样例（5c20fa8b 等三档）的墙房端接也已经闭合，不需要重造；它没有入城，换进城景要由 LY-010 另行立项，不属于本项补件。",
+ "touches": [
+  "城景节点 C02-010：只读矩阵；同原型的另外 8 院（C02-021、024、001、028、031、013、015、035）只读，不能受影响",
+  "资产 courtyard-A2 两档的节点 architecture_C_whitebox_earth_wall.001：院墙环盒体 x −9…−8.65、8.65…9，z −12…−11.65，南墙两段 x −8.65…−5 和 −2…8.65；门墩 x −5…−4.7、−2.3…−2.0，z 9.4…11.8。只读",
+  "architecture_C_plain_timber.001（门柱、门楣）、architecture_C_floor_plinth.001（只读，测距用）",
+  "地坪片：无。本项不碰任何 ground-atomic 片",
+  "如果改选 TC03 或 TC03-2：architecture_C_earth_wall 的隔墙盒体 x 0.5…3.5、21.5…23.55，以及住屋后墙盒体 x 3.5…21.5（只读）",
+  "墙房样例 wall-house_earth（只读参照）；本项 prep 目录 workpacks/LY-043/prep/*"
+ ],
+ "size": "S",
+ "risks": [
+  "LY-010 可能改选别的院，或者把「墙房相接」院型换进城景。那是改院型和布局，越过了「不移动矩阵、不增院」，并且和 LY-047、LY-050 冲突，不能借本项补件夹带进来。",
+  "A2 原型被 9 院共用。如果在共享原型上改端接，会把修订批量套给 9 院，违反「只改所选院」。只能做单院 overlay，需要 LY-006 给接口。",
+  "盒体法只对轴对齐闭合盒精确。墙房样例的 64 个山尖三角和全部木柱三角只和院墙内部做了 SAT 判定，没有做全场布尔运算，不能称「全场无穿插」。",
+  "门墩外露的 0.44 m² 墙端是闭合的设计露头。如果审美上要求门墩包住墙端，那是 C 设计改动，不是缺口，要另外定。",
+  "历史依据未知。墙厚、离墙距离、隔墙顶住屋后墙都是 C 设计；明器类比不能换算尺寸。本测只证明几何闭合，不证明结构安全、可通行、已入城或复原成立。",
+  "没做 GPU 或浏览器验证。CPU 和 numpy 回读不能冒充渲染验收。",
+  "输入漂移：lab/data/assets.json 工作区在 22:29 被外部重写（git 内容无差，换行 CRLF），工作区 SHA 由 3440caa2 变为 c39e8e9a；其余 45 个输入 SHA 复核一致。绑定 SHA 应以 git blob 为准，否则会误报漂移。"
+ ],
+ "readyAfterG": true
+}

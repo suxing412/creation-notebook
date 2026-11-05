@@ -1,0 +1,1883 @@
+{
+ "tool": "measure_ly044.py",
+ "scope": "surface ray casts on a grid + vertex comparison; not solid collision, not GPU, not gait, not combustion/smoke/fire safety",
+ "inputs": {
+  "docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD0.glb": "88e6f5907dc4d0b879ccee41ba830c58a706c8df9fcab0a9a0ef12ef55691776",
+  "docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD1.glb": "a687954a2817cd7575719d9dc127e0c78ece8a4dc45ef4747df69e1d5e30ee8b",
+  "docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD2.glb": "499a2d4ed0342ee570dfcda07f4a4311630e749d8cc800d9b0548498d836aa85",
+  "docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD0.glb": "3bde10b5f684b22bdf08591aece0deb5fecae40117293eb36168848aa8001beb",
+  "docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD1.glb": "aa4170faa8bc3b04eef9b94c0177116c7e258e628a561ba18b5f8391d3953b2e",
+  "docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD2.glb": "a79777807fafe196c1bcef1484c7315e54c0bd3e3cca06145db4fd9e75b124b3",
+  "docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD0.glb": "b7aa02d1f75198dc72c8f54519ca5259e0f4fff175deb6b8ee2cd9afc7d32893",
+  "docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD1.glb": "67ba605b83734b557547c81cf0a71be3f029253b9c43785dd33a91a10c2e2033",
+  "docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD2.glb": "d688e3b2e02205900a1e3e4dd278a96be23e73033594a5f0817666ffb50d542d",
+  "docs/library/models/m-luoyang-residential-life/files/life-block-LOD0.glb": "270998729726baca248762bc86d4883ddf0a5c8de4ee4e226ba8aae40b66ba72",
+  "docs/cities/luoyang/data/c02v/layout.json": "7528f0c8dbdae41cece61295b198751db954a0a757a5a252f9ba15666c8f2fb2",
+  "docs/cities/luoyang/data/far44/instances-calt.json": "c830b4e37090da5e070156b7f6199f36c5d0191c339f5a9399f0becded50ff85",
+  "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+  "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+  "docs/cities/luoyang/assets/ground-atomic/retained.glb": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+  "docs/cities/luoyang/assets/ground-atomic/south.glb": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+  "docs/cities/luoyang/assets/ground-atomic/D08.glb": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+  "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+  "docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1"
+ },
+ "stoves": {
+  "A-LOD0": {
+   "file": "docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD0.glb",
+   "nodes": {
+    "A_earth": {
+     "tris": 2804,
+     "bbox": [
+      [
+       -0.675000011920929,
+       0.0,
+       -0.42500001192092896
+      ],
+      [
+       0.675000011920929,
+       0.75,
+       0.42500001192092896
+      ]
+     ],
+     "bottomVerts": 39,
+     "bottomFootprint": [
+      [
+       -0.675000011920929,
+       0.0,
+       -0.42500001192092896
+      ],
+      [
+       0.675000011920929,
+       0.001994432881474495,
+       0.42500001192092896
+      ]
+     ]
+    },
+    "A_timber": {
+     "tris": 60,
+     "bbox": [
+      [
+       -1.2999999523162842,
+       0.0,
+       -0.42500001192092896
+      ],
+      [
+       -0.75,
+       0.5299999713897705,
+       0.22499999403953552
+      ]
+     ],
+     "bottomVerts": 48,
+     "bottomFootprint": [
+      [
+       -1.2549999952316284,
+       0.0,
+       -0.3799999952316284
+      ],
+      [
+       -0.7950000166893005,
+       0.0,
+       0.18000000715255737
+      ]
+     ]
+    }
+   },
+   "bbox": [
+    [
+     -1.2999999523162842,
+     0.0,
+     -0.42500001192092896
+    ],
+    [
+     0.675000011920929,
+     0.75,
+     0.42500001192092896
+    ]
+   ],
+   "earthOpeningsByFace": {
+    "+x": {
+     "openCells_0.025m": 0,
+     "openArea_m2": 0.0,
+     "lateralRange": null,
+     "heightRange": null,
+     "maxDepth_m": 0
+    },
+    "-x": {
+     "openCells_0.025m": 0,
+     "openArea_m2": 0.0,
+     "lateralRange": null,
+     "heightRange": null,
+     "maxDepth_m": 0
+    },
+    "+z": {
+     "openCells_0.025m": 168,
+     "openArea_m2": 0.105,
+     "lateralRange": [
+      -0.16250001192092856,
+      0.16249998807907173
+     ],
+     "heightRange": [
+      0.11250000000000002,
+      0.38750000000000007
+     ],
+     "maxDepth_m": 9.9
+    },
+    "-z": {
+     "openCells_0.025m": 36,
+     "openArea_m2": 0.0225,
+     "lateralRange": [
+      -0.06250001192092847,
+      0.062499988079071644
+     ],
+     "heightRange": [
+      0.3375000000000001,
+      0.4625000000000001
+     ],
+     "maxDepth_m": 9.9
+    }
+   },
+   "fireMouthFace": "+z"
+  },
+  "A-LOD1": {
+   "file": "docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD1.glb",
+   "nodes": {
+    "A_earth": {
+     "tris": 1016,
+     "bbox": [
+      [
+       -0.675000011920929,
+       0.0,
+       -0.42500001192092896
+      ],
+      [
+       0.675000011920929,
+       0.75,
+       0.42500001192092896
+      ]
+     ],
+     "bottomVerts": 39,
+     "bottomFootprint": [
+      [
+       -0.675000011920929,
+       0.0,
+       -0.42500001192092896
+      ],
+      [
+       0.675000011920929,
+       0.001994432881474495,
+       0.42500001192092896
+      ]
+     ]
+    },
+    "A_timber": {
+     "tris": 60,
+     "bbox": [
+      [
+       -1.2999999523162842,
+       0.0,
+       -0.42500001192092896
+      ],
+      [
+       -0.75,
+       0.5299999713897705,
+       0.22499999403953552
+      ]
+     ],
+     "bottomVerts": 48,
+     "bottomFootprint": [
+      [
+       -1.2549999952316284,
+       0.0,
+       -0.3799999952316284
+      ],
+      [
+       -0.7950000166893005,
+       0.0,
+       0.18000000715255737
+      ]
+     ]
+    }
+   },
+   "bbox": [
+    [
+     -1.2999999523162842,
+     0.0,
+     -0.42500001192092896
+    ],
+    [
+     0.675000011920929,
+     0.75,
+     0.42500001192092896
+    ]
+   ],
+   "earthOpeningsByFace": {
+    "+x": {
+     "openCells_0.025m": 0,
+     "openArea_m2": 0.0,
+     "lateralRange": null,
+     "heightRange": null,
+     "maxDepth_m": 0
+    },
+    "-x": {
+     "openCells_0.025m": 0,
+     "openArea_m2": 0.0,
+     "lateralRange": null,
+     "heightRange": null,
+     "maxDepth_m": 0
+    },
+    "+z": {
+     "openCells_0.025m": 168,
+     "openArea_m2": 0.105,
+     "lateralRange": [
+      -0.16250001192092856,
+      0.16249998807907173
+     ],
+     "heightRange": [
+      0.11250000000000002,
+      0.38750000000000007
+     ],
+     "maxDepth_m": 9.9
+    },
+    "-z": {
+     "openCells_0.025m": 36,
+     "openArea_m2": 0.0225,
+     "lateralRange": [
+      -0.06250001192092847,
+      0.062499988079071644
+     ],
+     "heightRange": [
+      0.3375000000000001,
+      0.4625000000000001
+     ],
+     "maxDepth_m": 9.9
+    }
+   },
+   "fireMouthFace": "+z"
+  },
+  "A-LOD2": {
+   "file": "docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD2.glb",
+   "nodes": {
+    "A_earth": {
+     "tris": 404,
+     "bbox": [
+      [
+       -0.675000011920929,
+       0.0,
+       -0.42500001192092896
+      ],
+      [
+       0.675000011920929,
+       0.75,
+       0.42500001192092896
+      ]
+     ],
+     "bottomVerts": 12,
+     "bottomFootprint": [
+      [
+       -0.675000011920929,
+       0.0,
+       -0.42500001192092896
+      ],
+      [
+       0.675000011920929,
+       0.0,
+       0.42500001192092896
+      ]
+     ]
+    },
+    "A_timber": {
+     "tris": 60,
+     "bbox": [
+      [
+       -1.2999999523162842,
+       0.0,
+       -0.42500001192092896
+      ],
+      [
+       -0.75,
+       0.5299999713897705,
+       0.22499999403953552
+      ]
+     ],
+     "bottomVerts": 48,
+     "bottomFootprint": [
+      [
+       -1.2549999952316284,
+       0.0,
+       -0.3799999952316284
+      ],
+      [
+       -0.7950000166893005,
+       0.0,
+       0.18000000715255737
+      ]
+     ]
+    }
+   },
+   "bbox": [
+    [
+     -1.2999999523162842,
+     0.0,
+     -0.42500001192092896
+    ],
+    [
+     0.675000011920929,
+     0.75,
+     0.42500001192092896
+    ]
+   ],
+   "earthOpeningsByFace": {
+    "+x": {
+     "openCells_0.025m": 0,
+     "openArea_m2": 0.0,
+     "lateralRange": null,
+     "heightRange": null,
+     "maxDepth_m": 0
+    },
+    "-x": {
+     "openCells_0.025m": 0,
+     "openArea_m2": 0.0,
+     "lateralRange": null,
+     "heightRange": null,
+     "maxDepth_m": 0
+    },
+    "+z": {
+     "openCells_0.025m": 168,
+     "openArea_m2": 0.105,
+     "lateralRange": [
+      -0.16250001192092856,
+      0.16249998807907173
+     ],
+     "heightRange": [
+      0.11250000000000002,
+      0.38750000000000007
+     ],
+     "maxDepth_m": 9.9
+    },
+    "-z": {
+     "openCells_0.025m": 36,
+     "openArea_m2": 0.0225,
+     "lateralRange": [
+      -0.06250001192092847,
+      0.062499988079071644
+     ],
+     "heightRange": [
+      0.3375000000000001,
+      0.4625000000000001
+     ],
+     "maxDepth_m": 9.9
+    }
+   },
+   "fireMouthFace": "+z"
+  },
+  "B-LOD0": {
+   "file": "docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD0.glb",
+   "nodes": {
+    "B_earth": {
+     "tris": 5592,
+     "bbox": [
+      [
+       -0.8999999761581421,
+       0.0,
+       -0.4749999940395355
+      ],
+      [
+       0.8999999761581421,
+       0.8199999928474426,
+       0.4749999940395355
+      ]
+     ],
+     "bottomVerts": 37,
+     "bottomFootprint": [
+      [
+       -0.8999999761581421,
+       0.0,
+       -0.4749999940395355
+      ],
+      [
+       0.8999999761581421,
+       0.0015646555693820119,
+       0.4749999940395355
+      ]
+     ]
+    },
+    "B_timber": {
+     "tris": 60,
+     "bbox": [
+      [
+       -1.524999976158142,
+       0.0,
+       -0.42500001192092896
+      ],
+      [
+       -0.9750000238418579,
+       0.5299999713897705,
+       0.22499999403953552
+      ]
+     ],
+     "bottomVerts": 48,
+     "bottomFootprint": [
+      [
+       -1.4800000190734863,
+       0.0,
+       -0.3799999952316284
+      ],
+      [
+       -1.0199999809265137,
+       0.0,
+       0.18000000715255737
+      ]
+     ]
+    }
+   },
+   "bbox": [
+    [
+     -1.524999976158142,
+     0.0,
+     -0.4749999940395355
+    ],
+    [
+     0.8999999761581421,
+     0.8199999928474426,
+     0.4749999940395355
+    ]
+   ],
+   "earthOpeningsByFace": {
+    "+x": {
+     "openCells_0.025m": 0,
+     "openArea_m2": 0.0,
+     "lateralRange": null,
+     "heightRange": null,
+     "maxDepth_m": 0
+    },
+    "-x": {
+     "openCells_0.025m": 0,
+     "openArea_m2": 0.0,
+     "lateralRange": null,
+     "heightRange": null,
+     "maxDepth_m": 0
+    },
+    "+z": {
+     "openCells_0.025m": 194,
+     "openArea_m2": 0.1213,
+     "lateralRange": [
+      -0.1624999761581415,
+      0.1625000238418588
+     ],
+     "heightRange": [
+      0.11250000000000002,
+      0.4625000000000001
+     ],
+     "maxDepth_m": 9.9
+    },
+    "-z": {
+     "openCells_0.025m": 36,
+     "openArea_m2": 0.0225,
+     "lateralRange": [
+      -0.0624999761581414,
+      0.06250002384185871
+     ],
+     "heightRange": [
+      0.3375000000000001,
+      0.4625000000000001
+     ],
+     "maxDepth_m": 9.9
+    }
+   },
+   "fireMouthFace": "+z"
+  },
+  "B-LOD1": {
+   "file": "docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD1.glb",
+   "nodes": {
+    "B_earth": {
+     "tris": 1956,
+     "bbox": [
+      [
+       -0.8999999761581421,
+       0.0,
+       -0.4749999940395355
+      ],
+      [
+       0.8999999761581421,
+       0.8199999928474426,
+       0.4749999940395355
+      ]
+     ],
+     "bottomVerts": 37,
+     "bottomFootprint": [
+      [
+       -0.8999999761581421,
+       0.0,
+       -0.4749999940395355
+      ],
+      [
+       0.8999999761581421,
+       0.0015646555693820119,
+       0.4749999940395355
+      ]
+     ]
+    },
+    "B_timber": {
+     "tris": 60,
+     "bbox": [
+      [
+       -1.524999976158142,
+       0.0,
+       -0.42500001192092896
+      ],
+      [
+       -0.9750000238418579,
+       0.5299999713897705,
+       0.22499999403953552
+      ]
+     ],
+     "bottomVerts": 48,
+     "bottomFootprint": [
+      [
+       -1.4800000190734863,
+       0.0,
+       -0.3799999952316284
+      ],
+      [
+       -1.0199999809265137,
+       0.0,
+       0.18000000715255737
+      ]
+     ]
+    }
+   },
+   "bbox": [
+    [
+     -1.524999976158142,
+     0.0,
+     -0.4749999940395355
+    ],
+    [
+     0.8999999761581421,
+     0.8199999928474426,
+     0.4749999940395355
+    ]
+   ],
+   "earthOpeningsByFace": {
+    "+x": {
+     "openCells_0.025m": 0,
+     "openArea_m2": 0.0,
+     "lateralRange": null,
+     "heightRange": null,
+     "maxDepth_m": 0
+    },
+    "-x": {
+     "openCells_0.025m": 0,
+     "openArea_m2": 0.0,
+     "lateralRange": null,
+     "heightRange": null,
+     "maxDepth_m": 0
+    },
+    "+z": {
+     "openCells_0.025m": 194,
+     "openArea_m2": 0.1213,
+     "lateralRange": [
+      -0.1624999761581415,
+      0.1625000238418588
+     ],
+     "heightRange": [
+      0.11250000000000002,
+      0.4625000000000001
+     ],
+     "maxDepth_m": 9.9
+    },
+    "-z": {
+     "openCells_0.025m": 36,
+     "openArea_m2": 0.0225,
+     "lateralRange": [
+      -0.0624999761581414,
+      0.06250002384185871
+     ],
+     "heightRange": [
+      0.3375000000000001,
+      0.4625000000000001
+     ],
+     "maxDepth_m": 9.9
+    }
+   },
+   "fireMouthFace": "+z"
+  },
+  "B-LOD2": {
+   "file": "docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD2.glb",
+   "nodes": {
+    "B_earth": {
+     "tris": 780,
+     "bbox": [
+      [
+       -0.8999999761581421,
+       0.0,
+       -0.4749999940395355
+      ],
+      [
+       0.8999999761581421,
+       0.8199999928474426,
+       0.4749999940395355
+      ]
+     ],
+     "bottomVerts": 12,
+     "bottomFootprint": [
+      [
+       -0.8999999761581421,
+       0.0,
+       -0.4749999940395355
+      ],
+      [
+       0.8999999761581421,
+       0.0,
+       0.4749999940395355
+      ]
+     ]
+    },
+    "B_timber": {
+     "tris": 60,
+     "bbox": [
+      [
+       -1.524999976158142,
+       0.0,
+       -0.42500001192092896
+      ],
+      [
+       -0.9750000238418579,
+       0.5299999713897705,
+       0.22499999403953552
+      ]
+     ],
+     "bottomVerts": 48,
+     "bottomFootprint": [
+      [
+       -1.4800000190734863,
+       0.0,
+       -0.3799999952316284
+      ],
+      [
+       -1.0199999809265137,
+       0.0,
+       0.18000000715255737
+      ]
+     ]
+    }
+   },
+   "bbox": [
+    [
+     -1.524999976158142,
+     0.0,
+     -0.4749999940395355
+    ],
+    [
+     0.8999999761581421,
+     0.8199999928474426,
+     0.4749999940395355
+    ]
+   ],
+   "earthOpeningsByFace": {
+    "+x": {
+     "openCells_0.025m": 0,
+     "openArea_m2": 0.0,
+     "lateralRange": null,
+     "heightRange": null,
+     "maxDepth_m": 0
+    },
+    "-x": {
+     "openCells_0.025m": 0,
+     "openArea_m2": 0.0,
+     "lateralRange": null,
+     "heightRange": null,
+     "maxDepth_m": 0
+    },
+    "+z": {
+     "openCells_0.025m": 190,
+     "openArea_m2": 0.1188,
+     "lateralRange": [
+      -0.1624999761581415,
+      0.1625000238418588
+     ],
+     "heightRange": [
+      0.11250000000000002,
+      0.4625000000000001
+     ],
+     "maxDepth_m": 9.9
+    },
+    "-z": {
+     "openCells_0.025m": 36,
+     "openArea_m2": 0.0225,
+     "lateralRange": [
+      -0.0624999761581414,
+      0.06250002384185871
+     ],
+     "heightRange": [
+      0.3375000000000001,
+      0.4625000000000001
+     ],
+     "maxDepth_m": 9.9
+    }
+   },
+   "fireMouthFace": "+z"
+  }
+ },
+ "W2": {
+  "LOD0": {
+   "file": "docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD0.glb",
+   "bbox": [
+    [
+     488.1000061035156,
+     0.20000000298023224,
+     -1004.2249755859375
+    ],
+    [
+     490.0749816894531,
+     0.949999988079071,
+     -1003.375
+    ]
+   ],
+   "nodes": {
+    "C_LIFE_W2_STOVE_A_V1__A_earth": {
+     "source": "A_earth",
+     "tris": 2804,
+     "sourceTris": null,
+     "sameVertexCount": true,
+     "maxNearestVertexDist_m_after_offset": 4.700870340457186e-05
+    },
+    "C_LIFE_W2_STOVE_A_V1__A_timber": {
+     "source": "A_timber",
+     "tris": 60,
+     "sourceTris": null,
+     "sameVertexCount": true,
+     "maxNearestVertexDist_m_after_offset": 2.5182820536429062e-05
+    }
+   },
+   "assumedOffset": [
+    489.4,
+    0.2,
+    -1003.8
+   ]
+  },
+  "LOD1": {
+   "file": "docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD1.glb",
+   "bbox": [
+    [
+     488.1000061035156,
+     0.20000000298023224,
+     -1004.2249755859375
+    ],
+    [
+     490.0749816894531,
+     0.949999988079071,
+     -1003.375
+    ]
+   ],
+   "nodes": {
+    "C_LIFE_W2_STOVE_A_V1__A_earth": {
+     "source": "A_earth",
+     "tris": 1016,
+     "sourceTris": null,
+     "sameVertexCount": true,
+     "maxNearestVertexDist_m_after_offset": 4.6229448344092816e-05
+    },
+    "C_LIFE_W2_STOVE_A_V1__A_timber": {
+     "source": "A_timber",
+     "tris": 60,
+     "sourceTris": null,
+     "sameVertexCount": true,
+     "maxNearestVertexDist_m_after_offset": 2.5182820536429062e-05
+    }
+   },
+   "assumedOffset": [
+    489.4,
+    0.2,
+    -1003.8
+   ]
+  },
+  "LOD2": {
+   "file": "docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD2.glb",
+   "bbox": [
+    [
+     488.1000061035156,
+     0.20000000298023224,
+     -1004.2249755859375
+    ],
+    [
+     490.0749816894531,
+     0.949999988079071,
+     -1003.375
+    ]
+   ],
+   "nodes": {
+    "C_LIFE_W2_STOVE_A_V1__A_earth": {
+     "source": "A_earth",
+     "tris": 404,
+     "sourceTris": null,
+     "sameVertexCount": true,
+     "maxNearestVertexDist_m_after_offset": 4.5576154661830515e-05
+    },
+    "C_LIFE_W2_STOVE_A_V1__A_timber": {
+     "source": "A_timber",
+     "tris": 60,
+     "sourceTris": null,
+     "sameVertexCount": true,
+     "maxNearestVertexDist_m_after_offset": 2.5182820536429062e-05
+    }
+   },
+   "assumedOffset": [
+    489.4,
+    0.2,
+    -1003.8
+   ]
+  }
+ },
+ "W2_on_lifeblock": {
+  "bottomVerts": 87,
+  "unsupported": 0,
+  "gap_min": -1.4901161193847656e-08,
+  "gap_max": 0.001994386315345764,
+  "lifeblockTrisInRegion": 9511,
+  "lifeblockNodesNearW2": [
+   "LIFE-W2__life_B__LY_P01_earth",
+   "LIFE-W2__life_B__LY_P01_tile",
+   "LIFE-W2__life_B__LY_P01_timber"
+  ],
+  "note": "first surface below each bottom vertex; a negative gap means the vertex is below that surface"
+ },
+ "yards": {
+  "C02-010": {
+   "lot": "C02-010",
+   "variant": "A2",
+   "calt_matrix": [
+    1.0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1.0,
+    0,
+    531,
+    0,
+    -818.45,
+    1
+   ],
+   "cityExcludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_hardpacked_activity_ground"
+   ],
+   "lods": {
+    "LOD0": {
+     "file": "assets/c02v/A2-LOD0-prototype.glb",
+     "keptNodes": {
+      "architecture_C_whitebox_earth_wall.001": [
+       [
+        522.0,
+        0.19999992847442627,
+        -830.45
+       ],
+       [
+        539.9999990463257,
+        3.2200000286102295,
+        -806.45
+       ]
+      ],
+      "architecture_C_roof_rhythm_not_glaze_copy.001": [
+       [
+        521.9999980926514,
+        2.4000000953674316,
+        -830.450002861023
+       ],
+       [
+        540.000002861023,
+        4.489999771118164,
+        -806.2999975204468
+       ]
+      ],
+      "architecture_C_plain_timber.001": [
+       [
+        525.6949996948242,
+        0.20000004768371582,
+        -824.5549995422364
+       ],
+       [
+        534.8499994277954,
+        2.6500000953674316,
+        -806.6500007629395
+       ]
+      ],
+      "architecture_C_floor_plinth.001": [
+       [
+        523.2999997138977,
+        0.19999998807907104,
+        -828.1500007629395
+       ],
+       [
+        535.7999997138977,
+        0.42000001668930054,
+        -816.3499996185303
+       ]
+      ]
+     },
+     "excludedNodesPresent": [
+      "designed_hardpacked_activity_ground",
+      "site_lot",
+      "site_neutral_lane"
+     ]
+    },
+    "LOD1": {
+     "file": "assets/c02v/A2-LOD1-prototype.glb",
+     "keptNodes": {
+      "architecture_C_whitebox_earth_wall.001": [
+       [
+        522.0,
+        0.19999992847442627,
+        -830.45
+       ],
+       [
+        539.9999990463257,
+        3.2200000286102295,
+        -806.45
+       ]
+      ],
+      "architecture_C_roof_rhythm_not_glaze_copy.001": [
+       [
+        521.9999980926514,
+        2.4000000953674316,
+        -830.450002861023
+       ],
+       [
+        540.000002861023,
+        4.489999771118164,
+        -806.2999975204468
+       ]
+      ],
+      "architecture_C_plain_timber.001": [
+       [
+        525.6949996948242,
+        0.20000004768371582,
+        -824.5549995422364
+       ],
+       [
+        534.8499994277954,
+        2.6500000953674316,
+        -806.6500007629395
+       ]
+      ],
+      "architecture_C_floor_plinth.001": [
+       [
+        523.2999997138977,
+        0.19999998807907104,
+        -828.1500007629395
+       ],
+       [
+        535.7999997138977,
+        0.42000001668930054,
+        -816.3499996185303
+       ]
+      ]
+     },
+     "excludedNodesPresent": [
+      "designed_hardpacked_activity_ground",
+      "site_lot",
+      "site_neutral_lane"
+     ]
+    }
+   },
+   "grid": {
+    "cell_m": 0.1,
+    "x": [
+     522.0499980926513,
+     539.9499980926554
+    ],
+    "z": [
+     -830.400002861023,
+     -806.3000028610176
+    ],
+    "cells": 43560,
+    "groundCells": 43560,
+    "groundSupplierCells": {
+     "ground-network": 0,
+     "ground-retained": 0,
+     "ground-south": 43560,
+     "ground-D08": 0
+    },
+    "groundHeight_min_max": [
+     0.1999969482421875,
+     0.20000457763671875
+    ],
+    "obstructedCells_band_0.03_2.0": 10185,
+    "freeCells": 33375,
+    "routeCells": 2173,
+    "freeNonRouteCells": 31560,
+    "buildingTrisInRegion": 6532
+   },
+   "routesWorldXZ": {
+    "gate_to_main": [
+     [
+      527.5,
+      -803.45
+     ],
+     [
+      527.5,
+      -811.45
+     ],
+     [
+      531.0,
+      -814.45
+     ],
+     [
+      531.6,
+      -821.25
+     ],
+     [
+      531.6,
+      -823.7
+     ]
+    ],
+    "yard_to_side": [
+     [
+      531.6,
+      -819.0500000000001
+     ],
+     [
+      526.6,
+      -819.0500000000001
+     ]
+    ]
+   },
+   "freeNonRouteComponents": [
+    {
+     "id": 1,
+     "area_m2": 309.35,
+     "x": [
+      522.35,
+      539.55
+     ],
+     "z": [
+      -830.1,
+      -806.9
+     ],
+     "maxClearance_m": 4.1
+    },
+    {
+     "id": 3,
+     "area_m2": 3.67,
+     "x": [
+      528.05,
+      539.95
+     ],
+     "z": [
+      -809.3,
+      -806.3
+     ],
+     "maxClearance_m": 0.2
+    },
+    {
+     "id": 2,
+     "area_m2": 2.58,
+     "x": [
+      522.05,
+      527.05
+     ],
+     "z": [
+      -809.3,
+      -806.3
+     ],
+     "maxClearance_m": 0.2
+    }
+   ],
+   "freeNonRouteComponentsTiny": 0,
+   "routeEndpoints": {
+    "gate_to_main": {
+     "xz": [
+      531.6,
+      -823.7
+     ],
+     "groundY": 0.20000076293945312,
+     "obstructedBand": true,
+     "buildingTopY": 3.6267356872558594
+    },
+    "yard_to_side": {
+     "xz": [
+      526.6,
+      -819.0500000000001
+     ],
+     "groundY": 0.20000076293945312,
+     "obstructedBand": true,
+     "buildingTopY": 3.2004470825195312
+    }
+   },
+   "maskPNG": {
+    "file": "mask-C02-010.png",
+    "rows": "z ascending top->bottom (row0 = z min = local north far side)",
+    "cols": "x ascending",
+    "legend": "255 free, 150 route corridor, 30 obstructed/no ground"
+   },
+   "placementSearch": {
+    "params": {
+     "grid_m": 0.1,
+     "band_m": [
+      0.03,
+      2.0
+     ],
+     "routeHalfWidth_m": 0.45,
+     "workDepth_m": 0.9,
+     "turnRadius_m": 0.75,
+     "footFlatTol_m": 0.01,
+     "footInflate_m": 0.05,
+     "step_m": 0.2,
+     "class": "C engineering design, not historical"
+    },
+    "results": {
+     "A": {
+      "tested": 39904,
+      "feasible": 15026,
+      "feasibleWithoutRouteOverlapInWorkZone": 14126,
+      "byYaw": {
+       "0": 3601,
+       "90": 3453,
+       "180": 3598,
+       "270": 3474
+      },
+      "mostClear": [
+       {
+        "yaw": 0,
+        "origin_xz": [
+         532.9,
+         -816.15
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         532.9,
+         -815.95
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         532.9,
+         -815.75
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         532.9,
+         -815.55
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         532.9,
+         -815.35
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       }
+      ]
+     },
+     "B": {
+      "tested": 39904,
+      "feasible": 13309,
+      "feasibleWithoutRouteOverlapInWorkZone": 12503,
+      "byYaw": {
+       "0": 3116,
+       "90": 3063,
+       "180": 3092,
+       "270": 3232
+      },
+      "mostClear": [
+       {
+        "yaw": 0,
+        "origin_xz": [
+         533.3,
+         -817.35
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         533.3,
+         -817.15
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         533.3,
+         -816.95
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         533.3,
+         -816.75
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         533.3,
+         -816.55
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       }
+      ]
+     }
+    }
+   }
+  },
+  "C02-012": {
+   "lot": "C02-012",
+   "variant": "TC03-2",
+   "calt_matrix": [
+    1.0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1.0,
+    0,
+    570,
+    0,
+    -805.45,
+    1
+   ],
+   "cityExcludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_front_apron",
+    "designed_side_passage",
+    "designed_rear_work_ground"
+   ],
+   "lods": {
+    "LOD0": {
+     "file": "assets/c02v/TC03-2-LOD0-prototype.glb",
+     "keptNodes": {
+      "architecture_C_earth_wall.001": [
+       [
+        570.0,
+        0.19999992847442627,
+        -841.45
+       ],
+       [
+        598.0,
+        3.2699999809265137,
+        -805.45
+       ]
+      ],
+      "architecture_C_roof_rhythm.001": [
+       [
+        569.9999975517383,
+        2.0,
+        -841.4500038146973
+       ],
+       [
+        598.0000057220459,
+        4.539999961853027,
+        -805.2999993979931
+       ]
+      ],
+      "architecture_C_plain_timber.001": [
+       [
+        574.8500003814697,
+        0.20000004768371582,
+        -835.1549999237061
+       ],
+       [
+        594.9500007629395,
+        2.6500000953674316,
+        -805.6499999880791
+       ]
+      ],
+      "architecture_C_plinth.001": [
+       [
+        572.5,
+        0.19999998807907104,
+        -838.95
+       ],
+       [
+        595.0,
+        0.42000001668930054,
+        -812.45
+       ]
+      ],
+      "architecture_C_drain_stone.001": [
+       [
+        596.5999984741211,
+        0.20000000298023224,
+        -827.1699993133545
+       ],
+       [
+        597.0,
+        0.2900000214576721,
+        -808.45
+       ]
+      ]
+     },
+     "excludedNodesPresent": [
+      "designed_front_apron",
+      "designed_rear_work_ground",
+      "designed_side_passage",
+      "site_lot",
+      "site_neutral_lane"
+     ]
+    },
+    "LOD1": {
+     "file": "assets/c02v/TC03-2-LOD1-prototype.glb",
+     "keptNodes": {
+      "architecture_C_earth_wall.001": [
+       [
+        570.0,
+        0.19999992847442627,
+        -841.45
+       ],
+       [
+        598.0,
+        3.2699999809265137,
+        -805.45
+       ]
+      ],
+      "architecture_C_roof_rhythm.001": [
+       [
+        569.9999975517383,
+        2.0,
+        -841.4500038146973
+       ],
+       [
+        598.0000057220459,
+        4.539999961853027,
+        -805.2999993979931
+       ]
+      ],
+      "architecture_C_plain_timber.001": [
+       [
+        574.8500003814697,
+        0.20000004768371582,
+        -835.1549999237061
+       ],
+       [
+        594.9500007629395,
+        2.6500000953674316,
+        -805.6499999880791
+       ]
+      ],
+      "architecture_C_plinth.001": [
+       [
+        572.5,
+        0.19999998807907104,
+        -838.95
+       ],
+       [
+        595.0,
+        0.42000001668930054,
+        -812.45
+       ]
+      ],
+      "architecture_C_drain_stone.001": [
+       [
+        596.5999984741211,
+        0.20000000298023224,
+        -827.1699993133545
+       ],
+       [
+        597.0,
+        0.2900000214576721,
+        -808.45
+       ]
+      ]
+     },
+     "excludedNodesPresent": [
+      "designed_front_apron",
+      "designed_rear_work_ground",
+      "designed_side_passage",
+      "site_lot",
+      "site_neutral_lane"
+     ]
+    }
+   },
+   "grid": {
+    "cell_m": 0.1,
+    "x": [
+     570.0499975517382,
+     597.9499975517446
+    ],
+    "z": [
+     -841.4000038146974,
+     -805.3000038146891
+    ],
+    "cells": 101360,
+    "groundCells": 101360,
+    "groundSupplierCells": {
+     "ground-network": 0,
+     "ground-retained": 0,
+     "ground-south": 101360,
+     "ground-D08": 0
+    },
+    "groundHeight_min_max": [
+     0.1999969482421875,
+     0.20000457763671875
+    ],
+    "obstructedCells_band_0.03_2.0": 25536,
+    "freeCells": 75824,
+    "routeCells": 7380,
+    "freeNonRouteCells": 69055,
+    "buildingTrisInRegion": 13916
+   },
+   "routesWorldXZ": {
+    "gate_to_main": [
+     [
+      579.0,
+      -802.45
+     ],
+     [
+      579.0,
+      -811.45
+     ],
+     [
+      582.0,
+      -817.45
+     ],
+     [
+      582.0,
+      -823.0500000000001
+     ]
+    ],
+    "front_to_rear_via_side": [
+     [
+      579.0,
+      -811.45
+     ],
+     [
+      584.0,
+      -815.45
+     ],
+     [
+      594.0,
+      -817.45
+     ],
+     [
+      594.0,
+      -829.45
+     ],
+     [
+      584.0,
+      -830.75
+     ]
+    ],
+    "rear_to_kitchen": [
+     [
+      584.0,
+      -830.75
+     ],
+     [
+      575.5,
+      -831.95
+     ],
+     [
+      575.5,
+      -834.25
+     ]
+    ],
+    "rear_to_storage": [
+     [
+      584.0,
+      -830.75
+     ],
+     [
+      592.5,
+      -832.45
+     ],
+     [
+      592.5,
+      -834.25
+     ]
+    ],
+    "front_to_west": [
+     [
+      582.0,
+      -815.95
+     ],
+     [
+      576.3,
+      -815.95
+     ]
+    ]
+   },
+   "freeNonRouteComponents": [
+    {
+     "id": 1,
+     "area_m2": 552.74,
+     "x": [
+      570.55,
+      597.45
+     ],
+     "z": [
+      -840.9,
+      -806.0
+     ],
+     "maxClearance_m": 4.1
+    },
+    {
+     "id": 2,
+     "area_m2": 129.56,
+     "x": [
+      570.55,
+      581.55
+     ],
+     "z": [
+      -827.1,
+      -806.0
+     ],
+     "maxClearance_m": 4.1
+    },
+    {
+     "id": 4,
+     "area_m2": 4.97,
+     "x": [
+      579.55,
+      597.95
+     ],
+     "z": [
+      -808.3,
+      -805.3
+     ],
+     "maxClearance_m": 0.2
+    },
+    {
+     "id": 3,
+     "area_m2": 3.28,
+     "x": [
+      570.05,
+      578.55
+     ],
+     "z": [
+      -808.3,
+      -805.3
+     ],
+     "maxClearance_m": 0.2
+    }
+   ],
+   "freeNonRouteComponentsTiny": 0,
+   "routeEndpoints": {
+    "gate_to_main": {
+     "xz": [
+      582.0,
+      -823.0500000000001
+     ],
+     "groundY": 0.20000076293945312,
+     "obstructedBand": true,
+     "buildingTopY": 3.709989547729492
+    },
+    "front_to_rear_via_side": {
+     "xz": [
+      584.0,
+      -830.75
+     ],
+     "groundY": 0.1999988555908203,
+     "obstructedBand": false,
+     "buildingTopY": null
+    },
+    "rear_to_kitchen": {
+     "xz": [
+      575.5,
+      -834.25
+     ],
+     "groundY": 0.20000076293945312,
+     "obstructedBand": true,
+     "buildingTopY": 3.123994827270508
+    },
+    "rear_to_storage": {
+     "xz": [
+      592.5,
+      -834.25
+     ],
+     "groundY": 0.1999988555908203,
+     "obstructedBand": true,
+     "buildingTopY": 3.3283329010009766
+    },
+    "front_to_west": {
+     "xz": [
+      576.3,
+      -815.95
+     ],
+     "groundY": 0.20000076293945312,
+     "obstructedBand": true,
+     "buildingTopY": 3.191011428833008
+    }
+   },
+   "maskPNG": {
+    "file": "mask-C02-012.png",
+    "rows": "z ascending top->bottom (row0 = z min = local north far side)",
+    "cols": "x ascending",
+    "legend": "255 free, 150 route corridor, 30 obstructed/no ground"
+   },
+   "placementSearch": {
+    "params": {
+     "grid_m": 0.1,
+     "band_m": [
+      0.03,
+      2.0
+     ],
+     "routeHalfWidth_m": 0.45,
+     "workDepth_m": 0.9,
+     "turnRadius_m": 0.75,
+     "footFlatTol_m": 0.01,
+     "footInflate_m": 0.05,
+     "step_m": 0.2,
+     "class": "C engineering design, not historical"
+    },
+    "results": {
+     "A": {
+      "tested": 95744,
+      "feasible": 29346,
+      "feasibleWithoutRouteOverlapInWorkZone": 26104,
+      "byYaw": {
+       "0": 6403,
+       "90": 6600,
+       "180": 6453,
+       "270": 6648
+      },
+      "mostClear": [
+       {
+        "yaw": 0,
+        "origin_xz": [
+         583.5,
+         -812.95
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         583.7,
+         -813.15
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         583.7,
+         -812.95
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         583.9,
+         -813.15
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         583.9,
+         -812.95
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       }
+      ]
+     },
+     "B": {
+      "tested": 95744,
+      "feasible": 25927,
+      "feasibleWithoutRouteOverlapInWorkZone": 22877,
+      "byYaw": {
+       "0": 5753,
+       "90": 5648,
+       "180": 5684,
+       "270": 5792
+      },
+      "mostClear": [
+       {
+        "yaw": 0,
+        "origin_xz": [
+         583.9,
+         -812.95
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         584.1,
+         -813.15
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         584.1,
+         -812.95
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         584.3,
+         -813.35
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       },
+       {
+        "yaw": 0,
+        "origin_xz": [
+         584.3,
+         -813.15
+        ],
+        "groundY": 0.2,
+        "workZoneRouteCells": 0,
+        "minClearanceFootprint_m": 4.1,
+        "yawsMouthNormal_xz": [
+         0,
+         1
+        ]
+       }
+      ]
+     }
+    }
+   }
+  }
+ }
+}

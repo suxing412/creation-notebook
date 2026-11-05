@@ -1,0 +1,45 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "LY-005-port-v1",
+ "title": "Luoyang port (local + world)",
+ "type": "object",
+ "required": ["portId", "version", "kind", "owner", "frames", "local", "world", "nodeMatrixColumnMajor", "measuredFrom", "elevationClass", "tolerance_m"],
+ "properties": {
+  "portId": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+(:[A-Za-z0-9_.-]+){1,3}$"},
+  "version": {"type": "integer", "minimum": 1},
+  "kind": {"enum": ["ground", "threshold", "floor", "wall-end", "road-end"]},
+  "owner": {
+   "type": "object", "required": ["nodeId", "assetId"],
+   "properties": {"nodeId": {"type": "string"}, "assetId": {"type": "string"}, "responsibleSeat": {"type": "string"}}
+  },
+  "frames": {
+   "type": "object", "required": ["local", "world"],
+   "properties": {"local": {"type": "string"}, "world": {"const": "luoyang-local-schematic-v01"}}
+  },
+  "local": {"$ref": "#/$defs/pose"},
+  "world": {"$ref": "#/$defs/pose"},
+  "nodeMatrixColumnMajor": {"type": "array", "items": {"type": "number"}, "minItems": 16, "maxItems": 16},
+  "measuredFrom": {"type": "object", "description": "file path(s) + sha256 + method; must allow recomputation"},
+  "elevationClass": {"enum": ["C-engineering", "measured-archaeological", "unknown"]},
+  "cityTerrainYBelow": {"type": ["number", "null"]},
+  "portMinusTerrain_m": {"type": ["number", "null"]},
+  "tolerance_m": {
+   "type": "object", "required": ["position", "elevation"],
+   "properties": {"position": {"type": "number"}, "elevation": {"type": "number"}}
+  },
+  "note": {"type": "string"}
+ },
+ "$defs": {
+  "vec3": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
+  "pose": {
+   "type": "object", "required": ["position", "up", "forward"],
+   "properties": {"position": {"$ref": "#/$defs/vec3"}, "up": {"$ref": "#/$defs/vec3"}, "forward": {"$ref": "#/$defs/vec3"}}
+  }
+ },
+ "x-invariants": [
+  "world.position == N · local.position, N = nodeMatrixColumnMajor (column-major), residual <= 1e-6 m",
+  "world.up == R(N) · local.up; world.forward == R(N) · local.forward",
+  "nodeMatrixColumnMajor equals the owner node's matrix in city-data at the stated baseline (or compose(position, rotationY, scale))",
+  "both sides of a seam reference the same portId and version"
+ ]
+}

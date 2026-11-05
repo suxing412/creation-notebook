@@ -1,0 +1,61 @@
+{
+ "seat": "LY-028",
+ "inputsFound": [
+  "ZIP:chunks/market_frontage_well_routes.glb (group B, selected: frontage v2.1 eight shops/four canopies + well A + C_market_ground_well_A + 7 route_* + 5 boundary_*) 0193ebc0 (ZIP parts 5895ef23; extracted to LY-028/prep/work/)",
+  "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0.glb 46f08f41 / LOD1 03ad28cf / LOD2 b5b13b1c (no ground mesh; canopies not separate nodes)",
+  "docs/library/models/m-luoyang-market-frontage/m-luoyang-market-frontage.asset.json ac85a44d (card: shed use not verified)",
+  "docs/cities/luoyang/assets/market/market-cluster.glb 77b8bf2e (group A, in city: city-data.mjs:511-512/3663/3953-3962, v1/west-layer.mjs:33)",
+  "docs/cities/luoyang/assets/market/N2-replacement.glb d33cbad1 (in city: city-data.mjs:562-563, west-layer.mjs:33/36)",
+  "docs/cities/luoyang/assets/market/flowB-routes.glb 43d7799f (flow B only, west-layer.mjs:33/36)",
+  "docs/cities/luoyang/data/west/market-flow-plan.json bff5bb22 (person 0.6 / small_hand_load 1.6, C; routes written for market-cluster)",
+  "docs/cities/luoyang/data/west/market-precedents.json abf2a3d2 (goods_service_yard = C functional guess)",
+  "docs/cities/luoyang/data/west/N2-contract.json 10678d73, market-interface.json 31c6786d, ground-atomic-contract.json bfc7fc83",
+  "docs/cities/luoyang/v1/market-assembly.mjs 0145ac84, v1/west-layer.mjs d8c14142, city-data.mjs e4115705",
+  "docs/model-library/updates/m-market-functional/files/market-LOD0/1/2.glb acdd4391 / e925451b / ea0c235f (library copy of group A, reference only)",
+  "modeling-lab/review-batches/2026-11-04-city-visible/intake.json d4631d18 (websiteDeployed:false, sourceMasterIncluded:false)"
+ ],
+ "inputsMissing": [
+  "City master C032 source .blend (sourceMasterSHA256 1e8c4d2c..., not in the repo): only needed if LY-006 wants a native-side pad or a ground re-cut. Can be rebuilt from GLB: yes (the chunk is a lossless split with byte-identical bufferViews); any native edit must be labelled 'rebuilt from GLB'",
+  "Frontage v2.1 private source (.blend/generator) and its 72-segment entry-envelope QA definition: needed for canopy semantics. Can be rebuilt from GLB: yes, the 4 canopies were recovered from 32 welded islands",
+  "LY-006 frozen work-edge port and ownership: which edge is 'frozen'; owner of the C_market_ground_well_A triangle under ST_C02E; shared edges y=5.0 (LY-022) and x=24.0 (route_east). Contract, not rebuildable",
+  "LY-010 group selection, which must equal LY-027's: if group A (five shops / three stalls) is chosen, this task collapses to a reuse judgement on the market-cluster rear strips",
+  "Goods route for group B: market-flow-plan A_goods/B_goods are written for market-cluster only, so no contract brings goods via route_east to the C02 east edge. Needs an LY-006/LY-010 decision, not rebuildable",
+  "LY-027 placeholder IDs, dimensions and full/empty states (the prep uses C test boxes 0.8x0.7x0.9, same as market-cluster *_closed_stock)",
+  "LY-025/LY-026 frozen well operation domain (the prep uses well A footprint + 1.0 m C ring)",
+  "LY-005 datum (ground 0.20 world vs 0.00 library-local) and LY-007 material semantic, the latter only if a distinct pad surface is demanded",
+  "LY-008 official checker; LY-023 decision on the C02 post-head packers"
+ ],
+ "gaps": [
+  "Group B has no unloading/staging domain, placeholder or state at all: outside the 8 shop plinths the frontage has only 32 islands, exactly the 4 canopies, and 0 goods objects",
+  "There is no standing room under any canopy. The roof projects only 0.175-0.275 m beyond the table, less than the 0.6 m person envelope. Below 1.8 m, table and supports occupy 510/782 sampled points (C00, C03) and 374/598 (C01, C02). Under-roof clearance is 2.35 m (flat) and 2.376 m (pitched), so the 'under-canopy interface' must be a strip outside the roof edge",
+  "No shop in v2.1 has a rear or end-wall opening: horizontal rays at z=1.4 every 0.05 m along 8 rear walls and 4 end walls found no gap wider than 0.2 m, so rear yards connect to neither shops nor canopies",
+  "Candidate C02E (x 21.3-24.0 x y 4.85-7.15, 2.70 m deep to route_east): 621/621 samples on ground, 0 blocked, 0 on route. C01N (2.70 m to route_rearN) is the alternative. C03E is rejected: 1.85 m deep, less than 1.6 + 0.6 m",
+  "Ground support already exists. OP_C02E+ST_C02E (972 samples) all hit one C_market_ground_well_A triangle at z=0.200 with normal z 1.0, 0 misses and 0 double layers. The lip to route_east is 0.010 m and the step to the under-canopy ground is 0. An added pad would create a double layer or require a cut in a ground slice owned by LY-025/LY-090",
+  "Ownership overlap: LY-022 claims x[-22.7,24] x |y| in [2,5] and x[22.15,24] x |y|<=5. The C02 roof south edge (y=4.85) lies 0.15 m inside that claim, so LY-028 domains start at y>=5.0 and need a shared port",
+  "The interface canopy C02 is pitched and has the open LY-023 defect: post heads sit 0.0751-0.1336 m below the roof, and there is a 0.030 m gap between table and supports",
+  "Distances from C02E: route_public >= 3.0 m (the main route is untouched); well A footprint >= 37.98 m; east boundary inner face 5.5 m; the 1.6 m hand-load envelope on A_goods (x 25.2-26.8) is 1.2 m away",
+  "Group A comparison: the rear strips y[13.26,15.0] (1.74 m) hold the rear step plus 3 closed_stock per shop (196/1360 points blocked). Only 0.65 m is left from closed_stock to route_rearN, which is a minimum separation gap, not a path. Under T2, 600/782 points are blocked",
+  "Checker self-test: 13/13 cases as expected. The 5 positive cases cover C02E and C01N empty/occupied plus C03E geometry. The 8 negative cases all fail as expected: on route, across the route edge, into a post, floating 0.05 m, into LY-022, on the well (112 miss / 128 blocked), under the table (108 blocked), on the main route"
+ ],
+ "reuseCandidate": "No complete reusable result: group B has no staging or under-canopy interface. Partial reuse: the ground support is the existing C_market_ground_well_A triangle (chunk 0193ebc0), which gives continuous z=0.200 support over the whole C02E domain (972/972 hits, 0 double layer; out/staging-check-groupB-master.json, out/workedge-groupB-master.json). The deliverable is therefore likely zero-new-triangle: assembly domains, empty/occupied states and QA. If LY-010 selects group A, the market-cluster rear *_closed_stock strips (77b8bf2e) are the reuse candidate, but they are a rear-door interface, not an under-canopy one",
+ "touches": [
+  "read-only: chunk node C_market_ground_well_A (the single triangle under local x 21.3-24.0, y 5.0-9.0) - support surface, owner LY-025/LY-090",
+  "read-only: chunk C_MARKET_ENTRY_V21_LOD0__layout__LY_P01_timber__PBR and _tile__PBR islands of canopy C02 (posts x 18.83-21.17, y 4.98-7.02; table x 18.875-21.125, y 5.125-6.875; roof x 18.7-21.3, y 4.85-7.15) - owner frontage/LY-023",
+  "read-only port edges: route_east (x=24.0 edge), route_public (y=2.0), boundary_east_9; shared edge y=5.0 with the LY-022 patch zone",
+  "planned (after G) ground floor patch, assembly-only: OP_C02E x[21.3,21.9] y[5.0,7.15] (1.29 m2) + ST_C02E x[21.9,24.0] y[5.0,9.0] (8.4 m2); alternative C01N x[-23.0,-19.0] y[12.3,15.0]",
+  "planned files: workpacks/LY-028/assembly.json, states (empty/occupied with LY-027 placeholder IDs), qa/* bound to chunk SHA; optional pad GLB only if LY-006 assigns, delivered as a replacement slice cut by the ground owner",
+  "never: market-cluster.glb / N2-replacement.glb, canopies, shops, counters, routes, well/hole, outer street (LY-083), city-data.mjs, p-luoyang.asset.json",
+  "neighbours to arbitrate: LY-022 (y=5.0 / x 22.15-24), LY-023 (C02), LY-025/026 (well domain), LY-027 (placeholders), LY-029 (mutual exclusion), LY-090 (ground slicing)"
+ ],
+ "size": "S",
+ "risks": [
+  "Selection risk: LY-010 might choose group A, or LY-027 might pick a different group; LY-028 must follow LY-027's group",
+  "No frozen goods route exists for group B; without one, 'unloading' at C02E is a C claim that is not tied to any route contract",
+  "If LY-006 demands a distinct pad surface, the size grows to M and needs a ground-slice replacement by LY-025/LY-090 (double-layer risk)",
+  "C02 has an unresolved post-head gap (LY-023); a later LY-023 packer must not change the C02 east roof edge x=21.3, or the interface line has to be re-measured",
+  "The LY-022 claim boundary is not frozen; if it moves north of y=5.0, ST/OP shrink below 2.15 m along the canopy",
+  "The checks are CPU point sampling and surface BVH only: no continuous body or load sweep and no turning, so they cannot be called complete solid collision or traffic proof",
+  "Frame confusion: LY-022/LY-025 use (x, z=+glTF) while this seat uses (x, y north); their (x, z) = our (x, -y). A sign slip would put the zone on the well side"
+ ],
+ "readyAfterG": true
+}

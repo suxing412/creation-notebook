@@ -1,0 +1,53 @@
+{
+ "seat": "LY-046",
+ "inputsFound": [
+  "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb 19b05202 (城景近景, city-data.mjs:109)",
+  "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb 277e9e73 (城景远景, city-data.mjs:89)",
+  "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb bf6287a5 / LOD1 d2432b7c (含 architecture_C_drain_stone.001)",
+  "docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb 367a7d25 / LOD1 8daea250 (含 architecture_C_drain_stone)",
+  "docs/cities/luoyang/assets/ground-atomic/south.glb 4313826d (C02-010/C02-012 院内与门前地面)",
+  "docs/cities/luoyang/city-data.mjs e4115705 (C02-010 :2322 矩阵 531,0,-818.45；loadAsset 于 city-renderer.mjs:285/309)",
+  "docs/cities/luoyang/research/2026-11-03/land-contract.json 772687b0 (C02-010-entry 入口禁区)",
+  "docs/cities/luoyang/research/2026-11-03/eaves-evidence.json 4d8b2bf1；density-evidence.json 8fca4b52",
+  "D:/GitHub/creation-notebook-workpacks/LY-041/prep/measure-C02-010-exact.json 9ca2f0ff (LY-041 选院候选 C02-010，倾向地基复用、无地脚差异件，未冻结)",
+  "docs/cities/luoyang/city-renderer.mjs fa0a8dcb (loadAsset :285, 近远档 :289/:293, excludeNodes :309)"
+ ],
+ "inputsMissing": [
+  "G 包冻结物 LY-001/002/005/006/007/008/009/010：端口ID、所有权、材质LOD、检查器、区域准入；无它们不能制作",
+  "LY-041 冻结选院与地坪差异件：试片所在院和落点地坪的依据",
+  "courtyard A2/TC03 私密 .blend 与生成器源 ZIP：用于在原坐标系编辑檐口/地坪；可从 GLB 重建参照（试片是独立新节点，只需 GLB 顶点），不得称找回原件",
+  "ground-atomic 源工程(south.glb 参数)：判路肩低带纵坡与终点；只能从 GLB 三角读高程，且地面不归本席位",
+  "郭宝钧1956《洛阳西郊汉代居住遗迹》原文与图（经 LY-002）：唯一的近同代院外砖砌水道线索，未读"
+ ],
+ "gaps": [
+  "C02-010(A2) 院内城市地面恒为 Y=0.2，坡度 p50=0%：现有几何无任何坡向",
+  "A/B/A2/B2 四型无任何排水/滴水/散水节点；全城 61 个 GLB 只有 TC03 系有 drain_stone",
+  "A2 檐底 Y 2.40(中位)/3.22(最高)，滴落约 2.2 m；院内露地滴水落点约 97.7 m(1954 格@0.05 m)，距墙中位 0.45 m(p95 0.583)",
+  "A2 前墙门洞 x -4.65..-2.3(2.35 m) = land-contract C02-010-entry；门顶屋面(底 2.65)止于本地 z≈12.1，滴水落在门槛线上的入口禁区内",
+  "门前巷道路肩低带 Y 0.1757–0.1944(低于院坪 0.6–2.4 cm，x≤525.5 / x≥530.1，z≈-803.7)：属道路地形，纵向终点未测，最多 candidate 出口",
+  "TC03/TC03-2 排水石 U 槽(沿 0.08×0.09 m，槽宽 0.24 m)槽底 0.232→0.202，坡度 0.148%/0.160%，长 20.22/18.72 m，屋面遮盖 0.3%，距滴水边 0.55 m(37/38 段)",
+  "TC03 系排水石终端距实心前墙 3.0 m(墙顶 2.4，无涵口)，前端槽底仅高于院坪 2 mm；C02-012 院外向北 0.2→0.21 逆坡：无出口"
+ ],
+ "reuseCandidate": "部分可复用但不合格：TC03/TC03-2 的 architecture_C_drain_stone(城景已加载于 C02-008/C02-020/C02-003/C02-012/FROZEN-D08-NW/NE)是有实测坡向(0.148–0.160%，流向院前沿)的 C 浅沟，可作参照或若 LY-041 改选 TC03 系院则复用其槽身；但它终端封死(距实心前墙 3.0 m)、不在滴水点下(距檐线 0.55 m)，不满足『明确出口端口』，不能整项标复用。主线 C02-010(A2) 无可复用件。",
+ "touches": [
+  "C02-010 院界内本地 x -9..9 / z -12..12（只读参照，不改 A2 GLB/矩阵/excludeNodes）",
+  "新节点组 ly046_drip_trial_* 与 ly046_outlet_port（overlay，可撤回）",
+  "ground-south 单节点 single_closed_terrain_after：只读高程；出口候选落在其路肩低带（所有权 LY-081/LY-082）",
+  "land-contract C02-010-entry 入口禁区 x 526.3–528.7 / z -807.65..-798.8（避让或经 LY-049 净空检查）",
+  "LY-041 地坪差异件（落点地坪，如有）",
+  "门框/门槛(LY-042)、墙房端接(LY-043)接面相邻",
+  "下游 LY-050 组装与 LY-087 排水端口汇总",
+  "可选参照：TC03-2 architecture_C_drain_stone.001 / TC03 architecture_C_drain_stone（只读）"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-041 若改选非 C02-010 院，全部数字须重跑（脚本已参数化）",
+  "唯一几何低点在道路地形上，出口所有权与 LY-081/082/087 冲突，需 LY-006 冻结端口归属",
+  "门前滴水落在入口禁区，任何门前沟/盖板都要净空与足下支持复核，否则阻断",
+  "无同代住宅排水原证：坡度、沟宽、出檐全是 C；易被误写成历史标准",
+  "城景 GLB 与资产库 C2 版(A2-LOD0-C2 e9981a07)不同；若 LY-007 指定 C2 为基须重测",
+  "院坪完全平：浅沟要么下切 site 地坪(须与 LY-041 协调切孔所有权)，要么抬沟沿影响通行",
+  "LY-041 倾向复用不加地坪件：浅沟只能下切 ground-south（所有权非本席位）或做凸起沟沿（须过通行/足下检查），二选一须 LY-006 冻结"
+ ],
+ "readyAfterG": true
+}

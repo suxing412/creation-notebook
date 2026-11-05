@@ -1,0 +1,56 @@
+{
+  "seat": "LY-019",
+  "inputsFound": [
+    "docs/library/models/m-luoyang-xia-gate/files/gate-B-LOD1.glb sha256 7c5999df (B-library-v1, 1,246,480 B, not in city)",
+    "docs/library/models/m-luoyang-xia-gate/files/gate-B-LOD2.glb sha256 802a1fee (39,672 B, not in city)",
+    "docs/library/models/m-luoyang-xia-gate/m-luoyang-xia-gate.asset.json sha256 3911af00",
+    "docs/cities/luoyang/assets/city-wall/A/wall-11.glb sha256 2cfa8461 (loaded: city-data.mjs L351/L3447 initial:true)",
+    "docs/cities/luoyang/assets/city-wall/A/wall-00.glb sha256 12d84a0b (loaded: city-data.mjs L171/L3204 initial:true)",
+    "docs/cities/luoyang/assets/city-wall/B/wall-11.glb sha256 9f0a8fff / B/wall-00.glb sha256 16a29621 (loaded only via v1/wall-layer.mjs L19 choose(B))",
+    "docs/cities/luoyang/data/west/city-wall-interface.json sha256 ad18cc65; city-wall-constraints.json sha256 b6006e31 (gate_xia_B C_projection_only 734.488869,3566.136697)",
+    "docs/cities/luoyang/data/evidence/evidence-geometry.json sha256 662562fa (gate_xia_B evidence_class B, gao2023_fig1)",
+    "docs/cities/luoyang/city-data.mjs sha256 e4115705 (no ground node within 60 m of Xia gap)",
+    "modeling-lab/review-batches/2026-11-04-city-visible zip parts (zip sha256 5895ef23) -> chunks/city_gate_xia-B-01.glb sha256 9563ec11 = existing interface trial (city_B_earth with wings + 0.17 pad), not loaded (adapter initial:false, undeployed)",
+    "modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json sha256 703caeed",
+    "prep/measure_seam.py sha256 cff8001c, prep/measure_detail.py sha256 52ad5b1c; outputs prep/measure-out/measure.json 31db22c2, detail.json efa8655d"
+  ],
+  "inputsMissing": [
+    "B-library-v1 LOD0 GLB (16,054,944 B, private, not on card): needed for the near-tier seam/ground check. LOD1/LOD2 earth are vertex-identical, so seam pieces can be rebuilt from GLB, but whether LOD0 earth is the same cannot be verified without the original; the near tier stays blocked until it is provided",
+    "Xia gate source .blend / generator / source ZIP (private): origin and parameter provenance of B-library-v1 and of the wing lofts. Rebuildable from GLB (wings and pad are low-poly lofts of the measured wall and gate sections)",
+    "city-C032-entry-LOD0.blend (sha256 1e8c4d2c..., private): to confirm whether city xia-B (city_B_earth) is the existing interface trial or a failed intermediate export, and whether hidden variants exist. Its geometry is readable from the public chunk, but its provenance cannot be proven from the GLB",
+    "LY-005 ground/threshold elevation port at Xia (C parameter ground_elevation): nothing to read in the repo; this is a dependency, not a rebuildable input"
+  ],
+  "gaps": [
+    "Old failed seam: B-library-v1 at the C placement leaves a 5.000 m (+-0.0001) open gap on each side between gate earth end (local x=+-11) and wall-A end caps (x=+-16.000); 629 sampled cells/side (0.25 m grid, 39.3 m2), analytic wall section ~41.0 m2, void ~205 m3 per side (~410 m3 total), intersect volume 0",
+    "Same gap against exclusive sample B wall: 5.000 m over 975 cells (60.9 m2); B section ~64.6 m2 (base 10.0 m @0.17, top 6.5 m @8.0)",
+    "Bottom: gate base z=0.000 vs wall base z=0.170 (0.17 m step); gate passages have no floor; the city has no ground node within 60 m of the Xia placement (only wall-A-00 and wall-A-11)",
+    "Existing interface trial (city_B_earth) closes the wall-A seam flush (652 cells |gap|<=0.1 mm, 0 m2 wall end exposed, intersect <=0.0004 m3, section mismatch <=0.03 m at x=+-15.9), but it is a replacement body (piers included, whole upper raised +0.17), so it duplicates the gate body and cannot be removed back to B-library-v1",
+    "Trial fails wall-B: wings stop at 6.2 vs B top 8.0 -> 354 cells (22.1 m2) still 5.0 m open, plus 1.06 m2 wall-B base exposed",
+    "Trial pad 32x20x0.17 ends in vertical 0.17 m steps along y=+-10 (2 x 32 m) with no ground outside",
+    "Trial topology: earth 10 edges with >2 faces (B-library-v1: 2); timber 4 non-manifold edges (B-library-v1 timber closed, 90.74 m3)",
+    "LOD: LOD1 and LOD2 earth/timber vertex-identical (vhash 12f982f3/ecd2fdbf), only tile 13,660->36 tris; LOD0 not public; master tile 217,996 tris sits +0.17..+0.26 m higher and is not provably B-library LOD0",
+    "Retained limitation: B-library tile has 4 edges with >2 faces after welding (consistent with the card's ridge internal end-cap note; inferred, not compared face by face)"
+  ],
+  "reuseCandidate": "Partial, not a full reuse. The existing interface trial in the city-visible handoff (chunks/city_gate_xia-B-01.glb sha256 9563ec11, master node xia-B-static_earth / city_B_earth) already closes the wall-A seam: 652 cells |gap|<=0.1 mm, 0 m2 exposed, <=0.0004 m3 intersect, wing section within 0.03 m of the wall section, pad top 0.17 = wall base. Its wing and pad parameters (wing loft from +-4.45/4.33 at |x|=11 to the wall section at |x|=16, top 5.37->6.2, pad 32x20x0.17) should be reused as the design for separate add-on pieces. It cannot be adopted as-is: it rewrites and duplicates the gate body (fails the no-duplicate-gate-body and removal-restores-original checks), fails wall-B, its provenance (interface trial vs failed intermediate) is unconfirmed, and it is not loaded in the city.",
+  "touches": [
+    "read-only: gate-B-static_earth / gate-B-static_timber / gate-B-static_tile in gate-B-LOD1.glb and gate-B-LOD2.glb (and private LOD0)",
+    "read-only seam ports: end caps of C_wall_A_11 (local x=-16) and C_wall_A_00 (x=+16) in city-wall/A; C_wall_B_11 / C_wall_B_00 in city-wall/B if sample B is served",
+    "new nodes (planned): xia-B seam-W wing (x -16..-11), seam-E wing (x 11..16), threshold pad (x +-16 x y +-10 local, z 0..0.17 or per LY-005), each in 3 tiers",
+    "ground patch at the Xia gate envelope (world approx x 718.3..750.6, glTF z -3576.6..-3555.7): possible ownership overlap with LY-020 (wall foot interfaces) and road/ground seats (81-90)",
+    "assembly transform on the gate root (+0.17 lift, or pad at 0) - must match the LY-005 elevation port",
+    "mutual exclusion against the city-visible chunk group city_gate_xia-B (adapter nodes visible-current-node-city_gate_xia-B-01..02-fragment-004)",
+    "files: only D:/GitHub/creation-notebook-workpacks/LY-019/**; city-data.mjs, p-luoyang.asset.json and city-wall-interface.json via a LY-100 proposal only"
+  ],
+  "size": "M",
+  "risks": [
+    "Provenance of city_B_earth is unknown: if LY-001 rules it the failed intermediate export, only the measured parameters may be referenced, not the mesh",
+    "Elevation choice (lift the gate +0.17 by transform vs pad at 0 vs ground at 0.17) depends on LY-005; a wrong choice re-opens a 0.17 m step",
+    "Wall sample B can be selected at runtime (wall-layer.mjs); A-only pieces leave a 22 m2 / 5 m gap under B, so LY-010 must rule A-only or A+B mutually exclusive sets",
+    "No ground exists at the Xia gate in the city; the pad's 0.17 m edges and the rest of wall-11/wall-00 (bottom at 0.17) float until ground/road seats deliver",
+    "LOD0 missing: the near tier cannot pass independently; three-tier pieces may legitimately be identical low-poly geometry, so LY-007 must rule against a copied-LOD finding",
+    "Gate earth has 2 non-manifold edges: exact boolean intersect volumes on it are approximate; contact classification must use face-coplanarity sampling plus a volume check",
+    "The 9.4 deg wing top in the trial looks like a wall-walk ramp; it must not be reported as validated upper access (out of scope, not validated)",
+    "All dimensions are C (design); the B point is 5.296 schematic m from the placement and must not be moved"
+  ],
+  "readyAfterG": true
+}

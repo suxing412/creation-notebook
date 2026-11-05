@@ -1,0 +1,59 @@
+{
+ "seat": "LY-027",
+ "inputsFound": [
+  "docs/cities/luoyang/assets/market/market-cluster.glb 77b8bf2e（A组五店三摊v1，已入城按章加载；5铺35个货架节点，15个店后closed_stock，9个摊上容器）",
+  "docs/cities/luoyang/assets/market/N2-replacement.glb d33cbad1（A组N2修订，已入城；17个具名包类占位+2块台板+货架）",
+  "docs/cities/luoyang/data/west/N2-contract.json 检出10678d73 / git blob 498f51fc（removeExactNodeIds 30）",
+  "docs/cities/luoyang/city-data.mjs 检出e4115705 / blob c849706b（market-main excludeNodes 在510-560行，market-N2 在561-581行，chapter market 在3953-3963行）",
+  "docs/cities/luoyang/city-renderer.mjs 检出fa0a8dcb / blob 04c6c643（309-346行：按名excludeNodes，数量不符就抛错；按pigment合并网格）",
+  "docs/cities/luoyang/v1/west-layer.mjs d8c14142 与 v1/market-assembly.mjs 0145ac84（旧版归档市肆层，按名retire）",
+  "docs/cities/luoyang/data/west/market-flow-plan.json bff5bb22（person 0.6 / small_hand_load 1.6）、market-precedents.json abf2a3d2（证据分栏）",
+  "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0/1/2.glb 46f08f41 / 03ad28cf / b5b13b1c（B组v2.1，已选为安装目标，未入城）",
+  "docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD0/1/2 7f1c2e70 / ef10e67a / 14a7925b，S84-LOD0 8ef1f3c8，generated_788bb4c4f5f9f6c3-LOD0 b599ade0",
+  "docs/model-library/updates/m-market-functional/files/market-LOD0/1/2.glb acdd4391 / e925451b / ea0c235f（C组，材质合并，占位没有ID）",
+  "docs/model-library/assets/market-A-N2-local.glb 493798b8（A组局部原点版）",
+  "LY-021/prep/out/extracted-market_frontage_well_routes.glb 0193ebc0（母版分块，只读复测）",
+  "LY-021/prep/out/entry-LOD0-vground.json 6f269290（v2.1 12个开口外路到柜后通过，引用）"
+ ],
+ "inputsMissing": [
+  "v2.1八铺四棚私密源包(.blend/生成器)与72段入口包络QA定义：用来给悬空三层板补支承、判断设计意图；占位可以作独立叠加件从GLB重建，改源件不行",
+  "五店三摊v1 market-cluster原生源：若回退A组、要改店后closed_stock时使用；节点都是12三角盒体，可以从GLB重建",
+  "N2合同引用的assets/original-N2.glb与assets/replacement-N2.glb（仓库里没有）：用来核原生与导出一致；以仓库内N2-replacement.glb(d33cbad1)从GLB重建/代替",
+  "母版city-C032-entry-LOD0.blend：在sample_ground上复核接地；用LY-021抽出的分块GLB(0193ebc0)代替",
+  "G冻结文件：LY-005楼面/地面端口、LY-006所有权（谁负责v2.1货架支承）、LY-007占位材质语义、LY-008检查器、LY-010金市选组（五店三摊还是八铺四棚）",
+  "LY-021冻结的v2.1门前踏步与开口落脚区（占位不能挤占）"
+ ],
+ "gaps": [
+  "B组v2.1只有2/8铺有货架（S86型#0和#6），共6块7.0×0.6×0.10的板，没有立柱或托架：5mm内没有任何表面；到侧墙0.22m、后墙0.12m，最低板离店内地面0.33m，板间0.40m。LOD0、LOD1、S86模块、三铺例、母版分块都一样，LOD2没有货架。货架支承验收现在不能通过",
+  "B组v2.1没有任何货物占位；整条店前线只有3个按材质合并的网格，没有单铺或单板节点，不能按ID删除，只能另做叠加件",
+  "B组v2.1铺内（柜背到后墙）：S86和6×6型深4.57m，S84和6×4型深2.57m；只有S86的三层板和6×6的内隔墙（门宽1.8，后间深1.41）；柜后0.60m店员带在8铺LOD0/1/2里都是0碰撞",
+  "A组按合同组装（剔除30、新增54）：满状态68件、空状态27件全部有支承；5铺×4段店员路线，体宽0.50和0.60、满空两状态都是0碰撞；最小余量0.26m（N2柜后段对台上小包）；负例报出2件碰撞",
+  "A组的铺内占位只在N2（17个包类+2块台板）；N1、N3、S1、S2的货架是空的；15个closed_stock在后墙外0.39m处（店后，不是铺内）；没有满/空状态清单，也没有出处或未知标签",
+  "A组立柱穿板60处，每处0.08×0.045×0.08m（2.9e-4 m³），是继承的正体积交叠，要分类成合法接面",
+  "装载包络：flow-plan的small_hand_load宽1.6m，大于A组后门净宽1.40m，也大于B组侧口净宽1.10m；进门货物包络没有定义",
+  "城市加载器按pigment合并网格，运行时节点名消失；可删除ID只存在于源GLB节点名和city-data的excludeNodes这两层",
+  "继承问题：A组5铺从柜台中缝直走到前阶，都会撞中柱*_frontpost.001（18个样里5个碰撞），不归本项",
+  "文本合同的SHA：city-data声明的N2-contract SHA 10678d73只等于CRLF检出字节，git blob是498f51fc"
+ ],
+ "reuseCandidate": "有条件复用：如果LY-010决定金市点位保留A组（现在入城的五店三摊+N2，77b8bf2e/d33cbad1），那么已有的35个货架节点和41个具名占位（N2的17个包类、15个closed_stock、9个摊上容器）已经满足两条验收：支承（满68/68、空27/27）和店员路线（5铺×4段，体宽0.50和0.60，满空两状态都是0碰撞；out/cluster-*.json）。这时本项只交状态清单、ID登记和出处/未知标签，不新造几何，标为复用。选定的B组（v2.1）没有合格成果可以复用：货架悬空，也没有占位。",
+ "touches": [
+  "只读/指纹不变：street_frontage-LOD0/1/2的layout__LY_P01_earth__PBR、layout__LY_P01_timber__PBR、layout__LY_P01_tile__PBR三个源网格",
+  "支承面（不改）：v2.1的8铺台基顶z=0.22（店内地面）、8张柜台顶1.08、S86#0/#6的6块货架板",
+  "相邻所有权：LY-021踏步顶和12个开口内0.70m落脚区；LY-028卸货/暂存地面；LY-022/025的地坪片C_market_ground_well_A与井孔（只读）",
+  "A组回退时（只读或只列清单）：market-cluster的N1/N2/N3/S1/S2 *_store_shelf*、*_shelfpost*、*_closed_stock*，T1-3 *_closed_generic_container*，N2-replacement的N2_detail_*与N2_closed_stock*，sample_ground",
+  "共享文件（只提合并提案，由LY-100写）：city-data.mjs market-main的excludeNodes、N2-contract.json、p-luoyang.asset.json",
+  "唯一写入：creation-notebook-workpacks/LY-027/**"
+ ],
+ "size": "M",
+ "risks": [
+  "v2.1悬空三层板：补立柱或托架是新增承重件，超出复用装配范围；LY-006不指定负责人，货架板槽位就停在停止项",
+  "LY-010如果保留五店三摊，B组叠加件就不能入城；本项转成A组复用，只交清单",
+  "A组与B组同址互斥(214.286,1959.184)，叠载就违反公共底线；需要LY-029的互斥/回退包",
+  "运行时网格合并，加载以后没办法逐件核ID；删除验证只能在源GLB和excludeNodes层面做",
+  "装载包络宽度(1.6m)和开口净宽(1.10/1.40m)冲突，装载状态的定义需要C决策，并且要披露",
+  "占位容易被读成古代库存：每个节点都要带evidence:C、notInventory和unknown标签，数量要有上限",
+  "LOD2没有柜台和货架，占位处理不当就会悬浮",
+  "文本合同的CRLF/blob SHA不一致，可能让线上合同校验失败（LY-001已报）"
+ ],
+ "readyAfterG": true
+}

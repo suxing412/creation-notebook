@@ -1,0 +1,332 @@
+{
+ "seat": "LY-014",
+ "labBaseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "reassembledZipSha256": "bad99bb9f5b301b5b6a3450931511caec385df3da8b5ffc5b94b1664eb598c23",
+ "zipManifestSha256": "bad99bb9f5b301b5b6a3450931511caec385df3da8b5ffc5b94b1664eb598c23",
+ "frame": "门体局部 Blender Z-up，+Y 北（城内）；城中工程原点 (2010.3973388671875,-21.3011474609375,0.17)，rotZ -0.020743634087871412 rad",
+ "inputs": [
+  {
+   "id": "K-v1-LOD0",
+   "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb",
+   "sha256": "88d9a3223ded3229f90fa1e6702c68771a675edcf15d6d09f3e0fe5f50aeefec",
+   "bytes": 1595636,
+   "loadedInCityScene": false,
+   "loaderCode": "仅资产卡 files[]；城景不引用",
+   "role": "近景门体，测量对象",
+   "nativeEquivalent": "ZIP::models/kaiyang-K-LOD0.blend（净化 95568b8b…；原生 88877470597b0cf2f25251e72536e2ae15b7943d637852db7da4eb6087cab6f5 未随包）"
+  },
+  {
+   "id": "K-v1-LOD1",
+   "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb",
+   "sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8",
+   "bytes": 495712,
+   "loadedInCityScene": false,
+   "loaderCode": "docs/cities/luoyang/city-data.mjs:727-748 study-north13-kaiyang-K.sourceAsset（只作来源记录；渲染器只 fetch asset.url = flat GLB）",
+   "role": "中景门体，测量对象；placement model"
+  },
+  {
+   "id": "K-v1-LOD2",
+   "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb",
+   "sha256": "13ff78a7a1fe9159ed577d715ff30c75cf3d0e8f6d2d47311968f660986ed801",
+   "bytes": 55280,
+   "loadedInCityScene": false,
+   "loaderCode": "docs/cities/luoyang/city-data.mjs:730 availableLod2（记录字段）",
+   "role": "远景门体"
+  },
+  {
+   "id": "K-v1-flat-study",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb",
+   "sha256": "94693c58dd6308153c5900b0bb9698eff138811f39369f54f545b9034417e71e",
+   "bytes": 138768,
+   "loadedInCityScene": "仅独立研究视图（local-study，cityPlacement=null，城中不渲染）",
+   "loaderCode": "docs/cities/luoyang/city-data.mjs:708-709 资产 study-north13-kaiyang-K.path；docs/cities/luoyang/city-data.mjs:4178 研究节点 research-north13-kaiyang-K；city-renderer.mjs:286-299 loadAsset() fetch；city-renderer.mjs:645-650 focusResearchModel()；app.mjs:117-118 chapter.researchModelIds",
+   "role": "城景里唯一被加载的开阳几何；未在本轮 Blender 回读（可能含 meshopt 压缩）"
+  },
+  {
+   "id": "ground-LOD0",
+   "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD0.glb",
+   "sha256": "5754432ae2b9497ee0ab5cbae0ce17471f093e249e10945e61b9c08375941bcd",
+   "bytes": 471920,
+   "loadedInCityScene": false,
+   "loaderCode": "仅资产卡 files[]",
+   "role": "现有门下地面附件"
+  },
+  {
+   "id": "ground-LOD1",
+   "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD1.glb",
+   "sha256": "50f8550280e3992b63f0fa4f70c23ebc0d5fceb8db96ae1d0f91730e13612ee9",
+   "bytes": 162984,
+   "loadedInCityScene": false,
+   "loaderCode": "仅资产卡 files[]",
+   "role": "现有门下地面附件"
+  },
+  {
+   "id": "ground-LOD2",
+   "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD2.glb",
+   "sha256": "e758e45f4ce320d039549c4d0346476830b0a81154d29c32fdc4d14a7b7330d6",
+   "bytes": 3808,
+   "loadedInCityScene": false,
+   "loaderCode": "仅资产卡 files[]",
+   "role": "现有门下地面附件"
+  },
+  {
+   "id": "wall-A-wall-04",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-04.glb",
+   "sha256": "50d8c7aa2c7d7dce95a894edf05bc1ecd2dbc73fbcd633e1c67f36065fd893ae",
+   "bytes": 2948,
+   "loadedInCityScene": true,
+   "loaderCode": "docs/cities/luoyang/city-data.mjs:251 资产，docs/cities/luoyang/city-data.mjs:3312 节点；city-renderer.mjs:286 loadAsset",
+   "role": "东侧相邻城墙（C_wall_A_04），墙顶端口对接面"
+  },
+  {
+   "id": "wall-A-wall-05",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-05.glb",
+   "sha256": "4e000b0c34b26504ff30b7c4c9748ede9f1b84819dcc75301b57caca85f261ae",
+   "bytes": 1732,
+   "loadedInCityScene": true,
+   "loaderCode": "docs/cities/luoyang/city-data.mjs:271 资产，docs/cities/luoyang/city-data.mjs:3339 节点；city-renderer.mjs:286 loadAsset",
+   "role": "西侧相邻城墙（C_wall_A_05 / refined_v1 端帽一致）"
+  },
+  {
+   "id": "ground-network-ground-stitched",
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "bytes": 3565544,
+   "loadedInCityScene": true,
+   "loaderCode": "docs/cities/luoyang/city-data.mjs:431 资产，docs/cities/luoyang/city-data.mjs:3555 节点",
+   "role": "城景地面；门周 ±30 m 无面（最近 388.9 m）"
+  },
+  {
+   "id": "asset-card",
+   "path": "docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json",
+   "sha256": "fadab2bbd9029d793a672d2ab0da27b56e134d0524f03c94b562041fdd28dca9",
+   "bytes": 2955,
+   "loadedInCityScene": false,
+   "loaderCode": "资产库页",
+   "role": "限制与状态记录"
+  },
+  {
+   "id": "city-data",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 111034,
+   "loadedInCityScene": true,
+   "loaderCode": "app.mjs:1 import",
+   "role": "城市清单（禁写）"
+  },
+  {
+   "id": "north13-source-contract",
+   "path": "docs/cities/luoyang/progress-assets/north13-gates/source.json",
+   "sha256": "9b07b7349ef536cd0b0a15c9bfa7134d2af7cc95e8dc402b7e2bea14d20719c1",
+   "bytes": 87701,
+   "loadedInCityScene": false,
+   "loaderCode": "docs/cities/luoyang/city-data.mjs:726 sourceContract",
+   "role": "来源契约"
+  },
+  {
+   "id": "city-wall-constraints",
+   "path": "docs/cities/luoyang/data/west/city-wall-constraints.json",
+   "sha256": "b6006e319d903da8bf8f32741d3377c53d6068956867289d7a1c7210c66abcac",
+   "bytes": 8806,
+   "loadedInCityScene": false,
+   "loaderCode": "研究数据",
+   "role": "gate_kaiyang_B B点与C投影"
+  },
+  {
+   "id": "K-v1-package-manifest",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/manifest.json",
+   "sha256": "5503a363f53839b8ea1cbf189155fb5a162b3e1c147cc1b893e938abed73ada5",
+   "bytes": 747,
+   "loadedInCityScene": false,
+   "loaderCode": "内容归档",
+   "role": "源包分卷清单"
+  },
+  {
+   "id": "K-v1-package-part001",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part001",
+   "sha256": "f742fb3ce1555beb371a30a828b1a59b80f9c0c4ef7f9cc17f4f9e21633aa521",
+   "bytes": 9437184,
+   "loadedInCityScene": false,
+   "loaderCode": "内容归档",
+   "role": "源包分卷 1"
+  },
+  {
+   "id": "K-v1-package-part002",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part002",
+   "sha256": "72609b8bcab43c8bea6acc14ce9eaf7f862da4abe80cd98f7bff3f165a1ad0b5",
+   "bytes": 2014045,
+   "loadedInCityScene": false,
+   "loaderCode": "内容归档",
+   "role": "源包分卷 2"
+  },
+  {
+   "id": "zip::city/placement.json",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/city/placement.json",
+   "sha256": "e608e78bf746b6b7a415ceff14883b8daadffd5346821c6d2c4f7f2b11abc39a",
+   "bytes": 2030,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "工程原点/旋转/接触与撤回契约"
+  },
+  {
+   "id": "zip::city/kaiyang-K-mid-hidden-trial.blend",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/city/kaiyang-K-mid-hidden-trial.blend",
+   "sha256": "75c96a3f1a8bb1d6231e005ed115a0c810f0f81f4ddeb7938ce10e56659558aa",
+   "bytes": 794987,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "隐藏试放，含端接土楔 kaiyang-K-C-terminal-±1（并入 static_earth）"
+  },
+  {
+   "id": "zip::config.json",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/config.json",
+   "sha256": "94ac52ed0418eed83520d911a780c7205523c182c21d68fc221373152479a907",
+   "bytes": 706,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "K-v1 参数契约"
+  },
+  {
+   "id": "zip::source/build.py",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/source/build.py",
+   "sha256": "df0be5edb6136453a457e4d9a16b778e11ed3ea5e52b7227b1044182e7b9ce4a",
+   "bytes": 6167,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "生成器"
+  },
+  {
+   "id": "zip::source/geometry.py",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/source/geometry.py",
+   "sha256": "47ef2902c8b160f65339acadb022ec7802c20c676c564f1bcb899585949fab08",
+   "bytes": 2907,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "生成器辅助"
+  },
+  {
+   "id": "zip::source/city-trial.py",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/source/city-trial.py",
+   "sha256": "826a5ebd5058712d06defd7dd6014d1dd2ed9720e59b4d64e4a02d025e48d5aa",
+   "bytes": 5381,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "试放与土楔生成"
+  },
+  {
+   "id": "zip::source/paths.py",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/source/paths.py",
+   "sha256": "8be82f6eede08260e2d7f4d45c7221881db7625f7275490a44a459bb7014f341",
+   "bytes": 2008,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "旧门道离散检查"
+  },
+  {
+   "id": "zip::qa/paths.json",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/qa/paths.json",
+   "sha256": "1d7cb15c934121deb5dad95428f0ac72dc4b1ae846d6e630df9fe21bdf5bb42f",
+   "bytes": 3231,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "旧门道检查结果（无上楼路线）"
+  },
+  {
+   "id": "zip::qa/interface-input.json",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/qa/interface-input.json",
+   "sha256": "cbe10dfd0512f09f34bb2e0cad6b94d1fbe2c7954e746e48925a6f8f0b55bc98",
+   "bytes": 18494,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "墙端面输入"
+  },
+  {
+   "id": "zip::qa/active-wall-dependencies.json",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/qa/active-wall-dependencies.json",
+   "sha256": "545e2812a59901afb468081c5ac765fe0fb18447874f58cf35e95cf6c68ff575",
+   "bytes": 1843,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "墙端四角核验"
+  },
+  {
+   "id": "zip::models/kaiyang-K-LOD0.blend",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD0.blend",
+   "sha256": "95568b8b54b892473a3e6222075732cc04456ecf314133d919e55f9d8042339f",
+   "bytes": 2160111,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "净化原生"
+  },
+  {
+   "id": "zip::models/kaiyang-K-LOD1.blend",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.blend",
+   "sha256": "f283dbf9cf477fd879608e0c31d1e3a9d059b145ca4702df33ee19c9de1809f3",
+   "bytes": 1060639,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "净化原生"
+  },
+  {
+   "id": "zip::models/kaiyang-K-LOD2.blend",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.blend",
+   "sha256": "c8ef8d100f20ab8eae9b5e8aab88a0663b816774b8ce13bc101af2cdc928e159",
+   "bytes": 540372,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "净化原生"
+  },
+  {
+   "id": "zip::NATIVE-EQUIVALENCE.json",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip(part001+002) :: luoyang-kaiyang-gate-study-v1/NATIVE-EQUIVALENCE.json",
+   "sha256": "a63e90e88efe18e1e74127dbfc1230ca2ac143e2859f2aabfb7447c0e3e6fcd3",
+   "bytes": 1598,
+   "loadedInCityScene": false,
+   "loaderCode": "不被城景加载",
+   "role": "净化与原生等价记录"
+  }
+ ],
+ "missing": [
+  {
+   "id": "bearing-section-v1",
+   "status": "未找到",
+   "searched": [
+    "lab main/luoyang-content/reviews/workpacks 四分支 git grep",
+    "D:/GitHub/creation-notebook-待传（仅说明.txt）",
+    "creation-notebook-review"
+   ],
+   "use": "LY-011 承托框架输入；本席位用它确认最终楼面/梁位",
+   "rebuildFromGLB": "部分：现 K-v1 楼板/柱位可从 GLB 实测；失败剖面本身不能从 GLB 重建"
+  },
+  {
+   "id": "开阳适配失败/实际剖面记录（0.0936 m³、21.76 m³ 出处）",
+   "status": "未找到",
+   "use": "核对 LY-011/013 修订前后",
+   "rebuildFromGLB": "否（是失败中间件的记录）"
+  },
+  {
+   "id": "K-v1 原生未净化 .blend（native 88877470…/f876be9e…/7deda70c…，delta ee0fee04…）",
+   "status": "不在仓库；公开净化版在 ZIP 中且 NATIVE-EQUIVALENCE equal=true",
+   "use": "严格绑定原 QA SHA",
+   "rebuildFromGLB": "不需要：净化版可用，SHA 映射须写清"
+  },
+  {
+   "id": "人体/货物包络与端口契约",
+   "status": "LY-005/006/008 未冻结",
+   "use": "通行判定参数",
+   "rebuildFromGLB": "不适用"
+  },
+  {
+   "id": "LY-011/LY-013 交付件",
+   "status": "未交付",
+   "use": "最终楼面标高、梁柱位置",
+   "rebuildFromGLB": "不适用"
+  }
+ ],
+ "prepScripts": {
+  "measure_ly014.py": "8957ae78eecc314846b25129145e7d8dce715111bd3833a38dac1ad7d9dd511b",
+  "ground_nearest.py": "ea88d109f5a21180e3b897125e109e9e03abae8c0308397ed04e193ceb1611eb",
+  "measure-result.json": "4d2d527273ac0f68a063a1c37523e78d4af463e1d3d0b021e283867a15d50159",
+  "ground-nearest-result.json": "5e447473fd63253b8cf87bda6105562f8d34df06dc7a634fde17d89d428e3592"
+ }
+}

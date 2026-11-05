@@ -1,0 +1,51 @@
+{
+ "seat": "LY-012",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "repo": "D:/GitHub/creation-notebook-lab (read-only; HEAD = origin/main = bce3211)",
+ "inputs": [
+  {"id": "K-v1-LOD0", "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb", "sha256": "88d9a3223ded3229f90fa1e6702c68771a675edcf15d6d09f3e0fe5f50aeefec", "bytes": 1595636, "kind": "public GLB, 3 nodes", "loadedInCity": false, "loadedBy": null, "note": "card-only near LOD; byte-identical to ZIP models/kaiyang-K-LOD0.glb"},
+  {"id": "K-v1-LOD1", "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb", "sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8", "bytes": 495712, "kind": "public GLB", "loadedInCity": false, "loadedBy": "only referenced as sourceAsset (city-data.mjs:748); renderer loads the flat projection"},
+  {"id": "K-v1-LOD2", "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb", "sha256": "13ff78a7a1fe9159ed577d715ff30c75cf3d0e8f6d2d47311968f660986ed801", "bytes": 55280, "kind": "public GLB", "loadedInCity": false, "loadedBy": "listed as availableLod2 (city-data.mjs:731); no code in app.mjs/city-renderer.mjs/scene.mjs reads availableLod2"},
+  {"id": "study-north13-kaiyang-K (flat LOD1 projection)", "path": "docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb", "sha256": "94693c58dd6308153c5900b0bb9698eff138811f39369f54f545b9034417e71e", "bytes": 138768, "kind": "public GLB, texture-stripped LOD1, geometry measured identical to LOD1", "loadedInCity": "local-study research view only; not placed in city (cityPlacement null, initial false)", "loadedBy": "asset city-data.mjs:708; researchModel research-north13-kaiyang-K city-data.mjs:4178; walls chapter researchModelIds city-data.mjs:3826; city-renderer.mjs:645 focusResearchModel -> city-renderer.mjs:286 loadAsset"},
+  {"id": "kaiyang-ground-LOD0", "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD0.glb", "sha256": "5754432ae2b9497ee0ab5cbae0ce17471f093e249e10945e61b9c08375941bcd", "bytes": 471920, "kind": "public GLB attachment, single mesh kaiyang_ground_C, 2016 tris", "loadedInCity": false, "loadedBy": null},
+  {"id": "kaiyang-ground-LOD1", "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD1.glb", "sha256": "50f8550280e3992b63f0fa4f70c23ebc0d5fceb8db96ae1d0f91730e13612ee9", "bytes": 162984, "loadedInCity": false, "loadedBy": null},
+  {"id": "kaiyang-ground-LOD2", "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD2.glb", "sha256": "e758e45f4ce320d039549c4d0346476830b0a81154d29c32fdc4d14a7b7330d6", "bytes": 3808, "loadedInCity": false, "loadedBy": null},
+  {"id": "pingcheng-ground-LOD0 (三门地面附件之一，仅参照)", "path": "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD0.glb", "sha256": "c0f700516af7bdd942048ac68494c8d7bf3a7aca4a6416382b0005ffd181aba6", "loadedInCity": false, "loadedBy": null},
+  {"id": "yong-ground-LOD0 (三门地面附件之一，仅参照)", "path": "docs/library/models/m-luoyang-yong-gate/files/yong-ground-LOD0.glb", "sha256": "e7836c7cbba4bc8e719366e672db13b08c9b47ab3436f7fda5c100192e98e812", "loadedInCity": false, "loadedBy": null},
+  {"id": "asset card", "path": "docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json", "sha256": "fadab2bbd9029d793a672d2ab0da27b56e134d0524f03c94b562041fdd28dca9", "loadedInCity": false, "loadedBy": "library pages only"},
+  {"id": "north13 source contract", "path": "docs/cities/luoyang/progress-assets/north13-gates/source.json", "sha256": "9b07b7349ef536cd0b0a15c9bfa7134d2af7cc95e8dc402b7e2bea14d20719c1", "loadedInCity": "metadata only", "loadedBy": "sourceContract fields in city-data.mjs; app.mjs:304-310 lists provenance.sourceContracts as links"},
+  {"id": "city-data", "path": "docs/cities/luoyang/city-data.mjs", "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a", "loadedInCity": true, "loadedBy": "app.mjs"},
+  {"id": "city-renderer", "path": "docs/cities/luoyang/city-renderer.mjs", "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca", "loadedInCity": true},
+  {"id": "app", "path": "docs/cities/luoyang/app.mjs", "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9", "loadedInCity": true},
+  {"id": "project card", "path": "docs/cities/luoyang/p-luoyang.asset.json", "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d", "note": "lists m-luoyang-kaiyang-gate (line 563)"},
+  {"id": "assets.json @bce3211", "path": "lab/data/assets.json", "sha256": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78", "note": "hash of `git show bce3211:lab/data/assets.json`; working-tree copy is locally modified (3440caa2...) and was NOT used"},
+  {"id": "K-v1 source ZIP part001", "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part001", "sha256": "f742fb3ce1555beb371a30a828b1a59b80f9c0c4ef7f9cc17f4f9e21633aa521"},
+  {"id": "K-v1 source ZIP part002", "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part002", "sha256": "72609b8bcab43c8bea6acc14ce9eaf7f862da4abe80cd98f7bff3f165a1ad0b5"},
+  {"id": "K-v1 source ZIP manifest", "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/manifest.json", "sha256": "5503a363f53839b8ea1cbf189155fb5a162b3e1c147cc1b893e938abed73ada5"},
+  {"id": "K-v1 source ZIP (reassembled)", "path": "<part001 + part002 concatenated; scratch copy only>", "sha256": "bad99bb9f5b301b5b6a3450931511caec385df3da8b5ffc5b94b1664eb598c23", "bytes": 11451229, "note": "matches manifest zipSHA256"},
+  {"id": "ZIP:source/build.py", "sha256": "df0be5edb6136453a457e4d9a16b778e11ed3ea5e52b7227b1044182e7b9ce4a", "note": "generator; leaf/jamb/head/batten formulas in the openings loop"},
+  {"id": "ZIP:source/geometry.py", "sha256": "47ef2902c8b160f65339acadb022ec7802c20c676c564f1bcb899585949fab08"},
+  {"id": "ZIP:models/kaiyang-K-LOD0.blend", "sha256": "95568b8b54b892473a3e6222075732cc04456ecf314133d919e55f9d8042339f", "note": "native; leaves already merged into static_timber (3 objects)"},
+  {"id": "ZIP:models/kaiyang-K-LOD1.blend", "sha256": "f283dbf9cf477fd879608e0c31d1e3a9d059b145ca4702df33ee19c9de1809f3"},
+  {"id": "ZIP:models/kaiyang-K-LOD2.blend", "sha256": "c8ef8d100f20ab8eae9b5e8aab88a0663b816774b8ce13bc101af2cdc928e159"},
+  {"id": "ZIP:city/kaiyang-K-mid-hidden-trial.blend", "sha256": "75c96a3f1a8bb1d6231e005ed115a0c810f0f81f4ddeb7938ce10e56659558aa"},
+  {"id": "ZIP:city/placement.json", "sha256": "e608e78bf746b6b7a415ceff14883b8daadffd5346821c6d2c4f7f2b11abc39a", "note": "activation false; engineering origin z 0.17; rotation_z -0.020744 rad; 'static fully-open door leaves, not a tested hinge rig'"},
+  {"id": "ZIP:qa/source-object-ranges.json (copied to prep/ref/k-v1-source-object-ranges.json)", "sha256": "a13c9f741347db813ff2deb3678b5ad6062fbc84584a3117df7a44939d42fdea"},
+  {"id": "ZIP:docs/evidence.md", "sha256": "2276b2f5c024d38a36a36b956d9993cda80c101da390809a416ad3ef7135bae5"},
+  {"id": "ZIP:config.json", "sha256": "94ac52ed0418eed83520d911a780c7205523c182c21d68fc221373152479a907"}
+ ],
+ "missing": [
+  {"id": "bearing-section-v1", "purpose": "中门道承托剖面（柱/地栿/梁）及门框安装面；LY-011/012/013 的共同输入", "searched": "lab bce3211 全树、origin/luoyang-content、D:/GitHub/creation-notebook、creation-notebook-review、creation-notebook-待传：均无此名文件或记录", "rebuildFromGLB": false, "note": "未见公开 GLB，不能从 GLB 重建；需协调者提供源包和 SHA，或由 LY-011 交付的新端口取代"},
+  {"id": "开阳适配失败/实际剖面记录（旧 0.0936 m³ 门楣/梁交体；LY-013 所述约 21.76 m³ 重复 deck）", "purpose": "确认替换前后门楣、梁的位置与本项门额、立颊的关系", "rebuildFromGLB": false},
+  {"id": "LY-011 交付端口", "purpose": "中门道柱列、地栿、横梁和门框安装面；本项枢接必须接在这里", "rebuildFromGLB": "n/a，前置席位产物"},
+  {"id": "G 冻结件（LY-005/006/007/008/010）", "purpose": "坐标与门槛/地面端口、端口 ID 和地坪切孔归属、材质与三档规则、官方检查入口、方案选择（枢接还是固定开门）"},
+  {"id": "门下地面附件的生成器/源工程", "purpose": "门砧、下枢臼或门槛需要在地坪上切孔或接触", "rebuildFromGLB": true, "note": "单网格 GLB 可以重建几何，但地坪的写入权必须由 LY-006 指派"}
+ ],
+ "prepScripts": {"prep/measure_k_v1_doors.py": "91a0ca85627631185b1f96076c15b9fefd1a05dc4029a4a680408a46babc734d"},
+ "prepResults": {
+  "prep/measure-LOD0.json": "f484358a596099adc7dda2b289ffc20cca956c142691ff771ad1b2d81ccc35ff",
+  "prep/measure-LOD1.json": "779b979c27d91f99d3aaaf97cadbd2b4a16963639c83e8887ca7341dd358e299",
+  "prep/measure-LOD2.json": "f2841d7321084220f079dbd6ef1ef92f70600fddc6e0d198a6f55b033cabdd54",
+  "prep/measure-city-flat-LOD1.json": "f5614ad856aad7ab0f1f2447411f58d199f9a412bd22bb3daf62173dea378cf4"
+ }
+}

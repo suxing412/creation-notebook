@@ -1,0 +1,68 @@
+{
+ "seat": "LY-099",
+ "inputsFound": [
+  "lab@bce3211f818e（HEAD=当前 main；本地 origin/main 指向 cad338ba683f，多 3 个提交；未 fetch）",
+  "TASKPOOL.md 00c2e171（LY-099 节第 1005 行）；taskboard.json 1d1fcb9c",
+  "G 已交付：LY-001 a32d742a、LY-007 status 2fddce70 + baseline/decisions.json cb2870fc、LY-008 status 4de552ad + source/ly_check.py 39aaa491 + qa/privacy-docs-bce3211.json 88d51e8f、LY-009 board/locks.json 5eb5ae32；LY-002/005/006 交付完成；LY-010 目录不存在",
+  "LY-001/qa/glb-files.csv 9771bf0c（373 GLB 分类）",
+  "docs/asset-spec/source-archive.json 8b80a86d（sources-2026.11.05，104 文件 + 8 拼合，无洛阳条目）",
+  "docs/asset-spec/batches/r2026.11.05-5.json 8d708271（待传 luoyang-yong-city-v1.1-private-source.zip，无 SHA）",
+  "lab/tools/build_assets.py ed7664a7（只读，未运行；SOURCE 正则第 35 行只扫 docs/）",
+  "docs/cities/luoyang/city-data.mjs c849706b；progress-assets/yong-city-v1/source.json 325fb5ca；granary-city-v1/source.json 30e74bda；projection-map.json 6f216ee5",
+  "modeling-lab/review-batches/2026-11-04-north13-gates/intake.json a0cfea35（8 包 zipSHA256）",
+  "8 个 north13 源包分卷（yong 4a9a0571、kaiyang bad99bb9、pingcheng 19646f31、shangxi cc7265a7、zhongdong 257e4df2、four-courts e24f386f、perimeter 9b172032、second-row 401e8c64）",
+  "modeling-lab/review-batches/2026-11-04/C2-courtyards/assets/*.glb 12 件（院落包重建所需的上游输入）",
+  "docs/library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb 45743d73（入城，city-data.mjs:1229）",
+  "全部 35 个仓库内档案（22 组分卷 68 片 + 13 个单 ZIP）；改前基线 prep/qa/baseline-bce3211.json 0ba607b3（工具 v2 0f6e26a9）",
+  "D:/Blender/blender.exe = Blender 5.2.1 LTS；Python 3.11.9（-I）",
+  "prep/inputs.json bfafc2ab（67 个 lab 输入 + 21 个 workpacks 输入，城景加载 7 个 GLB 都附 city-data.mjs 行号）"
+ ],
+ "inputsMissing": [
+  "luoyang-yong-city-v1.1-private-source.zip（r2026.11.05-5）：重建入城雍门地坪 yong-apron-LOD0/1/2 及装配；仓库仅有文件名无SHA，待传夹无该批子目录。几何可从GLB回读做语义比对，但不能『从GLB重建』冒充原生源",
+  "太仓 private granary city composer v1 源（granary-city-v1/source.json limitations）：重建入城 granary-city-LOD0/1/2；仓库连档案SHA都没有；只能标『从GLB重建，无原生原件』或阻断",
+  "城垣A/direct、ground-atomic（network-ground-stitched/retained/south/D08）、市肆 market-cluster/N2 的原生源：17个入城GLB只有SHA声明无源；projection-map 指向私有档案 a65b89f8…/052c6d6c…；可从GLB重建几何，但原生参数/生成器无法恢复",
+  "yong-Y-mid-hidden-trial.blend 私有原件（声明SHA 2bbd57e4…，仓库包内同路径为公开投影 e6b220d5…）：用于核对入城雍门接墙两翼的继承来源",
+  "lingtai 原件档案 f404f55a…、taixue 长堂原件 19ffc9dc…、PROJECTION-CHANGES bc58bba1…、iteration-C01 efa2d4f6…、iteration-luoyang fb825b99…、gallery 42fc810c…：研究视图投影的上游原件，仓库内无",
+  "origin/main新增：luoyang-yong-road-release-source-v2.zip（r2026.11.05-6，4个接街GLB自称byte-exact重建）、luoyang-north-three-placement-source-v1.zip（r2026.11.05-8）：无SHA",
+  "GitHub Release 资产清单与digest（sources-2026.11.05 及各r批次）：本席位不联网，须协调者提供 gh release view --json assets 输出",
+  "LY-010 工作包不存在（G 未冻结）；LY-096、LY-098 只有 prep/，依赖未满足",
+  "LY-007 P-GENERATOR 待制作人拍板：5.2.1 导出能否代替 4.3.2 原环境；拍板前 T4 的「语义相同」只能记未验",
+  "源包许可证与贴图来源口径：仓库内洛阳相关条目的 license 字段为 0"
+ ],
+ "gaps": [
+  "入城 34 个 GLB（17,544,456 B）中，只有 1 个（2.9%，雍门门体 yong-Y-LOD0）能用仓库内的原生源和生成器重建；21 个入城 GLB 在仓库内没有原生源（S4 17 个 + S4a 4 个）；12 个院落原型只在 reproduction.zip 里有字节副本，包里的脚本做 UV 投影和核验，不是生成器",
+  "110 个城中可达 GLB 的分层：S1 24 / S2 12 / S4a 28 / S4 46 / S5 0；107 个的 generator 是 Blender I/O v4.3.47，3 个是私有的太仓 composer",
+  "隔离重建：8 个包、30 个 GLB，在 Blender 5.2.1 下字节相同 0 个，语义相同（几何 + UV + 材质 + 贴图，1e-5 m）30 个；雍门 LOD0 重建为 1,570,860 B，原件 1,570,856 B",
+  "新测：5.2.1 重放之间逐字节确定。雍门包换一个空沙箱再跑，3/3 GLB 与第一轮重建字节相同（LOD0 6d248504），退出码 0，1.3 s",
+  "3 个院落包（four-courts-v2、perimeter-v1、second-row-v1）单独放进沙箱会构建失败（缺 C2-courtyard-family-v4/assets），补入同一 ref 的 12 个上游文件后通过；包里没有声明这条依赖；8 个包都没有固定写明 Blender 版本；zhongdong 的两个脚本没有写先后顺序",
+  "35 个仓库内档案的拼合、CRC、分卷连续性全部通过，内嵌 manifest 205/205 行一致；但有 6 个档案（F01、F02 的 source.zip，C3、C5、C6、C7-C8 的 evidence-and-source.zip）的 SHA 在任何已跟踪文本里都没有声明",
+  "雍门 reusedAdapterSource 的 .blend 声明 SHA 为 2bbd57e4…，仓库包内同路径成员是 e6b220d5…（公开投影），私有原件缺失",
+  "95 个档案身份 SHA 中有 8 个在仓库内无法解析（私有）；只有文件名、没有 SHA 的待传私有源包：@bce3211 1 个，@cad338b 3 个；待传文件夹里只有说明.txt",
+  "官方 checker 只扫 docs/：22 个源档案（310,070,675 B）在 modeling-lab/ 下，不受检；\\.part\\d{3}$ 漏掉两位编号的 city-visible…zip.part01–05",
+  "本席位扫描器 v1 的漏检（新发现，已修）：asset-spec/README.md 有 2 处盘符路径，v1 只抓到 D:/GitHub/，漏了中文路径段的 D:/待删-…（LY-008 抓到了）；v2 修正后 selftest 20/20，新基线与 v1 只差 privacyText 一项",
+  "隐私扫描：洛阳和 modeling-lab 的 22 个包全部成员（含 55 个未压缩 .blend）以及 110 个城中 GLB 的 JSON 块命中 0；非洛阳的 4 个 docs 源包含有 /home/agent/ 或 /workspace/scratch/",
+  "许可证：洛阳相关的源包、卡片和 source.json 中 license 字段为 0，贴图没有来源说明",
+  "漂移：bce3211→cad338b 用 v2 重算，compare 给出 6 条阻断（接街 4 个新 GLB 处于 S4，2 个批次新列了待传私有源包），退出码 1；compare 的负例 6/6"
+ ],
+ "reuseCandidate": "无。LY-099 按批次核验，没有可以直接复用的验收结论。可以当作输入的有：LY-001 GLB 台账；LY-008 ly_check.py（39aaa491）的 privacy/package 结果，作为 T12 交叉核对；包内自述（NATIVE-EQUIVALENCE、clean-rebuild、byte-privacy-check）属于生产方自述，不能当作独立验收；本席位已对 8 个 north13 包做的独立重放（qa/rebuild-*-bce3211.json：30/30 语义一致，0/30 字节一致；另有 5.2.1 重放之间 3/3 字节一致）。",
+ "touches": [
+  "只写 workpacks/LY-099/prep/（brief-draft.md、inputs.json、test-plan.md、prep-status.json、tools/*.py、qa/*.json）",
+  "不碰任何城市源节点、地坪片、city-data.mjs、p-luoyang.asset.json、资产卡、GLB、Release、待传文件夹（只列目录）",
+  "只读：lab@<ref> 的已跟踪档案（docs/**/source*.zip|part、modeling-lab/**/*.zip|part）、progress-assets/*/source.json、projection-map.json、asset-spec/batches/*.json、各包的 intake/manifest/archive.json；全部按 git show / cat-file 读提交 blob",
+  "只读：LY-001/007/008/009 已交付文件（glb-files.csv、decisions.json、ly_check.py、privacy-docs-bce3211.json、locks.json）",
+  "临时沙箱：只在 LY-099/prep/_sandbox/ 和 scratchpad 里解压、跑 Blender 重建，测量后删除（本轮已删）"
+ ],
+ "size": "M",
+ "risks": [
+  "入城 GLB 中 21/34 的原生源是私有的或已缺失。协调者如果拿不出私有包、SHA 和 Release digest，这些源包只能判阻断，或改标「从 GLB 重建」，LY-100 能合入的批次范围会因此缩小",
+  "Release 内容本席位不能联网核验，只能依赖协调者交来的 gh 输出；没有就只能记「未验」或阻断",
+  "跨 Blender 版本只能做到语义一致，做不到字节一致；LY-007 的 P-GENERATOR 还待制作人拍板，拍板前 T4 只能记「未验」",
+  "语义比对按 1e-5 m 网格取整，偏保守；只比 UV0，不比法线、切线、顶点色和动画",
+  ".blend 扫描只对未压缩文件有效；以后的包如果用 zstd 压缩，要先解压，否则记「未扫描」",
+  "本席位扫描器已经漏检过一次（中文路径段），说明单一扫描器不可靠，必须与 LY-008 交叉运行（T12）；工具升级后，基线和批次两边要用同一版本重跑",
+  "main 已漂移 3 个提交（雍门接街、北三院），LY-001 必须按最新 main 重拍快照，否则城中分类表是旧的",
+  "非洛阳源包里的代理沙箱路径、README 里的 D:/ 路径算不算私密路径，需要协调者定口径",
+  "雍门接街、13 院压缩、源包净化和 Release 归档由别人负责，本席位只报告不处理，避免越界"
+ ],
+ "readyAfterG": true
+}

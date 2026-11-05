@@ -1,0 +1,117 @@
+{
+ "seat": "LY-006",
+ "baseline": {
+  "repo": "D:/GitHub/creation-notebook-lab",
+  "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "readOnly": true
+ },
+ "predecessors": {
+  "LY-001": [
+   {
+    "path": "LY-001/status.json",
+    "sha256": "a32d742a0064baf45c0f78215b10905f2a21fb9ea070b18d8055a58454fe9236",
+    "bytes": 2968
+   },
+   {
+    "path": "LY-001/qa/snapshot-ledger.json",
+    "sha256": "479046caf49479cc6e58249585c63c80e84f23cafd82dc93bdc1034f9e1da7d0",
+    "bytes": 734203
+   },
+   {
+    "path": "LY-001/qa/city-data.dump.json",
+    "sha256": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98",
+    "bytes": 103531
+   },
+   {
+    "path": "LY-001/qa/family-ledger.json",
+    "sha256": "8eaa7c7a805d5cfb4fd1492a26c480ee0cad9095407e767648e0e9e71eadfe37",
+    "bytes": 89976
+   }
+  ],
+  "LY-005": [
+   {
+    "path": "LY-005/status.json",
+    "sha256": "add0f9b1a722f08e516ffd64b9dbaf97532a62d9fa18ded01df89ab7be5740ea",
+    "bytes": 3332
+   },
+   {
+    "path": "LY-005/coordinate-contract.json",
+    "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+    "bytes": 11013
+   },
+   {
+    "path": "LY-005/port-schema.json",
+    "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f",
+    "bytes": 2294
+   },
+   {
+    "path": "LY-005/qa/ports-bce3211.json",
+    "sha256": "1c009bb2c95caae89af76e8b7f7462253d1829cb6794e7b7bc77820f67e2f7ca",
+    "bytes": 93722
+   }
+  ]
+ },
+ "taskpool": [
+  {
+   "path": "TASKPOOL.md",
+   "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+   "bytes": 91407
+  },
+  {
+   "path": "taskboard.json",
+   "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+   "bytes": 105939
+  }
+ ],
+ "publicSourcePackages (origin/luoyang-content, read with git show; extracted only to the session scratchpad)": {
+  "branchHead": "95db183586d30d7e4c8e7574f267507bbbcdd9e3",
+  "luoyang-kaiyang-gate-study-v1 content.zip (part001+002)": {
+   "zipSHA256": "bad99bb9f5b301b5b6a3450931511caec385df3da8b5ffc5b94b1664eb598c23",
+   "used": [
+    "qa/source-object-ranges.json",
+    "city/placement.json",
+    "city/kaiyang-K-mid-hidden-trial.blend (sha256 75c96a3f1a8bb1d6231e005ed115a0c810f0f81f4ddeb7938ce10e56659558aa, read with Blender 5.2.1 headless)"
+   ]
+  },
+  "luoyang-pingcheng-gate-study-v1 content.zip (part001+002)": {
+   "zipSHA256": "19646f31c10acb3fbc90cbf19c84cdecc7acb40f6b5aec1635a52397958043ac",
+   "used": [
+    "qa/source-object-ranges.json",
+    "city/placement.json",
+    "city/pingcheng-P-mid-hidden-trial.blend (sha256 2d2b74a742d76478681646768760673963a88eedebdb1c5648ebb15cd48aa806)"
+   ]
+  },
+  "city-visible-web-handoff-v1-public.zip (part01..05)": {
+   "zipSHA256": "5895ef23a684a343271183dce1e92e112fb49bba9e03e4372023d1247bb50b69",
+   "used": [
+    "chunks/northeast_C_access.glb (58f2f58a464183e20d5489b13902f62f2570573cb8bf96fb237df781027d076e; copied to qa/chunks/)",
+    "chunks/market_frontage_well_routes.glb (0193ebc0cfe200292defd595ff4f4011b2b2d05388d4f53e7b4c3a19a255b4c5; not copied)",
+    "chunks/C_gate_local_ground.glb (6002f5a6dcc6653dc6cf081e77236dbd281e60ab9e88574a91eceb96afb6ceb6; searched for old ramp, not copied)"
+   ]
+  }
+ },
+ "otherSeatPrepReadOnly": [
+  {
+   "path": "LY-021/prep/out/entry-LOD0-vground.json",
+   "sha256": "6f2692902bb1f7667106fa01a6a5e6553d1e52d8d4ed1e93665245a1417cfd46",
+   "bytes": 34215
+  },
+  {
+   "path": "LY-028/prep/out/gap-summary.json",
+   "sha256": "36d27a46f75f2baa6cce6eba55ab8896f2233bb9ade75a99d2dbefdb09108715",
+   "bytes": 18200
+  },
+  {
+   "path": "LY-039/prep/out/measure-ne-approach.json",
+   "sha256": "0d5b110858ebef0d42fdb8a9451dcee1d554e02fc43cbeedfd76554897bde02b",
+   "bytes": 32552
+  }
+ ],
+ "otherSeatPrepUse": "LY-021 opening x-ranges copied as data (qa/frontage-openings.from-LY-021-prep.json); LY-028 canopy rectangles typed into registry_spec CANOPIES; LY-039 values cross-checked against LY-006 own read of the NE chunk. All other prep folders were only read to learn what each seat intends to touch.",
+ "labGlbIndex": "qa/glb-node-index.json: 373 GLB files at bce3211, every SHA equal to the LY-001 ledger (check C7)",
+ "nativeSource": "no private .blend / source ZIP was available or needed; only the public sanitized ZIPs above were read",
+ "tools": {
+  "python": "3.11.9",
+  "blender": "D:/Blender/blender.exe 5.2.1 (headless, factory startup) for bl_list_objects.py only"
+ }
+}

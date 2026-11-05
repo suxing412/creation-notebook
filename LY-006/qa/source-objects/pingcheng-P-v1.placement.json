@@ -1,0 +1,69 @@
+{
+  "base_sha256": "eabb2a902d671adf9017f9835ce1d1d9673985f33d793acdce067cd435540134",
+  "requires_previous_overlay_sha256": "660cdf37adddebbad7b3b9e0b3ab1f7d859b9bb3104d2d14a032761a61b96b84",
+  "B_point_unchanged": [
+    1622.449,
+    -30.612
+  ],
+  "engineering_origin_from_existing_wall_caps": [
+    1622.80908203125,
+    -13.259963035583496,
+    0.17000000178813934
+  ],
+  "offset_from_B_m": [
+    0.3600820312499309,
+    17.352036964416502
+  ],
+  "rotation_z_rad": -0.0207437532713328,
+  "new_ids": [
+    "pingcheng-P-static_earth",
+    "pingcheng-P-static_tile",
+    "pingcheng-P-static_timber"
+  ],
+  "hide_only_ids": [],
+  "remove_on_rollback": [
+    "pingcheng-P-static_earth",
+    "pingcheng-P-static_tile",
+    "pingcheng-P-static_timber"
+  ],
+  "delta_sha256": "bfd7a9ddd0752906ea3d7d625bb60477c0c3b4d7676812d0be7eabe8c621c327",
+  "model_sha256": "8f3c6fd1563170b9a9c7d9c1d18b75b82cd520a9eea8ceee4b6b9eebe8d4c1a6",
+  "contacts": [
+    {
+      "wall": "C_wall_A_06",
+      "side": -1,
+      "max_world_float_residual_m": 0.0001221038355096334,
+      "scope": "outer cap only, not whole object pair exemption",
+      "gate_inner_contact_plane_x": -12.8,
+      "gate_inner_contact_rect_yz": [
+        -5.0,
+        5.0,
+        0,
+        5.0
+      ]
+    },
+    {
+      "wall": "C_wall_A_05",
+      "side": 1,
+      "max_world_float_residual_m": 1.9073486328125e-06,
+      "scope": "outer cap only, not whole object pair exemption",
+      "gate_inner_contact_plane_x": 12.8,
+      "gate_inner_contact_rect_yz": [
+        -5.0,
+        5.0,
+        0,
+        5.0
+      ]
+    }
+  ],
+  "activation": false,
+  "historical_state": "177/178 damage accounts differ; circa180 repair status unknown; intact-form hypothesis only",
+  "access_state": "central lane fixed closed as C display choice, not documented daily traffic rule",
+  "limits": [
+    "Origin and orientation derived from current C wall geometry, not historical precision; south-wall gate location not excavated",
+    "No new roads, no wall edits, no whole-city activation",
+    "Gate contains closed central and open side leaves, all static; no tested hinge rig",
+    "Upper access remains unknown",
+    "No threshold inserted; existing terrain/approach support is not validated, hidden trial only"
+  ]
+}

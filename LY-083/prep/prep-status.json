@@ -1,0 +1,54 @@
+{
+ "seat": "LY-083",
+ "inputsFound": [
+  "lab baseline bce3211 (main); origin/main drift cad338ba (only city-data.mjs + p-luoyang.asset.json changed among LY-083 inputs)",
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb fdfc3ce5 - node C_stitch_primary carries the outer street; v2: terrain chapter only (initial:false); v1: market level when layout=calt",
+  "docs/cities/luoyang/assets/market/market-cluster.glb 77b8bf2e - route_exitPublic/exitN/exitS, sample_ground, boundary_east_+-9 at x=244.286",
+  "docs/cities/luoyang/assets/market/N2-replacement.glb d33cbad1; flowB-routes.glb 43d7799f (v1 flow=B only)",
+  "docs/cities/luoyang/assets/ground-atomic/retained.glb aed8b3d4 / south.glb 4313826d / D08.glb 3ab93310 (atomic group; no faces in the outer-street corridor)",
+  "docs/cities/luoyang/assets/market/corridor-6m-market-link.glb b46dd450 + road-junction/joined-route-terrain.glb f8729358 - old outer street, still loaded by v1 archive ?view=market&layout=original (west-layer.mjs L33)",
+  "progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb e5baa0df @cad338b (initial:true; contains the outer street, width identical to C_stitch_primary)",
+  "docs/cities/luoyang/data/west/road-plan.json 9792f217 (LF 0bc4528c); ground-atomic-contract.json bfc7fc83 (LF 7f26720b); N2-contract.json 10678d73; market-flow-plan.json bff5bb22; market-interface.json 31c6786d (stale); market-link-continuity.json d2da6a6c; market-precedents.json abf2a3d2",
+  "docs/cities/luoyang/city-data.mjs e4115705 (LF c849706b; @cad338b LF d8933a32) - market chapter loadNodeIds = market-main, market-N2 only",
+  "docs/cities/luoyang/city-renderer.mjs fa0a8dcb (L221 initial filter, L595-613 focusChapter); v1/west-layer.mjs d8c14142 (L31-37); v1/west-state.mjs 1ca60250 (layout default calt); v1/ground-atomic.mjs 45e25711"
+ ],
+ "inputsMissing": [
+  "G freeze (LY-001/002/005/006/007/008/009/010): new snapshot SHA; decides bce3211 vs cad338b+ and therefore whether the chapter-load merge proposal is needed",
+  "LY-030 frozen market boundary + retained exit list: decides whether route_exitN/exitS are real exits needing outside support",
+  "LY-081 ground reachability network: breakpoint vs forbidden edge for exitN/exitS, and whether receiver/stitched swap leaves a double surface",
+  "Private: C-ground-stitch-v1 generator/.blend (network-ground-stitched.glb) - not needed; C_stitch_primary is reused untouched; any patch is a separate GLB rebuilt from GLB boundary vertices (x=244.28599548, top 0.21)",
+  "Private: market-cluster native .blend - not needed; boundary read exactly from GLB (rebuild-from-GLB OK)",
+  "Private: yong-road-link-v2 source pack (Release) - not needed; receiver read as GLB",
+  "market-link-continuity checker script (sha 37aa804c...) absent from repo; replaced by own scripts in prep/measure/"
+ ],
+ "gaps": [
+  "bce3211 v2 cold market chapter: outer street absent - centerline 661/901 samples unsupported (x 244.5-405); only fixed if terrain chapter opened first. Assembly gap, not geometry",
+  "cad338b drift: initial:true yong-road-receiver (209-tri component of C_stitch_primary) now carries the outer street in cold open - centerline 45/901 misses (all outside 244.5-398.25), 1.6 m envelope 0/48906 unsupported, seam 5 mm 0/369 misses; gap above closed if snapshot includes cad338b",
+  "route_exitN (y1974.184-1978.184) and route_exitS (y1940.184-1944.184) end at x=244.286 with no support 0.1 m beyond; centre 14.99 m from outer-street centre at boundary (~13.0 m edge to edge); sample_ground edge drops 0.20 m into unbuilt void; no tested route uses them",
+  "v1 archive layout=original market view still loads corridor-6m-market-link (C_main_road_width_6, x 244.5-398.25 @0.21, 0 gaps); overlaying it with stitched gives 444/444 coplanar double surfaces (N3); market-interface.json still names it active",
+  "assertGroundAtomic only counts 3 stitched node names - stitched-only passes (S6); four-ground completeness needs a SHA-based check (first-pass N4 was wrong, fixed)",
+  "Public outer street itself has no gap: seam 0.000 m, dz 0.000 m, 148.11 m to spine west edge (151.09 m to centreline), width 4.00 -> 6.0 m over ~10 m, envelopes 0.6/1.6 m 0 unsupported, overhead 0/1445 obstructed",
+  "Inside market (not 083): sample_ground 0.20 vs routes 0.21 = 1 cm step at x 187.25-187.5 (LY-022/025)"
+ ],
+ "reuseCandidate": "Public outer street exists and is reused, no new geometry: network-ground-stitched.glb (sha256 fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60) node C_stitch_primary, x 244.286 -> 392.40 at y 1959.184 = 148.11 m (151.09 m to spine centreline), top 0.20999-0.21001, dz to route_exitPublic 0.000 m, seam gap 0.000000 m, 5 mm seam scan 0 misses, width 4.00 m at boundary (= exitPublic) to 6.0 m by x~254.3, 0.6 m / 1.6 m envelope sweeps 0/19266 and 0/48906 unsupported, overhead clearance 0/1445 obstructed; on cad338b the same street is also in the cold-open city via yong-road-receiver-component209.glb (sha e5baa0df...). Evidence: LY-083/prep/measure/outer_street_measure.json (1bba3cd9, reproduced byte-identical), fine_measure.json, supplement_measure.json, drift_cad338b_measure.json. Only conditional new work: exitN/exitS boundary aprons (after LY-030/081) and, if snapshot is bce3211, a chapter-load merge proposal.",
+ "touches": [
+  "network-ground-stitched.glb : C_stitch_primary (read-only reuse; must not be edited)",
+  "yong-road-receiver-component209.glb : C_stitch_primary_yong_receiver_component209 (read-only, cad338b+)",
+  "market-cluster.glb : route_exitPublic, route_exitN, route_exitS, sample_ground, boundary_east_-9, boundary_east_9 (read-only; boundary x=244.286 shared seam with LY-022)",
+  "flowB-routes.glb : flowB_entry (read-only)",
+  "corridor-6m-market-link.glb / joined-route-terrain.glb (must stay mutually exclusive with stitched; note only)",
+  "city-data.mjs chapter market loadNodeIds (proposal only via LY-100, only if snapshot lacks receiver)",
+  "v1/west-layer.mjs L31-37 and data/west/market-interface.json (stale-doc note only, via LY-100)",
+  "possible new: workpacks/LY-083/models/market-east-exit-apron-N/S.glb in x>244.286, y 1940.184-1944.184 and 1974.184-1978.184 bridging to the street edge (conditional)"
+ ],
+ "size": "S",
+ "risks": [
+  "Reuse verdict rests on finite ray/envelope sampling (0.25 m centreline, 0.1x0.05 m envelope grid, 5 mm seam); no continuous motion, solid collision or browser/GPU test",
+  "Snapshot drift: bce3211 vs cad338b flips the 'in city' result; all tests must be re-bound to LY-001's frozen SHA",
+  "exitN/exitS aprons would be C invention of a boundary street; must not be presented as ancient Jin market street network",
+  "Market chapter loading only stitched (not all 4 atomic grounds) violates ground-atomic-contract and passes assertGroundAtomic unnoticed",
+  "Re-adding corridor-6m-market-link.glb alongside stitched (or receiver alongside stitched) creates double coplanar road surface",
+  "Ownership seam with LY-022 at x=244.286 and with LY-081 network edges; LY-029/030 variant switch could change exits or drop sample_ground"
+ ],
+ "readyAfterG": true
+}

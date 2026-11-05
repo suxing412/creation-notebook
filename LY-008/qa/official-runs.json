@@ -1,0 +1,358 @@
+{
+ "repo": "D:/GitHub/creation-notebook-lab",
+ "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "copy": "tmp/repo（git archive 导出，无 .git）",
+ "copyIdentity": {
+  "lab/tools/build_assets.py": {
+   "commitBlobSha256": "ed7664a7d15c6f0114b6ffec99be9b43426ea8eee9c9ef6ad5537038c76c579e",
+   "copySha256": "ed7664a7d15c6f0114b6ffec99be9b43426ea8eee9c9ef6ad5537038c76c579e",
+   "same": true
+  },
+  "lab/tools/glb_audit.py": {
+   "commitBlobSha256": "99d64d7c868ac9b74e9ac1d828499ab959a847dcaebbd27f264f5728047166ac",
+   "copySha256": "99d64d7c868ac9b74e9ac1d828499ab959a847dcaebbd27f264f5728047166ac",
+   "same": true
+  },
+  "docs/asset-spec/categories.json": {
+   "commitBlobSha256": "63f41789873383a0340df13333b5cb47e3106c318a9c52f187c608bc3190f96a",
+   "copySha256": "63f41789873383a0340df13333b5cb47e3106c318a9c52f187c608bc3190f96a",
+   "same": true
+  },
+  "docs/asset-spec/README.md": {
+   "commitBlobSha256": "8c16f653c2bf4af81d4d6fe1330ec4f79bd00720bec2f2c31f79c8461a832769",
+   "copySha256": "8c16f653c2bf4af81d4d6fe1330ec4f79bd00720bec2f2c31f79c8461a832769",
+   "same": true
+  },
+  "_wholeTree": {
+   "blobs": 4411,
+   "mismatch": [],
+   "mismatchCount": 0,
+   "missing": [],
+   "extraBeforeRun": [],
+   "extraCountBeforeRun": 0,
+   "identical": true
+  }
+ },
+ "officialSpec": {
+  "spec": 1,
+  "limits": {
+   "id": "^[a-z0-9][a-z0-9-]{1,48}$",
+   "titleMax": 24,
+   "summaryMax": 120,
+   "summaryWarn": 80,
+   "coverMinWidth": 600,
+   "coverWarnWidth": 1200,
+   "imageTypes": [
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".webp"
+   ],
+   "galleryMax": 12,
+   "glbMaxMB": 15,
+   "glbWarnMB": 5,
+   "trianglesMax": 500000,
+   "trianglesWarn": 150000,
+   "standardFolder": "library/<category>/<id>/",
+   "imageWebpWarnMB": 1,
+   "glbCompressWarnMB": 1,
+   "sourceExtensions": [
+    "blend",
+    "blend1",
+    "zip",
+    "part###",
+    "psd",
+    "exr",
+    "fbx",
+    "max",
+    "ma",
+    "mb",
+    "c4d",
+    "spp",
+    "kra"
+   ]
+  },
+  "categories.json.sha256": "63f41789873383a0340df13333b5cb47e3106c318a9c52f187c608bc3190f96a",
+  "README.md.sha256": "8c16f653c2bf4af81d4d6fe1330ec4f79bd00720bec2f2c31f79c8461a832769",
+  "build_assets.py.sha256": "ed7664a7d15c6f0114b6ffec99be9b43426ea8eee9c9ef6ad5537038c76c579e",
+  "glb_audit.py.sha256": "99d64d7c868ac9b74e9ac1d828499ab959a847dcaebbd27f264f5728047166ac"
+ },
+ "command": "python -I lab/tools/build_assets.py --check（cwd = 导出副本；env GIT_CEILING_DIRECTORIES = 副本上一级）",
+ "refusedOnRealRepo": {
+  "errorCodes": [
+   "OFFICIAL_REFUSED_REAL_REPO"
+  ],
+  "ranBuildAssets": false
+ },
+ "runs": {
+  "baseline": {
+   "exitCode": 0,
+   "seconds": 11.4,
+   "reportCounts": {
+    "cards": 89,
+    "published": 89,
+    "drafts": 0,
+    "withErrors": 0,
+    "withWarnings": 50
+   },
+   "repoErrors": [],
+   "cardErrors": [],
+   "orphans": 0,
+   "stdoutTail": [
+    "89 cards · 89 on the site · 0 drafts · 0 with errors · 50 with warnings"
+   ],
+   "errorCodes": []
+  },
+  "injected": {
+   "exitCode": 1,
+   "seconds": 4.7,
+   "reportCounts": {
+    "cards": 101,
+    "published": 89,
+    "drafts": 8,
+    "withErrors": 4,
+    "withWarnings": 51
+   },
+   "repoErrors": [
+    "library/models/ly008-neg-boundary/files/scene.blend：源文件不进仓库，请上传到这一批 tag 的 GitHub Release（见规范「源文件」）"
+   ],
+   "cardErrors": [
+    {
+     "card": "library/models/ly008-neg-escape/ly008-neg-escape.asset.json",
+     "errors": [
+      "模型文件找不到：../../../../../../outside/model.glb"
+     ]
+    },
+    {
+     "card": "library/models/ly008-neg-idx/ly008-neg-idx.asset.json",
+     "errors": [
+      "GLB 读不出来：files/model.glb（list index out of range）"
+     ]
+    },
+    {
+     "card": "library/models/ly008-neg-oversize/ly008-neg-oversize.asset.json",
+     "errors": [
+      "GLB 超过 15 MB：files/model.glb（15.0 MB）"
+     ]
+    },
+    {
+     "card": "library/models/ly008-neg-tris/ly008-neg-tris.asset.json",
+     "errors": [
+      "面数超过 500,000：files/model.glb（501,956）"
+     ]
+    }
+   ],
+   "orphans": 3,
+   "stdoutTail": [
+    "101 cards · 89 on the site · 8 drafts · 4 with errors · 51 with warnings",
+    "  ERROR library/models/ly008-neg-escape/ly008-neg-escape.asset.json: 模型文件找不到：../../../../../../outside/model.glb",
+    "  ERROR library/models/ly008-neg-idx/ly008-neg-idx.asset.json: GLB 读不出来：files/model.glb（list index out of range）",
+    "  ERROR library/models/ly008-neg-oversize/ly008-neg-oversize.asset.json: GLB 超过 15 MB：files/model.glb（15.0 MB）",
+    "  ERROR library/models/ly008-neg-tris/ly008-neg-tris.asset.json: 面数超过 500,000：files/model.glb（501,956）",
+    "  WARN  library/models/ly008-neg-idx/files/model.glb: 没有任何卡片引用这个 GLB",
+    "  WARN  library/models/ly008-neg-oversize/files/model.glb: 没有任何卡片引用这个 GLB",
+    "  WARN  library/models/ly008-neg-tris/files/model.glb: 没有任何卡片引用这个 GLB",
+    "  ERROR library/models/ly008-neg-boundary/files/scene.blend：源文件不进仓库，请上传到这一批 tag 的 GitHub Release（见规范「源文件」）"
+   ],
+   "errorCodes": [
+    "OFFICIAL_CHECK_FAILED"
+   ]
+  },
+  "reverted": {
+   "exitCode": 0,
+   "seconds": 2.2,
+   "reportCounts": {
+    "cards": 89,
+    "published": 89,
+    "drafts": 0,
+    "withErrors": 0,
+    "withWarnings": 50
+   },
+   "repoErrors": [],
+   "cardErrors": [],
+   "orphans": 0,
+   "stdoutTail": [
+    "89 cards · 89 on the site · 0 drafts · 0 with errors · 50 with warnings"
+   ],
+   "errorCodes": []
+  }
+ },
+ "injectedComparison": [
+  {
+   "card": "ly008-neg-oversize",
+   "glb": "tmp/neg-big/N11-oversize-15000004.glb",
+   "glbSha256": "3df5f9afc806019abbe9f9456a2465464736081005998128072b1bdd98a7005b",
+   "filesPath": "files/model.glb",
+   "officialErrors": [
+    "GLB 超过 15 MB：files/model.glb（15.0 MB）"
+   ],
+   "officialCatches": true,
+   "lyCheckCase": "N11-oversize-15000004",
+   "lyCheckErrorCodes": [
+    "GLB_OVER_FORMAL_LIMIT"
+   ],
+   "lyCheckCatches": true
+  },
+  {
+   "card": "ly008-neg-boundary",
+   "glb": "tmp/neg-big/B11-boundary-15000000.glb",
+   "glbSha256": "29f1afae3059a4f209e7787fb02c207490fd81c91896b9c288a2294c731bb92e",
+   "filesPath": "files/model.glb",
+   "officialErrors": [],
+   "officialCatches": false,
+   "lyCheckCase": "B11-boundary-15000000",
+   "lyCheckErrorCodes": [],
+   "lyCheckCatches": false
+  },
+  {
+   "card": "ly008-neg-tris",
+   "glb": "tmp/neg-big/N23-over-triangle-limit.glb",
+   "glbSha256": "6cf5b816d19b1071ec9f2dc8e1ea756d19d2294d13a84252d51856aed2b2acc3",
+   "filesPath": "files/model.glb",
+   "officialErrors": [
+    "面数超过 500,000：files/model.glb（501,956）"
+   ],
+   "officialCatches": true,
+   "lyCheckCase": "N23-over-triangle-limit",
+   "lyCheckErrorCodes": [
+    "GEOM_OVER_TRI_LIMIT"
+   ],
+   "lyCheckCatches": true
+  },
+  {
+   "card": "ly008-neg-escape",
+   "glb": null,
+   "glbSha256": null,
+   "filesPath": "../../../../../../outside/model.glb",
+   "officialErrors": [
+    "模型文件找不到：../../../../../../outside/model.glb"
+   ],
+   "officialCatches": true,
+   "lyCheckCase": null,
+   "lyCheckErrorCodes": null,
+   "lyCheckCatches": null
+  },
+  {
+   "card": "ly008-neg-truncated",
+   "glb": "qa/negatives/N02-truncated.glb",
+   "glbSha256": "dd15debb41ad1e99c2367fceebcfd2eda4dec58c6ea9741b748eaf7fb0c4a25a",
+   "filesPath": "files/model.glb",
+   "officialErrors": [],
+   "officialCatches": false,
+   "lyCheckCase": "N02-truncated",
+   "lyCheckErrorCodes": [
+    "GLB_CHUNK_OVERRUN",
+    "GLB_LENGTH_MISMATCH",
+    "GLTF_BUFFERVIEW_OVERRUN",
+    "GLTF_BUFFER_OVERRUN",
+    "TEXTURE_MISSING"
+   ],
+   "lyCheckCatches": true
+  },
+  {
+   "card": "ly008-neg-badlen",
+   "glb": "qa/negatives/N01-bad-header-length.glb",
+   "glbSha256": "825a483c0d89b953488e5df8ecae1df3caf7fa00ea4b859c10d6b58dc5a18862",
+   "filesPath": "files/model.glb",
+   "officialErrors": [],
+   "officialCatches": false,
+   "lyCheckCase": "N01-bad-header-length",
+   "lyCheckErrorCodes": [
+    "GLB_LENGTH_MISMATCH"
+   ],
+   "lyCheckCatches": true
+  },
+  {
+   "card": "ly008-neg-nan",
+   "glb": "qa/negatives/N04-nan-position.glb",
+   "glbSha256": "52567f0980c590df7bddce601a6530032070e9ca93dd13a332211df4710345e5",
+   "filesPath": "files/model.glb",
+   "officialErrors": [],
+   "officialCatches": false,
+   "lyCheckCase": "N04-nan-position",
+   "lyCheckErrorCodes": [
+    "GEOM_NONFINITE"
+   ],
+   "lyCheckCatches": true
+  },
+  {
+   "card": "ly008-neg-notex",
+   "glb": "qa/negatives/N07-missing-texture-index.glb",
+   "glbSha256": "e43d20efce44ce9e61bdd6b4059b01e2cecd023a778fed8b4a786b389cc4b4bb",
+   "filesPath": "files/model.glb",
+   "officialErrors": [],
+   "officialCatches": false,
+   "lyCheckCase": "N07-missing-texture-index",
+   "lyCheckErrorCodes": [
+    "TEXTURE_MISSING"
+   ],
+   "lyCheckCatches": true
+  },
+  {
+   "card": "ly008-neg-exttex",
+   "glb": "qa/negatives/N09-external-texture-missing.glb",
+   "glbSha256": "63b99082b35568e6799b9f37cfc41e0014416ca943d798d4b996d12e6907211a",
+   "filesPath": "files/model.glb",
+   "officialErrors": [],
+   "officialCatches": false,
+   "lyCheckCase": "N09-external-texture-missing",
+   "lyCheckErrorCodes": [
+    "TEXTURE_MISSING",
+    "TEXTURE_NOT_EMBEDDED"
+   ],
+   "lyCheckCatches": true
+  },
+  {
+   "card": "ly008-neg-private",
+   "glb": "qa/negatives/N13a-private-path-extras.glb",
+   "glbSha256": "4685973f571db0485712de0292ea30811d414c217daf21969699a48a007bd149",
+   "filesPath": "files/model.glb",
+   "officialErrors": [],
+   "officialCatches": false,
+   "lyCheckCase": "N13a-private-path-extras",
+   "lyCheckErrorCodes": [
+    "PRIVATE_PATH_IN_JSON"
+   ],
+   "lyCheckCatches": true
+  },
+  {
+   "card": "ly008-neg-idx",
+   "glb": "qa/negatives/N17-index-out-of-range.glb",
+   "glbSha256": "a4a31f6660f43434227c4510651dea9f68fd29c58d24e4abd996ac9d26c39105",
+   "filesPath": "files/model.glb",
+   "officialErrors": [
+    "GLB 读不出来：files/model.glb（list index out of range）"
+   ],
+   "officialCatches": true,
+   "lyCheckCase": "N17-index-out-of-range",
+   "lyCheckErrorCodes": [
+    "GEOM_INDEX_OUT_OF_RANGE"
+   ],
+   "lyCheckCatches": true
+  },
+  {
+   "card": "ly008-pos-s84",
+   "glb": "../LY-007/models/samples/S84-LOD0.glb",
+   "glbSha256": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b",
+   "filesPath": "files/model.glb",
+   "officialErrors": [],
+   "officialCatches": false,
+   "lyCheckCase": "G-base-S84-LOD0.glb",
+   "lyCheckErrorCodes": [],
+   "lyCheckCatches": false
+  }
+ ],
+ "blendInjectedCaught": [
+  "library/models/ly008-neg-boundary/files/scene.blend：源文件不进仓库，请上传到这一批 tag 的 GitHub Release（见规范「源文件」）"
+ ],
+ "revertedEqualsBaseline": true,
+ "labRepoBefore": {
+  "head": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "status": "?? .claude/\n"
+ },
+ "labRepoAfter": {
+  "head": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "status": "?? .claude/\n"
+ },
+ "labRepoUnchanged": true
+}

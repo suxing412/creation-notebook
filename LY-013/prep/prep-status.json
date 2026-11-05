@@ -1,0 +1,56 @@
+{
+  "seat": "LY-013",
+  "inputsFound": [
+    "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb 88d9a322",
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb d82f13fc",
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb 13ff78a7",
+    "docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb 94693c58 (the only file the city loads, local-study view, city-renderer.mjs:286/645)",
+    "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD0/1/2.glb 5754432a / 50f85502 / e758e45f (three-passage ground attachments)",
+    "origin/luoyang-content:modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip (zip bad99bb9): build.py df0be5ed, source-object-ranges.json a13c9f74, placement.json e608e78b, sanitised LOD0/1/2 .blend 95568b8b/f283dbf9/c8ef8d10",
+    "docs/cities/luoyang/city-data.mjs e4115705 (asset :708, node research-north13-kaiyang-K :4178, cityPlacement null)",
+    "docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json fadab2bb"
+  ],
+  "inputsMissing": [
+    "bearing-section-v1: not in lab main, the luoyang-content/reviews/workpacks branches or 待传. Needed to find the 'new deck' (inferred 6.4x10x0.34 = 21.76 m3, coplanar with and fully inside C_upper_deck) and the 0.0936 m3 lintel/beam case. Cannot be rebuilt from GLB: that geometry is in no K-v1 GLB.",
+    "开阳适配失败/实际剖面记录: not found. Source of the 21.76 m3 figure and the section elevations. K-v1 sections can be re-cut from GLB; the failed adaptation itself cannot be rebuilt.",
+    "LY-011 frame output (column grid, sill and beam top elevations, port IDs): not produced yet. It is a hard input for the deck underside interface.",
+    "LY-006 ownership of triangle ranges inside the merged kaiyang-K-static_timber node: the deck shares one mesh with door heads, jambs and leaves (LY-011/012) and posts. Not frozen.",
+    "Original private unsanitised K-v1 .blend: not strictly needed. The public projection reopened equal (NATIVE-EQUIVALENCE), and build.py regenerates K-v1 deterministically, so the deck can be rebuilt from GLB or from build.py."
+  ],
+  "gaps": [
+    "K-v1 has exactly one deck, C_upper_deck, in LOD0/1/2 and in the city projection: 24.8x10x0.34 m, z 5.00-5.34, 84.32003 m3, closed (0 open, 0 non-manifold edges), with an identical geometry hash in all four files.",
+    "Deck underside 248.0 m2: only 117.38 m2 sits on something (four piers about 28.0 m2 each, door heads 1.44/2.08/1.44 m2, six jambs 0.08 m2 each). 130.62 m2 (52.7%) has no support: three full passage spans x[-9.6,-5.6], [-2.8,2.8], [5.6,9.6], clear spans 4.0/5.6/4.0 m, with only a front door head at y about -4.8.",
+    "Timber-earth interface below: the timber deck lies coplanar directly on the four rammed-earth pier tops (z=5.000, 4 x 28 m2). There is no sill, pad or defined port.",
+    "Timber-earth interface above: five earth guard-room walls (total footprint 4.704 m2; rear wall 5.8 m with only 3.45% of its x-extent over a pier) bear on the deck over the central 5.6 m span. Ten timber posts (gallery x=0/±5.8 and rear posts ±5.8/±8.7) also land over passage spans with no pier or beam beneath. 21 components bear on the deck top in total (19 in LOD2).",
+    "Deck vs others: 34 face/edge contacts (32 in LOD2); 0 positive-volume intrusions; 0 full containments.",
+    "Existing full containment found by the all-pairs scan: 4 rear guard posts (0.16x0.16x1.12 m, about 0.0287 m3 each) lie entirely inside the r=0.17 gallery posts at the same positions, in all LODs. The original joint-regions.json only kept them as unresolved candidates. Not LY-013's to fix; handed to LY-006/LY-015.",
+    "Detector negatives: N1 coplanar 6.4x10x0.34 duplicate = 21.76001 m3, detected as full containment (sampled 21.650). N2 inset duplicate and N3 full duplicate give 0 surface-BVH pairs but are still detected as full containment, which shows surface BVH alone misses them. N4 0.1 m beam intrusion is detected (0.1655 vs 0.168 m3 analytic). P1 flush beam is classified as contact.",
+    "The deck has no node of its own: it is triangle range [1776,1788) / [1136,1148) / [576,588) of kaiyang-K-static_timber in LOD0/1/2.",
+    "Deck top port z=5.34 local (5.51 at the hidden-trial +0.17 placement) is the LY-014 end elevation."
+  ],
+  "reuseCandidate": "Partial only, so not a reuse completion. K-v1 C_upper_deck is already a single, closed, explicitly defined deck (84.32 m3, identical across LOD0/1/2 and the city projection; measure_deck.py, qa/deck-measure.json bcf1dc7e). It can be kept as 'the one deck' instead of modelling a new slab. Still required: its interface to LY-011 beams and pier tops, separating it into its own node, and a replayable replacement record. So the seat cannot be closed as reuse.",
+  "touches": [
+    "kaiyang-K-static_timber (merged node) triangle range C_upper_deck LOD0 [1776,1788), LOD1 [1136,1148), LOD2 [576,588)",
+    "kaiyang-K-static_timber C_door_head_0..2 [60,96) and C_jamb_* (LOD0 [720,792), LOD1 [400,472), LOD2 [240,312)): read-only contact partners, shared with LY-011/LY-012",
+    "kaiyang-K-static_earth C_earth_pier_0..3 [72,120) (all LODs): pier tops z=5.0, read-only, timber-earth interface",
+    "kaiyang-K-static_earth C_central_room_* [0,72): earth walls bearing on the deck top, read-only",
+    "kaiyang-K-static_timber C_gallery_post_* and C_rear_guard_post_* (posts bearing on the deck top), read-only",
+    "LY-011 new frame beams/columns/sills (port interface, not owned)",
+    "docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb (city projection that must be regenerated by LY-100/015 if the deck changes)",
+    "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb and north13 LOD1/LOD2 GLBs (inputs only)",
+    "kaiyang-ground-LOD0/1/2 (clearance reference only, top about +0.041 m)",
+    "deck-top port z=5.34 shared with LY-014",
+    "D:/GitHub/creation-notebook-workpacks/LY-013/ (the only write area)"
+  ],
+  "size": "M",
+  "risks": [
+    "Node ownership conflict: the deck is merged into kaiyang-K-static_timber with the door heads, jambs and leaves of LY-011/LY-012 and the upper posts. LY-006 must assign the node split, or nobody can replace the deck without touching neighbours.",
+    "Without bearing-section-v1 the 'old vs new deck' cannot be located directly. The 21.76 m3 match with N1 is an inference, not a verified record.",
+    "If LY-011 puts beams under the deck with tops at z!=5.000, either the deck or the piers' port must move. Moving the deck top (5.34) breaks the LY-014 end elevation, so this needs a joint port version.",
+    "The earth guard-room walls on the timber deck over a 5.6 m span may tempt someone to call the structure safe or unsafe. Only geometric support can be reported; no structural claim.",
+    "4 inherited post-in-post full containments exist. The package must report them as inherited, not as cleared, and must not add more.",
+    "Deck/floor construction for c.180 Luoyang is unknown (C design). Northern Wei, Western Han or Sichuan brick evidence must not be used to fix thickness or joists.",
+    "The city loads only the projection GLB in local-study view. Any deck change needs a regenerated projection via LY-015/LY-100, or the city and the library would show different decks."
+  ],
+  "readyAfterG": true
+}

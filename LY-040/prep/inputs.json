@@ -1,0 +1,452 @@
+{
+  "seat": "LY-040",
+  "stage": "prep (G not frozen; no geometry produced)",
+  "labBaseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "hashRule": "GLB/zip: disk bytes (binary, equal to commit blob). Text: sha256Blob = `git show HEAD:<path>`; sha256Checkout = Windows checkout bytes (core.autocrlf=true). Bind tests to sha256Blob.",
+  "coordinates": "native metres X east / Y north / Z up; glTF Y-up = (x, z, -y). City node position [0,0,0]; translation inside GLB, never reapply.",
+  "inputs": [
+    {
+      "id": "granary-city-LOD0",
+      "role": "two granaries + receiving area + original ground (the only part of this region already in the city)",
+      "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+      "bytes": 1663844,
+      "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+      "geometryFingerprint1mm": "cd7ad9a40965cb93 (prefix; full in out/inspect.json)",
+      "triangles": 9508,
+      "nativeSource": "missing (private; source.json limitations)",
+      "loadedInCity": true,
+      "loadedBy": [
+        "docs/cities/luoyang/city-data.mjs:582-599 asset storage-main (path, bytes, sha256)",
+        "docs/cities/luoyang/city-data.mjs:3717-3735 node storage-main initial:false chapter storage",
+        "docs/cities/luoyang/city-data.mjs:3983-4008 chapter storage loadNodeIds [storage-main], camera",
+        "docs/cities/luoyang/city-renderer.mjs:286-299 loadAsset (fetch + GLTFLoader.parseAsync)",
+        "docs/cities/luoyang/city-renderer.mjs:595-601 focusChapter adds chapter.loadNodeIds"
+      ]
+    },
+    {
+      "id": "granary-city-LOD1",
+      "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb",
+      "bytes": 756484,
+      "sha256": "a1265bbf53d10ddb6398efa6f505c1b6dee86b81b37397f7af9855acc34f2e45",
+      "loadedInCity": false,
+      "loadedBy": [
+        "recorded only in granary-city-v1/source.json files[]"
+      ]
+    },
+    {
+      "id": "granary-city-LOD2",
+      "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD2.glb",
+      "bytes": 462440,
+      "sha256": "6b2564d3ffd76e6e982a4a7f703cfd0790ac0e0b2dfa75add4df169c4c82efe7",
+      "loadedInCity": false,
+      "loadedBy": [
+        "recorded only in granary-city-v1/source.json files[]"
+      ]
+    },
+    {
+      "id": "granary-city-v1-source",
+      "path": "docs/cities/luoyang/progress-assets/granary-city-v1/source.json",
+      "sha256Blob": "30e74bda8a965f4f7c84aaa32bdb7a179680b6163150584cdeb58de3e3f12639",
+      "sha256Checkout": "6cf88d6f0b2ae18c08cedc946ba783453af1a5edc1217158b8469a8cf2059224",
+      "loadedInCity": "as link only",
+      "loadedBy": [
+        "city-data.mjs node storage-main sourceContract; app.mjs:93-96 renders sourceContract link"
+      ]
+    },
+    {
+      "id": "rb-granary_C_with_ground",
+      "role": "same granary geometry as exported from mother 1e8c4d2c (fingerprint identical to city LOD0)",
+      "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part01-05 :: chunks/granary_C_with_ground.glb",
+      "bytes": 1993888,
+      "sha256": "156999f1dfe0df0634c72af4f4390a279b53827243a7df0c823b15656cb6ec91",
+      "sourceNodes": [
+        "sample_ground.001",
+        "C_GRANARY_V2_L0__granary-group-static_tile",
+        "C_GRANARY_V2_L0__granary-group-static_timber",
+        "C_GRANARY_V2_L0__granary-group-static_paper__cargo_proxy"
+      ],
+      "loadedInCity": false,
+      "loadedBy": [
+        "adapter/adapter.json node visible-current-node-granary_C_with_ground (initial:false); deploymentStatus 'not published'"
+      ]
+    },
+    {
+      "id": "rb-northeast_C_access",
+      "role": "existing ~196 m C short road C_NE_APPROACH_LOCAL (L slab 3 m wide, 0.18 m thick, 32 tris)",
+      "path": "…/2026-11-04-city-visible zip :: chunks/northeast_C_access.glb",
+      "bytes": 413628,
+      "sha256": "58f2f58a464183e20d5489b13902f62f2570573cb8bf96fb237df781027d076e",
+      "sourceNodes": [
+        "C_NE_APPROACH_LOCAL"
+      ],
+      "sourceDirectedTriangleSha256": "0f806978e9558e7ca8286f9120f89e692553a7a74a7ed7b1d59c0334d9333a4f",
+      "loadedInCity": false,
+      "loadedBy": [
+        "adapter/adapter.json node visible-current-node-northeast_C_access (initial:false)"
+      ]
+    },
+    {
+      "id": "rb-wuku_C_with_support-01",
+      "role": "wuku B earth+timber (v2.2, 150 deg door baked) + C_WUKU_ISOLATED_SUPPORT_PATCH",
+      "path": "…/2026-11-04-city-visible zip :: chunks/wuku_C_with_support-01.glb",
+      "bytes": 1278740,
+      "sha256": "29709e25f77f6becaf2566555a4d55b0525e244f73ede92ae344a78cc1a57b37",
+      "sourceNodes": [
+        "C_WUKU_ISOLATED_SUPPORT_PATCH",
+        "C_WUKU_ENTRY22_LOD0__wuku-B-static_earth.001",
+        "C_WUKU_ENTRY22_LOD0__wuku-B-static_timber.001"
+      ],
+      "loadedInCity": false,
+      "loadedBy": [
+        "adapter/adapter.json node visible-current-node-wuku_C_with_support-01 (initial:false)"
+      ]
+    },
+    {
+      "id": "rb-wuku_C_with_support-02",
+      "role": "wuku B tile (atomic with -01)",
+      "path": "…/2026-11-04-city-visible zip :: chunks/wuku_C_with_support-02.glb",
+      "bytes": 10108456,
+      "sha256": "34160b9d5c1ec0add696c2a7aec272c882d2ed68d4344b1d7d3b96d7da749429",
+      "sourceNodes": [
+        "C_WUKU_ENTRY22_LOD0__wuku-B-static_tile.001"
+      ],
+      "loadedInCity": false,
+      "loadedBy": [
+        "adapter/adapter.json node visible-current-node-wuku_C_with_support-02 (initial:false)"
+      ]
+    },
+    {
+      "id": "review-batch-zip-parts",
+      "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part0{1..5}",
+      "parts": [
+        {
+          "part": "01",
+          "bytes": 10485760,
+          "sha256": "d3d5eb7263e9f840c5444d46082eb7ced1c8e5488e7fba9b00d1a0fc3f32a9a3"
+        },
+        {
+          "part": "02",
+          "bytes": 10485760,
+          "sha256": "c20213e1eaa6f212f5dbf9cf41482347a26947880119ebba0f13978cd1876703"
+        },
+        {
+          "part": "03",
+          "bytes": 10485760,
+          "sha256": "6a468122cb53a36c5fc93652c2c7f7dc13658510ceee955dc8faf0de9fc9105b"
+        },
+        {
+          "part": "04",
+          "bytes": 10485760,
+          "sha256": "74f4cd0a08d3f69882cd44dc412efc885d84bf80a39fe0619ae6ff2043d924cb"
+        },
+        {
+          "part": "05",
+          "bytes": 4454445,
+          "sha256": "a8a0331b4408228a23181adcc3d07d8ca17d25cd108b2179b8bf99880331de5f"
+        }
+      ],
+      "concatenatedZipSha256": "5895ef23a684a343271183dce1e92e112fb49bba9e03e4372023d1247bb50b69",
+      "extractedBy": "prep/extract_chunks.py (to scratch dir only)",
+      "loadedInCity": false
+    },
+    {
+      "id": "review-batch-adapter",
+      "path": "modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json",
+      "sha256Blob": "8f890748d908e4551c1ed46107d98c4bfebfe28820393ae6943a6a2c2e7e0d7c",
+      "sha256Checkout": "703caeed4a7834e9e5324e1d2f1a1df78412c50d756768c6c98c3638f216934f",
+      "loadedInCity": false,
+      "loadedBy": [
+        "deploymentStatus: not published; no runtime import found"
+      ]
+    },
+    {
+      "id": "review-batch-source-node-manifest",
+      "path": "…/2026-11-04-city-visible zip :: qa/source-node-manifest.json",
+      "bytes": 475817,
+      "sha256": "6cd13e10623e8bf8913a9df804cec2b939f55fe456829bfd628166cd3328d5d6",
+      "loadedInCity": false
+    },
+    {
+      "id": "city-visible-budget",
+      "path": "modeling-lab/gallery/qa/r2026.11.05-2/city-visible-budget.json",
+      "sha256Blob": "53c07b883fe06c3ce59cfb28c9bf21b61549b7721eca71de2b1259d956c996d6",
+      "sha256Checkout": "720d524718bb2b6a364f7e890466ac8b88f786efc87dbc62cb1160fbff945081",
+      "note": "chapterByteBudget 10000000; wuku_C_with_support 11387196 listed in oversizedGroups",
+      "loadedInCity": false
+    },
+    {
+      "id": "lib-wuku-B-LOD0",
+      "role": "public wuku B final door-frame/pivot revision; equals mother B after translation (2316.326904296875, 3500, 0), max vertex delta 0.0",
+      "path": "docs/library/models/m-luoyang-wuku/files/wuku-B-LOD0.glb",
+      "bytes": 10975184,
+      "sha256": "e5de60b6ff972e6b9446bb60c9c8b79572d345c69be7124dfc855181ac87dfd3",
+      "localFingerprint1mm": "2c67c872bd5fcb04 (prefix)",
+      "loadedInCity": false,
+      "loadedBy": [
+        "asset card only (status 待审 · 已建模，未入城)"
+      ]
+    },
+    {
+      "id": "lib-wuku-B-LOD1",
+      "path": "docs/library/models/m-luoyang-wuku/files/wuku-B-LOD1.glb",
+      "bytes": 532472,
+      "sha256": "5e1cc6b99bb81c62ec2a3fff83bf361fb33bbbc5805d00fa00deffadcf7ee980",
+      "loadedInCity": false
+    },
+    {
+      "id": "lib-wuku-B-LOD2",
+      "path": "docs/library/models/m-luoyang-wuku/files/wuku-B-LOD2.glb",
+      "bytes": 96532,
+      "sha256": "e5c8730605f39fb304e7c0ef98a33c4b779fe199fc91ff12a613ca4585956c5d",
+      "loadedInCity": false
+    },
+    {
+      "id": "lib-wuku-A-LOD0",
+      "role": "A original v2 (alternative; LY-038)",
+      "path": "docs/library/models/m-luoyang-wuku/files/wuku-A-LOD0.glb",
+      "bytes": 10658276,
+      "sha256": "5daa542da405dcb8b9b2d0ac3387d5aa4fc5b3df0ef25f1cd8b5bd1ef24cea5c",
+      "loadedInCity": false
+    },
+    {
+      "id": "lib-wuku-A-LOD1",
+      "path": "docs/library/models/m-luoyang-wuku/files/wuku-A-LOD1.glb",
+      "bytes": 494300,
+      "sha256": "5111011994784c7296b9ae80b504d8c568fb08b10de66437d677b3443a3d6686",
+      "loadedInCity": false
+    },
+    {
+      "id": "lib-wuku-A-LOD2",
+      "path": "docs/library/models/m-luoyang-wuku/files/wuku-A-LOD2.glb",
+      "bytes": 51488,
+      "sha256": "ee0da0586620c47d50643014fa01daaaba7898a0dc0d3afa59aee6e4f47f3486",
+      "loadedInCity": false
+    },
+    {
+      "id": "wuku-card",
+      "path": "docs/library/models/m-luoyang-wuku/m-luoyang-wuku.asset.json",
+      "sha256Blob": "2487b3510604ed54cd9adb8d91ec03a4844d7ab8a884bc916ff40ca6dceadff3",
+      "sha256Checkout": "bc3665bbc2d17a54775940625f7aab5ca1b3e6e45dfd836a37951d96067d72a2",
+      "loadedInCity": false
+    },
+    {
+      "id": "storage-card",
+      "path": "docs/model-library/m-storage-functional.asset.json",
+      "sha256Blob": "3572786f39beea07571cfd9aec458dff3d19e2420943252957c391c0d7bb119f",
+      "sha256Checkout": "32af95efc4abffc6aa23644833fac6f7ae9edefc7b8156207209f1c9b31856e2",
+      "loadedInCity": false
+    },
+    {
+      "id": "granary-v2-parts",
+      "role": "v2 split A/B/receiving/group three-tier files (inputs of LY-031..034; LY-040 consumes their frozen outputs, not these directly)",
+      "files": [
+        {
+          "path": "docs/model-library/updates/m-storage-functional/files/granary-group-LOD0.glb",
+          "bytes": 1582228,
+          "sha256": "91a54eafe8991ded008b499d647ab3483bf44053a0cff84ded01f7afc8a42d28"
+        },
+        {
+          "path": "docs/model-library/updates/m-storage-functional/files/granary-A-LOD0.glb",
+          "bytes": 1006080,
+          "sha256": "2eee31460a64201c2ba25fbc1bccc9c52f4cebc0f7b9af1f9eb9beeca68b7bf6"
+        },
+        {
+          "path": "docs/model-library/updates/m-storage-functional/files/granary-B-LOD0.glb",
+          "bytes": 1118304,
+          "sha256": "407403ceeb418f6e1d3f0e86bff7d535642c0236d94691fd2b9a10c2f7866dc6"
+        },
+        {
+          "path": "docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD0.glb",
+          "bytes": 386980,
+          "sha256": "9fc0b90ef4c64b31371945427f1259b04c604bbc0f24b5ed38c700f3b07dff09"
+        }
+      ],
+      "loadedInCity": false
+    },
+    {
+      "id": "v1-old-storage-group",
+      "role": "superseded; v1 archive entry only — must not be stacked with the region package",
+      "path": "docs/cities/luoyang/assets/storage/storage-group-organized.glb",
+      "bytes": 1786124,
+      "sha256": "b8482824513a101d36eb4c768a4f641e77aaac66c3e834718d7f3964104a644b",
+      "loadedInCity": "v1 entry only",
+      "loadedBy": [
+        "docs/cities/luoyang/v1/west-layer.mjs:39 (s.level==='storage' environmentUrl)"
+      ]
+    },
+    {
+      "id": "storage-interface",
+      "path": "docs/cities/luoyang/data/west/storage-interface.json",
+      "sha256Blob": "4f3ccae9891c2fcd2ae3d962c3740a4b53eac7faea872b5ce28596cf1a62c2b3",
+      "sha256Checkout": "b910896799cdbb954717df342c7dfbb794eaaa1bdba3810b206140b84aeedba8",
+      "note": "city-data.mjs:4521 provenance records the CHECKOUT hash b9108967…, not the blob hash",
+      "loadedInCity": "provenance link only"
+    },
+    {
+      "id": "evidence-geometry",
+      "role": "region_taicang_B / region_wuku_B points; north_palace_extent_gao2023_B; north_palace_excavated_walls_A_unplaced",
+      "path": "docs/cities/luoyang/data/evidence/evidence-geometry.json",
+      "sha256Blob": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+      "sha256Checkout": "662562fa87cffc9de43b2c23564f1ab63fba8c01f2345891f255cb202bee2233",
+      "loadedInCity": "evidence layer (not this region's geometry)"
+    },
+    {
+      "id": "city-wall-01",
+      "role": "nearest neighbour geometry (clearance only)",
+      "path": "docs/cities/luoyang/assets/city-wall/A/wall-01.glb",
+      "bytes": 2748,
+      "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95",
+      "loadedInCity": true,
+      "loadedBy": [
+        "city-data.mjs node wall-A-wall-01 initial:true"
+      ]
+    },
+    {
+      "id": "city-data",
+      "path": "docs/cities/luoyang/city-data.mjs",
+      "sha256Blob": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+      "sha256Checkout": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+      "writable": false,
+      "owner": "LY-100",
+      "cad338b": {
+        "sha256Blob": "d8933a32a6a133b38bc8ae5591bd0b350d206f9c884e1a6c4a1adabf5fc6daf3",
+        "gitBlob": "b951a48922e4127fb1fb9aad32f94396011fa3f8",
+        "storageLines": {
+          "asset": "582-599",
+          "node": "3948-3966",
+          "chapter": "4681-4706"
+        },
+        "nodeCount": 77,
+        "storageBlocksIdenticalToBce3211": true
+      }
+    },
+    {
+      "id": "city-renderer",
+      "path": "docs/cities/luoyang/city-renderer.mjs",
+      "sha256Blob": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+      "sha256Checkout": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+      "writable": false
+    },
+    {
+      "id": "app",
+      "path": "docs/cities/luoyang/app.mjs",
+      "sha256Blob": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+      "sha256Checkout": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+      "writable": false
+    },
+    {
+      "id": "project-card",
+      "path": "docs/cities/luoyang/p-luoyang.asset.json",
+      "sha256Blob": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+      "sha256Checkout": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+      "writable": false,
+      "owner": "LY-100",
+      "cad338b": {
+        "sha256Blob": "f43d1496c85ff6c148f1c45e97fb5bcaefb2f06e1a258670d689d3b4f2b6f668",
+        "storageFieldsChanged": false
+      }
+    },
+    {
+      "id": "v1-west-layer",
+      "path": "docs/cities/luoyang/v1/west-layer.mjs",
+      "sha256Blob": "e406af117b112a5fd07483f1906f0d94ad767135bf844f03a82a9874f21c59fc",
+      "sha256Checkout": "d8c14142af2e4d993cc249dfcc605edadb38232190e5890f31640b94be9d2d4b",
+      "writable": false
+    },
+    {
+      "id": "ly003-admission",
+      "role": "frozen admission rows: NE storage 'maintain status quo'; ~196 m C road 'wall condition undecided (not admission)'; 1.7 km road 'not placeable'",
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-003/tables/admission.json",
+      "sha256": "dd0ab8c018e714be1366cb491107ff09131e5e176b9106894a2e5b2b86e88dd3",
+      "loadedInCity": false,
+      "loadedBy": [
+        "prep/hold_zone_check.py (sha256 recorded)"
+      ],
+      "owner": "LY-003",
+      "writable": false
+    },
+    {
+      "id": "ly003-hold-zones",
+      "role": "9 hold zones (base geometry + buffer_m) used for margin check",
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-003/tables/hold-zones.json",
+      "sha256": "0b9bb0ff52883ac7cb90a285db701edb807f558695a08e792eb1f6dfad6bc03b",
+      "loadedInCity": false,
+      "loadedBy": [
+        "prep/hold_zone_check.py"
+      ],
+      "owner": "LY-003",
+      "writable": false
+    },
+    {
+      "id": "ly003-ne-screen",
+      "role": "NE-C-SCREEN 5 m cells (22,475 cells, 561,875 m2)",
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-003/tables/ne-screening-cells.json",
+      "sha256": "5bd9a5016ac879a198cb7830048f0647ad2f980f12b84a5f7870821e4703e98b",
+      "loadedInCity": false,
+      "loadedBy": [
+        "prep/hold_zone_check.py"
+      ],
+      "owner": "LY-003",
+      "writable": false
+    },
+    {
+      "id": "ly003-ne-checks",
+      "role": "LY-003 granary distances (HZ-N 342.4 m, wall 65.6 m) reproduced independently",
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-003/qa/ne-checks.json",
+      "sha256": "d2fe03f840a532ececd8f5054afefdec55ab9c538c5788bf735726133a71e633",
+      "loadedInCity": false,
+      "owner": "LY-003",
+      "writable": false
+    },
+    {
+      "id": "ly003-status",
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-003/status.json",
+      "sha256": "46f2872d0013340acaa7b4dd241dee822be052ab1765e2b64c251d23bb8cc129",
+      "note": "status 交付完成; delivery-manifest d84c0954290d4d0628e9d29c6ecb19a0bb5b4eac883fb8c812fb2f24fb76a4d3",
+      "loadedInCity": false,
+      "owner": "LY-003",
+      "writable": false
+    }
+  ],
+  "missing": [
+    {
+      "what": "mother city-C032-entry-LOD0.blend",
+      "sha256": "1e8c4d2ce19827bb8ab5ff24a662fd4f3909aa5c6074fc9a90623a103b73b01b",
+      "use": "native parameters of C_NE_APPROACH_LOCAL / C_WUKU_ISOLATED_SUPPORT_PATCH",
+      "rebuildFromGLB": "yes for assembly (world transforms retained; source-node-manifest gives directed-triangle SHA to compare)"
+    },
+    {
+      "what": "granary-city-v1 native + generator/validation sources",
+      "use": "only if granary bodies change (not in scope)",
+      "rebuildFromGLB": "not needed"
+    },
+    {
+      "what": "wuku B v2.2 native .blend + pivot generator",
+      "use": "only for LY-036/037 edits",
+      "rebuildFromGLB": "not needed by LY-040"
+    },
+    {
+      "what": "东北长路预检 (NE long-road pre-check)",
+      "use": "prove the region does not extend into a 1.7 km trunk road",
+      "rebuildFromGLB": "no — a document, not geometry; ask coordinator / LY-039"
+    },
+    {
+      "what": "frozen outputs of LY-005/006/007/008/010 and LY-033..039",
+      "use": "ports, ownership, LOD/material baseline, checker, region admission, sub-parts",
+      "rebuildFromGLB": "no"
+    }
+  ],
+  "recheck": {
+    "date": "2026-11-05 (second round)",
+    "originMainSeen": "cad338ba683f7277aea098f45c8feb6c915a847c (local ref only, no fetch); local checkout still bce3211",
+    "storageInputsChanged": false,
+    "evidence": "git diff --quiet bce3211 origin/main over city-renderer.mjs, app.mjs, data/, progress-assets/granary-city-v1, library/models/m-luoyang-wuku, modeling-lab, v1/ -> no diff; storage asset/node/chapter blocks textually identical",
+    "routeRerun": "out/route_rerun_cad338b.json identical to out/route.json in all measured sections (Blender 5.2.1)"
+  },
+  "prepScripts": {
+    "hold_zone_check.py": "1859025f0dff265b7c8700306d49f1ed24de960da5eae3620230aa769cea3e72",
+    "nearest_nodes.mjs": "b783a89b3fe2961590b545233bf2a03d0c15d5829f6214d5033704b49069f133",
+    "measure_route.py": "6e1d8fc1fd3c27890911772d0e816d1927ba2c84abec67cb9540680dcb5b5f2e",
+    "glbinspect.py": "6ad327306caad0b8c6d69279f3e491a948a4b11eda37334931145a2597957b3b"
+  }
+}

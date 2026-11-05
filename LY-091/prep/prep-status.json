@@ -1,0 +1,57 @@
+{
+ "seat": "LY-091",
+ "inputsFound": [
+  "D:/GitHub/creation-notebook-lab：开工时本地 HEAD 为 bce3211（docs 干净，core.autocrlf=true）。运行中途在 2026-11-06 00:34:10 被别人快进到 cad338b（reflog 可查），本席位没有执行 git 写操作。基线和自测在快进前跑完，并在 bce3211 只读导出上逐字段复现；inputs.json v2.1 只读 bce3211 的 git 对象，文本 SHA 一律取提交字节",
+  "origin/main cad338b（领先 3 个提交：f28d650 雍门接路、b70c495 接路并入门附件、cad338b 北三院）：只读 git archive 导出后测过漂移，见 drift-cad338b.json 656c5dd5",
+  "city-data.mjs 提交字节 c849706b（工作区 e4115705）；city-renderer.mjs 04c6c643（bce3211=cad338b）：默认载入在 :221，nearUrl 在 :289/:293，replaces 在 rebuild() :409–:416；app.mjs cc0379c0：:1 import，:177 动态导入",
+  "p-luoyang.asset.json 8edb06ab（progress：14 件 / 10 座，cad338b f43d1496 计数不变）；city-wall-interface.json ca75d115（v1/wall-layer.mjs:20 硬查 A=13/B=12）；city-wall-constraints.json e9c84bdd",
+  "12 段墙与广阳门 GLB（例：direct/gate-body-only cdba2d5c、direct/wall-08 221b8dc8、wall-09 d4fb5c1c）；雍门 LOD0 45743d73、apron LOD0 e52eaaf5；远档 yong-Y-LOD2 7406a24c、apron-LOD2 fb8a5f2f（bce3211 已在库，cad338b 起入城）",
+  "terrain 4 片：network-ground-stitched、retained、south、D08（几何指纹见 baseline-bce3211.json）",
+  "12 张门卡与全部门 GLB，共 104 条输入，见 inputs.json v2",
+  "G 包已交付：LY-001 97e94edc、002 ccbf4b2c、005 642c07f0（端口容差 position 0.005 m / elevation 0.002 m）、006 230777d4（ports.json 28bcfb68、seams.json gateSlots ca4d81f8）、007 8100f197、008 6ac4a4f9（ly_check.py 39aaa491）、009 637e02b0（以上均为 delivery-manifest 短 SHA）",
+  "依赖席位：LY-015/017/018/019/020/085/089 都只有 prep 和 prep-status，没有 delivery-manifest"
+ ],
+ "inputsMissing": [
+  "LY-010 区域准入与基线选择：目录不存在，所以 G 未冻结；也没定用 docs 城景（bce3211 或 cad338b）还是母版 1e8c4d 的 city-visible 交接",
+  "LY-001/LY-100 对新 main 的锁定：本地 bce3211，origin cad338b，LY-005 也挂着这个待决项",
+  "依赖交付：015/017/018/019/020/085/089 的 delivery-manifest、models、assembly.json、qa 都还没有",
+  "批次 manifest（selected_tasks、dependency_closure、gate_results、excluded_regions、replaces、addedNodes、files、ports、siteClaims），由批次负责人出",
+  "平城 old-ramp:ground 端口数值：LY-006 只冻结了 ID，值待 LY-016 补；补齐前 C10 对它判 FAIL",
+  "qa/gate-projections.json：city-wall-interface.json 引用了它，docs 里没有；已改用 city-wall-constraints.json 的 gate_projection_diagnostics 重算",
+  "私密源包：广阳 direct 与 A/direct 墙的生成器/.blend、yong-city-v1 的 yong-Y-mid-hidden-trial.blend（2bbd57e4）、开阳/平城隐藏试放 .blend 与 city-trial.py、母版 1e8c4d 的 .blend，都不在仓库。本项只重放导出的 GLB，全部几何检查都能「从 GLB」做，不需要原生件；原生重建与源包核验归 LY-099"
+ ],
+ "gaps": [
+  "检查器自身（v1→v2 已修，绑 SHA）：v1 哈希了绝对 file:// url，换检出路径的重放会让全部 19 个区域/地面节点 C2 假 FAIL；v1 漏收 chapter 字段为 walls、但不在 nodeIds 里的节点（cad338b 有 2 个默认可见的雍门远档）；v1 不计 replaces；v1 的 22 个文本 SHA 是 CRLF 检出字节；v1 的 N3 负例不成立；C9 没实现。v2 自测 18/18 符合预期，bce3211 搬到 scratch 后 --rollback PASS",
+  "inputs.json v1 的 22 个文本 SHA 是 CRLF 检出字节（例：city-data.mjs 工作区 e4115705，提交 c849706b；项目卡 9b5e311f 对 8edb06ab），v2.1 已改为提交字节",
+  "门卡 12（缺 0、多 0）；三档齐全 6 张，只有 LOD1/2 的 5 张，旄门只有 LOD0/1；最大 2,140,916 B，全部 ≤15 MB",
+  "城中门体 2 处（雍、广阳），区域级三档 0：bce3211 各一档；cad338b 雍门两档（LOD2 远档 58,612 B / 788 三角默认可见，LOD0 1,570,856 B / 8,228 三角开章替换），LOD1 不在城中",
+  "10 处门址只有墙缺口：31.95–31.97 m，与 LY-006 帽距 32.0 m 差 0.028–0.05 m，在 ±0.25 m 容差内；上东 26.97 m；地面 0/5040（上东 0/4240）；其中中东、旄、小苑、津、上西 5 处在 LY-006 gateSlots 里 siteOwner=null，本轮无人负责",
+  "雍门：墙端残差 ≤0.00007 m；穿门 2.75/4.00/2.75 m（0.3 与 1.8 m 两高度相同）；地面 2148/5040，门道列 0.475，两侧 |v|>9.75 m 各缺 10.5 m；cad338b 上升到 2274/5040、门道列 0.5537，两侧 10.5 m 不连续仍在；没有登临（粗阶梯最大一级 1.25 m）",
+  "广阳门：缺口 7.984 m（LY-006 8.0）；门体 y 6.2–10.3 骑在墙顶；一洞 7.75 m，没有门叶；地面开 terrain 章时 1200/1200，默认 0/1200（bce3211 与 cad338b 相同）；登临最大一级 5.99 m",
+  "项目卡计数自洽：14 件 = 12 墙 + 2 门，10 座 = 12 − 2（cad338b 也一样）；任何新入城门都必须同时改这两个数（C5）",
+  "C10 端口：雍门 3 个门槛端口落在绘制面上，高差 0（容差 0.002 m）；高程偏 1 cm、未知 ID、版本不符都判 FAIL",
+  "cad338b 对 bce3211 基线：C2/C3/C9 FAIL（雍门节点记录改了，5 个新节点没声明），C1/C4/C5/C6 PASS；说明每批必须在锁定的 main 上重测基线"
+ ],
+ "reuseCandidate": "无。仓库和 workpacks 里都没有城门城垣区域验收报告。雍门 yong-city-v1 及其 cad338b 接路/远近档是已入城的受保护成果：自报的墙端残差 7.59e-05 m 经本项复测 ≤7e-05 m，节点与门数一致。但它是本项要保护的旧节点，不是本项成果，不能拿来当区域验收通过。LY-006 gateSlots 与本项墙缺口测量互相印证（差 ≤0.05 m），只算交叉校核，不算复用",
+ "touches": [
+  "只读源节点（C2 指纹保护）：wall-A-wall-00…07、wall-A-wall-10、wall-A-wall-11、wall-direct-wall-08、wall-direct-wall-09、wall-direct-gate-body-only、yong-gate-body、yong-gate-interface；cad338b 起另有 yong-gate-body-far、yong-gate-interface-far、yong-road-link、yong-road-link-near、yong-road-receiver（雍门接街负责人的成果）",
+  "只读地坪片：ground-network-ground-stitched、ground-retained、ground-south、ground-D08（支持取样，以及与 LY-089 差异片比对）",
+  "只读端口：LY-006 registry/ports.json 里的 yong-gate:*、guangyang-gate-body:floor-base、kaiyang-K-v1:*、pingcheng-P-v1:*、wall-A-wall-*:cap-*；seams.json gateSlots",
+  "只读文件：docs/cities/luoyang/city-data.mjs、city-renderer.mjs、app.mjs、index.html、p-luoyang.asset.json、data/west/city-wall-interface.json、city-wall-constraints.json、v1/wall-layer.mjs、assets/city-wall/A|B|direct/*.glb、progress-assets/yong-city-v1/*、yong-road-link-v2/*、north13-gates/*、flat/study-*gate*.glb、docs/library/models/m-luoyang-*-gate/**、modeling-lab/review-batches/2026-11-04-city-visible/*.zip.part*",
+  "12 处门址取样体（u∈墙缺口，v∈±20 m，y 0–墙顶）：只读测量，不写几何，不占所有权",
+  "写入：只写 D:/GitHub/creation-notebook-workpacks/LY-091/**；只读导出放 scratch（ly091-bce3211-export、ly091-cad338b）"
+ ],
+ "size": "L",
+ "risks": [
+  "main 在移动：本地 bce3211，origin cad338b，雍门区已被改。LY-010/LY-100 没定基线之前，同一个包在 bce3211、cad338b、city-visible 1e8c4d 上的结论可能不同。每批必须在 manifest baseCommit 的导出上现测基线，C2 按逐节点指纹比较",
+  "检出会被别人移动：本次运行中本地 HEAD 被快进到 cad338b，一份读工作区的 inputs.json 因此静默指向了错误提交，已作废重做。以后所有测量和 SHA 都从 git archive 导出或 git 对象取，不读共享工作区",
+  "CRLF：本机 autocrlf=true，任何直接 sha256 工作区文本的做法都会和提交、线上字节对不上（v1 就踩了，LY-001 也是）；重放一律用 git -c core.autocrlf=false archive",
+  "取样精度：穿门 0.25 m、地面 0.5 m，只做表面三角检测，不是连续人体包络，也不是实体碰撞穷尽；「可通行」「可登临」必须靠包内连续检查，本项只做否决和交叉复测",
+  "默认状态与开章状态结论不同（广阳地面 0 对 1200、雍门远档与近档）：报告必须两种状态分开写",
+  "5 处门址（中东、旄、小苑、津、上西）本轮没有负责席位：门数总量可以验，但这 5 处只能长期 NOT_IN_BATCH，不能被区域结论带成通过",
+  "地坪所有权：LY-018/019 门槛片、LY-085 接路、LY-089 认领片、LY-090 开孔可能落在同一门口；LY-089 没有预分配区，走认领协议",
+  "v1 档案页硬查 A=13：LY-020 新增转角根节点或改墙文件时 v1 会拒载，需要同时出 city-wall-interface.json 提案",
+  "官方 build_assets.py --check 不在仓库里跑；靠 LY-008 run_official.py 的逐 blob 导出副本，而它漏查截断、NaN、缺纹理、私密路径（LY-008 C5），所以本项 C6 与 ly_check 都要跑"
+ ],
+ "readyAfterG": true
+}

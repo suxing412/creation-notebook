@@ -1,0 +1,60 @@
+{
+  "seat": "LY-025",
+  "inputsFound": [
+    "docs/model-library/well-study/assets/well-A-LOD0.glb 6bc463f8（库件，122节点/9644tri）",
+    "docs/model-library/well-study/assets/well-A-LOD1.glb e9252de3",
+    "docs/model-library/well-study/contract.json b09677db（futurePlacementOpening A r0.59 深0.65）",
+    "modeling-lab/review-batches/2026-11-04-city-visible/*.zip.part01-05 → ZIP 5895ef23（校验通过）",
+    "(zip) chunks/market_frontage_well_routes.glb 0193ebc0（C_market_ground_well_A + 121×A_LOD0__* + V21店前线 + 12路带/边界；未入城）",
+    "(zip) qa/source-node-manifest.json 6cd13e10、qa/visibility.json cdbc1faf（集合 C_MARKET_WELL_ATOMIC_TRIAL 122可见）",
+    "docs/cities/luoyang/assets/market/market-cluster.glb 77b8bf2e（含 sample_ground，已入城 city-data.mjs:511 / v1/west-layer.mjs:33）",
+    "docs/cities/luoyang/assets/market/N2-replacement.glb d33cbad1、flowB-routes.glb 43d7799f",
+    "docs/cities/luoyang/assets/ground-atomic/{network-ground-stitched fdfc3ce5, retained aed8b3d4, south 4313826d, D08 3ab93310}",
+    "docs/cities/luoyang/city-data.mjs e4115705、city-renderer.mjs fa0a8dcb、v1/west-layer.mjs d8c14142、v1/market-assembly.mjs 0145ac84",
+    "docs/cities/luoyang/data/west/market-precedents.json abf2a3d2（avoid: 因名市井而强加水井）",
+    "modeling-lab/review-batches/2026-11-04/C3/assets/well-A-LOD1-batched-256/128 d7445554/c193956c（候选）"
+  ],
+  "inputsMissing": [
+    "city-C032-entry-LOD0.blend（SHA 1e8c4d2c…3b01b）母版：用来追溯开孔地面的原生切孔操作；可以从 GLB 重建（分块里已有精确几何：sample_ground 外框 + r0.59、48段孔）",
+    "井原生源包 original-source.zip（SHA b8946793…0165，含 .blend 与 source/build.py、check*.py；仓库的 well-study 下没有 source/）：用来重生成或改参；本包只复用，可以从 GLB 重建",
+    "切孔脚本、参数，以及试放选点 (-18,+7) 的理由：几何可以从 GLB 反推，理由不可重建，记为未知",
+    "G 冻结件 LY-001/002/005/006/007/008/009/010：快照、证据准入、坐标与所有权、LOD/字节/验收规范，均未冻结"
+  ],
+  "gaps": [
+    "当前城景无井无孔：market-cluster 的 sample_ground 是 60×44×0.2 m 实心板（12tri），井心 41/41 条竖向射线命中 z=0.2/0.0",
+    "不换地面直接放井：井筒与 sample_ground 精确布尔交体积 0.09122 m³（理论 0.0915），384 对三角面相交，即「旧地面堵井」",
+    "开孔地面合格：8 个外框顶点与 sample_ground 一致，96 个孔圈顶点 r=0.5900–0.5901，其他顶点 0；16 方位实测孔径 0.590–0.595 m；体积差 0.2181 m³（理论 0.2187）",
+    "井筒 ∩ 开孔地面 = 2.655e-6 m³ 数值薄片（48 段孔多边形），需逐对分类；井栏、柱、柱脚 ∩ 地面 = 0（z=0.2 面接触）",
+    "下方地层不封堵：11 个输入在井口半径内 z<0.32 的命中为 0；原子地面 C_stitch_primary 和 6 m 路只是包围盒覆盖，井心 1.5 m 内无面。但井筒在 −0.45 m 截断、无底，可看到背景",
+    "井可追溯：分块中 121 个 A_LOD0__* = 库件 122 节点去掉 apron，9260 = 9644−384 tri，平移 (196.286, 0.2, −1952.184) 后最大偏差 1.0e-4 m，无旋转缩放",
+    "母场景绑定的是店前线 v2.1（3 合并网格 15288tri），market-cluster 457 个网格和 N2 54 个都隐藏；当前 main 用的是五店三摊。整块分块载入会叠两套市肆，12 条路带/边界同名同包围盒重复，必须截取子集并重新绑定",
+    "净距：井心到 route_public 5.00 m（扣亭顶半宽 1.65 m 后 3.35 m），到 route_rearS 8.0 m，到 S1 铺 9.8 m；N2 和 flowB 不在 1.7 m 足迹内（只是包围盒，未做人体测试）",
+    "两个加载口径都要改契约：city-renderer excludeNodes 要求全命中（30→31）；v1/market-assembly 的 retire 写死 30/7，environment 根不支持 excludeNodes",
+    "原子包还不存在：没有子集 GLB、assembly.json、安装撤回和故障注入记录"
+  ],
+  "reuseCandidate": "几何可以完全复用，不需要新造：①开孔地面 C_market_ground_well_A（分块 0193ebc0…）= market-cluster sample_ground 的 8 个外框顶点不变，加上 96 个 r=0.590 m 的孔圈顶点，其他顶点 0，体积只少孔柱 0.2181 m³；②井 = 库件 well-A-LOD0（6bc463f8…）的 121/122 个节点（去掉 demonstration_apron_opening），9260 tri，平移 (196.286, 0.2, −1952.184) 后偏差 ≤1.0e-4 m。还缺的是按当前 main（market-cluster 五店三摊）绑定的原子装配包（子集截取、排除 sample_ground、两个口径的安装、撤回和回退），这部分属于复用装配本身，不是已完成成果",
+  "touches": [
+    "market-cluster.glb 节点 sample_ground（排除/retire，不改字节）",
+    "分块 market_frontage_well_routes.glb 的 C_market_ground_well_A 与 121 个 A_LOD0__* 节点（只读截取）",
+    "库件 well-A-LOD0.glb（只读，追溯用）",
+    "新文件 workpacks/LY-025/models/well-market-atomic.glb（子集，G 后制作）、assembly.json、qa/*",
+    "提案（LY-100 落地）：city-data.mjs market-main.excludeNodes（30→31）、新 asset/node、chapter market.loadNodeIds",
+    "提案（LY-100 落地）：v1/market-assembly.mjs retire 规则、v1/west-layer.mjs market extraEnvironments",
+    "地坪片：市肆 60×44 m 地面（local x −30..30，z −22..22，y 0..0.2），井位 local (−18, +7)，孔 r=0.59 m",
+    "相邻所有权：LY-022（店前连续地坪不得覆盖井孔）、LY-026（井架构件，依赖本包）、LY-029（市肆整体装配）、LY-090（地面开孔合成，同一地面文件）",
+    "只读核对：N2-contract.json、market-flow-plan.json、ground-atomic-contract.json、原子地面四片"
+  ],
+  "size": "M",
+  "risks": [
+    "证据冲突：market-precedents.json 的 proposal.avoid 写着「因名市井而强加水井」，井入市肆只能标 C 试放，需要 LY-002/003 或制作人准入，否则阻断",
+    "试放点 (−18,+7) 是按 v2.1 店前线母场景定的，没有针对当前五店三摊做过流线或使用设计；重新绑定后的合理性要交 LY-029 验",
+    "井底空：井筒截在 −0.45 m、无底，往下看到背景色；封底或加暗部属于新的 C 设计，不在本包范围（也不能加水位，LY-026 边界）",
+    "孔壁（r=0.59，48 段）和井筒外壁共面或贴面，GPU 可能 z-fighting，未测；数值薄片 2.655e-6 m³ 需按局部嵌接分类",
+    "城景渲染器只取 position/normal/pigment，不显示纹理；材质名 C_sample_ground.001 与 C_sample_ground 不同，按正则 /ground/ 着同一色，PBR 等价未验",
+    "两个加载口径（app/city-renderer 与 v1 west）都要改共享代码或数据，只能交 LY-100；v1 retire 计数写死，改漏会抛错或漏撤",
+    "LY-090 合成地面开孔、LY-022 铺连续地坪都会碰同一块市肆地面，需 LY-006 先判所有权",
+    "坐标约 2000 m 时 float32 精度约 1.2e-4 m，追溯容差不能小于 2e-4 m",
+    "母版和井原生源包都不在仓库，原生层面的追溯只能做到 GLB 和 source-node-manifest 为止"
+  ],
+  "readyAfterG": true
+}

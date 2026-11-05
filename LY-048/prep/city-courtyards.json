@@ -1,0 +1,1880 @@
+{
+ "source": "docs/cities/luoyang/city-data.mjs @ bce3211",
+ "assets": [
+  {
+   "id": "courtyard-A",
+   "path": "assets/r01/R01-A-LOD1-prototype.glb",
+   "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+   "nearPath": "assets/r01/R01-A-LOD0-prototype.glb",
+   "nearSha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_hardpacked_activity_ground"
+   ],
+   "sourceContract": "data/far44/preflight-contract.json"
+  },
+  {
+   "id": "courtyard-B",
+   "path": "assets/r01/R01-B-LOD1-prototype.glb",
+   "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+   "nearPath": "assets/r01/R01-B-LOD0-prototype.glb",
+   "nearSha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_loading_yard"
+   ],
+   "sourceContract": "data/far44/preflight-contract.json"
+  },
+  {
+   "id": "courtyard-TC03",
+   "path": "assets/d08/TC03-LOD1-prototype.glb",
+   "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+   "nearPath": "assets/d08/TC03-LOD0-prototype.glb",
+   "nearSha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "sourceContract": "data/far44/preflight-contract.json"
+  },
+  {
+   "id": "courtyard-A2",
+   "path": "assets/c02v/A2-LOD1-prototype.glb",
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "nearPath": "assets/c02v/A2-LOD0-prototype.glb",
+   "nearSha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_hardpacked_activity_ground"
+   ],
+   "sourceContract": "data/far44/preflight-contract.json"
+  },
+  {
+   "id": "courtyard-B2",
+   "path": "assets/c02v/B2-LOD1-prototype.glb",
+   "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+   "nearPath": "assets/c02v/B2-LOD0-prototype.glb",
+   "nearSha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_loading_yard"
+   ],
+   "sourceContract": "data/far44/preflight-contract.json"
+  },
+  {
+   "id": "courtyard-TC03-2",
+   "path": "assets/c02v/TC03-2-LOD1-prototype.glb",
+   "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+   "nearPath": "assets/c02v/TC03-2-LOD0-prototype.glb",
+   "nearSha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_front_apron",
+    "designed_side_passage",
+    "designed_rear_work_ground"
+   ],
+   "sourceContract": "data/far44/preflight-contract.json"
+  },
+  {
+   "id": "ground-network-ground-stitched",
+   "path": "assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "excludeNodes": [],
+   "sourceContract": "data/west/ground-atomic-contract.json"
+  },
+  {
+   "id": "ground-retained",
+   "path": "assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "excludeNodes": [],
+   "sourceContract": "data/west/ground-atomic-contract.json"
+  },
+  {
+   "id": "ground-south",
+   "path": "assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "excludeNodes": [],
+   "sourceContract": "data/west/ground-atomic-contract.json"
+  },
+  {
+   "id": "ground-D08",
+   "path": "assets/ground-atomic/D08.glb",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "excludeNodes": [],
+   "sourceContract": "data/west/ground-atomic-contract.json"
+  }
+ ],
+ "courtyards": [
+  {
+   "id": "C02-018",
+   "asset": "courtyard-B",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    724.06335,
+    0,
+    -983.8,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     715.063347,
+     0.2,
+     -995.950002
+    ],
+    "max": [
+     733.063351,
+     5.52,
+     -971.799996
+    ]
+   },
+   "variant": "B"
+  },
+  {
+   "id": "C02-019",
+   "asset": "courtyard-A",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    745.08936,
+    0,
+    -983.8,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     736.089357,
+     0.2,
+     -995.950002
+    ],
+    "max": [
+     754.089361,
+     4.49,
+     -971.799996
+    ]
+   },
+   "variant": "A"
+  },
+  {
+   "id": "C02-020",
+   "asset": "courtyard-TC03",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    738.98936,
+    0,
+    -1004.2,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     738.989358,
+     0.2,
+     -1040.200006
+    ],
+    "max": [
+     766.989366,
+     4.54,
+     -1000.2
+    ]
+   },
+   "variant": "TC03"
+  },
+  {
+   "id": "C02-021",
+   "asset": "courtyard-A2",
+   "matrix": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    717.45,
+    0,
+    -893.64308,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     705.299998,
+     0.2,
+     -902.643081
+    ],
+    "max": [
+     729.450004,
+     4.49,
+     -884.643077
+    ]
+   },
+   "variant": "A2"
+  },
+  {
+   "id": "C02-022",
+   "asset": "courtyard-B2",
+   "matrix": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    717.45,
+    0,
+    -923.30228,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     705.299998,
+     0.2,
+     -932.302281
+    ],
+    "max": [
+     729.450004,
+     5.27,
+     -914.302277
+    ]
+   },
+   "variant": "B2"
+  },
+  {
+   "id": "C02-023",
+   "asset": "courtyard-A",
+   "matrix": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    717.45,
+    0,
+    -949.71557,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     705.299998,
+     0.2,
+     -958.715571
+    ],
+    "max": [
+     729.450004,
+     4.49,
+     -940.715567
+    ]
+   },
+   "variant": "A"
+  },
+  {
+   "id": "C02-024",
+   "asset": "courtyard-A2",
+   "matrix": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    717.45,
+    0,
+    -1025.21097,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     705.299998,
+     0.2,
+     -1034.210971
+    ],
+    "max": [
+     729.450004,
+     4.49,
+     -1016.210967
+    ]
+   },
+   "variant": "A2"
+  },
+  {
+   "id": "C02-025",
+   "asset": "courtyard-B",
+   "matrix": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    717.45,
+    0,
+    -1053.25621,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     705.299998,
+     0.2,
+     -1062.256211
+    ],
+    "max": [
+     729.450004,
+     5.52,
+     -1044.256207
+    ]
+   },
+   "variant": "B"
+  },
+  {
+   "id": "C02-026",
+   "asset": "courtyard-A",
+   "matrix": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    717.45,
+    0,
+    -1084.58194,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     705.299998,
+     0.2,
+     -1093.581941
+    ],
+    "max": [
+     729.450004,
+     4.49,
+     -1075.581937
+    ]
+   },
+   "variant": "A"
+  },
+  {
+   "id": "C02-001",
+   "asset": "courtyard-A2",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    679.1392,
+    0,
+    -1176.2,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     670.139199,
+     0.2,
+     -1188.200004
+    ],
+    "max": [
+     688.139203,
+     4.49,
+     -1164.049998
+    ]
+   },
+   "variant": "A2"
+  },
+  {
+   "id": "C02-002",
+   "asset": "courtyard-B2",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    633.97426,
+    0,
+    -1176.2,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     624.974259,
+     0.2,
+     -1188.200004
+    ],
+    "max": [
+     642.974263,
+     5.27,
+     -1164.049998
+    ]
+   },
+   "variant": "B2"
+  },
+  {
+   "id": "C02-027",
+   "asset": "courtyard-A",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    671.07752,
+    0,
+    -1143.8,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     662.077517,
+     0.2,
+     -1155.950002
+    ],
+    "max": [
+     680.077521,
+     4.49,
+     -1131.799996
+    ]
+   },
+   "variant": "A"
+  },
+  {
+   "id": "C02-028",
+   "asset": "courtyard-A2",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    634.03585,
+    0,
+    -1143.8,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     625.035847,
+     0.2,
+     -1155.950002
+    ],
+    "max": [
+     643.035851,
+     4.49,
+     -1131.799996
+    ]
+   },
+   "variant": "A2"
+  },
+  {
+   "id": "C02-029",
+   "asset": "courtyard-B",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    608.78268,
+    0,
+    -1143.8,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     599.782677,
+     0.2,
+     -1155.950002
+    ],
+    "max": [
+     617.782681,
+     5.52,
+     -1131.799996
+    ]
+   },
+   "variant": "B"
+  },
+  {
+   "id": "C02-030",
+   "asset": "courtyard-A",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    575.35019,
+    0,
+    -1143.8,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     566.350187,
+     0.2,
+     -1155.950002
+    ],
+    "max": [
+     584.350191,
+     4.49,
+     -1131.799996
+    ]
+   },
+   "variant": "A"
+  },
+  {
+   "id": "C02-031",
+   "asset": "courtyard-A2",
+   "matrix": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    636.2,
+    0,
+    -1205.0107,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     624.049998,
+     0.2,
+     -1214.010701
+    ],
+    "max": [
+     648.200004,
+     4.49,
+     -1196.010697
+    ]
+   },
+   "variant": "A2"
+  },
+  {
+   "id": "C02-003",
+   "asset": "courtyard-TC03-2",
+   "matrix": [
+    0,
+    0,
+    -1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    615.8,
+    0,
+    -1164.95544,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     579.799994,
+     0.2,
+     -1192.955446
+    ],
+    "max": [
+     615.950002,
+     4.54,
+     -1164.955438
+    ]
+   },
+   "variant": "TC03-2"
+  },
+  {
+   "id": "C02-004",
+   "asset": "courtyard-B2",
+   "matrix": [
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    -1,
+    0,
+    0,
+    0,
+    717.45,
+    0,
+    -1157.81935,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     705.299998,
+     0.2,
+     -1166.819351
+    ],
+    "max": [
+     729.450004,
+     5.27,
+     -1148.819347
+    ]
+   },
+   "variant": "B2"
+  },
+  {
+   "id": "C02-005",
+   "asset": "courtyard-B",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    514,
+    0,
+    -782.55,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     504.999997,
+     0.2,
+     -794.700002
+    ],
+    "max": [
+     523.000001,
+     5.52,
+     -770.549996
+    ]
+   },
+   "variant": "B"
+  },
+  {
+   "id": "C02-006",
+   "asset": "courtyard-B2",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    537,
+    0,
+    -781.55,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     527.999997,
+     0.2,
+     -793.700002
+    ],
+    "max": [
+     546.000001,
+     5.27,
+     -769.549996
+    ]
+   },
+   "variant": "B2"
+  },
+  {
+   "id": "C02-007",
+   "asset": "courtyard-A",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    590,
+    0,
+    -782.55,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     580.999997,
+     0.2,
+     -794.700002
+    ],
+    "max": [
+     599.000001,
+     4.49,
+     -770.549996
+    ]
+   },
+   "variant": "A"
+  },
+  {
+   "id": "C02-008",
+   "asset": "courtyard-TC03",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    658,
+    0,
+    -794.55,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     629.999994,
+     0.2,
+     -798.55
+    ],
+    "max": [
+     658.000002,
+     4.54,
+     -758.549994
+    ]
+   },
+   "variant": "TC03"
+  },
+  {
+   "id": "C02-009",
+   "asset": "courtyard-B",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    508,
+    0,
+    -817.45,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     498.999999,
+     0.2,
+     -829.450004
+    ],
+    "max": [
+     517.000003,
+     5.52,
+     -805.299998
+    ]
+   },
+   "variant": "B"
+  },
+  {
+   "id": "C02-010",
+   "asset": "courtyard-A2",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    531,
+    0,
+    -818.45,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     521.999999,
+     0.2,
+     -830.450004
+    ],
+    "max": [
+     540.000003,
+     4.49,
+     -806.299998
+    ]
+   },
+   "variant": "A2"
+  },
+  {
+   "id": "C02-011",
+   "asset": "courtyard-A",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    554,
+    0,
+    -817.45,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     544.999999,
+     0.2,
+     -829.450004
+    ],
+    "max": [
+     563.000003,
+     4.49,
+     -805.299998
+    ]
+   },
+   "variant": "A"
+  },
+  {
+   "id": "C02-012",
+   "asset": "courtyard-TC03-2",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    570,
+    0,
+    -805.45,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     569.999998,
+     0.2,
+     -841.450006
+    ],
+    "max": [
+     598.000006,
+     4.54,
+     -805.299998
+    ]
+   },
+   "variant": "TC03-2"
+  },
+  {
+   "id": "C02-013",
+   "asset": "courtyard-A2",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    612,
+    0,
+    -817.45,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     602.999999,
+     0.2,
+     -829.450004
+    ],
+    "max": [
+     621.000003,
+     4.49,
+     -805.299998
+    ]
+   },
+   "variant": "A2"
+  },
+  {
+   "id": "C02-032",
+   "asset": "courtyard-B2",
+   "matrix": [
+    0,
+    0,
+    -1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    548.8,
+    0,
+    -758,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     536.799996,
+     0.2,
+     -767.000003
+    ],
+    "max": [
+     560.950002,
+     5.27,
+     -748.999999
+    ]
+   },
+   "variant": "B2"
+  },
+  {
+   "id": "C02-014",
+   "asset": "courtyard-A",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    584,
+    0,
+    -728.8,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     574.999997,
+     0.2,
+     -740.950002
+    ],
+    "max": [
+     593.000001,
+     4.49,
+     -716.799996
+    ]
+   },
+   "variant": "A"
+  },
+  {
+   "id": "C02-015",
+   "asset": "courtyard-A2",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    607,
+    0,
+    -728.8,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     597.999997,
+     0.2,
+     -740.950002
+    ],
+    "max": [
+     616.000001,
+     4.49,
+     -716.799996
+    ]
+   },
+   "variant": "A2"
+  },
+  {
+   "id": "C02-016",
+   "asset": "courtyard-B",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    613,
+    0,
+    -761.2,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     603.999999,
+     0.2,
+     -773.200004
+    ],
+    "max": [
+     622.000003,
+     5.52,
+     -749.049998
+    ]
+   },
+   "variant": "B"
+  },
+  {
+   "id": "C02-017",
+   "asset": "courtyard-A",
+   "matrix": [
+    0,
+    0,
+    -1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    650,
+    0,
+    -825,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     637.999996,
+     0.2,
+     -834.000003
+    ],
+    "max": [
+     662.150002,
+     4.49,
+     -815.999999
+    ]
+   },
+   "variant": "A"
+  },
+  {
+   "id": "C02-033",
+   "asset": "courtyard-B2",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    639.10105,
+    0,
+    -1080.2,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     630.101049,
+     0.2,
+     -1092.200004
+    ],
+    "max": [
+     648.101053,
+     5.27,
+     -1068.049998
+    ]
+   },
+   "variant": "B2"
+  },
+  {
+   "id": "C02-034",
+   "asset": "courtyard-B",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    601.89119,
+    0,
+    -1080.2,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     592.891189,
+     0.2,
+     -1092.200004
+    ],
+    "max": [
+     610.891193,
+     5.52,
+     -1068.049998
+    ]
+   },
+   "variant": "B"
+  },
+  {
+   "id": "C02-035",
+   "asset": "courtyard-A2",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    548.32284,
+    0,
+    -1080.2,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     539.322839,
+     0.2,
+     -1092.200004
+    ],
+    "max": [
+     557.322843,
+     4.49,
+     -1068.049998
+    ]
+   },
+   "variant": "A2"
+  },
+  {
+   "id": "C02-036",
+   "asset": "courtyard-B2",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    520.56271,
+    0,
+    -1080.2,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "C02_36",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     511.562709,
+     0.2,
+     -1092.200004
+    ],
+    "max": [
+     529.562713,
+     5.27,
+     -1068.049998
+    ]
+   },
+   "variant": "B2"
+  },
+  {
+   "id": "FROZEN-D08-S1",
+   "asset": "courtyard-A",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    543,
+    0,
+    -945,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "old8_shared_prototypes",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     533.999997,
+     0.2,
+     -957.150002
+    ],
+    "max": [
+     552.000001,
+     4.49,
+     -932.999996
+    ]
+   },
+   "variant": "A"
+  },
+  {
+   "id": "FROZEN-D08-S2",
+   "asset": "courtyard-B",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    565,
+    0,
+    -945,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "old8_shared_prototypes",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     555.999997,
+     0.2,
+     -957.150002
+    ],
+    "max": [
+     574.000001,
+     5.52,
+     -932.999996
+    ]
+   },
+   "variant": "B"
+  },
+  {
+   "id": "FROZEN-D08-S3",
+   "asset": "courtyard-A",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    589,
+    0,
+    -945,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "old8_shared_prototypes",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     579.999997,
+     0.2,
+     -957.150002
+    ],
+    "max": [
+     598.000001,
+     4.49,
+     -932.999996
+    ]
+   },
+   "variant": "A"
+  },
+  {
+   "id": "FROZEN-D08-S4",
+   "asset": "courtyard-B",
+   "matrix": [
+    -1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -1,
+    0,
+    611,
+    0,
+    -945,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "old8_shared_prototypes",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     601.999997,
+     0.2,
+     -957.150002
+    ],
+    "max": [
+     620.000001,
+     5.52,
+     -932.999996
+    ]
+   },
+   "variant": "B"
+  },
+  {
+   "id": "FROZEN-D08-M",
+   "asset": "courtyard-A",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    575,
+    0,
+    -975,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "old8_shared_prototypes",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     565.999999,
+     0.2,
+     -987.000004
+    ],
+    "max": [
+     584.000003,
+     4.49,
+     -962.849998
+    ]
+   },
+   "variant": "A"
+  },
+  {
+   "id": "FROZEN-D08-E",
+   "asset": "courtyard-B",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    629,
+    0,
+    -975,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "old8_shared_prototypes",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     619.999999,
+     0.2,
+     -987.000004
+    ],
+    "max": [
+     638.000003,
+     5.52,
+     -962.849998
+    ]
+   },
+   "variant": "B"
+  },
+  {
+   "id": "FROZEN-D08-NW",
+   "asset": "courtyard-TC03",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    534,
+    0,
+    -963,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "old8_shared_prototypes",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     533.999998,
+     0.2,
+     -999.000006
+    ],
+    "max": [
+     562.000006,
+     4.54,
+     -959
+    ]
+   },
+   "variant": "TC03"
+  },
+  {
+   "id": "FROZEN-D08-NE",
+   "asset": "courtyard-TC03",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    588,
+    0,
+    -975,
+    1
+   ],
+   "chapter": "residential",
+   "initial": true,
+   "sourceGroup": "old8_shared_prototypes",
+   "sourceContract": "data/far44/instances-calt.json",
+   "bounds": {
+    "min": [
+     587.999998,
+     0.2,
+     -1011.000006
+    ],
+    "max": [
+     616.000006,
+     4.54,
+     -971
+    ]
+   },
+   "variant": "TC03"
+  }
+ ],
+ "grounds": [
+  {
+   "id": "ground-network-ground-stitched",
+   "asset": "ground-network-ground-stitched",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "chapter": "terrain",
+   "initial": false,
+   "sourceContract": "data/west/ground-atomic-contract.json"
+  },
+  {
+   "id": "ground-retained",
+   "asset": "ground-retained",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "chapter": "terrain",
+   "initial": false,
+   "sourceContract": "data/west/ground-atomic-contract.json"
+  },
+  {
+   "id": "ground-south",
+   "asset": "ground-south",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "chapter": "terrain",
+   "initial": false,
+   "sourceContract": "data/west/ground-atomic-contract.json"
+  },
+  {
+   "id": "ground-D08",
+   "asset": "ground-D08",
+   "position": [
+    580,
+    0,
+    -960
+   ],
+   "chapter": "terrain",
+   "initial": false,
+   "sourceContract": "data/west/ground-atomic-contract.json"
+  }
+ ]
+}

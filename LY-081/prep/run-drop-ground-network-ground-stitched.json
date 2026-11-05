@@ -1,0 +1,2762 @@
+{
+ "script": "LY-081/prep/scripts/measure_ground.py",
+ "blender": "5.2.1 LTS",
+ "config": "scene-config.json",
+ "drop": [
+  "ground-network-ground-stitched"
+ ],
+ "groundOnly": true,
+ "params": {
+  "maxSlopeDeg": 20.0,
+  "seamTol_m": 0.02,
+  "stepTol_m": 0.18,
+  "probeOffset_m": 0.1,
+  "probeSpacing_m": 1.0,
+  "headroomLine_m": 2.0,
+  "weld_m": 0.001,
+  "grid_m": 0.0
+ },
+ "nodes": [
+  {
+   "node": "ground-retained",
+   "role": "ground",
+   "file": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256_declared": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "sha256_actual": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "triangles": 21192,
+   "excludeMissing": []
+  },
+  {
+   "node": "ground-south",
+   "role": "ground",
+   "file": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256_declared": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "sha256_actual": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "triangles": 96796,
+   "excludeMissing": []
+  },
+  {
+   "node": "ground-D08",
+   "role": "ground",
+   "file": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "sha256_declared": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "sha256_actual": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "triangles": 140,
+   "excludeMissing": []
+  }
+ ],
+ "trianglesTotal": 118128,
+ "allFinite": true,
+ "groundFaceClasses": {
+  "up<=20deg": {
+   "triangles": 56332,
+   "area_m2": 127552.667
+  },
+  "slope20-45deg": {
+   "triangles": 0,
+   "area_m2": 0.0
+  },
+  "steep45-80": {
+   "triangles": 0,
+   "area_m2": 0.0
+  },
+  "vertical": {
+   "triangles": 5589,
+   "area_m2": 789.627
+  },
+  "down": {
+   "triangles": 56207,
+   "area_m2": 127552.0
+  },
+  "degenerate": {
+   "triangles": 0,
+   "area_m2": 0.0
+  }
+ },
+ "contextFaceClasses": {
+  "up<=20deg": {
+   "triangles": 0,
+   "area_m2": 0.0
+  },
+  "slope20-45deg": {
+   "triangles": 0,
+   "area_m2": 0.0
+  },
+  "steep45-80": {
+   "triangles": 0,
+   "area_m2": 0.0
+  },
+  "vertical": {
+   "triangles": 0,
+   "area_m2": 0.0
+  },
+  "down": {
+   "triangles": 0,
+   "area_m2": 0.0
+  },
+  "degenerate": {
+   "triangles": 0,
+   "area_m2": 0.0
+  }
+ },
+ "groundTopComponents": 2,
+ "nonManifoldTopEdges": 2,
+ "boundaryEdges": 1712,
+ "boundaryProbeLength_m": {
+  "void": 2524.0,
+  "seam_same_comp": 799.6,
+  "seam_other_comp": 0.0,
+  "step": 0.0,
+  "drop": 0.0,
+  "context_surface": 0.0
+ },
+ "stepDz_m": {
+  "n": 0,
+  "max": null,
+  "p50": null
+ },
+ "componentGaps": [
+  {
+   "a": 0,
+   "b": 1,
+   "gapXY_m": 40.0,
+   "dz_m": 0.0,
+   "from": [
+    680.0,
+    929.3
+   ],
+   "to": [
+    640.0,
+    929.3
+   ]
+  }
+ ],
+ "componentSeams": [],
+ "regionsStrict": [
+  {
+   "region": 0,
+   "components": 1,
+   "area_m2": 117232.67,
+   "nodes": [
+    "ground-retained",
+    "ground-south"
+   ],
+   "bboxXY": [
+    480.0,
+    700.0,
+    780.0,
+    1250.0
+   ]
+  },
+  {
+   "region": 1,
+   "components": 1,
+   "area_m2": 10320.0,
+   "nodes": [
+    "ground-D08"
+   ],
+   "bboxXY": [
+    520.0,
+    929.0,
+    640.0,
+    1015.0
+   ]
+  }
+ ],
+ "regionsTolerant": [
+  {
+   "region": 0,
+   "components": 1,
+   "area_m2": 117232.67,
+   "nodes": [
+    "ground-retained",
+    "ground-south"
+   ],
+   "bboxXY": [
+    480.0,
+    700.0,
+    780.0,
+    1250.0
+   ]
+  },
+  {
+   "region": 1,
+   "components": 1,
+   "area_m2": 10320.0,
+   "nodes": [
+    "ground-D08"
+   ],
+   "bboxXY": [
+    520.0,
+    929.0,
+    640.0,
+    1015.0
+   ]
+  }
+ ],
+ "components": [
+  {
+   "id": 0,
+   "triangles": 56282,
+   "area_m2": 117232.667,
+   "nodes": [
+    "ground-retained",
+    "ground-south"
+   ],
+   "objects": [
+    "C02_retained_outside_south_Calt_domain",
+    "single_closed_terrain_after"
+   ],
+   "materials": [
+    "C02_design_earth",
+    "C02_design_road",
+    "C_ground_after"
+   ],
+   "bboxXY": [
+    480.0,
+    700.0,
+    780.0,
+    1250.0
+   ],
+   "z": [
+    0.175,
+    0.21
+   ]
+  },
+  {
+   "id": 1,
+   "triangles": 50,
+   "area_m2": 10320.0,
+   "nodes": [
+    "ground-D08"
+   ],
+   "objects": [
+    "D08_shared_terrain"
+   ],
+   "materials": [
+    "C_shared_soil",
+    "C_street_surface"
+   ],
+   "bboxXY": [
+    520.0,
+    929.0,
+    640.0,
+    1015.0
+   ],
+   "z": [
+    0.2,
+    0.2
+   ]
+  }
+ ],
+ "voidLengthByComponent_m": {
+  "0": 2112.0,
+  "1": 412.0
+ },
+ "dropSamples": [],
+ "voidSamplesMid": [
+  [
+   479.9,
+   738.59,
+   0
+  ],
+  [
+   479.9,
+   743.52,
+   0
+  ],
+  [
+   479.9,
+   745.0,
+   0
+  ],
+  [
+   479.9,
+   746.48,
+   0
+  ],
+  [
+   479.9,
+   746.97,
+   0
+  ],
+  [
+   479.9,
+   750.0,
+   0
+  ],
+  [
+   480.23,
+   786.1,
+   0
+  ],
+  [
+   479.9,
+   782.5,
+   0
+  ],
+  [
+   482.57,
+   786.1,
+   0
+  ],
+  [
+   482.23,
+   786.1,
+   0
+  ],
+  [
+   480.73,
+   786.1,
+   0
+  ],
+  [
+   481.73,
+   786.1,
+   0
+  ],
+  [
+   481.23,
+   786.1,
+   0
+  ],
+  [
+   482.85,
+   786.1,
+   0
+  ],
+  [
+   483.23,
+   786.1,
+   0
+  ],
+  [
+   483.73,
+   786.1,
+   0
+  ],
+  [
+   484.23,
+   786.1,
+   0
+  ],
+  [
+   484.73,
+   786.1,
+   0
+  ],
+  [
+   484.9,
+   813.9,
+   0
+  ],
+  [
+   484.68,
+   813.9,
+   0
+  ],
+  [
+   480.27,
+   813.9,
+   0
+  ],
+  [
+   484.27,
+   813.9,
+   0
+  ],
+  [
+   483.77,
+   813.9,
+   0
+  ],
+  [
+   480.77,
+   813.9,
+   0
+  ],
+  [
+   481.27,
+   813.9,
+   0
+  ],
+  [
+   483.27,
+   813.9,
+   0
+  ],
+  [
+   482.77,
+   813.9,
+   0
+  ],
+  [
+   481.77,
+   813.9,
+   0
+  ],
+  [
+   482.27,
+   813.9,
+   0
+  ],
+  [
+   479.9,
+   835.77,
+   0
+  ],
+  [
+   489.12,
+   1059.9,
+   0
+  ],
+  [
+   479.9,
+   1061.12,
+   0
+  ],
+  [
+   479.9,
+   1062.53,
+   0
+  ],
+  [
+   479.9,
+   1064.28,
+   0
+  ],
+  [
+   479.9,
+   1067.12,
+   0
+  ],
+  [
+   479.9,
+   1073.83,
+   0
+  ],
+  [
+   479.9,
+   1078.42,
+   0
+  ],
+  [
+   479.9,
+   1079.78,
+   0
+  ],
+  [
+   479.9,
+   1081.37,
+   0
+  ],
+  [
+   479.9,
+   1090.88,
+   0
+  ],
+  [
+   479.9,
+   1114.5,
+   0
+  ],
+  [
+   479.9,
+   1142.3,
+   0
+  ],
+  [
+   479.9,
+   1155.97,
+   0
+  ],
+  [
+   479.9,
+   1158.53,
+   0
+  ],
+  [
+   479.9,
+   1160.0,
+   0
+  ],
+  [
+   479.9,
+   1161.31,
+   0
+  ],
+  [
+   479.9,
+   1161.58,
+   0
+  ],
+  [
+   479.9,
+   1162.78,
+   0
+  ],
+  [
+   479.9,
+   1164.21,
+   0
+  ],
+  [
+   479.9,
+   1168.62,
+   0
+  ],
+  [
+   479.9,
+   1173.96,
+   0
+  ],
+  [
+   479.9,
+   1177.58,
+   0
+  ],
+  [
+   479.9,
+   1181.5,
+   0
+  ],
+  [
+   479.9,
+   1195.16,
+   0
+  ],
+  [
+   479.9,
+   1208.51,
+   0
+  ],
+  [
+   479.9,
+   1215.73,
+   0
+  ],
+  [
+   489.12,
+   1250.1,
+   0
+  ],
+  [
+   479.9,
+   1235.88,
+   0
+  ],
+  [
+   499.1,
+   1059.9,
+   0
+  ],
+  [
+   498.53,
+   1250.1,
+   0
+  ],
+  [
+   500.58,
+   1059.9,
+   0
+  ],
+  [
+   500.58,
+   1250.1,
+   0
+  ],
+  [
+   505.85,
+   1059.9,
+   0
+  ],
+  [
+   505.85,
+   1250.1,
+   0
+  ],
+  [
+   511.12,
+   1059.9,
+   0
+  ],
+  [
+   511.12,
+   1250.1,
+   0
+  ],
+  [
+   513.44,
+   1059.9,
+   0
+  ],
+  [
+   513.44,
+   1250.1,
+   0
+  ],
+  [
+   515.76,
+   1059.9,
+   0
+  ],
+  [
+   515.76,
+   1250.1,
+   0
+  ],
+  [
+   525.2,
+   1059.9,
+   0
+  ],
+  [
+   524.23,
+   1250.1,
+   0
+  ],
+  [
+   533.68,
+   1059.9,
+   0
+  ],
+  [
+   533.68,
+   1250.1,
+   0
+  ],
+  [
+   539.25,
+   1059.9,
+   0
+  ],
+  [
+   539.25,
+   1250.1,
+   0
+  ],
+  [
+   544.82,
+   1059.9,
+   0
+  ],
+  [
+   544.82,
+   1250.1,
+   0
+  ],
+  [
+   548.52,
+   1059.9,
+   0
+  ],
+  [
+   547.52,
+   1250.1,
+   0
+  ],
+  [
+   551.22,
+   1059.9,
+   0
+  ],
+  [
+   551.22,
+   1250.1,
+   0
+  ],
+  [
+   555.82,
+   1059.9,
+   0
+  ],
+  [
+   554.85,
+   1250.1,
+   0
+  ],
+  [
+   559.26,
+   1059.9,
+   0
+  ],
+  [
+   558.59,
+   1250.1,
+   0
+  ],
+  [
+   561.88,
+   1059.9,
+   0
+  ],
+  [
+   560.97,
+   1250.1,
+   0
+  ],
+  [
+   564.73,
+   1059.9,
+   0
+  ],
+  [
+   564.73,
+   1250.1,
+   0
+  ],
+  [
+   566.48,
+   1059.9,
+   0
+  ],
+  [
+   566.48,
+   1250.1,
+   0
+  ],
+  [
+   568.05,
+   1059.9,
+   0
+  ],
+  [
+   568.05,
+   1250.1,
+   0
+  ],
+  [
+   570.55,
+   1059.9,
+   0
+  ],
+  [
+   570.55,
+   1250.1,
+   0
+  ],
+  [
+   577.17,
+   1059.9,
+   0
+  ],
+  [
+   576.18,
+   1250.1,
+   0
+  ],
+  [
+   582.8,
+   1059.9,
+   0
+  ],
+  [
+   582.8,
+   1250.1,
+   0
+  ],
+  [
+   585.18,
+   1059.9,
+   0
+  ],
+  [
+   585.18,
+   1250.1,
+   0
+  ],
+  [
+   587.55,
+   1059.9,
+   0
+  ],
+  [
+   587.55,
+   1250.1,
+   0
+  ],
+  [
+   589.11,
+   1059.9,
+   0
+  ],
+  [
+   589.11,
+   1250.1,
+   0
+  ],
+  [
+   590.67,
+   1059.9,
+   0
+  ],
+  [
+   590.67,
+   1250.1,
+   0
+  ],
+  [
+   593.88,
+   1059.9,
+   0
+  ],
+  [
+   593.88,
+   1250.1,
+   0
+  ],
+  [
+   597.09,
+   1059.9,
+   0
+  ],
+  [
+   597.09,
+   1250.1,
+   0
+  ],
+  [
+   604.53,
+   1059.9,
+   0
+  ],
+  [
+   604.53,
+   1250.1,
+   0
+  ],
+  [
+   611.98,
+   1059.9,
+   0
+  ],
+  [
+   611.17,
+   1250.1,
+   0
+  ],
+  [
+   612.77,
+   1059.9,
+   0
+  ],
+  [
+   612.77,
+   1250.1,
+   0
+  ],
+  [
+   614.24,
+   1059.9,
+   0
+  ],
+  [
+   613.52,
+   1250.1,
+   0
+  ],
+  [
+   614.69,
+   1059.9,
+   0
+  ],
+  [
+   614.69,
+   1250.1,
+   0
+  ],
+  [
+   616.95,
+   1059.9,
+   0
+  ],
+  [
+   616.08,
+   1250.1,
+   0
+  ],
+  [
+   618.52,
+   1059.9,
+   0
+  ],
+  [
+   618.52,
+   1250.1,
+   0
+  ],
+  [
+   620.0,
+   1059.9,
+   0
+  ],
+  [
+   620.0,
+   1250.1,
+   0
+  ],
+  [
+   621.48,
+   1059.9,
+   0
+  ],
+  [
+   621.48,
+   1250.1,
+   0
+  ],
+  [
+   621.93,
+   1059.9,
+   0
+  ],
+  [
+   621.93,
+   1250.1,
+   0
+  ],
+  [
+   623.32,
+   1059.9,
+   0
+  ],
+  [
+   623.32,
+   1250.1,
+   0
+  ],
+  [
+   624.75,
+   1059.9,
+   0
+  ],
+  [
+   624.75,
+   1250.1,
+   0
+  ],
+  [
+   625.19,
+   1059.9,
+   0
+  ],
+  [
+   625.19,
+   1250.1,
+   0
+  ],
+  [
+   626.89,
+   1059.9,
+   0
+  ],
+  [
+   625.9,
+   1250.1,
+   0
+  ],
+  [
+   627.68,
+   1059.9,
+   0
+  ],
+  [
+   627.68,
+   1250.1,
+   0
+  ],
+  [
+   629.17,
+   1059.9,
+   0
+  ],
+  [
+   629.17,
+   1250.1,
+   0
+  ],
+  [
+   631.74,
+   1059.9,
+   0
+  ],
+  [
+   631.74,
+   1250.1,
+   0
+  ],
+  [
+   634.3,
+   1059.9,
+   0
+  ],
+  [
+   634.3,
+   1250.1,
+   0
+  ],
+  [
+   635.92,
+   1059.9,
+   0
+  ],
+  [
+   635.92,
+   1250.1,
+   0
+  ],
+  [
+   636.54,
+   1059.9,
+   0
+  ],
+  [
+   636.54,
+   1250.1,
+   0
+  ],
+  [
+   638.24,
+   1059.9,
+   0
+  ],
+  [
+   637.25,
+   1250.1,
+   0
+  ],
+  [
+   638.89,
+   1059.9,
+   0
+  ],
+  [
+   638.89,
+   1250.1,
+   0
+  ],
+  [
+   640.25,
+   1059.9,
+   0
+  ],
+  [
+   640.25,
+   1250.1,
+   0
+  ],
+  [
+   653.75,
+   1059.9,
+   0
+  ],
+  [
+   652.77,
+   1250.1,
+   0
+  ],
+  [
+   666.28,
+   1059.9,
+   0
+  ],
+  [
+   666.28,
+   1250.1,
+   0
+  ],
+  [
+   670.96,
+   1059.9,
+   0
+  ],
+  [
+   670.96,
+   1250.1,
+   0
+  ],
+  [
+   675.66,
+   1059.9,
+   0
+  ],
+  [
+   674.85,
+   1250.1,
+   0
+  ],
+  [
+   676.45,
+   1059.9,
+   0
+  ],
+  [
+   676.45,
+   1250.1,
+   0
+  ],
+  [
+   677.9,
+   1059.9,
+   0
+  ],
+  [
+   677.19,
+   1250.1,
+   0
+  ],
+  [
+   678.36,
+   1059.9,
+   0
+  ],
+  [
+   678.36,
+   1250.1,
+   0
+  ],
+  [
+   679.62,
+   1059.9,
+   0
+  ],
+  [
+   678.85,
+   1250.1,
+   0
+  ],
+  [
+   679.9,
+   877.47,
+   0
+  ],
+  [
+   679.9,
+   897.14,
+   0
+  ],
+  [
+   679.9,
+   912.62,
+   0
+  ],
+  [
+   679.9,
+   928.1,
+   0
+  ],
+  [
+   679.9,
+   936.51,
+   0
+  ],
+  [
+   679.9,
+   944.92,
+   0
+  ],
+  [
+   679.9,
+   970.36,
+   0
+  ],
+  [
+   679.9,
+   995.97,
+   0
+  ],
+  [
+   679.9,
+   998.52,
+   0
+  ],
+  [
+   679.9,
+   1000.0,
+   0
+  ],
+  [
+   679.9,
+   1001.48,
+   0
+  ],
+  [
+   679.9,
+   1003.12,
+   0
+  ],
+  [
+   679.9,
+   1016.46,
+   0
+  ],
+  [
+   679.9,
+   1028.71,
+   0
+  ],
+  [
+   679.9,
+   1043.38,
+   0
+  ],
+  [
+   679.9,
+   1058.06,
+   0
+  ],
+  [
+   679.9,
+   1059.63,
+   0
+  ],
+  [
+   680.44,
+   1250.1,
+   0
+  ],
+  [
+   687.07,
+   1250.1,
+   0
+  ],
+  [
+   694.72,
+   1250.1,
+   0
+  ],
+  [
+   697.31,
+   1250.1,
+   0
+  ],
+  [
+   698.52,
+   1250.1,
+   0
+  ],
+  [
+   700.0,
+   1250.1,
+   0
+  ],
+  [
+   701.48,
+   1250.1,
+   0
+  ],
+  [
+   702.06,
+   1250.1,
+   0
+  ],
+  [
+   704.37,
+   1250.1,
+   0
+  ],
+  [
+   713.8,
+   699.9,
+   0
+  ],
+  [
+   712.85,
+   1250.1,
+   0
+  ],
+  [
+   724.31,
+   779.9,
+   0
+  ],
+  [
+   723.35,
+   1250.1,
+   0
+  ],
+  [
+   728.86,
+   779.9,
+   0
+  ],
+  [
+   728.86,
+   1250.1,
+   0
+  ],
+  [
+   735.03,
+   779.9,
+   0
+  ],
+  [
+   734.13,
+   1250.1,
+   0
+  ],
+  [
+   739.54,
+   779.9,
+   0
+  ],
+  [
+   740.1,
+   1181.5,
+   0
+  ],
+  [
+   740.1,
+   1195.16,
+   0
+  ],
+  [
+   740.1,
+   1208.51,
+   0
+  ],
+  [
+   740.1,
+   1215.73,
+   0
+  ],
+  [
+   740.1,
+   1235.88,
+   0
+  ],
+  [
+   739.54,
+   1250.1,
+   0
+  ],
+  [
+   741.12,
+   779.9,
+   0
+  ],
+  [
+   740.37,
+   1180.1,
+   0
+  ],
+  [
+   744.58,
+   779.9,
+   0
+  ],
+  [
+   743.7,
+   1180.1,
+   0
+  ],
+  [
+   747.99,
+   779.9,
+   0
+  ],
+  [
+   747.99,
+   1180.1,
+   0
+  ],
+  [
+   755.47,
+   779.9,
+   0
+  ],
+  [
+   755.47,
+   1180.1,
+   0
+  ],
+  [
+   770.88,
+   779.9,
+   0
+  ],
+  [
+   780.1,
+   787.15,
+   0
+  ],
+  [
+   780.1,
+   795.63,
+   0
+  ],
+  [
+   780.1,
+   798.35,
+   0
+  ],
+  [
+   780.1,
+   800.0,
+   0
+  ],
+  [
+   780.1,
+   801.48,
+   0
+  ],
+  [
+   780.1,
+   802.69,
+   0
+  ],
+  [
+   780.1,
+   805.28,
+   0
+  ],
+  [
+   780.1,
+   821.11,
+   0
+  ],
+  [
+   780.1,
+   835.77,
+   0
+  ],
+  [
+   780.1,
+   848.96,
+   0
+  ],
+  [
+   780.1,
+   878.47,
+   0
+  ],
+  [
+   780.1,
+   897.14,
+   0
+  ],
+  [
+   780.1,
+   912.62,
+   0
+  ],
+  [
+   780.1,
+   928.1,
+   0
+  ],
+  [
+   780.1,
+   936.51,
+   0
+  ],
+  [
+   780.1,
+   944.92,
+   0
+  ],
+  [
+   780.1,
+   970.36,
+   0
+  ],
+  [
+   780.1,
+   996.88,
+   0
+  ],
+  [
+   780.1,
+   998.52,
+   0
+  ],
+  [
+   780.1,
+   1000.0,
+   0
+  ],
+  [
+   780.1,
+   1001.48,
+   0
+  ],
+  [
+   780.1,
+   1004.03,
+   0
+  ],
+  [
+   780.1,
+   1016.46,
+   0
+  ],
+  [
+   780.1,
+   1028.71,
+   0
+  ],
+  [
+   780.1,
+   1043.38,
+   0
+  ],
+  [
+   780.1,
+   1058.06,
+   0
+  ],
+  [
+   780.1,
+   1059.63,
+   0
+  ],
+  [
+   780.1,
+   1061.12,
+   0
+  ],
+  [
+   780.1,
+   1062.53,
+   0
+  ],
+  [
+   780.1,
+   1064.28,
+   0
+  ],
+  [
+   780.1,
+   1068.03,
+   0
+  ],
+  [
+   780.1,
+   1073.83,
+   0
+  ],
+  [
+   780.1,
+   1078.42,
+   0
+  ],
+  [
+   780.1,
+   1079.78,
+   0
+  ],
+  [
+   780.1,
+   1081.37,
+   0
+  ],
+  [
+   780.1,
+   1090.88,
+   0
+  ],
+  [
+   780.1,
+   1115.5,
+   0
+  ],
+  [
+   780.1,
+   1142.3,
+   0
+  ],
+  [
+   780.1,
+   1156.88,
+   0
+  ],
+  [
+   780.1,
+   1158.53,
+   0
+  ],
+  [
+   780.1,
+   1160.0,
+   0
+  ],
+  [
+   780.1,
+   1161.31,
+   0
+  ],
+  [
+   780.1,
+   1161.58,
+   0
+  ],
+  [
+   780.1,
+   1162.78,
+   0
+  ],
+  [
+   780.1,
+   1165.0,
+   0
+  ],
+  [
+   780.1,
+   1169.54,
+   0
+  ],
+  [
+   780.1,
+   1173.96,
+   0
+  ],
+  [
+   780.1,
+   1177.58,
+   0
+  ],
+  [
+   770.88,
+   1180.1,
+   0
+  ],
+  [
+   485.88,
+   786.1,
+   0
+  ],
+  [
+   485.65,
+   813.9,
+   0
+  ],
+  [
+   489.12,
+   699.9,
+   0
+  ],
+  [
+   479.9,
+   719.12,
+   0
+  ],
+  [
+   479.9,
+   740.97,
+   0
+  ],
+  [
+   479.9,
+   748.39,
+   0
+  ],
+  [
+   479.9,
+   764.71,
+   0
+  ],
+  [
+   479.9,
+   824.28,
+   0
+  ],
+  [
+   479.9,
+   848.01,
+   0
+  ],
+  [
+   489.12,
+   860.1,
+   0
+  ],
+  [
+   499.1,
+   699.9,
+   0
+  ],
+  [
+   498.53,
+   860.1,
+   0
+  ],
+  [
+   500.58,
+   699.9,
+   0
+  ],
+  [
+   500.58,
+   860.1,
+   0
+  ],
+  [
+   505.85,
+   699.9,
+   0
+  ],
+  [
+   505.85,
+   860.1,
+   0
+  ],
+  [
+   511.12,
+   699.9,
+   0
+  ],
+  [
+   511.12,
+   860.1,
+   0
+  ],
+  [
+   513.44,
+   699.9,
+   0
+  ],
+  [
+   513.44,
+   860.1,
+   0
+  ],
+  [
+   515.76,
+   699.9,
+   0
+  ],
+  [
+   515.76,
+   860.1,
+   0
+  ],
+  [
+   525.2,
+   699.9,
+   0
+  ],
+  [
+   524.23,
+   860.1,
+   0
+  ],
+  [
+   533.68,
+   699.9,
+   0
+  ],
+  [
+   533.68,
+   860.1,
+   0
+  ],
+  [
+   539.25,
+   699.9,
+   0
+  ],
+  [
+   539.25,
+   860.1,
+   0
+  ],
+  [
+   544.82,
+   699.9,
+   0
+  ],
+  [
+   544.82,
+   860.1,
+   0
+  ],
+  [
+   548.52,
+   699.9,
+   0
+  ],
+  [
+   547.52,
+   860.1,
+   0
+  ],
+  [
+   551.22,
+   699.9,
+   0
+  ],
+  [
+   551.22,
+   860.1,
+   0
+  ],
+  [
+   555.82,
+   699.9,
+   0
+  ],
+  [
+   554.85,
+   860.1,
+   0
+  ],
+  [
+   559.26,
+   699.9,
+   0
+  ],
+  [
+   558.59,
+   860.1,
+   0
+  ],
+  [
+   561.88,
+   699.9,
+   0
+  ],
+  [
+   560.97,
+   860.1,
+   0
+  ],
+  [
+   564.73,
+   699.9,
+   0
+  ],
+  [
+   564.73,
+   860.1,
+   0
+  ],
+  [
+   566.48,
+   699.9,
+   0
+  ],
+  [
+   566.48,
+   860.1,
+   0
+  ],
+  [
+   568.05,
+   699.9,
+   0
+  ],
+  [
+   568.05,
+   860.1,
+   0
+  ],
+  [
+   570.55,
+   699.9,
+   0
+  ],
+  [
+   570.55,
+   860.1,
+   0
+  ],
+  [
+   577.17,
+   699.9,
+   0
+  ],
+  [
+   576.18,
+   860.1,
+   0
+  ],
+  [
+   582.8,
+   699.9,
+   0
+  ],
+  [
+   582.8,
+   860.1,
+   0
+  ],
+  [
+   585.18,
+   699.9,
+   0
+  ],
+  [
+   585.18,
+   860.1,
+   0
+  ],
+  [
+   587.55,
+   699.9,
+   0
+  ],
+  [
+   587.55,
+   860.1,
+   0
+  ],
+  [
+   589.11,
+   699.9,
+   0
+  ],
+  [
+   589.11,
+   860.1,
+   0
+  ],
+  [
+   590.67,
+   699.9,
+   0
+  ],
+  [
+   590.67,
+   860.1,
+   0
+  ],
+  [
+   593.88,
+   699.9,
+   0
+  ],
+  [
+   593.88,
+   860.1,
+   0
+  ],
+  [
+   597.09,
+   699.9,
+   0
+  ],
+  [
+   597.09,
+   860.1,
+   0
+  ],
+  [
+   604.53,
+   699.9,
+   0
+  ],
+  [
+   604.53,
+   860.1,
+   0
+  ],
+  [
+   611.98,
+   699.9,
+   0
+  ],
+  [
+   611.17,
+   860.1,
+   0
+  ],
+  [
+   612.77,
+   699.9,
+   0
+  ],
+  [
+   612.77,
+   860.1,
+   0
+  ],
+  [
+   614.24,
+   699.9,
+   0
+  ],
+  [
+   613.52,
+   860.1,
+   0
+  ],
+  [
+   614.69,
+   699.9,
+   0
+  ],
+  [
+   614.69,
+   860.1,
+   0
+  ],
+  [
+   616.95,
+   699.9,
+   0
+  ],
+  [
+   616.08,
+   860.1,
+   0
+  ],
+  [
+   618.52,
+   699.9,
+   0
+  ],
+  [
+   618.52,
+   860.1,
+   0
+  ],
+  [
+   620.0,
+   699.9,
+   0
+  ],
+  [
+   620.0,
+   860.1,
+   0
+  ],
+  [
+   621.48,
+   699.9,
+   0
+  ],
+  [
+   621.48,
+   860.1,
+   0
+  ],
+  [
+   621.93,
+   699.9,
+   0
+  ],
+  [
+   621.93,
+   860.1,
+   0
+  ],
+  [
+   623.32,
+   699.9,
+   0
+  ],
+  [
+   623.32,
+   860.1,
+   0
+  ],
+  [
+   624.75,
+   699.9,
+   0
+  ],
+  [
+   624.75,
+   860.1,
+   0
+  ],
+  [
+   625.19,
+   699.9,
+   0
+  ],
+  [
+   625.19,
+   860.1,
+   0
+  ],
+  [
+   626.89,
+   699.9,
+   0
+  ],
+  [
+   625.9,
+   860.1,
+   0
+  ],
+  [
+   627.68,
+   699.9,
+   0
+  ],
+  [
+   627.68,
+   860.1,
+   0
+  ],
+  [
+   629.17,
+   699.9,
+   0
+  ],
+  [
+   629.17,
+   860.1,
+   0
+  ],
+  [
+   631.74,
+   699.9,
+   0
+  ],
+  [
+   631.74,
+   860.1,
+   0
+  ],
+  [
+   634.3,
+   699.9,
+   0
+  ],
+  [
+   634.3,
+   860.1,
+   0
+  ],
+  [
+   635.92,
+   699.9,
+   0
+  ],
+  [
+   635.92,
+   860.1,
+   0
+  ],
+  [
+   636.54,
+   699.9,
+   0
+  ],
+  [
+   636.54,
+   860.1,
+   0
+  ],
+  [
+   638.24,
+   699.9,
+   0
+  ],
+  [
+   637.25,
+   860.1,
+   0
+  ],
+  [
+   638.89,
+   699.9,
+   0
+  ],
+  [
+   638.89,
+   860.1,
+   0
+  ],
+  [
+   640.25,
+   699.9,
+   0
+  ],
+  [
+   640.25,
+   860.1,
+   0
+  ],
+  [
+   653.75,
+   699.9,
+   0
+  ],
+  [
+   652.77,
+   860.1,
+   0
+  ],
+  [
+   666.28,
+   699.9,
+   0
+  ],
+  [
+   666.28,
+   860.1,
+   0
+  ],
+  [
+   670.96,
+   699.9,
+   0
+  ],
+  [
+   670.96,
+   860.1,
+   0
+  ],
+  [
+   675.66,
+   699.9,
+   0
+  ],
+  [
+   674.85,
+   860.1,
+   0
+  ],
+  [
+   676.45,
+   699.9,
+   0
+  ],
+  [
+   676.45,
+   860.1,
+   0
+  ],
+  [
+   677.9,
+   699.9,
+   0
+  ],
+  [
+   677.19,
+   860.1,
+   0
+  ],
+  [
+   678.36,
+   699.9,
+   0
+  ],
+  [
+   678.36,
+   860.1,
+   0
+  ],
+  [
+   679.62,
+   699.9,
+   0
+  ],
+  [
+   678.85,
+   860.1,
+   0
+  ],
+  [
+   681.31,
+   699.9,
+   0
+  ]
+ ],
+ "ports": [
+  {
+   "id": "door-C02-005",
+   "xy": [
+    518.799995,
+    794.55
+   ],
+   "source": "data/west/network.json testedDoorConnections[0].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-005-out1m",
+   "xy": [
+    518.799995,
+    800.0
+   ],
+   "source": "data/west/network.json testedDoorConnections[0].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-006",
+   "xy": [
+    541.8,
+    793.55
+   ],
+   "source": "data/west/network.json testedDoorConnections[1].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-006-out1m",
+   "xy": [
+    541.8,
+    800.0
+   ],
+   "source": "data/west/network.json testedDoorConnections[1].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-007",
+   "xy": [
+    585.199998,
+    794.55
+   ],
+   "source": "data/west/network.json testedDoorConnections[2].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-007-out1m",
+   "xy": [
+    585.199998,
+    800.0
+   ],
+   "source": "data/west/network.json testedDoorConnections[2].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-008",
+   "xy": [
+    649.000005,
+    794.55
+   ],
+   "source": "data/west/network.json testedDoorConnections[3].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-008-out1m",
+   "xy": [
+    649.000005,
+    800.0
+   ],
+   "source": "data/west/network.json testedDoorConnections[3].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-009",
+   "xy": [
+    503.200001,
+    805.45
+   ],
+   "source": "data/west/network.json testedDoorConnections[4].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-009-out1m",
+   "xy": [
+    503.200001,
+    800.0
+   ],
+   "source": "data/west/network.json testedDoorConnections[4].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-010",
+   "xy": [
+    527.5,
+    806.45
+   ],
+   "source": "data/west/network.json testedDoorConnections[5].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-010-out1m",
+   "xy": [
+    527.5,
+    800.0
+   ],
+   "source": "data/west/network.json testedDoorConnections[5].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-011",
+   "xy": [
+    558.800004,
+    805.45
+   ],
+   "source": "data/west/network.json testedDoorConnections[6].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-011-out1m",
+   "xy": [
+    558.800004,
+    800.0
+   ],
+   "source": "data/west/network.json testedDoorConnections[6].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-012",
+   "xy": [
+    579.0,
+    805.45
+   ],
+   "source": "data/west/network.json testedDoorConnections[7].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-012-out1m",
+   "xy": [
+    579.0,
+    800.0
+   ],
+   "source": "data/west/network.json testedDoorConnections[7].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-013",
+   "xy": [
+    608.5,
+    805.45
+   ],
+   "source": "data/west/network.json testedDoorConnections[8].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-013-out1m",
+   "xy": [
+    608.5,
+    800.0
+   ],
+   "source": "data/west/network.json testedDoorConnections[8].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-032",
+   "xy": [
+    560.8,
+    753.2
+   ],
+   "source": "data/west/network.json testedDoorConnections[9].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-032-out1m",
+   "xy": [
+    565.0,
+    753.2
+   ],
+   "source": "data/west/network.json testedDoorConnections[9].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-014",
+   "xy": [
+    579.199996,
+    740.8
+   ],
+   "source": "data/west/network.json testedDoorConnections[10].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-014-out1m",
+   "xy": [
+    579.199996,
+    745.0
+   ],
+   "source": "data/west/network.json testedDoorConnections[10].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-015",
+   "xy": [
+    610.5,
+    740.8
+   ],
+   "source": "data/west/network.json testedDoorConnections[11].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-015-out1m",
+   "xy": [
+    610.5,
+    745.0
+   ],
+   "source": "data/west/network.json testedDoorConnections[11].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-016",
+   "xy": [
+    608.199995,
+    749.2
+   ],
+   "source": "data/west/network.json testedDoorConnections[12].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-016-out1m",
+   "xy": [
+    608.199995,
+    745.0
+   ],
+   "source": "data/west/network.json testedDoorConnections[12].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-017",
+   "xy": [
+    662.0,
+    829.8
+   ],
+   "source": "data/west/network.json testedDoorConnections[13].path[0] (B/C schematic threshold)",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "door-C02-017-out1m",
+   "xy": [
+    665.0,
+    829.8
+   ],
+   "source": "data/west/network.json testedDoorConnections[13].path[1]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 0,
+   "regionStrict": 0,
+   "regionTolerant": 0
+  },
+  {
+   "id": "guangyang-in",
+   "xy": [
+    6.0,
+    489.796
+   ],
+   "source": "C: inside west wall, gap between wall-08 (z<=-485.80) and wall-09 (z>=-493.80), network path end y=489.796",
+   "support": null,
+   "nearestGround_m": null,
+   "nearestComponent": null
+  },
+  {
+   "id": "guangyang-mid",
+   "xy": [
+    0.0,
+    489.796
+   ],
+   "source": "C: network.json path end [0,489.796]",
+   "support": null,
+   "nearestGround_m": null,
+   "nearestComponent": null
+  },
+  {
+   "id": "guangyang-out",
+   "xy": [
+    -10.0,
+    489.796
+   ],
+   "source": "C: outside west wall",
+   "support": null,
+   "nearestGround_m": null,
+   "nearestComponent": null
+  },
+  {
+   "id": "yong-in",
+   "xy": [
+    -4.0,
+    1397.773
+   ],
+   "source": "C: east of yong-gate-apron bounds (x max -6.37)",
+   "support": null,
+   "nearestGround_m": null,
+   "nearestComponent": null
+  },
+  {
+   "id": "yong-mid",
+   "xy": [
+    -16.016,
+    1397.773
+   ],
+   "source": "city-data yong-gate-body matrix translation",
+   "support": null,
+   "nearestGround_m": null,
+   "nearestComponent": null
+  },
+  {
+   "id": "yong-out",
+   "xy": [
+    -28.0,
+    1397.773
+   ],
+   "source": "C: west of apron bounds (x min -25.66)",
+   "support": null,
+   "nearestGround_m": null,
+   "nearestComponent": null
+  },
+  {
+   "id": "market-center",
+   "xy": [
+    214.286,
+    1959.184
+   ],
+   "source": "data/west/market-interface.json cameraTargets.market",
+   "support": null,
+   "nearestGround_m": null,
+   "nearestComponent": null
+  },
+  {
+   "id": "market-link",
+   "xy": [
+    320.0,
+    1959.184
+   ],
+   "source": "data/west/market-interface.json cameraTargets.link",
+   "support": null,
+   "nearestGround_m": null,
+   "nearestComponent": null
+  },
+  {
+   "id": "storage-target",
+   "xy": [
+    2285.714,
+    3673.469
+   ],
+   "source": "data/west/storage-interface.json camera.target",
+   "support": null,
+   "nearestGround_m": null,
+   "nearestComponent": null
+  },
+  {
+   "id": "D08-center",
+   "xy": [
+    580.0,
+    960.0
+   ],
+   "source": "D08 translation [580,0,-960]",
+   "support": "ground",
+   "z": 0.2,
+   "component": 1,
+   "regionStrict": 1,
+   "regionTolerant": 1
+  },
+  {
+   "id": "NEG-city-center-unbuilt",
+   "xy": [
+    1200.0,
+    1900.0
+   ],
+   "source": "negative: interior far from any declared ground",
+   "support": null,
+   "nearestGround_m": null,
+   "nearestComponent": null
+  },
+  {
+   "id": "NEG-north-palace-B",
+   "xy": [
+    700.0,
+    2400.0
+   ],
+   "source": "negative: B-label palace area, no ground declared",
+   "support": null,
+   "nearestGround_m": null,
+   "nearestComponent": null
+  }
+ ],
+ "grid": null,
+ "limits": "Triangle top-face topology + boundary probes every 1.0m at 0.10m offset + vertical rays; no body envelope sweep, no continuous motion, no GPU, not structural or historical.",
+ "seconds": 1.1
+}

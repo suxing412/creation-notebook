@@ -1,0 +1,3039 @@
+{
+ "ruleset": "LY-009 whitelist v1",
+ "checker": "LY-009/source/check_whitelist.py",
+ "coordinatorFiles": [
+  ".gitattributes",
+  ".gitignore",
+  "README.md",
+  "TASKPOOL.md",
+  "taskboard.json"
+ ],
+ "branches": {
+  "workpacks": {
+   "repo": "D:/GitHub/creation-notebook-workpacks (git worktree of creation-notebook-lab)",
+   "remote": "origin/workpacks",
+   "writers": "LY-001…100 each inside own LY-### dir; coordinator for root files",
+   "push": "coordinator only"
+  },
+  "lab main": {
+   "repo": "D:/GitHub/creation-notebook-lab",
+   "writers": "LY-100 only, per coordinator batch",
+   "push": "coordinator only"
+  },
+  "luoyang-content": {
+   "writers": "coordinator (source packs / Release)",
+   "seats": "read-only"
+  },
+  "per-seat branches": {
+   "naming": "wp/LY-### (based on workpacks)",
+   "why not workpacks/LY-###": "refs/heads/workpacks already exists; git refuses a ref that is both a file and a directory (tested in qa/checks.json C9)",
+   "content": "must contain only that seat whitelist (check_whitelist --git)"
+  }
+ },
+ "external": {
+  "D:/GitHub/creation-notebook-待传/": "coordinator only (LOCK-SOURCE-RELEASE)",
+  "scratchpad mq/cards/<id>/": "read-only shared inputs (audit/render), not a write area"
+ },
+ "seats": {
+  "LY-001": {
+   "writeArea": "workpacks/LY-001/",
+   "allow": [
+    "LY-001/**"
+   ],
+   "deny": [
+    "LY-001/**/*.blend*",
+    "LY-001/**/*.zip",
+    "LY-001/**/*.7z",
+    "LY-001/**/*.rar",
+    "LY-001/**/*.part###",
+    "LY-001/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-001"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-002": {
+   "writeArea": "workpacks/LY-002/",
+   "allow": [
+    "LY-002/**"
+   ],
+   "deny": [
+    "LY-002/**/*.blend*",
+    "LY-002/**/*.zip",
+    "LY-002/**/*.7z",
+    "LY-002/**/*.rar",
+    "LY-002/**/*.part###",
+    "LY-002/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-002"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-003": {
+   "writeArea": "workpacks/LY-003/",
+   "allow": [
+    "LY-003/**"
+   ],
+   "deny": [
+    "LY-003/**/*.blend*",
+    "LY-003/**/*.zip",
+    "LY-003/**/*.7z",
+    "LY-003/**/*.rar",
+    "LY-003/**/*.part###",
+    "LY-003/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-003"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-004": {
+   "writeArea": "workpacks/LY-004/",
+   "allow": [
+    "LY-004/**"
+   ],
+   "deny": [
+    "LY-004/**/*.blend*",
+    "LY-004/**/*.zip",
+    "LY-004/**/*.7z",
+    "LY-004/**/*.rar",
+    "LY-004/**/*.part###",
+    "LY-004/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-004"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-005": {
+   "writeArea": "workpacks/LY-005/",
+   "allow": [
+    "LY-005/**"
+   ],
+   "deny": [
+    "LY-005/**/*.blend*",
+    "LY-005/**/*.zip",
+    "LY-005/**/*.7z",
+    "LY-005/**/*.rar",
+    "LY-005/**/*.part###",
+    "LY-005/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-005"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-006": {
+   "writeArea": "workpacks/LY-006/",
+   "allow": [
+    "LY-006/**"
+   ],
+   "deny": [
+    "LY-006/**/*.blend*",
+    "LY-006/**/*.zip",
+    "LY-006/**/*.7z",
+    "LY-006/**/*.rar",
+    "LY-006/**/*.part###",
+    "LY-006/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-006"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-007": {
+   "writeArea": "workpacks/LY-007/",
+   "allow": [
+    "LY-007/**"
+   ],
+   "deny": [
+    "LY-007/**/*.blend*",
+    "LY-007/**/*.zip",
+    "LY-007/**/*.7z",
+    "LY-007/**/*.rar",
+    "LY-007/**/*.part###",
+    "LY-007/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-007"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-008": {
+   "writeArea": "workpacks/LY-008/",
+   "allow": [
+    "LY-008/**"
+   ],
+   "deny": [
+    "LY-008/**/*.blend*",
+    "LY-008/**/*.zip",
+    "LY-008/**/*.7z",
+    "LY-008/**/*.rar",
+    "LY-008/**/*.part###",
+    "LY-008/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-008"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-009": {
+   "writeArea": "workpacks/LY-009/",
+   "allow": [
+    "LY-009/**"
+   ],
+   "deny": [
+    "LY-009/**/*.blend*",
+    "LY-009/**/*.zip",
+    "LY-009/**/*.7z",
+    "LY-009/**/*.rar",
+    "LY-009/**/*.part###",
+    "LY-009/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-009"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-010": {
+   "writeArea": "workpacks/LY-010/",
+   "allow": [
+    "LY-010/**"
+   ],
+   "deny": [
+    "LY-010/**/*.blend*",
+    "LY-010/**/*.zip",
+    "LY-010/**/*.7z",
+    "LY-010/**/*.rar",
+    "LY-010/**/*.part###",
+    "LY-010/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-010"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-011": {
+   "writeArea": "workpacks/LY-011/",
+   "allow": [
+    "LY-011/**"
+   ],
+   "deny": [
+    "LY-011/**/*.blend*",
+    "LY-011/**/*.zip",
+    "LY-011/**/*.7z",
+    "LY-011/**/*.rar",
+    "LY-011/**/*.part###",
+    "LY-011/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-011"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-012": {
+   "writeArea": "workpacks/LY-012/",
+   "allow": [
+    "LY-012/**"
+   ],
+   "deny": [
+    "LY-012/**/*.blend*",
+    "LY-012/**/*.zip",
+    "LY-012/**/*.7z",
+    "LY-012/**/*.rar",
+    "LY-012/**/*.part###",
+    "LY-012/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-012"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-013": {
+   "writeArea": "workpacks/LY-013/",
+   "allow": [
+    "LY-013/**"
+   ],
+   "deny": [
+    "LY-013/**/*.blend*",
+    "LY-013/**/*.zip",
+    "LY-013/**/*.7z",
+    "LY-013/**/*.rar",
+    "LY-013/**/*.part###",
+    "LY-013/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-013"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-014": {
+   "writeArea": "workpacks/LY-014/",
+   "allow": [
+    "LY-014/**"
+   ],
+   "deny": [
+    "LY-014/**/*.blend*",
+    "LY-014/**/*.zip",
+    "LY-014/**/*.7z",
+    "LY-014/**/*.rar",
+    "LY-014/**/*.part###",
+    "LY-014/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-014"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-015": {
+   "writeArea": "workpacks/LY-015/",
+   "allow": [
+    "LY-015/**"
+   ],
+   "deny": [
+    "LY-015/**/*.blend*",
+    "LY-015/**/*.zip",
+    "LY-015/**/*.7z",
+    "LY-015/**/*.rar",
+    "LY-015/**/*.part###",
+    "LY-015/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-015"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-016": {
+   "writeArea": "workpacks/LY-016/",
+   "allow": [
+    "LY-016/**"
+   ],
+   "deny": [
+    "LY-016/**/*.blend*",
+    "LY-016/**/*.zip",
+    "LY-016/**/*.7z",
+    "LY-016/**/*.rar",
+    "LY-016/**/*.part###",
+    "LY-016/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-016"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-017": {
+   "writeArea": "workpacks/LY-017/",
+   "allow": [
+    "LY-017/**"
+   ],
+   "deny": [
+    "LY-017/**/*.blend*",
+    "LY-017/**/*.zip",
+    "LY-017/**/*.7z",
+    "LY-017/**/*.rar",
+    "LY-017/**/*.part###",
+    "LY-017/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-017"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-018": {
+   "writeArea": "workpacks/LY-018/",
+   "allow": [
+    "LY-018/**"
+   ],
+   "deny": [
+    "LY-018/**/*.blend*",
+    "LY-018/**/*.zip",
+    "LY-018/**/*.7z",
+    "LY-018/**/*.rar",
+    "LY-018/**/*.part###",
+    "LY-018/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-018"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-019": {
+   "writeArea": "workpacks/LY-019/",
+   "allow": [
+    "LY-019/**"
+   ],
+   "deny": [
+    "LY-019/**/*.blend*",
+    "LY-019/**/*.zip",
+    "LY-019/**/*.7z",
+    "LY-019/**/*.rar",
+    "LY-019/**/*.part###",
+    "LY-019/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-019"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-020": {
+   "writeArea": "workpacks/LY-020/",
+   "allow": [
+    "LY-020/**"
+   ],
+   "deny": [
+    "LY-020/**/*.blend*",
+    "LY-020/**/*.zip",
+    "LY-020/**/*.7z",
+    "LY-020/**/*.rar",
+    "LY-020/**/*.part###",
+    "LY-020/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-020"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-021": {
+   "writeArea": "workpacks/LY-021/",
+   "allow": [
+    "LY-021/**"
+   ],
+   "deny": [
+    "LY-021/**/*.blend*",
+    "LY-021/**/*.zip",
+    "LY-021/**/*.7z",
+    "LY-021/**/*.rar",
+    "LY-021/**/*.part###",
+    "LY-021/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-021"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-022": {
+   "writeArea": "workpacks/LY-022/",
+   "allow": [
+    "LY-022/**"
+   ],
+   "deny": [
+    "LY-022/**/*.blend*",
+    "LY-022/**/*.zip",
+    "LY-022/**/*.7z",
+    "LY-022/**/*.rar",
+    "LY-022/**/*.part###",
+    "LY-022/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-022"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-023": {
+   "writeArea": "workpacks/LY-023/",
+   "allow": [
+    "LY-023/**"
+   ],
+   "deny": [
+    "LY-023/**/*.blend*",
+    "LY-023/**/*.zip",
+    "LY-023/**/*.7z",
+    "LY-023/**/*.rar",
+    "LY-023/**/*.part###",
+    "LY-023/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-023"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-024": {
+   "writeArea": "workpacks/LY-024/",
+   "allow": [
+    "LY-024/**"
+   ],
+   "deny": [
+    "LY-024/**/*.blend*",
+    "LY-024/**/*.zip",
+    "LY-024/**/*.7z",
+    "LY-024/**/*.rar",
+    "LY-024/**/*.part###",
+    "LY-024/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-024"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-025": {
+   "writeArea": "workpacks/LY-025/",
+   "allow": [
+    "LY-025/**"
+   ],
+   "deny": [
+    "LY-025/**/*.blend*",
+    "LY-025/**/*.zip",
+    "LY-025/**/*.7z",
+    "LY-025/**/*.rar",
+    "LY-025/**/*.part###",
+    "LY-025/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-025"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-026": {
+   "writeArea": "workpacks/LY-026/",
+   "allow": [
+    "LY-026/**"
+   ],
+   "deny": [
+    "LY-026/**/*.blend*",
+    "LY-026/**/*.zip",
+    "LY-026/**/*.7z",
+    "LY-026/**/*.rar",
+    "LY-026/**/*.part###",
+    "LY-026/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-026"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-027": {
+   "writeArea": "workpacks/LY-027/",
+   "allow": [
+    "LY-027/**"
+   ],
+   "deny": [
+    "LY-027/**/*.blend*",
+    "LY-027/**/*.zip",
+    "LY-027/**/*.7z",
+    "LY-027/**/*.rar",
+    "LY-027/**/*.part###",
+    "LY-027/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-027"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-028": {
+   "writeArea": "workpacks/LY-028/",
+   "allow": [
+    "LY-028/**"
+   ],
+   "deny": [
+    "LY-028/**/*.blend*",
+    "LY-028/**/*.zip",
+    "LY-028/**/*.7z",
+    "LY-028/**/*.rar",
+    "LY-028/**/*.part###",
+    "LY-028/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-028"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-029": {
+   "writeArea": "workpacks/LY-029/",
+   "allow": [
+    "LY-029/**"
+   ],
+   "deny": [
+    "LY-029/**/*.blend*",
+    "LY-029/**/*.zip",
+    "LY-029/**/*.7z",
+    "LY-029/**/*.rar",
+    "LY-029/**/*.part###",
+    "LY-029/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-029"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-030": {
+   "writeArea": "workpacks/LY-030/",
+   "allow": [
+    "LY-030/**"
+   ],
+   "deny": [
+    "LY-030/**/*.blend*",
+    "LY-030/**/*.zip",
+    "LY-030/**/*.7z",
+    "LY-030/**/*.rar",
+    "LY-030/**/*.part###",
+    "LY-030/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-030"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-031": {
+   "writeArea": "workpacks/LY-031/",
+   "allow": [
+    "LY-031/**"
+   ],
+   "deny": [
+    "LY-031/**/*.blend*",
+    "LY-031/**/*.zip",
+    "LY-031/**/*.7z",
+    "LY-031/**/*.rar",
+    "LY-031/**/*.part###",
+    "LY-031/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-031"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-032": {
+   "writeArea": "workpacks/LY-032/",
+   "allow": [
+    "LY-032/**"
+   ],
+   "deny": [
+    "LY-032/**/*.blend*",
+    "LY-032/**/*.zip",
+    "LY-032/**/*.7z",
+    "LY-032/**/*.rar",
+    "LY-032/**/*.part###",
+    "LY-032/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-032"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-033": {
+   "writeArea": "workpacks/LY-033/",
+   "allow": [
+    "LY-033/**"
+   ],
+   "deny": [
+    "LY-033/**/*.blend*",
+    "LY-033/**/*.zip",
+    "LY-033/**/*.7z",
+    "LY-033/**/*.rar",
+    "LY-033/**/*.part###",
+    "LY-033/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-033"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-034": {
+   "writeArea": "workpacks/LY-034/",
+   "allow": [
+    "LY-034/**"
+   ],
+   "deny": [
+    "LY-034/**/*.blend*",
+    "LY-034/**/*.zip",
+    "LY-034/**/*.7z",
+    "LY-034/**/*.rar",
+    "LY-034/**/*.part###",
+    "LY-034/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-034"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-035": {
+   "writeArea": "workpacks/LY-035/",
+   "allow": [
+    "LY-035/**"
+   ],
+   "deny": [
+    "LY-035/**/*.blend*",
+    "LY-035/**/*.zip",
+    "LY-035/**/*.7z",
+    "LY-035/**/*.rar",
+    "LY-035/**/*.part###",
+    "LY-035/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-035"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-036": {
+   "writeArea": "workpacks/LY-036/",
+   "allow": [
+    "LY-036/**"
+   ],
+   "deny": [
+    "LY-036/**/*.blend*",
+    "LY-036/**/*.zip",
+    "LY-036/**/*.7z",
+    "LY-036/**/*.rar",
+    "LY-036/**/*.part###",
+    "LY-036/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-036"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-037": {
+   "writeArea": "workpacks/LY-037/",
+   "allow": [
+    "LY-037/**"
+   ],
+   "deny": [
+    "LY-037/**/*.blend*",
+    "LY-037/**/*.zip",
+    "LY-037/**/*.7z",
+    "LY-037/**/*.rar",
+    "LY-037/**/*.part###",
+    "LY-037/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-037"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-038": {
+   "writeArea": "workpacks/LY-038/",
+   "allow": [
+    "LY-038/**"
+   ],
+   "deny": [
+    "LY-038/**/*.blend*",
+    "LY-038/**/*.zip",
+    "LY-038/**/*.7z",
+    "LY-038/**/*.rar",
+    "LY-038/**/*.part###",
+    "LY-038/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-038"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-039": {
+   "writeArea": "workpacks/LY-039/",
+   "allow": [
+    "LY-039/**"
+   ],
+   "deny": [
+    "LY-039/**/*.blend*",
+    "LY-039/**/*.zip",
+    "LY-039/**/*.7z",
+    "LY-039/**/*.rar",
+    "LY-039/**/*.part###",
+    "LY-039/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-039"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-040": {
+   "writeArea": "workpacks/LY-040/",
+   "allow": [
+    "LY-040/**"
+   ],
+   "deny": [
+    "LY-040/**/*.blend*",
+    "LY-040/**/*.zip",
+    "LY-040/**/*.7z",
+    "LY-040/**/*.rar",
+    "LY-040/**/*.part###",
+    "LY-040/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-040"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-041": {
+   "writeArea": "workpacks/LY-041/",
+   "allow": [
+    "LY-041/**"
+   ],
+   "deny": [
+    "LY-041/**/*.blend*",
+    "LY-041/**/*.zip",
+    "LY-041/**/*.7z",
+    "LY-041/**/*.rar",
+    "LY-041/**/*.part###",
+    "LY-041/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-041"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-042": {
+   "writeArea": "workpacks/LY-042/",
+   "allow": [
+    "LY-042/**"
+   ],
+   "deny": [
+    "LY-042/**/*.blend*",
+    "LY-042/**/*.zip",
+    "LY-042/**/*.7z",
+    "LY-042/**/*.rar",
+    "LY-042/**/*.part###",
+    "LY-042/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-042"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-043": {
+   "writeArea": "workpacks/LY-043/",
+   "allow": [
+    "LY-043/**"
+   ],
+   "deny": [
+    "LY-043/**/*.blend*",
+    "LY-043/**/*.zip",
+    "LY-043/**/*.7z",
+    "LY-043/**/*.rar",
+    "LY-043/**/*.part###",
+    "LY-043/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-043"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-044": {
+   "writeArea": "workpacks/LY-044/",
+   "allow": [
+    "LY-044/**"
+   ],
+   "deny": [
+    "LY-044/**/*.blend*",
+    "LY-044/**/*.zip",
+    "LY-044/**/*.7z",
+    "LY-044/**/*.rar",
+    "LY-044/**/*.part###",
+    "LY-044/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-044"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-045": {
+   "writeArea": "workpacks/LY-045/",
+   "allow": [
+    "LY-045/**"
+   ],
+   "deny": [
+    "LY-045/**/*.blend*",
+    "LY-045/**/*.zip",
+    "LY-045/**/*.7z",
+    "LY-045/**/*.rar",
+    "LY-045/**/*.part###",
+    "LY-045/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-045"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-046": {
+   "writeArea": "workpacks/LY-046/",
+   "allow": [
+    "LY-046/**"
+   ],
+   "deny": [
+    "LY-046/**/*.blend*",
+    "LY-046/**/*.zip",
+    "LY-046/**/*.7z",
+    "LY-046/**/*.rar",
+    "LY-046/**/*.part###",
+    "LY-046/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-046"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-047": {
+   "writeArea": "workpacks/LY-047/",
+   "allow": [
+    "LY-047/**"
+   ],
+   "deny": [
+    "LY-047/**/*.blend*",
+    "LY-047/**/*.zip",
+    "LY-047/**/*.7z",
+    "LY-047/**/*.rar",
+    "LY-047/**/*.part###",
+    "LY-047/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-047"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-048": {
+   "writeArea": "workpacks/LY-048/",
+   "allow": [
+    "LY-048/**"
+   ],
+   "deny": [
+    "LY-048/**/*.blend*",
+    "LY-048/**/*.zip",
+    "LY-048/**/*.7z",
+    "LY-048/**/*.rar",
+    "LY-048/**/*.part###",
+    "LY-048/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-048"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-049": {
+   "writeArea": "workpacks/LY-049/",
+   "allow": [
+    "LY-049/**"
+   ],
+   "deny": [
+    "LY-049/**/*.blend*",
+    "LY-049/**/*.zip",
+    "LY-049/**/*.7z",
+    "LY-049/**/*.rar",
+    "LY-049/**/*.part###",
+    "LY-049/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-049"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-050": {
+   "writeArea": "workpacks/LY-050/",
+   "allow": [
+    "LY-050/**"
+   ],
+   "deny": [
+    "LY-050/**/*.blend*",
+    "LY-050/**/*.zip",
+    "LY-050/**/*.7z",
+    "LY-050/**/*.rar",
+    "LY-050/**/*.part###",
+    "LY-050/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-050"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-051": {
+   "writeArea": "workpacks/LY-051/",
+   "allow": [
+    "LY-051/**"
+   ],
+   "deny": [
+    "LY-051/**/*.blend*",
+    "LY-051/**/*.zip",
+    "LY-051/**/*.7z",
+    "LY-051/**/*.rar",
+    "LY-051/**/*.part###",
+    "LY-051/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-051"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-052": {
+   "writeArea": "workpacks/LY-052/",
+   "allow": [
+    "LY-052/**"
+   ],
+   "deny": [
+    "LY-052/**/*.blend*",
+    "LY-052/**/*.zip",
+    "LY-052/**/*.7z",
+    "LY-052/**/*.rar",
+    "LY-052/**/*.part###",
+    "LY-052/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-052"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-053": {
+   "writeArea": "workpacks/LY-053/",
+   "allow": [
+    "LY-053/**"
+   ],
+   "deny": [
+    "LY-053/**/*.blend*",
+    "LY-053/**/*.zip",
+    "LY-053/**/*.7z",
+    "LY-053/**/*.rar",
+    "LY-053/**/*.part###",
+    "LY-053/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-053"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-054": {
+   "writeArea": "workpacks/LY-054/",
+   "allow": [
+    "LY-054/**"
+   ],
+   "deny": [
+    "LY-054/**/*.blend*",
+    "LY-054/**/*.zip",
+    "LY-054/**/*.7z",
+    "LY-054/**/*.rar",
+    "LY-054/**/*.part###",
+    "LY-054/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-054"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-055": {
+   "writeArea": "workpacks/LY-055/",
+   "allow": [
+    "LY-055/**"
+   ],
+   "deny": [
+    "LY-055/**/*.blend*",
+    "LY-055/**/*.zip",
+    "LY-055/**/*.7z",
+    "LY-055/**/*.rar",
+    "LY-055/**/*.part###",
+    "LY-055/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-055"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-056": {
+   "writeArea": "workpacks/LY-056/",
+   "allow": [
+    "LY-056/**"
+   ],
+   "deny": [
+    "LY-056/**/*.blend*",
+    "LY-056/**/*.zip",
+    "LY-056/**/*.7z",
+    "LY-056/**/*.rar",
+    "LY-056/**/*.part###",
+    "LY-056/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-056"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-057": {
+   "writeArea": "workpacks/LY-057/",
+   "allow": [
+    "LY-057/**"
+   ],
+   "deny": [
+    "LY-057/**/*.blend*",
+    "LY-057/**/*.zip",
+    "LY-057/**/*.7z",
+    "LY-057/**/*.rar",
+    "LY-057/**/*.part###",
+    "LY-057/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-057"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-058": {
+   "writeArea": "workpacks/LY-058/",
+   "allow": [
+    "LY-058/**"
+   ],
+   "deny": [
+    "LY-058/**/*.blend*",
+    "LY-058/**/*.zip",
+    "LY-058/**/*.7z",
+    "LY-058/**/*.rar",
+    "LY-058/**/*.part###",
+    "LY-058/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-058"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-059": {
+   "writeArea": "workpacks/LY-059/",
+   "allow": [
+    "LY-059/**"
+   ],
+   "deny": [
+    "LY-059/**/*.blend*",
+    "LY-059/**/*.zip",
+    "LY-059/**/*.7z",
+    "LY-059/**/*.rar",
+    "LY-059/**/*.part###",
+    "LY-059/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-059"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-060": {
+   "writeArea": "workpacks/LY-060/",
+   "allow": [
+    "LY-060/**"
+   ],
+   "deny": [
+    "LY-060/**/*.blend*",
+    "LY-060/**/*.zip",
+    "LY-060/**/*.7z",
+    "LY-060/**/*.rar",
+    "LY-060/**/*.part###",
+    "LY-060/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-060"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-061": {
+   "writeArea": "workpacks/LY-061/",
+   "allow": [
+    "LY-061/**"
+   ],
+   "deny": [
+    "LY-061/**/*.blend*",
+    "LY-061/**/*.zip",
+    "LY-061/**/*.7z",
+    "LY-061/**/*.rar",
+    "LY-061/**/*.part###",
+    "LY-061/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-061"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-062": {
+   "writeArea": "workpacks/LY-062/",
+   "allow": [
+    "LY-062/**"
+   ],
+   "deny": [
+    "LY-062/**/*.blend*",
+    "LY-062/**/*.zip",
+    "LY-062/**/*.7z",
+    "LY-062/**/*.rar",
+    "LY-062/**/*.part###",
+    "LY-062/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-062"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-063": {
+   "writeArea": "workpacks/LY-063/",
+   "allow": [
+    "LY-063/**"
+   ],
+   "deny": [
+    "LY-063/**/*.blend*",
+    "LY-063/**/*.zip",
+    "LY-063/**/*.7z",
+    "LY-063/**/*.rar",
+    "LY-063/**/*.part###",
+    "LY-063/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-063"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-064": {
+   "writeArea": "workpacks/LY-064/",
+   "allow": [
+    "LY-064/**"
+   ],
+   "deny": [
+    "LY-064/**/*.blend*",
+    "LY-064/**/*.zip",
+    "LY-064/**/*.7z",
+    "LY-064/**/*.rar",
+    "LY-064/**/*.part###",
+    "LY-064/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-064"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-065": {
+   "writeArea": "workpacks/LY-065/",
+   "allow": [
+    "LY-065/**"
+   ],
+   "deny": [
+    "LY-065/**/*.blend*",
+    "LY-065/**/*.zip",
+    "LY-065/**/*.7z",
+    "LY-065/**/*.rar",
+    "LY-065/**/*.part###",
+    "LY-065/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-065"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-066": {
+   "writeArea": "workpacks/LY-066/",
+   "allow": [
+    "LY-066/**"
+   ],
+   "deny": [
+    "LY-066/**/*.blend*",
+    "LY-066/**/*.zip",
+    "LY-066/**/*.7z",
+    "LY-066/**/*.rar",
+    "LY-066/**/*.part###",
+    "LY-066/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-066"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-067": {
+   "writeArea": "workpacks/LY-067/",
+   "allow": [
+    "LY-067/**"
+   ],
+   "deny": [
+    "LY-067/**/*.blend*",
+    "LY-067/**/*.zip",
+    "LY-067/**/*.7z",
+    "LY-067/**/*.rar",
+    "LY-067/**/*.part###",
+    "LY-067/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-067"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-068": {
+   "writeArea": "workpacks/LY-068/",
+   "allow": [
+    "LY-068/**"
+   ],
+   "deny": [
+    "LY-068/**/*.blend*",
+    "LY-068/**/*.zip",
+    "LY-068/**/*.7z",
+    "LY-068/**/*.rar",
+    "LY-068/**/*.part###",
+    "LY-068/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-068"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-069": {
+   "writeArea": "workpacks/LY-069/",
+   "allow": [
+    "LY-069/**"
+   ],
+   "deny": [
+    "LY-069/**/*.blend*",
+    "LY-069/**/*.zip",
+    "LY-069/**/*.7z",
+    "LY-069/**/*.rar",
+    "LY-069/**/*.part###",
+    "LY-069/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-069"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-070": {
+   "writeArea": "workpacks/LY-070/",
+   "allow": [
+    "LY-070/**"
+   ],
+   "deny": [
+    "LY-070/**/*.blend*",
+    "LY-070/**/*.zip",
+    "LY-070/**/*.7z",
+    "LY-070/**/*.rar",
+    "LY-070/**/*.part###",
+    "LY-070/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-070"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-071": {
+   "writeArea": "workpacks/LY-071/",
+   "allow": [
+    "LY-071/**"
+   ],
+   "deny": [
+    "LY-071/**/*.blend*",
+    "LY-071/**/*.zip",
+    "LY-071/**/*.7z",
+    "LY-071/**/*.rar",
+    "LY-071/**/*.part###",
+    "LY-071/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-071"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-072": {
+   "writeArea": "workpacks/LY-072/",
+   "allow": [
+    "LY-072/**"
+   ],
+   "deny": [
+    "LY-072/**/*.blend*",
+    "LY-072/**/*.zip",
+    "LY-072/**/*.7z",
+    "LY-072/**/*.rar",
+    "LY-072/**/*.part###",
+    "LY-072/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-072"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-073": {
+   "writeArea": "workpacks/LY-073/",
+   "allow": [
+    "LY-073/**"
+   ],
+   "deny": [
+    "LY-073/**/*.blend*",
+    "LY-073/**/*.zip",
+    "LY-073/**/*.7z",
+    "LY-073/**/*.rar",
+    "LY-073/**/*.part###",
+    "LY-073/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-073"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-074": {
+   "writeArea": "workpacks/LY-074/",
+   "allow": [
+    "LY-074/**"
+   ],
+   "deny": [
+    "LY-074/**/*.blend*",
+    "LY-074/**/*.zip",
+    "LY-074/**/*.7z",
+    "LY-074/**/*.rar",
+    "LY-074/**/*.part###",
+    "LY-074/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-074"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-075": {
+   "writeArea": "workpacks/LY-075/",
+   "allow": [
+    "LY-075/**"
+   ],
+   "deny": [
+    "LY-075/**/*.blend*",
+    "LY-075/**/*.zip",
+    "LY-075/**/*.7z",
+    "LY-075/**/*.rar",
+    "LY-075/**/*.part###",
+    "LY-075/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-075"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-076": {
+   "writeArea": "workpacks/LY-076/",
+   "allow": [
+    "LY-076/**"
+   ],
+   "deny": [
+    "LY-076/**/*.blend*",
+    "LY-076/**/*.zip",
+    "LY-076/**/*.7z",
+    "LY-076/**/*.rar",
+    "LY-076/**/*.part###",
+    "LY-076/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-076"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-077": {
+   "writeArea": "workpacks/LY-077/",
+   "allow": [
+    "LY-077/**"
+   ],
+   "deny": [
+    "LY-077/**/*.blend*",
+    "LY-077/**/*.zip",
+    "LY-077/**/*.7z",
+    "LY-077/**/*.rar",
+    "LY-077/**/*.part###",
+    "LY-077/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-077"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-078": {
+   "writeArea": "workpacks/LY-078/",
+   "allow": [
+    "LY-078/**"
+   ],
+   "deny": [
+    "LY-078/**/*.blend*",
+    "LY-078/**/*.zip",
+    "LY-078/**/*.7z",
+    "LY-078/**/*.rar",
+    "LY-078/**/*.part###",
+    "LY-078/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-078"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-079": {
+   "writeArea": "workpacks/LY-079/",
+   "allow": [
+    "LY-079/**"
+   ],
+   "deny": [
+    "LY-079/**/*.blend*",
+    "LY-079/**/*.zip",
+    "LY-079/**/*.7z",
+    "LY-079/**/*.rar",
+    "LY-079/**/*.part###",
+    "LY-079/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-079"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-080": {
+   "writeArea": "workpacks/LY-080/",
+   "allow": [
+    "LY-080/**"
+   ],
+   "deny": [
+    "LY-080/**/*.blend*",
+    "LY-080/**/*.zip",
+    "LY-080/**/*.7z",
+    "LY-080/**/*.rar",
+    "LY-080/**/*.part###",
+    "LY-080/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-080"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-081": {
+   "writeArea": "workpacks/LY-081/",
+   "allow": [
+    "LY-081/**"
+   ],
+   "deny": [
+    "LY-081/**/*.blend*",
+    "LY-081/**/*.zip",
+    "LY-081/**/*.7z",
+    "LY-081/**/*.rar",
+    "LY-081/**/*.part###",
+    "LY-081/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-081"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-082": {
+   "writeArea": "workpacks/LY-082/",
+   "allow": [
+    "LY-082/**"
+   ],
+   "deny": [
+    "LY-082/**/*.blend*",
+    "LY-082/**/*.zip",
+    "LY-082/**/*.7z",
+    "LY-082/**/*.rar",
+    "LY-082/**/*.part###",
+    "LY-082/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-082"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-083": {
+   "writeArea": "workpacks/LY-083/",
+   "allow": [
+    "LY-083/**"
+   ],
+   "deny": [
+    "LY-083/**/*.blend*",
+    "LY-083/**/*.zip",
+    "LY-083/**/*.7z",
+    "LY-083/**/*.rar",
+    "LY-083/**/*.part###",
+    "LY-083/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-083"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-084": {
+   "writeArea": "workpacks/LY-084/",
+   "allow": [
+    "LY-084/**"
+   ],
+   "deny": [
+    "LY-084/**/*.blend*",
+    "LY-084/**/*.zip",
+    "LY-084/**/*.7z",
+    "LY-084/**/*.rar",
+    "LY-084/**/*.part###",
+    "LY-084/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-084"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-085": {
+   "writeArea": "workpacks/LY-085/",
+   "allow": [
+    "LY-085/**"
+   ],
+   "deny": [
+    "LY-085/**/*.blend*",
+    "LY-085/**/*.zip",
+    "LY-085/**/*.7z",
+    "LY-085/**/*.rar",
+    "LY-085/**/*.part###",
+    "LY-085/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-085"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-086": {
+   "writeArea": "workpacks/LY-086/",
+   "allow": [
+    "LY-086/**"
+   ],
+   "deny": [
+    "LY-086/**/*.blend*",
+    "LY-086/**/*.zip",
+    "LY-086/**/*.7z",
+    "LY-086/**/*.rar",
+    "LY-086/**/*.part###",
+    "LY-086/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-086"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-087": {
+   "writeArea": "workpacks/LY-087/",
+   "allow": [
+    "LY-087/**"
+   ],
+   "deny": [
+    "LY-087/**/*.blend*",
+    "LY-087/**/*.zip",
+    "LY-087/**/*.7z",
+    "LY-087/**/*.rar",
+    "LY-087/**/*.part###",
+    "LY-087/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-087"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-088": {
+   "writeArea": "workpacks/LY-088/",
+   "allow": [
+    "LY-088/**"
+   ],
+   "deny": [
+    "LY-088/**/*.blend*",
+    "LY-088/**/*.zip",
+    "LY-088/**/*.7z",
+    "LY-088/**/*.rar",
+    "LY-088/**/*.part###",
+    "LY-088/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-088"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-089": {
+   "writeArea": "workpacks/LY-089/",
+   "allow": [
+    "LY-089/**"
+   ],
+   "deny": [
+    "LY-089/**/*.blend*",
+    "LY-089/**/*.zip",
+    "LY-089/**/*.7z",
+    "LY-089/**/*.rar",
+    "LY-089/**/*.part###",
+    "LY-089/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-089"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-090": {
+   "writeArea": "workpacks/LY-090/",
+   "allow": [
+    "LY-090/**"
+   ],
+   "deny": [
+    "LY-090/**/*.blend*",
+    "LY-090/**/*.zip",
+    "LY-090/**/*.7z",
+    "LY-090/**/*.rar",
+    "LY-090/**/*.part###",
+    "LY-090/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-090"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-091": {
+   "writeArea": "workpacks/LY-091/",
+   "allow": [
+    "LY-091/**"
+   ],
+   "deny": [
+    "LY-091/**/*.blend*",
+    "LY-091/**/*.zip",
+    "LY-091/**/*.7z",
+    "LY-091/**/*.rar",
+    "LY-091/**/*.part###",
+    "LY-091/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-091"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-092": {
+   "writeArea": "workpacks/LY-092/",
+   "allow": [
+    "LY-092/**"
+   ],
+   "deny": [
+    "LY-092/**/*.blend*",
+    "LY-092/**/*.zip",
+    "LY-092/**/*.7z",
+    "LY-092/**/*.rar",
+    "LY-092/**/*.part###",
+    "LY-092/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-092"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-093": {
+   "writeArea": "workpacks/LY-093/",
+   "allow": [
+    "LY-093/**"
+   ],
+   "deny": [
+    "LY-093/**/*.blend*",
+    "LY-093/**/*.zip",
+    "LY-093/**/*.7z",
+    "LY-093/**/*.rar",
+    "LY-093/**/*.part###",
+    "LY-093/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-093"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-094": {
+   "writeArea": "workpacks/LY-094/",
+   "allow": [
+    "LY-094/**"
+   ],
+   "deny": [
+    "LY-094/**/*.blend*",
+    "LY-094/**/*.zip",
+    "LY-094/**/*.7z",
+    "LY-094/**/*.rar",
+    "LY-094/**/*.part###",
+    "LY-094/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-094"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-095": {
+   "writeArea": "workpacks/LY-095/",
+   "allow": [
+    "LY-095/**"
+   ],
+   "deny": [
+    "LY-095/**/*.blend*",
+    "LY-095/**/*.zip",
+    "LY-095/**/*.7z",
+    "LY-095/**/*.rar",
+    "LY-095/**/*.part###",
+    "LY-095/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-095"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-096": {
+   "writeArea": "workpacks/LY-096/",
+   "allow": [
+    "LY-096/**"
+   ],
+   "deny": [
+    "LY-096/**/*.blend*",
+    "LY-096/**/*.zip",
+    "LY-096/**/*.7z",
+    "LY-096/**/*.rar",
+    "LY-096/**/*.part###",
+    "LY-096/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-096"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-097": {
+   "writeArea": "workpacks/LY-097/",
+   "allow": [
+    "LY-097/**"
+   ],
+   "deny": [
+    "LY-097/**/*.blend*",
+    "LY-097/**/*.zip",
+    "LY-097/**/*.7z",
+    "LY-097/**/*.rar",
+    "LY-097/**/*.part###",
+    "LY-097/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-097"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-098": {
+   "writeArea": "workpacks/LY-098/",
+   "allow": [
+    "LY-098/**"
+   ],
+   "deny": [
+    "LY-098/**/*.blend*",
+    "LY-098/**/*.zip",
+    "LY-098/**/*.7z",
+    "LY-098/**/*.rar",
+    "LY-098/**/*.part###",
+    "LY-098/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-098"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-099": {
+   "writeArea": "workpacks/LY-099/",
+   "allow": [
+    "LY-099/**"
+   ],
+   "deny": [
+    "LY-099/**/*.blend*",
+    "LY-099/**/*.zip",
+    "LY-099/**/*.7z",
+    "LY-099/**/*.rar",
+    "LY-099/**/*.part###",
+    "LY-099/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-099"
+   },
+   "labWrite": "none",
+   "publish": "none (coordinator only)",
+   "cityWrite": "proposal only"
+  },
+  "LY-100": {
+   "writeArea": "workpacks/LY-100/",
+   "allow": [
+    "LY-100/**"
+   ],
+   "deny": [
+    "LY-100/**/*.blend*",
+    "LY-100/**/*.zip",
+    "LY-100/**/*.7z",
+    "LY-100/**/*.rar",
+    "LY-100/**/*.part###",
+    "LY-100/**/*.z##",
+    "GLB > 15,000,000 B",
+    "any file > 100 MiB"
+   ],
+   "warn": [
+    "__pycache__/",
+    "*.pyc",
+    "Thumbs.db",
+    ".DS_Store",
+    "any file > 50 MiB"
+   ],
+   "branch": {
+    "shared": "workpacks",
+    "ifSeparate": "wp/LY-100"
+   },
+   "labWrite": "LY-100 only, per coordinator batch",
+   "publish": "none (coordinator only)",
+   "cityWrite": "yes (LY-100 batches, coordinator-authorized)"
+  }
+ }
+}

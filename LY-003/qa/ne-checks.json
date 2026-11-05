@@ -1,0 +1,116 @@
+{
+ "granary": {
+  "glb": "granary-city-LOD0.glb",
+  "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+  "triangles": 9508,
+  "hull_bbox_xy": [
+   2249.71,
+   3647.47,
+   2321.71,
+   3699.47
+  ],
+  "all_hull_points_inside_city_wall_B": true,
+  "min_dist_to_city_wall_line_m": 65.6
+ },
+ "distances_m": [
+  {
+   "zone": "HZ-N",
+   "base": "north_palace_extent_gao2023_B",
+   "dist_to_base_m": 542.4,
+   "buffer_m": 200,
+   "outside_zone": true,
+   "margin_m": 342.4
+  },
+  {
+   "zone": "HZ-S",
+   "base": "south_palace_candidate_gao2023_B",
+   "dist_to_base_m": 2011.3,
+   "buffer_m": 200,
+   "outside_zone": true,
+   "margin_m": 1811.3
+  },
+  {
+   "zone": "HZ-C",
+   "base": "palaces_connector_B",
+   "dist_to_base_m": 1772.5,
+   "buffer_m": 80,
+   "outside_zone": true,
+   "margin_m": 1692.5
+  },
+  {
+   "zone": "HZ-Y",
+   "base": "region_yongan_B",
+   "dist_to_base_m": 568.6,
+   "buffer_m": 400,
+   "outside_zone": true,
+   "margin_m": 168.6
+  },
+  {
+   "zone": "HR-northwest_gate_link",
+   "base": "road_northwest_gate_link_B",
+   "dist_to_base_m": 2010.3,
+   "buffer_m": 80,
+   "outside_zone": true,
+   "margin_m": 1930.3
+  },
+  {
+   "zone": "HR-northeast_gate_link",
+   "base": "road_northeast_gate_link_B",
+   "dist_to_base_m": 1045.5,
+   "buffer_m": 80,
+   "outside_zone": true,
+   "margin_m": 965.5
+  },
+  {
+   "zone": "HR-central_south_spine",
+   "base": "road_central_south_spine_B",
+   "dist_to_base_m": 2077.5,
+   "buffer_m": 80,
+   "outside_zone": true,
+   "margin_m": 1997.5
+  },
+  {
+   "zone": "HR-east_north_link",
+   "base": "road_east_north_link_B",
+   "dist_to_base_m": 449.7,
+   "buffer_m": 80,
+   "outside_zone": true,
+   "margin_m": 369.7
+  },
+  {
+   "zone": "HR-east_south_link",
+   "base": "road_east_south_link_B",
+   "dist_to_base_m": 3188.3,
+   "buffer_m": 80,
+   "outside_zone": true,
+   "margin_m": 3108.3
+  },
+  {
+   "zone": null,
+   "base": "region_taicang_B",
+   "dist_to_base_m": 0.0
+  },
+  {
+   "zone": null,
+   "base": "region_wuku_B",
+   "dist_to_base_m": 147.6
+  },
+  {
+   "zone": null,
+   "base": "gate_shangdong_B",
+   "dist_to_base_m": 1067.4
+  }
+ ],
+ "screening_area": {
+  "id": "NE-C-SCREEN",
+  "rule": "城垣B内 ∩ x ≥ 1744.9（旧B北宫东界）∩ y ≥ 2051.0（旧B北宫南界）∩ 不在任何悬置区内；5米栅格",
+  "cells": 22475,
+  "area_m2": 561875.0,
+  "granary_hull_inside_share": 1.0,
+  "meaning": "C工程筛查范围：在这里试放可回退局部包不与旧研究示意冲突。不是“宫外”的证明，不是历史位置，不是入城准入。"
+ },
+ "C_NE_APPROACH_LOCAL": {
+  "found_in_commit": false,
+  "status": "在 bce3211 的 city-data.mjs 与本包读取的仓库文件中未找到；端点几何无法核对，交 LY-039 提供实际GLB后按 NE-C-SCREEN 与悬置区复核"
+ }
+}

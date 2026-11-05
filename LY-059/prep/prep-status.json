@@ -1,0 +1,54 @@
+{
+ "seat": "LY-059",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb 7eb9739e（LOD1 6baefbd0，LOD2 574d81d9）：双屋足碓作业院，未入城",
+  "docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb 89e0a439（LOD1 a21c2893，LOD2 7c054863）：同卡开敞棚",
+  "docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb e799b588：紧凑作业院，未入城",
+  "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD1.glb 2be52632（LOD2 641b05a5）：受保护北区储藏作业院，local-study（city-data.mjs:806/4232）",
+  "docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb a8d94bb3 / LOD1 25f018fa：城中 courtyard-B（city-data.mjs:35-57），C02-034 实例在 city-data.mjs:2742",
+  "docs/cities/luoyang/data/c02v/layout.json 7528f0c8：C02-034 位置 (601.89119,1080.2)，门 (597.0912,1068.2)，由 v1/west-layer.mjs:17 加载",
+  "docs/cities/luoyang/assets/c02v/C02-environment.glb 8c9d2028：现址地形，门前全部 z=0.2",
+  "docs/cities/luoyang/data/r01/model-contract.json ab921fad：院框 lot 18x24，ground_top_z 0.2，异地明器类比记录",
+  "modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json 703caeed：私有母版 C02-034__workyard_trial 与 C_NORTH_INFILL_03 workyard 试放（网页未接入）",
+  "窑 A/B e67d5976/4886d95d，磨 A/B 0fe50c2c/598cadc7，厩 A/B 672beeb4/bd82280a，足碓 LOD0 6f0e4183：作为排除或院内设施列清单"
+ ],
+ "inputsMissing": [
+  "「原谷物加工院」及其缺陷记录：仓库全仓 0 命中。如果 010 选它，需要它的院框、门位、地坪和缺陷清单。院框若就是 court-B/R01-B，可以从 GLB 读出（已实测相同）；缺陷记录不能从 GLB 重建",
+  "workyard-shed 原生 .blend / 生成器：用来拆分 workyard_earth（院墙和房屋夯土是同一网格）、把门扇做成独立节点。可以从 GLB 重建：墙是盒体，可按实测尺寸生成替换段，必须标「从GLB重建」",
+  "luoyang-north-four-courts-v2 源 ZIP（e24f386f…）：court-B LOD0 与原生节点。仓库只有 LOD1/2；墙框测量可以用 LOD1，近档不能重建",
+  "city-C032-entry-LOD0.blend 私有母版（1e8c4d2c…）：确认 workyard 试放是否替换 C02-034 的 R01-B。adapter 只给出 bounds 和节点名",
+  "LY-010 样板选择、LY-006 服务口端口 ID 与墙段归属、LY-007 材质基线、LY-053/054/058 地坪与端口：都还没冻结"
+ ],
+ "gaps": [
+  "外围墙体缺口 = 0：84 m 周长在 0.15–1.6 m 高度、0.05 m 步长下只有主门一个通透段；四边压顶连续。workyard LOD0/1/2、compact_work、court-B 结果完全一致（共用同一院框）",
+  "服务口 / 工作门口不存在：全院只有 −Y 墙一个开口，墙洞 3.00 m（x −6.30…−3.30），门墩净宽 2.40 m，开启门扇之间净宽 2.13 m，梁底净高 2.05 m（z 2.25−0.2），门屋进深 2.4 m；北、东、西三面墙连续",
+  "主门门扇只有全开一种静态形态（0.07×1.10×2.00 m 板，并在 workyard_timber 里），没有闭态，也没有独立节点，开 / 闭规则无法用现有几何表达",
+  "门内外没有任何地面几何：2 m 外沿 752 个竖直采样 0 命中。城中 R01-B 自带的 site_lot、4 m 前巷和 designed_loading_yard（z 0.2–0.215）都被 excludeNodes 排除",
+  "C02-034 现址主门高差 = 0.000 m（门前 y 1062.2–1072.2 的地形全部为 0.2，院基 0.2），不需要台阶。路沿到墙外皮只有 2.45 m（C02_upper_spur 中线 y=1064，宽 3.5 m）",
+  "主门入院直行 3.25 m 后在 y=−6.1 被院内建筑挡住（court-B 为 14.45 m），路线必须折行",
+  "服务口候选墙段（墙内 ≥2.0 m 无遮挡）：北墙 2×3.8 m、西墙 5.5 m 与 10.5 m、东墙 6.9 m 与 9.9 m（workyard）",
+  "外围墙与房屋夯土在同一网格 workyard_earth（424 三角）里，开服务口只能用隐藏加替换或 overlay，不能切原网格"
+ ],
+ "reuseCandidate": "部分复用，不是全复用：外围墙在实测中没有任何缺口（只有主门一个通透段，压顶连续，三档一致），所以「外围缺口」不需要新造。C02-034 现址的主门高差实测为 0.000 m，「主门台阶」也不需要新造。证据：prep/workyard-LOD0.enclosure.json、workyard-LOD0.coping.json、terrain-C02v-034.json，绑定 workyard-LOD0 7eb9739e 与 C02-environment 8c9d2028。服务口、门扇闭态和开闭规则没有现成合格成果，必须新做",
+ "touches": [
+  "workyard-LOD0/1/2.glb 节点 workyard_earth（隐藏或换拆分墙段）、workyard_timber（主门门扇状态）",
+  "compact_work-LOD0 节点 compact_work_earth（如果 010 选它）",
+  "court-B / R01-B 节点 architecture_C_whitebox_earth_wall、site_lot、site_neutral_lane、designed_loading_yard（只读，属于受保护的 13 院与城中 courtyard-B，不写）",
+  "城中地块 C02-034（courtyard-B，city-data.mjs:2742），门外坪 y 1065.75–1068.2、x 约 594.6–599.6",
+  "地形片 C02_single_shared_terrain（assets/c02v/C02-environment.glb）、C02_retained_outside_south_Calt_domain（ground-atomic/retained.glb）",
+  "道路 C02_upper_spur 路沿 y=1065.75（不得侵入）",
+  "私有母版节点 C02-034__workyard_trial__workyard_earth、C_NORTH_INFILL_03__workyard_earth",
+  "与 LY-053/054（窑前地面）、LY-056（足碓 x 4.54–5.46）、LY-058（院内路线起点 (−4.8,−12.0)）、LY-060（互斥组）共用端口",
+  "只写 D:/GitHub/creation-notebook-workpacks/LY-059/"
+ ],
+ "size": "M",
+ "risks": [
+  "院框与城中 14 个 courtyard-B 实例和受保护的北区 13 院共用，只要改原墙就会波及全城。必须做成样板专属的互斥替换，不能改共享 GLB",
+  "「原谷物加工院」在仓库里找不到。如果 010 选它而 LY-057 没有交出源件，本席位会被阻断",
+  "workyard_earth 把院墙和房屋墙合成一个网格，替换段要么隐藏整对象并重建全墙（从 GLB 重建），要么用 overlay。两条路都要 LY-006 判定归属",
+  "主门外到路沿只有 2.45 m，门外坪或台阶几乎没有余量。如果 010 另选地块，或 LY-053 改了地形，高差要重测",
+  "服务口位置、宽度、门制全部是 C，没有约 180 年洛阳的考古或原文依据，本轮也没做网络查证",
+  "只有离散射线检查，不能代表连续人体或车辆通行，也不代表结构或 GPU 验收"
+ ],
+ "readyAfterG": true
+}

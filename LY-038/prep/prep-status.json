@@ -1,0 +1,52 @@
+{
+ "seat": "LY-038",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-wuku/files/wuku-A-LOD0.glb 5daa542d (A LOD1 51110119, A LOD2 ee0da058)",
+  "docs/library/models/m-luoyang-wuku/files/wuku-B-LOD0.glb e5de60b6 (B LOD1 5e1cc6b9, B LOD2 e5c87306)",
+  "docs/library/models/m-luoyang-wuku/m-luoyang-wuku.asset.json bc3665bb（卡上写明未入城；notes 记「A旧试放曾有台阶支承问题，不借B结论覆盖A」）",
+  "modeling-lab/review-batches/2026-11-04-city-visible/*.zip.part01-05 → zip 5895ef23 → chunks/wuku_C_with_support-01.glb 29709e25（C_WUKU_ISOLATED_SUPPORT_PATCH + B earth/timber）、-02.glb 34160b9d（B tile）",
+  "该 zip 内的 qa/source-node-manifest.json 6cd13e10（城中原点 2316.327,3500,0；支撑片有向三角 1f46fa3e）、qa/visibility.json（2958 个网格里没有武库 A）",
+  "modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json 8f890748（git）/703caeed（CRLF 检出）：wuku_C_with_support，initial=false",
+  "modeling-lab/gallery/qa/r2026.11.05-2/city-visible-budget.json 720d5247（武库组 11,387,196 B，超章预算）",
+  "docs/cities/luoyang/data/evidence/evidence-geometry.json 662562fa（region_wuku_B，B 类区域标签，仅标记）",
+  "docs/cities/luoyang/v1/west-layer.mjs d8c14142 第 39 行：仓储章只加载 storage-group-organized.glb b8482824（太仓，无武库）",
+  "docs/cities/luoyang/city-data.mjs e4115705：没有武库节点"
+ ],
+ "inputsMissing": [
+  "武库 A/B 原生 .blend 和源 ZIP：用作可编辑源和原生/GLB SHA 对；本项只装矩阵、不动 A 字节，所以可以从 GLB 直接装，不需要重建",
+  "城市母版 city-C032-entry-LOD0.blend（1e8c4d2c）：要在真实母版里做安装和撤回、核隐藏的重复 B 与周边地面；分块 01/02 能把支撑片和 B 复现到 0.03 mm，但周边城市地面不在这两块里，只能部分重建",
+  "「A 北移 1 米」旧有限试验的记录：仓库和母版可见集里都没有。本次已在当前支撑片上独立复测（0 点悬空），原记录找不到，不能当作来源",
+  "前置包未交付：G 冻结（LY-001/002/005/006/007/008/009/010）、LY-036 B 外围支撑地坪、LY-010 的 A/B 二选一结论"
+ ],
+ "gaps": [
+  "A 放在 B 的城中原点：足底 46,224 个采样点里 1,617 个（3.50%）没有支撑，位置在台阶带 x −1.5…1.5、y −10.52…−10.0045，最大悬出 0.52 m；B 在原点 0/50,040 点悬空",
+  "y 向细扫第一个通过的偏移是 dy=+0.52（dy=+0.50 仍有 66 点悬空）；当前支撑片上的解析窗口 dx∈[−2,+6]、dy∈[+0.52,+4.5]；0.5 m 网格实扫 375 个偏移，112 个通过（dx −2…+5.5，dy +1…+4）",
+  "北移 1 米（dy=+1）支撑通过，但台阶外只剩 0.48 m 支撑（B 原位有 2.48 m）；外到达地面本来就缺，要等 LY-036",
+  "端口：A/B 三档踏步完全一致（2 级，踢面 0.133，踏面 0.34，宽 3.0，台基 0.4）；端口外缘 A 在 y=−10.52，B 在 y=−7.52；dy=+3.0 时 A 端口与 B 端口重合，台阶外支撑 2.48 m（候选，待 LY-036 复测）",
+  "A/B 同时安装：同原点三角相交 8,306 对，包围盒交叠 989.59 m³；A 北移 1 m 时 54,049 对、1,065.59 m³；母版还藏着一份重复的 wuku-B-static_*（hide_set），打开就会重复计数",
+  "库 B 与城中 B 实测是同一份几何（最大偏差 0.169 mm），但 1 mm 取整哈希会把 tile/timber 误判为不同，所以测试必须用容差比对",
+  "预算：武库组 11,387,196 B，超过 10 MB 章预算；A LOD0 10,658,276 B（低于 15 MB 上限）",
+  "复现：measure_wuku.py 二次重跑（work/rerun/measure.json）与首跑逐键相同；基线 HEAD bce3211、六个 GLB 与卡片 SHA 复核一致"
+ ],
+ "reuseCandidate": "无。A 三档 GLB 原样复用（足底和踏步三档一致，实测可读），但现成的合格安装契约并不存在：母版里没有 A 节点，旧的北移 1 米试验在仓库里没有记录，当前支撑片只是为 B 做的试放片（C_WUKU_B_RELATION_TRIAL）。若 LY-010 选 B，本项交只读兼容报告（以上实测加负例）",
+ "touches": [
+  "C_WUKU_ISOLATED_SUPPORT_PATCH（只读，作支撑面；若 LY-036 替换，改读 LY-036 的地坪片）",
+  "C_WUKU_ENTRY22_LOD0__wuku-B-static_earth.001 / _timber.001 / _tile.001（安装 A 时要隐藏或互斥，所有权归 LY-036/037）",
+  "母版隐藏的 wuku-B-static_earth / _timber / _tile（在 Collection 里，必须保持不可见，防止重复计数）",
+  "docs/library/models/m-luoyang-wuku/files/wuku-A-LOD0/1/2.glb（只读引用，不改字节）",
+  "adapter 组 wuku_C_with_support（城景接入时的互斥组，归 LY-100）",
+  "LY-036 交付的武库外围支撑地坪片和台阶端口（端口接点归 LY-036/037）",
+  "workpacks/LY-038/（唯一写入区）"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-036 可能替换或延长支撑片，A 的偏移窗口必须对新支撑全部重测，现窗口作废",
+  "A 端口比 B 靠南 3.0 m；用 dy=+3 对齐 B 端口会把 A 的库体整体北移 3 m，城中定位仍受 LY-003 宫区配准约束，而且区域标签点只是示意描点",
+  "dy=+1 支撑贴近边界（台阶外 0.48 m），容易被误报为已可通行",
+  "母版里隐藏的重复 B 一旦被打开，就会产生 A/B/B 三重计数",
+  "A LOD0 与 B 组都接近或超过 10 MB 章预算，入城时可能被要求降档，必须如实标注档位",
+  "原生源和旧试验记录都缺，安装只能以 GLB 为准，不能声称找回了原件",
+  "LY-010 若选 B，本项只交只读报告，不能被扩成多造一座库"
+ ],
+ "readyAfterG": true
+}

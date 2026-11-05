@@ -1,0 +1,483 @@
+{
+ "seat": "LY-043",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "note": "lab repo read-only; no file in it was written",
+ "selectedCourtyardProposal": {
+  "id": "C02-010",
+  "asset": "courtyard-A2",
+  "matrix": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   531,
+   0,
+   -818.45,
+   1
+  ],
+  "source": "LY-041 prep (not frozen)",
+  "sharedPrototypeInstances": [
+   "C02-021",
+   "C02-024",
+   "C02-001",
+   "C02-028",
+   "C02-031",
+   "C02-010",
+   "C02-013",
+   "C02-015",
+   "C02-035"
+  ]
+ },
+ "native": {
+  "courtyardPrototypes": "missing (no .blend / generator in repo); rebuildable from GLB: 100% of earth/plinth/timber triangles are exact axis-aligned boxes",
+  "wallHouseStudy": "missing (.blend not in repo); 252/316 earth tris rebuild as boxes, 64 gable tris + all timber are non-box"
+ },
+ "inputs": [
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 111034,
+   "loadedInCity": true,
+   "loadedBy": "index.html -> app.mjs import",
+   "use": "courtyard-A..TC03-2 assetRecords :6-170 (excludeNodes, nearPath); C02-010 node :2322; 44 instance matrices"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "bytes": 36571,
+   "loadedInCity": true,
+   "loadedBy": "app.mjs",
+   "use": "loadAsset :286-357 (far=path, near=nearPath, excludeNodes :309); rebuild near only for nextNearId :409-416; focusCourtyard :616"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "bytes": 14563,
+   "loadedInCity": true,
+   "loadedBy": "index.html",
+   "use": "city entry; setLevel(courtyard) :133"
+  },
+  {
+   "path": "docs/cities/luoyang/index.html",
+   "sha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "bytes": 16108,
+   "loadedInCity": true,
+   "loadedBy": "page",
+   "use": "entry"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "bytes": 24215,
+   "loadedInCity": false,
+   "loadedBy": "catalog only",
+   "use": "related card list incl. m-luoyang-wall-house-court :569, earthwall-family :577"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/instances-calt.json",
+   "sha256": "c830b4e37090da5e070156b7f6199f36c5d0191c339f5a9399f0becded50ff85",
+   "bytes": 23726,
+   "loadedInCity": false,
+   "loadedBy": "source contract of the matrices embedded in city-data.mjs",
+   "use": "C-alt matrices"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/instances-original.json",
+   "sha256": "a854589134150c2fe74b5bbed4e404aeeb5aa5724090795eb60923c68e3d2cff",
+   "bytes": 23916,
+   "loadedInCity": false,
+   "loadedBy": "comparison only",
+   "use": "original matrices"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/preflight-contract.json",
+   "sha256": "90dfa0774643b90d61f057aed726525cfe3e18647e897d3c90eb64fa79426d6b",
+   "bytes": 7002,
+   "loadedInCity": false,
+   "loadedBy": "sourceContract of assetRecords",
+   "use": "prototype contract"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb",
+   "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+   "bytes": 92328,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs courtyard-A.path -> city-renderer.mjs loadAsset (far, all instances)",
+   "use": "junction census, far tier"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb",
+   "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+   "bytes": 510536,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs courtyard-A.nearPath -> loadAsset(near) only for the focused courtyard",
+   "use": "junction census, near tier"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb",
+   "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+   "bytes": 112776,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs courtyard-B.path -> city-renderer.mjs loadAsset (far, all instances)",
+   "use": "junction census, far tier"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb",
+   "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+   "bytes": 626016,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs courtyard-B.nearPath -> loadAsset(near) only for the focused courtyard",
+   "use": "junction census, near tier"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb",
+   "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+   "bytes": 164300,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs courtyard-TC03.path -> city-renderer.mjs loadAsset (far, all instances)",
+   "use": "junction census, far tier"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb",
+   "sha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+   "bytes": 981664,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs courtyard-TC03.nearPath -> loadAsset(near) only for the focused courtyard",
+   "use": "junction census, near tier"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "bytes": 92220,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs courtyard-A2.path -> city-renderer.mjs loadAsset (far, all instances)",
+   "use": "junction census, far tier"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+   "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "bytes": 447064,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs courtyard-A2.nearPath -> loadAsset(near) only for the focused courtyard",
+   "use": "junction census, near tier"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/B2-LOD1-prototype.glb",
+   "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+   "bytes": 113064,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs courtyard-B2.path -> city-renderer.mjs loadAsset (far, all instances)",
+   "use": "junction census, far tier"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb",
+   "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+   "bytes": 569280,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs courtyard-B2.nearPath -> loadAsset(near) only for the focused courtyard",
+   "use": "junction census, near tier"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb",
+   "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+   "bytes": 164200,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs courtyard-TC03-2.path -> city-renderer.mjs loadAsset (far, all instances)",
+   "use": "junction census, far tier"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb",
+   "sha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+   "bytes": 943548,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs courtyard-TC03-2.nearPath -> loadAsset(near) only for the focused courtyard",
+   "use": "junction census, near tier"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-wall-house-court/files/wall-house-LOD0.glb",
+   "sha256": "5c20fa8b5d4599eab269d4af726695ad7aeaf4885db2c3326bd5d6d525f3b6dc",
+   "bytes": 1339740,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by any docs/cities/luoyang code (grep wall-house: only p-luoyang.asset.json related list)",
+   "use": "existing wall-house junction reference (墙房样例)"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-wall-house-court/files/wall-house-LOD1.glb",
+   "sha256": "86f66c698c899484f87db2a116b30c1f8116d0da9d73fc89de58633e5b837eb6",
+   "bytes": 473484,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by any docs/cities/luoyang code (grep wall-house: only p-luoyang.asset.json related list)",
+   "use": "existing wall-house junction reference (墙房样例)"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-wall-house-court/files/wall-house-LOD2.glb",
+   "sha256": "5f95176f4bd352ebf4a3a1620be048d413fe17b0cd03731724b3526ced29f345",
+   "bytes": 35988,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by any docs/cities/luoyang code (grep wall-house: only p-luoyang.asset.json related list)",
+   "use": "existing wall-house junction reference (墙房样例)"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-wall-house-court/m-luoyang-wall-house-court.asset.json",
+   "sha256": "bd35a7f937c2a2c167257b16f177ce5b5138c6148df586c52d4447a6a3e1d470",
+   "bytes": 1439,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by any docs/cities/luoyang code (grep wall-house: only p-luoyang.asset.json related list)",
+   "use": "existing wall-house junction reference (墙房样例)"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD0.glb",
+   "sha256": "3f755fcc7ae86bf875d126cedd287451f3e54a45b9d8ed3d870aee1138504e07",
+   "bytes": 585316,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by city code",
+   "use": "夯土墙族: city-wall scale (A 16x8x14 m), not a courtyard-wall section"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD1.glb",
+   "sha256": "1b4d0b3548881ce4f22a9b12ccbcb930abcd3d07d48b0aeed87cfc55470ad41e",
+   "bytes": 107096,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by city code",
+   "use": "夯土墙族: city-wall scale (A 16x8x14 m), not a courtyard-wall section"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD2.glb",
+   "sha256": "d7cea950c754ea3dad90f4e1503ec351c891beead48f50bda1c064cfdba9cfc6",
+   "bytes": 5928,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by city code",
+   "use": "夯土墙族: city-wall scale (A 16x8x14 m), not a courtyard-wall section"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD0.glb",
+   "sha256": "04c2b143b3b797c7e0da734215e3686fef2a54c381066f1af7dcab235b77b970",
+   "bytes": 585316,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by city code",
+   "use": "夯土墙族: city-wall scale (A 16x8x14 m), not a courtyard-wall section"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD1.glb",
+   "sha256": "1a44e1e5d06f1a7799b605938f2705a6fce25a2079f81e6cfd64a40b99d3480b",
+   "bytes": 107096,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by city code",
+   "use": "夯土墙族: city-wall scale (A 16x8x14 m), not a courtyard-wall section"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD2.glb",
+   "sha256": "0559e35497e461f6e4095c51f216a911df23b18d54501347a45ddd08ee877da7",
+   "bytes": 5928,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by city code",
+   "use": "夯土墙族: city-wall scale (A 16x8x14 m), not a courtyard-wall section"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD0.glb",
+   "sha256": "b8f1ab3a56826117df874fac71b4ddde6b0424d7b7fa0199778f896ba59979c2",
+   "bytes": 4783356,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by city code",
+   "use": "夯土墙族: city-wall scale (A 16x8x14 m), not a courtyard-wall section"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD1.glb",
+   "sha256": "92f85c546fce9658dabef6308857cc2d9eb74f56e87c0930d5de249d5bca9241",
+   "bytes": 585540,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by city code",
+   "use": "夯土墙族: city-wall scale (A 16x8x14 m), not a courtyard-wall section"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD2.glb",
+   "sha256": "ec97a1b3db088ceb20800eaf6658f5dc05655f7155644c64603666973456b7a1",
+   "bytes": 5976,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by city code",
+   "use": "夯土墙族: city-wall scale (A 16x8x14 m), not a courtyard-wall section"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/westwall10-LOD1.glb",
+   "sha256": "848a0ee23d22f4d6e40f58bddf237bf9af41c7dcdc36f7157d92488e61fea4b7",
+   "bytes": 1738808,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by city code",
+   "use": "夯土墙族: city-wall scale (A 16x8x14 m), not a courtyard-wall section"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/westwall10-LOD2.glb",
+   "sha256": "ccb8eea92edbc940ceb123ee510dab2d49aa2a53e926b03ebf30295dbfdea79a",
+   "bytes": 7560,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by city code",
+   "use": "夯土墙族: city-wall scale (A 16x8x14 m), not a courtyard-wall section"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/m-luoyang-earthwall-family.asset.json",
+   "sha256": "0575bc8298b46c13567b6fcfbed472a39e5d7c8bc5c9c60903783fafc0806fc9",
+   "bytes": 2088,
+   "loadedInCity": false,
+   "loadedBy": "catalog",
+   "use": "card"
+  },
+  {
+   "path": "docs/model-library/updates/m-courtyard-family/files/A2-LOD0-C2.glb",
+   "sha256": "e9981a079d799d7556a9a4852c9d09ad274bb268ff4343d8d2202a13bcbf3887",
+   "bytes": 1164812,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by city code (待审 C2 revision)",
+   "use": "box set identical to city A2 (UV-only revision)"
+  },
+  {
+   "path": "docs/model-library/updates/m-courtyard-family/files/A2-LOD1-C2.glb",
+   "sha256": "f3f317746181635791621b4d09a7122899d0754fc1d36b583b39b3f80b02caac",
+   "bytes": 229316,
+   "loadedInCity": false,
+   "loadedBy": "not referenced by city code (待审 C2 revision)",
+   "use": "box set identical to city A2 (UV-only revision)"
+  },
+  {
+   "path": "docs/model-library/m-courtyard-family.asset.json",
+   "sha256": "41999fbba1fa8f29c8c1d3fcc367ef4d9f2d026043b04cfbb62cbb926b2fc995",
+   "bytes": 6250,
+   "loadedInCity": false,
+   "loadedBy": "catalog",
+   "use": "card"
+  },
+  {
+   "path": "docs/cities/luoyang/research/2026-11-03/composition-review.md",
+   "sha256": "02ede5d131165739ae52525af421f1098b8b54bf3d4b382b64a7077d63fbaff4",
+   "bytes": 3760,
+   "loadedInCity": false,
+   "loadedBy": "research page",
+   "use": "analogy evidence (河南博物院彩绘陶院落)"
+  },
+  {
+   "path": "docs/cities/luoyang/research/2026-11-03/reference-review.md",
+   "sha256": "67dd8e347fee25526061453e276d016a9c78b48a2a919c1ee0eeb705ef56de3b",
+   "bytes": 3078,
+   "loadedInCity": false,
+   "loadedBy": "research page",
+   "use": "rule: 明器尺寸不可直接换算"
+  },
+  {
+   "path": "lab/data/assets.json",
+   "sha256": "c39e8e9a2a1833f3abbc15e585f5868fba6c7d2e01f6b8e504c2b44193f16979",
+   "bytes": 439273,
+   "loadedInCity": false,
+   "loadedBy": "site build data (read only)",
+   "use": "card status 待审 for wall-house / earthwall / courtyard-family",
+   "note": "working-tree copy is locally modified (pre-existing, not by this seat); sha256 above is the working tree. HEAD bce3211 blob sha256 is given in headSha256. Only used for card status text.",
+   "headSha256": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "sha256_gitHEAD_blob": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "driftNote": "上一稿（21:36）之后、本次复核（23:21）之前，工作区文件被外部重写（mtime 22:29）；git diff HEAD 为空，git ls-files --eol 显示 i/lf w/crlf，内容与 bce3211 一致。上一稿记 3440caa2。本席位未写该文件，未运行 build_assets.py。与本项几何无关，但 LY-008 检查器绑定 SHA 时应以 git blob（53d86312）为准。"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-041/prep/prep-status.json",
+   "sha256": "1fe842993f299cdcb98105c63e30fc41c6992710effd1e33d121ae0eb407cf77",
+   "bytes": 7720,
+   "loadedInCity": false,
+   "loadedBy": "workpack (read only)",
+   "use": "dependency / selection proposal C02-010"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-041/prep/brief-draft.md",
+   "sha256": "b31fadff6bb75013511303fb9310feb9858c20a3061039382400b60354cf5197",
+   "bytes": 11603,
+   "loadedInCity": false,
+   "loadedBy": "workpack (read only)",
+   "use": "dependency / selection proposal C02-010"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md",
+   "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+   "bytes": 91407,
+   "loadedInCity": false,
+   "loadedBy": "workpack (read only)",
+   "use": "dependency / selection proposal C02-010"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-workpacks/taskboard.json",
+   "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+   "bytes": 105939,
+   "loadedInCity": false,
+   "loadedBy": "workpack (read only)",
+   "use": "dependency / selection proposal C02-010"
+  }
+ ],
+ "prepOutputs": [
+  {
+   "path": "LY-043/prep/glbio.py",
+   "sha256": "7cdd5d07b8249a1dded359e8110215bddd0d9b60838abca53be28ed6d7a8e34d",
+   "bytes": 6051
+  },
+  {
+   "path": "LY-043/prep/nodegeo.py",
+   "sha256": "5dd016ca02c4c733a7146209c960828bad0cca0c8ec5d643bd483c5c7c388a0a",
+   "bytes": 1326
+  },
+  {
+   "path": "LY-043/prep/boxes.py",
+   "sha256": "eab99e600cd337e892fcbb5e0d1c6f5d4bd5ba3a4a6fdbae2e4aaa40be4915fe",
+   "bytes": 6859
+  },
+  {
+   "path": "LY-043/prep/measure_box_junctions.py",
+   "sha256": "87823693207ef0221deaba2a4debfc20cb1fd328fbc1b1e68044e2be8d3f7729",
+   "bytes": 11468
+  },
+  {
+   "path": "LY-043/prep/summarize_junctions.py",
+   "sha256": "c3733ce1c9179daf20487dcbd7e461c5c80cdcdca36cc79295c0f169066877d0",
+   "bytes": 4634
+  },
+  {
+   "path": "LY-043/prep/selftest_junctions.py",
+   "sha256": "f0f3cc15b3aff8c8e0a41044eaff916b693050f7d10dc34985e9305706f32633",
+   "bytes": 4745
+  },
+  {
+   "path": "LY-043/prep/wallhouse_gable_contacts.py",
+   "sha256": "2655b754ac2e7273ed2a898b8a0c77b19eb8a9ed1de7fcd6b5b69d82c9aeaabe",
+   "bytes": 2181
+  },
+  {
+   "path": "LY-043/prep/junctions-all.json",
+   "sha256": "bdfcb422b5ecd2a356e63e6932c589775b35c5775a10b75ec3275d419bcc9e14",
+   "bytes": 3617530
+  },
+  {
+   "path": "LY-043/prep/junctions-summary.json",
+   "sha256": "53ed075ed6ca608f61f12406269540f75405cf27c29edf0d72e693d6e85da3f6",
+   "bytes": 159902
+  },
+  {
+   "path": "LY-043/prep/selftest-junctions.json",
+   "sha256": "bfda602fa7844b9dc56bd07be594af7c16a9ee6ffcb33b7a8b4324d1252865dc",
+   "bytes": 5270
+  },
+  {
+   "path": "LY-043/prep/wallhouse-gable-contacts.json",
+   "sha256": "a060066775a56154cf5c9f176140f01c01c30dee909a7e0cfae418a0dba58f15",
+   "bytes": 4533
+  }
+ ],
+ "recheck": {
+  "when": "2026-11-05 复核",
+  "labHEAD": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "inputsChecked": 46,
+  "drift": [
+   "lab/data/assets.json（工作区重写，git 内容无差）"
+  ],
+  "rerun": "measure_box_junctions/summarize_junctions/selftest_junctions 重跑：junctions-all 仅 elapsed_s 不同，summary 仅 source 路径不同，selftest 字节相同（bfda602f），allPass=true"
+ }
+}

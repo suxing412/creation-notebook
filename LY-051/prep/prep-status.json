@@ -1,0 +1,61 @@
+{
+ "seat": "LY-051",
+ "inputsFound": [
+  "creation-notebook-lab/docs/library/models/m-luoyang-stable/files/A.glb (sha256 672beeb4, 4898748 B, 19 meshes, REUSED_C_* materials)",
+  "creation-notebook-lab/docs/library/models/m-luoyang-stable/files/B.glb (sha256 bd82280a, 7043436 B, 22 meshes)",
+  "creation-notebook-lab/docs/library/models/m-luoyang-stable/m-luoyang-stable.asset.json (commit sha256 eb670386 / worktree 66f0e994; 待审)",
+  "creation-notebook-lab/docs/cities/luoyang/p-luoyang.asset.json (commit 8edb06ab; line 233 progress row, line 542 related)",
+  "creation-notebook-lab/docs/cities/luoyang/city-data.mjs (commit c849706b; 0 stable references at bce3211 and at origin/main cad338b -> not loaded in city)",
+  "workpacks/LY-001/qa/family-ledger.json (8eaa7c7a; C:m-luoyang-stable cityNodes 0)",
+  "workpacks/LY-002/tables/evidence-ledger.json (237a4811) + family-binding.json (3aeddcc0): E-H01, E-H02, bans X07/X12/X24, D-07; 0 tether/partition entries",
+  "workpacks/LY-006/registry zones.json (6b3595ac) ports.json (28bcfb68) seats.json (a1426412) ownership.json (ecbbbcf5): LY-051 write zones, components W051-tethers/W051-partitions, port stable:partition-footprint:mount",
+  "workpacks/LY-007/baseline/LY-style-bible.frozen.md (50e51a93): 3 LODs, LY_P01 materials, REUSED_C_* banned",
+  "workpacks/LY-005/coordinate-contract.json (b6d7fe9d)",
+  "workpacks/LY-009/board/board.md (82921ea3): LY-051 待输入, lock PROTOTYPES",
+  "scratchpad/mq/cards/m-luoyang-stable/audit.json (e6999604; 0 issues)",
+  "workpacks/LY-051/prep/measure_stable.py (af2d79dc) -> measure-A.json (5dba80fe), measure-B.json (bd9f05fc), byte-identical on rerun",
+  "workpacks/LY-051/prep/check_kit.py (d79a4f99) -> selftest-A.json (f7fbd479), selftest-B.json (7162197a), 13/13 as expected"
+ ],
+ "inputsMissing": [
+  "stable A/B native .blend + source ZIP (not in repo): editable host geometry/params; NOT needed for the kit, which is a separate GLB; host reference geometry is rebuildable from GLB (12/28-tri boxes)",
+  "LY-008 frozen GLB/QA checker (only qa/negatives exists, no status.json): check_kit must be cross-run against it",
+  "LY-009 board freeze (no status.json)",
+  "LY-010 usage/admission selection (directory absent): unknown whether any stable/tether use is selected; without it the kit is a standalone C study",
+  "c.180 Luoyang evidence for tether form and stall partition: LY-002 has none; cannot be rebuilt from GLB"
+ ],
+ "gaps": [
+  "Tether points: 0 per bay (A 3 bays, B 4 bays); keyword node scan of 442 GLBs under docs/ finds no tether/stall part",
+  "Stall partitions: 0; A has 2 (x=+-1.4) and B has 3 (x=-3/0/+3) interior post lines with nothing between bays",
+  "LY-006 write zone floor is y=0.05: kit cannot touch the platform (0..0.05 is LY-052 floor layer); a post-hung partition leaves a 0.05 m gap, a floor-standing one needs an LY-052 footing via stable:partition-footprint:mount",
+  "LY-006 write zone top is 2.70 vs wallplate underside 2.7588 (A) / 2.7408 (B): wallplate unreachable, no suspended tether possible",
+  "Usable mounts: post side faces z 0.05-2.70, rear wall front face (Blender y 1.94 A / 2.24 B, top 1.30), trough rim z 0.68 (wall 0.10)",
+  "Partition corridor between troughs 0.55 m; t<=0.12 keeps 0.215 m to troughs; t<=0.18 keeps entry clear width 2.62 (A) / 2.82 (B); post-to-post partition length 3.70 (A) / 4.30 (B)",
+  "Trough cavity (measured) e.g. A trough_1 x -1.025..1.025, y 1.175..1.625, z 0.18..0.68; stall depth trough front to front post 2.925 (A) / 3.525 (B)",
+  "Checker selftest: t=0.30 partition intrudes each post 0.01035 m3 (analytic 0.18*0.05*1.15), caught; floating, cavity, below-zone, entrance bar, wrong-variant axis, bad footprint port all caught",
+  "Host uses REUSED_C_* (banned for new models by LY-007): kit in LY_P01_* will mismatch host colour; host has no LODs while kit needs 3",
+  "Inherited: rear posts embedded 0.09 m in rear wall (0.0211/0.0105 m3); tile shell dupFaces 360 (A) / 320 (B); trough bottoms coplanar with platform",
+  "Host not in city (cityNodes 0): 'installed in city' does not apply to LY-051 output"
+ ],
+ "reuseCandidate": "无。docs/ 下 442 个 GLB 节点/网格名检索 tether|hitch|halter|stall|manger|trough|stable|horse|partition|divider|系|栏|槽|厩|马，只命中厩棚 A/B 的 hollow_trough_*（饲槽本体）、石磨 feed_divider_C（磨具分料件）和 SD01/studies 的 Divider（非洛阳研究件）；A/B 内系留/分栏/排水节点为 0。",
+ "touches": [
+  "read-only host nodes A: A_post_{0..3}_{+-1.94}, A_rear_wall, A_hollow_trough_{0..2}, A_earth_platform, A_wallplate_* (all LY-052 keep per LY-006)",
+  "read-only host nodes B: B_post_{0..4}_{+-2.24}, B_rear_wall, B_hollow_trough_{0..3}, B_earth_platform, B_wallplate_* (LY-052 keep)",
+  "write zones LY-051:write:001 (stable-A) and LY-051:write:002 (stable-B), y 0.05..2.70 over the full platform",
+  "port stable:partition-footprint:mount v1 (producer LY-051 -> consumer LY-052); ground pieces gp:stable-A/B:*_earth_platform owned by LY-052, not touched",
+  "files: workpacks/LY-051/** only (kit GLBs x3 LOD per variant, assembly.json, qa/); downstream LY-052, LY-060",
+  "not touched: m-luoyang-stable/files/*.glb, asset card (owner LY-060), p-luoyang.asset.json, city-data.mjs, lab/data/assets.json (LY-100)"
+ ],
+ "size": "M",
+ "risks": [
+  "origin/main moved to cad338b past bce3211; stable files unchanged, but LY-001 must re-lock before production",
+  "No c.180 Luoyang evidence for tether or partition; whole kit is C; X12 forbids scaling mingqi models for heights; risk of overclaiming 汉制",
+  "Floor-standing partition feet would fall in LY-052's floor layer and its trough-front zone; recommended post/wall-hung zero-footprint design avoids the conflict but leaves a visible 0.05 m gap",
+  "ports.json lists stable:partition-footprint:mount only in local:stable-A; B frame needs LY-006 confirmation or a second port version",
+  "LY-010 absent: if no stable use is selected, the kit stays a standalone C study and must not be counted as installed",
+  "Kit must use LY_P01_* while host uses REUSED_C_*: colour jump; LY-007/010 may need to rule",
+  "Host has no LODs; kit's three tiers must be real reductions, not LOD0 copies",
+  "check_kit.py volume test is surface BVH + 5 mm parity sampling, not exhaustive solid collision; must be reconciled with LY-008 checker once frozen",
+  "Animal size, tether strength, partition load and animal suitability remain unverified and must be disclosed"
+ ],
+ "readyAfterG": true
+}

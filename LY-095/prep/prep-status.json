@@ -1,0 +1,62 @@
+{
+ "seat": "LY-095",
+ "inputsFound": [
+  "D:/GitHub/creation-notebook-lab @ bce3211f818e (HEAD; docs/ clean)",
+  "docs/cities/luoyang/city-data.mjs e4115705aeab (42 assets, 66 nodes, 7 chapters)",
+  "docs/cities/luoyang/city-renderer.mjs fa0a8dcbfaa5 (loader semantics: initial L221, excludeNodes L309-346, transformFor L372-388, chapter union L595-614)",
+  "docs/cities/luoyang/app.mjs 4d6b5b33d8d6; index.html a6402920b237; p-luoyang.asset.json 9b5e311f077a",
+  "docs/cities/luoyang/data/west/network.json af8e5479f47c (14 door routes, positive set; loaded only by legacy v1/west-layer.mjs)",
+  "docs/cities/luoyang/data/c02v/routes.json f567ae955ae8 (102 routes on c02v layout, not loaded by code, stale for 14 calt-moved courtyards)",
+  "docs/cities/luoyang/data/far44/instances-calt.json c830b4e37090; data/c02v/layout.json 7528f0c8dbda (used to rebase routes)",
+  "34 city GLBs (28 far + 6 courtyard near), all SHA256 == manifest sha256/nearSha256; list in prep/inputs.json glb[]",
+  "prep/out/baseline-far-bce3211.json 6ccd38c39d7f; baseline-near-bce3211.json 1d52afd937cb; selftest-bce3211.json f3f47a00297b; city-manifest.json 2520a4e1249a",
+  "prep/scripts/ly095_regress.py 949619e2e9a3; glbmesh.py ea5f2ac12851; dump_manifest.mjs 78a999c0e625; compare.py 8b73dcef4ed2 (was 661e45e7d433 before 2026-11-06 patch)",
+  "2026-11-06 replay on bce3211: city-manifest.json byte-identical (2520a4e1249a); far/near/selftest outputs equal to baseline except 'manifest' path and 'seconds' (prep/out/replay-20261106/far.json a1acf7c819b7, near.json 3d5bb2021097, selftest.json 0364160e5340)",
+  "prep/overlay-tests/OV-01-noop.json c044b1eec4dc, OV-02-dup-court.json 52e582ba5c36, OV-03-remove-ground.json 75bdc7ce1645, owners-test.json bc88a74adc5f; results in prep/out/overlay-20261106/"
+ ],
+ "inputsMissing": [
+  "G freeze not done: LY-005 port coordinates (gate thresholds, floor/road endpoints) needed for new-batch route endpoints and wrong-port negatives; contract, cannot be rebuilt from GLB",
+  "LY-006 frozen ownership map (node/asset -> LY-###) needed as compare.py owners.json to locate each unresolved intersection to a package; without it every finding is UNASSIGNED (blocks)",
+  "LY-006 moving-part IDs and closed/mutually-exclusive states (gate leaves etc.) needed to build NEG-closed negatives; no closed-state geometry exists in the current city assembly",
+  "LY-008 checker entry and official spec version for the shared report header",
+  "LY-091..094 packages and batch manifest (selected_tasks, dependency_closure, gate_results, excluded_regions) needed to build overlay.json for the after-run",
+  "Vehicle/cargo envelopes: not defined anywhere; only pedestrian envelope (C engineering r0.3/h1.8) is tested until a package declares one",
+  "Private source packs (.blend/source ZIP) of courtyard, ground-atomic, market, storage, Yong gate: not in repo; NOT needed by LY-095 because every check runs on the shipped GLB triangles the city renders; only the responsible package needs them to fix a located defect (no rebuild from GLB required for acceptance)"
+ ],
+ "gaps": [
+  "Volume intrusion 1 pair: market-N2 N2_gable_3.87 into market-main N3_gable_-3.87, depth 0.400 m at (218.286, 3.135, -1968.184); parity disagreement 69/1072 points -> PLAUSIBLE, needs recheck",
+  "21 unsupported components of 2,558: 9 A-wall segments (wall-A-00..07, 11) rest on implicit datum y=0.17 with no modelled ground below",
+  "8 TC03 paving slabs (designed_side_passage / designed_rear_work_ground, 0.2-0.212 m) on C02-020, C02-008, FROZEN-D08-NW, FROZEN-D08-NE float 0.199 m over the ground cut (ground-retained / ground-south / ground-D08)",
+  "TC03-2 architecture_C_plain_timber.001 board (0.9x1.9x0.055 m) on C02-003 and C02-012 hangs 0.029 m above ground, no contact (inherited asset defect)",
+  "market-main route_public slab 0.199 m above its own sample_ground (intra-asset)",
+  "c02v/routes.json stale: 16/102 fail, all in calt-moved courtyards (C02-005/006/007/009/010/011/012/013/014/032); rebased onto instances-calt 92/92 door routes pass",
+  "Yong gate apron isolated: centre passage is clear over x -6.37..-25.66, but no ground on either side; nearest road-network ground vertex 59.2 m from gate origin (~49.5 m gap east)",
+  "Guangyang: opening is clear, but outside ground stops at x=-39.0 (10 unsupported samples at the end of the 40 m probe)",
+  "Ground: worst base embedding 0.030 m (wall-direct-08/09, 17 vertices >1 cm); 0 duplicate ground coverage on a 1 m grid over 5 ground pairs; all 44 courtyards contact exactly 1 ground node; 0 courtyard vertices >1 cm below ground",
+  "Positive routes: NET 14/14 pass (12.74 km, 127,463 samples, foot y 0.185-0.212, max step 0.012 m, 2.3 m width 0 fails); negatives 3/3 fail for the expected reason; self-test injections 5/5 detected",
+  "Yong gate body vs interface: 82 transversal tri pairs, max inside depth <=0.01 m (surface contact) but 31 parity disagreements = coincident faces",
+  "Overlay channel exercised 2026-11-06: OV-01 no-op exit 0 (counts identical); OV-02 duplicate courtyard-B 3 m east of C02-005 -> exit 1, new volume-intrusion depth 1.089 m at (512.695, 0.65, -778.461), 2 routes blocked by OVL-dupB; OV-03 removing ground-network-ground-stitched -> exit 1, 15 route regressions (7,952 unsupported samples each NET route), 3 new floating components",
+  "Harness gap found and fixed in prep: original compare.py could not name a responsible package for support-loss route regressions (no blocker); now reports removedNodes + supportLossCandidates",
+  "Stacked old+new scheme (OV-02) classifies as volume-intrusion, not containment; test-plan now adds an AABB-overlap>50% same-asset-without-remove rule that blocks (written into the plan; not yet coded in compare.py)"
+ ],
+ "reuseCandidate": "none: existing checks (network.json graph reachability, route-coverage-correction AABB roof envelopes, road-junction-verification seam samples, ground-overlap-classification) are local or graph-level; none is a city-wide triangle/volume/sweep regression on one baseline with negatives, so they cannot stand in for LY-095",
+ "touches": [
+  "Read-only: all 66 city nodes in city-data.mjs (44 courtyards C02-001..036 + FROZEN-D08-*, 13 wall nodes, yong-gate-body/interface, 4 ground nodes, market-main/N2, storage-main)",
+  "Read-only: 34 GLBs (assets/r01, d08, c02v courtyard LOD0/LOD1; assets/city-wall/A|direct; assets/ground-atomic/*; assets/market/*; progress-assets/granary-city-v1; progress-assets/yong-city-v1; library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb)",
+  "Read-only: data/west/network.json, data/c02v/routes.json, data/c02v/layout.json, data/far44/instances-calt.json, city-renderer.mjs",
+  "Ground tiles read for heightfield/support only: ground-network-ground-stitched (C_stitch_primary/west/patch), ground-retained, ground-south, ground-D08",
+  "Write: only D:/GitHub/creation-notebook-workpacks/LY-095/ (prep/ now; qa/<batch>/ later); owns no source node, ground tile or card field"
+ ],
+ "size": "M",
+ "risks": [
+  "Parity inside-test is unreliable where faces coincide (yong gate 31, market 69 disagreements); a CONFIRMED verdict there needs a second method (voxel/other directions)",
+  "Ownership map missing: without LY-006 every new intersection is UNASSIGNED and blocks, which could stall batches",
+  "Packages may change route endpoints without LY-005 ports; ad-hoc endpoints would make route passes meaningless",
+  "Pedestrian sweep is discrete (0.1 m, <=0.004 m blind gap); it is not rigid-body, vehicle, or structural proof and must not be reported as such",
+  "Near-LOD baseline puts all 44 courtyards in near LOD at once, a superset of real renderer states",
+  "Result JSON contains run time, so file hashes change on rerun; equality must use compare.py, not SHA",
+  "Baseline is bce3211; if main moves before the first batch, the before-run must be redone on the new head",
+  "Overlay entries currently trust the package's own matrix; until LY-005 ports exist, a package can shift itself to dodge collisions, so overlay matrices must be checked against frozen ports before the after-run"
+ ],
+ "readyAfterG": true
+}

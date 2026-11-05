@@ -1,0 +1,44 @@
+{
+ "name": "NEG-C02-018-wrong-asset",
+ "node": "C02-018",
+ "asset": "courtyard-A",
+ "glb": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb",
+ "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+ "excludeNodes": [
+  "site_lot",
+  "site_neutral_lane",
+  "designed_hardpacked_activity_ground"
+ ],
+ "cityMatrixGLTFColumnMajor": [
+  -1,
+  0,
+  0,
+  0,
+  0,
+  1,
+  0,
+  0,
+  0,
+  0,
+  -1,
+  0,
+  724.06335,
+  0,
+  -983.8,
+  1
+ ],
+ "nativeBlenderRowMajor": null,
+ "declaredNodeBounds": {
+  "min": [
+   715.063347,
+   0.2,
+   -995.950002
+  ],
+  "max": [
+   733.063351,
+   5.52,
+   -971.799996
+  ]
+ },
+ "negativeTest": "deliberately wrong prototype (courtyard-A) on node C02-018 whose city-data asset is courtyard-B; check must fail"
+}

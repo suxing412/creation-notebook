@@ -1,0 +1,54 @@
+{
+ "seat": "LY-026",
+ "inputsFound": [
+  "docs/model-library/well-study/assets/well-A-LOD0.glb 6bc463f8 (lab bce3211, last touched 80aca52)",
+  "docs/model-library/well-study/assets/well-A-LOD1.glb e9252de3",
+  "docs/model-library/well-study/assets/well-B-LOD0.glb adf2f51a",
+  "docs/model-library/well-study/assets/well-B-LOD1.glb e4acc416",
+  "docs/model-library/well-study/{contract.json b09677db, README.md f9000404, inputs/reference-contract.json 75b3bd8f, qa/local-contact-checks.json 8850528e, qa/local-boolean-intersections.json 921e7bba, m-well-family.asset.json dfaaa0e9}",
+  "modeling-lab/review-batches/2026-11-04-city-visible (5ac1ea6): ZIP 5895ef23 -> chunks/market_frontage_well_routes.glb 0193ebc0 (井入母场景试放 = A-LOD0 minus apron at Zup (196.286,1952.184,0.200) + C_market_ground_well_A hole r=0.59); adapter/adapter.json 703caeed (initial:false)",
+  "docs/cities/luoyang/assets/market/market-cluster.glb 77b8bf2e (city-loaded via city-data.mjs:510-513 and v1/west-layer.mjs:33; contains solid sample_ground, no well)",
+  "N2-replacement.glb d33cbad1, corridor-6m-market-link.glb b46dd450, road-junction/joined-route-terrain.glb f8729358 (site neighbours)",
+  "docs/cities/luoyang/data/west/market-precedents.json abf2a3d2 (avoid list: 因名市井而强加水井)",
+  "workpacks LY-001/qa/snapshot-ledger.json (pre-freeze; m-well-family sameBytesAsCityLoaded=null)"
+ ],
+ "inputsMissing": [
+  "well-study source/ (build.py, check.py, check-contacts.py, check-local-booleans.py) + manifest.json: needed to regenerate operating parts with original parameters/seed and re-run source QA; small parts can be 从GLB重建 (must be labelled)",
+  "4 native .blend of the well family (native SHA ba15e0dd...): native-vs-GLB parity and hidden-variant collections; only partially rebuildable from GLB",
+  "mother scene city-C032-entry-LOD0.blend (1e8c4d2c...): exact trial placement source; chunk GLB suffices for measurement, not for scene re-export",
+  "G package outputs (LY-001/002/005/006/007/008/009/010): port IDs, node ownership of wheel/rope/container, LOD rules, checker; not rebuildable",
+  "LY-025 atomic well + cut-ground package: the actual ground/hole/placement to test against; not rebuildable here",
+  "original excavation plates / museum images actually viewed (灵宝张湾, 刘家渠, 烧沟): needed before any pulley/cheek/frame revision; only page text was read this round"
+ ],
+ "gaps": [
+  "No geometric conflict found between moving and fixed parts: container stroke free from dz -1.0 to +1.30 m (first block +1.35 on wheel_grooved_ring) in A/B x LOD0/LOD1 and city trial; min bore clearance A 0.1138 / A-LOD1 0.1118 / B 0.1886 / B-LOD1 0.1854 / city 0.1137 m",
+  "Lift-out (container bottom rim+0.03, dz A 0.59 / B 0.51): +-y clear 1.8 m; +-x first hit main_post at 0.70 (A) / 0.80 (B) m",
+  "Wheel ring/hub/4 spokes rotated 0-345 deg step 15: only contact hub-axle (fixed embed); ring top to cross_head 0.035 m, ring to cheek axial 0.030 m",
+  "Unclassified solid embeds missing from source QA: cheek->cross_head 6.72e-4 m3 per side (0.06 m tenon), axle->hub 2.10e-4 (LOD1 1.91e-4), spoke->ring 3.9e-6, spoke->hub 3.0e-6, container bottom 2.14e-5, lugs 1.27e-5, rope->bridle 7.7e-8; source boolean QA covers LOD0 only (LOD1 axle->cheek 1.34e-4 never reported)",
+  "Mechanism fused: axle passes solid through both cheeks and the hub (no bore) - which part rotates is unknown (stop item, not a fix)",
+  "No finite pose data: one static pose only; fixed rope 3.444 m gives hauling end z 0.52 (rest, below rim 0.68), -0.07 at lift-out (wheel 182 deg), -0.78 at top (beyond liner -0.65)",
+  "City trial ground hole r=0.590 equals liner outer radius (zero-volume contact), 17 bore rays open; liner hangs 0.45 m below the 0.2 m ground slab with no layer beneath (LY-025)",
+  "Negative: library A placed into current site market-cluster -> solid sample_ground plugs bore, container blocked at dz -0.15 (free only to -0.10); demo apron would double the ground (-0.08..0 over -0.2..0)"
+ ],
+ "reuseCandidate": "Likely reuse: the four well-family GLBs (6bc463f8, e9252de3, adf2f51a, e4acc416) and the city trial A in chunk 0193ebc0 show no operating-part conflict needing a guide/support part (prep/results/summary.json, ops-*.json). Not yet a reuse verdict: still owes the contact classification of the unlisted embeds plus a pose table, and must be rerun against the LY-025 package and frozen LY-006 ports.",
+ "touches": [
+  "well-family nodes {A,B}_LOD{0,1}__wheel_grooved_ring / wheel_hub / wheel_spoke(.001-.003) / wheel_axle / wheel_cheek_-1 / wheel_cheek_1",
+  "{A,B}_LOD{0,1}__rope_C_static",
+  "{A,B}_LOD{0,1}__drawing_container / container_bottom / container_bridle(.001) / container_lug(.001)",
+  "{A,B}_LOD{0,1}__cross_head (contact face only, read)",
+  "city trial chunk node visible-current-node-market_frontage_well_routes: A_LOD0__* operating nodes (read; no write)",
+  "ground C_market_ground_well_A and market-cluster sample_ground: read-only precondition, owned by LY-025",
+  "workpacks/LY-026/ only"
+ ],
+ "size": "S",
+ "risks": [
+  "LY-025 may change placement/ground (hole radius, slab depth, z) and invalidate stroke-below-ground results",
+  "If LY-006 assigns wheel/rope/container nodes to another seat (e.g. LY-025 or LY-029), ownership conflicts with this seat",
+  "Original plates not seen: text says 两柱井架呈梯形 (not vertical) and tomb number 2 vs 3 is inconsistent; a later evidence check could require frame changes outside this seat's scope",
+  "Pressure to 'fix' the fused axle/hub/cheek by inventing a bearing contradicts 未知机构不乱补",
+  "Market wells themselves are questioned by market-precedents.json (因名市井而强加水井); city admission belongs to LY-010/LY-025",
+  "Containment heuristic (nearest-normal) is unreliable on hollow parts; only BVH overlap + exact boolean are used as verdicts; not exhaustive solid collision",
+  "Source generator/blend missing: any revision is 从GLB重建 and cannot claim native parity"
+ ],
+ "readyAfterG": true
+}

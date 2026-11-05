@@ -1,0 +1,75 @@
+{
+ "seat": "LY-058",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb 7eb9739ec09a (已发布双屋作业院，任务池称与原谷物院不同产物；实测基线)",
+  "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD1.glb 6baefbd0fc1b",
+  "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD2.glb 574d81d91d38",
+  "docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD0/1/2.glb 89e0a43923fb / a21c2893a1cc / 7c054863f108",
+  "docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD0/1/2.glb 6f0e41834121 / d8759dd6e0b0 / e94416ef3074 (原样嵌入 workyard，T=(5,0.2,1.5))",
+  "docs/library/models/m-luoyang-hand-mill/files/hand-mill-A/B(.LOD1).glb 0fe50c2c0604 / 598cadc75933 / 5885f619799e / 5ec42d1118de",
+  "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD1.glb 2be52632e16e、court-B2-LOD1.glb 95b66c5d994c (储藏作业院，住宅变体，排重对照，非谷物院)",
+  "docs/cities/luoyang/city-data.mjs blob c849706b6210 (bce3211；workyard/foot-pestle/谷物 引用 0 处；f28d650 同为 0)",
+  "lab/asset.html blob d094ab78337b:112 + lab/lib.js:2 + lab/viewer.mjs d3a8329bd61a:71 (仅资产库详情页加载这些 GLB)",
+  "TASKPOOL.md 00c2e1715e31 / taskboard.json 1d1fcb9c6e5e (workpacks 09536a8)"
+ ],
+ "inputsMissing": [
+  "原谷物加工院 GLB 三档 + 原生源(.blend/源ZIP) + 缺陷记录（瓦落座/行缝/承件）：本项要复用的院体、作业区与旧地坪；在 lab 全分支、creation-notebook、review、modeling-lab、待传目录均未找到；仓库里没有其 GLB，不能「从 GLB 重建」；LY-057 prep 同样未找到，唯一线索是制作人清单第 10 条一句话，候选身份 workshed 89e0a439 有待 LY-001 或制作人确认",
+  "LY-057 修订院三档及新旧 SHA：本项装配的院体版本（依赖产物）",
+  "LY-056 足碓踏台安装包与人体包络：舂作位端口；踏台侧 0.4 m 窄位需其验证",
+  "LY-055 石磨安装包：判断磨是否进同院、避免占扬谷/暂存区",
+  "LY-005 院地坪标高契约：院心 82.6% 无地面几何，靠假定 y=0.200",
+  "LY-006/008/010：端口所有权、阶差/身体容差（0.20 vs 0.25 决定两屋可达）、选定样板与落位",
+  "workyard 原生 .blend：仅当改判以 workyard 为替代时需要；复用装配可从 GLB 读节点做 overlay，不冒称原件"
+ ],
+ "gaps": [
+  "G1 原谷物加工院身份与缺陷记录在 bce3211 全部可读位置检索为 0 命中（谷物/谷物加工/谷物院/扬谷/瓦落座/行缝）",
+  "G2 workyard 院心无地坪：footprint 43380 格(0.1 m)仅 7564 格(17.4%)有地面几何；石臼底与踏台脚落在 y=0.200 假定平面上",
+  "G3 两屋台基单级 0.22 m（0.20→0.42）且无踏步几何：STEP_MAX 0.20 两屋不可达（可达 28091 格），0.25 可达（33437 格）；西屋门 1.6 m、北堂前口 3.6 m，门头距台面 2.08 m",
+  "G4 单一院门 x -5.9..-3.6 @ z 12.1；门道内净宽 2.1 m，瓶颈约 2.2 m，有顶最小净高 2.05 m",
+  "G5 足碓踏台三级 0.24/0.24/0.24 m，踏面 0.3/0.4 m；STEP_MAX 0.20 不可登，0.25 可登但仅杵梁末端后 1.1 m 区，瓶颈约 0.8 m；杵梁两侧各 0.4 m，按 0.30 m 半宽不可站",
+  "G6 舂作旁暂存空间紧：石臼北侧离障碍物 0.9 m；东棚下扣 1.2 m 服务带后最大有顶空方 1.4 m",
+  "G7 扬谷留空：扣服务带后可达露天最大空方 4.9 m（x -1.6..3.2, z 6.5..11.3），三档一致；风向/糠尘去向未知",
+  "G8 暂存：仅当单级 0.25 被接受时北堂台面有 3.6 m 有顶空方；否则仅 1.4 m（东棚）",
+  "G9 最短路：门内→踏台梯脚 12.64 m，门内→石臼侧 15.56 m，石臼侧→北堂 9.37 m，石臼侧→西屋 11.85 m",
+  "G10 未入城：城景 0 处加载；仅资产库详情页加载",
+  "G11 LOD 可达格 28091/28086/28146（step 0.20）；LOD2 东棚有顶空方 1.8 m 对 LOD0 1.4 m，远档不能代替近景",
+  "G12 足碓静架 688 三角已并入 workyard_timber，不能单独替换；动杵独立节点保留"
+ ],
+ "reuseCandidate": "无。唯一公开的含碓院 m-luoyang-workyard-shed/workyard（7eb9739e…）被任务池点名为不同产物，而且实测缺院心地坪（只有 17.4% 有地面几何）、缺 0.22 m 台基踏步、缺区域与路线端口，不构成同版本合格成果。北区 court-B/B2 是住宅储藏院，没有碓。若 LY-001/010 书面改判以 workyard 作替代，本 prep 的实测数字可直接作基线。",
+ "touches": [
+  "原谷物院（LY-057 交付件，SHA 未知）全部节点，只读引用",
+  "替代基线 workyard-LOD0/1/2 节点 workyard_earth、workyard_timber、workyard_tile、pestle__pestle_timber_moving、workyard_stone，只读",
+  "足碓区 x 4.3..5.7, z -0.3..3.9（局部坐标），与 LY-056 踏台/扶栏/站位冲突面",
+  "院心地坪片：院心无几何，需 LY-005 地坪或保留旧地坪；可能与 LY-059 围界、服务口地坪重叠",
+  "两屋台基边 0.22 m 单级：踏步补件归属待 LY-006 判，候选 LY-059",
+  "扬谷留空区 x -1.6..3.2, z 6.5..11.3 与暂存区（北堂台面 x 0.7..4.2, z -10..-6.5，或东棚）：若 LY-055 石磨进同院则冲突",
+  "workpacks/LY-058/ 下的 assembly.json、qa/、preview/；不碰 city-data.mjs、p-luoyang.asset.json、lab/data/assets.json"
+ ],
+ "size": "M",
+ "risks": [
+  "原谷物加工院的身份可能根本不存在于可读输入中。LY-057 同样依赖它，整条 057→058→059→060 链有被一起阻断的风险",
+  "若把 workyard 当原院使用，就违反任务池「必须分清」",
+  "STEP_MAX 由 LY-008 定：0.20 时两屋不可达，暂存位只剩 1.4 m 空方",
+  "院心地坪不在 GLB 内；城市地坪若不是 y=0.200，足碓与路线会悬空或埋入",
+  "扬谷方式、风向、暂存容器都未知，只能做 C 留空，不能成像为具体工艺",
+  "西汉洛阳的扇车陶模型只是同地异期类比，而且扇车属争议机械，不能建",
+  "栅格与静态身体结论不等于连续人体运动；踏台 0.4 m 侧位需 LY-056 的姿态验证",
+  "候选身份：LY-057 prep 指出原院可能是「workshed 棚(89e0a439)+足碓」，该棚瓦落座 −32.4..+15.2 mm、脊缝 40/41 未盖；若确认，本项全部实测要用 LY-057 修订后的 SHA 重跑"
+ ],
+ "readyAfterG": false,
+ "readyNote": "G 冻结、055/056/057 交付后，只要 LY-057 交付件确是原谷物院（带 SHA 和缺陷对位），就能立即用本 prep 的脚本开工。目前原谷物院在仓库中缺失，057 本身也拿不到输入，所以判为 false。",
+ "prepFiles": [
+  "brief-draft.md",
+  "inputs.json",
+  "test-plan.md",
+  "prep-status.json",
+  "measure_yard.py",
+  "analyze_route.py",
+  "compare_pestle.py",
+  "glb_nodes.py",
+  "map_png.py",
+  "overlay_png.py",
+  "glb-nodes.json",
+  "out/"
+ ]
+}

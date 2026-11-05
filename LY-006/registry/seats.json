@@ -1,0 +1,5188 @@
+{
+ "registry": "LY-006 module ports & ownership",
+ "version": 1,
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "inputs": {
+  "taskboard": {
+   "path": "taskboard.json",
+   "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4"
+  },
+  "ly001_ledger": {
+   "path": "LY-001/qa/snapshot-ledger.json",
+   "sha256": "479046caf49479cc6e58249585c63c80e84f23cafd82dc93bdc1034f9e1da7d0"
+  },
+  "ly001_dump": {
+   "path": "LY-001/qa/city-data.dump.json",
+   "sha256": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98"
+  },
+  "ly005_ports": {
+   "path": "LY-005/qa/ports-bce3211.json",
+   "sha256": "1c009bb2c95caae89af76e8b7f7462253d1829cb6794e7b7bc77820f67e2f7ca"
+  },
+  "ly005_contract": {
+   "path": "LY-005/coordinate-contract.json",
+   "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712"
+  },
+  "ly005_port_schema": {
+   "path": "LY-005/port-schema.json",
+   "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f"
+  },
+  "glb_index": {
+   "path": "LY-006/qa/glb-node-index.json",
+   "sha256": "a218da85fb566bb4dd4b4bf040334066f2486048bf44f1c84f4dc559c84fff8d"
+  },
+  "wall_ends": {
+   "path": "LY-006/qa/wall-end-ports.measure.json",
+   "sha256": "38f25d638403a9c12693d3ee46865099efa8604678b8560fb543cf357c4d5521"
+  },
+  "probes": {
+   "path": "LY-006/qa/frozen-ports.probes.json",
+   "sha256": "8b9b4bd7fa51caac5f712114c00268d0e18d6c572df22d4574ec3c93cbd9a7f8"
+  },
+  "chunks": {
+   "path": "LY-006/qa/chunk-measure.json",
+   "sha256": "6a7e7fc1b9016c2df9f3916b427fce6357511abecbeaff10b0138556824e9e0e"
+  },
+  "court_free": {
+   "path": "LY-006/qa/court-A2-free-space.json",
+   "sha256": "c030801ffc4749a842eed04c50408453b3c32f824c7191d0e9842f69c9ff8839"
+  },
+  "k_objects": {
+   "path": "LY-006/qa/source-objects/kaiyang-K-v1.objects.json",
+   "sha256": "19a422ea12df17d558b4a20b766053f6f5f6c6e37543e2f2cc5c658b895b1074"
+  },
+  "p_objects": {
+   "path": "LY-006/qa/source-objects/pingcheng-P-v1.objects.json",
+   "sha256": "d50cfc84128ec1a54857b493f0a36a2913c6571e1d1916f7566b6ee72b381e21"
+  },
+  "k_trial": {
+   "path": "LY-006/qa/kaiyang-hidden-trial.objects.json",
+   "sha256": "1e463795cf9614beba15c009bc2ada44f2f4e884e4dde65895d0e6cda57c6d61"
+  },
+  "p_trial": {
+   "path": "LY-006/qa/pingcheng-hidden-trial.objects.json",
+   "sha256": "f513b58558f2cb44081ac69b72e8da6b4cfbe842c97174b05e13100ec44a7136"
+  },
+  "frontage_openings": {
+   "path": "LY-006/qa/frontage-openings.from-LY-021-prep.json",
+   "sha256": "907898d14961121b84bbabf2d757a90d8627d1a4c7ece6b384e44eb2f6aad1d7"
+  },
+  "spec": {
+   "path": "LY-006/source/registry_spec.py",
+   "sha256": "4a6f30bd9caaf3a3409e8d63c73740a012282167d694967c63fb356a69324e7b"
+  }
+ },
+ "seats": {
+  "LY-011": {
+   "seat": "LY-011",
+   "title": "开阳中门道承托框架修订",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-KAIYANG",
+   "siteOwner": "LY-015",
+   "role": "component",
+   "frames": [
+    "local:kaiyang-K-v1"
+   ],
+   "writeZones": [
+    "LY-011:write:001",
+    "LY-011:write:002",
+    "LY-011:write:003"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [
+     "kaiyang-K-v1:C_door_head_1"
+    ],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "K011-columns",
+     "class": "fixed"
+    },
+    {
+     "id": "K011-sill",
+     "class": "fixed"
+    },
+    {
+     "id": "K011-beams",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "kaiyang-K-v1:central-frame-top:floor",
+    "kaiyang-K-v1:central-jamb-seat-W:mount",
+    "kaiyang-K-v1:central-jamb-seat-E:mount",
+    "kaiyang-K-v1:central-head-soffit:mount"
+   ],
+   "consumes": [
+    "kaiyang-K-v1:passage-C:threshold"
+   ],
+   "placementProposal": null
+  },
+  "LY-012": {
+   "seat": "LY-012",
+   "title": "开阳门框门叶兼容子件",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-011"
+   ],
+   "usesG": true,
+   "site": "S-KAIYANG",
+   "siteOwner": "LY-015",
+   "role": "component",
+   "frames": [
+    "local:kaiyang-K-v1"
+   ],
+   "writeZones": [
+    "LY-012:write:001",
+    "LY-012:write:002",
+    "LY-012:write:003",
+    "LY-012:write:004",
+    "LY-012:write:005"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [
+     "kaiyang-K-v1:C_door_head_0",
+     "kaiyang-K-v1:C_door_head_2",
+     "kaiyang-K-v1:C_jamb_(0, -1)",
+     "kaiyang-K-v1:C_jamb_(0, 1)",
+     "kaiyang-K-v1:C_jamb_(1, -1)",
+     "kaiyang-K-v1:C_jamb_(1, 1)",
+     "kaiyang-K-v1:C_jamb_(2, -1)",
+     "kaiyang-K-v1:C_jamb_(2, 1)",
+     "kaiyang-K-v1:C_leaf_batten_(0, -1, 0.7)",
+     "kaiyang-K-v1:C_leaf_batten_(0, -1, 2.2)",
+     "kaiyang-K-v1:C_leaf_batten_(0, -1, 3.7)",
+     "kaiyang-K-v1:C_leaf_batten_(0, 1, 0.7)",
+     "kaiyang-K-v1:C_leaf_batten_(0, 1, 2.2)",
+     "kaiyang-K-v1:C_leaf_batten_(0, 1, 3.7)",
+     "kaiyang-K-v1:C_leaf_batten_(1, -1, 0.7)",
+     "kaiyang-K-v1:C_leaf_batten_(1, -1, 2.2)",
+     "kaiyang-K-v1:C_leaf_batten_(1, -1, 3.7)",
+     "kaiyang-K-v1:C_leaf_batten_(1, 1, 0.7)",
+     "kaiyang-K-v1:C_leaf_batten_(1, 1, 2.2)",
+     "kaiyang-K-v1:C_leaf_batten_(1, 1, 3.7)",
+     "kaiyang-K-v1:C_leaf_batten_(2, -1, 0.7)",
+     "kaiyang-K-v1:C_leaf_batten_(2, -1, 2.2)",
+     "kaiyang-K-v1:C_leaf_batten_(2, -1, 3.7)",
+     "kaiyang-K-v1:C_leaf_batten_(2, 1, 0.7)",
+     "kaiyang-K-v1:C_leaf_batten_(2, 1, 2.2)",
+     "kaiyang-K-v1:C_leaf_batten_(2, 1, 3.7)",
+     "kaiyang-K-v1:C_open_leaf_(0, -1)",
+     "kaiyang-K-v1:C_open_leaf_(0, 1)",
+     "kaiyang-K-v1:C_open_leaf_(1, -1)",
+     "kaiyang-K-v1:C_open_leaf_(1, 1)",
+     "kaiyang-K-v1:C_open_leaf_(2, -1)",
+     "kaiyang-K-v1:C_open_leaf_(2, 1)"
+    ],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "K012-leaf-C-W",
+     "class": "moving"
+    },
+    {
+     "id": "K012-leaf-C-E",
+     "class": "moving"
+    },
+    {
+     "id": "K012-leaf-W-W",
+     "class": "moving"
+    },
+    {
+     "id": "K012-leaf-W-E",
+     "class": "moving"
+    },
+    {
+     "id": "K012-leaf-E-W",
+     "class": "moving"
+    },
+    {
+     "id": "K012-leaf-E-E",
+     "class": "moving"
+    },
+    {
+     "id": "K012-pivot-sockets",
+     "class": "fixed"
+    },
+    {
+     "id": "K012-stops",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "kaiyang-K-v1:leaf-states:opening"
+   ],
+   "consumes": [
+    "kaiyang-K-v1:central-jamb-seat-W:mount",
+    "kaiyang-K-v1:central-jamb-seat-E:mount",
+    "kaiyang-K-v1:central-head-soffit:mount",
+    "kaiyang-K-v1:passage-C:threshold",
+    "kaiyang-K-v1:passage-W:threshold",
+    "kaiyang-K-v1:passage-E:threshold"
+   ],
+   "placementProposal": null
+  },
+  "LY-013": {
+   "seat": "LY-013",
+   "title": "开阳单一楼板与木土接口",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-011"
+   ],
+   "usesG": true,
+   "site": "S-KAIYANG",
+   "siteOwner": "LY-015",
+   "role": "component",
+   "frames": [
+    "local:kaiyang-K-v1"
+   ],
+   "writeZones": [
+    "LY-013:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [
+     "kaiyang-K-v1:C_upper_deck"
+    ],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "K013-deck",
+     "class": "fixed"
+    },
+    {
+     "id": "K013-surface",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "kaiyang-K-v1:deck-top:floor"
+   ],
+   "consumes": [
+    "kaiyang-K-v1:central-frame-top:floor"
+   ],
+   "placementProposal": null
+  },
+  "LY-014": {
+   "seat": "LY-014",
+   "title": "开阳登临与墙顶过渡",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-011",
+    "LY-013"
+   ],
+   "usesG": true,
+   "site": "S-KAIYANG",
+   "siteOwner": "LY-015",
+   "role": "component",
+   "frames": [
+    "local:kaiyang-K-v1"
+   ],
+   "writeZones": [
+    "LY-014:write:001",
+    "LY-014:write:002",
+    "LY-014:write:003"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [
+     "kaiyang-K-v1-trial:kaiyang-K-static_earth:end-wedge-E",
+     "kaiyang-K-v1-trial:kaiyang-K-static_earth:end-wedge-W"
+    ],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "K014-access-W",
+     "class": "fixed"
+    },
+    {
+     "id": "K014-access-E",
+     "class": "fixed"
+    },
+    {
+     "id": "K014-walltop-W",
+     "class": "fixed"
+    },
+    {
+     "id": "K014-walltop-E",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "kaiyang-K-v1:inner-access-edge:road-end"
+   ],
+   "consumes": [
+    "kaiyang-K-v1:deck-top:floor",
+    "wall-A-wall-05:cap-0:wall-end",
+    "wall-A-wall-04:cap-1:wall-end",
+    "wall-A-wall-05:cap-0-top:floor",
+    "wall-A-wall-04:cap-1-top:floor"
+   ],
+   "placementProposal": null
+  },
+  "LY-015": {
+   "seat": "LY-015",
+   "title": "开阳完整门组局部装配",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-011",
+    "LY-012",
+    "LY-013",
+    "LY-014"
+   ],
+   "usesG": true,
+   "site": "S-KAIYANG",
+   "siteOwner": "LY-015",
+   "role": "assembly",
+   "frames": [
+    "local:kaiyang-K-v1",
+    "world"
+   ],
+   "writeZones": [
+    "LY-015:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [
+    "research-north13-kaiyang-K"
+   ],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 269
+   },
+   "ownsGroundPieces": [
+    "gp:kaiyang-ground-LOD0",
+    "gp:kaiyang-ground-LOD1",
+    "gp:kaiyang-ground-LOD2"
+   ],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-kaiyang-gate"
+   ],
+   "components": [],
+   "produces": [],
+   "consumes": [
+    "kaiyang-K-v1:deck-top:floor",
+    "kaiyang-K-v1:leaf-states:opening",
+    "kaiyang-K-v1:inner-access-edge:road-end",
+    "wall-A-wall-05:cap-0:wall-end",
+    "wall-A-wall-04:cap-1:wall-end"
+   ],
+   "placementProposal": "local:kaiyang-K-v1"
+  },
+  "LY-016": {
+   "seat": "LY-016",
+   "title": "平城侧门通口完整地面",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-PINGCHENG",
+   "siteOwner": "LY-017",
+   "role": "component",
+   "frames": [
+    "local:pingcheng-P-v1"
+   ],
+   "writeZones": [
+    "LY-016:write:001",
+    "LY-016:write:002",
+    "LY-016:write:003",
+    "LY-016:write:004",
+    "LY-016:write:005",
+    "LY-016:write:006",
+    "LY-016:write:007"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [
+    "gp:pingcheng-ground-LOD0",
+    "gp:pingcheng-ground-LOD1",
+    "gp:pingcheng-ground-LOD2"
+   ],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "P016-side-ground-W",
+     "class": "fixed"
+    },
+    {
+     "id": "P016-side-ground-E",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "pingcheng-P-v1:outer-edge-W:road-end",
+    "pingcheng-P-v1:outer-edge-E:road-end"
+   ],
+   "consumes": [
+    "pingcheng-P-v1:old-ramp:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-017": {
+   "seat": "LY-017",
+   "title": "平城门墙旧路联合装配",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-016"
+   ],
+   "usesG": true,
+   "site": "S-PINGCHENG",
+   "siteOwner": "LY-017",
+   "role": "assembly",
+   "frames": [
+    "local:pingcheng-P-v1",
+    "world"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [
+    "research-north13-pingcheng-P"
+   ],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 364
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-pingcheng-gate"
+   ],
+   "components": [
+    {
+     "id": "P017-central-leaves",
+     "class": "fixed-closed"
+    },
+    {
+     "id": "P017-side-leaves",
+     "class": "fixed-open"
+    }
+   ],
+   "produces": [
+    "pingcheng-P-v1:central:opening"
+   ],
+   "consumes": [
+    "pingcheng-P-v1:passage-W:threshold",
+    "pingcheng-P-v1:passage-E:threshold",
+    "pingcheng-P-v1:old-ramp:ground",
+    "wall-A-wall-06:cap-0:wall-end",
+    "wall-A-wall-05:cap-1:wall-end"
+   ],
+   "placementProposal": "local:pingcheng-P-v1"
+  },
+  "LY-018": {
+   "seat": "LY-018",
+   "title": "谷门门墩接地与墙端适配",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-GU",
+   "siteOwner": "LY-018",
+   "role": "component+assembly",
+   "frames": [
+    "local:gu-G-v1"
+   ],
+   "writeZones": [
+    "LY-018:write:001",
+    "LY-018:write:002",
+    "LY-018:write:003"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 3
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-gu-gate"
+   ],
+   "components": [
+    {
+     "id": "G018-base",
+     "class": "fixed"
+    },
+    {
+     "id": "G018-threshold",
+     "class": "fixed"
+    },
+    {
+     "id": "G018-wall-adapters",
+     "class": "fixed"
+    }
+   ],
+   "produces": [],
+   "consumes": [
+    "wall-A-wall-00:cap-1:wall-end",
+    "wall-A-wall-01:cap-0:wall-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-019": {
+   "seat": "LY-019",
+   "title": "夏门接缝与底部支承修订",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-XIA",
+   "siteOwner": "LY-019",
+   "role": "component+assembly",
+   "frames": [
+    "local:xia-B-v1"
+   ],
+   "writeZones": [
+    "LY-019:write:001",
+    "LY-019:write:002",
+    "LY-019:write:003"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 3
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-xia-gate"
+   ],
+   "components": [
+    {
+     "id": "X019-seams",
+     "class": "fixed"
+    },
+    {
+     "id": "X019-base",
+     "class": "fixed"
+    }
+   ],
+   "produces": [],
+   "consumes": [
+    "wall-A-wall-00:cap-0:wall-end",
+    "wall-A-wall-11:cap-1:wall-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-020": {
+   "seat": "LY-020",
+   "title": "城垣转角与坡地脚接口族",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-WALLS",
+   "siteOwner": "LY-020",
+   "role": "component+steward",
+   "frames": [
+    "world",
+    "local:earthwall"
+   ],
+   "writeZones": [
+    "LY-020:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [
+    "wall-A-wall-00",
+    "wall-A-wall-01",
+    "wall-A-wall-02",
+    "wall-A-wall-03",
+    "wall-A-wall-04",
+    "wall-A-wall-05",
+    "wall-A-wall-06",
+    "wall-A-wall-07",
+    "wall-A-wall-10",
+    "wall-A-wall-11"
+   ],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 10
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-earthwall-family"
+   ],
+   "components": [
+    {
+     "id": "W020-corner-pieces",
+     "class": "fixed"
+    },
+    {
+     "id": "W020-foot-pieces",
+     "class": "fixed"
+    }
+   ],
+   "produces": [],
+   "consumes": [
+    "wall-A-wall-01:cap-1:wall-end",
+    "wall-A-wall-02:cap-0:wall-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-021": {
+   "seat": "LY-021",
+   "title": "八铺门前起步踏步组件",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-MARKET",
+   "siteOwner": "LY-030",
+   "role": "component",
+   "frames": [
+    "local:market-site"
+   ],
+   "writeZones": [
+    "LY-021:write:001",
+    "LY-021:write:002",
+    "LY-021:write:003",
+    "LY-021:write:004",
+    "LY-021:write:005",
+    "LY-021:write:006",
+    "LY-021:write:007",
+    "LY-021:write:008",
+    "LY-021:write:009",
+    "LY-021:write:010",
+    "LY-021:write:011",
+    "LY-021:write:012"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "M021-steps",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "market-site:shop0-door0-step-foot:ground",
+    "market-site:shop0-door1-step-foot:ground",
+    "market-site:shop1-door0-step-foot:ground",
+    "market-site:shop2-door0-step-foot:ground",
+    "market-site:shop3-door0-step-foot:ground",
+    "market-site:shop3-door1-step-foot:ground",
+    "market-site:shop4-door0-step-foot:ground",
+    "market-site:shop5-door0-step-foot:ground",
+    "market-site:shop5-door1-step-foot:ground",
+    "market-site:shop6-door0-step-foot:ground",
+    "market-site:shop6-door1-step-foot:ground",
+    "market-site:shop7-door0-step-foot:ground"
+   ],
+   "consumes": [
+    "market-site:shop0-door0:threshold",
+    "market-site:shop0-door1:threshold",
+    "market-site:shop1-door0:threshold",
+    "market-site:shop2-door0:threshold",
+    "market-site:shop3-door0:threshold",
+    "market-site:shop3-door1:threshold",
+    "market-site:shop4-door0:threshold",
+    "market-site:shop5-door0:threshold",
+    "market-site:shop5-door1:threshold",
+    "market-site:shop6-door0:threshold",
+    "market-site:shop6-door1:threshold",
+    "market-site:shop7-door0:threshold"
+   ],
+   "placementProposal": null
+  },
+  "LY-022": {
+   "seat": "LY-022",
+   "title": "市肆前街连续地坪接口",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-021"
+   ],
+   "usesG": true,
+   "site": "S-MARKET",
+   "siteOwner": "LY-030",
+   "role": "component",
+   "frames": [
+    "local:market-site"
+   ],
+   "writeZones": [
+    "LY-022:write:001",
+    "LY-022:write:002"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "M022-street-patches",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "market-site:street-patch-ends:ground"
+   ],
+   "consumes": [
+    "market-site:shop0-door0-step-foot:ground",
+    "market-site:shop0-door1-step-foot:ground",
+    "market-site:shop1-door0-step-foot:ground",
+    "market-site:shop2-door0-step-foot:ground",
+    "market-site:shop3-door0-step-foot:ground",
+    "market-site:shop3-door1-step-foot:ground",
+    "market-site:shop4-door0-step-foot:ground",
+    "market-site:shop5-door0-step-foot:ground",
+    "market-site:shop5-door1-step-foot:ground",
+    "market-site:shop6-door0-step-foot:ground",
+    "market-site:shop6-door1-step-foot:ground",
+    "market-site:shop7-door0-step-foot:ground",
+    "market-site:route-public:road-end",
+    "market-site:route-east:road-end",
+    "market-site:route-rearN:road-end",
+    "market-site:route-rearS:road-end",
+    "market-site:route-exitPublic:road-end",
+    "market-site:route-exitN:road-end",
+    "market-site:route-exitS:road-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-023": {
+   "seat": "LY-023",
+   "title": "棚摊基础与可拆脚端适配",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-MARKET",
+   "siteOwner": "LY-030",
+   "role": "component",
+   "frames": [
+    "local:market-site"
+   ],
+   "writeZones": [
+    "LY-023:write:001",
+    "LY-023:write:002",
+    "LY-023:write:003",
+    "LY-023:write:004"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "M023-stall-feet",
+     "class": "removable"
+    }
+   ],
+   "produces": [
+    "market-site:canopy-C00:ground",
+    "market-site:canopy-C01:ground",
+    "market-site:canopy-C02:ground",
+    "market-site:canopy-C03:ground"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-024": {
+   "seat": "LY-024",
+   "title": "一类铺型闭铺构件试案",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-MARKET",
+   "siteOwner": "LY-030",
+   "role": "component",
+   "frames": [
+    "local:market-site"
+   ],
+   "writeZones": [
+    "LY-024:write:001",
+    "LY-024:write:002",
+    "LY-024:write:003",
+    "LY-024:write:004",
+    "LY-024:write:005",
+    "LY-024:write:006",
+    "LY-024:write:007",
+    "LY-024:write:008"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "M024-closing-panels",
+     "class": "state-variant"
+    },
+    {
+     "id": "M024-side-closures",
+     "class": "state-variant"
+    }
+   ],
+   "produces": [
+    "market-site:shop-type-closure:opening"
+   ],
+   "consumes": [
+    "market-site:shop0-door0:threshold",
+    "market-site:shop0-door1:threshold",
+    "market-site:shop1-door0:threshold",
+    "market-site:shop2-door0:threshold",
+    "market-site:shop3-door0:threshold",
+    "market-site:shop3-door1:threshold",
+    "market-site:shop4-door0:threshold",
+    "market-site:shop5-door0:threshold",
+    "market-site:shop5-door1:threshold",
+    "market-site:shop6-door0:threshold",
+    "market-site:shop6-door1:threshold",
+    "market-site:shop7-door0:threshold"
+   ],
+   "placementProposal": null
+  },
+  "LY-025": {
+   "seat": "LY-025",
+   "title": "市肆井和开孔地面原子包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-MARKET",
+   "siteOwner": "LY-030",
+   "role": "assembly-atom",
+   "frames": [
+    "local:market-site"
+   ],
+   "writeZones": [
+    "LY-025:write:001",
+    "LY-025:write:002"
+   ],
+   "cutZones": [
+    "LY-025:cut:003"
+   ],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 170
+   },
+   "ownsGroundPieces": [
+    "gp:LY-025:C_market_ground_well_A",
+    "gp:well-A-LOD0:demonstration_apron_opening"
+   ],
+   "ownsCuts": [
+    "cut:LY-025:market-well-A"
+   ],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "M025-well-A",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "market-site:well-A:ground",
+    "cut:LY-025:market-well-A:cut"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-026": {
+   "seat": "LY-026",
+   "title": "井架操作构件兼容检查与修订",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-025"
+   ],
+   "usesG": true,
+   "site": "S-MARKET",
+   "siteOwner": "LY-030",
+   "role": "component",
+   "frames": [
+    "local:market-site"
+   ],
+   "writeZones": [
+    "LY-026:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [
+     "well-A:A_LOD0__container_bottom",
+     "well-A:A_LOD0__container_bridle",
+     "well-A:A_LOD0__container_bridle.001",
+     "well-A:A_LOD0__container_lug",
+     "well-A:A_LOD0__container_lug.001",
+     "well-A:A_LOD0__cross_head",
+     "well-A:A_LOD0__drawing_container",
+     "well-A:A_LOD0__eave_tie",
+     "well-A:A_LOD0__eave_tie.001",
+     "well-A:A_LOD0__main_post_-1",
+     "well-A:A_LOD0__main_post_1",
+     "well-A:A_LOD0__post_foot_-1",
+     "well-A:A_LOD0__post_foot_1",
+     "well-A:A_LOD0__rope_C_static",
+     "well-A:A_LOD0__wheel_axle",
+     "well-A:A_LOD1__container_bottom",
+     "well-A:A_LOD1__container_bridle",
+     "well-A:A_LOD1__container_bridle.001",
+     "well-A:A_LOD1__container_lug",
+     "well-A:A_LOD1__container_lug.001",
+     "well-A:A_LOD1__cross_head",
+     "well-A:A_LOD1__drawing_container",
+     "well-A:A_LOD1__eave_tie",
+     "well-A:A_LOD1__eave_tie.001",
+     "well-A:A_LOD1__main_post_-1",
+     "well-A:A_LOD1__main_post_1",
+     "well-A:A_LOD1__post_foot_-1",
+     "well-A:A_LOD1__post_foot_1",
+     "well-A:A_LOD1__rope_C_static",
+     "well-A:A_LOD1__wheel_axle"
+    ],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "M026-container",
+     "class": "moving"
+    },
+    {
+     "id": "M026-guides",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "market-site:well-A-windlass:mount"
+   ],
+   "consumes": [
+    "market-site:well-A:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-027": {
+   "seat": "LY-027",
+   "title": "铺内货架与货物占位兼容包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-021"
+   ],
+   "usesG": true,
+   "site": "S-MARKET",
+   "siteOwner": "LY-030",
+   "role": "assembly",
+   "frames": [
+    "local:market-site"
+   ],
+   "writeZones": [
+    "LY-027:write:001",
+    "LY-027:write:002",
+    "LY-027:write:003",
+    "LY-027:write:004",
+    "LY-027:write:005",
+    "LY-027:write:006",
+    "LY-027:write:007",
+    "LY-027:write:008"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "M027-cargo-proxies",
+     "class": "removable"
+    },
+    {
+     "id": "M027-load-states",
+     "class": "state-variant"
+    }
+   ],
+   "produces": [],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-028": {
+   "seat": "LY-028",
+   "title": "市肆卸货与棚下操作地面",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-022",
+    "LY-023",
+    "LY-027"
+   ],
+   "usesG": true,
+   "site": "S-MARKET",
+   "siteOwner": "LY-030",
+   "role": "component",
+   "frames": [
+    "local:market-site"
+   ],
+   "writeZones": [
+    "LY-028:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "M028-staging-ground",
+     "class": "fixed"
+    },
+    {
+     "id": "M028-staging-proxies",
+     "class": "removable"
+    }
+   ],
+   "produces": [
+    "market-site:staging-W:ground"
+   ],
+   "consumes": [
+    "market-site:canopy-C00:ground",
+    "market-site:canopy-C01:ground",
+    "market-site:route-rearN:road-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-029": {
+   "seat": "LY-029",
+   "title": "八铺四棚候选的互斥与回退包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-021",
+    "LY-022",
+    "LY-023",
+    "LY-024",
+    "LY-025",
+    "LY-026",
+    "LY-027",
+    "LY-028"
+   ],
+   "usesG": true,
+   "site": "S-MARKET",
+   "siteOwner": "LY-030",
+   "role": "assembly",
+   "frames": [
+    "local:market-site",
+    "world"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [
+    "market-N2",
+    "market-main"
+   ],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 583
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "M029-variant-switch",
+     "class": "state-variant"
+    }
+   ],
+   "produces": [],
+   "consumes": [
+    "market-site:well-A:ground",
+    "market-site:staging-W:ground",
+    "market-site:street-patch-ends:ground",
+    "market-site:shop-type-closure:opening"
+   ],
+   "placementProposal": "local:market-site"
+  },
+  "LY-030": {
+   "seat": "LY-030",
+   "title": "完整市肆区域局部交付",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-029"
+   ],
+   "usesG": true,
+   "site": "S-MARKET",
+   "siteOwner": "LY-030",
+   "role": "assembly",
+   "frames": [
+    "local:market-site"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-market-frontage",
+    "m-luoyang-market-modular-assembly",
+    "m-market-functional",
+    "m-well-family"
+   ],
+   "components": [],
+   "produces": [
+    "market-site:region-boundary-E:road-end"
+   ],
+   "consumes": [
+    "market-site:route-exitPublic:road-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-031": {
+   "seat": "LY-031",
+   "title": "太仓A门扇枢接子件",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-STORAGE",
+   "siteOwner": "LY-040",
+   "role": "component",
+   "frames": [
+    "local:storage-site"
+   ],
+   "writeZones": [
+    "LY-031:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "S031-A-leaves",
+     "class": "moving"
+    },
+    {
+     "id": "S031-A-frame",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "granary-A:door:opening"
+   ],
+   "consumes": [
+    "granary-A:step-foot:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-032": {
+   "seat": "LY-032",
+   "title": "太仓B门扇枢接子件",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-STORAGE",
+   "siteOwner": "LY-040",
+   "role": "component",
+   "frames": [
+    "local:storage-site"
+   ],
+   "writeZones": [
+    "LY-032:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "S032-B-leaves",
+     "class": "moving"
+    },
+    {
+     "id": "S032-B-frame",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "granary-B:door:opening"
+   ],
+   "consumes": [
+    "granary-B:step-foot:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-033": {
+   "seat": "LY-033",
+   "title": "两仓启闭与搬运联合包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-031",
+    "LY-032"
+   ],
+   "usesG": true,
+   "site": "S-STORAGE",
+   "siteOwner": "LY-040",
+   "role": "assembly",
+   "frames": [
+    "local:storage-site"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 6
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [],
+   "produces": [],
+   "consumes": [
+    "granary-A:door:opening",
+    "granary-B:door:opening"
+   ],
+   "placementProposal": null
+  },
+  "LY-034": {
+   "seat": "LY-034",
+   "title": "收货核验前场接口重绑定",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-STORAGE",
+   "siteOwner": "LY-040",
+   "role": "assembly",
+   "frames": [
+    "local:storage-site"
+   ],
+   "writeZones": [
+    "LY-034:write:001",
+    "LY-034:write:002",
+    "LY-034:write:003"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 5
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "S034-break-patches",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "storage-site:forecourt-north:road-end"
+   ],
+   "consumes": [
+    "granary-A:step-foot:ground",
+    "granary-B:step-foot:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-035": {
+   "seat": "LY-035",
+   "title": "仓前有限搬运与暂存变体",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-033",
+    "LY-034"
+   ],
+   "usesG": true,
+   "site": "S-STORAGE",
+   "siteOwner": "LY-040",
+   "role": "component",
+   "frames": [
+    "local:storage-site"
+   ],
+   "writeZones": [
+    "LY-035:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "S035-staging",
+     "class": "removable"
+    }
+   ],
+   "produces": [],
+   "consumes": [
+    "storage-site:forecourt-north:road-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-036": {
+   "seat": "LY-036",
+   "title": "武库B外围支持地坪包",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-WUKU",
+   "siteOwner": "LY-040",
+   "role": "component",
+   "frames": [
+    "local:wuku-B-v2.2"
+   ],
+   "writeZones": [
+    "LY-036:write:001",
+    "LY-036:write:002",
+    "LY-036:write:003",
+    "LY-036:write:004"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 3
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "B036-outer-ground",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "wuku-B:outer-arrival:ground"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-037": {
+   "seat": "LY-037",
+   "title": "武库B台前侧棚接续包",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-036"
+   ],
+   "usesG": true,
+   "site": "S-WUKU",
+   "siteOwner": "LY-040",
+   "role": "component",
+   "frames": [
+    "local:wuku-B-v2.2"
+   ],
+   "writeZones": [
+    "LY-037:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "B037-transitions",
+     "class": "fixed"
+    },
+    {
+     "id": "B037-leaf-state-150deg",
+     "class": "state-variant"
+    }
+   ],
+   "produces": [
+    "wuku-B:forecourt-side:ground"
+   ],
+   "consumes": [
+    "wuku-B:outer-arrival:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-038": {
+   "seat": "LY-038",
+   "title": "武库A备选安装契约",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-036"
+   ],
+   "usesG": true,
+   "site": "S-WUKU",
+   "siteOwner": "LY-040",
+   "role": "assembly",
+   "frames": [
+    "local:wuku-A-v2"
+   ],
+   "writeZones": [
+    "LY-038:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 3
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [],
+   "produces": [],
+   "consumes": [
+    "wuku-B:outer-arrival:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-039": {
+   "seat": "LY-039",
+   "title": "东北既有196米C路重绑定",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-003",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-034",
+    "LY-036",
+    "LY-037"
+   ],
+   "usesG": true,
+   "site": "S-NE-ROAD",
+   "siteOwner": "LY-040",
+   "role": "assembly",
+   "frames": [
+    "world"
+   ],
+   "writeZones": [
+    "LY-039:write:001",
+    "LY-039:write:002"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 1
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [],
+   "produces": [],
+   "consumes": [
+    "ne-approach:start:road-end",
+    "ne-approach:end-E:road-end",
+    "storage-site:forecourt-north:road-end",
+    "wuku-B:outer-arrival:ground",
+    "wuku-B:forecourt-side:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-040": {
+   "seat": "LY-040",
+   "title": "仓储武库功能区局部装配",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-033",
+    "LY-034",
+    "LY-035",
+    "LY-036",
+    "LY-037",
+    "LY-038",
+    "LY-039"
+   ],
+   "usesG": true,
+   "site": "S-STORAGE",
+   "siteOwner": "LY-040",
+   "role": "assembly",
+   "frames": [
+    "local:storage-site",
+    "world"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [
+    "storage-main"
+   ],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 3
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-wuku",
+    "m-storage-functional"
+   ],
+   "components": [],
+   "produces": [
+    "storage-site:region-boundary:road-end"
+   ],
+   "consumes": [
+    "storage-site:forecourt-north:road-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-041": {
+   "seat": "LY-041",
+   "title": "示范住宅地基与地坪适配",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-COURT",
+   "siteOwner": "LY-050",
+   "role": "component",
+   "frames": [
+    "court:C02-010"
+   ],
+   "writeZones": [
+    "LY-041:write:001",
+    "LY-041:write:002",
+    "LY-041:write:003",
+    "LY-041:write:004",
+    "LY-041:write:005",
+    "LY-041:write:006",
+    "LY-041:write:007",
+    "LY-041:write:008",
+    "LY-041:write:009",
+    "LY-041:write:010",
+    "LY-041:write:011",
+    "LY-041:write:012",
+    "LY-041:write:013"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "R041-foot-patches",
+     "class": "fixed"
+    }
+   ],
+   "produces": [],
+   "consumes": [
+    "C02-010:ground-base"
+   ],
+   "placementProposal": null
+  },
+  "LY-042": {
+   "seat": "LY-042",
+   "title": "住宅内门修订接回原院",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041"
+   ],
+   "usesG": true,
+   "site": "S-COURT",
+   "siteOwner": "LY-050",
+   "role": "assembly",
+   "frames": [
+    "court:C02-010"
+   ],
+   "writeZones": [
+    "LY-042:write:001",
+    "LY-042:write:002"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 2
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "R042-door-leaves",
+     "class": "moving"
+    },
+    {
+     "id": "R042-old-leaves-hidden",
+     "class": "state-variant"
+    }
+   ],
+   "produces": [
+    "C02-010:inner-door-axes:mount"
+   ],
+   "consumes": [
+    "C02-010:ground-base"
+   ],
+   "placementProposal": null
+  },
+  "LY-043": {
+   "seat": "LY-043",
+   "title": "住屋与院墙端接组件",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041"
+   ],
+   "usesG": true,
+   "site": "S-COURT",
+   "siteOwner": "LY-050",
+   "role": "component",
+   "frames": [
+    "court:C02-010"
+   ],
+   "writeZones": [
+    "LY-043:write:001",
+    "LY-043:write:002",
+    "LY-043:write:003",
+    "LY-043:write:004"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 3
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "R043-junctions",
+     "class": "fixed"
+    }
+   ],
+   "produces": [],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-044": {
+   "seat": "LY-044",
+   "title": "备食与灶体院内接地包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041"
+   ],
+   "usesG": true,
+   "site": "S-COURT",
+   "siteOwner": "LY-050",
+   "role": "assembly",
+   "frames": [
+    "court:C02-010"
+   ],
+   "writeZones": [
+    "LY-044:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 6
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "R044-stove",
+     "class": "fixed"
+    },
+    {
+     "id": "R044-prep-table",
+     "class": "fixed"
+    }
+   ],
+   "produces": [],
+   "consumes": [
+    "C02-010:ground-base"
+   ],
+   "placementProposal": null
+  },
+  "LY-045": {
+   "seat": "LY-045",
+   "title": "圈厕与真实地面开口包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041"
+   ],
+   "usesG": true,
+   "site": "S-COURT",
+   "siteOwner": "LY-050",
+   "role": "assembly",
+   "frames": [
+    "court:C02-010"
+   ],
+   "writeZones": [
+    "LY-045:write:001"
+   ],
+   "cutZones": [
+    "LY-045:cut:002"
+   ],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 3
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [
+    "cut:LY-045:C02-010-latrine"
+   ],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "R045-service-A",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "cut:LY-045:C02-010-latrine:cut"
+   ],
+   "consumes": [
+    "C02-010:ground-base"
+   ],
+   "placementProposal": null
+  },
+  "LY-046": {
+   "seat": "LY-046",
+   "title": "住宅门前与檐下排水试片",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041"
+   ],
+   "usesG": true,
+   "site": "S-COURT",
+   "siteOwner": "LY-050",
+   "role": "component",
+   "frames": [
+    "court:C02-010"
+   ],
+   "writeZones": [
+    "LY-046:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "R046-drip-strip",
+     "class": "removable"
+    }
+   ],
+   "produces": [
+    "C02-010:drip-outlet:drain"
+   ],
+   "consumes": [
+    "C02-010:ground-base"
+   ],
+   "placementProposal": null
+  },
+  "LY-047": {
+   "seat": "LY-047",
+   "title": "住宅储藏与棚下安装变体",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041",
+    "LY-043"
+   ],
+   "usesG": true,
+   "site": "S-COURT",
+   "siteOwner": "LY-050",
+   "role": "assembly",
+   "frames": [
+    "court:C02-010"
+   ],
+   "writeZones": [
+    "LY-047:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 3
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "R047-storage-module",
+     "class": "removable"
+    }
+   ],
+   "produces": [],
+   "consumes": [
+    "C02-010:ground-base"
+   ],
+   "placementProposal": null
+  },
+  "LY-048": {
+   "seat": "LY-048",
+   "title": "住宅服务口与边界闭合",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-047"
+   ],
+   "usesG": true,
+   "site": "S-COURT",
+   "siteOwner": "LY-050",
+   "role": "component",
+   "frames": [
+    "court:C02-010"
+   ],
+   "writeZones": [
+    "LY-048:write:001",
+    "LY-048:write:002",
+    "LY-048:write:003",
+    "LY-048:write:004",
+    "LY-048:write:005"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "R048-side-openings",
+     "class": "state-variant"
+    },
+    {
+     "id": "R048-low-wall-closures",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "C02-010:service-opening:opening"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-049": {
+   "seat": "LY-049",
+   "title": "院门至巷道边缘端口包",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041",
+    "LY-042",
+    "LY-048"
+   ],
+   "usesG": true,
+   "site": "S-COURT",
+   "siteOwner": "LY-050",
+   "role": "component",
+   "frames": [
+    "court:C02-010"
+   ],
+   "writeZones": [
+    "LY-049:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "R049-gate-transition",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "C02-010:gate-boundary:road-end"
+   ],
+   "consumes": [
+    "C02-010:ground-base",
+    "C02-010:service-opening:opening"
+   ],
+   "placementProposal": null
+  },
+  "LY-050": {
+   "seat": "LY-050",
+   "title": "示范院完整生活组装",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-046",
+    "LY-047",
+    "LY-048",
+    "LY-049"
+   ],
+   "usesG": true,
+   "site": "S-COURT",
+   "siteOwner": "LY-050",
+   "role": "assembly",
+   "frames": [
+    "court:C02-010",
+    "world"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [
+    "C02-010"
+   ],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-cooking-stove",
+    "m-luoyang-household-service",
+    "m-luoyang-inner-door-components",
+    "m-luoyang-residential-preparation",
+    "m-luoyang-service-court",
+    "m-luoyang-wall-house-court"
+   ],
+   "components": [],
+   "produces": [],
+   "consumes": [
+    "C02-010:gate-boundary:road-end",
+    "C02-010:drip-outlet:drain",
+    "C02-010:service-opening:opening"
+   ],
+   "placementProposal": null
+  },
+  "LY-051": {
+   "seat": "LY-051",
+   "title": "厩棚系留与分栏配件",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-WORK",
+   "siteOwner": "LY-060",
+   "role": "component",
+   "frames": [
+    "local:stable-A",
+    "local:stable-B"
+   ],
+   "writeZones": [
+    "LY-051:write:001",
+    "LY-051:write:002"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "W051-tethers",
+     "class": "removable"
+    },
+    {
+     "id": "W051-partitions",
+     "class": "removable"
+    }
+   ],
+   "produces": [
+    "stable:partition-footprint:mount"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-052": {
+   "seat": "LY-052",
+   "title": "厩棚操作地面与槽前接口",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-051"
+   ],
+   "usesG": true,
+   "site": "S-WORK",
+   "siteOwner": "LY-060",
+   "role": "component",
+   "frames": [
+    "local:stable-A",
+    "local:stable-B"
+   ],
+   "writeZones": [
+    "LY-052:write:001",
+    "LY-052:write:002",
+    "LY-052:write:003",
+    "LY-052:write:004"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 39
+   },
+   "ownsGroundPieces": [
+    "gp:stable-A:A_earth_platform",
+    "gp:stable-B:B_earth_platform"
+   ],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "W052-floor-diff",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "stable:entrance:ground",
+    "stable:drain-outlet:drain"
+   ],
+   "consumes": [
+    "stable:partition-footprint:mount"
+   ],
+   "placementProposal": null
+  },
+  "LY-053": {
+   "seat": "LY-053",
+   "title": "砖瓦窑坑位与基底包",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-WORK",
+   "siteOwner": "LY-060",
+   "role": "component",
+   "frames": [
+    "local:kiln-A",
+    "local:kiln-B"
+   ],
+   "writeZones": [
+    "LY-053:write:001",
+    "LY-053:write:002"
+   ],
+   "cutZones": [
+    "LY-053:cut:003",
+    "LY-053:cut:004"
+   ],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 80
+   },
+   "ownsGroundPieces": [
+    "gp:kiln-A:A_presentation_ground",
+    "gp:kiln-B:B_presentation_ground"
+   ],
+   "ownsCuts": [
+    "cut:LY-053:kiln-pit"
+   ],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "W053-pit-walls",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "kiln:pit-rim:cut",
+    "cut:LY-053:kiln-pit:cut"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-054": {
+   "seat": "LY-054",
+   "title": "窑前作业与暂存地面",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-053"
+   ],
+   "usesG": true,
+   "site": "S-WORK",
+   "siteOwner": "LY-060",
+   "role": "component",
+   "frames": [
+    "local:kiln-A",
+    "local:kiln-B"
+   ],
+   "writeZones": [
+    "LY-054:write:001",
+    "LY-054:write:002"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "W054-front-ground",
+     "class": "fixed"
+    },
+    {
+     "id": "W054-staging-proxies",
+     "class": "removable"
+    }
+   ],
+   "produces": [
+    "kiln:front-work:ground",
+    "kiln:front-drain:drain"
+   ],
+   "consumes": [
+    "kiln:pit-rim:cut"
+   ],
+   "placementProposal": null
+  },
+  "LY-055": {
+   "seat": "LY-055",
+   "title": "人力石磨安装与操作台脚",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-WORK",
+   "siteOwner": "LY-060",
+   "role": "assembly",
+   "frames": [
+    "local:hand-mill"
+   ],
+   "writeZones": [
+    "LY-055:write:001",
+    "LY-055:write:002",
+    "LY-055:write:003"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 34
+   },
+   "ownsGroundPieces": [
+    "gp:hand-mill-A:A_presentation_ground",
+    "gp:hand-mill-B:B_presentation_ground"
+   ],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "W055-upper-stone",
+     "class": "moving-candidate (static in GLB)"
+    }
+   ],
+   "produces": [
+    "hand-mill:stand-base:ground"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-056": {
+   "seat": "LY-056",
+   "title": "足碓踏台连续支承包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-WORK",
+   "siteOwner": "LY-060",
+   "role": "assembly",
+   "frames": [
+    "local:foot-pestle"
+   ],
+   "writeZones": [
+    "LY-056:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 3
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "W056-pestle-beam",
+     "class": "moving"
+    }
+   ],
+   "produces": [
+    "foot-pestle:tread-base:ground",
+    "foot-pestle:pivot:mount"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-057": {
+   "seat": "LY-057",
+   "title": "原谷物院屋面缺陷修订",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-WORK",
+   "siteOwner": "LY-060",
+   "role": "component",
+   "frames": [
+    "local:workshed"
+   ],
+   "writeZones": [
+    "LY-057:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [
+     "workshed:workshed_tile",
+     "workshed:workshed_timber"
+    ],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "W057-roof-revision",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "workshed:shed-floor:floor"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-058": {
+   "seat": "LY-058",
+   "title": "谷物院扬谷暂存通路包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-055",
+    "LY-056",
+    "LY-057"
+   ],
+   "usesG": true,
+   "site": "S-WORK",
+   "siteOwner": "LY-060",
+   "role": "assembly",
+   "frames": [
+    "local:work-site"
+   ],
+   "writeZones": [
+    "LY-058:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 5
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "W058-flow-ground",
+     "class": "fixed"
+    },
+    {
+     "id": "W058-staging-proxies",
+     "class": "removable"
+    }
+   ],
+   "produces": [
+    "work-site:interior-edge:ground"
+   ],
+   "consumes": [
+    "hand-mill:stand-base:ground",
+    "foot-pestle:tread-base:ground",
+    "workshed:shed-floor:floor"
+   ],
+   "placementProposal": null
+  },
+  "LY-059": {
+   "seat": "LY-059",
+   "title": "作坊围界与服务口补件",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-053",
+    "LY-054",
+    "LY-058"
+   ],
+   "usesG": true,
+   "site": "S-WORK",
+   "siteOwner": "LY-060",
+   "role": "component",
+   "frames": [
+    "local:work-site"
+   ],
+   "writeZones": [
+    "LY-059:write:001",
+    "LY-059:write:002",
+    "LY-059:write:003",
+    "LY-059:write:004"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "W059-gaps-closures",
+     "class": "fixed"
+    },
+    {
+     "id": "W059-service-gate",
+     "class": "state-variant"
+    }
+   ],
+   "produces": [
+    "work-site:service-gate:opening"
+   ],
+   "consumes": [
+    "work-site:interior-edge:ground",
+    "kiln:front-work:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-060": {
+   "seat": "LY-060",
+   "title": "作业设施区局部交付",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-051",
+    "LY-052",
+    "LY-053",
+    "LY-054",
+    "LY-055",
+    "LY-056",
+    "LY-057",
+    "LY-058",
+    "LY-059"
+   ],
+   "usesG": true,
+   "site": "S-WORK",
+   "siteOwner": "LY-060",
+   "role": "assembly",
+   "frames": [
+    "local:work-site"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-foot-pestle",
+    "m-luoyang-hand-mill",
+    "m-luoyang-stable",
+    "m-luoyang-tile-kiln",
+    "m-luoyang-workyard-shed"
+   ],
+   "components": [],
+   "produces": [],
+   "consumes": [
+    "work-site:service-gate:opening",
+    "stable:entrance:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-061": {
+   "seat": "LY-061",
+   "title": "无名候入院外围墙体",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-PALACE",
+   "siteOwner": "LY-070",
+   "role": "component",
+   "frames": [
+    "local:admission-court"
+   ],
+   "writeZones": [
+    "LY-061:write:001",
+    "LY-061:write:002",
+    "LY-061:write:003",
+    "LY-061:write:004",
+    "LY-061:write:005",
+    "LY-061:write:006",
+    "LY-061:write:007"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 21
+   },
+   "ownsGroundPieces": [
+    "gp:admission-court:guard__guard-slice-ground-earth"
+   ],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "P061-enclosure",
+     "class": "fixed"
+    },
+    {
+     "id": "P061-corners-footings",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "admission-court:enclosure:wall-end"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-062": {
+   "seat": "LY-062",
+   "title": "候入院侧口与工作口关闭件",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-061"
+   ],
+   "usesG": true,
+   "site": "S-PALACE",
+   "siteOwner": "LY-070",
+   "role": "component",
+   "frames": [
+    "local:admission-court"
+   ],
+   "writeZones": [
+    "LY-062:write:001",
+    "LY-062:write:002",
+    "LY-062:write:003"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 15
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "P062-closures",
+     "class": "state-variant"
+    },
+    {
+     "id": "P062-main-leaves-state",
+     "class": "state-variant"
+    }
+   ],
+   "produces": [
+    "admission-court:side-opening-W:opening",
+    "admission-court:side-opening-E:opening"
+   ],
+   "consumes": [
+    "admission-court:enclosure:wall-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-063": {
+   "seat": "LY-063",
+   "title": "侧廊端部转折安装模块",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-061"
+   ],
+   "usesG": true,
+   "site": "S-PALACE",
+   "siteOwner": "LY-070",
+   "role": "component",
+   "frames": [
+    "local:admission-court"
+   ],
+   "writeZones": [
+    "LY-063:write:001",
+    "LY-063:write:002",
+    "LY-063:write:003",
+    "LY-063:write:004"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 3
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "P063-end-turns",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "sidehall:ends:floor"
+   ],
+   "consumes": [
+    "admission-court:enclosure:wall-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-064": {
+   "seat": "LY-064",
+   "title": "成对阙前庭接地接口",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-PALACE",
+   "siteOwner": "LY-070",
+   "role": "component",
+   "frames": [
+    "local:paired-que"
+   ],
+   "writeZones": [
+    "LY-064:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 3
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "P064-footings-ground",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "paired-que:forecourt-edge:ground"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-065": {
+   "seat": "LY-065",
+   "title": "殿堂侧后台缘与维护接口",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-PALACE",
+   "siteOwner": "LY-070",
+   "role": "component",
+   "frames": [
+    "local:deyang"
+   ],
+   "writeZones": [
+    "LY-065:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 6
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "P065-maintenance",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "deyang:maintenance-edge:floor"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-066": {
+   "seat": "LY-066",
+   "title": "玉堂关系组可安装副本",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-PALACE",
+   "siteOwner": "LY-070",
+   "role": "assembly",
+   "frames": [
+    "local:yutang"
+   ],
+   "writeZones": [
+    "LY-066:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 6
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [],
+   "produces": [
+    "yutang:outer-port:ground"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-067": {
+   "seat": "LY-067",
+   "title": "复道A柱脚地面适配",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-PALACE",
+   "siteOwner": "LY-070",
+   "role": "component",
+   "frames": [
+    "local:gallery-A"
+   ],
+   "writeZones": [
+    "LY-067:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 6
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "P067-footings",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "gallery-A:feet:ground"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-068": {
+   "seat": "LY-068",
+   "title": "复道B层高登临兼容件",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-PALACE",
+   "siteOwner": "LY-070",
+   "role": "component",
+   "frames": [
+    "local:gallery-B"
+   ],
+   "writeZones": [
+    "LY-068:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 3
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "P068-stair-platform",
+     "class": "fixed"
+    },
+    {
+     "id": "P068-collision",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "gallery-B:landing:floor"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-069": {
+   "seat": "LY-069",
+   "title": "复道端部宫门廊口兼容包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-062",
+    "LY-063",
+    "LY-067",
+    "LY-068"
+   ],
+   "usesG": true,
+   "site": "S-PALACE",
+   "siteOwner": "LY-070",
+   "role": "assembly",
+   "frames": [
+    "local:palace-composite"
+   ],
+   "writeZones": [
+    "LY-069:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "P069-junction",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "gallery-end:junction:floor"
+   ],
+   "consumes": [
+    "gallery-A:feet:ground",
+    "gallery-B:landing:floor",
+    "sidehall:ends:floor",
+    "admission-court:side-opening-W:opening"
+   ],
+   "placementProposal": null
+  },
+  "LY-070": {
+   "seat": "LY-070",
+   "title": "宫院复道局部整合包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-003",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-061",
+    "LY-062",
+    "LY-063",
+    "LY-064",
+    "LY-065",
+    "LY-066",
+    "LY-067",
+    "LY-068",
+    "LY-069"
+   ],
+   "usesG": true,
+   "site": "S-PALACE",
+   "siteOwner": "LY-070",
+   "role": "assembly",
+   "frames": [
+    "local:palace-composite"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-deyang-hall",
+    "m-luoyang-gallery-access",
+    "m-luoyang-palace-admission-court",
+    "m-luoyang-palace-gallery",
+    "m-luoyang-palace-guard",
+    "m-luoyang-palace-paired-que",
+    "m-luoyang-palace-sidehall",
+    "m-luoyang-yutang-halls"
+   ],
+   "components": [],
+   "produces": [],
+   "consumes": [
+    "gallery-end:junction:floor",
+    "paired-que:forecourt-edge:ground",
+    "deyang:maintenance-edge:floor",
+    "yutang:outer-port:ground",
+    "admission-court:side-opening-E:opening"
+   ],
+   "placementProposal": null
+  },
+  "LY-071": {
+   "seat": "LY-071",
+   "title": "辟雍礼堂围护装配契约",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-BIYONG",
+   "siteOwner": "LY-073",
+   "role": "assembly",
+   "frames": [
+    "local:biyong"
+   ],
+   "writeZones": [
+    "LY-071:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 4
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [],
+   "produces": [
+    "biyong:hall-enclosure:ground"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-072": {
+   "seat": "LY-072",
+   "title": "辟雍跨水通道试案",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-071"
+   ],
+   "usesG": true,
+   "site": "S-BIYONG",
+   "siteOwner": "LY-073",
+   "role": "component",
+   "frames": [
+    "local:biyong"
+   ],
+   "writeZones": [
+    "LY-072:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "B072-crossing",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "biyong:crossing-ends:ground"
+   ],
+   "consumes": [
+    "biyong:hall-enclosure:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-073": {
+   "seat": "LY-073",
+   "title": "辟雍岸缘与外侧地面",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-071",
+    "LY-072"
+   ],
+   "usesG": true,
+   "site": "S-BIYONG",
+   "siteOwner": "LY-073",
+   "role": "component",
+   "frames": [
+    "local:biyong"
+   ],
+   "writeZones": [
+    "LY-073:write:001",
+    "LY-073:write:002",
+    "LY-073:write:003"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-biyong"
+   ],
+   "components": [
+    {
+     "id": "B073-bank",
+     "class": "fixed"
+    },
+    {
+     "id": "B073-water-material",
+     "class": "removable"
+    }
+   ],
+   "produces": [
+    "biyong:bank-outlet:drain"
+   ],
+   "consumes": [
+    "biyong:crossing-ends:ground",
+    "biyong:hall-enclosure:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-074": {
+   "seat": "LY-074",
+   "title": "明堂四侧入口外到达地面",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-MINGTANG",
+   "siteOwner": "LY-075",
+   "role": "component",
+   "frames": [
+    "local:mingtang"
+   ],
+   "writeZones": [
+    "LY-074:write:001",
+    "LY-074:write:002",
+    "LY-074:write:003",
+    "LY-074:write:004"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 6
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "T074-arrival",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "mingtang:side-N:ground",
+    "mingtang:side-E:ground",
+    "mingtang:side-S:ground",
+    "mingtang:side-W:ground"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-075": {
+   "seat": "LY-075",
+   "title": "明堂九房完整内部安装检查",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-074"
+   ],
+   "usesG": true,
+   "site": "S-MINGTANG",
+   "siteOwner": "LY-075",
+   "role": "assembly",
+   "frames": [
+    "local:mingtang"
+   ],
+   "writeZones": [
+    "LY-075:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-mingtang"
+   ],
+   "components": [
+    {
+     "id": "T075-gap-diffs",
+     "class": "fixed"
+    }
+   ],
+   "produces": [],
+   "consumes": [
+    "mingtang:side-N:ground",
+    "mingtang:side-E:ground",
+    "mingtang:side-S:ground",
+    "mingtang:side-W:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-076": {
+   "seat": "LY-076",
+   "title": "灵台未修台缘与绕行补件",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-LINGTAI",
+   "siteOwner": "LY-076",
+   "role": "component+assembly",
+   "frames": [
+    "local:lingtai-A"
+   ],
+   "writeZones": [
+    "LY-076:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [
+    "research-lingtai"
+   ],
+   "ownsSourceObjects": {
+    "modify/replace": [
+     "lingtai-A:C_access_stair",
+     "lingtai-A:central_square_platform_C",
+     "lingtai-A:ground_cell",
+     "lingtai-A:ground_cell.001",
+     "lingtai-A:ground_cell.002",
+     "lingtai-A:ground_cell.003",
+     "lingtai-A:ground_cell.004",
+     "lingtai-A:ground_cell.005",
+     "lingtai-A:lingtai-A-static_earth",
+     "lingtai-A:lingtai-A-static_path",
+     "lingtai-A:lingtai-A-static_tile",
+     "lingtai-A:lingtai-A-static_timber",
+     "lingtai-A:north_hall_v1_floor",
+     "lingtai-A:north_hall_v1_post",
+     "lingtai-A:north_hall_v1_post.001",
+     "lingtai-A:north_hall_v1_post.002",
+     "lingtai-A:north_hall_v1_post.003",
+     "lingtai-A:north_hall_v1_post.004",
+     "lingtai-A:north_hall_v1_post.005",
+     "lingtai-A:north_hall_v1_post.006",
+     "lingtai-A:north_hall_v1_post.007",
+     "lingtai-A:north_hall_v1_post.008",
+     "lingtai-A:north_hall_v1_post.009",
+     "lingtai-A:north_hall_v1_post.010",
+     "lingtai-A:north_hall_v1_post.011",
+     "lingtai-A:north_hall_v1_post.012",
+     "lingtai-A:north_hall_v1_post.013",
+     "lingtai-A:north_hall_v1_post.014",
+     "lingtai-A:north_hall_v1_post.015",
+     "lingtai-A:north_hall_v1_post.016",
+     "lingtai-A:north_hall_v1_post.017",
+     "lingtai-A:north_hall_v1_post.018",
+     "lingtai-A:north_hall_v1_post.019",
+     "lingtai-A:north_hall_v1_rafter",
+     "lingtai-A:north_hall_v1_rafter.001",
+     "lingtai-A:north_hall_v1_rafter.002",
+     "lingtai-A:north_hall_v1_rafter.003",
+     "lingtai-A:north_hall_v1_rafter.004",
+     "lingtai-A:north_hall_v1_rafter.005",
+     "lingtai-A:north_hall_v1_rafter.006",
+     "lingtai-A:north_hall_v1_rafter.007",
+     "lingtai-A:north_hall_v1_rafter.008",
+     "lingtai-A:north_hall_v1_rafter.009",
+     "lingtai-A:north_hall_v1_rafter.010",
+     "lingtai-A:north_hall_v1_rafter.011",
+     "lingtai-A:north_hall_v1_rafter.012",
+     "lingtai-A:north_hall_v1_rafter.013",
+     "lingtai-A:north_hall_v1_rafter.014",
+     "lingtai-A:north_hall_v1_rafter.015",
+     "lingtai-A:north_hall_v1_rafter.016",
+     "lingtai-A:north_hall_v1_rafter.017",
+     "lingtai-A:north_hall_v1_rafter.018",
+     "lingtai-A:north_hall_v1_rafter.019",
+     "lingtai-A:north_hall_v1_rear_infill",
+     "lingtai-A:north_hall_v1_rear_infill.001",
+     "lingtai-A:north_hall_v1_rear_infill.002",
+     "lingtai-A:north_hall_v1_rear_infill.003",
+     "lingtai-A:north_hall_v1_rear_infill.004",
+     "lingtai-A:north_hall_v1_rear_infill.005",
+     "lingtai-A:north_hall_v1_rear_infill.006",
+     "lingtai-A:north_hall_v1_rear_infill.007",
+     "lingtai-A:north_hall_v1_rear_infill.008",
+     "lingtai-A:north_hall_v1_side_infill",
+     "lingtai-A:north_hall_v1_side_infill.001",
+     "lingtai-A:north_hall_v1_tie",
+     "lingtai-A:north_hall_v1_tie.001",
+     "lingtai-A:north_v1_roof_support",
+     "lingtai-A:north_v1_roof_support.001",
+     "lingtai-A:north_v1_simple_ridge_C",
+     "lingtai-A:perimeter_wall_C",
+     "lingtai-A:perimeter_wall_C.001",
+     "lingtai-A:perimeter_wall_C.002",
+     "lingtai-A:perimeter_wall_C.003",
+     "lingtai-A:perimeter_wall_C.004",
+     "lingtai-A:perimeter_wall_C.005",
+     "lingtai-A:perimeter_wall_C.006",
+     "lingtai-A:perimeter_wall_C.007",
+     "lingtai-A:perimeter_wall_C.008",
+     "lingtai-A:perimeter_wall_C.009",
+     "lingtai-A:perimeter_wall_C.010",
+     "lingtai-A:perimeter_wall_C.011",
+     "lingtai-A:perimeter_wall_C.012",
+     "lingtai-A:perimeter_wall_C.013",
+     "lingtai-A:perimeter_wall_C.014",
+     "lingtai-A:perimeter_wall_C.015",
+     "lingtai-A:side_hall_cover_simplified",
+     "lingtai-A:side_hall_cover_simplified.001",
+     "lingtai-A:side_hall_cover_simplified.002",
+     "lingtai-A:side_hall_cover_simplified.003",
+     "lingtai-A:side_hall_cover_simplified.004",
+     "lingtai-A:side_hall_cover_simplified.005",
+     "lingtai-A:side_hall_cover_simplified.006",
+     "lingtai-A:side_hall_cover_simplified.007",
+     "lingtai-A:side_hall_cover_simplified.008",
+     "lingtai-A:side_hall_cover_simplified.009",
+     "lingtai-A:side_hall_cover_simplified.010",
+     "lingtai-A:side_hall_cover_simplified.011",
+     "lingtai-A:side_hall_cover_simplified.012",
+     "lingtai-A:side_hall_cover_simplified.013",
+     "lingtai-A:side_hall_cover_simplified.014",
+     "lingtai-A:side_hall_cover_simplified.015",
+     "lingtai-A:side_hall_cover_simplified.016",
+     "lingtai-A:side_hall_cover_simplified.017",
+     "lingtai-A:side_hall_cover_simplified.018",
+     "lingtai-A:side_hall_cover_simplified.019",
+     "lingtai-A:side_hall_cover_simplified.020",
+     "lingtai-A:side_hall_cover_simplified.021",
+     "lingtai-A:side_hall_cover_simplified.022",
+     "lingtai-A:side_hall_cover_simplified.023",
+     "lingtai-A:side_hall_cover_simplified.024",
+     "lingtai-A:side_hall_cover_simplified.025",
+     "lingtai-A:side_hall_cover_simplified.026",
+     "lingtai-A:side_hall_cover_simplified.027",
+     "lingtai-A:side_hall_cover_simplified.028",
+     "lingtai-A:side_hall_cover_simplified.029",
+     "lingtai-A:side_hall_cover_simplified.030",
+     "lingtai-A:side_hall_cover_simplified.031",
+     "lingtai-A:side_hall_cover_simplified.032",
+     "lingtai-A:side_hall_cover_simplified.033",
+     "lingtai-A:side_hall_cover_simplified.034",
+     "lingtai-A:side_hall_cover_simplified.035",
+     "lingtai-A:side_hall_cover_simplified.036",
+     "lingtai-A:side_hall_cover_simplified.037",
+     "lingtai-A:side_hall_cover_simplified.038",
+     "lingtai-A:side_hall_cover_simplified.039",
+     "lingtai-A:side_hall_cover_simplified.040",
+     "lingtai-A:side_hall_cover_simplified.041",
+     "lingtai-A:side_hall_cover_simplified.042",
+     "lingtai-A:side_hall_cover_simplified.043",
+     "lingtai-A:side_hall_cover_simplified.044",
+     "lingtai-A:side_hall_cover_simplified.045",
+     "lingtai-A:side_hall_cover_simplified.046",
+     "lingtai-A:side_hall_cover_simplified.047",
+     "lingtai-A:side_hall_cover_simplified.048",
+     "lingtai-A:side_hall_cover_simplified.049",
+     "lingtai-A:side_hall_cover_simplified.050",
+     "lingtai-A:side_hall_cover_simplified.051",
+     "lingtai-A:side_hall_cover_simplified.052",
+     "lingtai-A:side_hall_cover_simplified.053",
+     "lingtai-A:side_hall_cover_simplified.054",
+     "lingtai-A:side_hall_cover_simplified.055",
+     "lingtai-A:side_hall_cover_simplified.056",
+     "lingtai-A:side_hall_cover_simplified.057",
+     "lingtai-A:side_hall_cover_simplified.058",
+     "lingtai-A:side_hall_cover_simplified.059",
+     "lingtai-A:side_hall_cover_simplified.060",
+     "lingtai-A:side_hall_cover_simplified.061",
+     "lingtai-A:side_hall_cover_simplified.062",
+     "lingtai-A:side_hall_cover_simplified.063",
+     "lingtai-A:side_hall_cover_simplified.064",
+     "lingtai-A:side_hall_cover_simplified.065",
+     "lingtai-A:side_hall_cover_simplified.066",
+     "lingtai-A:side_hall_cover_simplified.067",
+     "lingtai-A:side_hall_cover_simplified.068",
+     "lingtai-A:side_hall_cover_simplified.069",
+     "lingtai-A:side_hall_cover_simplified.070",
+     "lingtai-A:side_hall_cover_simplified.071",
+     "lingtai-A:side_hall_cover_simplified.072",
+     "lingtai-A:side_hall_cover_simplified.073",
+     "lingtai-A:side_hall_cover_simplified.074",
+     "lingtai-A:side_hall_cover_simplified.075",
+     "lingtai-A:side_hall_cover_simplified.076",
+     "lingtai-A:side_hall_cover_simplified.077",
+     "lingtai-A:side_hall_cover_simplified.078",
+     "lingtai-A:side_hall_cover_simplified.079",
+     "lingtai-A:side_hall_cover_simplified.080",
+     "lingtai-A:side_hall_cover_simplified.081",
+     "lingtai-A:side_hall_cover_simplified.082",
+     "lingtai-A:side_hall_cover_simplified.083",
+     "lingtai-A:side_hall_cover_simplified.084",
+     "lingtai-A:side_hall_cover_simplified.085",
+     "lingtai-A:side_hall_cover_simplified.086",
+     "lingtai-A:side_hall_cover_simplified.087",
+     "lingtai-A:side_hall_cover_simplified.088",
+     "lingtai-A:side_hall_cover_simplified.089",
+     "lingtai-A:side_hall_cover_simplified.090",
+     "lingtai-A:side_hall_cover_simplified.091",
+     "lingtai-A:side_hall_cover_simplified.092",
+     "lingtai-A:side_hall_cover_simplified.093",
+     "lingtai-A:side_hall_cover_simplified.094",
+     "lingtai-A:side_hall_cover_simplified.095",
+     "lingtai-A:side_hall_cover_simplified.096",
+     "lingtai-A:side_hall_cover_simplified.097",
+     "lingtai-A:side_hall_cover_simplified.098",
+     "lingtai-A:side_hall_cover_simplified.099",
+     "lingtai-A:side_hall_cover_simplified.100",
+     "lingtai-A:side_hall_cover_simplified.101",
+     "lingtai-A:side_hall_cover_simplified.102",
+     "lingtai-A:side_hall_cover_simplified.103",
+     "lingtai-A:side_hall_cover_simplified.104",
+     "lingtai-A:side_hall_cover_simplified.105",
+     "lingtai-A:side_hall_cover_simplified.106",
+     "lingtai-A:side_hall_cover_simplified.107",
+     "lingtai-A:side_hall_cover_simplified.108",
+     "lingtai-A:side_hall_cover_simplified.109",
+     "lingtai-A:side_hall_cover_simplified.110",
+     "lingtai-A:side_hall_cover_simplified.111",
+     "lingtai-A:side_hall_cover_simplified.112",
+     "lingtai-A:side_hall_cover_simplified.113",
+     "lingtai-A:side_hall_cover_simplified.114",
+     "lingtai-A:side_hall_cover_simplified.115",
+     "lingtai-A:side_hall_cover_simplified.116",
+     "lingtai-A:side_hall_cover_simplified.117",
+     "lingtai-A:side_hall_cover_simplified.118",
+     "lingtai-A:side_hall_cover_simplified.119",
+     "lingtai-A:side_hall_cover_simplified.120",
+     "lingtai-A:side_hall_cover_simplified.121",
+     "lingtai-A:side_hall_cover_simplified.122",
+     "lingtai-A:side_hall_cover_simplified.123",
+     "lingtai-A:side_hall_cover_simplified.124",
+     "lingtai-A:side_hall_cover_simplified.125",
+     "lingtai-A:side_hall_cover_simplified.126",
+     "lingtai-A:side_hall_cover_simplified.127",
+     "lingtai-A:side_hall_cover_simplified.128",
+     "lingtai-A:side_hall_cover_simplified.129",
+     "lingtai-A:side_hall_cover_simplified.130",
+     "lingtai-A:side_hall_cover_simplified.131",
+     "lingtai-A:side_hall_cover_simplified.132",
+     "lingtai-A:side_hall_cover_simplified.133",
+     "lingtai-A:side_hall_cover_simplified.134",
+     "lingtai-A:side_hall_cover_simplified.135",
+     "lingtai-A:side_hall_cover_simplified.136",
+     "lingtai-A:side_hall_cover_simplified.137",
+     "lingtai-A:side_hall_cover_simplified.138",
+     "lingtai-A:side_hall_cover_simplified.139",
+     "lingtai-A:side_hall_cover_simplified.140",
+     "lingtai-A:side_hall_cover_simplified.141",
+     "lingtai-A:side_hall_cover_simplified.142",
+     "lingtai-A:side_hall_cover_simplified.143",
+     "lingtai-A:side_hall_cover_simplified.144",
+     "lingtai-A:side_hall_cover_simplified.145",
+     "lingtai-A:side_hall_cover_simplified.146",
+     "lingtai-A:side_hall_cover_simplified.147",
+     "lingtai-A:side_hall_cover_simplified.148",
+     "lingtai-A:side_hall_cover_simplified.149",
+     "lingtai-A:side_hall_cover_simplified.150",
+     "lingtai-A:side_hall_cover_simplified.151",
+     "lingtai-A:side_hall_cover_simplified.152",
+     "lingtai-A:side_hall_cover_simplified.153",
+     "lingtai-A:side_hall_cover_simplified.154",
+     "lingtai-A:side_hall_cover_simplified.155",
+     "lingtai-A:side_hall_cover_simplified.156",
+     "lingtai-A:side_hall_cover_simplified.157",
+     "lingtai-A:side_hall_cover_simplified.158",
+     "lingtai-A:side_hall_cover_simplified.159",
+     "lingtai-A:side_hall_cover_simplified.160",
+     "lingtai-A:side_hall_cover_simplified.161",
+     "lingtai-A:side_hall_cover_simplified.162",
+     "lingtai-A:side_hall_cover_simplified.163",
+     "lingtai-A:side_hall_cover_simplified.164",
+     "lingtai-A:side_hall_cover_simplified.165",
+     "lingtai-A:side_hall_cover_simplified.166",
+     "lingtai-A:side_hall_cover_simplified.167",
+     "lingtai-A:side_hall_cover_simplified.168",
+     "lingtai-A:side_hall_cover_simplified.169",
+     "lingtai-A:side_hall_cover_simplified.170",
+     "lingtai-A:side_hall_cover_simplified.171",
+     "lingtai-A:side_hall_cover_simplified.172",
+     "lingtai-A:side_hall_cover_simplified.173",
+     "lingtai-A:side_hall_cover_simplified.174",
+     "lingtai-A:side_hall_cover_simplified.175",
+     "lingtai-A:side_hall_cover_simplified.176",
+     "lingtai-A:side_hall_cover_simplified.177",
+     "lingtai-A:side_hall_cover_simplified.178",
+     "lingtai-A:side_hall_cover_simplified.179",
+     "lingtai-A:side_hall_cover_simplified.180",
+     "lingtai-A:side_hall_cover_simplified.181",
+     "lingtai-A:side_hall_cover_simplified.182",
+     "lingtai-A:side_hall_cover_simplified.183",
+     "lingtai-A:side_hall_cover_simplified.184",
+     "lingtai-A:side_hall_cover_simplified.185",
+     "lingtai-A:side_hall_cover_simplified.186",
+     "lingtai-A:side_hall_cover_simplified.187",
+     "lingtai-A:side_hall_cover_simplified.188",
+     "lingtai-A:side_hall_cover_simplified.189",
+     "lingtai-A:side_hall_cover_simplified.190",
+     "lingtai-A:side_hall_cover_simplified.191",
+     "lingtai-A:side_hall_cover_simplified.192",
+     "lingtai-A:side_hall_cover_simplified.193",
+     "lingtai-A:side_hall_cover_simplified.194",
+     "lingtai-A:side_hall_cover_simplified.195",
+     "lingtai-A:side_hall_cover_simplified.196",
+     "lingtai-A:side_hall_cover_simplified.197",
+     "lingtai-A:side_hall_cover_simplified.198",
+     "lingtai-A:side_hall_cover_simplified.199",
+     "lingtai-A:side_hall_cover_simplified.200",
+     "lingtai-A:side_hall_cover_simplified.201",
+     "lingtai-A:side_hall_cover_simplified.202",
+     "lingtai-A:side_hall_cover_simplified.203",
+     "lingtai-A:side_hall_cover_simplified.204",
+     "lingtai-A:side_hall_cover_simplified.205",
+     "lingtai-A:side_hall_cover_simplified.206",
+     "lingtai-A:side_hall_cover_simplified.207",
+     "lingtai-A:side_hall_cover_simplified.208",
+     "lingtai-A:side_hall_cover_simplified.209",
+     "lingtai-A:side_hall_cover_simplified.210",
+     "lingtai-A:side_hall_cover_simplified.211",
+     "lingtai-A:side_hall_cover_simplified.212",
+     "lingtai-A:side_hall_cover_simplified.213",
+     "lingtai-A:side_hall_cover_simplified.214",
+     "lingtai-A:side_hall_cover_simplified.215",
+     "lingtai-A:side_hall_cover_simplified.216",
+     "lingtai-A:side_hall_cover_simplified.217",
+     "lingtai-A:side_hall_cover_simplified.218",
+     "lingtai-A:side_hall_cover_simplified.219",
+     "lingtai-A:side_hall_cover_simplified.220",
+     "lingtai-A:side_hall_cover_simplified.221",
+     "lingtai-A:side_hall_cover_simplified.222",
+     "lingtai-A:side_hall_cover_simplified.223",
+     "lingtai-A:side_hall_cover_simplified.224",
+     "lingtai-A:side_hall_cover_simplified.225",
+     "lingtai-A:side_hall_cover_simplified.226",
+     "lingtai-A:side_hall_cover_simplified.227",
+     "lingtai-A:side_hall_cover_simplified.228",
+     "lingtai-A:side_hall_cover_simplified.229",
+     "lingtai-A:side_hall_cover_simplified.230",
+     "lingtai-A:side_hall_cover_simplified.231",
+     "lingtai-A:side_hall_cover_simplified.232",
+     "lingtai-A:side_hall_cover_simplified.233",
+     "lingtai-A:side_hall_cover_simplified.234",
+     "lingtai-A:side_hall_cover_simplified.235",
+     "lingtai-A:side_hall_cover_simplified.236",
+     "lingtai-A:side_hall_cover_simplified.237",
+     "lingtai-A:side_hall_cover_simplified.238",
+     "lingtai-A:side_hall_cover_simplified.239",
+     "lingtai-A:side_hall_cover_simplified.240",
+     "lingtai-A:side_hall_cover_simplified.241",
+     "lingtai-A:side_hall_cover_simplified.242",
+     "lingtai-A:side_hall_cover_simplified.243",
+     "lingtai-A:side_hall_cover_simplified.244",
+     "lingtai-A:side_hall_cover_simplified.245",
+     "lingtai-A:side_hall_cover_simplified.246",
+     "lingtai-A:side_hall_cover_simplified.247",
+     "lingtai-A:side_hall_cover_simplified.248",
+     "lingtai-A:side_hall_cover_simplified.249",
+     "lingtai-A:side_hall_cover_simplified.250",
+     "lingtai-A:side_hall_cover_simplified.251",
+     "lingtai-A:side_hall_cover_simplified.252",
+     "lingtai-A:side_hall_cover_simplified.253",
+     "lingtai-A:side_hall_cover_simplified.254",
+     "lingtai-A:side_hall_cover_simplified.255",
+     "lingtai-A:side_hall_cover_simplified.256",
+     "lingtai-A:side_hall_cover_simplified.257",
+     "lingtai-A:side_hall_cover_simplified.258",
+     "lingtai-A:side_hall_cover_simplified.259",
+     "lingtai-A:side_hall_cover_simplified.260",
+     "lingtai-A:side_hall_cover_simplified.261",
+     "lingtai-A:side_hall_cover_simplified.262",
+     "lingtai-A:side_hall_cover_simplified.263",
+     "lingtai-A:side_hall_cover_simplified.264",
+     "lingtai-A:side_hall_cover_simplified.265",
+     "lingtai-A:side_hall_cover_simplified.266",
+     "lingtai-A:side_hall_cover_simplified.267",
+     "lingtai-A:side_hall_cover_simplified.268",
+     "lingtai-A:side_hall_cover_simplified.269",
+     "lingtai-A:side_hall_cover_simplified.270",
+     "lingtai-A:side_hall_cover_simplified.271",
+     "lingtai-A:side_hall_cover_simplified.272",
+     "lingtai-A:side_hall_cover_simplified.273",
+     "lingtai-A:side_hall_cover_simplified.274",
+     "lingtai-A:side_hall_cover_simplified.275",
+     "lingtai-A:side_hall_cover_simplified.276",
+     "lingtai-A:side_hall_cover_simplified.277",
+     "lingtai-A:side_hall_cover_simplified.278",
+     "lingtai-A:side_hall_cover_simplified.279",
+     "lingtai-A:side_hall_cover_simplified.280",
+     "lingtai-A:side_hall_cover_simplified.281",
+     "lingtai-A:side_hall_cover_simplified.282",
+     "lingtai-A:side_hall_cover_simplified.283",
+     "lingtai-A:side_hall_cover_simplified.284",
+     "lingtai-A:side_hall_cover_simplified.285",
+     "lingtai-A:side_hall_cover_simplified.286",
+     "lingtai-A:side_hall_cover_simplified.287",
+     "lingtai-A:side_hall_cover_simplified.288",
+     "lingtai-A:side_hall_cover_simplified.289",
+     "lingtai-A:side_hall_cover_simplified.290",
+     "lingtai-A:side_hall_cover_simplified.291",
+     "lingtai-A:side_hall_cover_simplified.292",
+     "lingtai-A:side_hall_cover_simplified.293",
+     "lingtai-A:side_hall_cover_simplified.294",
+     "lingtai-A:side_hall_cover_simplified.295",
+     "lingtai-A:side_hall_cover_simplified.296",
+     "lingtai-A:side_hall_cover_simplified.297",
+     "lingtai-A:side_hall_cover_simplified.298",
+     "lingtai-A:side_hall_cover_simplified.299",
+     "lingtai-A:side_hall_cover_simplified.300",
+     "lingtai-A:side_hall_cover_simplified.301",
+     "lingtai-A:side_hall_cover_simplified.302",
+     "lingtai-A:side_hall_cover_simplified.303",
+     "lingtai-A:side_hall_cover_simplified.304",
+     "lingtai-A:side_hall_cover_simplified.305",
+     "lingtai-A:side_hall_cover_simplified.306",
+     "lingtai-A:side_hall_cover_simplified.307",
+     "lingtai-A:side_hall_cover_simplified.308",
+     "lingtai-A:side_hall_cover_simplified.309",
+     "lingtai-A:side_hall_cover_simplified.310",
+     "lingtai-A:side_hall_cover_simplified.311",
+     "lingtai-A:side_hall_cover_simplified.312",
+     "lingtai-A:side_hall_cover_simplified.313",
+     "lingtai-A:side_hall_cover_simplified.314",
+     "lingtai-A:side_hall_cover_simplified.315",
+     "lingtai-A:side_hall_cover_simplified.316",
+     "lingtai-A:side_hall_cover_simplified.317",
+     "lingtai-A:side_hall_cover_simplified.318",
+     "lingtai-A:side_hall_cover_simplified.319",
+     "lingtai-A:side_hall_cover_simplified.320",
+     "lingtai-A:side_hall_cover_simplified.321",
+     "lingtai-A:side_hall_cover_simplified.322",
+     "lingtai-A:side_hall_cover_simplified.323",
+     "lingtai-A:side_hall_cover_simplified.324",
+     "lingtai-A:side_hall_cover_simplified.325",
+     "lingtai-A:side_hall_cover_simplified.326",
+     "lingtai-A:side_hall_cover_simplified.327",
+     "lingtai-A:side_hall_cover_simplified.328",
+     "lingtai-A:side_hall_cover_simplified.329",
+     "lingtai-A:side_hall_cover_simplified.330",
+     "lingtai-A:side_hall_cover_simplified.331",
+     "lingtai-A:side_hall_cover_simplified.332",
+     "lingtai-A:side_hall_cover_simplified.333",
+     "lingtai-A:side_hall_cover_simplified.334",
+     "lingtai-A:side_hall_cover_simplified.335",
+     "lingtai-A:side_hall_cover_simplified.336",
+     "lingtai-A:side_hall_cover_simplified.337",
+     "lingtai-A:side_hall_cover_simplified.338",
+     "lingtai-A:side_hall_cover_simplified.339",
+     "lingtai-A:side_hall_cover_simplified.340",
+     "lingtai-A:side_hall_cover_simplified.341",
+     "lingtai-A:side_hall_cover_simplified.342",
+     "lingtai-A:side_hall_cover_simplified.343",
+     "lingtai-A:side_hall_cover_simplified.344",
+     "lingtai-A:side_hall_cover_simplified.345",
+     "lingtai-A:side_hall_cover_simplified.346",
+     "lingtai-A:side_hall_cover_simplified.347",
+     "lingtai-A:side_hall_cover_simplified.348",
+     "lingtai-A:side_hall_cover_simplified.349",
+     "lingtai-A:side_hall_cover_simplified.350",
+     "lingtai-A:side_hall_cover_simplified.351",
+     "lingtai-A:side_hall_cover_simplified.352",
+     "lingtai-A:side_hall_cover_simplified.353",
+     "lingtai-A:side_hall_cover_simplified.354",
+     "lingtai-A:side_hall_cover_simplified.355",
+     "lingtai-A:side_hall_cover_simplified.356",
+     "lingtai-A:side_hall_cover_simplified.357",
+     "lingtai-A:side_hall_cover_simplified.358",
+     "lingtai-A:side_hall_cover_simplified.359",
+     "lingtai-A:side_hall_cover_simplified.360",
+     "lingtai-A:side_hall_cover_simplified.361",
+     "lingtai-A:side_hall_cover_simplified.362",
+     "lingtai-A:side_hall_cover_simplified.363",
+     "lingtai-A:side_hall_deck",
+     "lingtai-A:side_hall_deck.001",
+     "lingtai-A:side_hall_deck.002",
+     "lingtai-A:side_hall_deck.003",
+     "lingtai-A:side_hall_floor",
+     "lingtai-A:side_hall_floor.001",
+     "lingtai-A:side_hall_post",
+     "lingtai-A:side_hall_post.001",
+     "lingtai-A:side_hall_post.002",
+     "lingtai-A:side_hall_post.003",
+     "lingtai-A:side_hall_post.004",
+     "lingtai-A:side_hall_post.005",
+     "lingtai-A:side_hall_post.006",
+     "lingtai-A:side_hall_post.007",
+     "lingtai-A:side_hall_post.008",
+     "lingtai-A:side_hall_post.009",
+     "lingtai-A:side_hall_post.010",
+     "lingtai-A:side_hall_post.011",
+     "lingtai-A:side_hall_post.012",
+     "lingtai-A:side_hall_post.013",
+     "lingtai-A:side_hall_post.014",
+     "lingtai-A:side_hall_post.015",
+     "lingtai-A:side_hall_post.016",
+     "lingtai-A:side_hall_post.017",
+     "lingtai-A:side_hall_post.018",
+     "lingtai-A:side_hall_post.019",
+     "lingtai-A:side_hall_post.020",
+     "lingtai-A:side_hall_post.021",
+     "lingtai-A:side_hall_post.022",
+     "lingtai-A:side_hall_post.023",
+     "lingtai-A:side_hall_post.024",
+     "lingtai-A:side_hall_post.025",
+     "lingtai-A:side_hall_post.026",
+     "lingtai-A:side_hall_post.027",
+     "lingtai-A:side_hall_post.028",
+     "lingtai-A:side_hall_post.029",
+     "lingtai-A:side_hall_post.030",
+     "lingtai-A:side_hall_post.031",
+     "lingtai-A:side_hall_post.032",
+     "lingtai-A:side_hall_post.033",
+     "lingtai-A:side_hall_post.034",
+     "lingtai-A:side_hall_post.035",
+     "lingtai-A:side_hall_post.036",
+     "lingtai-A:side_hall_post.037",
+     "lingtai-A:side_hall_post.038",
+     "lingtai-A:side_hall_post.039",
+     "lingtai-A:side_hall_rafter_C",
+     "lingtai-A:side_hall_rafter_C.001",
+     "lingtai-A:side_hall_rafter_C.002",
+     "lingtai-A:side_hall_rafter_C.003",
+     "lingtai-A:side_hall_rafter_C.004",
+     "lingtai-A:side_hall_rafter_C.005",
+     "lingtai-A:side_hall_rafter_C.006",
+     "lingtai-A:side_hall_rafter_C.007",
+     "lingtai-A:side_hall_rafter_C.008",
+     "lingtai-A:side_hall_rafter_C.009",
+     "lingtai-A:side_hall_rafter_C.010",
+     "lingtai-A:side_hall_rafter_C.011",
+     "lingtai-A:side_hall_rafter_C.012",
+     "lingtai-A:side_hall_rafter_C.013",
+     "lingtai-A:side_hall_rafter_C.014",
+     "lingtai-A:side_hall_rafter_C.015",
+     "lingtai-A:side_hall_rafter_C.016",
+     "lingtai-A:side_hall_rafter_C.017",
+     "lingtai-A:side_hall_rafter_C.018",
+     "lingtai-A:side_hall_rafter_C.019",
+     "lingtai-A:side_hall_rafter_C.020",
+     "lingtai-A:side_hall_rafter_C.021",
+     "lingtai-A:side_hall_rafter_C.022",
+     "lingtai-A:side_hall_rafter_C.023",
+     "lingtai-A:side_hall_rafter_C.024",
+     "lingtai-A:side_hall_rafter_C.025",
+     "lingtai-A:side_hall_rafter_C.026",
+     "lingtai-A:side_hall_rafter_C.027",
+     "lingtai-A:side_hall_rafter_C.028",
+     "lingtai-A:side_hall_rafter_C.029",
+     "lingtai-A:side_hall_rafter_C.030",
+     "lingtai-A:side_hall_rafter_C.031",
+     "lingtai-A:side_hall_rafter_C.032",
+     "lingtai-A:side_hall_rafter_C.033",
+     "lingtai-A:side_hall_rafter_C.034",
+     "lingtai-A:side_hall_rafter_C.035",
+     "lingtai-A:side_hall_rafter_C.036",
+     "lingtai-A:side_hall_rafter_C.037",
+     "lingtai-A:side_hall_rafter_C.038",
+     "lingtai-A:side_hall_rafter_C.039",
+     "lingtai-A:side_hall_tie",
+     "lingtai-A:side_hall_tie.001",
+     "lingtai-A:side_hall_tie.002",
+     "lingtai-A:side_hall_tie.003",
+     "lingtai-A:south_hall_cover_simplified",
+     "lingtai-A:south_hall_cover_simplified.001",
+     "lingtai-A:south_hall_cover_simplified.002",
+     "lingtai-A:south_hall_cover_simplified.003",
+     "lingtai-A:south_hall_cover_simplified.004",
+     "lingtai-A:south_hall_cover_simplified.005",
+     "lingtai-A:south_hall_cover_simplified.006",
+     "lingtai-A:south_hall_cover_simplified.007",
+     "lingtai-A:south_hall_cover_simplified.008",
+     "lingtai-A:south_hall_cover_simplified.009",
+     "lingtai-A:south_hall_cover_simplified.010",
+     "lingtai-A:south_hall_cover_simplified.011",
+     "lingtai-A:south_hall_cover_simplified.012",
+     "lingtai-A:south_hall_cover_simplified.013",
+     "lingtai-A:south_hall_cover_simplified.014",
+     "lingtai-A:south_hall_cover_simplified.015",
+     "lingtai-A:south_hall_cover_simplified.016",
+     "lingtai-A:south_hall_cover_simplified.017",
+     "lingtai-A:south_hall_cover_simplified.018",
+     "lingtai-A:south_hall_cover_simplified.019",
+     "lingtai-A:south_hall_cover_simplified.020",
+     "lingtai-A:south_hall_cover_simplified.021",
+     "lingtai-A:south_hall_cover_simplified.022",
+     "lingtai-A:south_hall_cover_simplified.023",
+     "lingtai-A:south_hall_cover_simplified.024",
+     "lingtai-A:south_hall_cover_simplified.025",
+     "lingtai-A:south_hall_cover_simplified.026",
+     "lingtai-A:south_hall_cover_simplified.027",
+     "lingtai-A:south_hall_cover_simplified.028",
+     "lingtai-A:south_hall_cover_simplified.029",
+     "lingtai-A:south_hall_cover_simplified.030",
+     "lingtai-A:south_hall_cover_simplified.031",
+     "lingtai-A:south_hall_cover_simplified.032",
+     "lingtai-A:south_hall_cover_simplified.033",
+     "lingtai-A:south_hall_cover_simplified.034",
+     "lingtai-A:south_hall_cover_simplified.035",
+     "lingtai-A:south_hall_cover_simplified.036",
+     "lingtai-A:south_hall_cover_simplified.037",
+     "lingtai-A:south_hall_cover_simplified.038",
+     "lingtai-A:south_hall_cover_simplified.039",
+     "lingtai-A:south_hall_cover_simplified.040",
+     "lingtai-A:south_hall_cover_simplified.041",
+     "lingtai-A:south_hall_cover_simplified.042",
+     "lingtai-A:south_hall_cover_simplified.043",
+     "lingtai-A:south_hall_cover_simplified.044",
+     "lingtai-A:south_hall_cover_simplified.045",
+     "lingtai-A:south_hall_cover_simplified.046",
+     "lingtai-A:south_hall_cover_simplified.047",
+     "lingtai-A:south_hall_cover_simplified.048",
+     "lingtai-A:south_hall_cover_simplified.049",
+     "lingtai-A:south_hall_cover_simplified.050",
+     "lingtai-A:south_hall_cover_simplified.051",
+     "lingtai-A:south_hall_cover_simplified.052",
+     "lingtai-A:south_hall_cover_simplified.053",
+     "lingtai-A:south_hall_cover_simplified.054",
+     "lingtai-A:south_hall_cover_simplified.055",
+     "lingtai-A:south_hall_cover_simplified.056",
+     "lingtai-A:south_hall_cover_simplified.057",
+     "lingtai-A:south_hall_cover_simplified.058",
+     "lingtai-A:south_hall_cover_simplified.059",
+     "lingtai-A:south_hall_cover_simplified.060",
+     "lingtai-A:south_hall_cover_simplified.061",
+     "lingtai-A:south_hall_cover_simplified.062",
+     "lingtai-A:south_hall_cover_simplified.063",
+     "lingtai-A:south_hall_cover_simplified.064",
+     "lingtai-A:south_hall_cover_simplified.065",
+     "lingtai-A:south_hall_cover_simplified.066",
+     "lingtai-A:south_hall_cover_simplified.067",
+     "lingtai-A:south_hall_cover_simplified.068",
+     "lingtai-A:south_hall_cover_simplified.069",
+     "lingtai-A:south_hall_cover_simplified.070",
+     "lingtai-A:south_hall_cover_simplified.071",
+     "lingtai-A:south_hall_cover_simplified.072",
+     "lingtai-A:south_hall_cover_simplified.073",
+     "lingtai-A:south_hall_cover_simplified.074",
+     "lingtai-A:south_hall_cover_simplified.075",
+     "lingtai-A:south_hall_cover_simplified.076",
+     "lingtai-A:south_hall_cover_simplified.077",
+     "lingtai-A:south_hall_cover_simplified.078",
+     "lingtai-A:south_hall_cover_simplified.079",
+     "lingtai-A:south_hall_cover_simplified.080",
+     "lingtai-A:south_hall_cover_simplified.081",
+     "lingtai-A:south_hall_cover_simplified.082",
+     "lingtai-A:south_hall_cover_simplified.083",
+     "lingtai-A:south_hall_cover_simplified.084",
+     "lingtai-A:south_hall_cover_simplified.085",
+     "lingtai-A:south_hall_cover_simplified.086",
+     "lingtai-A:south_hall_cover_simplified.087",
+     "lingtai-A:south_hall_cover_simplified.088",
+     "lingtai-A:south_hall_cover_simplified.089",
+     "lingtai-A:south_hall_cover_simplified.090",
+     "lingtai-A:south_hall_cover_simplified.091",
+     "lingtai-A:south_hall_cover_simplified.092",
+     "lingtai-A:south_hall_cover_simplified.093",
+     "lingtai-A:south_hall_cover_simplified.094",
+     "lingtai-A:south_hall_cover_simplified.095",
+     "lingtai-A:south_hall_cover_simplified.096",
+     "lingtai-A:south_hall_cover_simplified.097",
+     "lingtai-A:south_hall_cover_simplified.098",
+     "lingtai-A:south_hall_cover_simplified.099",
+     "lingtai-A:south_hall_cover_simplified.100",
+     "lingtai-A:south_hall_cover_simplified.101",
+     "lingtai-A:south_hall_cover_simplified.102",
+     "lingtai-A:south_hall_cover_simplified.103",
+     "lingtai-A:south_hall_cover_simplified.104",
+     "lingtai-A:south_hall_cover_simplified.105",
+     "lingtai-A:south_hall_cover_simplified.106",
+     "lingtai-A:south_hall_cover_simplified.107",
+     "lingtai-A:south_hall_cover_simplified.108",
+     "lingtai-A:south_hall_cover_simplified.109",
+     "lingtai-A:south_hall_cover_simplified.110",
+     "lingtai-A:south_hall_cover_simplified.111",
+     "lingtai-A:south_hall_cover_simplified.112",
+     "lingtai-A:south_hall_cover_simplified.113",
+     "lingtai-A:south_hall_cover_simplified.114",
+     "lingtai-A:south_hall_cover_simplified.115",
+     "lingtai-A:south_hall_cover_simplified.116",
+     "lingtai-A:south_hall_cover_simplified.117",
+     "lingtai-A:south_hall_cover_simplified.118",
+     "lingtai-A:south_hall_cover_simplified.119",
+     "lingtai-A:south_hall_cover_simplified.120",
+     "lingtai-A:south_hall_cover_simplified.121",
+     "lingtai-A:south_hall_cover_simplified.122",
+     "lingtai-A:south_hall_cover_simplified.123",
+     "lingtai-A:south_hall_cover_simplified.124",
+     "lingtai-A:south_hall_cover_simplified.125",
+     "lingtai-A:south_hall_cover_simplified.126",
+     "lingtai-A:south_hall_cover_simplified.127",
+     "lingtai-A:south_hall_cover_simplified.128",
+     "lingtai-A:south_hall_cover_simplified.129",
+     "lingtai-A:south_hall_cover_simplified.130",
+     "lingtai-A:south_hall_cover_simplified.131",
+     "lingtai-A:south_hall_cover_simplified.132",
+     "lingtai-A:south_hall_cover_simplified.133",
+     "lingtai-A:south_hall_cover_simplified.134",
+     "lingtai-A:south_hall_cover_simplified.135",
+     "lingtai-A:south_hall_cover_simplified.136",
+     "lingtai-A:south_hall_cover_simplified.137",
+     "lingtai-A:south_hall_cover_simplified.138",
+     "lingtai-A:south_hall_cover_simplified.139",
+     "lingtai-A:south_hall_cover_simplified.140",
+     "lingtai-A:south_hall_cover_simplified.141",
+     "lingtai-A:south_hall_cover_simplified.142",
+     "lingtai-A:south_hall_cover_simplified.143",
+     "lingtai-A:south_hall_cover_simplified.144",
+     "lingtai-A:south_hall_cover_simplified.145",
+     "lingtai-A:south_hall_cover_simplified.146",
+     "lingtai-A:south_hall_cover_simplified.147",
+     "lingtai-A:south_hall_cover_simplified.148",
+     "lingtai-A:south_hall_cover_simplified.149",
+     "lingtai-A:south_hall_cover_simplified.150",
+     "lingtai-A:south_hall_cover_simplified.151",
+     "lingtai-A:south_hall_deck",
+     "lingtai-A:south_hall_deck.001",
+     "lingtai-A:south_hall_deck.002",
+     "lingtai-A:south_hall_deck.003",
+     "lingtai-A:south_hall_floor",
+     "lingtai-A:south_hall_floor.001",
+     "lingtai-A:south_hall_post",
+     "lingtai-A:south_hall_post.001",
+     "lingtai-A:south_hall_post.002",
+     "lingtai-A:south_hall_post.003",
+     "lingtai-A:south_hall_post.004",
+     "lingtai-A:south_hall_post.005",
+     "lingtai-A:south_hall_post.006",
+     "lingtai-A:south_hall_post.007",
+     "lingtai-A:south_hall_post.008",
+     "lingtai-A:south_hall_post.009",
+     "lingtai-A:south_hall_post.010",
+     "lingtai-A:south_hall_post.011",
+     "lingtai-A:south_hall_post.012",
+     "lingtai-A:south_hall_post.013",
+     "lingtai-A:south_hall_post.014",
+     "lingtai-A:south_hall_post.015",
+     "lingtai-A:south_hall_post.016",
+     "lingtai-A:south_hall_post.017",
+     "lingtai-A:south_hall_post.018",
+     "lingtai-A:south_hall_post.019",
+     "lingtai-A:south_hall_rafter_C",
+     "lingtai-A:south_hall_rafter_C.001",
+     "lingtai-A:south_hall_rafter_C.002",
+     "lingtai-A:south_hall_rafter_C.003",
+     "lingtai-A:south_hall_rafter_C.004",
+     "lingtai-A:south_hall_rafter_C.005",
+     "lingtai-A:south_hall_rafter_C.006",
+     "lingtai-A:south_hall_rafter_C.007",
+     "lingtai-A:south_hall_rafter_C.008",
+     "lingtai-A:south_hall_rafter_C.009",
+     "lingtai-A:south_hall_rafter_C.010",
+     "lingtai-A:south_hall_rafter_C.011",
+     "lingtai-A:south_hall_rafter_C.012",
+     "lingtai-A:south_hall_rafter_C.013",
+     "lingtai-A:south_hall_rafter_C.014",
+     "lingtai-A:south_hall_rafter_C.015",
+     "lingtai-A:south_hall_rafter_C.016",
+     "lingtai-A:south_hall_rafter_C.017",
+     "lingtai-A:south_hall_rafter_C.018",
+     "lingtai-A:south_hall_rafter_C.019",
+     "lingtai-A:south_hall_tie",
+     "lingtai-A:south_hall_tie.001",
+     "lingtai-A:south_hall_tie.002",
+     "lingtai-A:south_hall_tie.003"
+    ],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-lingtai"
+   ],
+   "components": [
+    {
+     "id": "T076-edge-fixes",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "lingtai:edge:ground"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-077": {
+   "seat": "LY-077",
+   "title": "太学A门外到达接口",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-TAIXUE",
+   "siteOwner": "LY-078",
+   "role": "component",
+   "frames": [
+    "local:taixue-A"
+   ],
+   "writeZones": [
+    "LY-077:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [
+    "research-taixue-A",
+    "research-taixue-B"
+   ],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 191
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-taixue-a"
+   ],
+   "components": [
+    {
+     "id": "T077-entry-ground",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "taixue-A:outer-entry:ground"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-078": {
+   "seat": "LY-078",
+   "title": "太学观经空间外围安装包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-077"
+   ],
+   "usesG": true,
+   "site": "S-TAIXUE",
+   "siteOwner": "LY-078",
+   "role": "assembly",
+   "frames": [
+    "local:stoneclassic"
+   ],
+   "writeZones": [
+    "LY-078:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 3
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-stoneclassic-access-court"
+   ],
+   "components": [
+    {
+     "id": "T078-port-ground",
+     "class": "fixed"
+    },
+    {
+     "id": "T078-stele-slots-empty",
+     "class": "state-variant"
+    }
+   ],
+   "produces": [
+    "stoneclassic:south-mouth:road-end"
+   ],
+   "consumes": [
+    "taixue-A:outer-entry:ground"
+   ],
+   "placementProposal": null
+  },
+  "LY-079": {
+   "seat": "LY-079",
+   "title": "南郊圆坛八陛接地包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-004",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-SOUTH-ALTAR",
+   "siteOwner": "LY-079",
+   "role": "assembly",
+   "frames": [
+    "local:south-altar"
+   ],
+   "writeZones": [
+    "LY-079:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 62
+   },
+   "ownsGroundPieces": [
+    "gp:south-altar-A:A_presentation_ground",
+    "gp:south-altar-B:B_presentation_ground"
+   ],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-southern-altar"
+   ],
+   "components": [
+    {
+     "id": "T079-arrival",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "south-altar:stairs:ground"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-080": {
+   "seat": "LY-080",
+   "title": "北郊方坛四陛接地包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-004",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-NORTH-ALTAR",
+   "siteOwner": "LY-080",
+   "role": "assembly",
+   "frames": [
+    "local:north-altar"
+   ],
+   "writeZones": [
+    "LY-080:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 1
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [
+    "m-luoyang-northern-altar"
+   ],
+   "components": [
+    {
+     "id": "T080-arrival",
+     "class": "fixed"
+    }
+   ],
+   "produces": [
+    "north-altar:stairs:ground"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-081": {
+   "seat": "LY-081",
+   "title": "建立实际地面可达网络",
+   "type": "考据/契约",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-CITYGROUND",
+   "siteOwner": "LY-090",
+   "role": "data",
+   "frames": [
+    "world"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [],
+   "produces": [],
+   "consumes": [
+    "FROZEN:*"
+   ],
+   "placementProposal": null
+  },
+  "LY-082": {
+   "seat": "LY-082",
+   "title": "示范住宅外巷短接续",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-049",
+    "LY-081"
+   ],
+   "usesG": true,
+   "site": "S-COURT-LANE",
+   "siteOwner": "LY-082",
+   "role": "component",
+   "frames": [
+    "world"
+   ],
+   "writeZones": [
+    "LY-082:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "L082-lane-link",
+     "class": "removable"
+    }
+   ],
+   "produces": [],
+   "consumes": [
+    "C02-010:gate-boundary:road-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-083": {
+   "seat": "LY-083",
+   "title": "市肆外街真实接点补件",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-030",
+    "LY-081"
+   ],
+   "usesG": true,
+   "site": "S-MARKET-STREET",
+   "siteOwner": "LY-083",
+   "role": "component",
+   "frames": [
+    "world"
+   ],
+   "writeZones": [
+    "LY-083:write:001"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "L083-street-link",
+     "class": "removable"
+    }
+   ],
+   "produces": [],
+   "consumes": [
+    "market-site:region-boundary-E:road-end",
+    "market-site:route-exitPublic:road-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-084": {
+   "seat": "LY-084",
+   "title": "东北功能区对外连接候选",
+   "type": "考据/契约",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-003",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-040",
+    "LY-081"
+   ],
+   "usesG": true,
+   "site": "S-CITYGROUND",
+   "siteOwner": "LY-090",
+   "role": "data",
+   "frames": [
+    "world"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [],
+   "produces": [],
+   "consumes": [
+    "storage-site:region-boundary:road-end",
+    "ne-approach:end-E:road-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-085": {
+   "seat": "LY-085",
+   "title": "平城开阳城南端接路线",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-004",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-015",
+    "LY-017",
+    "LY-081"
+   ],
+   "usesG": true,
+   "site": "S-KAIYANG",
+   "siteOwner": "LY-015",
+   "role": "component",
+   "frames": [
+    "local:kaiyang-K-v1",
+    "local:pingcheng-P-v1"
+   ],
+   "writeZones": [
+    "LY-085:write:001",
+    "LY-085:write:002"
+   ],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "L085-kaiyang-link",
+     "class": "removable"
+    },
+    {
+     "id": "L085-pingcheng-link",
+     "class": "removable"
+    }
+   ],
+   "produces": [],
+   "consumes": [
+    "kaiyang-K-v1:outer-apron-edge:road-end",
+    "pingcheng-P-v1:outer-edge-W:road-end",
+    "pingcheng-P-v1:outer-edge-E:road-end"
+   ],
+   "placementProposal": null
+  },
+  "LY-086": {
+   "seat": "LY-086",
+   "title": "宫墙三段水道安装接口",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-003",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-WATERWAY",
+   "siteOwner": "LY-086",
+   "role": "assembly",
+   "frames": [
+    "local:waterway"
+   ],
+   "writeZones": [
+    "LY-086:write:001"
+   ],
+   "cutZones": [
+    "LY-086:cut:002"
+   ],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 9
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [
+    "cut:LY-086:waterway-wall-block"
+   ],
+   "ownsCards": [
+    "m-luoyang-palace-waterway-interface"
+   ],
+   "components": [
+    {
+     "id": "H086-wall-block",
+     "class": "fixed"
+    },
+    {
+     "id": "H086-covers",
+     "class": "removable"
+    }
+   ],
+   "produces": [
+    "waterway:ends:drain",
+    "cut:LY-086:waterway-wall-block:cut"
+   ],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-087": {
+   "seat": "LY-087",
+   "title": "局部排水端口一致性包",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-046",
+    "LY-052",
+    "LY-054",
+    "LY-073",
+    "LY-081"
+   ],
+   "usesG": true,
+   "site": "S-CITYGROUND",
+   "siteOwner": "LY-090",
+   "role": "data+assembly",
+   "frames": [
+    "world"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [],
+   "produces": [],
+   "consumes": [
+    "C02-010:drip-outlet:drain",
+    "stable:drain-outlet:drain",
+    "kiln:front-drain:drain",
+    "biyong:bank-outlet:drain"
+   ],
+   "placementProposal": null
+  },
+  "LY-088": {
+   "seat": "LY-088",
+   "title": "水系分期可视资料层",
+   "type": "考据/契约",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-003",
+    "LY-004",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "usesG": true,
+   "site": "S-CITYGROUND",
+   "siteOwner": "LY-090",
+   "role": "data",
+   "frames": [
+    "world"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [],
+   "produces": [],
+   "consumes": [],
+   "placementProposal": null
+  },
+  "LY-089": {
+   "seat": "LY-089",
+   "title": "地形支承差异片与边缘闭合",
+   "type": "补件/修订",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-081"
+   ],
+   "usesG": true,
+   "site": "S-CITYGROUND",
+   "siteOwner": "LY-090",
+   "role": "component",
+   "frames": [
+    "world"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": true,
+   "ownsCityNodes": [],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [
+    {
+     "id": "G089-support-patches",
+     "class": "fixed"
+    }
+   ],
+   "produces": [],
+   "consumes": [
+    "FROZEN:*"
+   ],
+   "placementProposal": null
+  },
+  "LY-090": {
+   "seat": "LY-090",
+   "title": "多地坪开孔与替换合成器",
+   "type": "复用装配",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-025",
+    "LY-045",
+    "LY-053",
+    "LY-086",
+    "LY-089"
+   ],
+   "usesG": true,
+   "site": "S-CITYGROUND",
+   "siteOwner": "LY-090",
+   "role": "assembly",
+   "frames": [
+    "world"
+   ],
+   "writeZones": [],
+   "cutZones": [],
+   "claimProtocol": false,
+   "ownsCityNodes": [
+    "ground-D08",
+    "ground-network-ground-stitched",
+    "ground-retained",
+    "ground-south"
+   ],
+   "ownsSourceObjects": {
+    "modify/replace": [],
+    "keep (assembly steward)": 0
+   },
+   "ownsGroundPieces": [
+    "gp:city-node:ground-D08",
+    "gp:city-node:ground-network-ground-stitched",
+    "gp:city-node:ground-retained",
+    "gp:city-node:ground-south",
+    "gp:granary-city:original_city_ground_preserved",
+    "gp:market-cluster:sample_ground"
+   ],
+   "ownsCuts": [],
+   "ownsCards": [],
+   "components": [],
+   "produces": [],
+   "consumes": [
+    "cut:LY-025:market-well-A:cut",
+    "cut:LY-045:C02-010-latrine:cut",
+    "cut:LY-053:kiln-pit:cut",
+    "cut:LY-086:waterway-wall-block:cut"
+   ],
+   "placementProposal": null
+  }
+ }
+}

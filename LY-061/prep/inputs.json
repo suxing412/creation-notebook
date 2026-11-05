@@ -1,0 +1,694 @@
+{
+ "seat": "LY-061",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "note": "sha256 为工作区文件字节；sha256_commit 为 git show HEAD: 的提交字节（GLB 两者一致；文本类见 LY-001 的 CRLF 问题）；2026-11-05 夜复核：lab HEAD 仍为 bce3211（本地 main 已到 44c66da，但 bce3211..44c66da 不改任何本席位输入，只删 yong-city-v1 进度副本），55 个原输入除 assets.json 工作区字节外全部复核一致；新增 LY-005/LY-006 契约候选与 prep 脚本条目",
+ "inputs": [
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/m-luoyang-palace-admission-court.asset.json",
+   "kind": "asset-card",
+   "sha256_commit": "7df2a18426266859f2718691546ae821026b2c50798035817a6f579fc693f560",
+   "bytes": 2175,
+   "role": "主输入：被补外围的候入院组合（门卫+庭地+两侧廊+殿阶），只读，新外围以独立叠加件对齐其资产坐标",
+   "loadedInCity": false,
+   "loadedBy": "docs/model-library/inspect.mjs:136 (资产详情页按卡片 files 列表加载)；城景 docs/cities/luoyang/* 无引用"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD0.glb",
+   "kind": "glb",
+   "sha256": "59c8b758a5a2523105eac0e516e9961bf769bd5e422ba2913d292492ed45c4b0",
+   "sha256_commit": "59c8b758a5a2523105eac0e516e9961bf769bd5e422ba2913d292492ed45c4b0",
+   "bytes": 2578472,
+   "role": "主输入：被补外围的候入院组合（门卫+庭地+两侧廊+殿阶），只读，新外围以独立叠加件对齐其资产坐标",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD1.glb",
+   "kind": "glb",
+   "sha256": "d95bd22f9317683ece8b8d14a6d4a6719522e47c8410f976e064708890148281",
+   "sha256_commit": "d95bd22f9317683ece8b8d14a6d4a6719522e47c8410f976e064708890148281",
+   "bytes": 1126584,
+   "role": "主输入：被补外围的候入院组合（门卫+庭地+两侧廊+殿阶），只读，新外围以独立叠加件对齐其资产坐标",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD2.glb",
+   "kind": "glb",
+   "sha256": "01b2017fac9d8ee6190726d233973c9b048936ce76b3ec7da8fb91aedec3a33d",
+   "sha256_commit": "01b2017fac9d8ee6190726d233973c9b048936ce76b3ec7da8fb91aedec3a33d",
+   "bytes": 278700,
+   "role": "主输入：被补外围的候入院组合（门卫+庭地+两侧廊+殿阶），只读，新外围以独立叠加件对齐其资产坐标",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0.glb",
+   "kind": "glb",
+   "sha256": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+   "sha256_commit": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+   "bytes": 2578388,
+   "role": "主输入：被补外围的候入院组合（门卫+庭地+两侧廊+殿阶），只读，新外围以独立叠加件对齐其资产坐标",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD1.glb",
+   "kind": "glb",
+   "sha256": "455a12153d4132d2b653cdf8bbcf4b4994a5c33451efc1ec16119ebbf21453d2",
+   "sha256_commit": "455a12153d4132d2b653cdf8bbcf4b4994a5c33451efc1ec16119ebbf21453d2",
+   "bytes": 1126500,
+   "role": "主输入：被补外围的候入院组合（门卫+庭地+两侧廊+殿阶），只读，新外围以独立叠加件对齐其资产坐标",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD2.glb",
+   "kind": "glb",
+   "sha256": "108e28a567dcef237868b2414332ae51925686d256891736355a5b40d9c0101d",
+   "sha256_commit": "108e28a567dcef237868b2414332ae51925686d256891736355a5b40d9c0101d",
+   "bytes": 278616,
+   "role": "主输入：被补外围的候入院组合（门卫+庭地+两侧廊+殿阶），只读，新外围以独立叠加件对齐其资产坐标",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/m-luoyang-palace-guard.asset.json",
+   "kind": "asset-card",
+   "sha256_commit": "6628df8326c79902d1af8fbd0fa5a1bebe96e8b9adc0a8c9bcd0941225e76cff",
+   "bytes": 2687,
+   "role": "门卫切片原件；外围南墙与其东西值守单元外侧面相接（x=±7.0，y −61…−55）",
+   "loadedInCity": false,
+   "loadedBy": "docs/model-library/inspect.mjs:136 (资产详情页按卡片 files 列表加载)；城景 docs/cities/luoyang/* 无引用"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD0.glb",
+   "kind": "glb",
+   "sha256": "1ffc1c3118766d418dd5fbb08b5f4a9b8790643465cc29a1d7c76f0bb28e53f3",
+   "sha256_commit": "1ffc1c3118766d418dd5fbb08b5f4a9b8790643465cc29a1d7c76f0bb28e53f3",
+   "bytes": 1386676,
+   "role": "门卫切片原件；外围南墙与其东西值守单元外侧面相接（x=±7.0，y −61…−55）",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD1.glb",
+   "kind": "glb",
+   "sha256": "42b7883dc066e1c12cff334dcc4f06705abed51a7bd1f8e42640eb388a2ffb86",
+   "sha256_commit": "42b7883dc066e1c12cff334dcc4f06705abed51a7bd1f8e42640eb388a2ffb86",
+   "bytes": 535508,
+   "role": "门卫切片原件；外围南墙与其东西值守单元外侧面相接（x=±7.0，y −61…−55）",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD2.glb",
+   "kind": "glb",
+   "sha256": "6eb2c56efc5a87a4f8e15bc5958e5b51ff327410b931d52bd44bd9f484ecdf6c",
+   "sha256_commit": "6eb2c56efc5a87a4f8e15bc5958e5b51ff327410b931d52bd44bd9f484ecdf6c",
+   "bytes": 103536,
+   "role": "门卫切片原件；外围南墙与其东西值守单元外侧面相接（x=±7.0，y −61…−55）",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD0.glb",
+   "kind": "glb",
+   "sha256": "48c511c54010cc00b5a6262dc280cab2b1d0a7c13050d847fc5856e264ce82cd",
+   "sha256_commit": "48c511c54010cc00b5a6262dc280cab2b1d0a7c13050d847fc5856e264ce82cd",
+   "bytes": 1386564,
+   "role": "门卫切片原件；外围南墙与其东西值守单元外侧面相接（x=±7.0，y −61…−55）",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD1.glb",
+   "kind": "glb",
+   "sha256": "a359265f37452cae18ab078b4b7945d8bb347c941637a12b68caf449adb94af8",
+   "sha256_commit": "a359265f37452cae18ab078b4b7945d8bb347c941637a12b68caf449adb94af8",
+   "bytes": 535400,
+   "role": "门卫切片原件；外围南墙与其东西值守单元外侧面相接（x=±7.0，y −61…−55）",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD2.glb",
+   "kind": "glb",
+   "sha256": "bf47d91d784b224fcfc0bbe81997c6e5a9a81c68375641134e29e396d9e5d63d",
+   "sha256_commit": "bf47d91d784b224fcfc0bbe81997c6e5a9a81c68375641134e29e396d9e5d63d",
+   "bytes": 103424,
+   "role": "门卫切片原件；外围南墙与其东西值守单元外侧面相接（x=±7.0，y −61…−55）",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-LOD0.glb",
+   "kind": "glb",
+   "sha256": "b06ba866692f54a2129d9673eb4ec73106d49323daa438246a772a3135b2c75e",
+   "sha256_commit": "b06ba866692f54a2129d9673eb4ec73106d49323daa438246a772a3135b2c75e",
+   "bytes": 1390736,
+   "role": "门卫切片原件；外围南墙与其东西值守单元外侧面相接（x=±7.0，y −61…−55）",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-unit-LOD0.glb",
+   "kind": "glb",
+   "sha256": "34c1a9474825554cfa4781e639b8d7ff0101be45b9f55029276a4835066b298d",
+   "sha256_commit": "34c1a9474825554cfa4781e639b8d7ff0101be45b9f55029276a4835066b298d",
+   "bytes": 1145796,
+   "role": "门卫切片原件；外围南墙与其东西值守单元外侧面相接（x=±7.0，y −61…−55）",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-sidehall/m-luoyang-palace-sidehall.asset.json",
+   "kind": "asset-card",
+   "sha256_commit": "2011ab6f9f458fab72f053006bb9154d94625f014ea7361fa53acf388e83760c",
+   "bytes": 1519,
+   "role": "侧廊庑原件（组合内东西两座）；外围与其后檐的净距约束",
+   "loadedInCity": false,
+   "loadedBy": "docs/model-library/inspect.mjs:136 (资产详情页按卡片 files 列表加载)；城景 docs/cities/luoyang/* 无引用"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD0.glb",
+   "kind": "glb",
+   "sha256": "bd000b1bf36419eebe884dbe1c92368f30ceab7597290aa6eafdbdbd971e32c2",
+   "sha256_commit": "bd000b1bf36419eebe884dbe1c92368f30ceab7597290aa6eafdbdbd971e32c2",
+   "bytes": 1555720,
+   "role": "侧廊庑原件（组合内东西两座）；外围与其后檐的净距约束",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD1.glb",
+   "kind": "glb",
+   "sha256": "547935049e53cee8d8a8c7613154365696065256722cf09f52914dc3dd3dddd1",
+   "sha256_commit": "547935049e53cee8d8a8c7613154365696065256722cf09f52914dc3dd3dddd1",
+   "bytes": 562484,
+   "role": "侧廊庑原件（组合内东西两座）；外围与其后檐的净距约束",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD2.glb",
+   "kind": "glb",
+   "sha256": "b4c64f499c9c706649e637a9f379bf5328dbf386f9161cc50db346907c612973",
+   "sha256_commit": "b4c64f499c9c706649e637a9f379bf5328dbf386f9161cc50db346907c612973",
+   "bytes": 93508,
+   "role": "侧廊庑原件（组合内东西两座）；外围与其后檐的净距约束",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-deyang-hall/m-luoyang-deyang-hall.asset.json",
+   "kind": "asset-card",
+   "sha256_commit": "16e39d6908180c5c36c63e1123d9af9cfce8b87a454136e5b3c1a2996485de14",
+   "bytes": 1821,
+   "role": "殿堂原型来源（组合内 hall 节点=deyang-A）；只作净距约束，不命名德阳",
+   "loadedInCity": false,
+   "loadedBy": "docs/model-library/inspect.mjs:136 (资产详情页按卡片 files 列表加载)；城景 docs/cities/luoyang/* 无引用"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD0.glb",
+   "kind": "glb",
+   "sha256": "7736998077a8414fe9a9dcfa8b6bce161519d2ff1d2ed5ef9440a244f061b5ae",
+   "sha256_commit": "7736998077a8414fe9a9dcfa8b6bce161519d2ff1d2ed5ef9440a244f061b5ae",
+   "bytes": 1601276,
+   "role": "殿堂原型来源（组合内 hall 节点=deyang-A）；只作净距约束，不命名德阳",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD1.glb",
+   "kind": "glb",
+   "sha256": "6f605ed7d79a091468e4bdc3b0e29315d4d05008f895290ad1ce3cb032553460",
+   "sha256_commit": "6f605ed7d79a091468e4bdc3b0e29315d4d05008f895290ad1ce3cb032553460",
+   "bytes": 727100,
+   "role": "殿堂原型来源（组合内 hall 节点=deyang-A）；只作净距约束，不命名德阳",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD2.glb",
+   "kind": "glb",
+   "sha256": "134b0375590b7440197dfd9a639d853ecfaa1e69023b4ab928a5ae738e2d452d",
+   "sha256_commit": "134b0375590b7440197dfd9a639d853ecfaa1e69023b4ab928a5ae738e2d452d",
+   "bytes": 67160,
+   "role": "殿堂原型来源（组合内 hall 节点=deyang-A）；只作净距约束，不命名德阳",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-paired-que/m-luoyang-palace-paired-que.asset.json",
+   "kind": "asset-card",
+   "sha256_commit": "455a167ea94a5a9dcb8ee776f2011a47524e356f61708c4c889525450c243d15",
+   "bytes": 1508,
+   "role": "对阙；本项不使用，只记为 LY-064 南外侧前庭的所有权边界",
+   "loadedInCity": false,
+   "loadedBy": "docs/model-library/inspect.mjs:136 (资产详情页按卡片 files 列表加载)；城景 docs/cities/luoyang/* 无引用"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD0.glb",
+   "kind": "glb",
+   "sha256": "a022d9870594f986658be288528048ca3ea6ca69c576b46a5b1aef700e0ca23d",
+   "sha256_commit": "a022d9870594f986658be288528048ca3ea6ca69c576b46a5b1aef700e0ca23d",
+   "bytes": 1588776,
+   "role": "对阙；本项不使用，只记为 LY-064 南外侧前庭的所有权边界",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD1.glb",
+   "kind": "glb",
+   "sha256": "09839d70748ea5c5ac6c3281c4c10655859e179b9c40046f1428478d8f27a68c",
+   "sha256_commit": "09839d70748ea5c5ac6c3281c4c10655859e179b9c40046f1428478d8f27a68c",
+   "bytes": 465904,
+   "role": "对阙；本项不使用，只记为 LY-064 南外侧前庭的所有权边界",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD2.glb",
+   "kind": "glb",
+   "sha256": "9b75671b3d12f393c5b9649611f96cb84eec161042a4fae2bc35cd0fbdd01a8b",
+   "sha256_commit": "9b75671b3d12f393c5b9649611f96cb84eec161042a4fae2bc35cd0fbdd01a8b",
+   "bytes": 49052,
+   "role": "对阙；本项不使用，只记为 LY-064 南外侧前庭的所有权边界",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-yutang-halls/m-luoyang-yutang-halls.asset.json",
+   "kind": "asset-card",
+   "sha256_commit": "72266b3ecc7b8b156ffa3ce358451a0461e07d3b82be779c2415c7dbc3bba82b",
+   "bytes": 1882,
+   "role": "玉堂前后殿；本项不使用（不在组合内），仅登记为任务池列出的现有输入",
+   "loadedInCity": false,
+   "loadedBy": "docs/model-library/inspect.mjs:136 (资产详情页按卡片 files 列表加载)；城景 docs/cities/luoyang/* 无引用"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD0.glb",
+   "kind": "glb",
+   "sha256": "6e7f06c054d07984e611f9bfdff80117feee3af246a2394eb289a35e8496e4f1",
+   "sha256_commit": "6e7f06c054d07984e611f9bfdff80117feee3af246a2394eb289a35e8496e4f1",
+   "bytes": 2349008,
+   "role": "玉堂前后殿；本项不使用（不在组合内），仅登记为任务池列出的现有输入",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD0.glb",
+   "kind": "glb",
+   "sha256": "92091dbe9c51e72b717a69c9ba41f6db13a2c79e77eb5f145c1881e9570b9eba",
+   "sha256_commit": "92091dbe9c51e72b717a69c9ba41f6db13a2c79e77eb5f145c1881e9570b9eba",
+   "bytes": 2230192,
+   "role": "玉堂前后殿；本项不使用（不在组合内），仅登记为任务池列出的现有输入",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/m-luoyang-earthwall-family.asset.json",
+   "kind": "asset-card",
+   "sha256_commit": "22b9cc43e047a9ff0024766969069bb913c9f4329c560798e1a4fcb8171381eb",
+   "bytes": 2018,
+   "role": "已有夯土墙身家族；复用评估对象（城垣尺度，厚 8–14 m，判不可直接复用）",
+   "loadedInCity": false,
+   "loadedBy": "docs/model-library/inspect.mjs:136 (资产详情页按卡片 files 列表加载)；城景 docs/cities/luoyang/* 无引用"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD0.glb",
+   "kind": "glb",
+   "sha256": "3f755fcc7ae86bf875d126cedd287451f3e54a45b9d8ed3d870aee1138504e07",
+   "sha256_commit": "3f755fcc7ae86bf875d126cedd287451f3e54a45b9d8ed3d870aee1138504e07",
+   "bytes": 585316,
+   "role": "已有夯土墙身家族；复用评估对象（城垣尺度，厚 8–14 m，判不可直接复用）",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD0.glb",
+   "kind": "glb",
+   "sha256": "04c2b143b3b797c7e0da734215e3686fef2a54c381066f1af7dcab235b77b970",
+   "sha256_commit": "04c2b143b3b797c7e0da734215e3686fef2a54c381066f1af7dcab235b77b970",
+   "bytes": 585316,
+   "role": "已有夯土墙身家族；复用评估对象（城垣尺度，厚 8–14 m，判不可直接复用）",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD0.glb",
+   "kind": "glb",
+   "sha256": "b8f1ab3a56826117df874fac71b4ddde6b0424d7b7fa0199778f896ba59979c2",
+   "sha256_commit": "b8f1ab3a56826117df874fac71b4ddde6b0424d7b7fa0199778f896ba59979c2",
+   "bytes": 4783356,
+   "role": "已有夯土墙身家族；复用评估对象（城垣尺度，厚 8–14 m，判不可直接复用）",
+   "loadedInCity": false,
+   "loadedBy": "仅资产详情页 docs/model-library/inspect.mjs:136；city-data.mjs / app.mjs / city-renderer.mjs / v1 无引用（grep 0 命中）"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/source.json",
+   "kind": "source-contract/qa",
+   "sha256_commit": "1653e1155a6ce396870c63b03e38320f0ca09df4c6d495dff96c0cac4f63fc2e",
+   "sha256_worktree": "d02c1d8e2333161495363e8e4d85feb91cb22d8f6d1a4c829b8557a0809f2fb3",
+   "bytes": 4087,
+   "loadedInCity": false,
+   "loadedBy": "无（来源/合同记录；LY-001 记为「仅出现在来源/合同记录中」）",
+   "role": "候入院原有检查记录：99 有限通行带、73 接口、闭门负例；外围必须保持这些通过"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/README.md",
+   "kind": "source-contract/qa",
+   "sha256_commit": "4f7b47698bb4fb41fdf1450fb99a4e78017f1c7048f1c7974e62744ec0e3593c",
+   "sha256_worktree": "59072e245440a54a9c5781b9aaad235d341aebb577ccec78522867d1090cddd5",
+   "bytes": 3238,
+   "loadedInCity": false,
+   "loadedBy": "无（来源/合同记录；LY-001 记为「仅出现在来源/合同记录中」）",
+   "role": "候入院原有检查记录：99 有限通行带、73 接口、闭门负例；外围必须保持这些通过"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/evidence.md",
+   "kind": "source-contract/qa",
+   "sha256_commit": "a73422a2d2fc6641f665369069577696237e898cc248a9df30d0450ae10988d6",
+   "sha256_worktree": "67fa52abefd1bcdbb887dd2a66b5f5060b933b8448084e61a64086236e48ad5a",
+   "bytes": 5257,
+   "loadedInCity": false,
+   "loadedBy": "无（来源/合同记录；LY-001 记为「仅出现在来源/合同记录中」）",
+   "role": "候入院原有检查记录：99 有限通行带、73 接口、闭门负例；外围必须保持这些通过"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/summary.json",
+   "kind": "source-contract/qa",
+   "sha256_commit": "67a3325b62b98e7916e2000cad0967b44d6ffdf66383e2e021a0c81d816b920b",
+   "sha256_worktree": "358fd8ff5cbb83e56c4abf60be0ffc9f710bf5993a81f8628e43eccee708171e",
+   "bytes": 2151,
+   "loadedInCity": false,
+   "loadedBy": "无（来源/合同记录；LY-001 记为「仅出现在来源/合同记录中」）",
+   "role": "候入院原有检查记录：99 有限通行带、73 接口、闭门负例；外围必须保持这些通过"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/finite-routes.json",
+   "kind": "source-contract/qa",
+   "sha256_commit": "3b57011c79fe0a81aa8481edf701c0a4f4a0ca659771f5a8f3c9226c2d0c4e50",
+   "sha256_worktree": "0fba7079c9cc825b8d1208247eb526a4069a41a76a67060361bb2a78d4378f38",
+   "bytes": 302159,
+   "loadedInCity": false,
+   "loadedBy": "无（来源/合同记录；LY-001 记为「仅出现在来源/合同记录中」）",
+   "role": "候入院原有检查记录：99 有限通行带、73 接口、闭门负例；外围必须保持这些通过"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/route-interfaces.json",
+   "kind": "source-contract/qa",
+   "sha256_commit": "0d42d41e57e181de3b08404df720ae9b7ddeb9c7a50669bec64df6c260730e08",
+   "sha256_worktree": "8e2e9d58015d1e0d5c8ebfbd405344bde4bcf4a58c17cc36cd0eee1102d96e15",
+   "bytes": 108147,
+   "loadedInCity": false,
+   "loadedBy": "无（来源/合同记录；LY-001 记为「仅出现在来源/合同记录中」）",
+   "role": "候入院原有检查记录：99 有限通行带、73 接口、闭门负例；外围必须保持这些通过"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/independent-geometry-review.json",
+   "kind": "source-contract/qa",
+   "sha256_commit": "c49c64e3e69d8ea2a1927b682de3dfc14cc21e8a14e78382385ffbd803c72027",
+   "sha256_worktree": "eafbbbe1057e28d5c795c9fd283a8d2701021b375f03e255c751ac728678ae67",
+   "bytes": 98749,
+   "loadedInCity": false,
+   "loadedBy": "无（来源/合同记录；LY-001 记为「仅出现在来源/合同记录中」）",
+   "role": "候入院原有检查记录：99 有限通行带、73 接口、闭门负例；外围必须保持这些通过"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/clean-rebuild.json",
+   "kind": "source-contract/qa",
+   "sha256_commit": "097b72446814ec728b428bd0b1118c422fb7f55a37d22d3f00439ba1879e30d0",
+   "sha256_worktree": "1d06fde4a2d9486c74f8c2c1724f300a1678dea3a0fa031a66b645ba2dcf2f0c",
+   "bytes": 2140,
+   "loadedInCity": false,
+   "loadedBy": "无（来源/合同记录；LY-001 记为「仅出现在来源/合同记录中」）",
+   "role": "候入院原有检查记录：99 有限通行带、73 接口、闭门负例；外围必须保持这些通过"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/independent-native-images.json",
+   "kind": "source-contract/qa",
+   "sha256_commit": "a98b626c3b82fde55ad7aeee6039aebdb52401d9fbb44e8afdbd138d927af47c",
+   "sha256_worktree": "ed3f69a808e16c9d05da68ed59971ad8f271aad05cbdd83a6529531165550c7d",
+   "bytes": 57348,
+   "loadedInCity": false,
+   "loadedBy": "无（来源/合同记录；LY-001 记为「仅出现在来源/合同记录中」）",
+   "role": "候入院原有检查记录：99 有限通行带、73 接口、闭门负例；外围必须保持这些通过"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-open-LOD0.glb",
+   "kind": "glb-duplicate",
+   "sha256": "59c8b758a5a2523105eac0e516e9961bf769bd5e422ba2913d292492ed45c4b0",
+   "bytes": 2578472,
+   "loadedInCity": false,
+   "loadedBy": "无；与资产卡文件逐字节相同（LY-001 已登记为重复副本）",
+   "role": "重复副本，不作独立输入"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-open-LOD1.glb",
+   "kind": "glb-duplicate",
+   "sha256": "d95bd22f9317683ece8b8d14a6d4a6719522e47c8410f976e064708890148281",
+   "bytes": 1126584,
+   "loadedInCity": false,
+   "loadedBy": "无；与资产卡文件逐字节相同（LY-001 已登记为重复副本）",
+   "role": "重复副本，不作独立输入"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-open-LOD2.glb",
+   "kind": "glb-duplicate",
+   "sha256": "01b2017fac9d8ee6190726d233973c9b048936ce76b3ec7da8fb91aedec3a33d",
+   "bytes": 278700,
+   "loadedInCity": false,
+   "loadedBy": "无；与资产卡文件逐字节相同（LY-001 已登记为重复副本）",
+   "role": "重复副本，不作独立输入"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-closed-LOD0.glb",
+   "kind": "glb-duplicate",
+   "sha256": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+   "bytes": 2578388,
+   "loadedInCity": false,
+   "loadedBy": "无；与资产卡文件逐字节相同（LY-001 已登记为重复副本）",
+   "role": "重复副本，不作独立输入"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-closed-LOD1.glb",
+   "kind": "glb-duplicate",
+   "sha256": "455a12153d4132d2b653cdf8bbcf4b4994a5c33451efc1ec16119ebbf21453d2",
+   "bytes": 1126500,
+   "loadedInCity": false,
+   "loadedBy": "无；与资产卡文件逐字节相同（LY-001 已登记为重复副本）",
+   "role": "重复副本，不作独立输入"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-closed-LOD2.glb",
+   "kind": "glb-duplicate",
+   "sha256": "108e28a567dcef237868b2414332ae51925686d256891736355a5b40d9c0101d",
+   "bytes": 278616,
+   "loadedInCity": false,
+   "loadedBy": "无；与资产卡文件逐字节相同（LY-001 已登记为重复副本）",
+   "role": "重复副本，不作独立输入"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "kind": "shared-readonly",
+   "sha256_commit": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "sha256_worktree": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 106463,
+   "loadedInCity": true,
+   "loadedBy": "—",
+   "role": "共享城市数据；只读，确认未登记候入院（LY-100 专属写）"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "kind": "shared-readonly",
+   "sha256_commit": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "sha256_worktree": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "bytes": 23627,
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "role": "项目卡；第164行进度项「无名宫院通行组合 已建模」，第498行日志 r2026.11.05-4；只读"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "kind": "shared-readonly",
+   "sha256_commit": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "sha256_worktree": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "bytes": 14242,
+   "loadedInCity": true,
+   "loadedBy": "—",
+   "role": "城景入口；无候入院引用"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "kind": "shared-readonly",
+   "sha256_commit": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "sha256_worktree": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "bytes": 35785,
+   "loadedInCity": true,
+   "loadedBy": "—",
+   "role": "渲染器；无候入院引用"
+  },
+  {
+   "path": "lab/data/assets.json",
+   "kind": "shared-readonly",
+   "sha256_commit": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "sha256_worktree": "c39e8e9a2a1833f3abbc15e585f5868fba6c7d2e01f6b8e504c2b44193f16979",
+   "bytes": 424754,
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "role": "汇总；工作区字节随他人未提交修改/CRLF 变化（21:07 记 3440caa2，23:2x 复核 c39e8e9a）；git hash-object 与 HEAD blob 相同，绑定一律取提交字节 53d86312"
+  },
+  {
+   "path": "workpacks/LY-006/registry/zones.json",
+   "absPath": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/zones.json",
+   "kind": "contract-candidate",
+   "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+   "bytes": 111303,
+   "role": "LY-061 七个写入区 LY-061:write:001..007（frame local:admission-court，glTF 坐标），以及相邻 LY-062:write:001..003、LY-063:write:001..004；本席位所有几何只能落在 001..007 内",
+   "loadedInCity": false,
+   "loadedBy": "—（工作包文件，不进城景）"
+  },
+  {
+   "path": "workpacks/LY-006/registry/seats.json",
+   "absPath": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/seats.json",
+   "kind": "contract-candidate",
+   "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+   "bytes": 127946,
+   "role": "seats.LY-061：site S-PALACE、siteOwner LY-070、components P061-enclosure / P061-corners-footings（fixed）、produces admission-court:enclosure:wall-end、keep steward 21 个源对象",
+   "loadedInCity": false,
+   "loadedBy": "—（工作包文件，不进城景）"
+  },
+  {
+   "path": "workpacks/LY-006/registry/ports.json",
+   "absPath": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/ports.json",
+   "kind": "contract-candidate",
+   "sha256": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+   "bytes": 287590,
+   "role": "ports[\"admission-court:enclosure:wall-end\"] v1：producer/steward LY-061，consumers LY-062、LY-063，local/world 均 null（交付时由本席位填），容差 position 0.005 m / elevation 0.002 m，elevationClass C-engineering",
+   "loadedInCity": false,
+   "loadedBy": "—（工作包文件，不进城景）"
+  },
+  {
+   "path": "workpacks/LY-006/registry/seams.json",
+   "absPath": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/seams.json",
+   "kind": "contract-candidate",
+   "sha256": "ca4d81f8f955333c089d782aa69c50c2ca83225d4da07f595f66d1ba87f3f4c1",
+   "bytes": 189895,
+   "role": "seams[101] LY-061->LY-062、seams[102] LY-061->LY-063（同一 wall-end 端口）",
+   "loadedInCity": false,
+   "loadedBy": "—（工作包文件，不进城景）"
+  },
+  {
+   "path": "workpacks/LY-006/registry/ownership.json",
+   "absPath": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/ownership.json",
+   "kind": "contract-candidate",
+   "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+   "bytes": 1236666,
+   "role": "ownership.sourceObjects admission-court:* 21 项 owner LY-061 mode keep；groundPieces gp:admission-court:guard__guard-slice-ground-earth owner LY-061；components P061-*",
+   "loadedInCity": false,
+   "loadedBy": "—（工作包文件，不进城景）"
+  },
+  {
+   "path": "workpacks/LY-006/registry/ownership-by-seat.csv",
+   "absPath": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/ownership-by-seat.csv",
+   "kind": "contract-candidate",
+   "sha256": "b1600336f758e8f4ae9887b7e3b36ecd5723863efd4728c530091fa72ba1a89b",
+   "bytes": 43132,
+   "role": "第 52 行 LY-061 汇总行",
+   "loadedInCity": false,
+   "loadedBy": "—（工作包文件，不进城景）"
+  },
+  {
+   "path": "workpacks/LY-006/status.json",
+   "absPath": "D:/GitHub/creation-notebook-workpacks/LY-006/status.json",
+   "kind": "contract-candidate",
+   "sha256": "fe4aaa6c7cb1441f95ac8f51101e0cf63a4ab07ed53452e59c2bd897c5539aba",
+   "bytes": 5097,
+   "role": "LY-006 自报完成；registry v1",
+   "loadedInCity": false,
+   "loadedBy": "—（工作包文件，不进城景）"
+  },
+  {
+   "path": "workpacks/LY-005/coordinate-contract.json",
+   "absPath": "D:/GitHub/creation-notebook-workpacks/LY-005/coordinate-contract.json",
+   "kind": "contract-candidate",
+   "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+   "bytes": 11013,
+   "role": "status frozen-candidate：glTF +X 东 +Y 上 +Z 南；Blender (X,Y,Z)=glTF (x,-z,y)；Y=0 为工程零点（C）；本席位的区间换算依据",
+   "loadedInCity": false,
+   "loadedBy": "—（工作包文件，不进城景）"
+  },
+  {
+   "path": "workpacks/LY-005/port-schema.json",
+   "absPath": "D:/GitHub/creation-notebook-workpacks/LY-005/port-schema.json",
+   "kind": "contract-candidate",
+   "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f",
+   "bytes": 2294,
+   "role": "端口字段定义；交付时 wall-end 端口值按此填写",
+   "loadedInCity": false,
+   "loadedBy": "—（工作包文件，不进城景）"
+  },
+  {
+   "path": "workpacks/LY-061/prep/scripts/measure_court.py",
+   "absPath": "D:/GitHub/creation-notebook-workpacks/LY-061/prep/scripts/measure_court.py",
+   "kind": "prep-script",
+   "sha256": "5bcc8697579aded897253ced27a1032f41e8ca8f632d6b69ebeff7025b2798f2",
+   "bytes": 6874,
+   "role": "庭地/净距/外围开放度测量（Blender 后台，只读）",
+   "loadedInCity": false,
+   "loadedBy": "—（工作包文件，不进城景）"
+  },
+  {
+   "path": "workpacks/LY-061/prep/scripts/gate_line_leaks.py",
+   "absPath": "D:/GitHub/creation-notebook-workpacks/LY-061/prep/scripts/gate_line_leaks.py",
+   "kind": "prep-script",
+   "sha256": "73acac512349d430a3c31929d43cb64263642bfd28386ac3c73046efd106a70c",
+   "bytes": 2682,
+   "role": "南门线直线漏洞扫描（Blender 后台，只读）",
+   "loadedInCity": false,
+   "loadedBy": "—（工作包文件，不进城景）"
+  },
+  {
+   "path": "workpacks/LY-061/prep/scripts/zone_check.py",
+   "absPath": "D:/GitHub/creation-notebook-workpacks/LY-061/prep/scripts/zone_check.py",
+   "kind": "prep-script",
+   "sha256": "d50f5934eee14c24e741592290bd8efe9ebace33e69ceff928173db3aafd4369",
+   "bytes": 7291,
+   "role": "LY-006 写入区 vs 现有几何：SAT 三角-盒相交、平板四边内外支承、LY-062 开口内向射线（Blender 后台，只读）",
+   "loadedInCity": false,
+   "loadedBy": "—（工作包文件，不进城景）"
+  }
+ ],
+ "missing": [
+  {
+   "name": "luoyang-palace-admission-court-v1.zip（私密源包）",
+   "contains": "native/palace-admission-court-LOD0/1/2.blend（LOD0 sha 932ec511…）、inputs/、builder（d4cd1cc4…）、config（9de34dcc…）、lock（54837b14…）、textures/、检查器（finite-routes bf82ede6…、route-interfaces ec77a791…）",
+   "purpose": "复跑原 99 带/73 接口/18,487 支承点检查器，作为加外围后「原通行不退化」的同一判据；原生 .blend 内可编辑庭地",
+   "searched": [
+    "D:/GitHub/creation-notebook-待传（只有说明.txt）",
+    "D:/ 深度4 文件名检索（只找到 待删-2026-11-05-重复缩略图 下的缩略图）"
+   ],
+   "rebuildFromGLB": "可以。外围按独立叠加 GLB 交付、不改原节点，不需要原 .blend；夯土材质与贴图可从 GLB 内嵌图像取（LY_P01_earth__PBR）。原检查器缺失时，用本 prep/scripts 的射线/包络脚本从 GLB 复建等价通行带检查，并在 QA 里写明「从 GLB 重建，不是原检查器」。"
+  },
+  {
+   "name": "LY-008 可重跑交付检查器（未冻结：无 status.json）、LY-009 任务锁（未冻结）、LY-010 首批方案与区域准入（目录不存在）",
+   "purpose": "G 冻结门槛；010 决定候入院只作独立演示域还是可进 S-PALACE；008 的检查器是交付前必跑项",
+   "searched": [
+    "D:/GitHub/creation-notebook-workpacks/LY-008",
+    "D:/GitHub/creation-notebook-workpacks/LY-009",
+    "D:/GitHub/creation-notebook-workpacks/LY-010"
+   ],
+   "rebuildFromGLB": "否（是契约/工具，不是几何）"
+  },
+  {
+   "name": "墙外地坪/地形基准（local:admission-court 平板外）",
+   "purpose": "外围基脚落在写入区内，平板外 1,244 个下向射线样点 0 命中；需要 LY-005/LY-070 声明墙外支承基准（或允许本席位在写入区内自带基脚垫层并声明其下为未定义地形）",
+   "searched": [
+    "LY-005/coordinate-contract.json elevation（只给城市各族 Y 值，未给本局部帧墙外地面）"
+   ],
+   "rebuildFromGLB": "否（是契约）"
+  }
+ ]
+}

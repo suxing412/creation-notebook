@@ -1,0 +1,49 @@
+{
+ "baseline": "LY_P01 纹理与 UV 规则",
+ "frozen_by": "LY-007",
+ "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "evidence_class": "原始数据（她的 GLB 提交字节实测）；不是历史考据，与约 180 年洛阳的真实材料无关",
+ "texture_library": {
+  "location": "textures/（本席位副本，字节与她 GLB 内嵌 PNG 逐字节相同，见 qa/texture-provenance.json）",
+  "manifest": "textures/manifest.json",
+  "sets": {
+   "512": "LOD0 用：earth / wood / tile 各 basecolor+normal+orm，stone 只有 normal+orm，共 11 张",
+   "256": "LOD1 用：同图案缩小版，均值与 512 版差 ≤ 0.03/255，共 11 张",
+   "legacy_grey": "旧灰调色板 7 张，只为识别旧卡（REUSED_C_* 等），新模型禁用"
+  },
+  "format": "PNG 8-bit RGB 无 alpha；不重新编码、不缩放、不调色；导出时原字节嵌入 GLB（Blender 导出器 happy path，image_format=AUTO, keep_originals=False）",
+  "naming": "glTF image.name = <earth|wood|tile|stone>-<basecolor|normal|orm>；木材贴图前缀叫 wood（材质叫 timber）",
+  "content": {
+   "earth/tile basecolor": "低频 fBm 云状噪声，无砖纹、无瓦纹；std 1.2–2.4/255，只给近看颗粒感",
+   "wood basecolor": "平行木纹条带，沿 U 延伸、沿 V 排列，周期 12.2 px/512（约 2.4 cm 一条）",
+   "normal": "均值 (127,127,254)，起伏极弱（wood G 通道 std 约 10）",
+   "orm": "R=255 恒定（不作 occlusion），G=粗糙度（earth 231.48、wood 198.4、tile 214.22、stone 218.77），B=0（非金属）"
+  }
+ },
+ "color_space": {
+  "basecolor": "sRGB",
+  "normal": "Non-Color（线性数据）",
+  "orm": "Non-Color（线性数据）",
+  "flat_factor": "线性（glTF 规定），= 8-bit sRGB 整数色的线性换算 float32",
+  "verified_by": "qa/readback.json：基准球与 6 个样件经 Blender 官方 glTF 导入器重读，basecolor 图为 sRGB、normal/orm 为 Non-Color，节点连线 ORM.G→Roughness、ORM.B→Metallic、normal→Normal Map"
+ },
+ "uv": {
+  "rule": "世界坐标盒式投影：每个面按面法线主轴取世界坐标，1 UV 单位 = 1 m，不按正负翻转，不展 UV，只有一套 UV（TEXCOORD_0 / UVMap）",
+  "axis_table_blender": {"|nz| 最大": "(x, y)", "|ny| 最大": "(x, z)", "|nx| 最大": "(y, z)"},
+  "gltf_storage": "v_gltf = 1 − v_blender；glTF (x,y,z) = Blender (x, z, −y)",
+  "tie_rule": "主轴按 float32 面法线分量绝对值严格比较（UV_TIE = 0），|nx| = |ny| 的 45° 面完全相等才取 (y,z)；坐标双精度计算、cos/sin 的 0/±1 取精确值。自检不把并列面计入吻合率，单独报 uv_ties",
+  "no_offset": "UV 不加平移（u = x、v = 1 − y 等直接取世界坐标）。普查里有 12 个现存文件 UV 是带整体平移的 1 m 盒投影（贴图外观等价），只作现状记录，新件不加平移",
+  "density": {"LOD0": "512 px / m", "LOD1": "256 px / m", "LOD2": "无贴图"},
+  "texel_note": "因 1 UV = 1 m 且贴图 REPEAT，大墙面每米重复一次；她的贴图对比度极低，重复不可见。斜坡面有投影拉伸，每单位约 1.04–1.19 m，照抄，不修正",
+  "verified_by": "qa/readback.json uv_calibration：五种材料的 1.000 m 标定块 12 个三角面 UV 跨度全部 (1.0, 1.0)；inspect_glb 世界盒式吻合率 1.0（基准球三档、样件六档）",
+  "exceptions_not_for_new": ["REUSED_C_earth / earth_C_reused 2 m/单位", "xiaoyuan 2 m/单位（__TEX256/__TEX128）", "TC03-roof-medium REUSED_C_tile 0.8 m/单位", "H64/H72/H96 逐片瓦近景件局部吻合 0.95–0.997"]
+ },
+ "sampler": {"magFilter": 9729, "minFilter": 9987, "wrapS/T": "不写（REPEAT）", "count": "每文件 1 个"},
+ "gpu_memory": {
+  "status": "未测。以下只是按未压缩 RGBA8 + 完整 mip 链的理论估算，不是实测显存，不得写成实测数字",
+  "formula": "w × h × 4 B × 4/3",
+  "estimate_bytes": {"512² 一张": 1398101, "256² 一张": 349525, "LOD0 三材料 9 张": 12582912, "LOD1 三材料 9 张": 3145728},
+  "note": "同一页面内各 GLB 嵌入的同一贴图是否被浏览器端去重取决于加载器，未测"
+ },
+ "preview_pitfall": "Blender Workbench（mq/render.py，color_type=TEXTURE）对 paper__stone__PBR 显示为亮黄色：该材质不挂底色图，Workbench 取到的第一张图是 stone-orm（R255 G219 B0）。这是预览假象，不是 GLB 颜色；她的 foot-pestle 在同一脚本下也是黄色（mq/cards/m-luoyang-foot-pestle/lods.png）。判 paper__stone 颜色只看 LOD2 或材质色渲染"
+}

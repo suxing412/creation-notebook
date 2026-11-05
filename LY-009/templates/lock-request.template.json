@@ -1,0 +1,11 @@
+{
+ "_usage": "对锁提出读取/解锁/改范围申请：存为 LY-###/lock-requests/<LOCK-ID>-<日期>.json。只有锁的 holder（持锁人或主协调者）能批；批准后由协调者更新 LY-009/source/locks_spec.py 并重跑 build_board，锁版本 +1。未批准前按原锁执行。",
+ "lock": "LOCK-… | RIGHT-…",
+ "requester": "LY-###",
+ "kind": "read-interface | unlock | change-scope | new-lock",
+ "reason": "为什么需要；不批会怎样",
+ "pathsOrNodes": ["lab 相对路径或城市节点 ID"],
+ "evidence": [{"path": "…", "sha256": "…"}],
+ "requestedAt": "YYYY-MM-DDTHH:MM+08:00",
+ "decision": {"by": null, "at": null, "result": "pending | approved | rejected", "note": null}
+}

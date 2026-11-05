@@ -1,0 +1,960 @@
+{
+ "schema": "ly099-inputs-v2",
+ "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "originMainAtPrep": "cad338ba683f7277aea098f45c8feb6c915a847c",
+ "byteBasis": "lab inputs hashed as committed blobs (git show <ref>:<path>), not CRLF worktree",
+ "lab": [
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/asset-spec/README.md",
+   "purpose": "spec §4 batch close, §7 sources/Release rules",
+   "exists": true,
+   "bytes": 11768,
+   "sha256Committed": "8c16f653c2bf4af81d4d6fe1330ec4f79bd00720bec2f2c31f79c8461a832769",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/asset-spec/source-archive.json",
+   "purpose": "map of archived docs sources -> Release sources-2026.11.05",
+   "exists": true,
+   "bytes": 11202,
+   "sha256Committed": "8b80a86d7b93e91812bcaa799e768bcb5efe86f31fd02221eb638da810b89653",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/asset-spec/batches/r2026.11.05-4.json",
+   "purpose": "batch file (no pending sources named)",
+   "exists": true,
+   "bytes": 345,
+   "sha256Committed": "a6710a48c80bc0c73f55a4dee24a5f7dbdce6b1b81f58694dc17aa43287f1f95",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/asset-spec/batches/r2026.11.05-5.json",
+   "purpose": "batch file naming pending luoyang-yong-city-v1.1-private-source.zip",
+   "exists": true,
+   "bytes": 265,
+   "sha256Committed": "8d70827178d4d0481c8bc5bec640ec584de530c3e107b5a37e63935b66a34d89",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "lab/tools/build_assets.py",
+   "purpose": "official checker (read only, NOT run): SOURCE regex line 35, docs-only scope",
+   "exists": true,
+   "bytes": 21230,
+   "sha256Committed": "ed7664a7d15c6f0114b6ffec99be9b43426ea8eee9c9ef6ad5537038c76c579e",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "lab/tools/archive_sources.py",
+   "purpose": "archives tracked docs sources, joins exact-zip-byte-parts-v1",
+   "exists": true,
+   "bytes": 3032,
+   "sha256Committed": "5dadcd3649cb5586728f39ecb2ada2bf08de49bf443abc556e15525ac23e4e03",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "lab/tools/upload_sources.py",
+   "purpose": "inbox -> Release upload with SHA-256 digest check",
+   "exists": true,
+   "bytes": 4493,
+   "sha256Committed": "ede1f9cb7f97743a70edca5bb05bdeb6dbd18c53515997e811a41b6c641c63c6",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "lab/tools/release_originals.py",
+   "purpose": "GLB originals -> batch Release + originals.json",
+   "exists": true,
+   "bytes": 6084,
+   "sha256Committed": "dcf166fac237b22640c8e622e13501fa904b544579386e171221c0b0cec5ccfd",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "lab/tools/tag_batches.py",
+   "purpose": "batch file -> r tag",
+   "exists": true,
+   "bytes": 3849,
+   "sha256Committed": "247dbd7fdfb41c72f1b4aeacd45c8cd288e043e2157e61b1fc89a0e8928be0f1",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "lab/tools/assemble_site.py",
+   "purpose": "leaves SOURCE files out of the published site",
+   "exists": true,
+   "bytes": 6412,
+   "sha256Committed": "dd184a3451388c639dac237f882eec5f80a54d2772c237f6c3457ed285274e6d",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/downloads/restore-source.py",
+   "purpose": "exact-zip-byte-parts-v1 restorer",
+   "exists": true,
+   "bytes": 4653,
+   "sha256Committed": "dae11948a3881d7ec804a2f71e0ae01ad5248e4fb5e9918a8cd80ec2b2b3d210",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "purpose": "city manifest: node paths, sha256, provenance.sourceContracts",
+   "exists": true,
+   "bytes": 106463,
+   "sha256Committed": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "purpose": "project card (journal/batch tags)",
+   "exists": true,
+   "bytes": 23627,
+   "sha256Committed": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/projection-map.json",
+   "purpose": "sourceArchiveSha256 a65b89f8… sourcePreservedPrivately=true",
+   "exists": true,
+   "bytes": 59712,
+   "sha256Committed": "6f216ee552de0365945d4caa034932252b23329a55ff63715bd4510f2d29101c",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/progress-assets/source.json",
+   "purpose": "research projections source record",
+   "exists": true,
+   "bytes": 13125,
+   "sha256Committed": "5cf4df560ec1419e029a5b34be7b2d7f0b2090a91479974c6a0192bf09595a18",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/progress-assets/flat/source.json",
+   "purpose": "flat research GLB provenance",
+   "exists": true,
+   "bytes": 25301,
+   "sha256Committed": "ddd1445c1dddabc7f2134b4dc0c3fae37484e619099ea549a4104bf483b486c1",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/progress-assets/yong-city-v1/source.json",
+   "purpose": "Yong in-city assembly record; reusedAdapterSource .blend sha",
+   "exists": true,
+   "bytes": 6403,
+   "sha256Committed": "325fb5caa15ee631896495c2c71b93e4b0267933c15bfc3fbd9f6be050e8f238",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/source.json",
+   "purpose": "granary: private composer, sources outside repo",
+   "exists": true,
+   "bytes": 3920,
+   "sha256Committed": "30e74bda8a965f4f7c84aaa32bdb7a179680b6163150584cdeb58de3e3f12639",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/progress-assets/north13-gates/source.json",
+   "purpose": "north13 hidden-trial provenance -> modeling-lab packs",
+   "exists": true,
+   "bytes": 85237,
+   "sha256Committed": "dc16990098026ab441455636507de821a5869e82b4576073f58a77f46fdab515",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/source.json",
+   "purpose": "sourceCommit null, private staged content",
+   "exists": true,
+   "bytes": 4087,
+   "sha256Committed": "1653e1155a6ce396870c63b03e38320f0ca09df4c6d495dff96c0cac4f63fc2e",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/clean-rebuild.json",
+   "purpose": "clean-rebuild record",
+   "exists": true,
+   "bytes": 2140,
+   "sha256Committed": "097b72446814ec728b428bd0b1118c422fb7f55a37d22d3f00439ba1879e30d0",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/model-library/assets/market-origin-contract.json",
+   "purpose": "market provenance",
+   "exists": true,
+   "bytes": 4888,
+   "sha256Committed": "a3940e014f0e64fd81556e0a8670884baff2c2cd16a6cc8436849b445b314716",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/model-library/assets/storage-origin-contract.json",
+   "purpose": "storage provenance",
+   "exists": true,
+   "bytes": 135867,
+   "sha256Committed": "44da794b334dba5cac3f46856e205790254dc71054f66adf93c5ea73723f92bf",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/intake.json",
+   "purpose": "zipSHA256 + parts for 8 north13 packs",
+   "exists": true,
+   "bytes": 7212,
+   "sha256Committed": "a0cfea3596a2c99314d148ca79be0fd8c95f3dba4c35b4f01c523d1218ed93b4",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-taixue-A-v3.2/intake.json",
+   "purpose": "taixue A v3.2 public-source parts",
+   "exists": true,
+   "bytes": 1111,
+   "sha256Committed": "7f419ffae9ce4c0064e1d1985352ef1a8c4a8a505b923032572f1f63c6815c53",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-mao-gate/intake.json",
+   "purpose": "mao gate pack identity",
+   "exists": true,
+   "bytes": 1946,
+   "sha256Committed": "41ecd02c488075cc290866ca48c628ffd690ae843013744c39eeae483a7a830f",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/restore-city-visible.py",
+   "purpose": "city-visible handoff restorer (ZIP_SHA inline)",
+   "exists": true,
+   "bytes": 1735,
+   "sha256Committed": "3fd30b7ca18ef934a0ada184fcf18f7ba7b2163fbe02631b8579dbbb5b2c1b29",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04/C2-courtyards/manifest.json",
+   "purpose": "C2 courtyards reproduction.zip identity",
+   "exists": true,
+   "bytes": 6129,
+   "sha256Committed": "f71e95954e351462d68f4cd62bbe0ff2f649eae9bad92bef89e95f396b71bda7",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/content/luoyang/lingtai-quality-v1/manifest.json",
+   "purpose": "originalArchiveSHA256 (private) + native list",
+   "exists": true,
+   "bytes": 11918,
+   "sha256Committed": "a8d1c1af9cbd31f077bddc1aa053a5721055b07fb4cef3c33af132c7d2ac6ecc",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/content/luoyang/taixue-long-hall-v1/manifest.json",
+   "purpose": "originalArchiveSHA256 (private) + native list",
+   "exists": true,
+   "bytes": 13062,
+   "sha256Committed": "e34f662ff6dcd7a5ba356e6bbc0316c23d03da9ab1249b35558848195f5a1235",
+   "loadedByCity": null,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+   "purpose": "city-reachable GLB",
+   "exists": true,
+   "bytes": 1570856,
+   "sha256Committed": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+   "cityClass(LY-001)": "已入城·首屏默认加载",
+   "loadedByCity": true,
+   "loadReferences": [
+    "docs/cities/luoyang/city-data.mjs:1229:  \"path\": \"../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb\","
+   ]
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+   "purpose": "city-reachable GLB",
+   "exists": true,
+   "bytes": 388208,
+   "sha256Committed": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+   "cityClass(LY-001)": "已入城·首屏默认加载",
+   "loadedByCity": true,
+   "loadReferences": [
+    "docs/cities/luoyang/city-data.mjs:1248:  \"path\": \"progress-assets/yong-city-v1/yong-apron-LOD0.glb\","
+   ]
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+   "purpose": "city-reachable GLB",
+   "exists": true,
+   "bytes": 1663844,
+   "sha256Committed": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+   "cityClass(LY-001)": "已入城·按章加载（initial=false）",
+   "loadedByCity": true,
+   "loadReferences": [
+    "docs/cities/luoyang/city-data.mjs:583:    \"path\": \"progress-assets/granary-city-v1/granary-city-LOD0.glb\","
+   ]
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-00.glb",
+   "purpose": "city-reachable GLB",
+   "exists": true,
+   "bytes": 2412,
+   "sha256Committed": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74",
+   "cityClass(LY-001)": "已入城·首屏默认加载",
+   "loadedByCity": true,
+   "loadReferences": [
+    "docs/cities/luoyang/city-data.mjs:172:    \"path\": \"assets/city-wall/A/wall-00.glb\","
+   ]
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "purpose": "city-reachable GLB",
+   "exists": true,
+   "bytes": 3565544,
+   "sha256Committed": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "cityClass(LY-001)": "已入城·按章加载（initial=false）",
+   "loadedByCity": true,
+   "loadReferences": [
+    "docs/cities/luoyang/city-data.mjs:432:    \"path\": \"assets/ground-atomic/network-ground-stitched.glb\",",
+    "docs/cities/luoyang/v1/west-layer.mjs:35:   const ground=[{url:archiveURL('./assets/ground-atomic/network-ground-stitched.glb'),translation:[0,0,0]},{url:archiveURL('./assets/ground-atomic/retained.gl"
+   ]
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "purpose": "city-reachable GLB",
+   "exists": true,
+   "bytes": 1031928,
+   "sha256Committed": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "cityClass(LY-001)": "已入城·按章加载（initial=false）",
+   "loadedByCity": true,
+   "loadReferences": [
+    "docs/cities/luoyang/city-data.mjs:512:    \"path\": \"assets/market/market-cluster.glb\",",
+    "docs/cities/luoyang/v1/west-layer.mjs:33:  if(s.level==='market'){layout.lots=[];layout.environmentUrl=archiveURL('./assets/market/market-cluster.glb');layout.extraEnvironments=[{url:archiveURL('./ass"
+   ]
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+   "purpose": "city-reachable GLB",
+   "exists": true,
+   "bytes": 447064,
+   "sha256Committed": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "cityClass(LY-001)": "已入城·首屏默认加载",
+   "loadedByCity": true,
+   "loadReferences": [
+    "docs/cities/luoyang/city-data.mjs:109:    \"nearPath\": \"assets/c02v/A2-LOD0-prototype.glb\","
+   ]
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-yong-gate-study-v1/content.zip.part001",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 9437184,
+   "sha256Committed": "d8b29066d0a98fab64d8d0cf44b3922a7f1c91ca63777444760c838014e2a7a7",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-yong-gate-study-v1/content.zip.part002",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 1917282,
+   "sha256Committed": "a3466c5bd4ed9f2d72b49c4580c8b521a38a5269c53553fcfd7ad8e40721b1f4",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part001",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 9437184,
+   "sha256Committed": "f742fb3ce1555beb371a30a828b1a59b80f9c0c4ef7f9cc17f4f9e21633aa521",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part002",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 2014045,
+   "sha256Committed": "72609b8bcab43c8bea6acc14ce9eaf7f862da4abe80cd98f7bff3f165a1ad0b5",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-pingcheng-gate-study-v1/content.zip.part001",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 9437184,
+   "sha256Committed": "4b5a189f76c733f45835af786d14c56c9b1af05dd82220a71a29304d67bd2abb",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-pingcheng-gate-study-v1/content.zip.part002",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 1981010,
+   "sha256Committed": "a7ef8b66cf48467bf88dbcda91e17b6b22750c1836e23ae04dc632f9beeb7c48",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-shangxi-gate-study-v1/content.zip.part001",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 9437184,
+   "sha256Committed": "1c50f03323523b7d2051422a9dc3c95afd47ea2f2c409869574af130d91f194b",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-shangxi-gate-study-v1/content.zip.part002",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 2165217,
+   "sha256Committed": "55d9c9e1d12981900fb761533215ee9e85e101de44f076ee18cf93c8106d1359",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-zhongdong-gate-study-v1.1/content.zip.part001",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 9437184,
+   "sha256Committed": "35640c921ea4f0320ba245e0cfea9c3fd8a49011e6432d69daf9971ec06ed771",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-zhongdong-gate-study-v1.1/content.zip.part002",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 9437184,
+   "sha256Committed": "ab58f7184909659e47b92fc387f013ce0c753f77c0ef2a696861e13c28e3dbd1",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-zhongdong-gate-study-v1.1/content.zip.part003",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 9077326,
+   "sha256Committed": "74614d47fad31043244e3c2aac4801d220e09ccd90d44b365e95e6e43ebe22b0",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-north-four-courts-v2/content.zip.part001",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 9437184,
+   "sha256Committed": "273372e514ebafff1068291a695117ab1b19c13e71dd38f42712cc9029f825fa",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-north-four-courts-v2/content.zip.part002",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 9437184,
+   "sha256Committed": "8ddb360668d20f5ca29ffc175e4913f0fd5ea0db17e0c648733149c6e77d774b",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-north-four-courts-v2/content.zip.part003",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 1516122,
+   "sha256Committed": "30b7e20b69b71f4c974a01b7c8aa80eb24a9ce575fa11160806889f27fa5064e",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-north-perimeter-v1/content.zip.part001",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 9437184,
+   "sha256Committed": "c5b33a220027e3b3b2f15cb9f8a0eea1b6c48b7418a8f35512717f986cc165e1",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-north-perimeter-v1/content.zip.part002",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 4361723,
+   "sha256Committed": "32c7614d0e9f9f8f579cc2d6a441637e71e61ec35a9c224f49eda952b597535d",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-north-second-row-v1/content.zip.part001",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 9437184,
+   "sha256Committed": "e484190f4bd21f42b02fb4bafa3a422f7d64191f532f8cf1b466d61d05cec23e",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-north-second-row-v1/content.zip.part002",
+   "purpose": "source pack part (replayed in isolated sandbox)",
+   "exists": true,
+   "bytes": 3545374,
+   "sha256Committed": "0851d7427f014efbd960100ba0292eb3cf0ad9c1ba189242c5af85c9ebef6312",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04/C2-courtyards/assets/A-LOD0-C2.glb",
+   "purpose": "upstream input staged for four-courts/perimeter/second-row replay",
+   "exists": true,
+   "bytes": 1332364,
+   "sha256Committed": "58562068d71a393dd94fa743e5ee222509b181629d38b21b112c2e2a4a77f0ff",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04/C2-courtyards/assets/A-LOD1-C2.glb",
+   "purpose": "upstream input staged for four-courts/perimeter/second-row replay",
+   "exists": true,
+   "bytes": 229832,
+   "sha256Committed": "d5fc80a0b849108a65d2efbe7445995e5519632f47ad044d9e0d7ea8447047c6",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04/C2-courtyards/assets/A2-LOD0-C2.glb",
+   "purpose": "upstream input staged for four-courts/perimeter/second-row replay",
+   "exists": true,
+   "bytes": 1164812,
+   "sha256Committed": "e9981a079d799d7556a9a4852c9d09ad274bb268ff4343d8d2202a13bcbf3887",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04/C2-courtyards/assets/A2-LOD1-C2.glb",
+   "purpose": "upstream input staged for four-courts/perimeter/second-row replay",
+   "exists": true,
+   "bytes": 229316,
+   "sha256Committed": "f3f317746181635791621b4d09a7122899d0754fc1d36b583b39b3f80b02caac",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04/C2-courtyards/assets/B-LOD0-C2.glb",
+   "purpose": "upstream input staged for four-courts/perimeter/second-row replay",
+   "exists": true,
+   "bytes": 1635312,
+   "sha256Committed": "1ebf0c8ef6e1ab38921d960110ddedc19f0c41888c1ed766b482a3d0a496f5c5",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04/C2-courtyards/assets/B-LOD1-C2.glb",
+   "purpose": "upstream input staged for four-courts/perimeter/second-row replay",
+   "exists": true,
+   "bytes": 282232,
+   "sha256Committed": "0e0ad6be50007f0c290d46e6aa012dd0a7b7ca52aa8645304da828bfa075630a",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04/C2-courtyards/assets/B2-LOD0-C2.glb",
+   "purpose": "upstream input staged for four-courts/perimeter/second-row replay",
+   "exists": true,
+   "bytes": 1486112,
+   "sha256Committed": "00fb41eb5d03a98e1122f52f40cae4a9f68549d297ac5c59bd6d2d0b79998714",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04/C2-courtyards/assets/B2-LOD1-C2.glb",
+   "purpose": "upstream input staged for four-courts/perimeter/second-row replay",
+   "exists": true,
+   "bytes": 283368,
+   "sha256Committed": "8f7911e96ed53fb432312271986c0775fec8e858d346abfb7768b99f022759e6",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04/C2-courtyards/assets/TC03-2-LOD0-C2.glb",
+   "purpose": "upstream input staged for four-courts/perimeter/second-row replay",
+   "exists": true,
+   "bytes": 2467560,
+   "sha256Committed": "eb00ff99877742e212a32c5031a26262d1b83a9e53b5d108e5432c92136b234c",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04/C2-courtyards/assets/TC03-2-LOD1-C2.glb",
+   "purpose": "upstream input staged for four-courts/perimeter/second-row replay",
+   "exists": true,
+   "bytes": 412900,
+   "sha256Committed": "ce0c1d73148355c6bcf319d1056800360fbc309269649e471489545314720402",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04/C2-courtyards/assets/TC03-LOD0-C2.glb",
+   "purpose": "upstream input staged for four-courts/perimeter/second-row replay",
+   "exists": true,
+   "bytes": 2568332,
+   "sha256Committed": "5f47f93091c3d5cec471015fe15ad28e9687b2e79a93840ae54b1b41dbba9b3a",
+   "loadedByCity": false,
+   "loadReferences": []
+  },
+  {
+   "repo": "creation-notebook-lab",
+   "ref": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "path": "modeling-lab/review-batches/2026-11-04/C2-courtyards/assets/TC03-LOD1-C2.glb",
+   "purpose": "upstream input staged for four-courts/perimeter/second-row replay",
+   "exists": true,
+   "bytes": 413444,
+   "sha256Committed": "4f1ed92ee81a6bc6f00b50685f14f65f06d24f81e9e0a569a800462884dbd1c5",
+   "loadedByCity": false,
+   "loadReferences": []
+  }
+ ],
+ "workpacks": [
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "TASKPOOL.md",
+   "purpose": "task pool (LY-099 section line 1005)",
+   "exists": true,
+   "bytes": 91407,
+   "sha256Worktree": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "taskboard.json",
+   "purpose": "taskboard",
+   "exists": true,
+   "bytes": 105939,
+   "sha256Worktree": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-001/qa/glb-files.csv",
+   "purpose": "GLB class ledger for bce3211 (373 GLB)",
+   "exists": true,
+   "bytes": 81027,
+   "sha256Worktree": "9771bf0ce16b50d70d04e6f48f01abbe9cbfe062a4e97ab72cad3b56fbe0e9ff"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-001/qa/snapshot-ledger.json",
+   "purpose": "source contracts / CRLF finding C8",
+   "exists": true,
+   "bytes": 734203,
+   "sha256Worktree": "479046caf49479cc6e58249585c63c80e84f23cafd82dc93bdc1034f9e1da7d0"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-001/status.json",
+   "purpose": "LY-001 delivered status",
+   "exists": true,
+   "bytes": 2968,
+   "sha256Worktree": "a32d742a0064baf45c0f78215b10905f2a21fb9ea070b18d8055a58454fe9236"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "README.md",
+   "purpose": "workpacks README (source projects never enter branch)",
+   "exists": true,
+   "bytes": 786,
+   "sha256Worktree": "9a2f4ad20bb7c4b504f863fad734e0c054ccc3bffdda80c045f779c53c88f06f"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": ".gitignore",
+   "purpose": "workpacks ignore list for source files",
+   "exists": true,
+   "bytes": 291,
+   "sha256Worktree": "32347f931c97eae1a5b778e274e45a9a4c86fd5a6112554a6e5a87a190c56cc5"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-007/status.json",
+   "purpose": "LY-007 delivered (style/export baseline)",
+   "exists": true,
+   "bytes": 5292,
+   "sha256Worktree": "2fddce70c110a19c6d08d10b90ac355440d538f5c8dcc82cca58504476ecc082"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-007/baseline/decisions.json",
+   "purpose": "D-EXPORTER frozen; D-U13/P-GENERATOR (5.2.1 vs 4.3.2 export) pending producer -> governs T4 grading",
+   "exists": true,
+   "bytes": 13105,
+   "sha256Worktree": "cb2870fc6966b59a5bd54d7071947c4f5cf588cf13a769ca41b08fc55b824598"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-008/status.json",
+   "purpose": "LY-008 delivered (checker)",
+   "exists": true,
+   "bytes": 4376,
+   "sha256Worktree": "4de552ad9689211cb155b4ae1f12818e09ab699d4ddb5c85f680b51331718f16"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-008/source/ly_check.py",
+   "purpose": "LY-008 checker: privacy / package / glb / official subcommands, run in T5/T12",
+   "exists": true,
+   "bytes": 64003,
+   "sha256Worktree": "39aaa491859e1a796080dd91ccabd1c47423cf7f9ef2af61c5f123b04b3dff4b"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-008/qa/privacy-docs-bce3211.json",
+   "purpose": "LY-008 privacy result on docs@bce3211 (cross-check of T5 scanner)",
+   "exists": true,
+   "bytes": 3728,
+   "sha256Worktree": "88d51e8f5648744e4444814738fba7f828ea3aa86578e2df73059929f6475748"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-009/board/locks.json",
+   "purpose": "LY-009 write locks / whitelist rules",
+   "exists": true,
+   "bytes": 167867,
+   "sha256Worktree": "5eb5ae327f1655db4eecbc79547ac79413b9c8c95489f05d2e679eb419d4cc9d"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-099/prep/tools/source_baseline.py",
+   "purpose": "own tool: baseline (v2 drive-path regex)",
+   "exists": true,
+   "bytes": 29093,
+   "sha256Worktree": "0f6e26a93ae8066d3478c937e06a89944501259b1daffeacd2ac28868154b953"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-099/prep/tools/compare_baselines.py",
+   "purpose": "own tool: before/after diff, exit 1 on blocking",
+   "exists": true,
+   "bytes": 3861,
+   "sha256Worktree": "3fdc5366188ed8ba7c616ecfb417598d2dad0003242c0efb5104760734cabcb5"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-099/prep/tools/compare_selftest.py",
+   "purpose": "own tool: compare negatives",
+   "exists": true,
+   "bytes": 4096,
+   "sha256Worktree": "507f89a78f20d259a2912fba7ad31782e115828a7e2242f15ed7a55357896a69"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-099/prep/tools/isolated_rebuild.py",
+   "purpose": "own tool: isolated replay",
+   "exists": true,
+   "bytes": 9218,
+   "sha256Worktree": "1c2193c370456a9ced2fa5905ecdd9ef622a095b1db13eb87d85c717b9f5f62a"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-099/prep/tools/glb_semantic_diff.py",
+   "purpose": "own tool: GLB semantic diff",
+   "exists": true,
+   "bytes": 8572,
+   "sha256Worktree": "b60f5f5e2a5c81b8b0afb660f46f37a04275a60ed21163f56f0095a2a929158e"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-099/prep/tools/semantic_selftest.py",
+   "purpose": "own tool: semantic diff negatives",
+   "exists": true,
+   "bytes": 4505,
+   "sha256Worktree": "d63db8aadfe802079c39d1fc3019199f4ad2b06803028c19da8bbe31692354c0"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-099/prep/qa/baseline-bce3211.json",
+   "purpose": "own baseline (before) at bce3211, tool v2",
+   "exists": true,
+   "bytes": 224165,
+   "sha256Worktree": "0ba607b38ffcfb16d49a6673d066758d58b7969db4ce2b1a55b4bfba4a5b82ac"
+  },
+  {
+   "repo": "creation-notebook-workpacks",
+   "path": "LY-099/prep/qa/replay-determinism-2026-11-06.json",
+   "purpose": "own: 5.2.1 replay byte-determinism record",
+   "exists": true,
+   "bytes": 2451,
+   "sha256Worktree": "6a53053ac5d8e37db9198a9e56b914b5311c8e2fa3c258638b1ca49407d925e3"
+  }
+ ],
+ "external": [
+  {
+   "path": "D:/GitHub/creation-notebook-待传/",
+   "purpose": "source inbox",
+   "observed": [
+    "说明.txt"
+   ]
+  },
+  {
+   "path": "D:/Blender/blender.exe",
+   "purpose": "replay tool",
+   "version": [
+    "Blender 5.2.1 LTS"
+   ]
+  }
+ ],
+ "notAvailable": [
+  "GitHub Release asset lists/digests (sources-2026.11.05, r2026.11.05-*) - no network/gh in this seat",
+  "luoyang-yong-city-v1.1-private-source.zip (r2026.11.05-5)",
+  "granary private composer source (granary-city-v1/source.json limitations)",
+  "projection-map sourceArchiveSha256 a65b89f8… / previous 052c6d6c… private archives"
+ ]
+}

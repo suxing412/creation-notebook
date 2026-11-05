@@ -1,0 +1,302 @@
+{
+ "units": {
+  "chi_m": [
+   0.23,
+   0.24
+  ],
+  "bu_chi": 6,
+  "li_bu": 300,
+  "note": "C假设（LY-002 X22）：汉尺0.230–0.240米；1步=6尺；1里=300步=1800尺，故1里=414–432米、1步=1.38–1.44米。",
+  "rounding": {
+   "li": 0.5,
+   "bu_hundreds": 50,
+   "note": "C假设：'二里所''一里所'等取±0.5里；'三百步'取±50步。这是读法宽度，不是历史误差。"
+  }
+ },
+ "constraints": [
+  {
+   "id": "T1a",
+   "sites": [
+    "mingtang"
+   ],
+   "textQuotes": [
+    "MT2"
+   ],
+   "kind": "distance",
+   "measured_m": 1045.109,
+   "interval_m": {
+    "strict": [
+     828.0,
+     864.0
+    ],
+    "loose": [
+     621.0,
+     1080.0
+    ]
+   },
+   "note": "平城门点到明堂描点（符号中心），冻结证据层数值",
+   "withinStrict": false,
+   "withinLoose": true,
+   "deviationFromStrict_pct": [
+    20.962,
+    26.221
+   ]
+  },
+  {
+   "id": "T1b",
+   "sites": [
+    "mingtang"
+   ],
+   "textQuotes": [
+    "MT2"
+   ],
+   "kind": "distance",
+   "measured_m": 881.684,
+   "interval_m": {
+    "strict": [
+     828.0,
+     864.0
+    ],
+    "loose": [
+     621.0,
+     1080.0
+    ]
+   },
+   "note": "平城门到图1明堂符号北缘（本席位读数）；若\"去平城门二里\"量到明堂外缘，与严格读法相合",
+   "withinStrict": false,
+   "withinLoose": true,
+   "deviationFromStrict_pct": [
+    2.047,
+    6.484
+   ]
+  },
+  {
+   "id": "T2a",
+   "sites": [
+    "mingtang",
+    "biyong"
+   ],
+   "textQuotes": [
+    "BY1"
+   ],
+   "kind": "distance",
+   "measured_m": 406.629,
+   "interval_m": {
+    "strict": [
+     414.0,
+     432.0
+    ],
+    "loose": [
+     345.0,
+     504.0
+    ]
+   },
+   "note": "明堂描点到辟雍描点（冻结证据层）",
+   "withinStrict": false,
+   "withinLoose": true,
+   "deviationFromStrict_pct": [
+    -5.873,
+    -1.78
+   ]
+  },
+  {
+   "id": "T2b",
+   "sites": [
+    "mingtang",
+    "biyong"
+   ],
+   "textQuotes": [
+    "BY1"
+   ],
+   "kind": "distance",
+   "measured_m": 396.983,
+   "interval_m": {
+    "strict": [
+     414.0,
+     432.0
+    ],
+    "loose": [
+     345.0,
+     504.0
+    ]
+   },
+   "note": "同上，本席位读数",
+   "withinStrict": false,
+   "withinLoose": true,
+   "deviationFromStrict_pct": [
+    -8.106,
+    -4.111
+   ]
+  },
+  {
+   "id": "T3",
+   "sites": [
+    "lingtai",
+    "mingtang"
+   ],
+   "textQuotes": [
+    "LT4"
+   ],
+   "kind": "relation",
+   "measured_m": {
+    "lingtaiEast": 1469.388,
+    "roadEastAtLingtai": 1613.815,
+    "mingtangEast": 1795.918,
+    "roadEastAtMingtang": 1613.64,
+    "northDiff_m": 20.408
+   },
+   "interval_m": null,
+   "note": "灵台在平城门外大道西、明堂在东，两者南北相差很小（夹道相对）",
+   "pass": true
+  },
+  {
+   "id": "T4",
+   "sites": [
+    "taixue"
+   ],
+   "textQuotes": [
+    "TX1",
+    "TX12"
+   ],
+   "kind": "relation",
+   "measured_m": {
+    "taixueNorth": -632.653,
+    "southWallNorthAtTaixue": -28.707,
+    "taixueEast": 2367.347,
+    "kaiyangRoadEastAtTaixue": 2015.586,
+    "distToKaiyangGate_m": 700.003
+   },
+   "interval_m": null,
+   "note": "太学在南垣外、开阳门南大道东：与\"开阳门外\"及北魏\"开阳门御道东\"相合",
+   "pass": true
+  },
+  {
+   "id": "T5a",
+   "sites": [
+    "taixue"
+   ],
+   "textQuotes": [
+    "TX1"
+   ],
+   "kind": "distance",
+   "measured_m": 1731.637,
+   "interval_m": {
+    "strict": [
+     3312.0,
+     3456.0
+    ],
+    "loose": [
+     3105.0,
+     3672.0
+    ]
+   },
+   "note": "太学到南宫候选包络中心：远小于八里——\"去宫八里\"不是以东汉南宫计",
+   "withinStrict": false,
+   "withinLoose": false,
+   "deviationFromStrict_pct": [
+    -49.895,
+    -47.716
+   ]
+  },
+  {
+   "id": "T5b",
+   "sites": [
+    "taixue"
+   ],
+   "textQuotes": [
+    "TX1"
+   ],
+   "kind": "distance",
+   "measured_m": 778.792,
+   "interval_m": {
+    "strict": [
+     3312.0,
+     3456.0
+    ],
+    "loose": [
+     3105.0,
+     3672.0
+    ]
+   },
+   "note": "太学到南宫候选包络最近边",
+   "withinStrict": false,
+   "withinLoose": false,
+   "deviationFromStrict_pct": [
+    -77.465,
+    -76.486
+   ]
+  },
+  {
+   "id": "T5c",
+   "sites": [
+    "taixue"
+   ],
+   "textQuotes": [
+    "TX1"
+   ],
+   "kind": "distance",
+   "measured_m": 3616.2,
+   "interval_m": {
+    "strict": [
+     3312.0,
+     3456.0
+    ],
+    "loose": [
+     3105.0,
+     3672.0
+    ]
+   },
+   "note": "太学到北宫旧示意范围中心：接近八里，与西晋宫城在北的格局相容（只说明该句是西晋参照，不用于定位）",
+   "withinStrict": false,
+   "withinLoose": true,
+   "deviationFromStrict_pct": [
+    4.635,
+    9.185
+   ]
+  },
+  {
+   "id": "T6",
+   "sites": [
+    "nanjiao",
+    "mingtang"
+   ],
+   "textQuotes": [
+    "MT3",
+    "NJ1"
+   ],
+   "kind": "relation",
+   "measured_m": {
+    "mingtangFromPingcheng_m": 1045.109,
+    "nanjiaoTextFromSouthWall_m": [
+     2691.0,
+     3240.0
+    ]
+   },
+   "interval_m": null,
+   "note": "出平城门先历明堂乃至郊祀：南郊坛应在明堂之外；七里带（≥2.69 km）远于明堂（约1.0 km），两条记载不冲突",
+   "pass": true
+  },
+  {
+   "id": "T7",
+   "sites": [
+    "mingtang",
+    "biyong",
+    "lingtai"
+   ],
+   "textQuotes": [
+    "MT8",
+    "BY10",
+    "LT7"
+   ],
+   "kind": "relation-later",
+   "measured_m": {
+    "mingtangIsSouthWestOfBiyong": true,
+    "biyongIsEastOfLingtai": true,
+    "lingtaiFromXiaoyuanGate_m": 1178.428
+   },
+   "interval_m": null,
+   "note": "北魏追记（后世栏）：图1明堂正在辟雍西南，正是北魏正光明堂的相对位置；因此图1明堂点与北魏明堂可能是同一处遗址，分期必须另核",
+   "pass": true
+  }
+ ]
+}

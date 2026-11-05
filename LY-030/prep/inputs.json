@@ -1,0 +1,706 @@
+{
+ "seat": "LY-030",
+ "baselineCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "generatedBy": "prep/scripts/build_inputs.py",
+ "inputs": [
+  {
+   "path": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "role": "5店3摊 v1 base (A routes, sample_ground, shared roofs); 500 nodes",
+   "exists": true,
+   "bytes": 1031928,
+   "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "loadedInCityScene": "yes",
+   "loadedBy": [
+    "city-data.mjs:511-555 asset market-main (excludeNodes 30 N2_*)",
+    "city-data.mjs:3663 node market-main",
+    "city-data.mjs:3953-3962 chapter market loadNodeIds",
+    "city-renderer.mjs:309-346 loadAsset excludeNodes (throws if not all matched)",
+    "v1/west-layer.mjs:33 layout.environmentUrl (level=market)",
+    "v1/market-assembly.mjs:2-7 retire 30 (+7 when flow=B)"
+   ],
+   "note": "",
+   "sha256AtHEAD": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/N2-replacement.glb",
+   "role": "N2 trade/storage C replacement, 54 nodes",
+   "exists": true,
+   "bytes": 72984,
+   "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "loadedInCityScene": "yes",
+   "loadedBy": [
+    "city-data.mjs:562 asset market-N2",
+    "city-data.mjs:3690 node market-N2",
+    "v1/west-layer.mjs:33 and :36 extraEnvironments"
+   ],
+   "note": "",
+   "sha256AtHEAD": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/flowB-routes.glb",
+   "role": "optional B service-detour route ribbons, 6 nodes",
+   "exists": true,
+   "bytes": 9344,
+   "sha256": "43d7799f85feccb0d6f1e0412c46853e6b3339535e38a9b806e8c5d3898f845e",
+   "loadedInCityScene": "only v1 flow=B",
+   "loadedBy": [
+    "v1/west-layer.mjs:33/:36 (s.flow===B)",
+    "v1/market-assembly.mjs:4 retires 7 A routes first"
+   ],
+   "note": "not in city-data.mjs",
+   "sha256AtHEAD": "43d7799f85feccb0d6f1e0412c46853e6b3339535e38a9b806e8c5d3898f845e",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/corridor-6m-market-link.glb",
+   "role": "6 m east link corridor 244.286->395.378",
+   "exists": true,
+   "bytes": 8272,
+   "sha256": "b46dd450d7e8636b744d2dcd1d0cee8e98352025b7cda57b2cd0938a3da149bf",
+   "loadedInCityScene": "declared but overridden at market level",
+   "loadedBy": [
+    "v1/west-layer.mjs:32 (calt non-market levels)",
+    "v1/west-layer.mjs:33 declared for market, then replaced by :36 because market is always calt"
+   ],
+   "note": "measured: v1 market level actually loads ground-atomic instead; ga_network covers the east entry",
+   "sha256AtHEAD": "b46dd450d7e8636b744d2dcd1d0cee8e98352025b7cda57b2cd0938a3da149bf",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/cities/luoyang/assets/road-junction/joined-route-terrain.glb",
+   "role": "joined route terrain",
+   "exists": true,
+   "bytes": 4408140,
+   "sha256": "f872935883fc6b4e3279c6465635411d13c2d810f50b7ad43def09ca4543d104",
+   "loadedInCityScene": "declared but overridden at market level",
+   "loadedBy": [
+    "v1/west-layer.mjs:32/:33 then overridden by :36"
+   ],
+   "note": "",
+   "sha256AtHEAD": "f872935883fc6b4e3279c6465635411d13c2d810f50b7ad43def09ca4543d104",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "role": "city ground atomic piece",
+   "exists": true,
+   "bytes": 3565544,
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "loadedInCityScene": "v1 market: yes; main app market chapter: only if terrain chapter was opened earlier",
+   "loadedBy": [
+    "v1/west-layer.mjs:35-36 ground[] (D08 translation [580,0,-960])",
+    "city-data.mjs terrain chapter nodes ground-* initial:false",
+    "city-renderer.mjs:597-605 focusChapter accumulates cityIds (state-dependent)"
+   ],
+   "note": "",
+   "sha256AtHEAD": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "role": "city ground atomic piece",
+   "exists": true,
+   "bytes": 629740,
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "loadedInCityScene": "v1 market: yes; main app market chapter: only if terrain chapter was opened earlier",
+   "loadedBy": [
+    "v1/west-layer.mjs:35-36 ground[] (D08 translation [580,0,-960])",
+    "city-data.mjs terrain chapter nodes ground-* initial:false",
+    "city-renderer.mjs:597-605 focusChapter accumulates cityIds (state-dependent)"
+   ],
+   "note": "",
+   "sha256AtHEAD": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "role": "city ground atomic piece",
+   "exists": true,
+   "bytes": 2623560,
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "loadedInCityScene": "v1 market: yes; main app market chapter: only if terrain chapter was opened earlier",
+   "loadedBy": [
+    "v1/west-layer.mjs:35-36 ground[] (D08 translation [580,0,-960])",
+    "city-data.mjs terrain chapter nodes ground-* initial:false",
+    "city-renderer.mjs:597-605 focusChapter accumulates cityIds (state-dependent)"
+   ],
+   "note": "",
+   "sha256AtHEAD": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "role": "city ground atomic piece",
+   "exists": true,
+   "bytes": 6664,
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "loadedInCityScene": "v1 market: yes; main app market chapter: only if terrain chapter was opened earlier",
+   "loadedBy": [
+    "v1/west-layer.mjs:35-36 ground[] (D08 translation [580,0,-960])",
+    "city-data.mjs terrain chapter nodes ground-* initial:false",
+    "city-renderer.mjs:597-605 focusChapter accumulates cityIds (state-dependent)"
+   ],
+   "note": "",
+   "sha256AtHEAD": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/N2-contract.json",
+   "role": "exact 30-node retirement list",
+   "exists": true,
+   "bytes": 9414,
+   "sha256": "10678d73111ae0d131afc3ff823162392eab339ee66bf2046e61666c2c8d9386",
+   "loadedInCityScene": "yes (fetched at runtime)",
+   "loadedBy": [
+    "v1/west-layer.mjs:40",
+    "city-data.mjs:4500-4540 sourceContracts"
+   ],
+   "note": "",
+   "sha256AtHEAD": "498f51fcd0723da69ab1b97c56f3de004a449a86e0e322dedc6489446a00e2cd",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-flow-plan.json",
+   "role": "A/B route polylines, 7 retire names, envelope widths 0.6/1.6",
+   "exists": true,
+   "bytes": 3078,
+   "sha256": "bff5bb22bac6bda21f02a4b43f4adf85e187b8070d360c0433d69832e11adbdf",
+   "loadedInCityScene": "yes (fetched at runtime)",
+   "loadedBy": [
+    "v1/west-layer.mjs:40",
+    "city-data.mjs:4500-4540 sourceContracts"
+   ],
+   "note": "",
+   "sha256AtHEAD": "fb2416122d3b9fd7e2bbeafcaa1934ee4efcaf67cbe4654139b212e4e50ce37b",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-interface.json",
+   "role": "market add/replace/keep contract",
+   "exists": true,
+   "bytes": 1761,
+   "sha256": "31c6786db03b1d7e4be79070abe8ea9a577207345a55703c85d2fb34bc479f4e",
+   "loadedInCityScene": "listed in sourceContracts",
+   "loadedBy": [
+    "v1/west-layer.mjs:40",
+    "city-data.mjs:4500-4540 sourceContracts"
+   ],
+   "note": "",
+   "sha256AtHEAD": "2957184accc87e5c2089987c71023cd09a8ef0274b2daab1fce4d39623606347",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-precedents.json",
+   "role": "text analogies, avoid list (incl. 因名市井而强加水井)",
+   "exists": true,
+   "bytes": 6377,
+   "sha256": "abf2a3d248114427f51a93b913c39e3ee523c5b3dda55860bd6379f5d37f7d38",
+   "loadedInCityScene": "listed in sourceContracts",
+   "loadedBy": [
+    "v1/west-layer.mjs:51 link",
+    "city-data.mjs:4500-4540 sourceContracts"
+   ],
+   "note": "",
+   "sha256AtHEAD": "14294a1202cb1ee7ab81938a53c80b537d2ce61e7d1072aa71809be5597f1916",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-link-continuity.json",
+   "role": "6 m link sampling",
+   "exists": true,
+   "bytes": 17650,
+   "sha256": "d2da6a6ce89c9f7f4128d41566d026f8429350ddf7c172b78b2d3d669fe47dd8",
+   "loadedInCityScene": "listed in sourceContracts",
+   "loadedBy": [
+    "v1/west-layer.mjs:40",
+    "city-data.mjs:4500-4540 sourceContracts"
+   ],
+   "note": "",
+   "sha256AtHEAD": "a0686753a51f73be4455608e8b07bfa5371b8f5cf005a225912dd841a4719fcd",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "role": "ground atomic assert contract",
+   "exists": true,
+   "bytes": 1391,
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "loadedInCityScene": "yes (fetched at runtime)",
+   "loadedBy": [
+    "v1/west-layer.mjs:40",
+    "city-data.mjs:4500-4540 sourceContracts"
+   ],
+   "note": "",
+   "sha256AtHEAD": "7f26720bf40fc8cd7f7d0b445398d889fcc70c407f7cc7e26e4acd0eb6332367",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "role": "shared loader / project card (no write)",
+   "exists": true,
+   "bytes": 111034,
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "loadedInCityScene": "code",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "role": "shared loader / project card (no write)",
+   "exists": true,
+   "bytes": 36571,
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "loadedInCityScene": "code",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "role": "shared loader / project card (no write)",
+   "exists": true,
+   "bytes": 14563,
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "loadedInCityScene": "code",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/cities/luoyang/v1/west-layer.mjs",
+   "role": "shared loader / project card (no write)",
+   "exists": true,
+   "bytes": 18747,
+   "sha256": "d8c14142af2e4d993cc249dfcc605edadb38232190e5890f31640b94be9d2d4b",
+   "loadedInCityScene": "code",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "e406af117b112a5fd07483f1906f0d94ad767135bf844f03a82a9874f21c59fc",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/cities/luoyang/v1/market-assembly.mjs",
+   "role": "shared loader / project card (no write)",
+   "exists": true,
+   "bytes": 1175,
+   "sha256": "0145ac84d938b570d08e2bbf334eb42cc69ae13569cb0e2bdfa917351ae68ce2",
+   "loadedInCityScene": "code",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "343373f0b4599d376c6064981f13dfcd60f6be4c512edcf8fada4cd886dce811",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/cities/luoyang/v1/west-state.mjs",
+   "role": "shared loader / project card (no write)",
+   "exists": true,
+   "bytes": 2294,
+   "sha256": "1ca602502911dd4983c0480d97a79f7c25291bafc794b9f0edb9e5abe27ed6f1",
+   "loadedInCityScene": "code",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "ece2a6e92e157a498204a71c7f8c6c9c923e33aef1fff0deb14067f30fc280be",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "role": "shared loader / project card (no write)",
+   "exists": true,
+   "bytes": 24215,
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "loadedInCityScene": "code",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "lab/data/assets.json",
+   "role": "site aggregate (no write)",
+   "exists": true,
+   "bytes": 439273,
+   "sha256": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+   "loadedInCityScene": "n/a",
+   "loadedBy": [],
+   "note": "working tree differs from HEAD only in updated timestamps (not ours)",
+   "sha256AtHEAD": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/model-library/assets/market-A-N2-local.glb",
+   "role": "standalone A+N2 (local coords, anchor 214.286,0,-1959.184)",
+   "exists": true,
+   "bytes": 1088036,
+   "sha256": "493798b8f09f594bb2ed3015b0db273e15badd3c7a62a99f9bdda1738880c707",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "measured == city market-cluster(-30)+N2 at 1 mm for 524/524 nodes",
+   "sha256AtHEAD": "493798b8f09f594bb2ed3015b0db273e15badd3c7a62a99f9bdda1738880c707",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/model-library/assets/optional-B-routes-local.glb",
+   "role": "standalone B route patch (local)",
+   "exists": true,
+   "bytes": 9224,
+   "sha256": "40f3fef9a52af742e2df71a684a4a61c7c21d9ea79760cb6b894bf27c371de56",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "40f3fef9a52af742e2df71a684a4a61c7c21d9ea79760cb6b894bf27c371de56",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/model-library/assets/market-origin-contract.json",
+   "role": "local A+N2 placement contract",
+   "exists": true,
+   "bytes": 5097,
+   "sha256": "d36462b911e38749cc209b11acde9ba5dc7fd180790c0f7b1d3ee74bef4b175c",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "a3940e014f0e64fd81556e0a8670884baff2c2cd16a6cc8436849b445b314716",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "docs/model-library/updates/m-market-functional/files/market-LOD0.glb",
+   "role": "market functional v2 (26x28.7 local module)",
+   "exists": true,
+   "bytes": 2845156,
+   "sha256": "acdd4391ea9a26022c5bdb22aa9e0db9403a0f99850dd63e701526eded72aa07",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "acdd4391ea9a26022c5bdb22aa9e0db9403a0f99850dd63e701526eded72aa07",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/model-library/updates/m-market-functional/files/market-LOD1.glb",
+   "role": "market functional v2 (26x28.7 local module)",
+   "exists": true,
+   "bytes": 1448032,
+   "sha256": "e925451bf71dbf688297d889f0ed85d49dcc6c8e4fbe6d4cb261260333520683",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "e925451bf71dbf688297d889f0ed85d49dcc6c8e4fbe6d4cb261260333520683",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/model-library/updates/m-market-functional/files/market-LOD2.glb",
+   "role": "market functional v2 (26x28.7 local module)",
+   "exists": true,
+   "bytes": 136216,
+   "sha256": "ea0c235f1505b9e1a0254258743f0ee073ae8c5794160e516bc3740835ce8864",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "ea0c235f1505b9e1a0254258743f0ee073ae8c5794160e516bc3740835ce8864",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0.glb",
+   "role": "八铺四棚店前线 v2.1",
+   "exists": true,
+   "bytes": 1932544,
+   "sha256": "46f08f41aa290218e9a3ec4e4de4e2cb676f10a80a035e9b6d3e1f8a0c5bf6f2",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "46f08f41aa290218e9a3ec4e4de4e2cb676f10a80a035e9b6d3e1f8a0c5bf6f2",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD1.glb",
+   "role": "八铺四棚店前线 v2.1",
+   "exists": true,
+   "bytes": 720296,
+   "sha256": "03ad28cf31f05cdb518b1ee8652cdc235def6d6ca4b7aa8ca1a29c5272fb6126",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "03ad28cf31f05cdb518b1ee8652cdc235def6d6ca4b7aa8ca1a29c5272fb6126",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD2.glb",
+   "role": "八铺四棚店前线 v2.1",
+   "exists": true,
+   "bytes": 125896,
+   "sha256": "b5b13b1c74f561903ba12489846c5c841e7b7bf7c1694228e7e12357869fa0f1",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "b5b13b1c74f561903ba12489846c5c841e7b7bf7c1694228e7e12357869fa0f1",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD0.glb",
+   "role": "S84/S86 修订铺型 / 三铺样例",
+   "exists": true,
+   "bytes": 1113880,
+   "sha256": "8ef1f3c8a8c3b570ac9607d4ab018b723b6450570175a0fad6752be430fa6b84",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "8ef1f3c8a8c3b570ac9607d4ab018b723b6450570175a0fad6752be430fa6b84",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD1.glb",
+   "role": "S84/S86 修订铺型 / 三铺样例",
+   "exists": true,
+   "bytes": 401756,
+   "sha256": "aa914dd6f246d6238abe543150dbd81f9c665edc8d21806edc390428c0fab535",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "aa914dd6f246d6238abe543150dbd81f9c665edc8d21806edc390428c0fab535",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD2.glb",
+   "role": "S84/S86 修订铺型 / 三铺样例",
+   "exists": true,
+   "bytes": 15644,
+   "sha256": "2f8e217c4c8d02401e9b982ee20d61a584de0ee2dad4895bcf8b409bd58e6f83",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "2f8e217c4c8d02401e9b982ee20d61a584de0ee2dad4895bcf8b409bd58e6f83",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD0.glb",
+   "role": "S84/S86 修订铺型 / 三铺样例",
+   "exists": true,
+   "bytes": 1118984,
+   "sha256": "7f1c2e70b2b9dca980cb17c274241f37513d001070386907c3c8a66408b77ee8",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "7f1c2e70b2b9dca980cb17c274241f37513d001070386907c3c8a66408b77ee8",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD1.glb",
+   "role": "S84/S86 修订铺型 / 三铺样例",
+   "exists": true,
+   "bytes": 405996,
+   "sha256": "ef10e67a81972ef52ea8a0c06d9e10cc7fb19c16201d6b198e4510ef3af686e8",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "ef10e67a81972ef52ea8a0c06d9e10cc7fb19c16201d6b198e4510ef3af686e8",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD2.glb",
+   "role": "S84/S86 修订铺型 / 三铺样例",
+   "exists": true,
+   "bytes": 16504,
+   "sha256": "14a7925bdb1458d91d187f0e194f70725d5ecd297bb62458cbad1af2b76a2601",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "14a7925bdb1458d91d187f0e194f70725d5ecd297bb62458cbad1af2b76a2601",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD0.glb",
+   "role": "S84/S86 修订铺型 / 三铺样例",
+   "exists": true,
+   "bytes": 1367376,
+   "sha256": "b599ade0b7137c2dfccfc3a75fd3ce4420179d4562178f76ffa89e83834c1b77",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "b599ade0b7137c2dfccfc3a75fd3ce4420179d4562178f76ffa89e83834c1b77",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD1.glb",
+   "role": "S84/S86 修订铺型 / 三铺样例",
+   "exists": true,
+   "bytes": 506208,
+   "sha256": "c64acc4ee7dc98fc4ac06744e85c1eba8db2b35908adfb9c134200878d6fc76f",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "c64acc4ee7dc98fc4ac06744e85c1eba8db2b35908adfb9c134200878d6fc76f",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD2.glb",
+   "role": "S84/S86 修订铺型 / 三铺样例",
+   "exists": true,
+   "bytes": 53400,
+   "sha256": "502d9d6e9db9e7f17bb93e5987c99401f52e9d9ce86b17487054e54ea0066a3a",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "502d9d6e9db9e7f17bb93e5987c99401f52e9d9ce86b17487054e54ea0066a3a",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/model-library/well-study/assets/well-A-LOD0.glb",
+   "role": "well family (A used by trial; no LOD2 exists)",
+   "exists": true,
+   "bytes": 1710964,
+   "sha256": "6bc463f8638df55c7e07282641d3d66d07d23ce9af8cd72a5e211be9772a38ab",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "6bc463f8638df55c7e07282641d3d66d07d23ce9af8cd72a5e211be9772a38ab",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/model-library/well-study/assets/well-A-LOD1.glb",
+   "role": "well family (A used by trial; no LOD2 exists)",
+   "exists": true,
+   "bytes": 1346488,
+   "sha256": "e9252de34398ef8049876aadaf60f2e4c7c9d9aebc35cd40f34b9fca55fd3255",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "e9252de34398ef8049876aadaf60f2e4c7c9d9aebc35cd40f34b9fca55fd3255",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/model-library/well-study/assets/well-B-LOD0.glb",
+   "role": "well family (A used by trial; no LOD2 exists)",
+   "exists": true,
+   "bytes": 1681036,
+   "sha256": "adf2f51a029289e8afbed8a583b1195bd22b815739b72f1c19e08bf693d55139",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "adf2f51a029289e8afbed8a583b1195bd22b815739b72f1c19e08bf693d55139",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/model-library/well-study/assets/well-B-LOD1.glb",
+   "role": "well family (A used by trial; no LOD2 exists)",
+   "exists": true,
+   "bytes": 1310032,
+   "sha256": "e4acc416db1024a28606a556c9c0b827482fb3da2d2232ecf00a83ea014aa9dd",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "e4acc416db1024a28606a556c9c0b827482fb3da2d2232ecf00a83ea014aa9dd",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "docs/model-library/well-study/contract.json",
+   "role": "well contract",
+   "exists": true,
+   "bytes": 4100,
+   "sha256": "b09677db7a8febaf7ec063141500cd6798c63e176d1fa2a878220bb038f76175",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "867502056eae46a90016c60940fa09cb846c65f41a158e0afea228c431ed852b",
+   "workingTreeEqualsHEAD": false
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part01",
+   "role": "city-visible handoff ZIP part",
+   "exists": true,
+   "bytes": 10485760,
+   "sha256": "d3d5eb7263e9f840c5444d46082eb7ced1c8e5488e7fba9b00d1a0fc3f32a9a3",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "d3d5eb7263e9f840c5444d46082eb7ced1c8e5488e7fba9b00d1a0fc3f32a9a3",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part02",
+   "role": "city-visible handoff ZIP part",
+   "exists": true,
+   "bytes": 10485760,
+   "sha256": "c20213e1eaa6f212f5dbf9cf41482347a26947880119ebba0f13978cd1876703",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "c20213e1eaa6f212f5dbf9cf41482347a26947880119ebba0f13978cd1876703",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part03",
+   "role": "city-visible handoff ZIP part",
+   "exists": true,
+   "bytes": 10485760,
+   "sha256": "6a468122cb53a36c5fc93652c2c7f7dc13658510ceee955dc8faf0de9fc9105b",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "6a468122cb53a36c5fc93652c2c7f7dc13658510ceee955dc8faf0de9fc9105b",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part04",
+   "role": "city-visible handoff ZIP part",
+   "exists": true,
+   "bytes": 10485760,
+   "sha256": "74f4cd0a08d3f69882cd44dc412efc885d84bf80a39fe0619ae6ff2043d924cb",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "74f4cd0a08d3f69882cd44dc412efc885d84bf80a39fe0619ae6ff2043d924cb",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part05",
+   "role": "city-visible handoff ZIP part",
+   "exists": true,
+   "bytes": 4454445,
+   "sha256": "a8a0331b4408228a23181adcc3d07d8ca17d25cd108b2179b8bf99880331de5f",
+   "loadedInCityScene": "no",
+   "loadedBy": [],
+   "note": "",
+   "sha256AtHEAD": "a8a0331b4408228a23181adcc3d07d8ca17d25cd108b2179b8bf99880331de5f",
+   "workingTreeEqualsHEAD": true
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-025/prep/work/market_frontage_well_routes.glb",
+   "role": "mother-scene trial chunk: frontage v2.1 (3 merged meshes) + well A 121 nodes + C_market_ground_well_A + 12 routes/boundaries",
+   "exists": true,
+   "bytes": 3695576,
+   "sha256": "0193ebc0cfe200292defd595ff4f4011b2b2d05388d4f53e7b4c3a19a255b4c5",
+   "loadedInCityScene": "no",
+   "loadedBy": [
+    "modeling-lab .../adapter (not published)"
+   ],
+   "note": "extracted by LY-025 prep (read-only for LY-030); source blend city-C032-entry-LOD0.blend 1e8c4d2c... not in repo"
+  }
+ ],
+ "privateMissing": [
+  {
+   "what": "city-C032-entry-LOD0.blend (SHA 1e8c4d2ce19827bb8ab5ff24a662fd4f3909aa5c6074fc9a90623a103b73b01b)",
+   "use": "native source of trial market+well collection C_MARKET_WELL_ATOMIC_TRIAL",
+   "rebuildFromGLB": "yes for assembly (chunk is lossless per city-visible manifest); no for editable parametric source"
+  },
+  {
+   "what": "market-cluster / N2 native .blend + generator (market v1, flow B)",
+   "use": "regenerate region with new well hole/operation area as native",
+   "rebuildFromGLB": "yes (all nodes axis-aligned, no rotation/scale; local A+N2 GLB equals city at 1 mm)"
+  },
+  {
+   "what": "frontage v2.1 native + generator",
+   "use": "only if LY-029 picks 八铺四棚 and a native re-export is required",
+   "rebuildFromGLB": "assembly yes; editable no (3 merged meshes, per-shop semantics lost)"
+  },
+  {
+   "what": "LY-029 frozen choice + LY-021..028 deliverables",
+   "use": "the actual parts to assemble",
+   "rebuildFromGLB": "n/a - upstream seats"
+  }
+ ]
+}

@@ -1,0 +1,917 @@
+{
+ "seat": "LY-063",
+ "stage": "prep (G not frozen)",
+ "labMain": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "taskpool": {
+  "path": "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md",
+  "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7"
+ },
+ "taskboard": {
+  "path": "D:/GitHub/creation-notebook-workpacks/taskboard.json",
+  "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4"
+ },
+ "coordinateNote": "Blender world frame after glTF import (Z up, metres). Court world == court GLB root; no city placement exists (cityPlacement null).",
+ "cityLoading": "None of these inputs is loaded by the Luoyang city scene at bce3211: city-data.mjs/app.mjs/city-renderer.mjs/scene.mjs/data/manifest.json contain 0 matches for palace|sidehall; v1/* matches are evidence-map colour/category code and north-palace extent layer, not these assets.",
+ "sourceLockCheck": "court independent-geometry-review.json locks inputs/sidehall-A-LOD0/1/2 to bd000b1b…/54793504…/b4c64f49…, equal to the current sidehall card files (latest entry-step revision)",
+ "inputs": [
+  {
+   "path": "docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD0.glb",
+   "role": "sidehall-A eight-bay side gallery, source of the ends; must stay byte/geometry identical",
+   "sha256": "bd000b1bf36419eebe884dbe1c92368f30ceab7597290aa6eafdbdbd971e32c2",
+   "bytes": 1555720,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "bd000b1bf36419eebe884dbe1c92368f30ceab7597290aa6eafdbdbd971e32c2",
+   "sha256Commit": "bd000b1bf36419eebe884dbe1c92368f30ceab7597290aa6eafdbdbd971e32c2",
+   "bytesCommit": 1555720,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD1.glb",
+   "role": "sidehall-A eight-bay side gallery, source of the ends; must stay byte/geometry identical",
+   "sha256": "547935049e53cee8d8a8c7613154365696065256722cf09f52914dc3dd3dddd1",
+   "bytes": 562484,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "547935049e53cee8d8a8c7613154365696065256722cf09f52914dc3dd3dddd1",
+   "sha256Commit": "547935049e53cee8d8a8c7613154365696065256722cf09f52914dc3dd3dddd1",
+   "bytesCommit": 562484,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD2.glb",
+   "role": "sidehall-A eight-bay side gallery, source of the ends; must stay byte/geometry identical",
+   "sha256": "b4c64f499c9c706649e637a9f379bf5328dbf386f9161cc50db346907c612973",
+   "bytes": 93508,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "b4c64f499c9c706649e637a9f379bf5328dbf386f9161cc50db346907c612973",
+   "sha256Commit": "b4c64f499c9c706649e637a9f379bf5328dbf386f9161cc50db346907c612973",
+   "bytesCommit": 93508,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-sidehall/m-luoyang-palace-sidehall.asset.json",
+   "role": "sidehall card (status 待审, 已建模未入城)",
+   "sha256": "d353b3a0a80647996f254f6c70b47588053933f658137abb0f510eca643f5b85",
+   "bytes": 1556,
+   "loadedInCity": false,
+   "loaderCode": "listed in docs/cities/luoyang/p-luoyang.asset.json members (line 551); not loaded by city scene",
+   "sha256Worktree": "d353b3a0a80647996f254f6c70b47588053933f658137abb0f510eca643f5b85",
+   "sha256Commit": "2011ab6f9f458fab72f053006bb9154d94625f014ea7361fa53acf388e83760c",
+   "bytesCommit": 1519,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD0.glb",
+   "role": "admission court composition (open) holding the two gallery instances whose 4 ends are measured",
+   "sha256": "59c8b758a5a2523105eac0e516e9961bf769bd5e422ba2913d292492ed45c4b0",
+   "bytes": 2578472,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "59c8b758a5a2523105eac0e516e9961bf769bd5e422ba2913d292492ed45c4b0",
+   "sha256Commit": "59c8b758a5a2523105eac0e516e9961bf769bd5e422ba2913d292492ed45c4b0",
+   "bytesCommit": 2578472,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-open-LOD0.glb",
+   "role": "byte-identical progress copy",
+   "sha256": "59c8b758a5a2523105eac0e516e9961bf769bd5e422ba2913d292492ed45c4b0",
+   "bytes": 2578472,
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (grep palace|sidehall = 0)",
+   "sha256Worktree": "59c8b758a5a2523105eac0e516e9961bf769bd5e422ba2913d292492ed45c4b0",
+   "sha256Commit": "59c8b758a5a2523105eac0e516e9961bf769bd5e422ba2913d292492ed45c4b0",
+   "bytesCommit": 2578472,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD1.glb",
+   "role": "admission court composition (open) holding the two gallery instances whose 4 ends are measured",
+   "sha256": "d95bd22f9317683ece8b8d14a6d4a6719522e47c8410f976e064708890148281",
+   "bytes": 1126584,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "d95bd22f9317683ece8b8d14a6d4a6719522e47c8410f976e064708890148281",
+   "sha256Commit": "d95bd22f9317683ece8b8d14a6d4a6719522e47c8410f976e064708890148281",
+   "bytesCommit": 1126584,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-open-LOD1.glb",
+   "role": "byte-identical progress copy",
+   "sha256": "d95bd22f9317683ece8b8d14a6d4a6719522e47c8410f976e064708890148281",
+   "bytes": 1126584,
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (grep palace|sidehall = 0)",
+   "sha256Worktree": "d95bd22f9317683ece8b8d14a6d4a6719522e47c8410f976e064708890148281",
+   "sha256Commit": "d95bd22f9317683ece8b8d14a6d4a6719522e47c8410f976e064708890148281",
+   "bytesCommit": 1126584,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD2.glb",
+   "role": "admission court composition (open) holding the two gallery instances whose 4 ends are measured",
+   "sha256": "01b2017fac9d8ee6190726d233973c9b048936ce76b3ec7da8fb91aedec3a33d",
+   "bytes": 278700,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "01b2017fac9d8ee6190726d233973c9b048936ce76b3ec7da8fb91aedec3a33d",
+   "sha256Commit": "01b2017fac9d8ee6190726d233973c9b048936ce76b3ec7da8fb91aedec3a33d",
+   "bytesCommit": 278700,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-open-LOD2.glb",
+   "role": "byte-identical progress copy",
+   "sha256": "01b2017fac9d8ee6190726d233973c9b048936ce76b3ec7da8fb91aedec3a33d",
+   "bytes": 278700,
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (grep palace|sidehall = 0)",
+   "sha256Worktree": "01b2017fac9d8ee6190726d233973c9b048936ce76b3ec7da8fb91aedec3a33d",
+   "sha256Commit": "01b2017fac9d8ee6190726d233973c9b048936ce76b3ec7da8fb91aedec3a33d",
+   "bytesCommit": 278700,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0.glb",
+   "role": "admission court composition (closed) holding the two gallery instances whose 4 ends are measured",
+   "sha256": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+   "bytes": 2578388,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+   "sha256Commit": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+   "bytesCommit": 2578388,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-closed-LOD0.glb",
+   "role": "byte-identical progress copy",
+   "sha256": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+   "bytes": 2578388,
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (grep palace|sidehall = 0)",
+   "sha256Worktree": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+   "sha256Commit": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+   "bytesCommit": 2578388,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD1.glb",
+   "role": "admission court composition (closed) holding the two gallery instances whose 4 ends are measured",
+   "sha256": "455a12153d4132d2b653cdf8bbcf4b4994a5c33451efc1ec16119ebbf21453d2",
+   "bytes": 1126500,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "455a12153d4132d2b653cdf8bbcf4b4994a5c33451efc1ec16119ebbf21453d2",
+   "sha256Commit": "455a12153d4132d2b653cdf8bbcf4b4994a5c33451efc1ec16119ebbf21453d2",
+   "bytesCommit": 1126500,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-closed-LOD1.glb",
+   "role": "byte-identical progress copy",
+   "sha256": "455a12153d4132d2b653cdf8bbcf4b4994a5c33451efc1ec16119ebbf21453d2",
+   "bytes": 1126500,
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (grep palace|sidehall = 0)",
+   "sha256Worktree": "455a12153d4132d2b653cdf8bbcf4b4994a5c33451efc1ec16119ebbf21453d2",
+   "sha256Commit": "455a12153d4132d2b653cdf8bbcf4b4994a5c33451efc1ec16119ebbf21453d2",
+   "bytesCommit": 1126500,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD2.glb",
+   "role": "admission court composition (closed) holding the two gallery instances whose 4 ends are measured",
+   "sha256": "108e28a567dcef237868b2414332ae51925686d256891736355a5b40d9c0101d",
+   "bytes": 278616,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "108e28a567dcef237868b2414332ae51925686d256891736355a5b40d9c0101d",
+   "sha256Commit": "108e28a567dcef237868b2414332ae51925686d256891736355a5b40d9c0101d",
+   "bytesCommit": 278616,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-closed-LOD2.glb",
+   "role": "byte-identical progress copy",
+   "sha256": "108e28a567dcef237868b2414332ae51925686d256891736355a5b40d9c0101d",
+   "bytes": 278616,
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (grep palace|sidehall = 0)",
+   "sha256Worktree": "108e28a567dcef237868b2414332ae51925686d256891736355a5b40d9c0101d",
+   "sha256Commit": "108e28a567dcef237868b2414332ae51925686d256891736355a5b40d9c0101d",
+   "bytesCommit": 278616,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/m-luoyang-palace-admission-court.asset.json",
+   "role": "court card",
+   "sha256": "ed89a6eac40374e753b2abcc988d902888a53094fe9232e5f12e1ce4c41003e4",
+   "bytes": 2227,
+   "loadedInCity": false,
+   "loaderCode": "listed in p-luoyang.asset.json members (line 532)",
+   "sha256Worktree": "ed89a6eac40374e753b2abcc988d902888a53094fe9232e5f12e1ce4c41003e4",
+   "sha256Commit": "7df2a18426266859f2718691546ae821026b2c50798035817a6f579fc693f560",
+   "bytesCommit": 2175,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/source.json",
+   "role": "court contract / QA record (read for route coverage and source locks)",
+   "sha256": "d02c1d8e2333161495363e8e4d85feb91cb22d8f6d1a4c829b8557a0809f2fb3",
+   "bytes": 4170,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "d02c1d8e2333161495363e8e4d85feb91cb22d8f6d1a4c829b8557a0809f2fb3",
+   "sha256Commit": "1653e1155a6ce396870c63b03e38320f0ca09df4c6d495dff96c0cac4f63fc2e",
+   "bytesCommit": 4087,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/README.md",
+   "role": "court contract / QA record (read for route coverage and source locks)",
+   "sha256": "59072e245440a54a9c5781b9aaad235d341aebb577ccec78522867d1090cddd5",
+   "bytes": 3275,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "59072e245440a54a9c5781b9aaad235d341aebb577ccec78522867d1090cddd5",
+   "sha256Commit": "4f7b47698bb4fb41fdf1450fb99a4e78017f1c7048f1c7974e62744ec0e3593c",
+   "bytesCommit": 3238,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/evidence.md",
+   "role": "court contract / QA record (read for route coverage and source locks)",
+   "sha256": "67fa52abefd1bcdbb887dd2a66b5f5060b933b8448084e61a64086236e48ad5a",
+   "bytes": 5298,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "67fa52abefd1bcdbb887dd2a66b5f5060b933b8448084e61a64086236e48ad5a",
+   "sha256Commit": "a73422a2d2fc6641f665369069577696237e898cc248a9df30d0450ae10988d6",
+   "bytesCommit": 5257,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/summary.json",
+   "role": "court contract / QA record (read for route coverage and source locks)",
+   "sha256": "358fd8ff5cbb83e56c4abf60be0ffc9f710bf5993a81f8628e43eccee708171e",
+   "bytes": 2205,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "358fd8ff5cbb83e56c4abf60be0ffc9f710bf5993a81f8628e43eccee708171e",
+   "sha256Commit": "67a3325b62b98e7916e2000cad0967b44d6ffdf66383e2e021a0c81d816b920b",
+   "bytesCommit": 2151,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/finite-routes.json",
+   "role": "court contract / QA record (read for route coverage and source locks)",
+   "sha256": "0fba7079c9cc825b8d1208247eb526a4069a41a76a67060361bb2a78d4378f38",
+   "bytes": 314134,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "0fba7079c9cc825b8d1208247eb526a4069a41a76a67060361bb2a78d4378f38",
+   "sha256Commit": "3b57011c79fe0a81aa8481edf701c0a4f4a0ca659771f5a8f3c9226c2d0c4e50",
+   "bytesCommit": 302159,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/route-interfaces.json",
+   "role": "court contract / QA record (read for route coverage and source locks)",
+   "sha256": "8e2e9d58015d1e0d5c8ebfbd405344bde4bcf4a58c17cc36cd0eee1102d96e15",
+   "bytes": 112586,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "8e2e9d58015d1e0d5c8ebfbd405344bde4bcf4a58c17cc36cd0eee1102d96e15",
+   "sha256Commit": "0d42d41e57e181de3b08404df720ae9b7ddeb9c7a50669bec64df6c260730e08",
+   "bytesCommit": 108147,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/independent-geometry-review.json",
+   "role": "court contract / QA record (read for route coverage and source locks)",
+   "sha256": "eafbbbe1057e28d5c795c9fd283a8d2701021b375f03e255c751ac728678ae67",
+   "bytes": 102210,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "eafbbbe1057e28d5c795c9fd283a8d2701021b375f03e255c751ac728678ae67",
+   "sha256Commit": "c49c64e3e69d8ea2a1927b682de3dfc14cc21e8a14e78382385ffbd803c72027",
+   "bytesCommit": 98749,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/independent-native-images.json",
+   "role": "court contract / QA record (read for route coverage and source locks)",
+   "sha256": "ed3f69a808e16c9d05da68ed59971ad8f271aad05cbdd83a6529531165550c7d",
+   "bytes": 59342,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "ed3f69a808e16c9d05da68ed59971ad8f271aad05cbdd83a6529531165550c7d",
+   "sha256Commit": "a98b626c3b82fde55ad7aeee6039aebdb52401d9fbb44e8afdbd138d927af47c",
+   "bytesCommit": 57348,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/qa/clean-rebuild.json",
+   "role": "court contract / QA record (read for route coverage and source locks)",
+   "sha256": "1d06fde4a2d9486c74f8c2c1724f300a1678dea3a0fa031a66b645ba2dcf2f0c",
+   "bytes": 2185,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "1d06fde4a2d9486c74f8c2c1724f300a1678dea3a0fa031a66b645ba2dcf2f0c",
+   "sha256Commit": "097b72446814ec728b428bd0b1118c422fb7f55a37d22d3f00439ba1879e30d0",
+   "bytesCommit": 2140,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD0.glb",
+   "role": "hall prototype used as court hall (north-end neighbour, platform 1.80 m)",
+   "sha256": "7736998077a8414fe9a9dcfa8b6bce161519d2ff1d2ed5ef9440a244f061b5ae",
+   "bytes": 1601276,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "7736998077a8414fe9a9dcfa8b6bce161519d2ff1d2ed5ef9440a244f061b5ae",
+   "sha256Commit": "7736998077a8414fe9a9dcfa8b6bce161519d2ff1d2ed5ef9440a244f061b5ae",
+   "bytesCommit": 1601276,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD1.glb",
+   "role": "hall prototype used as court hall (north-end neighbour, platform 1.80 m)",
+   "sha256": "6f605ed7d79a091468e4bdc3b0e29315d4d05008f895290ad1ce3cb032553460",
+   "bytes": 727100,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "6f605ed7d79a091468e4bdc3b0e29315d4d05008f895290ad1ce3cb032553460",
+   "sha256Commit": "6f605ed7d79a091468e4bdc3b0e29315d4d05008f895290ad1ce3cb032553460",
+   "bytesCommit": 727100,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD2.glb",
+   "role": "hall prototype used as court hall (north-end neighbour, platform 1.80 m)",
+   "sha256": "134b0375590b7440197dfd9a639d853ecfaa1e69023b4ab928a5ae738e2d452d",
+   "bytes": 67160,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "134b0375590b7440197dfd9a639d853ecfaa1e69023b4ab928a5ae738e2d452d",
+   "sha256Commit": "134b0375590b7440197dfd9a639d853ecfaa1e69023b4ab928a5ae738e2d452d",
+   "bytesCommit": 67160,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD0.glb",
+   "role": "guard slice used in court (south-end neighbour, 12.07 m away)",
+   "sha256": "1ffc1c3118766d418dd5fbb08b5f4a9b8790643465cc29a1d7c76f0bb28e53f3",
+   "bytes": 1386676,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "1ffc1c3118766d418dd5fbb08b5f4a9b8790643465cc29a1d7c76f0bb28e53f3",
+   "sha256Commit": "1ffc1c3118766d418dd5fbb08b5f4a9b8790643465cc29a1d7c76f0bb28e53f3",
+   "bytesCommit": 1386676,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD1.glb",
+   "role": "guard slice used in court (south-end neighbour, 12.07 m away)",
+   "sha256": "42b7883dc066e1c12cff334dcc4f06705abed51a7bd1f8e42640eb388a2ffb86",
+   "bytes": 535508,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "42b7883dc066e1c12cff334dcc4f06705abed51a7bd1f8e42640eb388a2ffb86",
+   "sha256Commit": "42b7883dc066e1c12cff334dcc4f06705abed51a7bd1f8e42640eb388a2ffb86",
+   "bytesCommit": 535508,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD2.glb",
+   "role": "guard slice used in court (south-end neighbour, 12.07 m away)",
+   "sha256": "6eb2c56efc5a87a4f8e15bc5958e5b51ff327410b931d52bd44bd9f484ecdf6c",
+   "bytes": 103536,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "6eb2c56efc5a87a4f8e15bc5958e5b51ff327410b931d52bd44bd9f484ecdf6c",
+   "sha256Commit": "6eb2c56efc5a87a4f8e15bc5958e5b51ff327410b931d52bd44bd9f484ecdf6c",
+   "bytesCommit": 103536,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD0.glb",
+   "role": "guard slice used in court (south-end neighbour, 12.07 m away)",
+   "sha256": "48c511c54010cc00b5a6262dc280cab2b1d0a7c13050d847fc5856e264ce82cd",
+   "bytes": 1386564,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "48c511c54010cc00b5a6262dc280cab2b1d0a7c13050d847fc5856e264ce82cd",
+   "sha256Commit": "48c511c54010cc00b5a6262dc280cab2b1d0a7c13050d847fc5856e264ce82cd",
+   "bytesCommit": 1386564,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD1.glb",
+   "role": "guard slice used in court (south-end neighbour, 12.07 m away)",
+   "sha256": "a359265f37452cae18ab078b4b7945d8bb347c941637a12b68caf449adb94af8",
+   "bytes": 535400,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "a359265f37452cae18ab078b4b7945d8bb347c941637a12b68caf449adb94af8",
+   "sha256Commit": "a359265f37452cae18ab078b4b7945d8bb347c941637a12b68caf449adb94af8",
+   "bytesCommit": 535400,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD2.glb",
+   "role": "guard slice used in court (south-end neighbour, 12.07 m away)",
+   "sha256": "bf47d91d784b224fcfc0bbe81997c6e5a9a81c68375641134e29e396d9e5d63d",
+   "bytes": 103424,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "bf47d91d784b224fcfc0bbe81997c6e5a9a81c68375641134e29e396d9e5d63d",
+   "sha256Commit": "bf47d91d784b224fcfc0bbe81997c6e5a9a81c68375641134e29e396d9e5d63d",
+   "bytesCommit": 103424,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD0.glb",
+   "role": "paired que — listed 现有输入, not in court, no geometric relation to the ends (registered only)",
+   "sha256": "a022d9870594f986658be288528048ca3ea6ca69c576b46a5b1aef700e0ca23d",
+   "bytes": 1588776,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "a022d9870594f986658be288528048ca3ea6ca69c576b46a5b1aef700e0ca23d",
+   "sha256Commit": "a022d9870594f986658be288528048ca3ea6ca69c576b46a5b1aef700e0ca23d",
+   "bytesCommit": 1588776,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD1.glb",
+   "role": "paired que — listed 现有输入, not in court, no geometric relation to the ends (registered only)",
+   "sha256": "09839d70748ea5c5ac6c3281c4c10655859e179b9c40046f1428478d8f27a68c",
+   "bytes": 465904,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "09839d70748ea5c5ac6c3281c4c10655859e179b9c40046f1428478d8f27a68c",
+   "sha256Commit": "09839d70748ea5c5ac6c3281c4c10655859e179b9c40046f1428478d8f27a68c",
+   "bytesCommit": 465904,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD2.glb",
+   "role": "paired que — listed 现有输入, not in court, no geometric relation to the ends (registered only)",
+   "sha256": "9b75671b3d12f393c5b9649611f96cb84eec161042a4fae2bc35cd0fbdd01a8b",
+   "bytes": 49052,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "9b75671b3d12f393c5b9649611f96cb84eec161042a4fae2bc35cd0fbdd01a8b",
+   "sha256Commit": "9b75671b3d12f393c5b9649611f96cb84eec161042a4fae2bc35cd0fbdd01a8b",
+   "bytesCommit": 49052,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD0.glb",
+   "role": "yutang halls — listed 现有输入, not in court, registered only",
+   "sha256": "6e7f06c054d07984e611f9bfdff80117feee3af246a2394eb289a35e8496e4f1",
+   "bytes": 2349008,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "6e7f06c054d07984e611f9bfdff80117feee3af246a2394eb289a35e8496e4f1",
+   "sha256Commit": "6e7f06c054d07984e611f9bfdff80117feee3af246a2394eb289a35e8496e4f1",
+   "bytesCommit": 2349008,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD1.glb",
+   "role": "yutang halls — listed 现有输入, not in court, registered only",
+   "sha256": "297c11b01604122c93167ede4a8417cb5f5e54cefc050e33d9a0bb78d9d005a8",
+   "bytes": 1150600,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "297c11b01604122c93167ede4a8417cb5f5e54cefc050e33d9a0bb78d9d005a8",
+   "sha256Commit": "297c11b01604122c93167ede4a8417cb5f5e54cefc050e33d9a0bb78d9d005a8",
+   "bytesCommit": 1150600,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD2.glb",
+   "role": "yutang halls — listed 现有输入, not in court, registered only",
+   "sha256": "6ff5440cc0be55639148c73f7e5c16179be269b5532da5f6672312a84b2738be",
+   "bytes": 104216,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "6ff5440cc0be55639148c73f7e5c16179be269b5532da5f6672312a84b2738be",
+   "sha256Commit": "6ff5440cc0be55639148c73f7e5c16179be269b5532da5f6672312a84b2738be",
+   "bytesCommit": 104216,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD0.glb",
+   "role": "yutang halls — listed 现有输入, not in court, registered only",
+   "sha256": "92091dbe9c51e72b717a69c9ba41f6db13a2c79e77eb5f145c1881e9570b9eba",
+   "bytes": 2230192,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "92091dbe9c51e72b717a69c9ba41f6db13a2c79e77eb5f145c1881e9570b9eba",
+   "sha256Commit": "92091dbe9c51e72b717a69c9ba41f6db13a2c79e77eb5f145c1881e9570b9eba",
+   "bytesCommit": 2230192,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD1.glb",
+   "role": "yutang halls — listed 现有输入, not in court, registered only",
+   "sha256": "1566de0280fbe50d345abee80b27169254f685eda7252d3e1c254ef4cf8ad38b",
+   "bytes": 1080232,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "1566de0280fbe50d345abee80b27169254f685eda7252d3e1c254ef4cf8ad38b",
+   "sha256Commit": "1566de0280fbe50d345abee80b27169254f685eda7252d3e1c254ef4cf8ad38b",
+   "bytesCommit": 1080232,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD2.glb",
+   "role": "yutang halls — listed 现有输入, not in court, registered only",
+   "sha256": "965ab0b851398f1f3ac52e5ca02f5873c73648ad150730f7969377a1ea267844",
+   "bytes": 100852,
+   "loadedInCity": false,
+   "loaderCode": "lab/asset.html:35 (const glbs = a.files) and :112 (viewer.load(glbs[i].url)) — asset detail page only; public docs detail page docs/model-library/inspect.mjs:136 (GLTFLoader().parseAsync on the card file). City scene: 0 references",
+   "sha256Worktree": "965ab0b851398f1f3ac52e5ca02f5873c73648ad150730f7969377a1ea267844",
+   "sha256Commit": "965ab0b851398f1f3ac52e5ca02f5873c73648ad150730f7969377a1ea267844",
+   "bytesCommit": 100852,
+   "commitBytesEqualWorktree": true
+  },
+  {
+   "path": "docs/library/models/m-luoyang-deyang-hall/m-luoyang-deyang-hall.asset.json",
+   "role": "card",
+   "sha256": "ead59fbdc484be777c9ca21fc5f1b8b1990b81526154a047e8e293bb6bfcee6f",
+   "bytes": 1872,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "ead59fbdc484be777c9ca21fc5f1b8b1990b81526154a047e8e293bb6bfcee6f",
+   "sha256Commit": "16e39d6908180c5c36c63e1123d9af9cfce8b87a454136e5b3c1a2996485de14",
+   "bytesCommit": 1821,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/m-luoyang-palace-guard.asset.json",
+   "role": "card",
+   "sha256": "b9932d281944fe4bafa3409c6fcccb377a5e910f38118230b56504908c27910c",
+   "bytes": 2763,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "b9932d281944fe4bafa3409c6fcccb377a5e910f38118230b56504908c27910c",
+   "sha256Commit": "6628df8326c79902d1af8fbd0fa5a1bebe96e8b9adc0a8c9bcd0941225e76cff",
+   "bytesCommit": 2687,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-paired-que/m-luoyang-palace-paired-que.asset.json",
+   "role": "card",
+   "sha256": "39dffd3b9e55deb3f4d04dabe03a2894bd354bb5f936a2dfaa862ab4f22adc57",
+   "bytes": 1546,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "39dffd3b9e55deb3f4d04dabe03a2894bd354bb5f936a2dfaa862ab4f22adc57",
+   "sha256Commit": "455a167ea94a5a9dcb8ee776f2011a47524e356f61708c4c889525450c243d15",
+   "bytesCommit": 1508,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/library/models/m-luoyang-yutang-halls/m-luoyang-yutang-halls.asset.json",
+   "role": "card",
+   "sha256": "994be90fe84918723192c4115743b061482c9a312a8da849aea31f7284fa2123",
+   "bytes": 1933,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "994be90fe84918723192c4115743b061482c9a312a8da849aea31f7284fa2123",
+   "sha256Commit": "72266b3ecc7b8b156ffa3ce358451a0461e07d3b82be779c2415c7dbc3bba82b",
+   "bytesCommit": 1882,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "role": "shared file, read-only; must be unchanged by LY-063 (LY-100 only)",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 111034,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "sha256Commit": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "bytesCommit": 106463,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "role": "shared file, read-only; must be unchanged by LY-063 (LY-100 only)",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "bytes": 24215,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "sha256Commit": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "bytesCommit": 23627,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/index.html",
+   "role": "shared file, read-only; must be unchanged by LY-063 (LY-100 only)",
+   "sha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "bytes": 16108,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "sha256Commit": "cfbf73763675397dde8f5ab08bb13f6b51fbcfa9954227552e32be756666b1bf",
+   "bytesCommit": 15991,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "role": "shared file, read-only; must be unchanged by LY-063 (LY-100 only)",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "bytes": 14563,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "sha256Commit": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "bytesCommit": 14242,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "role": "shared file, read-only; must be unchanged by LY-063 (LY-100 only)",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "bytes": 36571,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "sha256Commit": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "bytesCommit": 35785,
+   "commitBytesEqualWorktree": false
+  },
+  {
+   "path": "lab/data/assets.json",
+   "role": "shared file, read-only; must be unchanged by LY-063 (LY-100 only)",
+   "sha256": "c39e8e9a2a1833f3abbc15e585f5868fba6c7d2e01f6b8e504c2b44193f16979",
+   "bytes": 439273,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "c39e8e9a2a1833f3abbc15e585f5868fba6c7d2e01f6b8e504c2b44193f16979",
+   "sha256Commit": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "bytesCommit": 424754,
+   "commitBytesEqualWorktree": false,
+   "note": "worktree bytes were rewritten (mtime 2026-11-05 22:29) after the first prep pass: worktree SHA changed 3440caa2->c39e8e9a but git hash-object equals HEAD blob 3a70eca9 (CRLF checkout only, content unchanged). Bind QA to sha256Commit."
+  },
+  {
+   "path": "lab/asset.html",
+   "role": "shared file, read-only; must be unchanged by LY-063 (LY-100 only)",
+   "sha256": "aee1b7a04208d54abb8b5826ecea3d7bd48201c84453420b500535c5c4bb0070",
+   "bytes": 9429,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "sha256Worktree": "aee1b7a04208d54abb8b5826ecea3d7bd48201c84453420b500535c5c4bb0070",
+   "sha256Commit": "d094ab78337b890fea214e6f5b6f4f4f44f3bcf108a11248e735595b9cb6a601",
+   "bytesCommit": 9298,
+   "commitBytesEqualWorktree": false
+  }
+ ],
+ "inputsMissing": [
+  {
+   "what": "sidehall-A native .blend + generator/params (entry-step revision source pack)",
+   "use": "author end modules against native column/eave/platform objects and re-export three LODs with matching naming",
+   "inRepo": false,
+   "rebuildFromGLB": "yes for measurement and an overlay assembly (GLB geometry is rigid and fully decoded); no claim of native reproduction; any re-export of sidehall itself is out of scope"
+  },
+  {
+   "what": "luoyang-palace-admission-court-v1.zip (3 native .blend, inputs/, builder sha256 d4cd1cc4bde10bac3992b75b847759ad5f73495fb4c68a80f7fd673681a05966, config 9de34dcce59016aff115e7aeeae099d019acc887f3c21c17f0ff286eed498887, lock 54837b14365547336c6c4d4ae3e4f587e77bbd361d2a1dcb80c5ba4ca7dcd45e, route checker bf82ede6…/ec77a791…)",
+   "use": "byte-reproducible rebuild of the court with end modules; reuse of the original finite-route checker for comparable numbers",
+   "inRepo": false,
+   "rebuildFromGLB": "partly: the court can be re-assembled from the six GLBs as an overlay (node matrices are readable); original builder/route checker cannot be recovered, so LY-063 uses its own turn_envelope_check.py and states that"
+  },
+  {
+   "what": "G freeze remainder: LY-008 delivery checker (no status yet), LY-010 scheme/area admission (not started: which ends, closure vs turn, whether the 5 m rear strip and 0.809 m eave overshoot are granted); LY-005/006/007/009 are delivered and now listed in gSeatInputs",
+   "use": "checker entry point and negatives; choice of ends/variants; zone amendment",
+   "inRepo": false,
+   "rebuildFromGLB": "no"
+  },
+  {
+   "what": "LY-061 frozen perimeter contract (wall line, corners, footings)",
+   "use": "target of any turn module running toward the perimeter",
+   "inRepo": false,
+   "rebuildFromGLB": "no (LY-061 prep exists only as unfrozen measurement)"
+  }
+ ],
+ "prepArtifacts": [
+  {
+   "path": "LY-063/prep/scripts/measure_gallery_ends.py",
+   "sha256": "1a2193a3e593789ae2629fd3a6cf64c9f1cdc12ba8c4ec9a13847003824fac7e",
+   "bytes": 12234
+  },
+  {
+   "path": "LY-063/prep/scripts/measure_neighbours.py",
+   "sha256": "091b4e8f89bbff4c5d0bcac9a686bfb8358aabb23598aaf6a384153cbba68e3c",
+   "bytes": 3717
+  },
+  {
+   "path": "LY-063/prep/scripts/paths-court-baseline.json",
+   "sha256": "f2f2d59b80ddb78ee96fc99c4ae7c78ccd4806a94b21ef01d12ded890d726e67",
+   "bytes": 1636
+  },
+  {
+   "path": "LY-063/prep/scripts/turn_envelope_check.py",
+   "sha256": "ea0b0fd48b24a1efff2120123d6a0de59bce0a5cefccec217e344067dfe2be06",
+   "bytes": 6604
+  },
+  {
+   "path": "LY-063/prep/scripts/zone_fit.py",
+   "sha256": "4737df90d59eb6815c47811dc5ef2b3a06035ac7747bcace15ce47e5f0e95389",
+   "bytes": 9354
+  },
+  {
+   "path": "LY-063/prep/out/ends-palace-admission-court-closed-LOD0.json",
+   "sha256": "06eff20049036108d33e4c0506f8fb1576063f1b4ac824d9049e70639c3055e3",
+   "bytes": 11345
+  },
+  {
+   "path": "LY-063/prep/out/ends-palace-admission-court-closed-LOD1.json",
+   "sha256": "9eb7d8de56979b70b88b21d7c2af8497ed2f9182b088f639979df79c0cc2c8a0",
+   "bytes": 11343
+  },
+  {
+   "path": "LY-063/prep/out/ends-palace-admission-court-closed-LOD2.json",
+   "sha256": "34d76f7677d7938df4e82a25ed4e1822341ecd373c0067151fb0c071d18e020d",
+   "bytes": 10818
+  },
+  {
+   "path": "LY-063/prep/out/ends-palace-admission-court-open-LOD0.json",
+   "sha256": "0e7c4d9b067e52e5d7a30b88780962128d5bd635b7b393bd33ba9585ff3764b6",
+   "bytes": 11343
+  },
+  {
+   "path": "LY-063/prep/out/ends-palace-admission-court-open-LOD1.json",
+   "sha256": "f47ba865a4655231a55df1db0a8f2723874c8033804985509a8b675bc646cb2f",
+   "bytes": 11341
+  },
+  {
+   "path": "LY-063/prep/out/ends-palace-admission-court-open-LOD2.json",
+   "sha256": "02b8a3220c334363ac42943c5e640f1f388b60f0ac50df3a393742b9b7fd2017",
+   "bytes": 10816
+  },
+  {
+   "path": "LY-063/prep/out/ends-sidehall-A-LOD0.json",
+   "sha256": "c7d22a767fd1aea2cf0d9bda1dce3bdfa35f62964ea8298eef5eb2756694eab8",
+   "bytes": 4114
+  },
+  {
+   "path": "LY-063/prep/out/ends-sidehall-A-LOD1.json",
+   "sha256": "2810d383d0dce00838e266d6c0c7a658fddf8a2b900fc2f223190f4c1c9f69c9",
+   "bytes": 4113
+  },
+  {
+   "path": "LY-063/prep/out/ends-sidehall-A-LOD2.json",
+   "sha256": "e7186bde2d5ca92e0340cad949ebfc2e929a6bd33d43b67328e699c44543d0fb",
+   "bytes": 3870
+  },
+  {
+   "path": "LY-063/prep/out/envelope-baseline-closed-LOD0.json",
+   "sha256": "e9e66989eef11d407614a512e1a2ffa46bc9d909ee0ecb82247f8b5988475e2d",
+   "bytes": 18406
+  },
+  {
+   "path": "LY-063/prep/out/envelope-baseline-open-LOD0.json",
+   "sha256": "ab2845182d5a6a4efce2b78bf117e95ca427e61418d0e2dfe4979ee06c6cbfb8",
+   "bytes": 18404
+  },
+  {
+   "path": "LY-063/prep/out/neighbours-open-LOD0.json",
+   "sha256": "ca0ace2b8e376304a6950d439b3f99e2f3ae14a60f823d51272b7f0a8c18f127",
+   "bytes": 17785
+  },
+  {
+   "path": "LY-063/prep/out/zone-fit-closed-LOD0.json",
+   "sha256": "d632781edbfa2347fda032eecddba03a0a2f82d92aebfa896677b99998a40865",
+   "bytes": 11093
+  },
+  {
+   "path": "LY-063/prep/out/zone-fit-open-LOD0.json",
+   "sha256": "e76dcf9351f87a6125cd661d47cb1e06dcebac0e7500735dc1072078e13b70cf",
+   "bytes": 11091
+  },
+  {
+   "path": "LY-063/prep/out/zone-fit-open-LOD1.json",
+   "sha256": "c625fc47a72fec099d83a9b7ee9ab67a2b66761efd90d0fb6fd889ef6c80c738",
+   "bytes": 11011
+  },
+  {
+   "path": "LY-063/prep/out/zone-fit-open-LOD2.json",
+   "sha256": "49d713afbc6fffc6c07f3a9d9136631546f8376df2063ed2f320ed6a413cb2bf",
+   "bytes": 11011
+  }
+ ],
+ "shaPolicy": "Binary GLB: worktree == commit bytes. Text files: core.autocrlf=true checkout, so worktree SHA differs from commit bytes; QA must bind sha256Commit (LY-001 finding).",
+ "gSeatInputs": [
+  {
+   "path": "workpacks/LY-005/coordinate-contract.json",
+   "role": "frame luoyang-local-schematic-v01; Blender (X,Y,Z)=glTF (x,-z,y); scale=1, Y-rotation only, one N",
+   "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+   "bytes": 11013
+  },
+  {
+   "path": "workpacks/LY-005/port-schema.json",
+   "role": "port record schema (local+world)",
+   "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f",
+   "bytes": 2294
+  },
+  {
+   "path": "workpacks/LY-005/status.json",
+   "role": "LY-005 交付完成",
+   "sha256": "add0f9b1a722f08e516ffd64b9dbaf97532a62d9fa18ded01df89ab7be5740ea",
+   "bytes": 3332
+  },
+  {
+   "path": "workpacks/LY-006/registry/zones.json",
+   "role": "LY-063:write:001..004 (3 m end bays, frame local:admission-court, glTF axes)",
+   "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+   "bytes": 111303
+  },
+  {
+   "path": "workpacks/LY-006/registry/ports.json",
+   "role": "produces sidehall:ends:floor v1 (consumer LY-069); consumes admission-court:enclosure:wall-end v1 (producer LY-061); both values null = filled at delivery",
+   "sha256": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+   "bytes": 287590
+  },
+  {
+   "path": "workpacks/LY-006/registry/seams.json",
+   "role": "seams admission-court:enclosure:wall-end@v1::LY-061->LY-063 and sidehall:ends:floor@v1::LY-063->LY-069",
+   "sha256": "ca4d81f8f955333c089d782aa69c50c2ca83225d4da07f595f66d1ba87f3f4c1",
+   "bytes": 189895
+  },
+  {
+   "path": "workpacks/LY-006/registry/seats.json",
+   "role": "LY-063 component P063-end-turns (fixed), keep steward of 3 sidehall source objects",
+   "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+   "bytes": 127946
+  },
+  {
+   "path": "workpacks/LY-006/registry/ownership.json",
+   "role": "palace-sidehall:sidehall-A-static_{earth,timber,tile} owner LY-063 mode keep; court west/east_gallery__* and new_court_support_C owner LY-061 mode keep",
+   "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+   "bytes": 1236666
+  },
+  {
+   "path": "workpacks/LY-006/status.json",
+   "role": "LY-006 交付完成 (registry v1)",
+   "sha256": "fe4aaa6c7cb1441f95ac8f51101e0cf63a4ab07ed53452e59c2bd897c5539aba",
+   "bytes": 5097
+  },
+  {
+   "path": "workpacks/LY-007/status.json",
+   "role": "LY-007 交付完成; palace family numbers marked 待复核",
+   "sha256": "2fddce70c110a19c6d08d10b90ac355440d538f5c8dcc82cca58504476ecc082",
+   "bytes": 5292
+  },
+  {
+   "path": "workpacks/LY-009/board/ownership.json",
+   "role": "LY-063 whitelist LY-063/**, deny *.blend*/*.zip, GLB > 15,000,000 B",
+   "sha256": "a1b91bf1ea40e496229f8d50c8f054e8b3c89fe2a447f8daa3ee487d08f4d21c",
+   "bytes": 60312
+  },
+  {
+   "path": "workpacks/LY-009/board/pause-zone.json",
+   "role": "PZ-02 blocks-city for LY-063 (palace not registered)",
+   "sha256": "eabfeb22c11cb574fb1c622506b23e837ed760df3c2f770134e8c8bcaa9f4a08",
+   "bytes": 15214
+  },
+  {
+   "path": "workpacks/LY-009/status.json",
+   "role": "LY-009 交付完成",
+   "sha256": "09a1c45415aa3a8657581ce0a5ff2e8738e6fca09da800070e36972b330e896c",
+   "bytes": 5258
+  },
+  {
+   "path": "workpacks/LY-061/prep/prep-status.json",
+   "role": "LY-061 unfrozen prep only (no delivery); perimeter facts used for the turn target",
+   "sha256": "add7fb6ef7ab971021aa460b7cedd5c280d717226e3299f2d760d3b1ca48a3fb",
+   "bytes": 8094
+  }
+ ],
+ "gFreezeState": {
+  "checkedAt": "2026-11-05T23:50+08:00",
+  "delivered": [
+   "LY-001",
+   "LY-002",
+   "LY-005",
+   "LY-006",
+   "LY-007",
+   "LY-009"
+  ],
+  "notDelivered": {
+   "LY-008": "directory exists, no status.json",
+   "LY-010": "directory does not exist",
+   "LY-061": "prep only"
+  },
+  "gFrozen": false
+ },
+ "reproducibility": "2026-11-05 23:45 re-run of turn_envelope_check.py (open-LOD0) and measure_gallery_ends.py (sidehall-A-LOD0) into scratch reproduced out/envelope-baseline-open-LOD0.json ab284518 and out/ends-sidehall-A-LOD0.json c7d22a76 byte-for-byte."
+}

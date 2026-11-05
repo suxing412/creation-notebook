@@ -1,0 +1,70 @@
+{
+ "gallery_sha256": "0c09279723e2334c35f21c7602c195cc867d97808ac0f99ccf6f0208d3ff3849",
+ "cases": {
+  "P1_per_foot_pads_0.20": {
+   "gate_ok": true,
+   "expected": true,
+   "ok": true,
+   "piece_fail_count": 0,
+   "union_xz_area_m2": 12.96,
+   "first_fail": null
+  },
+  "N1_pads_0.25_outer_x_leaves_zone": {
+   "gate_ok": false,
+   "expected": false,
+   "ok": true,
+   "piece_fail_count": 16,
+   "union_xz_area_m2": 14.4,
+   "first_fail": {
+    "piece": "pad-A-F01",
+    "G1_in_zone": false,
+    "G2_below_grade": true,
+    "G3_pad_cap": false,
+    "G4_not_shared": true
+   }
+  },
+  "N2_zone_filling_slab": {
+   "gate_ok": false,
+   "expected": false,
+   "ok": true,
+   "piece_fail_count": 1,
+   "union_xz_area_m2": 98.685,
+   "first_fail": {
+    "piece": "slab",
+    "G1_in_zone": true,
+    "G2_below_grade": true,
+    "G3_pad_cap": false,
+    "G4_not_shared": false
+   }
+  },
+  "N3_pad_above_grade_2cm": {
+   "gate_ok": false,
+   "expected": false,
+   "ok": true,
+   "piece_fail_count": 1,
+   "union_xz_area_m2": 12.96,
+   "first_fail": {
+    "piece": "pad-A-F07",
+    "G1_in_zone": false,
+    "G2_below_grade": false,
+    "G3_pad_cap": true,
+    "G4_not_shared": true
+   }
+  },
+  "N4_strip_under_two_feet": {
+   "gate_ok": false,
+   "expected": false,
+   "ok": true,
+   "piece_fail_count": 1,
+   "union_xz_area_m2": 13.77,
+   "first_fail": {
+    "piece": "strip",
+    "G1_in_zone": true,
+    "G2_below_grade": true,
+    "G3_pad_cap": false,
+    "G4_not_shared": false
+   }
+  }
+ },
+ "all_selftests_ok": true
+}

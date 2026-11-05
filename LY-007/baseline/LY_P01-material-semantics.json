@@ -1,0 +1,844 @@
+{
+ "baseline": "LY_P01",
+ "frozen_by": "LY-007",
+ "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "scope_note": "规范只在城门、礼制、市肆、住屋四族上验证过（S84、G10 三档顶点级复刻；G10/H64/H72/H96/S84/workshed/kaiyang/gate-A 逐三角 UV 核对）；宫院（宫殿、廊、阙、武库等）与生产（窑、磨、碓、灶等器物）两族的事实来自分析员的部分输出，未逐三角复核。",
+ "color_space": {
+  "baseColor_texture": "sRGB（8-bit RGB PNG，无 alpha；Blender 导入/建材时 colorspace = sRGB）",
+  "orm_texture": "线性数据（Non-Color）。R = 255 恒定（不当 occlusion 用，材质不引用 occlusionTexture）；G = 粗糙度；B = 0 金属度",
+  "normal_texture": "线性数据（Non-Color），glTF 切线空间法线；均值 (127,127,254)，起伏极弱；Y 向约定（OpenGL/DirectX）未量到，因起伏 std ≤ 10/255 肉眼不可辨",
+  "flat_factor": "glTF baseColorFactor 为线性值。她的 FLAT = 8-bit sRGB 整数色经 sRGB→线性换算后存 float32，逐位可重算（见 roundtrip 字段）",
+  "workbench_note": "CPU Workbench 预览（mq/render.py）用 TEXTURE/MATERIAL 色，Standard 视图变换；预览图只是 CPU 图，不是浏览器/GPU 结果"
+ },
+ "gltf_material_structure": {
+  "pbr_example_from_her_glb": [
+   {
+    "doubleSided": true,
+    "name": "LY_P01_earth__PBR",
+    "normalTexture": {
+     "index": 0
+    },
+    "pbrMetallicRoughness": {
+     "baseColorTexture": {
+      "index": 1
+     },
+     "metallicRoughnessTexture": {
+      "index": 2
+     }
+    }
+   }
+  ],
+  "pbr_stone_example": [
+   {
+    "doubleSided": true,
+    "name": "LY_P01_paper__stone__PBR",
+    "normalTexture": {
+     "index": 0
+    },
+    "pbrMetallicRoughness": {
+     "baseColorFactor": [
+      0.8069522380828857,
+      0.7379103899002075,
+      0.5840784311294556,
+      1
+     ],
+     "metallicRoughnessTexture": {
+      "index": 1
+     }
+    }
+   }
+  ],
+  "pbr_path_example": [
+   {
+    "doubleSided": true,
+    "name": "LY_P01_path__PBR",
+    "normalTexture": {
+     "index": 9
+    },
+    "pbrMetallicRoughness": {
+     "baseColorTexture": {
+      "index": 10
+     },
+     "metallicRoughnessTexture": {
+      "index": 11
+     }
+    }
+   }
+  ],
+  "sampler": {
+   "magFilter": 9729,
+   "minFilter": 9987,
+   "wrap": "不写（REPEAT）"
+  },
+  "doubleSided": true,
+  "forbidden": [
+   "metallicFactor/roughnessFactor on __PBR",
+   "occlusionTexture",
+   "emissive*",
+   "alphaMode",
+   "KHR_materials_*",
+   "KHR_texture_transform",
+   "副本后缀 .001",
+   "无后缀名（LY_P01_earth）",
+   "REUSED_*",
+   "__VC 顶点色（城垣续做除外）",
+   "旧灰贴图 legacy_grey"
+  ]
+ },
+ "materials": [
+  {
+   "material": "earth",
+   "cn": "夯土",
+   "use": "夯土墙、台基、墩台、柱础（并入 earth 网格）、踏步、室内地坪、院墙墙身、地面补丁",
+   "validated_on": "城门、礼制、市肆、住屋四族逐三角核过；宫院、生产两族只有分析员部分输出",
+   "names": {
+    "LOD0": "LY_P01_earth__PBR",
+    "LOD1": "LY_P01_earth__PBR",
+    "LOD2": "LY_P01_earth__FLAT"
+   },
+   "flat": {
+    "baseColorFactor_linear": [
+     0.3762621283531189,
+     0.2581828534603119,
+     0.13013647496700287
+    ],
+    "roughness": 0.8799999952316284,
+    "metallic": 0,
+    "srgb_8bit_from_linear": [
+     165.0,
+     139.0,
+     101.0
+    ],
+    "srgb_8bit_int": [
+     165,
+     139,
+     101
+    ],
+    "hex": "#A58B65",
+    "roundtrip_int_srgb_to_linear_float32_bit_exact": true,
+    "source": {
+     "glb": "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD2.glb",
+     "glb_sha256": "134ca945603a696a8dc164087a8fc3334a8a1e1b57b4439ae2b97fab2803b4cc",
+     "commit": "bce3211f818ee5a8bef1773539da70695ba37b17"
+    }
+   },
+   "pbr": {
+    "baseColor": "texture",
+    "metallicFactor": "不写（默认 1；ORM.B = 0 压成非金属）",
+    "roughnessFactor": "不写（默认 1；ORM.G 给粗糙度）",
+    "orm_G_mean_8bit": 231.48,
+    "effective_roughness": 0.908,
+    "textures": {
+     "baseColor": "earth-basecolor",
+     "orm": "earth-orm",
+     "normal": "earth-normal"
+    },
+    "files": {
+     "baseColor": {
+      "512": {
+       "image_name": "earth-basecolor",
+       "file": "512/earth-basecolor.png",
+       "sha256": "522d6b1f68a5ddb11472a3da5437f90421c6cf1dd895e01ac4d160dab302b4f7",
+       "bytes": 110352,
+       "mean_srgb_8bit": [
+        164.51,
+        138.49,
+        100.52
+       ],
+       "std": [
+        1.98,
+        1.7,
+        1.32
+       ]
+      },
+      "256": {
+       "image_name": "earth-basecolor",
+       "file": "256/earth-basecolor.png",
+       "sha256": "9ea2f6f2c011723441839c704089d2f51682767523e8f44e91e1c8f6f3c71c6b",
+       "bytes": 41056,
+       "mean_srgb_8bit": [
+        164.5,
+        138.48,
+        100.5
+       ],
+       "std": [
+        2.0,
+        1.72,
+        1.32
+       ]
+      }
+     },
+     "orm": {
+      "512": {
+       "image_name": "earth-orm",
+       "file": "512/earth-orm.png",
+       "sha256": "6c3992a3c6a49aa2a07c5fef1c994f8e3e786f15cd46d4f8584e6ea167f01606",
+       "bytes": 85622,
+       "mean_srgb_8bit": [
+        255.0,
+        231.48,
+        0.0
+       ],
+       "std": [
+        0.0,
+        4.13,
+        0.0
+       ]
+      },
+      "256": {
+       "image_name": "earth-orm",
+       "file": "256/earth-orm.png",
+       "sha256": "16ebdabda5fad8925f178aa7257bfc80621dbfcf636926aff120b365b91dfd20",
+       "bytes": 31750,
+       "mean_srgb_8bit": [
+        255.0,
+        231.47,
+        0.0
+       ],
+       "std": [
+        0.0,
+        4.16,
+        0.0
+       ]
+      }
+     },
+     "normal": {
+      "512": {
+       "image_name": "earth-normal",
+       "file": "512/earth-normal.png",
+       "sha256": "d0e0d79659027067ceb1467cf612fcdf1a98469dce2af60c46c555bf881356d0",
+       "bytes": 184040,
+       "mean_srgb_8bit": [
+        127.0,
+        127.0,
+        254.0
+       ],
+       "std": [
+        1.77,
+        1.78,
+        0.0
+       ]
+      },
+      "256": {
+       "image_name": "earth-normal",
+       "file": "256/earth-normal.png",
+       "sha256": "a2c6ca111356e94efa6bd93a1ad4703feb55d5c75b28d1482138a94c6f81c6de",
+       "bytes": 62603,
+       "mean_srgb_8bit": [
+        127.0,
+        127.0,
+        254.0
+       ],
+       "std": [
+        1.77,
+        1.78,
+        0.0
+       ]
+      }
+     }
+    }
+   }
+  },
+  {
+   "material": "timber",
+   "cn": "木",
+   "use": "柱、梁枋、檩、门框、门叶、窗框窗棂、栌斗、柜台、扶手",
+   "validated_on": "同上；贴图前缀叫 wood",
+   "names": {
+    "LOD0": "LY_P01_timber__PBR",
+    "LOD1": "LY_P01_timber__PBR",
+    "LOD2": "LY_P01_timber__FLAT"
+   },
+   "flat": {
+    "baseColorFactor_linear": [
+     0.09305896610021591,
+     0.06480326503515244,
+     0.0423114113509655
+    ],
+    "roughness": 0.8799999952316284,
+    "metallic": 0,
+    "srgb_8bit_from_linear": [
+     86.0,
+     72.0,
+     58.0
+    ],
+    "srgb_8bit_int": [
+     86,
+     72,
+     58
+    ],
+    "hex": "#56483A",
+    "roundtrip_int_srgb_to_linear_float32_bit_exact": true,
+    "source": {
+     "glb": "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD2.glb",
+     "glb_sha256": "134ca945603a696a8dc164087a8fc3334a8a1e1b57b4439ae2b97fab2803b4cc",
+     "commit": "bce3211f818ee5a8bef1773539da70695ba37b17"
+    }
+   },
+   "pbr": {
+    "baseColor": "texture",
+    "metallicFactor": "不写（默认 1；ORM.B = 0 压成非金属）",
+    "roughnessFactor": "不写（默认 1；ORM.G 给粗糙度）",
+    "orm_G_mean_8bit": 198.4,
+    "effective_roughness": 0.778,
+    "textures": {
+     "baseColor": "wood-basecolor",
+     "orm": "wood-orm",
+     "normal": "wood-normal"
+    },
+    "files": {
+     "baseColor": {
+      "512": {
+       "image_name": "wood-basecolor",
+       "file": "512/wood-basecolor.png",
+       "sha256": "3383d4f1f353c96fd440281842bcd5fb4cf189c25a8f2973dc409a2c58e84bda",
+       "bytes": 98357,
+       "mean_srgb_8bit": [
+        85.46,
+        71.48,
+        57.48
+       ],
+       "std": [
+        2.29,
+        1.9,
+        1.44
+       ]
+      },
+      "256": {
+       "image_name": "wood-basecolor",
+       "file": "256/wood-basecolor.png",
+       "sha256": "cf45b370bb410bc6eaf4cdbbc9b4ed2f1731859615e3a36961e269fbc40814f9",
+       "bytes": 41308,
+       "mean_srgb_8bit": [
+        85.44,
+        71.46,
+        57.46
+       ],
+       "std": [
+        2.39,
+        2.01,
+        1.55
+       ]
+      }
+     },
+     "orm": {
+      "512": {
+       "image_name": "wood-orm",
+       "file": "512/wood-orm.png",
+       "sha256": "66dea3367e89673a533d5dd3e98582bc87e7eafab00f20c7a17237289288c950",
+       "bytes": 70710,
+       "mean_srgb_8bit": [
+        255.0,
+        198.4,
+        0.0
+       ],
+       "std": [
+        0.0,
+        4.33,
+        0.0
+       ]
+      },
+      "256": {
+       "image_name": "wood-orm",
+       "file": "256/wood-orm.png",
+       "sha256": "aa0fa3c978e454bd22fc66302ae2473236816a9d6d017d8f4aa41779a10640a4",
+       "bytes": 25347,
+       "mean_srgb_8bit": [
+        255.0,
+        198.4,
+        0.0
+       ],
+       "std": [
+        0.0,
+        4.4,
+        0.0
+       ]
+      }
+     },
+     "normal": {
+      "512": {
+       "image_name": "wood-normal",
+       "file": "512/wood-normal.png",
+       "sha256": "a76185638832e40e720e6d0ba16fbb0b4ca2b23acfc24ed62b9c0c0098854b10",
+       "bytes": 143226,
+       "mean_srgb_8bit": [
+        127.0,
+        127.0,
+        253.99
+       ],
+       "std": [
+        0.54,
+        9.9,
+        0.12
+       ]
+      },
+      "256": {
+       "image_name": "wood-normal",
+       "file": "256/wood-normal.png",
+       "sha256": "0d97751590c1853857644f764de4f9d7b11ede509358d670a52b5173b80eb163",
+       "bytes": 46577,
+       "mean_srgb_8bit": [
+        127.0,
+        127.0,
+        253.99
+       ],
+       "std": [
+        0.51,
+        9.99,
+        0.08
+       ]
+      }
+     }
+    }
+   }
+  },
+  {
+   "material": "tile",
+   "cn": "瓦",
+   "use": "屋面板、瓦垄、正脊/戗脊、院墙压顶",
+   "validated_on": "同上",
+   "names": {
+    "LOD0": "LY_P01_tile__PBR",
+    "LOD1": "LY_P01_tile__PBR",
+    "LOD2": "LY_P01_tile__FLAT"
+   },
+   "flat": {
+    "baseColorFactor_linear": [
+     0.09530746936798096,
+     0.10224173218011856,
+     0.08865558356046677
+    ],
+    "roughness": 0.8799999952316284,
+    "metallic": 0,
+    "srgb_8bit_from_linear": [
+     87.0,
+     90.0,
+     84.0
+    ],
+    "srgb_8bit_int": [
+     87,
+     90,
+     84
+    ],
+    "hex": "#575A54",
+    "roundtrip_int_srgb_to_linear_float32_bit_exact": true,
+    "source": {
+     "glb": "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD2.glb",
+     "glb_sha256": "134ca945603a696a8dc164087a8fc3334a8a1e1b57b4439ae2b97fab2803b4cc",
+     "commit": "bce3211f818ee5a8bef1773539da70695ba37b17"
+    }
+   },
+   "pbr": {
+    "baseColor": "texture",
+    "metallicFactor": "不写（默认 1；ORM.B = 0 压成非金属）",
+    "roughnessFactor": "不写（默认 1；ORM.G 给粗糙度）",
+    "orm_G_mean_8bit": 214.22,
+    "effective_roughness": 0.84,
+    "textures": {
+     "baseColor": "tile-basecolor",
+     "orm": "tile-orm",
+     "normal": "tile-normal"
+    },
+    "files": {
+     "baseColor": {
+      "512": {
+       "image_name": "tile-basecolor",
+       "file": "512/tile-basecolor.png",
+       "sha256": "47ea3f24cb54b516a2c4ec988ae560bab25967f5c7edbd01e16435bbca0ab45a",
+       "bytes": 52944,
+       "mean_srgb_8bit": [
+        86.46,
+        89.46,
+        83.48
+       ],
+       "std": [
+        1.21,
+        1.21,
+        1.18
+       ]
+      },
+      "256": {
+       "image_name": "tile-basecolor",
+       "file": "256/tile-basecolor.png",
+       "sha256": "977b131f7332176cfab26af1a63df58ed81584dd767694bc898f03a75212e0ab",
+       "bytes": 20045,
+       "mean_srgb_8bit": [
+        86.44,
+        89.44,
+        83.45
+       ],
+       "std": [
+        1.22,
+        1.22,
+        1.19
+       ]
+      }
+     },
+     "orm": {
+      "512": {
+       "image_name": "tile-orm",
+       "file": "512/tile-orm.png",
+       "sha256": "c0fe9035bf8646b2b2384aeaa5405f720a316f0533ce17139c703d73af02f8d3",
+       "bytes": 85717,
+       "mean_srgb_8bit": [
+        255.0,
+        214.22,
+        0.0
+       ],
+       "std": [
+        0.0,
+        4.23,
+        0.0
+       ]
+      },
+      "256": {
+       "image_name": "tile-orm",
+       "file": "256/tile-orm.png",
+       "sha256": "5299af3e2a2661cf92d2343340f7b58b5d39dc475050dcac75ae316ed436d7b2",
+       "bytes": 31764,
+       "mean_srgb_8bit": [
+        255.0,
+        214.22,
+        0.0
+       ],
+       "std": [
+        0.0,
+        4.26,
+        0.0
+       ]
+      }
+     },
+     "normal": {
+      "512": {
+       "image_name": "tile-normal",
+       "file": "512/tile-normal.png",
+       "sha256": "ac5451bc88080d7eadfb76ba6f8b4d8cb64e20c618ceecdd2a806c96e75358d8",
+       "bytes": 157803,
+       "mean_srgb_8bit": [
+        127.0,
+        127.0,
+        254.0
+       ],
+       "std": [
+        1.27,
+        1.25,
+        0.0
+       ]
+      },
+      "256": {
+       "image_name": "tile-normal",
+       "file": "256/tile-normal.png",
+       "sha256": "02d338882700e6a0cc1c9859bdf6b3dba371a7de40b6567d07d88eed6ae85350",
+       "bytes": 54978,
+       "mean_srgb_8bit": [
+        127.0,
+        127.0,
+        254.0
+       ],
+       "std": [
+        1.3,
+        1.28,
+        0.0
+       ]
+      }
+     }
+    }
+   }
+  },
+  {
+   "material": "path",
+   "cn": "路面",
+   "use": "路面、台面铺装（灵台 static_path）；PBR 借用 earth 三张贴图，FLAT 更浅",
+   "validated_on": "只在灵台一张卡见到（LOD1/LOD2，无 LOD0）",
+   "names": {
+    "LOD0": "LY_P01_path__PBR",
+    "LOD1": "LY_P01_path__PBR",
+    "LOD2": "LY_P01_path__FLAT"
+   },
+   "flat": {
+    "baseColorFactor_linear": [
+     0.4677838087081909,
+     0.35640013217926025,
+     0.21952620148658752
+    ],
+    "roughness": 0.8799999952316284,
+    "metallic": 0,
+    "srgb_8bit_from_linear": [
+     182.0,
+     161.0,
+     129.0
+    ],
+    "srgb_8bit_int": [
+     182,
+     161,
+     129
+    ],
+    "hex": "#B6A181",
+    "roundtrip_int_srgb_to_linear_float32_bit_exact": true,
+    "source": {
+     "glb": "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD2.glb",
+     "glb_sha256": "134ca945603a696a8dc164087a8fc3334a8a1e1b57b4439ae2b97fab2803b4cc",
+     "commit": "bce3211f818ee5a8bef1773539da70695ba37b17"
+    }
+   },
+   "pbr": {
+    "baseColor": "texture",
+    "metallicFactor": "不写（默认 1；ORM.B = 0 压成非金属）",
+    "roughnessFactor": "不写（默认 1；ORM.G 给粗糙度）",
+    "orm_G_mean_8bit": 231.48,
+    "effective_roughness": 0.908,
+    "textures": {
+     "baseColor": "earth-basecolor",
+     "orm": "earth-orm",
+     "normal": "earth-normal"
+    },
+    "files": {
+     "baseColor": {
+      "512": {
+       "image_name": "earth-basecolor",
+       "file": "512/earth-basecolor.png",
+       "sha256": "522d6b1f68a5ddb11472a3da5437f90421c6cf1dd895e01ac4d160dab302b4f7",
+       "bytes": 110352,
+       "mean_srgb_8bit": [
+        164.51,
+        138.49,
+        100.52
+       ],
+       "std": [
+        1.98,
+        1.7,
+        1.32
+       ]
+      },
+      "256": {
+       "image_name": "earth-basecolor",
+       "file": "256/earth-basecolor.png",
+       "sha256": "9ea2f6f2c011723441839c704089d2f51682767523e8f44e91e1c8f6f3c71c6b",
+       "bytes": 41056,
+       "mean_srgb_8bit": [
+        164.5,
+        138.48,
+        100.5
+       ],
+       "std": [
+        2.0,
+        1.72,
+        1.32
+       ]
+      }
+     },
+     "orm": {
+      "512": {
+       "image_name": "earth-orm",
+       "file": "512/earth-orm.png",
+       "sha256": "6c3992a3c6a49aa2a07c5fef1c994f8e3e786f15cd46d4f8584e6ea167f01606",
+       "bytes": 85622,
+       "mean_srgb_8bit": [
+        255.0,
+        231.48,
+        0.0
+       ],
+       "std": [
+        0.0,
+        4.13,
+        0.0
+       ]
+      },
+      "256": {
+       "image_name": "earth-orm",
+       "file": "256/earth-orm.png",
+       "sha256": "16ebdabda5fad8925f178aa7257bfc80621dbfcf636926aff120b365b91dfd20",
+       "bytes": 31750,
+       "mean_srgb_8bit": [
+        255.0,
+        231.47,
+        0.0
+       ],
+       "std": [
+        0.0,
+        4.16,
+        0.0
+       ]
+      }
+     },
+     "normal": {
+      "512": {
+       "image_name": "earth-normal",
+       "file": "512/earth-normal.png",
+       "sha256": "d0e0d79659027067ceb1467cf612fcdf1a98469dce2af60c46c555bf881356d0",
+       "bytes": 184040,
+       "mean_srgb_8bit": [
+        127.0,
+        127.0,
+        254.0
+       ],
+       "std": [
+        1.77,
+        1.78,
+        0.0
+       ]
+      },
+      "256": {
+       "image_name": "earth-normal",
+       "file": "256/earth-normal.png",
+       "sha256": "a2c6ca111356e94efa6bd93a1ad4703feb55d5c75b28d1482138a94c6f81c6de",
+       "bytes": 62603,
+       "mean_srgb_8bit": [
+        127.0,
+        127.0,
+        254.0
+       ],
+       "std": [
+        1.77,
+        1.78,
+        0.0
+       ]
+      }
+     }
+    }
+   }
+  },
+  {
+   "material": "paper__stone",
+   "cn": "纸样石",
+   "use": "石臼、石础等石质器物的占位色（研究性浅色样件，不声称石种与加工）；PBR 不挂底色图，只写 baseColorFactor，挂 stone-orm、stone-normal",
+   "validated_on": "见于 foot-pestle（器物）、workyard、TC03 院落",
+   "names": {
+    "LOD0": "LY_P01_paper__stone__PBR",
+    "LOD1": "LY_P01_paper__stone__PBR",
+    "LOD2": "LY_P01_paper__stone__FLAT"
+   },
+   "flat": {
+    "baseColorFactor_linear": [
+     0.8069522380828857,
+     0.7379103899002075,
+     0.5840784311294556
+    ],
+    "roughness": 0.8999999761581421,
+    "metallic": 0,
+    "srgb_8bit_from_linear": [
+     232.0,
+     223.0,
+     201.0
+    ],
+    "srgb_8bit_int": [
+     232,
+     223,
+     201
+    ],
+    "hex": "#E8DFC9",
+    "roundtrip_int_srgb_to_linear_float32_bit_exact": true,
+    "source": {
+     "glb": "docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD2.glb",
+     "glb_sha256": "e94416ef307479eb4a3bf01652153d9c2ff0ba26300b4240920d580a5ae83453",
+     "commit": "bce3211f818ee5a8bef1773539da70695ba37b17"
+    }
+   },
+   "pbr": {
+    "baseColor": "factor (= flat.baseColorFactor_linear)",
+    "metallicFactor": "不写（默认 1；ORM.B = 0 压成非金属）",
+    "roughnessFactor": "不写（默认 1；ORM.G 给粗糙度）",
+    "orm_G_mean_8bit": 218.77,
+    "effective_roughness": 0.858,
+    "textures": {
+     "orm": "stone-orm",
+     "normal": "stone-normal",
+     "baseColor": null
+    },
+    "files": {
+     "orm": {
+      "512": {
+       "image_name": "stone-orm",
+       "file": "512/stone-orm.png",
+       "sha256": "8712b08b43578525b6a18deeedd78f0c7edf060bd967b3cdc3b3fa4d451095f8",
+       "bytes": 237272,
+       "mean_srgb_8bit": [
+        255.0,
+        218.77,
+        0.0
+       ],
+       "std": [
+        0.0,
+        6.38,
+        0.0
+       ]
+      },
+      "256": {
+       "image_name": "stone-orm",
+       "file": "256/stone-orm.png",
+       "sha256": "26d990aa17831cc177d0a39d28eef815d13ffc1f5639171a503391cfc2d806c2",
+       "bytes": 47959,
+       "mean_srgb_8bit": [
+        255.0,
+        218.77,
+        0.0
+       ],
+       "std": [
+        0.0,
+        2.87,
+        0.0
+       ]
+      }
+     },
+     "normal": {
+      "512": {
+       "image_name": "stone-normal",
+       "file": "512/stone-normal.png",
+       "sha256": "d5e3b8583952a23219d9f39111438e090aa8b959f650c5a521fdf08a124fe902",
+       "bytes": 15877,
+       "mean_srgb_8bit": [
+        127.0,
+        127.0,
+        254.0
+       ],
+       "std": [
+        0.08,
+        0.08,
+        0.0
+       ]
+      },
+      "256": {
+       "image_name": "stone-normal",
+       "file": "256/stone-normal.png",
+       "sha256": "872a3902f9591c159cb7e44d5099f027dbcff9e366fdc4ea8e9d90aca428b687",
+       "bytes": 759,
+       "mean_srgb_8bit": [
+        127.0,
+        127.0,
+        254.0
+       ],
+       "std": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      }
+     }
+    }
+   }
+  }
+ ],
+ "new_material_rule": "新材料（真石材、砖、灰泥、金属、草席、货物代理等）先由制作人定调色板与贴图，本基线不起新名。现状中已出现的非五种角色见 decisions.json D-MAT-NEW。",
+ "sources": {
+  "flat4": {
+   "path": "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD2.glb",
+   "sha256": "134ca945603a696a8dc164087a8fc3334a8a1e1b57b4439ae2b97fab2803b4cc"
+  },
+  "flat_stone": {
+   "path": "docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD2.glb",
+   "sha256": "e94416ef307479eb4a3bf01652153d9c2ff0ba26300b4240920d580a5ae83453"
+  },
+  "pbr": {
+   "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb",
+   "sha256": "88d9a3223ded3229f90fa1e6702c68771a675edcf15d6d09f3e0fe5f50aeefec"
+  },
+  "pbr_stone": {
+   "path": "docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD0.glb",
+   "sha256": "6f0e41834121fa26cb36303606133256e8a8226e4c49464f68dc93646d181068"
+  },
+  "pbr_path": {
+   "path": "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD1.glb",
+   "sha256": "ffaff723c6a0c77a514d0a56fb03fad55fdbf0d880e3ee614887551884c6de0f"
+  }
+ }
+}

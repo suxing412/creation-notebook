@@ -1,0 +1,60 @@
+{
+ "seat": "LY-067",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-palace-gallery/files/gallery-A-LOD0/1/2.glb @bce3211 sha256 0c092797/227c3c4e/cb26b56e（bce3211..origin/main cad338b 之间 0 改动）",
+  "docs/library/models/m-luoyang-palace-gallery/files/gallery-B-LOD0/1/2.glb sha256 c7cb279c/fe72e192/ff15e1c4（B 属 LY-068，只读对照）",
+  "docs/library/models/m-luoyang-gallery-access/files/access-A-LOD0/1/2/collision-candidate.glb sha256 c973d325/7b5e26f4/b39c34c2/7327547e（LOCK-GALLERY-A，只记指纹）",
+  "m-luoyang-palace-gallery.asset.json 提交 sha256 100a78c3（卡注：城市候选柱脚支承未解决）；m-luoyang-gallery-access.asset.json 707f298f",
+  "docs/cities/luoyang/assets/ground-atomic/{network-ground-stitched,retained,south,D08}.glb sha256 fdfc3ce5/aed8b3d4/4313826d/3ab93310",
+  "docs/cities/luoyang/city-data.mjs 提交 sha256 c849706b（bce3211，复道引用 0）；origin/main cad338b 版 d8933a32 仍 0 引用",
+  "docs/cities/luoyang/data/evidence/evidence-geometry.json fa8b7002（palaces_connector_B 只是 B 级示意线）",
+  "LY-001/qa/snapshot-ledger.json 479046ca（C:m-luoyang-palace-gallery cityNodes=0）",
+  "LY-003/status.json 46f2872d（交付完成：两宫复道不可落位，共同控制点 0）",
+  "LY-005/coordinate-contract.json b6d7fe9d、port-schema.json 30854ed9（新件本地 y=0=接地面；E3 高程 2 mm / 平面 5 mm）",
+  "LY-006/registry zones 6b3595ac / ports 28bcfb68 / seats a1426412 / ownership ecbbbcf5（LY-067:write:001、gallery-A:feet:ground@v1、P067-footings、6 个 keep 源对象）",
+  "LY-009/board/pause-zone.json eabfeb22（PZ-02 open）、locks.json 5eb5ae32（LOCK-PROTOTYPES 含 palace-gallery/**，LOCK-GALLERY-A 含 gallery-access/**）",
+  "mq/cards/m-luoyang-palace-gallery/audit.json 09bbc9a2（六档 issues=[]）",
+  "prep 脚本：measure_footings.py b948421b、probe_ground.py 5720bdb9、check_feet.py b0e9948e、bl_import_check.py 96cf4847、zone_check.py 0425bb1c（本轮 4 个旧脚本全部重跑，含 Blender，与第一轮输出逐字节相同）"
+ ],
+ "inputsMissing": [
+  "旧柱脚未支持记录：16 个未命中支点的原始清单，含射线、城市变换和地形版本，用作逐脚对账的「旧」一侧。lab 各分支（reviews、workpacks、luoyang-content 文本）、本地待传 inbox、D:/待删-* 里都没有。16 个脚的本地位置和尺寸可以从 GLB 重建，已做成 A-F01..F16；旧城市变换和当时的地形不能从 GLB 重建",
+  "复道 A/B 私密源包（.blend 加生成器 ZIP）：仓库和本地待传 inbox 里都没有。只有改柱础或核对原生时才要用，而柱础按 LY-006 是 keep，所以本项不需要。几何可以从 GLB 重建，但要标明；参数和生成器找不回",
+  "access-A 源包：没有。只是为了证明木梯没变，GLB SHA 指纹已经够用，不必重建",
+  "宫区城市地形和旧城市候选变换：bce3211 和 cad338b 都没有；LY-003 判两宫复道不可落位，frames.local:gallery-A placement=null。不能从 GLB 重建，属于依赖缺失",
+  "LY-010 的区域准入和冻结的局部演示域（演示域地面 GLB+SHA、gallery-A 在演示域内的矩阵）：LY-010 目录不存在，S-PALACE envelope=null（owner LY-070）",
+  "LY-008 冻结检查器：还在做，没有 status.json，ly_check.py 的 SHA 在本轮内变过（fda345d4→4beeaf57）",
+  "access-A 相对 gallery-A 的装配变换：LY-006 frames 里没有 access-A 帧，两个 GLB 的节点都没有变换。木梯接口和梯脚垫避让都测不了。不能从 GLB 重建，要由 LY-069/070 或协调者给定"
+ ],
+ "gaps": [
+  "A 三档各有 16 个柱脚，排成 4×4：x∈{−6,−2,2,6}，z∈{−3.3,−1.1,1.1,3.3}；柱础 0.50×0.50×0.20 m（y 0→0.20），柱 0.32 m（y 0.20→3.80），柱底与柱础的间隙 0.000；三档逐个一致，Blender 5.2.1 复核 16/16",
+  "模型最低面 y=0 只落在这 16 个柱础底面（151 个连通件里有 16 个碰到最低面），合计接地 4.00 m²；GLB 内没有地面或底板，16 个支点在模型外都没有支持",
+  "城景引用复道的次数为 0（bce3211 和 cad338b 都是），没有 cityPlacement，所以旧候选城市变换在基线里不存在",
+  "复道示意线下打了 10 根射线，四块城市地面 0/10 命中；对照组 2/2 命中 y=0.2，负例 0 命中；最近的地面三角在 44.3 m 外（按 z=−y 解释）；network 地面只覆盖其 bbox 的 1.32%",
+  "LY-006 给的写入区是 [−6.45,−0.6,−3.824]..[6.45,0,3.824]，只在地面以下；柱础并集是 [−6.25,0,−3.55]..[6.25,0.2,3.55]，写入区比它外扩 x 0.20 m、z 0.274 m，写入区顶面 = 柱础底面 = 本地地面 y=0",
+  "防假底板的界限：写入区面积 98.66 m²，是柱础面积 4.00 m² 的 24.7 倍。每脚外扩 0.20 m 时单件 0.81 m²，16 件合计 12.96 m²，相邻两件之间还空 x 3.1 m、z 1.3 m。zone_check 自检 5/5 符合预期",
+  "access-A 在地面以下有 4 件：2 块梯脚垫（y −0.20→0）和 2 根梯帮（最低 y −0.130）。第一轮漏报了梯帮。它们相对 gallery-A 的变换不存在，所以平台顶面与楼面顶面的高差（各自本地都是 4.0）在同一坐标里测不了",
+  "端口 gallery-A:feet:ground@v1 的 local、world 和矩阵现在都是 null，要由本席位在交付时填写，容差 0.005/0.002 m。world 必须保持 null（PZ-02）",
+  "checker 自检：check_feet 6/6、zone_check 5/5 都符合预期"
+ ],
+ "reuseCandidate": "无。GLB 里的 16 个柱础只能说明构件本身自洽，属于「模型能读取」，既不是地面支持，也不是基础接口。两张卡都写明「城市候选柱脚支承未解决」。bce3211 和 cad338b 里也找不到可以复用的支持件或演示域地面",
+ "touches": [
+  "只读（keep，LY-006 记为 LY-067 持有，不改）：gallery-A-LOD0/1/2.glb 的节点 gallery-A-static_earth（16 个柱础）、gallery-A-static_timber、gallery-A-static_tile",
+  "只读指纹（keep，LOCK-GALLERY-A）：access-A-LOD0/1/2.glb 的 access-A-static_earth / static_timber，以及 access-A-collision-candidate.glb",
+  "只读：ground-atomic/network-ground-stitched.glb、retained.glb、south.glb、D08.glb（归 LY-090，不写）",
+  "唯一写入空间：LY-067:write:001（local:gallery-A，x ±6.45、y −0.6..0、z ±3.824），组件 P067-footings（fixed），新地坪件命名 gp:LY-067:<name>",
+  "端口：gallery-A:feet:ground@v1，接缝 gallery-A:feet:ground@v1::LY-067->LY-069",
+  "潜在冲突要交 LY-006 判：access-A 的梯脚垫和梯帮如果装配后落进 LY-067:write:001，本席位的基础件必须避让；S-PALACE 演示域地面由 LY-070/LY-010 指定，不由本席位出",
+  "文件写入只在 D:/GitHub/creation-notebook-workpacks/LY-067/，不碰 city-data.mjs、p-luoyang.asset.json 和资产卡"
+ ],
+ "size": "M",
+ "risks": [
+  "旧记录缺失：逐脚对账最多只能做到「新一侧 16/16，旧一侧缺失」，验收里的「原支点逐脚对账」只能算部分完成",
+  "宫区城市地面不存在，LY-003 又判了不可落位（PZ-02 open）：本项只能交演示域支持或基础件，同时报「城市地形依赖缺失、不入城」。把演示域结果写成城市支持就是越界",
+  "写入区只在地面以下：如果 LY-070/LY-010 不给演示域地面，16 个脚就只能交「地面以下基础件 + 地表支持缺失报告」，不能自己出地面，否则就是变相的假底板",
+  "access-A 的变换未定：梯脚垫或梯帮可能落进 LY-067 写入区，和基础件冲突；木梯又不能改，所以要由 LY-006 判归属",
+  "LY-008 检查器还在改，SHA 会漂移：开工时要重新绑定冻结版本",
+  "origin/main 已前进到 cad338b，城景在持续更新：开工时要重新确认复道和地面文件没有变化",
+  "文本文件的 checkout 字节因 CRLF 与提交不同，SHA 一律以 git show 的提交字节为准"
+ ],
+ "readyAfterG": true
+}

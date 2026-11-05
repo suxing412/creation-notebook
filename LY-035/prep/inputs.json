@@ -1,0 +1,417 @@
+{
+ "seat": "LY-035",
+ "baselineCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "repoReadOnly": true,
+ "note": "所有 SHA 为本次 prep 实测（2026-11-05）。私密源包不在仓库，见 missing。",
+ "coordinates": "glTF 绝对米制 X 东 / Y 上 / -Z 北；storage-main 节点 position [0,0,0]，平移已在 GLB 内一次性应用（source.json coordinates）",
+ "provisionalPorts": {
+  "receivingNorth": [
+   2285.7141,
+   0.2,
+   -3664.369
+  ],
+  "A_foot": [
+   2273.7141,
+   0.2,
+   -3674.989
+  ],
+  "B_foot": [
+   2297.7141,
+   0.2,
+   -3674.849
+  ],
+  "status": "C 临时测量点，不是冻结端口；开工时由 LY-034/LY-006 冻结端口替换"
+ },
+ "inputs": [
+  {
+   "id": "city-lod0",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+   "kind": "glb",
+   "bytes": 1663844,
+   "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+   "role": "城景唯一加载件；本项所有实测对象；变体必须逐字节保留",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:582-600 资产 storage-main(path,sha256) → city-data.mjs:1266-1270 cityURL → city-renderer.mjs:286 loadAsset / :293 fetch；节点 city-data.mjs:3717（initial=false）；章节 storage city-data.mjs:3983-3990 loadNodeIds",
+   "note": "4 节点 9508 三角；合并网格，无独立部件语义"
+  },
+  {
+   "id": "city-lod1",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb",
+   "kind": "glb",
+   "bytes": 756484,
+   "sha256": "a1265bbf53d10ddb6398efa6f505c1b6dee86b81b37397f7af9855acc34f2e45",
+   "role": "同组中档；变体中档须与之配对",
+   "loadedInCity": false,
+   "loadedBy": "source.json files[1]；资产卡 files[1]；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "city-lod2",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD2.glb",
+   "kind": "glb",
+   "bytes": 462440,
+   "sha256": "6b2564d3ffd76e6e982a4a7f703cfd0790ac0e0b2dfa75add4df169c4c82efe7",
+   "role": "同组远档；无货物代理节点",
+   "loadedInCity": false,
+   "loadedBy": "source.json files[2]；资产卡 files[2]；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "city-source",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/granary-city-v1/source.json",
+   "kind": "json",
+   "bytes": 4002,
+   "sha256": "6cf88d6f0b2ae18c08cedc946ba783453af1a5edc1217158b8469a8cf2059224",
+   "role": "来源契约：坐标/保留/限制/回退",
+   "loadedInCity": false,
+   "loadedBy": "city-data.mjs:599,3729 sourceContract（记录，不渲染）",
+   "note": ""
+  },
+  {
+   "id": "city-readme",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/granary-city-v1/README.md",
+   "kind": "md",
+   "bytes": 928,
+   "sha256": "10322cc5b14fc6b9c575126127fa1b31ee47552b7227da3aacc442891445474e",
+   "role": "目录说明",
+   "loadedInCity": false,
+   "loadedBy": "无",
+   "note": ""
+  },
+  {
+   "id": "v1-organized",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/assets/storage/storage-group-organized.glb",
+   "kind": "glb",
+   "bytes": 1786124,
+   "sha256": "b8482824513a101d36eb4c768a4f641e77aaac66c3e834718d7f3964104a644b",
+   "role": "241 命名节点；部件身份（A_step_*/B_step_*/C_bag_*）唯一来源；建筑三角与 city-lod0 同多重集",
+   "loadedInCity": false,
+   "loadedBy": "v1/west-layer.mjs:39（旧 v1 归档入口 storage 层，非当前主入口）",
+   "note": ""
+  },
+  {
+   "id": "origin-contract",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/assets/storage-origin-contract.json",
+   "kind": "json",
+   "bytes": 141922,
+   "sha256": "9bdf37f260abe589f377752710b8f006a0108b323e1f72428bb6227e51ace15a",
+   "role": "锚点 [2285.714111,0,-3673.468994]；local↔world",
+   "loadedInCity": false,
+   "loadedBy": "无",
+   "note": ""
+  },
+  {
+   "id": "origin-readback",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/assets/storage-origin-blender-readback.json",
+   "kind": "json",
+   "bytes": 628,
+   "sha256": "a1669d085eed1c3d92cc1f0c5d828c73387c38333a2e6509279869c7c6a8f6ef",
+   "role": "旧 Blender 4.3.2 往返记录",
+   "loadedInCity": false,
+   "loadedBy": "无",
+   "note": ""
+  },
+  {
+   "id": "overlay-local",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/assets/optional-functional-overlay-local.glb",
+   "kind": "glb",
+   "bytes": 6876,
+   "sha256": "07b7c65b55e434bbe00b90fe2b6345825849308485bd22ca9112b83941e2e84b",
+   "role": "现代讲解分区（接收/计验/暂存/入仓分流），非物理铺地；暂存 16×6 m",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files[19]；storage-interface.json 声明的城市版 e44c4f20 在仓库内不存在",
+   "note": ""
+  },
+  {
+   "id": "storage-group-organized-local",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/assets/storage-group-organized-local.glb",
+   "kind": "glb",
+   "bytes": 1779988,
+   "sha256": "427749f86e2fb037125a9d1ad4f0978b98848e44350bbf03b8c853b98bdb3a1c",
+   "role": "旧版对照（局部原点）",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "warehouse-A-organized-local",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/assets/warehouse-A-organized-local.glb",
+   "kind": "glb",
+   "bytes": 976296,
+   "sha256": "60942a4c45332d41a2d47a10f946f6f729fd3e734eadab701b58abbc0e2cd7d2",
+   "role": "旧版对照（局部原点）",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "warehouse-B-organized-local",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/assets/warehouse-B-organized-local.glb",
+   "kind": "glb",
+   "bytes": 1050912,
+   "sha256": "bba89b1ec38eb43c82dee547286ab75406be6536ab8e6ea8fa93459b58fd91ca",
+   "role": "旧版对照（局部原点）",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "v2-group-LOD0",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/updates/m-storage-functional/files/granary-group-LOD0.glb",
+   "kind": "glb",
+   "bytes": 1582228,
+   "sha256": "91a54eafe8991ded008b499d647ab3483bf44053a0cff84ded01f7afc8a42d28",
+   "role": "v2 分件/组装（局部坐标）；LY-031~034 的输入",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "v2-group-LOD1",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/updates/m-storage-functional/files/granary-group-LOD1.glb",
+   "kind": "glb",
+   "bytes": 387252,
+   "sha256": "3476fc8c9dfaacf80608d7f4e2ead9fda8cc558666dcecea3c76db11d874e24d",
+   "role": "v2 分件/组装（局部坐标）；LY-031~034 的输入",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "v2-group-LOD2",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/updates/m-storage-functional/files/granary-group-LOD2.glb",
+   "kind": "glb",
+   "bytes": 79024,
+   "sha256": "2111c6eab918194d4d445d16c99c48aace7573acf02726473080d7ce6e761ce2",
+   "role": "v2 分件/组装（局部坐标）；LY-031~034 的输入",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "v2-A-LOD0",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/updates/m-storage-functional/files/granary-A-LOD0.glb",
+   "kind": "glb",
+   "bytes": 1006080,
+   "sha256": "2eee31460a64201c2ba25fbc1bccc9c52f4cebc0f7b9af1f9eb9beeca68b7bf6",
+   "role": "v2 分件/组装（局部坐标）；LY-031~034 的输入",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "v2-A-LOD1",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/updates/m-storage-functional/files/granary-A-LOD1.glb",
+   "kind": "glb",
+   "bytes": 267256,
+   "sha256": "38884c1f6a7fb6b07cbbc674049e37db2e910f92e4fc0fb4944aac7c1745e955",
+   "role": "v2 分件/组装（局部坐标）；LY-031~034 的输入",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "v2-A-LOD2",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/updates/m-storage-functional/files/granary-A-LOD2.glb",
+   "kind": "glb",
+   "bytes": 35332,
+   "sha256": "fe703ccbc9f542cb8cb37856d110485e8c4128a45dfc49b0054eb1ac3c1b4a45",
+   "role": "v2 分件/组装（局部坐标）；LY-031~034 的输入",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "v2-B-LOD0",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/updates/m-storage-functional/files/granary-B-LOD0.glb",
+   "kind": "glb",
+   "bytes": 1118304,
+   "sha256": "407403ceeb418f6e1d3f0e86bff7d535642c0236d94691fd2b9a10c2f7866dc6",
+   "role": "v2 分件/组装（局部坐标）；LY-031~034 的输入",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "v2-B-LOD1",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/updates/m-storage-functional/files/granary-B-LOD1.glb",
+   "kind": "glb",
+   "bytes": 273392,
+   "sha256": "3ce46eee0c9b1ef56fcf380c4dfec3d39251697bab7cad45a719b19c06e6ce8a",
+   "role": "v2 分件/组装（局部坐标）；LY-031~034 的输入",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "v2-B-LOD2",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/updates/m-storage-functional/files/granary-B-LOD2.glb",
+   "kind": "glb",
+   "bytes": 40244,
+   "sha256": "0735a9f2cc76cfef98f5e548ab621295e40870bd2aef248ce25cc10e0b10022f",
+   "role": "v2 分件/组装（局部坐标）；LY-031~034 的输入",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "v2-receiving-LOD0",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD0.glb",
+   "kind": "glb",
+   "bytes": 386980,
+   "sha256": "9fc0b90ef4c64b31371945427f1259b04c604bbc0f24b5ed38c700f3b07dff09",
+   "role": "v2 分件/组装（局部坐标）；LY-031~034 的输入",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "v2-receiving-LOD1",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD1.glb",
+   "kind": "glb",
+   "bytes": 187912,
+   "sha256": "5bac6a81b60d7fc0bf63ccb40b0a72a01440110673472c1f0f5554fd5a65e8e3",
+   "role": "v2 分件/组装（局部坐标）；LY-031~034 的输入",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "v2-receiving-LOD2",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD2.glb",
+   "kind": "glb",
+   "bytes": 7632,
+   "sha256": "ecf34fe95282af1b17241ae8619fe2bfb9d35b31edc03289c8bae38fdaafdca2",
+   "role": "v2 分件/组装（局部坐标）；LY-031~034 的输入",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files；城景不加载",
+   "note": ""
+  },
+  {
+   "id": "card",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/m-storage-functional.asset.json",
+   "kind": "json",
+   "bytes": 5082,
+   "sha256": "32af95efc4abffc6aa23644833fac6f7ae9edefc7b8156207209f1c9b31856e2",
+   "role": "资产卡（含 A51/B77 1.8m 失败记录）",
+   "loadedInCity": false,
+   "loadedBy": "卡片；LY-100 才能改",
+   "note": ""
+  },
+  {
+   "id": "city-data",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-data.mjs",
+   "kind": "mjs",
+   "bytes": 111034,
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "role": "共享城市清单（只读）",
+   "loadedInCity": true,
+   "loadedBy": "app.mjs:1 import",
+   "note": ""
+  },
+  {
+   "id": "renderer",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-renderer.mjs",
+   "kind": "mjs",
+   "bytes": 36571,
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "role": "加载器（只读）",
+   "loadedInCity": true,
+   "loadedBy": "app.mjs:177 动态 import",
+   "note": ""
+  },
+  {
+   "id": "app",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/app.mjs",
+   "kind": "mjs",
+   "bytes": 14563,
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "role": "入口（只读）",
+   "loadedInCity": true,
+   "loadedBy": "index.html",
+   "note": ""
+  },
+  {
+   "id": "project-card",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/p-luoyang.asset.json",
+   "kind": "json",
+   "bytes": 24215,
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "role": "项目卡（只读；:64,:137,:438 仓储条目）",
+   "loadedInCity": false,
+   "loadedBy": "卡片",
+   "note": ""
+  },
+  {
+   "id": "storage-interface",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/data/west/storage-interface.json",
+   "kind": "json",
+   "bytes": 1975,
+   "sha256": "b910896799cdbb954717df342c7dfbb794eaaa1bdba3810b206140b84aeedba8",
+   "role": "旧 v1 仓储接口",
+   "loadedInCity": false,
+   "loadedBy": "city-data.mjs:4521 provenance 清单",
+   "note": ""
+  },
+  {
+   "id": "storage-precedents",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/data/west/storage-precedents.json",
+   "kind": "json",
+   "bytes": 6671,
+   "sha256": "acda86c8ae4067a8c665804fae5b3f7582d56e293c879bb791f1d61f1b431cf4",
+   "role": "证据与 C 提案（暂存属 workflow 第1步）",
+   "loadedInCity": false,
+   "loadedBy": "无",
+   "note": ""
+  },
+  {
+   "id": "city-wall-A-01",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/assets/city-wall/A/wall-01.glb",
+   "kind": "glb",
+   "bytes": 2748,
+   "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95",
+   "role": "邻接检查：距地块 61.6 m",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs 资产 wall-A-wall-01（initial=true）",
+   "note": ""
+  }
+ ],
+ "missing": [
+  {
+   "id": "granary-city-native",
+   "what": "granary-city-v1 原生工程与 composer/验证源（source.json limitations: \"Private native and generation/validation sources are outside repository\"）",
+   "use": "若需要以原生层级编辑合并网格；本项只新增附加件，不需要改它",
+   "rebuildFromGLB": "可以：附加件只需 LOD0 世界几何作参照，已从 GLB 实测"
+  },
+  {
+   "id": "v2-operations-probes",
+   "what": "v2 \"operations/入口体积诊断\" 探针源码与原始结果（卡片 A 51 / B 77 处 1.8m 失败）",
+   "use": "作为不可改写的失败基线逐条复现",
+   "rebuildFromGLB": "只能部分：本席位自建探针得 A 80/380、B 120/570，口径不同，不能替代原计数"
+  },
+  {
+   "id": "overlay-city-e44c4f20",
+   "what": "storage-interface.json 声明的 assets/optional-functional-overlay.glb（e44c4f20…，6948 B）",
+   "use": "讲解分区原件比对",
+   "rebuildFromGLB": "可以：-local 版 07b7c65b 经原点契约 binaryChunkByteEqual=true 可换算"
+  },
+  {
+   "id": "LY-033",
+   "what": "两仓门件、门叶扫掠体积与闭门负例",
+   "use": "转身/暂存体积须避让门叶扫掠",
+   "rebuildFromGLB": "不可：属前置席位产物"
+  },
+  {
+   "id": "LY-034",
+   "what": "收货前场—A/B 阶前冻结端口与路线包",
+   "use": "替换临时端口，定义搬运路线走廊",
+   "rebuildFromGLB": "不可"
+  },
+  {
+   "id": "G",
+   "what": "LY-005 坐标/端口契约、LY-006 所有权、LY-007 材质/三档、LY-008 检查器、LY-010 区域准入、LY-002 证据表",
+   "use": "开工前提",
+   "rebuildFromGLB": "不可"
+  }
+ ]
+}

@@ -1,0 +1,722 @@
+{
+ "rev": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "inputs": {
+  "docs/cities/luoyang/data/evidence/evidence-geometry.json": {
+   "blobSha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+   "bytes": 52278,
+   "worktreeSha256": "662562fa87cffc9de43b2c23564f1ab63fba8c01f2345891f255cb202bee2233",
+   "crlfDiffers": true
+  },
+  "docs/cities/luoyang/data/evidence/stage-contract.json": {
+   "blobSha256": "3227460643f5c8df8345ff750b128a27a8a5a497ab426ddcaa3574f0aafa705b",
+   "bytes": 1224,
+   "worktreeSha256": "6ade3f6e62c4779014e3d4005525b377db132b293a6e83f24817415c4422377c",
+   "crlfDiffers": true
+  },
+  "docs/cities/luoyang/research/2026-11-03/city-milestones.json": {
+   "blobSha256": "23b30e705ed780f676eb7fc69a8c06a08524d04dfd34021f93859a5aa370ccfd",
+   "bytes": 7430,
+   "worktreeSha256": "9d72a0a9de222a964b0a8d03e1580ea0f1897fc41a914d2f5715523e716018dd",
+   "crlfDiffers": true
+  },
+  "docs/cities/luoyang/p-luoyang.asset.json": {
+   "blobSha256": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "bytes": 23627,
+   "worktreeSha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "crlfDiffers": true
+  },
+  "docs/cities/luoyang/city-data.mjs": {
+   "blobSha256": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "bytes": 106463,
+   "worktreeSha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "crlfDiffers": true
+  },
+  "docs/cities/luoyang/app.mjs": {
+   "blobSha256": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "bytes": 14242,
+   "worktreeSha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "crlfDiffers": true
+  },
+  "docs/cities/luoyang/index.html": {
+   "blobSha256": "cfbf73763675397dde8f5ab08bb13f6b51fbcfa9954227552e32be756666b1bf",
+   "bytes": 15991,
+   "worktreeSha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "crlfDiffers": true
+  },
+  "docs/cities/luoyang/v1/index.html": {
+   "blobSha256": "27060f04f2d756335ccba67360c30ab68440499fda59b7a7a61d8a661458503a",
+   "bytes": 5715,
+   "worktreeSha256": "74d4420291c53054561d00aea3ad7b9d2bf5dd5fe2dfe43e2b21ac58a84ed9af",
+   "crlfDiffers": true
+  },
+  "docs/cities/luoyang/v1/boot.mjs": {
+   "blobSha256": "42164e5322ccdfbb9832eb0c0ccb9300a740478b1706c067be042c5dad5a51f3",
+   "bytes": 1928,
+   "worktreeSha256": "c3d145f5785580bf63881806b615a2259e20a9cbf08281ce4c2d130dab2f98d3",
+   "crlfDiffers": true
+  },
+  "docs/cities/luoyang/v1/evidence-view.mjs": {
+   "blobSha256": "fcf2079fd635f7f76553dbd1d23b8feaa688f77e278b4edb6e4154fab74c8fac",
+   "bytes": 20385,
+   "worktreeSha256": "4f4747ba7b30e44daf71d947661da12c39f058d9473c53de846c09b1275ce59a",
+   "crlfDiffers": true
+  },
+  "docs/cities/luoyang/v1/resource-url.mjs": {
+   "blobSha256": "d5efa9aae51d64190be7e691d80a0928da71fd67b937cc44d581577107965613",
+   "bytes": 310,
+   "worktreeSha256": "444299753ff30e0bf2af14d423ddee4a258fc7a2ea1523e26039ae4a2a6583bc",
+   "crlfDiffers": true
+  },
+  "docs/cities/luoyang/v1/c01-layer.mjs": {
+   "blobSha256": "d4f40805db74afcf313cd1d9b602632123866e3945a40cb6ec9cb5c2fbcb1582",
+   "bytes": 12485,
+   "worktreeSha256": "4ea01f6748a717c28e69cf8aa35554e268fbf04dd952fc5a51d539143e4b6261",
+   "crlfDiffers": true
+  },
+  "docs/cities/luoyang/progress-assets/yong-city-v1/source.json": {
+   "blobSha256": "325fb5caa15ee631896495c2c71b93e4b0267933c15bfc3fbd9f6be050e8f238",
+   "bytes": 6403,
+   "worktreeSha256": "a294289642c17497d7817a97e0f3f969e09604e267bfb38f5b1de091c515699c",
+   "crlfDiffers": true
+  },
+  "docs/library/models/m-luoyang-palace-waterway-interface/m-luoyang-palace-waterway-interface.asset.json": {
+   "blobSha256": "c0f4284053039e0aa7ae871cb955a6d0cb3163b41b691edb49ef71ec94f0a836",
+   "bytes": 1888,
+   "worktreeSha256": "3dc81ef172880ca7c998f4b59dd782e9fdd9f32b4a5ff8bb519d0f593b4d36bf",
+   "crlfDiffers": true
+  },
+  "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-near.glb": {
+   "blobSha256": "79d36565d0a4c064f85065b0dc861385d55ca56b24b6b55ba4994c18831a1a0b",
+   "bytes": 1518404,
+   "worktreeSha256": "79d36565d0a4c064f85065b0dc861385d55ca56b24b6b55ba4994c18831a1a0b",
+   "crlfDiffers": false
+  },
+  "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-mid.glb": {
+   "blobSha256": "68ec04bb8d39eda5cc7e5d93aa39b8bcb4ed86cea4a1b7bc990bc4d2ca3b716f",
+   "bytes": 133976,
+   "worktreeSha256": "68ec04bb8d39eda5cc7e5d93aa39b8bcb4ed86cea4a1b7bc990bc4d2ca3b716f",
+   "crlfDiffers": false
+  },
+  "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-far.glb": {
+   "blobSha256": "af5e8b65e892589366e7a65ae9210301c3291421b021fc487f0f1050d90a0931",
+   "bytes": 17200,
+   "worktreeSha256": "af5e8b65e892589366e7a65ae9210301c3291421b021fc487f0f1050d90a0931",
+   "crlfDiffers": false
+  },
+  "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-inspection-near.glb": {
+   "blobSha256": "f90094d2bd5fb376b13f6d8506bbce12cc48dd4c0f18795e0d79558fa0de1bba",
+   "bytes": 1416232,
+   "worktreeSha256": "f90094d2bd5fb376b13f6d8506bbce12cc48dd4c0f18795e0d79558fa0de1bba",
+   "crlfDiffers": false
+  }
+ },
+ "glb_scan": {
+  "cities/luoyang/assets/c02v/A2-LOD0-prototype.glb": {
+   "owner": "C02-035",
+   "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "nodes": 7,
+   "meshes": 7,
+   "materials": 6,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/c02v/A2-LOD1-prototype.glb": {
+   "owner": "C02-035",
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "nodes": 7,
+   "meshes": 7,
+   "materials": 6,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/c02v/B2-LOD0-prototype.glb": {
+   "owner": "C02-036",
+   "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+   "nodes": 7,
+   "meshes": 7,
+   "materials": 6,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/c02v/B2-LOD1-prototype.glb": {
+   "owner": "C02-036",
+   "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+   "nodes": 7,
+   "meshes": 7,
+   "materials": 6,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb": {
+   "owner": "C02-012",
+   "sha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+   "nodes": 10,
+   "meshes": 10,
+   "materials": 7,
+   "waterNamedObjects": [
+    "nodes[9]=architecture_C_drain_stone.001",
+    "meshes[9]=C_shallow_drain_floor.001",
+    "materials[6]=C_drain_stone.001"
+   ],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb": {
+   "owner": "C02-012",
+   "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+   "nodes": 10,
+   "meshes": 10,
+   "materials": 7,
+   "waterNamedObjects": [
+    "nodes[9]=architecture_C_drain_stone.001",
+    "meshes[9]=C_shallow_drain_floor.001",
+    "materials[6]=C_drain_stone.001"
+   ],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/city-wall/A/wall-00.glb": {
+   "owner": "wall-A-wall-00",
+   "sha256": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/city-wall/A/wall-01.glb": {
+   "owner": "wall-A-wall-01",
+   "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/city-wall/A/wall-02.glb": {
+   "owner": "wall-A-wall-02",
+   "sha256": "8a17587a995e6851a1c4c7e0844f79cb880cf70348edb55dfb62891434b2afa9",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/city-wall/A/wall-03.glb": {
+   "owner": "wall-A-wall-03",
+   "sha256": "cd4cb2b629c15cbf1eaaada61eca546fc96a034a1a53802acd9d7ebeb84e4762",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/city-wall/A/wall-04.glb": {
+   "owner": "wall-A-wall-04",
+   "sha256": "50d8c7aa2c7d7dce95a894edf05bc1ecd2dbc73fbcd633e1c67f36065fd893ae",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 2,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/city-wall/A/wall-05.glb": {
+   "owner": "wall-A-wall-05",
+   "sha256": "4e000b0c34b26504ff30b7c4c9748ede9f1b84819dcc75301b57caca85f261ae",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/city-wall/A/wall-06.glb": {
+   "owner": "wall-A-wall-06",
+   "sha256": "d7d3cc79fe7ea85cda3147c90531dfb7403789405f4af0671baef7d6ba89993e",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/city-wall/A/wall-07.glb": {
+   "owner": "wall-A-wall-07",
+   "sha256": "e7db9cff3eed1e7fe088a5199a5479d483ba68a2f440624cb68f6848373be550",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/city-wall/A/wall-10.glb": {
+   "owner": "wall-A-wall-10",
+   "sha256": "afb20f8e3b19dfd85a65bf1462dea09225336d336c272425fad4d7491e3cfde9",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/city-wall/A/wall-11.glb": {
+   "owner": "wall-A-wall-11",
+   "sha256": "2cfa846184cf28e36cacb832250b5d2afcdbdc6968c81c3f09957ed968e21ecd",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/city-wall/direct/gate-body-only.glb": {
+   "owner": "wall-direct-gate-body-only",
+   "sha256": "cdba2d5c3bbf14bbf9c6ed59e3fcadf174c13e882a5ccb1522b81bc9949d5058",
+   "nodes": 18,
+   "meshes": 18,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/city-wall/direct/wall-08.glb": {
+   "owner": "wall-direct-wall-08",
+   "sha256": "221b8dc8c5702bbd9980e72e291e61f54a0544ccb05a8923bb53d0f9a62a8a90",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 2,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/city-wall/direct/wall-09.glb": {
+   "owner": "wall-direct-wall-09",
+   "sha256": "d4fb5c1cbf3c08ff18f9dcf1b25cab67e44a36a00ade3b8b67fb5eb3679c31be",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/d08/TC03-LOD0-prototype.glb": {
+   "owner": "FROZEN-D08-NE",
+   "sha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+   "nodes": 10,
+   "meshes": 10,
+   "materials": 7,
+   "waterNamedObjects": [
+    "nodes[9]=architecture_C_drain_stone",
+    "meshes[9]=C_shallow_drain_floor",
+    "materials[6]=C_drain_stone"
+   ],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/d08/TC03-LOD1-prototype.glb": {
+   "owner": "FROZEN-D08-NE",
+   "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+   "nodes": 10,
+   "meshes": 10,
+   "materials": 7,
+   "waterNamedObjects": [
+    "nodes[9]=architecture_C_drain_stone",
+    "meshes[9]=C_shallow_drain_floor",
+    "materials[6]=C_drain_stone"
+   ],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/ground-atomic/D08.glb": {
+   "owner": "ground-D08",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/ground-atomic/network-ground-stitched.glb": {
+   "owner": "ground-network-ground-stitched",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 2,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/ground-atomic/retained.glb": {
+   "owner": "ground-retained",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/ground-atomic/south.glb": {
+   "owner": "ground-south",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/market/N2-replacement.glb": {
+   "owner": "market-N2",
+   "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "nodes": 54,
+   "meshes": 54,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/market/market-cluster.glb": {
+   "owner": "market-main",
+   "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "nodes": 500,
+   "meshes": 500,
+   "materials": 7,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb": {
+   "owner": "FROZEN-D08-M",
+   "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+   "nodes": 7,
+   "meshes": 7,
+   "materials": 6,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb": {
+   "owner": "FROZEN-D08-M",
+   "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+   "nodes": 7,
+   "meshes": 7,
+   "materials": 6,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb": {
+   "owner": "FROZEN-D08-E",
+   "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+   "nodes": 7,
+   "meshes": 7,
+   "materials": 6,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb": {
+   "owner": "FROZEN-D08-E",
+   "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+   "nodes": 7,
+   "meshes": 7,
+   "materials": 6,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb": {
+   "owner": "storage-main",
+   "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+   "nodes": 4,
+   "meshes": 4,
+   "materials": 4,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "13ff78a7a1fe9159ed577d715ff30c75cf3d0e8f6d2d47311968f660986ed801",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-A2-LOD1.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "d76580bbb5a7c89391152f32bd65b81595fbc300d6da69b2c6e819fff9d941c2",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-A2-LOD2.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "4691c63041231344e7309643c94c84938bb403b2a4ae68b595e6399b37214589",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD1.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "2be52632e16e43290ef96aae7479cd7c1faa413b2090cd2af162652a8bb16d9c",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD2.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "641b05a535a266dce29c8c966cccb576e522b65a4586e95e8cfe1fb30fb69952",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B2-LOD1.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "95b66c5d994cac56d38327896bfe3b370fb4a3daaf643b0250c225cd8e83795e",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B2-LOD2.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "b9651fa3ef9bc449131da9eadf86c1fa985ef798d5badc675a81c30174181380",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-north-perimeter-v1/models/court-TC03-2-LOD1.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "9003d00a45b4866385fbd6092a5c2f3b99438c9a4f3714543b9a107cdaac4024",
+   "nodes": 4,
+   "meshes": 4,
+   "materials": 4,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-north-perimeter-v1/models/court-TC03-2-LOD2.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "b8dda6789f4f9dcfddf1a1da430f43aa25ab6a56a0cb894ea139339a646a6905",
+   "nodes": 4,
+   "meshes": 4,
+   "materials": 4,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-north-second-row-v1/models/court-A-LOD1.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "245c20b6385dcee4c55ca300f7e2420b07ca883b5e91b5dcd5a93e5b5a561e6a",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-north-second-row-v1/models/court-A-LOD2.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "8e098a5f382448c20d07422f30543e6d3234112bc1fc9327d6ae6860a6cff94d",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "7d995a1b95026cb3d626bf6ad6bdd01edcf89d7c5baab87ffff341360d51f102",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD2.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "e6f289f78dc05c2d0c5ea6ef11726748be6b35ffb68315a5b7fc1186f3c5551e",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD1.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "00a2eb67b73bac04f267e24540f6fd2e6bf26689e4c0783783d664566bc24312",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD2.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "99047569c6248c99e0601924613ad9e9c710d25248ac661fd29a2bae84665862",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD1.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "c277f7e31d764384979e4712fef95472fb8749f930b5a75a54028e106939652c",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD2.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "7406a24cf7124fcde7409a30f2961251a873a64ea9a3ab6a3e9e206085ad6074",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD1.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "a78b7c84c1757e94a2ce9e455370c5003b22b999a5cc254b39374461c7808e0f",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD2.glb": {
+   "owner": "隐藏试放（activation=false）",
+   "sha256": "cefa53325287e76d6506463f1d01227a9bcb30ce32f21c5b37afd17c176c7038",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD0.glb": {
+   "owner": "yong-gate-interface",
+   "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 1,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-far.glb": {
+   "owner": "仅模型（资产卡文件）",
+   "sha256": "af5e8b65e892589366e7a65ae9210301c3291421b021fc487f0f1050d90a0931",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [
+    "nodes[0]=LY_waterway_full_static",
+    "meshes[0]=LY_waterway_full_static_mesh"
+   ],
+   "waterTermsInExtras": []
+  },
+  "library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-inspection-near.glb": {
+   "owner": "仅模型（资产卡文件）",
+   "sha256": "f90094d2bd5fb376b13f6d8506bbce12cc48dd4c0f18795e0d79558fa0de1bba",
+   "nodes": 8,
+   "meshes": 8,
+   "materials": 1,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  },
+  "library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-mid.glb": {
+   "owner": "仅模型（资产卡文件）",
+   "sha256": "68ec04bb8d39eda5cc7e5d93aa39b8bcb4ed86cea4a1b7bc990bc4d2ca3b716f",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [
+    "nodes[0]=LY_waterway_full_static",
+    "meshes[0]=LY_waterway_full_static_mesh"
+   ],
+   "waterTermsInExtras": []
+  },
+  "library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-near.glb": {
+   "owner": "仅模型（资产卡文件）",
+   "sha256": "79d36565d0a4c064f85065b0dc861385d55ca56b24b6b55ba4994c18831a1a0b",
+   "nodes": 1,
+   "meshes": 1,
+   "materials": 1,
+   "waterNamedObjects": [
+    "nodes[0]=LY_waterway_full_static",
+    "meshes[0]=LY_waterway_full_static_mesh"
+   ],
+   "waterTermsInExtras": []
+  },
+  "library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb": {
+   "owner": "yong-gate-body",
+   "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+   "nodes": 3,
+   "meshes": 3,
+   "materials": 3,
+   "waterNamedObjects": [],
+   "waterTermsInExtras": []
+  }
+ },
+ "evidence_geometry": {
+  "features": 42,
+  "waterFeatures": [
+   {
+    "id": "ancient_water_corridors_B_unplaced",
+    "name": "约180年古河渠｜未定位",
+    "kind": "unplaced_water",
+    "evidence_class": "B",
+    "geometry_status": "unknown_unplaced",
+    "placement_mode": "none",
+    "representation": "list-only-no-world-position",
+    "source_ids": [
+     "huang2026_abstract"
+    ],
+    "geometryIsNull": true
+   },
+   {
+    "id": "modern_luo_river_excluded",
+    "name": "图中洛河（今）｜排除",
+    "kind": "excluded_modern",
+    "evidence_class": "X",
+    "geometry_status": "excluded",
+    "placement_mode": "none",
+    "representation": null,
+    "source_ids": [
+     "gao2023_fig1"
+    ],
+    "geometryIsNull": true
+   }
+  ],
+  "sourceRegistryWater": {
+   "huang2026_abstract": {
+    "title": "黄学超《汉魏洛阳城周边的水利建设》2026",
+    "url": "https://zgld.cbpt.cnki.net/portal/journal/portal/client/paper/54295f2f542f9053ceb1930fc8765eea",
+    "status": "abstract only, no map"
+   }
+  }
+ },
+ "checks": {
+  "cityDataProvenanceSha_evidenceGeometry": "662562fa87cffc9de43b2c23564f1ab63fba8c01f2345891f255cb202bee2233",
+  "provenanceMatchesBlob": false,
+  "provenanceMatchesCRLFWorktree": true,
+  "evidenceViewPinsBlobSha": true,
+  "appMjsLoadsEvidenceGeometry": false,
+  "appMjsMentionsWaterTextOnly": [
+   "$('#research-content').textContent = '当前共用示意城市坐标。住宅落位、城墙高度及建筑形制属于设计推测。灵台与太学在独立模型视图展示。北宫新墙与古水系的配准资料仍待补充。';"
+  ],
+  "cityDataReferencesWaterwayAsset": false,
+  "scannedGlbCount": 58,
+  "enteredCityGlbCount": 34,
+  "hiddenTrialGlbCount": 20,
+  "cardOnlyGlbCount": 4,
+  "enteredCityGlbWithWaterNames": [
+   "cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb",
+   "cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb",
+   "cities/luoyang/assets/d08/TC03-LOD0-prototype.glb",
+   "cities/luoyang/assets/d08/TC03-LOD1-prototype.glb"
+  ],
+  "riverOrCanalMeshInEnteredCity": []
+ }
+}

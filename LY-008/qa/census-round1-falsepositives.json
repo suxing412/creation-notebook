@@ -1,0 +1,447 @@
+{
+ "note": "第一轮普查（ly_check 早期版本 sha256 c43b61ca904108f05443604b7cad7aeed05fa97ac64b2b870fba6f3ec46e5df3）的错误文件。PRIVATE_PATH_IN_BIN 39 例全部是 UNC 判据在贴图/顶点二进制里的误报（命中串形如 \\ef\f]`mn…，不是路径）；GLTF_BUFFER_NO_SOURCE 1 例是 meshopt 回退缓冲的误报；GEOM_OVER_TRI_LIMIT 1 例是按实例计数与官方按 mesh 计数口径不同。三处均已在检查器里修正，见 brief.md「标定」",
+ "summary": {
+  "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "glbFiles": 442,
+  "filesWithErrors": 39,
+  "filesWithWarnings": 19,
+  "errorCodeCounts": {
+   "PRIVATE_PATH_IN_BIN": 39,
+   "GLTF_BUFFER_NO_SOURCE": 1,
+   "GEOM_OVER_TRI_LIMIT": 1
+  },
+  "warningCodeCounts": {
+   "GLB_LARGE": 9,
+   "HIGH_DRAWCALLS": 6,
+   "GEOM_TRI_HIGH": 4,
+   "GEOM_DEGENERATE": 3,
+   "NODE_NONUNIT_SCALE": 1
+  },
+  "statsMatchOfficialAudit": 417,
+  "statsMismatchOfficialAudit": [
+   "cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-closed-LOD0.glb",
+   "cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-closed-LOD1.glb",
+   "cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-closed-LOD2.glb",
+   "cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-open-LOD0.glb",
+   "cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-open-LOD1.glb",
+   "cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-open-LOD2.glb",
+   "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0.glb",
+   "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD1.glb",
+   "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD2.glb",
+   "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD0.glb",
+   "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD1.glb",
+   "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD2.glb",
+   "library/models/m-luoyang-palace-guard/files/guard-slice-LOD0.glb",
+   "library/models/m-luoyang-palace-guard/files/guard-slice-LOD1.glb",
+   "library/models/m-luoyang-palace-guard/files/guard-slice-LOD2.glb",
+   "library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD0.glb",
+   "library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD1.glb",
+   "library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD2.glb",
+   "library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD0.glb",
+   "library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD1.glb",
+   "library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD2.glb",
+   "library/models/m-luoyang-residential-life/files/life-block-LOD0.glb",
+   "library/models/m-luoyang-residential-life/files/life-block-LOD1.glb",
+   "library/models/m-luoyang-residential-life/files/life-block-LOD2.glb",
+   "model-library/assets/market-A-N2-local.glb"
+  ],
+  "over15MB": [],
+  "checkerSha256": "c43b61ca904108f05443604b7cad7aeed05fa97ac64b2b870fba6f3ec46e5df3"
+ },
+ "files": [
+  {
+   "path": "cities/luoyang/assets/c02/C02-environment.glb",
+   "sha256": "4185c082f86aa8a9f2cd29afbbb2322a42e701664f3c83d586a36b6635841571",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "cities/luoyang/assets/c02v/C02-environment.glb",
+   "sha256": "8c9d2028a346852ad0f06259ba4d3118eb0b8401fda00e244a5ff058e552f937",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "cities/luoyang/progress-assets/flat/study-north13-zhongdong-Z-856cfff1f015.glb",
+   "sha256": "856cfff1f015f8ce3c216cb9908a82dc9038846fa94170255730142f19693d3c",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "cities/luoyang/progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD1.glb",
+   "sha256": "a78b7c84c1757e94a2ce9e455370c5003b22b999a5cc254b39374461c7808e0f",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "fusions/F03/assets/desk-atlas.glb",
+   "sha256": "e7ef5470de0ee56cc34a2e4822a4d0ceade7994b1afa44e33fccc7daff1e74f2",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "fusions/F03/assets/folio.glb",
+   "sha256": "2f036da9f9170535d4bd07c0a7b964df22655991a7eb4b54e9c2b4d0f93c6d83",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "library/models/m-luoyang-a1-neighborhood/files/A1-v3-LOD1.glb",
+   "sha256": "e7ccf822ab1cc4fd3dcde4257345bf4d55d505c1105451d2682e6545550ec456",
+   "errors": [
+    "GLTF_BUFFER_NO_SOURCE",
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "buffers[1] 没有 uri 也不是 GLB BIN",
+    "BIN 块里有 5 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "library/models/m-luoyang-biyong/files/enclosure-L-LOD0.glb",
+   "sha256": "88f227d05c4c7c8ebc771b2ef474f1504ae2ceed7dede01795b360db247d97df",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 2 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "library/models/m-luoyang-earthwall-family/files/westwall10-LOD1.glb",
+   "sha256": "848a0ee23d22f4d6e40f58bddf237bf9af41c7dcdc36f7157d92488e61fea4b7",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "library/models/m-luoyang-gu-gate/files/gu-G-LOD1.glb",
+   "sha256": "5195ce552b76fc60240248d671812fa9e1912e2be327a061cd52524f65a42432",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "library/models/m-luoyang-lingtai/files/lingtai-A-LOD1.glb",
+   "sha256": "ffaff723c6a0c77a514d0a56fb03fad55fdbf0d880e3ee614887551884c6de0f",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "library/models/m-luoyang-ordinary-house-types/files/H64-LOD0.glb",
+   "sha256": "7d685fe2f53d29b1aca09528c2d7a45b22a6dae4d7c6b716f11b581434eb3eb6",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "library/models/m-luoyang-residential-life/files/life-block-LOD0.glb",
+   "sha256": "270998729726baca248762bc86d4883ddf0a5c8de4ee4e226ba8aae40b66ba72",
+   "errors": [
+    "GEOM_OVER_TRI_LIMIT",
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "506,828 三角 > 官方上限 500,000",
+    "BIN 块里有 2 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "library/models/m-luoyang-residential-life/files/life-block-LOD1.glb",
+   "sha256": "200fb8a31019957979e9fbffb5c161155c593d6d079077f3f0c40d3b1423bfb8",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 2 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "library/models/m-luoyang-xia-gate/files/gate-B-LOD1.glb",
+   "sha256": "7c5999df87f17f0278481c33734ab7af79f6ea57a07bb4d4faba8938f532f760",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "model-library/updates/m-courtyard-family/files/A2-deep.glb",
+   "sha256": "5fdc1dc8573a71fcb60a46c7ff9dd79fcbb69c0970fcff5c1805e3e312b1e0dd",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "model-library/updates/m-courtyard-family/roof-revisions/files/courtyard-A-roofs-v2.glb",
+   "sha256": "7c980de58c7dd57e2a015a80c7bd39ffdad2d1c9bd3640d085d9c70a6947e957",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "spaces/SD01-v02/assets/hinge.glb",
+   "sha256": "05970c44007d68dfb18627c313035404dfda5661694edd1d2e0ea825fe1f4997",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 3 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "spaces/SD01-v02/assets/jointworks.glb",
+   "sha256": "02ddb3f4545a59cf23070fa7d24557f6bc8cabe10ada06b740509174524780a3",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "spaces/SD01/assets/hinge-extended.glb",
+   "sha256": "8a43e9357b50faad27fc52e9e987dab082df88368a71c1123c824b9e45fcae49",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 3 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "spaces/SD01/assets/hinge-folded.glb",
+   "sha256": "fd371f1dae9e0c88eba074f9386165147ccbd4b4d49a50b1aa03b76e40a4afcd",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 3 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "spaces/SD01/assets/hinge.glb",
+   "sha256": "05970c44007d68dfb18627c313035404dfda5661694edd1d2e0ea825fe1f4997",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 3 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "spaces/SD01/assets/jointworks.glb",
+   "sha256": "02ddb3f4545a59cf23070fa7d24557f6bc8cabe10ada06b740509174524780a3",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/006/assets/atlas/model.glb",
+   "sha256": "ee8f019ad1234e7f279700e345fc887da60d755adc0cd95f95b4d31756c5b407",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/006/assets/folio/model.glb",
+   "sha256": "2f036da9f9170535d4bd07c0a7b964df22655991a7eb4b54e9c2b4d0f93c6d83",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/006/assets/spire/model.glb",
+   "sha256": "ed88296c4e2727ef6401935ae766e28d1389ed809076c3840bd8575251fb8139",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/008/assets/fold/model.glb",
+   "sha256": "2a3f7ebec1cc9041681d7ac7b70f7215bc66d854c0e44fd6a5a90be98bdfaae6",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/009/model/assets/hinge/model.glb",
+   "sha256": "05970c44007d68dfb18627c313035404dfda5661694edd1d2e0ea825fe1f4997",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 3 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/009/model/assets/hinge/poses/extended/model.glb",
+   "sha256": "8a43e9357b50faad27fc52e9e987dab082df88368a71c1123c824b9e45fcae49",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 3 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/009/model/assets/hinge/poses/folded/model.glb",
+   "sha256": "fd371f1dae9e0c88eba074f9386165147ccbd4b4d49a50b1aa03b76e40a4afcd",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 3 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/009/model/assets/poise/model.glb",
+   "sha256": "c399b9b1ec5776b272514696eb84a5443f9862d0deec87c15ea5653aefc8040f",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 3 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/009/model/assets/poise/poses/extended/model.glb",
+   "sha256": "5239f836537df6e592b920cb1e1d903a1234a2fcf5f2803cc66ffd8da263dede",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 3 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/009/model/assets/poise/poses/folded/model.glb",
+   "sha256": "dc133def9fa06f72df81b8182136e9cd05ff792bcdf9c7af6bc8abf8257caf74",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 3 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/009/model/assets/reach/model.glb",
+   "sha256": "9b62997ec674ff7febdb82600e955e692248e614e958f1eeebbb1c1695feb263",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 3 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/009/model/assets/reach/poses/extended/model.glb",
+   "sha256": "983cfb7d6b5e9e1f9efbeaaa3c23668292710bbf59324ef67c1c0d8541dddc3f",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 3 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/009/model/assets/reach/poses/folded/model.glb",
+   "sha256": "4f62a7f0cfee8cf2b0c2946a4d61c9d8df08982fb53bda8fdb180bb60c068b7b",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 3 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/014/assets/que-A.glb",
+   "sha256": "4d8f414f95c58189618514e4241ab5486a96a2c48ae94650dbf1c863c6b2a030",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/014/assets/que-B.glb",
+   "sha256": "dd1566fc9dfe9d750b835a2e22b8fb3c2dd6de183154a2c7db61842ae73e1e79",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  },
+  {
+   "path": "studies/014/assets/que-C.glb",
+   "sha256": "57cefea4775cef76c11001a97f62970659cde9c6ff2ccb920ba231ce80c9a1a8",
+   "errors": [
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "msgs": [
+    "BIN 块里有 1 处像私密路径的字符串"
+   ]
+  }
+ ]
+}

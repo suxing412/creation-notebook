@@ -1,0 +1,50 @@
+{
+ "seat": "LY-020",
+ "inputsFound": [
+  "lab HEAD bce3211 (docs/cities/luoyang + earthwall card clean)",
+  "docs/cities/luoyang/assets/city-wall/A/wall-00..07,10,11.glb (12d84a0b cfbbc45a 8a17587a cd4cb2b6 50d8c7aa 4e000b0c d7d3cc79 e7db9cff afb20f8e 2cfa8461) - loaded first screen",
+  "docs/cities/luoyang/assets/city-wall/direct/wall-08.glb 221b8dc8, wall-09.glb d4fb5c1c, gate-body-only.glb cdba2d5c - loaded first screen",
+  "docs/cities/luoyang/assets/city-wall/B/wall-00..11.glb (wall-01 91eefa47, wall-02 b363a115 ...) - v1 ?wall=B only",
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched fdfc3ce5, retained aed8b3d4, south 4313826d, D08 3ab93310 (node pos 580,0,-960) - chapter terrain, initial=false",
+  "docs/cities/luoyang/data/west/city-wall-interface.json ad18cc65 (v1/wall-layer.mjs:20, expectedRoots A13/B12)",
+  "docs/cities/luoyang/data/west/city-wall-constraints.json b6006e31 (gate C projections, C_only_parameters)",
+  "docs/cities/luoyang/city-data.mjs e4115705; city-renderer.mjs fa0a8dcb; v1/wall-layer.mjs 73372f7a; p-luoyang.asset.json 9b5e311f",
+  "docs/library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD0 b8f1ab3a / C-LOD1 92f85c54 / C-LOD2 ec97a1b3 (section 8/5.6/6.03 = city A); A/B modules 14/10/8 match no city sample; not loaded in city",
+  "neighbours (reserved): yong-apron-LOD0 e52eaaf5, yong-Y-LOD0 45743d73"
+ ],
+ "inputsMissing": [
+  "earthwall family native source (.blend/generator+params): for a family-consistent Shangdong stub (rammed-layer undulation, UV, LOD rule); partial rebuild from GLB possible by cutting C-LOD0/1/2 end profile (390/198/54 verts) - must be labelled rebuilt-from-GLB",
+  "city-wall C01 segment generator (luoyang-west-connection: wall_offset_from_B, gate_gap_width, corner_join): to regenerate the Shangdong ends by rule; geometry fully rebuildable from GLB (pure trapezoid lofts, stations recovered exactly), parameters not",
+  "reusedContext route-corridor.glb / guangyang-C-form.glb / south14-after.glb not in repo (connection-terrain = ground-atomic/south.glb 4313826d present); only needed for any Guangyang-side foot work, not for Shangdong",
+  "G package: LY-005 coordinate/port contract, LY-006 port IDs + ownership of the Shangdong gate-gap volume, LY-007 LY_P01 material/LOD baseline, LY-008 checker entry, LY-010 admission + min clear gate width - none rebuildable from GLB"
+ ],
+ "gaps": [
+  "Shangdong gap (wall-01<->wall-02) is the only non-collinear junction of 12: caps deflect 64.166 deg (B 64.163), outline vertex (2469.388,-2602.040) lies inside the gap 2.423 m from wall-01 cap and 29.577 m from wall-02 cap; rail gap widths 27.033/34.520 m (B 26.141/35.488); the city corner there has no wall mass",
+  "Full miter stub is out of domain: A inner setback 2.508 m > arm1 2.423 m (inner miter point 0.085 m behind wall-01 cap; B 0.711 m); fixture full miter intrudes 0.00275 m3/0.059 m (A), 0.846 m3/0.686 m (B)",
+  "Chamfer stub domain: A arm2 >= 2.702 m analytic (sweep fail 2.50, pass 2.75); B arm2 >= 4.766 m (fail 4.75, pass 5.00); upper bound 23.577 m with placeholder 6.0 m min clear width",
+  "Foot vs ground: 12,360 of 12,476 foot-line samples (99.07%) have no ground beneath; 10 segments are 30.097-1001.964 m from nearest ground; only Guangyang direct walls touch ground (116 samples, embedded 1.33-3.00 cm, max float -0.0133 m); 11 of 12 gate gaps have no floor; ground not on first screen -> no slope-foot gap exists to fill (diagnosis only, ground is LY-081/LY-089)",
+  "In-segment corners already correct: 11 mitered stations (3.339-97.951 deg) width error <=0.001 m, no inner fold, 12 closed shells (0 open/0 non-manifold), Blender volumes equal numpy",
+  "Read-only finding for Guangyang owner: direct/wall-08 and wall-09 carry four exposed full-height micro-step faces 0.0719/0.0721/0.0935/0.0934 m (+0.0029 m) and 16+8 sliver triangles (<1 cm edge); shells closed"
+ ],
+ "reuseCandidate": "Partial reuse: the 11 in-segment mitered corners, 12 closed wall shells and the Guangyang wall-foot embedment are already qualified (measure-walls.json 99ada63e: miter width error <=0.001 m, 0 open edges, embed 1.33-3.00 cm, no float), so no corner or foot pieces are made for them; slope-foot part has no measurable gap (99.07% of foot has no ground) -> diagnosis, not a build. Only the Shangdong bent gate gap has no existing piece; earthwall-C (b8f1ab3a) section matches city A and can serve as section/material reference only.",
+ "touches": [
+  "read-only source node C_wall_A_01 (city-wall/A/wall-01.glb cfbbc45a) end cap at (2469.361,0.17,-2604.463)",
+  "read-only source node C_wall_A_02 (city-wall/A/wall-02.glb 8a17587a) end cap at (2496.150,0.17,-2589.447)",
+  "B variant only: city-wall/B/wall-01.glb 91eefa47, B/wall-02.glb b363a115",
+  "Shangdong (上东门) gate-gap volume between those caps - shared with any future gate seat; needs LY-006 owner",
+  "ground: none (no ground tile under Shangdong gap or wall feet except Guangyang); no 地坪片 written",
+  "proposal only via LY-100: new node in docs/cities/luoyang/city-data.mjs; data/west/city-wall-interface.json expectedRoots A 13->14 (v1/wall-layer.mjs:20 hard check)",
+  "write area: workpacks/LY-020/ only",
+  "report-only (not touched): direct/wall-08.glb, direct/wall-09.glb micro-steps (Guangyang owner)"
+ ],
+ "size": "S",
+ "risks": [
+  "The only real corner gap is a gate opening: a stub narrows the straight opening to <=26.827 m (A) / <=24.577 m (B) and fixes the gate side; constraints forbid closing gate gaps and say B corners are schematic -> must be authorised by LY-006/LY-010, otherwise deliver diagnosis only",
+  "Wall-layer v1 hard-checks expectedRoots (A=13) and SHA list: an extra root breaks ?wall=A unless the contract is changed through LY-100",
+  "No terrain under the walls: the stub (like all walls) stands on void at y=0.17; any later LY-089 ground must be re-run through D4",
+  "No native/generator source: piece must be declared rebuilt from GLB; earthwall-C undulating surface vs flat untextured city walls will show a visual seam if family geometry is used",
+  "float32 at |z|~3900 m: vertex quantisation ~0.25 mm, normal noise ~1e-4; tolerances below 1 mm are not meaningful",
+  "Gate C projection is 13.577 m from the vertex: a future Shangdong gate centred on it would not be centred in the post-stub opening; record, do not move B point"
+ ],
+ "readyAfterG": true
+}

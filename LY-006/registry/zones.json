@@ -1,0 +1,6602 @@
+{
+ "registry": "LY-006 module ports & ownership",
+ "version": 1,
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "inputs": {
+  "taskboard": {
+   "path": "taskboard.json",
+   "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4"
+  },
+  "ly001_ledger": {
+   "path": "LY-001/qa/snapshot-ledger.json",
+   "sha256": "479046caf49479cc6e58249585c63c80e84f23cafd82dc93bdc1034f9e1da7d0"
+  },
+  "ly001_dump": {
+   "path": "LY-001/qa/city-data.dump.json",
+   "sha256": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98"
+  },
+  "ly005_ports": {
+   "path": "LY-005/qa/ports-bce3211.json",
+   "sha256": "1c009bb2c95caae89af76e8b7f7462253d1829cb6794e7b7bc77820f67e2f7ca"
+  },
+  "ly005_contract": {
+   "path": "LY-005/coordinate-contract.json",
+   "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712"
+  },
+  "ly005_port_schema": {
+   "path": "LY-005/port-schema.json",
+   "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f"
+  },
+  "glb_index": {
+   "path": "LY-006/qa/glb-node-index.json",
+   "sha256": "a218da85fb566bb4dd4b4bf040334066f2486048bf44f1c84f4dc559c84fff8d"
+  },
+  "wall_ends": {
+   "path": "LY-006/qa/wall-end-ports.measure.json",
+   "sha256": "38f25d638403a9c12693d3ee46865099efa8604678b8560fb543cf357c4d5521"
+  },
+  "probes": {
+   "path": "LY-006/qa/frozen-ports.probes.json",
+   "sha256": "8b9b4bd7fa51caac5f712114c00268d0e18d6c572df22d4574ec3c93cbd9a7f8"
+  },
+  "chunks": {
+   "path": "LY-006/qa/chunk-measure.json",
+   "sha256": "6a7e7fc1b9016c2df9f3916b427fce6357511abecbeaff10b0138556824e9e0e"
+  },
+  "court_free": {
+   "path": "LY-006/qa/court-A2-free-space.json",
+   "sha256": "c030801ffc4749a842eed04c50408453b3c32f824c7191d0e9842f69c9ff8839"
+  },
+  "k_objects": {
+   "path": "LY-006/qa/source-objects/kaiyang-K-v1.objects.json",
+   "sha256": "19a422ea12df17d558b4a20b766053f6f5f6c6e37543e2f2cc5c658b895b1074"
+  },
+  "p_objects": {
+   "path": "LY-006/qa/source-objects/pingcheng-P-v1.objects.json",
+   "sha256": "d50cfc84128ec1a54857b493f0a36a2913c6571e1d1916f7566b6ee72b381e21"
+  },
+  "k_trial": {
+   "path": "LY-006/qa/kaiyang-hidden-trial.objects.json",
+   "sha256": "1e463795cf9614beba15c009bc2ada44f2f4e884e4dde65895d0e6cda57c6d61"
+  },
+  "p_trial": {
+   "path": "LY-006/qa/pingcheng-hidden-trial.objects.json",
+   "sha256": "f513b58558f2cb44081ac69b72e8da6b4cfbe842c97174b05e13100ec44a7136"
+  },
+  "frontage_openings": {
+   "path": "LY-006/qa/frontage-openings.from-LY-021-prep.json",
+   "sha256": "907898d14961121b84bbabf2d757a90d8627d1a4c7ece6b384e44eb2f6aad1d7"
+  },
+  "spec": {
+   "path": "LY-006/source/registry_spec.py",
+   "sha256": "4a6f30bd9caaf3a3409e8d63c73740a012282167d694967c63fb356a69324e7b"
+  }
+ },
+ "frames": {
+  "world": {
+   "placement": null,
+   "status": "luoyang-local-schematic-v01 (LY-005)"
+  },
+  "local:kaiyang-K-v1": {
+   "placement": {
+    "t": [
+     2010.3973388671875,
+     0.17000000178813934,
+     21.3011474609375
+    ],
+    "yaw": -0.020743634087871412
+   },
+   "status": "hidden-trial placement (activation=false) from source ZIP city/placement.json; not in city",
+   "evidence": "qa/source-objects/kaiyang-K-v1.placement.json (Blender Z-up origin (x,y,z)->(x,z,-y); rotation_z -> yaw)"
+  },
+  "local:pingcheng-P-v1": {
+   "placement": {
+    "t": [
+     1622.80908203125,
+     0.17000000178813934,
+     13.259963035583496
+    ],
+    "yaw": -0.0207437532713328
+   },
+   "status": "hidden-trial placement (activation=false); not in city",
+   "evidence": "qa/source-objects/pingcheng-P-v1.placement.json"
+  },
+  "local:gu-G-v1": {
+   "placement": null,
+   "status": "unplaced; slot envelope only (wall seam 00/01)"
+  },
+  "local:xia-B-v1": {
+   "placement": null,
+   "status": "unplaced; slot envelope only (wall seam 00/11)"
+  },
+  "local:market-site": {
+   "placement": {
+    "t": [
+     214.286,
+     0.0,
+     -1959.184
+    ],
+    "yaw": 0.0
+   },
+   "status": "C: centre of market-main bounds; frontage v2.1 assumed at (0,0.2,0) in this frame as in the mother-scene chunk (LY-025/028 prep). LY-029 must confirm before any city use",
+   "evidence": "market-cluster.glb sample_ground AABB [184.286..244.286]x[-1981.184..-1937.184]"
+  },
+  "local:frontage-v2.1": {
+   "placement": {
+    "t": [
+     214.286,
+     0.2,
+     -1959.184
+    ],
+    "yaw": 0.0
+   },
+   "status": "C assumption = market-site + (0,0.2,0); unconfirmed"
+  },
+  "local:storage-site": {
+   "placement": {
+    "t": [
+     2285.714,
+     0.0,
+     -3673.469
+    ],
+    "yaw": 0.0
+   },
+   "status": "in city: granary-city-LOD0 (storage-main) internal translation (LY-005 note)"
+  },
+  "local:wuku-B-v2.2": {
+   "placement": null,
+   "status": "unplaced (LY-003 gate); old trial support near NE road end"
+  },
+  "local:wuku-A-v2": {
+   "placement": null,
+   "status": "unplaced; A/B exclusive (LY-038)"
+  },
+  "court:C02-010": {
+   "placement": {
+    "t": [
+     531.0,
+     0.0,
+     -818.45
+    ],
+    "yaw": 0.0
+   },
+   "status": "city node C02-010 (courtyard-A2, calt) = candidate demonstration court (LY-041 prep); LY-010 freezes the choice. If another court is chosen this frame and all 041-050 zones are re-issued as registry v2",
+   "evidence": "docs/cities/luoyang/data/far44/instances-calt.json via LY-001 dump"
+  },
+  "local:stable-A": {
+   "placement": null,
+   "status": "unplaced"
+  },
+  "local:stable-B": {
+   "placement": null,
+   "status": "unplaced"
+  },
+  "local:kiln-A": {
+   "placement": null,
+   "status": "unplaced"
+  },
+  "local:kiln-B": {
+   "placement": null,
+   "status": "unplaced"
+  },
+  "local:hand-mill": {
+   "placement": null,
+   "status": "unplaced (A and B share this local frame; A/B exclusive)"
+  },
+  "local:foot-pestle": {
+   "placement": null,
+   "status": "unplaced"
+  },
+  "local:workshed": {
+   "placement": null,
+   "status": "unplaced"
+  },
+  "local:work-site": {
+   "placement": null,
+   "status": "composed frame defined by LY-058/LY-060 (selected work sample); unplaced"
+  },
+  "local:admission-court": {
+   "placement": null,
+   "status": "unplaced (LY-003)"
+  },
+  "local:paired-que": {
+   "placement": null,
+   "status": "unplaced"
+  },
+  "local:deyang": {
+   "placement": null,
+   "status": "unplaced; A(5-bay)/B(7-bay) exclusive"
+  },
+  "local:yutang": {
+   "placement": null,
+   "status": "unplaced; A/B exclusive"
+  },
+  "local:gallery-A": {
+   "placement": null,
+   "status": "unplaced"
+  },
+  "local:gallery-B": {
+   "placement": null,
+   "status": "unplaced"
+  },
+  "local:palace-composite": {
+   "placement": null,
+   "status": "composed frame defined by LY-069/LY-070; unplaced"
+  },
+  "local:biyong": {
+   "placement": null,
+   "status": "unplaced; hall A origin; enclosure joined by LY-071 locked transform"
+  },
+  "local:mingtang": {
+   "placement": null,
+   "status": "unplaced; A/B exclusive"
+  },
+  "local:lingtai-A": {
+   "placement": null,
+   "status": "unplaced"
+  },
+  "local:taixue-A": {
+   "placement": null,
+   "status": "unplaced"
+  },
+  "local:stoneclassic": {
+   "placement": null,
+   "status": "unplaced"
+  },
+  "local:south-altar": {
+   "placement": null,
+   "status": "unplaced (south suburb); A/B exclusive"
+  },
+  "local:north-altar": {
+   "placement": null,
+   "status": "unplaced (north suburb, never grouped with south)"
+  },
+  "local:waterway": {
+   "placement": null,
+   "status": "unplaced wall research block"
+  }
+ },
+ "sites": {
+  "S-KAIYANG": {
+   "seats": [
+    "LY-011",
+    "LY-012",
+    "LY-013",
+    "LY-014",
+    "LY-015",
+    "LY-085"
+   ],
+   "owner": "LY-015",
+   "envelope": {
+    "frame": "local:kaiyang-K-v1",
+    "box": [
+     [
+      -16.0,
+      -0.3,
+      -11.0
+     ],
+     [
+      16.0,
+      10.6,
+      7.0
+     ]
+    ]
+   }
+  },
+  "S-PINGCHENG": {
+   "seats": [
+    "LY-016",
+    "LY-017",
+    "LY-085"
+   ],
+   "owner": "LY-017",
+   "envelope": {
+    "frame": "local:pingcheng-P-v1",
+    "box": [
+     [
+      -16.0,
+      -0.3,
+      -14.0
+     ],
+     [
+      16.0,
+      10.6,
+      14.0
+     ]
+    ]
+   }
+  },
+  "S-GU": {
+   "seats": [
+    "LY-018"
+   ],
+   "owner": "LY-018",
+   "envelope": {
+    "frame": "wallseam:wall-A-wall-00/wall-A-wall-01",
+    "halfDepth": 8.0,
+    "y": [
+     -0.3,
+     10.6
+    ]
+   }
+  },
+  "S-XIA": {
+   "seats": [
+    "LY-019"
+   ],
+   "owner": "LY-019",
+   "envelope": {
+    "frame": "wallseam:wall-A-wall-00/wall-A-wall-11",
+    "halfDepth": 8.0,
+    "y": [
+     -0.3,
+     10.6
+    ]
+   }
+  },
+  "S-MARKET": {
+   "seats": [
+    "LY-021",
+    "LY-022",
+    "LY-023",
+    "LY-024",
+    "LY-025",
+    "LY-026",
+    "LY-027",
+    "LY-028",
+    "LY-029",
+    "LY-030"
+   ],
+   "owner": "LY-030",
+   "envelope": {
+    "frame": "local:market-site",
+    "box": [
+     [
+      -30.0,
+      -0.8,
+      -22.0
+     ],
+     [
+      30.0,
+      5.0,
+      22.0
+     ]
+    ]
+   }
+  },
+  "S-STORAGE": {
+   "seats": [
+    "LY-031",
+    "LY-032",
+    "LY-033",
+    "LY-034",
+    "LY-035",
+    "LY-039",
+    "LY-040"
+   ],
+   "owner": "LY-040",
+   "envelope": {
+    "frame": "local:storage-site",
+    "box": [
+     [
+      -36.0,
+      -0.3,
+      -26.0
+     ],
+     [
+      36.0,
+      5.5,
+      26.0
+     ]
+    ]
+   }
+  },
+  "S-NE-ROAD": {
+   "seats": [
+    "LY-039"
+   ],
+   "owner": "LY-040",
+   "envelope": {
+    "frame": "world",
+    "boxes": [
+     [
+      [
+       2283.714,
+       -0.3,
+       -3647.469
+      ],
+      [
+       2287.714,
+       0.6,
+       -3484.0
+      ]
+     ],
+     [
+      [
+       2287.714,
+       -0.3,
+       -3490.5
+      ],
+      [
+       2318.327,
+       0.6,
+       -3484.0
+      ]
+     ]
+    ]
+   }
+  },
+  "S-WUKU": {
+   "seats": [
+    "LY-036",
+    "LY-037",
+    "LY-038",
+    "LY-040"
+   ],
+   "owner": "LY-040",
+   "envelope": null
+  },
+  "S-COURT": {
+   "seats": [
+    "LY-041",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-046",
+    "LY-047",
+    "LY-048",
+    "LY-049",
+    "LY-050"
+   ],
+   "owner": "LY-050",
+   "envelope": {
+    "frame": "court:C02-010",
+    "box": [
+     [
+      -9.0,
+      -1.6,
+      -12.0
+     ],
+     [
+      9.0,
+      5.6,
+      12.0
+     ]
+    ]
+   }
+  },
+  "S-COURT-LANE": {
+   "seats": [
+    "LY-082"
+   ],
+   "owner": "LY-082",
+   "envelope": {
+    "frame": "world",
+    "box": [
+     [
+      526.0,
+      -0.3,
+      -806.45
+     ],
+     [
+      530.0,
+      0.6,
+      -796.45
+     ]
+    ]
+   }
+  },
+  "S-MARKET-STREET": {
+   "seats": [
+    "LY-083"
+   ],
+   "owner": "LY-083",
+   "envelope": {
+    "frame": "world",
+    "box": [
+     [
+      244.286,
+      -0.3,
+      -1981.184
+     ],
+     [
+      274.286,
+      0.6,
+      -1937.184
+     ]
+    ]
+   }
+  },
+  "S-WORK": {
+   "seats": [
+    "LY-051",
+    "LY-052",
+    "LY-053",
+    "LY-054",
+    "LY-055",
+    "LY-056",
+    "LY-057",
+    "LY-058",
+    "LY-059",
+    "LY-060"
+   ],
+   "owner": "LY-060",
+   "envelope": null
+  },
+  "S-PALACE": {
+   "seats": [
+    "LY-061",
+    "LY-062",
+    "LY-063",
+    "LY-064",
+    "LY-065",
+    "LY-066",
+    "LY-067",
+    "LY-068",
+    "LY-069",
+    "LY-070"
+   ],
+   "owner": "LY-070",
+   "envelope": null
+  },
+  "S-BIYONG": {
+   "seats": [
+    "LY-071",
+    "LY-072",
+    "LY-073"
+   ],
+   "owner": "LY-073",
+   "envelope": null
+  },
+  "S-MINGTANG": {
+   "seats": [
+    "LY-074",
+    "LY-075"
+   ],
+   "owner": "LY-075",
+   "envelope": null
+  },
+  "S-LINGTAI": {
+   "seats": [
+    "LY-076"
+   ],
+   "owner": "LY-076",
+   "envelope": null
+  },
+  "S-TAIXUE": {
+   "seats": [
+    "LY-077",
+    "LY-078"
+   ],
+   "owner": "LY-078",
+   "envelope": null
+  },
+  "S-SOUTH-ALTAR": {
+   "seats": [
+    "LY-079"
+   ],
+   "owner": "LY-079",
+   "envelope": null
+  },
+  "S-NORTH-ALTAR": {
+   "seats": [
+    "LY-080"
+   ],
+   "owner": "LY-080",
+   "envelope": null
+  },
+  "S-WATERWAY": {
+   "seats": [
+    "LY-086"
+   ],
+   "owner": "LY-086",
+   "envelope": null
+  },
+  "S-WALLS": {
+   "seats": [
+    "LY-020"
+   ],
+   "owner": "LY-020",
+   "envelope": null
+  },
+  "S-CITYGROUND": {
+   "seats": [
+    "LY-081",
+    "LY-084",
+    "LY-087",
+    "LY-088",
+    "LY-089",
+    "LY-090"
+   ],
+   "owner": "LY-090",
+   "envelope": null
+  }
+ },
+ "zones": [
+  {
+   "zoneId": "LY-011:write:001",
+   "seat": "LY-011",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     -2.8,
+     0.0,
+     -5.0
+    ],
+    [
+     2.8,
+     5.0,
+     1.99
+    ]
+   ],
+   "label": "central passage bearing frame behind leaf sweep",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2010.4285557976118,
+     2.6700000017881393,
+     19.796471248839065
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     2.8,
+     2.5,
+     3.495
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-011:write:002",
+   "seat": "LY-011",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     -2.8,
+     4.7,
+     1.99
+    ],
+    [
+     2.8,
+     5.0,
+     4.64
+    ]
+   ],
+   "label": "central passage beam space under deck, in front of head",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2010.3285786516683,
+     5.020000001788139,
+     24.615434266988203
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     2.8,
+     0.1499999999999999,
+     1.3249999999999997
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-011:write:003",
+   "seat": "LY-011",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     -2.6,
+     4.7,
+     4.64
+    ],
+    [
+     2.6,
+     5.0,
+     4.96
+    ]
+   ],
+   "label": "central door head C_door_head_1",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2010.2977765641733,
+     5.020000001788139,
+     26.10011478191589
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     2.6,
+     0.1499999999999999,
+     0.16000000000000014
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-012:write:001",
+   "seat": "LY-012",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     -2.8,
+     0.0,
+     1.99
+    ],
+    [
+     2.8,
+     4.7,
+     4.96
+    ]
+   ],
+   "label": "central passage door plane + leaf sweep",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2010.3252599082346,
+     2.5200000017881394,
+     24.775399844354148
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     2.8,
+     2.35,
+     1.4849999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-012:write:002",
+   "seat": "LY-012",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     -2.8,
+     4.7,
+     4.64
+    ],
+    [
+     -2.6,
+     5.0,
+     4.96
+    ]
+   ],
+   "label": "central jamb top W",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2007.5983574461231,
+     5.020000001788139,
+     26.044110986470454
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     0.09999999999999987,
+     0.1499999999999999,
+     0.16000000000000014
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-012:write:003",
+   "seat": "LY-012",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     2.6,
+     4.7,
+     4.64
+    ],
+    [
+     2.8,
+     5.0,
+     4.96
+    ]
+   ],
+   "label": "central jamb top E",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2012.9971956822237,
+     5.020000001788139,
+     26.15611857736133
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     0.09999999999999987,
+     0.1499999999999999,
+     0.16000000000000014
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-012:write:004",
+   "seat": "LY-012",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     -9.6,
+     0.0,
+     1.99
+    ],
+    [
+     -5.6,
+     5.0,
+     4.96
+    ]
+   ],
+   "label": "west passage door plane + leaf sweep",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2002.7268949833522,
+     2.6700000017881393,
+     24.617759531248474
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     2.0,
+     2.5,
+     1.4849999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-012:write:005",
+   "seat": "LY-012",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     5.6,
+     0.0,
+     1.99
+    ],
+    [
+     9.6,
+     5.0,
+     4.96
+    ]
+   ],
+   "label": "east passage door plane + leaf sweep",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2017.923624833117,
+     2.6700000017881393,
+     24.933040157459825
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     2.0,
+     2.5,
+     1.4849999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-013:write:001",
+   "seat": "LY-013",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     -12.4,
+     5.0,
+     -5.0
+    ],
+    [
+     12.4,
+     5.34,
+     5.0
+    ]
+   ],
+   "label": "single upper deck slab (replaces C_upper_deck)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2010.3973388671875,
+     5.340000001788139,
+     21.3011474609375
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     12.4,
+     0.16999999999999993,
+     5.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-014:write:001",
+   "seat": "LY-014",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     -16.0,
+     0.0,
+     -5.0
+    ],
+    [
+     -12.4,
+     9.0,
+     5.0
+    ]
+   ],
+   "label": "west end bay: side opening / stair / wall-top transition",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     1996.2003938759597,
+     4.670000001788139,
+     21.00660898118742
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     1.7999999999999998,
+     4.5,
+     5.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-014:write:002",
+   "seat": "LY-014",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     12.4,
+     0.0,
+     -5.0
+    ],
+    [
+     16.0,
+     9.0,
+     5.0
+    ]
+   ],
+   "label": "east end bay: side opening / stair / wall-top transition",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2024.5942838584153,
+     4.670000001788139,
+     21.59568594068758
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     1.7999999999999998,
+     4.5,
+     5.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-014:write:003",
+   "seat": "LY-014",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     -16.0,
+     0.0,
+     -11.0
+    ],
+    [
+     16.0,
+     6.2,
+     -5.0
+    ]
+   ],
+   "label": "inner-side (city side, local -z) access strip",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2010.5632760388776,
+     3.2700000017881394,
+     13.30286859264018
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     16.0,
+     3.1,
+     3.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-015:write:001",
+   "seat": "LY-015",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     -8.5,
+     -0.16,
+     -7.0
+    ],
+    [
+     8.5,
+     0.0,
+     7.0
+    ]
+   ],
+   "label": "kaiyang ground strip layer below y=0 (strip top 0.042 is inherited contact)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2010.3973388671875,
+     0.09000000178813934,
+     21.3011474609375
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     8.5,
+     0.08,
+     7.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-016:write:001",
+   "seat": "LY-016",
+   "site": "S-PINGCHENG",
+   "class": "write",
+   "frame": "local:pingcheng-P-v1",
+   "box": [
+    [
+     -10.0,
+     -0.2,
+     -10.0
+    ],
+    [
+     10.0,
+     0.042,
+     10.0
+    ]
+   ],
+   "label": "gate ground layer (strip + side passage support fixes)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     1622.80908203125,
+     0.09100000178813934,
+     13.259963035583496
+    ],
+    "yaw": -0.0207437532713328,
+    "h": [
+     10.0,
+     0.12100000000000001,
+     10.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-016:write:002",
+   "seat": "LY-016",
+   "site": "S-PINGCHENG",
+   "class": "write",
+   "frame": "local:pingcheng-P-v1",
+   "box": [
+    [
+     -10.0,
+     0.042,
+     -14.0
+    ],
+    [
+     -5.8,
+     0.25,
+     14.0
+    ]
+   ],
+   "label": "west side passage support/edge (no leaf intrusion)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     1614.9107816683363,
+     0.31600000178813936,
+     13.09609913719266
+    ],
+    "yaw": -0.0207437532713328,
+    "h": [
+     2.1,
+     0.104,
+     14.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-016:write:003",
+   "seat": "LY-016",
+   "site": "S-PINGCHENG",
+   "class": "write",
+   "frame": "local:pingcheng-P-v1",
+   "box": [
+    [
+     5.8,
+     0.042,
+     -14.0
+    ],
+    [
+     10.0,
+     0.25,
+     14.0
+    ]
+   ],
+   "label": "east side passage support/edge (no leaf intrusion)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     1630.7073823941637,
+     0.31600000178813936,
+     13.423826933974333
+    ],
+    "yaw": -0.0207437532713328,
+    "h": [
+     2.1,
+     0.104,
+     14.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-016:write:004",
+   "seat": "LY-016",
+   "site": "S-PINGCHENG",
+   "class": "write",
+   "frame": "local:pingcheng-P-v1",
+   "box": [
+    [
+     -10.0,
+     -0.2,
+     10.0
+    ],
+    [
+     -5.8,
+     0.042,
+     14.0
+    ]
+   ],
+   "label": "west outer connection ground",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     1614.661874480907,
+     0.09100000178813934,
+     25.093517409973103
+    ],
+    "yaw": -0.0207437532713328,
+    "h": [
+     2.1,
+     0.12100000000000001,
+     2.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-016:write:005",
+   "seat": "LY-016",
+   "site": "S-PINGCHENG",
+   "class": "write",
+   "frame": "local:pingcheng-P-v1",
+   "box": [
+    [
+     5.8,
+     -0.2,
+     10.0
+    ],
+    [
+     10.0,
+     0.042,
+     14.0
+    ]
+   ],
+   "label": "east outer connection ground",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     1630.4584752067346,
+     0.09100000178813934,
+     25.421245206754776
+    ],
+    "yaw": -0.0207437532713328,
+    "h": [
+     2.1,
+     0.12100000000000001,
+     2.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-016:write:006",
+   "seat": "LY-016",
+   "site": "S-PINGCHENG",
+   "class": "write",
+   "frame": "local:pingcheng-P-v1",
+   "box": [
+    [
+     -10.0,
+     -0.2,
+     -14.0
+    ],
+    [
+     -5.8,
+     0.042,
+     -10.0
+    ]
+   ],
+   "label": "west inner connection ground",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     1615.1596888557654,
+     0.09100000178813934,
+     1.0986808644122146
+    ],
+    "yaw": -0.0207437532713328,
+    "h": [
+     2.1,
+     0.12100000000000001,
+     2.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-016:write:007",
+   "seat": "LY-016",
+   "site": "S-PINGCHENG",
+   "class": "write",
+   "frame": "local:pingcheng-P-v1",
+   "box": [
+    [
+     5.8,
+     -0.2,
+     -14.0
+    ],
+    [
+     10.0,
+     0.042,
+     -10.0
+    ]
+   ],
+   "label": "east inner connection ground",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     1630.956289581593,
+     0.09100000178813934,
+     1.4264086611938875
+    ],
+    "yaw": -0.0207437532713328,
+    "h": [
+     2.1,
+     0.12100000000000001,
+     2.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-018:write:001",
+   "seat": "LY-018",
+   "site": "S-GU",
+   "class": "write",
+   "frame": "local:gu-G-v1",
+   "box": [
+    [
+     -16.0,
+     -0.3,
+     -8.0
+    ],
+    [
+     16.0,
+     0.3,
+     8.0
+    ]
+   ],
+   "label": "pier base support + threshold ground layer",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-018:write:002",
+   "seat": "LY-018",
+   "site": "S-GU",
+   "class": "write",
+   "frame": "local:gu-G-v1",
+   "box": [
+    [
+     -16.0,
+     0.3,
+     -5.0
+    ],
+    [
+     -12.0,
+     6.2,
+     5.0
+    ]
+   ],
+   "label": "west wall-end adapter bay",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-018:write:003",
+   "seat": "LY-018",
+   "site": "S-GU",
+   "class": "write",
+   "frame": "local:gu-G-v1",
+   "box": [
+    [
+     12.0,
+     0.3,
+     -5.0
+    ],
+    [
+     16.0,
+     6.2,
+     5.0
+    ]
+   ],
+   "label": "east wall-end adapter bay",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-019:write:001",
+   "seat": "LY-019",
+   "site": "S-XIA",
+   "class": "write",
+   "frame": "local:xia-B-v1",
+   "box": [
+    [
+     -16.0,
+     -0.3,
+     -8.0
+    ],
+    [
+     16.0,
+     0.3,
+     8.0
+    ]
+   ],
+   "label": "base support + ground seam layer",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-019:write:002",
+   "seat": "LY-019",
+   "site": "S-XIA",
+   "class": "write",
+   "frame": "local:xia-B-v1",
+   "box": [
+    [
+     -16.0,
+     0.3,
+     -5.5
+    ],
+    [
+     -12.0,
+     6.2,
+     5.5
+    ]
+   ],
+   "label": "west wall seam bay",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-019:write:003",
+   "seat": "LY-019",
+   "site": "S-XIA",
+   "class": "write",
+   "frame": "local:xia-B-v1",
+   "box": [
+    [
+     12.0,
+     0.3,
+     -5.5
+    ],
+    [
+     16.0,
+     6.2,
+     5.5
+    ]
+   ],
+   "label": "east wall seam bay",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-020:write:001",
+   "seat": "LY-020",
+   "site": "S-WALLS",
+   "class": "write",
+   "frame": "world",
+   "box": [
+    [
+     2465.3611,
+     -0.5,
+     -2608.4631
+    ],
+    [
+     2500.1504,
+     6.4,
+     -2585.4468
+    ]
+   ],
+   "label": "NE corner seam (01/02); a gate slot, diagnosis only unless LY-010 allows a stub",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2482.7557349999997,
+     2.95,
+     -2596.954955
+    ],
+    "yaw": 0.0,
+    "h": [
+     17.39465499999983,
+     3.45,
+     11.508174999999937
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-021:write:001",
+   "seat": "LY-021",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -15.6,
+     0.2,
+     -5.0
+    ],
+    [
+     -13.9,
+     0.6,
+     -4.2
+    ]
+   ],
+   "label": "shop0 door0 step (outside front line)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     199.536,
+     0.4,
+     -1963.7839999999999
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.8500000000000014,
+     0.19999999999999998,
+     0.3999999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-021:write:002",
+   "seat": "LY-021",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -9.7,
+     0.2,
+     -5.0
+    ],
+    [
+     -8.0,
+     0.6,
+     -4.2
+    ]
+   ],
+   "label": "shop0 door1 step (outside front line)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     205.436,
+     0.4,
+     -1963.7839999999999
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.8500000000000005,
+     0.19999999999999998,
+     0.3999999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-021:write:003",
+   "seat": "LY-021",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     12.6,
+     0.2,
+     -5.0
+    ],
+    [
+     15.6,
+     0.6,
+     -4.2
+    ]
+   ],
+   "label": "shop1 door0 step (outside front line)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     228.386,
+     0.4,
+     -1963.7839999999999
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.5000000000000009,
+     0.19999999999999998,
+     0.3999999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-021:write:004",
+   "seat": "LY-021",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -3.98,
+     0.2,
+     -5.0
+    ],
+    [
+     -0.8,
+     0.6,
+     -4.2
+    ]
+   ],
+   "label": "shop2 door0 step (outside front line)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     211.89600000000002,
+     0.4,
+     -1963.7839999999999
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.5899999999999999,
+     0.19999999999999998,
+     0.3999999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-021:write:005",
+   "seat": "LY-021",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     0.8,
+     0.2,
+     -5.0
+    ],
+    [
+     2.5,
+     0.6,
+     -4.2
+    ]
+   ],
+   "label": "shop3 door0 step (outside front line)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     215.936,
+     0.4,
+     -1963.7839999999999
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.85,
+     0.19999999999999998,
+     0.3999999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-021:write:006",
+   "seat": "LY-021",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     6.7,
+     0.2,
+     -5.0
+    ],
+    [
+     8.4,
+     0.6,
+     -4.2
+    ]
+   ],
+   "label": "shop3 door1 step (outside front line)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     221.836,
+     0.4,
+     -1963.7839999999999
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.8500000000000001,
+     0.19999999999999998,
+     0.3999999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-021:write:007",
+   "seat": "LY-021",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -14.0,
+     0.2,
+     4.2
+    ],
+    [
+     -10.82,
+     0.6,
+     5.0
+    ]
+   ],
+   "label": "shop4 door0 step (outside front line)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     201.876,
+     0.4,
+     -1954.584
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.5900000000000007,
+     0.19999999999999998,
+     0.3999999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-021:write:008",
+   "seat": "LY-021",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     10.5,
+     0.2,
+     4.2
+    ],
+    [
+     12.2,
+     0.6,
+     5.0
+    ]
+   ],
+   "label": "shop5 door0 step (outside front line)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     225.636,
+     0.4,
+     -1954.584
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.8500000000000005,
+     0.19999999999999998,
+     0.3999999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-021:write:009",
+   "seat": "LY-021",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     16.4,
+     0.2,
+     4.2
+    ],
+    [
+     18.1,
+     0.6,
+     5.0
+    ]
+   ],
+   "label": "shop5 door1 step (outside front line)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     231.536,
+     0.4,
+     -1954.584
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.8500000000000014,
+     0.19999999999999998,
+     0.3999999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-021:write:010",
+   "seat": "LY-021",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -6.6,
+     0.2,
+     4.2
+    ],
+    [
+     -4.9,
+     0.6,
+     5.0
+    ]
+   ],
+   "label": "shop6 door0 step (outside front line)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     208.536,
+     0.4,
+     -1954.584
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.8499999999999996,
+     0.19999999999999998,
+     0.3999999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-021:write:011",
+   "seat": "LY-021",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -0.7,
+     0.2,
+     4.2
+    ],
+    [
+     1.0,
+     0.6,
+     5.0
+    ]
+   ],
+   "label": "shop6 door1 step (outside front line)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     214.436,
+     0.4,
+     -1954.584
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.85,
+     0.19999999999999998,
+     0.3999999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-021:write:012",
+   "seat": "LY-021",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     2.8,
+     0.2,
+     4.2
+    ],
+    [
+     5.8,
+     0.6,
+     5.0
+    ]
+   ],
+   "label": "shop7 door0 step (outside front line)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     218.586,
+     0.4,
+     -1954.584
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.4999999999999998,
+     0.19999999999999998,
+     0.3999999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-023:write:001",
+   "seat": "LY-023",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -22.9,
+     0.2,
+     -7.35
+    ],
+    [
+     -19.1,
+     1.3,
+     -4.65
+    ]
+   ],
+   "label": "stall C00 feet/base (below table top 1.3)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     193.286,
+     0.75,
+     -1965.184
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.8999999999999986,
+     0.55,
+     1.3500000000000005
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-023:write:002",
+   "seat": "LY-023",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -22.35,
+     0.2,
+     -12.5
+    ],
+    [
+     -19.65,
+     1.3,
+     -9.5
+    ]
+   ],
+   "label": "stall C01 feet/base (below table top 1.3)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     193.286,
+     0.75,
+     -1970.184
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.3499999999999979,
+     0.55,
+     1.5
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-023:write:003",
+   "seat": "LY-023",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     18.5,
+     0.2,
+     -7.35
+    ],
+    [
+     21.5,
+     1.3,
+     -4.65
+    ]
+   ],
+   "label": "stall C02 feet/base (below table top 1.3)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     234.286,
+     0.75,
+     -1965.184
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.5,
+     0.55,
+     1.3500000000000005
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-023:write:004",
+   "seat": "LY-023",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     19.65,
+     0.2,
+     5.1
+    ],
+    [
+     22.35,
+     1.3,
+     8.9
+    ]
+   ],
+   "label": "stall C03 feet/base (below table top 1.3)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     235.286,
+     0.75,
+     -1952.184
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.3499999999999979,
+     0.55,
+     1.8999999999999995
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-024:write:001",
+   "seat": "LY-024",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -15.8,
+     0.2,
+     -5.35
+    ],
+    [
+     -7.8,
+     4.0,
+     -5.0
+    ]
+   ],
+   "label": "shop0 front-plane band (closing parts)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     202.486,
+     2.1,
+     -1964.359
+    ],
+    "yaw": 0.0,
+    "h": [
+     4.0,
+     1.9,
+     0.17499999999999982
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-024:write:002",
+   "seat": "LY-024",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     9.8,
+     0.2,
+     -5.35
+    ],
+    [
+     15.8,
+     4.0,
+     -5.0
+    ]
+   ],
+   "label": "shop1 front-plane band (closing parts)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     227.086,
+     2.1,
+     -1964.359
+    ],
+    "yaw": 0.0,
+    "h": [
+     3.0,
+     1.9,
+     0.17499999999999982
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-024:write:003",
+   "seat": "LY-024",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -6.6,
+     0.2,
+     -5.35
+    ],
+    [
+     -0.6,
+     4.0,
+     -5.0
+    ]
+   ],
+   "label": "shop2 front-plane band (closing parts)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     210.686,
+     2.1,
+     -1964.359
+    ],
+    "yaw": 0.0,
+    "h": [
+     3.0,
+     1.9,
+     0.17499999999999982
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-024:write:004",
+   "seat": "LY-024",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     0.6,
+     0.2,
+     -5.35
+    ],
+    [
+     8.6,
+     4.0,
+     -5.0
+    ]
+   ],
+   "label": "shop3 front-plane band (closing parts)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     218.886,
+     2.1,
+     -1964.359
+    ],
+    "yaw": 0.0,
+    "h": [
+     4.0,
+     1.9,
+     0.17499999999999982
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-024:write:005",
+   "seat": "LY-024",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -14.2,
+     0.2,
+     5.0
+    ],
+    [
+     -8.2,
+     4.0,
+     5.35
+    ]
+   ],
+   "label": "shop4 front-plane band (closing parts)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     203.086,
+     2.1,
+     -1954.009
+    ],
+    "yaw": 0.0,
+    "h": [
+     3.0,
+     1.9,
+     0.17499999999999982
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-024:write:006",
+   "seat": "LY-024",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     10.3,
+     0.2,
+     5.0
+    ],
+    [
+     18.3,
+     4.0,
+     5.35
+    ]
+   ],
+   "label": "shop5 front-plane band (closing parts)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     228.586,
+     2.1,
+     -1954.009
+    ],
+    "yaw": 0.0,
+    "h": [
+     4.0,
+     1.9,
+     0.17499999999999982
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-024:write:007",
+   "seat": "LY-024",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -6.8,
+     0.2,
+     5.0
+    ],
+    [
+     1.2,
+     4.0,
+     5.35
+    ]
+   ],
+   "label": "shop6 front-plane band (closing parts)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     211.486,
+     2.1,
+     -1954.009
+    ],
+    "yaw": 0.0,
+    "h": [
+     4.0,
+     1.9,
+     0.17499999999999982
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-024:write:008",
+   "seat": "LY-024",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     2.6,
+     0.2,
+     5.0
+    ],
+    [
+     8.6,
+     4.0,
+     5.35
+    ]
+   ],
+   "label": "shop7 front-plane band (closing parts)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     219.886,
+     2.1,
+     -1954.009
+    ],
+    "yaw": 0.0,
+    "h": [
+     3.0,
+     1.9,
+     0.17499999999999982
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-025:write:001",
+   "seat": "LY-025",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -19.65,
+     -0.8,
+     5.35
+    ],
+    [
+     -16.35,
+     0.25,
+     8.65
+    ]
+   ],
+   "label": "well liner + collar + cut slab ring (below 0.25)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     196.286,
+     -0.275,
+     -1952.184
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.6499999999999986,
+     0.525,
+     1.6500000000000004
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-025:write:002",
+   "seat": "LY-025",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -30.0,
+     -0.05,
+     -22.0
+    ],
+    [
+     30.0,
+     0.2,
+     22.0
+    ]
+   ],
+   "label": "cut slab layer replacing sample_ground (whole market slab)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     214.286,
+     0.07500000000000001,
+     -1959.184
+    ],
+    "yaw": 0.0,
+    "h": [
+     30.0,
+     0.125,
+     22.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-025:cut:003",
+   "seat": "LY-025",
+   "site": "S-MARKET",
+   "class": "cut",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -19.65,
+     -0.8,
+     5.35
+    ],
+    [
+     -16.35,
+     0.2,
+     8.65
+    ]
+   ],
+   "label": "well hole",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     196.286,
+     -0.30000000000000004,
+     -1952.184
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.6499999999999986,
+     0.5,
+     1.6500000000000004
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-026:write:001",
+   "seat": "LY-026",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -19.65,
+     0.25,
+     5.35
+    ],
+    [
+     -16.35,
+     3.4,
+     8.65
+    ]
+   ],
+   "label": "well frame / windlass / guide parts above ground",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     196.286,
+     1.825,
+     -1952.184
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.6499999999999986,
+     1.575,
+     1.6500000000000004
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-027:write:001",
+   "seat": "LY-027",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -15.8,
+     0.42,
+     -11.0
+    ],
+    [
+     -7.8,
+     3.2,
+     -5.35
+    ]
+   ],
+   "label": "shop0 interior above floor (shelves/cargo proxies)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     202.486,
+     1.81,
+     -1967.359
+    ],
+    "yaw": 0.0,
+    "h": [
+     4.0,
+     1.3900000000000001,
+     2.825
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-027:write:002",
+   "seat": "LY-027",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     9.8,
+     0.42,
+     -11.0
+    ],
+    [
+     15.8,
+     3.2,
+     -5.35
+    ]
+   ],
+   "label": "shop1 interior above floor (shelves/cargo proxies)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     227.086,
+     1.81,
+     -1967.359
+    ],
+    "yaw": 0.0,
+    "h": [
+     3.0,
+     1.3900000000000001,
+     2.825
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-027:write:003",
+   "seat": "LY-027",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -6.6,
+     0.42,
+     -9.0
+    ],
+    [
+     -0.6,
+     3.2,
+     -5.35
+    ]
+   ],
+   "label": "shop2 interior above floor (shelves/cargo proxies)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     210.686,
+     1.81,
+     -1966.359
+    ],
+    "yaw": 0.0,
+    "h": [
+     3.0,
+     1.3900000000000001,
+     1.8250000000000002
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-027:write:004",
+   "seat": "LY-027",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     0.6,
+     0.42,
+     -9.0
+    ],
+    [
+     8.6,
+     3.2,
+     -5.35
+    ]
+   ],
+   "label": "shop3 interior above floor (shelves/cargo proxies)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     218.886,
+     1.81,
+     -1966.359
+    ],
+    "yaw": 0.0,
+    "h": [
+     4.0,
+     1.3900000000000001,
+     1.8250000000000002
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-027:write:005",
+   "seat": "LY-027",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -14.2,
+     0.42,
+     5.35
+    ],
+    [
+     -8.2,
+     3.2,
+     9.0
+    ]
+   ],
+   "label": "shop4 interior above floor (shelves/cargo proxies)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     203.086,
+     1.81,
+     -1952.009
+    ],
+    "yaw": 0.0,
+    "h": [
+     3.0,
+     1.3900000000000001,
+     1.8250000000000002
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-027:write:006",
+   "seat": "LY-027",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     10.3,
+     0.42,
+     5.35
+    ],
+    [
+     18.3,
+     3.2,
+     9.0
+    ]
+   ],
+   "label": "shop5 interior above floor (shelves/cargo proxies)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     228.586,
+     1.81,
+     -1952.009
+    ],
+    "yaw": 0.0,
+    "h": [
+     4.0,
+     1.3900000000000001,
+     1.8250000000000002
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-027:write:007",
+   "seat": "LY-027",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -6.8,
+     0.42,
+     5.35
+    ],
+    [
+     1.2,
+     3.2,
+     11.0
+    ]
+   ],
+   "label": "shop6 interior above floor (shelves/cargo proxies)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     211.486,
+     1.81,
+     -1951.009
+    ],
+    "yaw": 0.0,
+    "h": [
+     4.0,
+     1.3900000000000001,
+     2.825
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-027:write:008",
+   "seat": "LY-027",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     2.6,
+     0.42,
+     5.35
+    ],
+    [
+     8.6,
+     3.2,
+     11.0
+    ]
+   ],
+   "label": "shop7 interior above floor (shelves/cargo proxies)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     219.886,
+     1.81,
+     -1951.009
+    ],
+    "yaw": 0.0,
+    "h": [
+     3.0,
+     1.3900000000000001,
+     2.825
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-028:write:001",
+   "seat": "LY-028",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -22.7,
+     0.2,
+     -9.5
+    ],
+    [
+     -19.3,
+     0.26,
+     -7.35
+    ]
+   ],
+   "label": "west-end unloading / staging ground between canopies C00 and C01",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     193.286,
+     0.23,
+     -1967.609
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.6999999999999993,
+     0.03,
+     1.0750000000000002
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-031:write:001",
+   "seat": "LY-031",
+   "site": "S-STORAGE",
+   "class": "write",
+   "frame": "local:storage-site",
+   "box": [
+    [
+     -17.0,
+     0.2,
+     -2.6
+    ],
+    [
+     -7.0,
+     4.0,
+     -1.52
+    ]
+   ],
+   "label": "granary A front band (door frame / leaf / pivot / stop)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2273.714,
+     2.1,
+     -3675.529
+    ],
+    "yaw": 0.0,
+    "h": [
+     5.0,
+     1.9,
+     0.54
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-032:write:001",
+   "seat": "LY-032",
+   "site": "S-STORAGE",
+   "class": "write",
+   "frame": "local:storage-site",
+   "box": [
+    [
+     5.5,
+     0.2,
+     -2.6
+    ],
+    [
+     18.5,
+     4.6,
+     -1.38
+    ]
+   ],
+   "label": "granary B front band (door frame / leaf / pivot / stop)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2297.714,
+     2.4,
+     -3675.459
+    ],
+    "yaw": 0.0,
+    "h": [
+     6.5,
+     2.1999999999999997,
+     0.6100000000000001
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-034:write:001",
+   "seat": "LY-034",
+   "site": "S-STORAGE",
+   "class": "write",
+   "frame": "local:storage-site",
+   "box": [
+    [
+     -17.0,
+     0.2,
+     -1.52
+    ],
+    [
+     5.5,
+     0.3,
+     2.5
+    ]
+   ],
+   "label": "step-front strip to forecourt, A side (patches only at measured breaks)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2279.964,
+     0.25,
+     -3672.9790000000003
+    ],
+    "yaw": 0.0,
+    "h": [
+     11.25,
+     0.04999999999999999,
+     2.01
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-034:write:002",
+   "seat": "LY-034",
+   "site": "S-STORAGE",
+   "class": "write",
+   "frame": "local:storage-site",
+   "box": [
+    [
+     5.5,
+     0.2,
+     -1.38
+    ],
+    [
+     18.5,
+     0.3,
+     2.5
+    ]
+   ],
+   "label": "step-front strip to forecourt, B side (patches only at measured breaks)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2297.714,
+     0.25,
+     -3672.909
+    ],
+    "yaw": 0.0,
+    "h": [
+     6.5,
+     0.04999999999999999,
+     1.94
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-034:write:003",
+   "seat": "LY-034",
+   "site": "S-STORAGE",
+   "class": "write",
+   "frame": "local:storage-site",
+   "box": [
+    [
+     -5.0,
+     0.2,
+     2.5
+    ],
+    [
+     5.0,
+     0.3,
+     26.0
+    ]
+   ],
+   "label": "receiving forecourt corridor to site north edge",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2285.714,
+     0.25,
+     -3659.219
+    ],
+    "yaw": 0.0,
+    "h": [
+     5.0,
+     0.04999999999999999,
+     11.75
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-035:write:001",
+   "seat": "LY-035",
+   "site": "S-STORAGE",
+   "class": "write",
+   "frame": "local:storage-site",
+   "box": [
+    [
+     -17.0,
+     0.2,
+     2.5
+    ],
+    [
+     -5.0,
+     0.3,
+     8.0
+    ]
+   ],
+   "label": "west forecourt staging / turning variant (closable)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2274.714,
+     0.25,
+     -3668.219
+    ],
+    "yaw": 0.0,
+    "h": [
+     6.0,
+     0.04999999999999999,
+     2.75
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-037:write:001",
+   "seat": "LY-037",
+   "site": "S-WUKU",
+   "class": "write",
+   "frame": "local:wuku-B-v2.2",
+   "box": [
+    [
+     -6.5,
+     0.0,
+     -6.5
+    ],
+    [
+     10.5,
+     1.5,
+     7.52
+    ]
+   ],
+   "label": "platform front / side shed / inspection table transitions inside B footprint",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-038:write:001",
+   "seat": "LY-038",
+   "site": "S-WUKU",
+   "class": "write",
+   "frame": "local:wuku-A-v2",
+   "box": [
+    [
+     -10.0,
+     -0.3,
+     -8.5
+    ],
+    [
+     10.0,
+     0.6,
+     13.5
+    ]
+   ],
+   "label": "A alternative: step base / support offset test (only if A is selected)",
+   "basis": "C-partition",
+   "exclusiveGroup": "wuku-A-or-B",
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-039:write:001",
+   "seat": "LY-039",
+   "site": "S-NE-ROAD",
+   "class": "write",
+   "frame": "world",
+   "box": [
+    [
+     2283.714,
+     -0.3,
+     -3647.469
+    ],
+    [
+     2287.714,
+     0.6,
+     -3484.0
+    ]
+   ],
+   "label": "existing C_NE_APPROACH_LOCAL N-S leg + end-cap slopes",
+   "basis": "LY-039 prep measurement of C_NE_APPROACH_LOCAL (+0.5 m)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2285.714,
+     0.15,
+     -3565.7345
+    ],
+    "yaw": 0.0,
+    "h": [
+     2.0,
+     0.44999999999999996,
+     81.73450000000003
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-039:write:002",
+   "seat": "LY-039",
+   "site": "S-NE-ROAD",
+   "class": "write",
+   "frame": "world",
+   "box": [
+    [
+     2287.714,
+     -0.3,
+     -3490.5
+    ],
+    [
+     2318.327,
+     0.6,
+     -3484.0
+    ]
+   ],
+   "label": "existing C_NE_APPROACH_LOCAL E leg + end cap",
+   "basis": "LY-039 prep measurement (+0.5 m)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2303.0205,
+     0.15,
+     -3487.25
+    ],
+    "yaw": 0.0,
+    "h": [
+     15.306500000000142,
+     0.44999999999999996,
+     3.25
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-042:write:001",
+   "seat": "LY-042",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -5.0,
+     0.25,
+     -4.6
+    ],
+    [
+     1.1,
+     2.6,
+     -3.4
+    ]
+   ],
+   "label": "main house front door band (west of latrine zone)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     529.05,
+     1.425,
+     -822.45
+    ],
+    "yaw": 0.0,
+    "h": [
+     3.05,
+     1.175,
+     0.5999999999999999
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-042:write:002",
+   "seat": "LY-042",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -4.0,
+     0.25,
+     -3.4
+    ],
+    [
+     -3.0,
+     2.6,
+     2.9
+    ]
+   ],
+   "label": "west wing east-face door band",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     527.5,
+     1.425,
+     -818.7
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.5,
+     1.175,
+     3.15
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-043:write:001",
+   "seat": "LY-043",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -9.0,
+     0.25,
+     -12.0
+    ],
+    [
+     -8.0,
+     3.3,
+     -11.0
+    ]
+   ],
+   "label": "NW corner",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     522.5,
+     1.775,
+     -829.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.5,
+     1.525,
+     0.5
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-043:write:002",
+   "seat": "LY-043",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     8.0,
+     0.25,
+     -12.0
+    ],
+    [
+     9.0,
+     3.3,
+     -11.0
+    ]
+   ],
+   "label": "NE corner",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     539.5,
+     1.775,
+     -829.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.5,
+     1.525,
+     0.5
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-043:write:003",
+   "seat": "LY-043",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -9.0,
+     0.25,
+     11.0
+    ],
+    [
+     -8.0,
+     3.3,
+     12.0
+    ]
+   ],
+   "label": "SW corner",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     522.5,
+     1.775,
+     -806.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.5,
+     1.525,
+     0.5
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-043:write:004",
+   "seat": "LY-043",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     8.0,
+     0.25,
+     11.0
+    ],
+    [
+     9.0,
+     3.3,
+     12.0
+    ]
+   ],
+   "label": "SE corner",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     539.5,
+     1.775,
+     -806.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.5,
+     1.525,
+     0.5
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-044:write:001",
+   "seat": "LY-044",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -8.0,
+     -0.3,
+     3.4
+    ],
+    [
+     -4.4,
+     3.2,
+     8.6
+    ]
+   ],
+   "label": "kitchen: stove + preparation table + turning space (SW yard)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     524.8,
+     1.4500000000000002,
+     -812.45
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.7999999999999998,
+     1.75,
+     2.5999999999999996
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-045:write:001",
+   "seat": "LY-045",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     1.1,
+     -1.6,
+     -4.0
+    ],
+    [
+     8.0,
+     4.4,
+     3.6
+    ]
+   ],
+   "label": "latrine / pen group with steps and pit (E yard); 6.75 x 7.56 m footprint fits only in this orientation",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     535.55,
+     1.4000000000000001,
+     -818.6500000000001
+    ],
+    "yaw": 0.0,
+    "h": [
+     3.45,
+     3.0,
+     3.8
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-045:cut:002",
+   "seat": "LY-045",
+   "site": "S-COURT",
+   "class": "cut",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     1.1,
+     -1.6,
+     -4.0
+    ],
+    [
+     8.0,
+     0.25,
+     3.6
+    ]
+   ],
+   "label": "latrine pit opening in city ground (ground-retained)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     535.55,
+     -0.675,
+     -818.6500000000001
+    ],
+    "yaw": 0.0,
+    "h": [
+     3.45,
+     0.925,
+     3.8
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-046:write:001",
+   "seat": "LY-046",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -3.0,
+     -0.3,
+     -3.6
+    ],
+    [
+     -2.2,
+     0.25,
+     2.9
+    ]
+   ],
+   "label": "drip / slope / shallow channel trial strip",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     528.4,
+     -0.024999999999999994,
+     -818.8000000000001
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.3999999999999999,
+     0.275,
+     3.25
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-047:write:001",
+   "seat": "LY-047",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     4.1,
+     -0.3,
+     -11.0
+    ],
+    [
+     8.0,
+     4.0,
+     -4.0
+    ]
+   ],
+   "label": "storage / shed variant (NE back strip)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     537.05,
+     1.85,
+     -825.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.9500000000000002,
+     2.15,
+     3.5
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-048:write:001",
+   "seat": "LY-048",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -9.0,
+     0.25,
+     -11.0
+    ],
+    [
+     -8.0,
+     3.3,
+     11.0
+    ]
+   ],
+   "label": "west wall ring segment",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     522.5,
+     1.775,
+     -818.45
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.5,
+     1.525,
+     11.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-048:write:002",
+   "seat": "LY-048",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     8.0,
+     0.25,
+     -11.0
+    ],
+    [
+     9.0,
+     3.3,
+     11.0
+    ]
+   ],
+   "label": "east wall ring segment",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     539.5,
+     1.775,
+     -818.45
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.5,
+     1.525,
+     11.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-048:write:003",
+   "seat": "LY-048",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -8.0,
+     0.25,
+     -12.0
+    ],
+    [
+     8.0,
+     3.3,
+     -11.0
+    ]
+   ],
+   "label": "north wall ring segment",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     531.0,
+     1.775,
+     -829.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     8.0,
+     1.525,
+     0.5
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-048:write:004",
+   "seat": "LY-048",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -8.0,
+     0.25,
+     11.0
+    ],
+    [
+     -5.0,
+     3.3,
+     12.0
+    ]
+   ],
+   "label": "south ring W of gate",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     524.5,
+     1.775,
+     -806.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.5,
+     1.525,
+     0.5
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-048:write:005",
+   "seat": "LY-048",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -1.0,
+     0.25,
+     11.0
+    ],
+    [
+     8.0,
+     3.3,
+     12.0
+    ]
+   ],
+   "label": "south ring E of gate",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     534.5,
+     1.775,
+     -806.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     4.5,
+     1.525,
+     0.5
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-049:write:001",
+   "seat": "LY-049",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -5.0,
+     -0.3,
+     9.0
+    ],
+    [
+     -1.0,
+     3.2,
+     12.0
+    ]
+   ],
+   "label": "gate passage to lot boundary z=12 (local)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     528.0,
+     1.4500000000000002,
+     -807.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     2.0,
+     1.75,
+     1.5
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-051:write:001",
+   "seat": "LY-051",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:stable-A",
+   "box": [
+    [
+     -4.5,
+     0.05,
+     -2.4
+    ],
+    [
+     4.5,
+     2.7,
+     2.4
+    ]
+   ],
+   "label": "stable A tether / partition parts above platform",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-051:write:002",
+   "seat": "LY-051",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:stable-B",
+   "box": [
+    [
+     -6.3,
+     0.05,
+     -2.7
+    ],
+    [
+     6.3,
+     2.7,
+     2.7
+    ]
+   ],
+   "label": "stable B tether / partition parts above platform",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-052:write:001",
+   "seat": "LY-052",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:stable-A",
+   "box": [
+    [
+     -4.5,
+     -0.3,
+     -2.4
+    ],
+    [
+     4.5,
+     0.05,
+     2.4
+    ]
+   ],
+   "label": "stable A floor layer",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-052:write:002",
+   "seat": "LY-052",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:stable-A",
+   "box": [
+    [
+     -4.5,
+     -0.3,
+     2.4
+    ],
+    [
+     4.5,
+     0.3,
+     6.4
+    ]
+   ],
+   "label": "stable A front approach",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-052:write:003",
+   "seat": "LY-052",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:stable-B",
+   "box": [
+    [
+     -6.3,
+     -0.3,
+     -2.7
+    ],
+    [
+     6.3,
+     0.05,
+     2.7
+    ]
+   ],
+   "label": "stable B floor layer",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-052:write:004",
+   "seat": "LY-052",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:stable-B",
+   "box": [
+    [
+     -6.3,
+     -0.3,
+     2.7
+    ],
+    [
+     6.3,
+     0.3,
+     6.7
+    ]
+   ],
+   "label": "stable B front approach",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-053:write:001",
+   "seat": "LY-053",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:kiln-A",
+   "box": [
+    [
+     -8.0,
+     -1.6,
+     -6.0
+    ],
+    [
+     8.0,
+     0.0,
+     6.0
+    ]
+   ],
+   "label": "kiln A pit / base / cut terrain contract (below grade)",
+   "basis": "C-partition",
+   "exclusiveGroup": "kiln-A-or-B",
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-053:write:002",
+   "seat": "LY-053",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:kiln-B",
+   "box": [
+    [
+     -8.0,
+     -1.6,
+     -6.0
+    ],
+    [
+     8.0,
+     0.0,
+     6.0
+    ]
+   ],
+   "label": "kiln B pit / base / cut terrain contract (below grade)",
+   "basis": "C-partition",
+   "exclusiveGroup": "kiln-A-or-B",
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-053:cut:003",
+   "seat": "LY-053",
+   "site": "S-WORK",
+   "class": "cut",
+   "frame": "local:kiln-A",
+   "box": [
+    [
+     -2.0,
+     -1.1,
+     2.0
+    ],
+    [
+     2.0,
+     0.0,
+     5.4
+    ]
+   ],
+   "label": "kiln A operation pit opening",
+   "basis": "C-partition",
+   "exclusiveGroup": "kiln-A-or-B",
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-053:cut:004",
+   "seat": "LY-053",
+   "site": "S-WORK",
+   "class": "cut",
+   "frame": "local:kiln-B",
+   "box": [
+    [
+     -2.0,
+     -1.1,
+     2.0
+    ],
+    [
+     2.0,
+     0.0,
+     5.4
+    ]
+   ],
+   "label": "kiln B operation pit opening",
+   "basis": "C-partition",
+   "exclusiveGroup": "kiln-A-or-B",
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-054:write:001",
+   "seat": "LY-054",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:kiln-A",
+   "box": [
+    [
+     -8.0,
+     0.0,
+     6.0
+    ],
+    [
+     8.0,
+     0.4,
+     9.5
+    ]
+   ],
+   "label": "kiln A front operation ground + staging proxies",
+   "basis": "C-partition",
+   "exclusiveGroup": "kiln-A-or-B",
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-054:write:002",
+   "seat": "LY-054",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:kiln-B",
+   "box": [
+    [
+     -8.0,
+     0.0,
+     6.0
+    ],
+    [
+     8.0,
+     0.4,
+     9.5
+    ]
+   ],
+   "label": "kiln B front operation ground + staging proxies",
+   "basis": "C-partition",
+   "exclusiveGroup": "kiln-A-or-B",
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-055:write:001",
+   "seat": "LY-055",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:hand-mill",
+   "box": [
+    [
+     -1.4,
+     -0.12,
+     -1.4
+    ],
+    [
+     1.4,
+     0.0,
+     1.4
+    ]
+   ],
+   "label": "support surface replacing presentation ground",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-055:write:002",
+   "seat": "LY-055",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:hand-mill",
+   "box": [
+    [
+     -2.4,
+     -0.12,
+     -2.4
+    ],
+    [
+     2.4,
+     0.0,
+     -1.4
+    ]
+   ],
+   "label": "operator standing ground N",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-055:write:003",
+   "seat": "LY-055",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:hand-mill",
+   "box": [
+    [
+     -2.4,
+     -0.12,
+     1.4
+    ],
+    [
+     2.4,
+     0.0,
+     2.4
+    ]
+   ],
+   "label": "operator standing ground S",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-056:write:001",
+   "seat": "LY-056",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:foot-pestle",
+   "box": [
+    [
+     -1.6,
+     -0.2,
+     -2.6
+    ],
+    [
+     1.6,
+     0.0,
+     3.4
+    ]
+   ],
+   "label": "selected work ground under pestle + tread + turning",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-057:write:001",
+   "seat": "LY-057",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:workshed",
+   "box": [
+    [
+     -4.05,
+     2.8,
+     -4.45
+    ],
+    [
+     4.05,
+     4.2,
+     0.45
+    ]
+   ],
+   "label": "shed roof tile seating / row joints / bearers",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-058:write:001",
+   "seat": "LY-058",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:work-site",
+   "box": [
+    [
+     -8.0,
+     0.2,
+     -11.0
+    ],
+    [
+     8.0,
+     0.3,
+     11.0
+    ]
+   ],
+   "label": "interior circulation ground of the selected work site (C frame defined by LY-058)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-059:write:001",
+   "seat": "LY-059",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:work-site",
+   "box": [
+    [
+     -9.0,
+     0.0,
+     -12.0
+    ],
+    [
+     9.0,
+     3.5,
+     -11.0
+    ]
+   ],
+   "label": "perimeter N",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-059:write:002",
+   "seat": "LY-059",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:work-site",
+   "box": [
+    [
+     -9.0,
+     0.0,
+     11.0
+    ],
+    [
+     9.0,
+     3.5,
+     12.0
+    ]
+   ],
+   "label": "perimeter S",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-059:write:003",
+   "seat": "LY-059",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:work-site",
+   "box": [
+    [
+     -9.0,
+     0.0,
+     -11.0
+    ],
+    [
+     -8.0,
+     3.5,
+     11.0
+    ]
+   ],
+   "label": "perimeter W",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-059:write:004",
+   "seat": "LY-059",
+   "site": "S-WORK",
+   "class": "write",
+   "frame": "local:work-site",
+   "box": [
+    [
+     8.0,
+     0.0,
+     -11.0
+    ],
+    [
+     9.0,
+     3.5,
+     11.0
+    ]
+   ],
+   "label": "perimeter E",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-061:write:001",
+   "seat": "LY-061",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     -36.0,
+     -0.3,
+     -22.0
+    ],
+    [
+     36.0,
+     6.0,
+     -20.0
+    ]
+   ],
+   "label": "enclosure N side",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-061:write:002",
+   "seat": "LY-061",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     -36.0,
+     -0.3,
+     67.0
+    ],
+    [
+     -3.0,
+     6.0,
+     69.0
+    ]
+   ],
+   "label": "enclosure S side W",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-061:write:003",
+   "seat": "LY-061",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     3.0,
+     -0.3,
+     67.0
+    ],
+    [
+     36.0,
+     6.0,
+     69.0
+    ]
+   ],
+   "label": "enclosure S side E",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-061:write:004",
+   "seat": "LY-061",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     -36.0,
+     -0.3,
+     -20.0
+    ],
+    [
+     -34.0,
+     6.0,
+     10.0
+    ]
+   ],
+   "label": "enclosure W side N",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-061:write:005",
+   "seat": "LY-061",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     -36.0,
+     -0.3,
+     16.0
+    ],
+    [
+     -34.0,
+     6.0,
+     67.0
+    ]
+   ],
+   "label": "enclosure W side S",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-061:write:006",
+   "seat": "LY-061",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     34.0,
+     -0.3,
+     -20.0
+    ],
+    [
+     36.0,
+     6.0,
+     10.0
+    ]
+   ],
+   "label": "enclosure E side N",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-061:write:007",
+   "seat": "LY-061",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     34.0,
+     -0.3,
+     16.0
+    ],
+    [
+     36.0,
+     6.0,
+     67.0
+    ]
+   ],
+   "label": "enclosure E side S",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-062:write:001",
+   "seat": "LY-062",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     -36.0,
+     -0.3,
+     10.0
+    ],
+    [
+     -34.0,
+     6.0,
+     16.0
+    ]
+   ],
+   "label": "west side opening",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-062:write:002",
+   "seat": "LY-062",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     34.0,
+     -0.3,
+     10.0
+    ],
+    [
+     36.0,
+     6.0,
+     16.0
+    ]
+   ],
+   "label": "east side opening",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-062:write:003",
+   "seat": "LY-062",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     -3.0,
+     -0.3,
+     67.0
+    ],
+    [
+     3.0,
+     6.0,
+     69.0
+    ]
+   ],
+   "label": "rear work opening",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-063:write:001",
+   "seat": "LY-063",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     -29.0,
+     -0.2,
+     10.0
+    ],
+    [
+     -18.1,
+     6.4,
+     13.0
+    ]
+   ],
+   "label": "side gallery end bays (3 m beyond each gallery end along its long axis) [west_gallery__sidehall-A-static_earth]",
+   "basis": "measured gallery node AABB + C 3 m",
+   "exclusiveGroup": null,
+   "worldOBB": null,
+   "measuredFrom": {
+    "file": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0.glb",
+    "sha256": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+    "node": "west_gallery__sidehall-A-static_earth"
+   }
+  },
+  {
+   "zoneId": "LY-063:write:002",
+   "seat": "LY-063",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     -29.0,
+     -0.2,
+     51.0
+    ],
+    [
+     -18.1,
+     6.4,
+     54.0
+    ]
+   ],
+   "label": "side gallery end bays (3 m beyond each gallery end along its long axis) [west_gallery__sidehall-A-static_earth]",
+   "basis": "measured gallery node AABB + C 3 m",
+   "exclusiveGroup": null,
+   "worldOBB": null,
+   "measuredFrom": {
+    "file": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0.glb",
+    "sha256": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+    "node": "west_gallery__sidehall-A-static_earth"
+   }
+  },
+  {
+   "zoneId": "LY-063:write:003",
+   "seat": "LY-063",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     18.1,
+     -0.2,
+     10.0
+    ],
+    [
+     29.0,
+     6.4,
+     13.0
+    ]
+   ],
+   "label": "side gallery end bays (3 m beyond each gallery end along its long axis) [east_gallery__sidehall-A-static_earth]",
+   "basis": "measured gallery node AABB + C 3 m",
+   "exclusiveGroup": null,
+   "worldOBB": null,
+   "measuredFrom": {
+    "file": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0.glb",
+    "sha256": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+    "node": "east_gallery__sidehall-A-static_earth"
+   }
+  },
+  {
+   "zoneId": "LY-063:write:004",
+   "seat": "LY-063",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:admission-court",
+   "box": [
+    [
+     18.1,
+     -0.2,
+     51.0
+    ],
+    [
+     29.0,
+     6.4,
+     54.0
+    ]
+   ],
+   "label": "side gallery end bays (3 m beyond each gallery end along its long axis) [east_gallery__sidehall-A-static_earth]",
+   "basis": "measured gallery node AABB + C 3 m",
+   "exclusiveGroup": null,
+   "worldOBB": null,
+   "measuredFrom": {
+    "file": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0.glb",
+    "sha256": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+    "node": "east_gallery__sidehall-A-static_earth"
+   }
+  },
+  {
+   "zoneId": "LY-064:write:001",
+   "seat": "LY-064",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:paired-que",
+   "box": [
+    [
+     -20.5,
+     -0.3,
+     -12.0
+    ],
+    [
+     20.5,
+     0.3,
+     12.0
+    ]
+   ],
+   "label": "forecourt ground layer around both que bases",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-065:write:001",
+   "seat": "LY-065",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:deyang",
+   "box": [
+    [
+     -22.3,
+     -0.3,
+     -13.9
+    ],
+    [
+     22.3,
+     1.6,
+     19.0
+    ]
+   ],
+   "label": "side/back platform edge + maintenance points (must not touch main stair / column grid; LY-065 lists exact pieces)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-066:write:001",
+   "seat": "LY-066",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:yutang",
+   "box": [
+    [
+     -19.5,
+     -0.3,
+     -33.5
+    ],
+    [
+     19.5,
+     0.3,
+     34.9
+    ]
+   ],
+   "label": "grounding / outer port band of the yutang group",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-067:write:001",
+   "seat": "LY-067",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:gallery-A",
+   "box": [
+    [
+     -6.45,
+     -0.6,
+     -3.824
+    ],
+    [
+     6.45,
+     0.0,
+     3.824
+    ]
+   ],
+   "label": "post foot support / foundation interfaces (below grade)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-068:write:001",
+   "seat": "LY-068",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:gallery-B",
+   "box": [
+    [
+     4.95,
+     -0.2,
+     -4.2
+    ],
+    [
+     12.0,
+     8.1,
+     4.2
+    ]
+   ],
+   "label": "B stair / platform bay (+x end)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-069:write:001",
+   "seat": "LY-069",
+   "site": "S-PALACE",
+   "class": "write",
+   "frame": "local:palace-composite",
+   "box": [
+    [
+     -6.0,
+     -0.3,
+     -6.0
+    ],
+    [
+     6.0,
+     9.0,
+     6.0
+    ]
+   ],
+   "label": "one gallery-end / gate-gallery junction (frame origin = chosen junction)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-071:write:001",
+   "seat": "LY-071",
+   "site": "S-BIYONG",
+   "class": "write",
+   "frame": "local:biyong",
+   "box": [
+    [
+     -20.4,
+     -1.2,
+     -20.4
+    ],
+    [
+     20.4,
+     0.0,
+     20.4
+    ]
+   ],
+   "label": "hall platform base / enclosure interface layer (below hall grade)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-072:write:001",
+   "seat": "LY-072",
+   "site": "S-BIYONG",
+   "class": "write",
+   "frame": "local:biyong",
+   "box": [
+    [
+     20.4,
+     -1.5,
+     -2.5
+    ],
+    [
+     30.0,
+     1.5,
+     2.5
+    ]
+   ],
+   "label": "one crossing corridor on +x (C; re-validate against LY-071 transform)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-073:write:001",
+   "seat": "LY-073",
+   "site": "S-BIYONG",
+   "class": "write",
+   "frame": "local:biyong",
+   "box": [
+    [
+     30.0,
+     -1.5,
+     -6.0
+    ],
+    [
+     40.0,
+     0.5,
+     6.0
+    ]
+   ],
+   "label": "outer bank + arrival ground at crossing end",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-073:write:002",
+   "seat": "LY-073",
+   "site": "S-BIYONG",
+   "class": "write",
+   "frame": "local:biyong",
+   "box": [
+    [
+     20.4,
+     -1.5,
+     -6.0
+    ],
+    [
+     30.0,
+     0.0,
+     -2.5
+    ]
+   ],
+   "label": "bank edge S of crossing",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-073:write:003",
+   "seat": "LY-073",
+   "site": "S-BIYONG",
+   "class": "write",
+   "frame": "local:biyong",
+   "box": [
+    [
+     20.4,
+     -1.5,
+     2.5
+    ],
+    [
+     30.0,
+     0.0,
+     6.0
+    ]
+   ],
+   "label": "bank edge N of crossing",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-075:write:001",
+   "seat": "LY-075",
+   "site": "S-MINGTANG",
+   "class": "write",
+   "frame": "local:mingtang",
+   "box": [
+    [
+     -16.64,
+     0.4,
+     -16.64
+    ],
+    [
+     16.64,
+     10.9,
+     16.64
+    ]
+   ],
+   "label": "interior gap diffs only (no new doors / no column removal)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-076:write:001",
+   "seat": "LY-076",
+   "site": "S-LINGTAI",
+   "class": "write",
+   "frame": "local:lingtai-A",
+   "box": [
+    [
+     -34.0,
+     -0.3,
+     -34.0
+    ],
+    [
+     34.0,
+     6.0,
+     34.0
+    ]
+   ],
+   "label": "lingtai edge / detour fixes (excluding the five repaired steps, enforced by LY-076 list)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-077:write:001",
+   "seat": "LY-077",
+   "site": "S-TAIXUE",
+   "class": "write",
+   "frame": "local:taixue-A",
+   "box": [
+    [
+     -18.8,
+     -0.3,
+     4.85
+    ],
+    [
+     18.8,
+     0.5,
+     12.0
+    ]
+   ],
+   "label": "A outer entry ground / step front / lateral merge (local +z)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-078:write:001",
+   "seat": "LY-078",
+   "site": "S-TAIXUE",
+   "class": "write",
+   "frame": "local:stoneclassic",
+   "box": [
+    [
+     -20.0,
+     -0.3,
+     18.0
+    ],
+    [
+     20.0,
+     0.5,
+     24.0
+    ]
+   ],
+   "label": "independent street-side port band + ground boundary (south)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-079:write:001",
+   "seat": "LY-079",
+   "site": "S-SOUTH-ALTAR",
+   "class": "write",
+   "frame": "local:south-altar",
+   "box": [
+    [
+     -40.0,
+     -0.4,
+     -40.0
+    ],
+    [
+     40.0,
+     0.3,
+     40.0
+    ]
+   ],
+   "label": "outer arrival ground at the eight stairs (must not reshape the platforms)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-080:write:001",
+   "seat": "LY-080",
+   "site": "S-NORTH-ALTAR",
+   "class": "write",
+   "frame": "local:north-altar",
+   "box": [
+    [
+     -17.0,
+     -0.3,
+     -17.0
+    ],
+    [
+     17.0,
+     0.3,
+     17.0
+    ]
+   ],
+   "label": "north-suburb independent arrival ground at four stairs (must not reshape the platform)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-082:write:001",
+   "seat": "LY-082",
+   "site": "S-COURT-LANE",
+   "class": "write",
+   "frame": "world",
+   "box": [
+    [
+     526.0,
+     -0.3,
+     -806.45
+    ],
+    [
+     530.0,
+     0.6,
+     -796.45
+    ]
+   ],
+   "label": "short lane link from C02-010 lot boundary (C reservation 10 m; 081 sets the real target)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     528.0,
+     0.15,
+     -801.45
+    ],
+    "yaw": 0.0,
+    "h": [
+     2.0,
+     0.44999999999999996,
+     5.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-083:write:001",
+   "seat": "LY-083",
+   "site": "S-MARKET-STREET",
+   "class": "write",
+   "frame": "world",
+   "box": [
+    [
+     244.286,
+     -0.3,
+     -1981.184
+    ],
+    [
+     274.286,
+     0.6,
+     -1937.184
+    ]
+   ],
+   "label": "outer street link east of the market boundary (C reservation 30 m; 081 sets the real target)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     259.286,
+     0.15,
+     -1959.184
+    ],
+    "yaw": 0.0,
+    "h": [
+     15.0,
+     0.44999999999999996,
+     22.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-085:write:001",
+   "seat": "LY-085",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     -12.4,
+     -0.5,
+     7.0
+    ],
+    [
+     12.4,
+     1.0,
+     40.0
+    ]
+   ],
+   "label": "Kaiyang outer approach (city south, local +z) from strip edge",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     2009.9098984253476,
+     0.42000000178813934,
+     44.796091636560874
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     12.4,
+     0.75,
+     16.5
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-085:write:002",
+   "seat": "LY-085",
+   "site": "S-KAIYANG",
+   "class": "write",
+   "frame": "local:pingcheng-P-v1",
+   "box": [
+    [
+     -12.8,
+     -0.5,
+     14.0
+    ],
+    [
+     12.8,
+     1.0,
+     40.0
+    ]
+   ],
+   "label": "Pingcheng outer approach (city south, local +z) from connection ground",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     1622.2490408595345,
+     0.42000000178813934,
+     40.2541541493395
+    ],
+    "yaw": -0.0207437532713328,
+    "h": [
+     12.8,
+     0.75,
+     13.0
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-086:write:001",
+   "seat": "LY-086",
+   "site": "S-WATERWAY",
+   "class": "write",
+   "frame": "local:waterway",
+   "box": [
+    [
+     -6.0,
+     -1.0,
+     -4.0
+    ],
+    [
+     6.0,
+     6.2,
+     4.0
+    ]
+   ],
+   "label": "local wall research block with opening, covers and atomic install",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-086:cut:002",
+   "seat": "LY-086",
+   "site": "S-WATERWAY",
+   "class": "cut",
+   "frame": "local:waterway",
+   "box": [
+    [
+     -3.3,
+     -0.18,
+     -0.76
+    ],
+    [
+     3.3,
+     2.01,
+     1.86
+    ]
+   ],
+   "label": "wall opening for the three waterway parts",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": null
+  },
+  {
+   "zoneId": "LY-022:write:001",
+   "seat": "LY-022",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -22.7,
+     0.2,
+     -4.2
+    ],
+    [
+     22.15,
+     0.26,
+     -2.0
+    ]
+   ],
+   "label": "street ground patches on top of the slab, minus steps/stalls/well/routes",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     214.011,
+     0.23,
+     -1962.28398
+    ],
+    "yaw": 0.0,
+    "h": [
+     22.424999999999997,
+     0.03,
+     1.1000200000000002
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -22.7,
+      0.2,
+      -4.2
+     ],
+     [
+      22.15,
+      0.26,
+      4.2
+     ]
+    ],
+    "minus": [
+     "LY-021",
+     "LY-023",
+     "LY-025",
+     "LY-028",
+     "__routes__"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-022:write:002",
+   "seat": "LY-022",
+   "site": "S-MARKET",
+   "class": "write",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -22.7,
+     0.2,
+     2.0
+    ],
+    [
+     22.15,
+     0.26,
+     4.2
+    ]
+   ],
+   "label": "street ground patches on top of the slab, minus steps/stalls/well/routes",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     214.011,
+     0.23,
+     -1956.0839799999999
+    ],
+    "yaw": 0.0,
+    "h": [
+     22.424999999999997,
+     0.03,
+     1.0999800000000002
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -22.7,
+      0.2,
+      -4.2
+     ],
+     [
+      22.15,
+      0.26,
+      4.2
+     ]
+    ],
+    "minus": [
+     "LY-021",
+     "LY-023",
+     "LY-025",
+     "LY-028",
+     "__routes__"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-036:write:001",
+   "seat": "LY-036",
+   "site": "S-WUKU",
+   "class": "write",
+   "frame": "local:wuku-B-v2.2",
+   "box": [
+    [
+     -9.5,
+     -0.3,
+     -9.5
+    ],
+    [
+     13.5,
+     0.3,
+     -6.5
+    ]
+   ],
+   "label": "outer arrival / support ground ring outside B footprint",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": null,
+   "derivedFrom": {
+    "box": [
+     [
+      -9.5,
+      -0.3,
+      -9.5
+     ],
+     [
+      13.5,
+      0.3,
+      10.52
+     ]
+    ],
+    "minus": [
+     "LY-037"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-036:write:002",
+   "seat": "LY-036",
+   "site": "S-WUKU",
+   "class": "write",
+   "frame": "local:wuku-B-v2.2",
+   "box": [
+    [
+     -9.5,
+     -0.3,
+     -6.5
+    ],
+    [
+     -6.5,
+     0.3,
+     10.52
+    ]
+   ],
+   "label": "outer arrival / support ground ring outside B footprint",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": null,
+   "derivedFrom": {
+    "box": [
+     [
+      -9.5,
+      -0.3,
+      -9.5
+     ],
+     [
+      13.5,
+      0.3,
+      10.52
+     ]
+    ],
+    "minus": [
+     "LY-037"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-036:write:003",
+   "seat": "LY-036",
+   "site": "S-WUKU",
+   "class": "write",
+   "frame": "local:wuku-B-v2.2",
+   "box": [
+    [
+     10.5,
+     -0.3,
+     -6.5
+    ],
+    [
+     13.5,
+     0.3,
+     10.52
+    ]
+   ],
+   "label": "outer arrival / support ground ring outside B footprint",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": null,
+   "derivedFrom": {
+    "box": [
+     [
+      -9.5,
+      -0.3,
+      -9.5
+     ],
+     [
+      13.5,
+      0.3,
+      10.52
+     ]
+    ],
+    "minus": [
+     "LY-037"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-036:write:004",
+   "seat": "LY-036",
+   "site": "S-WUKU",
+   "class": "write",
+   "frame": "local:wuku-B-v2.2",
+   "box": [
+    [
+     -6.5,
+     -0.3,
+     7.52
+    ],
+    [
+     10.5,
+     0.3,
+     10.52
+    ]
+   ],
+   "label": "outer arrival / support ground ring outside B footprint",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": null,
+   "derivedFrom": {
+    "box": [
+     [
+      -9.5,
+      -0.3,
+      -9.5
+     ],
+     [
+      13.5,
+      0.3,
+      10.52
+     ]
+    ],
+    "minus": [
+     "LY-037"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-041:write:001",
+   "seat": "LY-041",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -9.0,
+     -0.3,
+     -12.0
+    ],
+    [
+     9.0,
+     0.25,
+     -11.0
+    ]
+   ],
+   "label": "base / foot / ground diff layer minus facility footprints",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     531.0,
+     -0.024999999999999994,
+     -829.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     9.0,
+     0.275,
+     0.5
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -9.0,
+      -0.3,
+      -12.0
+     ],
+     [
+      9.0,
+      0.25,
+      12.0
+     ]
+    ],
+    "minus": [
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-049"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-041:write:002",
+   "seat": "LY-041",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -9.0,
+     -0.3,
+     -11.0
+    ],
+    [
+     4.1,
+     0.25,
+     -4.0
+    ]
+   ],
+   "label": "base / foot / ground diff layer minus facility footprints",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     528.55,
+     -0.024999999999999994,
+     -825.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     6.55,
+     0.275,
+     3.5
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -9.0,
+      -0.3,
+      -12.0
+     ],
+     [
+      9.0,
+      0.25,
+      12.0
+     ]
+    ],
+    "minus": [
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-049"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-041:write:003",
+   "seat": "LY-041",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     8.0,
+     -0.3,
+     -11.0
+    ],
+    [
+     9.0,
+     0.25,
+     12.0
+    ]
+   ],
+   "label": "base / foot / ground diff layer minus facility footprints",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     539.5,
+     -0.024999999999999994,
+     -817.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.5,
+     0.275,
+     11.5
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -9.0,
+      -0.3,
+      -12.0
+     ],
+     [
+      9.0,
+      0.25,
+      12.0
+     ]
+    ],
+    "minus": [
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-049"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-041:write:004",
+   "seat": "LY-041",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -9.0,
+     -0.3,
+     -4.0
+    ],
+    [
+     1.1,
+     0.25,
+     -3.6
+    ]
+   ],
+   "label": "base / foot / ground diff layer minus facility footprints",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     527.05,
+     -0.024999999999999994,
+     -822.25
+    ],
+    "yaw": 0.0,
+    "h": [
+     5.05,
+     0.275,
+     0.19999999999999996
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -9.0,
+      -0.3,
+      -12.0
+     ],
+     [
+      9.0,
+      0.25,
+      12.0
+     ]
+    ],
+    "minus": [
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-049"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-041:write:005",
+   "seat": "LY-041",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -9.0,
+     -0.3,
+     -3.6
+    ],
+    [
+     -3.0,
+     0.25,
+     3.4
+    ]
+   ],
+   "label": "base / foot / ground diff layer minus facility footprints",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     525.0,
+     -0.024999999999999994,
+     -818.5500000000001
+    ],
+    "yaw": 0.0,
+    "h": [
+     3.0,
+     0.275,
+     3.5
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -9.0,
+      -0.3,
+      -12.0
+     ],
+     [
+      9.0,
+      0.25,
+      12.0
+     ]
+    ],
+    "minus": [
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-049"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-041:write:006",
+   "seat": "LY-041",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -2.2,
+     -0.3,
+     -3.6
+    ],
+    [
+     1.1,
+     0.25,
+     9.0
+    ]
+   ],
+   "label": "base / foot / ground diff layer minus facility footprints",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     530.45,
+     -0.024999999999999994,
+     -815.75
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.6500000000000001,
+     0.275,
+     6.3
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -9.0,
+      -0.3,
+      -12.0
+     ],
+     [
+      9.0,
+      0.25,
+      12.0
+     ]
+    ],
+    "minus": [
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-049"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-041:write:007",
+   "seat": "LY-041",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -3.0,
+     -0.3,
+     2.9
+    ],
+    [
+     -2.2,
+     0.25,
+     9.0
+    ]
+   ],
+   "label": "base / foot / ground diff layer minus facility footprints",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     528.4,
+     -0.024999999999999994,
+     -812.5
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.3999999999999999,
+     0.275,
+     3.05
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -9.0,
+      -0.3,
+      -12.0
+     ],
+     [
+      9.0,
+      0.25,
+      12.0
+     ]
+    ],
+    "minus": [
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-049"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-041:write:008",
+   "seat": "LY-041",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -9.0,
+     -0.3,
+     3.4
+    ],
+    [
+     -8.0,
+     0.25,
+     12.0
+    ]
+   ],
+   "label": "base / foot / ground diff layer minus facility footprints",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     522.5,
+     -0.024999999999999994,
+     -810.75
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.5,
+     0.275,
+     4.3
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -9.0,
+      -0.3,
+      -12.0
+     ],
+     [
+      9.0,
+      0.25,
+      12.0
+     ]
+    ],
+    "minus": [
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-049"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-041:write:009",
+   "seat": "LY-041",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -4.4,
+     -0.3,
+     3.4
+    ],
+    [
+     -3.0,
+     0.25,
+     9.0
+    ]
+   ],
+   "label": "base / foot / ground diff layer minus facility footprints",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     527.3,
+     -0.024999999999999994,
+     -812.25
+    ],
+    "yaw": 0.0,
+    "h": [
+     0.7000000000000002,
+     0.275,
+     2.8
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -9.0,
+      -0.3,
+      -12.0
+     ],
+     [
+      9.0,
+      0.25,
+      12.0
+     ]
+    ],
+    "minus": [
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-049"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-041:write:010",
+   "seat": "LY-041",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     1.1,
+     -0.3,
+     3.6
+    ],
+    [
+     8.0,
+     0.25,
+     12.0
+    ]
+   ],
+   "label": "base / foot / ground diff layer minus facility footprints",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     535.55,
+     -0.024999999999999994,
+     -810.6500000000001
+    ],
+    "yaw": 0.0,
+    "h": [
+     3.45,
+     0.275,
+     4.2
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -9.0,
+      -0.3,
+      -12.0
+     ],
+     [
+      9.0,
+      0.25,
+      12.0
+     ]
+    ],
+    "minus": [
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-049"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-041:write:011",
+   "seat": "LY-041",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -8.0,
+     -0.3,
+     8.6
+    ],
+    [
+     -4.4,
+     0.25,
+     9.0
+    ]
+   ],
+   "label": "base / foot / ground diff layer minus facility footprints",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     524.8,
+     -0.024999999999999994,
+     -809.6500000000001
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.7999999999999998,
+     0.275,
+     0.20000000000000018
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -9.0,
+      -0.3,
+      -12.0
+     ],
+     [
+      9.0,
+      0.25,
+      12.0
+     ]
+    ],
+    "minus": [
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-049"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-041:write:012",
+   "seat": "LY-041",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -8.0,
+     -0.3,
+     9.0
+    ],
+    [
+     -5.0,
+     0.25,
+     12.0
+    ]
+   ],
+   "label": "base / foot / ground diff layer minus facility footprints",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     524.5,
+     -0.024999999999999994,
+     -807.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.5,
+     0.275,
+     1.5
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -9.0,
+      -0.3,
+      -12.0
+     ],
+     [
+      9.0,
+      0.25,
+      12.0
+     ]
+    ],
+    "minus": [
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-049"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-041:write:013",
+   "seat": "LY-041",
+   "site": "S-COURT",
+   "class": "write",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -1.0,
+     -0.3,
+     9.0
+    ],
+    [
+     1.1,
+     0.25,
+     12.0
+    ]
+   ],
+   "label": "base / foot / ground diff layer minus facility footprints",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     531.05,
+     -0.024999999999999994,
+     -807.95
+    ],
+    "yaw": 0.0,
+    "h": [
+     1.05,
+     0.275,
+     1.5
+    ]
+   },
+   "derivedFrom": {
+    "box": [
+     [
+      -9.0,
+      -0.3,
+      -12.0
+     ],
+     [
+      9.0,
+      0.25,
+      12.0
+     ]
+    ],
+    "minus": [
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-049"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-074:write:001",
+   "seat": "LY-074",
+   "site": "S-MINGTANG",
+   "class": "write",
+   "frame": "local:mingtang",
+   "box": [
+    [
+     -24.0,
+     -0.3,
+     -24.0
+    ],
+    [
+     24.0,
+     0.4,
+     -14.48
+    ]
+   ],
+   "label": "four-side arrival ground outside the selected hall footprint",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": null,
+   "derivedFrom": {
+    "box": [
+     [
+      -24.0,
+      -0.3,
+      -24.0
+     ],
+     [
+      24.0,
+      0.4,
+      24.0
+     ]
+    ],
+    "minus": [
+     "__mingtang_B_core__"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-074:write:002",
+   "seat": "LY-074",
+   "site": "S-MINGTANG",
+   "class": "write",
+   "frame": "local:mingtang",
+   "box": [
+    [
+     -24.0,
+     -0.3,
+     -14.48
+    ],
+    [
+     -14.48,
+     0.4,
+     24.0
+    ]
+   ],
+   "label": "four-side arrival ground outside the selected hall footprint",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": null,
+   "derivedFrom": {
+    "box": [
+     [
+      -24.0,
+      -0.3,
+      -24.0
+     ],
+     [
+      24.0,
+      0.4,
+      24.0
+     ]
+    ],
+    "minus": [
+     "__mingtang_B_core__"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-074:write:003",
+   "seat": "LY-074",
+   "site": "S-MINGTANG",
+   "class": "write",
+   "frame": "local:mingtang",
+   "box": [
+    [
+     14.48,
+     -0.3,
+     -14.48
+    ],
+    [
+     24.0,
+     0.4,
+     24.0
+    ]
+   ],
+   "label": "four-side arrival ground outside the selected hall footprint",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": null,
+   "derivedFrom": {
+    "box": [
+     [
+      -24.0,
+      -0.3,
+      -24.0
+     ],
+     [
+      24.0,
+      0.4,
+      24.0
+     ]
+    ],
+    "minus": [
+     "__mingtang_B_core__"
+    ]
+   }
+  },
+  {
+   "zoneId": "LY-074:write:004",
+   "seat": "LY-074",
+   "site": "S-MINGTANG",
+   "class": "write",
+   "frame": "local:mingtang",
+   "box": [
+    [
+     -14.48,
+     -0.3,
+     14.48
+    ],
+    [
+     14.48,
+     0.4,
+     24.0
+    ]
+   ],
+   "label": "four-side arrival ground outside the selected hall footprint",
+   "basis": "C-partition (box minus other seats claims)",
+   "exclusiveGroup": null,
+   "worldOBB": null,
+   "derivedFrom": {
+    "box": [
+     [
+      -24.0,
+      -0.3,
+      -24.0
+     ],
+     [
+      24.0,
+      0.4,
+      24.0
+     ]
+    ],
+    "minus": [
+     "__mingtang_B_core__"
+    ]
+   }
+  }
+ ],
+ "envelopes": [
+  {
+   "site": "S-KAIYANG",
+   "owner": "LY-015",
+   "frame": "local:kaiyang-K-v1",
+   "box": [
+    [
+     -16.0,
+     -0.3,
+     -11.0
+    ],
+    [
+     16.0,
+     10.6,
+     7.0
+    ]
+   ],
+   "worldOBB": {
+    "c": [
+     2010.4388231601101,
+     5.320000001788139,
+     19.30157774386317
+    ],
+    "yaw": -0.020743634087871412,
+    "h": [
+     16.0,
+     5.45,
+     9.0
+    ]
+   }
+  },
+  {
+   "site": "S-PINGCHENG",
+   "owner": "LY-017",
+   "frame": "local:pingcheng-P-v1",
+   "box": [
+    [
+     -16.0,
+     -0.3,
+     -14.0
+    ],
+    [
+     16.0,
+     10.6,
+     14.0
+    ]
+   ],
+   "worldOBB": {
+    "c": [
+     1622.80908203125,
+     5.320000001788139,
+     13.259963035583496
+    ],
+    "yaw": -0.0207437532713328,
+    "h": [
+     16.0,
+     5.45,
+     14.0
+    ]
+   }
+  },
+  {
+   "site": "S-GU",
+   "owner": "LY-018",
+   "frame": "world",
+   "worldOBB": {
+    "c": [
+     1693.22308,
+     5.1499999999999995,
+     -3894.53015
+    ],
+    "yaw": -0.1887328770029921,
+    "h": [
+     15.999995860102588,
+     5.45,
+     8.0
+    ]
+   },
+   "from": "wallseam:wall-A-wall-00/wall-A-wall-01"
+  },
+  {
+   "site": "S-XIA",
+   "owner": "LY-019",
+   "frame": "world",
+   "worldOBB": {
+    "c": [
+     734.488895,
+     5.1499999999999995,
+     -3566.1366
+    ],
+    "yaw": 3.102848543377867,
+    "h": [
+     15.99998233321291,
+     5.45,
+     8.0
+    ]
+   },
+   "from": "wallseam:wall-A-wall-00/wall-A-wall-11"
+  },
+  {
+   "site": "S-MARKET",
+   "owner": "LY-030",
+   "frame": "local:market-site",
+   "box": [
+    [
+     -30.0,
+     -0.8,
+     -22.0
+    ],
+    [
+     30.0,
+     5.0,
+     22.0
+    ]
+   ],
+   "worldOBB": {
+    "c": [
+     214.286,
+     2.1,
+     -1959.184
+    ],
+    "yaw": 0.0,
+    "h": [
+     30.0,
+     2.9,
+     22.0
+    ]
+   }
+  },
+  {
+   "site": "S-STORAGE",
+   "owner": "LY-040",
+   "frame": "local:storage-site",
+   "box": [
+    [
+     -36.0,
+     -0.3,
+     -26.0
+    ],
+    [
+     36.0,
+     5.5,
+     26.0
+    ]
+   ],
+   "worldOBB": {
+    "c": [
+     2285.714,
+     2.6,
+     -3673.469
+    ],
+    "yaw": 0.0,
+    "h": [
+     36.0,
+     2.9,
+     26.0
+    ]
+   }
+  },
+  {
+   "site": "S-NE-ROAD",
+   "owner": "LY-040",
+   "frame": "world",
+   "box": [
+    [
+     2283.714,
+     -0.3,
+     -3647.469
+    ],
+    [
+     2287.714,
+     0.6,
+     -3484.0
+    ]
+   ],
+   "worldOBB": {
+    "c": [
+     2285.714,
+     0.15,
+     -3565.7345
+    ],
+    "yaw": 0.0,
+    "h": [
+     2.0,
+     0.44999999999999996,
+     81.73450000000003
+    ]
+   }
+  },
+  {
+   "site": "S-NE-ROAD",
+   "owner": "LY-040",
+   "frame": "world",
+   "box": [
+    [
+     2287.714,
+     -0.3,
+     -3490.5
+    ],
+    [
+     2318.327,
+     0.6,
+     -3484.0
+    ]
+   ],
+   "worldOBB": {
+    "c": [
+     2303.0205,
+     0.15,
+     -3487.25
+    ],
+    "yaw": 0.0,
+    "h": [
+     15.306500000000142,
+     0.44999999999999996,
+     3.25
+    ]
+   }
+  },
+  {
+   "site": "S-COURT",
+   "owner": "LY-050",
+   "frame": "court:C02-010",
+   "box": [
+    [
+     -9.0,
+     -1.6,
+     -12.0
+    ],
+    [
+     9.0,
+     5.6,
+     12.0
+    ]
+   ],
+   "worldOBB": {
+    "c": [
+     531.0,
+     1.9999999999999998,
+     -818.45
+    ],
+    "yaw": 0.0,
+    "h": [
+     9.0,
+     3.5999999999999996,
+     12.0
+    ]
+   }
+  },
+  {
+   "site": "S-COURT-LANE",
+   "owner": "LY-082",
+   "frame": "world",
+   "box": [
+    [
+     526.0,
+     -0.3,
+     -806.45
+    ],
+    [
+     530.0,
+     0.6,
+     -796.45
+    ]
+   ],
+   "worldOBB": {
+    "c": [
+     528.0,
+     0.15,
+     -801.45
+    ],
+    "yaw": 0.0,
+    "h": [
+     2.0,
+     0.44999999999999996,
+     5.0
+    ]
+   }
+  },
+  {
+   "site": "S-MARKET-STREET",
+   "owner": "LY-083",
+   "frame": "world",
+   "box": [
+    [
+     244.286,
+     -0.3,
+     -1981.184
+    ],
+    [
+     274.286,
+     0.6,
+     -1937.184
+    ]
+   ],
+   "worldOBB": {
+    "c": [
+     259.286,
+     0.15,
+     -1959.184
+    ],
+    "yaw": 0.0,
+    "h": [
+     15.0,
+     0.44999999999999996,
+     22.0
+    ]
+   }
+  }
+ ]
+}

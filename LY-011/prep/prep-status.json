@@ -1,0 +1,51 @@
+{
+ "seat": "LY-011",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb 88d9a322（与源包同字节）",
+  "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb d82f13fc",
+  "同目录 kaiyang-K-LOD2.glb 13ff78a7",
+  "docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb 94693c58（城景唯一加载件，city-data.mjs:708 → city-renderer.mjs:286 loadAsset，仅 local-study 研究视图）",
+  "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD0/1/2.glb 5754432a / 50f85502 / e758e45f（现有三门地面附件，城景不加载）",
+  "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part001/002 f742fb3c / 72609b8b，拼接 ZIP bad99bb9（与 manifest 一致），已解到 LY-011/prep/_src",
+  "源包 models/kaiyang-K-LOD0/1/2.blend 95568b8b / f283dbf9 / c8ef8d10（净化重开版，与原 QA 绑定的原生 SHA 不同）",
+  "源包 source/build.py df0be5ed、geometry.py 47ef2902、qa/source-object-ranges.json a13c9f74",
+  "docs/cities/luoyang/progress-assets/north13-gates/source.json 9b07b734（placement activation false，工程原点 z 0.17）",
+  "docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json fadab2bb（状态 待审，未入城）"
+ ],
+ "inputsMissing": [
+  "bearing-section-v1：失败承托样例本体，用于「替代」对象定位和旧 0.0936 m³ 的「前」证据。lab 四条分支 git grep、modeling-lab 全部 review-batches、D:/GitHub 文件名扫描都没有。不能从 GLB 重建：K-v1 GLB 不含这套件，且 K-v1 本体没有任何落在 0.0936±0.003 m³ 内的交体对",
+  "开阳适配失败 / 实际剖面记录：用于失败位置、剖面高差、原重叠算法。没找到。不能从 GLB 重建；prep/qa/k-central-measure.json 只能当 K-v1 现剖面基线，不能冒称原记录",
+  "三门地面附件的源工程/生成器（仓内只有 GLB）：调整地面端口时要用。可以从 GLB 重建（三条约 1.8×14×0.2 m 带），但必须标「从GLB重建」",
+  "G 冻结件：LY-005 地面端口高程与世界变换、LY-006 端口 ID 与源对象所有权（C_door_head_1 / C_jamb_(1,±1) / 楼板底面 / 上层交体）、LY-007 材质与三档规则、LY-008 检查器、LY-010 开阳放行"
+ ],
+ "gaps": [
+  "中门道楼板底悬空：C_upper_deck 底 z 5.000，净跨 5.60 m×进深 10 m；22,400 个 0.05 m 网格点里，下方 0.01 m 内有构件的只有 3.0%（C_door_head_1 624 点，两根 C_jamb_(1,±1) 各 24 点，都在前檐 y -4.96..-4.64）；LOD0/1/2 与城景投影一致",
+  "楼板跨中上有 7 个立物，全落在中门道净跨里：C_gallery_post_(0,±3.8)（x ±0.17，正跨中，LOD0 各 0.2946 m³）、C_central_room_rear（跨满 5.6 m，3.452 m³）、C_central_room_front_±1（各 1.071 m³）、C_central_room_side_±1（只越出墩边 0.02 m）",
+  "K-v1 下部门楣/门框/墩/楼板之间全是面接触，正体积交体为 0；全模型 LOD0 977 对里 695 对有正体积，合计 3.251 m³，没有一对落在 0.0936±0.003 m³ 内，所以旧 0.0936 m³ 问题不在 K-v1 本体，「前」证据要等缺失的样例",
+  "中门道已有的上层继承交体（不归本项）：守室后墙∩廊柱(0,3.8) LOD0 0.1811 / LOD1 0.1728 / LOD2 0.1309 m³；守室墙角 4×0.0357 m³；C_cross_tie_0 相关约 0.0587 m³；中门道正体积合计 LOD0 0.5675 / LOD1 0.5456 / LOD2 0.4448 m³",
+  "净空（离散射线）：门框间 5.20 m；门叶开启区 y -4.55..-1.99 最窄 4.89 m（LOD2 4.98 m）；其余 5.60 m；门楣下净高 4.70 m，其余 5.00 m；墩面上不和开启门叶冲突的柱位段只有 y -1.99..5.0，约 7.0 m",
+  "地面端口：三档地面附件在中门道只有 x -0.90..0.91 一条带，覆盖净跨 33.3%，顶面 z 0.040–0.042，门体底 z 0；墩面附近没有地面几何；横跨门道的地栿放在 z0 会被测试带顶面侵入 0.04 m；城市试放原点 z 0.17，古地面未知"
+ ],
+ "reuseCandidate": "无。K-v1 中门道没有柱列/地栿/横梁，楼板底 97% 悬空（prep/qa/k-central-measure.json 61fac69e）；被替代的失败样例又不在手。这是补件，不是复用。",
+ "touches": [
+  "K-v1 源对象 C_door_head_1（中门道门楣，可能被隐藏或替换）",
+  "K-v1 源对象 C_jamb_(1,-1)、C_jamb_(1,1)（中门道门框，可能被隐藏或替换）",
+  "K-v1 C_earth_pier_1 / C_earth_pier_2 内侧墩面 x=±2.8（只接触，不改）",
+  "K-v1 C_upper_deck 底面 z=5.0 中门道段（只接触；楼板本体归 LY-013）",
+  "K-v1 C_open_leaf_(1,±1)、C_leaf_batten_(1,*) 占位（禁入；归 LY-012）",
+  "地面附件 kaiyang-ground-LOD0/1/2 的中门道测试带 kaiyang_patch0 x -0.9..0.9（地面端口接触；可能要求加地面片，地坪所有权待 LY-006）",
+  "K-v1 三个合并网格 kaiyang-K-static_timber / _earth（隐藏单个源对象要按三角范围拆，所有权要和 LY-012/013 一起定）",
+  "只写 creation-notebook-workpacks/LY-011/"
+ ],
+ "size": "M",
+ "risks": [
+  "bearing-section-v1 和失败记录一直拿不到：0.0936 m³ 前后证据这一条验收只能阻断，不能凭推测造件去复现",
+  "K-v1 每档只有三个按材质合并的网格；要隐藏或替换 C_door_head_1 / C_jamb_(1,±1)，就得按 source-object-ranges 截三角，或者出一份改过的门体 GLB，和 LY-012、LY-013、LY-015 争同一个源文件，必须由 LY-006 定唯一负责人",
+  "墩面加柱列会和开启门叶（y -4.55..-1.99，离墩面 0.355 m 内）冲突，也会把最窄宽度压到 4.89 m 以下；柱位和门框的接口得和 LY-012 一起冻结",
+  "地面端口高程（z0、测试带顶 0.04 还是城市 0.17）没定；定错了，柱脚就会悬空或侵入地面",
+  "跨中立物的位置会诱导人把承托写成受力结论；只能写接触和支承比例，不能写荷载安全",
+  "中门道上层已有 0.4–0.57 m³ 继承交体，不归本项；新件要是碰了上层，这批数字会变，需要当回归哨兵",
+  "柱列、地栿、横梁的形制全是 C，没有约 180 年开阳门的承托考古依据；北魏/汉晋其他门的排叉柱尺寸不能套用"
+ ],
+ "readyAfterG": false
+}

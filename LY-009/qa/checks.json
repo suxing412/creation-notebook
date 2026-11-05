@@ -1,0 +1,556 @@
+{
+ "seat": "LY-009",
+ "generatedAt": "2026-11-05T23:35:57+08:00",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "labOriginMain": "cad338ba683f7277aea098f45c8feb6c915a847c",
+ "inputs": {
+  "board/taskboard.v2.json": "bd2fcbbe02a1e68fe7b98cd706a86ae14f49bcb495f2088b68e002e2f818106a",
+  "board/locks.json": "5eb5ae327f1655db4eecbc79547ac79413b9c8c95489f05d2e679eb419d4cc9d",
+  "board/pause-zone.json": "eabfeb22c11cb574fb1c622506b23e837ed760df3c2f770134e8c8bcaa9f4a08",
+  "board/ownership.json": "a1b91bf1ea40e496229f8d50c8f054e8b3c89fe2a447f8daa3ee487d08f4d21c",
+  "board/dag.json": "0480db37712caac4a97c948c12cbe5f0750b53ed99ab71b7c0c0c17369925b7e",
+  "qa/parse-compare.json": "a2c28c18c794bb5cd772437765fe416a963e0371e03379136960212a9087063d",
+  "qa/whitelist-scan.json": "796491668e47509c43306e7bbca90f348c3077fdaf7c8cbf0e632b0487a3dfbd"
+ },
+ "tools": {
+  "board_diff.py": "a124af7acf754276959c1b20d6536219b8004a24406d707719c178a9d345f455",
+  "build_board.py": "57920e1e13e5b09c05d7e23abc25bee0028782aa4043485a74e5fcead8a1fd3c",
+  "check_board.py": "c1cad36f18045afca0ce6311d08ff60f71aef58fb9bc77a38ec2722956725753",
+  "check_handover.py": "535a618af09ee805ee9c1a74d1a90fa51938701db733689d777dac278484b5ca",
+  "check_whitelist.py": "e68e9a5d6f08f7547f94b75286deb69169bc6636ffec3e7e23dd5ca7b9537ada",
+  "locks_spec.py": "33ae0f250ce0a0c56cf1849f95308143153b174c2c03a784d7a7dea54305df7a",
+  "make_handover_example.py": "c6c7f3420f26d5ce972202947661229fc8787c32b740a900e8c998d71809a8d5",
+  "parse_taskpool.py": "b9f6dfaff25c09f9c2fa83c3896214c64118ea4b727f73dccb7a0a8a6d772794",
+  "pause_spec.py": "8c0ef78ead5338664760c93ec6f1251caf458fb06c5b0031685ad401d7a9df26",
+  "render_board.py": "ce6e83e5e777f3db9651b021b62b43b9c82e6207c7ae30097dda1b640608051c",
+  "write_manifest.py": "49ed9856cd75128ddb84748248a8c7f5d8aef57dadd7a797aee00d392f48c31e"
+ },
+ "summary": {
+  "C1": "PASS",
+  "C2": "PASS",
+  "C3": "PASS",
+  "C4": "PASS",
+  "C5": "PASS",
+  "C6": "PASS",
+  "C7": "PASS",
+  "C8": "PASS",
+  "C9": "PASS",
+  "C10": "PASS",
+  "C11": "PASS",
+  "C12": "PASS"
+ },
+ "negativesDetected": "40/40",
+ "checks": [
+  {
+   "id": "C1",
+   "name": "任务板解析与原文一致（标题/类型/依赖逐席、text 逐字）",
+   "result": "PASS",
+   "errors": [],
+   "evidence": {
+    "TASKPOOL.md": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+    "taskboard.json worktree": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+    "metaIdentical": 100,
+    "textIdentical": 91,
+    "textBleed": [
+     "LY-010",
+     "LY-020",
+     "LY-030",
+     "LY-040",
+     "LY-050",
+     "LY-060",
+     "LY-070",
+     "LY-080",
+     "LY-090"
+    ],
+    "v2TextIdenticalToOriginal": true,
+    "userOriginalSha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+    "userOriginalIdentical": true
+   },
+   "negatives": [
+    {
+     "injection": "taskboard 删去 LY-021 一个依赖",
+     "detected": true,
+     "errors": [
+      "deps differ"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C2",
+   "name": "100 个 ID 不重复且恰为 LY-001…100",
+   "result": "PASS",
+   "errors": [],
+   "evidence": {
+    "n": 100
+   },
+   "negatives": [
+    {
+     "injection": "把 LY-006 改成重复的 LY-005",
+     "detected": true,
+     "errors": [
+      "duplicate ids: LY-005",
+      "ids are not exactly LY-001..LY-100"
+     ]
+    },
+    {
+     "injection": "删掉 LY-100",
+     "detected": true,
+     "errors": [
+      "99 seats, expected 100",
+      "ids are not exactly LY-001..LY-100"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C3",
+   "name": "依赖无环、无未知依赖、最长链 15 层、根 taskboard.topo 合法、G 成员不引用 G",
+   "result": "PASS",
+   "errors": [],
+   "evidence": {
+    "edges": 925,
+    "longest": 15,
+    "oneLongestChain": [
+     "LY-001",
+     "LY-005",
+     "LY-006",
+     "LY-009",
+     "LY-010",
+     "LY-021",
+     "LY-027",
+     "LY-028",
+     "LY-029",
+     "LY-030",
+     "LY-083",
+     "LY-092",
+     "LY-098",
+     "LY-099",
+     "LY-100"
+    ]
+   },
+   "negatives": [
+    {
+     "injection": "LY-001 依赖 LY-100（造环）",
+     "detected": true,
+     "errors": [
+      "cycle: LY-001 -> LY-100 -> LY-001",
+      "cycle: LY-001 -> LY-100 -> LY-002 -> LY-001",
+      "cycle: LY-001 -> LY-100 -> LY-005 -> LY-001"
+     ]
+    },
+    {
+     "injection": "LY-031 依赖不存在的 LY-123",
+     "detected": true,
+     "errors": [
+      "LY-031 -> unknown LY-123"
+     ]
+    },
+    {
+     "injection": "LY-100 只留 G 依赖（最长链变短）",
+     "detected": true,
+     "errors": [
+      "longest chain 14 levels, stated 15",
+      "board level field disagrees for ['LY-100']"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C4",
+   "name": "类型计数与原文 46/31/13/9/1 一致（77 项产出模型或装配，23 项其他）",
+   "result": "PASS",
+   "errors": [],
+   "evidence": {
+    "补件/修订": 46,
+    "复用装配": 31,
+    "考据/契约": 13,
+    "独立验收": 9,
+    "唯一整合": 1
+   },
+   "negatives": []
+  },
+  {
+   "id": "C5",
+   "name": "状态取自各席位 status.json 或依赖推导，词表 7 项，完成必有交付文件",
+   "result": "PASS",
+   "errors": [],
+   "evidence": {
+    "counts": {
+     "待输入": 91,
+     "可开工": 0,
+     "制作中": 1,
+     "待验收": 0,
+     "阻断": 0,
+     "复用完成": 0,
+     "交付完成": 8
+    },
+    "G": {
+     "members": [
+      "LY-001",
+      "LY-002",
+      "LY-005",
+      "LY-006",
+      "LY-007",
+      "LY-008",
+      "LY-009",
+      "LY-010"
+     ],
+     "frozen": false,
+     "missing": [
+      "LY-008",
+      "LY-010"
+     ]
+    }
+   },
+   "negatives": [
+    {
+     "injection": "状态写成词表外的「完成」",
+     "detected": true,
+     "errors": [
+      "LY-051: status '完成' not in vocabulary"
+     ]
+    },
+    {
+     "injection": "LY-061 依赖未齐却标可开工",
+     "detected": true,
+     "errors": [
+      "LY-061: 可开工 with unfinished deps ['LY-008', 'LY-010']"
+     ]
+    },
+    {
+     "injection": "LY-041 无 status.json 却标交付完成",
+     "detected": true,
+     "errors": [
+      "LY-041: 交付完成 without status.json"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C6",
+   "name": "排除项都有锁：保护清单逐条、各节导语的排除事项；锁定文件 SHA 由 git 提交字节逐件重算",
+   "result": "PASS",
+   "errors": [],
+   "evidence": {
+    "locks": 17,
+    "lockedFilesHashed": 500,
+    "protectBullets": 6,
+    "introKeys": [
+     "雍门接街",
+     "13院",
+     "v2.1",
+     "v2.2",
+     "196米",
+     "31组"
+    ]
+   },
+   "negatives": [
+    {
+     "injection": "雍门锁去掉持锁人",
+     "detected": true,
+     "errors": [
+      "LOCK-YONG-ROAD: no holder"
+     ]
+    },
+    {
+     "injection": "篡改十二门锁的原文引句",
+     "detected": true,
+     "errors": [
+      "LOCK-12GATES: poolQuote not in TASKPOOL.md"
+     ]
+    },
+    {
+     "injection": "加一个匹配不到文件的锁路径",
+     "detected": true,
+     "errors": [
+      "LOCK-MARKET-V21: pattern docs/library/models/m-luoyang-market-frontage-v9/** matches nothing at baseline"
+     ]
+    },
+    {
+     "injection": "删掉 13院锁",
+     "detected": true,
+     "errors": [
+      "section-intro exclusion without lock: 13院"
+     ]
+    },
+    {
+     "injection": "篡改武库B锁文件 SHA",
+     "detected": true,
+     "errors": [
+      "LOCK-WUKU-B22: sha/bytes mismatch docs/library/models/m-luoyang-wuku/files/wuku-B-LOD0.glb"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C7",
+   "name": "发布账户与城市写入权不下放；每席白名单只含自己目录",
+   "result": "PASS",
+   "errors": [],
+   "evidence": {
+    "seats": 100
+   },
+   "negatives": [
+    {
+     "injection": "LY-030 获得城市写入",
+     "detected": true,
+     "errors": [
+      "LY-030: lab/city write delegated"
+     ]
+    },
+    {
+     "injection": "LY-100 获得发布账户",
+     "detected": true,
+     "errors": [
+      "LY-100: publish right delegated"
+     ]
+    },
+    {
+     "injection": "LY-021 白名单含 LY-022",
+     "detected": true,
+     "errors": [
+      "LY-021: whitelist is not exactly its own dir"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C8",
+   "name": "写入白名单：检查器正反例；共享分支当前改动全部落在某个席位目录内，根文件未改",
+   "result": "PASS",
+   "errors": [],
+   "evidence": {
+    "scanFile": "qa/whitelist-scan.json",
+    "scanSha256": "796491668e47509c43306e7bbca90f348c3077fdaf7c8cbf0e632b0487a3dfbd",
+    "filesScanned": 7487,
+    "changedPaths": 2654,
+    "seatsWithChanges": 98,
+    "contentViolationsInsideSeatDirs": 175,
+    "contentViolationsNotIgnored": [
+     "LY-076/prep/work/qv1src/assets/lingtai-A-quality.glb"
+    ],
+    "rootFilesContentChanged": [],
+    "otherRootFilesChangedOrAdded": [
+     ".gitignore"
+    ],
+    "rootFileNote": "根目录 .gitignore 为基线后新增（未跟踪），不是 LY-009 所写；按规则只有协调者可写根文件，作者未核实",
+    "note": "目录内 R3/R4 违规不算越界写入，记在暂停区 PZ-14，由协调者裁定"
+   },
+   "negatives": [
+    {
+     "injection": "LY-021 写 LY-022/brief.md (10 B)",
+     "detected": true,
+     "errors": [
+      "R1: LY-021 may not write into LY-022/"
+     ]
+    },
+    {
+     "injection": "LY-021 写 taskboard.json (10 B)",
+     "detected": true,
+     "errors": [
+      "R2: root task-board file is coordinator-only"
+     ]
+    },
+    {
+     "injection": "LY-021 写 TASKPOOL.md (10 B)",
+     "detected": true,
+     "errors": [
+      "R2: root task-board file is coordinator-only"
+     ]
+    },
+    {
+     "injection": "LY-033 写 LY-033/native/door.blend (10 B)",
+     "detected": true,
+     "errors": [
+      "R3: source project / archive not allowed in workpacks branch"
+     ]
+    },
+    {
+     "injection": "LY-033 写 LY-033/source/pack.zip (10 B)",
+     "detected": true,
+     "errors": [
+      "R3: source project / archive not allowed in workpacks branch"
+     ]
+    },
+    {
+     "injection": "LY-040 写 LY-040/models/x-LOD0.glb (15000001 B)",
+     "detected": true,
+     "errors": [
+      "R4: GLB 15000001 bytes > 15,000,000"
+     ]
+    },
+    {
+     "injection": "LY-011 写 LY-011/../LY-012/x.json (10 B)",
+     "detected": true,
+     "errors": [
+      "R1: dot segment in path"
+     ]
+    },
+    {
+     "injection": "LY-011 写 D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-data.mjs (10 B)",
+     "detected": true,
+     "errors": [
+      "R7: absolute path (outside workpacks tree; R7)"
+     ]
+    },
+    {
+     "injection": "LY-011 写 /docs/x (10 B)",
+     "detected": true,
+     "errors": [
+      "R7: absolute path (outside workpacks tree; R7)"
+     ]
+    },
+    {
+     "injection": "LY-011 写 ly-011/brief.md (10 B)",
+     "detected": true,
+     "errors": [
+      "R1: seat dir name not exactly LY-### (case/format)"
+     ]
+    },
+    {
+     "injection": "LY-100 写 LY-099/status.json (10 B)",
+     "detected": true,
+     "errors": [
+      "R1: LY-100 may not write into LY-099/"
+     ]
+    },
+    {
+     "injection": "LY-050 写 LY-050/qa/huge.bin (105906176 B)",
+     "detected": true,
+     "errors": [
+      "R5: 105906176 bytes > 100 MiB"
+     ]
+    },
+    {
+     "injection": "LY-011 写 LY-011\\brief.md (10 B)",
+     "detected": true,
+     "errors": [
+      "R1: backslash in path"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C9",
+   "name": "分支命名：workpacks/LY-### 与既有 workpacks 分支冲突，采用 wp/LY-###（临时仓库实测）",
+   "result": "PASS",
+   "errors": [],
+   "evidence": {
+    "workpacks/LY-011": "fatal: cannot lock ref 'refs/heads/workpacks/LY-011': 'refs/heads/workpacks' exists; cannot create 'refs/heads/workpacks/LY-011'",
+    "wp/LY-011 exit": 0,
+    "liveBranches": [
+     "*",
+     "workpacks"
+    ]
+   },
+   "negatives": []
+  },
+  {
+   "id": "C10",
+   "name": "暂停区每条都有裁决人、解除条件，来源引句在源文件中重新找到",
+   "result": "PASS",
+   "errors": [],
+   "evidence": {
+    "entries": 14
+   },
+   "negatives": [
+    {
+     "injection": "来源引句找不到",
+     "detected": true,
+     "errors": [
+      "PZ-01: source quote not found in LY-005/status.json"
+     ]
+    },
+    {
+     "injection": "登记不存在的席位 LY-101",
+     "detected": true,
+     "errors": [
+      "PZ-02: unknown seat LY-101"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C11",
+   "name": "每日交接模板：样例通过 schema 与语义检查，8 个注入负例均被拒",
+   "result": "PASS",
+   "errors": [],
+   "evidence": {
+    "example": "templates/examples/LY-009-2026-11-05.handover.json",
+    "exampleSha256": "749229c86932cd3fd02f3b6489abf1e26355df7e657d207b5529b5ac18528d7b"
+   },
+   "negatives": [
+    {
+     "injection": "非 LY-100 声称已入城",
+     "detected": true,
+     "errors": [
+      "H1: 已入城 只能由 LY-100 写「做到」"
+     ]
+    },
+    {
+     "injection": "做到 无 SHA",
+     "detected": true,
+     "errors": [
+      "H2: 模型能读取=做到 但缺证据或 sha256 不在本交接的产物/来源中"
+     ]
+    },
+    {
+     "injection": "产物写到别席位",
+     "detected": true,
+     "errors": [
+      "H5: ../LY-010/x.json: R1 dot segment in path",
+      "H6: ../LY-010/x.json 不存在"
+     ]
+    },
+    {
+     "injection": "产物是 .blend",
+     "detected": true,
+     "errors": [
+      "H5: native/a.blend: R3 source project / archive not allowed in workpacks branch",
+      "H6: native/a.blend 不存在"
+     ]
+    },
+    {
+     "injection": "交付完成却无产物",
+     "detected": true,
+     "errors": [
+      "H3: 声明完成但没有产物"
+     ]
+    },
+    {
+     "injection": "状态写成词表外",
+     "detected": true,
+     "errors": [
+      "schema: status: '差不多完成' is not one of ['待输入', '可开工', '制作中', '待验收', '阻断', '复用完成', '交付完成']"
+     ]
+    },
+    {
+     "injection": "产物 SHA 与磁盘不符",
+     "detected": true,
+     "errors": [
+      "H6: board/taskboard.v2.json 字节或 SHA 与磁盘不符"
+     ]
+    },
+    {
+     "injection": "缺五项之一",
+     "detected": true,
+     "errors": [
+      "schema: fiveClaims: '真实结构安全' is a required property"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C12",
+   "name": "lab 仓库只读：本次运行前后 HEAD 与已跟踪文件状态不变",
+   "result": "PASS",
+   "errors": [],
+   "evidence": {
+    "labHead": "bce3211f818ee5a8bef1773539da70695ba37b17",
+    "trackedChanges": []
+   },
+   "negatives": []
+  }
+ ]
+}

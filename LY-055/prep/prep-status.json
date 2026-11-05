@@ -1,0 +1,65 @@
+{
+ "seat": "LY-055",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-hand-mill/files/hand-mill-A.glb  sha256 0fe50c2c0604 (1,778,876 B, 18 nodes, 4670 tris)",
+  "docs/library/models/m-luoyang-hand-mill/files/hand-mill-B.glb  sha256 598cadc75933 (1,779,100 B, 18 nodes, 4670 tris)",
+  "docs/library/models/m-luoyang-hand-mill/files/hand-mill-A-LOD1.glb  sha256 5885f619799e (1,605,992 B, 1524 tris)",
+  "docs/library/models/m-luoyang-hand-mill/files/hand-mill-B-LOD1.glb  sha256 5ec42d1118de (1,605,928 B, 1524 tris)",
+  "docs/library/models/m-luoyang-hand-mill/m-luoyang-hand-mill.asset.json  blob sha256 abb7865c0ce2 (worktree CRLF f2c221df420e; status 待审, 不改变城市场景)",
+  "docs/cities/luoyang/p-luoyang.asset.json  blob@bce3211 8edb06abf5e7 (L247 人力石磨 A/B 已建模/未入城, L544 related); origin/main cad338b blob f43d1496c85f, L257/L576 same status",
+  "lab/data/assets.json HEAD blob sha256 53d863121bb5 (L2550 card entry); worktree differs only by CRLF",
+  "city loader: none — git grep 'hand-mill|石磨' over docs/cities/luoyang at bce3211 and origin/main hits only p-luoyang.asset.json; app.mjs blob cc0379c02c97, city-data.mjs blob c849706b6210 (origin/main d8933a32a6a1), city-renderer.mjs blob 04c6c643e44f",
+  "baseline: lab HEAD bce3211 on branch lab/site-redesign; local main stale at 44c66da; origin/main cad338b = bce3211+3, no hand-mill file changes",
+  "review copy creation-notebook-review/site/.../m-luoyang-hand-mill/files/*.glb: identical SHAs (no second version)",
+  "card audit scratchpad/mq/cards/m-luoyang-hand-mill/audit.json: issues [] for all 4 GLBs, SHAs match",
+  "context only (LY-056 owns): foot-pestle-LOD0/1/2.glb 6f0e41834121 / d8759dd6e0b0 / e94416ef3074",
+  "prep scripts: dump_nodes.py 65e0acd28817, measure_mill.py b295d15cae58, measure_sweep_reach.py 921463fd89f0, classify_contacts.py add46849ab22, make_negatives.py 2bfb94e68c27; re-run of A/B reproduced prep/measure exactly"
+ ],
+ "inputsMissing": [
+  "hand-mill native .blend / generator + params: not in lab repo, creation-notebook-待传 (only 说明.txt) or review copy, although the card says previews are '同版原生模型CPU实渲' (so a native file exists elsewhere). Not needed for the reuse assembly (hide presentation_ground at assembly level, build new feet/floor from GLB coordinates = 'rebuilt from GLB'); needed only if LY-007 demands LOD2 or a GLB re-export without the slab — both can be rebuilt from GLB and must be labelled so",
+  "LY-005 coordinate/elevation contract: site origin, ground height & slope under the 4 post feet",
+  "LY-006 port/ownership freeze: foot port, ownership of work-floor patch shared with LY-056/LY-058",
+  "LY-007 tier baseline: whether a reuse assembly must carry LOD2 (only LOD0+LOD1 exist)",
+  "LY-010 regional admission: whether the installation scene may sit in the city or stays a local demo domain",
+  "LY-002 evidence/forbidden list: posture (standing / seated) and mill-table evidence class; no Luoyang c.180 mill evidence found in repo"
+ ],
+ "gaps": [
+  "G1 four 0.10x0.10 m posts (A span 0.77x0.72 m, B 1.07x0.72 m) rest only on *_presentation_ground (49/49 rays per post, gap 0); removing the slab leaves the stand with no support surface",
+  "G2 presentation_ground is a 2.8x2.8x0.12 m slab with top at z=0 — coplanar with any city ground → z-fight/burial; must be hidden at assembly level",
+  "G3 inherited: upper-stone subassembly (upper stone + feed ring + divider + handle) has no bearing contact — 2.0–5.6 mm (LOD1 2.0 mm) above lower stone, 1.9/3.0 mm from spindle, 1.4/3.0 mm from handle, 0 tri overlaps; disclosed on card as display gap; out of LY-055 mechanism scope, must be kept and disclosed",
+  "G4 spindle embedded 1 mm into collection floor (48–50 tri overlaps), 34 mm above bed; radial clearance in lower-stone bore (open radius 12.5 mm vs spindle r 9 mm)",
+  "G5/G6 openings real: handle 34.6 mm into side hole with 0 tri overlaps; feed through-hole A 0.00325 m² (130 cells @5 mm), B 0.00385 m² (154 cells), first surface below = lower stone",
+  "G7 handle 360° sweep (10° steps) hits no static part: 0",
+  "G8 handle tip circle r A 0.485 m / B 0.510 m; tip overhangs bed outline up to 35 mm (A) / 65 mm (B), 28/72 and 33/72 angle steps outside",
+  "G9 C torso cylinder r0.20 h1.70 clear of body and full handle sweep needs gap from bed edge: A ±x 15 mm, ±y 40 mm; B +x 5 mm, −x 70 mm, ±y 65 mm; negative controls hit as expected",
+  "G10 reach over-limit: with C reach 0.60 m, one station reaches only 115° of the handle circle (A all sides; B −x/±y), B +x only 55°; farthest point 1.175 m (A) / 1.52 m (B) — single-station full-turn operation not supported",
+  "G11 only two tiers (LOD0, LOD1), no LOD2; both share 1,504,494 B of textures so LOD1 is only ~10% smaller",
+  "G12 not loaded by the city; no coordinates, elevation or install site",
+  "G13 handle height A 0.849–0.875 m, B 0.644–0.670 m; posture unknown, B must not default to standing",
+  "G14 inherited contact classes (classify_contacts.py, 4 mm grid, ray-parity): all 18 nodes closed; 30 pairs per tier = 16 face_contact, 1 local_embed (spindle in collection floor ~4 mm), 8 volume_intrusion (aprons into posts 50x70x100 mm at z 0.512–0.608 A / 0.292–0.388 B; cross ties into posts 70x50x70 mm at z 0.127–0.193; contained 6–9%), 5 bbox_only_no_contact (handle/upper stone, spindle/stones — side hole and bore are real voids), 0 containment. Earlier vertex-distance table missed the 8 intrusions; must be disclosed as '示意榫接实体交叠', never '台脚无穿插'. Negative controls pass: cube in post → containment 1.0 with 0 tri overlaps; pad 20 mm into post → volume_intrusion",
+  "G15 cross ties sit ~0.127 m above floor between posts: any operator foot/floor zone under the bed collides; stations stay outside the bed per G9"
+ ],
+ "reuseCandidate": "无 — the mill geometry itself is reused by design (A/B LOD0+LOD1 at the SHAs above, node sets identical, bbox delta ≤0.5 mm, audit issues []), but the deliverable (real support under the four 0.10 m posts, operating floor, one limited install scene) does not exist anywhere: posts stand only on the 2.8x2.8x0.12 m presentation slab (49/49 rays per post) and no city code loads the hand mill at bce3211 or origin/main cad338b",
+ "touches": [
+  "read-only source nodes (A and B, LOD0+LOD1): *_stand_post_C, *_stand_post_C.001/.002/.003 (foot interface), *_wood_bed_C (envelope edge), *_handle_static_C (sweep), *_upper_stone_C, *_lower_stone_C, *_static_spindle_C, *_feed_ring_C, *_feed_divider_C, *_collection_floor_C, *_collection_lip_C, *_stand_apron_C(.001), *_stand_cross_tie_C(.001)",
+  "node to hide at assembly level: A_presentation_ground, B_presentation_ground",
+  "files read: docs/library/models/m-luoyang-hand-mill/files/hand-mill-{A,B}{,-LOD1}.glb",
+  "new (LY-055 only): foot pads / support surface, operating floor patch, limited install scene, assembly.json under workpacks/LY-055/",
+  "ground patch at the chosen work site — ownership conflict risk with LY-056 (foot pestle '选定作业地坪') and LY-058 (grain court circulation, depends on LY-055) and LY-057 (grain court); city ground tiles owned via LY-005",
+  "no shared files: city-data.mjs, p-luoyang.asset.json, lab/data/assets.json go through LY-100 only"
+ ],
+ "size": "M",
+ "risks": [
+  "upper stone 2 mm float is inherited and outside mechanism scope; a strict 'no unexplained floating' gate could block unless the coordinator accepts it as disclosed",
+  "stand already has 8 inherited positive-volume intrusions (apron/cross-tie into posts); a strict 'no unexplained solid intrusion' gate needs these classified as disclosed C joinery before LY-055 can pass, and new foot pads must not add more",
+  "LY-007 may require LOD2 for city use; that would turn part of this reuse item into a 补件 and may need the missing native source (else rebuild from GLB, labelled)",
+  "shared work-floor patch with LY-056/LY-058 needs LY-006 ownership before any floor is cut; otherwise two packages stack floors",
+  "posture for B (low table, handle 0.657 m) unknown — risk of implying a standing operator; keep as C placeholder",
+  "operator reach/torso are C placeholders; must not be written as human-factors or operability certification; single station reaches only 115°/55° of the handle circle",
+  "no install site admitted yet (LY-010); scene may remain a local demo domain, not 已入城",
+  "overlay node-hide depends on loader honouring node visibility; if LY-100 needs a GLB without the slab, a re-export is needed (no native source)",
+  "baseline drift: origin/main is already 3 commits past bce3211 (city-data.mjs, p-luoyang changed); LY-001's new snapshot must be rebound before T1",
+  "classify_contacts is surface-BVH + 4 mm grid sampling, not exhaustive solid collision; first version missed full containment until the negative control exposed it"
+ ],
+ "readyAfterG": true
+}

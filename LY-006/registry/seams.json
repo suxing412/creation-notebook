@@ -1,0 +1,7827 @@
+{
+ "registry": "LY-006 module ports & ownership",
+ "version": 1,
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "inputs": {
+  "taskboard": {
+   "path": "taskboard.json",
+   "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4"
+  },
+  "ly001_ledger": {
+   "path": "LY-001/qa/snapshot-ledger.json",
+   "sha256": "479046caf49479cc6e58249585c63c80e84f23cafd82dc93bdc1034f9e1da7d0"
+  },
+  "ly001_dump": {
+   "path": "LY-001/qa/city-data.dump.json",
+   "sha256": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98"
+  },
+  "ly005_ports": {
+   "path": "LY-005/qa/ports-bce3211.json",
+   "sha256": "1c009bb2c95caae89af76e8b7f7462253d1829cb6794e7b7bc77820f67e2f7ca"
+  },
+  "ly005_contract": {
+   "path": "LY-005/coordinate-contract.json",
+   "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712"
+  },
+  "ly005_port_schema": {
+   "path": "LY-005/port-schema.json",
+   "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f"
+  },
+  "glb_index": {
+   "path": "LY-006/qa/glb-node-index.json",
+   "sha256": "a218da85fb566bb4dd4b4bf040334066f2486048bf44f1c84f4dc559c84fff8d"
+  },
+  "wall_ends": {
+   "path": "LY-006/qa/wall-end-ports.measure.json",
+   "sha256": "38f25d638403a9c12693d3ee46865099efa8604678b8560fb543cf357c4d5521"
+  },
+  "probes": {
+   "path": "LY-006/qa/frozen-ports.probes.json",
+   "sha256": "8b9b4bd7fa51caac5f712114c00268d0e18d6c572df22d4574ec3c93cbd9a7f8"
+  },
+  "chunks": {
+   "path": "LY-006/qa/chunk-measure.json",
+   "sha256": "6a7e7fc1b9016c2df9f3916b427fce6357511abecbeaff10b0138556824e9e0e"
+  },
+  "court_free": {
+   "path": "LY-006/qa/court-A2-free-space.json",
+   "sha256": "c030801ffc4749a842eed04c50408453b3c32f824c7191d0e9842f69c9ff8839"
+  },
+  "k_objects": {
+   "path": "LY-006/qa/source-objects/kaiyang-K-v1.objects.json",
+   "sha256": "19a422ea12df17d558b4a20b766053f6f5f6c6e37543e2f2cc5c658b895b1074"
+  },
+  "p_objects": {
+   "path": "LY-006/qa/source-objects/pingcheng-P-v1.objects.json",
+   "sha256": "d50cfc84128ec1a54857b493f0a36a2913c6571e1d1916f7566b6ee72b381e21"
+  },
+  "k_trial": {
+   "path": "LY-006/qa/kaiyang-hidden-trial.objects.json",
+   "sha256": "1e463795cf9614beba15c009bc2ada44f2f4e884e4dde65895d0e6cda57c6d61"
+  },
+  "p_trial": {
+   "path": "LY-006/qa/pingcheng-hidden-trial.objects.json",
+   "sha256": "f513b58558f2cb44081ac69b72e8da6b4cfbe842c97174b05e13100ec44a7136"
+  },
+  "frontage_openings": {
+   "path": "LY-006/qa/frontage-openings.from-LY-021-prep.json",
+   "sha256": "907898d14961121b84bbabf2d757a90d8627d1a4c7ece6b384e44eb2f6aad1d7"
+  },
+  "spec": {
+   "path": "LY-006/source/registry_spec.py",
+   "sha256": "4a6f30bd9caaf3a3409e8d63c73740a012282167d694967c63fb356a69324e7b"
+  }
+ },
+ "seams": [
+  {
+   "seamId": "C02-001:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-001:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-001:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-001:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-001:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-001:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-001:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-001:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-002:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-002:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-002:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-002:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-002:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-002:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-002:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-002:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-003:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-003:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-003:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-003:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-003:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-003:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-003:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-003:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-004:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-004:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-004:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-004:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-004:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-004:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-004:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-004:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-005:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-005:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-005:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-005:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-005:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-005:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-005:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-005:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-006:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-006:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-006:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-006:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-006:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-006:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-006:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-006:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-007:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-007:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-007:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-007:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-007:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-007:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-007:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-007:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-008:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-008:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-008:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-008:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-008:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-008:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-008:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-008:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-009:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-009:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-009:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-009:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-009:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-009:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-009:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-009:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:drip-outlet:drain@v1::LY-046->LY-050",
+   "portId": "C02-010:drip-outlet:drain",
+   "version": 1,
+   "producer": "LY-046",
+   "steward": "LY-046",
+   "consumer": "LY-050",
+   "sideA": {
+    "seat": "LY-046",
+    "portId": "C02-010:drip-outlet:drain",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-050",
+    "portId": "C02-010:drip-outlet:drain",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:drip-outlet:drain@v1::LY-046->LY-087",
+   "portId": "C02-010:drip-outlet:drain",
+   "version": 1,
+   "producer": "LY-046",
+   "steward": "LY-046",
+   "consumer": "LY-087",
+   "sideA": {
+    "seat": "LY-046",
+    "portId": "C02-010:drip-outlet:drain",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-087",
+    "portId": "C02-010:drip-outlet:drain",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:gate-boundary:road-end@v1::LY-049->LY-050",
+   "portId": "C02-010:gate-boundary:road-end",
+   "version": 1,
+   "producer": "LY-049",
+   "steward": "LY-049",
+   "consumer": "LY-050",
+   "sideA": {
+    "seat": "LY-049",
+    "portId": "C02-010:gate-boundary:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-050",
+    "portId": "C02-010:gate-boundary:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:gate-boundary:road-end@v1::LY-049->LY-082",
+   "portId": "C02-010:gate-boundary:road-end",
+   "version": 1,
+   "producer": "LY-049",
+   "steward": "LY-049",
+   "consumer": "LY-082",
+   "sideA": {
+    "seat": "LY-049",
+    "portId": "C02-010:gate-boundary:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-082",
+    "portId": "C02-010:gate-boundary:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:ground-base@v1::LY-005->LY-041",
+   "portId": "C02-010:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": "LY-050",
+   "consumer": "LY-041",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-041",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:ground-base@v1::LY-005->LY-042",
+   "portId": "C02-010:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": "LY-050",
+   "consumer": "LY-042",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-042",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:ground-base@v1::LY-005->LY-044",
+   "portId": "C02-010:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": "LY-050",
+   "consumer": "LY-044",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-044",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:ground-base@v1::LY-005->LY-045",
+   "portId": "C02-010:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": "LY-050",
+   "consumer": "LY-045",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-045",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:ground-base@v1::LY-005->LY-046",
+   "portId": "C02-010:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": "LY-050",
+   "consumer": "LY-046",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-046",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:ground-base@v1::LY-005->LY-047",
+   "portId": "C02-010:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": "LY-050",
+   "consumer": "LY-047",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-047",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:ground-base@v1::LY-005->LY-049",
+   "portId": "C02-010:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": "LY-050",
+   "consumer": "LY-049",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-049",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-010:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": "LY-050",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-010:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": "LY-050",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-010:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:service-opening:opening@v1::LY-048->LY-049",
+   "portId": "C02-010:service-opening:opening",
+   "version": 1,
+   "producer": "LY-048",
+   "steward": "LY-048",
+   "consumer": "LY-049",
+   "sideA": {
+    "seat": "LY-048",
+    "portId": "C02-010:service-opening:opening",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-049",
+    "portId": "C02-010:service-opening:opening",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-010:service-opening:opening@v1::LY-048->LY-050",
+   "portId": "C02-010:service-opening:opening",
+   "version": 1,
+   "producer": "LY-048",
+   "steward": "LY-048",
+   "consumer": "LY-050",
+   "sideA": {
+    "seat": "LY-048",
+    "portId": "C02-010:service-opening:opening",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-050",
+    "portId": "C02-010:service-opening:opening",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-011:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-011:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-011:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-011:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-011:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-011:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-011:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-011:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-012:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-012:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-012:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-012:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-012:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-012:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-012:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-012:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-013:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-013:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-013:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-013:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-013:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-013:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-013:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-013:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-014:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-014:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-014:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-014:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-014:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-014:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-014:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-014:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-015:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-015:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-015:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-015:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-015:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-015:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-015:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-015:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-016:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-016:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-016:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-016:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-016:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-016:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-016:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-016:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-017:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-017:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-017:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-017:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-017:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-017:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-017:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-017:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-018:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-018:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-018:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-018:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-018:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-018:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-018:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-018:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-019:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-019:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-019:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-019:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-019:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-019:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-019:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-019:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-020:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-020:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-020:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-020:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-020:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-020:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-020:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-020:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-021:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-021:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-021:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-021:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-021:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-021:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-021:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-021:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-022:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-022:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-022:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-022:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-022:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-022:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-022:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-022:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-023:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-023:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-023:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-023:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-023:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-023:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-023:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-023:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-024:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-024:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-024:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-024:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-024:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-024:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-024:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-024:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-025:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-025:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-025:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-025:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-025:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-025:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-025:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-025:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-026:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-026:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-026:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-026:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-026:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-026:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-026:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-026:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-027:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-027:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-027:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-027:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-027:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-027:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-027:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-027:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-028:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-028:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-028:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-028:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-028:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-028:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-028:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-028:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-029:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-029:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-029:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-029:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-029:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-029:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-029:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-029:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-030:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-030:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-030:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-030:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-030:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-030:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-030:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-030:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-031:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-031:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-031:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-031:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-031:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-031:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-031:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-031:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-032:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-032:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-032:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-032:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-032:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-032:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-032:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-032:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-033:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-033:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-033:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-033:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-033:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-033:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-033:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-033:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-034:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-034:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-034:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-034:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-034:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-034:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-034:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-034:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-035:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-035:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-035:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-035:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-035:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-035:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-035:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-035:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-036:ground-base@v1::LY-005->LY-081",
+   "portId": "C02-036:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-036:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "C02-036:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "C02-036:ground-base@v1::LY-005->LY-089",
+   "portId": "C02-036:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "C02-036:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "C02-036:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-E:ground-base@v1::LY-005->LY-081",
+   "portId": "FROZEN-D08-E:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-E:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "FROZEN-D08-E:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-E:ground-base@v1::LY-005->LY-089",
+   "portId": "FROZEN-D08-E:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-E:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "FROZEN-D08-E:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-M:ground-base@v1::LY-005->LY-081",
+   "portId": "FROZEN-D08-M:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-M:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "FROZEN-D08-M:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-M:ground-base@v1::LY-005->LY-089",
+   "portId": "FROZEN-D08-M:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-M:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "FROZEN-D08-M:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-NE:ground-base@v1::LY-005->LY-081",
+   "portId": "FROZEN-D08-NE:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-NE:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "FROZEN-D08-NE:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-NE:ground-base@v1::LY-005->LY-089",
+   "portId": "FROZEN-D08-NE:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-NE:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "FROZEN-D08-NE:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-NW:ground-base@v1::LY-005->LY-081",
+   "portId": "FROZEN-D08-NW:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-NW:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "FROZEN-D08-NW:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-NW:ground-base@v1::LY-005->LY-089",
+   "portId": "FROZEN-D08-NW:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-NW:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "FROZEN-D08-NW:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-S1:ground-base@v1::LY-005->LY-081",
+   "portId": "FROZEN-D08-S1:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-S1:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "FROZEN-D08-S1:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-S1:ground-base@v1::LY-005->LY-089",
+   "portId": "FROZEN-D08-S1:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-S1:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "FROZEN-D08-S1:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-S2:ground-base@v1::LY-005->LY-081",
+   "portId": "FROZEN-D08-S2:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-S2:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "FROZEN-D08-S2:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-S2:ground-base@v1::LY-005->LY-089",
+   "portId": "FROZEN-D08-S2:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-S2:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "FROZEN-D08-S2:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-S3:ground-base@v1::LY-005->LY-081",
+   "portId": "FROZEN-D08-S3:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-S3:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "FROZEN-D08-S3:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-S3:ground-base@v1::LY-005->LY-089",
+   "portId": "FROZEN-D08-S3:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-S3:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "FROZEN-D08-S3:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-S4:ground-base@v1::LY-005->LY-081",
+   "portId": "FROZEN-D08-S4:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-S4:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "FROZEN-D08-S4:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "FROZEN-D08-S4:ground-base@v1::LY-005->LY-089",
+   "portId": "FROZEN-D08-S4:ground-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "FROZEN-D08-S4:ground-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "FROZEN-D08-S4:ground-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "admission-court:enclosure:wall-end@v1::LY-061->LY-062",
+   "portId": "admission-court:enclosure:wall-end",
+   "version": 1,
+   "producer": "LY-061",
+   "steward": "LY-061",
+   "consumer": "LY-062",
+   "sideA": {
+    "seat": "LY-061",
+    "portId": "admission-court:enclosure:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-062",
+    "portId": "admission-court:enclosure:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "admission-court:enclosure:wall-end@v1::LY-061->LY-063",
+   "portId": "admission-court:enclosure:wall-end",
+   "version": 1,
+   "producer": "LY-061",
+   "steward": "LY-061",
+   "consumer": "LY-063",
+   "sideA": {
+    "seat": "LY-061",
+    "portId": "admission-court:enclosure:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-063",
+    "portId": "admission-court:enclosure:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "admission-court:side-opening-E:opening@v1::LY-062->LY-070",
+   "portId": "admission-court:side-opening-E:opening",
+   "version": 1,
+   "producer": "LY-062",
+   "steward": "LY-062",
+   "consumer": "LY-070",
+   "sideA": {
+    "seat": "LY-062",
+    "portId": "admission-court:side-opening-E:opening",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-070",
+    "portId": "admission-court:side-opening-E:opening",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "admission-court:side-opening-W:opening@v1::LY-062->LY-069",
+   "portId": "admission-court:side-opening-W:opening",
+   "version": 1,
+   "producer": "LY-062",
+   "steward": "LY-062",
+   "consumer": "LY-069",
+   "sideA": {
+    "seat": "LY-062",
+    "portId": "admission-court:side-opening-W:opening",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-069",
+    "portId": "admission-court:side-opening-W:opening",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "biyong:bank-outlet:drain@v1::LY-073->LY-087",
+   "portId": "biyong:bank-outlet:drain",
+   "version": 1,
+   "producer": "LY-073",
+   "steward": "LY-073",
+   "consumer": "LY-087",
+   "sideA": {
+    "seat": "LY-073",
+    "portId": "biyong:bank-outlet:drain",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-087",
+    "portId": "biyong:bank-outlet:drain",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "biyong:crossing-ends:ground@v1::LY-072->LY-073",
+   "portId": "biyong:crossing-ends:ground",
+   "version": 1,
+   "producer": "LY-072",
+   "steward": "LY-072",
+   "consumer": "LY-073",
+   "sideA": {
+    "seat": "LY-072",
+    "portId": "biyong:crossing-ends:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-073",
+    "portId": "biyong:crossing-ends:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "biyong:hall-enclosure:ground@v1::LY-071->LY-072",
+   "portId": "biyong:hall-enclosure:ground",
+   "version": 1,
+   "producer": "LY-071",
+   "steward": "LY-071",
+   "consumer": "LY-072",
+   "sideA": {
+    "seat": "LY-071",
+    "portId": "biyong:hall-enclosure:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-072",
+    "portId": "biyong:hall-enclosure:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "biyong:hall-enclosure:ground@v1::LY-071->LY-073",
+   "portId": "biyong:hall-enclosure:ground",
+   "version": 1,
+   "producer": "LY-071",
+   "steward": "LY-071",
+   "consumer": "LY-073",
+   "sideA": {
+    "seat": "LY-071",
+    "portId": "biyong:hall-enclosure:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-073",
+    "portId": "biyong:hall-enclosure:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "cut:LY-025:market-well-A:cut@v1::LY-025->LY-090",
+   "portId": "cut:LY-025:market-well-A:cut",
+   "version": 1,
+   "producer": "LY-025",
+   "steward": "LY-025",
+   "consumer": "LY-090",
+   "sideA": {
+    "seat": "LY-025",
+    "portId": "cut:LY-025:market-well-A:cut",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-090",
+    "portId": "cut:LY-025:market-well-A:cut",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "cut:LY-045:C02-010-latrine:cut@v1::LY-045->LY-090",
+   "portId": "cut:LY-045:C02-010-latrine:cut",
+   "version": 1,
+   "producer": "LY-045",
+   "steward": "LY-045",
+   "consumer": "LY-090",
+   "sideA": {
+    "seat": "LY-045",
+    "portId": "cut:LY-045:C02-010-latrine:cut",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-090",
+    "portId": "cut:LY-045:C02-010-latrine:cut",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "cut:LY-053:kiln-pit:cut@v1::LY-053->LY-090",
+   "portId": "cut:LY-053:kiln-pit:cut",
+   "version": 1,
+   "producer": "LY-053",
+   "steward": "LY-053",
+   "consumer": "LY-090",
+   "sideA": {
+    "seat": "LY-053",
+    "portId": "cut:LY-053:kiln-pit:cut",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-090",
+    "portId": "cut:LY-053:kiln-pit:cut",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "cut:LY-086:waterway-wall-block:cut@v1::LY-086->LY-090",
+   "portId": "cut:LY-086:waterway-wall-block:cut",
+   "version": 1,
+   "producer": "LY-086",
+   "steward": "LY-086",
+   "consumer": "LY-090",
+   "sideA": {
+    "seat": "LY-086",
+    "portId": "cut:LY-086:waterway-wall-block:cut",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-090",
+    "portId": "cut:LY-086:waterway-wall-block:cut",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "deyang:maintenance-edge:floor@v1::LY-065->LY-070",
+   "portId": "deyang:maintenance-edge:floor",
+   "version": 1,
+   "producer": "LY-065",
+   "steward": "LY-065",
+   "consumer": "LY-070",
+   "sideA": {
+    "seat": "LY-065",
+    "portId": "deyang:maintenance-edge:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-070",
+    "portId": "deyang:maintenance-edge:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "foot-pestle:tread-base:ground@v1::LY-056->LY-058",
+   "portId": "foot-pestle:tread-base:ground",
+   "version": 1,
+   "producer": "LY-056",
+   "steward": "LY-056",
+   "consumer": "LY-058",
+   "sideA": {
+    "seat": "LY-056",
+    "portId": "foot-pestle:tread-base:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-058",
+    "portId": "foot-pestle:tread-base:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "gallery-A:feet:ground@v1::LY-067->LY-069",
+   "portId": "gallery-A:feet:ground",
+   "version": 1,
+   "producer": "LY-067",
+   "steward": "LY-067",
+   "consumer": "LY-069",
+   "sideA": {
+    "seat": "LY-067",
+    "portId": "gallery-A:feet:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-069",
+    "portId": "gallery-A:feet:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "gallery-B:landing:floor@v1::LY-068->LY-069",
+   "portId": "gallery-B:landing:floor",
+   "version": 1,
+   "producer": "LY-068",
+   "steward": "LY-068",
+   "consumer": "LY-069",
+   "sideA": {
+    "seat": "LY-068",
+    "portId": "gallery-B:landing:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-069",
+    "portId": "gallery-B:landing:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "gallery-end:junction:floor@v1::LY-069->LY-070",
+   "portId": "gallery-end:junction:floor",
+   "version": 1,
+   "producer": "LY-069",
+   "steward": "LY-069",
+   "consumer": "LY-070",
+   "sideA": {
+    "seat": "LY-069",
+    "portId": "gallery-end:junction:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-070",
+    "portId": "gallery-end:junction:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "granary-A:door:opening@v1::LY-031->LY-033",
+   "portId": "granary-A:door:opening",
+   "version": 1,
+   "producer": "LY-031",
+   "steward": "LY-031",
+   "consumer": "LY-033",
+   "sideA": {
+    "seat": "LY-031",
+    "portId": "granary-A:door:opening",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-033",
+    "portId": "granary-A:door:opening",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "granary-A:step-foot:ground@v1::LY-006->LY-031",
+   "portId": "granary-A:step-foot:ground",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-033",
+   "consumer": "LY-031",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "granary-A:step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-031",
+    "portId": "granary-A:step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "granary-A:step-foot:ground@v1::LY-006->LY-034",
+   "portId": "granary-A:step-foot:ground",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-033",
+   "consumer": "LY-034",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "granary-A:step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-034",
+    "portId": "granary-A:step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "granary-A:step-foot:ground@v1::LY-006->LY-081",
+   "portId": "granary-A:step-foot:ground",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-033",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "granary-A:step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "granary-A:step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "granary-A:step-foot:ground@v1::LY-006->LY-089",
+   "portId": "granary-A:step-foot:ground",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-033",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "granary-A:step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "granary-A:step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "granary-B:door:opening@v1::LY-032->LY-033",
+   "portId": "granary-B:door:opening",
+   "version": 1,
+   "producer": "LY-032",
+   "steward": "LY-032",
+   "consumer": "LY-033",
+   "sideA": {
+    "seat": "LY-032",
+    "portId": "granary-B:door:opening",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-033",
+    "portId": "granary-B:door:opening",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "granary-B:step-foot:ground@v1::LY-006->LY-032",
+   "portId": "granary-B:step-foot:ground",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-033",
+   "consumer": "LY-032",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "granary-B:step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-032",
+    "portId": "granary-B:step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "granary-B:step-foot:ground@v1::LY-006->LY-034",
+   "portId": "granary-B:step-foot:ground",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-033",
+   "consumer": "LY-034",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "granary-B:step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-034",
+    "portId": "granary-B:step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "granary-B:step-foot:ground@v1::LY-006->LY-081",
+   "portId": "granary-B:step-foot:ground",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-033",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "granary-B:step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "granary-B:step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "granary-B:step-foot:ground@v1::LY-006->LY-089",
+   "portId": "granary-B:step-foot:ground",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-033",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "granary-B:step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "granary-B:step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "guangyang-gate-body:floor-base@v1::LY-005->LY-081",
+   "portId": "guangyang-gate-body:floor-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "guangyang-gate-body:floor-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "guangyang-gate-body:floor-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "guangyang-gate-body:floor-base@v1::LY-005->LY-089",
+   "portId": "guangyang-gate-body:floor-base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "guangyang-gate-body:floor-base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "guangyang-gate-body:floor-base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "hand-mill:stand-base:ground@v1::LY-055->LY-058",
+   "portId": "hand-mill:stand-base:ground",
+   "version": 1,
+   "producer": "LY-055",
+   "steward": "LY-055",
+   "consumer": "LY-058",
+   "sideA": {
+    "seat": "LY-055",
+    "portId": "hand-mill:stand-base:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-058",
+    "portId": "hand-mill:stand-base:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:central-frame-top:floor@v1::LY-011->LY-013",
+   "portId": "kaiyang-K-v1:central-frame-top:floor",
+   "version": 1,
+   "producer": "LY-011",
+   "steward": "LY-011",
+   "consumer": "LY-013",
+   "sideA": {
+    "seat": "LY-011",
+    "portId": "kaiyang-K-v1:central-frame-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-013",
+    "portId": "kaiyang-K-v1:central-frame-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:central-head-soffit:mount@v1::LY-011->LY-012",
+   "portId": "kaiyang-K-v1:central-head-soffit:mount",
+   "version": 1,
+   "producer": "LY-011",
+   "steward": "LY-011",
+   "consumer": "LY-012",
+   "sideA": {
+    "seat": "LY-011",
+    "portId": "kaiyang-K-v1:central-head-soffit:mount",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-012",
+    "portId": "kaiyang-K-v1:central-head-soffit:mount",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:central-jamb-seat-E:mount@v1::LY-011->LY-012",
+   "portId": "kaiyang-K-v1:central-jamb-seat-E:mount",
+   "version": 1,
+   "producer": "LY-011",
+   "steward": "LY-011",
+   "consumer": "LY-012",
+   "sideA": {
+    "seat": "LY-011",
+    "portId": "kaiyang-K-v1:central-jamb-seat-E:mount",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-012",
+    "portId": "kaiyang-K-v1:central-jamb-seat-E:mount",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:central-jamb-seat-W:mount@v1::LY-011->LY-012",
+   "portId": "kaiyang-K-v1:central-jamb-seat-W:mount",
+   "version": 1,
+   "producer": "LY-011",
+   "steward": "LY-011",
+   "consumer": "LY-012",
+   "sideA": {
+    "seat": "LY-011",
+    "portId": "kaiyang-K-v1:central-jamb-seat-W:mount",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-012",
+    "portId": "kaiyang-K-v1:central-jamb-seat-W:mount",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:deck-top:floor@v1::LY-013->LY-014",
+   "portId": "kaiyang-K-v1:deck-top:floor",
+   "version": 1,
+   "producer": "LY-013",
+   "steward": "LY-013",
+   "consumer": "LY-014",
+   "sideA": {
+    "seat": "LY-013",
+    "portId": "kaiyang-K-v1:deck-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-014",
+    "portId": "kaiyang-K-v1:deck-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:deck-top:floor@v1::LY-013->LY-015",
+   "portId": "kaiyang-K-v1:deck-top:floor",
+   "version": 1,
+   "producer": "LY-013",
+   "steward": "LY-013",
+   "consumer": "LY-015",
+   "sideA": {
+    "seat": "LY-013",
+    "portId": "kaiyang-K-v1:deck-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-015",
+    "portId": "kaiyang-K-v1:deck-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:inner-access-edge:road-end@v1::LY-014->LY-015",
+   "portId": "kaiyang-K-v1:inner-access-edge:road-end",
+   "version": 1,
+   "producer": "LY-014",
+   "steward": "LY-014",
+   "consumer": "LY-015",
+   "sideA": {
+    "seat": "LY-014",
+    "portId": "kaiyang-K-v1:inner-access-edge:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-015",
+    "portId": "kaiyang-K-v1:inner-access-edge:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:leaf-states:opening@v1::LY-012->LY-015",
+   "portId": "kaiyang-K-v1:leaf-states:opening",
+   "version": 1,
+   "producer": "LY-012",
+   "steward": "LY-012",
+   "consumer": "LY-015",
+   "sideA": {
+    "seat": "LY-012",
+    "portId": "kaiyang-K-v1:leaf-states:opening",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-015",
+    "portId": "kaiyang-K-v1:leaf-states:opening",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:outer-apron-edge:road-end@v1::LY-006->LY-081",
+   "portId": "kaiyang-K-v1:outer-apron-edge:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-015",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "kaiyang-K-v1:outer-apron-edge:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "kaiyang-K-v1:outer-apron-edge:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:outer-apron-edge:road-end@v1::LY-006->LY-085",
+   "portId": "kaiyang-K-v1:outer-apron-edge:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-015",
+   "consumer": "LY-085",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "kaiyang-K-v1:outer-apron-edge:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-085",
+    "portId": "kaiyang-K-v1:outer-apron-edge:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:outer-apron-edge:road-end@v1::LY-006->LY-089",
+   "portId": "kaiyang-K-v1:outer-apron-edge:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-015",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "kaiyang-K-v1:outer-apron-edge:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "kaiyang-K-v1:outer-apron-edge:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:passage-C:threshold@v1::LY-006->LY-011",
+   "portId": "kaiyang-K-v1:passage-C:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-015",
+   "consumer": "LY-011",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "kaiyang-K-v1:passage-C:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-011",
+    "portId": "kaiyang-K-v1:passage-C:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:passage-C:threshold@v1::LY-006->LY-012",
+   "portId": "kaiyang-K-v1:passage-C:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-015",
+   "consumer": "LY-012",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "kaiyang-K-v1:passage-C:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-012",
+    "portId": "kaiyang-K-v1:passage-C:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:passage-C:threshold@v1::LY-006->LY-081",
+   "portId": "kaiyang-K-v1:passage-C:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-015",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "kaiyang-K-v1:passage-C:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "kaiyang-K-v1:passage-C:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:passage-C:threshold@v1::LY-006->LY-089",
+   "portId": "kaiyang-K-v1:passage-C:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-015",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "kaiyang-K-v1:passage-C:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "kaiyang-K-v1:passage-C:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:passage-E:threshold@v1::LY-006->LY-012",
+   "portId": "kaiyang-K-v1:passage-E:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-015",
+   "consumer": "LY-012",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "kaiyang-K-v1:passage-E:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-012",
+    "portId": "kaiyang-K-v1:passage-E:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:passage-E:threshold@v1::LY-006->LY-081",
+   "portId": "kaiyang-K-v1:passage-E:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-015",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "kaiyang-K-v1:passage-E:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "kaiyang-K-v1:passage-E:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:passage-E:threshold@v1::LY-006->LY-089",
+   "portId": "kaiyang-K-v1:passage-E:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-015",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "kaiyang-K-v1:passage-E:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "kaiyang-K-v1:passage-E:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:passage-W:threshold@v1::LY-006->LY-012",
+   "portId": "kaiyang-K-v1:passage-W:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-015",
+   "consumer": "LY-012",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "kaiyang-K-v1:passage-W:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-012",
+    "portId": "kaiyang-K-v1:passage-W:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:passage-W:threshold@v1::LY-006->LY-081",
+   "portId": "kaiyang-K-v1:passage-W:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-015",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "kaiyang-K-v1:passage-W:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "kaiyang-K-v1:passage-W:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kaiyang-K-v1:passage-W:threshold@v1::LY-006->LY-089",
+   "portId": "kaiyang-K-v1:passage-W:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-015",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "kaiyang-K-v1:passage-W:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "kaiyang-K-v1:passage-W:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kiln:front-drain:drain@v1::LY-054->LY-087",
+   "portId": "kiln:front-drain:drain",
+   "version": 1,
+   "producer": "LY-054",
+   "steward": "LY-054",
+   "consumer": "LY-087",
+   "sideA": {
+    "seat": "LY-054",
+    "portId": "kiln:front-drain:drain",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-087",
+    "portId": "kiln:front-drain:drain",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kiln:front-work:ground@v1::LY-054->LY-059",
+   "portId": "kiln:front-work:ground",
+   "version": 1,
+   "producer": "LY-054",
+   "steward": "LY-054",
+   "consumer": "LY-059",
+   "sideA": {
+    "seat": "LY-054",
+    "portId": "kiln:front-work:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-059",
+    "portId": "kiln:front-work:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "kiln:pit-rim:cut@v1::LY-053->LY-054",
+   "portId": "kiln:pit-rim:cut",
+   "version": 1,
+   "producer": "LY-053",
+   "steward": "LY-053",
+   "consumer": "LY-054",
+   "sideA": {
+    "seat": "LY-053",
+    "portId": "kiln:pit-rim:cut",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-054",
+    "portId": "kiln:pit-rim:cut",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:canopy-C00:ground@v1::LY-023->LY-028",
+   "portId": "market-site:canopy-C00:ground",
+   "version": 1,
+   "producer": "LY-023",
+   "steward": "LY-023",
+   "consumer": "LY-028",
+   "sideA": {
+    "seat": "LY-023",
+    "portId": "market-site:canopy-C00:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-028",
+    "portId": "market-site:canopy-C00:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:canopy-C01:ground@v1::LY-023->LY-028",
+   "portId": "market-site:canopy-C01:ground",
+   "version": 1,
+   "producer": "LY-023",
+   "steward": "LY-023",
+   "consumer": "LY-028",
+   "sideA": {
+    "seat": "LY-023",
+    "portId": "market-site:canopy-C01:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-028",
+    "portId": "market-site:canopy-C01:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:region-boundary-E:road-end@v1::LY-030->LY-083",
+   "portId": "market-site:region-boundary-E:road-end",
+   "version": 1,
+   "producer": "LY-030",
+   "steward": "LY-030",
+   "consumer": "LY-083",
+   "sideA": {
+    "seat": "LY-030",
+    "portId": "market-site:region-boundary-E:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-083",
+    "portId": "market-site:region-boundary-E:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-east:road-end@v1::LY-006->LY-022",
+   "portId": "market-site:route-east:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-east:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:route-east:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-east:road-end@v1::LY-006->LY-081",
+   "portId": "market-site:route-east:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-east:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:route-east:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-east:road-end@v1::LY-006->LY-089",
+   "portId": "market-site:route-east:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-east:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:route-east:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-exitN:road-end@v1::LY-006->LY-022",
+   "portId": "market-site:route-exitN:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-exitN:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:route-exitN:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-exitN:road-end@v1::LY-006->LY-081",
+   "portId": "market-site:route-exitN:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-exitN:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:route-exitN:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-exitN:road-end@v1::LY-006->LY-089",
+   "portId": "market-site:route-exitN:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-exitN:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:route-exitN:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-exitPublic:road-end@v1::LY-006->LY-022",
+   "portId": "market-site:route-exitPublic:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-exitPublic:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:route-exitPublic:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-exitPublic:road-end@v1::LY-006->LY-030",
+   "portId": "market-site:route-exitPublic:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-030",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-exitPublic:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-030",
+    "portId": "market-site:route-exitPublic:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-exitPublic:road-end@v1::LY-006->LY-081",
+   "portId": "market-site:route-exitPublic:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-exitPublic:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:route-exitPublic:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-exitPublic:road-end@v1::LY-006->LY-083",
+   "portId": "market-site:route-exitPublic:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-083",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-exitPublic:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-083",
+    "portId": "market-site:route-exitPublic:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-exitPublic:road-end@v1::LY-006->LY-089",
+   "portId": "market-site:route-exitPublic:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-exitPublic:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:route-exitPublic:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-exitS:road-end@v1::LY-006->LY-022",
+   "portId": "market-site:route-exitS:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-exitS:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:route-exitS:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-exitS:road-end@v1::LY-006->LY-081",
+   "portId": "market-site:route-exitS:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-exitS:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:route-exitS:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-exitS:road-end@v1::LY-006->LY-089",
+   "portId": "market-site:route-exitS:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-exitS:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:route-exitS:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-public:road-end@v1::LY-006->LY-022",
+   "portId": "market-site:route-public:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-public:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:route-public:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-public:road-end@v1::LY-006->LY-081",
+   "portId": "market-site:route-public:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-public:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:route-public:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-public:road-end@v1::LY-006->LY-089",
+   "portId": "market-site:route-public:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-public:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:route-public:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-rearN:road-end@v1::LY-006->LY-022",
+   "portId": "market-site:route-rearN:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-rearN:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:route-rearN:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-rearN:road-end@v1::LY-006->LY-028",
+   "portId": "market-site:route-rearN:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-028",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-rearN:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-028",
+    "portId": "market-site:route-rearN:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-rearN:road-end@v1::LY-006->LY-081",
+   "portId": "market-site:route-rearN:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-rearN:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:route-rearN:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-rearN:road-end@v1::LY-006->LY-089",
+   "portId": "market-site:route-rearN:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-rearN:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:route-rearN:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-rearS:road-end@v1::LY-006->LY-022",
+   "portId": "market-site:route-rearS:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-rearS:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:route-rearS:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-rearS:road-end@v1::LY-006->LY-081",
+   "portId": "market-site:route-rearS:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-rearS:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:route-rearS:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:route-rearS:road-end@v1::LY-006->LY-089",
+   "portId": "market-site:route-rearS:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:route-rearS:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:route-rearS:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop-type-closure:opening@v1::LY-024->LY-029",
+   "portId": "market-site:shop-type-closure:opening",
+   "version": 1,
+   "producer": "LY-024",
+   "steward": "LY-024",
+   "consumer": "LY-029",
+   "sideA": {
+    "seat": "LY-024",
+    "portId": "market-site:shop-type-closure:opening",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-029",
+    "portId": "market-site:shop-type-closure:opening",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop0-door0-step-foot:ground@v1::LY-021->LY-022",
+   "portId": "market-site:shop0-door0-step-foot:ground",
+   "version": 1,
+   "producer": "LY-021",
+   "steward": "LY-021",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-021",
+    "portId": "market-site:shop0-door0-step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:shop0-door0-step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop0-door0:threshold@v1::LY-006->LY-021",
+   "portId": "market-site:shop0-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-021",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop0-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-021",
+    "portId": "market-site:shop0-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop0-door0:threshold@v1::LY-006->LY-024",
+   "portId": "market-site:shop0-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-024",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop0-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-024",
+    "portId": "market-site:shop0-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop0-door0:threshold@v1::LY-006->LY-081",
+   "portId": "market-site:shop0-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop0-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:shop0-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop0-door0:threshold@v1::LY-006->LY-089",
+   "portId": "market-site:shop0-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop0-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:shop0-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop0-door1-step-foot:ground@v1::LY-021->LY-022",
+   "portId": "market-site:shop0-door1-step-foot:ground",
+   "version": 1,
+   "producer": "LY-021",
+   "steward": "LY-021",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-021",
+    "portId": "market-site:shop0-door1-step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:shop0-door1-step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop0-door1:threshold@v1::LY-006->LY-021",
+   "portId": "market-site:shop0-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-021",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop0-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-021",
+    "portId": "market-site:shop0-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop0-door1:threshold@v1::LY-006->LY-024",
+   "portId": "market-site:shop0-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-024",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop0-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-024",
+    "portId": "market-site:shop0-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop0-door1:threshold@v1::LY-006->LY-081",
+   "portId": "market-site:shop0-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop0-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:shop0-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop0-door1:threshold@v1::LY-006->LY-089",
+   "portId": "market-site:shop0-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop0-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:shop0-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop1-door0-step-foot:ground@v1::LY-021->LY-022",
+   "portId": "market-site:shop1-door0-step-foot:ground",
+   "version": 1,
+   "producer": "LY-021",
+   "steward": "LY-021",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-021",
+    "portId": "market-site:shop1-door0-step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:shop1-door0-step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop1-door0:threshold@v1::LY-006->LY-021",
+   "portId": "market-site:shop1-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-021",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop1-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-021",
+    "portId": "market-site:shop1-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop1-door0:threshold@v1::LY-006->LY-024",
+   "portId": "market-site:shop1-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-024",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop1-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-024",
+    "portId": "market-site:shop1-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop1-door0:threshold@v1::LY-006->LY-081",
+   "portId": "market-site:shop1-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop1-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:shop1-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop1-door0:threshold@v1::LY-006->LY-089",
+   "portId": "market-site:shop1-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop1-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:shop1-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop2-door0-step-foot:ground@v1::LY-021->LY-022",
+   "portId": "market-site:shop2-door0-step-foot:ground",
+   "version": 1,
+   "producer": "LY-021",
+   "steward": "LY-021",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-021",
+    "portId": "market-site:shop2-door0-step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:shop2-door0-step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop2-door0:threshold@v1::LY-006->LY-021",
+   "portId": "market-site:shop2-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-021",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop2-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-021",
+    "portId": "market-site:shop2-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop2-door0:threshold@v1::LY-006->LY-024",
+   "portId": "market-site:shop2-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-024",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop2-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-024",
+    "portId": "market-site:shop2-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop2-door0:threshold@v1::LY-006->LY-081",
+   "portId": "market-site:shop2-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop2-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:shop2-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop2-door0:threshold@v1::LY-006->LY-089",
+   "portId": "market-site:shop2-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop2-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:shop2-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop3-door0-step-foot:ground@v1::LY-021->LY-022",
+   "portId": "market-site:shop3-door0-step-foot:ground",
+   "version": 1,
+   "producer": "LY-021",
+   "steward": "LY-021",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-021",
+    "portId": "market-site:shop3-door0-step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:shop3-door0-step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop3-door0:threshold@v1::LY-006->LY-021",
+   "portId": "market-site:shop3-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-021",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop3-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-021",
+    "portId": "market-site:shop3-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop3-door0:threshold@v1::LY-006->LY-024",
+   "portId": "market-site:shop3-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-024",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop3-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-024",
+    "portId": "market-site:shop3-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop3-door0:threshold@v1::LY-006->LY-081",
+   "portId": "market-site:shop3-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop3-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:shop3-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop3-door0:threshold@v1::LY-006->LY-089",
+   "portId": "market-site:shop3-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop3-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:shop3-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop3-door1-step-foot:ground@v1::LY-021->LY-022",
+   "portId": "market-site:shop3-door1-step-foot:ground",
+   "version": 1,
+   "producer": "LY-021",
+   "steward": "LY-021",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-021",
+    "portId": "market-site:shop3-door1-step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:shop3-door1-step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop3-door1:threshold@v1::LY-006->LY-021",
+   "portId": "market-site:shop3-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-021",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop3-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-021",
+    "portId": "market-site:shop3-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop3-door1:threshold@v1::LY-006->LY-024",
+   "portId": "market-site:shop3-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-024",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop3-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-024",
+    "portId": "market-site:shop3-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop3-door1:threshold@v1::LY-006->LY-081",
+   "portId": "market-site:shop3-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop3-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:shop3-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop3-door1:threshold@v1::LY-006->LY-089",
+   "portId": "market-site:shop3-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop3-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:shop3-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop4-door0-step-foot:ground@v1::LY-021->LY-022",
+   "portId": "market-site:shop4-door0-step-foot:ground",
+   "version": 1,
+   "producer": "LY-021",
+   "steward": "LY-021",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-021",
+    "portId": "market-site:shop4-door0-step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:shop4-door0-step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop4-door0:threshold@v1::LY-006->LY-021",
+   "portId": "market-site:shop4-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-021",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop4-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-021",
+    "portId": "market-site:shop4-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop4-door0:threshold@v1::LY-006->LY-024",
+   "portId": "market-site:shop4-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-024",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop4-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-024",
+    "portId": "market-site:shop4-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop4-door0:threshold@v1::LY-006->LY-081",
+   "portId": "market-site:shop4-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop4-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:shop4-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop4-door0:threshold@v1::LY-006->LY-089",
+   "portId": "market-site:shop4-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop4-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:shop4-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop5-door0-step-foot:ground@v1::LY-021->LY-022",
+   "portId": "market-site:shop5-door0-step-foot:ground",
+   "version": 1,
+   "producer": "LY-021",
+   "steward": "LY-021",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-021",
+    "portId": "market-site:shop5-door0-step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:shop5-door0-step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop5-door0:threshold@v1::LY-006->LY-021",
+   "portId": "market-site:shop5-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-021",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop5-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-021",
+    "portId": "market-site:shop5-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop5-door0:threshold@v1::LY-006->LY-024",
+   "portId": "market-site:shop5-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-024",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop5-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-024",
+    "portId": "market-site:shop5-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop5-door0:threshold@v1::LY-006->LY-081",
+   "portId": "market-site:shop5-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop5-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:shop5-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop5-door0:threshold@v1::LY-006->LY-089",
+   "portId": "market-site:shop5-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop5-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:shop5-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop5-door1-step-foot:ground@v1::LY-021->LY-022",
+   "portId": "market-site:shop5-door1-step-foot:ground",
+   "version": 1,
+   "producer": "LY-021",
+   "steward": "LY-021",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-021",
+    "portId": "market-site:shop5-door1-step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:shop5-door1-step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop5-door1:threshold@v1::LY-006->LY-021",
+   "portId": "market-site:shop5-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-021",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop5-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-021",
+    "portId": "market-site:shop5-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop5-door1:threshold@v1::LY-006->LY-024",
+   "portId": "market-site:shop5-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-024",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop5-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-024",
+    "portId": "market-site:shop5-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop5-door1:threshold@v1::LY-006->LY-081",
+   "portId": "market-site:shop5-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop5-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:shop5-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop5-door1:threshold@v1::LY-006->LY-089",
+   "portId": "market-site:shop5-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop5-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:shop5-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop6-door0-step-foot:ground@v1::LY-021->LY-022",
+   "portId": "market-site:shop6-door0-step-foot:ground",
+   "version": 1,
+   "producer": "LY-021",
+   "steward": "LY-021",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-021",
+    "portId": "market-site:shop6-door0-step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:shop6-door0-step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop6-door0:threshold@v1::LY-006->LY-021",
+   "portId": "market-site:shop6-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-021",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop6-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-021",
+    "portId": "market-site:shop6-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop6-door0:threshold@v1::LY-006->LY-024",
+   "portId": "market-site:shop6-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-024",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop6-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-024",
+    "portId": "market-site:shop6-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop6-door0:threshold@v1::LY-006->LY-081",
+   "portId": "market-site:shop6-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop6-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:shop6-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop6-door0:threshold@v1::LY-006->LY-089",
+   "portId": "market-site:shop6-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop6-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:shop6-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop6-door1-step-foot:ground@v1::LY-021->LY-022",
+   "portId": "market-site:shop6-door1-step-foot:ground",
+   "version": 1,
+   "producer": "LY-021",
+   "steward": "LY-021",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-021",
+    "portId": "market-site:shop6-door1-step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:shop6-door1-step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop6-door1:threshold@v1::LY-006->LY-021",
+   "portId": "market-site:shop6-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-021",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop6-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-021",
+    "portId": "market-site:shop6-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop6-door1:threshold@v1::LY-006->LY-024",
+   "portId": "market-site:shop6-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-024",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop6-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-024",
+    "portId": "market-site:shop6-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop6-door1:threshold@v1::LY-006->LY-081",
+   "portId": "market-site:shop6-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop6-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:shop6-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop6-door1:threshold@v1::LY-006->LY-089",
+   "portId": "market-site:shop6-door1:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop6-door1:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:shop6-door1:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop7-door0-step-foot:ground@v1::LY-021->LY-022",
+   "portId": "market-site:shop7-door0-step-foot:ground",
+   "version": 1,
+   "producer": "LY-021",
+   "steward": "LY-021",
+   "consumer": "LY-022",
+   "sideA": {
+    "seat": "LY-021",
+    "portId": "market-site:shop7-door0-step-foot:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-022",
+    "portId": "market-site:shop7-door0-step-foot:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop7-door0:threshold@v1::LY-006->LY-021",
+   "portId": "market-site:shop7-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-021",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop7-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-021",
+    "portId": "market-site:shop7-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop7-door0:threshold@v1::LY-006->LY-024",
+   "portId": "market-site:shop7-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-024",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop7-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-024",
+    "portId": "market-site:shop7-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop7-door0:threshold@v1::LY-006->LY-081",
+   "portId": "market-site:shop7-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop7-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "market-site:shop7-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:shop7-door0:threshold@v1::LY-006->LY-089",
+   "portId": "market-site:shop7-door0:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-029",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "market-site:shop7-door0:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "market-site:shop7-door0:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:staging-W:ground@v1::LY-028->LY-029",
+   "portId": "market-site:staging-W:ground",
+   "version": 1,
+   "producer": "LY-028",
+   "steward": "LY-028",
+   "consumer": "LY-029",
+   "sideA": {
+    "seat": "LY-028",
+    "portId": "market-site:staging-W:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-029",
+    "portId": "market-site:staging-W:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:street-patch-ends:ground@v1::LY-022->LY-029",
+   "portId": "market-site:street-patch-ends:ground",
+   "version": 1,
+   "producer": "LY-022",
+   "steward": "LY-022",
+   "consumer": "LY-029",
+   "sideA": {
+    "seat": "LY-022",
+    "portId": "market-site:street-patch-ends:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-029",
+    "portId": "market-site:street-patch-ends:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:well-A:ground@v1::LY-025->LY-026",
+   "portId": "market-site:well-A:ground",
+   "version": 1,
+   "producer": "LY-025",
+   "steward": "LY-025",
+   "consumer": "LY-026",
+   "sideA": {
+    "seat": "LY-025",
+    "portId": "market-site:well-A:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-026",
+    "portId": "market-site:well-A:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "market-site:well-A:ground@v1::LY-025->LY-029",
+   "portId": "market-site:well-A:ground",
+   "version": 1,
+   "producer": "LY-025",
+   "steward": "LY-025",
+   "consumer": "LY-029",
+   "sideA": {
+    "seat": "LY-025",
+    "portId": "market-site:well-A:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-029",
+    "portId": "market-site:well-A:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "mingtang:side-E:ground@v1::LY-074->LY-075",
+   "portId": "mingtang:side-E:ground",
+   "version": 1,
+   "producer": "LY-074",
+   "steward": "LY-074",
+   "consumer": "LY-075",
+   "sideA": {
+    "seat": "LY-074",
+    "portId": "mingtang:side-E:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-075",
+    "portId": "mingtang:side-E:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "mingtang:side-N:ground@v1::LY-074->LY-075",
+   "portId": "mingtang:side-N:ground",
+   "version": 1,
+   "producer": "LY-074",
+   "steward": "LY-074",
+   "consumer": "LY-075",
+   "sideA": {
+    "seat": "LY-074",
+    "portId": "mingtang:side-N:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-075",
+    "portId": "mingtang:side-N:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "mingtang:side-S:ground@v1::LY-074->LY-075",
+   "portId": "mingtang:side-S:ground",
+   "version": 1,
+   "producer": "LY-074",
+   "steward": "LY-074",
+   "consumer": "LY-075",
+   "sideA": {
+    "seat": "LY-074",
+    "portId": "mingtang:side-S:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-075",
+    "portId": "mingtang:side-S:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "mingtang:side-W:ground@v1::LY-074->LY-075",
+   "portId": "mingtang:side-W:ground",
+   "version": 1,
+   "producer": "LY-074",
+   "steward": "LY-074",
+   "consumer": "LY-075",
+   "sideA": {
+    "seat": "LY-074",
+    "portId": "mingtang:side-W:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-075",
+    "portId": "mingtang:side-W:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "ne-approach:end-E:road-end@v1::LY-006->LY-039",
+   "portId": "ne-approach:end-E:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-039",
+   "consumer": "LY-039",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "ne-approach:end-E:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-039",
+    "portId": "ne-approach:end-E:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "ne-approach:end-E:road-end@v1::LY-006->LY-081",
+   "portId": "ne-approach:end-E:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-039",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "ne-approach:end-E:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "ne-approach:end-E:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "ne-approach:end-E:road-end@v1::LY-006->LY-084",
+   "portId": "ne-approach:end-E:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-039",
+   "consumer": "LY-084",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "ne-approach:end-E:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-084",
+    "portId": "ne-approach:end-E:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "ne-approach:end-E:road-end@v1::LY-006->LY-089",
+   "portId": "ne-approach:end-E:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-039",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "ne-approach:end-E:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "ne-approach:end-E:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "ne-approach:start:road-end@v1::LY-006->LY-039",
+   "portId": "ne-approach:start:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-039",
+   "consumer": "LY-039",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "ne-approach:start:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-039",
+    "portId": "ne-approach:start:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "ne-approach:start:road-end@v1::LY-006->LY-081",
+   "portId": "ne-approach:start:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-039",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "ne-approach:start:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "ne-approach:start:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "ne-approach:start:road-end@v1::LY-006->LY-089",
+   "portId": "ne-approach:start:road-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-039",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "ne-approach:start:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "ne-approach:start:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "paired-que:forecourt-edge:ground@v1::LY-064->LY-070",
+   "portId": "paired-que:forecourt-edge:ground",
+   "version": 1,
+   "producer": "LY-064",
+   "steward": "LY-064",
+   "consumer": "LY-070",
+   "sideA": {
+    "seat": "LY-064",
+    "portId": "paired-que:forecourt-edge:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-070",
+    "portId": "paired-que:forecourt-edge:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "pingcheng-P-v1:old-ramp:ground@v1::LY-006->LY-016",
+   "portId": "pingcheng-P-v1:old-ramp:ground",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-017",
+   "consumer": "LY-016",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "pingcheng-P-v1:old-ramp:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-016",
+    "portId": "pingcheng-P-v1:old-ramp:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "pingcheng-P-v1:old-ramp:ground@v1::LY-006->LY-017",
+   "portId": "pingcheng-P-v1:old-ramp:ground",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-017",
+   "consumer": "LY-017",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "pingcheng-P-v1:old-ramp:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-017",
+    "portId": "pingcheng-P-v1:old-ramp:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "pingcheng-P-v1:old-ramp:ground@v1::LY-006->LY-081",
+   "portId": "pingcheng-P-v1:old-ramp:ground",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-017",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "pingcheng-P-v1:old-ramp:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "pingcheng-P-v1:old-ramp:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "pingcheng-P-v1:old-ramp:ground@v1::LY-006->LY-089",
+   "portId": "pingcheng-P-v1:old-ramp:ground",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-017",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "pingcheng-P-v1:old-ramp:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "pingcheng-P-v1:old-ramp:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "pingcheng-P-v1:outer-edge-E:road-end@v1::LY-016->LY-085",
+   "portId": "pingcheng-P-v1:outer-edge-E:road-end",
+   "version": 1,
+   "producer": "LY-016",
+   "steward": "LY-016",
+   "consumer": "LY-085",
+   "sideA": {
+    "seat": "LY-016",
+    "portId": "pingcheng-P-v1:outer-edge-E:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-085",
+    "portId": "pingcheng-P-v1:outer-edge-E:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "pingcheng-P-v1:outer-edge-W:road-end@v1::LY-016->LY-085",
+   "portId": "pingcheng-P-v1:outer-edge-W:road-end",
+   "version": 1,
+   "producer": "LY-016",
+   "steward": "LY-016",
+   "consumer": "LY-085",
+   "sideA": {
+    "seat": "LY-016",
+    "portId": "pingcheng-P-v1:outer-edge-W:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-085",
+    "portId": "pingcheng-P-v1:outer-edge-W:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "pingcheng-P-v1:passage-E:threshold@v1::LY-006->LY-017",
+   "portId": "pingcheng-P-v1:passage-E:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-016",
+   "consumer": "LY-017",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "pingcheng-P-v1:passage-E:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-017",
+    "portId": "pingcheng-P-v1:passage-E:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "pingcheng-P-v1:passage-E:threshold@v1::LY-006->LY-081",
+   "portId": "pingcheng-P-v1:passage-E:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-016",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "pingcheng-P-v1:passage-E:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "pingcheng-P-v1:passage-E:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "pingcheng-P-v1:passage-E:threshold@v1::LY-006->LY-089",
+   "portId": "pingcheng-P-v1:passage-E:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-016",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "pingcheng-P-v1:passage-E:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "pingcheng-P-v1:passage-E:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "pingcheng-P-v1:passage-W:threshold@v1::LY-006->LY-017",
+   "portId": "pingcheng-P-v1:passage-W:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-016",
+   "consumer": "LY-017",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "pingcheng-P-v1:passage-W:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-017",
+    "portId": "pingcheng-P-v1:passage-W:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "pingcheng-P-v1:passage-W:threshold@v1::LY-006->LY-081",
+   "portId": "pingcheng-P-v1:passage-W:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-016",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "pingcheng-P-v1:passage-W:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "pingcheng-P-v1:passage-W:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "pingcheng-P-v1:passage-W:threshold@v1::LY-006->LY-089",
+   "portId": "pingcheng-P-v1:passage-W:threshold",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-016",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "pingcheng-P-v1:passage-W:threshold",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "pingcheng-P-v1:passage-W:threshold",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "sidehall:ends:floor@v1::LY-063->LY-069",
+   "portId": "sidehall:ends:floor",
+   "version": 1,
+   "producer": "LY-063",
+   "steward": "LY-063",
+   "consumer": "LY-069",
+   "sideA": {
+    "seat": "LY-063",
+    "portId": "sidehall:ends:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-069",
+    "portId": "sidehall:ends:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "stable:drain-outlet:drain@v1::LY-052->LY-087",
+   "portId": "stable:drain-outlet:drain",
+   "version": 1,
+   "producer": "LY-052",
+   "steward": "LY-052",
+   "consumer": "LY-087",
+   "sideA": {
+    "seat": "LY-052",
+    "portId": "stable:drain-outlet:drain",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-087",
+    "portId": "stable:drain-outlet:drain",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "stable:entrance:ground@v1::LY-052->LY-060",
+   "portId": "stable:entrance:ground",
+   "version": 1,
+   "producer": "LY-052",
+   "steward": "LY-052",
+   "consumer": "LY-060",
+   "sideA": {
+    "seat": "LY-052",
+    "portId": "stable:entrance:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-060",
+    "portId": "stable:entrance:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "stable:partition-footprint:mount@v1::LY-051->LY-052",
+   "portId": "stable:partition-footprint:mount",
+   "version": 1,
+   "producer": "LY-051",
+   "steward": "LY-051",
+   "consumer": "LY-052",
+   "sideA": {
+    "seat": "LY-051",
+    "portId": "stable:partition-footprint:mount",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-052",
+    "portId": "stable:partition-footprint:mount",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "storage-site:forecourt-north:road-end@v1::LY-034->LY-035",
+   "portId": "storage-site:forecourt-north:road-end",
+   "version": 1,
+   "producer": "LY-034",
+   "steward": "LY-034",
+   "consumer": "LY-035",
+   "sideA": {
+    "seat": "LY-034",
+    "portId": "storage-site:forecourt-north:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-035",
+    "portId": "storage-site:forecourt-north:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "storage-site:forecourt-north:road-end@v1::LY-034->LY-039",
+   "portId": "storage-site:forecourt-north:road-end",
+   "version": 1,
+   "producer": "LY-034",
+   "steward": "LY-034",
+   "consumer": "LY-039",
+   "sideA": {
+    "seat": "LY-034",
+    "portId": "storage-site:forecourt-north:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-039",
+    "portId": "storage-site:forecourt-north:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "storage-site:forecourt-north:road-end@v1::LY-034->LY-040",
+   "portId": "storage-site:forecourt-north:road-end",
+   "version": 1,
+   "producer": "LY-034",
+   "steward": "LY-034",
+   "consumer": "LY-040",
+   "sideA": {
+    "seat": "LY-034",
+    "portId": "storage-site:forecourt-north:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-040",
+    "portId": "storage-site:forecourt-north:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "storage-site:region-boundary:road-end@v1::LY-040->LY-084",
+   "portId": "storage-site:region-boundary:road-end",
+   "version": 1,
+   "producer": "LY-040",
+   "steward": "LY-040",
+   "consumer": "LY-084",
+   "sideA": {
+    "seat": "LY-040",
+    "portId": "storage-site:region-boundary:road-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-084",
+    "portId": "storage-site:region-boundary:road-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "taixue-A:outer-entry:ground@v1::LY-077->LY-078",
+   "portId": "taixue-A:outer-entry:ground",
+   "version": 1,
+   "producer": "LY-077",
+   "steward": "LY-077",
+   "consumer": "LY-078",
+   "sideA": {
+    "seat": "LY-077",
+    "portId": "taixue-A:outer-entry:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-078",
+    "portId": "taixue-A:outer-entry:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-00:cap-0-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-00:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-00:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-00:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-00:cap-0-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-00:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-00:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-00:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-00:cap-0:wall-end@v1::LY-006->LY-019",
+   "portId": "wall-A-wall-00:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-019",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-00:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-019",
+    "portId": "wall-A-wall-00:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-00:cap-0:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-00:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-00:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-00:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-00:cap-0:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-00:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-00:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-00:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-00:cap-1-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-00:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-00:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-00:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-00:cap-1-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-00:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-00:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-00:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-00:cap-1:wall-end@v1::LY-006->LY-018",
+   "portId": "wall-A-wall-00:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-018",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-00:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-018",
+    "portId": "wall-A-wall-00:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-00:cap-1:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-00:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-00:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-00:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-00:cap-1:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-00:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-00:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-00:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-01:cap-0-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-01:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-01:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-01:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-01:cap-0-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-01:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-01:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-01:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-01:cap-0:wall-end@v1::LY-006->LY-018",
+   "portId": "wall-A-wall-01:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-018",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-01:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-018",
+    "portId": "wall-A-wall-01:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-01:cap-0:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-01:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-01:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-01:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-01:cap-0:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-01:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-01:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-01:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-01:cap-1-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-01:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-01:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-01:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-01:cap-1-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-01:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-01:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-01:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-01:cap-1:wall-end@v1::LY-006->LY-020",
+   "portId": "wall-A-wall-01:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-020",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-01:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-020",
+    "portId": "wall-A-wall-01:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-01:cap-1:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-01:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-01:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-01:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-01:cap-1:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-01:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-01:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-01:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-02:cap-0-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-02:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-02:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-02:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-02:cap-0-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-02:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-02:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-02:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-02:cap-0:wall-end@v1::LY-006->LY-020",
+   "portId": "wall-A-wall-02:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-020",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-02:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-020",
+    "portId": "wall-A-wall-02:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-02:cap-0:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-02:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-02:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-02:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-02:cap-0:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-02:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-02:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-02:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-02:cap-1-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-02:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-02:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-02:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-02:cap-1-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-02:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-02:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-02:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-02:cap-1:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-02:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-02:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-02:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-02:cap-1:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-02:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-02:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-02:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-03:cap-0-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-03:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-03:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-03:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-03:cap-0-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-03:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-03:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-03:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-03:cap-0:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-03:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-03:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-03:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-03:cap-0:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-03:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-03:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-03:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-03:cap-1-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-03:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-03:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-03:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-03:cap-1-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-03:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-03:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-03:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-03:cap-1:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-03:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-03:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-03:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-03:cap-1:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-03:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-03:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-03:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-04:cap-0-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-04:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-04:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-04:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-04:cap-0-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-04:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-04:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-04:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-04:cap-0:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-04:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-04:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-04:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-04:cap-0:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-04:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-04:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-04:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-04:cap-1-top:floor@v1::LY-006->LY-014",
+   "portId": "wall-A-wall-04:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-014",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-04:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-014",
+    "portId": "wall-A-wall-04:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-04:cap-1-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-04:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-04:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-04:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-04:cap-1-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-04:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-04:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-04:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-04:cap-1:wall-end@v1::LY-006->LY-014",
+   "portId": "wall-A-wall-04:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-014",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-04:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-014",
+    "portId": "wall-A-wall-04:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-04:cap-1:wall-end@v1::LY-006->LY-015",
+   "portId": "wall-A-wall-04:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-015",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-04:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-015",
+    "portId": "wall-A-wall-04:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-04:cap-1:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-04:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-04:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-04:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-04:cap-1:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-04:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-04:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-04:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-05:cap-0-top:floor@v1::LY-006->LY-014",
+   "portId": "wall-A-wall-05:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-014",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-05:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-014",
+    "portId": "wall-A-wall-05:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-05:cap-0-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-05:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-05:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-05:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-05:cap-0-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-05:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-05:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-05:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-05:cap-0:wall-end@v1::LY-006->LY-014",
+   "portId": "wall-A-wall-05:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-014",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-05:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-014",
+    "portId": "wall-A-wall-05:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-05:cap-0:wall-end@v1::LY-006->LY-015",
+   "portId": "wall-A-wall-05:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-015",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-05:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-015",
+    "portId": "wall-A-wall-05:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-05:cap-0:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-05:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-05:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-05:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-05:cap-0:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-05:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-05:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-05:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-05:cap-1-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-05:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-05:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-05:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-05:cap-1-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-05:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-05:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-05:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-05:cap-1:wall-end@v1::LY-006->LY-017",
+   "portId": "wall-A-wall-05:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-017",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-05:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-017",
+    "portId": "wall-A-wall-05:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-05:cap-1:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-05:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-05:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-05:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-05:cap-1:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-05:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-05:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-05:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-06:cap-0-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-06:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-06:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-06:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-06:cap-0-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-06:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-06:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-06:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-06:cap-0:wall-end@v1::LY-006->LY-017",
+   "portId": "wall-A-wall-06:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-017",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-06:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-017",
+    "portId": "wall-A-wall-06:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-06:cap-0:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-06:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-06:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-06:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-06:cap-0:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-06:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-06:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-06:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-06:cap-1-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-06:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-06:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-06:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-06:cap-1-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-06:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-06:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-06:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-06:cap-1:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-06:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-06:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-06:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-06:cap-1:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-06:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-06:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-06:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-07:cap-0-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-07:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-07:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-07:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-07:cap-0-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-07:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-07:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-07:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-07:cap-0:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-07:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-07:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-07:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-07:cap-0:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-07:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-07:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-07:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-07:cap-1-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-07:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-07:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-07:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-07:cap-1-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-07:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-07:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-07:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-07:cap-1:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-07:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-07:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-07:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-07:cap-1:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-07:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-07:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-07:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-10:cap-0-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-10:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-10:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-10:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-10:cap-0-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-10:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-10:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-10:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-10:cap-0:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-10:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-10:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-10:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-10:cap-0:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-10:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-10:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-10:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-10:cap-1-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-10:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-10:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-10:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-10:cap-1-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-10:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-10:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-10:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-10:cap-1:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-10:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-10:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-10:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-10:cap-1:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-10:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-10:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-10:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-11:cap-0-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-11:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-11:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-11:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-11:cap-0-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-11:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-11:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-11:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-11:cap-0:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-11:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-11:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-11:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-11:cap-0:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-11:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-11:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-11:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-11:cap-1-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-11:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-11:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-11:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-11:cap-1-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-11:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-11:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-11:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-11:cap-1:wall-end@v1::LY-006->LY-019",
+   "portId": "wall-A-wall-11:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-019",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-11:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-019",
+    "portId": "wall-A-wall-11:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-11:cap-1:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-A-wall-11:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-11:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-A-wall-11:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-A-wall-11:cap-1:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-A-wall-11:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": "LY-020",
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-A-wall-11:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-A-wall-11:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-08:cap-0-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-direct-wall-08:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-08:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-direct-wall-08:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-08:cap-0-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-direct-wall-08:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-08:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-direct-wall-08:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-08:cap-0:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-direct-wall-08:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-08:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-direct-wall-08:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-08:cap-0:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-direct-wall-08:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-08:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-direct-wall-08:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-08:cap-1-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-direct-wall-08:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-08:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-direct-wall-08:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-08:cap-1-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-direct-wall-08:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-08:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-direct-wall-08:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-08:cap-1:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-direct-wall-08:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-08:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-direct-wall-08:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-08:cap-1:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-direct-wall-08:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-08:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-direct-wall-08:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-09:cap-0-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-direct-wall-09:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-09:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-direct-wall-09:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-09:cap-0-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-direct-wall-09:cap-0-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-09:cap-0-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-direct-wall-09:cap-0-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-09:cap-0:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-direct-wall-09:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-09:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-direct-wall-09:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-09:cap-0:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-direct-wall-09:cap-0:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-09:cap-0:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-direct-wall-09:cap-0:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-09:cap-1-top:floor@v1::LY-006->LY-081",
+   "portId": "wall-direct-wall-09:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-09:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-direct-wall-09:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-09:cap-1-top:floor@v1::LY-006->LY-089",
+   "portId": "wall-direct-wall-09:cap-1-top:floor",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-09:cap-1-top:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-direct-wall-09:cap-1-top:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-09:cap-1:wall-end@v1::LY-006->LY-081",
+   "portId": "wall-direct-wall-09:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-09:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "wall-direct-wall-09:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wall-direct-wall-09:cap-1:wall-end@v1::LY-006->LY-089",
+   "portId": "wall-direct-wall-09:cap-1:wall-end",
+   "version": 1,
+   "producer": "LY-006",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-006",
+    "portId": "wall-direct-wall-09:cap-1:wall-end",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "wall-direct-wall-09:cap-1:wall-end",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "work-site:interior-edge:ground@v1::LY-058->LY-059",
+   "portId": "work-site:interior-edge:ground",
+   "version": 1,
+   "producer": "LY-058",
+   "steward": "LY-058",
+   "consumer": "LY-059",
+   "sideA": {
+    "seat": "LY-058",
+    "portId": "work-site:interior-edge:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-059",
+    "portId": "work-site:interior-edge:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "work-site:service-gate:opening@v1::LY-059->LY-060",
+   "portId": "work-site:service-gate:opening",
+   "version": 1,
+   "producer": "LY-059",
+   "steward": "LY-059",
+   "consumer": "LY-060",
+   "sideA": {
+    "seat": "LY-059",
+    "portId": "work-site:service-gate:opening",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-060",
+    "portId": "work-site:service-gate:opening",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "workshed:shed-floor:floor@v1::LY-057->LY-058",
+   "portId": "workshed:shed-floor:floor",
+   "version": 1,
+   "producer": "LY-057",
+   "steward": "LY-057",
+   "consumer": "LY-058",
+   "sideA": {
+    "seat": "LY-057",
+    "portId": "workshed:shed-floor:floor",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-058",
+    "portId": "workshed:shed-floor:floor",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wuku-B:forecourt-side:ground@v1::LY-037->LY-039",
+   "portId": "wuku-B:forecourt-side:ground",
+   "version": 1,
+   "producer": "LY-037",
+   "steward": "LY-037",
+   "consumer": "LY-039",
+   "sideA": {
+    "seat": "LY-037",
+    "portId": "wuku-B:forecourt-side:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-039",
+    "portId": "wuku-B:forecourt-side:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wuku-B:outer-arrival:ground@v1::LY-036->LY-037",
+   "portId": "wuku-B:outer-arrival:ground",
+   "version": 1,
+   "producer": "LY-036",
+   "steward": "LY-036",
+   "consumer": "LY-037",
+   "sideA": {
+    "seat": "LY-036",
+    "portId": "wuku-B:outer-arrival:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-037",
+    "portId": "wuku-B:outer-arrival:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wuku-B:outer-arrival:ground@v1::LY-036->LY-038",
+   "portId": "wuku-B:outer-arrival:ground",
+   "version": 1,
+   "producer": "LY-036",
+   "steward": "LY-036",
+   "consumer": "LY-038",
+   "sideA": {
+    "seat": "LY-036",
+    "portId": "wuku-B:outer-arrival:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-038",
+    "portId": "wuku-B:outer-arrival:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "wuku-B:outer-arrival:ground@v1::LY-036->LY-039",
+   "portId": "wuku-B:outer-arrival:ground",
+   "version": 1,
+   "producer": "LY-036",
+   "steward": "LY-036",
+   "consumer": "LY-039",
+   "sideA": {
+    "seat": "LY-036",
+    "portId": "wuku-B:outer-arrival:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-039",
+    "portId": "wuku-B:outer-arrival:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:apron-edge-inner:ground@v1::LY-005->LY-081",
+   "portId": "yong-gate:apron-edge-inner:ground",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:apron-edge-inner:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "yong-gate:apron-edge-inner:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:apron-edge-inner:ground@v1::LY-005->LY-089",
+   "portId": "yong-gate:apron-edge-inner:ground",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:apron-edge-inner:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "yong-gate:apron-edge-inner:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:apron-edge-outer:ground@v1::LY-005->LY-081",
+   "portId": "yong-gate:apron-edge-outer:ground",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:apron-edge-outer:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "yong-gate:apron-edge-outer:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:apron-edge-outer:ground@v1::LY-005->LY-089",
+   "portId": "yong-gate:apron-edge-outer:ground",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:apron-edge-outer:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "yong-gate:apron-edge-outer:ground",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:passage-C:threshold-inner@v1::LY-005->LY-081",
+   "portId": "yong-gate:passage-C:threshold-inner",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:passage-C:threshold-inner",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "yong-gate:passage-C:threshold-inner",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:passage-C:threshold-inner@v1::LY-005->LY-089",
+   "portId": "yong-gate:passage-C:threshold-inner",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:passage-C:threshold-inner",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "yong-gate:passage-C:threshold-inner",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:passage-C:threshold-outer@v1::LY-005->LY-081",
+   "portId": "yong-gate:passage-C:threshold-outer",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:passage-C:threshold-outer",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "yong-gate:passage-C:threshold-outer",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:passage-C:threshold-outer@v1::LY-005->LY-089",
+   "portId": "yong-gate:passage-C:threshold-outer",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:passage-C:threshold-outer",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "yong-gate:passage-C:threshold-outer",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:passage-N:threshold-inner@v1::LY-005->LY-081",
+   "portId": "yong-gate:passage-N:threshold-inner",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:passage-N:threshold-inner",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "yong-gate:passage-N:threshold-inner",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:passage-N:threshold-inner@v1::LY-005->LY-089",
+   "portId": "yong-gate:passage-N:threshold-inner",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:passage-N:threshold-inner",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "yong-gate:passage-N:threshold-inner",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:passage-N:threshold-outer@v1::LY-005->LY-081",
+   "portId": "yong-gate:passage-N:threshold-outer",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:passage-N:threshold-outer",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "yong-gate:passage-N:threshold-outer",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:passage-N:threshold-outer@v1::LY-005->LY-089",
+   "portId": "yong-gate:passage-N:threshold-outer",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:passage-N:threshold-outer",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "yong-gate:passage-N:threshold-outer",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:passage-S:threshold-inner@v1::LY-005->LY-081",
+   "portId": "yong-gate:passage-S:threshold-inner",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:passage-S:threshold-inner",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "yong-gate:passage-S:threshold-inner",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:passage-S:threshold-inner@v1::LY-005->LY-089",
+   "portId": "yong-gate:passage-S:threshold-inner",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:passage-S:threshold-inner",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "yong-gate:passage-S:threshold-inner",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:passage-S:threshold-outer@v1::LY-005->LY-081",
+   "portId": "yong-gate:passage-S:threshold-outer",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:passage-S:threshold-outer",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "yong-gate:passage-S:threshold-outer",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:passage-S:threshold-outer@v1::LY-005->LY-089",
+   "portId": "yong-gate:passage-S:threshold-outer",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:passage-S:threshold-outer",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "yong-gate:passage-S:threshold-outer",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:wall-joint-north:base@v1::LY-005->LY-081",
+   "portId": "yong-gate:wall-joint-north:base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:wall-joint-north:base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "yong-gate:wall-joint-north:base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:wall-joint-north:base@v1::LY-005->LY-089",
+   "portId": "yong-gate:wall-joint-north:base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:wall-joint-north:base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "yong-gate:wall-joint-north:base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:wall-joint-south:base@v1::LY-005->LY-081",
+   "portId": "yong-gate:wall-joint-south:base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-081",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:wall-joint-south:base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-081",
+    "portId": "yong-gate:wall-joint-south:base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yong-gate:wall-joint-south:base@v1::LY-005->LY-089",
+   "portId": "yong-gate:wall-joint-south:base",
+   "version": 1,
+   "producer": "LY-005",
+   "steward": null,
+   "consumer": "LY-089",
+   "sideA": {
+    "seat": "LY-005",
+    "portId": "yong-gate:wall-joint-south:base",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-089",
+    "portId": "yong-gate:wall-joint-south:base",
+    "version": 1
+   }
+  },
+  {
+   "seamId": "yutang:outer-port:ground@v1::LY-066->LY-070",
+   "portId": "yutang:outer-port:ground",
+   "version": 1,
+   "producer": "LY-066",
+   "steward": "LY-066",
+   "consumer": "LY-070",
+   "sideA": {
+    "seat": "LY-066",
+    "portId": "yutang:outer-port:ground",
+    "version": 1
+   },
+   "sideB": {
+    "seat": "LY-070",
+    "portId": "yutang:outer-port:ground",
+    "version": 1
+   }
+  }
+ ],
+ "gateSlots": [
+  {
+   "pair": [
+    "wall-A-wall-00",
+    "wall-A-wall-11"
+   ],
+   "caps": [
+    "wall-A-wall-00:cap-0:wall-end",
+    "wall-A-wall-11:cap-1:wall-end"
+   ],
+   "gap_plan_m": 32.0,
+   "midpoint": [
+    734.4889,
+    0.17,
+    -3566.1366
+   ],
+   "gateSlot": "夏门 Xia",
+   "site": "S-XIA",
+   "siteOwner": "LY-019"
+  },
+  {
+   "pair": [
+    "wall-A-wall-00",
+    "wall-A-wall-01"
+   ],
+   "caps": [
+    "wall-A-wall-00:cap-1:wall-end",
+    "wall-A-wall-01:cap-0:wall-end"
+   ],
+   "gap_plan_m": 32.0,
+   "midpoint": [
+    1693.2231,
+    0.17,
+    -3894.5302
+   ],
+   "gateSlot": "谷门 Gu",
+   "site": "S-GU",
+   "siteOwner": "LY-018"
+  },
+  {
+   "pair": [
+    "wall-A-wall-02",
+    "wall-A-wall-03"
+   ],
+   "caps": [
+    "wall-A-wall-02:cap-1:wall-end",
+    "wall-A-wall-03:cap-0:wall-end"
+   ],
+   "gap_plan_m": 32.0,
+   "midpoint": [
+    2579.9965,
+    0.17,
+    -1805.3687
+   ],
+   "gateSlot": "中东门 Zhongdong (not in 011-090)",
+   "site": null,
+   "siteOwner": null
+  },
+  {
+   "pair": [
+    "wall-A-wall-03",
+    "wall-A-wall-04"
+   ],
+   "caps": [
+    "wall-A-wall-03:cap-1:wall-end",
+    "wall-A-wall-04:cap-0:wall-end"
+   ],
+   "gap_plan_m": 32.0,
+   "midpoint": [
+    2473.5861,
+    0.17,
+    -459.0605
+   ],
+   "gateSlot": "旄门 Mao (not in 011-090)",
+   "site": null,
+   "siteOwner": null
+  },
+  {
+   "pair": [
+    "wall-A-wall-04",
+    "wall-A-wall-05"
+   ],
+   "caps": [
+    "wall-A-wall-04:cap-1:wall-end",
+    "wall-A-wall-05:cap-0:wall-end"
+   ],
+   "gap_plan_m": 32.0001,
+   "midpoint": [
+    2010.3972,
+    0.17,
+    21.3011
+   ],
+   "gateSlot": "开阳门 Kaiyang",
+   "site": "S-KAIYANG",
+   "siteOwner": "LY-015"
+  },
+  {
+   "pair": [
+    "wall-A-wall-05",
+    "wall-A-wall-06"
+   ],
+   "caps": [
+    "wall-A-wall-05:cap-1:wall-end",
+    "wall-A-wall-06:cap-0:wall-end"
+   ],
+   "gap_plan_m": 32.0,
+   "midpoint": [
+    1622.8091,
+    0.17,
+    13.26
+   ],
+   "gateSlot": "平城门 Pingcheng",
+   "site": "S-PINGCHENG",
+   "siteOwner": "LY-017"
+  },
+  {
+   "pair": [
+    "wall-A-wall-06",
+    "wall-A-wall-07"
+   ],
+   "caps": [
+    "wall-A-wall-06:cap-1:wall-end",
+    "wall-A-wall-07:cap-0:wall-end"
+   ],
+   "gap_plan_m": 32.0,
+   "midpoint": [
+    898.2075,
+    0.17,
+    -1.7731
+   ],
+   "gateSlot": "小苑门 Xiaoyuan (not in 011-090)",
+   "site": null,
+   "siteOwner": null
+  },
+  {
+   "pair": [
+    "wall-A-wall-07",
+    "wall-direct-wall-08"
+   ],
+   "caps": [
+    "wall-A-wall-07:cap-1:wall-end",
+    "wall-direct-wall-08:cap-1:wall-end"
+   ],
+   "gap_plan_m": 32.0001,
+   "midpoint": [
+    388.0115,
+    0.17,
+    -12.358
+   ],
+   "gateSlot": "津门 Jin (not in 011-090)",
+   "site": null,
+   "siteOwner": null
+  },
+  {
+   "pair": [
+    "wall-A-wall-10",
+    "wall-direct-wall-09"
+   ],
+   "caps": [
+    "wall-A-wall-10:cap-0:wall-end",
+    "wall-direct-wall-09:cap-0:wall-end"
+   ],
+   "gap_plan_m": 32.0,
+   "midpoint": [
+    -16.0157,
+    0.17,
+    -1397.7727
+   ],
+   "gateSlot": "雍门 Yong (in city, protected)",
+   "site": null,
+   "siteOwner": null
+  },
+  {
+   "pair": [
+    "wall-A-wall-10",
+    "wall-A-wall-11"
+   ],
+   "caps": [
+    "wall-A-wall-10:cap-1:wall-end",
+    "wall-A-wall-11:cap-0:wall-end"
+   ],
+   "gap_plan_m": 32.0,
+   "midpoint": [
+    -30.3734,
+    0.17,
+    -2632.5372
+   ],
+   "gateSlot": "上西门 Shangxi (not in 011-090)",
+   "site": null,
+   "siteOwner": null
+  },
+  {
+   "pair": [
+    "wall-direct-wall-08",
+    "wall-direct-wall-09"
+   ],
+   "caps": [
+    "wall-direct-wall-08:cap-0:wall-end",
+    "wall-direct-wall-09:cap-1:wall-end"
+   ],
+   "gap_plan_m": 8.0,
+   "midpoint": [
+    0.0,
+    0.17,
+    -489.796
+   ],
+   "gateSlot": "广阳门 Guangyang (existing, protected)",
+   "site": null,
+   "siteOwner": null
+  },
+  {
+   "pair": [
+    "wall-A-wall-01",
+    "wall-A-wall-02"
+   ],
+   "caps": [
+    "wall-A-wall-01:cap-1:wall-end",
+    "wall-A-wall-02:cap-0:wall-end"
+   ],
+   "gap_plan_m": null,
+   "midpoint": null,
+   "gateSlot": "上东门 Shangdong corner gap (not facing caps; LY-020 prep: a gate opening)",
+   "site": "S-WALLS",
+   "siteOwner": "LY-020"
+  }
+ ]
+}

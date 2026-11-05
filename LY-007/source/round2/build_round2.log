@@ -1,0 +1,138 @@
+===== S84  构件 103  坡度 24.179°  板段 [(-4.45, -3.7), (-3.7, 3.7), (3.7, 4.45)]
+[检查] s84-A LOD0: 构件 103
+  悬空 0 []
+  意外穿插 0 []
+  允许的埋入 66 对（瓦垄/脊入板、梁顶入板底等）
+  共面同向重叠 0 []
+  落地 {'zmin_building': 0.0, 'zmin_all': 0.0, 'grounded': True}
+[检查] s84-A LOD1: 构件 103
+  悬空 0 []
+  意外穿插 0 []
+  允许的埋入 36 对（瓦垄/脊入板、梁顶入板底等）
+  共面同向重叠 0 []
+  落地 {'zmin_building': 0.0, 'zmin_all': 0.0, 'grounded': True}
+  通道净空 {'clear_width': 7.44, 'left': (0.66, 'gable_R'), 'right': (6.78, 'gable_L'), 'clear_height': 3.3412, 'head': 'roof_left_seg1', 'samples': 171, 'blocked': 0, 'blockers': {}, 'pass': True}
+INFO Draco is available, use library at D:\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at D:\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+22:10:39 | INFO: Starting glTF 2.0 export
+22:10:39 | INFO: Extracting primitive: S84_floor
+22:10:39 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:10:39 | INFO: Primitives created: 1
+22:10:39 | INFO: Extracting primitive: S84_roof_left
+22:10:39 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:10:39 | INFO: Primitives created: 1
+22:10:39 | INFO: Extracting primitive: S84_frontpost_sloped_cap
+22:10:39 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:10:39 | INFO: Primitives created: 1
+22:10:39 | INFO: Finished glTF 2.0 export in 0.05018758773803711 s
+
+[GLB] S84-LOD0.glb  tris=1956 verts=3384 gen=Khronos glTF Blender I/O v5.2.40
+      materials=['LY_P01_earth__PBR', 'LY_P01_timber__PBR', 'LY_P01_tile__PBR']  nodes=['S84-static-LY_P01_earth__PBR', 'S84-static-LY_P01_timber__PBR', 'S84-static-LY_P01_tile__PBR']
+      images=[('earth-normal', 512, 'd0e0d7965902', 'shared'), ('earth-basecolor', 512, '522d6b1f68a5', 'shared'), ('earth-orm', 512, '6c3992a3c6a4', 'shared'), ('wood-normal', 512, 'a76185638832', 'shared'), ('wood-basecolor', 512, '3383d4f1f353', 'shared'), ('wood-orm', 512, '66dea3367e89', 'shared'), ('tile-normal', 512, 'ac5451bc8808', 'shared'), ('tile-basecolor', 512, '47ea3f24cb54', 'shared'), ('tile-orm', 512, 'c0fe9035bf86', 'shared')]
+      bbox(glTF) min=[-4.45, 0.0, -4.45] max=[4.45, 4.3297, 0.45] flat=1.0 uv=1.0 degen=0
+      meshes=['S84_floor', 'S84_frontpost_sloped_cap', 'S84_roof_left']  uv 并列面={'timber:xy->yz': 16}
+      通过
+22:10:39 | INFO: Starting glTF 2.0 export
+22:10:39 | INFO: Extracting primitive: S84_floor
+22:10:39 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:10:39 | INFO: Primitives created: 1
+22:10:39 | INFO: Extracting primitive: S84_roof_left
+22:10:39 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:10:39 | INFO: Primitives created: 1
+22:10:39 | INFO: Extracting primitive: S84_frontpost_sloped_cap
+22:10:39 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:10:39 | INFO: Primitives created: 1
+22:10:39 | INFO: Finished glTF 2.0 export in 0.022659778594970703 s
+
+[GLB] S84-LOD1.glb  tris=604 verts=1176 gen=Khronos glTF Blender I/O v5.2.40
+      materials=['LY_P01_earth__PBR', 'LY_P01_timber__PBR', 'LY_P01_tile__PBR']  nodes=['S84-static-LY_P01_earth__PBR', 'S84-static-LY_P01_timber__PBR', 'S84-static-LY_P01_tile__PBR']
+      images=[('earth-normal', 256, 'a2c6ca111356', 'shared'), ('earth-basecolor', 256, '9ea2f6f2c011', 'shared'), ('earth-orm', 256, '16ebdabda5fa', 'shared'), ('wood-normal', 256, '0d97751590c1', 'shared'), ('wood-basecolor', 256, 'cf45b370bb41', 'shared'), ('wood-orm', 256, 'aa0fa3c978e4', 'shared'), ('tile-normal', 256, '02d338882700', 'shared'), ('tile-basecolor', 256, '977b131f7332', 'shared'), ('tile-orm', 256, '5299af3e2a26', 'shared')]
+      bbox(glTF) min=[-4.45, 0.0, -4.45] max=[4.45, 4.3297, 0.45] flat=1.0 uv=1.0 degen=0
+      meshes=['S84_floor', 'S84_frontpost_sloped_cap', 'S84_roof_left']  uv 并列面={}
+      通过
+22:10:39 | INFO: Starting glTF 2.0 export
+22:10:39 | INFO: Extracting primitive: S84_floor
+22:10:39 | INFO: Primitives created: 1
+22:10:39 | INFO: Extracting primitive: S84_roof_left
+22:10:39 | INFO: Primitives created: 1
+22:10:39 | INFO: Extracting primitive: S84_frontpost_sloped_cap
+22:10:39 | INFO: Primitives created: 1
+22:10:39 | INFO: Finished glTF 2.0 export in 0.0064890384674072266 s
+
+[GLB] S84-LOD2.glb  tris=176 verts=336 gen=Khronos glTF Blender I/O v5.2.40
+      materials=['LY_P01_earth__FLAT', 'LY_P01_timber__FLAT', 'LY_P01_tile__FLAT']  nodes=['S84-static-LY_P01_earth__FLAT', 'S84-static-LY_P01_timber__FLAT', 'S84-static-LY_P01_tile__FLAT']
+      images=[]
+      bbox(glTF) min=[-4.45, 0.0, -4.45] max=[4.45, 4.23, 0.45] flat=1.0 uv=1.0 degen=0
+      meshes=['S84_floor', 'S84_frontpost_sloped_cap', 'S84_roof_left']  uv 并列面={'timber:xy->yz': 8, 'timber:xy->xz': 8}
+      通过
+LOD 三角数 {0: (1956, 1.0), 1: (604, 0.309), 2: (176, 0.09)}
+===== G10  构件 120  坡度 24.179°  板段 [(-5.45, -4.7), (-4.7, 4.7), (4.7, 5.45)]
+[检查] g10-A LOD0: 构件 120
+  悬空 0 []
+  意外穿插 0 []
+  允许的埋入 74 对（瓦垄/脊入板、梁顶入板底等）
+  共面同向重叠 0 []
+  落地 {'zmin_building': 0.0, 'zmin_all': 0.0, 'grounded': True}
+[检查] g10-A LOD1: 构件 120
+  悬空 0 []
+  意外穿插 0 []
+  允许的埋入 36 对（瓦垄/脊入板、梁顶入板底等）
+  共面同向重叠 0 []
+  落地 {'zmin_building': 0.0, 'zmin_all': 0.0, 'grounded': True}
+  通道净空 {'clear_width': 2.2, 'left': (1.1, 'front_wall'), 'right': (1.1, 'front_wall'), 'clear_height': 2.08, 'head': 'front_wall', 'samples': 171, 'blocked': 0, 'blockers': {}, 'pass': True}
+22:10:40 | INFO: Starting glTF 2.0 export
+22:10:40 | INFO: Extracting primitive: G10_floor
+22:10:40 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:10:40 | INFO: Primitives created: 1
+22:10:40 | INFO: Extracting primitive: G10_roof_left
+22:10:40 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:10:40 | INFO: Primitives created: 1
+22:10:40 | INFO: Extracting primitive: G10_frontpost_sloped_cap
+22:10:40 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:10:40 | INFO: Primitives created: 1
+22:10:40 | INFO: Finished glTF 2.0 export in 0.05008554458618164 s
+
+[GLB] G10-LOD0.glb  tris=2360 verts=4080 gen=Khronos glTF Blender I/O v5.2.40
+      materials=['LY_P01_earth__PBR', 'LY_P01_timber__PBR', 'LY_P01_tile__PBR']  nodes=['layout__LY_P01_earth__PBR', 'layout__LY_P01_timber__PBR', 'layout__LY_P01_tile__PBR']
+      images=[('earth-normal', 512, 'd0e0d7965902', 'shared'), ('earth-basecolor', 512, '522d6b1f68a5', 'shared'), ('earth-orm', 512, '6c3992a3c6a4', 'shared'), ('wood-normal', 512, 'a76185638832', 'shared'), ('wood-basecolor', 512, '3383d4f1f353', 'shared'), ('wood-orm', 512, '66dea3367e89', 'shared'), ('tile-normal', 512, 'ac5451bc8808', 'shared'), ('tile-basecolor', 512, '47ea3f24cb54', 'shared'), ('tile-orm', 512, 'c0fe9035bf86', 'shared')]
+      bbox(glTF) min=[-5.45, 0.0, -4.45] max=[5.45, 4.5297, 0.45] flat=1.0 uv=1.0 degen=0
+      meshes=['G10_floor', 'G10_frontpost_sloped_cap', 'G10_roof_left']  uv 并列面={'timber:xy->yz': 16}
+      通过
+22:10:40 | INFO: Starting glTF 2.0 export
+22:10:40 | INFO: Extracting primitive: G10_floor
+22:10:40 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:10:40 | INFO: Primitives created: 1
+22:10:40 | INFO: Extracting primitive: G10_roof_left
+22:10:40 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:10:40 | INFO: Primitives created: 1
+22:10:40 | INFO: Extracting primitive: G10_frontpost_sloped_cap
+22:10:40 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:10:40 | INFO: Primitives created: 1
+22:10:40 | INFO: Finished glTF 2.0 export in 0.0636453628540039 s
+
+[GLB] G10-LOD1.glb  tris=688 verts=1344 gen=Khronos glTF Blender I/O v5.2.40
+      materials=['LY_P01_earth__PBR', 'LY_P01_timber__PBR', 'LY_P01_tile__PBR']  nodes=['layout__LY_P01_earth__PBR', 'layout__LY_P01_timber__PBR', 'layout__LY_P01_tile__PBR']
+      images=[('earth-normal', 256, 'a2c6ca111356', 'shared'), ('earth-basecolor', 256, '9ea2f6f2c011', 'shared'), ('earth-orm', 256, '16ebdabda5fa', 'shared'), ('wood-normal', 256, '0d97751590c1', 'shared'), ('wood-basecolor', 256, 'cf45b370bb41', 'shared'), ('wood-orm', 256, 'aa0fa3c978e4', 'shared'), ('tile-normal', 256, '02d338882700', 'shared'), ('tile-basecolor', 256, '977b131f7332', 'shared'), ('tile-orm', 256, '5299af3e2a26', 'shared')]
+      bbox(glTF) min=[-5.45, 0.0, -4.45] max=[5.45, 4.5297, 0.45] flat=1.0 uv=1.0 degen=0
+      meshes=['G10_floor', 'G10_frontpost_sloped_cap', 'G10_roof_left']  uv 并列面={}
+      通过
+22:10:40 | INFO: Starting glTF 2.0 export
+22:10:40 | INFO: Extracting primitive: G10_floor
+22:10:40 | INFO: Primitives created: 1
+22:10:40 | INFO: Extracting primitive: G10_roof_left
+22:10:40 | INFO: Primitives created: 1
+22:10:40 | INFO: Extracting primitive: G10_frontpost_sloped_cap
+22:10:40 | INFO: Primitives created: 1
+22:10:40 | INFO: Finished glTF 2.0 export in 0.010401248931884766 s
+
+[GLB] G10-LOD2.glb  tris=224 verts=432 gen=Khronos glTF Blender I/O v5.2.40
+      materials=['LY_P01_earth__FLAT', 'LY_P01_timber__FLAT', 'LY_P01_tile__FLAT']  nodes=['layout__LY_P01_earth__FLAT', 'layout__LY_P01_timber__FLAT', 'layout__LY_P01_tile__FLAT']
+      images=[]
+      bbox(glTF) min=[-5.45, 0.0, -4.45] max=[5.45, 4.43, 0.45] flat=1.0 uv=1.0 degen=0
+      meshes=['G10_floor', 'G10_frontpost_sloped_cap', 'G10_roof_left']  uv 并列面={'timber:xy->yz': 16}
+      通过
+LOD 三角数 {0: (2360, 1.0), 1: (688, 0.292), 2: (224, 0.095)}
+ROUND2 DONE C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/style/validate/round2 GLB 问题: 无 检查问题: 无
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 02:38:20)
+
+Blender quit

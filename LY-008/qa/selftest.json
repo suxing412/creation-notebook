@@ -1,0 +1,1875 @@
+{
+ "summary": {
+  "cases": 77,
+  "negatives": 46,
+  "positives": 31,
+  "negativesCaught": 46,
+  "positivesPassed": 31,
+  "selftestFailures": 0,
+  "checkerSha256": "39aaa491859e1a796080dd91ccabd1c47423cf7f9ef2af61c5f123b04b3dff4b",
+  "casesSha256": "1c5dfdfcbd55237ee90ebb2837bd1ecd2a4e15ec48a3eb55e0382f69b5b4b3ac",
+  "python": "3.11.9",
+  "harnessSanity": [
+   {
+    "file": "../LY-007/models/samples/S84-LOD0.glb",
+    "pretendExpectFail": true,
+    "harnessVerdictPass": false,
+    "detectedAsWrong": true
+   },
+   {
+    "file": "qa/negatives/N04-nan-position.glb",
+    "pretendExpectFail": false,
+    "harnessVerdictPass": false,
+    "detectedAsWrong": true
+   }
+  ]
+ },
+ "rows": [
+  {
+   "id": "C00-repacked-unchanged",
+   "cmd": "glb",
+   "inject": "读出再打包，不改内容（JSON 紧凑化）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b",
+   "bytes": 1114076,
+   "upload": {
+    "rawBytes": 1114076,
+    "base64Bytes": 1485436,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/C00-repacked-unchanged.glb --profile ly-p01 --lod 0 --tex-manifest {LY7}/textures/manifest.json",
+   "pass": true
+  },
+  {
+   "id": "N01-bad-header-length",
+   "cmd": "glb",
+   "inject": "头部 length 字段 +8（文件字节不变）",
+   "expectFail": true,
+   "expectCodes": [
+    "GLB_LENGTH_MISMATCH"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GLB_LENGTH_MISMATCH"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "825a483c0d89b953488e5df8ecae1df3caf7fa00ea4b859c10d6b58dc5a18862",
+   "bytes": 1114076,
+   "upload": {
+    "rawBytes": 1114076,
+    "base64Bytes": 1485436,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N01-bad-header-length.glb",
+   "pass": true
+  },
+  {
+   "id": "N02-truncated",
+   "cmd": "glb",
+   "inject": "文件截掉末尾 1000 字节（头部仍声明原长度）",
+   "expectFail": true,
+   "expectCodes": [
+    "GLB_LENGTH_MISMATCH",
+    "GLB_CHUNK_OVERRUN"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GLB_CHUNK_OVERRUN",
+    "GLB_LENGTH_MISMATCH",
+    "GLTF_BUFFERVIEW_OVERRUN",
+    "GLTF_BUFFER_OVERRUN",
+    "TEXTURE_MISSING"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "dd15debb41ad1e99c2367fceebcfd2eda4dec58c6ea9741b748eaf7fb0c4a25a",
+   "bytes": 1113076,
+   "upload": {
+    "rawBytes": 1113076,
+    "base64Bytes": 1484104,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N02-truncated.glb",
+   "pass": true
+  },
+  {
+   "id": "N03-bad-bin-chunk-length",
+   "cmd": "glb",
+   "inject": "BIN 块长度字段改成整个文件长度（越过文件末尾）",
+   "expectFail": true,
+   "expectCodes": [
+    "GLB_CHUNK_OVERRUN"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GLB_CHUNK_OVERRUN"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "5a66ea3fdef86e3fa6aadad1ba79721b123bc394bc33205a7aec372ec8c1091a",
+   "bytes": 1114076,
+   "upload": {
+    "rawBytes": 1114076,
+    "base64Bytes": 1485436,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N03-bad-bin-chunk-length.glb",
+   "pass": true
+  },
+  {
+   "id": "N22-bad-magic",
+   "cmd": "glb",
+   "inject": "魔数改为 gLTF",
+   "expectFail": true,
+   "expectCodes": [
+    "GLB_BAD_MAGIC"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GLB_BAD_MAGIC"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "716a8e82f523ffc83c1f5eeb40f2d6c11319f26d64c56aaa7d2304be36ea5b14",
+   "bytes": 1114076,
+   "upload": {
+    "rawBytes": 1114076,
+    "base64Bytes": 1485436,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N22-bad-magic.glb",
+   "pass": true
+  },
+  {
+   "id": "N04-nan-position",
+   "cmd": "glb",
+   "inject": "POSITION 第 1 个顶点的 y 写成 NaN（min/max 不动）",
+   "expectFail": true,
+   "expectCodes": [
+    "GEOM_NONFINITE"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GEOM_NONFINITE"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "52567f0980c590df7bddce601a6530032070e9ca93dd13a332211df4710345e5",
+   "bytes": 1114076,
+   "upload": {
+    "rawBytes": 1114076,
+    "base64Bytes": 1485436,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N04-nan-position.glb",
+   "pass": true
+  },
+  {
+   "id": "N05-inf-uv",
+   "cmd": "glb",
+   "inject": "TEXCOORD_0 第 1 个 u 写成 +Inf",
+   "expectFail": true,
+   "expectCodes": [
+    "GEOM_NONFINITE"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GEOM_NONFINITE"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "3406c4bb429542dd3ce7af47b3d8c127ec55f891fea38f16cbc463ad034d5168",
+   "bytes": 1114076,
+   "upload": {
+    "rawBytes": 1114076,
+    "base64Bytes": 1485436,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N05-inf-uv.glb",
+   "pass": true
+  },
+  {
+   "id": "N06-nan-json",
+   "cmd": "glb",
+   "inject": "JSON 里写入 NaN 字面量（nodes[0].extras）",
+   "expectFail": true,
+   "expectCodes": [
+    "GLTF_JSON_NONFINITE"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GLTF_JSON_NONFINITE"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "f6017c814b35ade885e1c39890e2bf859a15692fb67cb733a18bdc4f94af6952",
+   "bytes": 1113840,
+   "upload": {
+    "rawBytes": 1113840,
+    "base64Bytes": 1485120,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N06-nan-json.glb",
+   "pass": true
+  },
+  {
+   "id": "N07-missing-texture-index",
+   "cmd": "glb",
+   "inject": "materials[0] baseColorTexture.index = 99（只有 9 个 texture）",
+   "expectFail": true,
+   "expectCodes": [
+    "TEXTURE_MISSING"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "TEXTURE_MISSING"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "e43d20efce44ce9e61bdd6b4059b01e2cecd023a778fed8b4a786b389cc4b4bb",
+   "bytes": 1114080,
+   "upload": {
+    "rawBytes": 1114080,
+    "base64Bytes": 1485440,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N07-missing-texture-index.glb",
+   "pass": true
+  },
+  {
+   "id": "N08-missing-image-source",
+   "cmd": "glb",
+   "inject": "textures[0].source = 50（只有 9 张 image）",
+   "expectFail": true,
+   "expectCodes": [
+    "TEXTURE_MISSING"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "TEXTURE_MISSING"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "4f52261211f706273cf96fc858eab5e9bfc3837fdf0cc0cc22a9d53299689ad5",
+   "bytes": 1114080,
+   "upload": {
+    "rawBytes": 1114080,
+    "base64Bytes": 1485440,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N08-missing-image-source.glb",
+   "pass": true
+  },
+  {
+   "id": "N09-external-texture-missing",
+   "cmd": "glb",
+   "inject": "images[0] 改为外部 uri earth-normal.png（同目录不存在）",
+   "expectFail": true,
+   "expectCodes": [
+    "TEXTURE_NOT_EMBEDDED",
+    "TEXTURE_MISSING"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "TEXTURE_MISSING",
+    "TEXTURE_NOT_EMBEDDED"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "63b99082b35568e6799b9f37cfc41e0014416ca943d798d4b996d12e6907211a",
+   "bytes": 1114064,
+   "upload": {
+    "rawBytes": 1114064,
+    "base64Bytes": 1485420,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N09-external-texture-missing.glb",
+   "pass": true
+  },
+  {
+   "id": "N10-corrupt-texture-bytes",
+   "cmd": "glb",
+   "inject": "images[0] 前 16 字节清零（PNG 头被毁）",
+   "expectFail": true,
+   "expectCodes": [
+    "TEXTURE_MIME_MISMATCH",
+    "TEXTURE_CORRUPT"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "TEXTURE_CORRUPT",
+    "TEXTURE_MIME_MISMATCH"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "aaa816bb2424980db5e3536314fc6dc2dff1f105f3ab7d27919447b30ca543e0",
+   "bytes": 1114076,
+   "upload": {
+    "rawBytes": 1114076,
+    "base64Bytes": 1485436,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N10-corrupt-texture-bytes.glb",
+   "pass": true
+  },
+  {
+   "id": "N21-missing-uv",
+   "cmd": "glb",
+   "inject": "带贴图材质的图元删去 TEXCOORD_0",
+   "expectFail": true,
+   "expectCodes": [
+    "UV_MISSING"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "UV_MISSING"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "47221b975e85907eb779452f8a38361d38ee20d8c72253c45f1809f4af34911f",
+   "bytes": 1114064,
+   "upload": {
+    "rawBytes": 1114064,
+    "base64Bytes": 1485420,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N21-missing-uv.glb",
+   "pass": true
+  },
+  {
+   "id": "N17-index-out-of-range",
+   "cmd": "glb",
+   "inject": "第 1 个索引写成 65000（顶点数 < 200）",
+   "expectFail": true,
+   "expectCodes": [
+    "GEOM_INDEX_OUT_OF_RANGE"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GEOM_INDEX_OUT_OF_RANGE"
+   ],
+   "warningCodes": [
+    "GEOM_DEGENERATE"
+   ],
+   "inputSha256OK": true,
+   "inputSha256": "a4a31f6660f43434227c4510651dea9f68fd29c58d24e4abd996ac9d26c39105",
+   "bytes": 1114076,
+   "upload": {
+    "rawBytes": 1114076,
+    "base64Bytes": 1485436,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N17-index-out-of-range.glb",
+   "pass": true
+  },
+  {
+   "id": "N18-accessor-overrun",
+   "cmd": "glb",
+   "inject": "POSITION accessor.count += 100000",
+   "expectFail": true,
+   "expectCodes": [
+    "GLTF_ACCESSOR_OVERRUN"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GLTF_ACCESSOR_OVERRUN"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "c4f55d6a56c0ca63f1971a289bf151cbf627d375dc23acb5a7bac0eed1dcf6d3",
+   "bytes": 1114080,
+   "upload": {
+    "rawBytes": 1114080,
+    "base64Bytes": 1485440,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N18-accessor-overrun.glb",
+   "pass": true
+  },
+  {
+   "id": "N19-bufferview-overrun",
+   "cmd": "glb",
+   "inject": "bufferViews[0].byteLength 加上两倍 BIN 长",
+   "expectFail": true,
+   "expectCodes": [
+    "GLTF_BUFFERVIEW_OVERRUN"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GLTF_BUFFERVIEW_OVERRUN"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "02c3f2256313808c1097991262ece79b0b6cc6ad708064c451d2a31ad13703d1",
+   "bytes": 1114080,
+   "upload": {
+    "rawBytes": 1114080,
+    "base64Bytes": 1485440,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N19-bufferview-overrun.glb",
+   "pass": true
+  },
+  {
+   "id": "N20-minmax-wrong",
+   "cmd": "glb",
+   "inject": "POSITION.max 各分量 +5 m",
+   "expectFail": true,
+   "expectCodes": [
+    "GLTF_POSITION_MINMAX_WRONG"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GLTF_POSITION_MINMAX_WRONG"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "4fcef52c799521f1a43bd1af90a75d534d7c3c355c862cafbc9e8cbcb6af9ba1",
+   "bytes": 1114080,
+   "upload": {
+    "rawBytes": 1114080,
+    "base64Bytes": 1485440,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N20-minmax-wrong.glb",
+   "pass": true
+  },
+  {
+   "id": "N13a-private-path-extras",
+   "cmd": "glb",
+   "inject": "nodes[0].extras 写入 C:/Users/<占位用户>/Desktop/S84.blend",
+   "expectFail": true,
+   "expectCodes": [
+    "PRIVATE_PATH_IN_JSON"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "PRIVATE_PATH_IN_JSON"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "4685973f571db0485712de0292ea30811d414c217daf21969699a48a007bd149",
+   "bytes": 1113876,
+   "upload": {
+    "rawBytes": 1113876,
+    "base64Bytes": 1485168,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N13a-private-path-extras.glb",
+   "pass": true
+  },
+  {
+   "id": "N13b-private-path-nodename",
+   "cmd": "glb",
+   "inject": "nodes[1].name 写成 D:/GitHub/… 盘符路径",
+   "expectFail": true,
+   "expectCodes": [
+    "PRIVATE_PATH_IN_JSON"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "PRIVATE_PATH_IN_JSON"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "b0d4d35ff4ebc37a687a9d0cc77df1ffc181b17b0247cd10755c50513a8568ce",
+   "bytes": 1114088,
+   "upload": {
+    "rawBytes": 1114088,
+    "base64Bytes": 1485452,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N13b-private-path-nodename.glb",
+   "pass": true
+  },
+  {
+   "id": "N13c-username-generator",
+   "cmd": "glb",
+   "inject": "asset.generator 末尾带占位用户名（检查时用 --private-token 指定该名）",
+   "expectFail": true,
+   "expectCodes": [
+    "PRIVATE_PATH_IN_JSON"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "PRIVATE_PATH_IN_JSON"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "c909773dd0e530c138e4741c49dfa64317f9548811abb868bb688578ba71ef34",
+   "bytes": 1114088,
+   "upload": {
+    "rawBytes": 1114088,
+    "base64Bytes": 1485452,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py --private-token lyneguser glb qa/negatives/N13c-username-generator.glb",
+   "pass": true
+  },
+  {
+   "id": "N14-private-path-png-text",
+   "cmd": "glb",
+   "inject": "images[0] 的 PNG 插入 tEXt 块 Source=C:\\Users\\<占位用户>\\AppData\\…（像素不变）",
+   "expectFail": true,
+   "expectCodes": [
+    "PRIVATE_PATH_IN_TEXTURE",
+    "PRIVATE_PATH_IN_BIN"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "PRIVATE_PATH_IN_BIN",
+    "PRIVATE_PATH_IN_TEXTURE"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "d347e49021b1d1857da00abd692182861775fdedc314cc2bb58119e786edda38",
+   "bytes": 1298244,
+   "upload": {
+    "rawBytes": 1298244,
+    "base64Bytes": 1730992,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N14-private-path-png-text.glb",
+   "pass": true
+  },
+  {
+   "id": "N15-path-escape-image-uri",
+   "cmd": "glb",
+   "inject": "images[0].uri = ../../LY-007/textures/512/earth-normal.png（向上越出）",
+   "expectFail": true,
+   "expectCodes": [
+    "PATH_ESCAPE",
+    "TEXTURE_NOT_EMBEDDED"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "PATH_ESCAPE",
+    "TEXTURE_MISSING",
+    "TEXTURE_NOT_EMBEDDED"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "3c481f241bd36321b1df8911e625889acf0730a6a819af4ee6bb7d67f2c080aa",
+   "bytes": 1114092,
+   "upload": {
+    "rawBytes": 1114092,
+    "base64Bytes": 1485456,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N15-path-escape-image-uri.glb",
+   "pass": true
+  },
+  {
+   "id": "N16-path-escape-buffer-uri",
+   "cmd": "glb",
+   "inject": "追加 buffers[1].uri = ../outside/extra.bin",
+   "expectFail": true,
+   "expectCodes": [
+    "PATH_ESCAPE",
+    "GLTF_EXTERNAL_BUFFER"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GLTF_EXTERNAL_BUFFER",
+    "PATH_ESCAPE"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "83a1f0f764bc6484b05195e602301ee5a14d6829947c2d91672028e064e3982a",
+   "bytes": 1114124,
+   "upload": {
+    "rawBytes": 1114124,
+    "base64Bytes": 1485500,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N16-path-escape-buffer-uri.glb",
+   "pass": true
+  },
+  {
+   "id": "N23-over-triangle-limit",
+   "cmd": "glb",
+   "inject": "第 0 个图元索引重复 6251 次（> 500,000 三角）",
+   "expectFail": true,
+   "expectCodes": [
+    "GEOM_OVER_TRI_LIMIT"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GEOM_OVER_TRI_LIMIT"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "6cf5b816d19b1071ec9f2dc8e1ea756d19d2294d13a84252d51856aed2b2acc3",
+   "bytes": 4114684,
+   "upload": {
+    "rawBytes": 4114684,
+    "base64Bytes": 5486248,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb tmp/neg-big/N23-over-triangle-limit.glb",
+   "pass": true
+  },
+  {
+   "id": "N11-oversize-15000004",
+   "cmd": "glb",
+   "inject": "追加未引用的 bufferView 填零，使文件 = 15,000,004 字节（几何不变）",
+   "expectFail": true,
+   "expectCodes": [
+    "GLB_OVER_FORMAL_LIMIT"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "GLB_OVER_FORMAL_LIMIT"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "3df5f9afc806019abbe9f9456a2465464736081005998128072b1bdd98a7005b",
+   "bytes": 15000004,
+   "upload": {
+    "rawBytes": 15000004,
+    "base64Bytes": 20000008,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb tmp/neg-big/N11-oversize-15000004.glb",
+   "pass": true
+  },
+  {
+   "id": "B11-boundary-15000000",
+   "cmd": "glb",
+   "inject": "同法填到恰好 15,000,000 字节（边界：正式上限是「超过」才错）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [
+    "GLB_LARGE"
+   ],
+   "inputSha256OK": true,
+   "inputSha256": "29f1afae3059a4f209e7787fb02c207490fd81c91896b9c288a2294c731bb92e",
+   "bytes": 15000000,
+   "upload": {
+    "rawBytes": 15000000,
+    "base64Bytes": 20000000,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb tmp/neg-big/B11-boundary-15000000.glb",
+   "pass": true
+  },
+  {
+   "id": "N12-upload-channel-14000000",
+   "cmd": "glb",
+   "inject": "填到 14,000,000 字节：正式上限内；按 base64 承载 18,666,668 字节",
+   "expectFail": true,
+   "expectCodes": [
+    "UPLOAD_OVER_CHANNEL_LIMIT"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "UPLOAD_OVER_CHANNEL_LIMIT"
+   ],
+   "warningCodes": [
+    "GLB_LARGE"
+   ],
+   "inputSha256OK": true,
+   "inputSha256": "cf3e78c74fdf9d7c62f0f0f89e74e02af869e9482183695e83fbfa36aa58c89c",
+   "bytes": 14000000,
+   "upload": {
+    "rawBytes": 14000000,
+    "base64Bytes": 18666668,
+    "encoding": "base64",
+    "limit": 15000000,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "carriedBytes": 18666668,
+    "verdict": "fail"
+   },
+   "command": "python -I source/ly_check.py glb tmp/neg-big/N12-upload-channel-14000000.glb --upload-limit 15000000 --upload-encoding base64",
+   "pass": true
+  },
+  {
+   "id": "B12-same-file-no-channel-limit",
+   "cmd": "glb",
+   "inject": "N12 同一文件，不给通道上限",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [
+    "GLB_LARGE"
+   ],
+   "inputSha256OK": true,
+   "inputSha256": "cf3e78c74fdf9d7c62f0f0f89e74e02af869e9482183695e83fbfa36aa58c89c",
+   "bytes": 14000000,
+   "upload": {
+    "rawBytes": 14000000,
+    "base64Bytes": 18666668,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb tmp/neg-big/N12-upload-channel-14000000.glb",
+   "pass": true
+  },
+  {
+   "id": "L01-material-name-suffix",
+   "cmd": "glb",
+   "inject": "材质名改为 LY_P01_earth__PBR.001",
+   "expectFail": true,
+   "expectCodes": [
+    "LY_MATERIAL_NAME"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "LY_LOD_MATERIAL_TIER",
+    "LY_MATERIAL_NAME"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "c05523eb2571951cd3f2691a9dcd97c6c73c5c363f24756c29f2a7bb1b957de5",
+   "bytes": 1114080,
+   "upload": {
+    "rawBytes": 1114080,
+    "base64Bytes": 1485440,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/L01-material-name-suffix.glb --profile ly-p01 --lod 0",
+   "pass": true
+  },
+  {
+   "id": "L02-lod0-checked-as-lod1",
+   "cmd": "glb",
+   "inject": "好样件 S84-LOD0（512² 贴图）按 LOD1 检查",
+   "expectFail": true,
+   "expectCodes": [
+    "LY_TEXTURE_RES"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "LY_TEXTURE_RES"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b",
+   "bytes": 1114076,
+   "upload": {
+    "rawBytes": 1114076,
+    "base64Bytes": 1485436,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/S84-LOD0.glb --profile ly-p01 --lod 1",
+   "pass": true
+  },
+  {
+   "id": "L03-lod1-checked-as-lod2",
+   "cmd": "glb",
+   "inject": "好样件 S84-LOD1（PBR + 256² 贴图）按 LOD2 检查",
+   "expectFail": true,
+   "expectCodes": [
+    "LY_LOD_MATERIAL_TIER",
+    "LY_LOD2_HAS_TEXTURE"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "LY_LOD2_HAS_TEXTURE",
+    "LY_LOD_MATERIAL_TIER"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "ccd799f25c0c93ba6cd18a8888363db204bd0538d874b4e65f3b924d45c49e88",
+   "bytes": 401952,
+   "upload": {
+    "rawBytes": 401952,
+    "base64Bytes": 535936,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/S84-LOD1.glb --profile ly-p01 --lod 2",
+   "pass": true
+  },
+  {
+   "id": "L04-static-node-trs",
+   "cmd": "glb",
+   "inject": "nodes[0]（静态件）加 translation [0,0.05,0]",
+   "expectFail": true,
+   "expectCodes": [
+    "LY_STATIC_NODE_TRS"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "LY_STATIC_NODE_TRS",
+    "LY_UV_NOT_WORLD_BOX"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "553d1c6adad83c75d0053d64bdcee5cbef1f446927b024996d9222a824211aba",
+   "bytes": 1114108,
+   "upload": {
+    "rawBytes": 1114108,
+    "base64Bytes": 1485480,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/L04-static-node-trs.glb --profile ly-p01 --lod 0",
+   "pass": true
+  },
+  {
+   "id": "L05-uv-shifted",
+   "cmd": "glb",
+   "inject": "earth 图元 UV 的 u 整体 +0.37（不再是 1 UV = 1 m 无平移的世界盒投影）",
+   "expectFail": true,
+   "expectCodes": [
+    "LY_UV_NOT_WORLD_BOX"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "LY_UV_NOT_WORLD_BOX"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "d787a7f4ae2f672492acaeae79756205b210eaf19a9bb26df66f462cd0552c5b",
+   "bytes": 1114076,
+   "upload": {
+    "rawBytes": 1114076,
+    "base64Bytes": 1485436,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/L05-uv-shifted.glb --profile ly-p01 --lod 0",
+   "pass": true
+  },
+  {
+   "id": "L06-texture-not-hers",
+   "cmd": "glb",
+   "inject": "N14 文件（贴图字节被改）按 ly-p01 + 她的贴图清单检查",
+   "expectFail": true,
+   "expectCodes": [
+    "LY_TEXTURE_NOT_HERS"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "LY_TEXTURE_NOT_HERS",
+    "PRIVATE_PATH_IN_BIN",
+    "PRIVATE_PATH_IN_TEXTURE"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "d347e49021b1d1857da00abd692182861775fdedc314cc2bb58119e786edda38",
+   "bytes": 1298244,
+   "upload": {
+    "rawBytes": 1298244,
+    "base64Bytes": 1730992,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb qa/negatives/N14-private-path-png-text.glb --profile ly-p01 --lod 0 --tex-manifest {LY7}/textures/manifest.json",
+   "pass": true
+  },
+  {
+   "id": "S01-lod0-copied-as-lod1",
+   "cmd": "lodset",
+   "inject": "S84-LOD0 原字节复制改名当 LOD1",
+   "expectFail": true,
+   "expectCodes": [
+    "LOD_COPY_OF_LOD0"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "LOD_COPY_OF_LOD0",
+    "LOD_NOT_DECREASING"
+   ],
+   "warningCodes": [
+    "LOD_TRI_RATIO"
+   ],
+   "inputSha256OK": true,
+   "inputSha256": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b",
+   "bytes": 1114076,
+   "upload": null,
+   "command": "python -I source/ly_check.py lodset ../LY-007/models/samples/S84-LOD0.glb qa/negatives/S01-LOD1-is-LOD0-copy.glb ../LY-007/models/samples/S84-LOD2.glb --family house",
+   "pass": true
+  },
+  {
+   "id": "S02-house-bbox-under-default-family",
+   "cmd": "lodset",
+   "inject": "S84 三档按普通家族判（LOD2 顶部降 0.0997 m > 0.02）",
+   "expectFail": true,
+   "expectCodes": [
+    "LOD_BBOX"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "LOD_BBOX"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py lodset ../LY-007/models/samples/S84-LOD0.glb ../LY-007/models/samples/S84-LOD1.glb ../LY-007/models/samples/S84-LOD2.glb --family default",
+   "pass": true
+  },
+  {
+   "id": "S03-tiers-swapped",
+   "cmd": "lodset",
+   "inject": "LOD1/LOD2 对调",
+   "expectFail": true,
+   "expectCodes": [
+    "LOD_NOT_DECREASING"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "LOD_BBOX",
+    "LOD_NOT_DECREASING"
+   ],
+   "warningCodes": [
+    "LOD_TRI_RATIO"
+   ],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py lodset ../LY-007/models/samples/S84-LOD0.glb ../LY-007/models/samples/S84-LOD2.glb ../LY-007/models/samples/S84-LOD1.glb --family house",
+   "pass": true
+  },
+  {
+   "id": "P00-good",
+   "cmd": "package",
+   "inject": "好包：两个文件，清单大小/SHA 正确",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py package qa/negatives/packages/P00-good",
+   "pass": true
+  },
+  {
+   "id": "P01-size-mismatch",
+   "cmd": "package",
+   "inject": "清单 bytes +1",
+   "expectFail": true,
+   "expectCodes": [
+    "MANIFEST_SIZE_MISMATCH"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "MANIFEST_SIZE_MISMATCH"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py package qa/negatives/packages/P01-size-mismatch",
+   "pass": true
+  },
+  {
+   "id": "P02-sha-mismatch",
+   "cmd": "package",
+   "inject": "清单 sha256 全 0",
+   "expectFail": true,
+   "expectCodes": [
+    "MANIFEST_SHA_MISMATCH"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "MANIFEST_SHA_MISMATCH"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py package qa/negatives/packages/P02-sha-mismatch",
+   "pass": true
+  },
+  {
+   "id": "P03-missing-file",
+   "cmd": "package",
+   "inject": "清单列了不存在的文件",
+   "expectFail": true,
+   "expectCodes": [
+    "MANIFEST_FILE_MISSING"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "MANIFEST_FILE_MISSING"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py package qa/negatives/packages/P03-missing-file",
+   "pass": true
+  },
+  {
+   "id": "P04-path-escape-parent",
+   "cmd": "package",
+   "inject": "清单路径 ../P00-good/brief.md",
+   "expectFail": true,
+   "expectCodes": [
+    "PATH_ESCAPE"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "PATH_ESCAPE"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py package qa/negatives/packages/P04-path-escape-parent",
+   "pass": true
+  },
+  {
+   "id": "P05-path-absolute",
+   "cmd": "package",
+   "inject": "清单路径为盘符绝对路径",
+   "expectFail": true,
+   "expectCodes": [
+    "PATH_ESCAPE"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "PATH_ESCAPE"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py package qa/negatives/packages/P05-path-absolute",
+   "pass": true
+  },
+  {
+   "id": "P06-private-path-public-file",
+   "cmd": "package",
+   "inject": "公共文件 public-note.md 写了 C:\\Users\\<占位用户>\\…",
+   "expectFail": true,
+   "expectCodes": [
+    "PRIVATE_PATH_PUBLIC_FILE"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "PRIVATE_PATH_PUBLIC_FILE"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py package qa/negatives/packages/P06-private-path-public-file",
+   "pass": true
+  },
+  {
+   "id": "P07-contains-bad-glb",
+   "cmd": "package",
+   "inject": "包内 GLB 带 NaN 顶点",
+   "expectFail": true,
+   "expectCodes": [
+    "PACKAGE_GLB_INVALID"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "PACKAGE_GLB_INVALID"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py package qa/negatives/packages/P07-contains-bad-glb",
+   "pass": true
+  },
+  {
+   "id": "P08-backslash-path",
+   "cmd": "package",
+   "inject": "清单路径用反斜杠并含 ..",
+   "expectFail": true,
+   "expectCodes": [
+    "PATH_ESCAPE"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "PATH_ESCAPE"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py package qa/negatives/packages/P08-backslash-path",
+   "pass": true
+  },
+  {
+   "id": "P09-fixture-unexpectedly-passes",
+   "cmd": "package",
+   "inject": "好 GLB 被清单登记成负例夹具（expectFail: true）",
+   "expectFail": true,
+   "expectCodes": [
+    "FIXTURE_UNEXPECTEDLY_PASSES"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "FIXTURE_UNEXPECTEDLY_PASSES"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py package qa/negatives/packages/P09-fixture-unexpectedly-passes",
+   "pass": true
+  },
+  {
+   "id": "P10-fixture-registered",
+   "cmd": "package",
+   "inject": "坏 GLB 在清单里登记为负例夹具（expectFail: true）：包应通过",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py package qa/negatives/packages/P10-fixture-registered",
+   "pass": true
+  },
+  {
+   "id": "T00-clean-tree",
+   "cmd": "privacy",
+   "inject": "干净的公共目录（提到裸 file:// 协议名不算）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py privacy qa/negatives/trees/T00-clean-tree",
+   "pass": true
+  },
+  {
+   "id": "T01-source-file",
+   "cmd": "privacy",
+   "inject": "公共目录里混进 .blend",
+   "expectFail": true,
+   "expectCodes": [
+    "SOURCE_FILE_IN_PUBLIC"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "SOURCE_FILE_IN_PUBLIC"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py privacy qa/negatives/trees/T01-source-file",
+   "pass": true
+  },
+  {
+   "id": "T02-private-path",
+   "cmd": "privacy",
+   "inject": "公共 md 写了 C:\\Users\\<占位用户>\\Desktop\\…",
+   "expectFail": true,
+   "expectCodes": [
+    "PRIVATE_PATH_PUBLIC_FILE"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "PRIVATE_PATH_PUBLIC_FILE"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py privacy qa/negatives/trees/T02-private-path",
+   "pass": true
+  },
+  {
+   "id": "T03-drive-path",
+   "cmd": "privacy",
+   "inject": "公共 md 写了 D:/ 盘路径",
+   "expectFail": true,
+   "expectCodes": [
+    "PRIVATE_PATH_PUBLIC_FILE"
+   ],
+   "exitCode": 1,
+   "errorCodes": [
+    "PRIVATE_PATH_PUBLIC_FILE"
+   ],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py privacy qa/negatives/trees/T03-drive-path",
+   "pass": true
+  },
+  {
+   "id": "T04-weak-only",
+   "cmd": "privacy",
+   "inject": "只有 /home/agent/ 式通用路径（弱判据：警告不判错）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [
+    "PRIVATE_PATH_WEAK"
+   ],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py privacy qa/negatives/trees/T04-weak-only",
+   "pass": true
+  },
+  {
+   "id": "R01-bin-backslash-noise",
+   "cmd": "glb",
+   "inject": "贴图二进制里有大量 0x5C（第一轮 UNC 判据误报）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "4185c082f86aa8a9f2cd29afbbb2322a42e701664f3c83d586a36b6635841571",
+   "bytes": 41704,
+   "upload": {
+    "rawBytes": 41704,
+    "base64Bytes": 55608,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb tmp/repo/docs/cities/luoyang/assets/c02/C02-environment.glb",
+   "pass": true
+  },
+  {
+   "id": "R02-meshopt-fallback-buffer",
+   "cmd": "glb",
+   "inject": "meshopt 回退缓冲无数据（第一轮误判 GLTF_BUFFER_NO_SOURCE）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [
+    "GEOM_TRI_HIGH",
+    "GLB_LARGE"
+   ],
+   "inputSha256OK": true,
+   "inputSha256": "e7ccf822ab1cc4fd3dcde4257345bf4d55d505c1105451d2682e6545550ec456",
+   "bytes": 11954084,
+   "upload": {
+    "rawBytes": 11954084,
+    "base64Bytes": 15938780,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb tmp/repo/docs/library/models/m-luoyang-a1-neighborhood/files/A1-v3-LOD1.glb",
+   "pass": true
+  },
+  {
+   "id": "R03-instanced-mesh",
+   "cmd": "glb",
+   "inject": "mesh 多实例：官方口径 116,108 三角，绘制 506,828（第一轮误判超限，现为警告）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [
+    "GEOM_DRAWN_TRI_OVER_LIMIT",
+    "GLB_LARGE"
+   ],
+   "inputSha256OK": true,
+   "inputSha256": "270998729726baca248762bc86d4883ddf0a5c8de4ee4e226ba8aae40b66ba72",
+   "bytes": 8744148,
+   "upload": {
+    "rawBytes": 8744148,
+    "base64Bytes": 11658864,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb tmp/repo/docs/library/models/m-luoyang-residential-life/files/life-block-LOD0.glb",
+   "pass": true
+  },
+  {
+   "id": "G-base-G10-LOD0.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "c912961f8b23061aedb5bab67ce15c0f8fa9622e47036c7dea4b55c148f09a1c",
+   "bytes": 1138632,
+   "upload": {
+    "rawBytes": 1138632,
+    "base64Bytes": 1518176,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/G10-LOD0.glb --profile base",
+   "pass": true
+  },
+  {
+   "id": "G-ly-p01-G10-LOD0.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "c912961f8b23061aedb5bab67ce15c0f8fa9622e47036c7dea4b55c148f09a1c",
+   "bytes": 1138632,
+   "upload": {
+    "rawBytes": 1138632,
+    "base64Bytes": 1518176,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/G10-LOD0.glb --profile ly-p01 --lod 0 --tex-manifest {LY7}/textures/manifest.json",
+   "pass": true
+  },
+  {
+   "id": "G-base-G10-LOD1.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "d92921bef682fa3c2084d10ba2b48c7600badaf9aefa899c5189177fb1dd5f2f",
+   "bytes": 407688,
+   "upload": {
+    "rawBytes": 407688,
+    "base64Bytes": 543584,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/G10-LOD1.glb --profile base",
+   "pass": true
+  },
+  {
+   "id": "G-ly-p01-G10-LOD1.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "d92921bef682fa3c2084d10ba2b48c7600badaf9aefa899c5189177fb1dd5f2f",
+   "bytes": 407688,
+   "upload": {
+    "rawBytes": 407688,
+    "base64Bytes": 543584,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/G10-LOD1.glb --profile ly-p01 --lod 1 --tex-manifest {LY7}/textures/manifest.json",
+   "pass": true
+  },
+  {
+   "id": "G-base-G10-LOD2.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "42f47696899037f1364c060ed58f70dcc7d7756c2ff7879d5b1f930c8ee8f933",
+   "bytes": 19060,
+   "upload": {
+    "rawBytes": 19060,
+    "base64Bytes": 25416,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/G10-LOD2.glb --profile base",
+   "pass": true
+  },
+  {
+   "id": "G-ly-p01-G10-LOD2.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "42f47696899037f1364c060ed58f70dcc7d7756c2ff7879d5b1f930c8ee8f933",
+   "bytes": 19060,
+   "upload": {
+    "rawBytes": 19060,
+    "base64Bytes": 25416,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/G10-LOD2.glb --profile ly-p01 --lod 2 --tex-manifest {LY7}/textures/manifest.json",
+   "pass": true
+  },
+  {
+   "id": "G-base-S84-LOD0.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b",
+   "bytes": 1114076,
+   "upload": {
+    "rawBytes": 1114076,
+    "base64Bytes": 1485436,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/S84-LOD0.glb --profile base",
+   "pass": true
+  },
+  {
+   "id": "G-ly-p01-S84-LOD0.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b",
+   "bytes": 1114076,
+   "upload": {
+    "rawBytes": 1114076,
+    "base64Bytes": 1485436,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/S84-LOD0.glb --profile ly-p01 --lod 0 --tex-manifest {LY7}/textures/manifest.json",
+   "pass": true
+  },
+  {
+   "id": "G-base-S84-LOD1.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "ccd799f25c0c93ba6cd18a8888363db204bd0538d874b4e65f3b924d45c49e88",
+   "bytes": 401952,
+   "upload": {
+    "rawBytes": 401952,
+    "base64Bytes": 535936,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/S84-LOD1.glb --profile base",
+   "pass": true
+  },
+  {
+   "id": "G-ly-p01-S84-LOD1.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "ccd799f25c0c93ba6cd18a8888363db204bd0538d874b4e65f3b924d45c49e88",
+   "bytes": 401952,
+   "upload": {
+    "rawBytes": 401952,
+    "base64Bytes": 535936,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/S84-LOD1.glb --profile ly-p01 --lod 1 --tex-manifest {LY7}/textures/manifest.json",
+   "pass": true
+  },
+  {
+   "id": "G-base-S84-LOD2.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "bytes": 15840,
+   "upload": {
+    "rawBytes": 15840,
+    "base64Bytes": 21120,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/S84-LOD2.glb --profile base",
+   "pass": true
+  },
+  {
+   "id": "G-ly-p01-S84-LOD2.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "bytes": 15840,
+   "upload": {
+    "rawBytes": 15840,
+    "base64Bytes": 21120,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/samples/S84-LOD2.glb --profile ly-p01 --lod 2 --tex-manifest {LY7}/textures/manifest.json",
+   "pass": true
+  },
+  {
+   "id": "G-base-lyref-A-LOD0.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "0f2e69426378437c98c17227cbf8dfdf856d9d59e0e71e374c4d7f39988e83ef",
+   "bytes": 1417516,
+   "upload": {
+    "rawBytes": 1417516,
+    "base64Bytes": 1890024,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/refsphere/lyref-A-LOD0.glb --profile base",
+   "pass": true
+  },
+  {
+   "id": "G-ly-p01-lyref-A-LOD0.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "0f2e69426378437c98c17227cbf8dfdf856d9d59e0e71e374c4d7f39988e83ef",
+   "bytes": 1417516,
+   "upload": {
+    "rawBytes": 1417516,
+    "base64Bytes": 1890024,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/refsphere/lyref-A-LOD0.glb --profile ly-p01 --lod 0 --tex-manifest {LY7}/textures/manifest.json",
+   "pass": true
+  },
+  {
+   "id": "G-base-lyref-A-LOD1.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "5ee4849fa157df975c31a973edd3b1f96b5362af30ec4935dc44ce0e69a9d8d1",
+   "bytes": 466176,
+   "upload": {
+    "rawBytes": 466176,
+    "base64Bytes": 621568,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/refsphere/lyref-A-LOD1.glb --profile base",
+   "pass": true
+  },
+  {
+   "id": "G-ly-p01-lyref-A-LOD1.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "5ee4849fa157df975c31a973edd3b1f96b5362af30ec4935dc44ce0e69a9d8d1",
+   "bytes": 466176,
+   "upload": {
+    "rawBytes": 466176,
+    "base64Bytes": 621568,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/refsphere/lyref-A-LOD1.glb --profile ly-p01 --lod 1 --tex-manifest {LY7}/textures/manifest.json",
+   "pass": true
+  },
+  {
+   "id": "G-base-lyref-A-LOD2.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "8ae694899f5509890de5dc72b1c7374f994ce6aea2f102c2071fa9798f0b2945",
+   "bytes": 33060,
+   "upload": {
+    "rawBytes": 33060,
+    "base64Bytes": 44080,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/refsphere/lyref-A-LOD2.glb --profile base",
+   "pass": true
+  },
+  {
+   "id": "G-ly-p01-lyref-A-LOD2.glb",
+   "cmd": "glb",
+   "inject": "无（LY-007 好样件原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": "8ae694899f5509890de5dc72b1c7374f994ce6aea2f102c2071fa9798f0b2945",
+   "bytes": 33060,
+   "upload": {
+    "rawBytes": 33060,
+    "base64Bytes": 44080,
+    "encoding": "base64",
+    "limit": null,
+    "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+    "verdict": "not-judged"
+   },
+   "command": "python -I source/ly_check.py glb ../LY-007/models/refsphere/lyref-A-LOD2.glb --profile ly-p01 --lod 2 --tex-manifest {LY7}/textures/manifest.json",
+   "pass": true
+  },
+  {
+   "id": "G-lodset-S84",
+   "cmd": "lodset",
+   "inject": "无（LY-007 三档原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py lodset ../LY-007/models/samples/S84-LOD0.glb ../LY-007/models/samples/S84-LOD1.glb ../LY-007/models/samples/S84-LOD2.glb --family house",
+   "pass": true
+  },
+  {
+   "id": "G-lodset-G10",
+   "cmd": "lodset",
+   "inject": "无（LY-007 三档原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py lodset ../LY-007/models/samples/G10-LOD0.glb ../LY-007/models/samples/G10-LOD1.glb ../LY-007/models/samples/G10-LOD2.glb --family house",
+   "pass": true
+  },
+  {
+   "id": "G-lodset-lyref-A",
+   "cmd": "lodset",
+   "inject": "无（LY-007 三档原字节）",
+   "expectFail": false,
+   "expectCodes": [],
+   "exitCode": 0,
+   "errorCodes": [],
+   "warningCodes": [],
+   "inputSha256OK": true,
+   "inputSha256": null,
+   "bytes": null,
+   "upload": null,
+   "command": "python -I source/ly_check.py lodset ../LY-007/models/refsphere/lyref-A-LOD0.glb ../LY-007/models/refsphere/lyref-A-LOD1.glb ../LY-007/models/refsphere/lyref-A-LOD2.glb --family default",
+   "pass": true
+  }
+ ]
+}

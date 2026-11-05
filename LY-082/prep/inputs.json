@@ -1,0 +1,389 @@
+{
+ "seat": "LY-082",
+ "title": "示范住宅外巷短接续",
+ "phase": "开工准备（G 未冻结，未制作任何交付几何）",
+ "labBaseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "labDocsCleanAgainstHEAD": true,
+ "labWorkingTreeNote": "lab/data/assets.json、glb-cache.json、report.json 在工作树里被别人改过（assets.json 工作树 3440caa2…，HEAD 53d86312…）。本席位不读也不依赖这三份文件。",
+ "taskpool": {
+  "path": "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md",
+  "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+  "section": "### LY-082｜示范住宅外巷短接续（TASKPOOL.md:848）",
+  "taskboard": "D:/GitHub/creation-notebook-workpacks/taskboard.json",
+  "taskboardSha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+  "deps": [
+   "LY-001",
+   "LY-002",
+   "LY-005",
+   "LY-006",
+   "LY-007",
+   "LY-008",
+   "LY-009",
+   "LY-010",
+   "LY-049",
+   "LY-081"
+  ]
+ },
+ "cityCode": [
+  {
+   "path": "docs/cities/luoyang/index.html",
+   "sha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "loaded": true,
+   "where": "入口页；index.html:115 加载 app.mjs"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "loaded": true,
+   "where": "app.mjs:1 导入 city-data.mjs；app.mjs:177 动态导入 city-renderer.mjs"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "loaded": true,
+   "where": "assets[] 1267–1272 把 path/nearPath 导出成 sourcePath/url/nearUrl；nodes[] 1274 起；chapters[] 3745 起"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "loaded": true,
+   "where": ":221 初始只装 initial !== false 的节点；:309–318 按 excludeNodes 剔除；:374–387 组矩阵；:600–604 打开章节时并入 loadNodeIds；:616–623 focusCourtyard 只加该院"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "loaded": false,
+   "where": "项目卡，城景不读；本席位只读不写"
+  }
+ ],
+ "grounds": [
+  {
+   "id": "ground-south",
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "bytes": 2623560,
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "loaded": "仅在打开 terrain 章后（initial:false）",
+   "cityData": "asset city-data.mjs:471；node :3609（position [0,0,0]，chapter terrain，initial false）；terrain 章 loadNodeIds :4027 起",
+   "nodes": "single_closed_terrain_after / 材质 C_ground_after / 96,796 三角（Blender 回读同数）",
+   "role": "C02-010 门外到巷面这一段的唯一承托面；巷面拱顶、两侧浅沟、C02-010 门前过沟段都在这同一个节点里"
+  },
+  {
+   "id": "ground-retained",
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "bytes": 629740,
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "loaded": "仅 terrain 章后",
+   "cityData": "asset :451；node :3582",
+   "nodes": "C02_retained_outside_south_Calt_domain：C02_design_earth 13,008 / C02_design_road 1,259 / C02_earth_edge 6,925 三角",
+   "role": "备选院 C02-021 门外的承托面和设计道路（C02_design_road）；C02_access 巷带 x 710–712 的东端"
+  },
+  {
+   "id": "ground-network-ground-stitched",
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "bytes": 3565544,
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "loaded": "仅 terrain 章后",
+   "cityData": "asset :431；node :3555",
+   "nodes": "C_stitch_primary 257 / C_stitch_west 127,544 / C_stitch_patch 45+496",
+   "role": "C02_access 巷带 x 380–486 段（C_stitch_west / C_earth_route_surface）；本席位不碰"
+  },
+  {
+   "id": "ground-D08",
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "bytes": 6664,
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "loaded": "仅 terrain 章后",
+   "cityData": "asset :491；node :3636（position [580,0,−960]）",
+   "role": "与本项无交集，只为四原子完整读取"
+  }
+ ],
+ "courtyards": [
+  {
+   "id": "C02-010",
+   "role": "候选示范院（LY-041 prep 建议，LY-010 未冻结）",
+   "cityData": "node city-data.mjs:2322，matrix [1,0,0,0,0,1,0,0,0,0,1,0,531,0,−818.45,1]，initial true，chapter residential（:3835）",
+   "asset": "courtyard-A2（city-data.mjs:88），excludeNodes [site_lot, site_neutral_lane, designed_hardpacked_activity_ground]",
+   "files": [
+    {
+     "path": "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+     "bytes": 92220,
+     "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+     "loaded": "远档，initial 即加载"
+    },
+    {
+     "path": "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+     "bytes": 447064,
+     "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+     "loaded": "近档，focusCourtyard 时（renderer :416）"
+    }
+   ]
+  },
+  {
+   "id": "C02-021",
+   "role": "备选院（LY-041 prep 备选）",
+   "cityData": "node :1482，matrix [0,0,1,0,0,1,0,0,−1,0,0,0,717.45,0,−893.64308,1]",
+   "asset": "courtyard-A2（同上两档）"
+  },
+  {
+   "id": "C02-009",
+   "role": "邻院（门前通道体积检查）",
+   "cityData": "node :2280",
+   "files": [
+    {
+     "path": "docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb",
+     "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed"
+    },
+    {
+     "path": "docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb",
+     "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6"
+    }
+   ]
+  },
+  {
+   "id": "C02-011",
+   "role": "邻院",
+   "cityData": "node :2364",
+   "files": [
+    {
+     "path": "docs/cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb",
+     "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2"
+    },
+    {
+     "path": "docs/cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb",
+     "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445"
+    }
+   ]
+  },
+  {
+   "id": "C02-006",
+   "role": "巷对面院（门在 x 541.8）",
+   "cityData": "node :2154",
+   "files": [
+    {
+     "path": "docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb",
+     "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7"
+    },
+    {
+     "path": "docs/cities/luoyang/assets/c02v/B2-LOD1-prototype.glb",
+     "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db"
+    }
+   ]
+  },
+  {
+   "id": "C02-005",
+   "role": "巷对面院",
+   "cityData": "node :2112",
+   "files": "同 C02-009（R01-B 两档）"
+  }
+ ],
+ "contractsAndResearch": [
+  {
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "loaded": false,
+   "where": "city-data 各 ground node 的 sourceContract 字段引用；城景运行时不 fetch",
+   "use": "四原子必须同装、D08 平移一次；doNotClaim 列出不得声称的事项"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/instances-calt.json",
+   "sha256": "c830b4e37090da5e070156b7f6199f36c5d0191c339f5a9399f0becded50ff85",
+   "loaded": false,
+   "where": "44 院 node 的 sourceContract；矩阵已抄进 city-data",
+   "use": "C02-010 C-alt 矩阵来源（changedByCalt true）"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/instances-original.json",
+   "sha256": "a854589134150c2fe74b5bbed4e404aeeb5aa5724090795eb60923c68e3d2cff",
+   "loaded": false,
+   "use": "原布局对照（C02-010 原位 x 537.176）"
+  },
+  {
+   "path": "docs/cities/luoyang/research/2026-11-03/land-contract.json",
+   "sha256": "772687b0cbe8a7be6b967737ca850c6a56c1d0b72706dfd9d8f87aab095c61e2",
+   "loaded": false,
+   "where": "只被 research/2026-11-03/index.html 引用",
+   "use": "C02_access 巷带 x 387.37–703.5、北坐标 796.5–803.5（含 0.5 m 侧向留空，C 道路试验）；C02-010-entry 门前留空 x 526.3–528.7、北 798.8–807.65"
+  },
+  {
+   "path": "docs/cities/luoyang/research/2026-11-03/south14-geometry.json",
+   "sha256": "b6949cdc60aa1edd50a466c326e477f72cd4479ffc5cbe00f40815549dc6427a",
+   "loaded": false,
+   "use": "既有 CPU 门前路段中心线检查（C02-010-gate 40 样点、0 体积命中）；其位置是旧原布局坐标，不能直接当 C-alt 结果"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/alt14-placement.json",
+   "sha256": "802a88f12d85039562668bbdce08ab584aba050db27a9adf7f1a5d7479f4552a",
+   "loaded": false,
+   "where": "只被 v1/west-layer.mjs:17（归档旧版）读取",
+   "use": "C02-010 gate [527.5, 806.45]，gateRoute 到北坐标 800（巷心）"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/network.json",
+   "sha256": "af8e5479f47ccae1dd5c41766da60e6a871e74808018737a85514895334afc73",
+   "loaded": false,
+   "where": "只被 v1/west-layer.mjs:17 读取",
+   "use": "C02-010_door_approach 旧示意线，记「最小设计宽 2.3 m」"
+  },
+  {
+   "path": "docs/cities/luoyang/data/c02v/routes.json",
+   "sha256": "f567ae955ae8bc1045c196d47da3b1493a514dd894fc9134274d219e98e89301",
+   "loaded": false,
+   "use": "C02-010-gate 在旧原布局 x 533.676；与 C-alt 门 x 527.5 差 6.176 m，不能直接用"
+  },
+  {
+   "path": "docs/model-library/m-passage-interface.asset.json",
+   "sha256": "eb5e249571aebae2479e2928b1e28145885f8dba93dbf5cf4472a3276762b122",
+   "loaded": false,
+   "use": "已核：WFC 通行试件，自称不与住宅近景同级，不是本项的复用候选"
+  }
+ ],
+ "peerPrepRead": [
+  {
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-041/prep/brief-draft.md",
+   "sha256": "b31fadff6bb75013511303fb9310feb9858c20a3061039382400b60354cf5197",
+   "status": "同侪开工准备稿，未冻结；只作线索，结论本席位重测"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-048/prep/gate-C02-010.json",
+   "sha256": "79b32f52c2a853ae2f9f9402856675362c370c71a1d290cc870ba348621124c6",
+   "status": "未冻结；门洞本地 x −4.975…−2.000 取自 LY-048 measure-closure（9d0dc238…），门框最窄 2.10 m"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-049/prep/",
+   "status": "只有一个读取脚本，尚无端口；LY-049 的院界端口未冻结"
+  },
+  {
+   "path": "LY-049/prep/brief-draft.md",
+   "sha256": "0fb6babfb8b10c60767deeda5ca47d684e2d32fe5dae2b5f2c5c8d4bfe841323",
+   "note": "院界=局部 z 12=世界 z -806.45；端口值交付时填；未冻结"
+  },
+  {
+   "path": "LY-081/prep/ports.json",
+   "sha256": "9138694bcfda61621d9f3e92cc2227e0fc5f656428906ff6383e17269d8afd95",
+   "note": "door-C02-010 / door-C02-010-out1m 探针"
+  },
+  {
+   "path": "LY-081/prep/run-full-grid2.json",
+   "sha256": "fb9fcd4672539800f6c6c84cc6cdcd27af9d375c18d2b4aabe22048342a3b25f",
+   "note": "两探针在 component 4（主分量 174,298.76 m2），y 0.2"
+  },
+  {
+   "path": "LY-081/prep/run-drop-ground-south.json",
+   "sha256": "a808736d5054f79a1eb48c837217642b237683ef89c03561401759817e678fbe",
+   "note": "去掉 south 后两探针 support null，最近地面 41.5 m"
+  }
+ ],
+ "frozenInputsNotYetAvailable": [
+  {
+   "from": "LY-010",
+   "what": "示范院 ID 与南组 14 院区域准入"
+  },
+  {
+   "from": "LY-049",
+   "what": "院界端口（ID、版本、世界坐标、高程、宽度）"
+  },
+  {
+   "from": "LY-081",
+   "what": "实际可达网络里 C02_access 巷面是否是合法已通边、端口 ID"
+  },
+  {
+   "from": "LY-005",
+   "what": "y 0.200 地面基准与本地/世界端口表达"
+  },
+  {
+   "from": "LY-006",
+   "what": "ground-south 门前这一段（x 526.0–529.0、z −806.45…−803.0）的所有权"
+  },
+  {
+   "from": "LY-008",
+   "what": "交付检查器与官方 checker 入口"
+  },
+  {
+   "from": "LY-002",
+   "what": "约 180 年洛阳里巷宽度、路面、排水沟的证据条目"
+  }
+ ],
+ "privateSourcePacks": [
+  {
+   "what": "south.glb 的源工程（生成 single_closed_terrain_after 的 .blend 或生成器、拼接参数）",
+   "status": "不在仓库，本轮拿不到",
+   "useFor": "万一要在 ground-south 里切孔或改门前过沟段时用",
+   "rebuildFromGLB": "可以从 GLB 回读后改，但交付时必须写「从 GLB 重建」，不能冒称原件"
+  },
+  {
+   "what": "courtyard-A2 原型源工程",
+   "status": "不在仓库",
+   "useFor": "本项不改院落，不需要",
+   "rebuildFromGLB": "不适用"
+  }
+ ],
+ "prepArtifacts": {
+  "scripts": {
+   "glbio82.py": "5920651331857408b41e6cc09cee144f8d1c05237ec12e515f5ef918d59fbf74",
+   "export_city_nodes.mjs": "fae1fc65fccd9d095931a9907be3594b31aace82f8713b202c32a8acdab72728",
+   "measure_lane82.py": "4d72a83e0a1444a4a8d2a83fb6e903b4ec5e7ce45998e45704788c1de69542c1",
+   "measure_corridor82.py": "58f5fe47493b5a0373c20dac9b248840bf96c64ac369d3ea203b620ac4946671",
+   "ditch_xsection82.py": "25b8d5549feddf1a9aa196effdbc5882abb41b41098dba77abd6f086e2a22a53",
+   "crossing_width82.py": "cea682f84b80aebbac68ee39b38498293ad79a3d9e6cad507de1402633cc851b",
+   "layers_laneband82.py": "a8b2f7e3b1e99857ad113dcc8fda19dddaf3fdac38884afe16c05981f0973e35",
+   "blender_xcheck82.py": "b82f338523352b66fe62897bd7d86f47f7d9bb55751b1259b31e6745e6972cf0",
+   "check_lane82.py": "36c09dd92ff293e2b3a9cda8ead32b17c014af5f03133d1441728ed6be89a0e9",
+   "xcheck_compare82.py": "813708ec8f32483a59e04c9e2e4985cff6729caedde2e85b8a27899700fac406",
+   "zone_check82.py": "6e23438da783f568954a05ea8add06b0194c9682660b1566225adef33bba8fb9"
+  },
+  "results": {
+   "city-nodes-near.json": "31873ee4b51878a23a64cc88acb88228c01967ba65c34fcce9353347534f6a88",
+   "measure-lane-full.json": "b973d8e53120b0944f46c17f421fe8fa9ebf68a44e65c97d83d0a48a9639e032",
+   "corridor-C02-010.json": "08dee31f8c59c5e4164ebd589ea455b5466e530e30c28bb64ac523c43c0b6dc8",
+   "corridor-C02-010-NEG-no-south.json": "a484a88d814e213761efa680d07696339f28888cfce4a67ce9eb83e394bb5a03",
+   "corridor-C02-010-NEG-no-ground.json": "34573a4db3d3fb576f3935eac91e86cb1bbec7571bff2807a421653ab5970205",
+   "corridor-C02-021.json": "ef6c326fa52ad086823b81ca09600edd92d5df0a2805a240a1f2cc3422faea25",
+   "ditch-xsection-C02-010.json": "3b94f7d6e86319ed8076869b6561dd84200c4e1d558e6f51344a71b9dae827a9",
+   "crossing-C02-010.json": "a55b3637f4d8b9c0f036b56906d09e39da21e2bc2e1b95381646368a86e6f0e7",
+   "layers-laneband.json": "7c2c6eff7248ba513420746675db8ee6e46640855852686fdfe3c3a1eaa74fd4",
+   "blender-xcheck.json": "bb0d277b4773309e68da2d26c14bf4542e134278be1c34c9240498984709fcaa",
+   "check-corridor-C02-010.json": "a82a5305500616064270191e00ecae303d3f0d8d6f2e32d254f7a1f98f0972b6",
+   "check-corridor-C02-021.json": "306a6217f2ddb200b935e2afb488633f27da6c030209b48af1b7f32f75945235",
+   "check-corridor-C02-010-NEG-no-south.json": "faee89ed669d036cfa3784f8abf6f5445ddd0b6d66d00f40bef136cfd7a6318e",
+   "selftest-check.json": "e2efba10ed66e93fca9bff6d7c98b49d9551f738af6c8f7fca07c71da4e153f1",
+   "xcheck-compare.json": "7ba6ab0a5186be0f8689b4d830d12552b61168ee47e1315118b12e40dcfd082a",
+   "zone-check.json": "1999c7ed836d6fc1e87da239d669d3dc5b4d7f87cbbc213124931b0149e99b55"
+  }
+ },
+ "frozenRegistryLY006": [
+  {
+   "path": "LY-006/registry/zones.json",
+   "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+   "loadedInCity": false,
+   "use": "LY-082:write:001 世界盒 x 526-530, y -0.3-0.6, z -806.45…-796.45（S-COURT-LANE）"
+  },
+  {
+   "path": "LY-006/registry/ownership.json",
+   "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+   "loadedInCity": false,
+   "use": "gp:city-node:ground-south owner LY-090；newGroundNamespaceRule gp:<seat>:<name>"
+  },
+  {
+   "path": "LY-006/registry/ports.json",
+   "sha256": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+   "loadedInCity": false,
+   "use": "C02-010:gate-boundary:road-end v1，producer LY-049，consumers LY-050/LY-082，local/world 尚为 null"
+  },
+  {
+   "path": "LY-006/registry/seams.json",
+   "sha256": "ca4d81f8f955333c089d782aa69c50c2ca83225d4da07f595f66d1ba87f3f4c1",
+   "loadedInCity": false,
+   "use": "seams[21] C02-010:gate-boundary:road-end@v1::LY-049->LY-082"
+  },
+  {
+   "path": "LY-006/status.json",
+   "sha256": "fe4aaa6c7cb1441f95ac8f51101e0cf63a4ab07ed53452e59c2bd897c5539aba",
+   "loadedInCity": false,
+   "use": "状态 交付完成（registry v1，按 bce3211）"
+  }
+ ],
+ "revisions": [
+  "2026-11-05 第一轮",
+  "2026-11-06 第二轮：加 LY-006 registry v1、LY-081 交叉印证、K9"
+ ]
+}

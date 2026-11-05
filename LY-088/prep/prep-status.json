@@ -1,0 +1,64 @@
+{
+ "seat": "LY-088",
+ "inputsFound": [
+  "lab bce3211 docs/cities/luoyang/data/evidence/evidence-geometry.json blob fa8b7002 (CRLF 662562fa; unchanged at origin/main cad338b): ancient_water_corridors_B_unplaced L1668 (B, geometry null), modern_luo_river_excluded L1724 (X), huang2026_abstract L1761",
+  "lab bce3211 research/2026-11-03/city-milestones.json blob 23b30e70: P2 道路与古水系 L62-64, 黄学超摘要 L98-103, 两份未读报告 L116-125",
+  "lab bce3211 v1/evidence-view.mjs blob fcf2079f: L28 loads evidence-geometry pinned fa8b7002; null geometry -> text only",
+  "lab bce3211 app.mjs blob cc0379c0: evidence-geometry loaded 0 times; water text only L312",
+  "lab bce3211 city-data.mjs blob c849706b (origin/main d8933a32); p-luoyang.asset.json 8edb06ab (origin/main f43d1496)",
+  "lab bce3211 m-luoyang-palace-waterway-interface asset.json c0f42840 (card only, 0 city nodes)",
+  "lab bce3211 ground-atomic network fdfc3ce5 / retained aed8b3d4 / south 4313826d / D08 3ab93310; road-plan 0bc4528c; ground-atomic-contract 7f26720b",
+  "lab TC03 courtyard GLBs with C_shallow_drain_floor: c02v LOD0 bf6287a5 / LOD1 d2432b7c, d08 LOD0 367a7d25 / LOD1 8daea250",
+  "workpacks LY-002 tables/evidence-ledger.json 237a4811 (E-H03, E-P07, E-R03, E-R05, X15); snapshots hhs02 96b91280, hhs03 66a7e4d7, hhs09 150f2160, hhs125 e33c9395",
+  "workpacks LY-003 tables/admission.json dd0ab8c0 (宫墙水道 不可落位), control-points.json a92fff19 (CP-08 千秋门砖券水道1.2m, CP-09 宫城西南角汉晋河渠, both not usable), brief.md 5c5e51b6 L39 (Q13 北魏水渠 forbidden)",
+  "workpacks LY-004 tables/site-constraints.json 633c3302 (MT4, BY3, BY7, BY8, NJ9, P06)",
+  "workpacks LY-006 registry/seats.json a1426412 + ownership-by-seat.csv b1600336 L79: LY-088 role=data, 0 write zones, 0 nodes, 0 ground pieces",
+  "workpacks LY-001 qa/city-nodes.csv 8ab19b05, glb-files.csv 9771bf0c; LY-005 coordinate-contract.json b6d7fe9d; LY-009 board/taskboard.v2.json bd2fcbbe",
+  "prep scripts: scan_water.py a039c845 -> scan-water.out.json 69b08aad (11-06 rerun byte-identical); scan_drift.py dab9387a -> scan-drift.out.json cb4f9032",
+  "public (WebFetch only, no bytes): 后汉书卷22「及渠成而水不流」, 卷35「上穿陽渠，引洛水為漕」, 水经注卷16「陽嘉四年乙酉壬申詔書」; english.henan.gov.cn/2022/06-13/2466953.html 'the internal one is not only 1.2 meters in width'"
+ ],
+ "inputsMissing": [
+  "LY-010 (last G freeze item): workpack directory absent on 2026-11-06; production gate; not rebuildable from GLB",
+  "黄学超2026《汉魏洛阳城周边的水利建设》全文与图: modern phasing (东汉/魏/晋/北魏) and CN/EN east-west conflict; abstract only; not rebuildable from GLB",
+  "《汉魏洛阳城东阳渠、鸿池陂考古勘察简报》2011: archaeological phasing of 东阳渠/鸿池陂; unread; not rebuildable from GLB",
+  "《洛阳汉唐漕运水系考古调查》2016: dated canal segments; unread; not rebuildable from GLB",
+  "2025年度报告 宫墙东汉砖砌水道原页 and 千秋门发掘原报告 (LY-003 CP-08/Q10-11): phase of the brick channel; news text only; not rebuildable from GLB",
+  "2011 宫城西南角发掘简报平面 (LY-003 CP-09/Q12): phase split of 汉晋大型河渠; unread; not rebuildable from GLB",
+  "'奏请罢渠' primary-text locator: named by TASKPOOL; not found in 2 web searches, lab git grep, or any D:/GitHub repo",
+  "local byte snapshots of 王梁传/张纯传/水经注卷16 for verbatim T2 check; download needs coordinator authorization",
+  "private source packs (.blend/ZIP): not needed, LY-088 produces no geometry"
+ ],
+ "gaps": [
+  "Dated water event/relation records in repo at bce3211 and at origin/main cad338b: 0. Water-related evidence features: 2 of 42, both geometry=null. TASKPOOL premise '复用已有水利事件/关系研究' does not match: only fragments exist.",
+  "Current entry app.mjs loads evidence-geometry 0 times; the only switchable evidence surface is v1/evidence-view.mjs.",
+  "Entered-city GLBs: 34 (LY-001 set) with 0 river/canal-named meshes; 4 water-named files are TC03 courtyard C_shallow_drain_floor (local drain, LY-087 scope). city-data/app GLB refs 71 at bce3211 -> 81 at cad338b, 0 new water-named, 0 new river/canal-named.",
+  "city-data.mjs provenance sha for evidence-geometry is CRLF 662562fa, not served blob fa8b7002 (inherited LY-001 C8).",
+  "Glyph variant: LY-002 snapshot hhs02 bytes read 「爎中无水」 while LY-002 interpretation/forbidden columns write 壍中无水; T2 variant map must carry 爎->壍 or the same passage fails verbatim check across upstream packs.",
+  "LY-003 rules all palace water relations 不可落位 (0 shared control points; CP-08/CP-09 usable=false): every water record's placement is none/label_only; periodTag enum needs han_jin_unsplit for CP-09.",
+  "Source coverage: 6 key reports unread; 3 primary passages only WebFetch; 1 TASKPOOL-named item (奏请罢渠) unlocated; ~16 candidate events/relations, 6 verbatim-verified by upstream (LY-002 E-R05/E-P07, LY-004 MT4/BY3/BY7/BY8), rest pending.",
+  "Disputes to carry: 汉官仪「明堂…爎(壍)中无水」 vs 水经注 引水为辟雍; 辟雍「東西南有水，北無」 vs BY8 未见闭合; 千秋门 news lists Han, Wei-Jin and Northern Wei channels together."
+ ],
+ "reuseCandidate": "无。仓库在 bce3211 和 origin/main cad338b 都没有合格的水利事件/关系数据集（事件级记录 0 条）。可复用的零件：evidence-geometry 的两条水系条目和来源登记、city-milestones P2、LY-002 E-H03/E-P07/E-R03/E-R05/X15 及快照、LY-003 CP-08/CP-09/Q13 与宫墙水道不可落位结论、LY-004 MT4/BY3/BY7/BY8/NJ9（已逐字核到），以及 v1/evidence-view.mjs 对 null 几何“只出文字”的显示方式。",
+ "touches": [
+  "write only: D:/GitHub/creation-notebook-workpacks/LY-088/ (prep/ now; data/, qa/, tmp/, delivery-manifest later)",
+  "read only: docs/cities/luoyang/data/evidence/evidence-geometry.json, research/2026-11-03/city-milestones.json, v1/evidence-view.mjs, app.mjs, city-data.mjs, p-luoyang.asset.json",
+  "read only baseline-unchanged checks: assets/ground-atomic/{network-ground-stitched,retained,south,D08}.glb, data/west/road-plan.json, data/west/ground-atomic-contract.json, TC03 courtyard GLBs c02v/d08",
+  "read only: m-luoyang-palace-waterway-interface asset card (cited as relation; geometry owned by LY-086)",
+  "read only: LY-002 tables+snapshots, LY-003 tables, LY-004 tables, LY-006 registry (LY-088 owns 0 nodes / 0 ground pieces / 0 source objects)",
+  "no ground tile, source node or GLB modified; integration targets (city-data.mjs limits/provenance, app.mjs research panel, v1 evidence panel) are LY-100 only"
+ ],
+ "size": "M",
+ "risks": [
+  "WebFetch quotes are model transcriptions; byte-level verification needs local snapshots this seat may not download without coordinator authorization",
+  "水经注 and 伽蓝记 are Northern Wei/Eastern Wei retrospectives; easy to mis-tag as Eastern Han fact; 千金堨、太和碑、Q13 北魏水渠 must stay non-180",
+  "'奏请罢渠' may be conflated with 王梁 '有司劾奏' (impeachment, not abandonment); must not yield an abandonment date or 'dried by 180'",
+  "爎/壍 glyph variant makes LY-002/LY-004 quotes look inconsistent; a silent normalization would break verbatim traceability",
+  "黄学超 abstract CN/EN east/west inconsistency; modern phasing cannot be stated until full text is read",
+  "TC03 courtyard drain meshes could be mistaken for the water system (LY-087 owns them)",
+  "CRLF vs LF SHA confusion in city-data provenance",
+  "lab origin/main already 3 commits past bce3211; city-data.mjs and project card changed; LY-001 must re-snapshot before production and scans must be rerun",
+  "LY-010 may add publication limits (e.g. untested GPU/mobile) that the toggle proposal must disclose"
+ ],
+ "readyAfterG": true,
+ "readyNote": "LY-003 and LY-004 are now delivered, so once LY-010 freezes G the data layer can start immediately: placement is fixed to none/label_only by LY-003, and missing reports only lower coverage and are flagged unknown."
+}

@@ -1,0 +1,58 @@
+{
+ "seat": "LY-034",
+ "phase": "开工准备（G 未冻结，未制作或修改任何交付几何）",
+ "labHead": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "inputsFound": [
+  "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb sha256 5937211c7366（当前入口 storage-main 加载，city-data.mjs:582/3716/3983，city-renderer.mjs:285-299）",
+  "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb a1265bbf53d1 / LOD2 6b2564d3ffd7（城里不加载）",
+  "docs/cities/luoyang/assets/storage/storage-group-organized.glb b8482824513a（旧 v1 入口加载，v1/west-layer.mjs:39）",
+  "docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD0.glb 9fc0b90ef4c6；granary-A-LOD0 2eee31460a64；granary-B-LOD0 407403ceeb41；granary-group-LOD0 91a54eafe899",
+  "docs/cities/luoyang/progress-assets/granary-city-v1/source.json 检出 6cf88d6f0b2a / 提交 blob 30e74bda8a96",
+  "docs/cities/luoyang/data/west/storage-interface.json 检出 b910896799cd / 提交 blob 4f3ccae9891c（已过期）",
+  "docs/cities/luoyang/data/west/storage-precedents.json 检出 acda86c8ae40 / 提交 blob db8024490dad",
+  "docs/model-library/assets/storage-origin-contract.json 检出 9bdf37f260ab（锚点 2285.714111328125, 0, -3673.468994140625）",
+  "docs/cities/luoyang/assets/city-wall/A/wall-01.glb cfbbc45a874a（唯一邻近城市节点）",
+  "docs/cities/luoyang/city-data.mjs 检出 e4115705aeab / 提交 blob c849706b6210；city-renderer.mjs fa0a8dcbfaa5 / 04c6c643e44f"
+ ],
+ "inputsMissing": [
+  "私密原生 .blend 和「Luoyang private granary city composer v1」生成与校验源（source.json 注明在仓库外）。用途：命名子件、作者端口。对本项可以从 GLB 重建：端口、支持、指纹都已从 GLB 松散件实测，不需要重生成几何",
+  "operations / 入口体积诊断数据（模型卡「A 51 处、B 77 处」1.8 m 失败的探针定义）。用途：作为回归基线精确复现。只能部分从 GLB 重建：pass/fail 结论可以重算，51/77 的计数依赖未公开的探针定义",
+  "G 包产物 LY-005 坐标与端口格式、LY-006 端口 ID 与所有权模板、LY-007、LY-008 检查器、LY-010 仓储区准入。属于契约，不能从 GLB 重建",
+  "C_NE_APPROACH_LOCAL（约 196 m C 路）的 GLB 和预检：lab bce3211 中 grep 0 命中，归 LY-039。用途：地坪边的邻路指纹"
+ ],
+ "gaps": [
+  "前场内部无几何断点：收货棚到 A/B 阶脚是同一块 y=0.20 平地，8 邻接路线 14.15 m 和 14.09 m，最大相邻高差 0.000，0.6–1.8 m 包络都可达；前场 52,332 格中 51,893 格在地面上，其余 439 格都是柱、案腿、货物、阶梯的占位",
+  "A 阶 4 级 × 0.1625 m、宽 1.50、阶脚 z=-1.52、阶顶齐平进入 0.85 仓板；B 阶 6 级 × 0.15 m、宽 1.50、阶脚 z=-1.38、阶顶齐平进入 1.10 仓板；两门洞都是 1.50 × 2.09 m；LOD0、LOD1、LOD2 的阶梯和棚指纹相同",
+  "端口无任何声明：LOD0 只有 4 个合并节点，没有端口节点或 extras；storage-interface.json 和模型卡都没有端口。本项真正缺的是 006 格式的几何端口 JSON 和路线包",
+  "storage-interface.json 过期：defaultLoad 指向旧 b848…，运行中的是 5937…；所列 4 个文件中 3 个路径在 cities/luoyang 下不存在；city-data.mjs:4521 仍登记它，登记的 SHA 只对得上 CRLF 检出",
+  "两个入口加载两个版本（当前入口 5937…，v1 b848…）；前场 16 个松散件的 1 mm 指纹相同，只有阶梯在旧文件中是 10 块独立踏步",
+  "1.5 m 和 1.8 m 包络到不了 A/B 仓板（窄阶 1.50 m，横向余量 0），属于必须保留的失败边界",
+  "对外断开：地坪是 72×52 m、厚 0.2 m 的孤板，城市地面节点在约 1025 m 外，wall-A-wall-01 在 61.6 m 外；地坪边端口只能标「未连接」（归 LY-039）",
+  "v2 group 与 LOD0 相比有 44 块屋面盖瓦在 1 mm 取整哈希上不同（不在本项范围），说明「不变」检查必须用访问器字节 SHA 或逐点偏差，不能用取整哈希"
+ ],
+ "reuseCandidate": "几何部分复用，不需新造：前场、收货棚、台案、地坪、A/B 阶梯都不需要改动，实测证据在 prep/out/granary-city-LOD0.json（前场全平、路线 14.15/14.09 m、高差 0、阶顶齐平）和 prep/out/fingerprint-city-LOD0.json。但端口 JSON、路线包、装配与撤回记录这些交付物目前不存在，要在 G 冻结后按 005/006/008 格式以零几何改动出具，所以不能直接记「复用完成」",
+ "touches": [
+  "granary-city-LOD0.glb 节点 granary-group-static_timber（棚顶、4 柱、台面、4 案腿、A/B 两个焊接阶梯件）——只读和测量",
+  "granary-city-LOD0.glb 节点 granary-group-static_paper__cargo_proxy（案上 1 件、场内 4 件货物占位）——只读",
+  "granary-city-LOD0.glb 节点 original_city_ground_preserved（72×52 地坪，y 0–0.20）——只读；与 LY-035（前场暂存）、LY-039（地坪边）共享",
+  "A 阶脚和阶顶端口格（局部 x -12.75…-11.25，z -1.52…-2.80）——与 LY-031、LY-033 门件扫掠共享",
+  "B 阶脚和阶顶端口格（局部 x 11.25…12.75，z -1.38…-3.30）——与 LY-032、LY-033 共享",
+  "storage-group-organized.glb 节点 receiving_post*、receiving_cover、checking_table、checking_leg*、A_step_0-3、B_step_0-5、sample_ground、C_bag_occupancy_*（v1 入口）——只读",
+  "city-data.mjs storage-main 资产、节点、章节记录和 :4521 provenance——只交合并提案给 LY-100",
+  "data/west/storage-interface.json——只交过期说明和更新提案",
+  "workpacks/LY-034/**（唯一写入区）"
+ ],
+ "size": "S",
+ "risks": [
+  "LY-006 冻结的端口格式或 ID 可能与本草案的 RCV-N/A-FOOT/A-HEAD/B-FOOT/B-HEAD/SLAB-EDGE 不同，需要重映射",
+  "LY-031/032/033 的门叶如果向外开，会扫入阶顶端口区，A-HEAD/B-HEAD 的净空要在门件冻结后重测",
+  "LY-035 的暂存和转身空间与前场同一块地坪，所有权需要由 006 划格，避免两包都声称拥有前场",
+  "两个入口两个版本：LY-010/LY-100 未定以谁为准之前，路线包要对两个 SHA 都跑",
+  "CRLF 检出导致文本文件 SHA 与提交 blob 不同，绑定时要写明用哪一种字节",
+  "离散网格和包络检查只是有限通行，不能写成连续人体、负重、车辆或结构安全",
+  "无法复现原 51/77 探针计数，只能在结论层面对齐"
+ ],
+ "readyAfterG": true,
+ "scripts": ["prep/measure_frontfield.py", "prep/fingerprint.py", "prep/neighbour_check.py", "prep/gltf_inspect.py", "prep/build_inputs.py"],
+ "outputs": ["prep/brief-draft.md", "prep/inputs.json", "prep/test-plan.md", "prep/out/granary-city-LOD0.json", "prep/out/granary-city-LOD1.json", "prep/out/granary-city-LOD2.json", "prep/out/storage-group-organized.json", "prep/out/fingerprint-city-LOD0.json", "prep/out/fingerprint-city-LOD1.json", "prep/out/fingerprint-city-LOD2.json", "prep/out/neighbour.json", "prep/out/v2-parts-vs-city.json"]
+}

@@ -1,0 +1,194 @@
+{
+ "seat": "LY-086",
+ "stage": "prep (G not frozen; no delivered geometry)",
+ "lab_repo": "D:/GitHub/creation-notebook-lab",
+ "lab_commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "inputs": [
+  {
+   "role": "waterway body, near LOD (single merged primitive)",
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-near.glb",
+   "sha256": "79d36565d0a4c064f85065b0dc861385d55ca56b24b6b55ba4994c18831a1a0b",
+   "bytes": 1518404,
+   "loaded_in_city": false,
+   "loaded_by": "none under docs/cities/luoyang (grep 'waterway' in *.mjs, v1/*, data/*: 0 hits); listed only by lab/data/assets.json:5597 for the asset library"
+  },
+  {
+   "role": "waterway body, mid LOD",
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-mid.glb",
+   "sha256": "68ec04bb8d39eda5cc7e5d93aa39b8bcb4ed86cea4a1b7bc990bc4d2ca3b716f",
+   "bytes": 133976,
+   "loaded_in_city": false,
+   "loaded_by": "lab/data/assets.json:5616 (library only)"
+  },
+  {
+   "role": "waterway body, far LOD",
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-far.glb",
+   "sha256": "af5e8b65e892589366e7a65ae9210301c3291421b021fc487f0f1050d90a0931",
+   "bytes": 17200,
+   "loaded_in_city": false,
+   "loaded_by": "lab/data/assets.json:5635 (library only)"
+  },
+  {
+   "role": "waterway modern inspection near: 8 semantic nodes (inner/outer/shaft x shell/inspection_side, inner/outer cover_C) -- the only public source of the part split",
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-inspection-near.glb",
+   "sha256": "f90094d2bd5fb376b13f6d8506bbce12cc48dd4c0f18795e0d79558fa0de1bba",
+   "bytes": 1416232,
+   "loaded_in_city": false,
+   "loaded_by": "lab/data/assets.json:5654 (library only)"
+  },
+  {
+   "role": "asset card (status 待审, '未入城')",
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/m-luoyang-palace-waterway-interface.asset.json",
+   "sha256": "3dc81ef172880ca7c998f4b59dd782e9fdd9f32b4a5ff8bb519d0f593b4d36bf",
+   "loaded_in_city": false,
+   "loaded_by": "build_assets.py -> lab/data/assets.json:5685"
+  },
+  {
+   "role": "project card: member list + stat card '宫墙水道三段接口 已建模 未定位'",
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "loaded_in_city": "metadata only (lines 187-192, 535); no geometry reference",
+   "loaded_by": "asset library build"
+  },
+  {
+   "role": "city manifest; states '北宫新墙与古水系仍未配准，相关几何保留空缺' (line 4555); defines the four atomic ground assets (lines 431-508)",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "loaded_in_city": true,
+   "loaded_by": "docs/cities/luoyang/app.mjs:1, scene.mjs:7 (import manifest)"
+  },
+  {
+   "role": "atomic ground: network-ground-stitched",
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs:431-448 (asset), 3555 (instance)"
+  },
+  {
+   "role": "atomic ground: retained",
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs:452"
+  },
+  {
+   "role": "atomic ground: south",
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs:472"
+  },
+  {
+   "role": "atomic ground: D08",
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs:492"
+  },
+  {
+   "role": "ground atomic contract",
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "loaded_in_city": "referenced as sourceContract in city-data.mjs:448/468/488/508",
+   "loaded_by": "city-data.mjs"
+  },
+  {
+   "role": "north palace conflict layer (new palace wall A unregistered, geometry null; unverified lead News_ID=2810 on Eastern Han brick waterway)",
+   "path": "docs/cities/luoyang/data/west/north-palace-conflict-layer.json",
+   "sha256": "f0755db3e6d6e14966974dd241c60709c52a099fb9a9935f04554cd45ed16192",
+   "loaded_in_city": true,
+   "loaded_by": "docs/cities/luoyang/v1/north-layer.mjs:15 (fetch, text cards only)"
+  },
+  {
+   "role": "existing water-system phasing research (P2 道路与古水系; huang abstract, 东阳渠/鸿池陂 brief, 漕运水系 survey)",
+   "path": "docs/cities/luoyang/research/2026-11-03/city-milestones.json",
+   "sha256": "9d72a0a9de222a964b0a8d03e1580ea0f1897fc41a914d2f5715523e716018dd",
+   "loaded_in_city": false,
+   "loaded_by": "research/2026-11-03/index.html (static research page)"
+  },
+  {
+   "role": "evidence geometry: ancient_water_corridors_B_unplaced (geometry null)",
+   "path": "docs/cities/luoyang/data/evidence/evidence-geometry.json",
+   "sha256": "662562fa87cffc9de43b2c23564f1ab63fba8c01f2345891f255cb202bee2233",
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs:4525 (sha pinned), v1/evidence-view.mjs:28"
+  },
+  {
+   "role": "research-unplaced features (water: geometry null, renderable false)",
+   "path": "docs/cities/luoyang/data/research-unplaced.json",
+   "sha256": "601549ca1238edd7cb195b407653e1c0be71e3eefa642611eed1863d28b82c2b",
+   "loaded_in_city": "not verified as loaded",
+   "loaded_by": "unknown"
+  },
+  {
+   "role": "candidate host wall block (CITY rammed-earth wall family, not palace wall) A",
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD0.glb",
+   "sha256": "3f755fcc7ae86bf875d126cedd287451f3e54a45b9d8ed3d870aee1138504e07",
+   "loaded_in_city": "not checked as this file; city uses assets/city-wall/*",
+   "loaded_by": "library"
+  },
+  {
+   "role": "candidate host wall block B",
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD0.glb",
+   "sha256": "04c2b143b3b797c7e0da734215e3686fef2a54c381066f1af7dcab235b77b970",
+   "loaded_in_city": "not checked",
+   "loaded_by": "library"
+  },
+  {
+   "role": "candidate host wall block C",
+   "path": "docs/library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD0.glb",
+   "sha256": "b8f1ab3a56826117df874fac71b4ddde6b0424d7b7fa0199778f896ba59979c2",
+   "loaded_in_city": "not checked",
+   "loaded_by": "library"
+  },
+  {
+   "role": "pre-existing geometry audit (scratchpad, read-only)",
+   "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/cards/m-luoyang-palace-waterway-interface/audit.json",
+   "sha256": "ef8b63bca391dab754e0b61bd2e1bf835ce0f251a8270e1fea4210962196389c",
+   "loaded_in_city": false,
+   "loaded_by": "n/a"
+  },
+  {
+   "role": "uniform render script",
+   "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/render.py",
+   "sha256": "ff89761743a064f7d599835e3e3123f330ca152df43634717c312ece667d4dc7",
+   "loaded_in_city": false,
+   "loaded_by": "n/a"
+  }
+ ],
+ "missing": [
+  {
+   "what": "private native source (.blend / generator 'LY private deterministic lossless static batch v1' / source ZIP)",
+   "use": "editable source for cut/cover changes, provenance of C dimensions",
+   "rebuild_from_glb": "yes: inspection-near.glb carries the 8 semantic groups with identity rot/scale, assembled volume and tris equal near.glb (5.8456 m3, 18420 tris); a rebuild must be labelled 'rebuilt from GLB'"
+  },
+  {
+   "what": "component-ranges-near.json / component-ranges-mid.json / component-ranges-far.json (named in node extras of near/far GLB)",
+   "use": "map index ranges of the merged LOD primitive back to inner/shaft/outer/cover groups",
+   "rebuild_from_glb": "near: yes via inspection GLB; mid/far: only by spatial partition (x<-0.75, |x|<=0.759, x>0.75, y>0.6) -- not an original range table"
+  },
+  {
+   "what": "LY-003 palace wall registration (control points, wall line, thickness, ground level)",
+   "use": "decide whether any world position may be written",
+   "rebuild_from_glb": "no"
+  },
+  {
+   "what": "LY-006 frozen port IDs / LY-010 designation of the 'allowed local wall research block'",
+   "use": "host block for the wall opening; ownership of any ground cut",
+   "rebuild_from_glb": "no"
+  },
+  {
+   "what": "original publication of the Eastern Han brick waterway (hnswwkgyjy.cn News_ID=2810)",
+   "use": "only evidence of the three parts; DNS ENOTFOUND on 2026-11-05",
+   "rebuild_from_glb": "no"
+  }
+ ],
+ "prep_outputs": [
+  {"path": "prep/measure_waterway.py", "sha256": "aecd2ca50b0ce5f49bdd4921d2edcc6dda078b0b541ca02e2199fe155043f345"},
+  {"path": "prep/locate_nonmanifold.py", "sha256": "5872a9a0ab55446268c09ccd86bd93cad84b503945b7fae28c61f345412b2132"},
+  {"path": "prep/out/measure.json", "sha256": "0d93f00df49b2dda9c7268609f199fa3d4ae01554f9c1bfc3511797c6cd0a6be"},
+  {"path": "prep/out/nonmanifold.json", "sha256": "12c4e35e3866a68ccebc3787a5db77ba02667e6bd5c2cfbe85ae1ccea5a5111d"},
+  {"path": "prep/probe_joint.py", "sha256": "2be99bac5c8f0ebe47f34b8bb054a262a0e232c97dc84a6df81953f48d2015b9"},
+  {"path": "prep/out/joint.json", "sha256": "bffe76b2eb32b4aba6f2b98410d60379dd5626dcd39b03544ed32ef74b1eaa76"}
+ ]
+}

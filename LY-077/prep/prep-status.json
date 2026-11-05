@@ -1,0 +1,68 @@
+{
+  "seat": "LY-077",
+  "inputsFound": [
+    "docs/cities/luoyang/progress-assets/taixue-A-v3.2/models/taixue-A-LOD1.glb sha256 413c2f35ec26 (638,660 B, 3,864 tris)",
+    "docs/cities/luoyang/progress-assets/flat/study-taixue-A-ee4163421d16.glb sha256 ee4163421d16 (city-loaded flat projection; geometry hash == LOD1 283181be5b27)",
+    "docs/library/models/m-luoyang-taixue-a/files/taixue-A-LOD2.glb sha256 b911beb4c21a",
+    "modeling-lab/review-batches/2026-11-04-taixue-A-v3.2/public-source.zip.part001-003 -> zip 83556f30e8e8 (26/26 members verified): models/taixue-A-LOD0.glb ed40ae07e410 (27,855,752 B, 389,704 tris), LOD0/1/2 .blend af30bc125128 / 0e1fe2ba0a8a / 3cd8b6e490ae, source/check-entry.py d8c83c3a47fd, qa/current-city-binding.json 343ab20084f9, city/dependencies.json ac1a326982f7",
+    "docs/cities/luoyang/progress-assets/taixue-A-v3.2/source.json commit blob 535e10ae94ef (worktree CRLF 5f2a8078e2fa)",
+    "docs/library/models/m-luoyang-taixue-a/m-luoyang-taixue-a.asset.json commit blob 18948eaa26eb",
+    "docs/cities/luoyang/progress-assets/taixue-long-hall-v1/display/hall-A-LOD1.gltf 1403135d7a08 (superseded A; node A_presentation_ground 46x18x0.4 top y=0)",
+    "NEGATIVE docs/cities/luoyang/progress-assets/flat/study-taixue-B-11b01e4948be.glb 11b01e4948be; source hall-B-LOD1.gltf fa828ef0ee21",
+    "docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_{near,middle,far}.glb 0fcb76be7171 / 5a0ff55f9010 / 1b45de37e025 (LY-078 territory, read-only)",
+    "docs/cities/luoyang/city-data.mjs commit blob c849706b6210; city-renderer.mjs 04c6c643e44f; app.mjs cc0379c02c97; p-luoyang.asset.json 8edb06abf5e7",
+    "LY-002/tables/evidence-ledger.md ea060db64e08 (E-R06, E-R08, X09, X11, X18); LY-005/port-schema.json 30854ed927c6; LY-005/coordinate-contract.json b6d7fe9db952"
+  ],
+  "inputsMissing": [
+    "Native city mother .blend sha 1e8c4d2ce198 (private) with node C_TAIXUE_ISOLATED_SUPPORT_PATCH: needed to prove the new arrival ground is not double-loaded with the native support patch and to read the registered C placement [2367.347,-632.653,0]. Patch geometry CAN be rebuilt from the bounds recorded in city/dependencies.json (a box x±23 z±9 y-0.4..0); its identity/ownership cannot.",
+    "Original mother a37f316904c7 + delta eb6de7c4268c (private, archival): not needed; explicitly must not be activated.",
+    "Stone-classic access court native source (.blend/zip, private): not needed by LY-077 (GLB suffices for the do-not-weld negative); LY-078's input.",
+    "LY-006 frozen port IDs and ownership of the Taixue A forecourt ground (overlaps LY-078 street/ground boundary): contract, not rebuildable from GLB.",
+    "LY-005 rule for ports on a local-study asset (port-schema requires world + nodeMatrix, A has cityPlacement=null): contract.",
+    "LY-004 Taixue placement: not a LY-077 dependency; without it the deliverable stays local-study with world=unregistered."
+  ],
+  "gaps": [
+    "A v3.2 has only three south flights at x=-10.5/1.5/10.5, each 2.2 m wide, 3 risers x 0.20 m (0->0.2->0.4->0.6 platform), tread 0.35 m, foot line z=4.85; identical in LOD0/LOD1/LOD2/flat. North/east/west platform edges are 0.6 m sheer with no access.",
+    "No ground at all outside the footprint: south 4 m band 0/18,440 probes, between-flight notches (z 3.85-4.8) 0/560, north 0/18,440, west 0/3,612, east 0/3,612. The first riser (horizontal ray hits z=4.85 at y=0.02/0.10/0.19) drops to y=0 onto nothing.",
+    "check_arrival.py --patch none: pad support 264/264 failures at each of 3 flights; port->flight convergence routes 462/99/372 probes all fail.",
+    "Lateral convergence is impossible on the platform front: 0.6 m sheer edge between flights over 9.8 m (x -9.4..0.4) and 6.8 m (x 2.6..9.4), plus 7.2 m at each end; convergence must happen on ground at z>=4.85.",
+    "Flights are asymmetric about the hall axis: middle flight at x=1.5, hall centre x=0. Port x (0 vs 1.5) is an unfrozen C choice for LY-006.",
+    "Port frame cannot close: A is space=local-study, cityPlacement=null; LY-005 port-schema requires world (luoyang-local-schematic-v01) + nodeMatrixColumnMajor. Native mother translation [2367.347,-632.653,0] is an archival C registration, not web placement.",
+    "No shared transform between A and the stone-classic court (40x34 m, bounds [-20,-0.3,-16]..[20,6.54,18], ground y=0) in any repo file.",
+    "Old v1 A_presentation_ground (46x18x0.4, top 0, REUSED_C_earth) geometrically passes the full harness under v3.2 A (pads 0 fail, first riser 0.200, routes 0 fail/0 intrusion, 0 inside A solid) but only 4.15 m of forecourt depth (z 4.85-9.0), covers rear/ends too, has no ports, and has the same bounds as the native C_TAIXUE_ISOLATED_SUPPORT_PATCH (double-load risk).",
+    "Overhead: steps and forecourt open to sky (tile min y=4.1, extent z±3.65); clearance at platform front z=3.6 is 3.525 m.",
+    "Near tier LOD0 is 27,855,752 B > 15,000,000 B limit; available only inside the public-source zip."
+  ],
+  "reuseCandidate": "Partial only, not reuse-complete. (1) Taixue A v3.2 itself is the qualified result to reuse unchanged: 3 tiers + native .blend present, original check-entry.py rerun under Blender 5.2.1 gives identical results (0 intrusions, 27/27 tread supports, 168/168/117 landing supports per tier), city flat geometry hash == LOD1. (2) For the missing outer ground, the superseded v1 node A_presentation_ground in docs/cities/luoyang/progress-assets/taixue-long-hall-v1/display/hall-A-LOD1.gltf (sha 1403135d7a08) passes prep/check_arrival.py against v3.2 LOD1 (qa/selftest/REUSE-probe-v1-presentation-ground.json, PASS) and matches the recorded native C_TAIXUE_ISOLATED_SUPPORT_PATCH bounds, so its C dimensions can be reused rather than invented. It still lacks ports, assembly/mutual-exclusion and ownership, so the seat must still deliver ports + forecourt piece.",
+  "touches": [
+    "READ-ONLY A nodes taixue-A-static_earth / _timber / _tile / _fiber (all three tiers + flat); nine stair components at x -10.5/1.5/10.5 must stay byte-identical",
+    "NEW ground piece in A local-study frame, proposed x -19..19, z 3.8..~9.5, y -0.4..0 (top 0.000), incl. the two between-flight notches z 3.8..4.85",
+    "Mutual exclusion with v1 node A_presentation_ground (hall-A-LOD1.gltf 1403135d7a08) and native mother node C_TAIXUE_ISOLATED_SUPPORT_PATCH (same 46x18 footprint)",
+    "Ports: 3 threshold ports at flight feet (x -10.5/1.5/10.5, z 4.85, y 0) + 1 outer ground port (x 0 or 1.5, z ~8-9.5); port IDs owned via LY-006; one hand-off port to LY-078",
+    "Boundary with LY-078 stone-classic court ground/street port (south of A forecourt) - ownership conflict to be resolved by LY-006",
+    "city-data.mjs research-taixue-A / study-taixue-A entries (lines 636-672, 4124-4152, 4540-4566) - LY-100 only, not written",
+    "Workpack files: D:/GitHub/creation-notebook-workpacks/LY-077/ (prep/ now; models/, assembly.json, qa/, preview/, delivery-manifest.json at production)"
+  ],
+  "size": "S",
+  "risks": [
+    "Double-load / coplanar z-fight if the new forecourt is installed together with v1 A_presentation_ground or the native C_TAIXUE_ISOLATED_SUPPORT_PATCH (identical top y=0).",
+    "Local-study port has no legal world pose under current LY-005 schema; risk of someone filling it with the native [2367.347,-632.653,0] translation, which is not a web/LY-004 placement.",
+    "Ownership overlap with LY-078 (forecourt vs stone-classic court ground and street port); conflating A hall stairs with the recorded '太学门外' (courtyard gate) would wrongly weld the two C studies.",
+    "0.6 m unguarded platform edge between flights remains; no evidence for railings, so it must be listed as a passage limitation, not fixed.",
+    "Harness is surface-BVH + triangle clipping with 3 mm / 15 mm tolerances; not continuous gait, crowd or structural proof.",
+    "Near-tier checks need LOD0 from the public-source zip (restored outside the repo); repo restore.py writes into the repo and must not be run there.",
+    "Text-file SHA ambiguity (commit LF vs worktree CRLF), e.g. taixue-A-v3.2/source.json 535e10ae94ef vs 5f2a8078e2fa; bind commit blobs."
+  ],
+  "readyAfterG": true,
+  "prepArtifacts": {
+    "brief-draft.md": "D:/GitHub/creation-notebook-workpacks/LY-077/prep/brief-draft.md",
+    "inputs.json": "D:/GitHub/creation-notebook-workpacks/LY-077/prep/inputs.json",
+    "test-plan.md": "D:/GitHub/creation-notebook-workpacks/LY-077/prep/test-plan.md",
+    "measure_taixue_a_entry.py": "172e10d68adecd88ec1e0dbf9aeb117a95ff0c6f24a31620e975a3523628a599",
+    "probe_stoneclassic.py": "6bd804a488ec3131a37fbef2e51cef4ac5ec95d46ae3115bed6ccab12a7a8484",
+    "check_arrival.py": "568c65e363cb6aa57591a3e2d8331c1f43876ee3442e9b0d09e2dfb8165643f2",
+    "qa": "measure-*.json, probe-stoneclassic-near.json, selftest/*.json + selftest.txt",
+    "_src": "restored public-source zip + extracted pub/ + rerun/ of check-entry.py (local working copy, not a deliverable)",
+    "recheck": "qa/recheck-2/LOD1-{none,ok,gap}.json: rerun 2026-11-05 at bce3211, identical to qa/selftest/ (label fields excluded)"
+  }
+}

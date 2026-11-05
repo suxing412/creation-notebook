@@ -1,0 +1,176 @@
+{
+  "seat": "LY-051",
+  "revision": 2,
+  "baseline": {
+    "taskpoolBaseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+    "labHEAD": "bce3211f818ee5a8bef1773539da70695ba37b17",
+    "originMainObserved": "cad338ba683f7277aea098f45c8feb6c915a847c",
+    "driftNote": "git diff bce3211 cad338b -- docs/library/models/m-luoyang-stable is empty; city-data.mjs at cad338b has 0 references to stable. LY-001 must re-lock before production."
+  },
+  "frames": {
+    "registry": "local:stable-A | local:stable-B = GLB native (x bay, y up, +z open front, -z rear wall)",
+    "blenderImport": "Blender (x, y, z) = glTF (x, -z, y); prep scripts measure in Blender coords and convert zone boxes once"
+  },
+  "inputs": [
+    {
+      "id": "m-luoyang-stable/A",
+      "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-stable/files/A.glb",
+      "role": "host stable, 3 bays, C",
+      "bytes": 4898748,
+      "sha256Commit": "672beeb46faaee0a15f7de649099c486c639b40a39b045b89525fbe7f15b2563",
+      "sha256Worktree": "672beeb46faaee0a15f7de649099c486c639b40a39b045b89525fbe7f15b2563",
+      "meshes": 19,
+      "materials": ["REUSED_C_earth", "REUSED_C_wood", "REUSED_C_tile"],
+      "generator": "Khronos glTF Blender I/O v4.3.47",
+      "native": null,
+      "nativeNote": "no .blend / source ZIP in repo; kit is a separate GLB, host reference geometry rebuildable from GLB (all structural parts are 12/28-tri boxes)",
+      "loadedInCity": false,
+      "loaderCode": null,
+      "referencedBy": ["docs/library/models/m-luoyang-stable/m-luoyang-stable.asset.json files[0]", "lab/data/assets.json (id m-luoyang-stable, library page only)"],
+      "owner": "LY-052 keep (LY-006 ownership.json sourceObjects stable-A:*); ground piece gp:stable-A:A_earth_platform -> LY-052"
+    },
+    {
+      "id": "m-luoyang-stable/B",
+      "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-stable/files/B.glb",
+      "role": "host stable, 4 bays, C; mutually exclusive with A",
+      "bytes": 7043436,
+      "sha256Commit": "bd82280a76f0677821788c62c39b42e8fb2314d297bbad704a92aa7d452c2cb4",
+      "sha256Worktree": "bd82280a76f0677821788c62c39b42e8fb2314d297bbad704a92aa7d452c2cb4",
+      "meshes": 22,
+      "materials": ["REUSED_C_earth", "REUSED_C_wood", "REUSED_C_tile"],
+      "native": null,
+      "loadedInCity": false,
+      "loaderCode": null,
+      "referencedBy": ["m-luoyang-stable.asset.json files[1]"],
+      "owner": "LY-052 keep; gp:stable-B:B_earth_platform -> LY-052"
+    },
+    {
+      "id": "m-luoyang-stable/card",
+      "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-stable/m-luoyang-stable.asset.json",
+      "sha256Commit": "eb67038618d1e24697d2ea45e8182a13a9a4c574ada855f3cfb1d319317eb995",
+      "sha256Worktree": "66f0e994580905874ef788ae041272bcc5d73d6d50f250d2f749ed6b523fd824",
+      "worktreeNote": "CRLF checkout; LY-006 ownership.json cards entry records the worktree hash 66f0e994",
+      "loadedInCity": false,
+      "loaderCode": "library page only; card owner LY-060 (LY-006 seats.json ownsCards)"
+    },
+    {
+      "id": "p-luoyang",
+      "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/p-luoyang.asset.json",
+      "sha256Commit": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+      "sha256Worktree": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+      "relevantLines": {"233": "progress row 厩棚与饲槽 A/B", "542": "related m-luoyang-stable"},
+      "loadedInCity": "project card, not a geometry loader",
+      "writeOwner": "LY-100 only"
+    },
+    {
+      "id": "city-data",
+      "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-data.mjs",
+      "sha256Commit": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+      "sha256Worktree": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+      "stableReferences": 0,
+      "check": "grep -rIl 'm-luoyang-stable|stable/files' docs/cities/luoyang -> only p-luoyang.asset.json; no loader in app.mjs, city-renderer.mjs, city-data.mjs, v1/, data/"
+    },
+    {
+      "id": "assets-summary",
+      "path": "D:/GitHub/creation-notebook-lab/lab/data/assets.json",
+      "sha256Commit": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+      "sha256Worktree": "c39e8e9a2a1833f3abbc15e585f5868fba6c7d2e01f6b8e504c2b44193f16979",
+      "note": "worktree bytes differ from commit (line endings); use commit bytes. Entry id m-luoyang-stable at line 6594"
+    },
+    {
+      "id": "LY-001-ledger",
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-001/qa/family-ledger.json",
+      "sha256": "8eaa7c7a805d5cfb4fd1492a26c480ee0cad9095407e767648e0e9e71eadfe37",
+      "entry": "family C:m-luoyang-stable, cityNodes 0, 仅模型（资产卡文件）",
+      "status": "LY-001 交付完成"
+    },
+    {
+      "id": "LY-002-evidence",
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-002/tables/evidence-ledger.json",
+      "sha256": "237a4811acad3d7f6733d4c5c95a64df0b2c67adf48b2682264eb0f0c8512b77",
+      "md": {"path": "LY-002/tables/evidence-ledger.md", "sha256": "ea060db64e08645e299924e3243c566587689ac59acf35cff7638e0b190fc5de"},
+      "familyBinding": {"path": "LY-002/tables/family-binding.json", "sha256": "3aeddcc065cbbef44ddd2da3995d6e72fcd37e93a75d0c46e92fe1d2a02e12b6",
+                        "entry": {"family": "C:m-luoyang-stable", "facts": ["E-H01"], "prohibited": ["X07", "X12", "X24"], "repoIssues": ["D-07"]}},
+      "alsoRelevant": "E-H02 (md line 437): 模型可用 砖瓦窑、厩棚、足碓等为C独立模块",
+      "tetherPartitionEntries": 0,
+      "status": "LY-002 交付完成"
+    },
+    {
+      "id": "LY-006-registry",
+      "files": {
+        "LY-006/registry/zones.json": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+        "LY-006/registry/ports.json": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+        "LY-006/registry/seats.json": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+        "LY-006/registry/ownership.json": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca"
+      },
+      "LY-051": {
+        "writeZones": {"LY-051:write:001": [[-4.5, 0.05, -2.4], [4.5, 2.7, 2.4]], "LY-051:write:002": [[-6.3, 0.05, -2.7], [6.3, 2.7, 2.7]]},
+        "components": [{"id": "W051-tethers", "class": "removable"}, {"id": "W051-partitions", "class": "removable"}],
+        "produces": "stable:partition-footprint:mount v1 (consumer LY-052; tol position 0.005 m, elevation 0.002 m; local frame listed only as local:stable-A)",
+        "consumes": [],
+        "ownsSourceObjects": 0,
+        "site": "S-WORK (owner LY-060)"
+      },
+      "neighbours": {"LY-052": "floor layer y -0.3..0.05 over the platform, front approach z 2.4..6.4 (A) / 2.7..6.7 (B), owns 39 host objects (keep) and both platforms",
+                     "LY-087": "consumes stable:drain-outlet:drain"},
+      "status": "LY-006 交付完成"
+    },
+    {
+      "id": "LY-007-style",
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-007/baseline/LY-style-bible.frozen.md",
+      "sha256": "50e51a9358b1ba50fe5fbfcf1afad93dbb1c8a616d4a50d3faae17a9641f276d",
+      "rules": ["three LODs LOD0/1/2, same slug/bbox/origin", "LY_P01_<mat>__PBR (LOD0/1), __FLAT (LOD2)", "REUSED_C_* banned for new models (host stable uses it)", "round timber 16->8->box"],
+      "status": "LY-007 交付完成"
+    },
+    {
+      "id": "LY-005-contract",
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-005/coordinate-contract.json",
+      "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+      "use": "metric, +Y up; stable has no city node so only local frames apply",
+      "status": "LY-005 交付完成"
+    },
+    {
+      "id": "LY-009-board",
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-009/board/board.md",
+      "sha256": "82921ea34c16de69d58b6518faad2e2fd461b1c203e3c41e5920ce2e5fccb1b3",
+      "entry": "LY-051 | wave 6 | 待输入 | G、LY-002 | lock PROTOTYPES",
+      "status": "no status.json (not frozen)"
+    },
+    {
+      "id": "mq-audit",
+      "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/cards/m-luoyang-stable/audit.json",
+      "sha256": "e6999604d36edc8b704f97c3f17d579890c637a602f2eadfabb89926fca4126c",
+      "extras": "views.png, lods.png, r/*.png, extra/"
+    },
+    {
+      "id": "render",
+      "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/render.py",
+      "sha256": "ff89761743a064f7d599835e3e3123f330ca152df43634717c312ece667d4dc7"
+    },
+    {
+      "id": "prep-measure",
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-051/prep/measure_stable.py",
+      "sha256": "af2d79dc76b832d49d2fc4b5fc864be236e9428434013c9ce8a3d9eb940e5486",
+      "outputs": {"measure-A.json": "5dba80fec2a3d247761275450e7ed95ed4bdf234680d3189831198da8c248aee", "measure-B.json": "bd9f05fc1cff7027abf090c840993717dfb9fd8a7e91a29f2839be27a2db82f2"},
+      "reproduced": "byte-identical rerun 2026-11-05",
+      "tool": "Blender 5.2.1 LTS, -b --factory-startup --python-exit-code 1"
+    },
+    {
+      "id": "prep-checker",
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-051/prep/check_kit.py",
+      "sha256": "d79a4f9938f896c48e642f94e0c87b9cc3c4eccc3e05ac96946d9d0e84b423b8",
+      "outputs": {"selftest-A.json": "f7fbd47980e4bee2f32dc508f8a30cf04deca6b220b8c75f245bae4d5ddc7948", "selftest-B.json": "7162197a9c20f7fb292fc139ad4185259d6d71fcdc7e89e44d321d3cc66c52aa"},
+      "result": "13/13 cases behave as expected for A and B (3 positives pass, 7 kit negatives fail, host-change detected, host restored)",
+      "note": "probe boxes exist only in Blender memory; nothing exported"
+    }
+  ],
+  "pendingDependencies": {
+    "LY-008": "official GLB/QA checker not frozen (only qa/negatives present)",
+    "LY-009": "board present, no status.json",
+    "LY-010": "workpack directory absent: no usage selection, so it is unknown whether any stable / tether use is admitted"
+  },
+  "missing": [
+    {"what": "stable A/B .blend + source ZIP", "use": "editable host geometry and generator params", "rebuildFromGLB": "yes for reference geometry; the kit is a separate GLB and does not modify the host"},
+    {"what": "c.180 Luoyang evidence for tethering / stall partition", "use": "evidence column of assembly.json", "rebuildFromGLB": "no"}
+  ]
+}

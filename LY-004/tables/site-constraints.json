@@ -1,0 +1,1742 @@
+{
+ "schema": "LY-004/site-constraints/1",
+ "seat": "LY-004",
+ "snapshotYearCE": 180,
+ "baselineCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "frame": "luoyang-local-schematic-v01",
+ "units": {
+  "chi_m": [
+   0.23,
+   0.24
+  ],
+  "bu_chi": 6,
+  "li_bu": 300,
+  "note": "C假设（LY-002 X22）：汉尺0.230–0.240米；1步=6尺；1里=300步=1800尺，故1里=414–432米、1步=1.38–1.44米。",
+  "rounding": {
+   "li": 0.5,
+   "bu_hundreds": 50,
+   "note": "C假设：'二里所''一里所'等取±0.5里；'三百步'取±50步。这是读法宽度，不是历史误差。"
+  }
+ },
+ "sites": [
+  {
+   "id": "lingtai",
+   "name": "灵台",
+   "region": "city-south",
+   "group": "城南礼制四所",
+   "assets": [
+    "m-luoyang-lingtai (F-lingtai)"
+   ],
+   "ly002Entries": [
+    "E-R04",
+    "E-R08"
+   ],
+   "evidence": {
+    "sameLuoyang": [
+     {
+      "id": "LT1",
+      "src": "S02",
+      "locator": "光武纪下中元元年注引汉宫阁疏",
+      "quote": "灵台高三丈，十二门",
+      "col": "same",
+      "supports": "高度与门数（《汉宫阁疏》成书年代未核）",
+      "textDate": "未核",
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 9,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "LT2",
+      "src": "S107",
+      "locator": "祭祀志中中元元年",
+      "quote": "是年初营北郊，明堂﹑[一]辟雍﹑[二]灵台未用事",
+      "col": "same",
+      "supports": "56年三雍尚未用事（分期起点）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 24,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "LT3",
+      "src": "S07",
+      "locator": "顺帝纪永和元年",
+      "quote": "宗祀明堂，登灵台，改元永和",
+      "col": "same",
+      "supports": "136年明堂、灵台在用",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 13,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "LT4",
+      "src": "G23",
+      "locator": "页55",
+      "quote": "灵台位于平城门外大道西侧，与明堂一西一东夹道相对",
+      "col": "same",
+      "supports": "与明堂夹平城门外大道（二手综述）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 24,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "LT5",
+      "src": "G23",
+      "locator": "页55",
+      "quote": "每边长200米左右",
+      "col": "same",
+      "supports": "围墙边长（转引段鹏琦2010，分期未核）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 9,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "LT6",
+      "src": "G23",
+      "locator": "页55",
+      "quote": "残高约8米",
+      "col": "same",
+      "supports": "台基现存残高（不是原高）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 5,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "LT8",
+      "src": "S09",
+      "locator": "灵帝纪中平二年注引续汉志",
+      "quote": "时烧灵台殿、乐成殿",
+      "col": "same",
+      "supports": "185年南宫火烧的'灵台殿'是宫中殿名，不是城南灵台",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 9,
+      "notLongerThanOneSentence": true
+     }
+    ],
+    "otherHan": [],
+    "later": [
+     {
+      "id": "LT7",
+      "src": "SQ3",
+      "locator": "卷三城南·秦太上公二寺条",
+      "quote": "寺東有靈臺一所，基址雖頹，猶高五丈餘，即是漢光武所立者",
+      "col": "later",
+      "supports": "北魏人认定此台为汉光武所立（6世纪追记）",
+      "textDate": "东魏547",
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 27,
+      "notLongerThanOneSentence": true
+     }
+    ],
+    "unknown": [
+     "台体原高、各层建筑东汉形态：未知（残高约8米≠原高；'高三丈'与米值换算为C）",
+     "围墙'每边长200米左右'属哪一期：未核原报告",
+     "高2023'50平方米左右的台基'量纲疑为边长（网上游记称约31×41米，来源不明，不采用）"
+    ]
+   },
+   "phase": {
+    "founded": "56（中元元年）",
+    "foundedQuote": [
+     "MT1"
+    ],
+    "notYetInUse56": [
+     "LT2"
+    ],
+    "inUseBefore180": [
+     "LT3"
+    ],
+    "nearest180": "136年（LT3）；180年前后无专条，但礼制按年行用",
+    "afterSnapshot": "185年南宫火烧的'灵台殿'是宫殿名，不涉此台（LT8）",
+    "laterReuse": "北魏人仍见台基并归于汉光武（LT7）；遗址现存部分各期分属未核"
+   },
+   "positionTextQuotes": [
+    "LT4"
+   ],
+   "coordinate": {
+    "status": "B-research-marker",
+    "label": "B 研究示意描点（非测绘，无控制点）",
+    "point_en": [
+     1469.388,
+     -1040.816
+    ],
+    "markerRadius_m": 164.177,
+    "independentResidual_m": 29.267,
+    "historicalPositionError_m": null,
+    "geometryFile": "geometry/city-south.json#S-lingtai-marker"
+   },
+   "constraintsChecked": [
+    "T3",
+    "T7"
+   ],
+   "admission180": {
+    "install180": "不放行",
+    "marker": "可作研究标记（B点或文本带，标明非测绘）",
+    "items": [
+     {
+      "id": "P01",
+      "item": "图1灵台B描点",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "无考古控制点：位置等级=B"
+      ]
+     },
+     {
+      "id": "P02",
+      "item": "灵台围墙每边约200米、残高约8米（LT5、LT6）",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "遗迹分期未核（原报告未读）",
+       "无考古控制点：位置等级=None"
+      ]
+     },
+     {
+      "id": "P15",
+      "item": "185年南宫'灵台殿'火灾当作城南灵台状态（LT8）",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "分期/设施不符：after-180-other-facility",
+       "无考古控制点：位置等级=None"
+      ]
+     },
+     {
+      "id": "P16",
+      "item": "图1灵台B描点作研究标记",
+      "request": "marker",
+      "admitted": true,
+      "reasons": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "mingtang",
+   "name": "明堂",
+   "region": "city-south",
+   "group": "城南礼制四所",
+   "assets": [
+    "m-luoyang-mingtang"
+   ],
+   "ly002Entries": [
+    "E-R03",
+    "E-R08"
+   ],
+   "evidence": {
+    "sameLuoyang": [
+     {
+      "id": "MT1",
+      "src": "S02",
+      "locator": "光武纪下中元元年",
+      "quote": "初起明堂﹑灵台﹑辟雍，及北郊兆域",
+      "col": "same",
+      "supports": "56年起三雍及北郊兆域",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 16,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "MT2",
+      "src": "S02",
+      "locator": "注引汉官仪",
+      "quote": "明堂去平城门二里所",
+      "col": "same",
+      "supports": "距平城门约二里（应劭，东汉末）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 9,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "MT3",
+      "src": "S02",
+      "locator": "注引汉官仪",
+      "quote": "天子出，从平城门，先历明堂，乃至郊祀",
+      "col": "same",
+      "supports": "出平城门先经明堂后至郊：郊坛在明堂之外",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 18,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "MT4",
+      "src": "S02",
+      "locator": "注引汉官仪",
+      "quote": "明堂四面起土作爎，上作桥，爎中无水",
+      "col": "same",
+      "supports": "四面干壍与桥",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 17,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "MT5",
+      "src": "S07",
+      "locator": "顺帝纪汉安元年",
+      "quote": "汉安元年春正月癸巳，宗祀明堂",
+      "col": "same",
+      "supports": "142年明堂在用",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 14,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "MT6",
+      "src": "G23",
+      "locator": "页54",
+      "quote": "每面墙约长400米",
+      "col": "same",
+      "supports": "明堂围墙（转引，分期未核）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 9,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "MT7",
+      "src": "G23",
+      "locator": "页54",
+      "quote": "直径61至62米",
+      "col": "same",
+      "supports": "中心圆形夯土基址（转引，分期未核）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 8,
+      "notLongerThanOneSentence": true
+     }
+    ],
+    "otherHan": [],
+    "later": [
+     {
+      "id": "MT8",
+      "src": "SQ3",
+      "locator": "卷三城南·秦太上公二寺条",
+      "quote": "至我正光中，造明堂於辟雍之西南，上圓下方，八窗四闥",
+      "col": "later",
+      "supports": "北魏正光（520–525）在辟雍西南另造明堂，上圆下方",
+      "textDate": "东魏547",
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 25,
+      "notLongerThanOneSentence": true
+     }
+    ],
+    "unknown": [
+     "东汉明堂与北魏正光明堂是否同址重建：未核（原报告未读）",
+     "'每面墙约长400米''直径61至62米'属哪一期：未核"
+    ]
+   },
+   "phase": {
+    "founded": "56（中元元年）",
+    "foundedQuote": [
+     "MT1"
+    ],
+    "notYetInUse56": [
+     "LT2"
+    ],
+    "inUseBefore180": [
+     "LT3",
+     "MT5"
+    ],
+    "nearest180": "142年（MT5）",
+    "afterSnapshot": "无",
+    "laterReuse": "北魏正光年间在'辟雍之西南'另造明堂，上圆下方（MT8）。图1明堂正在辟雍西南，现遗址中心'圆形夯土基址'可能属北魏，分期未核"
+   },
+   "positionTextQuotes": [
+    "MT2",
+    "MT3"
+   ],
+   "coordinate": {
+    "status": "B-research-marker",
+    "label": "B 研究示意描点（非测绘，无控制点）",
+    "point_en": [
+     1795.918,
+     -1061.224
+    ],
+    "markerRadius_m": 220.279,
+    "independentResidual_m": 3.401,
+    "historicalPositionError_m": null,
+    "geometryFile": "geometry/city-south.json#S-mingtang-marker"
+   },
+   "constraintsChecked": [
+    "T1a",
+    "T1b",
+    "T2a",
+    "T2b",
+    "T3",
+    "T6",
+    "T7"
+   ],
+   "admission180": {
+    "install180": "不放行",
+    "marker": "可作研究标记（B点或文本带，标明非测绘）",
+    "items": [
+     {
+      "id": "P03",
+      "item": "图1明堂B描点",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "无考古控制点：位置等级=B"
+      ]
+     },
+     {
+      "id": "P04",
+      "item": "明堂围墙每面约400米、中心圆基径61–62米（MT6、MT7）",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "遗迹分期未核（原报告未读）；与北魏正光明堂可能同址",
+       "无考古控制点：位置等级=None"
+      ]
+     },
+     {
+      "id": "P17",
+      "item": "图1明堂B描点作研究标记",
+      "request": "marker",
+      "admitted": true,
+      "reasons": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "biyong",
+   "name": "辟雍",
+   "region": "city-south",
+   "group": "城南礼制四所",
+   "assets": [
+    "m-luoyang-biyong"
+   ],
+   "ly002Entries": [
+    "E-R05",
+    "E-R08"
+   ],
+   "evidence": {
+    "sameLuoyang": [
+     {
+      "id": "BY1",
+      "src": "S02",
+      "locator": "注引汉官仪",
+      "quote": "辟雍去明堂三百步",
+      "col": "same",
+      "supports": "与明堂相距三百步",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 8,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BY2",
+      "src": "S02",
+      "locator": "注引汉官仪",
+      "quote": "车驾临辟雍，从北门入",
+      "col": "same",
+      "supports": "北门入",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 10,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BY3",
+      "src": "S02",
+      "locator": "注引汉官仪",
+      "quote": "东西南有水，北无",
+      "col": "same",
+      "supports": "水在东西南三面",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 8,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BY4",
+      "src": "S07",
+      "locator": "顺帝纪阳嘉元年",
+      "quote": "帝临辟雍飨射，大赦天下，改元阳嘉",
+      "col": "same",
+      "supports": "132年辟雍在用",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 16,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BY5",
+      "src": "S09",
+      "locator": "灵帝纪熹平六年",
+      "quote": "帝临辟雍",
+      "col": "same",
+      "supports": "177年冬十月灵帝临辟雍（离快照最近的在用记录）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 4,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BY6",
+      "src": "G23",
+      "locator": "页53",
+      "quote": "可证辟雍遗址位于城南大郊村一带",
+      "col": "same",
+      "supports": "遗址认定依据是晋碑（见BY9）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 15,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BY7",
+      "src": "G23",
+      "locator": "页53",
+      "quote": "各流出180余米后折而向南",
+      "col": "same",
+      "supports": "环水东西分流（分期未核）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 13,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BY8",
+      "src": "G23",
+      "locator": "页53",
+      "quote": "尚未显出转折闭合的迹象",
+      "col": "same",
+      "supports": "环水未见闭合",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 11,
+      "notLongerThanOneSentence": true
+     }
+    ],
+    "otherHan": [],
+    "later": [
+     {
+      "id": "BY9",
+      "src": "G23",
+      "locator": "页53",
+      "quote": "发现晋武帝三临辟雍的纪念碑",
+      "col": "later",
+      "supports": "西晋碑：证遗址延用到晋",
+      "textDate": "西晋",
+      "status": "逐字找到",
+      "occurrences": 2,
+      "lengthChars": 13,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BY10",
+      "src": "SQ3",
+      "locator": "卷三城南·秦太上公二寺条",
+      "quote": "靈臺東辟雍，是魏武帝所立者",
+      "col": "later",
+      "supports": "北魏人称灵台东的辟雍为魏武帝所立",
+      "textDate": "东魏547",
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 13,
+      "notLongerThanOneSentence": true
+     }
+    ],
+    "unknown": [
+     "东汉辟雍中心殿形制：未知",
+     "环水分期、闭合与否：未核（BY7、BY8 为二手转引）",
+     "伽蓝记'魏武帝所立'与东汉中元元年始建如何并存：未定（可能是曹魏重建，也可能是追记有误）"
+    ]
+   },
+   "phase": {
+    "founded": "56（中元元年）",
+    "foundedQuote": [
+     "MT1"
+    ],
+    "notYetInUse56": [
+     "LT2"
+    ],
+    "inUseBefore180": [
+     "BY4",
+     "BY5"
+    ],
+    "nearest180": "177年冬十月（BY5）",
+    "afterSnapshot": "无",
+    "laterReuse": "北魏人称灵台东的辟雍为魏武帝所立（BY10）；遗址出西晋碑（BY9）。东汉辟雍是否即此遗址、哪些遗迹属东汉：未核"
+   },
+   "positionTextQuotes": [
+    "BY1",
+    "BY2"
+   ],
+   "coordinate": {
+    "status": "B-research-marker",
+    "label": "B 研究示意描点（非测绘，无控制点）",
+    "point_en": [
+     2183.673,
+     -938.776
+    ],
+    "markerRadius_m": 170.237,
+    "independentResidual_m": 9.821,
+    "historicalPositionError_m": null,
+    "geometryFile": "geometry/city-south.json#S-biyong-marker"
+   },
+   "constraintsChecked": [
+    "T2a",
+    "T2b",
+    "T7"
+   ],
+   "admission180": {
+    "install180": "不放行",
+    "marker": "可作研究标记（B点或文本带，标明非测绘）",
+    "items": [
+     {
+      "id": "P05",
+      "item": "图1辟雍B描点",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "无考古控制点：位置等级=B"
+      ]
+     },
+     {
+      "id": "P06",
+      "item": "辟雍环水东西各180余米、未闭合（BY7、BY8）",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "遗迹分期未核（原报告未读）",
+       "无考古控制点：位置等级=None"
+      ]
+     },
+     {
+      "id": "P07",
+      "item": "西晋三临辟雍碑及晋代遗迹（BY9）",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "分期/设施不符：W-Jin",
+       "无考古控制点：位置等级=None"
+      ]
+     },
+     {
+      "id": "P18",
+      "item": "图1辟雍B描点作研究标记",
+      "request": "marker",
+      "admitted": true,
+      "reasons": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "taixue",
+   "name": "太学",
+   "region": "city-south",
+   "group": "城南礼制四所",
+   "assets": [
+    "m-luoyang-taixue-a (F-taixue-hall)",
+    "m-luoyang-stoneclassic-access-court"
+   ],
+   "ly002Entries": [
+    "E-R06",
+    "E-R08"
+   ],
+   "evidence": {
+    "sameLuoyang": [
+     {
+      "id": "TX0",
+      "src": "S01",
+      "locator": "光武纪上建武五年",
+      "quote": "初起太学",
+      "col": "same",
+      "supports": "29年起太学",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 4,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "TX2",
+      "src": "S07",
+      "locator": "顺帝纪永建六年",
+      "quote": "秋九月辛巳，缮起太学",
+      "col": "same",
+      "supports": "131年重修太学",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 10,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "TX3",
+      "src": "S07",
+      "locator": "顺帝纪阳嘉元年",
+      "quote": "以太学新成",
+      "col": "same",
+      "supports": "132年太学新成",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 5,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "TX4",
+      "src": "S85",
+      "locator": "儒林传序",
+      "quote": "凡所造构二百四十房，千八百五十室",
+      "col": "same",
+      "supports": "顺帝重修规模（快照年的太学是重修后的状态）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 16,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "TX5",
+      "src": "S09",
+      "locator": "灵帝纪熹平四年",
+      "quote": "刻石立于太学门外",
+      "col": "same",
+      "supports": "175年起刻石经立太学门外",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 8,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "TX6",
+      "src": "S09",
+      "locator": "灵帝纪熹平五年",
+      "quote": "试太学生年六十以上百余人",
+      "col": "same",
+      "supports": "176年太学在用",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 12,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "TX7",
+      "src": "S09",
+      "locator": "灵帝纪光和五年",
+      "quote": "还，幸太学",
+      "col": "same",
+      "supports": "182年十二月幸太学",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 5,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "TX8",
+      "src": "S85",
+      "locator": "儒林传注引谢承书",
+      "quote": "碑立太学门外，瓦屋覆之，四面栏障，开门于南",
+      "col": "same",
+      "supports": "石经覆屋与围护（谢承，孙吴人）",
+      "textDate": "孙吴",
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 21,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "TX9",
+      "src": "G23",
+      "locator": "页52",
+      "quote": "太学遗址应在洛阳故城南郊今太学村一带",
+      "col": "same",
+      "supports": "遗址推定位置（二手）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 18,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "TX11",
+      "src": "G23",
+      "locator": "页52",
+      "quote": "说明东汉太学遗址正在此处",
+      "col": "same",
+      "supports": "东汉太学同址是作者推论",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 12,
+      "notLongerThanOneSentence": true
+     }
+    ],
+    "otherHan": [],
+    "later": [
+     {
+      "id": "TX1",
+      "src": "S01",
+      "locator": "光武纪上建武五年注引陆机洛阳记",
+      "quote": "太学在洛阳城故开阳门外，去宫八里",
+      "col": "later",
+      "supports": "开阳门外；'去宫八里'是西晋人以西晋宫城计",
+      "textDate": "西晋",
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 16,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "TX10",
+      "src": "G23",
+      "locator": "页52",
+      "quote": "东西150余米，南北约220米",
+      "col": "later",
+      "supports": "魏晋以降太学遗址范围（LY-002 X09 禁作东汉）",
+      "textDate": "魏晋以降",
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 15,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "TX12",
+      "src": "SQ3",
+      "locator": "卷三城南·报德寺条",
+      "quote": "開陽門御道東有漢國子學堂",
+      "col": "later",
+      "supports": "北魏人所见：开阳门御道东有'汉国子学堂'",
+      "textDate": "东魏547",
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 12,
+      "notLongerThanOneSentence": true
+     }
+    ],
+    "unknown": [
+     "东汉太学院落范围、讲堂确址：未知",
+     "180年已立石经碑数：未知",
+     "'去宫八里'是西晋人以西晋宫城计（宫在北），不能用来定东汉太学与南宫的距离"
+    ]
+   },
+   "phase": {
+    "founded": "29（建武五年）",
+    "foundedQuote": [
+     "TX0"
+    ],
+    "notYetInUse56": [],
+    "inUseBefore180": [
+     "TX2",
+     "TX3",
+     "TX5",
+     "TX6"
+    ],
+    "nearest180": "176年（TX6）、182年（TX7）",
+    "afterSnapshot": "182年仍幸太学（TX7）",
+    "laterReuse": "131–132年顺帝重修，凡二百四十房、千八百五十室（TX2–TX4），180年的太学是这次重修后的状态；175年起石经立于门外（TX5），180年立碑数未知；魏晋以降遗址另有150×220米范围（TX10，禁作东汉）"
+   },
+   "positionTextQuotes": [
+    "TX1",
+    "TX9",
+    "TX11"
+   ],
+   "coordinate": {
+    "status": "B-research-marker",
+    "label": "B 研究示意描点（非测绘，无控制点）",
+    "point_en": [
+     2367.347,
+     -632.653
+    ],
+    "markerRadius_m": 111.952,
+    "independentResidual_m": 19.743,
+    "historicalPositionError_m": null,
+    "geometryFile": "geometry/city-south.json#S-taixue-marker"
+   },
+   "constraintsChecked": [
+    "T4",
+    "T5a",
+    "T5b",
+    "T5c"
+   ],
+   "admission180": {
+    "install180": "不放行",
+    "marker": "可作研究标记（B点或文本带，标明非测绘）",
+    "items": [
+     {
+      "id": "P08",
+      "item": "图1太学B描点",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "无考古控制点：位置等级=B"
+      ]
+     },
+     {
+      "id": "P09",
+      "item": "魏晋以降太学遗址150×220米（TX10）",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "分期/设施不符：Wei-Jin+",
+       "无考古控制点：位置等级=None"
+      ]
+     },
+     {
+      "id": "P10",
+      "item": "陆机讲堂长十丈、广三丈（TX1注）",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "分期/设施不符：W-Jin",
+       "无考古控制点：位置等级=None"
+      ]
+     },
+     {
+      "id": "P19",
+      "item": "图1太学B描点作研究标记",
+      "request": "marker",
+      "admitted": true,
+      "reasons": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "nanjiao",
+   "name": "南郊（圆坛八陛）",
+   "region": "south-suburb",
+   "group": "南郊",
+   "assets": [
+    "m-luoyang-southern-altar"
+   ],
+   "ly002Entries": [
+    "E-R01"
+   ],
+   "evidence": {
+    "sameLuoyang": [
+     {
+      "id": "NJ1",
+      "src": "S106",
+      "locator": "祭祀志上建武二年",
+      "quote": "初制郊兆于雒阳城南七里",
+      "col": "same",
+      "supports": "南郊兆在城南七里（26年）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 11,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "NJ2",
+      "src": "S106",
+      "locator": "祭祀志上建武二年",
+      "quote": "为圆坛八陛，中又为重坛",
+      "col": "same",
+      "supports": "圆坛八陛",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 11,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "NJ3",
+      "src": "S107",
+      "locator": "祭祀志中五郊迎气注引月令章句",
+      "quote": "南郊七里，因火数也",
+      "col": "same",
+      "supports": "蔡邕以'七'为火数：七里可能是配数而非测距（LY-002 X17）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 9,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "NJ4",
+      "src": "S103",
+      "locator": "礼仪志上",
+      "quote": "正月上丁，祠南郊",
+      "col": "same",
+      "supports": "南郊在东汉礼仪中按年使用",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 8,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "NJ5",
+      "src": "S09",
+      "locator": "灵帝纪中平元年注",
+      "quote": "悬其首于南郊以谢天下",
+      "col": "same",
+      "supports": "184年上书仍以南郊为京师地标",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 10,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "NJ6",
+      "src": "G23",
+      "locator": "二（七）南北郊坛段",
+      "quote": "有可能是南郊坛的位置所在",
+      "col": "same",
+      "supports": "大郊村只是'可能'位置（遗址未发现）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 12,
+      "notLongerThanOneSentence": true
+     }
+    ],
+    "otherHan": [],
+    "later": [
+     {
+      "id": "NJ7",
+      "src": "S118",
+      "locator": "郡国志一雒阳注引魏氏春秋",
+      "quote": "魏时营为圆丘",
+      "col": "later",
+      "supports": "曹魏另营圆丘，不是东汉南郊",
+      "textDate": "曹魏",
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 6,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "NJ8",
+      "src": "SQ3",
+      "locator": "卷三城南·永桥条",
+      "quote": "永橋以南，圜丘以北，伊洛之間",
+      "col": "later",
+      "supports": "北魏圜丘在洛水以南、伊洛之间，不是东汉南郊",
+      "textDate": "东魏547",
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 14,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "NJ9",
+      "src": "SQ3",
+      "locator": "卷三城南·永桥条",
+      "quote": "宣陽門外四里，至洛水上，作浮橋，所謂永橋也",
+      "col": "later",
+      "supports": "北魏洛水距宣阳门（汉小苑门）约四里",
+      "textDate": "东魏547",
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 21,
+      "notLongerThanOneSentence": true
+     }
+    ],
+    "unknown": [
+     "遗址：未发现（NJ6 只说大郊村'有可能'）",
+     "坛高、径、陛宽、营墙尺寸：未知",
+     "'七里'从城垣、城门还是宫门量起：未知；'七'与蔡邕'火数'相合（NJ3），可能是配数而非实测",
+     "东西方向：完全没有约束"
+    ]
+   },
+   "phase": {
+    "founded": "26（建武二年）",
+    "foundedQuote": [
+     "NJ1"
+    ],
+    "notYetInUse56": [],
+    "inUseBefore180": [
+     "NJ4"
+    ],
+    "nearest180": "礼仪志记每年正月上丁祠南郊（NJ4）；184年仍作京师地标（NJ5）",
+    "afterSnapshot": "无",
+    "laterReuse": "曹魏另营圆丘（NJ7）、北魏圜丘在洛水南伊洛之间（NJ8），均不是东汉南郊"
+   },
+   "positionTextQuotes": [
+    "NJ1",
+    "MT3"
+   ],
+   "coordinate": {
+    "status": "unplaced-text-band",
+    "label": "未配准：只有城南七里文本带，不出点",
+    "point_en": null,
+    "band_m_south_of_south_wall": [
+     2691.0,
+     3240.0
+    ],
+    "eastWest": null,
+    "geometryFile": "geometry/city-south.json#S-nanjiao-text-band"
+   },
+   "constraintsChecked": [
+    "T6"
+   ],
+   "admission180": {
+    "install180": "不放行",
+    "marker": "可作研究标记（B点或文本带，标明非测绘）",
+    "items": [
+     {
+      "id": "P11",
+      "item": "南郊'城南七里'文本距离带",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "无考古控制点：位置等级=text-band"
+      ]
+     },
+     {
+      "id": "P12",
+      "item": "曹魏圆丘、北魏圜丘位置（NJ7、NJ8）",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "分期/设施不符：Wei/NW",
+       "无考古控制点：位置等级=None"
+      ]
+     },
+     {
+      "id": "P20",
+      "item": "南郊文本距离带作研究标记（不出点）",
+      "request": "marker",
+      "admitted": true,
+      "reasons": []
+     }
+    ]
+   }
+  },
+  {
+   "id": "beijiao",
+   "name": "北郊（方坛四陛）",
+   "region": "north-suburb",
+   "group": "北郊（单列）",
+   "assets": [
+    "m-luoyang-northern-altar"
+   ],
+   "ly002Entries": [
+    "E-R02"
+   ],
+   "evidence": {
+    "sameLuoyang": [
+     {
+      "id": "BJ1",
+      "src": "S107",
+      "locator": "祭祀志中",
+      "quote": "北郊在雒阳城北四里，为方坛四陛",
+      "col": "same",
+      "supports": "读法A：城北四里（志文正文）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 15,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BJ3",
+      "src": "S02",
+      "locator": "光武纪下注引汉官仪",
+      "quote": "北郊□在城西北角，去城一里所",
+      "col": "same",
+      "supports": "读法C：城西北角外一里所（应劭，东汉末）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 14,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BJ4",
+      "src": "S02",
+      "locator": "光武纪下注引汉官仪",
+      "quote": "但有□祠舍而已",
+      "col": "same",
+      "supports": "北郊只有祠舍类建筑（缺字）",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 7,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BJ5",
+      "src": "S107",
+      "locator": "祭祀志中",
+      "quote": "四陛醊及中外营门封神如南郊",
+      "col": "same",
+      "supports": "北郊也有中营、外营及营门",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 13,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BJ6",
+      "src": "S107",
+      "locator": "祭祀志中五郊迎气注引月令章句",
+      "quote": "北郊六里，因水数也",
+      "col": "same",
+      "supports": "这是'迎冬于北郊'的五郊迎气兆，以六为水数；与方坛不是同一设施",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 9,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BJ7",
+      "src": "S103",
+      "locator": "礼仪志上",
+      "quote": "礼毕，次北郊，明堂，高庙，世祖庙，谓之五供",
+      "col": "same",
+      "supports": "北郊在东汉礼仪中按年使用",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 21,
+      "notLongerThanOneSentence": true
+     },
+     {
+      "id": "BJ8",
+      "src": "G23",
+      "locator": "二（七）南北郊坛段",
+      "quote": "刘秀于建武中元元年立北郊坛于洛阳城北",
+      "col": "same",
+      "supports": "二手综述：北郊坛在城北",
+      "textDate": null,
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 18,
+      "notLongerThanOneSentence": true
+     }
+    ],
+    "otherHan": [],
+    "later": [
+     {
+      "id": "BJ2",
+      "src": "S107",
+      "locator": "祭祀志中注引张璠记",
+      "quote": "城北六里",
+      "col": "later",
+      "supports": "读法B：城北六里（晋人记）",
+      "textDate": "晋",
+      "status": "逐字找到",
+      "occurrences": 1,
+      "lengthChars": 4,
+      "notLongerThanOneSentence": true
+     }
+    ],
+    "unknown": [
+     "三说孰是：未定（四里/六里/西北角一里所，互相排斥）",
+     "坛边长、高度、陛宽：未知",
+     "祠舍、中外营的数量与形态：未知",
+     "地形（邙山坡麓）与古地面高程：未知",
+     "张璠'六里'与蔡邕'北郊六里，因水数也'（迎冬北郊兆）数字相同，可能混入五郊迎气兆"
+    ]
+   },
+   "phase": {
+    "founded": "56营、57初祀（中元元年/二年）",
+    "foundedQuote": [
+     "MT1",
+     "LT2"
+    ],
+    "notYetInUse56": [],
+    "inUseBefore180": [
+     "BJ7"
+    ],
+    "nearest180": "礼仪志记每年五供次北郊（BJ7）；180年前后无专条",
+    "afterSnapshot": "无",
+    "laterReuse": "未见后世沿用记录"
+   },
+   "positionTextQuotes": [
+    "BJ1",
+    "BJ2",
+    "BJ3"
+   ],
+   "coordinate": {
+    "status": "unplaced-three-exclusive-readings",
+    "label": "未配准：三说互斥，不出点；只在城北",
+    "point_en": null,
+    "readings": {
+     "A": [
+      1449.0,
+      1944.0
+     ],
+     "B": [
+      2277.0,
+      2808.0
+     ],
+     "C_fromNWcorner": [
+      207.0,
+      648.0
+     ]
+    },
+    "geometryFile": "geometry/north-suburb.json"
+   },
+   "constraintsChecked": [],
+   "admission180": {
+    "install180": "不放行",
+    "marker": "可作研究标记（B点或文本带，标明非测绘）",
+    "items": [
+     {
+      "id": "P13",
+      "item": "北郊三说候选包络",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "无考古控制点：位置等级=text-band-exclusive"
+      ]
+     },
+     {
+      "id": "P14",
+      "item": "月令章句'北郊六里'（迎冬兆）当作方坛位置（BJ6）",
+      "request": "install180",
+      "admitted": false,
+      "reasons": [
+       "分期/设施不符：EH-other-facility",
+       "无考古控制点：位置等级=None"
+      ]
+     },
+     {
+      "id": "P21",
+      "item": "北郊三说包络作研究标记（不出点）",
+      "request": "marker",
+      "admitted": true,
+      "reasons": []
+     }
+    ]
+   }
+  }
+ ],
+ "constraints": [
+  {
+   "id": "T1a",
+   "sites": [
+    "mingtang"
+   ],
+   "textQuotes": [
+    "MT2"
+   ],
+   "kind": "distance",
+   "measured_m": 1045.109,
+   "interval_m": {
+    "strict": [
+     828.0,
+     864.0
+    ],
+    "loose": [
+     621.0,
+     1080.0
+    ]
+   },
+   "note": "平城门点到明堂描点（符号中心），冻结证据层数值",
+   "withinStrict": false,
+   "withinLoose": true,
+   "deviationFromStrict_pct": [
+    20.962,
+    26.221
+   ]
+  },
+  {
+   "id": "T1b",
+   "sites": [
+    "mingtang"
+   ],
+   "textQuotes": [
+    "MT2"
+   ],
+   "kind": "distance",
+   "measured_m": 881.684,
+   "interval_m": {
+    "strict": [
+     828.0,
+     864.0
+    ],
+    "loose": [
+     621.0,
+     1080.0
+    ]
+   },
+   "note": "平城门到图1明堂符号北缘（本席位读数）；若\"去平城门二里\"量到明堂外缘，与严格读法相合",
+   "withinStrict": false,
+   "withinLoose": true,
+   "deviationFromStrict_pct": [
+    2.047,
+    6.484
+   ]
+  },
+  {
+   "id": "T2a",
+   "sites": [
+    "mingtang",
+    "biyong"
+   ],
+   "textQuotes": [
+    "BY1"
+   ],
+   "kind": "distance",
+   "measured_m": 406.629,
+   "interval_m": {
+    "strict": [
+     414.0,
+     432.0
+    ],
+    "loose": [
+     345.0,
+     504.0
+    ]
+   },
+   "note": "明堂描点到辟雍描点（冻结证据层）",
+   "withinStrict": false,
+   "withinLoose": true,
+   "deviationFromStrict_pct": [
+    -5.873,
+    -1.78
+   ]
+  },
+  {
+   "id": "T2b",
+   "sites": [
+    "mingtang",
+    "biyong"
+   ],
+   "textQuotes": [
+    "BY1"
+   ],
+   "kind": "distance",
+   "measured_m": 396.983,
+   "interval_m": {
+    "strict": [
+     414.0,
+     432.0
+    ],
+    "loose": [
+     345.0,
+     504.0
+    ]
+   },
+   "note": "同上，本席位读数",
+   "withinStrict": false,
+   "withinLoose": true,
+   "deviationFromStrict_pct": [
+    -8.106,
+    -4.111
+   ]
+  },
+  {
+   "id": "T3",
+   "sites": [
+    "lingtai",
+    "mingtang"
+   ],
+   "textQuotes": [
+    "LT4"
+   ],
+   "kind": "relation",
+   "measured_m": {
+    "lingtaiEast": 1469.388,
+    "roadEastAtLingtai": 1613.815,
+    "mingtangEast": 1795.918,
+    "roadEastAtMingtang": 1613.64,
+    "northDiff_m": 20.408
+   },
+   "interval_m": null,
+   "note": "灵台在平城门外大道西、明堂在东，两者南北相差很小（夹道相对）",
+   "pass": true
+  },
+  {
+   "id": "T4",
+   "sites": [
+    "taixue"
+   ],
+   "textQuotes": [
+    "TX1",
+    "TX12"
+   ],
+   "kind": "relation",
+   "measured_m": {
+    "taixueNorth": -632.653,
+    "southWallNorthAtTaixue": -28.707,
+    "taixueEast": 2367.347,
+    "kaiyangRoadEastAtTaixue": 2015.586,
+    "distToKaiyangGate_m": 700.003
+   },
+   "interval_m": null,
+   "note": "太学在南垣外、开阳门南大道东：与\"开阳门外\"及北魏\"开阳门御道东\"相合",
+   "pass": true
+  },
+  {
+   "id": "T5a",
+   "sites": [
+    "taixue"
+   ],
+   "textQuotes": [
+    "TX1"
+   ],
+   "kind": "distance",
+   "measured_m": 1731.637,
+   "interval_m": {
+    "strict": [
+     3312.0,
+     3456.0
+    ],
+    "loose": [
+     3105.0,
+     3672.0
+    ]
+   },
+   "note": "太学到南宫候选包络中心：远小于八里——\"去宫八里\"不是以东汉南宫计",
+   "withinStrict": false,
+   "withinLoose": false,
+   "deviationFromStrict_pct": [
+    -49.895,
+    -47.716
+   ]
+  },
+  {
+   "id": "T5b",
+   "sites": [
+    "taixue"
+   ],
+   "textQuotes": [
+    "TX1"
+   ],
+   "kind": "distance",
+   "measured_m": 778.792,
+   "interval_m": {
+    "strict": [
+     3312.0,
+     3456.0
+    ],
+    "loose": [
+     3105.0,
+     3672.0
+    ]
+   },
+   "note": "太学到南宫候选包络最近边",
+   "withinStrict": false,
+   "withinLoose": false,
+   "deviationFromStrict_pct": [
+    -77.465,
+    -76.486
+   ]
+  },
+  {
+   "id": "T5c",
+   "sites": [
+    "taixue"
+   ],
+   "textQuotes": [
+    "TX1"
+   ],
+   "kind": "distance",
+   "measured_m": 3616.2,
+   "interval_m": {
+    "strict": [
+     3312.0,
+     3456.0
+    ],
+    "loose": [
+     3105.0,
+     3672.0
+    ]
+   },
+   "note": "太学到北宫旧示意范围中心：接近八里，与西晋宫城在北的格局相容（只说明该句是西晋参照，不用于定位）",
+   "withinStrict": false,
+   "withinLoose": true,
+   "deviationFromStrict_pct": [
+    4.635,
+    9.185
+   ]
+  },
+  {
+   "id": "T6",
+   "sites": [
+    "nanjiao",
+    "mingtang"
+   ],
+   "textQuotes": [
+    "MT3",
+    "NJ1"
+   ],
+   "kind": "relation",
+   "measured_m": {
+    "mingtangFromPingcheng_m": 1045.109,
+    "nanjiaoTextFromSouthWall_m": [
+     2691.0,
+     3240.0
+    ]
+   },
+   "interval_m": null,
+   "note": "出平城门先历明堂乃至郊祀：南郊坛应在明堂之外；七里带（≥2.69 km）远于明堂（约1.0 km），两条记载不冲突",
+   "pass": true
+  },
+  {
+   "id": "T7",
+   "sites": [
+    "mingtang",
+    "biyong",
+    "lingtai"
+   ],
+   "textQuotes": [
+    "MT8",
+    "BY10",
+    "LT7"
+   ],
+   "kind": "relation-later",
+   "measured_m": {
+    "mingtangIsSouthWestOfBiyong": true,
+    "biyongIsEastOfLingtai": true,
+    "lingtaiFromXiaoyuanGate_m": 1178.428
+   },
+   "interval_m": null,
+   "note": "北魏追记（后世栏）：图1明堂正在辟雍西南，正是北魏正光明堂的相对位置；因此图1明堂点与北魏明堂可能是同一处遗址，分期必须另核",
+   "pass": true
+  }
+ ],
+ "repoIssues": [
+  {
+   "id": "R-01",
+   "file": "docs/cities/luoyang/data/research-unplaced.json",
+   "where": "features[id=ritual_south].name",
+   "found": "灵台、明堂、辟雍、太学这一组被命名为'南郊礼制区'",
+   "issue": "'南郊'在东汉文献里专指城南七里的圆坛郊兆；把四所叫南郊会与南郊坛混组",
+   "suggest": "改名'城南礼制区'，南郊坛另立一条 unknown-unplaced 记录",
+   "to": "LY-100"
+  },
+  {
+   "id": "R-02",
+   "file": "docs/cities/luoyang/data/research-unplaced.json",
+   "where": "features",
+   "found": "没有北郊条目",
+   "issue": "北郊在研究层里缺位，容易被归进城南或干脆忽略",
+   "suggest": "新增 north_suburb（spatialState: unknown-unplaced，renderable: false，注三说互斥）",
+   "to": "LY-100"
+  },
+  {
+   "id": "R-03",
+   "file": "docs/cities/luoyang/data/evidence/evidence-geometry.json",
+   "where": "features",
+   "found": "南郊坛、北郊坛都没有 null-geometry 的 list-only 条目",
+   "issue": "两处有文献、无坐标，和北宫新墙段一样应该列名不落位",
+   "suggest": "各加一条 geometry:null、placement_mode:none 的条目，北郊注明三说",
+   "to": "LY-100"
+  },
+  {
+   "id": "R-04",
+   "file": "docs/cities/luoyang/p-luoyang.asset.json",
+   "where": "progress[title=北郊方坛四陛].chapter",
+   "found": "北郊方坛四陛记在 chapter 'ritual'，与城南灵台、太学等同一章",
+   "issue": "展示分组上把北郊和城南礼制放在一起",
+   "suggest": "北郊方坛加 region:'north-suburb' 或单列，卡片文字注明在城北",
+   "to": "LY-098 / LY-100"
+  },
+  {
+   "id": "R-05",
+   "file": "docs/cities/luoyang/data/evidence/evidence-geometry.json",
+   "where": "frame.calibration.original_raster_dimensions_px",
+   "found": "记作 1284×1800；PDF内嵌图1实际为 373×594 像素（SHA da21a2c0…）",
+   "issue": "本席位独立描点与冻结描点只差一个常量平移（约195.5, 932像素）且比例尺相同，说明冻结像素坐标来自另一张底图；底图来源未登记",
+   "suggest": "在 frame 里登记底图来源与平移量；不影响现有米制数值",
+   "to": "LY-100"
+  }
+ ],
+ "notObtained": [
+  {
+   "what": "中国社会科学院考古研究所《汉魏洛阳故城南郊礼制建筑遗址（1962–1992年考古发掘报告）》，文物出版社2010",
+   "status": "未能访问：网上只检索到书目条目，正文、遗址总平面和测绘控制点均未取得",
+   "searched": "WebSearch 2026-11-05"
+  },
+  {
+   "what": "南郊圆坛、北郊方坛的考古遗址资料",
+   "status": "未找到：检索只得到邙山东汉帝陵材料；高2023称南郊坛遗址未发现、'大郊村'只是可能位置",
+   "searched": "WebSearch 2026-11-05"
+  },
+  {
+   "what": "大郊村、太学村、岗上村等现代村落的坐标",
+   "status": "没有取得：即使取得，也只能给现代地名点，不能当东汉遗址控制点；本席位没有使用任何现代地理坐标",
+   "searched": "未取"
+  },
+  {
+   "what": "东汉尺的量器实测出处",
+   "status": "未取得：检索只得到科普转述（约23.1厘米）；换算沿用LY-002的C假设0.230–0.240米/尺",
+   "searched": "WebSearch 2026-11-05"
+  }
+ ],
+ "repoState": {
+  "researchModelsRitual": [
+   [
+    "research-lingtai",
+    "null"
+   ],
+   [
+    "research-taixue-A",
+    "null"
+   ],
+   [
+    "research-taixue-B",
+    "null"
+   ]
+  ],
+  "researchUnplaced_ritual_south_name": "南郊礼制区",
+  "researchUnplaced_north_entries": 0,
+  "evidenceGeometry_jiao_features": [],
+  "projectCard_beijiao_chapter": "ritual",
+  "assetCardStatus": {
+   "m-luoyang-lingtai": "已建模，未入城 · 独立研究模型",
+   "m-luoyang-mingtang": "已建模，未入城 · 独立研究模型",
+   "m-luoyang-biyong": "已建模，未入城 · 独立研究模型",
+   "m-luoyang-taixue-a": "已建模，未入城 · 独立研究模型",
+   "m-luoyang-stoneclassic-access-court": "已建模；独立资产库待审，未入城。",
+   "m-luoyang-southern-altar": "已建模，未入城 · 独立研究模型",
+   "m-luoyang-northern-altar": "已建模；独立关系研究，未入城。"
+  }
+ },
+ "altUpload": {
+  "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/643503e53f1c0.pdf",
+  "sha256": "516b163774b02ed7ca6fc33706cc98a14a51a3b6708047b35513682043dd1dcd",
+  "note": "同文单篇抽印件；图1内嵌图字节SHA与G23相同(da21a2c0…)，本席位用它做了文字核对的交叉阅读，引文以G23文字层为准"
+ },
+ "fiveThings": {
+  "模型能读取": "本席位不涉及",
+  "局部通行通过": "本席位不涉及",
+  "已入城": "六类地点的模型全部未入城（LY-001 家族 cityNodes=0；city-data 礼制研究件 cityPlacement=null）",
+  "真实结构安全": "本席位不涉及",
+  "历史复原成立": "只给位置/分期约束：四所是B示意点，南郊与北郊未配准；没有任何一项进入约180年安装层"
+ }
+}

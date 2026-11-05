@@ -1,0 +1,84 @@
+{
+ "cityNodes": 66,
+ "localStudyNodes": 14,
+ "bboxHits": [
+  {
+   "node": "ground-network-ground-stitched",
+   "zone": "S-lingtai-marker",
+   "triangles": 8
+  },
+  {
+   "node": "ground-network-ground-stitched",
+   "zone": "S-mingtang-marker",
+   "triangles": 8
+  },
+  {
+   "node": "ground-network-ground-stitched",
+   "zone": "S-biyong-marker",
+   "triangles": 0
+  },
+  {
+   "node": "ground-network-ground-stitched",
+   "zone": "S-taixue-marker",
+   "triangles": 0
+  }
+ ],
+ "hits": [
+  {
+   "triangles": 8,
+   "hitTrianglesFootprintArea_m2": 13809.8,
+   "hitBounds_en": [
+    [
+     1609.25,
+     -1224.52
+    ],
+    [
+     1625.08,
+     -73.69
+    ]
+   ],
+   "hitY_range": [
+    0.16,
+    0.21
+   ],
+   "node": "ground-network-ground-stitched",
+   "zone": "S-lingtai-marker",
+   "glbFiles": [
+    {
+     "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+     "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60"
+    }
+   ]
+  },
+  {
+   "triangles": 8,
+   "hitTrianglesFootprintArea_m2": 13809.8,
+   "hitBounds_en": [
+    [
+     1609.25,
+     -1224.52
+    ],
+    [
+     1625.08,
+     -73.69
+    ]
+   ],
+   "hitY_range": [
+    0.16,
+    0.21
+   ],
+   "node": "ground-network-ground-stitched",
+   "zone": "S-mingtang-marker",
+   "glbFiles": [
+    {
+     "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+     "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60"
+    }
+   ]
+  }
+ ],
+ "method": "先用节点世界包围盒与约束区做平面相交；相交者读GLB提交字节，按LY-005节点矩阵×GLB内节点矩阵变换，在(east,north)平面逐三角形判定与约束区相交。只判平面足迹，不是实体碰撞。",
+ "nodesEntirelySouthOfSouthWall": [],
+ "nodesEntirelyNorthOfNorthWall": [],
+ "framesSha256": "c0f846cbe2966526535c23358b1695b830e2ba2a191fd1758adc1256687ccba6"
+}

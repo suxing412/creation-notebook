@@ -1,0 +1,462 @@
+{
+ "seat": "LY-049",
+ "lod": "LOD1",
+ "mode": "city-terrain-loaded",
+ "inputs": {
+  "prototype": "assets/c02v/A2-LOD1-prototype.glb",
+  "prototypeSha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+  "grounds": {
+   "ground-south": [
+    "assets/ground-atomic/south.glb",
+    "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e"
+   ],
+   "ground-retained": [
+    "assets/ground-atomic/retained.glb",
+    "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc"
+   ],
+   "ground-network-ground-stitched": [
+    "assets/ground-atomic/network-ground-stitched.glb",
+    "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60"
+   ],
+   "ground-D08": [
+    "assets/ground-atomic/D08.glb",
+    "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a"
+   ]
+  }
+ },
+ "frame": "glTF world x east, y up, z=-north; court C02-010 matrix translate(531,0,-818.45)",
+ "cell_m": 0.02,
+ "bodyProbe_m": {
+  "width": 0.6,
+  "height": 1.8,
+  "note": "C probe, not a regulation"
+ },
+ "obstacleBand_y": [
+  0.25,
+  2.0
+ ],
+ "excludeNodes": [
+  "site_lot",
+  "site_neutral_lane",
+  "designed_hardpacked_activity_ground"
+ ],
+ "courtNodesInRegion": {
+  "architecture_C_whitebox_earth_wall.001": 44,
+  "architecture_C_roof_rhythm_not_glaze_copy.001": 34,
+  "architecture_C_plain_timber.001": 48
+ },
+ "groundsInRegion": {
+  "ground-south": 240
+ },
+ "gatePassage": {
+  "zLocal": [
+   9.0,
+   12.0
+  ],
+  "minFreeWidth_m": 2.12,
+  "minFreeWidthAtZl": 10.45,
+  "minFreeX_world": [
+   526.44,
+   528.56
+  ],
+  "widthAtBoundaryRow": 2.98,
+  "freeAtBoundaryRow": [
+   526.02,
+   529.0
+  ]
+ },
+ "corridor_court_z6_9": {
+  "cells": 31500,
+  "unsupported": 0,
+  "maxLayers": 1,
+  "yMin": 0.2,
+  "yMax": 0.2,
+  "maxAdjStep_m": 0.0,
+  "sources": {
+   "ground-south": 31500
+  },
+  "minClear_m": null,
+  "buildingStepCells": 0,
+  "buildingStepMax_m": 0.0
+ },
+ "corridor_gate_z9_12": {
+  "cells": 19147,
+  "unsupported": 0,
+  "maxLayers": 1,
+  "yMin": 0.2,
+  "yMax": 0.2,
+  "maxAdjStep_m": 0.0,
+  "sources": {
+   "ground-south": 19147
+  },
+  "minClear_m": 2.05,
+  "buildingStepCells": 0,
+  "buildingStepMax_m": 0.0
+ },
+ "corridor_gate_between_posts_2p13": {
+  "cells": 15900,
+  "unsupported": 0,
+  "maxLayers": 1,
+  "yMin": 0.2,
+  "yMax": 0.2,
+  "maxAdjStep_m": 0.0,
+  "sources": {
+   "ground-south": 15900
+  },
+  "minClear_m": 2.05,
+  "buildingStepCells": 0,
+  "buildingStepMax_m": 0.0
+ },
+ "beyondBoundary_z12_12p6": {
+  "cells": 6239,
+  "unsupported": 0,
+  "maxLayers": 1,
+  "yMin": 0.2,
+  "yMax": 0.2,
+  "maxAdjStep_m": 0.0,
+  "sources": {
+   "ground-south": 6239
+  },
+  "minClear_m": 2.45,
+  "buildingStepCells": 0,
+  "buildingStepMax_m": 0.0
+ },
+ "bodySweep": {
+  "ok": true,
+  "failRowsLocalZ": [],
+  "nFail": 0
+ },
+ "centreline": [
+  {
+   "zl": 5.01,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 5.21,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 5.41,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 5.61,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 5.81,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 6.01,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 6.21,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 6.41,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 6.61,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 6.81,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 7.01,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 7.21,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 7.41,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 7.61,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 7.81,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 8.01,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 8.21,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 8.41,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 8.61,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 8.81,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 9.01,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 9.21,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 9.41,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.36,
+   "clearMin": 2.05
+  },
+  {
+   "zl": 9.61,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.36,
+   "clearMin": 2.05
+  },
+  {
+   "zl": 9.81,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.36,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 10.01,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.36,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 10.21,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.36,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 10.41,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.36,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 10.61,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.12,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 10.81,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.12,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 11.01,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.12,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 11.21,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.12,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 11.41,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.12,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 11.61,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.36,
+   "clearMin": 2.05
+  },
+  {
+   "zl": 11.81,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.36,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 11.99,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.98,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 12.01,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 2.98,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 12.21,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  },
+  {
+   "zl": 12.41,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "width": 4.2,
+   "clearMin": null
+  }
+ ],
+ "boundaryRows": [
+  {
+   "zl": 11.99,
+   "free": [
+    526.02,
+    529.0
+   ],
+   "width": 2.98,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "unsupported": 0,
+   "clearMin": 2.45
+  },
+  {
+   "zl": 12.01,
+   "free": [
+    526.02,
+    529.0
+   ],
+   "width": 2.98,
+   "footMin": 0.2,
+   "footMax": 0.2,
+   "unsupported": 0,
+   "clearMin": 2.45
+  }
+ ],
+ "boundaryPortCandidate": {
+  "local": [
+   -3.5,
+   0.2,
+   12.0
+  ],
+  "world": [
+   527.5,
+   0.2,
+   -806.45
+  ],
+  "forward": [
+   0,
+   0,
+   1
+  ],
+  "up": [
+   0,
+   1,
+   0
+  ],
+  "openingLocalX": [
+   -5.0,
+   -2.0
+  ],
+  "note": "candidate only; frozen by LY-049 at delivery after G"
+ },
+ "limits": [
+  "surface height field at cell centres + edge-sampled band rasterisation; not solid collision",
+  "gaps narrower than one cell (0.02 m) not detected",
+  "no GPU / browser / animation test"
+ ]
+}

@@ -1,0 +1,85 @@
+{
+ "seat": "LY-097",
+ "phase": "开工准备（G 未冻结；未验任何批次）",
+ "baselineRev": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "inputsFound": [
+  "D:/GitHub/creation-notebook-lab @ bce3211（提交 blob 服务，非工作树）",
+  "docs/cities/luoyang/index.html cfbf7376",
+  "docs/cities/luoyang/app.mjs cc0379c0",
+  "docs/cities/luoyang/city-data.mjs c849706b（提交字节；工作树 CRLF 为 e4115705）",
+  "docs/cities/luoyang/city-renderer.mjs 04c6c643",
+  "docs/fusions/F01/vendor/three.module.js c8211c69；GLTFLoader 67ac5551；OrbitControls b97879c7；BufferGeometryUtils fda7e946；docs/vendor/meshopt_decoder.module.js d428e73a；docs/prototypes/luoyang-m0/shaders.mjs d4b7aeed",
+  "docs/cities/luoyang/v1/boot.mjs 42164e53（?mode= 跳转的归档入口）",
+  "docs/cities/luoyang/p-luoyang.asset.json 8edb06ab（只读，用于核对「浏览器/GPU验收未宣称完成」这一表述）",
+  "48 个城景 GLB（42 远档 + 6 近档）：声明 SHA 与提交 blob 48/48 一致，基线运行 48/48 被请求，逐条见 prep/inputs.json",
+  "workpacks/LY-001/source/serve_git_head.py 8373817e（复制）；dump_city_data.mjs 5943be43（调用）",
+  "workpacks/LY-001/qa/runtime-load-capture.raw.json（只做交叉核对）",
+  "workpacks/LY-002、LY-005、LY-006 status=交付完成（G 的一部分）",
+  "Chrome 156.0.8078.80（本机）；GPU：NVIDIA RTX 5090（驱动 32.0.16.2101）与 AMD Radeon 集显（--force_low_power_gpu，驱动 32.0.21045.16010）"
+ ],
+ "inputsMissing": [
+  "LY-010 区域准入与未验策略（未交付）：用来判断真机未验、集显帧余量是否阻断；缺失时这些项只能标「待验」，不能判通过",
+  "LY-007 / LY-008 / LY-009（未冻结或未交付）：需要其中的三档质量基线、官方 checker 入口、批次白名单和分支登记，用来确定每批要验的文件集合",
+  "LY-091–094、LY-096 的放行批次包与 manifest（目前只有 prep）：需要 selected_tasks、dependency_closure、改动区域机位和 expect-changed 步骤名",
+  "LY-100 的批次合并候选提交 SHA：重放只认提交，不认工作树",
+  "物理手机或平板、Safari/macOS、Firefox：本机都没有，R11 真机永远记 UNTESTED",
+  "私密源包（.blend、源 ZIP）：本席位不需要。运行时只加载公开 GLB，因此没有「从 GLB 重建」的需求"
+ ],
+ "gaps": [
+  "真机覆盖为 0：没有物理手机、平板，没有 Safari 和 Firefox；手机只做了 Chrome 仿真（390×844 DPR3）：先停在 poster、不请求 GLB，点开后 ready、52 次绘制；画布从 y=690 开始，大部分在 844 高的首屏以下",
+  "集显帧余量：重载视图（66 节点、全城档、108 次绘制、634,440 个三角形，画布 1110×681）的 GPU 同步帧在 AMD 集显上 p50 13.3 ms、p95 13.8 ms，距 16.7 ms 只剩约 3 ms；RTX 5090 上 p50 1.3 ms、p95 1.5 ms。更大窗口和 DPR2 没有测",
+  "只看比例的视觉门会漏检：N04（wall-05 换成 wall-00 的字节）在全城档只改了 216 px，即 0.029%，比例阈值 0.002 抓不到；同设备噪声底为 0 px（45 张中 44 张字节相同），因此加绝对阈值 50 px。墙换在住宅档视野外时截图字节完全不变，视野外的改动视觉回归抓不到",
+  "跨设备不可比：独显对集显最多 1.46% 像素不同；跨设备判定中 R9、R10 都是 FAIL，必须同类设备对比",
+  "城景渲染器丢弃 UV 和贴图：4 个 GLB（广阳门门体、仓储、雍门近档、雍门地坪）内嵌 30 张图共 3,498,392 B，照样下载、解码后丢弃，约占全城模型量 13,466,348 B 的 26%；贴图正确性城景内验不了；48 个 GLB 中落到默认颜色的为 0",
+  "清单章节 yong-gate「雍门与通口」没有 UI 按钮，只能用 ?chapter=yong-gate 进入（14 次绘制 / 16,772 个三角形）",
+  "v1 归档入口（?mode=west）连续渲染：WebGL 绘制调用累计 514,689 次；当前入口为按需渲染",
+  "资源计数局限：GPU 显存是整个浏览器 GPU 进程的 Dedicated Usage（独显 121–212 MB，集显 190–256 MB），集显的 Shared Usage 未采；JS 堆峰值 49–51 MB，早一轮单次运行出现过 77.8 MB 和 84 MB（GC 抖动）",
+  "headless 帧间隔不能当 FPS（镜头飞行时独显约 4.2 ms、集显 9–12 ms，不受 vsync 限制）；有头窗口的 vsync 帧率没有测",
+  "LY-001 的运行抓取只覆盖 1/6 种近景；本基线通过网格点选补到 6/6（第 23/24/25/20/22/26 院）",
+  "测试工具教训：Network.enable({maxTotalBufferSize:0}) 会造成假的 ERR_NO_BUFFER_SPACE，看起来像动态 import 失败；已去掉该参数，以后报页面问题前先排除这一项"
+ ],
+ "reuseCandidate": "无。LY-001 的 runtime-load-capture 只证明请求集合与静态推断一致：没有截图差分、没有资源用量、没有负例、近景只有 1/6、不含集显，够不上 LY-097 的验收物，只用作交叉核对。LY-097 是验收席位，不产出几何，不存在模型复用问题",
+ "touches": [
+  "只读：D:/GitHub/creation-notebook-lab @ bce3211 的 docs/cities/luoyang/{index.html, style.css, app.mjs, city-data.mjs, city-renderer.mjs, v1/**, assets/**, progress-assets/**, data/**}、docs/library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb、docs/fusions/F01/vendor/**、docs/vendor/meshopt_decoder.module.js、docs/prototypes/luoyang-m0/shaders.mjs、p-luoyang.asset.json、lab/data/assets.json（全部经 git cat-file 读取提交 blob）",
+  "运行时插桩（只在浏览器内存里，不落盘）：probe_openings 经 CDP Fetch 返回在 city-renderer.mjs 第 1 处 camera 构造后插入一行暴露句柄的版本；原文件 SHA 与插桩后 SHA 都记在 openings.json",
+  "射线探针读到的城市节点：wall-direct-wall-08、wall-direct-wall-09、wall-direct-gate-body-only、yong-gate-body、yong-gate-interface（只读命中，不改）",
+  "负例注入（只在浏览器内存里）：city-wall/A/wall-05.glb 返回 404、伪 GLB、wall-00 字节；c02v/A2-LOD1-prototype.glb 返回 R01-A 字节；WEBGL_lose_context",
+  "写入：只写 workpacks/LY-097/prep/（source/、baseline/、qa/、brief-draft.md、inputs.json、test-plan.md、prep-status.json）",
+  "不占用任何源节点、地坪片或卡片字段的所有权；不写共享城市文件"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-010 未交付：真机、平板、Safari 和集显余量到底是「允许的待验」还是「阻断」，现在无法判定",
+  "截图机位只覆盖已有章节、研究视图和固定探针；新批次改动若落在所有机位之外，视觉回归会静默通过。每批必须按 manifest 补机位和开孔探针",
+  "基线绑定在本机两块 GPU 和 Chrome 156 上；浏览器或驱动升级会改变像素，需要在旧提交上重跑基线后才能比较",
+  "插桩探针依赖 city-renderer.mjs 里的一行源码（PerspectiveCamera 构造）；渲染器改动后探针会报 needle not found，必须同步更新并重新绑定 SHA",
+  "headless 模式与真实窗口在合成、vsync 和 DPR 上不同；GPU 同步帧是含 readPixels 停顿的上限值，不能写成 FPS",
+  "GPU 显存计数是进程级的，与其他标签页或并行席位同时使用 GPU 时会互相干扰；基线是在本席位独占 8797 端口时测的，但不能保证其他席位当时没有使用 GPU",
+  "基线截图共约 108 MB，只留在本地工作包内，不能进入公共 docs"
+ ],
+ "readyAfterG": true,
+ "readyAfterGNote": "G 冻结、且 LY-091–094 与 LY-096 交出放行批次和 LY-100 候选提交以后，可以立即按 test-plan.md §1 重放并出判定；脚本和基线都已就绪",
+ "scriptSha256": {
+  "source/run_runtime.mjs": "2f87c52ba9c9a1ed659bb41c364a0c566c9e5e78c70f19b268293c9463449cc4",
+  "source/cdp.mjs": "73c93e392f045fe62522c6f8bb1cfdbab0527356d7ce8c057cb359df203bde9f",
+  "source/probe_openings.mjs": "f2a5d040136991aff7b14e268ab0c3eb09f7e9403b631c486899cfd55e88c790",
+  "source/diff_shots.py": "1e5e80a9b4e132912a0bec7fc8171b23147f6d7b7117053a172bb21225c9bf0e",
+  "source/check_run.py": "ae2f58374071a1a850ccd6abbf41e75b8fc381212410c634755ede8b382cc837",
+  "source/selftest_checker.py": "0bf54fe586f36fb06f17211ed686c9b31af8e92b14bda1b8b332a2a1786c8b8f",
+  "source/summarize.py": "aefcafdc183ca26faf964866cfe8462f5cca3d64ec77bb2a86ff292ecd4f2e80",
+  "source/build_inputs.py": "448cbf280ff4fd6053632206af163d836a22f4575a20f4fe9e8ef89a947b78a4",
+  "source/audit_textures_pigment.py": "79e8e084a0852860b5232a6ceca2a94da3f178d63937d6663537e1b0d07edd2b",
+  "source/serve_git_head.py": "8373817e107d1499652c2d55161ac8d5e7fcea32bf8dc10cafefd9baa75dab2f"
+ },
+ "baselineSha256": {
+  "baseline/bce3211-dgpu-a/run.json": "764f72dc578dd2272a73cd8166f7a965a1063d8c0bf80ef29506d6a65928d73c",
+  "baseline/bce3211-dgpu-b/run.json": "a52d8b758c3f89e31d5ec51ed1768eff5a248816b9640b2d2331e8db39098ce7",
+  "baseline/bce3211-igpu-a/run.json": "e1d408a15a852b30b13b425f982a7e9524243411edd53c08437ae9d9923c1c93",
+  "baseline/bce3211-openings-dgpu/openings.json": "06ab5624fc5a7ae680c1a786f1cbcd8741e693ede881702dd2109b61780d56b6",
+  "baseline/city-data.bce3211.dump.json": "206a44dcc4977cb72e87e97678c32c44d19c1202836f903512bcd29387343387",
+  "inputs.json": "37bb2c699445b0c885759bb6154aa3fb28e4c22f35f03c413ef2b6d306d1cc38",
+  "qa/verdict-dgpu-b-vs-a.json": "f102f9cfcac3ee46fe57a055d026f5de146255314fe7b7f83571f6eea58ad004",
+  "qa/checker-selftest.json": "60b74f1f0d4f9f0e3f8e518f653a7edfd471824327bc288f31f45e9fd55c9f27",
+  "qa/texture-pigment-audit.json": "e794c2431839d4c5c9af8a8b740e3bc7d9531b4cc23f6dae47eec1aebbca30af"
+ }
+}

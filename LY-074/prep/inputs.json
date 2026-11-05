@@ -1,0 +1,238 @@
+{
+  "seat": "LY-074",
+  "phase": "prep (G not frozen; no delivery geometry made or changed)",
+  "baseline_commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "sha_note": "GLB/webp are binary: on-disk SHA == git blob SHA. Text files are checked out with core.autocrlf=true, so on-disk SHA differs from the committed (LF) blob; 'sha256' below is the committed blob (git show HEAD:<path> | sha256sum), 'sha256_worktree' is the CRLF file on this machine. evidence-view.mjs pins evidence-geometry.json to fa8b7002..., which matches the committed blob, so the committed blob is the canonical value to bind.",
+  "taskpool": {
+    "TASKPOOL.md": {
+      "path": "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md",
+      "sha256_worktree": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+      "section": "### LY-074｜明堂四侧入口外到达地面 (line 772)"
+    },
+    "taskboard.json": {
+      "path": "D:/GitHub/creation-notebook-workpacks/taskboard.json",
+      "sha256_worktree": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+      "deps": [
+        "LY-001",
+        "LY-002",
+        "LY-005",
+        "LY-006",
+        "LY-007",
+        "LY-008",
+        "LY-009",
+        "LY-010"
+      ]
+    }
+  },
+  "inputs": [
+    {
+      "id": "mingtang-A-LOD0",
+      "asset": "m-luoyang-mingtang",
+      "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD0.glb",
+      "sha256": "bdcc369e765df692b755c2987053d56df5d859964d982fab41f55c535e716ee2",
+      "bytes": 1837268,
+      "role": "variant A near tier; stair foot / platform measured here",
+      "loadedInCity": false,
+      "loadedBy": null
+    },
+    {
+      "id": "mingtang-A-LOD1",
+      "asset": "m-luoyang-mingtang",
+      "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD1.glb",
+      "sha256": "993ec375a777d825bdf39a680ea689576c33a6b50fcfbc804b55ec22dca086a9",
+      "bytes": 856488,
+      "role": "variant A mid tier",
+      "loadedInCity": false,
+      "loadedBy": null
+    },
+    {
+      "id": "mingtang-A-LOD2",
+      "asset": "m-luoyang-mingtang",
+      "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD2.glb",
+      "sha256": "275f8fe20f2e6f1d1a0ea0066447f25431e67fba2323ab3ffe76a9d1d1417cda",
+      "bytes": 88960,
+      "role": "variant A far tier",
+      "loadedInCity": false,
+      "loadedBy": null
+    },
+    {
+      "id": "mingtang-B-LOD0",
+      "asset": "m-luoyang-mingtang",
+      "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD0.glb",
+      "sha256": "7337871c488c3695bfea2c12a45ac5ad31a16512955726d5380cb797cd98dda3",
+      "bytes": 1773216,
+      "role": "variant B near tier",
+      "loadedInCity": false,
+      "loadedBy": null
+    },
+    {
+      "id": "mingtang-B-LOD1",
+      "asset": "m-luoyang-mingtang",
+      "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD1.glb",
+      "sha256": "25035eeb0583bcae69137867d466dc3ad238747b1173c8e043f338c35b43b62e",
+      "bytes": 817968,
+      "role": "variant B mid tier",
+      "loadedInCity": false,
+      "loadedBy": null
+    },
+    {
+      "id": "mingtang-B-LOD2",
+      "asset": "m-luoyang-mingtang",
+      "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD2.glb",
+      "sha256": "d495219cb6bcf99655a5ab793ad1743c84b4c453b24f50d40c958a6fce987102",
+      "bytes": 85472,
+      "role": "variant B far tier",
+      "loadedInCity": false,
+      "loadedBy": null
+    },
+    {
+      "id": "mingtang-card",
+      "path": "docs/library/models/m-luoyang-mingtang/m-luoyang-mingtang.asset.json",
+      "sha256": "d3019d6e5b531a8b18411f1c53edafd23013f4423d1d2ef0d5a7643b9ab5f34f",
+      "sha256_worktree": "34a01526382316f13b1ade14a3e8a39b80ac433c62a55e1e9563ae35e1950ba9",
+      "role": "status 待审 / '已建模，未入城 · 独立研究模型'; declares A/B mutually exclusive, no 2nd-floor stair, no ring water, no Northern Wei base sizes",
+      "loadedInCity": false,
+      "loadedBy": "library page only (lab/data/assets.json build output)"
+    },
+    {
+      "id": "mingtang-cover",
+      "path": "docs/library/models/m-luoyang-mingtang/cover.webp",
+      "sha256": "c974157c65f891a49da480b8932df43a1d1adb6b468d7b722b307d27890a2e8b",
+      "loadedInCity": false
+    },
+    {
+      "id": "mingtang-shots",
+      "paths": {
+        "shots/A-LOD1-whole.webp": "3404c0670a30708b5dc5fa7b11c555d48b785a0d403e486add8b658dab33e3a6",
+        "shots/A-LOD2-whole.webp": "f7e4bf416125e17f7a10996fc34f63cf45bff446cf48774c6b4c8e40251c81ae",
+        "shots/B-LOD0-whole.webp": "c9d40f39c2b30f8bd0c2bdb2c6a19eda86358d34277fcf45917a8381dded8151"
+      },
+      "loadedInCity": false
+    },
+    {
+      "id": "project-card",
+      "path": "docs/cities/luoyang/p-luoyang.asset.json",
+      "sha256": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+      "sha256_worktree": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+      "role": "lists m-luoyang-mingtang only in its 'related' array (line 573); no install node",
+      "loadedInCity": "card, not a scene loader",
+      "loadedBy": null
+    },
+    {
+      "id": "evidence-geometry",
+      "path": "docs/cities/luoyang/data/evidence/evidence-geometry.json",
+      "sha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+      "sha256_worktree": "662562fa87cffc9de43b2c23564f1ab63fba8c01f2345891f255cb202bee2233",
+      "role": "feature ritual_mingtang_B: Point [1795.918, -1061.224] in frame luoyang-local-schematic-v01, evidence_class B, geometry_status schematic_digitized, representation evidence-marker-only, architectural_completion not_modeled, presentation_envelope_m 75, historical_position_error_m null",
+      "loadedInCity": true,
+      "loadedBy": [
+        "docs/cities/luoyang/city-data.mjs:4525 (manifest path entry)",
+        "docs/cities/luoyang/v1/evidence-view.mjs:28 start() -> checkedJSON(archiveURL('./data/evidence/evidence-geometry.json'), 'fa8b7002...')"
+      ],
+      "note": "only a marker is loaded; no mingtang GLB and no ground around it"
+    },
+    {
+      "id": "c01-research-candidate",
+      "path": "docs/cities/luoyang/data/c01/research-candidate.json",
+      "sha256": "52599ef31ee5b1ffc4553d9c40cd9bae8829ade2c78f56e9534c6bdda4b38d3f",
+      "role": "ritual_mingtang_B boundary_distance_schematic_m 2276.52, overlap false (mingtang is outside the C01 design area)",
+      "loadedInCity": true,
+      "loadedBy": "C01 layer (v1/c01-layer.mjs) via city manifest"
+    },
+    {
+      "id": "c02-research-mask",
+      "path": "docs/cities/luoyang/data/c02/research-mask.json",
+      "sha256": "d801b5e7c42acc9d32f7689abd15a3b403e515e32b6a6e4fe7080e4ada3e1275",
+      "role": "ritual_mingtang_B boundary_clearance_schematic_m 2063.858, intersection false (also identical in data/c02v/research-mask.json)",
+      "loadedInCity": true,
+      "loadedBy": "C02 layer (v1/c02-layer.mjs) via city manifest"
+    },
+    {
+      "id": "city-code",
+      "paths": {
+        "docs/cities/luoyang/city-data.mjs": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+        "docs/cities/luoyang/v1/evidence-view.mjs": "fcf2079fd635f7f76553dbd1d23b8feaa688f77e278b4edb6e4154fab74c8fac",
+        "docs/cities/luoyang/index.html": "cfbf73763675397dde8f5ab08bb13f6b51fbcfa9954227552e32be756666b1bf",
+        "docs/cities/luoyang/app.mjs": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+        "docs/cities/luoyang/city-renderer.mjs": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc"
+      },
+      "role": "grep for 'mingtang' / '明堂' in docs/cities/luoyang/*.mjs, v1/*.mjs, index.html: 0 hits -> the GLBs are not loaded anywhere in the city scene"
+    },
+    {
+      "id": "card-audit",
+      "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/cards/m-luoyang-mingtang/audit.json",
+      "sha256_worktree": "e14b304756d16b43eb05882d06e9ca8c9c4a86bdbb617dc8bcc5568f2d22ad94",
+      "role": "6 GLBs: 0 issues, 0 degenerate tris, 3 nodes/3 meshes/3 materials (LY_P01_earth/timber/tile__PBR), bbox A +-16.64 x 0..10.878, B +-14.48 x 0..10.078",
+      "loadedInCity": false
+    },
+    {
+      "id": "render",
+      "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/render.py",
+      "sha256_worktree": "ff89761743a064f7d599835e3e3123f330ca152df43634717c312ece667d4dc7",
+      "role": "uniform CPU render for later before/after previews",
+      "loadedInCity": false
+    }
+  ],
+  "prep_outputs": {
+    "measure_access.py": "c251a80720d9f819dfddda666b52cd5716eb3203ee0daeb4f8895d90ff09d286",
+    "stair_exact.py": "a7d8d3d89be58c43cca948e48fdbc4829ec7f7803efbefd7060d585279110825",
+    "door_probe.py": "b7a4186c4b1af5d3ebf8538a86c418196cfcfc2601eecc839a4f7021ebff4c7b",
+    "check_apron.py": "1bc3624e767d649aed5ee3187d6457608745fc357e7d13c30fd9d50ece6967a1",
+    "measure-all.json": "95ee5dcd8b9edde152f6733d9e01ebd53429000cc5f6b8e607bb7399e8e272f4",
+    "stair-exact.json": "6b619372369802462d688001a2261a8479bec5074301c152ba2593223598de75",
+    "door-probe-LOD0.json": "07f90a7796641a87a6de8c6d68b46692f2f89f7eb1549732d09158ea046daf38",
+    "selftest.txt": "91fcc2a5ed11507f5060fe99f6986465d136f8d6dc7361dfb493a682086ffa62",
+    "blender_crosscheck.py": "c70c4589f12b088bc60b30790dc15dd9033478b5f61d636e6c43c921d6436ae3",
+    "blender-crosscheck.json": "8337da9c09c32083a5da458ca9c5e157d487fb3fffc2c6a05ceff18a567919bb"
+  },
+  "missing": [
+    {
+      "what": "mingtang native source (.blend / generator / source ZIP) for A and B",
+      "use": "only to prove native==GLB identity if the coordinator wants the apron merged into the mingtang export; NOT needed if the apron is a separate node and the mingtang GLBs are referenced unchanged",
+      "rebuildFromGLB": "not required; the stair foot lines are read exactly from the GLB (stair-exact.json). LY-074 should not re-export mingtang at all"
+    },
+    {
+      "what": "the earlier 'four-way door support and clearance ray' check record named on the card",
+      "use": "baseline to compare against; the card text is the only trace in the repo",
+      "rebuildFromGLB": "partly: door_probe.py re-measures overhead clearance on the centrelines"
+    },
+    {
+      "what": "LY-006 frozen external ports for the mingtang (port id, local + world coords, height, width)",
+      "use": "outer end of each arrival ground",
+      "rebuildFromGLB": "no - it is a contract, not geometry"
+    },
+    {
+      "what": "LY-005 height/axis contract (which axis is south; world y of mingtang local y=0)",
+      "use": "naming four sides and the ground height",
+      "rebuildFromGLB": "no"
+    },
+    {
+      "what": "LY-010 choice of A or B",
+      "use": "which foot line (16.64 vs 14.48) the apron is built to",
+      "rebuildFromGLB": "no"
+    },
+    {
+      "what": "LY-007 earth/paving material and tier rules; LY-008 checker",
+      "use": "apron material + official check",
+      "rebuildFromGLB": "no"
+    }
+  ],
+  "reverify": {
+    "when": "2026-11-05 second prep pass",
+    "lab_HEAD": "bce3211f818ee5a8bef1773539da70695ba37b17",
+    "lab_status": "only ?? .claude/ (earlier uncommitted lab/data changes gone)",
+    "glb_sha_unchanged": true,
+    "committed_blob_sha_unchanged": [
+      "mingtang-card",
+      "evidence-geometry",
+      "project-card"
+    ],
+    "reruns": {
+      "measure_access.py": "byte-identical to measure-all.json",
+      "stair_exact.py": "equal to stair-exact.json",
+      "door_probe.py": "equal to door-probe-LOD0.json",
+      "check_apron.py --selftest": "identical to selftest.txt, 9/9 PASS"
+    },
+    "blender": "Blender 5.2.1 LTS factory-startup import agrees: foot_r A 16.64 / B 14.48, base_half 14.00 / 12.50, earth y_min 0.00, all matrix_world identity, tris A 12464/7424/1264, B 11392/6800/1200"
+  }
+}

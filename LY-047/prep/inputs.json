@@ -1,0 +1,462 @@
+{
+ "tool": "make_inputs.py",
+ "labCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "inputs": [
+  {
+   "role": "B far prototype (10 courts)",
+   "path": "docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb",
+   "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+   "bytes": 112776,
+   "loadedInCity": true,
+   "loader": "city-data.mjs:36 assets[courtyard-B].path; city-renderer.mjs:221 initial set (initial!==false); :286-309 loadAsset + excludeNodes; :346 all exclusions must match; :411-419 near file only for focused node; :612-623 focusCourtyard",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "B near prototype (focused court only)",
+   "path": "docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb",
+   "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+   "bytes": 626016,
+   "loadedInCity": true,
+   "loader": "city-data.mjs:56 nearPath; city-renderer.mjs:416 near only when node.id===nextNearId",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "B2 far prototype (7 courts)",
+   "path": "docs/cities/luoyang/assets/c02v/B2-LOD1-prototype.glb",
+   "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+   "bytes": 113064,
+   "loadedInCity": true,
+   "loader": "city-data.mjs:116 assets[courtyard-B2].path; city-renderer.mjs:221 initial set (initial!==false); :286-309 loadAsset + excludeNodes; :346 all exclusions must match; :411-419 near file only for focused node; :612-623 focusCourtyard",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "B2 near prototype",
+   "path": "docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb",
+   "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+   "bytes": 569280,
+   "loadedInCity": true,
+   "loader": "city-data.mjs:136 nearPath",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "A2 far prototype (C02-010 proposed by LY-041)",
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "bytes": 92220,
+   "loadedInCity": true,
+   "loader": "city-data.mjs:89",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "A2 near prototype",
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+   "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "bytes": 447064,
+   "loadedInCity": true,
+   "loader": "city-data.mjs:109 nearPath",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "workshed LOD0 (registered shed module)",
+   "path": "docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb",
+   "sha256": "89e0a43923fb3868452903186b07299162fdf208a667c0d82630791b554ce726",
+   "bytes": 721404,
+   "loadedInCity": false,
+   "loader": "not referenced by any docs/cities/luoyang *.mjs or data file; only listed in p-luoyang.asset.json related",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "workshed LOD1",
+   "path": "docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD1.glb",
+   "sha256": "a21c2893a1cc7c7d8b69bb7c61b5d85f65f17fc352d003ff67ed9da4ea502671",
+   "bytes": 262480,
+   "loadedInCity": false,
+   "loader": "not referenced",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "workshed LOD2",
+   "path": "docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD2.glb",
+   "sha256": "7c054863f1088ddc8709592dfbfe70e2a581dc8ef91d4741c02aa65a0d0a614e",
+   "bytes": 19776,
+   "loadedInCity": false,
+   "loader": "not referenced",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "workyard LOD0 (complete two-house court; NOT installable into an existing court)",
+   "path": "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
+   "sha256": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e",
+   "bytes": 1850040,
+   "loadedInCity": false,
+   "loader": "not referenced",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "workyard LOD1",
+   "path": "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD1.glb",
+   "sha256": "6baefbd0fc1bc08694e2a3b226b38d308f8a214b70464c72e75e0c907dfb540f",
+   "bytes": 713292,
+   "loadedInCity": false,
+   "loader": "not referenced",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "workyard LOD2",
+   "path": "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD2.glb",
+   "sha256": "574d81d91d3898bf9de5e3d46b2b7d8532dd2c1b52d4ac35f7132898a1babda0",
+   "bytes": 167792,
+   "loadedInCity": false,
+   "loader": "not referenced",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "workyard-shed card",
+   "path": "docs/library/models/m-luoyang-workyard-shed/m-luoyang-workyard-shed.asset.json",
+   "sha256": "bc2a6289a997ca5d8936b616c829ef0f0d72bb4e68b275ac370b1755f47d42f9",
+   "bytes": 1697,
+   "loadedInCity": false,
+   "loader": "library card, status 待审",
+   "headBlobSha256": "ddda7bde8f30ccb6e751fa7c5244824844edd21bca32f8101732f79bbe11f4bd",
+   "shaNote": "sha256 = Windows work-tree bytes (CRLF, autocrlf=true); headBlobSha256 = committed LF blob at bce3211"
+  },
+  {
+   "role": "B2 preset baseline (pre-C2)",
+   "path": "docs/model-library/updates/m-courtyard-family/files/baseline.glb",
+   "sha256": "9be877245f0e7a3fd652a8f2df57bd8c4d868a93fdaf826636d4751dcae8aa62",
+   "bytes": 1710204,
+   "loadedInCity": false,
+   "loader": "not referenced by city",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "B2 preset north (shed -0.8 m z)",
+   "path": "docs/model-library/updates/m-courtyard-family/files/north.glb",
+   "sha256": "b119cbef6bc18e539b8e2037d9fa65c0688993ec05c63dc8826b5611ae7bdfb6",
+   "bytes": 1710524,
+   "loadedInCity": false,
+   "loader": "not referenced by city",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "B2 preset south (shed +0.8 m z)",
+   "path": "docs/model-library/updates/m-courtyard-family/files/south.glb",
+   "sha256": "c2db32398ee405565b27941f1a2bddef450275ca49d768f74ecab5946352a0d3",
+   "bytes": 1710908,
+   "loadedInCity": false,
+   "loader": "not referenced by city",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "B C2 UV revision LOD0",
+   "path": "docs/model-library/updates/m-courtyard-family/files/B-LOD0-C2.glb",
+   "sha256": "1ebf0c8ef6e1ab38921d960110ddedc19f0c41888c1ed766b482a3d0a496f5c5",
+   "bytes": 1635312,
+   "loadedInCity": false,
+   "loader": "not referenced (C2 UV-only revision, 待审)",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "B2 C2 UV revision LOD0",
+   "path": "docs/model-library/updates/m-courtyard-family/files/B2-LOD0-C2.glb",
+   "sha256": "00fb41eb5d03a98e1122f52f40cae4a9f68549d297ac5c59bd6d2d0b79998714",
+   "bytes": 1486112,
+   "loadedInCity": false,
+   "loader": "not referenced",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "courtyard-family card",
+   "path": "docs/model-library/m-courtyard-family.asset.json",
+   "sha256": "41999fbba1fa8f29c8c1d3fcc367ef4d9f2d026043b04cfbb62cbb926b2fc995",
+   "bytes": 6250,
+   "loadedInCity": false,
+   "loader": "library card",
+   "headBlobSha256": "afc231529d971a276c7d2f36780057326e117cc5b311cbee6430ff0c959d04da",
+   "shaNote": "sha256 = Windows work-tree bytes (CRLF, autocrlf=true); headBlobSha256 = committed LF blob at bce3211"
+  },
+  {
+   "role": "model-library contracts",
+   "path": "docs/model-library/contracts.json",
+   "sha256": "1e698ef3f8613dfeeb37853b6d61a38f04214ed4541f81faa56e066324d9cf00",
+   "bytes": 34514,
+   "loadedInCity": false,
+   "loader": "courtyard-family origin contract",
+   "headBlobSha256": "98a83b1b4847bfb5da5381745822fef373e17707eabf6b8fa177791b29c1c00d",
+   "shaNote": "sha256 = Windows work-tree bytes (CRLF, autocrlf=true); headBlobSha256 = committed LF blob at bce3211"
+  },
+  {
+   "role": "compact_work court (layout kit; full court, not a shed module)",
+   "path": "docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb",
+   "sha256": "e799b5880cd12a5c9255f1c2cadbb49051032027d1781e8e6dd3c27dd48c7ce2",
+   "bytes": 1446320,
+   "loadedInCity": false,
+   "loader": "not referenced",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "north B storage court research model",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-B-6f7f84af4e7f.glb",
+   "sha256": "6f7f84af4e7f57920dc1182b747a7081bca9d15b2d595d3ec80593f60e022282",
+   "bytes": 546768,
+   "loadedInCity": false,
+   "loader": "city-data.mjs:4233 researchModels, space local-study, cityPlacement null, initial false",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "north B2 storage court research model",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-B2-7d3758ce668d.glb",
+   "sha256": "7d3758ce668d06541694e7e17d947d5b380a0974311c57eba7968284214c6ac2",
+   "bytes": 502688,
+   "loadedInCity": false,
+   "loader": "researchModels, local-study, cityPlacement null",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "ground south",
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "bytes": 2623560,
+   "loadedInCity": "terrain chapter only",
+   "loader": "city-data.mjs:471 asset; node initial:false",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "ground retained",
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "bytes": 629740,
+   "loadedInCity": "terrain chapter only",
+   "loader": "node initial:false",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "ground network stitched",
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "bytes": 3565544,
+   "loadedInCity": "terrain chapter only",
+   "loader": "node initial:false",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "ground D08 (translation 580,0,-960)",
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "bytes": 6664,
+   "loadedInCity": "terrain chapter only",
+   "loader": "node initial:false, position [580,0,-960]",
+   "native": "none in repo; GLB only"
+  },
+  {
+   "role": "R01 model contract (variant B = 居住兼储藏作业院)",
+   "path": "docs/cities/luoyang/data/r01/model-contract.json",
+   "sha256": "ab921fadeb4111cc5e9598444205ae4eab7ae441fb849a1c874d465a88871185",
+   "bytes": 5398,
+   "loadedInCity": false,
+   "loader": "data only",
+   "headBlobSha256": "ca713fbad55fb2068e439fab2e5c615691516bc7b5b2cebadbc81093fd00ccbf",
+   "shaNote": "sha256 = Windows work-tree bytes (CRLF, autocrlf=true); headBlobSha256 = committed LF blob at bce3211"
+  },
+  {
+   "role": "C02V model contract",
+   "path": "docs/cities/luoyang/data/c02v/model-contract.json",
+   "sha256": "ba319156acb1f57f690e85916fa148097b068920ce339dec2c2b7b6ee5fb322e",
+   "bytes": 15302,
+   "loadedInCity": false,
+   "loader": "data only",
+   "headBlobSha256": "d91f4d35b5ecb27b029394aefd4a1407e1b58181a34dded420c932dbad80564f",
+   "shaNote": "sha256 = Windows work-tree bytes (CRLF, autocrlf=true); headBlobSha256 = committed LF blob at bce3211"
+  },
+  {
+   "role": "far44 instances C-alt (44 matrices)",
+   "path": "docs/cities/luoyang/data/far44/instances-calt.json",
+   "sha256": "c830b4e37090da5e070156b7f6199f36c5d0191c339f5a9399f0becded50ff85",
+   "bytes": 23726,
+   "loadedInCity": false,
+   "loader": "sourceContract of court nodes",
+   "headBlobSha256": "e39fdafb016c9ff7f42e25bfcbfe37152f381fac84ffe2cca11cd6fc936fdf7e",
+   "shaNote": "sha256 = Windows work-tree bytes (CRLF, autocrlf=true); headBlobSha256 = committed LF blob at bce3211"
+  },
+  {
+   "role": "far44 preflight",
+   "path": "docs/cities/luoyang/data/far44/preflight-contract.json",
+   "sha256": "90dfa0774643b90d61f057aed726525cfe3e18647e897d3c90eb64fa79426d6b",
+   "bytes": 7002,
+   "loadedInCity": false,
+   "loader": "sourceContract of court assets",
+   "headBlobSha256": "c9aafa7d22100deb141c554deffd07da67818af711a75cb6f36144fe68f9cc50",
+   "shaNote": "sha256 = Windows work-tree bytes (CRLF, autocrlf=true); headBlobSha256 = committed LF blob at bce3211"
+  },
+  {
+   "role": "city manifest",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 111034,
+   "loadedInCity": true,
+   "loader": "imported by app.mjs:1",
+   "headBlobSha256": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "shaNote": "sha256 = Windows work-tree bytes (CRLF, autocrlf=true); headBlobSha256 = committed LF blob at bce3211"
+  },
+  {
+   "role": "city renderer",
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "bytes": 36571,
+   "loadedInCity": true,
+   "loader": "app",
+   "headBlobSha256": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "shaNote": "sha256 = Windows work-tree bytes (CRLF, autocrlf=true); headBlobSha256 = committed LF blob at bce3211"
+  },
+  {
+   "role": "app",
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "bytes": 14563,
+   "loadedInCity": true,
+   "loader": "index.html",
+   "headBlobSha256": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "shaNote": "sha256 = Windows work-tree bytes (CRLF, autocrlf=true); headBlobSha256 = committed LF blob at bce3211"
+  },
+  {
+   "role": "index",
+   "path": "docs/cities/luoyang/index.html",
+   "sha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "bytes": 16108,
+   "loadedInCity": true,
+   "loader": "",
+   "headBlobSha256": "cfbf73763675397dde8f5ab08bb13f6b51fbcfa9954227552e32be756666b1bf",
+   "shaNote": "sha256 = Windows work-tree bytes (CRLF, autocrlf=true); headBlobSha256 = committed LF blob at bce3211"
+  },
+  {
+   "role": "project card",
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "bytes": 24215,
+   "loadedInCity": false,
+   "loader": "read only; LY-100 owns writes",
+   "headBlobSha256": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "shaNote": "sha256 = Windows work-tree bytes (CRLF, autocrlf=true); headBlobSha256 = committed LF blob at bce3211"
+  },
+  {
+   "role": "site asset summary (read only)",
+   "path": "lab/data/assets.json",
+   "sha256": "c39e8e9a2a1833f3abbc15e585f5868fba6c7d2e01f6b8e504c2b44193f16979",
+   "headBlobSha256": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "bytes": 439273,
+   "loadedInCity": false,
+   "loader": "site build"
+  },
+  {
+   "role": "sibling prep (not frozen) LY-041",
+   "path": "workpacks/LY-041/prep/prep-status.json",
+   "sha256": "598064f9e3c6d6af3346a72f78f401cec8dfc0a7eb519e4de246af372d154700",
+   "bytes": 8291,
+   "loadedInCity": false,
+   "loader": "none"
+  },
+  {
+   "role": "sibling prep (not frozen) LY-043",
+   "path": "workpacks/LY-043/prep/prep-status.json",
+   "sha256": "bc8cc06b98cf8a6b809cfad3c06de322c415ab4882247a5891cce96e917493e2",
+   "bytes": 7302,
+   "loadedInCity": false,
+   "loader": "none"
+  },
+  {
+   "role": "sibling prep (not frozen) LY-044",
+   "path": "workpacks/LY-044/prep/prep-status.json",
+   "sha256": "511245712ad2a71bb9cf9e1704fbea38b47211e6b24abede6084e7fd3adcd191",
+   "bytes": 5646,
+   "loadedInCity": false,
+   "loader": "none"
+  },
+  {
+   "role": "sibling prep (not frozen) LY-044",
+   "path": "workpacks/LY-044/prep/probe-place.json",
+   "sha256": "e95a1abddb430f3ba4ee5294804aef82da14f63675579390d596eca240a68595",
+   "bytes": 2037,
+   "loadedInCity": false,
+   "loader": "none"
+  }
+ ],
+ "prepFiles": [
+  {
+   "path": "workpacks/LY-047/prep/measure_ly047.py",
+   "sha256": "de2adbd179b28ca4ff7cde44712e60196f8e82ce140e5d0d88efca9cfce88c83",
+   "bytes": 31052
+  },
+  {
+   "path": "workpacks/LY-047/prep/selftest_ly047.py",
+   "sha256": "47eb6399fcc7ddfd5f1bd6fdd46fe7694a2a2c0a9d64213ae4620725a9f067e5",
+   "bytes": 5150
+  },
+  {
+   "path": "workpacks/LY-047/prep/blender_crosscheck.py",
+   "sha256": "078a16d8d81ffab7a30da09548381f74ee587f4be761ce6a803018b407351140",
+   "bytes": 2664
+  },
+  {
+   "path": "workpacks/LY-047/prep/glbio.py",
+   "sha256": "aea1221030894f66f138939f0fdb6f090aa463da85d78ded661dbbe80e894605",
+   "bytes": 3699
+  },
+  {
+   "path": "workpacks/LY-047/prep/citydata.py",
+   "sha256": "753caa5216b31c8f58b8322f53fdf4e784bee301ec2db154c3516b0a474c56dd",
+   "bytes": 1300
+  },
+  {
+   "path": "workpacks/LY-047/prep/measure-ly047.json",
+   "sha256": "7126f5d949838cebb1f4e0e3adb1ef6c9a943fffd3d157f844788d15762fc677",
+   "bytes": 84089
+  },
+  {
+   "path": "workpacks/LY-047/prep/selftest-ly047.json",
+   "sha256": "4deea40ae0414171f59e566a22926d646529900cc7da258cf695ea194da03faa",
+   "bytes": 1270
+  },
+  {
+   "path": "workpacks/LY-047/prep/blender-crosscheck.json",
+   "sha256": "60cdb115c5d0c43a0a466fd2a651ad7cbd5dabc12c5cfc1b2588518d190fc0ad",
+   "bytes": 5539
+  }
+ ],
+ "missing": [
+  {
+   "what": "native source of R01-B / B2 prototypes (.blend or generator, source_sha256 65e4e69b… / B2 per C02V contract)",
+   "use": "split the in-place shed (posts, beams, bins, bench, shed roof) out of the court-wide nodes so it could be toggled; only needed if LY-010 asks for a removable B shed",
+   "rebuildFromGLB": "yes for the box parts (components identified: 4 posts, 4 plinths, 2 beams, 2 bins, bench top+4 legs); the shed roof is part of a 7,896-tri roof node and must be cut by region; original authoring intent not recoverable"
+  },
+  {
+   "what": "native source of workshed (.blend) ",
+   "use": "not needed for install (rigid placement + y offset); needed only if a storage bin set must be added under it",
+   "rebuildFromGLB": "not needed"
+  },
+  {
+   "what": "private source ZIP / Release package of m-luoyang-workyard-shed and m-courtyard-family presets",
+   "use": "QA definitions behind the card claims (shed support, 0/4/8 deg pose checks, preset route checks) so they could be inherited",
+   "rebuildFromGLB": "no; the claims must be re-measured instead (done here for support/clearance)"
+  },
+  {
+   "what": "LY-010 decision table",
+   "use": "which court is the demo court and whether a storage/shed use is selected for it",
+   "rebuildFromGLB": "n/a"
+  },
+  {
+   "what": "LY-005 elevation contract",
+   "use": "freeze floor datum 0.200 vs prototype yard 0.215",
+   "rebuildFromGLB": "n/a"
+  },
+  {
+   "what": "LY-006 port/ownership registry",
+   "use": "who owns the A2 yard cells a shed would occupy (LY-044 stove, LY-045 latrine, LY-047 shed)",
+   "rebuildFromGLB": "n/a"
+  },
+  {
+   "what": "LY-002 evidence table",
+   "use": "evidence grade for household storage sheds/bins around 180 CE Luoyang",
+   "rebuildFromGLB": "n/a"
+  }
+ ]
+}

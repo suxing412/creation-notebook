@@ -8,3 +8,13 @@
 *.fbx
 native/
 __pycache__/
+
+# extracted private source packages and scratch copies
+_src/
+tmp/
+*.part[0-9][0-9][0-9]
+
+# prep working folders (renders, copies of repo GLBs, caches) stay local; prep top-level notes are kept
+LY-*/prep/*/
+*.npz
+*.npy

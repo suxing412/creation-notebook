@@ -1,0 +1,259 @@
+{
+ "seat": "LY-041",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "candidateCourtyard": {
+  "id": "C02-010",
+  "variant": "A2",
+  "asset": "courtyard-A2",
+  "cityDataLine": 2322,
+  "matrixCalt": [
+   1.0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   1.0,
+   0,
+   531,
+   0,
+   -818.45,
+   1
+  ],
+  "matrixOriginalTranslation": [
+   537.17635,
+   0,
+   -817.45
+  ],
+  "excludeNodes": [
+   "site_lot",
+   "site_neutral_lane",
+   "designed_hardpacked_activity_ground"
+  ],
+  "lotWorld": {
+   "x": [
+    522,
+    540
+   ],
+   "z": [
+    -830.45,
+    -806.45
+   ]
+  },
+  "gateWorld": [
+   527.5,
+   0.2,
+   -806.45
+  ],
+  "supportingGround": "ground-south"
+ },
+ "nativeSources": {
+  "A2 prototype .blend/generator": "missing — not in repo; can rebuild from GLB (simple closed boxes), not needed for reuse",
+  "ground-south native/generator": "missing — needed only if LY-045 must cut an opening; local cut can be rebuilt from GLB (1,140 tris inside lot + 120 crossing lot edge need re-triangulation)"
+ },
+ "coordinateContract": "LY-005 not frozen; measured in glTF Y-up metres, node matrices applied once (column-major from instances-calt.json)",
+ "inputs": [
+  {
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "role": "A2 远档原型（courtyard-A2.path）",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:88-112 assetRecords[courtyard-A2].path；city-renderer.mjs:286-347 loadAsset（far），:309 excludeNodes 剔除"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+   "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "role": "A2 近档原型（nearPath）",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:109-111 nearPath/nearSha256；city-renderer.mjs:289 useNear，:616-623 focusCourtyard"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "role": "南区地面，单节点 single_closed_terrain_after，承托 C02-010 全地块",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:471 资产、:3609 节点 ground-south initial:false；仅 terrain 章 loadNodeIds（:4027）加载，city-renderer.mjs:595-606 focusChapter 并集"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "role": "C02 保留地面（备选 C02-021 承托）",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs 节点 ground-retained initial:false，terrain 章"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "role": "路网缝合地面（原子三节点），C02-010 地块内 0 覆盖",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs 节点 ground-network-ground-stitched initial:false，terrain 章"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "role": "八院样段地面，平移 [580,0,-960]",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs 节点 ground-D08 initial:false，terrain 章"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/instances-calt.json",
+   "sha256": "c830b4e37090da5e070156b7f6199f36c5d0191c339f5a9399f0becded50ff85",
+   "role": "44 院 C-alt 矩阵（城景节点 sourceContract）",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:2344 等 sourceContract；v1/far-layer.mjs:17 读取"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/instances-original.json",
+   "sha256": "a854589134150c2fe74b5bbed4e404aeeb5aa5724090795eb60923c68e3d2cff",
+   "role": "44 院原布局矩阵（对照）",
+   "loadedInCity": false,
+   "loadedBy": "仅 v1/far-layer.mjs:17（far44 可选层），主城景 app.mjs 不读"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/preflight-contract.json",
+   "sha256": "90dfa0774643b90d61f057aed726525cfe3e18647e897d3c90eb64fa79426d6b",
+   "role": "六原型清单与 removable_site_nodes",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs assetRecords sourceContract；v1/far-layer.mjs:17"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "role": "原子地面合同",
+   "loadedInCity": false,
+   "loadedBy": "v1/west-layer.mjs:40（district 视图），主城景只作 sourceContract 文字"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/alt14-placement.json",
+   "sha256": "802a88f12d85039562668bbdce08ab584aba050db27a9adf7f1a5d7479f4552a",
+   "role": "C-alt 南组 14 院位置与院门 gate/gateRoute（C02-010 gate [527.5,806.45]）",
+   "loadedInCity": false,
+   "loadedBy": "v1/west-layer.mjs:24 sourceLots"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/network.json",
+   "sha256": "af8e5479f47ccae1dd5c41766da60e6a871e74808018737a85514895334afc73",
+   "role": "testedDoorConnections（含 C02-010_door_approach）",
+   "loadedInCity": false,
+   "loadedBy": "v1/west-layer.mjs:58 画样例路线"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "role": "城景清单（只读）",
+   "loadedInCity": true,
+   "loadedBy": "app.mjs:1 import"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "role": "城景渲染（只读）",
+   "loadedInCity": true,
+   "loadedBy": "app.mjs:177 动态 import"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "role": "城景入口（只读）",
+   "loadedInCity": true,
+   "loadedBy": "index.html script src"
+  },
+  {
+   "path": "docs/cities/luoyang/index.html",
+   "sha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "role": "城景页（只读）",
+   "loadedInCity": true,
+   "loadedBy": "—"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "role": "项目卡（只读，不改）",
+   "loadedInCity": false,
+   "loadedBy": "站点构建读取，不是城景运行时"
+  },
+  {
+   "path": "docs/model-library/m-courtyard-family.asset.json",
+   "sha256": "41999fbba1fa8f29c8c1d3fcc367ef4d9f2d026043b04cfbb62cbb926b2fc995",
+   "role": "院落家族卡（C2 待审）",
+   "loadedInCity": false,
+   "loadedBy": "模型库"
+  },
+  {
+   "path": "docs/model-library/updates/m-courtyard-family/files/A2-LOD0-C2.glb",
+   "sha256": "e9981a079d799d7556a9a4852c9d09ad274bb268ff4343d8d2202a13bcbf3887",
+   "role": "A2 C2 修订（UV 更新，待审）",
+   "loadedInCity": false,
+   "loadedBy": "不加载；若 LY-007/010 选 C2 需重跑检查"
+  },
+  {
+   "path": "docs/model-library/updates/m-courtyard-family/files/A2-LOD1-C2.glb",
+   "sha256": "f3f317746181635791621b4d09a7122899d0754fc1d36b583b39b3f80b02caac",
+   "role": "A2 C2 修订（UV 更新，待审）",
+   "loadedInCity": false,
+   "loadedBy": "不加载"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-A2-db02f24fde89.glb",
+   "sha256": "db02f24fde899b73d5902b41391a7a5e6db64affac25b7cc609de3d46a3b0994",
+   "role": "北区生活院修订研究（local-study）",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs researchModels research-north13-court-A2，space local-study，cityPlacement null"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-residential-life/files/life-block-LOD2.glb",
+   "sha256": "a9781f6ee525468b42f1deebf0c5d4fdd956ef4ecb7f81fdaad4d586166e27ad",
+   "role": "13 院片区（禁碰，仅取 AABB 排除选院）",
+   "loadedInCity": false,
+   "loadedBy": "未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD0.glb",
+   "sha256": "b7aa02d1f75198dc72c8f54519ca5259e0f4fff175deb6b8ee2cd9afc7d32893",
+   "role": "W2 灶放置层（世界坐标 489.4,0.2,-1003.8，属 13 院布局，不能直接套 C02-010）",
+   "loadedInCity": false,
+   "loadedBy": "未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-inner-door-components/files/single-door-LOD0.glb",
+   "sha256": "597d81ad26c8c652a93fe6db1a846ae6742f3a53858db97958f37587e0840b67",
+   "role": "住宅内门 v2 单扇（LY-042 输入，本席位只读）",
+   "loadedInCity": false,
+   "loadedBy": "未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD0.glb",
+   "sha256": "67bc127a37beff59ec7ad673e30c191ce6211c1039567003d8bef335926451b5",
+   "role": "住宅内门 v2 双扇（LY-042 输入）",
+   "loadedInCity": false,
+   "loadedBy": "未入城"
+  },
+  {
+   "path": "lab/data/assets.json",
+   "sha256": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "role": "汇总（取 bce3211 提交版本；工作树副本已被本地修改，未使用）",
+   "loadedInCity": false,
+   "loadedBy": "站点构建"
+  }
+ ],
+ "prepScripts": {
+  "glbio.py": "7cdd5d07b8249a1dded359e8110215bddd0d9b60838abca53be28ed6d7a8e34d",
+  "measure_footing.py": "1da961308e246ba74cf4174f3a8bcce7a05aeb223faf93670d174d65cd758ac9",
+  "measure_c02010_exact.py": "fa8fee844484f0105de8512523f9c83ed4d398e361cbb3afc669bb545658918c",
+  "list_bottom_tris.py": "a37a0ebac5b72b3b2e5b4b09dc90efb3324bc54cc9e3ea0f279dbcfcd3675de0",
+  "check_footing.py": "97e90f170597fea72fb6df4f1884a592d595187ad8965c23e035df16c4c31c65",
+  "blender_crosscheck.py": "c7a1d6ed0346b06f54f6a8bcefe5c2ee135c459a68276b0f26f45b02b93a64b2"
+ },
+ "prepResults": {
+  "blender-crosscheck-C02-010.json": {
+   "sha256": "8f6e4c0e4a4719c74333f9435e3f9926e083813ca4f32dd896fa15ec96cbf7d1",
+   "tool": "Blender 5.2.1 LTS glTF importer + BVH ray cast (independent of glbio.py)",
+   "result": "PASS: LOD0/LOD1 bottom verts plinth 72 / timber 24 / earth wall 84, noGround 0, gap -2.4e-7..0 m; lot 1728 samples noGround 0, top 0.199999-0.200001"
+  }
+ },
+ "reverifiedAt": "2026-11-05 on lab HEAD bce3211 (clean tree): check_footing calt PASS; --selftest allBehaved; measure_c02010_exact re-run identical to archived JSON; Blender cross-check PASS"
+}

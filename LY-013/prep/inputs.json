@@ -1,0 +1,152 @@
+{
+  "seat": "LY-013",
+  "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "prepared": "2026-11-05",
+  "frozen": false,
+  "note": "Paths relative to D:/GitHub/creation-notebook-lab unless marked. cityLoaded = fetched by the city scene at runtime (only in local-study view, cityPlacement=null).",
+  "inputs": [
+    {
+      "id": "K-v1-LOD0",
+      "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb",
+      "bytes": 1595636,
+      "sha256": "88d9a3223ded3229f90fa1e6702c68771a675edcf15d6d09f3e0fe5f50aeefec",
+      "nativeSha256_originalQA": "88877470597b0cf2f25251e72536e2ae15b7943d637852db7da4eb6087cab6f5",
+      "cityLoaded": false,
+      "loadedBy": "library card only: docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json files[1]",
+      "deckTriangleRange": [1776, 1788]
+    },
+    {
+      "id": "K-v1-LOD1",
+      "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb",
+      "bytes": 495712,
+      "sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8",
+      "nativeSha256_originalQA": "f876be9ee9ccecd8bbed1305800f2f91128c66488995e53049421ba7262a0612",
+      "cityLoaded": false,
+      "loadedBy": "metadata only: docs/cities/luoyang/city-data.mjs:747-751 (sourceAsset of study-north13-kaiyang-K); library card files[0]",
+      "deckTriangleRange": [1136, 1148]
+    },
+    {
+      "id": "K-v1-LOD2",
+      "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb",
+      "bytes": 55280,
+      "sha256": "13ff78a7a1fe9159ed577d715ff30c75cf3d0e8f6d2d47311968f660986ed801",
+      "nativeSha256_originalQA": "7deda70cf284c5c7bb9947604c63b0276e2340b01550fb3913449ef60acd07a5",
+      "cityLoaded": false,
+      "loadedBy": "metadata only: docs/cities/luoyang/city-data.mjs:730-746 (availableLod2; no renderer code reads it); library card files[2]",
+      "deckTriangleRange": [576, 588]
+    },
+    {
+      "id": "K-v1-flat-city",
+      "path": "docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb",
+      "bytes": 138768,
+      "sha256": "94693c58dd6308153c5900b0bb9698eff138811f39369f54f545b9034417e71e",
+      "cityLoaded": true,
+      "loadedBy": "city-data.mjs:708-709 asset study-north13-kaiyang-K -> node research-north13-kaiyang-K (city-data.mjs:4178, space local-study, cityPlacement null); fetched by city-renderer.mjs:286 loadAsset() via focusResearchModel() city-renderer.mjs:645 (entered from :619)",
+      "derivedFrom": "K-v1-LOD1 (progress-assets/flat/source.json: geometryBytePreserved, imagesRemoved 9); measured component geometry identical to LOD1"
+    },
+    {
+      "id": "kaiyang-ground-LOD0",
+      "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD0.glb",
+      "bytes": 471920,
+      "sha256": "5754432ae2b9497ee0ab5cbae0ce17471f093e249e10945e61b9c08375941bcd",
+      "cityLoaded": false,
+      "loadedBy": "library card files[4] only"
+    },
+    {
+      "id": "kaiyang-ground-LOD1",
+      "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD1.glb",
+      "bytes": 162984,
+      "sha256": "50f8550280e3992b63f0fa4f70c23ebc0d5fceb8db96ae1d0f91730e13612ee9",
+      "cityLoaded": false,
+      "loadedBy": "library card files[3] only"
+    },
+    {
+      "id": "kaiyang-ground-LOD2",
+      "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD2.glb",
+      "bytes": 3808,
+      "sha256": "e758e45f4ce320d039549c4d0346476830b0a81154d29c32fdc4d14a7b7330d6",
+      "cityLoaded": false,
+      "loadedBy": "library card files[5] only"
+    },
+    {
+      "id": "asset-card",
+      "path": "docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json",
+      "sha256": "fadab2bbd9029d793a672d2ab0da27b56e134d0524f03c94b562041fdd28dca9",
+      "cityLoaded": false,
+      "loadedBy": "site asset page; read-only for LY-013"
+    },
+    {
+      "id": "city-data",
+      "path": "docs/cities/luoyang/city-data.mjs",
+      "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+      "cityLoaded": true,
+      "loadedBy": "app.mjs / city-renderer.mjs imports; shared file, LY-100 only"
+    },
+    {
+      "id": "city-renderer",
+      "path": "docs/cities/luoyang/city-renderer.mjs",
+      "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+      "cityLoaded": true,
+      "loadedBy": "index.html -> app.mjs"
+    },
+    {
+      "id": "north13-source-contract",
+      "path": "docs/cities/luoyang/progress-assets/north13-gates/source.json",
+      "sha256": "9b07b7349ef536cd0b0a15c9bfa7134d2af7cc95e8dc402b7e2bea14d20719c1",
+      "cityLoaded": false,
+      "loadedBy": "referenced as sourceContract in city-data.mjs:726"
+    },
+    {
+      "id": "flat-source-contract",
+      "path": "docs/cities/luoyang/progress-assets/flat/source.json",
+      "sha256": "f2734dd41fd56a02dea00474e5c41ce8e0a21d9ac7cc472e76e01b3ce08d8785",
+      "cityLoaded": false,
+      "loadedBy": "projectionSourceContract in city-data.mjs"
+    },
+    {
+      "id": "project-card",
+      "path": "docs/cities/luoyang/p-luoyang.asset.json",
+      "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+      "cityLoaded": false,
+      "loadedBy": "site project page; shared, LY-100 only"
+    },
+    {
+      "id": "K-v1-source-pack",
+      "path": "git object: origin/luoyang-content:modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part001+part002",
+      "partSha256": ["f742fb3ce1555beb371a30a828b1a59b80f9c0c4ef7f9cc17f4f9e21633aa521", "72609b8bcab43c8bea6acc14ce9eaf7f862da4abe80cd98f7bff3f165a1ad0b5"],
+      "zipSha256": "bad99bb9f5b301b5b6a3450931511caec385df3da8b5ffc5b94b1664eb598c23",
+      "zipBytes": 11451229,
+      "cityLoaded": false,
+      "loadedBy": "not loaded; public projection of the private pack (sanitised natives, NATIVE-EQUIVALENCE.json equal=true for 4 .blend)",
+      "members": {
+        "source/build.py": "df0be5edb6136453a457e4d9a16b778e11ed3ea5e52b7227b1044182e7b9ce4a",
+        "source/geometry.py": "47ef2902c8b160f65339acadb022ec7802c20c676c564f1bcb899585949fab08",
+        "qa/build.json": "b854b38d83c2023a221fd23ac56232035756bae0f45c65b59d1f6f23f20a5eb7",
+        "qa/source-object-ranges.json": "a13c9f741347db813ff2deb3678b5ad6062fbc84584a3117df7a44939d42fdea",
+        "city/placement.json": "e608e78bf746b6b7a415ceff14883b8daadffd5346821c6d2c4f7f2b11abc39a",
+        "config.json": "94ac52ed0418eed83520d911a780c7205523c182c21d68fc221373152479a907",
+        "models/kaiyang-K-LOD0.blend (projection)": "95568b8b54b892473a3e6222075732cc04456ecf314133d919e55f9d8042339f",
+        "models/kaiyang-K-LOD1.blend (projection)": "f283dbf9cf477fd879608e0c31d1e3a9d059b145ca4702df33ee19c9de1809f3",
+        "models/kaiyang-K-LOD2.blend (projection)": "c8ef8d100f20ab8eae9b5e8aab88a0663b816774b8ce13bc101af2cdc928e159"
+      }
+    },
+    {
+      "id": "LY-001-snapshot",
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-001/qa/snapshot-ledger.json",
+      "cityLoaded": false,
+      "loadedBy": "workpack ledger; node research-north13-kaiyang-K state '仅模型·独立研究视图'"
+    }
+  ],
+  "prepArtifacts": {
+    "prep/qa/k-v1-source-object-ranges.json": "a13c9f741347db813ff2deb3678b5ad6062fbc84584a3117df7a44939d42fdea",
+    "prep/source/measure_deck.py": "4444bed7e4de7b7f1e4f14803e2df1586773d305ac603bdc3251789222dce2b4",
+    "prep/qa/deck-measure.json": "bcf1dc7e0086e7742f3dcad1bf3bba7202b4c4b9bf5cb16d8d6ac7e24ddeab12"
+  },
+  "missing": [
+    {"id": "bearing-section-v1", "need": "locate the 'new deck' and the 0.0936 m3 lintel/beam case; define what is replaced", "rebuildFromGLB": "no - it is a different geometry not present in any K-v1 GLB; only the N1 inference (6.4x10x0.34 = 21.76 m3) exists"},
+    {"id": "开阳适配失败/实际剖面记录", "need": "source of the 21.76 m3 duplicate figure and section elevations", "rebuildFromGLB": "partly - K-v1 sections can be re-cut from GLB; the failed adaptation itself cannot"},
+    {"id": "LY-011 frame ports", "need": "beam top elevations, column grid, sill positions under the deck", "rebuildFromGLB": "no - not yet produced"},
+    {"id": "LY-006 port/ownership freeze", "need": "who owns triangle ranges inside merged kaiyang-K-static_timber", "rebuildFromGLB": "n/a"},
+    {"id": "original private .blend (unsanitised)", "need": "not strictly needed; public projection reopened equal", "rebuildFromGLB": "yes - build.py regenerates K-v1 deterministically; GLB carries the geometry"}
+  ]
+}

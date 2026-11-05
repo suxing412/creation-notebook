@@ -1,0 +1,82 @@
+{
+ "seat": "LY-089",
+ "round": 2,
+ "date": "2026-11-06",
+ "phase": "prep（G 未冻结：LY-010 不存在；LY-081 仅 prep）",
+ "inputsFound": [
+  "lab@bce3211（HEAD；origin/main=cad338b，四块地面 blob 与 bce3211 相同）docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb fdfc3ce5（C_stitch_primary/west/patch，terrain 章 initial:false，owner LY-090）",
+  "lab@bce3211 assets/ground-atomic/retained.glb aed8b3d4（cad338b 改为 initial:true）、south.glb 4313826d、D08.glb 3ab93310（节点平移 580,0,-960）",
+  "lab@bce3211 city-data.mjs 磁盘 e4115705：terrain 章 loadNodeIds L4027-4041；city-renderer.mjs fa0a8dcb：loadAsset L286 / excludeNodes L309 / rebuild L409 / setMatrixAt L431 / focusChapter L595",
+  "lab@bce3211 data/west/road-plan.json 9792f217：G-7/G-8 的 cut existing_route_* 「final seam pending」；只被 v1/road-layer.mjs L17 加载，当前城景不加载",
+  "lab@bce3211 data/west/ground-atomic-contract.json bfc7fc83、ground-final-actual-GLB.json、ground-overlap-classification.json",
+  "12 段城垣、广阳门体、市肆 market-cluster 77b8bf2e、仓储 granary-city-LOD0 5937211c、雍门 yong-Y/yong-apron、住宅六种原型 LOD0/LOD1（全 SHA 见 prep/inputs.json，81 条）",
+  "workpacks/LY-005（交付完成）coordinate-contract b6d7fe9d、frames-bce3211 c0f846cb、glbio.py 2acd023b、vray.py ab4984f2",
+  "workpacks/LY-006（交付完成）registry v1：ownership.json ecbbbcf5、seats.json a1426412（LY-089 writeZones [] / claimProtocol true / consumes FROZEN:*）、zones.json 6b3595ac、seams.json ca4d81f8（133 条 consumer=LY-089）、ports.json 28bcfb68",
+  "workpacks/LY-001 a32d742a、LY-002 0ac63db8（F-ground-road：E-G09、E-H03；禁用 X15、X23）、LY-007 2fddce70、LY-008 4de552ad（ly_check.py 39aaa491）、LY-009 09a1c454 status.json，均为交付完成",
+  "workpacks/LY-081/prep（未交付，仅交叉核对）prep-status.json：C_5 3.761 m、C_1 4.292 m、裂缝 4-62 mm，与本席位独立实测一致"
+ ],
+ "inputsMissing": [
+  "LY-010 放行区域 / 缺口多边形清单（目录不存在）：决定差异片能落在哪里；现在一个缺口都没批，所以不能造任何片",
+  "LY-006 认领协议结果：LY-089 没有预分配写入区，G-7/G-8/G-9 要以 LY-089:write:NNN 认领，并通过 check_registry 的写入区和包络互检（本席位预检为 0 相交）；check_registry.py 写 LY-006/qa，只能由 LY-006 运行",
+  "LY-090 书面确认：四块原子地面归 LY-090。新的 overlay 片 gp:LY-089:* 不等于修改它的文件；G-9 裂缝是否改由 LY-090 在原文件里缝合，也要它定",
+  "LY-081 交付版可达网络：G-7/G-8 闭合后，C_5、C_1 能否并入主分量，以及禁用边是否保持断开，要它重算（T19）",
+  "私密源包：四块原子地面的 .blend 或生成器不在仓库，只用来解释接缝和裂缝的成因；接边几何已从 GLB 精确取出，overlay 可以「从 GLB 重建」，不需要源包；原材质节点图拿不到，材质按 LY-007 的 earth/path 新建，或沿用 GLB 的 PBR 参数，不冒称找回原件",
+  "约 180 年洛阳的地表、墙脚、河渠地形资料：没有（LY-002 只给 E-G09/E-H03，并禁用 X15/X23），因此只做平板或线性过渡的闭合，不造起伏"
+ ],
+ "gaps": [
+  "G-7 SEAM-C5（新测）：road_west_south_link C_5 西端与旧走廊之间有夹空。X 404.000→407.761，Z -492.796…-486.796，路宽 6 m；北侧缺角使空隙呈 L 形（1×1.204 m）；面积 23.770 m²。西侧 C_stitch_west 顶 0.20，东侧 C_stitch_primary 顶 0.21（板底 0.16），dy +0.01 m。24/31 条 1 cm 扫描线有夹空；road-plan 记为 final seam pending",
+  "G-8 SEAM-C1（新测）：road_west_spine C_1 北端，Z -476.000→-471.684/-471.708，X 386.59…392.59；空长 4.292–4.316 m，面积 25.824 m²；顶面 0.20/0.21，dy +0.01 m；24/53 条扫描线有夹空",
+  "G-9 CRACK（新测）：C_stitch_primary 内部有楔形裂缝，宽 3–62 mm，长 4.18 m，约 0.13 m²，位于 X 397.94…398.02、Z -1849.94…-1845.76；两侧都是 0.21；41/56 条 1 mm 扫描线有夹空",
+  "G-7+G-8+G-9 合计约 49.72 m²，是四块地面顶面 192,878 m² 的 0.026%；包围盒外扩 2 m 后，与 LY-006 的 173 个区和 11 个包络都是 0 相交，不碰其他城市节点；正负对照 3/3 通过（填满框后夹空降为 0，平移 0.5 m 后仍有 4/24/41 条线留空）",
+  "G-0：bce3211 的四块地面都是 initial:false，默认首屏 59 个节点下方没有地面；cad338b 把 retained 改为 true。属加载策略，归 LY-100/LY-010",
+  "G-1：城垣 A 段 10 段墙脚，底 0.17，足迹 84,761 m²，100% 没有地面，200 m 内也没有；端口 steward 是 LY-020；整圈铺地 = 被禁止的整城填平",
+  "G-2：direct 08/09 墙，足迹 13,804 m²，其中 13,038 m² 没有地面；另有 766.2 m² 被地面带（顶 0.20）伸进墙脚 3 cm，属正体积侵入，由 LY-020 做接触分类",
+  "G-3/G-4：市肆底板 60×44×0.2 m（周长 208 m 中只有 4 m 接路）、仓储底板 72×52×0.2 m（248/248 个探针 200 m 内无地面）；按 LY-006 v1，两块底板都归 LY-090，外街归 LY-083，东北路归 LY-039/040/084，不归本席位",
+  "G-6：四块地面外露顶面边界 17,832 m；1 mm 焊接下 network 有 10 个、retained 有 23 个非流形边（只做基线）",
+  "复现：measure_support 重跑，除 seconds 外逐值相同；ground_fingerprint 重跑逐字节相同（c3078dcc）；measure_seams 重跑逐字节相同（2aa95391）"
+ ],
+ "reuseCandidate": "部分复用：住宅 44 院不需要造片。证据是 qa/support-bce3211.json（3b5c786c，第 2 轮重跑除 seconds 外逐值相同）和 qa/support-near-bce3211.json（5e301e07）：44 院底面 6,354.24/6,354.54 m² 贴合原地面（|Δ|≤5 mm，无地面面积为 0），足迹边界 12,489.0/12,500.4 m 与地面同高，LOD1 和 LOD0 都通过，Blender BVH 双法复核一致；LY-006 列给本席位的 44 个 ground-base 消费端口因此不需要补件。雍门内侧接街是原负责人的保护件。G-7/G-8/G-9 没有已有合格成果：road-plan 记为 final seam pending，裂缝在 bce3211 和 cad338b 都存在。本席位整体不能判为复用完成",
+ "touches": [
+  "只读，作为接边对象：network-ground-stitched.glb 的 C_stitch_primary（G-7 东边 X=407.761、G-8 南边 (392.5904,-471.6843)-(386.5904,-471.7077)、G-9 裂缝边）、C_stitch_west（G-7 西边 X=404/403 及 Z=-488 缺角边、G-8 北边 Z=-476）；文件归 LY-090，不改",
+  "只读：retained.glb、south.glb、D08.glb（归 LY-090）；城垣 A/direct 墙脚（LY-020 steward）；market-cluster sample_ground、granary original_city_ground_preserved（归 LY-090）；yong-apron（保护件）",
+  "计划新增（须先获放行和认领）：gp:LY-089:seam-c5（23.770 m²）、gp:LY-089:seam-c1（25.824 m²）；gp:LY-089:crack-stitch（0.13 m²）仅在 LY-006/LY-090 判给本席位时做；放在一个 overlay GLB workpacks/LY-089/models/terrain-diff-*.glb（local-origin、单位节点）里，附 assembly.json 和接边记录",
+  "计划认领的写入区（按精确边界边的包围范围，各外扩 5 mm 后提交）：LY-089:write:001 = G-7，X 403.000–407.761、Z -492.796…-486.796；:002 = G-8，X 386.5904–392.5904、Z -476.000…-471.6843；:003 = G-9，X 397.937–398.015、Z -1849.94…-1845.76。预检用的是扫描框外扩 2 m，与其他席位的区和包络都是 0 相交",
+  "相关席位：LY-090（地面所有者、切孔合成；片不得封住 cut:LY-025/045/053/086）、LY-081（可达网络重算）、LY-020（墙脚）、LY-083（市肆外街）、LY-039/040/084（东北路）、LY-085（城南门接路）",
+  "不碰：city-data.mjs、p-luoyang.asset.json、lab/data/assets.json（都走 LY-100）"
+ ],
+ "size": "S",
+ "risks": [
+  "批准范围可能为空：LY-010 还不存在，不放行就只交诊断，不凑件",
+  "所有权：四块原子地面归 LY-090。LY-090 可能要求接缝在原文件里缝合，而不接受 overlay，那样本席位只交测量和接边记录；裂缝 G-9 更适合由 LY-090 缝合",
+  "G-7/G-8 两侧高差 1 cm（0.20/0.21）：要么线性过渡（坡 0.27%/0.23%），要么声明台阶；如果补片顶面整取 0.21，会在西/北侧留下未声明的 +10 mm 台阶",
+  "G-8 的 primary 边斜 0.023 m（不平行于 X 轴）；补片若取平直边，西端会叠顶 7.7 mm、东端会留缝 15.7 mm，必须按精确边界边建模",
+  "这两条接缝是 C 工程路网的「final seam pending」，闭合后 LY-081 的连通性会变；禁用边（中横路 56.2 m，palaces_connector_B）不能被顺手接通",
+  "范围膨胀：若 LY-010/LY-006 v2 把墙脚（G-1/G-2）判给本席位，面积会大几个数量级，需要重新估规模，并防止整圈铺地",
+  "基线漂移：cad338b 的地面 blob 没变，但 retained 改成了 initial:true、新增北缘三院，support 需要按新节点集重跑",
+  "源工程缺失：原地面材质节点图拿不到，补片材质可能与原地面有色差",
+  "只做了竖直射线、有限扫描线和包围盒互检，不是实体碰撞或身体扫掠，也没有浏览器 / GPU 实测"
+ ],
+ "readyAfterG": true,
+ "readyAfterGNote": "G（含 LY-010）冻结、LY-081 交付、LY-006 认领通过、LY-090 确认之后，可以立即按 test-plan T16–T18 制作两到三块补片：精确边界、高程和测试脚本都已就绪",
+ "files": {
+  "brief": "prep/brief-draft.md",
+  "inputs": "prep/inputs.json",
+  "testPlan": "prep/test-plan.md",
+  "round1Archive": "prep/qa/r1-archive/",
+  "newScriptsR2": [
+   "prep/scripts/measure_seams.py",
+   "prep/scripts/seam_neighbours.py",
+   "prep/scripts/consumed_ports.py",
+   "prep/scripts/make_inputs_r2.py"
+  ],
+  "newQaR2": [
+   "prep/qa/seams-bce3211.json",
+   "prep/qa/seam-neighbours-bce3211.json",
+   "prep/qa/consumed-ports-ly006v1.json",
+   "prep/qa/neg/",
+   "prep/qa/rerun-r2/",
+   "prep/qa/lab-status-before-r2.txt",
+   "prep/qa/lab-status-after-r2.txt"
+  ]
+ }
+}

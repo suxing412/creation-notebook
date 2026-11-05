@@ -1,0 +1,64 @@
+{
+ "seat": "LY-094",
+ "inputsFound": [
+  "lab bce3211 (HEAD == baseline at 2026-11-06T00:14 rerun; read-only; git status only .claude/)",
+  "docs/cities/luoyang/city-data.mjs blob c849706b; city-renderer.mjs 04c6c643 (loadedIds :221, chapter loadNodeIds :601, focusResearchModel :645); app.mjs cc0379c0; index.html cfbf7376",
+  "docs/cities/luoyang/data/evidence/evidence-geometry.json blob fa8b7002 (CRLF checkout 662562fa); research-unplaced.json 27f9e7f3; p-luoyang.asset.json 8edb06ab",
+  "17 scope families / 77 GLB (16 library cards + model-library taixue B), all blob==file; city research GLBs study-lingtai c1b58de1, study-taixue-A ee416342, study-taixue-B 11b01e49; loaded ground network-ground-stitched fdfc3ce5, retained aed8b3d4, south 4313826d, D08 3ab93310",
+  "mq card audits for all 16 cards: SHA current, issues [] for all 76 card GLBs",
+  "workpacks LY-001 status a32d742a, LY-002 evidence-ledger 237a4811 / family-binding 3aeddcc0, LY-003 tables/admission.json dd0ab8c0 (all palace zones 不可落位, 0 common CP), LY-005 coordinate-contract b6d7fe9d",
+  "NEW 11-06: LY-004 delivered (status c9358ea5, delivery-manifest cb8a7e7f, tables/site-constraints.json 633c3302, geometry/city-south.json bb34e891, geometry/north-suburb.json eb4ae791); independently cross-checked X1-X6 all pass",
+  "NEW 11-06: LY-006 registry/seats.json a1426412, zones.json 6b3595ac (all 12 scope seats in local:* frames, placement null, placementProposal null); LY-007/008/009 delivered (LY-008 source/ly_check.py available for package checks)",
+  "prep re-measure out/rerun-1106: baseline before.json 5e9587bc (== v1 b2217d24 except measuredAt and B10 detail), ground probe e646b933 (byte-identical), check-baseline-v2 dfdd42ca (byte-identical, 195/195), selftest-v2 02701733 (31/31), crosscheck-ly004 2ffbf4b6, projectcard-grouping (R23 FAIL at baseline)"
+ ],
+ "inputsMissing": [
+  "LY-010 region admission table (the only G seat not delivered; directory absent at 2026-11-06T00:20): needed to freeze the admission uncertainty ceiling (R12 uses a 75 m placeholder) and this batch's allowed scope; cannot be rebuilt from GLB",
+  "Delivered packages of LY-070..080 and LY-086 (delivery-manifest SHA, assembly.json, qa): the objects this seat rules on; only prep/ exists; R24 (package frame == LY-006 seat frame, placement null) can only be implemented against a real assembly.json; cannot be rebuilt from GLB",
+  "Original report 汉魏洛阳故城南郊礼制建筑遗址（1962-1992） (LY-004 could not access it): needed to separate Eastern Han from Wei-Jin / Northern Wei remains at 明堂/辟雍/灵台/太学 and to obtain control points; not a GLB matter; belongs to LY-002/LY-004, this seat only checks citations",
+  "Original base raster of 高2023 图1 at the frozen pixel frame (LY-004 R-05: frozen pixels come from an unregistered 1284x1800 base; the PDF figure is 373x594): needed to re-pick B points independently; not a GLB matter",
+  "Private source packs (lingtai quality-v1 source.zip + native/lingtai-A-quality.blend; lingtai LOD0 26,176,944 B; taixue-A LOD0 27,855,752 B; palace/ritual .blend): NOT needed for position/phase admission rulings; if a package changes geometry it must ship its own source or state 从GLB重建, and this seat only checks its GLB SHA against its qa"
+ ],
+ "gaps": [
+  "G1 0/17 scope families have a city node (66 city nodes total); 3 research views local-study with cityPlacement null; 77/77 GLB root translation 0 m, AABB centre < 100 m from origin",
+  "G2 LY-003: north palace, south palace, connector, Yongan, palace waterway all 不可落位, 0 common control points -> 9 palace-side families capped at 只能独立研究",
+  "G3 LY-004 (delivered 2026-11-05 22:13): all 6 sites install180=不放行; 4 ritual sites are B markers (independent residual 29.3/3.4/9.8/19.7 m, historicalPositionError_m null), 南郊 only a text band 2691-3240 m south of the inferred south wall with no east-west constraint, 北郊 three exclusive readings with no point -> all 8 LY-004-authority families capped at 只能独立研究",
+  "G4 明堂-平城门 schematic 1045.1 m vs 二里 828-864 m (C units): 181.1 m outside, larger than the 75 m envelope (LY-004 T1a strict false, loose true); 辟雍-明堂 406.6 m vs 三百步 414-432 m: 7.4 m outside",
+  "G5 ground: 0 coverage within 75 m of all 4 B points (0/4413..4421 samples at 2 m); nearest ground 141.4 / 179.3 / 566.0 / 747.0 m; at LY-004 marker radii (164.2/220.3/170.2/112.0 m) the lingtai and mingtang circles each hit 8 triangles of network-ground-stitched (4 up-facing, y 0.16-0.21 m), coverage 228/21,039 and 367/37,862; biyong/taixue 0 - identical to LY-004 city-overlap 8/8/0/0",
+  "G6 北郊 4 li 1656-1728 m, 6 li 2484-2592 m, NW corner 1 li 414-432 m; ground coverage on LY-004 polygons 0/11,783, 0/12,635, 0/2,957 (10 m grid); 0/80,700 in the 0-3 km north band",
+  "G7 南郊 城南七里 = 2898-3024 m (C), possibly numerological (因火数也); LY-004 band ground coverage 0/13,504",
+  "G8 city lingtai research view c1b58de1 (21,332 tris, 737 nodes, pre stair revision) != card LOD1 ffaff723 (21,424 tris, 4 nodes, five-stair revision)",
+  "G9 taixue B has no library card; LY-006 assigns node research-taixue-B to LY-077, but LY-004 site taixue lists only taixue-a and stoneclassic-access-court -> needs its own ruling (negative N11) and may not borrow the taixue site (negative N25)",
+  "G10 lingtai LOD0 26,176,944 B and taixue-A LOD0 27,855,752 B exceed 15,000,000 B and are absent from the repo; all 77 present scope GLBs <= 8,977,644 B",
+  "G11 old B north-palace NS sides 1398.1/1398.3 m vs Northern Wei 1398 m: 0.1-0.3 m apart but 1 px = 10.2 m, borrowing vs coincidence undecidable without the drawing note",
+  "G12 evidence-geometry blob fa8b7002 vs CRLF checkout 662562fa: all checks hash committed blobs",
+  "G13 southern altar A/B embed 66/74 m display ground; 八陛 support without it 0/24 (LY-079 prep) -> cannot be 可接城 until LY-079 delivers",
+  "G14 checker v1 could not read LY-004's list-shaped sites and would wrongly block even a genuinely registered LY-004 site (measured: the same northern-altar admission table -> v1 R10 FAIL, v2 pass); fixed in v2 (normalize_ly004 + R22), selftest 24 -> 31 cases all OK",
+  "G15 v1 七里 probe band started at city z=0 instead of the south wall (wall z -20.4..30.6) -> offset <= 31 m; re-measured on the LY-004 band, still 0 coverage",
+  "G16 project card p-luoyang.asset.json (blob 8edb06ab) progress[10] 北郊方坛四陛 has chapter=ritual together with 灵台与太学 and 太学门外观经空间 -> new check R23 FAILs at baseline (same as LY-004 R-04); city-data chapters are clean (B3 pass); only LY-100/LY-098 may fix it"
+ ],
+ "reuseCandidate": "无。本席位是独立验收席位，产物是逐资产判定表；bce3211 里没有任何宫区、礼制、郊祀资产的准入判定可以复用。上游已交付的 LY-003 tables/admission.json（dd0ab8c0，宫区全部不可落位）和 LY-004 tables/site-constraints.json（633c3302，六站点全部不放行）由本席位直接引用，并经 crosscheck_ly004.py 独立复核（X1-X6 通过），不重做；它们是判定的输入，不能替代判定表。",
+ "touches": [
+  "只读：docs/library/models/{palace-admission-court,palace-guard,palace-sidehall,palace-paired-que,deyang-hall,yutang-halls,palace-gallery,gallery-access,palace-waterway-interface,biyong,mingtang,lingtai,taixue-a,stoneclassic-access-court,southern-altar,northern-altar}/ 卡片与 76 个 GLB；docs/model-library/taixue",
+  "只读：docs/cities/luoyang/progress-assets/flat/study-lingtai-c1b58de1bff4.glb、study-taixue-A-ee4163421d16.glb、study-taixue-B-11b01e4948be.glb",
+  "只读：docs/cities/luoyang/city-data.mjs（researchModels、chapter ritual）、city-renderer.mjs、app.mjs、index.html；data/evidence/evidence-geometry.json、data/research-unplaced.json；p-luoyang.asset.json（progress 分组、members）",
+  "只读地坪片：assets/ground-atomic/network-ground-stitched.glb（与灵台、明堂标记圈各 8 个三角形平面相交）、retained.glb、south.glb、D08.glb（仅平面覆盖探测）",
+  "只读：workpacks LY-001/002/003/004/005/006/007/008/009 交付物，以及 LY-010、LY-070—080、LY-086 将来的包",
+  "写：仅 workpacks/LY-094/（本阶段 prep/）",
+  "不拥有任何源节点、城市节点或地坪片（LY-006 registry 只覆盖 LY-011—090）；给 LY-100 的建议（灵台研究视图版本、太学 B 归属、项目卡北郊分组 R23）只是提案，不写共享文件"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-010 not delivered: the 75 m admission uncertainty ceiling is a placeholder; if LY-010 freezes a different value, R12 must be re-parameterised and the selftest re-run before any ruling",
+  "If LY-004 re-issues its table in a new shape, a new adapter plus a negative case is required (v1 already failed closed but wrongly on the delivered shape, G14); never hand-edit upstream data",
+  "Region codes are fixed to the baseline (R07); if LY-004/LY-010 regroup 太学 or 南郊, the baseline must be re-measured, not patched",
+  "Ground probe and crosscheck are plan-footprint only: no step height, foot support or clearance; packages must supply their own port/support qa",
+  "R04 (FOREIGN words) and R23 are lexical; Wei-Jin / Northern Wei dimensions (e.g. 明堂圆基 61-62 m) written without the trigger words pass the script, so the manual evidence-class cross-check stays mandatory",
+  "LY-076/LY-100 may fix the lingtai research-view version before review; R20 will then flag study-lingtai as changed unless it is listed in batchTouches",
+  "Concurrent seats keep writing (LY-076 prep brief changed since v1; LY-004 landed during v1 prep): every run must re-hash upstream inputs and re-bind",
+  "R24 (package frames vs LY-006 seat frames) is specified but cannot be implemented until a real assembly.json exists",
+  "Five things kept separate: this seat rules only on position/phase admission; it must not upgrade 模型能读取 or 局部通行 into 已入城 or 历史复原成立"
+ ],
+ "readyAfterG": true,
+ "updated": "2026-11-06T00:25+08:00",
+ "previous": "out/rerun-1106/prep-status.v1.json"
+}

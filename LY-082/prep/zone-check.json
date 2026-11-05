@@ -1,0 +1,239 @@
+{
+ "registrySha256": {
+  "zones.json": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+  "ownership.json": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+  "ports.json": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+  "seams.json": "ca4d81f8f955333c089d782aa69c50c2ca83225d4da07f595f66d1ba87f3f4c1"
+ },
+ "corridorFile": "corridor-C02-010.json",
+ "corridorSha256": "08dee31f8c59c5e4164ebd589ea455b5466e530e30c28bb64ac523c43c0b6dc8",
+ "myZones": [
+  {
+   "zoneId": "LY-082:write:001",
+   "seat": "LY-082",
+   "site": "S-COURT-LANE",
+   "class": "write",
+   "frame": "world",
+   "box": [
+    [
+     526.0,
+     -0.3,
+     -806.45
+    ],
+    [
+     530.0,
+     0.6,
+     -796.45
+    ]
+   ],
+   "label": "short lane link from C02-010 lot boundary (C reservation 10 m; 081 sets the real target)",
+   "basis": "C-partition",
+   "exclusiveGroup": null,
+   "worldOBB": {
+    "c": [
+     528.0,
+     0.15,
+     -801.45
+    ],
+    "yaw": 0.0,
+    "h": [
+     2.0,
+     0.44999999999999996,
+     5.0
+    ]
+   }
+  }
+ ],
+ "checks": [
+  {
+   "name": "K9a_gate_on_zone_face",
+   "pass_": true,
+   "gateX": [
+    526.025,
+    529.0
+   ],
+   "gateZ": -806.45,
+   "zoneX": [
+    526.0,
+    530.0
+   ],
+   "zoneZmin": -806.45
+  },
+  {
+   "name": "K9b_crossing_in_zone",
+   "pass_": true,
+   "flatWithin_2mm": {
+    "-804.4": [
+     526.21,
+     529.36,
+     3.15
+    ],
+    "-804.0": [
+     526.27,
+     528.8,
+     2.53
+    ],
+    "-803.7": [
+     526.29,
+     528.75,
+     2.46
+    ],
+    "-803.3": [
+     526.09,
+     528.75,
+     2.66
+    ]
+   }
+  },
+  {
+   "name": "K9c_zone_volume_overlap_0",
+   "pass_": true,
+   "overlaps": []
+  },
+  {
+   "name": "K9d_ground_south_owner_is_LY-090",
+   "pass_": true,
+   "entry": {
+    "owner": "LY-090",
+    "instances": [
+     {
+      "cityNode": "ground-south"
+     }
+    ],
+    "rule": "only LY-090 may emit a diff/replacement of this file; all cut requests go through LY-090"
+   }
+  },
+  {
+   "name": "K9e_port_declared",
+   "pass_": true,
+   "port": {
+    "portId": "C02-010:gate-boundary:road-end",
+    "version": 1,
+    "kind": "road-end",
+    "producer": "LY-049",
+    "steward": "LY-049",
+    "status": "declared (values filled by producer at delivery)",
+    "frames": {
+     "local": "court:C02-010",
+     "world": "luoyang-local-schematic-v01"
+    },
+    "local": null,
+    "world": null,
+    "nodeMatrixColumnMajor": [
+     1.0,
+     0,
+     -0.0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.0,
+     0,
+     1.0,
+     0,
+     531.0,
+     0.0,
+     -818.45,
+     1
+    ],
+    "measuredFrom": null,
+    "elevationClass": "C-engineering",
+    "tolerance_m": {
+     "position": 0.005,
+     "elevation": 0.002
+    },
+    "consumers": [
+     "LY-050",
+     "LY-082"
+    ]
+   },
+   "valuesFilled": false,
+   "note": "values null until LY-049 delivers; K4 uses y 0.200 until then"
+  }
+ ],
+ "faceContacts": [
+  {
+   "zoneId": "LY-048:write:004",
+   "class": "write",
+   "box": [
+    [
+     523.0,
+     0.25,
+     -807.45
+    ],
+    [
+     526.0,
+     3.3,
+     -806.45
+    ]
+   ]
+  },
+  {
+   "zoneId": "LY-048:write:005",
+   "class": "write",
+   "box": [
+    [
+     530.0,
+     0.25,
+     -807.45
+    ],
+    [
+     539.0,
+     3.3,
+     -806.45
+    ]
+   ]
+  },
+  {
+   "zoneId": "LY-049:write:001",
+   "class": "write",
+   "box": [
+    [
+     526.0,
+     -0.3,
+     -809.45
+    ],
+    [
+     530.0,
+     3.2,
+     -806.45
+    ]
+   ]
+  },
+  {
+   "zoneId": "LY-041:write:012",
+   "class": "write",
+   "box": [
+    [
+     523.0,
+     -0.3,
+     -809.45
+    ],
+    [
+     526.0,
+     0.25,
+     -806.45
+    ]
+   ]
+  },
+  {
+   "zoneId": "LY-041:write:013",
+   "class": "write",
+   "box": [
+    [
+     530.0,
+     -0.3,
+     -809.45
+    ],
+    [
+     532.1,
+     0.25,
+     -806.45
+    ]
+   ]
+  }
+ ],
+ "namespaceRule": "any new ground piece must be named gp:<seat>:<name> and lie inside one of that seat write zones",
+ "allPass": true
+}

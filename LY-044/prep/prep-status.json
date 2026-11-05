@@ -1,0 +1,57 @@
+{
+ "seat": "LY-044",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD0.glb 88e6f590 (LOD1 a687954a, LOD2 499a2d4e); not loaded in city",
+  "docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD0.glb 3bde10b5 (LOD1 aa4170fa, LOD2 a7977780); not loaded in city",
+  "docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD0.glb b7aa02d1 (LOD1 67ba605b, LOD2 d688e3b2) = stove-A translated by (489.4,0.2,-1003.8), max vertex deviation 4.7e-5 m; not loaded in city",
+  "docs/library/models/m-luoyang-residential-life/files/life-block-LOD0.glb 27099872 (13-yard block, yard LIFE-W2 hosts W2; protected, read only)",
+  "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb 277e9e73 / A2-LOD0-prototype.glb 19b05202 (candidate yard C02-010, city-data.mjs:88/109, node :2322)",
+  "docs/cities/luoyang/assets/ground-atomic/south.glb 4313826d (actual yard ground of C02-010, node ground-south city-data.mjs:3609, initial:false)",
+  "docs/cities/luoyang/data/far44/instances-calt.json c830b4e3 (C02-010 calt T=(531,0,-818.45))",
+  "docs/cities/luoyang/data/c02v/layout.json 7528f0c8 (C02-010 localRoutes gate_to_main, yard_to_side)",
+  "docs/cities/luoyang/city-data.mjs e4115705; city-renderer.mjs fa0a8dcb (initial :221, excludeNodes :309, near tier :416)",
+  "docs/cities/luoyang/p-luoyang.asset.json 9b5e311f (院内备食关系 :203-208, 庖厨炉灶 :226-230, both 已建模未入城)",
+  "lab HEAD bce3211f; lab/data/assets.json HEAD blob 53d86312 (working tree has unrelated uncommitted edits)"
+ ],
+ "inputsMissing": [
+  "W2 placement QA package (14 routes, 2 fixed-orientation work positions, 2 turn-back bays, 65 protected routes, wrong-work-position negative): needed to reuse the validated operator/turn envelopes; NOT rebuildable from GLB (test definitions, not geometry) -> must be redefined as C parameters for the city yard",
+  "stove A/B native source (.blend/generator): only needed if stove geometry changed (it must not); geometry rebuildable from GLB",
+  "life-block native source: not needed for a 44-yard install; geometry available in GLB",
+  "frozen G items: LY-041 selected yard (draft C02-010, alt C02-021), LY-005 yard datum (expected 0.200), LY-006 floor-space/ground ownership vs LY-045/046/047, LY-010 usage combo and stove type A or B",
+  "LY-002 evidence row for any c.180 Luoyang stove form/position: none found (one public search, no direct hit)"
+ ],
+ "gaps": [
+  "Not in city: 0 references to stove/W2 in docs/cities/luoyang *.mjs, v1/*.mjs, data/*.json; none of the 6 yard prototypes has a stove node",
+  "W2 cannot be loaded as-is: its 87 bottom vertices (x 488.1-490.1, z -1004.2..-1003.4) have 0 city-ground triangles below (life-block frame, overlaps D08 area, not one of the 44 lots)",
+  "W2 QA definitions absent from repo, so its pass claims cannot be inherited",
+  "Datum: C02-010 actual yard ground = ground-south y 0.199997-0.200005 over 43,560 cells; placing at prototype activity-ground datum 0.215 floats all 87 (A) / 88 (B) bottom vertices by >=0.015 m; at 0.200 max gap 0.0020 (A) / 0.0023 m (B), 0 floating",
+  "Space is not the bottleneck: C02-010 main free non-route area 309.35 m2; 14,126 (A) / 12,503 (B) of 39,904 tested poses per family satisfy footprint+0.9 m work strip+r0.75 m turn disk without route overlap; the gap is the unfrozen position and ownership",
+  "ground-south is initial:false (city-renderer.mjs:221) -> in default/focus view the yard and a stove node would have no ground (LY-041: lotCoverage 0)",
+  "Near tier switches only the focused node (city-renderer.mjs:416): a separate stove node would stay LOD1 (1,076 tris) next to yard LOD0; city has only 2 tiers so stove LOD2 is unused",
+  "C02-012 rear_to_kitchen endpoint (575.5,-834.25) is inside the house (band obstructed, building top 3.12 m): TC03 kitchen is an indoor room, not a yard stove spot"
+ ],
+ "reuseCandidate": "无（stove-A/B GLB原件可原样复用、无需新几何或地坪补片，但城景44院内尚无已安装的合格成果；W2只在13院life-block坐标内合格，0/87底点有城景地面）",
+ "touches": [
+  "city node C02-010 (matrix read only)",
+  "A2 kept nodes architecture_C_whitebox_earth_wall.001, architecture_C_floor_plinth.001, architecture_C_plain_timber.001 (clearance only)",
+  "assets/ground-atomic/south.glb (support surface, no cut; floor-space within C02-010 shared with LY-045/046/047)",
+  "data/c02v/layout.json lots[C02-010].localRoutes gate_to_main, yard_to_side (corridors kept free)",
+  "library stove-A/B GLBs (referenced, not copied or edited)",
+  "W2 GLB and life-block (not loaded; 13-yard area untouched)",
+  "city-data.mjs new asset+node record and chapter loadNodeIds/near-tier coupling (proposal only, LY-100 writes)",
+  "p-luoyang.asset.json entries 院内备食关系/庖厨炉灶 statusNote (proposal only, LY-100 writes)",
+  "workpacks/LY-044/ only"
+ ],
+ "size": "S",
+ "risks": [
+  "LY-041 yard choice not frozen; C02-021 alternative would need re-measurement",
+  "LY-006 may assign the same yard floor to 圈厕 hole (LY-045) or shed (LY-047); hole must not fall under stove/work zone",
+  "Wrong datum 0.215 would float the stove 15 mm",
+  "Default view shows no ground unless LY-100 couples ground-south with the yard/stove",
+  "LOD mismatch at near view unless near-tier coupling is solved",
+  "Wooden prep board 75 mm from stove shell: thermal risk unassessed; no fire/smoke/combustion claim permitted",
+  "No c.180 Luoyang evidence for stove form or yard position; everything is C design",
+  "Surface ray checks only; not solid-collision-exhaustive, not GPU, not gait"
+ ],
+ "readyAfterG": true
+}

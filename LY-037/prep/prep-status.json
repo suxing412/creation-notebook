@@ -1,0 +1,62 @@
+{
+ "seat": "LY-037",
+ "inputsFound": [
+  "lab docs/library/models/m-luoyang-wuku/files/wuku-B-LOD0.glb e5de60b6 (extras.version 2.2.0-C-entry-candidate; leaves baked in static_timber tris 304-459 / 460-615)",
+  "lab docs/library/models/m-luoyang-wuku/files/wuku-B-LOD1.glb 5e1cc6b9 (leaves 304-459 / 460-615)",
+  "lab docs/library/models/m-luoyang-wuku/files/wuku-B-LOD2.glb e5c87306 (leaves 68-223 / 224-379; check table absent)",
+  "lab docs/library/models/m-luoyang-wuku/files/wuku-A-LOD0/1/2.glb 5daa542d / 51110119 / ee0da058 (read-only, not used for B conclusions)",
+  "lab docs/library/models/m-luoyang-wuku/m-luoyang-wuku.asset.json bc3665bb (blob d55f305f): only fixed 150 deg verified, mid angles occupy side route, no animation/interlock",
+  "lab docs/cities/luoyang/city-data.mjs e4115705 (blob 0c1262e2): 0 wuku nodes; line 4525 registers evidence-geometry.json",
+  "lab docs/cities/luoyang/data/evidence/evidence-geometry.json 662562fa: region_wuku_B label point, not_modeled",
+  "lab docs/cities/luoyang/p-luoyang.asset.json 9b5e311f: members[] line 571 lists m-luoyang-wuku",
+  "lab modeling-lab/review-batches/2026-11-04-city-visible zip part01-05 d3d5eb72/c20213e1/6a468122/74f4cd0a/a8a0331b :: chunks/wuku_C_with_support-01.glb 29709e25 (old support patch, stand-in ground), -02.glb 34160b9d, northeast_C_access.glb 58f2f58a",
+  "lab .../adapter/adapter.json 703caeed: wuku nodes initial:false, not read by city code",
+  "workpacks LY-006/registry ports.json 28bcfb68, zones.json 6b3595ac, seams.json ca4d81f8, seats.json a1426412, ownership.json ecbbbcf5: zone LY-037:write:001 [[-6.5,0,-6.5],[10.5,1.5,7.52]], components B037-transitions / B037-leaf-state-150deg, port wuku-B:forecourt-side:ground (to LY-039)",
+  "workpacks LY-005/coordinate-contract.json b6d7fe9d: yaw-only, scale 1, C ground 0.20/0.21",
+  "scratchpad mq/cards/m-luoyang-wuku/audit.json 9aa3e457: B three LODs DEGENERATE_TRIS 14 each (inherited)"
+ ],
+ "inputsMissing": [
+  "wuku-B v2.2 native .blend + generator + private route QA (declared body envelope, route polylines, mid-angle list): needed for the author's declared operation route/envelope; geometry can be rebuilt from GLB (leaves are closed 156-tri islands, hinge recovered with 0 m residual) but the declared envelope cannot - it must be restated as C parameters (2.0 m height, 0.14 m step, 0.9/1.0 m width)",
+  "LY-036 delivered outer-arrival ground + wuku-B:outer-arrival:ground values: real start surface below the stair foot; prep used old patch C_WUKU_ISOLATED_SUPPORT_PATCH (29709e25) as stand-in; not rebuildable here (other seat)",
+  "LY-010 decision table (S-WUKU selects B? region admitted?): not rebuildable from GLB",
+  "LY-007 ruling on whether baked door leaves must become an independent node vs a triangle-range sidecar: contract, not rebuildable",
+  "LY-008 delivered checker entry (LY-008 has no status.json yet): needed for the official check wrapper",
+  "LY-003 placement (world value of the port): not rebuildable from GLB"
+ ],
+ "gaps": [
+  "no machine-readable fixed-150 interface exists: leaves are welded into wuku-B-static_timber (no node, no extras); reference must be SHA + triangle ranges (LOD0/1 304-459 & 460-615, LOD2 68-223 & 224-379) + hinges (-1.1345,4.8411)/(1.1344,4.8414) + measured 150.10/150.12 deg",
+  "other angles block the side route: terrace clear width beside the leaf 0.501 m at 90, 0.512 at 100, 0.558 at 110, 0.748 at 130, 0.886 at 140, 1.048 at 150 (continuous); grid widest path stair->side shed 0.566 / 0.50 / 0.50 / 0.70 / 0.80 / 1.00 m; pass interval 141-180 deg for 0.9 m, 148-180 deg for 1.0 m, so 150 deg has only 0.048 m / -2 deg margin on 1.0 m",
+  "height transitions terrace <-> side shed <-> check-table standing area: 0.000 m (single 17x13x0.4 earth box, top y=0.400; only walking levels 0/0.133/0.267/0.400 in 119k grid cells); only transition on route is the existing 3-riser stair (0.1333 x 3, tread 0.34, width 3.0, foot y=0 z=7.52); no new transition geometry needed",
+  "unguarded 0.4 m platform edge drop: W 13.35, E 13.35, S 14.0 (excl. stair), N 17.0 m; at 150 deg the 1.05 m side corridor runs along the south drop",
+  "LOD2 has no check table (38 islands vs 2777 in LOD0), so check-table approach can only be proved on LOD0/1",
+  "registry conflict: LY-037 write zone top y=1.5 m but door leaves reach y=2.85 m; a geometric B037-leaf-state-150deg would leave the zone",
+  "port wuku-B:forecourt-side:ground local/world are null; proposed local (0, 0.000, 7.52) x -1.5..1.5 (stair foot), distinct from LY-036 outer-arrival road end at z=10; city C ground 0.20/0.21 vs B stair foot y=0 -> placement offset owned by installer",
+  "without ground B stair foot is void (29200 void cells), the whole route can only be checked from the top tread until LY-036 delivers",
+  "leaf bottom coplanar with floor (0 mm swing clearance) -> any motion would scrape: another geometric reason not to export animation",
+  "verified OK, not gaps: 0 leaf intrusions into 46 static boxes over 0-180 deg (injected post caught: 115 samples at 150); door lintel clearance 2.40 m, under shed slab 2.55 m, eaves 3.238 m; check table legs and shed posts coplanar-supported on y=0.4; grid sweep rerun identical"
+ ],
+ "reuseCandidate": "部分复用，不能判复用完成。B037-transitions 不需要新几何：B v2.2（e5de60b6/5e1cc6b9/e5c87306）里台前、侧棚和点验台站位在同一个土方台面上（y=0.400），实测高差 0.000 m；台阶已有 3 级，踢面 0.1333 m。门叶在 150.1° 时，台前侧路的连续净宽为 1.048 m，格网最宽路径为 1.00 m；0–180° 全程不侵入任何静态件。但 150° 兼容接口还没有：门叶没有独立节点，只有卡片里的一段文字，其他角度的限制和禁占区也没有落成机读件。所以这个席位要交一份旁注契约和一套 QA，不交新的建筑几何。",
+ "touches": [
+  "read-only reference: wuku-B-LOD0/1/2.glb by SHA (static_earth platform box top y=0.4, stair boxes z 6.5..7.52, static_timber leaf tri ranges, side-shed posts/slab, check table)",
+  "new component B037-leaf-state-150deg (sidecar JSON: SHAs, tri ranges, hinges, 150 deg, allowed 141/148-180 deg intervals, 0-140 deg swept keep-out polygon) - no B re-export",
+  "component B037-transitions: evidence-only (0.000 m), no geometry expected; any geometry must stay in LY-037:write:001 [[-6.5,0,-6.5],[10.5,1.5,7.52]]",
+  "port wuku-B:forecourt-side:ground (producer LY-037, consumer LY-039) at local z=7.52, x -1.5..1.5, y=0",
+  "seam wuku-B:outer-arrival:ground@v1::LY-036->LY-037 (LY-036 ground under the stair foot, ring zone LY-036:write:004 z 7.52..10.52)",
+  "QA-only route volume stair foot -> terrace z 4.61..6.5 -> side shed south mouth x 5.62..8.38 z 4.75 -> check-table bands (x 5.9..8.1, z 1.5..2.5)",
+  "must stay mutually exclusive with old trial nodes C_WUKU_ENTRY22_LOD0__* and C_WUKU_ISOLATED_SUPPORT_PATCH (chunk01/02)",
+  "no touch: city-data.mjs, p-luoyang.asset.json, m-luoyang-wuku card (LY-040/LY-100), A files (LY-038), NE road (LY-039)",
+  "workpacks/LY-037/ only"
+ ],
+ "size": "S",
+ "risks": [
+  "fixed-150 margin is thin: 1.048 m vs a 1.0 m C width leaves 0.048 m (148 deg lower bound); if LY-010/LY-035 adopt a wider body or cargo envelope the declared route fails even at 150 deg",
+  "triangle-range sidecar breaks silently if B is ever re-exported; must be SHA-locked and re-verified per LOD (LOD2 ranges differ)",
+  "LY-007 may require independent moving-part nodes; that would mean re-exporting B, which collides with 'B door pivot already fixed, do not redo' and with LY-036's SHA binding - coordinator decision",
+  "write-zone height 1.5 m vs leaf height 2.85 m (LY-006 registry v1) must be resolved before any geometric leaf state",
+  "unguarded 0.4 m edge beside the 1.05 m corridor may be read as unsafe; adding a rail/edge is outside the declared route and not authorised here",
+  "stand-in ground (old patch) is not LY-036's deliverable; numbers starting from the ground must be re-run on LY-036's file",
+  "region gated by LY-003/LY-010 (label point, error null); package may remain local-only",
+  "all checks are grid/planar, C-parameter, CPU; not continuous body motion, cargo, vehicle, structure, GPU or phone"
+ ],
+ "readyAfterG": true
+}

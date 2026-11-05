@@ -1,0 +1,365 @@
+{
+ "seat": "LY-050",
+ "phase": "开工准备（G 未冻结）",
+ "labCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "labWorkingTree": "只读；git status 仅 ?? .claude/；lab/data/assets.json 工作副本 = HEAD blob 3a70eca9",
+ "cityFrame": {
+  "node": "C02-010",
+  "asset": "courtyard-A2",
+  "matrixColMajor": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   531,
+   0,
+   -818.45,
+   1
+  ],
+  "residentialIndex": 24,
+  "groundBase": "C02-010:ground-base (LY-005 frozen) local 0,0.2,0.075 / world 531,0.2,-818.375"
+ },
+ "labInputs": [
+  {
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+   "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "bytes": 447064,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:109 nearPath → city-renderer.mjs:416 仅当 focusCourtyard('C02-010')",
+   "note": "近档"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "bytes": 92220,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:89 courtyard-A2.path → city-renderer.mjs:286 loadAsset(far)；C02-010 initial:true 首屏加载",
+   "note": "远档；9 个节点共用（C02-001/010/013/015/021/024/028/031/035）"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "bytes": 2623560,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:472 path；节点 :3609 initial:false，只在 terrain 章 loadNodeIds（:4027）打开后累加",
+   "note": "C02-010 地块下唯一承托面，1,428 三角落在地块范围，顶面 y 全部 0.200"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD0.glb",
+   "sha256": "88e6f5907dc4d0b879ccee41ba830c58a706c8df9fcab0a9a0ef12ef55691776",
+   "bytes": 865760,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD0.glb",
+   "sha256": "3bde10b5f684b22bdf08591aece0deb5fecae40117293eb36168848aa8001beb",
+   "bytes": 1032792,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-service-court/files/service-A-LOD0.glb",
+   "sha256": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7",
+   "bytes": 1562188,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-household-service/files/service-enclosure-LOD0.glb",
+   "sha256": "507c6e706fff27b52f8516ee7ddf3c06ec02ee95f429b071b46e9f2a710972a1",
+   "bytes": 1056252,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb",
+   "sha256": "89e0a43923fb3868452903186b07299162fdf208a667c0d82630791b554ce726",
+   "bytes": 721404,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD1.glb",
+   "sha256": "a687954a2817cd7575719d9dc127e0c78ece8a4dc45ef4747df69e1d5e30ee8b",
+   "bytes": 316124,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD1.glb",
+   "sha256": "aa4170faa8bc3b04eef9b94c0177116c7e258e628a561ba18b5f8391d3953b2e",
+   "bytes": 370688,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-service-court/files/service-A-LOD1.glb",
+   "sha256": "366e1a26442b28a8c8a440d76399a15edab149beb68d5a46d78f9bad6ba29e17",
+   "bytes": 461416,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-household-service/files/service-enclosure-LOD1.glb",
+   "sha256": "87ed97d70caae67f17461d82d1a8342ce9a8a39ec09fe7d574fe7c64f29c0c98",
+   "bytes": 388620,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD1.glb",
+   "sha256": "a21c2893a1cc7c7d8b69bb7c61b5d85f65f17fc352d003ff67ed9da4ea502671",
+   "bytes": 262480,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
+   "sha256": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e",
+   "bytes": 1850040,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD0.glb",
+   "sha256": "b7aa02d1f75198dc72c8f54519ca5259e0f4fff175deb6b8ee2cd9afc7d32893",
+   "bytes": 866432,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD0.glb",
+   "sha256": "67bc127a37beff59ec7ad673e30c191ce6211c1039567003d8bef335926451b5",
+   "bytes": 112236,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-inner-door-components/files/single-door-LOD0.glb",
+   "sha256": "597d81ad26c8c652a93fe6db1a846ae6742f3a53858db97958f37587e0840b67",
+   "bytes": 53712,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-wall-house-court/files/wall-house-LOD0.glb",
+   "sha256": "5c20fa8b5d4599eab269d4af726695ad7aeaf4885db2c3326bd5d6d525f3b6dc",
+   "bytes": 1339740,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-residential-life/files/life-block-LOD0.glb",
+   "sha256": "270998729726baca248762bc86d4883ddf0a5c8de4ee4e226ba8aae40b66ba72",
+   "bytes": 8744148,
+   "loadedInCity": false,
+   "loadedBy": "城景 *.mjs / data/*.json 中 0 处引用（独立卡片文件）",
+   "note": "卡片状态均为「待审」，未入城"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 111034,
+   "loadedInCity": true,
+   "loadedBy": "index.html:115 加载 app.mjs；app.mjs:1 import manifest from './city-data.mjs'",
+   "note": "城景清单：C02-010 节点 :2322（asset courtyard-A2，matrix [1,0,0,0,0,1,0,0,0,0,1,0,531,0,-818.45,1]，initial:true，chapter residential）；courtyard-A2 资产 :88-112；ground-south 资产 :471 / 节点 :3609（initial:false）；residential 章 :3835；terrain 章 :4027"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "bytes": 36571,
+   "loadedInCity": true,
+   "loadedBy": "app.mjs:177 await import('./city-renderer.mjs')",
+   "note": "加载逻辑：:221 首屏只取 initial!==false；:286 loadAsset；:309-322 excludeNodes 必须全部命中否则报错；:412 replaces 机制（当前 0 个节点使用）；:416 近档只给被聚焦的那一个节点；:595 focusChapter 累加 loadNodeIds；:616 focusCourtyard"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "bytes": 14563,
+   "loadedInCity": true,
+   "loadedBy": "index.html:115 <script type=module src=app.mjs>",
+   "note": "app.mjs:78-80 用 chapter==='residential' 的节点顺序给「第 N 院」编号（C02-010 = 第 24 院）；:25/:297 文案写死「44 座」"
+  },
+  {
+   "path": "docs/cities/luoyang/index.html",
+   "sha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "bytes": 16108,
+   "loadedInCity": true,
+   "loadedBy": "城景入口",
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "bytes": 24215,
+   "loadedInCity": false,
+   "loadedBy": "项目卡，城景运行时不读",
+   "note": "院内备食关系/庖厨炉灶等条目状态；LY-100 才能改"
+  },
+  {
+   "path": "docs/cities/luoyang/data/c02v/layout.json",
+   "sha256": "7528f0c8dbdae41cece61295b198751db954a0a757a5a252f9ba15666c8f2fb2",
+   "bytes": 81479,
+   "loadedInCity": false,
+   "loadedBy": "当前入口不读；只有 v1/west-layer.mjs（存档）引用",
+   "note": "C02-010 localRoutes gate_to_main / yard_to_side（layout 坐标 (x,y) → GLB 坐标 (x,-z)）"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/instances-calt.json",
+   "sha256": "c830b4e37090da5e070156b7f6199f36c5d0191c339f5a9399f0becded50ff85",
+   "bytes": 23726,
+   "loadedInCity": false,
+   "loadedBy": "sourceContract 字段引用，运行时不读",
+   "note": "C02-010 calt 矩阵来源 :787"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/preflight-contract.json",
+   "sha256": "90dfa0774643b90d61f057aed726525cfe3e18647e897d3c90eb64fa79426d6b",
+   "bytes": 7002,
+   "loadedInCity": false,
+   "loadedBy": "sourceContract 字段引用，运行时不读",
+   "note": "原型 source_sha256"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "bytes": 1391,
+   "loadedInCity": false,
+   "loadedBy": "sourceContract 字段引用，运行时不读",
+   "note": "地面原子合同"
+  }
+ ],
+ "workpackInputs": [
+  {
+   "path": "workpacks/LY-006/registry/zones.json",
+   "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+   "loadedInCity": false,
+   "note": "S-COURT 场地与 041-049 写入区（court:C02-010 坐标）",
+   "frozen": null
+  },
+  {
+   "path": "workpacks/LY-006/registry/ownership-by-seat.csv",
+   "sha256": "b1600336f758e8f4ae9887b7e3b36ecd5723863efd4728c530091fa72ba1a89b",
+   "loadedInCity": false,
+   "note": "LY-050 = S-COURT 场地负责人，拥有城景节点 C02-010 与 6 张卡",
+   "frozen": null
+  },
+  {
+   "path": "workpacks/LY-006/registry/seats.json",
+   "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+   "loadedInCity": false,
+   "note": "LY-050 seat 记录：consumes 3 个端口，produces 无",
+   "frozen": null
+  },
+  {
+   "path": "workpacks/LY-006/registry/ports.json",
+   "sha256": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+   "loadedInCity": false,
+   "note": "C02-010:ground-base / gate-boundary / drip-outlet / service-opening",
+   "frozen": null
+  },
+  {
+   "path": "workpacks/LY-002/tables/evidence-ledger.json",
+   "sha256": "237a4811acad3d7f6733d4c5c95a64df0b2c67adf48b2682264eb0f0c8512b77",
+   "loadedInCity": false,
+   "note": "E-H01 住宅=未知+类比；X07/X12/X24 禁用",
+   "frozen": null
+  },
+  {
+   "path": "workpacks/LY-001/qa/city-data.dump.json",
+   "sha256": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98",
+   "loadedInCity": false,
+   "note": "LY-001 快照对照",
+   "frozen": null
+  },
+  {
+   "path": "workpacks/LY-041/prep/prep-status.json",
+   "sha256": "598064f9e3c6d6af3346a72f78f401cec8dfc0a7eb519e4de246af372d154700",
+   "loadedInCity": false,
+   "note": "选院候选 C02-010（未冻结）",
+   "frozen": false
+  },
+  {
+   "path": "workpacks/LY-043/prep/prep-status.json",
+   "sha256": "bc8cc06b98cf8a6b809cfad3c06de322c415ab4882247a5891cce96e917493e2",
+   "loadedInCity": false,
+   "note": "端接无缺口",
+   "frozen": false
+  },
+  {
+   "path": "workpacks/LY-044/prep/prep-status.json",
+   "sha256": "511245712ad2a71bb9cf9e1704fbea38b47211e6b24abede6084e7fd3adcd191",
+   "loadedInCity": false,
+   "note": "灶未入城、W2 不能原样用",
+   "frozen": false
+  },
+  {
+   "path": "workpacks/LY-046/prep/prep-status.json",
+   "sha256": "2a87698ef35a09b979738a2b28111dabe25eac934928e39e50354b2dea25f27e",
+   "loadedInCity": false,
+   "note": "排水试片需求",
+   "frozen": false
+  },
+  {
+   "path": "workpacks/LY-048/prep/prep-status.json",
+   "sha256": "58923a390476e202e335e800f934044fcdaa672afa8ef09a158bdd1a96b09815",
+   "loadedInCity": false,
+   "note": "围界只有一个前门、无关闭态",
+   "frozen": false
+  },
+  {
+   "path": "workpacks/TASKPOOL.md",
+   "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+   "loadedInCity": false,
+   "note": "任务池 LY-050 节",
+   "frozen": null
+  },
+  {
+   "path": "workpacks/taskboard.json",
+   "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+   "loadedInCity": false,
+   "note": "任务板",
+   "frozen": null
+  }
+ ],
+ "native": {
+  "status": "缺",
+  "detail": "A2 原型、灶 A/B、圈厕 A、低墙生活分区、作业棚的 .blend / 源 ZIP 均不在仓库（git ls-files 无对应 .blend/.zip）。LY-050 是复用装配，只做节点级组合与矩阵，可以「从 GLB 重建」，不需要改网格；不得冒称找回原件。"
+ },
+ "prepOutputs": {
+  "out/city-dump.json": "1f335585bf56171f09bdf06ba65d28848a9e6c71c79bcc0b4491eeb904db6f66",
+  "out/fingerprint-bce3211.json": "5e8ed5a8f1809c149a429c6895c7ed91a5972d7756d01fed3785106c59643e64",
+  "out/selftest-fingerprint.json": "d4dabfad162ed6a0710c37d4fc97c55b4154544ae61886cb4d066d1e6325f2bb",
+  "out/measure-ly050.json": "48e6f9e0a11f9314c3231774db29ccf0174d611940e5fac6fba7ca2264782750",
+  "out/probe-routes.json": "0083bea8d270bf172818364ebb074fd5cb7fd0143c9db97b2f9a9306ab4cbc5e",
+  "dump_city.mjs": "8a8d9ac52df11b1537f57870fb1a20479daeea82781964fe43c04f8197a780a4",
+  "glbmini.py": "a5329e2090481d351a75616ec6aaf57094266a9cc7e32cd1b8faf93f7f4a8fcd",
+  "measure_ly050.py": "d808f43041241ced3ac0a1f216e3565efee185ae03f7a1c986e545df20f51132",
+  "probe_routes.py": "abfb19845c67a2f03fcb288471c03fd289a09174a3e5edc6a1b8e7721800757b",
+  "fingerprint.py": "826bbd34d9aae45061f2f7f451622da313d085125445f2f8085fc7a18816ade8"
+ }
+}

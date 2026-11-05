@@ -1,0 +1,60 @@
+{
+ "seat": "LY-031",
+ "inputsFound": [
+  "docs/model-library/updates/m-storage-functional/files/granary-A-LOD0.glb 2eee3146 (A本体，资产卡专用，未入城)",
+  "docs/model-library/updates/m-storage-functional/files/granary-A-LOD1.glb 38884c1f",
+  "docs/model-library/updates/m-storage-functional/files/granary-A-LOD2.glb fe703ccb",
+  "docs/model-library/updates/m-storage-functional/files/granary-group-LOD0/1/2.glb 91a54eaf/3476fc8c/2111c6ea (A在组内偏移 -12,0,-6)",
+  "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb 5937211c (城景唯一加载：city-data.mjs:582-599 -> :1270 cityURL -> 节点 :3717 -> city-renderer.mjs:285-299)",
+  "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb a1265bbf / LOD2 6b2564d3 (仅独立查看)",
+  "docs/cities/luoyang/progress-assets/granary-city-v1/source.json 6cf88d6f；README.md 10322cc5",
+  "docs/model-library/m-storage-functional.asset.json 32af95ef；lab/data/assets.json 3440caa2",
+  "docs/cities/luoyang/data/west/storage-interface.json b9108967；storage-precedents.json acda86c8",
+  "docs/cities/luoyang/assets/storage/storage-group-organized.glb b8482824 (旧v1档案视图 v1/west-layer.mjs:39 加载，非现城景)",
+  "docs/model-library/updates/m-storage-functional/files/granary-B-LOD0.glb 407403ce、receiving-LOD0 9fc0b90e (只读，界定边界)",
+  "docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD0.glb 67bc127a、single-door-LOD0.glb 597d81ad (复用候选，已否决)"
+ ],
+ "inputsMissing": [
+  "太仓v2原生.blend与私密 'granary city composer v1' 生成器：用途是可编辑旧墙/门楣；本项不改旧体，门件按GLB实测端口从GLB重建即可，不阻断",
+  "operations 与入口体积诊断原报告（卡片所述A仓1.8米条带51处失败的来源）：用途是复现原通行负例；只能部分从GLB重建——prep/probe_passage.py是独立有限体块探针，不复现51这个数",
+  "G契约：LY-005端口/轴向、LY-006门洞端口ID与所有权、LY-007材质名/UV约定/三档规则、LY-008检查器、LY-002门制证据表、LY-010区域准入——契约非几何，不能从GLB重建，是硬前置"
+ ],
+ "gaps": [
+  "A区域在全部9个文件(A0-2/G0-2/C0-2)中门/框/叶/轴/止挡节点数=0；Blender射线 y=1.5 自门外z=5.0一直穿到后墙内面z=-2.8",
+  "门洞(A本地，朝+Z=南)：净宽1.50(x±0.75)、净高2.10(地板0.85至门楣底2.95)、墙厚0.20(z2.80–3.00)，三档一致(门楣底面2三角/0.30m²)，Blender复核一致",
+  "无门槛：墙底面积5.54m²=不扣门槛计算值",
+  "继承共面内面：门楣块(y2.95–3.15)两端与门侧壁面重合，每侧0.04m²、共0.08m²",
+  "门外只有0.20m余地(墙外皮z3.00至首阶z3.20)；4阶每阶高0.1625、踏面0.32、宽1.50；顶阶与地板同高0.85。外开扫掠z3.00–3.75(双扇)/3.00–4.50(单扇)会压在唯一阶道上",
+  "内开余量：内墙面到货物纵深1.75m，门侧壁到货物横向1.85m；0.75双扇扫到z2.05、1.50单扇扫到z1.30，与货物0命中",
+  "上轴/连楹可用高度0.20m(门楣底2.95至顶板底3.15)；外檐比门楣底高0.32",
+  "通行探针136站：敞口0.9/1.4条带0失败，1.8条带25站失败；虚拟闭门板0.9条带18站失败(负例有效)；虚拟双扇内开90°(叶厚0.06)0.9条带0失败、1.4条带52站失败、净宽1.38；洞内再加0.08门框后净宽1.22",
+  "UV：独立A与组合/城市几何一致(最大差1.2e-7m)，但米制投影UV平移(12,6)，新件需两套UV或等LY-007约定",
+  "城市C0按材质把A/B/收货合并为granary-group-static_*三个节点，A无独立节点；门件只能新增节点或叠加安装(LY-033)",
+  "旧体指纹基准(A区域)：LOD0 timber332/tile3468/cargo48，LOD1 332/36/48，LOD2 284/36/0；城市LOD0 timber指纹959ee325dd47df86"
+ ],
+ "reuseCandidate": "无。A区域9个文件中门件节点数为0；m-luoyang-inner-door-components双扇宽±0.65(配1.30洞口)、高2.035且只有静态90°开门、没有闭门态，与A的1.50×2.10洞口不符；武库B v2.2门叶已焊进static_timber、固定150°，不是独立动件",
+ "touches": [
+  "A墙体组件(timber，128三角，含门楣与门侧壁)：只读接触，作门框贴面",
+  "A地板顶面 y=0.85，z±3.2(timber 12三角板)：门砧坐落面，不切孔",
+  "A室内顶板底 y=3.15 与门楣内侧 z<2.80：连楹/上轴所在带",
+  "A 4阶顶踏面 z3.20–3.52 与外侧余地 z3.00–3.20：扫掠禁入区(与LY-033/LY-034共用端口)",
+  "A货物代理4箱(cargo_proxy)：扫掠净距对象",
+  "城市C0节点 granary-group-static_timber/tile/paper__cargo_proxy 与 original_city_ground_preserved：只读，不改",
+  "世界门洞 x2272.9641–2274.4641、z-3676.669–-3676.469、y0.85–2.95(端口须与LY-006一致)",
+  "写入仅限 workpacks/LY-031/(models/、qa/、preview/、source/、prep/)"
+ ],
+ "size": "M",
+ "risks": [
+  "门制(叶数、开向、门枢、尺寸)没有同期洛阳证据，只能做C方案；国博陶仓页只支持'仓门前有台阶'这一通论",
+  "内开双扇叶厚和门框会把净宽从1.50压到1.22–1.38：0.9条带仍过，1.4条带失败，须如实披露，不能削件求过",
+  "外开会侵占唯一的1.5m阶道和0.20m门外余地，必须作为负例保留",
+  "端口(LY-006)若改原点或门洞ID，需重测；独立/城市两套UV若LY-007另定约定也要重做",
+  "城市文件A无独立节点：LY-033安装时须新增节点/叠加，否则与'不改旧体'冲突",
+  "LY-032不得缩放A件套用B(B为6阶、地板1.10)；本件参数不得被默认为B可用",
+  "原入口体积诊断缺失：51处失败无法逐条复现，只能用独立探针并注明差异",
+  "继承的门楣共面内面(0.08m²)可能被门框遮住，被误报为已修",
+  "哈希口径：文本输入在Windows工作区为CRLF，与LF blob哈希不同；city-data.mjs:4521记录的storage-interface.json SHA(b9108967)对应CRLF副本而非LF blob(4f3ccae9)——转LY-001/LY-008",
+  "lab工作区lab/data/assets.json等3个文件有未提交改动(非本席位)，基线须以bce3211 LF blob为准"
+ ],
+ "readyAfterG": true
+}

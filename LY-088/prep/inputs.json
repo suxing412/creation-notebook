@@ -1,0 +1,316 @@
+{
+ "seat": "LY-088",
+ "phase": "prep refresh 2026-11-06 (G not frozen: LY-010 absent; LY-001..009 and LY-003/LY-004 delivered)",
+ "labRev": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "prepScript": {
+  "path": "D:/GitHub/creation-notebook-workpacks/LY-088/prep/scan_water.py",
+  "sha256": "a039c8452cc2a272c1fcf7dd7d3da3dcc6d6f38c01e94b7cea6393cb47371381",
+  "output": "prep/scan-water.out.json",
+  "outputSha256": "69b08aad181ff68690bb9d1e3b2028682093429e5c1e13fb5dbeb49682e24c39",
+  "rerun": "2026-11-06 rerun byte-identical to 2026-11-05 output"
+ },
+ "shaNote": "blobSha256 = git show bce3211:<path> bytes (LF, what the site serves and what v1/evidence-view.mjs pins). worktreeSha256 = local CRLF checkout bytes. They differ for every text file; GLBs are identical. Recomputable by prep/scan_water.py -> prep/scan-water.out.json.",
+ "inputs": [
+  {
+   "id": "evidence-geometry",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/data/evidence/evidence-geometry.json",
+   "blobSha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+   "worktreeSha256": "662562fa87cffc9de43b2c23564f1ab63fba8c01f2345891f255cb202bee2233",
+   "role": "existing water entries: feature ancient_water_corridors_B_unplaced (line 1668, B, geometry null, list-only-no-world-position, source huang2026_abstract), modern_luo_river_excluded (line 1724, X), source_registry.huang2026_abstract (line 1761, abstract only, no map)",
+   "loadedInCity": "current entry (index.html -> app.mjs): NO. Archive entry v1/index.html default mode: YES",
+   "loaderLocation": "docs/cities/luoyang/v1/evidence-view.mjs line 28 checkedJSON(archiveURL('./data/evidence/evidence-geometry.json'),'fa8b70...') ; null-geometry entries rendered as text only (category()=='unknown', summary(): '未定位 / 未建', no camera move). Also listed in city-data.mjs provenance line 4525-4526 with the CRLF sha 662562..., which does not match the served blob."
+  },
+  {
+   "id": "stage-contract",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/data/evidence/stage-contract.json",
+   "blobSha256": "3227460643f5c8df8345ff750b128a27a8a5a497ab426ddcaa3574f0aafa705b",
+   "worktreeSha256": "6ade3f6e62c4779014e3d4005525b377db132b293a6e83f24817415c4422377c",
+   "role": "stage-01 evidence contract paired with evidence-geometry",
+   "loadedInCity": "v1 only",
+   "loaderLocation": "docs/cities/luoyang/v1/evidence-view.mjs line 28 (second checkedJSON)"
+  },
+  {
+   "id": "city-milestones",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/research/2026-11-03/city-milestones.json",
+   "blobSha256": "23b30e705ed780f676eb7fc69a8c06a08524d04dfd34021f93859a5aa370ccfd",
+   "worktreeSha256": "9d72a0a9de222a964b0a8d03e1580ea0f1897fc41a914d2f5715523e716018dd",
+   "role": "the only repo 'water phasing study': milestone 'P2研究｜道路与古水系' (line 62-64, next step = dated intake/drain topology + road-water conflict list), new_source_review 黄学超 (line 98-103, abstract only, CN/EN abstract inconsistent on city east/west), unread_targets 东阳渠鸿池陂简报 2011 (line 116-119) and 洛阳汉唐漕运水系考古调查 2016 (line 122-125)",
+   "loadedInCity": "NO (research page docs/cities/luoyang/research/2026-11-03/index.html only)",
+   "loaderLocation": "none in app.mjs / city-renderer.mjs / v1"
+  },
+  {
+   "id": "city-data",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-data.mjs",
+   "blobSha256": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "worktreeSha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "role": "shared city manifest (forbidden to write). Water appears only as limits text line 4555 '北宫新墙与古水系仍未配准，相关几何保留空缺。'; does not reference m-luoyang-palace-waterway-interface",
+   "loadedInCity": "YES (current entry)",
+   "loaderLocation": "imported by docs/cities/luoyang/app.mjs"
+  },
+  {
+   "id": "app",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/app.mjs",
+   "blobSha256": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "worktreeSha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "role": "current entry; water only as #research-content text line 312; #show-tiers / #evidence-legend toggle at line 258 is the nearest existing toggle pattern",
+   "loadedInCity": "YES",
+   "loaderLocation": "docs/cities/luoyang/index.html line 115 <script type=module src=app.mjs>"
+  },
+  {
+   "id": "project-card",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/p-luoyang.asset.json",
+   "blobSha256": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "worktreeSha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "role": "line 187-192 waterway interface entry ('流向、用途和180年在用性未定'); line 584 '北宫新墙与古水系配准资料待补'",
+   "loadedInCity": "NO (site card)",
+   "loaderLocation": "lab/tools/build_assets.py (not run)"
+  },
+  {
+   "id": "yong-city-v1-source",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/yong-city-v1/source.json",
+   "blobSha256": "325fb5caa15ee631896495c2c71b93e4b0267933c15bfc3fbd9f6be050e8f238",
+   "worktreeSha256": "a294289642c17497d7817a97e0f3f969e09604e267bfb38f5b1de091c515699c",
+   "role": "already cites 水经注·卷十六·穀水 (wikisource 四库本) for a Northern Wei gate relocation, lines 146-148; precedent for treating 水经注 as Northern Wei retrospective",
+   "loadedInCity": "source contract only",
+   "loaderLocation": "city-data.mjs provenance.sourceContracts"
+  },
+  {
+   "id": "palace-waterway-interface",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-palace-waterway-interface/",
+   "blobSha256": {
+    "asset.json": "c0f4284053039e0aa7ae871cb955a6d0cb3163b41b691edb49ef71ec94f0a836",
+    "near.glb": "79d36565d0a4c064f85065b0dc861385d55ca56b24b6b55ba4994c18831a1a0b",
+    "mid.glb": "68ec04bb8d39eda5cc7e5d93aa39b8bcb4ed86cea4a1b7bc990bc4d2ca3b716f",
+    "far.glb": "af5e8b65e892589366e7a65ae9210301c3291421b021fc487f0f1050d90a0931",
+    "inspection-near.glb": "f90094d2bd5fb376b13f6d8506bbce12cc48dd4c0f18795e0d79558fa0de1bba"
+   },
+   "role": "现宫墙水道三段 (C, unplaced). LY-088 cites it as one relation record only; geometry not touched (LY-086 owns install)",
+   "loadedInCity": "NO (LY-001: 仅模型（资产卡文件）, 0 city nodes)",
+   "loaderLocation": "none; card audit/renders at scratchpad/mq/cards/m-luoyang-palace-waterway-interface/"
+  },
+  {
+   "id": "ground-atomic-x4",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/assets/ground-atomic/{network-ground-stitched,retained,south,D08}.glb",
+   "blobSha256": {
+    "network-ground-stitched.glb": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+    "retained.glb": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+    "south.glb": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+    "D08.glb": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a"
+   },
+   "role": "baseline that must stay byte-identical (layer adds no mesh, does not change walkable ground / LY-081 network)",
+   "loadedInCity": "YES",
+   "loaderLocation": "city-data.mjs lines 432/452/472/492 (assets), sourceContract data/west/ground-atomic-contract.json (blob 7f26720bf40fc8cd7f7d0b445398d889fcc70c407f7cc7e26e4acd0eb6332367)"
+  },
+  {
+   "id": "road-plan",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/data/west/road-plan.json",
+   "blobSha256": "0bc4528cbf354a18c5a74f9bbf4574bfc0ea0ee817516736e9d15ef5dca6881a",
+   "role": "road baseline (unchanged check); road-junction-contract.json blob 4f4f133aa36fb04bb958f6730e157eabe41ddf7413e166b96277f1710a2bdbb7",
+   "loadedInCity": "contract data",
+   "loaderLocation": "city-data.mjs sourceContracts"
+  },
+  {
+   "id": "TC03-drain-courtyards",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/assets/{c02v/TC03-2-LOD0-prototype,c02v/TC03-2-LOD1-prototype,d08/TC03-LOD0-prototype,d08/TC03-LOD1-prototype}.glb",
+   "blobSha256": {
+    "c02v/TC03-2-LOD0": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+    "c02v/TC03-2-LOD1": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+    "d08/TC03-LOD0": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+    "d08/TC03-LOD1": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa"
+   },
+   "role": "the only loaded GLBs with water-like names: courtyard C_shallow_drain_floor / C_drain_stone (nodes[9]). Local courtyard drains (LY-087 domain), not river/canal. Baseline count to keep unchanged; LY-088 must not relabel them as ancient water system",
+   "loadedInCity": "YES (nodes C02-012, FROZEN-D08-NE)",
+   "loaderLocation": "city-data.mjs nodes (via LY-001 qa/city-nodes.csv)"
+  },
+  {
+   "id": "LY-002-evidence-ledger",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-002/tables/evidence-ledger.json",
+   "sha256": "237a4811acad3d7f6733d4c5c95a64df0b2c67adf48b2682264eb0f0c8512b77",
+   "role": "upstream evidence: E-H03 (水系未定位), E-P07 (鸿池 雒阳东二十里, 南园在雒水南), E-R03 (明堂 壍中无水), E-R05 (辟雍 东西南有水北无), X15 (今洛河不得当180年河道); md sha ea060db64e08645e299924e3243c566587689ac59acf35cff7638e0b190fc5de",
+   "loadedInCity": "NO",
+   "loaderLocation": "n/a (workpack)"
+  },
+  {
+   "id": "LY-002-snapshots",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-002/source/snapshots/",
+   "sha256": {
+    "hhs03.html (明帝纪, 伊洛水溢到津城门 注引续汉志; 汴渠 non-Luoyang)": "66a7e4d7de8d0e08353c414ab365d70dfbce03221b6b06fdc6722b9daf24a882",
+    "hhs09.html (灵帝纪, '秋，洛水溢')": "150f216001fd49261edc239f7c21d9c59aa73d674649081eea80143d16bf13cd",
+    "hhs118.html (郡国志一 雒阳注)": "3b91aa7f562c24b32db1848841bf3a4c79357ad83cc3f7fa8e2b68735de4d616",
+    "hhs125.html (百官志三 钩盾令 鸿池/南园; 注引汉官 '主水渠，在马巿东')": "e33c9395d1ca7640f1530d41b551c60dfd986d7acddef0370bd2baf10ec07b11"
+   },
+   "role": "GB18030 local bytes for byte-level quote checks",
+   "loadedInCity": "NO",
+   "loaderLocation": "n/a"
+  },
+  {
+   "id": "LY-001-ledger",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-001/qa/city-nodes.csv ; qa/glb-files.csv",
+   "sha256": {
+    "city-nodes.csv": "8ab19b0553faf60717759d3580ac1d173d560a832f58512d83bb478a289f27c7",
+    "glb-files.csv": "9771bf0ce16b50d70d04e6f48f01abbe9cbfe062a4e97ab72cad3b56fbe0e9ff"
+   },
+   "role": "which GLBs are loaded (66 nodes: 59 first-screen + 7 chapter). Scanned 58 GLB = 34 entered-city (27 first-screen + 7 chapter) + 20 hidden trial + 4 waterway card files",
+   "loadedInCity": "n/a",
+   "loaderLocation": "n/a"
+  },
+  {
+   "id": "LY-005-coordinate-contract",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-005/coordinate-contract.json",
+   "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+   "role": "only needed to state that the layer carries NO world coordinates (no geographic origin exists)",
+   "loadedInCity": "n/a",
+   "loaderLocation": "n/a"
+  },
+  {
+   "id": "taskpool",
+   "path": "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md",
+   "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+   "role": "LY-088 section lines 902-909",
+   "loadedInCity": "n/a",
+   "loaderLocation": "n/a"
+  },
+  {
+   "id": "LY-003-admission",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-003/tables/admission.json",
+   "sha256": "dd0ab8c018e714be1366cb491107ff09131e5e176b9106894a2e5b2b86e88dd3",
+   "role": "row 宫墙水道（三段接口） ids=[ancient_water_corridors_B_unplaced] status=不可落位; reason CP-08/09 text only, phase Han-Jin, 180 use unknown. Sets placement=none for every water relation",
+   "loadedInCity": "no (workpack)",
+   "loaderLocation": "n/a"
+  },
+  {
+   "id": "LY-003-control-points",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-003/tables/control-points.json",
+   "sha256": "a92fff1937d3823f0cbae622d87751f6b0fc518b0074481f0a6b8cdbefe26307",
+   "role": "CP-08 千秋门下不晚于汉代砖券水道 内宽1.2米 (news text Q10/Q11, usable_as_shared_control_point=false); CP-09 宫城西南角下汉晋大型河渠 (Q12, false)",
+   "loadedInCity": "no",
+   "loaderLocation": "n/a"
+  },
+  {
+   "id": "LY-003-brief",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-003/brief.md",
+   "sha256": "5c5e51b6f9681acb85df900d255a1ad75d3680de2d52ae14e8f232bc7006d571",
+   "role": "line 39: Q13 宫城东侧仓窖区与砌砖水渠属北魏 (forbidden as Eastern Han)",
+   "loadedInCity": "no",
+   "loaderLocation": "n/a"
+  },
+  {
+   "id": "LY-003-quote-check",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-003/qa/quote-check.json",
+   "sha256": "5e9ee23a80f40cea79c9b9acaf85d8122350a67c0e323894febe6006b4123fc0",
+   "role": "verbatim check of Q10-Q13",
+   "loadedInCity": "no",
+   "loaderLocation": "n/a"
+  },
+  {
+   "id": "LY-004-site-constraints",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-004/tables/site-constraints.json",
+   "sha256": "633c3302ff1219e8d93d2a59107eae85a6d7c077f418f7b53300f642708eb77f",
+   "role": "MT4 明堂爎(壍)中无水 (S02 汉官仪, 逐字找到); BY3 辟雍东西南有水北无; BY7/BY8 高崇文2023 p53 环水各流出180余米后折而向南/尚未显出转折闭合 (二手, 分期未核); NJ9 伽蓝记 北魏洛水距宣阳门四里 (later, not 180); P06 辟雍环水不放行",
+   "loadedInCity": "no",
+   "loaderLocation": "n/a"
+  },
+  {
+   "id": "LY-002-snapshot-hhs02",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-002/source/snapshots/hhs02.html",
+   "sha256": "96b9128099e2e44642e88cfeafd37965ead747a1ce03fe13feb15e41cd3523df",
+   "role": "GB18030 bytes contain 四面起土作爎，上作桥，爎中无水 (glyph 爎 where the ledger interpretation writes 壍) - variant map needed",
+   "loadedInCity": "no",
+   "loaderLocation": "n/a"
+  },
+  {
+   "id": "LY-006-seats",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/seats.json",
+   "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+   "role": "LY-088 role=data, site S-CITYGROUND (owner LY-090), writeZones [], ownsCityNodes [], ownsGroundPieces [], components [], produces [], consumes []",
+   "loadedInCity": "no",
+   "loaderLocation": "n/a"
+  },
+  {
+   "id": "LY-006-ownership-by-seat",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/ownership-by-seat.csv",
+   "sha256": "b1600336f758e8f4ae9887b7e3b36ecd5723863efd4728c530091fa72ba1a89b",
+   "role": "line 79 LY-088 data/world, 0 nodes, 0 objects",
+   "loadedInCity": "no",
+   "loaderLocation": "n/a"
+  },
+  {
+   "id": "LY-009-taskboard-v2",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-009/board/taskboard.v2.json",
+   "sha256": "bd2fcbbe02a1e68fe7b98cd706a86ae14f49bcb495f2088b68e002e2f818106a",
+   "role": "seat text/deps re-parsed; LY-088 deps G+002+003+004",
+   "loadedInCity": "no",
+   "loaderLocation": "n/a"
+  },
+  {
+   "id": "web-henan-qianqiu-2022",
+   "path": "https://english.henan.gov.cn/2022/06-13/2466953.html",
+   "sha256": null,
+   "role": "public news (WebFetch transcription, no local bytes): the internal one is not only 1.2 meters in width; dating Han / Wei-Jin / Northern Wei; channels of water diversion from outside to the palace and vice versa. Corroborates CP-08 text only",
+   "loadedInCity": "no",
+   "loaderLocation": "n/a"
+  }
+ ],
+ "missing": [
+  {
+   "id": "LY-010",
+   "what": "G freeze item; workpack directory absent on 2026-11-06",
+   "use": "release gate; until frozen no production",
+   "rebuildableFromGLB": false
+  },
+  {
+   "id": "黄学超2026全文/图",
+   "need": "东汉/魏/晋/北魏分期事件的现代解释；中英文摘要城东/城西矛盾",
+   "status": "abstract only; CNKI paywall; cannot rebuild from GLB"
+  },
+  {
+   "id": "《汉魏洛阳城东阳渠、鸿池陂考古勘察简报》2011",
+   "need": "东阳渠/鸿池陂考古分期",
+   "status": "unread; cannot rebuild from GLB"
+  },
+  {
+   "id": "《洛阳汉唐漕运水系考古调查》2016",
+   "need": "按年代区分河段",
+   "status": "unread; cannot rebuild from GLB"
+  },
+  {
+   "id": "2025年度报告 宫墙东汉砖砌水道原页",
+   "need": "水道三段关系条目的原始依据",
+   "status": "原发布不可读 (asset card); cannot rebuild from GLB"
+  },
+  {
+   "id": "'奏请罢渠' 原文定位",
+   "need": "TASKPOOL 点名的条目；本轮未找到出处",
+   "status": "unlocated"
+  },
+  {
+   "id": "private source packs (.blend/zip)",
+   "need": "not needed: LY-088 produces no geometry",
+   "status": "n/a"
+  },
+  {
+   "id": "local snapshots 后汉书卷22王梁传/卷35张纯传/水经注卷16穀水",
+   "need": "verbatim T2 check of 3 primary passages (only WebFetch transcription so far)",
+   "status": "not fetched; download needs coordinator authorization; cannot rebuild from GLB"
+  },
+  {
+   "id": "2011 宫城西南角发掘简报平面 (LY-003 CP-09/Q12)",
+   "need": "phase (汉/晋 not split) and existence status of 宫城西南角汉晋大型河渠 relation",
+   "status": "unread; cannot rebuild from GLB"
+  },
+  {
+   "id": "千秋门发掘原报告 (LY-003 CP-08/Q10-Q11)",
+   "need": "phase of 1.2 m brick-vault channel (news says Han, Wei-Jin and Northern Wei channels coexist)",
+   "status": "only news text; cannot rebuild from GLB"
+  }
+ ],
+ "driftCheck": {
+  "path": "D:/GitHub/creation-notebook-workpacks/LY-088/prep/scan_drift.py",
+  "sha256": "dab9387aba18e3d6cee614f4df69dd22c63824947174eebe7c01e2023e78549c",
+  "output": "prep/scan-drift.out.json",
+  "outputSha256": "cb4f9032c64cb29a9a9fbf643c7cfefd6b578e7ca3a4a711447180f52b1bbdda",
+  "base": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "new": "cad338ba683f7277aea098f45c8feb6c915a847c (origin/main, 3 commits ahead)",
+  "result": "city-data.mjs c849706b->d8933a32 and p-luoyang.asset.json 8edb06ab->f43d1496 changed; evidence-geometry, app.mjs, v1/evidence-view.mjs, city-milestones, ground-atomic network GLB, road-plan, ground contract, waterway card unchanged; 10 GLB refs added (yong road link, court layout kit, workyard), 0 new water-named, 0 river/canal-named GLB"
+ }
+}

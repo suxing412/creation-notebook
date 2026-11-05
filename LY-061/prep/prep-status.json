@@ -1,0 +1,54 @@
+{
+ "seat": "LY-061",
+ "inputsFound": [
+  "lab bce3211（工作区 HEAD；本地 main 44c66da 与 bce3211 之差只删 yong-city-v1 副本，不触本席位输入）",
+  "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD0/1/2.glb 59c8b758 / d95bd22f / 01b2017f",
+  "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0/1/2.glb 6ea89298 / 455a1215 / 108e28a5",
+  "docs/library/models/m-luoyang-palace-admission-court/m-luoyang-palace-admission-court.asset.json 7df2a184（提交字节）",
+  "docs/cities/luoyang/progress-assets/palace-admission-court/source.json 1653e115；qa/summary.json 67a3325b；qa/finite-routes.json 3b57011c；qa/route-interfaces.json 0d42d41e",
+  "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD0.glb 1ffc1c31 / guard-slice-closed-LOD0.glb 48c511c5（三档见 inputs.json）",
+  "docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD0.glb bd000b1b；m-luoyang-deyang-hall/files/deyang-A-LOD0.glb 77369980（只作净距约束）",
+  "docs/library/models/m-luoyang-earthwall-family/files/earthwall-A/B/C-LOD0.glb 3f755fcc / 04c2b143 / b8f1ab3a（复用评估：城垣尺度，否决）",
+  "docs/cities/luoyang/city-data.mjs c849706b、p-luoyang.asset.json 8edb06ab（提交字节；都没有登记候入院入城）",
+  "workpacks/LY-006/registry/zones.json 6b3595ac（LY-061:write:001..007）、seats.json a1426412、ports.json 28bcfb68（admission-court:enclosure:wall-end v1）、seams.json ca4d81f8、ownership.json ecbbbcf5",
+  "workpacks/LY-005/coordinate-contract.json b6d7fe9d（frozen-candidate；Blender (X,Y,Z)=glTF (x,-z,y)）",
+  "城景加载：候入院六份 GLB 与全部宫院原件，在 city-data.mjs、app.mjs、city-renderer.mjs、v1/* 中引用 0 处；只有 docs/model-library/inspect.mjs 详情页加载"
+ ],
+ "inputsMissing": [
+  "luoyang-palace-admission-court-v1.zip（私密源包）：native/*.blend（LOD0 932ec511）、builder d4cd1cc4、config 9de34dcc、lock 54837b14、textures、检查器（finite-routes bf82ede6 / route-interfaces ec77a791）。用途：复跑原 99 带 / 73 接口检查器，作为「原通行不退化」的同一判据。本机未找到。可以从 GLB 重建：外围是独立叠加件，不需要原 .blend；检查器用 prep/scripts 从 GLB 复建，并标注「从 GLB 重建」。",
+  "墙外支承基准：local:admission-court 平板外 1,244 个下向样点 0 命中，LY-005 elevation 只给了城市各族的 Y 值。需要 LY-005 或 LY-070 声明墙外地坪基准，或明确允许在写入区内自带垫层、其下为未定义地形。这是契约，不能从 GLB 重建。",
+  "LY-008 交付检查器（没有 status.json）、LY-009 任务锁（未冻结）、LY-010 首批方案与区域准入（目录不存在）。这是 G 门槛，不能从 GLB 重建。",
+  "LY-006 待修订：LY-062:write:003 标注错误（实为正对主门的南前口，不是 rear）；wall-end 只有 1 个端口，实际 6 个墙端；seam LY-061→LY-063 没有几何接面（两者写入区相距 5 m）"
+ ],
+ "gaps": [
+  "外围 100% 敞开：庭地平板 68×87 m（x −34…34，y −67…20，z −0.2…0），周长 310 m；1,240 个外向内水平射线样点（0.3/1.0/1.6 m）被挡 0 个",
+  "平板外没有任何支承：四边外 0.05 m 共 1,244 个下向射线样点命中 0 个（闭门 LOD0、开门 LOD0、闭门 LOD2 一致）；写入区内基脚下方在本局部帧中没有地坪",
+  "LY-006 写入区：北 72 m + 南 2×33 m + 西 30+51 m + 东 30+51 m，共 300 m，均 2 m 宽、z −0.3…6.0，内皮正好贴平板四边；三份资产的区内现有三角侵入都是 0；声明开口 3 个（西 y −16…−10、东 y −16…−10、南 x ±3），每个 6 m，共 18 m",
+  "南门线直线漏洞（闭门，三档一致）：两翼 x ±6.85…±34 各 27.15 m，加值守单元内 6 条 0.95–1.05 m 直通口（合 6.2 m），共 60.5 m；开门再加中央 2.7 m。按 LY-006 分区，南墙在 y −69…−67，门卫前沿在 y −61，中间 6 m 前庭带向两翼敞开，所以这 60.5 m 变成院内路径；闭门加南口开时，组合仍可从两翼进入",
+  "南口内向射线：x ±1…±2 在 11.58–12.55 m 处命中门卫闸口和门叶，x ±2.5…±3 直通值守单元直通口。LY-062:write:003 正对主门，registry 把它标为 rear work opening 是错的",
+  "v1 设想的南接头（值守单元外侧面 x=±7.0，y −61…−55）不在任何 LY-061 写入区内，作废；门卫瓦檐 ±7.367（底 3.05 m）和侧廊瓦檐 ±29.809 距写入区分别为 26.6 m 和 4.19 m，不再约束墙高",
+  "基脚最多比平板底再低 0.1 m（写入区下限 −0.3，平板底 −0.2），不能伸到平板下面；墙厚 ≤2 m、墙高 ≤6 m；已有夯土墙身家族厚 8–14 m，不能原样复用",
+  "原 99 条通行带中只有 outer_ground_join（x ±0.4，y −66.5…−65）伸到平板边 2 m 以内，正对南口 ±3 m，南墙不会截断它"
+ ],
+ "reuseCandidate": "无。资产库没有宫院围墙件；m-luoyang-earthwall-family 是城垣尺度（A 16×8 m、厚 14 m；C 高 6 m、厚 8 m），超出 LY-006 给的 2 m 宽写入区，也不允许缩放；m-luoyang-palace-waterway-interface 是涵洞接口，不是墙身；候入院 source.json 明写 'No enclosing palace wall'。只能复用夯土材质语义（LY_P01 earth）。",
+ "touches": [
+  "新建外围件：只落在 LY-061:write:001..007（local:admission-court，glTF 盒：N [-36,-0.3,-22]-[36,6,-20]；S-W [-36,-0.3,67]-[-3,6,69]；S-E [3,..,67]-[36,..,69]；W-N [-36,..,-20]-[-34,..,10]；W-S [-36,..,16]-[-34,..,67]；E-N/E-S 同上取 x 34..36）",
+  "new_court_support_C（庭地平板）：四边侧面 x=±34、y=−67、y=20，z −0.2…0，只作共面接触，不改",
+  "gp:admission-court:guard__guard-slice-ground-earth（registry 归 LY-061 所有）：本次不改，T1 校验不变",
+  "registry 中 21 个 keep 源对象（hall__deyang-A-static_*、west/east_gallery__sidehall-A-static_*、guard__guard-slice-*、new_court_support_C）：保持不变，由本席位 T1 证明",
+  "端口 admission-court:enclosure:wall-end（producer LY-061，consumers LY-062 / LY-063）：交付时填 6 个墙端面",
+  "相邻、不得侵入：LY-062:write:001..003（三个 6 m 开口）、LY-063:write:001..004（廊端）、LY-064 local:paired-que",
+  "文件：D:/GitHub/creation-notebook-workpacks/LY-061/**（唯一写入区）；只读 docs/library/models/m-luoyang-palace-admission-court/files/*.glb、m-luoyang-palace-guard、-sidehall、-deyang-hall 的 files/*.glb；workpacks/LY-005、LY-006 契约"
+ ],
+ "size": "M",
+ "risks": [
+  "约 180 年候入院是否有独立围墙属于未知；墙线来自 LY-006 的 C 分区，厚度、高度、基脚、转角都是 C；《后汉书·百官二》只支持受控准入，不支持围墙形制",
+  "按 LY-006 分区，南墙在门卫外 6 m，门卫变成内检查点；闭门加南口开时，组合仍可从两翼进入。若 LY-062 或制作人原本期望「门卫即外围」，分区要返工（需在 x ±7…±34、y −61 一带加写入区）",
+  "墙外没有支承基准：基脚下在本局部帧中是空的，必须等 LY-005 或 LY-070 声明，否则只能写「垫层以下为未定义 C 地形」，不能称已接地",
+  "LY-006 registry 有三处需修订（南口标注、wall-end 粒度、LY-063 接缝）。端口值在 v2 之前填写，可能要重做",
+  "私密检查器缺失，原通行不退化只能用从 GLB 重建的等价脚本复验，不能宣称用了原检查器；射线和 BVH 不等于实体碰撞穷尽，BFS 栅格不等于连续人体运动",
+  "LY-005 仍是 frozen-candidate；若 G 冻结时改用 f28d650 或 44c66da 为基线，需按 T1 重算全部输入 SHA（预期不变）",
+  "文本类文件存在 CRLF 与提交字节不一致（例：assets.json 工作区字节两次复核不同），QA 绑定 SHA 必须用提交字节"
+ ],
+ "readyAfterG": true
+}

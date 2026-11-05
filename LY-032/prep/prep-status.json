@@ -1,0 +1,61 @@
+{
+ "seat": "LY-032",
+ "inputsFound": [
+  "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb 5937211c（城景已加载：city-data.mjs:582-599 / :1270，city-renderer.mjs:285-299）",
+  "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb a1265bbf（未加载，独立备选）",
+  "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD2.glb 6b2564d3（未加载，独立备选）",
+  "docs/cities/luoyang/progress-assets/granary-city-v1/source.json（城景运行件的来源契约）",
+  "docs/model-library/updates/m-storage-functional/files/granary-B-LOD0/1/2.glb 407403ce/3ce46eee/0735a9f2（v2 B 分件，B 局部坐标）",
+  "docs/model-library/updates/m-storage-functional/files/granary-group-LOD0.glb 91a54eaf（v2 整组，组局部坐标）",
+  "docs/cities/luoyang/assets/storage/storage-group-organized.glb b8482824（旧 v1 分节点件，只在 v1 证据页 west-layer.mjs:39 加载；回退件）",
+  "docs/model-library/assets/warehouse-B-organized-local.glb bba89b1e（origin-v1 历史件）",
+  "docs/cities/luoyang/data/west/storage-interface.json b9108967、storage-precedents.json acda86c8",
+  "docs/model-library/m-storage-functional.asset.json 32af95ef（卡片注：B 仓在 1.8 m 条带上 77 处失败）",
+  "modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json 里的 granary_C_with_ground 分块 156999f1（只在归档，未加载，未解包核对）",
+  "lab main bce3211f818ee5a8bef1773539da70695ba37b17"
+ ],
+ "inputsMissing": [
+  "granary v2 / 城景合成器 v1 的私密原生源与生成、验证源（.blend / 源 ZIP）：原本用来编辑 B 门间和复跑原检查。可以从 GLB 重建：B 仓体是轴对齐方块，已精确实测；门件是新增几何，不需要重写仓体。交付时须标「从GLB重建」",
+  "0.9 m / 1.8 m 条带探针的定义，以及任务池所列「operations 和入口体积诊断」文件，仓库里没找到：原本用来确定条带的精确 x 范围，并复算 A51/B77 失败。只能从 GLB 部分重建：已假定条带以台阶为中心（x 2297.2641–2298.1641），计数和私源结果不会逐位相同",
+  "city-C032-entry-LOD0.blend（1e8c4d2c…）：归档分块的母版。只有当 G 要求门件也配那一层时才需要",
+  "LY-031 的 A 门件：只有当 B 决定沿用 A 件时，才需要拿它做兼容对比；目前还没做出来",
+  "G 开工包（LY-001/002/005/006/007/008/009/010）：快照、坐标与端口契约、所有权、容差、验收格式",
+  "东汉洛阳仓门门制的原始证据：没有。UMMA 陶仓页面 403，没打开，不算已看过；门制只能做 C 方案"
+ ],
+ "gaps": [
+  "B 门洞完全没有启闭件，没有门叶、枢、砧、止挡、门框。洞口实测：净宽 1.500（x 2296.9641–2298.4641）× 净高 2.100（地板 1.100 到门楣下皮 3.200）× 墙厚 0.200（z -3676.969 / -3677.169）。城景 LOD0/1/2、v2 B LOD0/1/2、v2 整组、旧 v1 共 7 处结果一致",
+  "0.9 m 条带两侧各只有 0.300 m 余量。开启后「门叶厚 + 枢偏心 + 止挡」必须 ≤ 0.300；加门框还要再扣",
+  "45° 半开时门叶伸进 0.9 条带 0.230 m（测试夹具：150 根射线挡住 90 根，关门阻挡率 0.69），半开只能当阻挡态或负例",
+  "6 阶：每阶升 0.150、踏面 0.320、宽 1.500，与门洞同宽；门外平台 0.200 与阶顶 1.10 齐平，没有门槛。加门槛就会在 0.9 路径上新增阶差",
+  "1.8 m 条带在 z≈-3676.759 处一次跌落 0.900（失败保留，卡片记 B 77 处）",
+  "门楣厚 0.40（3.20–3.60），只有洞口宽，没有上枢或连楹的锚固件；A 的门楣是 0.20，上部附件不能照搬",
+  "内开扫掠区（半径 0.75）2850 个采样 0 处阻挡；外开 2850 个采样也是 0 阻挡，但门叶会悬在第 5、6 阶上方",
+  "城景运行件把 A、B、收货区合成一个 timber 网格（844 三角，B 区 392），没法按节点替换 B 门，门件只能新增节点。LOD2 的 timber 是 FLAT 材质（332 三角）",
+  "A 与 B 洞口尺寸相同（1.500×2.100×0.200），A 件只能平移 (+24.000, +0.250, −0.500) 套用，不能缩放；还必须拿 LY-031 的实际 GLB 复验",
+  "同一个 B 洞口有三份基底：城景件、v1 页面件、归档分块，需要由 G 指定门件配哪一份并保证互斥"
+ ],
+ "reuseCandidate": "无。三种基底（城景 granary-city-LOD0/1/2、v2 granary-B-LOD0/1/2、旧 storage-group-organized）里都只有墙洞、门楣和台阶，节点名里没有任何门叶或门枢；没有可复用的合格门件",
+ "touches": [
+  "granary-city-LOD0/1/2.glb：B 门间，城景绝对坐标盒 x 2291.0–2304.5、z -3682.6 至 -3674.7（只读基底，门件作为新增节点或 overlay）",
+  "源节点 granary-group-static_timber（B 区 392/392/332 三角）、granary-group-static_tile（B 区 4508/36/36）",
+  "旧 v1 节点 B_frontwall_-1、B_frontwall_1、B_door_lintel、B_floor、B_step_0..5（对接面，只读）",
+  "地坪 original_city_ground_preserved（台阶脚 y=0.20，只读）",
+  "granary-B-LOD0/1/2.glb（B 局部坐标偏移 −(2297.7141, 0, −3679.469)）",
+  "storage-main 节点 / city-data.mjs:582-599、:3716-3740（只读，合并归 LY-100）",
+  "与 LY-031（A 门件）、LY-033（两仓联合装配）、LY-034（收货前场）相邻；0.9 条带与 1.8 压力边界由 LY-033 共享",
+  "workpacks/LY-032/ 下：models/、qa/、assembly.json、delivery-manifest.json（待开工）"
+ ],
+ "size": "M",
+ "risks": [
+  "「三档」有歧义：可以是 LOD0/1/2，也可以是关/半开/全开。本草案两者都交，需 G 确认",
+  "0.9 条带的精确位置来自私源，现假定居中。如果偏心，0.300 余量会变",
+  "门制（单双扇、内外开、门槛、枢砧）没有东汉洛阳证据，只能做 C 方案，防止写成复原",
+  "运行件网格已合并，门件不能和 timber 合批，否则 T02 基线失效，也无法撤回",
+  "三份基底可能各自演化，门件只声明一份，要防叠载",
+  "用 A 件平移套 B 时，上枢和连楹会因门楣厚度不同（0.20 对 0.40）而不兼容",
+  "外开会让门叶悬在阶上；局部通行通过不等于人身安全或结构安全",
+  "Blender 导入 + 表面 BVH 只是表面检查，不能称实体碰撞已查完",
+  "lab 工作区 lab/data/assets.json、glb-cache.json、report.json 有未提交改动（不是本席位所为），G 快照应以 HEAD bce3211 为准；assets.json 的 HEAD 版本 SHA 是 53d86312…"
+ ],
+ "readyAfterG": true
+}

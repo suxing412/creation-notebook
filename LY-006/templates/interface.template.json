@@ -1,0 +1,43 @@
+{
+ "schema": "LY-006-interface-v1",
+ "seat": "LY-0__",
+ "registryVersion": 1,
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "_howTo": [
+  "1. Copy this file to workpacks/<seat>/interface.json. Look up your row in LY-006/registry/seats.json: writeZones, cutZones, ownsSourceObjects, ownsGroundPieces, ownsCuts, ownsCards, components, produces, consumes.",
+  "2. claims: list only objects the registry gives to YOUR seat (registry/ownership.json). Everything else is read-only; if you need it, set portsConsumed[].ack = rejected-needs-coordinator and stop.",
+  "3. zonesUsed: for each registry zoneId you write geometry into, give the AABBs (zone frame) of what you actually wrote; they must lie inside the zone box.",
+  "4. portsProduced: one record per registry port whose producer is your seat, same portId and version, measured local + world (world = frame placement * local; world stays null while the frame is unplaced) and measuredFrom with the file SHA256.",
+  "5. portsConsumed: every registry port you consume, same version, ack + measured residual against your geometry.",
+  "6. New ground pieces are named gp:<seat>:<name> and sit inside one of your write zones. Cuts in city ground are composed only by LY-090.",
+  "7. Moving parts stay separate nodes (never merged into static batches) and name the mount/opening port that carries their axis or state (hostPortId).",
+  "8. Run: python -I LY-006/source/validate_interface.py LY-006/registry <your interface.json> <your seat dir>. Changing any port value or version is a registry v2 request to LY-006 / the coordinator, never a local edit."
+ ],
+ "frames": ["<frame id from registry/zones.json frames>"],
+ "claims": {
+  "sourceObjects": [{"objectId": "<catalog>:<object>", "mode": "modify|replace|keep|hide"}],
+  "cityNodes": [{"nodeId": "<city node id>", "action": "keep|replace-proposal|hide-proposal|exclude-nodes-proposal|add-sibling-proposal"}],
+  "groundPieces": ["gp:..."],
+  "cuts": ["cut:<seat>:<name>"],
+  "cardFields": [{"field": "<cardId>#notes.限制与待解决", "proposal": "<text proposed to the card owner; LY-100 writes the public card>"}],
+  "components": [{"id": "<component id from registry>", "class": "fixed|moving|state-variant|removable|fixed-closed|fixed-open", "hostPortId": "<mount/opening port for moving parts>", "states": ["open", "closed"], "dof": "hinge about +Y at <port>, 0..90 deg"}]
+ },
+ "zonesUsed": [{"zoneId": "<LY-0__:write:001>", "boxesWritten": [[[0, 0, 0], [0, 0, 0]]]}],
+ "portsProduced": [{
+  "portId": "<registry port id>", "version": 1, "kind": "ground|threshold|floor|wall-end|road-end|mount|opening|cut|drain",
+  "producer": "LY-0__", "steward": "LY-0__", "consumers": [],
+  "frames": {"local": "<frame>", "world": "luoyang-local-schematic-v01"},
+  "local": {"position": [0, 0, 0], "up": [0, 1, 0], "forward": [0, 0, 1]},
+  "world": null,
+  "nodeMatrixColumnMajor": null,
+  "measuredFrom": {"file": "<path in your package>", "sha256": "<sha256>", "method": "<how measured, recomputable>"},
+  "elevationClass": "C-engineering",
+  "tolerance_m": {"position": 0.005, "elevation": 0.002}
+ }],
+ "portsConsumed": [{"portId": "<registry port id>", "version": 1, "ack": "accepted", "measuredResidual_m": null, "note": ""}],
+ "newGroundPieces": [{"id": "gp:LY-0__:<name>", "zoneId": "<LY-0__:write:001>", "file": "models/<file>.glb", "sha256": "<sha256>"}],
+ "install": {"order": ["<step>"], "replaces": [], "hides": [], "rollback": ["<step that restores the exact input state>"], "exclusiveWith": []},
+ "evidence": {"原始考古/原文": [], "异地异期类比": [], "C工程设计": [], "未知": []},
+ "notClaimed": ["模型能读取 ≠ 局部通行通过 ≠ 已入城 ≠ 真实结构安全 ≠ 历史复原成立"],
+ "files": [{"path": "<relative path>", "sha256": "<sha256>", "bytes": 0}]
+}

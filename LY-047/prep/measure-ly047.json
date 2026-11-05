@@ -1,0 +1,4770 @@
+{
+ "tool": "measure_ly047.py",
+ "lab": "D:/GitHub/creation-notebook-lab",
+ "params": {
+  "FLOOR": 0.2,
+  "CELL": 0.05,
+  "BAND": [
+   0.45,
+   2.1
+  ],
+  "R_WALK": 0.3,
+  "R_LADEN": 0.45,
+  "REACH": 0.7,
+  "OP_DEPTH": 0.9,
+  "note": "C engineering envelopes; discrete grid; vertical rays; not solid collision or continuous motion"
+ },
+ "sha256": {
+  "cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+  "cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+  "cities/luoyang/assets/c02v/B2-LOD0-prototype.glb": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+  "cities/luoyang/assets/c02v/B2-LOD1-prototype.glb": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+  "cities/luoyang/assets/c02v/A2-LOD0-prototype.glb": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+  "cities/luoyang/assets/c02v/A2-LOD1-prototype.glb": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+  "library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb": "89e0a43923fb3868452903186b07299162fdf208a667c0d82630791b554ce726",
+  "library/models/m-luoyang-workyard-shed/files/workshed-LOD1.glb": "a21c2893a1cc7c7d8b69bb7c61b5d85f65f17fc352d003ff67ed9da4ea502671",
+  "library/models/m-luoyang-workyard-shed/files/workshed-LOD2.glb": "7c054863f1088ddc8709592dfbfe70e2a581dc8ef91d4741c02aa65a0d0a614e",
+  "cities/luoyang/assets/ground-atomic/south.glb": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+  "cities/luoyang/assets/ground-atomic/retained.glb": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+  "cities/luoyang/assets/ground-atomic/network-ground-stitched.glb": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+  "cities/luoyang/assets/ground-atomic/D08.glb": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+  "cities/luoyang/city-data.mjs": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+  "model-library/updates/m-courtyard-family/files/baseline.glb": "9be877245f0e7a3fd652a8f2df57bd8c4d868a93fdaf826636d4751dcae8aa62",
+  "model-library/updates/m-courtyard-family/files/north.glb": "b119cbef6bc18e539b8e2037d9fa65c0688993ec05c63dc8826b5611ae7bdfb6",
+  "model-library/updates/m-courtyard-family/files/south.glb": "c2db32398ee405565b27941f1a2bddef450275ca49d768f74ecab5946352a0d3"
+ },
+ "inplace": {
+  "B-LOD0": {
+   "variant": "B",
+   "shed_box": [
+    -7.2,
+    -4.4,
+    -0.4,
+    5.4
+   ],
+   "post_on_plinth_gap_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "store_house": {
+    "plinth_min": [
+     3.8,
+     0.2,
+     -7.8
+    ],
+    "plinth_max": [
+     7.4,
+     0.65,
+     1.2
+    ],
+    "floor_y": 0.65,
+    "rise_above_yard_m": 0.45,
+    "steps": {
+     "min": [
+      2.72,
+      0.2,
+      -4.3
+     ],
+     "max": [
+      3.8,
+      0.65,
+      -2.3
+     ],
+     "levels_y": [
+      0.2,
+      0.35,
+      0.5,
+      0.65
+     ],
+     "risers_m": [
+      0.15,
+      0.15,
+      0.15
+     ],
+     "treads_m": [
+      0.36,
+      0.36,
+      0.36
+     ],
+     "width_m": 2.0,
+     "bottom_on_floor": true
+    },
+    "door_frames": [
+     {
+      "min": [
+       3.93,
+       0.65,
+       -4.2
+      ],
+      "max": [
+       4.03,
+       2.95,
+       -2.4
+      ],
+      "z_levels": [
+       -4.2,
+       -4.13,
+       -2.47,
+       -2.4
+      ],
+      "y_levels": [
+       0.65,
+       2.89,
+       2.95
+      ],
+      "clear_width_m": 1.66,
+      "clear_height_m": 2.24
+     }
+    ],
+    "interior_reachable_m2_walk": 18.76,
+    "yard_connected_walk": true,
+    "interior_reachable_m2_laden": 15.52,
+    "yard_connected_laden": true,
+    "interior_plinth_area_m2": 32.4,
+    "interior_headroom_m": 3.6,
+    "plinth_bottom_on_floor": true
+   },
+   "beam_underside_above_floor_m": 2.15,
+   "glb": "cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb",
+   "elements": [
+    {
+     "node": "architecture_C_roof_rhythm_not_glaze_copy",
+     "kind": "shed_roof_part",
+     "tris": 1844,
+     "min": [
+      -7.7,
+      2.65,
+      -0.9
+     ],
+     "max": [
+      -3.9,
+      3.57,
+      5.9
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -7.09,
+      0.28,
+      -0.29
+     ],
+     "max": [
+      -6.91,
+      2.35,
+      -0.11
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -7.09,
+      0.28,
+      5.11
+     ],
+     "max": [
+      -6.91,
+      2.35,
+      5.29
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -7.09,
+      2.35,
+      -0.3
+     ],
+     "max": [
+      -6.91,
+      2.65,
+      5.3
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -6.1,
+      0.2,
+      1.7
+     ],
+     "max": [
+      -6.0,
+      0.9,
+      1.8
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -6.1,
+      0.2,
+      3.2
+     ],
+     "max": [
+      -6.0,
+      0.9,
+      3.3
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -6.575,
+      0.2,
+      0.3
+     ],
+     "max": [
+      -5.925,
+      0.74,
+      1.1
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -6.575,
+      0.2,
+      3.9
+     ],
+     "max": [
+      -5.925,
+      0.74,
+      4.7
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -5.6,
+      0.2,
+      1.7
+     ],
+     "max": [
+      -5.5,
+      0.9,
+      1.8
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -5.6,
+      0.2,
+      3.2
+     ],
+     "max": [
+      -5.5,
+      0.9,
+      3.3
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "bench_top",
+     "tris": 12,
+     "min": [
+      -6.2,
+      0.9,
+      1.6
+     ],
+     "max": [
+      -5.4,
+      0.98,
+      3.4
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.69,
+      0.28,
+      -0.29
+     ],
+     "max": [
+      -4.51,
+      2.35,
+      -0.11
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.69,
+      0.28,
+      5.11
+     ],
+     "max": [
+      -4.51,
+      2.35,
+      5.29
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -4.69,
+      2.35,
+      -0.3
+     ],
+     "max": [
+      -4.51,
+      2.65,
+      5.3
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -7.14,
+      0.2,
+      -0.34
+     ],
+     "max": [
+      -6.86,
+      0.28,
+      -0.06
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -7.14,
+      0.2,
+      5.06
+     ],
+     "max": [
+      -6.86,
+      0.28,
+      5.34
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.74,
+      0.2,
+      -0.34
+     ],
+     "max": [
+      -4.46,
+      0.28,
+      -0.06
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.74,
+      0.2,
+      5.06
+     ],
+     "max": [
+      -4.46,
+      0.28,
+      5.34
+     ]
+    }
+   ],
+   "element_counts": {
+    "beam": 2,
+    "bench_leg": 4,
+    "bench_top": 1,
+    "post": 4,
+    "post_plinth": 4,
+    "shed_roof_part": 1,
+    "storage_bin": 2
+   },
+   "shed_tris_total": 2072,
+   "host_node_tris": {
+    "architecture_C_whitebox_earth_wall": 648,
+    "architecture_C_roof_rhythm_not_glaze_copy": 7896,
+    "architecture_C_plain_timber": 540,
+    "architecture_C_floor_plinth": 132
+   },
+   "separately_loadable": false,
+   "separately_loadable_reason": "shed posts/bins/bench are merged into the court-wide nodes architecture_C_plain_timber / floor_plinth / roof; no node of its own",
+   "storage_access": [
+    {
+     "kind": "storage_bin",
+     "min": [
+      -6.575,
+      0.2,
+      0.3
+     ],
+     "max": [
+      -5.925,
+      0.74,
+      1.1
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.35,
+      "+x": 0.35,
+      "-z": 0.325,
+      "+z": 0.325
+     },
+     "reach_laden_m": {
+      "-x": 0.5,
+      "+x": 0.5,
+      "-z": 0.475,
+      "+z": 4.125
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 288,
+       "obstructed_cells_band": 0
+      },
+      "+x": {
+       "cells": 288,
+       "obstructed_cells_band": 0
+      },
+      "-z": {
+       "cells": 234,
+       "obstructed_cells_band": 0
+      },
+      "+z": {
+       "cells": 234,
+       "obstructed_cells_band": 48
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    },
+    {
+     "kind": "storage_bin",
+     "min": [
+      -6.575,
+      0.2,
+      3.9
+     ],
+     "max": [
+      -5.925,
+      0.74,
+      4.7
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.35,
+      "+x": 0.35,
+      "-z": 0.325,
+      "+z": 0.375
+     },
+     "reach_laden_m": {
+      "-x": 0.5,
+      "+x": 0.5,
+      "-z": 4.075,
+      "+z": 0.525
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 288,
+       "obstructed_cells_band": 0
+      },
+      "+x": {
+       "cells": 288,
+       "obstructed_cells_band": 0
+      },
+      "-z": {
+       "cells": 234,
+       "obstructed_cells_band": 48
+      },
+      "+z": {
+       "cells": 234,
+       "obstructed_cells_band": 13
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    },
+    {
+     "kind": "bench_top",
+     "min": [
+      -6.2,
+      0.9,
+      1.6
+     ],
+     "max": [
+      -5.4,
+      0.98,
+      3.4
+     ],
+     "height_above_floor": 0.78,
+     "reach_walk_m": {
+      "-x": 0.375,
+      "+x": 0.325,
+      "-z": 0.325,
+      "+z": 0.325
+     },
+     "reach_laden_m": {
+      "-x": 0.525,
+      "+x": 0.475,
+      "-z": 0.475,
+      "+z": 0.475
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 648,
+       "obstructed_cells_band": 36
+      },
+      "+x": {
+       "cells": 648,
+       "obstructed_cells_band": 0
+      },
+      "-z": {
+       "cells": 288,
+       "obstructed_cells_band": 48
+      },
+      "+z": {
+       "cells": 288,
+       "obstructed_cells_band": 48
+      }
+     },
+     "clear_height_above_top_m": 1.67
+    }
+   ],
+   "shed_clear_height_m": 2.45,
+   "bottom_vertices": 40,
+   "bottom_y_min_max": [
+    0.2,
+    0.2
+   ],
+   "bottom_vs_loading_yard_top_m": {
+    "on_yard": 0,
+    "off_yard": 40,
+    "gap_values": []
+   },
+   "gate_seed_free_walk": true,
+   "gate_seed_free_laden": true,
+   "reachable_area_m2_walk": 301.15,
+   "reachable_area_m2_laden": 273.71
+  },
+  "B-LOD1": {
+   "variant": "B",
+   "shed_box": [
+    -7.2,
+    -4.4,
+    -0.4,
+    5.4
+   ],
+   "post_on_plinth_gap_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "store_house": {
+    "plinth_min": [
+     3.8,
+     0.2,
+     -7.8
+    ],
+    "plinth_max": [
+     7.4,
+     0.65,
+     1.2
+    ],
+    "floor_y": 0.65,
+    "rise_above_yard_m": 0.45,
+    "steps": {
+     "min": [
+      2.72,
+      0.2,
+      -4.3
+     ],
+     "max": [
+      3.8,
+      0.65,
+      -2.3
+     ],
+     "levels_y": [
+      0.2,
+      0.35,
+      0.5,
+      0.65
+     ],
+     "risers_m": [
+      0.15,
+      0.15,
+      0.15
+     ],
+     "treads_m": [
+      0.36,
+      0.36,
+      0.36
+     ],
+     "width_m": 2.0,
+     "bottom_on_floor": true
+    },
+    "door_frames": [
+     {
+      "min": [
+       3.93,
+       0.65,
+       -4.2
+      ],
+      "max": [
+       4.03,
+       2.95,
+       -2.4
+      ],
+      "z_levels": [
+       -4.2,
+       -4.13,
+       -2.47,
+       -2.4
+      ],
+      "y_levels": [
+       0.65,
+       2.89,
+       2.95
+      ],
+      "clear_width_m": 1.66,
+      "clear_height_m": 2.24
+     }
+    ],
+    "interior_reachable_m2_walk": 18.76,
+    "yard_connected_walk": true,
+    "interior_reachable_m2_laden": 15.52,
+    "yard_connected_laden": true,
+    "interior_plinth_area_m2": 32.4,
+    "interior_headroom_m": 3.6,
+    "plinth_bottom_on_floor": true
+   },
+   "beam_underside_above_floor_m": 2.15,
+   "glb": "cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb",
+   "elements": [
+    {
+     "node": "architecture_C_roof_rhythm_not_glaze_copy",
+     "kind": "shed_roof_part",
+     "tris": 20,
+     "min": [
+      -7.7,
+      2.65,
+      -0.9
+     ],
+     "max": [
+      -3.9,
+      3.57,
+      5.9
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -7.09,
+      0.28,
+      -0.29
+     ],
+     "max": [
+      -6.91,
+      2.35,
+      -0.11
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -7.09,
+      0.28,
+      5.11
+     ],
+     "max": [
+      -6.91,
+      2.35,
+      5.29
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -7.09,
+      2.35,
+      -0.3
+     ],
+     "max": [
+      -6.91,
+      2.65,
+      5.3
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -6.1,
+      0.2,
+      1.7
+     ],
+     "max": [
+      -6.0,
+      0.9,
+      1.8
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -6.1,
+      0.2,
+      3.2
+     ],
+     "max": [
+      -6.0,
+      0.9,
+      3.3
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -6.575,
+      0.2,
+      0.3
+     ],
+     "max": [
+      -5.925,
+      0.74,
+      1.1
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -6.575,
+      0.2,
+      3.9
+     ],
+     "max": [
+      -5.925,
+      0.74,
+      4.7
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -5.6,
+      0.2,
+      1.7
+     ],
+     "max": [
+      -5.5,
+      0.9,
+      1.8
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -5.6,
+      0.2,
+      3.2
+     ],
+     "max": [
+      -5.5,
+      0.9,
+      3.3
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "bench_top",
+     "tris": 12,
+     "min": [
+      -6.2,
+      0.9,
+      1.6
+     ],
+     "max": [
+      -5.4,
+      0.98,
+      3.4
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.69,
+      0.28,
+      -0.29
+     ],
+     "max": [
+      -4.51,
+      2.35,
+      -0.11
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.69,
+      0.28,
+      5.11
+     ],
+     "max": [
+      -4.51,
+      2.35,
+      5.29
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -4.69,
+      2.35,
+      -0.3
+     ],
+     "max": [
+      -4.51,
+      2.65,
+      5.3
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -7.14,
+      0.2,
+      -0.34
+     ],
+     "max": [
+      -6.86,
+      0.28,
+      -0.06
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -7.14,
+      0.2,
+      5.06
+     ],
+     "max": [
+      -6.86,
+      0.28,
+      5.34
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.74,
+      0.2,
+      -0.34
+     ],
+     "max": [
+      -4.46,
+      0.28,
+      -0.06
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.74,
+      0.2,
+      5.06
+     ],
+     "max": [
+      -4.46,
+      0.28,
+      5.34
+     ]
+    }
+   ],
+   "element_counts": {
+    "beam": 2,
+    "bench_leg": 4,
+    "bench_top": 1,
+    "post": 4,
+    "post_plinth": 4,
+    "shed_roof_part": 1,
+    "storage_bin": 2
+   },
+   "shed_tris_total": 248,
+   "host_node_tris": {
+    "architecture_C_whitebox_earth_wall": 648,
+    "architecture_C_roof_rhythm_not_glaze_copy": 120,
+    "architecture_C_plain_timber": 540,
+    "architecture_C_floor_plinth": 132
+   },
+   "separately_loadable": false,
+   "separately_loadable_reason": "shed posts/bins/bench are merged into the court-wide nodes architecture_C_plain_timber / floor_plinth / roof; no node of its own",
+   "storage_access": [
+    {
+     "kind": "storage_bin",
+     "min": [
+      -6.575,
+      0.2,
+      0.3
+     ],
+     "max": [
+      -5.925,
+      0.74,
+      1.1
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.35,
+      "+x": 0.35,
+      "-z": 0.325,
+      "+z": 0.325
+     },
+     "reach_laden_m": {
+      "-x": 0.5,
+      "+x": 0.5,
+      "-z": 0.475,
+      "+z": 4.125
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 288,
+       "obstructed_cells_band": 0
+      },
+      "+x": {
+       "cells": 288,
+       "obstructed_cells_band": 0
+      },
+      "-z": {
+       "cells": 234,
+       "obstructed_cells_band": 0
+      },
+      "+z": {
+       "cells": 234,
+       "obstructed_cells_band": 48
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    },
+    {
+     "kind": "storage_bin",
+     "min": [
+      -6.575,
+      0.2,
+      3.9
+     ],
+     "max": [
+      -5.925,
+      0.74,
+      4.7
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.35,
+      "+x": 0.35,
+      "-z": 0.325,
+      "+z": 0.375
+     },
+     "reach_laden_m": {
+      "-x": 0.5,
+      "+x": 0.5,
+      "-z": 4.075,
+      "+z": 0.525
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 288,
+       "obstructed_cells_band": 0
+      },
+      "+x": {
+       "cells": 288,
+       "obstructed_cells_band": 0
+      },
+      "-z": {
+       "cells": 234,
+       "obstructed_cells_band": 48
+      },
+      "+z": {
+       "cells": 234,
+       "obstructed_cells_band": 13
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    },
+    {
+     "kind": "bench_top",
+     "min": [
+      -6.2,
+      0.9,
+      1.6
+     ],
+     "max": [
+      -5.4,
+      0.98,
+      3.4
+     ],
+     "height_above_floor": 0.78,
+     "reach_walk_m": {
+      "-x": 0.375,
+      "+x": 0.325,
+      "-z": 0.325,
+      "+z": 0.325
+     },
+     "reach_laden_m": {
+      "-x": 0.525,
+      "+x": 0.475,
+      "-z": 0.475,
+      "+z": 0.475
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 648,
+       "obstructed_cells_band": 36
+      },
+      "+x": {
+       "cells": 648,
+       "obstructed_cells_band": 0
+      },
+      "-z": {
+       "cells": 288,
+       "obstructed_cells_band": 48
+      },
+      "+z": {
+       "cells": 288,
+       "obstructed_cells_band": 48
+      }
+     },
+     "clear_height_above_top_m": 1.67
+    }
+   ],
+   "shed_clear_height_m": 2.45,
+   "bottom_vertices": 40,
+   "bottom_y_min_max": [
+    0.2,
+    0.2
+   ],
+   "bottom_vs_loading_yard_top_m": {
+    "on_yard": 0,
+    "off_yard": 40,
+    "gap_values": []
+   },
+   "gate_seed_free_walk": true,
+   "gate_seed_free_laden": true,
+   "reachable_area_m2_walk": 301.15,
+   "reachable_area_m2_laden": 273.71
+  },
+  "B2-LOD0": {
+   "variant": "B2",
+   "shed_box": [
+    -4.75,
+    -0.25,
+    0.85,
+    4.15
+   ],
+   "post_on_plinth_gap_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "store_house": {
+    "plinth_min": [
+     3.8,
+     0.2,
+     -8.6
+    ],
+    "plinth_max": [
+     7.4,
+     0.65,
+     -1.4
+    ],
+    "floor_y": 0.65,
+    "rise_above_yard_m": 0.45,
+    "steps": {
+     "min": [
+      2.72,
+      0.2,
+      -6.0
+     ],
+     "max": [
+      3.8,
+      0.65,
+      -4.0
+     ],
+     "levels_y": [
+      0.2,
+      0.35,
+      0.5,
+      0.65
+     ],
+     "risers_m": [
+      0.15,
+      0.15,
+      0.15
+     ],
+     "treads_m": [
+      0.36,
+      0.36,
+      0.36
+     ],
+     "width_m": 2.0,
+     "bottom_on_floor": true
+    },
+    "door_frames": [
+     {
+      "min": [
+       3.93,
+       0.65,
+       -5.9
+      ],
+      "max": [
+       4.03,
+       2.95,
+       -4.1
+      ],
+      "z_levels": [
+       -5.9,
+       -5.83,
+       -4.17,
+       -4.1
+      ],
+      "y_levels": [
+       0.65,
+       2.89,
+       2.95
+      ],
+      "clear_width_m": 1.66,
+      "clear_height_m": 2.24
+     }
+    ],
+    "interior_reachable_m2_walk": 14.44,
+    "yard_connected_walk": true,
+    "interior_reachable_m2_laden": 11.75,
+    "yard_connected_laden": true,
+    "interior_plinth_area_m2": 25.92,
+    "interior_headroom_m": 3.6,
+    "plinth_bottom_on_floor": true
+   },
+   "beam_underside_above_floor_m": 2.15,
+   "glb": "cities/luoyang/assets/c02v/B2-LOD0-prototype.glb",
+   "elements": [
+    {
+     "node": "architecture_C_roof_rhythm_not_glaze_copy.001",
+     "kind": "shed_roof_part",
+     "tris": 1460,
+     "min": [
+      -5.2,
+      2.65,
+      0.3
+     ],
+     "max": [
+      0.2,
+      3.57,
+      4.7
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -4.7,
+      0.2,
+      1.725
+     ],
+     "max": [
+      -3.9,
+      0.74,
+      2.375
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -4.6,
+      2.35,
+      0.91
+     ],
+     "max": [
+      -0.4,
+      2.65,
+      1.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -4.6,
+      2.35,
+      3.91
+     ],
+     "max": [
+      -0.4,
+      2.65,
+      4.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.59,
+      0.28,
+      0.91
+     ],
+     "max": [
+      -4.41,
+      2.35,
+      1.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.59,
+      0.28,
+      3.91
+     ],
+     "max": [
+      -4.41,
+      2.35,
+      4.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_top",
+     "tris": 12,
+     "min": [
+      -3.4,
+      0.9,
+      2.1
+     ],
+     "max": [
+      -1.6,
+      0.98,
+      2.9
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -3.3,
+      0.2,
+      2.2
+     ],
+     "max": [
+      -3.2,
+      0.9,
+      2.3
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -3.3,
+      0.2,
+      2.7
+     ],
+     "max": [
+      -3.2,
+      0.9,
+      2.8
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -1.8,
+      0.2,
+      2.2
+     ],
+     "max": [
+      -1.7,
+      0.9,
+      2.3
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -1.8,
+      0.2,
+      2.7
+     ],
+     "max": [
+      -1.7,
+      0.9,
+      2.8
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -1.1,
+      0.2,
+      1.725
+     ],
+     "max": [
+      -0.3,
+      0.74,
+      2.375
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -0.59,
+      0.28,
+      0.91
+     ],
+     "max": [
+      -0.41,
+      2.35,
+      1.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -0.59,
+      0.28,
+      3.91
+     ],
+     "max": [
+      -0.41,
+      2.35,
+      4.09
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.64,
+      0.2,
+      0.86
+     ],
+     "max": [
+      -4.36,
+      0.28,
+      1.14
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.64,
+      0.2,
+      3.86
+     ],
+     "max": [
+      -4.36,
+      0.28,
+      4.14
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -0.64,
+      0.2,
+      0.86
+     ],
+     "max": [
+      -0.36,
+      0.28,
+      1.14
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -0.64,
+      0.2,
+      3.86
+     ],
+     "max": [
+      -0.36,
+      0.28,
+      4.14
+     ]
+    }
+   ],
+   "element_counts": {
+    "beam": 2,
+    "bench_leg": 4,
+    "bench_top": 1,
+    "post": 4,
+    "post_plinth": 4,
+    "shed_roof_part": 1,
+    "storage_bin": 2
+   },
+   "shed_tris_total": 1688,
+   "host_node_tris": {
+    "architecture_C_whitebox_earth_wall.001": 648,
+    "architecture_C_roof_rhythm_not_glaze_copy.001": 7032,
+    "architecture_C_plain_timber.001": 540,
+    "architecture_C_floor_plinth.001": 132
+   },
+   "separately_loadable": false,
+   "separately_loadable_reason": "shed posts/bins/bench are merged into the court-wide nodes architecture_C_plain_timber / floor_plinth / roof; no node of its own",
+   "storage_access": [
+    {
+     "kind": "storage_bin",
+     "min": [
+      -4.7,
+      0.2,
+      1.725
+     ],
+     "max": [
+      -3.9,
+      0.74,
+      2.375
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.375,
+      "+x": 0.325,
+      "-z": 0.35,
+      "+z": 0.35
+     },
+     "reach_laden_m": {
+      "-x": 0.525,
+      "+x": 4.125,
+      "-z": 0.5,
+      "+z": 0.5
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 234,
+       "obstructed_cells_band": 13
+      },
+      "+x": {
+       "cells": 234,
+       "obstructed_cells_band": 40
+      },
+      "-z": {
+       "cells": 288,
+       "obstructed_cells_band": 12
+      },
+      "+z": {
+       "cells": 272,
+       "obstructed_cells_band": 0
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    },
+    {
+     "kind": "bench_top",
+     "min": [
+      -3.4,
+      0.9,
+      2.1
+     ],
+     "max": [
+      -1.6,
+      0.98,
+      2.9
+     ],
+     "height_above_floor": 0.78,
+     "reach_walk_m": {
+      "-x": 0.325,
+      "+x": 0.375,
+      "-z": 0.325,
+      "+z": 0.325
+     },
+     "reach_laden_m": {
+      "-x": 0.475,
+      "+x": 0.525,
+      "-z": 0.475,
+      "+z": 0.475
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 288,
+       "obstructed_cells_band": 48
+      },
+      "+x": {
+       "cells": 288,
+       "obstructed_cells_band": 64
+      },
+      "-z": {
+       "cells": 648,
+       "obstructed_cells_band": 0
+      },
+      "+z": {
+       "cells": 648,
+       "obstructed_cells_band": 0
+      }
+     },
+     "clear_height_above_top_m": 1.67
+    },
+    {
+     "kind": "storage_bin",
+     "min": [
+      -1.1,
+      0.2,
+      1.725
+     ],
+     "max": [
+      -0.3,
+      0.74,
+      2.375
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.325,
+      "+x": 0.375,
+      "-z": 0.35,
+      "+z": 0.35
+     },
+     "reach_laden_m": {
+      "-x": 4.125,
+      "+x": 0.525,
+      "-z": 0.5,
+      "+z": 0.5
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 234,
+       "obstructed_cells_band": 45
+      },
+      "+x": {
+       "cells": 234,
+       "obstructed_cells_band": 13
+      },
+      "-z": {
+       "cells": 288,
+       "obstructed_cells_band": 12
+      },
+      "+z": {
+       "cells": 272,
+       "obstructed_cells_band": 0
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    }
+   ],
+   "shed_clear_height_m": 2.45,
+   "bottom_vertices": 40,
+   "bottom_y_min_max": [
+    0.2,
+    0.2
+   ],
+   "bottom_vs_loading_yard_top_m": {
+    "on_yard": 0,
+    "off_yard": 40,
+    "gap_values": []
+   },
+   "gate_seed_free_walk": true,
+   "gate_seed_free_laden": true,
+   "reachable_area_m2_walk": 308.94,
+   "reachable_area_m2_laden": 282.09
+  },
+  "B2-LOD1": {
+   "variant": "B2",
+   "shed_box": [
+    -4.75,
+    -0.25,
+    0.85,
+    4.15
+   ],
+   "post_on_plinth_gap_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "store_house": {
+    "plinth_min": [
+     3.8,
+     0.2,
+     -8.6
+    ],
+    "plinth_max": [
+     7.4,
+     0.65,
+     -1.4
+    ],
+    "floor_y": 0.65,
+    "rise_above_yard_m": 0.45,
+    "steps": {
+     "min": [
+      2.72,
+      0.2,
+      -6.0
+     ],
+     "max": [
+      3.8,
+      0.65,
+      -4.0
+     ],
+     "levels_y": [
+      0.2,
+      0.35,
+      0.5,
+      0.65
+     ],
+     "risers_m": [
+      0.15,
+      0.15,
+      0.15
+     ],
+     "treads_m": [
+      0.36,
+      0.36,
+      0.36
+     ],
+     "width_m": 2.0,
+     "bottom_on_floor": true
+    },
+    "door_frames": [
+     {
+      "min": [
+       3.93,
+       0.65,
+       -5.9
+      ],
+      "max": [
+       4.03,
+       2.95,
+       -4.1
+      ],
+      "z_levels": [
+       -5.9,
+       -5.83,
+       -4.17,
+       -4.1
+      ],
+      "y_levels": [
+       0.65,
+       2.89,
+       2.95
+      ],
+      "clear_width_m": 1.66,
+      "clear_height_m": 2.24
+     }
+    ],
+    "interior_reachable_m2_walk": 14.44,
+    "yard_connected_walk": true,
+    "interior_reachable_m2_laden": 11.75,
+    "yard_connected_laden": true,
+    "interior_plinth_area_m2": 25.92,
+    "interior_headroom_m": 3.6,
+    "plinth_bottom_on_floor": true
+   },
+   "beam_underside_above_floor_m": 2.15,
+   "glb": "cities/luoyang/assets/c02v/B2-LOD1-prototype.glb",
+   "elements": [
+    {
+     "node": "architecture_C_roof_rhythm_not_glaze_copy.001",
+     "kind": "shed_roof_part",
+     "tris": 20,
+     "min": [
+      -5.2,
+      2.65,
+      0.3
+     ],
+     "max": [
+      0.2,
+      3.57,
+      4.7
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -4.7,
+      0.2,
+      1.725
+     ],
+     "max": [
+      -3.9,
+      0.74,
+      2.375
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -4.6,
+      2.35,
+      0.91
+     ],
+     "max": [
+      -0.4,
+      2.65,
+      1.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -4.6,
+      2.35,
+      3.91
+     ],
+     "max": [
+      -0.4,
+      2.65,
+      4.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.59,
+      0.28,
+      0.91
+     ],
+     "max": [
+      -4.41,
+      2.35,
+      1.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.59,
+      0.28,
+      3.91
+     ],
+     "max": [
+      -4.41,
+      2.35,
+      4.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_top",
+     "tris": 12,
+     "min": [
+      -3.4,
+      0.9,
+      2.1
+     ],
+     "max": [
+      -1.6,
+      0.98,
+      2.9
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -3.3,
+      0.2,
+      2.2
+     ],
+     "max": [
+      -3.2,
+      0.9,
+      2.3
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -3.3,
+      0.2,
+      2.7
+     ],
+     "max": [
+      -3.2,
+      0.9,
+      2.8
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -1.8,
+      0.2,
+      2.2
+     ],
+     "max": [
+      -1.7,
+      0.9,
+      2.3
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -1.8,
+      0.2,
+      2.7
+     ],
+     "max": [
+      -1.7,
+      0.9,
+      2.8
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -1.1,
+      0.2,
+      1.725
+     ],
+     "max": [
+      -0.3,
+      0.74,
+      2.375
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -0.59,
+      0.28,
+      0.91
+     ],
+     "max": [
+      -0.41,
+      2.35,
+      1.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -0.59,
+      0.28,
+      3.91
+     ],
+     "max": [
+      -0.41,
+      2.35,
+      4.09
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.64,
+      0.2,
+      0.86
+     ],
+     "max": [
+      -4.36,
+      0.28,
+      1.14
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.64,
+      0.2,
+      3.86
+     ],
+     "max": [
+      -4.36,
+      0.28,
+      4.14
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -0.64,
+      0.2,
+      0.86
+     ],
+     "max": [
+      -0.36,
+      0.28,
+      1.14
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -0.64,
+      0.2,
+      3.86
+     ],
+     "max": [
+      -0.36,
+      0.28,
+      4.14
+     ]
+    }
+   ],
+   "element_counts": {
+    "beam": 2,
+    "bench_leg": 4,
+    "bench_top": 1,
+    "post": 4,
+    "post_plinth": 4,
+    "shed_roof_part": 1,
+    "storage_bin": 2
+   },
+   "shed_tris_total": 248,
+   "host_node_tris": {
+    "architecture_C_whitebox_earth_wall.001": 648,
+    "architecture_C_roof_rhythm_not_glaze_copy.001": 120,
+    "architecture_C_plain_timber.001": 540,
+    "architecture_C_floor_plinth.001": 132
+   },
+   "separately_loadable": false,
+   "separately_loadable_reason": "shed posts/bins/bench are merged into the court-wide nodes architecture_C_plain_timber / floor_plinth / roof; no node of its own",
+   "storage_access": [
+    {
+     "kind": "storage_bin",
+     "min": [
+      -4.7,
+      0.2,
+      1.725
+     ],
+     "max": [
+      -3.9,
+      0.74,
+      2.375
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.375,
+      "+x": 0.325,
+      "-z": 0.35,
+      "+z": 0.35
+     },
+     "reach_laden_m": {
+      "-x": 0.525,
+      "+x": 4.125,
+      "-z": 0.5,
+      "+z": 0.5
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 234,
+       "obstructed_cells_band": 13
+      },
+      "+x": {
+       "cells": 234,
+       "obstructed_cells_band": 40
+      },
+      "-z": {
+       "cells": 288,
+       "obstructed_cells_band": 12
+      },
+      "+z": {
+       "cells": 272,
+       "obstructed_cells_band": 0
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    },
+    {
+     "kind": "bench_top",
+     "min": [
+      -3.4,
+      0.9,
+      2.1
+     ],
+     "max": [
+      -1.6,
+      0.98,
+      2.9
+     ],
+     "height_above_floor": 0.78,
+     "reach_walk_m": {
+      "-x": 0.325,
+      "+x": 0.375,
+      "-z": 0.325,
+      "+z": 0.325
+     },
+     "reach_laden_m": {
+      "-x": 0.475,
+      "+x": 0.525,
+      "-z": 0.475,
+      "+z": 0.475
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 288,
+       "obstructed_cells_band": 48
+      },
+      "+x": {
+       "cells": 288,
+       "obstructed_cells_band": 64
+      },
+      "-z": {
+       "cells": 648,
+       "obstructed_cells_band": 0
+      },
+      "+z": {
+       "cells": 648,
+       "obstructed_cells_band": 0
+      }
+     },
+     "clear_height_above_top_m": 1.67
+    },
+    {
+     "kind": "storage_bin",
+     "min": [
+      -1.1,
+      0.2,
+      1.725
+     ],
+     "max": [
+      -0.3,
+      0.74,
+      2.375
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.325,
+      "+x": 0.375,
+      "-z": 0.35,
+      "+z": 0.35
+     },
+     "reach_laden_m": {
+      "-x": 4.125,
+      "+x": 0.525,
+      "-z": 0.5,
+      "+z": 0.5
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 234,
+       "obstructed_cells_band": 45
+      },
+      "+x": {
+       "cells": 234,
+       "obstructed_cells_band": 13
+      },
+      "-z": {
+       "cells": 288,
+       "obstructed_cells_band": 12
+      },
+      "+z": {
+       "cells": 272,
+       "obstructed_cells_band": 0
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    }
+   ],
+   "shed_clear_height_m": 2.45,
+   "bottom_vertices": 40,
+   "bottom_y_min_max": [
+    0.2,
+    0.2
+   ],
+   "bottom_vs_loading_yard_top_m": {
+    "on_yard": 0,
+    "off_yard": 40,
+    "gap_values": []
+   },
+   "gate_seed_free_walk": true,
+   "gate_seed_free_laden": true,
+   "reachable_area_m2_walk": 308.94,
+   "reachable_area_m2_laden": 282.09
+  },
+  "B2-baseline": {
+   "variant": "B2",
+   "shed_box": [
+    -4.75,
+    -0.25,
+    0.85,
+    4.15
+   ],
+   "post_on_plinth_gap_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "store_house": {
+    "plinth_min": [
+     3.8,
+     0.2,
+     -8.6
+    ],
+    "plinth_max": [
+     7.4,
+     0.65,
+     -1.4
+    ],
+    "floor_y": 0.65,
+    "rise_above_yard_m": 0.45,
+    "steps": {
+     "min": [
+      2.72,
+      0.2,
+      -6.0
+     ],
+     "max": [
+      3.8,
+      0.65,
+      -4.0
+     ],
+     "levels_y": [
+      0.2,
+      0.35,
+      0.5,
+      0.65
+     ],
+     "risers_m": [
+      0.15,
+      0.15,
+      0.15
+     ],
+     "treads_m": [
+      0.36,
+      0.36,
+      0.36
+     ],
+     "width_m": 2.0,
+     "bottom_on_floor": true
+    },
+    "door_frames": [
+     {
+      "min": [
+       3.93,
+       0.65,
+       -5.9
+      ],
+      "max": [
+       4.03,
+       2.95,
+       -4.1
+      ],
+      "z_levels": [
+       -5.9,
+       -5.83,
+       -4.17,
+       -4.1
+      ],
+      "y_levels": [
+       0.65,
+       2.89,
+       2.95
+      ],
+      "clear_width_m": 1.66,
+      "clear_height_m": 2.24
+     }
+    ],
+    "interior_reachable_m2_walk": 14.44,
+    "yard_connected_walk": true,
+    "interior_reachable_m2_laden": 11.74,
+    "yard_connected_laden": true,
+    "interior_plinth_area_m2": 25.92,
+    "interior_headroom_m": 3.6,
+    "plinth_bottom_on_floor": true
+   },
+   "beam_underside_above_floor_m": 2.15,
+   "glb": "model-library/updates/m-courtyard-family/files/baseline.glb",
+   "elements": [
+    {
+     "node": "architecture_C_roof_rhythm_not_glaze_copy.001",
+     "kind": "shed_roof_part",
+     "tris": 1460,
+     "min": [
+      -5.2,
+      2.65,
+      0.3
+     ],
+     "max": [
+      0.2,
+      3.57,
+      4.7
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -4.7,
+      0.2,
+      1.725
+     ],
+     "max": [
+      -3.9,
+      0.74,
+      2.375
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -4.6,
+      2.35,
+      0.91
+     ],
+     "max": [
+      -0.4,
+      2.65,
+      1.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -4.6,
+      2.35,
+      3.91
+     ],
+     "max": [
+      -0.4,
+      2.65,
+      4.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.59,
+      0.28,
+      0.91
+     ],
+     "max": [
+      -4.41,
+      2.35,
+      1.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.59,
+      0.28,
+      3.91
+     ],
+     "max": [
+      -4.41,
+      2.35,
+      4.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_top",
+     "tris": 12,
+     "min": [
+      -3.4,
+      0.9,
+      2.1
+     ],
+     "max": [
+      -1.6,
+      0.98,
+      2.9
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -3.3,
+      0.2,
+      2.2
+     ],
+     "max": [
+      -3.2,
+      0.9,
+      2.3
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -3.3,
+      0.2,
+      2.7
+     ],
+     "max": [
+      -3.2,
+      0.9,
+      2.8
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -1.8,
+      0.2,
+      2.2
+     ],
+     "max": [
+      -1.7,
+      0.9,
+      2.3
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -1.8,
+      0.2,
+      2.7
+     ],
+     "max": [
+      -1.7,
+      0.9,
+      2.8
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -1.1,
+      0.2,
+      1.725
+     ],
+     "max": [
+      -0.3,
+      0.74,
+      2.375
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -0.59,
+      0.28,
+      0.91
+     ],
+     "max": [
+      -0.41,
+      2.35,
+      1.09
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -0.59,
+      0.28,
+      3.91
+     ],
+     "max": [
+      -0.41,
+      2.35,
+      4.09
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.64,
+      0.2,
+      0.86
+     ],
+     "max": [
+      -4.36,
+      0.28,
+      1.14
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.64,
+      0.2,
+      3.86
+     ],
+     "max": [
+      -4.36,
+      0.28,
+      4.14
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -0.64,
+      0.2,
+      0.86
+     ],
+     "max": [
+      -0.36,
+      0.28,
+      1.14
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -0.64,
+      0.2,
+      3.86
+     ],
+     "max": [
+      -0.36,
+      0.28,
+      4.14
+     ]
+    }
+   ],
+   "element_counts": {
+    "beam": 2,
+    "bench_leg": 4,
+    "bench_top": 1,
+    "post": 4,
+    "post_plinth": 4,
+    "shed_roof_part": 1,
+    "storage_bin": 2
+   },
+   "shed_tris_total": 1688,
+   "host_node_tris": {
+    "architecture_C_whitebox_earth_wall.001": 648,
+    "architecture_C_roof_rhythm_not_glaze_copy.001": 7032,
+    "architecture_C_plain_timber.001": 540,
+    "architecture_C_floor_plinth.001": 132
+   },
+   "separately_loadable": false,
+   "separately_loadable_reason": "shed posts/bins/bench are merged into the court-wide nodes architecture_C_plain_timber / floor_plinth / roof; no node of its own",
+   "storage_access": [
+    {
+     "kind": "storage_bin",
+     "min": [
+      -4.7,
+      0.2,
+      1.725
+     ],
+     "max": [
+      -3.9,
+      0.74,
+      2.375
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.325,
+      "+x": 0.375,
+      "-z": 0.35,
+      "+z": 0.35
+     },
+     "reach_laden_m": {
+      "-x": 0.475,
+      "+x": 4.125,
+      "-z": 0.5,
+      "+z": 0.5
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 234,
+       "obstructed_cells_band": 0
+      },
+      "+x": {
+       "cells": 234,
+       "obstructed_cells_band": 53
+      },
+      "-z": {
+       "cells": 288,
+       "obstructed_cells_band": 12
+      },
+      "+z": {
+       "cells": 272,
+       "obstructed_cells_band": 0
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    },
+    {
+     "kind": "bench_top",
+     "min": [
+      -3.4,
+      0.9,
+      2.1
+     ],
+     "max": [
+      -1.6,
+      0.98,
+      2.9
+     ],
+     "height_above_floor": 0.78,
+     "reach_walk_m": {
+      "-x": 0.325,
+      "+x": 0.375,
+      "-z": 0.325,
+      "+z": 0.375
+     },
+     "reach_laden_m": {
+      "-x": 0.475,
+      "+x": 0.525,
+      "-z": 0.475,
+      "+z": 0.525
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 288,
+       "obstructed_cells_band": 54
+      },
+      "+x": {
+       "cells": 288,
+       "obstructed_cells_band": 64
+      },
+      "-z": {
+       "cells": 648,
+       "obstructed_cells_band": 0
+      },
+      "+z": {
+       "cells": 648,
+       "obstructed_cells_band": 36
+      }
+     },
+     "clear_height_above_top_m": 1.67
+    },
+    {
+     "kind": "storage_bin",
+     "min": [
+      -1.1,
+      0.2,
+      1.725
+     ],
+     "max": [
+      -0.3,
+      0.74,
+      2.375
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.325,
+      "+x": 0.375,
+      "-z": 0.35,
+      "+z": 0.35
+     },
+     "reach_laden_m": {
+      "-x": 4.075,
+      "+x": 0.525,
+      "-z": 0.5,
+      "+z": 0.5
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 234,
+       "obstructed_cells_band": 45
+      },
+      "+x": {
+       "cells": 234,
+       "obstructed_cells_band": 13
+      },
+      "-z": {
+       "cells": 288,
+       "obstructed_cells_band": 12
+      },
+      "+z": {
+       "cells": 272,
+       "obstructed_cells_band": 0
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    }
+   ],
+   "shed_clear_height_m": 2.45,
+   "bottom_vertices": 40,
+   "bottom_y_min_max": [
+    0.2,
+    0.2
+   ],
+   "bottom_vs_loading_yard_top_m": {
+    "on_yard": 0,
+    "off_yard": 40,
+    "gap_values": []
+   },
+   "gate_seed_free_walk": true,
+   "gate_seed_free_laden": true,
+   "reachable_area_m2_walk": 309.84,
+   "reachable_area_m2_laden": 282.92
+  },
+  "B2-north": {
+   "variant": "B2",
+   "shed_box": [
+    -4.75,
+    -0.25,
+    0.05,
+    3.35
+   ],
+   "post_on_plinth_gap_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "store_house": {
+    "plinth_min": [
+     3.8,
+     0.2,
+     -8.6
+    ],
+    "plinth_max": [
+     7.4,
+     0.65,
+     -1.4
+    ],
+    "floor_y": 0.65,
+    "rise_above_yard_m": 0.45,
+    "steps": {
+     "min": [
+      2.72,
+      0.2,
+      -6.0
+     ],
+     "max": [
+      3.8,
+      0.65,
+      -4.0
+     ],
+     "levels_y": [
+      0.2,
+      0.35,
+      0.5,
+      0.65
+     ],
+     "risers_m": [
+      0.15,
+      0.15,
+      0.15
+     ],
+     "treads_m": [
+      0.36,
+      0.36,
+      0.36
+     ],
+     "width_m": 2.0,
+     "bottom_on_floor": true
+    },
+    "door_frames": [
+     {
+      "min": [
+       3.93,
+       0.65,
+       -5.9
+      ],
+      "max": [
+       4.03,
+       2.95,
+       -4.1
+      ],
+      "z_levels": [
+       -5.9,
+       -5.83,
+       -4.17,
+       -4.1
+      ],
+      "y_levels": [
+       0.65,
+       2.89,
+       2.95
+      ],
+      "clear_width_m": 1.66,
+      "clear_height_m": 2.24
+     }
+    ],
+    "interior_reachable_m2_walk": 14.44,
+    "yard_connected_walk": true,
+    "interior_reachable_m2_laden": 11.74,
+    "yard_connected_laden": true,
+    "interior_plinth_area_m2": 25.92,
+    "interior_headroom_m": 3.6,
+    "plinth_bottom_on_floor": true
+   },
+   "beam_underside_above_floor_m": 2.15,
+   "glb": "model-library/updates/m-courtyard-family/files/north.glb",
+   "elements": [
+    {
+     "node": "architecture_C_roof_rhythm_not_glaze_copy.001",
+     "kind": "shed_roof_part",
+     "tris": 1460,
+     "min": [
+      -5.2,
+      2.65,
+      -0.5
+     ],
+     "max": [
+      0.2,
+      3.57,
+      3.9
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -4.7,
+      0.2,
+      0.925
+     ],
+     "max": [
+      -3.9,
+      0.74,
+      1.575
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -4.6,
+      2.35,
+      0.11
+     ],
+     "max": [
+      -0.4,
+      2.65,
+      0.29
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -4.6,
+      2.35,
+      3.11
+     ],
+     "max": [
+      -0.4,
+      2.65,
+      3.29
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.59,
+      0.28,
+      0.11
+     ],
+     "max": [
+      -4.41,
+      2.35,
+      0.29
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.59,
+      0.28,
+      3.11
+     ],
+     "max": [
+      -4.41,
+      2.35,
+      3.29
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_top",
+     "tris": 12,
+     "min": [
+      -3.4,
+      0.9,
+      1.3
+     ],
+     "max": [
+      -1.6,
+      0.98,
+      2.1
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -3.3,
+      0.2,
+      1.4
+     ],
+     "max": [
+      -3.2,
+      0.9,
+      1.5
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -3.3,
+      0.2,
+      1.9
+     ],
+     "max": [
+      -3.2,
+      0.9,
+      2.0
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -1.8,
+      0.2,
+      1.4
+     ],
+     "max": [
+      -1.7,
+      0.9,
+      1.5
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -1.8,
+      0.2,
+      1.9
+     ],
+     "max": [
+      -1.7,
+      0.9,
+      2.0
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -1.1,
+      0.2,
+      0.925
+     ],
+     "max": [
+      -0.3,
+      0.74,
+      1.575
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -0.59,
+      0.28,
+      0.11
+     ],
+     "max": [
+      -0.41,
+      2.35,
+      0.29
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -0.59,
+      0.28,
+      3.11
+     ],
+     "max": [
+      -0.41,
+      2.35,
+      3.29
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.64,
+      0.2,
+      0.06
+     ],
+     "max": [
+      -4.36,
+      0.28,
+      0.34
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.64,
+      0.2,
+      3.06
+     ],
+     "max": [
+      -4.36,
+      0.28,
+      3.34
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -0.64,
+      0.2,
+      0.06
+     ],
+     "max": [
+      -0.36,
+      0.28,
+      0.34
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -0.64,
+      0.2,
+      3.06
+     ],
+     "max": [
+      -0.36,
+      0.28,
+      3.34
+     ]
+    }
+   ],
+   "element_counts": {
+    "beam": 2,
+    "bench_leg": 4,
+    "bench_top": 1,
+    "post": 4,
+    "post_plinth": 4,
+    "shed_roof_part": 1,
+    "storage_bin": 2
+   },
+   "shed_tris_total": 1688,
+   "host_node_tris": {
+    "architecture_C_whitebox_earth_wall.001": 648,
+    "architecture_C_roof_rhythm_not_glaze_copy.001": 7032,
+    "architecture_C_plain_timber.001": 540,
+    "architecture_C_floor_plinth.001": 132
+   },
+   "separately_loadable": false,
+   "separately_loadable_reason": "shed posts/bins/bench are merged into the court-wide nodes architecture_C_plain_timber / floor_plinth / roof; no node of its own",
+   "storage_access": [
+    {
+     "kind": "storage_bin",
+     "min": [
+      -4.7,
+      0.2,
+      0.925
+     ],
+     "max": [
+      -3.9,
+      0.74,
+      1.575
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.325,
+      "+x": 0.375,
+      "-z": 0.35,
+      "+z": 0.35
+     },
+     "reach_laden_m": {
+      "-x": 0.475,
+      "+x": 4.125,
+      "-z": 0.5,
+      "+z": 0.5
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 234,
+       "obstructed_cells_band": 0
+      },
+      "+x": {
+       "cells": 234,
+       "obstructed_cells_band": 53
+      },
+      "-z": {
+       "cells": 288,
+       "obstructed_cells_band": 12
+      },
+      "+z": {
+       "cells": 288,
+       "obstructed_cells_band": 16
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    },
+    {
+     "kind": "bench_top",
+     "min": [
+      -3.4,
+      0.9,
+      1.3
+     ],
+     "max": [
+      -1.6,
+      0.98,
+      2.1
+     ],
+     "height_above_floor": 0.78,
+     "reach_walk_m": {
+      "-x": 0.325,
+      "+x": 0.375,
+      "-z": 0.325,
+      "+z": 0.375
+     },
+     "reach_laden_m": {
+      "-x": 0.475,
+      "+x": 0.525,
+      "-z": 0.475,
+      "+z": 0.525
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 288,
+       "obstructed_cells_band": 54
+      },
+      "+x": {
+       "cells": 288,
+       "obstructed_cells_band": 64
+      },
+      "-z": {
+       "cells": 648,
+       "obstructed_cells_band": 0
+      },
+      "+z": {
+       "cells": 648,
+       "obstructed_cells_band": 36
+      }
+     },
+     "clear_height_above_top_m": 1.67
+    },
+    {
+     "kind": "storage_bin",
+     "min": [
+      -1.1,
+      0.2,
+      0.925
+     ],
+     "max": [
+      -0.3,
+      0.74,
+      1.575
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.325,
+      "+x": 0.375,
+      "-z": 0.35,
+      "+z": 0.35
+     },
+     "reach_laden_m": {
+      "-x": 4.075,
+      "+x": 0.525,
+      "-z": 0.5,
+      "+z": 0.5
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 234,
+       "obstructed_cells_band": 45
+      },
+      "+x": {
+       "cells": 234,
+       "obstructed_cells_band": 13
+      },
+      "-z": {
+       "cells": 288,
+       "obstructed_cells_band": 12
+      },
+      "+z": {
+       "cells": 288,
+       "obstructed_cells_band": 16
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    }
+   ],
+   "shed_clear_height_m": 2.45,
+   "bottom_vertices": 40,
+   "bottom_y_min_max": [
+    0.2,
+    0.2
+   ],
+   "bottom_vs_loading_yard_top_m": {
+    "on_yard": 0,
+    "off_yard": 40,
+    "gap_values": []
+   },
+   "gate_seed_free_walk": true,
+   "gate_seed_free_laden": true,
+   "reachable_area_m2_walk": 309.84,
+   "reachable_area_m2_laden": 282.92
+  },
+  "B2-south": {
+   "variant": "B2",
+   "shed_box": [
+    -4.75,
+    -0.25,
+    1.65,
+    4.95
+   ],
+   "post_on_plinth_gap_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "store_house": {
+    "plinth_min": [
+     3.8,
+     0.2,
+     -8.6
+    ],
+    "plinth_max": [
+     7.4,
+     0.65,
+     -1.4
+    ],
+    "floor_y": 0.65,
+    "rise_above_yard_m": 0.45,
+    "steps": {
+     "min": [
+      2.72,
+      0.2,
+      -6.0
+     ],
+     "max": [
+      3.8,
+      0.65,
+      -4.0
+     ],
+     "levels_y": [
+      0.2,
+      0.35,
+      0.5,
+      0.65
+     ],
+     "risers_m": [
+      0.15,
+      0.15,
+      0.15
+     ],
+     "treads_m": [
+      0.36,
+      0.36,
+      0.36
+     ],
+     "width_m": 2.0,
+     "bottom_on_floor": true
+    },
+    "door_frames": [
+     {
+      "min": [
+       3.93,
+       0.65,
+       -5.9
+      ],
+      "max": [
+       4.03,
+       2.95,
+       -4.1
+      ],
+      "z_levels": [
+       -5.9,
+       -5.83,
+       -4.17,
+       -4.1
+      ],
+      "y_levels": [
+       0.65,
+       2.89,
+       2.95
+      ],
+      "clear_width_m": 1.66,
+      "clear_height_m": 2.24
+     }
+    ],
+    "interior_reachable_m2_walk": 14.44,
+    "yard_connected_walk": true,
+    "interior_reachable_m2_laden": 11.74,
+    "yard_connected_laden": true,
+    "interior_plinth_area_m2": 25.92,
+    "interior_headroom_m": 3.6,
+    "plinth_bottom_on_floor": true
+   },
+   "beam_underside_above_floor_m": 2.15,
+   "glb": "model-library/updates/m-courtyard-family/files/south.glb",
+   "elements": [
+    {
+     "node": "architecture_C_roof_rhythm_not_glaze_copy.001",
+     "kind": "shed_roof_part",
+     "tris": 1460,
+     "min": [
+      -5.2,
+      2.65,
+      1.1
+     ],
+     "max": [
+      0.2,
+      3.57,
+      5.5
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -4.7,
+      0.2,
+      2.525
+     ],
+     "max": [
+      -3.9,
+      0.74,
+      3.175
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -4.6,
+      2.35,
+      1.71
+     ],
+     "max": [
+      -0.4,
+      2.65,
+      1.89
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "beam",
+     "tris": 12,
+     "min": [
+      -4.6,
+      2.35,
+      4.71
+     ],
+     "max": [
+      -0.4,
+      2.65,
+      4.89
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.59,
+      0.28,
+      1.71
+     ],
+     "max": [
+      -4.41,
+      2.35,
+      1.89
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -4.59,
+      0.28,
+      4.71
+     ],
+     "max": [
+      -4.41,
+      2.35,
+      4.89
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_top",
+     "tris": 12,
+     "min": [
+      -3.4,
+      0.9,
+      2.9
+     ],
+     "max": [
+      -1.6,
+      0.98,
+      3.7
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -3.3,
+      0.2,
+      3.0
+     ],
+     "max": [
+      -3.2,
+      0.9,
+      3.1
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -3.3,
+      0.2,
+      3.5
+     ],
+     "max": [
+      -3.2,
+      0.9,
+      3.6
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -1.8,
+      0.2,
+      3.0
+     ],
+     "max": [
+      -1.7,
+      0.9,
+      3.1
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "bench_leg",
+     "tris": 12,
+     "min": [
+      -1.8,
+      0.2,
+      3.5
+     ],
+     "max": [
+      -1.7,
+      0.9,
+      3.6
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "storage_bin",
+     "tris": 24,
+     "min": [
+      -1.1,
+      0.2,
+      2.525
+     ],
+     "max": [
+      -0.3,
+      0.74,
+      3.175
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -0.59,
+      0.28,
+      1.71
+     ],
+     "max": [
+      -0.41,
+      2.35,
+      1.89
+     ]
+    },
+    {
+     "node": "architecture_C_plain_timber.001",
+     "kind": "post",
+     "tris": 12,
+     "min": [
+      -0.59,
+      0.28,
+      4.71
+     ],
+     "max": [
+      -0.41,
+      2.35,
+      4.89
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.64,
+      0.2,
+      1.66
+     ],
+     "max": [
+      -4.36,
+      0.28,
+      1.94
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -4.64,
+      0.2,
+      4.66
+     ],
+     "max": [
+      -4.36,
+      0.28,
+      4.94
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -0.64,
+      0.2,
+      1.66
+     ],
+     "max": [
+      -0.36,
+      0.28,
+      1.94
+     ]
+    },
+    {
+     "node": "architecture_C_floor_plinth.001",
+     "kind": "post_plinth",
+     "tris": 12,
+     "min": [
+      -0.64,
+      0.2,
+      4.66
+     ],
+     "max": [
+      -0.36,
+      0.28,
+      4.94
+     ]
+    }
+   ],
+   "element_counts": {
+    "beam": 2,
+    "bench_leg": 4,
+    "bench_top": 1,
+    "post": 4,
+    "post_plinth": 4,
+    "shed_roof_part": 1,
+    "storage_bin": 2
+   },
+   "shed_tris_total": 1688,
+   "host_node_tris": {
+    "architecture_C_whitebox_earth_wall.001": 648,
+    "architecture_C_roof_rhythm_not_glaze_copy.001": 7032,
+    "architecture_C_plain_timber.001": 540,
+    "architecture_C_floor_plinth.001": 132
+   },
+   "separately_loadable": false,
+   "separately_loadable_reason": "shed posts/bins/bench are merged into the court-wide nodes architecture_C_plain_timber / floor_plinth / roof; no node of its own",
+   "storage_access": [
+    {
+     "kind": "storage_bin",
+     "min": [
+      -4.7,
+      0.2,
+      2.525
+     ],
+     "max": [
+      -3.9,
+      0.74,
+      3.175
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.325,
+      "+x": 0.375,
+      "-z": 0.35,
+      "+z": 0.35
+     },
+     "reach_laden_m": {
+      "-x": 0.475,
+      "+x": 4.125,
+      "-z": 0.5,
+      "+z": 0.5
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 234,
+       "obstructed_cells_band": 0
+      },
+      "+x": {
+       "cells": 234,
+       "obstructed_cells_band": 53
+      },
+      "-z": {
+       "cells": 272,
+       "obstructed_cells_band": 12
+      },
+      "+z": {
+       "cells": 304,
+       "obstructed_cells_band": 16
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    },
+    {
+     "kind": "bench_top",
+     "min": [
+      -3.4,
+      0.9,
+      2.9
+     ],
+     "max": [
+      -1.6,
+      0.98,
+      3.7
+     ],
+     "height_above_floor": 0.78,
+     "reach_walk_m": {
+      "-x": 0.325,
+      "+x": 0.375,
+      "-z": 0.325,
+      "+z": 0.375
+     },
+     "reach_laden_m": {
+      "-x": 0.475,
+      "+x": 0.525,
+      "-z": 0.475,
+      "+z": 0.525
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 288,
+       "obstructed_cells_band": 54
+      },
+      "+x": {
+       "cells": 288,
+       "obstructed_cells_band": 64
+      },
+      "-z": {
+       "cells": 648,
+       "obstructed_cells_band": 0
+      },
+      "+z": {
+       "cells": 648,
+       "obstructed_cells_band": 36
+      }
+     },
+     "clear_height_above_top_m": 1.67
+    },
+    {
+     "kind": "storage_bin",
+     "min": [
+      -1.1,
+      0.2,
+      2.525
+     ],
+     "max": [
+      -0.3,
+      0.74,
+      3.175
+     ],
+     "height_above_floor": 0.54,
+     "reach_walk_m": {
+      "-x": 0.325,
+      "+x": 0.375,
+      "-z": 0.35,
+      "+z": 0.35
+     },
+     "reach_laden_m": {
+      "-x": 4.075,
+      "+x": 0.525,
+      "-z": 0.5,
+      "+z": 0.5
+     },
+     "sides_within_REACH_walk": [
+      "-x",
+      "+x",
+      "-z",
+      "+z"
+     ],
+     "op_strip_0.9m": {
+      "-x": {
+       "cells": 234,
+       "obstructed_cells_band": 45
+      },
+      "+x": {
+       "cells": 234,
+       "obstructed_cells_band": 13
+      },
+      "-z": {
+       "cells": 272,
+       "obstructed_cells_band": 12
+      },
+      "+z": {
+       "cells": 304,
+       "obstructed_cells_band": 16
+      }
+     },
+     "clear_height_above_top_m": 1.91
+    }
+   ],
+   "shed_clear_height_m": 2.45,
+   "bottom_vertices": 40,
+   "bottom_y_min_max": [
+    0.2,
+    0.2
+   ],
+   "bottom_vs_loading_yard_top_m": {
+    "on_yard": 0,
+    "off_yard": 40,
+    "gap_values": []
+   },
+   "gate_seed_free_walk": true,
+   "gate_seed_free_laden": true,
+   "reachable_area_m2_walk": 309.84,
+   "reachable_area_m2_laden": 282.92
+  }
+ },
+ "city_instances": {
+  "count": 17,
+  "by_asset": {
+   "courtyard-B": 10,
+   "courtyard-B2": 7
+  },
+  "instances": [
+   {
+    "id": "C02-018",
+    "asset": "courtyard-B",
+    "line": 1356,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     724.06335,
+     0,
+     -983.8
+    ],
+    "yaw_cos_sin": [
+     -1.0,
+     0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-retained"
+    ]
+   },
+   {
+    "id": "C02-022",
+    "asset": "courtyard-B2",
+    "line": 1524,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     717.45,
+     0,
+     -923.30228
+    ],
+    "yaw_cos_sin": [
+     0,
+     -1.0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-retained"
+    ]
+   },
+   {
+    "id": "C02-025",
+    "asset": "courtyard-B",
+    "line": 1650,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     717.45,
+     0,
+     -1053.25621
+    ],
+    "yaw_cos_sin": [
+     0,
+     -1.0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-retained"
+    ]
+   },
+   {
+    "id": "C02-002",
+    "asset": "courtyard-B2",
+    "line": 1776,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     633.97426,
+     0,
+     -1176.2
+    ],
+    "yaw_cos_sin": [
+     1.0,
+     0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-retained"
+    ]
+   },
+   {
+    "id": "C02-029",
+    "asset": "courtyard-B",
+    "line": 1902,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     608.78268,
+     0,
+     -1143.8
+    ],
+    "yaw_cos_sin": [
+     -1.0,
+     0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-retained"
+    ]
+   },
+   {
+    "id": "C02-004",
+    "asset": "courtyard-B2",
+    "line": 2070,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     717.45,
+     0,
+     -1157.81935
+    ],
+    "yaw_cos_sin": [
+     0,
+     -1.0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-retained"
+    ]
+   },
+   {
+    "id": "C02-005",
+    "asset": "courtyard-B",
+    "line": 2112,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     514,
+     0,
+     -782.55
+    ],
+    "yaw_cos_sin": [
+     -1.0,
+     0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-south"
+    ]
+   },
+   {
+    "id": "C02-006",
+    "asset": "courtyard-B2",
+    "line": 2154,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     537,
+     0,
+     -781.55
+    ],
+    "yaw_cos_sin": [
+     -1.0,
+     0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-south"
+    ]
+   },
+   {
+    "id": "C02-009",
+    "asset": "courtyard-B",
+    "line": 2280,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     508,
+     0,
+     -817.45
+    ],
+    "yaw_cos_sin": [
+     1.0,
+     0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-south"
+    ]
+   },
+   {
+    "id": "C02-032",
+    "asset": "courtyard-B2",
+    "line": 2490,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     548.8,
+     0,
+     -758
+    ],
+    "yaw_cos_sin": [
+     0,
+     1.0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-south"
+    ]
+   },
+   {
+    "id": "C02-016",
+    "asset": "courtyard-B",
+    "line": 2616,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     613,
+     0,
+     -761.2
+    ],
+    "yaw_cos_sin": [
+     1.0,
+     0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-south"
+    ]
+   },
+   {
+    "id": "C02-033",
+    "asset": "courtyard-B2",
+    "line": 2700,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     639.10105,
+     0,
+     -1080.2
+    ],
+    "yaw_cos_sin": [
+     1.0,
+     0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-retained"
+    ]
+   },
+   {
+    "id": "C02-034",
+    "asset": "courtyard-B",
+    "line": 2742,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     601.89119,
+     0,
+     -1080.2
+    ],
+    "yaw_cos_sin": [
+     1.0,
+     0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-retained"
+    ]
+   },
+   {
+    "id": "C02-036",
+    "asset": "courtyard-B2",
+    "line": 2826,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     520.56271,
+     0,
+     -1080.2
+    ],
+    "yaw_cos_sin": [
+     1.0,
+     0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-retained"
+    ]
+   },
+   {
+    "id": "FROZEN-D08-S2",
+    "asset": "courtyard-B",
+    "line": 2910,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     565,
+     0,
+     -945
+    ],
+    "yaw_cos_sin": [
+     -1.0,
+     0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-D08"
+    ]
+   },
+   {
+    "id": "FROZEN-D08-S4",
+    "asset": "courtyard-B",
+    "line": 2994,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     611,
+     0,
+     -945
+    ],
+    "yaw_cos_sin": [
+     -1.0,
+     0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-D08"
+    ]
+   },
+   {
+    "id": "FROZEN-D08-E",
+    "asset": "courtyard-B",
+    "line": 3078,
+    "initial": true,
+    "chapter": "residential",
+    "translation": [
+     629,
+     0,
+     -975
+    ],
+    "yaw_cos_sin": [
+     1.0,
+     0
+    ],
+    "shed_bottom_vertices": 40,
+    "noGround": 0,
+    "gap_min": -0.0,
+    "gap_max": -0.0,
+    "floating_gt_5mm": 0,
+    "buried_lt_-5mm": 0,
+    "ground_sources": [
+     "ground-D08"
+    ]
+   }
+  ],
+  "ground_nodes": [
+   {
+    "id": "ground-network-ground-stitched",
+    "initial": false,
+    "chapter": "terrain",
+    "line": 431
+   },
+   {
+    "id": "ground-retained",
+    "initial": false,
+    "chapter": "terrain",
+    "line": 451
+   },
+   {
+    "id": "ground-south",
+    "initial": false,
+    "chapter": "terrain",
+    "line": 471
+   },
+   {
+    "id": "ground-D08",
+    "initial": false,
+    "chapter": "terrain",
+    "line": 491
+   }
+  ],
+  "default_view_ground_loaded": false
+ },
+ "workshed": {
+  "LOD0": {
+   "glb": "library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb",
+   "nodes": {
+    "workshed_tile": 1572,
+    "workshed_timber": 192
+   },
+   "min": [
+    -4.05,
+    0.0,
+    -4.45
+   ],
+   "max": [
+    4.05,
+    4.1297,
+    0.45
+   ],
+   "ground_posts": 6,
+   "post_bottom_y": [
+    0.0
+   ],
+   "tie_beam_underside_y": 2.62
+  },
+  "LOD1": {
+   "glb": "library/models/m-luoyang-workyard-shed/files/workshed-LOD1.glb",
+   "nodes": {
+    "workshed_tile": 372,
+    "workshed_timber": 192
+   },
+   "min": [
+    -4.05,
+    0.0,
+    -4.45
+   ],
+   "max": [
+    4.05,
+    4.1297,
+    0.45
+   ],
+   "ground_posts": 6,
+   "post_bottom_y": [
+    0.0
+   ],
+   "tie_beam_underside_y": 2.62
+  },
+  "LOD2": {
+   "glb": "library/models/m-luoyang-workyard-shed/files/workshed-LOD2.glb",
+   "nodes": {
+    "workshed_tile": 60,
+    "workshed_timber": 192
+   },
+   "min": [
+    -4.05,
+    0.0,
+    -4.45
+   ],
+   "max": [
+    4.05,
+    4.03,
+    0.45
+   ],
+   "ground_posts": 6,
+   "post_bottom_y": [
+    0.0
+   ],
+   "tie_beam_underside_y": 2.62
+  }
+ },
+ "a2_install_option": {
+  "court": "C02-010 (courtyard-A2) as proposed by LY-041 prep; frame = A2 prototype local",
+  "a2_glb": "cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+  "gate_seed": [
+   -3.5,
+   11.75
+  ],
+  "doors": {
+   "west_house_step": [
+    -3.0,
+    -0.6
+   ],
+   "north_house_step": [
+    0.6,
+    -3.8
+   ]
+  },
+  "doors_reachable_laden_before": {
+   "west_house_step": true,
+   "north_house_step": true
+  },
+  "free_area_any_height_m2": 303.95,
+  "max_inscribed_circle_radius_m": 6.236,
+  "workshed_eaves_rect_local": [
+   -4.05,
+   4.05,
+   -4.45,
+   0.45
+  ],
+  "workshed_eaves_size_m": [
+   8.1,
+   4.9
+  ],
+  "workshed_post_boxes": [
+   [
+    -3.2,
+    -3.0,
+    -3.95,
+    -3.75
+   ],
+   [
+    -3.2,
+    -3.0,
+    -0.25,
+    -0.05
+   ],
+   [
+    -0.1,
+    0.1,
+    -3.95,
+    -3.75
+   ],
+   [
+    -0.1,
+    0.1,
+    -0.25,
+    -0.05
+   ],
+   [
+    3.0,
+    3.2,
+    -3.95,
+    -3.75
+   ],
+   [
+    3.0,
+    3.2,
+    -0.25,
+    -0.05
+   ]
+  ],
+  "placements_tried": 3626,
+  "placements_feasible": 409,
+  "rejected_by_stage": {
+   "outside_lot_inner": 2148,
+   "eaves_hit_existing": 1068,
+   "gate_blocked": 0,
+   "door_cut_off": 1,
+   "under_shed_unreachable": 0
+  },
+  "feasible_also_clear_on_A2_LOD1": 409,
+  "C02_010_matrix_line": 2322,
+  "C02_010_matrix": [
+   1.0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   1.0,
+   0,
+   531,
+   0,
+   -818.45,
+   1
+  ],
+  "city_ground_under_posts_with_y_offset_0.2": {
+   "posts": 2454,
+   "noGround": 0,
+   "gap_min": -2.9802322831784522e-09,
+   "gap_max": -2.9802321999117254e-09,
+   "sources": [
+    "ground-south"
+   ]
+  },
+  "feasible_without_LY044_conflict": 65,
+  "feasible_sample": [
+   {
+    "yaw": 0,
+    "origin_local": [
+     -4.5,
+     7.5
+    ],
+    "eaves_rect": [
+     -8.55,
+     -0.45,
+     3.05,
+     7.95
+    ],
+    "under_shed_reachable_frac_walk": 0.973,
+    "conflicts_LY044_stove_trial_1.5m": false
+   },
+   {
+    "yaw": 0,
+    "origin_local": [
+     -4.5,
+     8.0
+    ],
+    "eaves_rect": [
+     -8.55,
+     -0.45,
+     3.55,
+     8.45
+    ],
+    "under_shed_reachable_frac_walk": 0.973,
+    "conflicts_LY044_stove_trial_1.5m": false
+   },
+   {
+    "yaw": 0,
+    "origin_local": [
+     -4.5,
+     8.5
+    ],
+    "eaves_rect": [
+     -8.55,
+     -0.45,
+     4.05,
+     8.95
+    ],
+    "under_shed_reachable_frac_walk": 0.973,
+    "conflicts_LY044_stove_trial_1.5m": false
+   },
+   {
+    "yaw": 0,
+    "origin_local": [
+     -4.0,
+     7.5
+    ],
+    "eaves_rect": [
+     -8.05,
+     0.05,
+     3.05,
+     7.95
+    ],
+    "under_shed_reachable_frac_walk": 0.973,
+    "conflicts_LY044_stove_trial_1.5m": false
+   },
+   {
+    "yaw": 0,
+    "origin_local": [
+     -4.0,
+     8.0
+    ],
+    "eaves_rect": [
+     -8.05,
+     0.05,
+     3.55,
+     8.45
+    ],
+    "under_shed_reachable_frac_walk": 0.973,
+    "conflicts_LY044_stove_trial_1.5m": false
+   },
+   {
+    "yaw": 0,
+    "origin_local": [
+     -4.0,
+     8.5
+    ],
+    "eaves_rect": [
+     -8.05,
+     0.05,
+     4.05,
+     8.95
+    ],
+    "under_shed_reachable_frac_walk": 0.973,
+    "conflicts_LY044_stove_trial_1.5m": false
+   },
+   {
+    "yaw": 0,
+    "origin_local": [
+     -3.5,
+     7.5
+    ],
+    "eaves_rect": [
+     -7.55,
+     0.55,
+     3.05,
+     7.95
+    ],
+    "under_shed_reachable_frac_walk": 0.973,
+    "conflicts_LY044_stove_trial_1.5m": true
+   },
+   {
+    "yaw": 0,
+    "origin_local": [
+     -3.5,
+     8.0
+    ],
+    "eaves_rect": [
+     -7.55,
+     0.55,
+     3.55,
+     8.45
+    ],
+    "under_shed_reachable_frac_walk": 0.973,
+    "conflicts_LY044_stove_trial_1.5m": true
+   },
+   {
+    "yaw": 0,
+    "origin_local": [
+     -3.5,
+     8.5
+    ],
+    "eaves_rect": [
+     -7.55,
+     0.55,
+     4.05,
+     8.95
+    ],
+    "under_shed_reachable_frac_walk": 0.973,
+    "conflicts_LY044_stove_trial_1.5m": true
+   },
+   {
+    "yaw": 0,
+    "origin_local": [
+     -3.0,
+     7.5
+    ],
+    "eaves_rect": [
+     -7.05,
+     1.05,
+     3.05,
+     7.95
+    ],
+    "under_shed_reachable_frac_walk": 0.973,
+    "conflicts_LY044_stove_trial_1.5m": true
+   },
+   {
+    "yaw": 0,
+    "origin_local": [
+     -3.0,
+     8.0
+    ],
+    "eaves_rect": [
+     -7.05,
+     1.05,
+     3.55,
+     8.45
+    ],
+    "under_shed_reachable_frac_walk": 0.973,
+    "conflicts_LY044_stove_trial_1.5m": true
+   },
+   {
+    "yaw": 0,
+    "origin_local": [
+     -3.0,
+     8.5
+    ],
+    "eaves_rect": [
+     -7.05,
+     1.05,
+     4.05,
+     8.95
+    ],
+    "under_shed_reachable_frac_walk": 0.973,
+    "conflicts_LY044_stove_trial_1.5m": true
+   }
+  ],
+  "feasible_origin_extent": {
+   "0": {
+    "x": [
+     -4.5,
+     4.5
+    ],
+    "z": [
+     0.5,
+     11.0
+    ],
+    "n": 198
+   },
+   "90": {
+    "x": [
+     1.0,
+     8.0
+    ],
+    "z": [
+     0.0,
+     7.5
+    ],
+    "n": 211
+   }
+  },
+  "y_offset_needed": "workshed post bottoms are at y=0.0; court floor / city ground top is 0.200 -> translation y=+0.200 required (else 0.2 m buried)"
+ }
+}

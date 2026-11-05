@@ -1,0 +1,210 @@
+{
+ "baselineSha256": "bcd6296996f19d4b1405b254cd9917f0d5b6708af7db9b616a92f434b8fd462e",
+ "baselineHead": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "cases": [
+  {
+   "case": "P1-baseline-self",
+   "expectFail": false,
+   "verdict": {
+    "verdict": "PASS-FOR-CLAIMED-SCOPE",
+    "failed": []
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N1-old-wall-moved-1cm",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "BLOCK",
+    "failed": [
+     "C2-old-nodes-unchanged"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N2-duplicate-body-coloaded",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "BLOCK",
+    "failed": [
+     "C3-new-nodes-declared-and-owned",
+     "C4-mutual-exclusion"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N3-apron-removed-support-claim",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "BLOCK",
+    "failed": [
+     "C8-site:gate_yong_B"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N4-claim-kaiyang-not-in-city",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "BLOCK",
+    "failed": [
+     "C5-region-status-consistent",
+     "C8-site:gate_kaiyang_B"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N5-sha-mismatch",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "BLOCK",
+    "failed": [
+     "C7-sha-binding"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N6-claim-climb-yong",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "BLOCK",
+    "failed": [
+     "C8-site:gate_yong_B"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N7-bad-glb-length",
+   "expectFail": true,
+   "verdict": "reader refused: GLB header length 1736 != file length 1732",
+   "selftestOk": true
+  },
+  {
+   "case": "N8-thirteenth-gate-card",
+   "expectFail": true,
+   "verdict": "count=13",
+   "selftestOk": true
+  },
+  {
+   "case": "P2-relocated-checkout-urls",
+   "expectFail": false,
+   "verdict": {
+    "verdict": "PASS-FOR-CLAIMED-SCOPE",
+    "failed": []
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N9-chapter-field-only-node",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "BLOCK",
+    "failed": [
+     "C3-new-nodes-declared-and-owned",
+     "C4-mutual-exclusion"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "P3-rollback-exact",
+   "expectFail": false,
+   "verdict": {
+    "verdict": "PASS",
+    "failed": []
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N10-rollback-leaves-node",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "FAIL",
+    "failed": [
+     "{'node': 'yong-gate-body-far-undeclared', 'why': 'left behind after rollback'}",
+     "{'site': 'gate_yong_B', 'why': 'site measurement differs'}",
+     "{'why': 'counts differ', 'base': {'gateCards': 12, 'wallSegmentNodes': 12, 'gateRegionNodesInCity': 3, 'gateSitesWithBod"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N11-rollback-hides-old-wall",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "FAIL",
+    "failed": [
+     "{'node': 'wall-A-wall-03', 'why': 'cityNodeRecordSha256'}",
+     "{'node': 'wall-A-wall-03', 'why': 'visibleByDefault'}"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "P4-yong-ports-on-surface",
+   "expectFail": false,
+   "verdict": {
+    "verdict": "PASS",
+    "failed": []
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N12-port-elevation-off-1cm",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "FAIL",
+    "failed": [
+     {
+      "portId": "yong-gate:passage-C:threshold-inner",
+      "why": "world off registry",
+      "dPlan_m": 0.0,
+      "dY_m": 0.010000000000000009
+     },
+     {
+      "portId": "yong-gate:passage-C:threshold-inner",
+      "why": "no drawn surface within elevation tolerance",
+      "surfaceY": 0.17,
+      "portY": 0.18000000178813935
+     }
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N13-unknown-port-id",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "FAIL",
+    "failed": [
+     {
+      "portId": "yong-gate:passage-X:threshold-inner",
+      "why": "not in LY-006 registry"
+     }
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N14-port-version-mismatch",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "FAIL",
+    "failed": [
+     {
+      "portId": "yong-gate:passage-C:threshold-inner",
+      "why": "version 2 != registry 1"
+     }
+    ]
+   },
+   "selftestOk": true
+  }
+ ],
+ "allOk": true
+}

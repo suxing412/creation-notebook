@@ -1,0 +1,62 @@
+{
+ "seat": "LY-045",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-service-court/files/service-A-LOD0.glb cc02f68f (9,456 tris; LOD1 366e1a26 1,656; LOD2 c88104ce 696); not loaded in city (0 refs in docs/cities/luoyang *.mjs/*.json/*.html)",
+  "docs/library/models/m-luoyang-service-court/m-luoyang-service-court.asset.json 02e98a9d (status 待审; cover b25af8e0, shots 6b4e2742/fda049b6)",
+  "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb 19b05202 / A2-LOD1-prototype.glb 277e9e73 (candidate yard C02-010, city-data.mjs:88/109, node :2322; alt C02-021 node :1482)",
+  "docs/cities/luoyang/assets/ground-atomic/south.glb 4313826d (real ground of C02-010 and the pen floor; single node 96,796 tris; asset :471, node :3609 initial:false)",
+  "docs/cities/luoyang/assets/ground-atomic/retained.glb aed8b3d4 (real ground of C02-021; node :3582 initial:false)",
+  "docs/cities/luoyang/data/far44/instances-calt.json c830b4e3; data/c02v/layout.json 7528f0c8 (localRoutes)",
+  "docs/cities/luoyang/city-data.mjs e4115705; city-renderer.mjs fa0a8dcb (initial :221, excludeNodes :309/:346, near tier :416, focusCourtyard :616)",
+  "docs/cities/luoyang/p-luoyang.asset.json 9b5e311f (:254 圈厕关系 A 已建模, 未入城)",
+  "lab HEAD bce3211f; lab/data/assets.json HEAD blob 53d86312 (working tree has unrelated uncommitted edits)",
+  "prior same-seat prep files inventory.py, measure_service.py, out/*.json (20:46-20:48) consistent with this prep"
+ ],
+ "inputsMissing": [
+  "圈厕关系 A native source (.blend/generator/batch source ZIP): only needed if service-A geometry changed (it must not) or for native re-renders; geometry rebuildable from GLB (3 static nodes), native parameters not",
+  "card QA package for 有限门口、孔口和台阶检查: needed to inherit card pass claims; NOT rebuildable from GLB (test definitions) -> re-derived by measure_service_court.py / check_install.py",
+  "ground-south native generator (single_closed_terrain_after): for a clean local cut in the has-hole variant; local patch rebuildable from GLB (regular 2 m grid, top 0.2 / bottom 0.0)",
+  "frozen G items: LY-041 yard (draft C02-010, alt C02-021), LY-005 yard datum (measured 0.200 vs prototype 0.215), LY-006 ownership of the ground cut in shared ground-south and floor-space vs LY-044/046/047, LY-010 whether has-hole variant is admitted",
+  "LY-002 evidence row for c.180 Luoyang latrine/pen form, pit depth or yard position: none found (one public search, no direct hit)"
+ ],
+ "gaps": [
+  "Not in city: 0 references to service-A/m-luoyang-service-court in docs/cities/luoyang code or data",
+  "Model has no ground: 0 up-facing tris at y=0; below the 0.42x0.42 m (0.1764 m2) floor hole 25/25 numpy rays and 3/3 Blender BVH rays hit nothing -> must be assembled with real ground; at the candidate pose the first hit is ground-south top 0.200, drop 1.400 m (25/25)",
+  "Default view has no ground: ground-south/retained initial:false (city-renderer.mjs:221); without ground 744/744 bottom samples unsupported, 25/25 hole rays open to infinity, aprons 110+120 cells without ground",
+  "Datum: placing at prototype activity ground 0.215 floats 744/744 bottom samples by 0.015 m and makes first riser 0.190 instead of 0.175; at 0.200 gap 0.000",
+  "Has-hole variant cannot be done with existing mechanism: ground-south is one node (96,796 tris, 14 yards), excludeNodes is whole-node only (:309/:346); 8 ground tris touch the hole rect, 16 within 1 m (2.0-2.828 m edges); deleting whole tris over-cuts: 206/744 pen-bottom samples lose ground; C02-021 ground-retained hole tris have 13.35-38.34 m edges",
+  "Old ground residue: under the hole the prototype site_lot (0-0.2) and designed_hardpacked_activity_ground (0.2-0.215) lie only behind excludeNodes; if dropped the hole is resealed at 0.215 and 327/744 bottom samples bury 0.015 m",
+  "Space is not the bottleneck: C02-010 open-sky non-route 284.64 m2, max inscribed r 6.2 m vs pen r 2.80; installation 36.25 m2; valid poses rot0/90/180/270 = 1,289/385/1,679/568 (0.3 m clearance 1,160/269/1,319/331) of 17,170-17,710; candidate rot0 T=(533.8,0.2,-812.15) clearance 2.1 m, both aprons reach routes; floor-space shared with LY-044/046/047 unfrozen",
+  "Near tier switches only the focused node (city-renderer.mjs:416): a separate service-court node stays LOD1 (1,656 tris) next to yard LOD0; LOD2 unused in 2-tier city",
+  "Inherited defects (not modified): door lintel y3.3-3.5 spans exactly the 0.80 m opening, 0.096 m2 bottom unsupported, zero bearing; ridge 0.48 m2 floats ~0.01 m over tiles (card: 保留既有局部屋脊接触); floor on 4 posts 0.0784 m2"
+ ],
+ "reuseCandidate": "无（service-A三档GLB原样复用、几何不改，三档功能尺寸一致：孔0.42x0.42、门0.80x1.90、8级0.175踢面、缺口1.20；但城景内引用为0，模型自身无地面，没有已安装且孔下地面合格的成果）",
+ "touches": [
+  "city node C02-010 (matrix read only; alt C02-021)",
+  "A2 kept nodes architecture_C_whitebox_earth_wall.001, architecture_C_floor_plinth.001, architecture_C_plain_timber.001, architecture_C_roof_rhythm_not_glaze_copy.001 (clearance only)",
+  "A2 excluded nodes site_lot, designed_hardpacked_activity_ground (must stay excluded; residue negative)",
+  "assets/ground-atomic/south.glb node single_closed_terrain_after: support of the pen; has-hole variant needs a local cut / replacement (ownership LY-006, merge LY-100)",
+  "ground-south 2 m grid cells around world x 533.59-534.01, z -814.62..-814.20 at candidate pose (8 tris touching, 16 within 1 m)",
+  "data/c02v/layout.json lots[C02-010].localRoutes gate_to_main, yard_to_side (corridors kept free)",
+  "library service-A-LOD0/1/2.glb (referenced, not copied or edited)",
+  "C02-010 yard floor shared with LY-044 stove, LY-046 drainage, LY-047 shed",
+  "city-data.mjs new asset+node record, ground coupling with chapter loadNodeIds/near tier (proposal only, LY-100 writes)",
+  "p-luoyang.asset.json :254 圈厕关系 A statusNote (proposal only, LY-100 writes)",
+  "workpacks/LY-045/ only"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-041 yard choice not frozen; C02-021 alternative needs re-run (script already covers it)",
+  "Has-hole variant requires modifying/replacing shared ground-south (one node for 14 yards): ownership conflict with LY-041/044/046/047/049/082 unless LY-006 assigns it",
+  "Over-cutting the coarse ground grid leaves the pen wall unsupported (N8)",
+  "Excluded prototype ground silently reseals the hole if excludeNodes are lost (N4)",
+  "Wrong datum 0.215 floats the whole group 15 mm (N1)",
+  "Default view shows no ground unless LY-100 couples ground with the package (N2)",
+  "LOD mismatch at near view",
+  "Undetermined pit depth could be misreported as finished engineering; checker forces OPEN_UNDETERMINED_DEPTH",
+  "No c.180 Luoyang evidence for form, pit depth or position; everything is C design; mingqi typology is analogy only",
+  "Inherited zero-bearing lintel and ridge slit must be disclosed, not claimed structurally safe",
+  "Surface raster/ray checks only; not solid-collision-exhaustive, not gait, not GPU"
+ ],
+ "readyAfterG": true
+}

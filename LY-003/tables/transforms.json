@@ -1,0 +1,112 @@
+{
+ "shared_control_points": 0,
+ "dof_table": [
+  {
+   "model": "平移",
+   "dof": 2,
+   "min_points": 1,
+   "min_points_with_check": 2,
+   "available_points": 0,
+   "status": "欠定，不能求解"
+  },
+  {
+   "model": "刚体（平移+旋转）",
+   "dof": 3,
+   "min_points": 2,
+   "min_points_with_check": 3,
+   "available_points": 0,
+   "status": "欠定，不能求解"
+  },
+  {
+   "model": "相似（+等比缩放）",
+   "dof": 4,
+   "min_points": 2,
+   "min_points_with_check": 3,
+   "available_points": 0,
+   "status": "欠定，不能求解"
+  },
+  {
+   "model": "仿射",
+   "dof": 6,
+   "min_points": 3,
+   "min_points_with_check": 4,
+   "available_points": 0,
+   "status": "欠定，不能求解"
+  }
+ ],
+ "candidates": [
+  {
+   "id": "T0",
+   "what": "恒等（现行 luoyang-local-schematic-v01）",
+   "dof_solved": 0,
+   "params": {
+    "s": 1.0
+   },
+   "basis": "示意图比例尺500米/49像素",
+   "residual": null,
+   "independent_check": "东垣残长检验失败（见 side-lengths）",
+   "admissible_for_palace_placement": false,
+   "note": "只改比例，不定平移和旋转；对宫墙落位没有帮助（宫墙在任何框架里都还没有坐标）。"
+  },
+  {
+   "id": "T1-A",
+   "what": "等比缩放（只用北垣全长，数值版本A）",
+   "dof_solved": 1,
+   "params": {
+    "s": 0.9126,
+    "about": "示意原点（西南推定角）"
+   },
+   "basis": "Q02 北垣 2523 米",
+   "residual": "1个量定1个参数，零冗余，无残差可算",
+   "independent_check": "东边缩放后 3348 米 < 东垣残长 3895 米 → 矛盾",
+   "admissible_for_palace_placement": false,
+   "note": "只改比例，不定平移和旋转；对宫墙落位没有帮助（宫墙在任何框架里都还没有坐标）。"
+  },
+  {
+   "id": "T1-B",
+   "what": "等比缩放（只用北垣全长，数值版本B）",
+   "dof_solved": 1,
+   "params": {
+    "s": 1.02,
+    "about": "示意原点（西南推定角）"
+   },
+   "basis": "Q14 北垣 2820 米",
+   "residual": "1个量定1个参数，零冗余，无残差可算",
+   "independent_check": "东边缩放后 3742 米 < 东垣残长 3895 米 → 矛盾",
+   "admissible_for_palace_placement": false,
+   "note": "只改比例，不定平移和旋转；对宫墙落位没有帮助（宫墙在任何框架里都还没有坐标）。"
+  },
+  {
+   "id": "T1-C",
+   "what": "等比缩放（只用北垣全长，数值版本C）",
+   "dof_solved": 1,
+   "params": {
+    "s": 1.3383,
+    "about": "示意原点（西南推定角）"
+   },
+   "basis": "Q16 北垣 3700 米",
+   "residual": "1个量定1个参数，零冗余，无残差可算",
+   "independent_check": "东边缩放后 4910 米 ≥ 东垣残长 3895 米 → 不矛盾",
+   "admissible_for_palace_placement": false,
+   "note": "只改比例，不定平移和旋转；对宫墙落位没有帮助（宫墙在任何框架里都还没有坐标）。"
+  },
+  {
+   "id": "T2",
+   "what": "东西、南北分别缩放",
+   "dof_solved": 2,
+   "params": {
+    "sx": [
+     0.9126,
+     1.3383
+    ],
+    "sy_lower_bound": 1.0617
+   },
+   "basis": "北垣三说给 sx 区间；东垣残长只给 sy 下限",
+   "residual": "无冗余",
+   "independent_check": "西垣残长三说（3500/3510/4290）互相差 22%，无法作为第三个独立量",
+   "admissible_for_palace_placement": false,
+   "note": "只改比例，不定平移和旋转；对宫墙落位没有帮助（宫墙在任何框架里都还没有坐标）。"
+  }
+ ],
+ "decision": "不选任何候选替换现行框架；宫区与水系配准结论：不可落位。"
+}

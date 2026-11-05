@@ -1,0 +1,59 @@
+{
+ "seat": "LY-086",
+ "inputsFound": [
+  "lab@bce3211 docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-near.glb sha256 79d36565 (18420 tris, 6.600x1.980x1.518 m, 1 merged primitive)",
+  "lab@bce3211 .../palace-waterway-interface-mid.glb sha256 68ec04bb (1740 tris)",
+  "lab@bce3211 .../palace-waterway-interface-far.glb sha256 af5e8b65 (204 tris)",
+  "lab@bce3211 .../palace-waterway-interface-inspection-near.glb sha256 f90094d2 (8 semantic nodes: inner/outer/shaft __shell/__inspection_side, inner/outer __cover_C)",
+  "lab@bce3211 .../m-luoyang-palace-waterway-interface.asset.json sha256 3dc81ef1 (待审, 未入城)",
+  "lab@bce3211 docs/cities/luoyang/city-data.mjs sha256 e4115705 (no waterway reference; line 4555 palace wall/water unregistered)",
+  "lab@bce3211 docs/cities/luoyang/p-luoyang.asset.json sha256 9b5e311f (member + stat card only)",
+  "lab@bce3211 docs/cities/luoyang/assets/ground-atomic/{network-ground-stitched fdfc3ce5, retained aed8b3d4, south 4313826d, D08 3ab93310}.glb (loaded via city-data.mjs:431-508)",
+  "lab@bce3211 docs/cities/luoyang/data/west/north-palace-conflict-layer.json sha256 f0755db3 (loaded by v1/north-layer.mjs:15; new palace wall A geometry null)",
+  "lab@bce3211 docs/cities/luoyang/research/2026-11-03/city-milestones.json sha256 9d72a0a9 (existing water phasing research, not loaded by city)",
+  "lab@bce3211 docs/cities/luoyang/data/evidence/evidence-geometry.json sha256 662562fa (ancient_water_corridors_B_unplaced geometry null)",
+  "lab@bce3211 docs/library/models/m-luoyang-earthwall-family/files/earthwall-{A 3f755fcc,B 04c2b143,C b8f1ab3a}-LOD0.glb (city wall, only candidate host block)"
+ ],
+ "inputsMissing": [
+  "Private native source (.blend / generator 'LY private deterministic lossless static batch v1' / source ZIP): needed for editable cover/cut changes and provenance; can be rebuilt from GLB (inspection-near assembled == near: 18420 tris, 5.8456 m3), must be labelled 'rebuilt from GLB'",
+  "component-ranges-near/mid/far.json (named in GLB node extras, not in repo): maps merged-primitive ranges to inner/shaft/outer/cover; near rebuildable via inspection GLB, mid/far only by spatial partition",
+  "Designated 'allowed local wall research block' (LY-010/LY-006): does not exist anywhere; cannot be rebuilt from waterway GLB",
+  "LY-003 palace wall registration (line, thickness, base/ground level): needed for any world position; not rebuildable",
+  "LY-005 ground/threshold port definition and LY-006 frozen port IDs: ground level relative to conduit undefined",
+  "Original publication of Eastern Han brick waterway (hnswwkgyjy.cn News_ID=2810): DNS ENOTFOUND 2026-11-05; only reprint summary known"
+ ],
+ "gaps": [
+  "No wall/opening/ground geometry in the asset: 0 wall nodes among 8 inspection nodes; the wall-hole and atomic install do not exist",
+  "Conduit total length 6.600 m vs existing earthwall thickness at cover top y=0.76: A 13.637 m, B 13.587 m, C 7.674 m -> shortfall 7.037 / 6.987 / 1.074 m; earthwall is CITY wall, not palace wall",
+  "Invert flat y=0.000 at all 17 sampled x positions (slope 0): geometry gives no flow direction",
+  "Clear section 0.600x0.600 m, through-open end to end (0 hits along X at y 0.05/0.20/0.40); both ports at x=+-3.300 uncapped",
+  "Cover_C (0.160 m thick, y 0.600-0.760) ends at x=+-0.750 but shaft brick relief extends to +-0.759 at cover height: 9 mm intrusion each side, <=1.44e-3 m3 per side, BVH tri pairs 128/133 -- must be classified, not blanket-exempted",
+  "Shaft (outer 1.50, clear 0.90x0.90, top y=1.800, depth 1.80 to invert, no sump) has no cover and no ground cut plan for LY-090",
+  "No ground-level port: origin is invert top, slab bottom -0.180; ground could be 0.76 or 1.80 or other -- undefined",
+  "Closure OK: after 1e-4 weld all LODs have 18 non-manifold edges, all 4-face block-to-block edges, 0 open boundary edges",
+  "LOD volume drift: near 5.8456, mid 5.8146 (-0.53%), far 5.7390 (-1.82%) m3",
+  "Not loaded in city: 0 'waterway' hits in docs/cities/luoyang *.mjs/v1/data",
+  "T0 reproducibility: measure_waterway.py re-run 2026-11-06 -> out/measure-rerun.json identical to out/measure.json"
+ ],
+ "reuseCandidate": "Three-segment body reusable as-is (no new body): near/mid/far real LODs, closed (0 boundary edges after weld), through-open 0.6x0.6, inspection GLB restores 8 semantic groups with identical assembled volume 5.8456 m3. The installation interface itself (wall hole, cover/shaft relation, atomic install) does not exist -> no qualifying deliverable to reuse.",
+ "touches": [
+  "READ-ONLY source nodes: inspection inner__shell, inner__inspection_side, inner__cover_C, outer__shell, outer__inspection_side, outer__cover_C, shaft__shell, shaft__inspection_side; near/mid/far node LY_waterway_full_static",
+  "Host wall research block (to be designated by LY-010/LY-006; candidate earthwall-C-LOD0.glb b8f1ab3a or a workpack-local C block) -- wall-hole difference piece",
+  "Possible new C shaft-mouth cover node (independent, removable)",
+  "Ground cut plan proposal (shaft 0.90x0.90 clear / 1.518x1.518 outer) handed to LY-090; no ground GLB written by LY-086",
+  "No city-data.mjs / p-luoyang.asset.json / ground-atomic GLB writes; world placement null",
+  "Write area: D:/GitHub/creation-notebook-workpacks/LY-086/"
+ ],
+ "size": "M",
+ "risks": [
+  "Host wall block may never be designated or palace wall thickness stays unknown; then only an unplaced local C study is possible",
+  "Conduit shorter than any existing wall block (by 1.07-7.04 m); temptation to stretch the conduit violates no-scale rule",
+  "Analog evidence (Qianqiu Gate, Northern Wei palace west wall: arch-vaulted brick channel, inner width 1.2 m 'not later than Han') differs from C design (flat cover, 0.6 m); must not be used to re-dimension as 180 CE fact",
+  "9 mm cover/shaft intrusion inherited; must be disclosed or fixed, cannot claim zero penetration",
+  "Ground-cut ownership conflict with LY-090 if LY-086 writes ground directly",
+  "Merged single-primitive mid/far LODs lack range tables; part-level edits on mid/far need spatial partition rebuild",
+  "Re-verified 2026-11-06: lab HEAD bce3211, working tree clean except untracked .claude/; lab/data/assets.json equals bce3211 blob after CRLF normalisation (sha256 53d86312 LF), so line refs 5597/5616/5635/5654/5685 are blob-valid; GLB git blob ids equal HEAD. LY-001 must still re-pin on its own snapshot",
+  "readyAfterG=true is conditional: production also needs LY-002/LY-003 delivered and a host wall research block designated (LY-010/LY-006); otherwise output stays an unplaced local C study"
+ ],
+ "readyAfterG": true
+}

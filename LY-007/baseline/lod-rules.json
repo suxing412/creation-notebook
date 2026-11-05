@@ -1,0 +1,70 @@
+{
+ "baseline": "LY_P01 三档质量基线：LOD 命名、逐类降档、近景保留",
+ "frozen_by": "LY-007",
+ "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "scope_note": "降档规则在城门（kaiyang、pingcheng、jin 等）、礼制（biyong、mingtang 等）、市肆（S84）、住屋（G10、H72）上核过，S84/G10 三档顶点级复刻；宫院（deyang、sidehall、gallery、yutang、guard）与生产（器物）两族的数字来自分析员部分输出，未逐三角复核",
+ "tiers": {
+  "LOD0": {"use": "近景 / 交互 / 通行判定 / 原件归档档", "material": "LY_P01_<m>__PBR", "textures": "512²", "rule": "完整近景，任何情况下保留原文件"},
+  "LOD1": {"use": "中景；城中院落远档目前用 LOD1（city-data path）", "material": "LY_P01_<m>__PBR", "textures": "256²（同图案）"},
+  "LOD2": {"use": "远景剪影", "material": "LY_P01_<m>__FLAT", "textures": "无"}
+ },
+ "naming": {
+  "file_default": "<slug>-<V>-LOD<n>.glb（slug 小写连字符，变体一个大写字母）",
+  "file_market_house_types": "<原型>-LOD<n>.glb（S84-LOD0.glb、G10-LOD0.glb）",
+  "ground_patch": "<slug>-ground-LOD<n>.glb",
+  "node_default": "<slug>-<V>-static_<mat>（每种材料一个节点，无 TRS）",
+  "node_market": "<原型>-static-LY_P01_<mat>__PBR|__FLAT",
+  "node_house_types": "layout__LY_P01_<mat>__PBR|__FLAT",
+  "mesh": "default = 节点名；market / house_types = <原型>_<该材料组第一个构件名>，三档同名",
+  "movable_node": "<slug>-<V>-leaf_<序>_<L|R>（可开合门扇，原点在铰点，extras 写 hinge_axis_native / pivot_native / angle_range_deg / swing_sign）",
+  "follow_family": "同一张卡片里的新文件必须与该卡已有文件同式；新开家族用 default",
+  "not_for_new": ["类型门只有 LOD1/LOD2 且 LOD1 实为最高档", "南坛主文件 + -LOD1", "石经院 near/middle/far", "宫墙水道 near/mid/far", "mao display-LOD1", "*-LOD0-prototype.glb（城中院落现用，保留不改名）"]
+ },
+ "per_component": [
+  {"part": "夯土（台、墙、墩、础、踏步、地坪）", "LOD0->1": "不变", "LOD1->2": "不变", "rule": "keep"},
+  {"part": "圆木（柱、圆檩、望柱）", "LOD0->1": "16/12 边 -> 8 边，r 不变", "LOD1->2": "-> 2r 外接方盒；住屋/店铺檐柱 -> 4 边菱形", "rule": "round"},
+  {"part": "扫掠件（叉手）", "LOD0->1": "16 -> 8 边", "LOD1->2": "-> 4 边菱形", "rule": "sweep"},
+  {"part": "瓦垄", "LOD0->1": "house：逐板段重排 n0//2 根、8 -> 4 边；hall：1/2、保持 8 边；gate：约 1/4、8 -> 4 边", "LOD1->2": "删除", "rule": "rib"},
+  {"part": "正脊", "LOD0->1": "16 -> 8 边", "LOD1->2": "-> 2r 方盒", "rule": "ridge"},
+  {"part": "戗脊 / 垂脊", "LOD0->1": "16 -> 8 边", "LOD1->2": "删除", "rule": "hip_ridge"},
+  {"part": "梁、枋、门框、窗框、屋面板", "LOD0->1": "不变", "LOD1->2": "不变", "rule": "keep"},
+  {"part": "窗棂、檩条", "LOD0->1": "留中间一根或隔根留", "LOD1->2": "删除", "rule": "thin"},
+  {"part": "门叶横带、小矮柱、柜台（S84）", "LOD0->1": "不变", "LOD1->2": "删除", "rule": "lod01"},
+  {"part": "门钉、纴木头、柱头小块", "LOD0->1": "删除", "LOD1->2": "—", "rule": "lod0"},
+  {"part": "栌斗", "LOD0->1": "不变", "LOD1->2": "保留（本基线比她更严：辟雍 LOD2 删栌斗致柱顶露缝，不学）", "rule": "keep"},
+  {"part": "材质", "LOD0->1": "PBR 512 -> PBR 256", "LOD1->2": "-> FLAT", "rule": "—"}
+ ],
+ "derivation": "LOD1/LOD2 由同一组构件参数按上表重新生成（ly_style.component_geometry），不对 LOD0 网格做 decimate，不从 LOD0 文件复制",
+ "acceptance": {
+  "tri_ratio": {"LOD1/LOD0": [0.17, 0.62], "LOD2/LOD0": [0.05, 0.20], "note": "超出时先查夯土是否过重（夯土不降档）"},
+  "bbox": "LOD1 包围盒与 LOD0 逐值相同；LOD2 一般 ≤ 0.02 m。住屋/店铺（house）例外：LOD2 删瓦垄后最高点降到板顶，降幅等于假脊管头高出板顶的量（S84、G10 她的原件均为 −0.0997 m，qa/lod-diff.json），这是她的做法，冻结为允许值 ≤ 0.10 m（见 decisions D-LOD-BBOX）",
+  "origin_orientation": "三档原点、朝向、正面 +Z 一致",
+  "copy_ban": "任何一档与 LOD0 字节相同，或几何哈希、贴图分辨率、材质名三项都与 LOD0 相同，即判为「LOD0 复制改名」，不得交付（qa/lod-diff.json 负例 NEG_lod0_copied_as_lod1 被判出）",
+  "no_far_for_near": "不能用 LOD1/LOD2 通过的检查（面数、体积、剪影）证明近景可用；交互、通行、接触判定一律在 LOD0 上做（S84 柜台在 LOD2 删除，LOD2 上测不到员工通道）"
+ },
+ "near_view_retention": [
+  "LOD0 是原件档：她的每个 LOD0 以提交 blob SHA256 入账（qa/near-retention.json），恢复命令 git show <commit>:<path>；派生、降档、换装都不得覆盖或删除 LOD0",
+  "城中近景：city-data.mjs 里 6 条 nearPath（院落 *-LOD0-prototype.glb）提交字节 SHA 与声明一致，且与对应远档字节不同；换档逻辑不改",
+  "单 GLB 超过 15,000,000 字节时，不静默降低完整近景：原 LOD0 保留并如实标注交付档位，另出分块或较轻档另行命名",
+  "复刻 / 新做件：生成脚本 + 冻结库 + 原字节贴图即可逐字节重出（本席位实测 round2 复刻件 6/6 字节相同，qa/round2-rebuild.json）",
+  "近景专用件（H64/H72/H96 整坡逐片瓦、石经院 near）保留为近景档，不拿来铺量"
+ ],
+ "movable_parts": {
+  "rule": "门叶等动件保留独立节点与语义（leaf_* 节点、铰点原点、extras 开合参数），不为合批焊进 static 网格；只有静态件按材料合批",
+  "static_leaf_ok": "城门、宫门默认静态门叶并网是她的做法（试做门、类型门）；一旦某件被声明为动件（开合动画、通行状态切换），三档都要保留同名单独节点，LOD2 也不得并网",
+  "tiers": "门钉只在 LOD0；门叶横带 LOD2 删除；门叶板本身三档保留",
+  "unknown": "jin 门扇 UV 按世界坐标（关闭姿态）还是局部坐标投影未量到；本基线暂按导出姿态世界坐标（D-LEAF-UV，待验）"
+ },
+ "samples": {
+  "S84": {"files": "models/samples/S84-LOD{0,1,2}.glb", "triangles": [1956, 604, 176], "ratio": [1.0, 0.309, 0.09],
+          "parts_per_material": {"LOD0": {"earth": 1, "timber": 6, "tile": 61}, "LOD1": {"earth": 1, "timber": 6, "tile": 31}, "LOD2": {"earth": 1, "timber": 3, "tile": 1}},
+          "what_changes": "LOD0→1：瓦垄每坡 30→15（逐段重排，8 边→4 边），檐柱 12 边→8 边，柜台、檐枋不变，贴图 512→256；LOD1→2：瓦垄全删（tile 只剩 3 段屋面板，焊成 1 个连通块），檐柱→4 边菱形，柜台删除，材质→FLAT",
+          "silhouette_iou_vs_LOD0": {"front": [0.9902, 0.9931], "side": [1.0, 0.9677], "top": [1.0, 1.0]}},
+  "G10": {"files": "models/samples/G10-LOD{0,1,2}.glb", "triangles": [2360, 688, 224], "ratio": [1.0, 0.292, 0.095],
+          "parts_per_material": {"LOD0": {"earth": 1, "timber": 2, "tile": 75}, "LOD1": {"earth": 1, "timber": 2, "tile": 37}, "LOD2": {"earth": 1, "timber": 2, "tile": 1}},
+          "what_changes": "LOD0→1：瓦垄每坡 37→18（逐段重排，8→4 边），斜切檐柱 12→8 边；LOD1→2：瓦垄全删，檐柱→菱形，材质→FLAT；夯土 140 三角三档不变",
+          "silhouette_iou_vs_LOD0": {"front": [0.9893, 0.9908], "side": [1.0, 0.9704], "top": [1.0, 1.0]}},
+  "lyref": {"files": "models/refsphere/lyref-A-LOD{0,1,2}.glb", "triangles": [2680, 880, 440], "ratio": [1.0, 0.328, 0.164],
+            "what_changes": "基准球 24×11 → 12×7 → 8×5（包围盒三档逐值相同），1 m 标定块三档不变；材质 PBR512 → PBR256 → FLAT"}
+ }
+}

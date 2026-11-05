@@ -1,0 +1,62 @@
+{
+ "seat": "LY-087",
+ "inputsFound": [
+  "lab bce3211 docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb 8daea250 / LOD0 367a7d25 (architecture_C_drain_stone; 首屏加载 C02-020/C02-008/FROZEN-D08-NW/NE, city-data.mjs:62/82, nodes :1440 :2238 :3120 :3162)",
+  "lab bce3211 docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb d2432b7c / LOD0 bf6287a5 (architecture_C_drain_stone.001; C02-003/C02-012, city-data.mjs:142/165)",
+  "lab bce3211 ground-atomic network-ground-stitched.glb fdfc3ce5, retained.glb aed8b3d4, south.glb 4313826d, D08.glb 3ab93310 (仅地形章节加载 initial=false; city-renderer.mjs:221/595-605)",
+  "lab bce3211 m-luoyang-palace-waterway-interface near 79d36565 / mid 68ec04bb / far af5e8b65 / inspection-near f90094d2 (资产库, 城中 0 引用); stable A 672beeb4 / B bd82280a; tile-kiln A e67d5976 / B 4886d95d",
+  "lab bce3211 city-data.mjs commit c849706b (worktree CRLF e4115705); city-renderer.mjs commit 04c6c643; app.mjs commit cc0379c0 -- 23 lab inputs re-hashed 11-06, all identical",
+  "LY-006 registry v1 (交付完成): ports.json 28bcfb68, seats.json a1426412, ownership.json ecbbbcf5, port.schema.json 9fcdf932 -- 5 drain ports declared, LY-087 consumes 4, writeZones=[]",
+  "LY-003 tables/admission.json dd0ab8c0 (宫墙水道 不可落位; no admitted water outlet); LY-008 source/ly_check.py 39aaa491; LY-009 board/taskboard.v2.json bd2fcbbe (LY-087 待输入, PZ-06)",
+  "LY-002 evidence-ledger.md ea060db6 (E-H03, E-R05, X15); LY-001 qa/city-data.dump.json 28ce130c; LY-005 port-schema.json 30854ed9",
+  "prep drafts (not frozen): LY-046 2a87698e, LY-052 dce3535d, LY-054 3d603159, LY-073 5e5b9594, LY-081 f0ea250f (changed during this prep), LY-086 f377be48; LY-073 extract biyong_C_relationship.glb 1bd1c446",
+  "LY-087/prep: measure_drain_ports.py ebc00228 (rerun byte-identical: A af272601, B 13002753, C 8caac65d, D 14de6dee), check_port_graph.py ddf4deda, reconcile_wall_gap.py 68e6043f, drift_scan_cad338b.py 2605d6b3, inputs.json 118d09c0"
+ ],
+ "inputsMissing": [
+  "LY-010 区域/示范院冻结（目录不存在）：G 因此未冻结；C02-010 是否为示范院决定 C02-010:drip-outlet:drain 的帧",
+  "LY-046/052/054/073 冻结交付：registry 里的 4 个消费端口 portId 已定、version 1，但 local/world/measuredFrom 全为 null；本项汇总的就是这些值",
+  "LY-081 冻结的实际地面可达网络（只有 prep，且本次准备期间仍在改）：判出口下游面是否为准入地面",
+  "LY-006 registry v2 或协调者决定：(a) 是否给 6 条现有 TC03 浅沟在既有几何上补登 drain 端口；(b) PZ-06 是否给 LY-087 加 LY-086 依赖、接入 waterway:ends:drain；(c) 若演示需要沉井/标记，LY-087 的写入区",
+  "LY-088 水系分期资料层（只有 prep）；LY-003 已交付但没有准入任何排水出口：没有准入出口时所有端口只能保持未接",
+  "私密源包：TC03 系院落 .blend/生成器、宫墙水道私有确定性生成器、厩棚/窑 .blend、辟雍母版 city-C032-entry-LOD0.blend；只用于追溯参数。本项只读端口，全部可从 GLB 顶点重算，不需要原件；若端口所属席位做衔接片须标「从GLB重建」",
+  "黄学超 2026《汉魏洛阳城周边的水利建设》等水系原文（evidence-geometry.json 有条目，未读）：只影响出口准入说明，不影响端口几何"
+ ],
+ "gaps": [
+  "城内全部排水几何只有 6 条 TC03 系 C 浅沟（远近档三角哈希一致 2739cd13e8b5df72 / b4b891d7470da637），坡度 0.1484% / 0.1603%，长 20.22 / 18.72 m，槽底 0.232→0.202，槽宽 0.24，两端 U 形开口；上游端无来水构件（来源未声明）",
+  "首屏默认状态：site_lot 被 excludeNodes 去掉、ground-atomic 不加载，6/6 低端外 0.02–2.0 m 内没有支承面（R1 6/6 失败）",
+  "地形章节状态：低端落到城市地面 0.200（-2 mm），2.9 m 内坡度 0；沟端到夯土前墙内面 2.50 m、外面 3.00 m（墙厚 0.50，墙顶 2.40，6/6，无涵口）：平地滞留/被墙挡，0 个出口。LY-046 的 3.0 m 是外面，与本席位 2.51 m 内面射线一致",
+  "LY-006 registry v1：5 个 drain 端口全部 local/world=null；6 条现有 TC03 浅沟所在城市节点 owner=null/frozen，0 个登记端口；waterway:ends:drain consumers=[]；port.schema 无 flowDir/invert/destState/admittedOutlet 字段",
+  "LY-087 在 registry 里 writeZones=0、produces=0、ownsCityNodes=0：上一版计划的 ly087_* 沉井/标记几何不可做（新增 R9 负例拦截）",
+  "registry 模式回归：首屏 10 条失败（R1×6 + R8×4），地形章节 4 条失败（R8×4 消费端口未交付）；16/16 夹具在两种模式下都符合预期",
+  "四个原子地面平坡（<0.01%）面积占比 82.2%–100%，最大坡度 4.6–5.4%；16 个严格局部低点，其中 10 个回升 ≥1 mm（最大 8.3 mm）：地形定义不了下游方向",
+  "宫墙水道 near/mid/far 槽底全程 0.000（落差 0，流向未定义），断面 0.6×0.6，竖井 0.9 宽、敞开到 1.8、无沉井；LY-003 判不可落位",
+  "辟雍方形水符号 360/360 方位有水，闭合环、无进出口，与 E-R05 冲突；registry 的 biyong:bank-outlet:drain 无证据支撑（LY-073 草稿同样结论）",
+  "厩棚 A/B 平台顶面 12 顶点全为 y=0.000、无沟；窑 A/B 41 节点无排水类节点（registry 仍给 LY-054 登记了 kiln:front-drain:drain，值待 LY-054 自己定）",
+  "基线漂移：origin/main=cad338b（bce3211 后 3 个提交），新增 0 个排水类节点，6 个 TC03 排水节点块不变；本地 main 44c66da 已陈旧"
+ ],
+ "reuseCandidate": "无。6 条 TC03 浅沟坡向正确（0.148–0.160%，远近档一致，cad338b 下不变），可按原样作为只读端口来源复用、不重造；但出口首屏落在虚空，地形章节中是平地滞留，2.50 m 外被墙挡，没有一个出口有准入去向，而且它们在 LY-006 registry 里没有端口。宫墙水道落差为 0 且不可落位，辟雍水环闭合，registry 的 4 个消费端口数值全空，不满足「每个出口都有来源和去向状态」。",
+ "touches": [
+  "只读：C02-020/C02-003/C02-008/C02-012/FROZEN-D08-NW/FROZEN-D08-NE 的 architecture_C_drain_stone(.001) 及其低端外 0–2.9 m 地坪与 architecture_C_earth_wall(.001) 内外面（frozen, owner null）",
+  "只读：ground-atomic 四片（C_stitch_primary/west/patch、C02_retained_outside_south_Calt_domain、single_closed_terrain_after、D08_shared_terrain），场地 S-CITYGROUND 所有人 LY-090",
+  "LY-006 端口 C02-010:drip-outlet:drain v1（LY-046，C02-010 节点归 LY-050）",
+  "LY-006 端口 stable:drain-outlet:drain v1（LY-052，local:stable-A）",
+  "LY-006 端口 kiln:front-drain:drain v1（LY-054，local:kiln-A）",
+  "LY-006 端口 biyong:bank-outlet:drain v1（LY-073，local:biyong）与 biyong-layout A_square_water_symbol（只登记为静态水体）",
+  "LY-006 端口 waterway:ends:drain v1（LY-086，当前不是本席位依赖，PZ-06）",
+  "LY-081 地面网络数据（判出口下游面）",
+  "写入只限 workpacks/LY-087/（台账、检查器、assembly.json 引用清单）；不产生任何几何节点，不碰 city-data.mjs、p-luoyang.asset.json、任何地坪片"
+ ],
+ "size": "M",
+ "risks": [
+  "registry 里 5 个 drain 端口全空；前置四席位若各自把流向/槽底放进不同字段（schema 没有这些字段），汇总要做格式映射，容易漏 version",
+  "6 条现有浅沟没有登记端口：不补登就只能出只读台账，验收「每个出口都有来源和去向状态」只覆盖 4 个登记端口，容易被误读为全城排水已核",
+  "LY-087 没有写入区：演示组合不能放沉井/标记，如果为了好看在本包里加几何会触发 R9 阻断",
+  "PZ-06：宫墙水道端口没有消费者；若协调者把它加给 087，需要 LY-086 先交相对端口，且仍不写世界位置",
+  "首屏与地形章节两种加载状态结论不同；只测一种会误判通过或误判失败",
+  "前置草稿在本次准备期间仍在改（LY-081 a4b1b01a→f0ea250f）；制作时必须重绑 SHA",
+  "基线漂移到 cad338b：LY-001 重锁快照后要重跑 drift_scan 与 T1–T3",
+  "宫墙水道落差 0、用途未知，辟雍闭合水环、registry 却登记了 bank-outlet：都容易被误写成流动排水，须保持静态并标争议",
+  "TC03 浅沟继承缺陷（终端被墙挡、无来水）不归本席位修，容易被顺手改掉"
+ ],
+ "readyAfterG": true
+}

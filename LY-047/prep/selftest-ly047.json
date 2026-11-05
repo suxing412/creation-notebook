@@ -1,0 +1,55 @@
+{
+ "tool": "selftest_ly047.py",
+ "cases": {
+  "P1_ref_placement_offset_0.2": {
+   "expect": "pass",
+   "gap_min": -2.9802322554228766e-09,
+   "gap_max": -2.980232227667301e-09,
+   "eaves_hit": false,
+   "pass": true
+  },
+  "N1_no_y_offset": {
+   "expect": "fail(buried)",
+   "gap_min": -0.20000000298023227,
+   "gap_max": -0.20000000298023224,
+   "detected": true
+  },
+  "N2_eaves_into_west_house": {
+   "expect": "fail(eaves hit)",
+   "eaves_rect": [
+    -8.55,
+    -0.45,
+    -4.45,
+    0.45
+   ],
+   "detected": true
+  },
+  "N3_coload_second_shed_in_B": {
+   "expect": "fail(rule: one shed candidate per court; B already has in-place shed)",
+   "free_slot_found_for_geometry": true,
+   "slot": [
+    0.5,
+    6.5
+   ],
+   "in_place_shed_present": true,
+   "exclusivity_ok": false,
+   "note": "geometry alone may fit; the exclusivity rule (test-plan T5) must reject it, not the clearance test",
+   "detected": true
+  },
+  "P2_workshed_alone_in_A2": {
+   "expect": "pass",
+   "pass": true
+  },
+  "P3_B_inplace_only": {
+   "expect": "pass",
+   "pass": true
+  },
+  "N4_bin_front_blocked": {
+   "expect": "fail(+x access > REACH)",
+   "before": 0.35,
+   "after": 1.25,
+   "detected": true
+  }
+ },
+ "allBehaved": true
+}

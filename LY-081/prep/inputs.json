@@ -1,0 +1,496 @@
+{
+ "seat": "LY-081",
+ "phase": "prep (G not frozen)",
+ "labBaseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "frame": "paths relative to D:/GitHub/creation-notebook-lab; geometry measured in Blender world (x=glTF X, y=-glTF Z, z=glTF Y)",
+ "inputs": [
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "bytes": 3565544,
+   "role": "ground (atomic 3 nodes)",
+   "loadedInCity": "yes, on demand (terrain chapter / v1 calt 6m)",
+   "loaderCode": "main: city-data.mjs terrain chapter loadNodeIds (city-data.mjs:4027) -> city-renderer.mjs:601 nextIds.add -> loadAsset city-renderer.mjs:286, transformFor :372; initial:false so city-renderer.mjs:221 skips it at boot; v1: west-layer.mjs:35-37 (calt, level!=storage) and road-layer.mjs:17-19 via road-interface.json runtimeAssets width 6; assertGroundAtomic in v1/ground-atomic.mjs",
+   "note": "city-data.mjs:431 asset, :3555 node position [0,0,0]"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "bytes": 629740,
+   "role": "ground",
+   "loadedInCity": "yes, on demand",
+   "loaderCode": "main: city-data.mjs terrain chapter loadNodeIds (city-data.mjs:4027) -> city-renderer.mjs:601 nextIds.add -> loadAsset city-renderer.mjs:286, transformFor :372; initial:false so city-renderer.mjs:221 skips it at boot; v1: west-layer.mjs:35-37 (calt, level!=storage) and road-layer.mjs:17-19 via road-interface.json runtimeAssets width 6; assertGroundAtomic in v1/ground-atomic.mjs",
+   "note": "city-data.mjs:451, :3582"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "bytes": 2623560,
+   "role": "ground",
+   "loadedInCity": "yes, on demand; also v1 calt environmentUrl and v1 10m mode",
+   "loaderCode": "main: city-data.mjs terrain chapter loadNodeIds (city-data.mjs:4027) -> city-renderer.mjs:601 nextIds.add -> loadAsset city-renderer.mjs:286, transformFor :372; initial:false so city-renderer.mjs:221 skips it at boot; v1: west-layer.mjs:35-37 (calt, level!=storage) and road-layer.mjs:17-19 via road-interface.json runtimeAssets width 6; assertGroundAtomic in v1/ground-atomic.mjs; west-layer.mjs:31",
+   "note": "city-data.mjs:471, :3609"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "bytes": 6664,
+   "role": "ground",
+   "loadedInCity": "yes, on demand, translation [580,0,-960]",
+   "loaderCode": "main: city-data.mjs terrain chapter loadNodeIds (city-data.mjs:4027) -> city-renderer.mjs:601 nextIds.add -> loadAsset city-renderer.mjs:286, transformFor :372; initial:false so city-renderer.mjs:221 skips it at boot; v1: west-layer.mjs:35-37 (calt, level!=storage) and road-layer.mjs:17-19 via road-interface.json runtimeAssets width 6; assertGroundAtomic in v1/ground-atomic.mjs",
+   "note": "city-data.mjs:491, :3636 position [580,0,-960]"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "bytes": 1391,
+   "role": "contract",
+   "loadedInCity": "read at runtime by v1 only",
+   "loaderCode": "v1/west-layer.mjs:40, v1/road-layer.mjs:19",
+   "note": "main page does not read it; city-data.mjs:4509 lists it as provenance"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 111034,
+   "role": "city manifest",
+   "loadedInCity": "yes (module import)",
+   "loaderCode": "app.mjs:1; city-renderer.mjs manifest",
+   "note": "66 nodes / 42 assets"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "bytes": 36571,
+   "role": "loader",
+   "loadedInCity": "yes",
+   "loaderCode": "app.mjs:177 dynamic import",
+   "note": "excludeNodes handling :309"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "bytes": 14563,
+   "role": "page logic",
+   "loadedInCity": "yes",
+   "loaderCode": "index.html module script",
+   "note": "terrain chapter copy app.mjs:29"
+  },
+  {
+   "path": "docs/cities/luoyang/index.html",
+   "sha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "bytes": 16108,
+   "role": "page",
+   "loadedInCity": "yes",
+   "loaderCode": "-",
+   "note": "data-chapter=\"terrain\" button :41, badge text 已入城"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/west-layer.mjs",
+   "sha256": "d8c14142af2e4d993cc249dfcc605edadb38232190e5890f31640b94be9d2d4b",
+   "bytes": 18747,
+   "role": "loader (v1)",
+   "loadedInCity": "yes in v1/index.html",
+   "loaderCode": "v1/boot.mjs",
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/v1/road-layer.mjs",
+   "sha256": "b6102a1c44421f7c6312ef841d7bec9439de59a82708948088b7bcaa55a40cd8",
+   "bytes": 6859,
+   "role": "loader (v1 roads)",
+   "loadedInCity": "yes in v1",
+   "loaderCode": "v1/boot.mjs",
+   "note": "6m vs 10m mutually exclusive"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/ground-atomic.mjs",
+   "sha256": "45e25711f8a1e98db6751d2644f6fe5ca127e7798b60eb85eb9666db794380b0",
+   "bytes": 441,
+   "role": "atomic assert",
+   "loadedInCity": "yes in v1",
+   "loaderCode": "west-layer.mjs:2, road-layer.mjs:2",
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/road-interface.json",
+   "sha256": "ef4b334d3c75c227ca4d9cf4104d24f5eefdc6e692063dea5916df8055b5ddf0",
+   "bytes": 2724,
+   "role": "v1 runtime asset list",
+   "loadedInCity": "read at runtime by v1",
+   "loaderCode": "v1/road-layer.mjs:17",
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/road-plan.json",
+   "sha256": "9792f217619ef72f2cb7528856112c7403a765420814a0dfe562ad23a7ebd361",
+   "bytes": 16893,
+   "role": "C segment plan + cuts (B-derived)",
+   "loadedInCity": "read by v1 roads (overlay lines only)",
+   "loaderCode": "v1/road-layer.mjs:17,23",
+   "note": "NOT a walkable source; its cuts explain gaps G2-G6"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/road-preconstraints.json",
+   "sha256": "8b2fa0faaf5c6fa5fcb3a9d50e2e7d412a5f5a8f47e03ce13cc641474c5f449d",
+   "bytes": 8852,
+   "role": "B relation classification",
+   "loadedInCity": "no (documentation)",
+   "loaderCode": "-",
+   "note": "5 C_corridor_trial / 2 relation_only / 5 hold_palace_interface"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/network.json",
+   "sha256": "af8e5479f47ccae1dd5c41766da60e6a871e74808018737a85514895334afc73",
+   "bytes": 17517,
+   "role": "prior schematic reachability (14 doors)",
+   "loadedInCity": "no",
+   "loaderCode": "-",
+   "note": "door threshold xy used only as provisional probe ports"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-final-actual-GLB.json",
+   "sha256": "405db4fee6a822f1e2a54260ed5c256782d087e49a40eba457b3940f94b6ea13",
+   "bytes": 156964,
+   "role": "prior finite path-sample report",
+   "loadedInCity": "no",
+   "loaderCode": "-",
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-overlap-classification.json",
+   "sha256": "886390e060f04c80e4382a359c2bd2930b130144a120e250d0e841bb9a8e083c",
+   "bytes": 10704,
+   "role": "prior overlap report",
+   "loadedInCity": "no",
+   "loaderCode": "-",
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/runtime-coverage.json",
+   "sha256": "0b25c3176d7aaf26f0aa0a1c04d7e0f96f584b8668026e1e056f93113a476f9e",
+   "bytes": 3125,
+   "role": "prior coverage statement",
+   "loadedInCity": "no",
+   "loaderCode": "-",
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/road-junction-verification.json",
+   "sha256": "ead15c78f24a5db32792bc8a1aa774e814858e968d55a1f62cfc9d218b0b65a4",
+   "bytes": 19259,
+   "role": "prior seam samples",
+   "loadedInCity": "no",
+   "loaderCode": "-",
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/route-coverage-correction.json",
+   "sha256": "03ca9353bb82c099c79fc72576ddcc827ea4d854607bf7bc9748d4b71c0289fc",
+   "bytes": 44176,
+   "role": "prior envelope coverage",
+   "loadedInCity": "no",
+   "loaderCode": "-",
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-interface.json",
+   "sha256": "31c6786db03b1d7e4be79070abe8ea9a577207345a55703c85d2fb34bc479f4e",
+   "bytes": 1761,
+   "role": "market port hints",
+   "loadedInCity": "read by v1 market level",
+   "loaderCode": "v1/west-layer.mjs:33",
+   "note": "camera targets used as provisional probes only"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/storage-interface.json",
+   "sha256": "b910896799cdbb954717df342c7dfbb794eaaa1bdba3810b206140b84aeedba8",
+   "bytes": 1975,
+   "role": "storage port hints",
+   "loadedInCity": "no (main page)",
+   "loaderCode": "-",
+   "note": "unconnected:true"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/city-wall-interface.json",
+   "sha256": "ad18cc65915724a850d1f97b498be8b63464cd3d25116c9d615bfd79f2570da8",
+   "bytes": 12102,
+   "role": "wall assets",
+   "loadedInCity": "walls initial:true",
+   "loaderCode": "city-data walls chapter",
+   "note": "wall base y 0.17 vs ground top 0.21"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/north-palace-conflict-layer.json",
+   "sha256": "f0755db3e6d6e14966974dd241c60709c52a099fb9a9935f04554cd45ed16192",
+   "bytes": 7825,
+   "role": "palace/water conflict text",
+   "loadedInCity": "no",
+   "loaderCode": "-",
+   "note": "water channel geometry must not be drawn yet"
+  },
+  {
+   "path": "docs/cities/luoyang/research/2026-11-03/city-milestones.json",
+   "sha256": "9d72a0a9de222a964b0a8d03e1580ea0f1897fc41a914d2f5715523e716018dd",
+   "bytes": 7565,
+   "role": "water-phase research status",
+   "loadedInCity": "no",
+   "loaderCode": "-",
+   "note": "ancient waterway B still null"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "bytes": 1031928,
+   "role": "context (market floor)",
+   "loadedInCity": "yes, market chapter",
+   "loaderCode": "city-data market-main node, excludes 30 N2 nodes",
+   "note": "touches atomic ground on ~4.0 m of ground boundary"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/N2-replacement.glb",
+   "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "bytes": 72984,
+   "role": "context",
+   "loadedInCity": "yes, market chapter",
+   "loaderCode": "city-data market-N2",
+   "note": "joins only in tolerant graph (steps <= 0.18 m)"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+   "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+   "bytes": 1663844,
+   "role": "context (storage yard)",
+   "loadedInCity": "yes, storage chapter",
+   "loaderCode": "city-data storage-main",
+   "note": "no atomic ground within 200 m"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+   "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+   "bytes": 388208,
+   "role": "context (yong apron)",
+   "loadedInCity": "yes, initial (walls chapter)",
+   "loaderCode": "city-data yong-gate-interface (matrix)",
+   "note": "island 539.83 m2, 47-49.5 m from ground; protected item (雍门接街)"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/main-roads/corridor-10m.glb",
+   "sha256": "bd79de9518a706e34dd834277860810c248b12ac557d3ba14c7c11ff1bc9dbbf",
+   "bytes": 6468,
+   "role": "exclusive 10m alternative",
+   "loadedInCity": "v1 only, 10m mode",
+   "loaderCode": "road-interface runtimeAssets width 10",
+   "note": "excluded from LY-081 network"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/west/route-corridor.glb",
+   "sha256": "ec883eaff95f335e2ba57fe763793be941fd3ac0db55c921ca0910ef702bb9c7",
+   "bytes": 4292780,
+   "role": "exclusive 10m alternative",
+   "loadedInCity": "v1 only, 10m mode",
+   "loaderCode": "road-interface runtimeAssets width 10",
+   "note": "excluded"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-near.glb",
+   "sha256": "79d36565d0a4c064f85065b0dc861385d55ca56b24b6b55ba4994c18831a1a0b",
+   "bytes": 1518404,
+   "role": "palace-wall waterway three segments (study)",
+   "loadedInCity": "no (card status 研究; not referenced by city-data.mjs)",
+   "loaderCode": "-",
+   "note": "no placed water geometry -> water edges stay unknown"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-mid.glb",
+   "sha256": "68ec04bb8d39eda5cc7e5d93aa39b8bcb4ed86cea4a1b7bc990bc4d2ca3b716f",
+   "bytes": 133976,
+   "role": "palace-wall waterway three segments (study)",
+   "loadedInCity": "no (card status 研究; not referenced by city-data.mjs)",
+   "loaderCode": "-",
+   "note": "no placed water geometry -> water edges stay unknown"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-far.glb",
+   "sha256": "af5e8b65e892589366e7a65ae9210301c3291421b021fc487f0f1050d90a0931",
+   "bytes": 17200,
+   "role": "palace-wall waterway three segments (study)",
+   "loadedInCity": "no (card status 研究; not referenced by city-data.mjs)",
+   "loaderCode": "-",
+   "note": "no placed water geometry -> water edges stay unknown"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-inspection-near.glb",
+   "sha256": "f90094d2bd5fb376b13f6d8506bbce12cc48dd4c0f18795e0d79558fa0de1bba",
+   "bytes": 1416232,
+   "role": "palace-wall waterway three segments (study)",
+   "loadedInCity": "no (card status 研究; not referenced by city-data.mjs)",
+   "loaderCode": "-",
+   "note": "no placed water geometry -> water edges stay unknown"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "bytes": 24215,
+   "role": "project card",
+   "loadedInCity": "no (metadata)",
+   "loaderCode": "-",
+   "note": "limits: north palace wall / ancient water registration pending"
+  },
+  {
+   "path": "lab/data/assets.json",
+   "sha256": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+   "bytes": 439273,
+   "role": "library aggregate",
+   "loadedInCity": "no",
+   "loaderCode": "-",
+   "note": "WORKING TREE differs from HEAD (pre-existing uncommitted change, not by LY-081); sha256 above is working tree; HEAD blob sha256 53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78"
+  }
+ ],
+ "notInRepo": [
+  {
+   "item": "LY-006 frozen ports / ownership JSON",
+   "use": "authoritative port IDs for courtyards, gates, market, storage; replaces provisional ports.json",
+   "rebuildFromGLB": "partly: positions can be probed from GLB, but port IDs/ownership are a contract"
+  },
+  {
+   "item": "LY-005 coordinate/elevation contract",
+   "use": "confirm glTF->Blender mapping and single application of D08 translation",
+   "rebuildFromGLB": "measurement yes, freeze no"
+  },
+  {
+   "item": "LY-010 region admission table",
+   "use": "which breakpoints may be offered to LY-082..085 and which regions are excluded",
+   "rebuildFromGLB": "no"
+  },
+  {
+   "item": "native .blend of C-ground-stitch-v1 (network/retained/south/D08)",
+   "use": "not required: LY-081 reads the loaded triangles, i.e. the GLB",
+   "rebuildFromGLB": "not needed; GLB is the authoritative input for this seat"
+  },
+  {
+   "item": "B frozen evidence file with SHA fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+   "use": "verify road-plan cut endpoints derive from unchanged B",
+   "rebuildFromGLB": "no (evidence data); no repo file hashes to this value, may be a canonicalised hash"
+  },
+  {
+   "item": "machine-readable door ports for the other 30 of 44 courtyards",
+   "use": "complete port list",
+   "rebuildFromGLB": "yes by probing prototype door nodes x 44 matrices, but naming must come from LY-006"
+  }
+ ],
+ "prepOutputs": {
+  "ports.json": "9138694bcfda61621d9f3e92cc2227e0fc5f656428906ff6383e17269d8afd95",
+  "run-drop-ground-D08.json": "6927512815c53aaa46a0d807be72e949478f5332d97cfa14f2a98f12597bbe48",
+  "run-drop-ground-network-ground-stitched.json": "bd29f6d8f6d2bbd7963f3adff6493ea5ffc9f68f83a7582f8192888d9c4678a3",
+  "run-drop-ground-retained.json": "f81f60b0a754ddb73ed7697a0ecab61067362bdcd4620950978f56f2c764b8eb",
+  "run-drop-ground-south.json": "a808736d5054f79a1eb48c837217642b237683ef89c03561401759817e678fbe",
+  "run-ends.json": "965a41a5395418741a5bf5c2530f0534c5faf9abd72e9f913c520a0eb3a43913",
+  "run-full-grid2.json": "fb9fcd4672539800f6c6c84cc6cdcd27af9d375c18d2b4aabe22048342a3b25f",
+  "run-ground-only.json": "1c32cfce1e4c061785ab17793778ad40486a4b72eb0a5ad65234c29e9ebd1b25",
+  "run-promoted.json": "37ec153d8fc93d1551424a0c76dee8b79c4015e28787b6bde3f353b0f29fbfd4",
+  "scene-config-promoted.json": "5feae04bcf7485cc568232cf5472e8e0aa62776d562f5d22209938a56c1a65b9",
+  "scene-config.json": "c44db34eba9cb72f0b1b05eec8c263f850dda1be23dce33ecd4072efafb07a01",
+  "scripts/crack_width.py": "deaf3ae94a11aef68c97f569bf77762c6a1356724aac7062229edc8a0e9a532a",
+  "scripts/make_config.mjs": "c804f1ade1f0f4609a1d7bc368c6304e604dc8831b30ebe808936f5bc5f0f357",
+  "scripts/make_inputs.py": "33a319793c07ee7c9435662118e4baeddfcb1e9890a8ae077f48f924c9014c86",
+  "scripts/measure_ends.py": "f904d465444e4ede2fa65a5b1352e89c09b7f0d42224f61d278ce9938513accb",
+  "scripts/measure_ground.py": "e28e34a8e59209a9b3d2791f509b0e0ab4fb7ff7b6ca03e8d0f9f1dcbd3aae2e",
+  "scripts/scan_line.py": "1a4d25044172e3c83a8fd5eda1ef20bffffb04725be5e4fb127e36176d22c958",
+  "brief-draft.md": "c0d985512fd4ab92b751e8b5d1a93679cfaa40e121fd8fa71f3ad5181ba0aa67",
+  "drift-cad338b/drift-summary.json": "edbe3d85930c28953f567b335e7185fe00bf03ea1f00cd11d6d5c7dee60dcc29",
+  "drift-cad338b/run/base-bce3211-default.json": "f564b497f89611d3f5cbb40b35f277d7db71146bae97326ff983dd117a06560a",
+  "drift-cad338b/run/base-bce3211-terrain.json": "6358b5e986f34172223f2ee15a7be56c93d6fb529c00afb12c750e2951f62694",
+  "drift-cad338b/run/baseP-default.json": "ead73aebc3455e129fff20d4e5fba6377dd735a1e33bd05b469a62200a908c93",
+  "drift-cad338b/run/baseP-terrain.json": "3985caaa1b309a4b0ad3db6574a5026a208d11f8d65202925b4c866039ef3c37",
+  "drift-cad338b/run/cfg-default.json": "4c875092877c101c6548af7cb5c83ebc47e6388567754fddc174f7d7c2791140",
+  "drift-cad338b/run/cfg-terrain.json": "f39a786dc1527c6c39465b31d607709117d4c266f5b02cdc895b11e1c8971271",
+  "drift-cad338b/run/cfgP-default.json": "c4164b00ef53f7d870b12f4c10eba06e298eff5aa870ce553cded3facc240a65",
+  "drift-cad338b/run/cfgP-terrain.json": "41a7d4554c6a531e258b56e0ba41b572dd0235dd5efe2d3339e66b29941c4ff4",
+  "drift-cad338b/run/log-base-P.txt": "832ca64a878ad570ba54e96ae8b9822436697baa1e5f38f300a035e84c1e5fe4",
+  "drift-cad338b/run/log-default-P.txt": "1c34fa9b3a8cd31723edf50d6590a722101b7d560e56a96ecfe64bfe42a2ae1b",
+  "drift-cad338b/run/log-grid-d.txt": "b1f42593673abbca99f8b5790d94bd7cb243b8bdfec74466e513f5312e0688c3",
+  "drift-cad338b/run/log-grid.txt": "a17d0b9d756289c0641ff7ced5a4f0dc0096957ae1dd5f9b0cfe5aeea8615a61",
+  "drift-cad338b/run/log-terrain-P.txt": "feae7b402866b968ed030ec8895b96e20f59408de1fe723f1adf41d6bff13e6d",
+  "drift-cad338b/run/log-terrain-drop.txt": "a46e2772cf11c3be2ff5e17b6d596c67cc9f4d9d48ad3f5d0fa460c9ed5820ee",
+  "drift-cad338b/run/m-base-terrain-P.json": "f9a6ad1928225077d425bf2af36a394fc498ce4cceb99d32e800b7aa52896d37",
+  "drift-cad338b/run/m-default-P-grid2.json": "191f3f553328002079cce4b19dfb78795fee6d4122d5fb6d899b550c21906b84",
+  "drift-cad338b/run/m-default-P.json": "2cd67ca22c8a70386d2180ebc6f7a45a70f0af241225140a6b6af43bc08a02a0",
+  "drift-cad338b/run/m-terrain-P-drop-link.json": "3663d40a642a70aac6f1854e464e9ba0a9d4e7db161558c558676903d9e01dd9",
+  "drift-cad338b/run/m-terrain-P-grid2.json": "6c8e3265b7d46d72f4f392132c35bcbd2fd821893b51e49235e8b5b2ba9f62da",
+  "drift-cad338b/run/m-terrain-P.json": "1acd20172f1c532b73b61734b7f1263d9bbe80af57d41bd424d1c7e298bed9f2",
+  "drift-cad338b/run/ports-drift.json": "63091a8e9dec519cdc1528891d8669cabda8343743bc421dce9f6140918590a2",
+  "scripts/make_config_drift.mjs": "123aaa9e056cc097937b947e746356672237521615a5d389fbeae8800793540d",
+  "scripts/make_inputs_drift.py": "6a482abccf35e9e30fbdbd7301a1e8b996483a7dd36d0b9b7c99d1756af97446",
+  "scripts/summarize_drift.py": "70f345154cfaeb224fba40ea9345806631999a99eddd620975d4b02fcf480285",
+  "test-plan.md": "b12c818ff2024387d0936f3bd6c8043b61550383577304300c3f7f87f661c6b8"
+ },
+ "driftOriginMain": {
+  "note": "Local origin/main cad338b is 3 commits past bce3211 (f28d650, b70c495, cad338b). Not fetched; read from existing local refs. The 4 atomic GLBs and ground-atomic-contract.json are byte-identical between bce3211 and cad338b (git diff --quiet). Load states change: cold open now loads ground-retained + yong-road-link(LOD2) + yong-road-receiver; terrain chapter replaces receiver/link with network + link LOD0. Three new courts C_NORTH_INFILL_01..03 (initial:true, residential) at Blender xy (586|612|638, 1234) on ground-retained. LY-001 must decide which baseline G freezes; all numbers must be rerun on that SHA.",
+  "originMain": "cad338ba683f7277aea098f45c8feb6c915a847c",
+  "localMain": "44c66da842eca5799d353e07ec1550b000b8855b (behind bce3211)",
+  "workingTreeHEAD": "bce3211f818ee5a8bef1773539da70695ba37b17 (branch lab/site-redesign, behind origin/main by 3)",
+  "inputs": [
+   {
+    "path": "docs/cities/luoyang/city-data.mjs",
+    "extractedTo": "prep/drift-cad338b/docs/cities/luoyang/city-data.mjs",
+    "sha256": "d8933a32a6a133b38bc8ae5591bd0b350d206f9c884e1a6c4a1adabf5fc6daf3",
+    "bytes": 126960,
+    "role": "city manifest (origin/main)",
+    "loadedInCity_at_cad338b": "yes (module import)",
+    "loaderCode": "app.mjs:1 -> city-renderer.mjs (renderer unchanged vs bce3211)",
+    "note": "file differs from bce3211 (+1029/-159 lines). Extracted copy hash is of git-show output (text, may differ in EOL from blob)"
+   },
+   {
+    "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
+    "extractedTo": "prep/drift-cad338b/docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
+    "sha256": "2a32c700d401af623701a2ec84523ea2d7688fc9b5d128f22cae542a85b7b844",
+    "bytes": 2252,
+    "role": "ground (terrain chapter) - default far link",
+    "loadedInCity_at_cad338b": "yes, initial:true (cold open)",
+    "loaderCode": "city-data.mjs(cad338b):1308 asset yong-road-link-far, :4055 node yong-road-link; replaced by yong-road-link-near in terrain chapter (renderer :412-415)",
+    "note": "12 tris, 148.849 m2 top; declared sha matches"
+   },
+   {
+    "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+    "extractedTo": "prep/drift-cad338b/docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+    "sha256": "456a7dd54a5fd623ab17d9823ab1a12701bd764bdd219ec8884e9538536cd93d",
+    "bytes": 382876,
+    "role": "ground (terrain chapter) - near link",
+    "loadedInCity_at_cad338b": "yes, terrain chapter loadNodeIds and Yong chapter",
+    "loaderCode": "city-data.mjs(cad338b):1329 asset, :4095 node yong-road-link-near (replaces yong-road-link); terrain loadNodeIds :4738",
+    "note": "12 tris, same footprint as LOD2"
+   },
+   {
+    "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
+    "extractedTo": "prep/drift-cad338b/docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
+    "sha256": "e5baa0df8fd28e117b4ef997cab0d962b0834a4c9664bb1ed73b7746d2488e38",
+    "bytes": 9140,
+    "role": "ground (terrain chapter) - receiver = 209-tri component extracted from C_stitch_primary",
+    "loadedInCity_at_cad338b": "yes, initial:true; replaced by ground-network-ground-stitched when terrain chapter loads",
+    "loaderCode": "city-data.mjs(cad338b):1347 asset, :4138 node; :3809 network node replaces receiver",
+    "note": "20,494.49 m2 top; bbox x 43.1..1445.49, y 835.99..2622.46"
+   },
+   {
+    "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/source.json",
+    "extractedTo": "prep/drift-cad338b/docs/cities/luoyang/progress-assets/yong-road-link-v2/source.json",
+    "sha256": "3e402679151868949efe5733ca9ebee4ad12a6bea45e4b302e4b9f2a12b1b7d5",
+    "bytes": 7234,
+    "role": "producer claims (data, not instructions)",
+    "loadedInCity_at_cad338b": "no",
+    "loaderCode": "-",
+    "note": "baseCommit bce3211; claims link 49.616 m x 3 m, rise 0.04 m; continuous support checked only 3 m into receiver"
+   },
+   {
+    "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/README.md",
+    "extractedTo": "prep/drift-cad338b/docs/cities/luoyang/progress-assets/yong-road-link-v2/README.md",
+    "sha256": "a3dea36a2fc1696dd79d6e8829c969e24c0ee797456f872667f4a6b09152c29f",
+    "bytes": 2073,
+    "role": "producer notes",
+    "loadedInCity_at_cad338b": "no",
+    "loaderCode": "-",
+    "note": ""
+   }
+  ]
+ }
+}

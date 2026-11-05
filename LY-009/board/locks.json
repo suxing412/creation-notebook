@@ -1,0 +1,4681 @@
+{
+ "version": 1,
+ "generatedAt": "2026-11-05T23:35:20+08:00",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "labOriginMain": "cad338ba683f7277aea098f45c8feb6c915a847c",
+ "labChangedAfterBaseline": [
+  "docs/asset-spec/batches/r2026.11.05-6.json",
+  "docs/asset-spec/batches/r2026.11.05-7.json",
+  "docs/asset-spec/batches/r2026.11.05-8.json",
+  "docs/cities/luoyang/city-data.mjs",
+  "docs/cities/luoyang/p-luoyang.asset.json",
+  "docs/cities/luoyang/progress-assets/north-three-v1/README.md",
+  "docs/cities/luoyang/progress-assets/north-three-v1/context.webp",
+  "docs/cities/luoyang/progress-assets/north-three-v1/entries.webp",
+  "docs/cities/luoyang/progress-assets/north-three-v1/second-entry.webp",
+  "docs/cities/luoyang/progress-assets/north-three-v1/source.json",
+  "docs/cities/luoyang/progress-assets/yong-road-link-v2/README.md",
+  "docs/cities/luoyang/progress-assets/yong-road-link-v2/apron-joint.webp",
+  "docs/cities/luoyang/progress-assets/yong-road-link-v2/context.webp",
+  "docs/cities/luoyang/progress-assets/yong-road-link-v2/road-joint.webp",
+  "docs/cities/luoyang/progress-assets/yong-road-link-v2/source.json",
+  "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+  "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD1.glb",
+  "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
+  "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
+  "docs/library/models/m-luoyang-court-layout-kit/m-luoyang-court-layout-kit.asset.json",
+  "docs/library/models/m-luoyang-workyard-shed/m-luoyang-workyard-shed.asset.json",
+  "docs/library/models/m-luoyang-yong-gate/m-luoyang-yong-gate.asset.json",
+  "lab/data/assets.json",
+  "lab/data/report.json",
+  "lab/media/cities-luoyang-progress-assets-north-three-v1-entries-1800.webp",
+  "lab/media/cities-luoyang-progress-assets-north-three-v1-entries-720.webp",
+  "lab/media/cities-luoyang-progress-assets-yong-road-link-v2-apron-joint-1800.webp",
+  "lab/media/cities-luoyang-progress-assets-yong-road-link-v2-apron-joint-720.webp",
+  "lab/media/cities-luoyang-progress-assets-yong-road-link-v2-context-1800.webp",
+  "lab/media/cities-luoyang-progress-assets-yong-road-link-v2-context-720.webp",
+  "lab/media/cities-luoyang-progress-assets-yong-road-link-v2-road-joint-1800.webp",
+  "lab/media/cities-luoyang-progress-assets-yong-road-link-v2-road-joint-720.webp"
+ ],
+ "locks": [
+  {
+   "id": "LOCK-YONG-ROAD",
+   "kind": "protected-work",
+   "name": "雍门接街与雍门本体",
+   "poolQuote": "雍门接街、13院模型压缩：由原负责人继续，任务池只读取冻结接口。",
+   "holder": "原负责人（雍门接街）",
+   "holderRecorded": false,
+   "paths": [
+    "docs/cities/luoyang/progress-assets/yong-city-v1/**",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/**",
+    "docs/library/models/m-luoyang-yong-gate/**",
+    "docs/library/models/m-luoyang-yong-link/**",
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/**",
+    "docs/cities/luoyang/progress-assets/flat/study-north13-yong-Y-*",
+    "docs/cities/luoyang/assets/city-wall/direct/wall-09.glb"
+   ],
+   "afterBaselinePaths": [
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/**",
+    "docs/library/models/m-luoyang-yong-link/**"
+   ],
+   "cityNodes": [
+    "yong-gate-body",
+    "yong-gate-interface",
+    "research-north13-yong-Y",
+    "wall-direct-wall-09"
+   ],
+   "extRefs": [
+    "lab origin/main f28d650 / b70c495（持锁方在基线后继续提交的雍门接街）"
+   ],
+   "keywords": [
+    "雍门"
+   ],
+   "release": "持锁人交出冻结接口版本并由协调者宣布解锁；任务池内不解锁。",
+   "poolQuoteFound": true,
+   "patternMatches": {
+    "docs/cities/luoyang/progress-assets/yong-city-v1/**": {
+     "baseline": 7,
+     "head": 7,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/**": {
+     "baseline": 0,
+     "head": 9,
+     "expectedOnlyAfterBaseline": true
+    },
+    "docs/library/models/m-luoyang-yong-gate/**": {
+     "baseline": 7,
+     "head": 7,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-yong-link/**": {
+     "baseline": 0,
+     "head": 0,
+     "expectedOnlyAfterBaseline": true
+    },
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/**": {
+     "baseline": 2,
+     "head": 2,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/progress-assets/flat/study-north13-yong-Y-*": {
+     "baseline": 1,
+     "head": 1,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/assets/city-wall/direct/wall-09.glb": {
+     "baseline": 1,
+     "head": 1,
+     "expectedOnlyAfterBaseline": false
+    }
+   },
+   "files": [
+    {
+     "path": "docs/cities/luoyang/assets/city-wall/direct/wall-09.glb",
+     "bytes": 5020,
+     "sha256": "d4fb5c1cbf3c08ff18f9dcf1b25cab67e44a36a00ade3b8b67fb5eb3679c31be"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/flat/study-north13-yong-Y-1983dab58385.glb",
+     "bytes": 144900,
+     "sha256": "1983dab583853beb9b2a905227c9b63526b3696811b049466ccf471db58ba164"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD1.glb",
+     "bytes": 501844,
+     "sha256": "c277f7e31d764384979e4712fef95472fb8749f930b5a75a54028e106939652c"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD2.glb",
+     "bytes": 58612,
+     "sha256": "7406a24cf7124fcde7409a30f2961251a873a64ea9a3ab6a3e9e206085ad6074"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-city-v1/README.md",
+     "bytes": 1364,
+     "sha256": "eb48d95f49f096662ac1946e6866577444d2d6a1095c6040e1c3f8a67a032b6d"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-city-v1/context.webp",
+     "bytes": 87070,
+     "sha256": "9a2fcf408961111f01cd381ab2b70f7a55f0eb9271c81a40a29d47af7fd3a049"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-city-v1/entry.webp",
+     "bytes": 154380,
+     "sha256": "33139fc7530f5d1609ffbcc2250937ed9472916dc482a17d3485b8f7d7e5c7d9"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-city-v1/source.json",
+     "bytes": 6403,
+     "sha256": "325fb5caa15ee631896495c2c71b93e4b0267933c15bfc3fbd9f6be050e8f238"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+     "bytes": 388208,
+     "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD1.glb",
+     "bytes": 143604,
+     "sha256": "7ad8346bc6b0e19a05cef678be6b9bd2c83daf009d8bcaa1d67faef23bca90db"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD2.glb",
+     "bytes": 7564,
+     "sha256": "fb8a5f2f93aace63e0229cdc4a9c65d0c1450bb80bf8965e75da0fd92cad529a"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/cover.webp",
+     "bytes": 54070,
+     "sha256": "789eb1288314d1c6ae71094dbb774a372c44c4cb65df887e458ba7956ee7ef52"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+     "bytes": 1570856,
+     "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/files/yong-ground-LOD0.glb",
+     "bytes": 471944,
+     "sha256": "e7836c7cbba4bc8e719366e672db13b08c9b47ab3436f7fda5c100192e98e812"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/files/yong-ground-LOD1.glb",
+     "bytes": 163008,
+     "sha256": "434d3ff7152ce07a0b2f305e0472aeb5643aea6527f4efca2443d5277eb69f27"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/files/yong-ground-LOD2.glb",
+     "bytes": 3828,
+     "sha256": "08323732b2852e5bd5d01f186260d8c052561abda53a843055a2be671e81adaa"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/m-luoyang-yong-gate.asset.json",
+     "bytes": 4250,
+     "sha256": "a649f3f120e4fffb7f0160056d3b85e96f88619a89991860945f612d2fd455f8"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/shots/detail.webp",
+     "bytes": 65442,
+     "sha256": "7e2a6e26625c11a03f6e488fa93ce750617e4ca8266187943e153889b3fbadc1"
+    }
+   ],
+   "filesAddedAfterBaseline": [
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/README.md",
+     "bytes": 2073,
+     "sha256": "a3dea36a2fc1696dd79d6e8829c969e24c0ee797456f872667f4a6b09152c29f"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/apron-joint.webp",
+     "bytes": 157958,
+     "sha256": "f86203fd352cc5c9a7dfd15bfa79dddffff7c09823f6083f676fa16d1ec3fef7"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/context.webp",
+     "bytes": 24964,
+     "sha256": "6ca3ceafaa1c08abc0cca0ab497263297eb110908b217dbadd2420d811924caf"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/road-joint.webp",
+     "bytes": 12954,
+     "sha256": "7654305dc831d0618cb3f27eeb6cf4ed97b245a9551b6a2597eec93a747cef7a"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/source.json",
+     "bytes": 7234,
+     "sha256": "3e402679151868949efe5733ca9ebee4ad12a6bea45e4b302e4b9f2a12b1b7d5"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+     "bytes": 382876,
+     "sha256": "456a7dd54a5fd623ab17d9823ab1a12701bd764bdd219ec8884e9538536cd93d"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD1.glb",
+     "bytes": 138268,
+     "sha256": "52d981b33a10e615e145ac49d798f0ab569d44582866ecfd0fe7d3fa76e8db2a"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
+     "bytes": 2252,
+     "sha256": "2a32c700d401af623701a2ec84523ea2d7688fc9b5d128f22cae542a85b7b844"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
+     "bytes": 9140,
+     "sha256": "e5baa0df8fd28e117b4ef997cab0d962b0834a4c9664bb1ed73b7746d2488e38"
+    }
+   ],
+   "changedAfterBaseline": [
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/README.md",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/apron-joint.webp",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/context.webp",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/road-joint.webp",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/source.json",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD1.glb",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
+    "docs/library/models/m-luoyang-yong-gate/m-luoyang-yong-gate.asset.json"
+   ],
+   "cityNodesCheck": {
+    "yong-gate-body": {
+     "inBaselineCityData": true,
+     "ly006": "frozen"
+    },
+    "yong-gate-interface": {
+     "inBaselineCityData": true,
+     "ly006": "frozen"
+    },
+    "research-north13-yong-Y": {
+     "inBaselineCityData": true,
+     "ly006": "frozen"
+    },
+    "wall-direct-wall-09": {
+     "inBaselineCityData": true,
+     "ly006": "frozen"
+    }
+   },
+   "extFiles": [],
+   "seatsAffected": [
+    {
+     "seat": "LY-009",
+     "keywords": [
+      "雍门"
+     ],
+     "line": "- **边界与排重**：排除雍门接街、13院压缩等正在另做事项；代理只写自己的工作包，未领取不得顺手改邻居。"
+    },
+    {
+     "seat": "LY-011",
+     "keywords": [
+      "雍门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-012",
+     "keywords": [
+      "雍门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-013",
+     "keywords": [
+      "雍门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-014",
+     "keywords": [
+      "雍门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-015",
+     "keywords": [
+      "雍门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-016",
+     "keywords": [
+      "雍门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-017",
+     "keywords": [
+      "雍门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-018",
+     "keywords": [
+      "雍门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-019",
+     "keywords": [
+      "雍门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-020",
+     "keywords": [
+      "雍门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-082",
+     "keywords": [
+      "雍门"
+     ],
+     "line": "- **边界与排重**：与049按边界分工，不触13院压缩和雍门接街；没有实际目标或区域准入时停止，不生成虚构里坊主路。"
+    },
+    {
+     "seat": "LY-100",
+     "keywords": [
+      "雍门"
+     ],
+     "line": "- **边界与排重**：只有此席位可写共享城市/项目文件；仍按主协调者授权提交发布。阻断项不能硬合；010已明确接受的待验项必须保留待审标识，不覆盖同期雍门接街/13院成果。"
+    }
+   ],
+   "forbidden": [
+    "交付替换、重做、改版或删除被锁文件/节点的成果包",
+    "把被锁对象登记为本席位新建或新家族",
+    "LY-100 合并时把非持锁人的改动写进被锁路径"
+   ],
+   "allowed": [
+    "只读被锁文件与其冻结接口（LY-005/LY-006 端口）",
+    "在自己工作包内做比对、测试和消费端口的子件"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "LOCK-13COURT",
+   "kind": "protected-work",
+   "name": "13院片区与13院模型压缩",
+   "poolQuote": "雍门接街、13院模型压缩：由原负责人继续，任务池只读取冻结接口。",
+   "holder": "原负责人（13院压缩）",
+   "holderRecorded": false,
+   "paths": [
+    "docs/library/models/m-luoyang-residential-life/**",
+    "docs/cities/luoyang/progress-assets/flat/study-north13-court-*",
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/**",
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-second-row-v1/**",
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-perimeter-v1/**"
+   ],
+   "scopeNote": "m-luoyang-residential-life 卡片自述为「13院、26屋」布局候选（文本命中）；research-north13-court-* 与 north13-gates 下三组院落/周界研究件归入本锁，沿用 LY-006 的冻结判断，LY-009 未能从持锁人处确认边界，见暂停区 PZ-13。",
+   "cityNodes": [
+    "research-north13-court-A",
+    "research-north13-court-A2",
+    "research-north13-court-B",
+    "research-north13-court-B2",
+    "research-north13-court-TC03-2"
+   ],
+   "extRefs": [
+    "lab origin/main cad338b README：北缘三院「与另待部署的13院区域分离」"
+   ],
+   "keywords": [
+    "13院"
+   ],
+   "release": "同上。",
+   "poolQuoteFound": true,
+   "patternMatches": {
+    "docs/library/models/m-luoyang-residential-life/**": {
+     "baseline": 6,
+     "head": 6,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/progress-assets/flat/study-north13-court-*": {
+     "baseline": 5,
+     "head": 5,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/**": {
+     "baseline": 6,
+     "head": 6,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-second-row-v1/**": {
+     "baseline": 2,
+     "head": 2,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-perimeter-v1/**": {
+     "baseline": 2,
+     "head": 2,
+     "expectedOnlyAfterBaseline": false
+    }
+   },
+   "files": [
+    {
+     "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-A-19a42b6b0b1c.glb",
+     "bytes": 444348,
+     "sha256": "19a42b6b0b1cc1f204e112fc9d63b626895bf0f9b94922cac6ab2bd1cb810ff4"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-A2-db02f24fde89.glb",
+     "bytes": 395408,
+     "sha256": "db02f24fde899b73d5902b41391a7a5e6db64affac25b7cc609de3d46a3b0994"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-B-6f7f84af4e7f.glb",
+     "bytes": 546768,
+     "sha256": "6f7f84af4e7f57920dc1182b747a7081bca9d15b2d595d3ec80593f60e022282"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-B2-7d3758ce668d.glb",
+     "bytes": 502688,
+     "sha256": "7d3758ce668d06541694e7e17d947d5b380a0974311c57eba7968284214c6ac2"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-TC03-2-98bedd183667.glb",
+     "bytes": 821660,
+     "sha256": "98bedd1836674388e9aee3794af12def4235d566324dae877c6ab7baee0c3a05"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-A2-LOD1.glb",
+     "bytes": 752352,
+     "sha256": "d76580bbb5a7c89391152f32bd65b81595fbc300d6da69b2c6e819fff9d941c2"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-A2-LOD2.glb",
+     "bytes": 121516,
+     "sha256": "4691c63041231344e7309643c94c84938bb403b2a4ae68b595e6399b37214589"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD1.glb",
+     "bytes": 903708,
+     "sha256": "2be52632e16e43290ef96aae7479cd7c1faa413b2090cd2af162652a8bb16d9c"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD2.glb",
+     "bytes": 150468,
+     "sha256": "641b05a535a266dce29c8c966cccb576e522b65a4586e95e8cfe1fb30fb69952"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B2-LOD1.glb",
+     "bytes": 859632,
+     "sha256": "95b66c5d994cac56d38327896bfe3b370fb4a3daaf643b0250c225cd8e83795e"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B2-LOD2.glb",
+     "bytes": 150456,
+     "sha256": "b9651fa3ef9bc449131da9eadf86c1fa985ef798d5badc675a81c30174181380"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-perimeter-v1/models/court-TC03-2-LOD1.glb",
+     "bytes": 1178612,
+     "sha256": "9003d00a45b4866385fbd6092a5c2f3b99438c9a4f3714543b9a107cdaac4024"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-perimeter-v1/models/court-TC03-2-LOD2.glb",
+     "bytes": 219732,
+     "sha256": "b8dda6789f4f9dcfddf1a1da430f43aa25ab6a56a0cb894ea139339a646a6905"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-second-row-v1/models/court-A-LOD1.glb",
+     "bytes": 801292,
+     "sha256": "245c20b6385dcee4c55ca300f7e2420b07ca883b5e91b5dcd5a93e5b5a561e6a"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-north-second-row-v1/models/court-A-LOD2.glb",
+     "bytes": 121496,
+     "sha256": "8e098a5f382448c20d07422f30543e6d3234112bc1fc9327d6ae6860a6cff94d"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-residential-life/cover.webp",
+     "bytes": 430814,
+     "sha256": "1342eae556cc71e121fa884374d871d9574b064c9b2a2901b8fb8350317e2582"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-residential-life/files/life-block-LOD0.glb",
+     "bytes": 8744148,
+     "sha256": "270998729726baca248762bc86d4883ddf0a5c8de4ee4e226ba8aae40b66ba72"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-residential-life/files/life-block-LOD1.glb",
+     "bytes": 4526768,
+     "sha256": "200fb8a31019957979e9fbffb5c161155c593d6d079077f3f0c40d3b1423bfb8"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-residential-life/files/life-block-LOD2.glb",
+     "bytes": 638000,
+     "sha256": "a9781f6ee525468b42f1deebf0c5d4fdd956ef4ecb7f81fdaad4d586166e27ad"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-residential-life/m-luoyang-residential-life.asset.json",
+     "bytes": 1995,
+     "sha256": "8efd37b57d45ec6cedf4e2336949c540f257204b41236abc1ad5332abfaa407f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-residential-life/shots/detail.webp",
+     "bytes": 421442,
+     "sha256": "451171883c9a2b10d44df31c330898005d1b0964a757af8674ae2b617d44e2c6"
+    }
+   ],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [],
+   "cityNodesCheck": {
+    "research-north13-court-A": {
+     "inBaselineCityData": true,
+     "ly006": "frozen"
+    },
+    "research-north13-court-A2": {
+     "inBaselineCityData": true,
+     "ly006": "frozen"
+    },
+    "research-north13-court-B": {
+     "inBaselineCityData": true,
+     "ly006": "frozen"
+    },
+    "research-north13-court-B2": {
+     "inBaselineCityData": true,
+     "ly006": "frozen"
+    },
+    "research-north13-court-TC03-2": {
+     "inBaselineCityData": true,
+     "ly006": "frozen"
+    }
+   },
+   "extFiles": [],
+   "seatsAffected": [
+    {
+     "seat": "LY-009",
+     "keywords": [
+      "13院"
+     ],
+     "line": "- **边界与排重**：排除雍门接街、13院压缩等正在另做事项；代理只写自己的工作包，未领取不得顺手改邻居。"
+    },
+    {
+     "seat": "LY-041",
+     "keywords": [
+      "13院"
+     ],
+     "line": "- **边界与排重**：不碰13院片区，不移动原院矩阵、不增院数；已有支持就复用，禁止用大底板覆盖真实孔洞和道路。"
+    },
+    {
+     "seat": "LY-042",
+     "keywords": [
+      "13院"
+     ],
+     "line": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。"
+    },
+    {
+     "seat": "LY-043",
+     "keywords": [
+      "13院"
+     ],
+     "line": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。"
+    },
+    {
+     "seat": "LY-044",
+     "keywords": [
+      "13院"
+     ],
+     "line": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。"
+    },
+    {
+     "seat": "LY-045",
+     "keywords": [
+      "13院"
+     ],
+     "line": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。"
+    },
+    {
+     "seat": "LY-046",
+     "keywords": [
+      "13院"
+     ],
+     "line": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。"
+    },
+    {
+     "seat": "LY-047",
+     "keywords": [
+      "13院"
+     ],
+     "line": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。"
+    },
+    {
+     "seat": "LY-048",
+     "keywords": [
+      "13院"
+     ],
+     "line": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。"
+    },
+    {
+     "seat": "LY-049",
+     "keywords": [
+      "13院"
+     ],
+     "line": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。"
+    },
+    {
+     "seat": "LY-050",
+     "keywords": [
+      "13院"
+     ],
+     "line": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。"
+    },
+    {
+     "seat": "LY-082",
+     "keywords": [
+      "13院"
+     ],
+     "line": "- **边界与排重**：与049按边界分工，不触13院压缩和雍门接街；没有实际目标或区域准入时停止，不生成虚构里坊主路。"
+    },
+    {
+     "seat": "LY-100",
+     "keywords": [
+      "13院"
+     ],
+     "line": "- **边界与排重**：只有此席位可写共享城市/项目文件；仍按主协调者授权提交发布。阻断项不能硬合；010已明确接受的待验项必须保留待审标识，不覆盖同期雍门接街/13院成果。"
+    }
+   ],
+   "forbidden": [
+    "交付替换、重做、改版或删除被锁文件/节点的成果包",
+    "把被锁对象登记为本席位新建或新家族",
+    "LY-100 合并时把非持锁人的改动写进被锁路径"
+   ],
+   "allowed": [
+    "只读被锁文件与其冻结接口（LY-005/LY-006 端口）",
+    "在自己工作包内做比对、测试和消费端口的子件"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "LOCK-12GATES",
+   "kind": "protected-work",
+   "name": "十二门本体",
+   "poolQuote": "十二门本体；井、灶、圈厕、厩、窑、磨、足碓、住屋、宫殿/廊、两坛、明堂、辟雍等现有原型。",
+   "holder": "既有成果（本轮只读；仅子件/接口席位可交独立子件）",
+   "holderRecorded": true,
+   "paths": [
+    "docs/library/models/m-luoyang-guangyang-gate/**",
+    "docs/library/models/m-luoyang-kaiyang-gate/**",
+    "docs/library/models/m-luoyang-pingcheng-gate/**",
+    "docs/library/models/m-luoyang-gu-gate/**",
+    "docs/library/models/m-luoyang-xia-gate/**",
+    "docs/library/models/m-luoyang-yong-gate/**",
+    "docs/library/models/m-luoyang-jin-gate/**",
+    "docs/library/models/m-luoyang-mao-gate/**",
+    "docs/library/models/m-luoyang-shangdong-gate/**",
+    "docs/library/models/m-luoyang-shangxi-gate/**",
+    "docs/library/models/m-luoyang-xiaoyuan-gate/**",
+    "docs/library/models/m-luoyang-zhongdong-gate/**",
+    "docs/cities/luoyang/assets/city-wall/direct/gate-body-only.glb",
+    "docs/cities/luoyang/progress-assets/mao-gate/**",
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-*-gate-study-*/**"
+   ],
+   "expectCount": {
+    "gateCards": 12
+   },
+   "cityNodes": [
+    "wall-direct-gate-body-only",
+    "research-north13-shangxi-X",
+    "research-north13-zhongdong-Z",
+    "research-mao-gate"
+   ],
+   "extRefs": [],
+   "keywords": [
+    "十二门",
+    "门家族总数"
+   ],
+   "release": "本轮不解锁；门数恒为12（LY-091验收）。",
+   "poolQuoteFound": true,
+   "patternMatches": {
+    "docs/library/models/m-luoyang-guangyang-gate/**": {
+     "baseline": 5,
+     "head": 5,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-kaiyang-gate/**": {
+     "baseline": 7,
+     "head": 7,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-pingcheng-gate/**": {
+     "baseline": 7,
+     "head": 7,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-gu-gate/**": {
+     "baseline": 5,
+     "head": 5,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-xia-gate/**": {
+     "baseline": 5,
+     "head": 5,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-yong-gate/**": {
+     "baseline": 7,
+     "head": 7,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-jin-gate/**": {
+     "baseline": 6,
+     "head": 6,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-mao-gate/**": {
+     "baseline": 4,
+     "head": 4,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-shangdong-gate/**": {
+     "baseline": 5,
+     "head": 5,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-shangxi-gate/**": {
+     "baseline": 4,
+     "head": 4,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-xiaoyuan-gate/**": {
+     "baseline": 6,
+     "head": 6,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-zhongdong-gate/**": {
+     "baseline": 3,
+     "head": 3,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/assets/city-wall/direct/gate-body-only.glb": {
+     "baseline": 1,
+     "head": 1,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/progress-assets/mao-gate/**": {
+     "baseline": 3,
+     "head": 3,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-*-gate-study-*/**": {
+     "baseline": 10,
+     "head": 10,
+     "expectedOnlyAfterBaseline": false
+    }
+   },
+   "files": [
+    {
+     "path": "docs/cities/luoyang/assets/city-wall/direct/gate-body-only.glb",
+     "bytes": 1139920,
+     "sha256": "cdba2d5c3bbf14bbf9c6ed59e3fcadf174c13e882a5ccb1522b81bc9949d5058"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/mao-gate/mao-C-LOD0.glb",
+     "bytes": 2140916,
+     "sha256": "d8fbad038b582634084f0248d2e4b23f13f41d850b83f64ec4cfcc3b90264388"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/mao-gate/mao-cover.webp",
+     "bytes": 14588,
+     "sha256": "c1e147669ff99a7dc215612fb4412ddd241ce74b5c8fd0cd1635eba0b5afbbe0"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/mao-gate/source.json",
+     "bytes": 2341,
+     "sha256": "95589c004a939a4adcb76fe005b32a1ebf6c5645a37106d045708d0fb0c4ee12"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb",
+     "bytes": 495712,
+     "sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb",
+     "bytes": 55280,
+     "sha256": "13ff78a7a1fe9159ed577d715ff30c75cf3d0e8f6d2d47311968f660986ed801"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb",
+     "bytes": 476264,
+     "sha256": "7d995a1b95026cb3d626bf6ad6bdd01edcf89d7c5baab87ffff341360d51f102"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD2.glb",
+     "bytes": 42072,
+     "sha256": "e6f289f78dc05c2d0c5ea6ef11726748be6b35ffb68315a5b7fc1186f3c5551e"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD1.glb",
+     "bytes": 481044,
+     "sha256": "00a2eb67b73bac04f267e24540f6fd2e6bf26689e4c0783783d664566bc24312"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD2.glb",
+     "bytes": 41236,
+     "sha256": "99047569c6248c99e0601924613ad9e9c710d25248ac661fd29a2bae84665862"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD1.glb",
+     "bytes": 501844,
+     "sha256": "c277f7e31d764384979e4712fef95472fb8749f930b5a75a54028e106939652c"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD2.glb",
+     "bytes": 58612,
+     "sha256": "7406a24cf7124fcde7409a30f2961251a873a64ea9a3ab6a3e9e206085ad6074"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD1.glb",
+     "bytes": 1343084,
+     "sha256": "a78b7c84c1757e94a2ce9e455370c5003b22b999a5cc254b39374461c7808e0f"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD2.glb",
+     "bytes": 51936,
+     "sha256": "cefa53325287e76d6506463f1d01227a9bcb30ce32f21c5b37afd17c176c7038"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gu-gate/cover.webp",
+     "bytes": 153292,
+     "sha256": "5b7f330f8c5a74042c74cb39093979234895ed058cb408c051b5fa454eba7000"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gu-gate/files/gu-G-LOD1.glb",
+     "bytes": 1280000,
+     "sha256": "5195ce552b76fc60240248d671812fa9e1912e2be327a061cd52524f65a42432"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gu-gate/files/gu-G-LOD2.glb",
+     "bytes": 52340,
+     "sha256": "945b3346ab16676dc62cc78aca69b5eef665758607686badea79065193587f6e"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gu-gate/m-luoyang-gu-gate.asset.json",
+     "bytes": 1814,
+     "sha256": "e192ac647b774d66a27bf6a24249de679f2c014f82cd2882ea1010d28a036d28"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gu-gate/shots/detail.webp",
+     "bytes": 156964,
+     "sha256": "50176a2983e00bf24b5c644c158e346f2d28a957569fd7479160aea1b34333f9"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-guangyang-gate/cover.webp",
+     "bytes": 69338,
+     "sha256": "b6933fe9fcdab7b104a4a4f6974682a68cb0e2708363c74a5216e2875953a63a"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-guangyang-gate/files/gate-A-LOD1.glb",
+     "bytes": 1166484,
+     "sha256": "59a972589991432a71f579a3a70231268d3a7a935e79aba4f270eae935afa376"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-guangyang-gate/files/gate-A-LOD2.glb",
+     "bytes": 41304,
+     "sha256": "c2f0927c5bd086e8bb985461b9441009425d8f4a1f69045eba8c0ff067d4a759"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-guangyang-gate/m-luoyang-guangyang-gate.asset.json",
+     "bytes": 1828,
+     "sha256": "cce98c6fa087a2084ccea3dffd1c048d15f8bb984c953836684a51a33970cd62"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-guangyang-gate/shots/detail.webp",
+     "bytes": 65858,
+     "sha256": "fdc30a7dfdb8d6a150e68e1310ed532f0a3569a14f97fa26906de95165fe4e38"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-jin-gate/cover.webp",
+     "bytes": 47004,
+     "sha256": "2c27dfda592bce9c3af9b7fae0a506b991fbf2833eb0efbfb4186fb0a4f8d7cb"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-jin-gate/files/jin-C-LOD0.glb",
+     "bytes": 1830728,
+     "sha256": "f8ac88a9673eeb904a55c22d408b1d0b389a06cde5ccc850935ffd1012565099"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-jin-gate/files/jin-C-LOD1.glb",
+     "bytes": 686148,
+     "sha256": "7f9929174880e45adce031f09a041280000aec164787e5b911c41a4610ff2d26"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-jin-gate/files/jin-C-LOD2.glb",
+     "bytes": 194212,
+     "sha256": "25adfdb7db3bfc1a323f791b8cb2212d1c3f735e040c1303fc90f48a8f217df9"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-jin-gate/m-luoyang-jin-gate.asset.json",
+     "bytes": 2042,
+     "sha256": "22291787512599a86ae893cce37bf86b59b8491c74ab27b208bef65b13ca6032"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-jin-gate/shots/detail.webp",
+     "bytes": 44546,
+     "sha256": "88c7996b7541c57429d4721f064a1f3858c958d461fead3bb056b888a861d0b1"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-kaiyang-gate/cover.webp",
+     "bytes": 60648,
+     "sha256": "19f93c1aecf3905b5ac5f2061218a802d9482077c5d3efda4893d3321b663b1e"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb",
+     "bytes": 1595636,
+     "sha256": "88d9a3223ded3229f90fa1e6702c68771a675edcf15d6d09f3e0fe5f50aeefec"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD0.glb",
+     "bytes": 471920,
+     "sha256": "5754432ae2b9497ee0ab5cbae0ce17471f093e249e10945e61b9c08375941bcd"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD1.glb",
+     "bytes": 162984,
+     "sha256": "50f8550280e3992b63f0fa4f70c23ebc0d5fceb8db96ae1d0f91730e13612ee9"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD2.glb",
+     "bytes": 3808,
+     "sha256": "e758e45f4ce320d039549c4d0346476830b0a81154d29c32fdc4d14a7b7330d6"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json",
+     "bytes": 2903,
+     "sha256": "a864fd4a1b8d2cbd08abc8591cf65beac300b91c611f574d7013ed913455599a"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-kaiyang-gate/shots/detail.webp",
+     "bytes": 75548,
+     "sha256": "23db389533140408b456a84db941893f60a883d897777e7f3422543be058e497"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mao-gate/cover.webp",
+     "bytes": 818202,
+     "sha256": "11648be5852910e4b5ca6bed63db37d60c49dda624db970cee40757e89bd9960"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mao-gate/files/mao-C-display-LOD1.glb",
+     "bytes": 374184,
+     "sha256": "ac586b98df4d9a564931d6f26575fcd0a7a2f985e98e134f8708a13df9060b63"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mao-gate/m-luoyang-mao-gate.asset.json",
+     "bytes": 1746,
+     "sha256": "ed7992599850161e9f080880ab4b336c1ba35613be99f448672deaa52a81e47b"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mao-gate/shots/rear.webp",
+     "bytes": 834020,
+     "sha256": "4b4124aa4902fd00f91211366bdc478f112b6057a00fd2036c51c6fbf9b25477"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-pingcheng-gate/cover.webp",
+     "bytes": 54634,
+     "sha256": "c0713bde69cc74be2cbe6553c2f0a06fbf68a19446db34d6dbfb69eed951f6cf"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-P-LOD0.glb",
+     "bytes": 1693932,
+     "sha256": "5cdd8d68a8d7338b3f5897ba494631838ff518d649fba9529897e381c94c6546"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD0.glb",
+     "bytes": 562936,
+     "sha256": "c0f700516af7bdd942048ac68494c8d7bf3a7aca4a6416382b0005ffd181aba6"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD1.glb",
+     "bytes": 189364,
+     "sha256": "d4de907ad9c14da39c8ee00e999165ed837bd27510d77111ae636327fa047687"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD2.glb",
+     "bytes": 6368,
+     "sha256": "87e3e751efc8768ed4ceb3dc7dc09f0b20651d4ffc30c2113897396c7701628f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-pingcheng-gate/m-luoyang-pingcheng-gate.asset.json",
+     "bytes": 2989,
+     "sha256": "0254f742a097094718b3760b68b3a840757333b0ff31c1db04baccc12c92c1f6"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-pingcheng-gate/shots/detail.webp",
+     "bytes": 70662,
+     "sha256": "013e214a95bfcb8afd43eeaa2eb81e4adffca74aed0042b0791ff4264e468d5b"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-shangdong-gate/cover.webp",
+     "bytes": 170444,
+     "sha256": "46036d9d22bac9da86f3af622f68e1df8e19029a2c88bb406acd0c5dd717fd09"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-shangdong-gate/files/shangdong-S-LOD1.glb",
+     "bytes": 1286020,
+     "sha256": "59cfef6e01d0034d338555cce6ce53cfa77d775fd366d8fd1722fdd20823464a"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-shangdong-gate/files/shangdong-S-LOD2.glb",
+     "bytes": 68172,
+     "sha256": "b8a7ccd6e426d7e05b6349c8d6d78b200512c40661a4b1cc0611790c55ed86f7"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-shangdong-gate/m-luoyang-shangdong-gate.asset.json",
+     "bytes": 1829,
+     "sha256": "2e69e3fee2564b301df3843e7153292dc2fbfde2f7af63fbbdc0734ef74ecfdb"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-shangdong-gate/shots/detail.webp",
+     "bytes": 171950,
+     "sha256": "cf147e86f51faca7f74962e77f9117a1ed74e36603afb8c7713d512567d611c7"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-shangxi-gate/cover.webp",
+     "bytes": 54736,
+     "sha256": "d23f5ec5de3020f42863d98867389489684336cba0e39cb3d0ea103845d4f31c"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-shangxi-gate/files/shangxi-X-LOD0.glb",
+     "bytes": 1706888,
+     "sha256": "534d2827dae64c395d25bb9e5e22a4b8cba625970d3f6d0e428cb03500b7bf1d"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-shangxi-gate/m-luoyang-shangxi-gate.asset.json",
+     "bytes": 1963,
+     "sha256": "3fb4cb82c7d1c547dc34a0bac65873bf7de5c0b556428e075506757f7b33485c"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-shangxi-gate/shots/detail.webp",
+     "bytes": 66018,
+     "sha256": "abc8a490fee8418efb45c909940cb3d95a7e99dec4af74c839e722559b3cca27"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-xia-gate/cover.webp",
+     "bytes": 71760,
+     "sha256": "2113d09758efc5b0031862c462fc97d572a28777379163c5ace0329427fadf7b"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-xia-gate/files/gate-B-LOD1.glb",
+     "bytes": 1246480,
+     "sha256": "7c5999df87f17f0278481c33734ab7af79f6ea57a07bb4d4faba8938f532f760"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-xia-gate/files/gate-B-LOD2.glb",
+     "bytes": 39672,
+     "sha256": "802a1fee2f1028c431b232cb8b6b12d3bf7b7026e56cbe1a01b4f6fda7c018ed"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-xia-gate/m-luoyang-xia-gate.asset.json",
+     "bytes": 1803,
+     "sha256": "db2dd2a7dcdf9c4e8004d7ef19147b92cfb3af76999a67f530680ce596478ccc"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-xia-gate/shots/detail.webp",
+     "bytes": 69370,
+     "sha256": "4b4d4e820e4d6da23f90c3e3fb7a9c4d4cccf26e13f7a02bc3982da6062d53e3"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-xiaoyuan-gate/cover.webp",
+     "bytes": 98416,
+     "sha256": "07a18e52a1b584f5215ea46382a1c7911d61fbf4c8ecef0e6f1aa33f1eef861b"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-xiaoyuan-gate/files/xiaoyuan-LOD0.glb",
+     "bytes": 597900,
+     "sha256": "1eea3bfbc2e8d25d77132f3caee00b3e6624f4d802bff9e0225db3350e957717"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-xiaoyuan-gate/files/xiaoyuan-LOD1.glb",
+     "bytes": 295292,
+     "sha256": "f9ccb424075f79b530b14cd1552c0fe20e1a3fd9008aec3c1f3bf7a64e5ebc0f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-xiaoyuan-gate/files/xiaoyuan-LOD2.glb",
+     "bytes": 133884,
+     "sha256": "269368942888298da00a4bdc7ec57a60e742c5b253ec932f1fe0440a13d121a8"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-xiaoyuan-gate/m-luoyang-xiaoyuan-gate.asset.json",
+     "bytes": 1857,
+     "sha256": "90bb143d0cc939f468d2b2b00faf46ac0f9229c833335cef5c54fdc828527622"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-xiaoyuan-gate/shots/detail.webp",
+     "bytes": 112032,
+     "sha256": "c1ec48a1a60cf8679d6aeb38977d549bf22498db2a1136aa1e625e6900c711e8"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/cover.webp",
+     "bytes": 54070,
+     "sha256": "789eb1288314d1c6ae71094dbb774a372c44c4cb65df887e458ba7956ee7ef52"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+     "bytes": 1570856,
+     "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/files/yong-ground-LOD0.glb",
+     "bytes": 471944,
+     "sha256": "e7836c7cbba4bc8e719366e672db13b08c9b47ab3436f7fda5c100192e98e812"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/files/yong-ground-LOD1.glb",
+     "bytes": 163008,
+     "sha256": "434d3ff7152ce07a0b2f305e0472aeb5643aea6527f4efca2443d5277eb69f27"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/files/yong-ground-LOD2.glb",
+     "bytes": 3828,
+     "sha256": "08323732b2852e5bd5d01f186260d8c052561abda53a843055a2be671e81adaa"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/m-luoyang-yong-gate.asset.json",
+     "bytes": 4250,
+     "sha256": "a649f3f120e4fffb7f0160056d3b85e96f88619a89991860945f612d2fd455f8"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yong-gate/shots/detail.webp",
+     "bytes": 65442,
+     "sha256": "7e2a6e26625c11a03f6e488fa93ce750617e4ca8266187943e153889b3fbadc1"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-zhongdong-gate/cover.webp",
+     "bytes": 43718,
+     "sha256": "bea075909a043ab3378ccae8688be6ad867ddbd965cc835917badd3e4256ab1f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-zhongdong-gate/m-luoyang-zhongdong-gate.asset.json",
+     "bytes": 2018,
+     "sha256": "388ca470d6335db648fd4a4fb8c7a400bc4b9637d3fe74719dce53ae3154e933"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-zhongdong-gate/shots/detail.webp",
+     "bytes": 34376,
+     "sha256": "01a34be7841489e13ffe9c1226986c6121c8185ddbb3d115c388722251e509dd"
+    }
+   ],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [
+    "docs/library/models/m-luoyang-yong-gate/m-luoyang-yong-gate.asset.json"
+   ],
+   "gateCardsFound": [
+    "m-luoyang-gu-gate",
+    "m-luoyang-guangyang-gate",
+    "m-luoyang-jin-gate",
+    "m-luoyang-kaiyang-gate",
+    "m-luoyang-mao-gate",
+    "m-luoyang-pingcheng-gate",
+    "m-luoyang-shangdong-gate",
+    "m-luoyang-shangxi-gate",
+    "m-luoyang-xia-gate",
+    "m-luoyang-xiaoyuan-gate",
+    "m-luoyang-yong-gate",
+    "m-luoyang-zhongdong-gate"
+   ],
+   "gateCardCountOk": true,
+   "cityNodesCheck": {
+    "wall-direct-gate-body-only": {
+     "inBaselineCityData": true,
+     "ly006": "frozen"
+    },
+    "research-north13-shangxi-X": {
+     "inBaselineCityData": true,
+     "ly006": "frozen"
+    },
+    "research-north13-zhongdong-Z": {
+     "inBaselineCityData": true,
+     "ly006": "frozen"
+    },
+    "research-mao-gate": {
+     "inBaselineCityData": true,
+     "ly006": "frozen"
+    }
+   },
+   "extFiles": [],
+   "seatsAffected": [
+    {
+     "seat": "LY-011",
+     "keywords": [
+      "十二门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-012",
+     "keywords": [
+      "十二门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-013",
+     "keywords": [
+      "十二门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-014",
+     "keywords": [
+      "十二门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-015",
+     "keywords": [
+      "十二门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-016",
+     "keywords": [
+      "十二门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-017",
+     "keywords": [
+      "十二门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-018",
+     "keywords": [
+      "十二门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-019",
+     "keywords": [
+      "十二门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-020",
+     "keywords": [
+      "十二门"
+     ],
+     "line": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+    },
+    {
+     "seat": "LY-091",
+     "keywords": [
+      "门家族总数"
+     ],
+     "line": "- **边界与排重**：只验通过的候选，不因文件能打开就标已入城；门家族总数保持12，版本与附件不增加门数。"
+    }
+   ],
+   "forbidden": [
+    "交付替换、重做、改版或删除被锁文件/节点的成果包",
+    "把被锁对象登记为本席位新建或新家族",
+    "LY-100 合并时把非持锁人的改动写进被锁路径"
+   ],
+   "allowed": [
+    "只读被锁文件与其冻结接口（LY-005/LY-006 端口）",
+    "在自己工作包内做比对、测试和消费端口的子件"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "LOCK-PROTOTYPES",
+   "kind": "protected-work",
+   "name": "现有原型（井、灶、圈厕、厩、窑、磨、足碓、住屋、宫殿/廊、两坛、明堂、辟雍）",
+   "poolQuote": "十二门本体；井、灶、圈厕、厩、窑、磨、足碓、住屋、宫殿/廊、两坛、明堂、辟雍等现有原型。",
+   "holder": "既有成果（本轮只读）",
+   "holderRecorded": true,
+   "paths": [
+    "docs/model-library/well-study/**",
+    "docs/library/models/m-luoyang-cooking-stove/**",
+    "docs/library/models/m-luoyang-service-court/**",
+    "docs/library/models/m-luoyang-household-service/**",
+    "docs/library/models/m-luoyang-stable/**",
+    "docs/library/models/m-luoyang-tile-kiln/**",
+    "docs/library/models/m-luoyang-hand-mill/**",
+    "docs/library/models/m-luoyang-foot-pestle/**",
+    "docs/library/models/m-luoyang-ordinary-house-types/**",
+    "docs/library/models/m-luoyang-house-roof/**",
+    "docs/model-library/m-courtyard-family.asset.json",
+    "docs/model-library/updates/m-courtyard-family/**",
+    "docs/library/models/m-luoyang-deyang-hall/**",
+    "docs/library/models/m-luoyang-yutang-halls/**",
+    "docs/library/models/m-luoyang-palace-gallery/**",
+    "docs/library/models/m-luoyang-southern-altar/**",
+    "docs/library/models/m-luoyang-northern-altar/**",
+    "docs/library/models/m-luoyang-mingtang/**",
+    "docs/library/models/m-luoyang-biyong/**"
+   ],
+   "cityNodes": [],
+   "extRefs": [],
+   "keywords": [
+    "原型"
+   ],
+   "release": "本轮不解锁；补件只交兼容子件/安装包，原件不改。",
+   "poolQuoteFound": true,
+   "patternMatches": {
+    "docs/model-library/well-study/**": {
+     "baseline": 24,
+     "head": 24,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-cooking-stove/**": {
+     "baseline": 9,
+     "head": 9,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-service-court/**": {
+     "baseline": 7,
+     "head": 7,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-household-service/**": {
+     "baseline": 5,
+     "head": 5,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-stable/**": {
+     "baseline": 5,
+     "head": 5,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-tile-kiln/**": {
+     "baseline": 8,
+     "head": 8,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-hand-mill/**": {
+     "baseline": 8,
+     "head": 8,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-foot-pestle/**": {
+     "baseline": 7,
+     "head": 7,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-ordinary-house-types/**": {
+     "baseline": 16,
+     "head": 16,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-house-roof/**": {
+     "baseline": 5,
+     "head": 5,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/model-library/m-courtyard-family.asset.json": {
+     "baseline": 1,
+     "head": 1,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/model-library/updates/m-courtyard-family/**": {
+     "baseline": 26,
+     "head": 26,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-deyang-hall/**": {
+     "baseline": 11,
+     "head": 11,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-yutang-halls/**": {
+     "baseline": 11,
+     "head": 11,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-palace-gallery/**": {
+     "baseline": 11,
+     "head": 11,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-southern-altar/**": {
+     "baseline": 9,
+     "head": 9,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-northern-altar/**": {
+     "baseline": 9,
+     "head": 9,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-mingtang/**": {
+     "baseline": 11,
+     "head": 11,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-biyong/**": {
+     "baseline": 9,
+     "head": 9,
+     "expectedOnlyAfterBaseline": false
+    }
+   },
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-biyong/cover.webp",
+     "bytes": 348934,
+     "sha256": "13b882fdb9b43b2bfc398e99d93c3c8e24928e7fc92bdd148addc0abc9af5ff1"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-biyong/files/biyong-A-LOD0.glb",
+     "bytes": 1689400,
+     "sha256": "937a31922d0b0ef69c300f223d88310dad2e284312fbba054b04e8bdb437e1e8"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-biyong/files/biyong-A-LOD1.glb",
+     "bytes": 552104,
+     "sha256": "5dc71e322a3fec8731fcaec60b791c93ec7cd7fb0650d565f400e4c9fb8fcbfb"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-biyong/files/biyong-A-LOD2.glb",
+     "bytes": 78060,
+     "sha256": "482222614a0f39807743387dd841e7127bac62ee6ed95fc592ee443b1af21dd4"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD0.glb",
+     "bytes": 2303620,
+     "sha256": "88f227d05c4c7c8ebc771b2ef474f1504ae2ceed7dede01795b360db247d97df"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD1.glb",
+     "bytes": 293348,
+     "sha256": "69ae00ce019d4868a49afb1d2baaf4ea8ab8ff092c9270785a2de8ccfa7f63aa"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD2.glb",
+     "bytes": 2620,
+     "sha256": "60026711645722e1e5b61f14867a6753021e7687c94cd6e759e335d05bf50c4c"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-biyong/m-luoyang-biyong.asset.json",
+     "bytes": 1793,
+     "sha256": "4b6f37622159dbdfee4ccca5ea1d6ecb849ae2644ffec199286f19b20785b9b1"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-biyong/shots/after-entry.webp",
+     "bytes": 646792,
+     "sha256": "657f6f74acfa933e5b618bb182f95d501325aee57658cd177bde4a41434623a3"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-cooking-stove/cover.webp",
+     "bytes": 216002,
+     "sha256": "5b4d9b1089efe3d62eea44bcf52b07b75ff4c6578dbf8a520fe5fbabf980c612"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD0.glb",
+     "bytes": 865760,
+     "sha256": "88e6f5907dc4d0b879ccee41ba830c58a706c8df9fcab0a9a0ef12ef55691776"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD1.glb",
+     "bytes": 316124,
+     "sha256": "a687954a2817cd7575719d9dc127e0c78ece8a4dc45ef4747df69e1d5e30ee8b"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-cooking-stove/files/stove-A-LOD2.glb",
+     "bytes": 30164,
+     "sha256": "499a2d4ed0342ee570dfcda07f4a4311630e749d8cc800d9b0548498d836aa85"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD0.glb",
+     "bytes": 1032792,
+     "sha256": "3bde10b5f684b22bdf08591aece0deb5fecae40117293eb36168848aa8001beb"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD1.glb",
+     "bytes": 370688,
+     "sha256": "aa4170faa8bc3b04eef9b94c0177116c7e258e628a561ba18b5f8391d3953b2e"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-cooking-stove/files/stove-B-LOD2.glb",
+     "bytes": 52804,
+     "sha256": "a79777807fafe196c1bcef1484c7315e54c0bd3e3cca06145db4fd9e75b124b3"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-cooking-stove/m-luoyang-cooking-stove.asset.json",
+     "bytes": 1622,
+     "sha256": "032e7eef6d0daabc4a125bf1f1a74a9d958b7b40f6b380f0862623a329b609dc"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-cooking-stove/shots/01.webp",
+     "bytes": 275224,
+     "sha256": "83e25f54de4298c6e858ca7019ee50795383bbf1aa2e5fa95884d0a59b4a1cb2"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/cover.webp",
+     "bytes": 837584,
+     "sha256": "108bc692dcf76bd9745f60f3e40d6b4b5c122cc439b47ffd116e173d13f03dfd"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD0.glb",
+     "bytes": 1601276,
+     "sha256": "7736998077a8414fe9a9dcfa8b6bce161519d2ff1d2ed5ef9440a244f061b5ae"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD1.glb",
+     "bytes": 727100,
+     "sha256": "6f605ed7d79a091468e4bdc3b0e29315d4d05008f895290ad1ce3cb032553460"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD2.glb",
+     "bytes": 67160,
+     "sha256": "134b0375590b7440197dfd9a639d853ecfaa1e69023b4ab928a5ae738e2d452d"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-B-LOD0.glb",
+     "bytes": 1686752,
+     "sha256": "6ef34781443e13cddeff0c5f45d57e35b09dcb077a73bca5debfbdd19842d35d"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-B-LOD1.glb",
+     "bytes": 786704,
+     "sha256": "d9a73c76db5fd7eb87151e5076e61a42792bd7a22cc10be7c42933a4b1b00368"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-B-LOD2.glb",
+     "bytes": 83676,
+     "sha256": "1fd999980d904342aa633d83842a93922d6f0d80698ca32468ab3aae7c6754ad"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/m-luoyang-deyang-hall.asset.json",
+     "bytes": 1821,
+     "sha256": "16e39d6908180c5c36c63e1123d9af9cfce8b87a454136e5b3c1a2996485de14"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/shots/deyang-A-LOD1-CPU.webp",
+     "bytes": 834974,
+     "sha256": "e6a975a942fb13f7ddef311d22d84ad617df6a23404ef662afeced99e99ee5ec"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/shots/deyang-A-LOD2-CPU.webp",
+     "bytes": 817896,
+     "sha256": "cf3f46b32824ccd9542943ecc403d148ddd745d2293f55adf6e47c59b1d0115d"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/shots/deyang-B-LOD0-CPU.webp",
+     "bytes": 834906,
+     "sha256": "40a41bc4dc76ec18437ff3905f9a36c413fb3bcbfd64246a8387f8403066dcf2"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-foot-pestle/cover.webp",
+     "bytes": 296998,
+     "sha256": "722900d6ceceef68401cc1cbe82fe7d732d9ca8650ff604b40bceb7385898f30"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD0.glb",
+     "bytes": 655508,
+     "sha256": "6f0e41834121fa26cb36303606133256e8a8226e4c49464f68dc93646d181068"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD1.glb",
+     "bytes": 248208,
+     "sha256": "d8759dd6e0b0880325bb033e5031723e327f132c66a3cafd1aa97fed985cdd7c"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD2.glb",
+     "bytes": 79500,
+     "sha256": "e94416ef307479eb4a3bf01652153d9c2ff0ba26300b4240920d580a5ae83453"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-foot-pestle/m-luoyang-foot-pestle.asset.json",
+     "bytes": 1289,
+     "sha256": "0edeedebc0c33d511f702177149afa8dde2d6a62839f95aaa5cfb98f847d64d0"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-foot-pestle/shots/01.webp",
+     "bytes": 297444,
+     "sha256": "259a4a3d8e0564f90648d12b9ce2fc94779b03c41a34f6366fe228090f8e6e80"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-foot-pestle/shots/02.webp",
+     "bytes": 265766,
+     "sha256": "882a6c4ca7b2d3c75461bdc250635b95cbfbb09d271fe3665f071877c0999f18"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-hand-mill/cover.webp",
+     "bytes": 740986,
+     "sha256": "e75b2a264799033975a3a75fed737045e93bcf633d47a21baad2545ffceb6e36"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-hand-mill/files/hand-mill-A-LOD1.glb",
+     "bytes": 1605992,
+     "sha256": "5885f619799ef79071e6b2960866ff7cfb75fd4dcc838b341755924139fd1ede"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-hand-mill/files/hand-mill-A.glb",
+     "bytes": 1778876,
+     "sha256": "0fe50c2c0604237d9c6d011803550261b48304669b8dcb64f2155332af11c396"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-hand-mill/files/hand-mill-B-LOD1.glb",
+     "bytes": 1605928,
+     "sha256": "5ec42d1118def47115038f65c68bcd82aacf5cac208891cd2c9eb9066c0b57d3"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-hand-mill/files/hand-mill-B.glb",
+     "bytes": 1779100,
+     "sha256": "598cadc7593300bc399773fc469a77830cabb540ad42baffeec3dbaccd478d36"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-hand-mill/m-luoyang-hand-mill.asset.json",
+     "bytes": 1446,
+     "sha256": "abb7865c0ce2ba9b1c4570e1db5a098bf1854c2d67b3d9066cf28ab60fa1f30d"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-hand-mill/shots/01.webp",
+     "bytes": 720580,
+     "sha256": "c2c0a4847f108282c4b09924cb78ff94fdddcbf0b84037c1606dbee2f2bf8374"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-hand-mill/shots/02.webp",
+     "bytes": 686540,
+     "sha256": "540bb0628147457dc66646b0b8fb1116fdfd2cc83faef2b543e823d843876533"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-house-roof/cover.webp",
+     "bytes": 321006,
+     "sha256": "8600d8f90316e8bc136d2f15a53b305410f525e67a31a880dcd8e4f895701837"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-house-roof/files/TC03-main-roof-kit.glb",
+     "bytes": 10378412,
+     "sha256": "804d6bab26445dc32bf7f56ecd2b402150e0572f19c06f4ee96b1722dd059c0a"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-house-roof/files/TC03-roof-medium.glb",
+     "bytes": 713320,
+     "sha256": "16994ca8a1f86b38515ae7a38fb7f468861397593b8a5b38b9d9f45967d5393d"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-house-roof/m-luoyang-house-roof.asset.json",
+     "bytes": 1488,
+     "sha256": "42522d933d604873bb3738177625df37cdfb24e5dce66ff400bdce0f5d0e9441"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-house-roof/shots/roof-reverse.webp",
+     "bytes": 308224,
+     "sha256": "9264d0f56dbe79fc8302375e0d3a51b3c60cd6e3bce5e71c9c10bc03d0f1a9f2"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-household-service/cover.webp",
+     "bytes": 307954,
+     "sha256": "9c7c161778b37e4b584b3f8c9c5a4fed4e4855f62b33d146ea4203c0af2f4227"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-household-service/files/service-enclosure-LOD0.glb",
+     "bytes": 1056252,
+     "sha256": "507c6e706fff27b52f8516ee7ddf3c06ec02ee95f429b071b46e9f2a710972a1"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-household-service/files/service-enclosure-LOD1.glb",
+     "bytes": 388620,
+     "sha256": "87ed97d70caae67f17461d82d1a8342ce9a8a39ec09fe7d574fe7c64f29c0c98"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-household-service/files/service-enclosure-LOD2.glb",
+     "bytes": 18424,
+     "sha256": "19d20f7bc294bd4d12fc3beb358b554815a4fff69af51b9a7e396155217075b8"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-household-service/m-luoyang-household-service.asset.json",
+     "bytes": 1376,
+     "sha256": "f11a78af29eb891228ef057464ba1a1374300c6c652d7eca5435fb65ab34961d"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/cover.webp",
+     "bytes": 253162,
+     "sha256": "c974157c65f891a49da480b8932df43a1d1adb6b468d7b722b307d27890a2e8b"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD0.glb",
+     "bytes": 1837268,
+     "sha256": "bdcc369e765df692b755c2987053d56df5d859964d982fab41f55c535e716ee2"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD1.glb",
+     "bytes": 856488,
+     "sha256": "993ec375a777d825bdf39a680ea689576c33a6b50fcfbc804b55ec22dca086a9"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD2.glb",
+     "bytes": 88960,
+     "sha256": "275f8fe20f2e6f1d1a0ea0066447f25431e67fba2323ab3ffe76a9d1d1417cda"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD0.glb",
+     "bytes": 1773216,
+     "sha256": "7337871c488c3695bfea2c12a45ac5ad31a16512955726d5380cb797cd98dda3"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD1.glb",
+     "bytes": 817968,
+     "sha256": "25035eeb0583bcae69137867d466dc3ad238747b1173c8e043f338c35b43b62e"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD2.glb",
+     "bytes": 85472,
+     "sha256": "d495219cb6bcf99655a5ab793ad1743c84b4c453b24f50d40c958a6fce987102"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/m-luoyang-mingtang.asset.json",
+     "bytes": 1822,
+     "sha256": "d3019d6e5b531a8b18411f1c53edafd23013f4423d1d2ef0d5a7643b9ab5f34f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/shots/A-LOD1-whole.webp",
+     "bytes": 249346,
+     "sha256": "3404c0670a30708b5dc5fa7b11c555d48b785a0d403e486add8b658dab33e3a6"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/shots/A-LOD2-whole.webp",
+     "bytes": 236186,
+     "sha256": "f7e4bf416125e17f7a10996fc34f63cf45bff446cf48774c6b4c8e40251c81ae"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/shots/B-LOD0-whole.webp",
+     "bytes": 216232,
+     "sha256": "c9d40f39c2b30f8bd0c2bdb2c6a19eda86358d34277fcf45917a8381dded8151"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-northern-altar/cover.webp",
+     "bytes": 494010,
+     "sha256": "fcb409d97306d8cbac6019a57bdc00decc7e0bf6769600e82a9e70f68d9d4017"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD0.glb",
+     "bytes": 425760,
+     "sha256": "d62dce7d2130828c4e309edf42701fd8890454d39d51d2763f16fe351a8e6ebe"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD1.glb",
+     "bytes": 164836,
+     "sha256": "4842be77757597237ddcedcd1e2d2f66402db0dcde57986e9fbb926cc096d6dd"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD2.glb",
+     "bytes": 25644,
+     "sha256": "7c7f3a51ac7cce90137a8a0210f3031129058b5d7e21a1eb850bc222953a1287"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-northern-altar/m-luoyang-northern-altar.asset.json",
+     "bytes": 1699,
+     "sha256": "9deabeb6c12a4c45cb3d86e5101a9a2dd997a5e4d8cacaa7cdf7360d50fe666c"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-northern-altar/shots/LOD0-plan.webp",
+     "bytes": 578136,
+     "sha256": "42f86fcbef0560d8d7b3296ddfcae7056ea40d2f8af04c47ca38f95594d4b61f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-northern-altar/shots/LOD0-stairs.webp",
+     "bytes": 475848,
+     "sha256": "99576b08807ec7269cc9edc3df25b6edce806c6c0efb3c45f96ea1d3a98c6020"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-northern-altar/shots/LOD1-overview.webp",
+     "bytes": 494228,
+     "sha256": "3107dbdf2794d1382685ffee02e25450db9077c5b88aff44cf8eeec80f910a43"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-northern-altar/shots/LOD2-overview.webp",
+     "bytes": 493914,
+     "sha256": "8141d7a8cfa0317c81aa44974970068bda55f768999e45b6a3699f254a842e20"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/cover.webp",
+     "bytes": 382630,
+     "sha256": "cef00e4dfb6b359b33975721ef608fe55eb788afb55df7cc88bd7bdf0b28b220"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/files/G10-LOD0.glb",
+     "bytes": 1138348,
+     "sha256": "f3777c2b0ae7ce6dff3637b45e2b21f09607aa7619cd6d77aa7b74c35aff7d51"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/files/G10-LOD1.glb",
+     "bytes": 407404,
+     "sha256": "cf36b118d8c874c8550429c6fde146897e534224a44273b8fd573e46914fcc5f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/files/G10-LOD2.glb",
+     "bytes": 18776,
+     "sha256": "9f0db40575e11be7e37371a92800b95604f44e3be9c8abd25a038046856dd970"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/files/H64-LOD0.glb",
+     "bytes": 2138912,
+     "sha256": "7d685fe2f53d29b1aca09528c2d7a45b22a6dae4d7c6b716f11b581434eb3eb6"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/files/H64-LOD1.glb",
+     "bytes": 958384,
+     "sha256": "c536862bb469d7ca1f98da196b92222ddd07be01968401a756096b575f64fc2f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/files/H64-LOD2.glb",
+     "bytes": 20568,
+     "sha256": "9742df0d3763435688ec6b7ce54177b2e596d4ee3b71c63d1e1420686ea818d5"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/files/H72-v1.1-LOD0.glb",
+     "bytes": 2231240,
+     "sha256": "5d505afff8df4cc4f306e3613aeafd01d176616637515a62f45d58e1e89b2de1"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/files/H72-v1.1-LOD1.glb",
+     "bytes": 1006956,
+     "sha256": "645b2b21e70e660ecb66b52a2fef8b293a35ef09b0ad62089a9dc0d3032e49d4"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/files/H72-v1.1-LOD2.glb",
+     "bytes": 25532,
+     "sha256": "9f08e128b6d86f6cc47d3ecab79b70c197f6d17fd3b37dd052a3213adbab7838"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/files/H96-LOD0.glb",
+     "bytes": 2615760,
+     "sha256": "80611275c9620034113d5a943be8cd73ab995eecaad8bb2e2d89c4fcf401b747"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/files/H96-LOD1.glb",
+     "bytes": 1209280,
+     "sha256": "158ce912bfebfa6a95cd1e37825738d97ec59fd8f674b5fb30d214197b4d5fae"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/files/H96-LOD2.glb",
+     "bytes": 32624,
+     "sha256": "c8626a2f5212c7f2a3640a6c7d57494b94dc02a4e66202f2f59467f8eea17af7"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/m-luoyang-ordinary-house-types.asset.json",
+     "bytes": 2107,
+     "sha256": "4dc0e33e84593e9ed835d12537cc7b18b79b44e5f66b68d39f942a9db001e03f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/shots/01.webp",
+     "bytes": 366344,
+     "sha256": "1ea197da29b621c51ff8151de6ffb78d91714a20c2f5f74ccdd03585b525776f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-ordinary-house-types/shots/02.webp",
+     "bytes": 370322,
+     "sha256": "cbfbbe4f7efc97d803ad13a426609dd830c11765eb8310cad721d95d9b6770f2"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/cover.webp",
+     "bytes": 869266,
+     "sha256": "bb4b69c80ac17ba977cdc98300d9dba4081df4cb788947a38424f8299208f393"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/files/gallery-A-LOD0.glb",
+     "bytes": 1257116,
+     "sha256": "0c09279723e2334c35f21c7602c195cc867d97808ac0f99ccf6f0208d3ff3849"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/files/gallery-A-LOD1.glb",
+     "bytes": 559364,
+     "sha256": "227c3c4ecc2625629d00ef6beb274575587e4f1095f68b7a50359781e94b3e68"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/files/gallery-A-LOD2.glb",
+     "bytes": 74360,
+     "sha256": "cb26b56e1634f27a878d83997649804eaeef29f5a0bb1420b8aa959a65e137ea"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/files/gallery-B-LOD0.glb",
+     "bytes": 1203308,
+     "sha256": "c7cb279cfd1103158a3f93e071f2d56ba8a07de05c5d7422f26b9c3fe5a56a21"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/files/gallery-B-LOD1.glb",
+     "bytes": 517732,
+     "sha256": "fe72e192573df077335f7882fdd2d9db6e18ba3c1f05758e529f1e18ae2ddb08"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/files/gallery-B-LOD2.glb",
+     "bytes": 59236,
+     "sha256": "ff15e1c4ca8cb4f95a5ee486d9a53447b5a24a3671b7ec46c837b0572b9491f7"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/m-luoyang-palace-gallery.asset.json",
+     "bytes": 1863,
+     "sha256": "100a78c3ed3a18e04bf5a98b8dd2c4d75e1d4b73461d96b0cf9c8893a7da3a0c"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/shots/gallery-A-LOD1-CPU.webp",
+     "bytes": 862920,
+     "sha256": "4b57c9135e045c7ca402cec4e5215dd2f0c0a92d14b9abb20568ce7fc91a9560"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/shots/gallery-A-LOD2-CPU.webp",
+     "bytes": 848358,
+     "sha256": "1a867eefd77c997da90306d392409154a43cb70875503239a0451ad37076d470"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/shots/gallery-B-LOD0-CPU.webp",
+     "bytes": 944636,
+     "sha256": "13de7307cea80e65b001ed2461c2590f7a03ceb1620c91a7361452c59d1ff6a4"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-service-court/cover.webp",
+     "bytes": 259540,
+     "sha256": "b25af8e0e29b74484ae75eb7b6b2815154e9bae95f3b5cc506d7a6c12cf7643f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-service-court/files/service-A-LOD0.glb",
+     "bytes": 1562188,
+     "sha256": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-service-court/files/service-A-LOD1.glb",
+     "bytes": 461416,
+     "sha256": "366e1a26442b28a8c8a440d76399a15edab149beb68d5a46d78f9bad6ba29e17"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-service-court/files/service-A-LOD2.glb",
+     "bytes": 49320,
+     "sha256": "c88104ce40192d2238c5c640743ed9374927edfeef612740495c52a1c267122a"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-service-court/m-luoyang-service-court.asset.json",
+     "bytes": 1319,
+     "sha256": "3add026e38daf82c238c18e98eb2d16f1ea0e430370b78118150e125088ab3af"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-service-court/shots/01.webp",
+     "bytes": 254476,
+     "sha256": "6b4e2742a3fbebf66c5c933db46ca0b57f79a83719a671bde4e2a94679f8f962"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-service-court/shots/02.webp",
+     "bytes": 253648,
+     "sha256": "fda049b69454c0a1c915d1970ce4a08513c2873d823f1b76f0e535f8289df3d6"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-southern-altar/cover.webp",
+     "bytes": 662080,
+     "sha256": "5e8645bac30ed3258d05b4b8239becc10f1458d25a442fac5169c7583e73a4a7"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-southern-altar/files/south-altar-A-LOD1.glb",
+     "bytes": 916616,
+     "sha256": "70b8f7c4c396a5ebe3809d4bbce515e25673c1bca2650cdad62dcb2f78819edc"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-southern-altar/files/south-altar-A.glb",
+     "bytes": 1023180,
+     "sha256": "57141a082a4341ac951a658528e7d6dfbc3b9eeda83d90b0aad6120f79e19afb"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-southern-altar/files/south-altar-B-LOD1.glb",
+     "bytes": 898812,
+     "sha256": "6ee4dbe0d164ae2d8ee7f925022ed8ede7e33454beb3a988329d5c33394e7309"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-southern-altar/files/south-altar-B.glb",
+     "bytes": 937892,
+     "sha256": "3382670edbc4086b4861c7bc1e5534a83c1e0dbc4c78e9cc2d8fcf73bf66d7ec"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-southern-altar/m-luoyang-southern-altar.asset.json",
+     "bytes": 1653,
+     "sha256": "b98b85a936a7ca8f5c8305ce08385a0ff0e5685cfe6fd2a7a6eded9cd3e1db42"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-southern-altar/shots/A-top.webp",
+     "bytes": 761486,
+     "sha256": "b916722e423fd5a1fd99a8cd4089fe3cced847f47fac5d3a25358d6e7040c152"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-southern-altar/shots/B-top.webp",
+     "bytes": 797890,
+     "sha256": "501fb8ed4527ca82b8b6b54c1002ce6141a211312c8bec549a6e3538cc4ddde4"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-southern-altar/shots/B-whole.webp",
+     "bytes": 667664,
+     "sha256": "74125bc330a0af27583070c59e7151b19bd71b1ffc3b229fff3277a161755561"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-stable/cover.webp",
+     "bytes": 265016,
+     "sha256": "2bc69724dce7bf24f519d129096194ab5a66f78518cdb10053092d1f6b7dabaa"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-stable/files/A.glb",
+     "bytes": 4898748,
+     "sha256": "672beeb46faaee0a15f7de649099c486c639b40a39b045b89525fbe7f15b2563"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-stable/files/B.glb",
+     "bytes": 7043436,
+     "sha256": "bd82280a76f0677821788c62c39b42e8fb2314d297bbad704a92aa7d452c2cb4"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-stable/m-luoyang-stable.asset.json",
+     "bytes": 1133,
+     "sha256": "eb67038618d1e24697d2ea45e8182a13a9a4c574ada855f3cfb1d319317eb995"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-stable/shots/01.webp",
+     "bytes": 361868,
+     "sha256": "d177e4fafee24d8d5cb982a1f65209f49bbd4fa417b51c126da8f13a099c5a88"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-tile-kiln/cover.webp",
+     "bytes": 513406,
+     "sha256": "f3e3bfceb53851c87604f90c7afbd953c3aae5ed9557dd4169c31553251dbacc"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-tile-kiln/files/kiln-A-LOD1.glb",
+     "bytes": 821880,
+     "sha256": "562b4b398bb97ea4478f0d6e06595994b16725139ee9e80ad66c28501efb69c9"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-tile-kiln/files/kiln-A.glb",
+     "bytes": 1208676,
+     "sha256": "e67d597617c3cdeb5d611f233438fa529151afddbc73ad9a2a98315cc9252f01"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-tile-kiln/files/kiln-B-LOD1.glb",
+     "bytes": 820856,
+     "sha256": "8d9db85bf26e911ffca14123784f97f5b0c7677cf2cce8cf762d8dc21167a0d5"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-tile-kiln/files/kiln-B.glb",
+     "bytes": 1207668,
+     "sha256": "4886d95d22383a9b26870d36b476f2efa3b35fe68037df6b444847fd38980d91"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-tile-kiln/m-luoyang-tile-kiln.asset.json",
+     "bytes": 1389,
+     "sha256": "737f2533ef83e12abee04e443b8d1d1e5163f03864c97b1db30524dbbcb7a724"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-tile-kiln/shots/01.webp",
+     "bytes": 509260,
+     "sha256": "4eb104a70f4ab45cf48f7901558b24c627dff543dfea25aedd89b5d1d7899953"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-tile-kiln/shots/02.webp",
+     "bytes": 694462,
+     "sha256": "2cc6bb2c818d79e78f414dd60f3d66466c8b4ae8df4f5627a29a6a4e2fbdb0b7"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/cover.webp",
+     "bytes": 730132,
+     "sha256": "4804bfe0b776e9ca376be92232051688a2c35c64c7a1401a46e521e1a2607f38"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD0.glb",
+     "bytes": 2349008,
+     "sha256": "6e7f06c054d07984e611f9bfdff80117feee3af246a2394eb289a35e8496e4f1"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD1.glb",
+     "bytes": 1150600,
+     "sha256": "297c11b01604122c93167ede4a8417cb5f5e54cefc050e33d9a0bb78d9d005a8"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD2.glb",
+     "bytes": 104216,
+     "sha256": "6ff5440cc0be55639148c73f7e5c16179be269b5532da5f6672312a84b2738be"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD0.glb",
+     "bytes": 2230192,
+     "sha256": "92091dbe9c51e72b717a69c9ba41f6db13a2c79e77eb5f145c1881e9570b9eba"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD1.glb",
+     "bytes": 1080232,
+     "sha256": "1566de0280fbe50d345abee80b27169254f685eda7252d3e1c254ef4cf8ad38b"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD2.glb",
+     "bytes": 100852,
+     "sha256": "965ab0b851398f1f3ac52e5ca02f5873c73648ad150730f7969377a1ea267844"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/m-luoyang-yutang-halls.asset.json",
+     "bytes": 1882,
+     "sha256": "72266b3ecc7b8b156ffa3ce358451a0461e07d3b82be779c2415c7dbc3bba82b"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/shots/yutang-A-LOD1-CPU.webp",
+     "bytes": 729106,
+     "sha256": "f96dbe89c2c4acc603349e3be003a22f5ba41be6217b296b2af8c2edd06adda0"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/shots/yutang-A-LOD2-CPU.webp",
+     "bytes": 717318,
+     "sha256": "9c5369b040beaeb1c81546ad0d5e0dca75cd10b38a95951c3f80d450f6c56cbb"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/shots/yutang-B-LOD0-CPU.webp",
+     "bytes": 767718,
+     "sha256": "8d6223725f476c059d5186720c08a9d45fb784676cb0bb52daa73bc6ca6fc5e3"
+    },
+    {
+     "path": "docs/model-library/m-courtyard-family.asset.json",
+     "bytes": 6094,
+     "sha256": "afc231529d971a276c7d2f36780057326e117cc5b311cbee6430ff0c959d04da"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/A-LOD0-C2.glb",
+     "bytes": 1332364,
+     "sha256": "58562068d71a393dd94fa743e5ee222509b181629d38b21b112c2e2a4a77f0ff"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/A-LOD1-C2.glb",
+     "bytes": 229832,
+     "sha256": "d5fc80a0b849108a65d2efbe7445995e5519632f47ad044d9e0d7ea8447047c6"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/A2-LOD0-C2.glb",
+     "bytes": 1164812,
+     "sha256": "e9981a079d799d7556a9a4852c9d09ad274bb268ff4343d8d2202a13bcbf3887"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/A2-LOD1-C2.glb",
+     "bytes": 229316,
+     "sha256": "f3f317746181635791621b4d09a7122899d0754fc1d36b583b39b3f80b02caac"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/A2-deep.glb",
+     "bytes": 2593528,
+     "sha256": "5fdc1dc8573a71fcb60a46c7ff9dd79fcbb69c0970fcff5c1805e3e312b1e0dd"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/A2-shallow.glb",
+     "bytes": 2296532,
+     "sha256": "e1c33bbd6ceae64f6c1e1245e20e531f2530e933e5cb9a6ebcc24380c50097f7"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/B-LOD0-C2.glb",
+     "bytes": 1635312,
+     "sha256": "1ebf0c8ef6e1ab38921d960110ddedc19f0c41888c1ed766b482a3d0a496f5c5"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/B-LOD1-C2.glb",
+     "bytes": 282232,
+     "sha256": "0e0ad6be50007f0c290d46e6aa012dd0a7b7ca52aa8645304da828bfa075630a"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/B2-LOD0-C2.glb",
+     "bytes": 1486112,
+     "sha256": "00fb41eb5d03a98e1122f52f40cae4a9f68549d297ac5c59bd6d2d0b79998714"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/B2-LOD1-C2.glb",
+     "bytes": 283368,
+     "sha256": "8f7911e96ed53fb432312271986c0775fec8e858d346abfb7768b99f022759e6"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/TC03-2-LOD0-C2.glb",
+     "bytes": 2467560,
+     "sha256": "eb00ff99877742e212a32c5031a26262d1b83a9e53b5d108e5432c92136b234c"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/TC03-2-LOD1-C2.glb",
+     "bytes": 412900,
+     "sha256": "ce0c1d73148355c6bcf319d1056800360fbc309269649e471489545314720402"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/TC03-LOD0-C2.glb",
+     "bytes": 2568332,
+     "sha256": "5f47f93091c3d5cec471015fe15ad28e9687b2e79a93840ae54b1b41dbba9b3a"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/TC03-LOD1-C2.glb",
+     "bytes": 413444,
+     "sha256": "4f1ed92ee81a6bc6f00b50685f14f65f06d24f81e9e0a569a800462884dbd1c5"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/baseline.glb",
+     "bytes": 1710204,
+     "sha256": "9be877245f0e7a3fd652a8f2df57bd8c4d868a93fdaf826636d4751dcae8aa62"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/north.glb",
+     "bytes": 1710524,
+     "sha256": "b119cbef6bc18e539b8e2037d9fa65c0688993ec05c63dc8826b5611ae7bdfb6"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/files/south.glb",
+     "bytes": 1710908,
+     "sha256": "c2db32398ee405565b27941f1a2bddef450275ca49d768f74ecab5946352a0d3"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/roof-revisions/files/courtyard-A-roofs-v2.glb",
+     "bytes": 11173976,
+     "sha256": "7c980de58c7dd57e2a015a80c7bd39ffdad2d1c9bd3640d085d9c70a6947e957"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/roof-revisions/files/courtyard-TC03-roof-v1.glb",
+     "bytes": 11008212,
+     "sha256": "681103cec2a94f1d94edab2bc9a27de63806a4fc97e102eec3c201f891ccdb49"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/roof-revisions/shots/courtyard-A-roofs-v2.webp",
+     "bytes": 883606,
+     "sha256": "1e450d05b551ebb01763018fa39559d1167854279e86fed78461876e0440540b"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/roof-revisions/shots/courtyard-TC03-roof-v1.webp",
+     "bytes": 690676,
+     "sha256": "4dddad8a810c2edfe5c680d142c2275ac54a65f96a9301458917140e74aa07c6"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/shots/variant-00.webp",
+     "bytes": 550822,
+     "sha256": "d64da61e8ca2ae4369559d9af19c3041cf98b5ff83ebdff048c8512b243d61fe"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/shots/variant-01.webp",
+     "bytes": 552118,
+     "sha256": "42aafc4234bad0cebf86364c4b4c4e872e14e204d778cb282c3802a4394b6ce2"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/shots/variant-02.webp",
+     "bytes": 316740,
+     "sha256": "7ae17c4da201e5cef5b2fca97bf48b4f12e3670e0acb0d304191576b97634998"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/shots/variant-03.webp",
+     "bytes": 316924,
+     "sha256": "4b22b465d1a8268999b5149f339c0cf677c9864669eb3ee239e9de65f0862f2f"
+    },
+    {
+     "path": "docs/model-library/updates/m-courtyard-family/shots/variant-04.webp",
+     "bytes": 317530,
+     "sha256": "94b4b1626f260a14681230421645d22408d4bfbe8e805a41fcd93db390cbcf64"
+    },
+    {
+     "path": "docs/model-library/well-study/README.md",
+     "bytes": 3429,
+     "sha256": "b034d0d3910798443d3c624e5d45bb4d8665f30c2f4f10e8c232e14270cd4469"
+    },
+    {
+     "path": "docs/model-library/well-study/assets/well-A-LOD0.glb",
+     "bytes": 1710964,
+     "sha256": "6bc463f8638df55c7e07282641d3d66d07d23ce9af8cd72a5e211be9772a38ab"
+    },
+    {
+     "path": "docs/model-library/well-study/assets/well-A-LOD1.glb",
+     "bytes": 1346488,
+     "sha256": "e9252de34398ef8049876aadaf60f2e4c7c9d9aebc35cd40f34b9fca55fd3255"
+    },
+    {
+     "path": "docs/model-library/well-study/assets/well-B-LOD0.glb",
+     "bytes": 1681036,
+     "sha256": "adf2f51a029289e8afbed8a583b1195bd22b815739b72f1c19e08bf693d55139"
+    },
+    {
+     "path": "docs/model-library/well-study/assets/well-B-LOD1.glb",
+     "bytes": 1310032,
+     "sha256": "e4acc416db1024a28606a556c9c0b827482fb3da2d2232ecf00a83ea014aa9dd"
+    },
+    {
+     "path": "docs/model-library/well-study/contract.json",
+     "bytes": 3995,
+     "sha256": "867502056eae46a90016c60940fa09cb846c65f41a158e0afea228c431ed852b"
+    },
+    {
+     "path": "docs/model-library/well-study/index.html",
+     "bytes": 4855,
+     "sha256": "c9b6fbd71132934a1b8085487cf27e5363251b28f23267fba4d75f1c3996b589"
+    },
+    {
+     "path": "docs/model-library/well-study/inputs/reference-contract.json",
+     "bytes": 4411,
+     "sha256": "371da0d11787ca4a2c5db9abbd9091b0d8f86ef1945ddbf1794db25099c9c872"
+    },
+    {
+     "path": "docs/model-library/well-study/m-well-family.asset.json",
+     "bytes": 720,
+     "sha256": "f77d855c7b13bbf44a3f11cffb32a99fe1fafa607f69d79785f24d71f1cd4c38"
+    },
+    {
+     "path": "docs/model-library/well-study/qa/A-LOD0-mechanism.png",
+     "bytes": 1607172,
+     "sha256": "6bbfbb96ab109ce7fb1df83f06addecc2b6ec8965988848658696a8f7c82258a"
+    },
+    {
+     "path": "docs/model-library/well-study/qa/A-LOD0-opening.png",
+     "bytes": 1879068,
+     "sha256": "7f4296c58ef28a0790435fb946967b181ae6f5dacbbfa802d57d3465bd142e0d"
+    },
+    {
+     "path": "docs/model-library/well-study/qa/A-LOD0-whole.png",
+     "bytes": 1620464,
+     "sha256": "762a073874e63ac0123dbffccdd5923354645fd42004a1e7174a61cf9adb8799"
+    },
+    {
+     "path": "docs/model-library/well-study/qa/B-LOD0-mechanism.png",
+     "bytes": 1619449,
+     "sha256": "d952fe92fb8edfc25500e373193a309605a56cbebda36d4bc77972a4886e177e"
+    },
+    {
+     "path": "docs/model-library/well-study/qa/B-LOD0-opening.png",
+     "bytes": 1800971,
+     "sha256": "83726fd261f791845811ed5e2863939fdb60e76d069ae174460210ea089f976e"
+    },
+    {
+     "path": "docs/model-library/well-study/qa/B-LOD0-whole.png",
+     "bytes": 1630956,
+     "sha256": "17b9b7ca1358309e70b6a4a9631cd76e8ad962a17adf32189245b63f00d84a38"
+    },
+    {
+     "path": "docs/model-library/well-study/qa/actual-GLB.json",
+     "bytes": 91599,
+     "sha256": "c0a0087953061dea4f463bc0ed259b297bdda33dfddfaf77111547912b525a36"
+    },
+    {
+     "path": "docs/model-library/well-study/qa/local-boolean-intersections.json",
+     "bytes": 5407,
+     "sha256": "7a6614ca2cc8af01d9abe2aed072c07d2225e5179dae8789cdef87f3ee3387a8"
+    },
+    {
+     "path": "docs/model-library/well-study/qa/local-contact-checks.json",
+     "bytes": 18061,
+     "sha256": "286de38ec20f1e6919aad55fbdcd986da6556f4dddecf907b3fa351c90a9ae95"
+    },
+    {
+     "path": "docs/model-library/well-study/qa/native-check.json",
+     "bytes": 55744,
+     "sha256": "264bc95e509942b01217ebb3902077672df3c2d60df2b448c2e2f3522cfb6c84"
+    },
+    {
+     "path": "docs/model-library/well-study/qa/png-cleanup.json",
+     "bytes": 2186,
+     "sha256": "36a4fa590300e902872af77094c9b5bc6d6d00efa8f0951415edcb812e109ae4"
+    },
+    {
+     "path": "docs/model-library/well-study/qa/static-web-check.json",
+     "bytes": 524,
+     "sha256": "0543ff203c857b29084437de5cd0fa2e5fa373fc13f95f71d2d9ff814cebb29f"
+    },
+    {
+     "path": "docs/model-library/well-study/qa/texture-budget.json",
+     "bytes": 1895,
+     "sha256": "50b8265e2b1e298247127d2d364d42051572154d089c522012676d2642fbd515"
+    },
+    {
+     "path": "docs/model-library/well-study/texture-reuse.json",
+     "bytes": 2444,
+     "sha256": "98db869deabe657c05cf50ebe1dd34958600028b550c02111fdd390ea6981934"
+    },
+    {
+     "path": "docs/model-library/well-study/viewer.js",
+     "bytes": 2313,
+     "sha256": "b711bfdc494b536df24e49ab515838dcf8a675406cfc4e02a634831a155d0c91"
+    }
+   ],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [],
+   "cityNodesCheck": {},
+   "extFiles": [],
+   "seatsAffected": [
+    {
+     "seat": "LY-023",
+     "keywords": [
+      "原型"
+     ],
+     "line": "- **边界与排重**：不新造摊棚原型，不造无依据石础装饰；若现件已可靠接地，复用并交适配包即可。"
+    },
+    {
+     "seat": "LY-038",
+     "keywords": [
+      "原型"
+     ],
+     "line": "- **具体产物**：保留A原型，对当前支撑的可替换性、偏移和台阶端口做独立适配。"
+    },
+    {
+     "seat": "LY-041",
+     "keywords": [
+      "原型"
+     ],
+     "line": "- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。"
+    },
+    {
+     "seat": "LY-042",
+     "keywords": [
+      "原型"
+     ],
+     "line": "- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。"
+    },
+    {
+     "seat": "LY-043",
+     "keywords": [
+      "原型"
+     ],
+     "line": "- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。"
+    },
+    {
+     "seat": "LY-044",
+     "keywords": [
+      "原型"
+     ],
+     "line": "- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。"
+    },
+    {
+     "seat": "LY-045",
+     "keywords": [
+      "原型"
+     ],
+     "line": "- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。"
+    },
+    {
+     "seat": "LY-046",
+     "keywords": [
+      "原型"
+     ],
+     "line": "- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。"
+    },
+    {
+     "seat": "LY-047",
+     "keywords": [
+      "原型"
+     ],
+     "line": "- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。"
+    },
+    {
+     "seat": "LY-048",
+     "keywords": [
+      "原型"
+     ],
+     "line": "- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。"
+    },
+    {
+     "seat": "LY-049",
+     "keywords": [
+      "原型"
+     ],
+     "line": "- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。"
+    },
+    {
+     "seat": "LY-050",
+     "keywords": [
+      "原型"
+     ],
+     "line": "- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。"
+    },
+    {
+     "seat": "LY-051",
+     "keywords": [
+      "原型"
+     ],
+     "line": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。"
+    },
+    {
+     "seat": "LY-052",
+     "keywords": [
+      "原型"
+     ],
+     "line": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。"
+    },
+    {
+     "seat": "LY-053",
+     "keywords": [
+      "原型"
+     ],
+     "line": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。"
+    },
+    {
+     "seat": "LY-054",
+     "keywords": [
+      "原型"
+     ],
+     "line": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。"
+    },
+    {
+     "seat": "LY-055",
+     "keywords": [
+      "原型"
+     ],
+     "line": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。"
+    },
+    {
+     "seat": "LY-056",
+     "keywords": [
+      "原型"
+     ],
+     "line": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。"
+    },
+    {
+     "seat": "LY-057",
+     "keywords": [
+      "原型"
+     ],
+     "line": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。"
+    },
+    {
+     "seat": "LY-058",
+     "keywords": [
+      "原型"
+     ],
+     "line": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。"
+    },
+    {
+     "seat": "LY-059",
+     "keywords": [
+      "原型"
+     ],
+     "line": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。"
+    },
+    {
+     "seat": "LY-060",
+     "keywords": [
+      "原型"
+     ],
+     "line": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。"
+    },
+    {
+     "seat": "LY-065",
+     "keywords": [
+      "原型"
+     ],
+     "line": "- **具体产物**：在010选定的一套德阳类C殿堂原型上，补实际未连通的侧/后台缘与检修接点。"
+    }
+   ],
+   "forbidden": [
+    "交付替换、重做、改版或删除被锁文件/节点的成果包",
+    "把被锁对象登记为本席位新建或新家族",
+    "LY-100 合并时把非持锁人的改动写进被锁路径"
+   ],
+   "allowed": [
+    "只读被锁文件与其冻结接口（LY-005/LY-006 端口）",
+    "在自己工作包内做比对、测试和消费端口的子件"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "LOCK-MARKET-V21",
+   "kind": "protected-work",
+   "name": "市肆S84/S86柜台与店前线v2.1",
+   "poolQuote": "市肆S84/S86柜台和店前线v2.1、武库B门框枢轴v2.2、灵台五处踏步、复道A服务登临节点：已有修订，不再派相同修复。",
+   "holder": "既有修订（只读）",
+   "holderRecorded": true,
+   "paths": [
+    "docs/library/models/m-luoyang-market-modular-assembly/**",
+    "docs/library/models/m-luoyang-market-frontage/**"
+   ],
+   "cityNodes": [],
+   "extRefs": [],
+   "keywords": [
+    "S84",
+    "S86",
+    "v2.1",
+    "柜台"
+   ],
+   "release": "不再派相同修复。",
+   "poolQuoteFound": true,
+   "patternMatches": {
+    "docs/library/models/m-luoyang-market-modular-assembly/**": {
+     "baseline": 13,
+     "head": 13,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/library/models/m-luoyang-market-frontage/**": {
+     "baseline": 6,
+     "head": 6,
+     "expectedOnlyAfterBaseline": false
+    }
+   },
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-market-frontage/cover.webp",
+     "bytes": 465814,
+     "sha256": "7029a03ffaec916d1e4c4ac68b79c25ab5ac0dd762b13aa8499c70f4cf6f5777"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0.glb",
+     "bytes": 1932544,
+     "sha256": "46f08f41aa290218e9a3ec4e4de4e2cb676f10a80a035e9b6d3e1f8a0c5bf6f2"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD1.glb",
+     "bytes": 720296,
+     "sha256": "03ad28cf31f05cdb518b1ee8652cdc235def6d6ca4b7aa8ca1a29c5272fb6126"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD2.glb",
+     "bytes": 125896,
+     "sha256": "b5b13b1c74f561903ba12489846c5c841e7b7bf7c1694228e7e12357869fa0f1"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-frontage/m-luoyang-market-frontage.asset.json",
+     "bytes": 1397,
+     "sha256": "7e1e8e307c8c3820bf0d6c1c5e2fc083706f6eaa39f8e650a5861ad8c86e0718"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-frontage/shots/01.webp",
+     "bytes": 454310,
+     "sha256": "fcae847917357bef27b4584d339d3c60d70d35fb52e051276ae1b7a23b19d009"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-modular-assembly/cover.webp",
+     "bytes": 567300,
+     "sha256": "a10026c938f35d63457b69ca27f8ff32d28c26d155514d697f62695067f5e45f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD0.glb",
+     "bytes": 1113880,
+     "sha256": "8ef1f3c8a8c3b570ac9607d4ab018b723b6450570175a0fad6752be430fa6b84"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD1.glb",
+     "bytes": 401756,
+     "sha256": "aa914dd6f246d6238abe543150dbd81f9c665edc8d21806edc390428c0fab535"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD2.glb",
+     "bytes": 15644,
+     "sha256": "2f8e217c4c8d02401e9b982ee20d61a584de0ee2dad4895bcf8b409bd58e6f83"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD0.glb",
+     "bytes": 1118984,
+     "sha256": "7f1c2e70b2b9dca980cb17c274241f37513d001070386907c3c8a66408b77ee8"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD1.glb",
+     "bytes": 405996,
+     "sha256": "ef10e67a81972ef52ea8a0c06d9e10cc7fb19c16201d6b198e4510ef3af686e8"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD2.glb",
+     "bytes": 16504,
+     "sha256": "14a7925bdb1458d91d187f0e194f70725d5ecd297bb62458cbad1af2b76a2601"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD0.glb",
+     "bytes": 1367376,
+     "sha256": "b599ade0b7137c2dfccfc3a75fd3ce4420179d4562178f76ffa89e83834c1b77"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD1.glb",
+     "bytes": 506208,
+     "sha256": "c64acc4ee7dc98fc4ac06744e85c1eba8db2b35908adfb9c134200878d6fc76f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD2.glb",
+     "bytes": 53400,
+     "sha256": "502d9d6e9db9e7f17bb93e5987c99401f52e9d9ce86b17487054e54ea0066a3a"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-modular-assembly/m-luoyang-market-modular-assembly.asset.json",
+     "bytes": 1958,
+     "sha256": "7d05df76837c518bbb5ff8e5ee3b711c25e705e5ff31cdbef7be689ff882a3f1"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-modular-assembly/shots/01.webp",
+     "bytes": 357490,
+     "sha256": "4682358ad82b41c41925743f59f74964541a57d98987e188235fe8a08c3befa4"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-market-modular-assembly/shots/02.webp",
+     "bytes": 321432,
+     "sha256": "0d57833964af50c19ce09a0153394aeceda37d56c5a0fae84433cb287858fd2f"
+    }
+   ],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [],
+   "cityNodesCheck": {},
+   "extFiles": [],
+   "seatsAffected": [
+    {
+     "seat": "LY-021",
+     "keywords": [
+      "S84",
+      "S86",
+      "v2.1",
+      "柜台"
+     ],
+     "line": "- **现有输入**：店前线 v2.1、已修 S84/S86 前框、现四铺型/两棚型与7条既有路带。"
+    },
+    {
+     "seat": "LY-022",
+     "keywords": [
+      "S84",
+      "S86",
+      "v2.1",
+      "柜台"
+     ],
+     "line": "- **现有输入**：店前线 v2.1、已修 S84/S86 前框、现四铺型/两棚型与7条既有路带。"
+    },
+    {
+     "seat": "LY-023",
+     "keywords": [
+      "S84",
+      "S86",
+      "v2.1",
+      "柜台"
+     ],
+     "line": "- **现有输入**：店前线 v2.1、已修 S84/S86 前框、现四铺型/两棚型与7条既有路带。"
+    },
+    {
+     "seat": "LY-024",
+     "keywords": [
+      "S84",
+      "S86",
+      "v2.1",
+      "柜台"
+     ],
+     "line": "- **现有输入**：店前线 v2.1、已修 S84/S86 前框、现四铺型/两棚型与7条既有路带。"
+    },
+    {
+     "seat": "LY-025",
+     "keywords": [
+      "v2.1",
+      "柜台"
+     ],
+     "line": "八铺四棚v2.1的柜台已修，当前默认五店三摊不自动替换。井体/开孔方案已有，任务是兼容与整体接入。"
+    },
+    {
+     "seat": "LY-026",
+     "keywords": [
+      "v2.1",
+      "柜台"
+     ],
+     "line": "八铺四棚v2.1的柜台已修，当前默认五店三摊不自动替换。井体/开孔方案已有，任务是兼容与整体接入。"
+    },
+    {
+     "seat": "LY-027",
+     "keywords": [
+      "v2.1",
+      "柜台"
+     ],
+     "line": "- **现有输入**：店前线 v2.1、功能市肆旧组与现柜架/货物占位；必须明确选择哪一组。"
+    },
+    {
+     "seat": "LY-028",
+     "keywords": [
+      "v2.1",
+      "柜台"
+     ],
+     "line": "- **现有输入**：店前线 v2.1、功能市肆旧组与现柜架/货物占位；必须明确选择哪一组。"
+    },
+    {
+     "seat": "LY-029",
+     "keywords": [
+      "v2.1",
+      "柜台"
+     ],
+     "line": "- **现有输入**：店前线 v2.1、功能市肆旧组与现柜架/货物占位；必须明确选择哪一组。"
+    },
+    {
+     "seat": "LY-030",
+     "keywords": [
+      "v2.1",
+      "柜台"
+     ],
+     "line": "- **现有输入**：店前线 v2.1、功能市肆旧组与现柜架/货物占位；必须明确选择哪一组。"
+    },
+    {
+     "seat": "LY-036",
+     "keywords": [
+      "v2.1"
+     ],
+     "line": "- **现有输入**：武库 B 门框枢轴修订 v2.2、A 原v2与旧试放支持；不得回退失败 v2.1。"
+    },
+    {
+     "seat": "LY-037",
+     "keywords": [
+      "v2.1"
+     ],
+     "line": "- **现有输入**：武库 B 门框枢轴修订 v2.2、A 原v2与旧试放支持；不得回退失败 v2.1。"
+    },
+    {
+     "seat": "LY-038",
+     "keywords": [
+      "v2.1"
+     ],
+     "line": "- **现有输入**：武库 B 门框枢轴修订 v2.2、A 原v2与旧试放支持；不得回退失败 v2.1。"
+    }
+   ],
+   "forbidden": [
+    "交付替换、重做、改版或删除被锁文件/节点的成果包",
+    "把被锁对象登记为本席位新建或新家族",
+    "LY-100 合并时把非持锁人的改动写进被锁路径"
+   ],
+   "allowed": [
+    "只读被锁文件与其冻结接口（LY-005/LY-006 端口）",
+    "在自己工作包内做比对、测试和消费端口的子件"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "LOCK-WUKU-B22",
+   "kind": "protected-work",
+   "name": "武库B门框枢轴v2.2",
+   "poolQuote": "武库B门框枢轴v2.2",
+   "holder": "既有修订（只读）",
+   "holderRecorded": true,
+   "paths": [
+    "docs/library/models/m-luoyang-wuku/files/wuku-B-LOD*.glb"
+   ],
+   "cityNodes": [],
+   "extRefs": [],
+   "keywords": [
+    "v2.2",
+    "武库B"
+   ],
+   "release": "不再派相同修复。",
+   "poolQuoteFound": true,
+   "patternMatches": {
+    "docs/library/models/m-luoyang-wuku/files/wuku-B-LOD*.glb": {
+     "baseline": 3,
+     "head": 3,
+     "expectedOnlyAfterBaseline": false
+    }
+   },
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-wuku/files/wuku-B-LOD0.glb",
+     "bytes": 10975184,
+     "sha256": "e5de60b6ff972e6b9446bb60c9c8b79572d345c69be7124dfc855181ac87dfd3"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-wuku/files/wuku-B-LOD1.glb",
+     "bytes": 532472,
+     "sha256": "5e1cc6b99bb81c62ec2a3fff83bf361fb33bbbc5805d00fa00deffadcf7ee980"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-wuku/files/wuku-B-LOD2.glb",
+     "bytes": 96532,
+     "sha256": "e5c8730605f39fb304e7c0ef98a33c4b779fe199fc91ff12a613ca4585956c5d"
+    }
+   ],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [],
+   "cityNodesCheck": {},
+   "extFiles": [],
+   "seatsAffected": [
+    {
+     "seat": "LY-031",
+     "keywords": [
+      "v2.2",
+      "武库B"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-032",
+     "keywords": [
+      "v2.2",
+      "武库B"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-033",
+     "keywords": [
+      "v2.2",
+      "武库B"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-034",
+     "keywords": [
+      "v2.2",
+      "武库B"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-035",
+     "keywords": [
+      "v2.2",
+      "武库B"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-036",
+     "keywords": [
+      "v2.2",
+      "武库B"
+     ],
+     "line": "### LY-036｜武库B外围支持地坪包"
+    },
+    {
+     "seat": "LY-037",
+     "keywords": [
+      "v2.2",
+      "武库B"
+     ],
+     "line": "### LY-037｜武库B台前侧棚接续包"
+    },
+    {
+     "seat": "LY-038",
+     "keywords": [
+      "v2.2",
+      "武库B"
+     ],
+     "line": "- **现有输入**：武库 B 门框枢轴修订 v2.2、A 原v2与旧试放支持；不得回退失败 v2.1。"
+    },
+    {
+     "seat": "LY-039",
+     "keywords": [
+      "v2.2",
+      "武库B"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-040",
+     "keywords": [
+      "v2.2",
+      "武库B"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    }
+   ],
+   "forbidden": [
+    "交付替换、重做、改版或删除被锁文件/节点的成果包",
+    "把被锁对象登记为本席位新建或新家族",
+    "LY-100 合并时把非持锁人的改动写进被锁路径"
+   ],
+   "allowed": [
+    "只读被锁文件与其冻结接口（LY-005/LY-006 端口）",
+    "在自己工作包内做比对、测试和消费端口的子件"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "LOCK-LINGTAI-STEPS",
+   "kind": "protected-work",
+   "name": "灵台五处踏步",
+   "poolQuote": "灵台五处踏步",
+   "holder": "既有修订（只读）",
+   "holderRecorded": true,
+   "paths": [
+    "docs/library/models/m-luoyang-lingtai/**",
+    "docs/cities/luoyang/progress-assets/lingtai-quality-v1/**",
+    "docs/model-library/lingtai/**"
+   ],
+   "cityNodes": [],
+   "extRefs": [],
+   "keywords": [
+    "灵台"
+   ],
+   "release": "不再派相同修复；LY-076 只补未修台缘与绕行。",
+   "poolQuoteFound": true,
+   "patternMatches": {
+    "docs/library/models/m-luoyang-lingtai/**": {
+     "baseline": 5,
+     "head": 5,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/progress-assets/lingtai-quality-v1/**": {
+     "baseline": 12,
+     "head": 12,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/model-library/lingtai/**": {
+     "baseline": 2,
+     "head": 2,
+     "expectedOnlyAfterBaseline": false
+    }
+   },
+   "files": [
+    {
+     "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/images/6250b50f55419a7ed79d0412c8ceb56955a5e57cc4bc6252960479861243c325.png",
+     "bytes": 140239,
+     "sha256": "6250b50f55419a7ed79d0412c8ceb56955a5e57cc4bc6252960479861243c325"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/images/66dea3367e89673a533d5dd3e98582bc87e7eafab00f20c7a17237289288c950.png",
+     "bytes": 70710,
+     "sha256": "66dea3367e89673a533d5dd3e98582bc87e7eafab00f20c7a17237289288c950"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/images/6c3992a3c6a49aa2a07c5fef1c994f8e3e786f15cd46d4f8584e6ea167f01606.png",
+     "bytes": 85622,
+     "sha256": "6c3992a3c6a49aa2a07c5fef1c994f8e3e786f15cd46d4f8584e6ea167f01606"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/images/9272084c99e9127e2a04fb15b5baac03f679694ac7235519126002d115614d42.png",
+     "bytes": 121462,
+     "sha256": "9272084c99e9127e2a04fb15b5baac03f679694ac7235519126002d115614d42"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/images/a76185638832e40e720e6d0ba16fbb0b4ca2b23acfc24ed62b9c0c0098854b10.png",
+     "bytes": 143226,
+     "sha256": "a76185638832e40e720e6d0ba16fbb0b4ca2b23acfc24ed62b9c0c0098854b10"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/images/ac5451bc88080d7eadfb76ba6f8b4d8cb64e20c618ceecdd2a806c96e75358d8.png",
+     "bytes": 157803,
+     "sha256": "ac5451bc88080d7eadfb76ba6f8b4d8cb64e20c618ceecdd2a806c96e75358d8"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/images/c0fe9035bf8646b2b2384aeaa5405f720a316f0533ce17139c703d73af02f8d3.png",
+     "bytes": 85717,
+     "sha256": "c0fe9035bf8646b2b2384aeaa5405f720a316f0533ce17139c703d73af02f8d3"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/images/c3f94711b0603569701dafb90638052f0f037914fedf2a9a99105d9aff80584b.png",
+     "bytes": 110503,
+     "sha256": "c3f94711b0603569701dafb90638052f0f037914fedf2a9a99105d9aff80584b"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/images/d0e0d79659027067ceb1467cf612fcdf1a98469dce2af60c46c555bf881356d0.png",
+     "bytes": 184040,
+     "sha256": "d0e0d79659027067ceb1467cf612fcdf1a98469dce2af60c46c555bf881356d0"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/images/e3c95b48a0ee6e273096b5a77c2b5d751a00217de67f553a437b281a670d0ff8.png",
+     "bytes": 133089,
+     "sha256": "e3c95b48a0ee6e273096b5a77c2b5d751a00217de67f553a437b281a670d0ff8"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/lingtai-A-quality-LOD1-geometry-00.bin",
+     "bytes": 1502616,
+     "sha256": "712a00c5982a5f3a0b8c819ea18807af2017c8ca67008794770564270952f53a"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/lingtai-A-quality-LOD1.gltf",
+     "bytes": 571077,
+     "sha256": "c27d581371f6eb6956983674802a6006c0f665d5dd5dcb6f36089d6fbc130220"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-lingtai/cover.webp",
+     "bytes": 451090,
+     "sha256": "3d1a230b048fd6dbe9a5b29e157b3dbdf57b648f945ff7d24dd3067d88d3fb38"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD1.glb",
+     "bytes": 1949148,
+     "sha256": "ffaff723c6a0c77a514d0a56fb03fad55fdbf0d880e3ee614887551884c6de0f"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD2.glb",
+     "bytes": 131700,
+     "sha256": "134ca945603a696a8dc164087a8fc3334a8a1e1b57b4439ae2b97fab2803b4cc"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-lingtai/m-luoyang-lingtai.asset.json",
+     "bytes": 1439,
+     "sha256": "7db1211873f3a533fd6204e97509dc2007b5fdf268347d53d08b761886d82572"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-lingtai/shots/lingtai-LOD1-reverse.webp",
+     "bytes": 440078,
+     "sha256": "c630112913ddf81b42246ce12806045315de5b340697343ee1dc4114506205d1"
+    },
+    {
+     "path": "docs/model-library/lingtai/cover-whole.png",
+     "bytes": 1491428,
+     "sha256": "55164b02035de105d52d8114831a07b99c599e2b448154c3dfe34120b0aa2092"
+    },
+    {
+     "path": "docs/model-library/lingtai/metadata.json",
+     "bytes": 2837,
+     "sha256": "3e28f8b9cd90f2190d570c7f7ed649c2593c257899ed492df6804e62465419ce"
+    }
+   ],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [],
+   "cityNodesCheck": {},
+   "extFiles": [],
+   "seatsAffected": [
+    {
+     "seat": "LY-004",
+     "keywords": [
+      "灵台"
+     ],
+     "line": "- **具体产物**：灵台、明堂、辟雍、太学、南郊与北郊分别建立位置/分期约束和不确定范围。"
+    },
+    {
+     "seat": "LY-076",
+     "keywords": [
+      "灵台"
+     ],
+     "line": "### LY-076｜灵台未修台缘与绕行补件"
+    },
+    {
+     "seat": "LY-085",
+     "keywords": [
+      "灵台"
+     ],
+     "line": "- **本项验收**：两门分别给当前门口至具体路端的实际支持/连续体积结果；不把未连接灵台/太学段算入通过范围。"
+    }
+   ],
+   "forbidden": [
+    "交付替换、重做、改版或删除被锁文件/节点的成果包",
+    "把被锁对象登记为本席位新建或新家族",
+    "LY-100 合并时把非持锁人的改动写进被锁路径"
+   ],
+   "allowed": [
+    "只读被锁文件与其冻结接口（LY-005/LY-006 端口）",
+    "在自己工作包内做比对、测试和消费端口的子件"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "LOCK-GALLERY-A",
+   "kind": "protected-work",
+   "name": "复道A服务登临节点",
+   "poolQuote": "复道A服务登临节点",
+   "holder": "既有修订（只读）",
+   "holderRecorded": true,
+   "paths": [
+    "docs/library/models/m-luoyang-gallery-access/**"
+   ],
+   "cityNodes": [],
+   "extRefs": [],
+   "keywords": [
+    "复道A"
+   ],
+   "release": "不再派相同修复。",
+   "poolQuoteFound": true,
+   "patternMatches": {
+    "docs/library/models/m-luoyang-gallery-access/**": {
+     "baseline": 8,
+     "head": 8,
+     "expectedOnlyAfterBaseline": false
+    }
+   },
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-gallery-access/cover.webp",
+     "bytes": 943868,
+     "sha256": "2a1a9937ea035adc8d940ca2536d58b8da2961e6b973e74925f0464dd7cbb450"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gallery-access/files/access-A-LOD0.glb",
+     "bytes": 962760,
+     "sha256": "c973d325d1d08cfd53c129df5270f6276677694a5d4a96cab35fde47d3d11076"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gallery-access/files/access-A-LOD1.glb",
+     "bytes": 358456,
+     "sha256": "7b5e26f443a1e1bcecd47c7e2072aaf00d2496c944afe6bfa4068ce72553834b"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gallery-access/files/access-A-LOD2.glb",
+     "bytes": 42844,
+     "sha256": "b39c34c28ab38963be7bc90ff2650eb6360eb71d4a1d16a294c76ab344809fd9"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gallery-access/files/access-A-collision-candidate.glb",
+     "bytes": 62432,
+     "sha256": "7327547eee27c4c0bb259b757de4533c95f640600c94882c24b881bd8b8a8209"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gallery-access/m-luoyang-gallery-access.asset.json",
+     "bytes": 1697,
+     "sha256": "707f298fe235a2444c1f88c357cc75dcaea270d92754835671fbdb7480ca366e"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gallery-access/shots/access-A-LOD1-CPU.webp",
+     "bytes": 938644,
+     "sha256": "d2c1c66ba367ea5f8d3f2e70b93f178882bc92e96b169fd221197237a3fd1a80"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gallery-access/shots/access-A-LOD2-CPU.webp",
+     "bytes": 841662,
+     "sha256": "8076ebd0065b919c525bc71054c48c3278a9f09a83997262557681fb7199baa1"
+    }
+   ],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [],
+   "cityNodesCheck": {},
+   "extFiles": [],
+   "seatsAffected": [
+    {
+     "seat": "LY-067",
+     "keywords": [
+      "复道A"
+     ],
+     "line": "### LY-067｜复道A柱脚地面适配"
+    },
+    {
+     "seat": "LY-068",
+     "keywords": [
+      "复道A"
+     ],
+     "line": "- **现有输入**：高架复道A/B、A服务登临节点与旧柱脚未支持记录；选定宫院局部端口。"
+    },
+    {
+     "seat": "LY-069",
+     "keywords": [
+      "复道A"
+     ],
+     "line": "- **现有输入**：高架复道A/B、A服务登临节点与旧柱脚未支持记录；选定宫院局部端口。"
+    },
+    {
+     "seat": "LY-070",
+     "keywords": [
+      "复道A"
+     ],
+     "line": "- **现有输入**：高架复道A/B、A服务登临节点与旧柱脚未支持记录；选定宫院局部端口。"
+    }
+   ],
+   "forbidden": [
+    "交付替换、重做、改版或删除被锁文件/节点的成果包",
+    "把被锁对象登记为本席位新建或新家族",
+    "LY-100 合并时把非持锁人的改动写进被锁路径"
+   ],
+   "allowed": [
+    "只读被锁文件与其冻结接口（LY-005/LY-006 端口）",
+    "在自己工作包内做比对、测试和消费端口的子件"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "LOCK-GRANARY-NEAR",
+   "kind": "protected-work",
+   "name": "太仓原位近景",
+   "poolQuote": "太仓原位近景已接入",
+   "holder": "既有成果（只读）",
+   "holderRecorded": true,
+   "paths": [
+    "docs/cities/luoyang/progress-assets/granary-city-v1/**",
+    "docs/model-library/m-storage-functional.asset.json",
+    "docs/model-library/updates/m-storage-functional/**"
+   ],
+   "cityNodes": [],
+   "extRefs": [],
+   "keywords": [
+    "太仓"
+   ],
+   "release": "不重复制作；031–035 只交门扇枢接、启闭与前场子件。",
+   "poolQuoteFound": true,
+   "patternMatches": {
+    "docs/cities/luoyang/progress-assets/granary-city-v1/**": {
+     "baseline": 9,
+     "head": 9,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/model-library/m-storage-functional.asset.json": {
+     "baseline": 1,
+     "head": 1,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/model-library/updates/m-storage-functional/**": {
+     "baseline": 17,
+     "head": 17,
+     "expectedOnlyAfterBaseline": false
+    }
+   },
+   "files": [
+    {
+     "path": "docs/cities/luoyang/progress-assets/granary-city-v1/LOD0.webp",
+     "bytes": 29136,
+     "sha256": "6121ce29c8871b265b18f80ecf10d1eef865a03fe8055fb33051446a71bab326"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/granary-city-v1/LOD1.webp",
+     "bytes": 24256,
+     "sha256": "6f8b3c09ec5c0bd0aa9e71e0ea52aba8639da815056798566c297d4f249e5386"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/granary-city-v1/LOD2.webp",
+     "bytes": 23532,
+     "sha256": "6eb1be47809e8b2b6738a5ae9afec223d56155da4e8f5545580265a4e2fdd5ef"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/granary-city-v1/README.md",
+     "bytes": 921,
+     "sha256": "4b6d5cc6a51b01cfadace069ab38a8d6cfc5175a9f76c23ef6dac0de9235fd6e"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/granary-city-v1/cover.webp",
+     "bytes": 29136,
+     "sha256": "6121ce29c8871b265b18f80ecf10d1eef865a03fe8055fb33051446a71bab326"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+     "bytes": 1663844,
+     "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb",
+     "bytes": 756484,
+     "sha256": "a1265bbf53d10ddb6398efa6f505c1b6dee86b81b37397f7af9855acc34f2e45"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD2.glb",
+     "bytes": 462440,
+     "sha256": "6b2564d3ffd76e6e982a4a7f703cfd0790ac0e0b2dfa75add4df169c4c82efe7"
+    },
+    {
+     "path": "docs/cities/luoyang/progress-assets/granary-city-v1/source.json",
+     "bytes": 3920,
+     "sha256": "30e74bda8a965f4f7c84aaa32bdb7a179680b6163150584cdeb58de3e3f12639"
+    },
+    {
+     "path": "docs/model-library/m-storage-functional.asset.json",
+     "bytes": 4967,
+     "sha256": "3572786f39beea07571cfd9aec458dff3d19e2420943252957c391c0d7bb119f"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/cover.webp",
+     "bytes": 163982,
+     "sha256": "a5e92d1980c6ced6af23bedb39a11e98acc0d03dbe785f56227333dee76b58e8"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/files/granary-A-LOD0.glb",
+     "bytes": 1006080,
+     "sha256": "2eee31460a64201c2ba25fbc1bccc9c52f4cebc0f7b9af1f9eb9beeca68b7bf6"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/files/granary-A-LOD1.glb",
+     "bytes": 267256,
+     "sha256": "38884c1f6a7fb6b07cbbc674049e37db2e910f92e4fc0fb4944aac7c1745e955"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/files/granary-A-LOD2.glb",
+     "bytes": 35332,
+     "sha256": "fe703ccbc9f542cb8cb37856d110485e8c4128a45dfc49b0054eb1ac3c1b4a45"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/files/granary-B-LOD0.glb",
+     "bytes": 1118304,
+     "sha256": "407403ceeb418f6e1d3f0e86bff7d535642c0236d94691fd2b9a10c2f7866dc6"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/files/granary-B-LOD1.glb",
+     "bytes": 273392,
+     "sha256": "3ce46eee0c9b1ef56fcf380c4dfec3d39251697bab7cad45a719b19c06e6ce8a"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/files/granary-B-LOD2.glb",
+     "bytes": 40244,
+     "sha256": "0735a9f2cc76cfef98f5e548ab621295e40870bd2aef248ce25cc10e0b10022f"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/files/granary-group-LOD0.glb",
+     "bytes": 1582228,
+     "sha256": "91a54eafe8991ded008b499d647ab3483bf44053a0cff84ded01f7afc8a42d28"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/files/granary-group-LOD1.glb",
+     "bytes": 387252,
+     "sha256": "3476fc8c9dfaacf80608d7f4e2ead9fda8cc558666dcecea3c76db11d874e24d"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/files/granary-group-LOD2.glb",
+     "bytes": 79024,
+     "sha256": "2111c6eab918194d4d445d16c99c48aace7573acf02726473080d7ce6e761ce2"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD0.glb",
+     "bytes": 386980,
+     "sha256": "9fc0b90ef4c64b31371945427f1259b04c604bbc0f24b5ed38c700f3b07dff09"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD1.glb",
+     "bytes": 187912,
+     "sha256": "5bac6a81b60d7fc0bf63ccb40b0a72a01440110673472c1f0f5554fd5a65e8e3"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD2.glb",
+     "bytes": 7632,
+     "sha256": "ecf34fe95282af1b17241ae8619fe2bfb9d35b31edc03289c8bae38fdaafdca2"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/shots/01.webp",
+     "bytes": 156448,
+     "sha256": "2fb97d77afdff2c4eb65ffc7ac18310c80e008576fdff435dd1f33fbad18c3d0"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/shots/02.webp",
+     "bytes": 143036,
+     "sha256": "06562e53428f4f144609364a02bf24e6f4bb459389d4eab3a9ed79adb58c25ad"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/shots/03.webp",
+     "bytes": 330098,
+     "sha256": "58c31a70c6aeefc5369189e393f38180d066fd7796c8717ab3fdb49ae65e4a94"
+    },
+    {
+     "path": "docs/model-library/updates/m-storage-functional/shots/04.webp",
+     "bytes": 271790,
+     "sha256": "a107d45f681231f20027e32efd0720f488749bca8a2e0186bef4abbc319228e8"
+    }
+   ],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [],
+   "cityNodesCheck": {},
+   "extFiles": [],
+   "seatsAffected": [
+    {
+     "seat": "LY-031",
+     "keywords": [
+      "太仓"
+     ],
+     "line": "### LY-031｜太仓A门扇枢接子件"
+    },
+    {
+     "seat": "LY-032",
+     "keywords": [
+      "太仓"
+     ],
+     "line": "### LY-032｜太仓B门扇枢接子件"
+    },
+    {
+     "seat": "LY-033",
+     "keywords": [
+      "太仓"
+     ],
+     "line": "- **现有输入**：太仓库 v2、已入城整组及 A/B/收货分件；operations 和入口体积诊断。"
+    },
+    {
+     "seat": "LY-034",
+     "keywords": [
+      "太仓"
+     ],
+     "line": "- **现有输入**：太仓库 v2、已入城整组及 A/B/收货分件；operations 和入口体积诊断。"
+    },
+    {
+     "seat": "LY-035",
+     "keywords": [
+      "太仓"
+     ],
+     "line": "- **现有输入**：太仓库 v2、已入城整组及 A/B/收货分件；operations 和入口体积诊断。"
+    },
+    {
+     "seat": "LY-036",
+     "keywords": [
+      "太仓"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-037",
+     "keywords": [
+      "太仓"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-038",
+     "keywords": [
+      "太仓"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-039",
+     "keywords": [
+      "太仓"
+     ],
+     "line": "- **现有输入**：现太仓地坪、所选武库支持片、既有约196示意米 C_NE_APPROACH_LOCAL 和东北长路预检。"
+    },
+    {
+     "seat": "LY-040",
+     "keywords": [
+      "太仓"
+     ],
+     "line": "- **现有输入**：现太仓地坪、所选武库支持片、既有约196示意米 C_NE_APPROACH_LOCAL 和东北长路预检。"
+    }
+   ],
+   "forbidden": [
+    "交付替换、重做、改版或删除被锁文件/节点的成果包",
+    "把被锁对象登记为本席位新建或新家族",
+    "LY-100 合并时把非持锁人的改动写进被锁路径"
+   ],
+   "allowed": [
+    "只读被锁文件与其冻结接口（LY-005/LY-006 端口）",
+    "在自己工作包内做比对、测试和消费端口的子件"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "LOCK-NE-196C",
+   "kind": "protected-work",
+   "name": "东北约196米C短路",
+   "poolQuote": "东北约196米C短路也早已有候选，不重复制作。",
+   "holder": "既有候选（只读）",
+   "holderRecorded": true,
+   "paths": [],
+   "cityNodes": [],
+   "extRefs": [
+    "lab origin/luoyang-content city-visible 分卷 ZIP 内 northeast_C_access.glb（不在 docs 树）",
+    "workpacks LY-006/qa/chunks/northeast_C_access.glb sha256 58f2f58a464183e20d5489b13902f62f2570573cb8bf96fb237df781027d076e"
+   ],
+   "extFiles": [
+    {
+     "path": "LY-006/qa/chunks/northeast_C_access.glb",
+     "sha256": "58f2f58a464183e20d5489b13902f62f2570573cb8bf96fb237df781027d076e",
+     "present": true,
+     "sha256Recomputed": "58f2f58a464183e20d5489b13902f62f2570573cb8bf96fb237df781027d076e",
+     "match": true
+    }
+   ],
+   "keywords": [
+    "196"
+   ],
+   "release": "不可再造、不可延成东北主干路；LY-039 只重绑定。",
+   "poolQuoteFound": true,
+   "patternMatches": {},
+   "files": [],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [],
+   "cityNodesCheck": {},
+   "seatsAffected": [
+    {
+     "seat": "LY-031",
+     "keywords": [
+      "196"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-032",
+     "keywords": [
+      "196"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-033",
+     "keywords": [
+      "196"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-034",
+     "keywords": [
+      "196"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-035",
+     "keywords": [
+      "196"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-036",
+     "keywords": [
+      "196"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-037",
+     "keywords": [
+      "196"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-038",
+     "keywords": [
+      "196"
+     ],
+     "line": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+    },
+    {
+     "seat": "LY-039",
+     "keywords": [
+      "196"
+     ],
+     "line": "### LY-039｜东北既有196米C路重绑定"
+    },
+    {
+     "seat": "LY-040",
+     "keywords": [
+      "196"
+     ],
+     "line": "- **现有输入**：现太仓地坪、所选武库支持片、既有约196示意米 C_NE_APPROACH_LOCAL 和东北长路预检。"
+    },
+    {
+     "seat": "LY-084",
+     "keywords": [
+      "196"
+     ],
+     "line": "- **边界与排重**：无可配准约束不生成1.7公里路面；已有196米短路不重复。只有010追加放行后才转模型生产。"
+    }
+   ],
+   "forbidden": [
+    "交付替换、重做、改版或删除被锁文件/节点的成果包",
+    "把被锁对象登记为本席位新建或新家族",
+    "LY-100 合并时把非持锁人的改动写进被锁路径"
+   ],
+   "allowed": [
+    "只读被锁文件与其冻结接口（LY-005/LY-006 端口）",
+    "在自己工作包内做比对、测试和消费端口的子件"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "LOCK-SOURCE-RELEASE",
+   "kind": "protected-work",
+   "name": "源包净化与Release归档",
+   "poolQuote": "正在独立进行的源包净化/Release归档不由普通模型代理接管。",
+   "holder": "主协调者",
+   "holderRecorded": true,
+   "paths": [],
+   "cityNodes": [],
+   "extRefs": [
+    "D:/GitHub/creation-notebook-待传/**",
+    "GitHub Releases（suxing412/creation-notebook）",
+    "lab origin/luoyang-content 分支"
+   ],
+   "keywords": [
+    "Release"
+   ],
+   "release": "不下放；LY-099 只核已授权目录，不上传、不覆盖旧源包。",
+   "poolQuoteFound": true,
+   "patternMatches": {},
+   "files": [],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [],
+   "cityNodesCheck": {},
+   "extFiles": [],
+   "seatsAffected": [
+    {
+     "seat": "LY-099",
+     "keywords": [
+      "Release"
+     ],
+     "line": "- **边界与排重**：私密路径/凭据不进入交付；只核已授权目录，禁止覆盖旧源包；Release上传不由普通生产代理代行。"
+    }
+   ],
+   "forbidden": [
+    "交付替换、重做、改版或删除被锁文件/节点的成果包",
+    "把被锁对象登记为本席位新建或新家族",
+    "LY-100 合并时把非持锁人的改动写进被锁路径"
+   ],
+   "allowed": [
+    "只读被锁文件与其冻结接口（LY-005/LY-006 端口）",
+    "在自己工作包内做比对、测试和消费端口的子件"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "LOCK-31PALACES",
+   "kind": "protected-work",
+   "name": "被停用的31组重复宫殿",
+   "poolQuote": "被停用的31组重复宫殿不能用来填南北宫，也不能当考据布局输入。",
+   "holder": "主协调者（清单未交）",
+   "holderRecorded": false,
+   "paths": [],
+   "cityNodes": [],
+   "extRefs": [
+    "来源清单缺：LY-001 在 bce3211 docs、lab/data 与 git 历史中未找到（LY-001 status openItems）"
+   ],
+   "keywords": [
+    "31组"
+   ],
+   "release": "协调者交出清单后，按清单逐件挂锁；之前只按名称禁用。",
+   "poolQuoteFound": true,
+   "patternMatches": {},
+   "files": [],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [],
+   "cityNodesCheck": {},
+   "extFiles": [],
+   "seatsAffected": [
+    {
+     "seat": "LY-061",
+     "keywords": [
+      "31组"
+     ],
+     "line": "- **边界与排重**：不再造原殿廊，不命名德阳或玉堂，不重复31组宫殿；实名及绝对位置不确定时只作局部C试案。"
+    },
+    {
+     "seat": "LY-062",
+     "keywords": [
+      "31组"
+     ],
+     "line": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。"
+    },
+    {
+     "seat": "LY-063",
+     "keywords": [
+      "31组"
+     ],
+     "line": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。"
+    },
+    {
+     "seat": "LY-064",
+     "keywords": [
+      "31组"
+     ],
+     "line": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。"
+    },
+    {
+     "seat": "LY-065",
+     "keywords": [
+      "31组"
+     ],
+     "line": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。"
+    },
+    {
+     "seat": "LY-066",
+     "keywords": [
+      "31组"
+     ],
+     "line": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。"
+    },
+    {
+     "seat": "LY-067",
+     "keywords": [
+      "31组"
+     ],
+     "line": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。"
+    },
+    {
+     "seat": "LY-068",
+     "keywords": [
+      "31组"
+     ],
+     "line": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。"
+    },
+    {
+     "seat": "LY-069",
+     "keywords": [
+      "31组"
+     ],
+     "line": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。"
+    },
+    {
+     "seat": "LY-070",
+     "keywords": [
+      "31组"
+     ],
+     "line": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。"
+    }
+   ],
+   "forbidden": [
+    "交付替换、重做、改版或删除被锁文件/节点的成果包",
+    "把被锁对象登记为本席位新建或新家族",
+    "LY-100 合并时把非持锁人的改动写进被锁路径"
+   ],
+   "allowed": [
+    "只读被锁文件与其冻结接口（LY-005/LY-006 端口）",
+    "在自己工作包内做比对、测试和消费端口的子件"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "LOCK-SHARED-CITY",
+   "kind": "shared-file",
+   "name": "共享城市文件、项目卡、构建数据、全局UI",
+   "poolQuote": "LY-001—099不得直接修改main、共享 `city-data.mjs`、项目卡 `p-luoyang.asset.json`、全站分类/构建数据或全局UI；只交独立分支/overlay和语义合并提案。",
+   "holder": "LY-100（按主协调者授权）",
+   "holderRecorded": true,
+   "paths": [
+    "docs/cities/luoyang/city-data.mjs",
+    "docs/cities/luoyang/p-luoyang.asset.json",
+    "docs/cities/luoyang/app.mjs",
+    "docs/cities/luoyang/city-renderer.mjs",
+    "docs/cities/luoyang/index.html",
+    "docs/cities/luoyang/v1/**",
+    "docs/cities/luoyang/data/**",
+    "docs/asset-spec/**",
+    "lab/data/**",
+    "lab/tools/**",
+    "docs/*.html",
+    "docs/model-library/registry.json"
+   ],
+   "cityNodes": [],
+   "extRefs": [
+    "lab main 分支（任何提交）"
+   ],
+   "keywords": [],
+   "appliesTo": "ALL",
+   "release": "不下放。",
+   "poolQuoteFound": true,
+   "patternMatches": {
+    "docs/cities/luoyang/city-data.mjs": {
+     "baseline": 1,
+     "head": 1,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/p-luoyang.asset.json": {
+     "baseline": 1,
+     "head": 1,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/app.mjs": {
+     "baseline": 1,
+     "head": 1,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/city-renderer.mjs": {
+     "baseline": 1,
+     "head": 1,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/index.html": {
+     "baseline": 1,
+     "head": 1,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/v1/**": {
+     "baseline": 27,
+     "head": 27,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/cities/luoyang/data/**": {
+     "baseline": 58,
+     "head": 58,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/asset-spec/**": {
+     "baseline": 6,
+     "head": 9,
+     "expectedOnlyAfterBaseline": false
+    },
+    "lab/data/**": {
+     "baseline": 3,
+     "head": 3,
+     "expectedOnlyAfterBaseline": false
+    },
+    "lab/tools/**": {
+     "baseline": 9,
+     "head": 9,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/*.html": {
+     "baseline": 6,
+     "head": 6,
+     "expectedOnlyAfterBaseline": false
+    },
+    "docs/model-library/registry.json": {
+     "baseline": 1,
+     "head": 1,
+     "expectedOnlyAfterBaseline": false
+    }
+   },
+   "files": [
+    {
+     "path": "docs/asset-spec/README.md",
+     "bytes": 11768,
+     "sha256": "8c16f653c2bf4af81d4d6fe1330ec4f79bd00720bec2f2c31f79c8461a832769"
+    },
+    {
+     "path": "docs/asset-spec/batches/r2026.11.05-4.json",
+     "bytes": 345,
+     "sha256": "a6710a48c80bc0c73f55a4dee24a5f7dbdce6b1b81f58694dc17aa43287f1f95"
+    },
+    {
+     "path": "docs/asset-spec/batches/r2026.11.05-5.json",
+     "bytes": 265,
+     "sha256": "8d70827178d4d0481c8bc5bec640ec584de530c3e107b5a37e63935b66a34d89"
+    },
+    {
+     "path": "docs/asset-spec/categories.json",
+     "bytes": 2593,
+     "sha256": "63f41789873383a0340df13333b5cb47e3106c318a9c52f187c608bc3190f96a"
+    },
+    {
+     "path": "docs/asset-spec/source-archive.json",
+     "bytes": 11202,
+     "sha256": "8b80a86d7b93e91812bcaa799e768bcb5efe86f31fd02221eb638da810b89653"
+    },
+    {
+     "path": "docs/asset-spec/template.json",
+     "bytes": 374,
+     "sha256": "75d76926cc41f18bed2382709c0e2dd5ca9a74227c7b57c35ac9de4ed99f27bc"
+    },
+    {
+     "path": "docs/benchmark.html",
+     "bytes": 5374,
+     "sha256": "b4358d4a8773a0ba52190c3d36ad0a5c3d839c9a8d9338598f9a7f8f3f0aa447"
+    },
+    {
+     "path": "docs/cities/luoyang/app.mjs",
+     "bytes": 14242,
+     "sha256": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8"
+    },
+    {
+     "path": "docs/cities/luoyang/city-data.mjs",
+     "bytes": 106463,
+     "sha256": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00"
+    },
+    {
+     "path": "docs/cities/luoyang/city-renderer.mjs",
+     "bytes": 35785,
+     "sha256": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc"
+    },
+    {
+     "path": "docs/cities/luoyang/data/c01/placement.json",
+     "bytes": 1500,
+     "sha256": "3a41865c7b705141837702a2ef26555d091321be561adb073d93d099486bd289"
+    },
+    {
+     "path": "docs/cities/luoyang/data/c01/research-candidate.json",
+     "bytes": 5981,
+     "sha256": "52599ef31ee5b1ffc4553d9c40cd9bae8829ade2c78f56e9534c6bdda4b38d3f"
+    },
+    {
+     "path": "docs/cities/luoyang/data/c02/layout.json",
+     "bytes": 38115,
+     "sha256": "8f4837c7d4cff1d3f665bdbf7b2a8ce9551a700b066f81d5b54c49f9a577f876"
+    },
+    {
+     "path": "docs/cities/luoyang/data/c02/partitions.json",
+     "bytes": 2152,
+     "sha256": "609d4b614f33ab9c77d4c24faea28f9b0b91a32dfa26cb050d8f3dd7d6dcf4ee"
+    },
+    {
+     "path": "docs/cities/luoyang/data/c02/research-mask.json",
+     "bytes": 11155,
+     "sha256": "d801b5e7c42acc9d32f7689abd15a3b403e515e32b6a6e4fe7080e4ada3e1275"
+    },
+    {
+     "path": "docs/cities/luoyang/data/c02v/layout.json",
+     "bytes": 76949,
+     "sha256": "3a81af210d0f934389f89e3e4d1d90f35d8ff094ea844b5336ec88e6d70c3ac9"
+    },
+    {
+     "path": "docs/cities/luoyang/data/c02v/model-contract.json",
+     "bytes": 14918,
+     "sha256": "d91f4d35b5ecb27b029394aefd4a1407e1b58181a34dded420c932dbad80564f"
+    },
+    {
+     "path": "docs/cities/luoyang/data/c02v/partitions.json",
+     "bytes": 2778,
+     "sha256": "7ba136a51c80cdf9e42f404cb0d49aa14a0b7ef03423b259ebc9c34bea65f256"
+    },
+    {
+     "path": "docs/cities/luoyang/data/c02v/research-mask.json",
+     "bytes": 11155,
+     "sha256": "d801b5e7c42acc9d32f7689abd15a3b403e515e32b6a6e4fe7080e4ada3e1275"
+    },
+    {
+     "path": "docs/cities/luoyang/data/c02v/routes.json",
+     "bytes": 23062,
+     "sha256": "9c41155ccb75a0d2d1892d5fc54fd3d3072e131c528a15b574517d35cb9c3bc4"
+    },
+    {
+     "path": "docs/cities/luoyang/data/d08/layout.json",
+     "bytes": 3217,
+     "sha256": "69ae2c8377517c69dbb20842d599e101482eafa6405ab03b83acc306c1bbe502"
+    },
+    {
+     "path": "docs/cities/luoyang/data/d08/model-contract.json",
+     "bytes": 7252,
+     "sha256": "fc5ebf96e4ad2ead128a3923405da0e1c3f9b0b58dca3bfefe050ec07e687878"
+    },
+    {
+     "path": "docs/cities/luoyang/data/evidence/evidence-geometry.json",
+     "bytes": 52278,
+     "sha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7"
+    },
+    {
+     "path": "docs/cities/luoyang/data/evidence/stage-contract.json",
+     "bytes": 1224,
+     "sha256": "3227460643f5c8df8345ff750b128a27a8a5a497ab426ddcaa3574f0aafa705b"
+    },
+    {
+     "path": "docs/cities/luoyang/data/far44/instances-calt.json",
+     "bytes": 22224,
+     "sha256": "e39fdafb016c9ff7f42e25bfcbfe37152f381fac84ffe2cca11cd6fc936fdf7e"
+    },
+    {
+     "path": "docs/cities/luoyang/data/far44/instances-original.json",
+     "bytes": 22414,
+     "sha256": "94837847b191bd9b668216acba95143832c3648ef24fc31e85b2060a75f852f1"
+    },
+    {
+     "path": "docs/cities/luoyang/data/far44/preflight-contract.json",
+     "bytes": 6842,
+     "sha256": "c9aafa7d22100deb141c554deffd07da67818af711a75cb6f36144fe68f9cc50"
+    },
+    {
+     "path": "docs/cities/luoyang/data/manifest.json",
+     "bytes": 1266,
+     "sha256": "afff5e087315d666bbb5d3bb0893f170ecb669430c056e6951dc97359d8f93a3"
+    },
+    {
+     "path": "docs/cities/luoyang/data/r01/layout.json",
+     "bytes": 2309,
+     "sha256": "7f378c1942f587437e0a92e5a4ee2f0c98bf6a09eb43249a5b9243cab13f14d8"
+    },
+    {
+     "path": "docs/cities/luoyang/data/r01/model-contract.json",
+     "bytes": 5261,
+     "sha256": "ca713fbad55fb2068e439fab2e5c615691516bc7b5b2cebadbc81093fd00ccbf"
+    },
+    {
+     "path": "docs/cities/luoyang/data/research-unplaced.json",
+     "bytes": 4331,
+     "sha256": "27f9e7f3429eccd8e7b5cbc1f5bbf88019a90ee9191c090b067d838d1a7bb43b"
+    },
+    {
+     "path": "docs/cities/luoyang/data/test-0-0.json",
+     "bytes": 618,
+     "sha256": "b0ab39e90f548afe7ac44de62c68f2203902a0f42ebfb127c1cb5adf022b6c9c"
+    },
+    {
+     "path": "docs/cities/luoyang/data/test-0-1.json",
+     "bytes": 613,
+     "sha256": "273c3f35316219ef7125f481898e85d2aef1d67ced5bb7149649c78b2fde0414"
+    },
+    {
+     "path": "docs/cities/luoyang/data/test-0-2.json",
+     "bytes": 611,
+     "sha256": "d6841ad4954d2e74966da17ea2f18ac71bb238647c8ec4bb1418714c6ef01a9a"
+    },
+    {
+     "path": "docs/cities/luoyang/data/test-1-0.json",
+     "bytes": 613,
+     "sha256": "f831805a6daa04a5efb0078f2e8a539ef87a4c8ae9f16493e250c3eb23804515"
+    },
+    {
+     "path": "docs/cities/luoyang/data/test-1-1.json",
+     "bytes": 608,
+     "sha256": "e32b37981923be3246fdd099aa702671f3047eb9adf1c0aa8412f0f958550f99"
+    },
+    {
+     "path": "docs/cities/luoyang/data/test-1-2.json",
+     "bytes": 606,
+     "sha256": "a29d16b9a8c0663b65334c1d9dc1753d94e60a1c0eb49f2acc61f38624b978a6"
+    },
+    {
+     "path": "docs/cities/luoyang/data/test-2-0.json",
+     "bytes": 611,
+     "sha256": "8024558471c9113452157915d9d31ece69ee3f50ba2a0ffa76aebcb408b228ed"
+    },
+    {
+     "path": "docs/cities/luoyang/data/test-2-1.json",
+     "bytes": 606,
+     "sha256": "b83cb6a91c32a3d76cd71fdb39b239411bc520e548483ed2d504868eb10f0e10"
+    },
+    {
+     "path": "docs/cities/luoyang/data/test-2-2.json",
+     "bytes": 604,
+     "sha256": "c8279e0c7398276663f44f84a8fe26d8da50d049fdb3bb756a16404f515398d5"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/N2-contract.json",
+     "bytes": 9018,
+     "sha256": "498f51fcd0723da69ab1b97c56f3de004a449a86e0e322dedc6489446a00e2cd"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/alt14-placement.json",
+     "bytes": 7479,
+     "sha256": "6168014202e47eaaa744f19c894f004d5d870a7ac824886fb138ea4c7df16bb4"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/candidate.json",
+     "bytes": 722,
+     "sha256": "3582d6b909563b0de2b2d1933e23c7cca7fcac285365c22b46ad61d81091a6cf"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/city-wall-constraints.json",
+     "bytes": 8554,
+     "sha256": "e9c84bddc7bb7d867e3ba8abf8cbeb604b222ad0960901f32e979dbb995e0af3"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/city-wall-interface-original.json",
+     "bytes": 11814,
+     "sha256": "90ce1c9e98c1b8b03b3c016ecf925bb4acc231116fba582ab1fd57340b1c115b"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/city-wall-interface.json",
+     "bytes": 11633,
+     "sha256": "ca75d115d49d38a53c66258af12e6e455d314f0f75548899e021276c5b100543"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+     "bytes": 1333,
+     "sha256": "7f26720bf40fc8cd7f7d0b445398d889fcc70c407f7cc7e26e4acd0eb6332367"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/ground-final-actual-GLB.json",
+     "bytes": 147619,
+     "sha256": "3a58394bee372834684a9e52c38ac88b3dec670a02b98019c3081df99bc4e9d5"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/ground-overlap-classification.json",
+     "bytes": 10226,
+     "sha256": "9de815a86e0584ee00750f99feaa03c4432effbb8bef7dc6fb4b8004afcbdc95"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/guangyang-replacement-contract.json",
+     "bytes": 1693,
+     "sha256": "fab27faaf8dacab23b91d53b75bbbe1341ab63f961389901ebfb49baadf4625b"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/market-flow-plan.json",
+     "bytes": 2885,
+     "sha256": "fb2416122d3b9fd7e2bbeafcaa1934ee4efcaf67cbe4654139b212e4e50ce37b"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/market-interface.json",
+     "bytes": 1702,
+     "sha256": "2957184accc87e5c2089987c71023cd09a8ef0274b2daab1fce4d39623606347"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/market-link-continuity.json",
+     "bytes": 16796,
+     "sha256": "a0686753a51f73be4455608e8b07bfa5371b8f5cf005a225912dd841a4719fcd"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/market-precedents.json",
+     "bytes": 6253,
+     "sha256": "14294a1202cb1ee7ab81938a53c80b537d2ce61e7d1072aa71809be5597f1916"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/network.json",
+     "bytes": 16589,
+     "sha256": "bb572f2497d25e8c96f93e2c26cf11c93c28c5bcff626d86b17caf6ad2d4bd53"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/north-palace-conflict-layer.json",
+     "bytes": 7651,
+     "sha256": "da9c7c198cb28ed27c215d96d00cb7bb50de158ee91a557c91669550b1a8dd5b"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/preview-interface.json",
+     "bytes": 2293,
+     "sha256": "ac8b6cfabcfd03119610cbb1c5ab7aa788fc9aed5605fdc43e3f1e5fe5b58bba"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/road-interface.json",
+     "bytes": 2633,
+     "sha256": "a3efd106ef508f5981e5157d9a40f9069d707957d236ba7ede24a16dd1db2a16"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/road-junction-continuity.json",
+     "bytes": 28864,
+     "sha256": "8428565311d7269fe491f0fea99be1205b1ab0a652f83083e2670392a5a52443"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/road-junction-contract.json",
+     "bytes": 1001,
+     "sha256": "4f4f133aa36fb04bb958f6730e157eabe41ddf7413e166b96277f1710a2bdbb7"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/road-junction-verification.json",
+     "bytes": 18168,
+     "sha256": "965be0714e274bf0b6310839c798e889c5ee11653b68248dc5254bbee5eef84b"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/road-plan-original.json",
+     "bytes": 15844,
+     "sha256": "1f0f947cc2f977f4bb1a20f46ac8a903e9204e36cf476addcd33494cabcf6852"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/road-plan.json",
+     "bytes": 16182,
+     "sha256": "0bc4528cbf354a18c5a74f9bbf4574bfc0ea0ee817516736e9d15ef5dca6881a"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/road-preconstraints.json",
+     "bytes": 8657,
+     "sha256": "d369409a92fce2d26e8c57eee0e2b5864e509fe30f8458ae8a3e150e661d3c52"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/route-coverage-correction.json",
+     "bytes": 42527,
+     "sha256": "79b25cd9d15726d55881d7d4d56408019f352092fe64899c4916d446568e3128"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/runtime-coverage.json",
+     "bytes": 3069,
+     "sha256": "cc43f1e473dc5f56b66a7d493efc06f57af410ce4f1f9fd54b66a70a2d2223ca"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/storage-interface.json",
+     "bytes": 1916,
+     "sha256": "4f3ccae9891c2fcd2ae3d962c3740a4b53eac7faea872b5ce28596cf1a62c2b3"
+    },
+    {
+     "path": "docs/cities/luoyang/data/west/storage-precedents.json",
+     "bytes": 6538,
+     "sha256": "db8024490dad09484f9c1b24a915872c4010024817cadb7abb2ce58cd70fbd39"
+    },
+    {
+     "path": "docs/cities/luoyang/index.html",
+     "bytes": 15991,
+     "sha256": "cfbf73763675397dde8f5ab08bb13f6b51fbcfa9954227552e32be756666b1bf"
+    },
+    {
+     "path": "docs/cities/luoyang/p-luoyang.asset.json",
+     "bytes": 23627,
+     "sha256": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/archive.md",
+     "bytes": 747,
+     "sha256": "2d60b4c79c5713cdbb83c5574afdaa305fa18e07864b40a7b7effd81c7377973"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/assemble-far44.mjs",
+     "bytes": 1726,
+     "sha256": "93eceb13606903ad90ed4c208af35e8ba8a3e8e22ee973feccba05582ff41ca1"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/boot.mjs",
+     "bytes": 1928,
+     "sha256": "42164e5322ccdfbb9832eb0c0ccb9300a740478b1706c067be042c5dad5a51f3"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/c01-layer.mjs",
+     "bytes": 12485,
+     "sha256": "d4f40805db74afcf313cd1d9b602632123866e3945a40cb6ec9cb5c2fbcb1582"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/c02-camera.mjs",
+     "bytes": 684,
+     "sha256": "feb5c438afb68e7c6d0a48ca2625cbb5a9d8a3e71738670d063870a21e1d0811"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/c02-layer.mjs",
+     "bytes": 12014,
+     "sha256": "dedd3e7e728ac1575ee0bf755f44d52053124ff425a65c5598d782143d64d0a5"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/evidence-adapter.mjs",
+     "bytes": 2224,
+     "sha256": "efb87ee78e49912af49d7ef96cfaab42d7afe48f6ca4eb4ebb64787a79497733"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/evidence-view.mjs",
+     "bytes": 20385,
+     "sha256": "fcf2079fd635f7f76553dbd1d23b8feaa688f77e278b4edb6e4154fab74c8fac"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/far-layer.mjs",
+     "bytes": 4382,
+     "sha256": "0b0e69ffa49e92908abb42eb871c20b382e399e3e87e0b1e969096b16a064be7"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/ground-atomic.mjs",
+     "bytes": 440,
+     "sha256": "b9aec1f15c20bd7141e0eb27f537a6a0132d7f1411fb08f5d507a5cd0108b792"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/index.html",
+     "bytes": 5715,
+     "sha256": "27060f04f2d756335ccba67360c30ab68440499fda59b7a7a61d8a661458503a"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/market-assembly.mjs",
+     "bytes": 1167,
+     "sha256": "343373f0b4599d376c6064981f13dfcd60f6be4c512edcf8fada4cd886dce811"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/north-layer.mjs",
+     "bytes": 3296,
+     "sha256": "2bef6f588d9c8aba5fcff7f241904b028a42a1023a1aad896b735b6658a942f7"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/project-notes.html",
+     "bytes": 3110,
+     "sha256": "41954739629cde3967f5426f7974d1ded1daed46f35ac5749d7a356280147736"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/r01-assets.mjs",
+     "bytes": 2500,
+     "sha256": "be58dd5de8d568e9bb04b6854c04ee42967412b55eecc156a17518d045d88e4e"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/r01-camera.mjs",
+     "bytes": 996,
+     "sha256": "38e71df04730cf0907f10935537c2338a69957b7a373bbd5ad4bc6c711c8d04b"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/r01-view.mjs",
+     "bytes": 13902,
+     "sha256": "1a156ad2a7a1fa25e2777b17e7d8093ebda60521ac160815e49a0d6d0a9d66f6"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/resource-url.mjs",
+     "bytes": 310,
+     "sha256": "d5efa9aae51d64190be7e691d80a0928da71fd67b937cc44d581577107965613"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/road-layer.mjs",
+     "bytes": 6835,
+     "sha256": "11275037da4e7829408f2a7f0c8ead6504f4132e3b46c747c4c74e4f12038952"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/shell.css",
+     "bytes": 4305,
+     "sha256": "3fcd645312faa93a376aea52620637eed7a46373520bb56faf109ff22e4a00c8"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/shell.mjs",
+     "bytes": 10048,
+     "sha256": "e3a1adccc70b8385f1e9a5d4320a9504608ade070ceedf3e2436151907b31b33"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/static-evidence.html",
+     "bytes": 1143,
+     "sha256": "e0d213195f76fa8e71fee5737e8f4f5bc33336aa17952b29d3095f145955dea7"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/wall-layer.mjs",
+     "bytes": 5176,
+     "sha256": "d2c1d2d69e0d9c03a2984f1c0cf48f39bb5a692627f4244f1a0fa58af28b7883"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/west-fallback.mjs",
+     "bytes": 4945,
+     "sha256": "fb76a5e16380c4a060071e26f5c382a0223b13d641cc1d05b19fe87ffaa5e1f3"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/west-layer.mjs",
+     "bytes": 18681,
+     "sha256": "e406af117b112a5fd07483f1906f0d94ad767135bf844f03a82a9874f21c59fc"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/west-state.mjs",
+     "bytes": 2281,
+     "sha256": "ece2a6e92e157a498204a71c7f8c6c9c923e33aef1fff0deb14067f30fc280be"
+    },
+    {
+     "path": "docs/cities/luoyang/v1/world.mjs",
+     "bytes": 5811,
+     "sha256": "064328a019a74e6831fc51d024680917388ce6e43c3c7c3ca14faa2ecd375162"
+    },
+    {
+     "path": "docs/gallery-web-revision.html",
+     "bytes": 7064,
+     "sha256": "721f0f1152f64d261c1f1c05c5ad0f996435869827584d8e31a4c4669862f8c8"
+    },
+    {
+     "path": "docs/index.html",
+     "bytes": 12337,
+     "sha256": "95d9b0c66cd2947abf53cf8ba3af835fd29b86ae16cc18e84c3ccddc0c1fb051"
+    },
+    {
+     "path": "docs/model-library/registry.json",
+     "bytes": 35691,
+     "sha256": "0b6bc45ed41fdd0fe795bd82bea14174681cc3de1bff289a4d2c25bc195079be"
+    },
+    {
+     "path": "docs/overview-before-four-libraries.html",
+     "bytes": 53139,
+     "sha256": "7fe40aa7851cfadfb8bc33df79611c91b6194e7ea5bb69c86c02c839bee35604"
+    },
+    {
+     "path": "docs/overview-review.html",
+     "bytes": 6877,
+     "sha256": "bb57f9b0a3987b8e7450c81e245ae6459f9bd67f535395a8fda2b102261d3f53"
+    },
+    {
+     "path": "docs/web-design-review.html",
+     "bytes": 18124,
+     "sha256": "533b9fb2fcef41eb01f544045a4d34fd1727c604d262dc78d2ac8eee748252e5"
+    },
+    {
+     "path": "lab/data/assets.json",
+     "bytes": 424754,
+     "sha256": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78"
+    },
+    {
+     "path": "lab/data/glb-cache.json",
+     "bytes": 110142,
+     "sha256": "8bf9ced22b4997bf5d5bc188022cf88bf16d1de76cc242420924924df4f50720"
+    },
+    {
+     "path": "lab/data/report.json",
+     "bytes": 25933,
+     "sha256": "98c689e514d192cfb56ca65fd5cfb4c557e12f763930fe653d953b26569a435a"
+    },
+    {
+     "path": "lab/tools/archive_sources.py",
+     "bytes": 3032,
+     "sha256": "5dadcd3649cb5586728f39ecb2ada2bf08de49bf443abc556e15525ac23e4e03"
+    },
+    {
+     "path": "lab/tools/assemble_site.py",
+     "bytes": 6412,
+     "sha256": "dd184a3451388c639dac237f882eec5f80a54d2772c237f6c3457ed285274e6d"
+    },
+    {
+     "path": "lab/tools/build_assets.py",
+     "bytes": 21230,
+     "sha256": "ed7664a7d15c6f0114b6ffec99be9b43426ea8eee9c9ef6ad5537038c76c579e"
+    },
+    {
+     "path": "lab/tools/glb_audit.py",
+     "bytes": 8364,
+     "sha256": "99d64d7c868ac9b74e9ac1d828499ab959a847dcaebbd27f264f5728047166ac"
+    },
+    {
+     "path": "lab/tools/release_originals.py",
+     "bytes": 6084,
+     "sha256": "dcf166fac237b22640c8e622e13501fa904b544579386e171221c0b0cec5ccfd"
+    },
+    {
+     "path": "lab/tools/serve.py",
+     "bytes": 1133,
+     "sha256": "016310c27dec431e5cb0302c386da50b341f9c2b3dfa112b655fe2a57b6d9ab8"
+    },
+    {
+     "path": "lab/tools/slim_site.py",
+     "bytes": 22472,
+     "sha256": "e6942333e17cfe4b210af72087994d56f3fe90bc9e86c03ed4e6394cd412f9df"
+    },
+    {
+     "path": "lab/tools/tag_batches.py",
+     "bytes": 3849,
+     "sha256": "247dbd7fdfb41c72f1b4aeacd45c8cd288e043e2157e61b1fc89a0e8928be0f1"
+    },
+    {
+     "path": "lab/tools/upload_sources.py",
+     "bytes": 4493,
+     "sha256": "ede1f9cb7f97743a70edca5bb05bdeb6dbd18c53515997e811a41b6c641c63c6"
+    }
+   ],
+   "filesAddedAfterBaseline": [
+    {
+     "path": "docs/asset-spec/batches/r2026.11.05-6.json",
+     "bytes": 295,
+     "sha256": "d9713af2c5bef51e015becba19b9fe889494c7f110c9e108d8120974c268df44"
+    },
+    {
+     "path": "docs/asset-spec/batches/r2026.11.05-7.json",
+     "bytes": 260,
+     "sha256": "ae521d265633f3f4f260ba77cc5e9dee8023b15470e6d9848e8390590c098c8d"
+    },
+    {
+     "path": "docs/asset-spec/batches/r2026.11.05-8.json",
+     "bytes": 335,
+     "sha256": "c6570f884f2114fffad9d1b84480abd80dc471812e950b53e02fe32be4cdf6da"
+    }
+   ],
+   "changedAfterBaseline": [
+    "docs/asset-spec/batches/r2026.11.05-6.json",
+    "docs/asset-spec/batches/r2026.11.05-7.json",
+    "docs/asset-spec/batches/r2026.11.05-8.json",
+    "docs/cities/luoyang/city-data.mjs",
+    "docs/cities/luoyang/p-luoyang.asset.json",
+    "lab/data/assets.json",
+    "lab/data/report.json"
+   ],
+   "cityNodesCheck": {},
+   "extFiles": [],
+   "seatsAffected": "ALL",
+   "forbidden": [
+    "LY-001…099 写入、改名、删除这些路径",
+    "以「顺手修」名义提交到 lab main"
+   ],
+   "allowed": [
+    "只读",
+    "在自己工作包内交 overlay / 语义合并提案"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "LOCK-PUBLIC-DOCS",
+   "kind": "shared-file",
+   "name": "全部公共文件（lab 仓库 docs/ 与 lab/）",
+   "poolQuote": "所有公共文件另走LY-100。",
+   "holder": "LY-100（按主协调者授权）",
+   "holderRecorded": true,
+   "paths": [
+    "docs/**",
+    "lab/**"
+   ],
+   "cityNodes": [],
+   "extRefs": [],
+   "keywords": [],
+   "appliesTo": "ALL",
+   "release": "不下放。",
+   "poolQuoteFound": true,
+   "patternMatches": {
+    "docs/**": {
+     "baseline": 3438,
+     "head": 3455,
+     "expectedOnlyAfterBaseline": false
+    },
+    "lab/**": {
+     "baseline": 673,
+     "head": 681,
+     "expectedOnlyAfterBaseline": false
+    }
+   },
+   "files": {
+    "baselineCount": 4111,
+    "note": "全部 docs/ 与 lab/，不逐件列 SHA"
+   },
+   "changedAfterBaseline": [
+    "docs/asset-spec/batches/r2026.11.05-6.json",
+    "docs/asset-spec/batches/r2026.11.05-7.json",
+    "docs/asset-spec/batches/r2026.11.05-8.json",
+    "docs/cities/luoyang/city-data.mjs",
+    "docs/cities/luoyang/p-luoyang.asset.json",
+    "docs/cities/luoyang/progress-assets/north-three-v1/README.md",
+    "docs/cities/luoyang/progress-assets/north-three-v1/context.webp",
+    "docs/cities/luoyang/progress-assets/north-three-v1/entries.webp",
+    "docs/cities/luoyang/progress-assets/north-three-v1/second-entry.webp",
+    "docs/cities/luoyang/progress-assets/north-three-v1/source.json",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/README.md",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/apron-joint.webp",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/context.webp",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/road-joint.webp",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/source.json",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD1.glb",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
+    "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
+    "docs/library/models/m-luoyang-court-layout-kit/m-luoyang-court-layout-kit.asset.json",
+    "docs/library/models/m-luoyang-workyard-shed/m-luoyang-workyard-shed.asset.json",
+    "docs/library/models/m-luoyang-yong-gate/m-luoyang-yong-gate.asset.json",
+    "lab/data/assets.json",
+    "lab/data/report.json",
+    "lab/media/cities-luoyang-progress-assets-north-three-v1-entries-1800.webp",
+    "lab/media/cities-luoyang-progress-assets-north-three-v1-entries-720.webp",
+    "lab/media/cities-luoyang-progress-assets-yong-road-link-v2-apron-joint-1800.webp",
+    "lab/media/cities-luoyang-progress-assets-yong-road-link-v2-apron-joint-720.webp",
+    "lab/media/cities-luoyang-progress-assets-yong-road-link-v2-context-1800.webp",
+    "lab/media/cities-luoyang-progress-assets-yong-road-link-v2-context-720.webp",
+    "lab/media/cities-luoyang-progress-assets-yong-road-link-v2-road-joint-1800.webp",
+    "lab/media/cities-luoyang-progress-assets-yong-road-link-v2-road-joint-720.webp"
+   ],
+   "cityNodesCheck": {},
+   "extFiles": [],
+   "seatsAffected": "ALL",
+   "forbidden": [
+    "LY-001…099 写入、改名、删除这些路径",
+    "以「顺手修」名义提交到 lab main"
+   ],
+   "allowed": [
+    "只读",
+    "在自己工作包内交 overlay / 语义合并提案"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "RIGHT-PUBLISH",
+   "kind": "right",
+   "name": "发布账户（push、Release 上传、Pages 部署、对外通信）",
+   "poolQuote": "本任务池本身不授权新账号、插件、付款、对外通信或任意发布。远端提交、Release上传、源包落盘和发布仍由主协调者按已有授权安排，不能借“代理有100个”扩展权限。",
+   "holder": "主协调者",
+   "holderRecorded": true,
+   "paths": [],
+   "cityNodes": [],
+   "extRefs": [
+    "git push 任意远端",
+    "gh release",
+    "GitHub Pages"
+   ],
+   "keywords": [],
+   "appliesTo": "ALL",
+   "release": "不下放；LY-100 也只在主协调者逐批授权后提交。",
+   "poolQuoteFound": true,
+   "patternMatches": {},
+   "files": [],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [],
+   "cityNodesCheck": {},
+   "extFiles": [],
+   "seatsAffected": "ALL",
+   "forbidden": [
+    "任何席位自行行使此权利"
+   ],
+   "allowed": [
+    "向持权人提出申请"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "RIGHT-CITY-WRITE",
+   "kind": "right",
+   "name": "城市写入权",
+   "poolQuote": "只有此席位可写共享城市/项目文件；仍按主协调者授权提交发布。",
+   "holder": "LY-100",
+   "holderRecorded": true,
+   "paths": [],
+   "cityNodes": [],
+   "extRefs": [],
+   "keywords": [],
+   "appliesTo": "ALL",
+   "release": "不下放；区域装配包不能自动激活城市。",
+   "poolQuoteFound": true,
+   "patternMatches": {},
+   "files": [],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [],
+   "cityNodesCheck": {},
+   "extFiles": [],
+   "seatsAffected": "ALL",
+   "forbidden": [
+    "任何席位自行行使此权利"
+   ],
+   "allowed": [
+    "向持权人提出申请"
+   ],
+   "state": "active"
+  },
+  {
+   "id": "RIGHT-TASKBOARD",
+   "kind": "right",
+   "name": "任务板根文件（TASKPOOL.md、taskboard.json、README.md）",
+   "poolQuote": "每个代理只写 `workpacks/LY-###/` 下自己的工作包，原输入只读。",
+   "holder": "主协调者",
+   "holderRecorded": true,
+   "paths": [],
+   "cityNodes": [],
+   "extRefs": [
+    "workpacks/TASKPOOL.md",
+    "workpacks/taskboard.json",
+    "workpacks/README.md"
+   ],
+   "keywords": [],
+   "appliesTo": "ALL",
+   "release": "LY-009 只在 LY-009/board/ 交 v2 提案，由协调者决定是否替换根文件。",
+   "poolQuoteFound": true,
+   "patternMatches": {},
+   "files": [],
+   "filesAddedAfterBaseline": [],
+   "changedAfterBaseline": [],
+   "cityNodesCheck": {},
+   "extFiles": [],
+   "seatsAffected": "ALL",
+   "forbidden": [
+    "任何席位自行行使此权利"
+   ],
+   "allowed": [
+    "向持权人提出申请"
+   ],
+   "state": "active"
+  }
+ ]
+}

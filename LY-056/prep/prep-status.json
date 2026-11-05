@@ -1,0 +1,57 @@
+{
+ "seat": "LY-056",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD0.glb 6f0e4183 (3 nodes: stone_static/timber_moving/timber_static)",
+  "docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD1.glb d8759dd6",
+  "docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD2.glb e94416ef (static only, moving merged)",
+  "docs/library/models/m-luoyang-foot-pestle/m-luoyang-foot-pestle.asset.json 801fe3b1",
+  "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb 7eb9739e (contains baked copy of same pestle at T=(5,-1.5,0.2) Blender)",
+  "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD1.glb 6baefbd0 / LOD2 574d81d9",
+  "docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb 89e0a439 / LOD1 a21c2893 / LOD2 7c054863 (standalone shelter: no pestle, no floor; alternative C host)",
+  "docs/library/models/m-luoyang-hand-mill/files/hand-mill-A.glb 0fe50c2c / B 598cadc7 (LY-055 scope, read only)",
+  "docs/cities/luoyang/city-data.mjs e4115705 (no pestle/workyard/mill entry -> not loaded; loader city-renderer.mjs:285-299 fa0a8dcb)",
+  "docs/cities/luoyang/p-luoyang.asset.json 9b5e311f (line 261: 足碓与踏台 未入城)",
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb fdfc3ce5 (candidate city ground, top 0.21; site unchosen)",
+  "lab/data/assets.json HEAD 53d86312 (re-check: git status clean at bce3211; worktree hash c39e8e9a differs only by CRLF checkout)"
+ ],
+ "inputsMissing": [
+  "Selected work ground: LY-010 site admission + LY-005 elevation contract + LY-006 ground-tile owner. It is the installation target and support surface, so it cannot be rebuilt from a GLB. No repo GLB has a floor under the pestle.",
+  "foot-pestle native .blend / generator (private source pack). It is the editable source for future revisions. The reuse assembly does not need it, and it can be rebuilt from the GLB, which has semantic nodes and embedded textures.",
+  "workyard native .blend. It would allow un-baking the pestle that is merged into workyard_timber/workyard_stone. LY-056 does not need it: it uses the standalone GLB nodes instead, and the workyard stays a mutually exclusive reference.",
+  "原谷物加工院 (with 双足碓) source and defect record. It is a possible alternative install site referenced by LY-057/058. It is not in the repo and cannot be rebuilt from a GLB.",
+  "LY-002 original-text/plate entry for 踏碓 in Eastern Han. All current dims are C. Only the Wikipedia Huan Tan line about the hydraulic trip hammer was seen, not the treadle text."
+ ],
+ "gaps": [
+  "No support surface. In workyard-LOD0, 14/14 pestle footprints are NO_SUPPORT (126/126 downward rays miss) and the yard has no floor at all; probe at (0,0) hits nothing. The standalone pestle also has no ground, with all 14 footprints at z=0.",
+  "The baked install is not withdrawable. In workyard only the lever is a separate node; static timber is merged into workyard_timber and the mortar into workyard_stone. Installing the standalone pestle at the same T double-loads 21/21 components (doubleLoad FAIL).",
+  "Pivot hole is open but there is no contact support. Lever hole r=0.079 (16/16 probes) vs axle r=0.075, with axle-lever overlap 0 m3. The post saddle bottom is at z=0.921 and the axle bottom at 0.925, so the moving parts and axle hang on 4 mm gaps.",
+  "8 deg pose has about 3 mm margin. The lever hits the platform at about 8.13 deg: lever min z 0.723 vs platform 0.720 at 8 deg, and overlap is 5.6e-5 m3 at 8.5 deg.",
+  "Pestle hangs 5 cm above the bowl at 0 deg (pestle z=0.35, bowl bottom 0.30). Bowl contact is at about -2.1 deg, outside the allowed poses [0,4,8]. Stroke is 0.175 m over 0-8 deg.",
+  "Platform is 1.25x1.20 m at 0.72 m with 3 risers of 0.24 m and 0.35 m treads. Rails give 1.19 m clear width and stand 0.985 m above the platform. The lever splits the platform into two 0.485 m strips plus a lever-free 1.19x0.40 m front zone, so a 0.6 m turning circle does not fit. The back edge has no rail and drops 0.72 m.",
+  "Inherited static embeds: pivot post fully through base 0.0088 m3 x2; rail post into platform about 3e-4 m3 x4; rail post into step 9e-5 m3 x2; rail top into post 2.1e-4 m3 x4; pestle tenon into lever 2.75e-3 m3.",
+  "Axis convention: workyard pivot_m [5,-1.5,1.2] is in Blender Z-up, not glTF. The standalone moving node has no pivot extras and its origin is not at the axle, at local (0,0,1.0) Blender / (0,1.0,0) glTF.",
+  "LOD2 has no moving node (static only). There is also a 1 cm datum mismatch: workyard base is 0.20 while city ground top is 0.21.",
+  "Alternative host workshed-LOD0 has no floor either. With the pestle centred in the right bay (T=1.55,2.0,0), support is FAIL with 14/14 NO_SUPPORT. Other results there: plan gap to posts 0.745 m each side; headroom over the platform 2.45-2.88 m; no horizontal ray hits; doubleLoad PASS. The pestle is 4.21 m long against 3.5 m between post rows, so the step front pokes out to the eave line at y≈-0.45."
+ ],
+ "reuseCandidate": "Partial reuse. The pestle geometry can be reused unchanged: compare_runs shows 21/21 components match with deviation <1 mm between standalone LOD0 and workyard, and LOD1/2 differ only in rails, ≤7.4 mm. The workyard install (T=(5,-1.5,0.2), poses 0/4/8) is a C reference. It does not qualify as the deliverable, because it has no floor (NO_SUPPORT 14/14), cannot be withdrawn (baked), and is not admitted to the city. No new pestle geometry is needed, only the assembly package plus ground interface.",
+ "touches": [
+  "foot-pestle-LOD0/1/2.glb nodes pestle_stone_static, pestle_timber_moving, pestle_timber_static (referenced read-only, not modified)",
+  "workyard-LOD0/1/2.glb nodes pestle__pestle_timber_moving, workyard_timber, workyard_stone (mutual-exclusion rule only; owner of workyard decides)",
+  "workshed-LOD0/1/2.glb nodes workshed_tile, workshed_timber (only if LY-010 chooses it as a C shelter; read-only reference)",
+  "selected work-ground tile/patch from LY-010/LY-005 (support check; any pad/cut needs LY-006 ownership); city ground network-ground-stitched.glb if the site is in it",
+  "workpacks/LY-056/ assembly.json, qa/, delivery-manifest.json (own write area)",
+  "Shared site with LY-055 (hand mill in same work ground?), downstream LY-058 (grain-yard route uses LY-056), LY-060 (area package), LY-057 (原谷物院 双足碓, do not duplicate)"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-010 may choose no admitted work site. In that case the package stays an independent demo domain and cannot count as 已入城.",
+  "If the ground contract lacks a flat patch of at least 1.41x4.21 m plus an approach zone, a pad or cut is required, and its ownership with LY-006 or the ground owner may conflict.",
+  "With only 3 mm margin at 8 deg, any pad, mat or platform finish layer would make the treadle collide. Attachments must stay out of the lever sweep and the pivot envelope.",
+  "The 0 deg rest pose is visually a hanging pestle (5 cm gap). Changing the pose table touches the moving-semantics owner, so it must not be altered silently.",
+  "Blender-axis pivot_m could be misread as glTF and give a wrong runtime rotation axis.",
+  "The workyard and LY-056 install may be loaded together (double load).",
+  "Body-space numbers are geometric C envelopes, not ergonomics or safety; the unguarded back edge must be disclosed.",
+  "No original evidence on 踏碓 dimensions at Luoyang c.180: all dims are C, and Sichuan bricks, Northern Wei or Western Han material cannot be imported as fact."
+ ],
+ "readyAfterG": true
+}

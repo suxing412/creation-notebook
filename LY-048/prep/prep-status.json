@@ -1,0 +1,72 @@
+{
+ "seat": "LY-048",
+ "inputsFound": [
+  "docs/cities/luoyang/city-data.mjs e4115705 (bce3211; 44 院矩阵、6 原型 excludeNodes、地面 position、章节 loadNodeIds)",
+  "docs/cities/luoyang/city-renderer.mjs fa0a8dcb (:221 初始集合, :309-318 excludeNodes, :374-387 矩阵, :416 近档, :600-604 章节累加)",
+  "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb 19b05202 / A2-LOD1 277e9e73 (候选 C02-010 宿主)",
+  "docs/cities/luoyang/assets/r01/R01-A-LOD0 93b70de2 / LOD1 0827fa49; R01-B-LOD0 a8d94bb3 / LOD1 25f018fa",
+  "docs/cities/luoyang/assets/d08/TC03-LOD0 367a7d25 / LOD1 8daea250; c02v/B2-LOD0 d99affca / LOD1 83282373; c02v/TC03-2-LOD0 bf6287a5 / LOD1 d2432b7c",
+  "docs/cities/luoyang/assets/ground-atomic/south.glb 4313826d (C02-010 门下/四周地面供给, initial:false)",
+  "docs/cities/luoyang/data/west/network.json af8e5479 (旧档案 v1 才读; C02-010 门槛点 527.5,806.45; 设计宽 2.3 m)",
+  "docs/cities/luoyang/data/far44/preflight-contract.json 90dfa077 (原型 source_sha256, 城景不加载)",
+  "docs/library/models/m-luoyang-household-service/files/service-enclosure-LOD0 507c6e70 / LOD1 87ed97d7 / LOD2 19d20f7b (源服务单元: 1.15 m 低墙 + 0.875 m 开放门洞; 未入城)",
+  "docs/library/models/m-luoyang-service-court/files/service-A-LOD0 cc02f68f (圈厕 A, 1.3 m 前口; 未入城)",
+  "docs/library/models/m-luoyang-wall-house-court/files/wall-house-LOD0 5c20fa8b (2.2 m 前口带台阶; 未入城)",
+  "docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD0 67bc127a / single-door-LOD0 597d81ad (房门门叶 2x0.53 m, 非院门; 未入城)",
+  "workpacks/LY-006/registry/zones.json 6b3595ac (v1 交付完成: LY-048:write:001-005 墙环 1 m 带, y 0.25-3.3; 四角归 LY-043, 门道 x -5..-1 z 9..12 归 LY-049)",
+  "workpacks/LY-006/registry/ports.json 28bcfb68 / seams.json ca4d81f8 (端口 C02-010:service-opening:opening v1, 消费者 LY-049/LY-050, 容差 5 mm/2 mm)",
+  "workpacks/LY-006/registry/ownership.json ecbbbcf5 / seats.json a1426412 (组件 R048-side-openings, R048-low-wall-closures; ownsSourceObjects modify/replace = []; c02v 源对象未登记)",
+  "workpacks/LY-005/coordinate-contract.json b6d7fe9d (地块顶 0.20; E3 容差 2 mm/5 mm) / port-schema.json 30854ed9 (kind 不含 opening)",
+  "LY-048/prep/zone-fit-C02-010.json 35ce723a (zone_fit.py 9c62bfb5 实测)",
+  "LY-041/prep/measure-C02-010-exact.json (只读参考: 候选院 C02-010)"
+ ],
+ "inputsMissing": [
+  "6 个院落原型的原始源 GLB/.blend (preflight 记 source_sha256, 如 A2 LOD1 98257941…)：用于在原生工程中开侧口、加门槛/门叶。可从 GLB 重建：差异件在原型同原点米制 Y-up 独立建模；若要开原墙只能“隐藏整节点 architecture_C_whitebox_earth_wall.001 + 整段替换件”从 GLB 重建，且 LY-006 v1 未授 LY-048 任何源对象 modify/replace 权，需 v2",
+  "LY-010 冻结示范院与用途组合 (目录为空)；LY-006 v1 暂以 C02-010/A2 为帧，另选则 041-050 需 registry v2",
+  "LY-008 检查器、LY-009 任务锁未交付 (无 status.json)，G 未冻结",
+  "LY-042/043/044/045/047 冻结交付 (目前都只有 prep/)：决定是否需要侧口、货物包络、作业点与四角端接",
+  "主院门关闭态负责人：v1 门道写入区归 LY-049 (R049-gate-transition, fixed)，R042 门叶只指房门，无人拥有院门门叶；需协调者/LY-006 v2 定，或声明主门无关闭态",
+  "侧口门外落脚/路线端口：东西侧外为 ground-south (归 LY-090) 5.0 m 间带，无道路节点；需 LY-090/LY-082 或协调者给端口",
+  "约 180 年洛阳住宅侧门/后门/门槛的原始考古或原文：本轮未找到，记未知，交 LY-002"
+ ],
+ "gaps": [
+  "侧/服务口：6 原型 x 2 档 x 6 高度 (y 0.233-1.953) 与院心连通的边缘开口均恰为 1 处 (前院门)，侧口/后口 = 0",
+  "C02-010 (A2) 院门：边缘净宽 2.975 m (本地 x -4.975..-2.000)，门框处收窄至 2.10 m (进深 0.5-1.5 m)，楣下 y=2.25 即净高 2.05 m",
+  "门槛 = 0：y=0.233 (地块顶 +0.033) 已贯通",
+  "关闭态不存在：门洞在全部 6 个高度贯通，无门叶；库内唯一门叶为 LY-042 房门 2x0.53 m，无 2.95 m 院门门叶",
+  "门框净宽 2.10 m 比旧档案 network.json 设计最小宽 2.3 m 小 0.20 m",
+  "地面：44 院剔除 site_lot，地面原子 initial:false 只在打开 terrain 章节后累加；住宅章节初始视图门下/院内无地面。加载后 C02-010 门下 ground-south y=0.199-0.200，门外 4.5 m 内 0.182-0.210 (起伏 2.8 cm)",
+  "邻院：C02-010 与 C02-009、C02-011 各 5.0 m，后方 8 m 内无地块；侧边外仅 ground-south (y 0.2)，无道路/巷道节点可接侧口",
+  "检测下限：宽度 <= 2 格的缝 (0.05 m 栅格约 0.10 m, 0.025 m 约 0.05 m) 不报，门叶缝需精确边距检查",
+  "写入区 vs 宿主 (A2 LOD0)：院门木框 32/32 顶点在 LY-049:write:001，0 在 LY-048 区；本项无法在主门放门槛/门叶",
+  "写入区 y 下限 0.25 比墙脚/地块顶 0.20 高 5 cm (该层归 LY-041 基底)；从地面起的墙段或门槛底部 5 cm 越区",
+  "环带四角 4 x 1 m² 归 LY-043 (取样各 8 点)，墙节点 220 顶点中仅 3 个在 LY-048 区：墙环是单一节点，开侧口需隐藏整墙，波及 LY-043 四角与 LY-049 门道墙段",
+  "端口 kind=opening 在 LY-005 port-schema 枚举 (ground/threshold/floor/wall-end/road-end) 中不存在，仅 LY-006 schema 认可"
+ ],
+ "reuseCandidate": "部分/条件复用：实测 6 原型 x 2 档围界已闭合、仅 1 个前院门 (measure-closure.json 9d0dc238…, measure-closure-0025.json e706e9f9…，r2 复跑逐字段一致)，无未声明缺口。若 LY-010/协调者定“示范院不设侧口、主门只有开启态”，本项为复用、零新几何，只交实测与 C02-010:service-opening:opening 端口声明值；否则需新造侧口，且须先获 LY-006 v2 源对象权与门外地面端口，现状下为阻断。当前不能判复用",
+ "touches": [
+  "宿主 docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb / A2-LOD1 (只读；开侧口才涉及节点 architecture_C_whitebox_earth_wall.001 隐藏/替换，v1 无权，需 LY-006 v2；与 LY-043 四角、LY-049 门道墙段冲突)",
+  "LY-006 写入区 LY-048:write:001-005 (court:C02-010 帧：西环 x-9..-8, 东环 x8..9, 北环 z-12..-11, 南环门西 x-8..-5 / 门东 x-1..8, y0.25-3.3)",
+  "相邻区边界：LY-043:write:001-004 (四角)、LY-049:write:001 (门道 x-5..-1 z9..12)、LY-041 基底层 (y<0.25)、LY-045:write:001 (东院)、LY-047:write:001 (东北后带)、LY-044:write:001 (西南灶)",
+  "宿主节点 architecture_C_plain_timber.001 (院门框，在 LY-049 区内；本项不碰)",
+  "端口 C02-010:service-opening:opening v1 (seams[31] -> LY-049, seams[32] -> LY-050)",
+  "门外地坪 ground-south.glb (归 LY-090；C02-010 东西 5 m 间带为侧口去向，本项不铺地面)",
+  "排除节点 designed_hardpacked_activity_ground / site_lot / site_neutral_lane (城中已剔除，不复活)",
+  "只写 D:/GitHub/creation-notebook-workpacks/LY-048/"
+ ],
+ "size": "M",
+ "risks": [
+  "示范院未冻结：若最终非 A2，宿主/门位不同 (A 门 3.325..6.275，B/B2 -6.275..-3.300，TC03/TC03-2 7.525..10.5)，但检测脚本对 6 型均已覆盖",
+  "开侧口必然改动原墙节点 (合并在单一节点 architecture_C_whitebox_earth_wall.001 内)，只能“隐藏整节点+替换件”，回退与 LY-043 端接冲突风险高",
+  "关闭态决策缺主：任务池无席位明确负责院门门叶；若由本项新造，需与 LY-042 门叶互斥并防“新门”被误计为新建筑",
+  "住宅章节初始不加载地面，'地面边界完整'验收必须声明在地面已加载状态下测，否则视觉上院门下空",
+  "旧档案 2.3 m 设计宽与实测 2.10 m 门框不一致，货流若超 2.10 m 包络会推出侧口需求",
+  "检测为截面栅格+逐节点奇偶，不是实体碰撞；早期版本曾因墙顶与屋盖共面误报空段 (已修正)，节点内自交/重叠壳仍可能误判，需 LY-008 实体检查复核",
+  "证据：侧门/门槛无约 180 年洛阳原始依据，三杨庄为西汉晚期异地类比且原文未亲见；不得写成里坊或门禁制度",
+  "registry v1 与实际需要不合：若需侧口或门槛，必须先申请 LY-006 v2 (源对象权、y 下限、门外端口)，否则只能阻断",
+  "port schema 双轨 (LY-005 无 opening / LY-006 有)，LY-008 检查器以哪份为准未定",
+  "lab 工作树 lab/data/assets.json 22:29 又被他人改写 (工作树 c39e8e9a ≠ 提交版 53d86312, git diff 为空)，非本席位；本项不依赖"
+ ],
+ "readyAfterG": false,
+ "prepRevision": "r2"
+}

@@ -1,0 +1,66 @@
+{
+ "seat": "LY-029",
+ "inputsFound": [
+  "docs/cities/luoyang/assets/market/market-cluster.glb 77b8bf2e（V1 五店三摊基础组；已加载：city-data.mjs:511/3663，v1/west-layer.mjs:33）",
+  "docs/cities/luoyang/assets/market/N2-replacement.glb d33cbad1（V1；已加载 city-data.mjs:562/3690）",
+  "docs/cities/luoyang/assets/market/flowB-routes.glb 43d7799f（V1 流线 B；只在 v1 加载，west-layer.mjs:36）",
+  "docs/model-library/updates/m-market-functional/files/market-LOD0/1/2.glb acdd4391/e925451b/ea0c235f（V2；未加载）",
+  "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0/1/2.glb 46f08f41/03ad28cf/b5b13b1c（F 八铺四棚 v2.1；未加载）",
+  "母版分块 chunks/market_frontage_well_routes.glb 0193ebc0（用 LY-021 解出的只读副本；ZIP 五卷 d3d5eb72/c20213e1/6a468122/74f4cd0a/a8a0331b；adapter.json 703caeed）",
+  "docs/library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD0/1/2.glb b599ade0/c64acc4e/502d9d6e（三铺样例；没有落位）",
+  "docs/model-library/assets/market-A-N2-local.glb 493798b8 + optional-B-routes-local.glb 40f3fef9（V1 平移后的副本）",
+  "docs/cities/luoyang/assets/ground-atomic/{network-ground-stitched,retained,south,D08}.glb fdfc3ce5/aed8b3d4/4313826d/3ab93310",
+  "docs/cities/luoyang/data/west/N2-contract.json 10678d73、market-flow-plan.json bff5bb22、market-interface.json 31c6786d、ground-atomic-contract.json bfc7fc83、market-precedents.json abf2a3d2",
+  "docs/cities/luoyang/city-data.mjs e4115705、city-renderer.mjs fa0a8dcb、app.mjs 4d6b5b33、v1/west-layer.mjs d8c14142、v1/market-assembly.mjs 0145ac84、v1/west-state.mjs 1ca60250、v1/r01-assets.mjs fbfd5479",
+  "docs/cities/luoyang/p-luoyang.asset.json 9b5e311f（第 134 行是市肆说明）"
+ ],
+ "inputsMissing": [
+  "F（店前线 v2.1）的私密源包（.blend 或生成器加参数）：要靠它拿到单铺、单棚的节点身份。从 GLB 只能在整套层面重建：GLB 是 3 个按材质合并的网格；分块里的落位等于库件 LOD0 平移 (214.286, 0.2, −1959.184)，误差 4e-5 m。如果按铺拆分，得到的是新派生的文件，不是原生源。",
+  "V2（m-market-functional）的私密 .blend 和城市落位记录：落位**可以**从 GLB 重建。LOD0 平移 (214.286, 0, −1959.184) 以后，三角形集合和城里 V1 结构相同，共 18140 个，1 mm 下没有对不上的。单铺身份不能重建，因为是 4 个合并网格。",
+  "母版 city-C032-entry-LOD0.blend：F 下哪些节点要隐藏，它是权威来源。可以用分块加 adapter 重建：LY-025 记录的是隐藏 457 个 cluster 节点和 54 个 N2 节点，和本席位实测的 487−30、+54 一致。",
+  "G 冻结：LY-005 地面端口；LY-006 所有权（LY-025 和 LY-029 都要改 market-main 的 excludeNodes）；LY-007 三档规则；LY-008 检查器；LY-010 准入哪几套候选（F 有 8 间店，超出 market-precedents.json 里 4–6 间的 C 提案）。",
+  "LY-021—028 的交付物（目前都还在 prep）：要靠它们才能知道每个附件挂在哪一套上，无法重建。"
+ ],
+ "gaps": [
+  "F 和 V1 有效结构＋N2 的 XZ 重叠 185.125 m²（0.25 m 网格，y>0.25）。F 足迹 403.75 m²，V1 348.0 m²。V1 的每一组（N1、N3、S1、S2、T1–T3、north_*、south_*、4 块共享屋面）都和 F 相交，所以换 F 必须卸掉 market-cluster 的全部 487 个结构节点（其中 30 个已经被排除）和 N2 的全部 54 个网格，部分卸载不可行。",
+  "V2 不是另一种布局。V2 LOD0 放到锚点后，三角形集合和 V1 结构相同（18140 个，1 mm 和 1 cm 下都是 0 个 V1 独有、0 个 V2 独有，IoU 1.000；LOD2 的 IoU 0.974）。V2 没有地坪、路带和边界（y 最低 0.2），要用 market-cluster 里的 13 个共享层。",
+  "market-A-N2-local.glb 是 V1 平移到原点的副本：524 对 524 个网格，顶点最大差 0.0 m。要列进「永不入城」名单。",
+  "market-cluster 里有 13 个共享层（sample_ground、7 个 route_*、5 个 boundary_*，指纹 b88718bf）。F 和 7 条 A 路带、6 条 B 路带、5 条边界的重叠都是 0.0 m²；分块里同名的 12 个路带和边界节点和 cluster 的完全一样（包围盒差 0.0）。所以三套变体下都原样保留。",
+  "市肆框内，原子地面四片、6 m 走廊和 joined-route 地形都是 0 个三角形，sample_ground（或 LY-025 的开孔地坪）是这里唯一的地面；误卸以后就没有地面了。",
+  "两条市肆加载路径都没有 SHA 闸门。city-renderer.mjs:286-346 和 market-assembly.mjs:4 只核名字和个数。拿同名但版本不对的 GLB（market-A-N2-local）来，30 个排除名和 7 个路带名照样全部命中，可这 30 个节点几何全都不同（NEG-A）。city-data.mjs:514 写了 sha256，渲染器却从来不读。现成的闸门写法在 v1/road-layer.mjs:18、wall-layer.mjs:21。",
+  "N2 替换件用了 30 个和被卸 cluster 节点相同的名字。卸载时只要匹配范围超出了本资产根，就会把它们一起删掉（NEG-B）。",
+  "主城渲染器从来不移除已经加载的 id（focusChapter city-renderer.mjs:600-605，focusCourtyard :620-624）。两个变体章节会同时在场（NEG-D）。对称的 replaces（rebuild :412-415 取并集）会让市肆变空（NEG-C）。现在 66 个节点里没有一个用到 replaces。",
+  "excludeNodes 挂在资产记录上（city-data.mjs:515），不跟着变体走。F 需要在同一份字节上再加一条资产记录（排除 487 个），或者新增 includeNodes 功能。LY-025 也要往同一个 market-main 的排除表里加 sample_ground，这是所有权冲突，要 LY-006 裁定。",
+  "v1 没有变体参数（west-state.mjs:2-3 只有 level、layout、flow）。applyMarketReplacements 默认 roots[0] 就是 market-cluster，个数写死为 30 和 7，所以不改代码 F 和 V2 在 v1 里加载不了（只能写提案交 LY-100）。好在它的 Transaction 已经做到一次只持有一个资源，失败时回退。",
+  "流线 B 会卸掉 7 条路带，而这 7 条在 F/V2 下是共享层（NEG-E），所以 B 必须拒绝执行，或者重新定义。",
+  "文案写死了五店三摊：app.mjs:26、scene.mjs:12、city-data.mjs:3954-3955、p-luoyang.asset.json:134。",
+  "严格基线已冻结（可复现，跑两次结果一致）：主城 chapter=market 524 个网格、18296 个三角形，200f269d…；v1 calt market flow=A 530 个、264766 个，df7e9c34…；flow=B 529 个、264754 个，6a5462e0…；只算市肆的 flow=B 523 个、18284 个，dbaeae0c…"
+ ],
+ "reuseCandidate": "无（互斥/回退包不存在）。零件都可以原样复用，不用新造几何：V1、V2、F 的原 GLB 按 SHA 引用。母版分块 0193ebc0 证明 F＋13 个共享层＋井这个组合放得下（共享层同名同几何，F 和路带、边界的重叠为 0），但它把 F、地坪、井合在一个 GLB 里，没有撤回，没有 SHA 闸门，也没有和 V1 互斥，不能当交付。",
+ "touches": [
+  "market-cluster.glb：487 个结构节点 N1_*/N2_*/N3_*/S1_*/S2_*/T1_*–T3_*/north_*/south_*/4 个 *_shared_roofbed_*（只排除或卸下，不改字节）",
+  "market-cluster.glb：13 个共享层 sample_ground、route_public/east/rearN/rearS/exitPublic/exitN/exitS、boundary_west/-21.7/21.7/east_-9/east_9（只读，必须保留；sample_ground 归 LY-025，路带归 LY-022/083）",
+  "N2-replacement.glb 的 54 个 N2_* 节点（V2/F 下整体卸下）",
+  "flowB-routes.glb 的 6 个 flowB_* 节点（只用于 V1）",
+  "m-market-functional 的 market-LOD0/1/2.glb，4 个网格 market-static_earth/timber/tile/paper（只引用）",
+  "street_frontage-LOD0/1/2.glb，3 个网格 layout__LY_P01_earth/tile/timber__PBR|FLAT（只引用；落位 214.286, 0.2, −1959.184）",
+  "分块 0193ebc0 的节点：C_MARKET_ENTRY_V21_LOD0__*（3 个）、C_market_ground_well_A、A_LOD0__*（121 个，归 LY-025）、route_*/boundary_*（12 个），只读比对",
+  "只写提案（由 LY-100 写入）：city-data.mjs 资产 market-main 的 excludeNodes（和 LY-025 冲突）；V2、F 和共享层子集的新资产记录；节点 market-main、market-N2；章节 market 的 title/subtitle/loadNodeIds",
+  "只写提案：city-renderer.mjs 的 focusChapter/focusCourtyard/rebuild/loadAsset（互斥组＋SHA 闸门）",
+  "只写提案：v1/west-layer.mjs 的 load() 市肆分支、v1/market-assembly.mjs、v1/west-state.mjs 的 readState/urlFor（加变体参数）",
+  "只写提案：app.mjs:26、scene.mjs:12、p-luoyang.asset.json:134 的市肆文案",
+  "附件挂载位：LY-021（F 的踏步）、LY-022（地坪补片）、LY-023（V1/V2 的 T1–T3 摊脚，或 F 的棚）、LY-024（一种铺型的闭铺件）、LY-025（井＋开孔地坪）、LY-026、LY-027、LY-028",
+  "写入：只写 workpacks/LY-029/"
+ ],
+ "size": "L",
+ "risks": [
+  "F 的准入：F 是两排对街共 8 间店，market-precedents.json 的 C 提案写的是 4–6 间，并且要避免两排完全对称的商街。LY-010 或 LY-002 可能拒绝 F，那样只剩 V1/V2，本包就缩成一个版本切换。",
+  "market-main 的 excludeNodes 上有所有权冲突：LY-025 要排除 sample_ground，LY-029 要排除结构节点。没有 LY-006 裁定，两个包会互相覆盖。",
+  "两条加载路径都要改共享代码（互斥组、SHA 闸门、v1 变体参数），全部要经过 LY-100。所以 LY-029 只能交经过模拟器验证的提案，交不出浏览器内的通过结果。",
+  "F 和 V2 是按材质合并的（3 个和 4 个网格），没法和 V1 的 541 个节点逐节点对应，映射只能整套对整套。按铺的附件（LY-024 的闭铺件、LY-027 的货架）必须做成单独的叠加资产，绑定到某一套变体上。",
+  "F/V2 下流线 B 怎么定义还没定；如果拒绝执行，非 V1 变体下 flow=B 的 URL 行为就会和现在不同。",
+  "目前的指纹覆盖了资产 SHA、节点名、材质名和取整到 1 mm 的三角形；材质参数和精确矩阵要在冻结前补上。",
+  "lab 工作区的 lab/data/* 有未提交的修改；如果 LY-001 重新给 main 拍快照，所有绑定的 SHA 和基线指纹都要重跑。"
+ ],
+ "readyAfterG": true
+}

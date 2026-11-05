@@ -1,0 +1,13 @@
+{
+ "seat": "LY-007",
+ "applies": false,
+ "reason": "本席位是材质与三档质量契约，不装配任何城市节点，不改 city-data.mjs、项目卡或资产卡；没有输入节点→输出节点映射，也没有安装/撤回操作",
+ "city_nodes_touched": [],
+ "consumer_install_order": [
+  {"step": 1, "what": "读 baseline/LY_P01-material-semantics.json、texture-uv-rules.json、lod-rules.json、decisions.json"},
+  {"step": 2, "what": "建模用 source/lib/ly_style.py，import 后设 ly.TEX_DIR = <LY-007>/textures（库字节不改）"},
+  {"step": 3, "what": "导出后跑 source/readback_blender.py（读回、颜色空间、UV 标定）与 source/lod_diff.py（档间差异、LOD0 复制负例）"},
+  {"step": 4, "what": "需要对照时用 models/samples/（S84、G10 三档）与 models/refsphere/（五材料 × 三档）"}
+ ],
+ "rollback": "本席位不改公共文件，无需撤回；基线文件本身改动须另开席位，经 LY-100"
+}

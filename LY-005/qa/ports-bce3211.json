@@ -1,0 +1,4365 @@
+{
+ "schema": "LY-005-port-v1",
+ "frame": "luoyang-local-schematic-v01",
+ "baseline": "bce3211",
+ "ports": [
+  {
+   "portId": "yong-gate:passage-N:threshold-outer",
+   "version": 1,
+   "kind": "threshold",
+   "owner": {
+    "nodeId": "yong-gate-body",
+    "assetId": "yong-gate-near",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     6.9,
+     0.0,
+     -5.811703681945801
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "world": {
+    "position": [
+     -21.907277542346698,
+     0.17000000178813934,
+     -1404.6046668298127
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     -0.9999324083328247,
+     0.0,
+     0.01162686012685299
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "measuredFrom": {
+    "surfaceFile": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "surfaceSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "bodyFile": "../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+    "bodySha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+    "method": "pier gap by downward-facing y=0 faces of body along local z=0 (step 0.05 m): local x 5.2..8.6; walking surface = top upward face of apron at that point"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": null,
+   "portMinusTerrain_m": null,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "passage clear width approx 3.45 m (sampling step 0.05 m). Body has no floor/threshold geometry; surface comes from apron. outer = local -Z = world west (outside city)."
+  },
+  {
+   "portId": "yong-gate:passage-N:threshold-inner",
+   "version": 1,
+   "kind": "threshold",
+   "owner": {
+    "nodeId": "yong-gate-body",
+    "assetId": "yong-gate-near",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     6.9,
+     0.0,
+     5.811703681945801
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     -10.284655823937078,
+     0.17000000178813934,
+     -1404.7398105614302
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.9999324083328247,
+     0.0,
+     -0.01162686012685299
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "measuredFrom": {
+    "surfaceFile": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "surfaceSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "bodyFile": "../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+    "bodySha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+    "method": "pier gap by downward-facing y=0 faces of body along local z=0 (step 0.05 m): local x 5.2..8.6; walking surface = top upward face of apron at that point"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": null,
+   "portMinusTerrain_m": null,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "passage clear width approx 3.45 m (sampling step 0.05 m). Body has no floor/threshold geometry; surface comes from apron. outer = local -Z = world west (outside city)."
+  },
+  {
+   "portId": "yong-gate:passage-C:threshold-outer",
+   "version": 1,
+   "kind": "threshold",
+   "owner": {
+    "nodeId": "yong-gate-body",
+    "assetId": "yong-gate-near",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     0.0,
+     0.0,
+     -5.811703681945801
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "world": {
+    "position": [
+     -21.82705220747141,
+     0.17000000178813934,
+     -1397.7051332123162
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     -0.9999324083328247,
+     0.0,
+     0.01162686012685299
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "measuredFrom": {
+    "surfaceFile": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "surfaceSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "bodyFile": "../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+    "bodySha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+    "method": "pier gap by downward-facing y=0 faces of body along local z=0 (step 0.05 m): local x -2.4..2.4; walking surface = top upward face of apron at that point"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": null,
+   "portMinusTerrain_m": null,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "passage clear width approx 4.85 m (sampling step 0.05 m). Body has no floor/threshold geometry; surface comes from apron. outer = local -Z = world west (outside city)."
+  },
+  {
+   "portId": "yong-gate:passage-C:threshold-inner",
+   "version": 1,
+   "kind": "threshold",
+   "owner": {
+    "nodeId": "yong-gate-body",
+    "assetId": "yong-gate-near",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     0.0,
+     0.0,
+     5.811703681945801
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     -10.204430489061792,
+     0.17000000178813934,
+     -1397.8402769439338
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.9999324083328247,
+     0.0,
+     -0.01162686012685299
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "measuredFrom": {
+    "surfaceFile": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "surfaceSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "bodyFile": "../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+    "bodySha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+    "method": "pier gap by downward-facing y=0 faces of body along local z=0 (step 0.05 m): local x -2.4..2.4; walking surface = top upward face of apron at that point"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": null,
+   "portMinusTerrain_m": null,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "passage clear width approx 4.85 m (sampling step 0.05 m). Body has no floor/threshold geometry; surface comes from apron. outer = local -Z = world west (outside city)."
+  },
+  {
+   "portId": "yong-gate:passage-S:threshold-outer",
+   "version": 1,
+   "kind": "threshold",
+   "owner": {
+    "nodeId": "yong-gate-body",
+    "assetId": "yong-gate-near",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     -6.9,
+     0.0,
+     -5.811703681945801
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "world": {
+    "position": [
+     -21.746826872596124,
+     0.17000000178813934,
+     -1390.8055995948198
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     -0.9999324083328247,
+     0.0,
+     0.01162686012685299
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "measuredFrom": {
+    "surfaceFile": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "surfaceSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "bodyFile": "../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+    "bodySha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+    "method": "pier gap by downward-facing y=0 faces of body along local z=0 (step 0.05 m): local x -8.6..-5.2; walking surface = top upward face of apron at that point"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": null,
+   "portMinusTerrain_m": null,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "passage clear width approx 3.45 m (sampling step 0.05 m). Body has no floor/threshold geometry; surface comes from apron. outer = local -Z = world west (outside city)."
+  },
+  {
+   "portId": "yong-gate:passage-S:threshold-inner",
+   "version": 1,
+   "kind": "threshold",
+   "owner": {
+    "nodeId": "yong-gate-body",
+    "assetId": "yong-gate-near",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     -6.9,
+     0.0,
+     5.811703681945801
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     -10.124205154186507,
+     0.17000000178813934,
+     -1390.9407433264373
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.9999324083328247,
+     0.0,
+     -0.01162686012685299
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "measuredFrom": {
+    "surfaceFile": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "surfaceSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "bodyFile": "../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+    "bodySha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+    "method": "pier gap by downward-facing y=0 faces of body along local z=0 (step 0.05 m): local x -8.6..-5.2; walking surface = top upward face of apron at that point"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": null,
+   "portMinusTerrain_m": null,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "passage clear width approx 3.45 m (sampling step 0.05 m). Body has no floor/threshold geometry; surface comes from apron. outer = local -Z = world west (outside city)."
+  },
+  {
+   "portId": "yong-gate:apron-edge-outer:ground",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "yong-gate-interface",
+    "assetId": "yong-gate-apron",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     0.0,
+     0.0,
+     -9.5
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "world": {
+    "position": [
+     -25.515099227428436,
+     0.17000000178813934,
+     -1397.66224990692
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     -0.9999324083328247,
+     0.0,
+     0.01162686012685299
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "measuredFrom": {
+    "surfaceFile": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "surfaceSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "method": "apron kept bounds edge, top y=0"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": null,
+   "portMinusTerrain_m": null,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "street/road receiver port on the west (outside-city) side; no road reaches it at bce3211 or f28d650."
+  },
+  {
+   "portId": "yong-gate:apron-edge-inner:ground",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "yong-gate-interface",
+    "assetId": "yong-gate-apron",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     0.0,
+     0.0,
+     9.5
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     -6.516383469104767,
+     0.17000000178813934,
+     -1397.88316024933
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.9999324083328247,
+     0.0,
+     -0.01162686012685299
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "measuredFrom": {
+    "surfaceFile": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "surfaceSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "method": "apron kept bounds edge, top y=0"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": null,
+   "portMinusTerrain_m": null,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "street/road receiver port on the east (inside-city) side; nothing reaches it at bce3211; at f28d650 yong-road-link-LOD0 starts here flush (see qa/f28d650-port-consumption.json)."
+  },
+  {
+   "portId": "yong-gate:wall-joint-north:base",
+   "version": 1,
+   "kind": "wall-end",
+   "owner": {
+    "nodeId": "yong-gate-interface",
+    "assetId": "yong-gate-apron",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     16.00006103515625,
+     0.0,
+     0.0
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "world": {
+    "position": [
+     -16.201771819943474,
+     0.17000000178813934,
+     -1413.771684642481
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     -0.01162686012685299,
+     0.0,
+     -0.9999324083328247
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "measuredFrom": {
+    "surfaceFile": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "surfaceSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "method": "adapter extreme local x, base y=0, z=0 (adapter centre line)"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": null,
+   "portMinusTerrain_m": null,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "joins existing C wall end; local +X = world north for this node."
+  },
+  {
+   "portId": "yong-gate:wall-joint-south:base",
+   "version": 1,
+   "kind": "wall-end",
+   "owner": {
+    "nodeId": "yong-gate-interface",
+    "assetId": "yong-gate-apron",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     -15.99994945526123,
+     0.0,
+     0.0
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     -1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "world": {
+    "position": [
+     -15.829712173913562,
+     0.17000000178813934,
+     -1381.773837086122
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.01162686012685299,
+     0.0,
+     0.9999324083328247
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "measuredFrom": {
+    "surfaceFile": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "surfaceSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "method": "adapter extreme local x, base y=0, z=0 (adapter centre line)"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": null,
+   "portMinusTerrain_m": null,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "joins existing C wall end; local +X = world north for this node."
+  },
+  {
+   "portId": "C02-018:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-018",
+    "assetId": "courtyard-B",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     724.0633491942627,
+     0.19999992847442627,
+     -983.8749994327869
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    724.06335,
+    0.0,
+    -983.8,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-B-LOD1-prototype.glb",
+    "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-019:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-019",
+    "assetId": "courtyard-A",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499878786441627
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     745.0893591942628,
+     0.19999992847442627,
+     -983.8749987878643
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    745.08936,
+    0.0,
+    -983.8,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-A-LOD1-prototype.glb",
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-020:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-020",
+    "assetId": "courtyard-TC03",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     14.000001847434405,
+     0.19999992847442627,
+     -16.000003039869128
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     752.9893618474345,
+     0.19999992847442627,
+     -1020.2000030398692
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    738.98936,
+    0.0,
+    -1004.2,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/d08/TC03-LOD1-prototype.glb",
+    "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-021:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-021",
+    "assetId": "courtyard-A2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499934545374742
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     717.3750006545463,
+     0.19999992847442627,
+     -893.6430791942628
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     -1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    717.45,
+    0.0,
+    -893.64308,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/A2-LOD1-prototype.glb",
+    "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-022:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-022",
+    "assetId": "courtyard-B2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     717.3750005672131,
+     0.19999992847442627,
+     -923.3022791942627
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     -1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    717.45,
+    0.0,
+    -923.30228,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/B2-LOD1-prototype.glb",
+    "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-023:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-023",
+    "assetId": "courtyard-A",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499878786441627
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     717.3750012121357,
+     0.19999992847442627,
+     -949.7155691942627
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     -1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    717.45,
+    0.0,
+    -949.71557,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-A-LOD1-prototype.glb",
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-024:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-024",
+    "assetId": "courtyard-A2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499934545374742
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     717.3750006545463,
+     0.19999992847442627,
+     -1025.2109691942628
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     -1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    717.45,
+    0.0,
+    -1025.21097,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/A2-LOD1-prototype.glb",
+    "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-025:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-025",
+    "assetId": "courtyard-B",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     717.3750005672131,
+     0.19999992847442627,
+     -1053.2562091942627
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     -1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    717.45,
+    0.0,
+    -1053.25621,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-B-LOD1-prototype.glb",
+    "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-026:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-026",
+    "assetId": "courtyard-A",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499878786441627
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     717.3750012121357,
+     0.19999992847442627,
+     -1084.5819391942628
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     -1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    717.45,
+    0.0,
+    -1084.58194,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-A-LOD1-prototype.glb",
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-001:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-001",
+    "assetId": "courtyard-A2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499934545374742
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     679.1392008057372,
+     0.19999992847442627,
+     -1176.1250006545463
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    679.1392,
+    0.0,
+    -1176.2,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/A2-LOD1-prototype.glb",
+    "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-002:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-002",
+    "assetId": "courtyard-B2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     633.9742608057372,
+     0.19999992847442627,
+     -1176.125000567213
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    633.97426,
+    0.0,
+    -1176.2,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/B2-LOD1-prototype.glb",
+    "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-027:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-027",
+    "assetId": "courtyard-A",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499878786441627
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     671.0775191942628,
+     0.19999992847442627,
+     -1143.8749987878643
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    671.07752,
+    0.0,
+    -1143.8,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-A-LOD1-prototype.glb",
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-028:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-028",
+    "assetId": "courtyard-A2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499934545374742
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     634.0358491942627,
+     0.19999992847442627,
+     -1143.8749993454537
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    634.03585,
+    0.0,
+    -1143.8,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/A2-LOD1-prototype.glb",
+    "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-029:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-029",
+    "assetId": "courtyard-B",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     608.7826791942628,
+     0.19999992847442627,
+     -1143.874999432787
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    608.78268,
+    0.0,
+    -1143.8,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-B-LOD1-prototype.glb",
+    "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-030:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-030",
+    "assetId": "courtyard-A",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499878786441627
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     575.3501891942627,
+     0.19999992847442627,
+     -1143.8749987878643
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    575.35019,
+    0.0,
+    -1143.8,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-A-LOD1-prototype.glb",
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-031:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-031",
+    "assetId": "courtyard-A2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499934545374742
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     636.1250006545463,
+     0.19999992847442627,
+     -1205.0106991942628
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     -1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    636.2,
+    0.0,
+    -1205.0107,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/A2-LOD1-prototype.glb",
+    "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-003:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-003",
+    "assetId": "courtyard-TC03-2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     14.000001847434405,
+     0.19999992847442627,
+     -17.925002471476407
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     597.8749975285235,
+     0.19999992847442627,
+     -1178.9554418474343
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    615.8,
+    0.0,
+    -1164.95544,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/TC03-2-LOD1-prototype.glb",
+    "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-004:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-004",
+    "assetId": "courtyard-B2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     717.3750005672131,
+     0.19999992847442627,
+     -1157.8193491942627
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     -1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    717.45,
+    0.0,
+    -1157.81935,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/B2-LOD1-prototype.glb",
+    "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-005:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-005",
+    "assetId": "courtyard-B",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     513.9999991942627,
+     0.19999992847442627,
+     -782.6249994327869
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    514.0,
+    0.0,
+    -782.55,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-B-LOD1-prototype.glb",
+    "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-006:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-006",
+    "assetId": "courtyard-B2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     536.9999991942627,
+     0.19999992847442627,
+     -781.6249994327869
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    537.0,
+    0.0,
+    -781.55,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/B2-LOD1-prototype.glb",
+    "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-007:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-007",
+    "assetId": "courtyard-A",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499878786441627
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     589.9999991942627,
+     0.19999992847442627,
+     -782.6249987878643
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    590.0,
+    0.0,
+    -782.55,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-A-LOD1-prototype.glb",
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-008:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-008",
+    "assetId": "courtyard-TC03",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     14.000001847434405,
+     0.19999992847442627,
+     -16.000003039869128
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     643.9999981525656,
+     0.19999992847442627,
+     -778.5499969601308
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    658.0,
+    0.0,
+    -794.55,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/d08/TC03-LOD1-prototype.glb",
+    "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-009:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-009",
+    "assetId": "courtyard-B",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     508.0000008057373,
+     0.19999992847442627,
+     -817.3750005672131
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    508.0,
+    0.0,
+    -817.45,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-B-LOD1-prototype.glb",
+    "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-010:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-010",
+    "assetId": "courtyard-A2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499934545374742
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     531.0000008057373,
+     0.19999992847442627,
+     -818.3750006545463
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    531.0,
+    0.0,
+    -818.45,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/A2-LOD1-prototype.glb",
+    "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-011:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-011",
+    "assetId": "courtyard-A",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499878786441627
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     554.0000008057373,
+     0.19999992847442627,
+     -817.3750012121357
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    554.0,
+    0.0,
+    -817.45,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-A-LOD1-prototype.glb",
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-012:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-012",
+    "assetId": "courtyard-TC03-2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     14.000001847434405,
+     0.19999992847442627,
+     -17.925002471476407
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     584.0000018474344,
+     0.19999992847442627,
+     -823.3750024714765
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    570.0,
+    0.0,
+    -805.45,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/TC03-2-LOD1-prototype.glb",
+    "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-013:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-013",
+    "assetId": "courtyard-A2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499934545374742
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     612.0000008057373,
+     0.19999992847442627,
+     -817.3750006545463
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    612.0,
+    0.0,
+    -817.45,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/A2-LOD1-prototype.glb",
+    "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-032:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-032",
+    "assetId": "courtyard-B2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     548.8749994327869,
+     0.19999992847442627,
+     -758.0000008057373
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    548.8,
+    0.0,
+    -758.0,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/B2-LOD1-prototype.glb",
+    "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-014:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-014",
+    "assetId": "courtyard-A",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499878786441627
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     583.9999991942627,
+     0.19999992847442627,
+     -728.8749987878643
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    584.0,
+    0.0,
+    -728.8,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-A-LOD1-prototype.glb",
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-015:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-015",
+    "assetId": "courtyard-A2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499934545374742
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     606.9999991942627,
+     0.19999992847442627,
+     -728.8749993454537
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    607.0,
+    0.0,
+    -728.8,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/A2-LOD1-prototype.glb",
+    "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-016:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-016",
+    "assetId": "courtyard-B",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     613.0000008057373,
+     0.19999992847442627,
+     -761.1250005672131
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    613.0,
+    0.0,
+    -761.2,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-B-LOD1-prototype.glb",
+    "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-017:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-017",
+    "assetId": "courtyard-A",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499878786441627
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     650.0749987878644,
+     0.19999992847442627,
+     -825.0000008057373
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     1.0,
+     0.0,
+     0.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    650.0,
+    0.0,
+    -825.0,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-A-LOD1-prototype.glb",
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-033:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-033",
+    "assetId": "courtyard-B2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     639.1010508057373,
+     0.19999992847442627,
+     -1080.125000567213
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    639.10105,
+    0.0,
+    -1080.2,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/B2-LOD1-prototype.glb",
+    "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-034:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-034",
+    "assetId": "courtyard-B",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     601.8911908057373,
+     0.19999992847442627,
+     -1080.125000567213
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    601.89119,
+    0.0,
+    -1080.2,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-B-LOD1-prototype.glb",
+    "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-035:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-035",
+    "assetId": "courtyard-A2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499934545374742
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     548.3228408057373,
+     0.19999992847442627,
+     -1080.1250006545463
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    548.32284,
+    0.0,
+    -1080.2,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/A2-LOD1-prototype.glb",
+    "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "C02-036:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "C02-036",
+    "assetId": "courtyard-B2",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     520.5627108057373,
+     0.19999992847442627,
+     -1080.125000567213
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    520.56271,
+    0.0,
+    -1080.2,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/c02v/B2-LOD1-prototype.glb",
+    "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "FROZEN-D08-S1:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "FROZEN-D08-S1",
+    "assetId": "courtyard-A",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499878786441627
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     542.9999991942627,
+     0.19999992847442627,
+     -945.0749987878644
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    543.0,
+    0.0,
+    -945.0,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-A-LOD1-prototype.glb",
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "FROZEN-D08-S2:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "FROZEN-D08-S2",
+    "assetId": "courtyard-B",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     564.9999991942627,
+     0.19999992847442627,
+     -945.074999432787
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    565.0,
+    0.0,
+    -945.0,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-B-LOD1-prototype.glb",
+    "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "FROZEN-D08-S3:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "FROZEN-D08-S3",
+    "assetId": "courtyard-A",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499878786441627
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     588.9999991942627,
+     0.19999992847442627,
+     -945.0749987878644
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    589.0,
+    0.0,
+    -945.0,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-A-LOD1-prototype.glb",
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "FROZEN-D08-S4:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "FROZEN-D08-S4",
+    "assetId": "courtyard-B",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     610.9999991942627,
+     0.19999992847442627,
+     -945.074999432787
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     -1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    -1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1.0,
+    0.0,
+    611.0,
+    0.0,
+    -945.0,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-B-LOD1-prototype.glb",
+    "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "FROZEN-D08-M:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "FROZEN-D08-M",
+    "assetId": "courtyard-A",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499878786441627
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     575.0000008057373,
+     0.19999992847442627,
+     -974.9250012121356
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    575.0,
+    0.0,
+    -975.0,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-A-LOD1-prototype.glb",
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "FROZEN-D08-E:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "FROZEN-D08-E",
+    "assetId": "courtyard-B",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     8.057372857805944e-07,
+     0.19999992847442627,
+     0.07499943278701693
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     629.0000008057373,
+     0.19999992847442627,
+     -974.925000567213
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    629.0,
+    0.0,
+    -975.0,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/r01/R01-B-LOD1-prototype.glb",
+    "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "FROZEN-D08-NW:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "FROZEN-D08-NW",
+    "assetId": "courtyard-TC03",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     14.000001847434405,
+     0.19999992847442627,
+     -16.000003039869128
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     548.0000018474344,
+     0.19999992847442627,
+     -979.0000030398692
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    534.0,
+    0.0,
+    -963.0,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/d08/TC03-LOD1-prototype.glb",
+    "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "FROZEN-D08-NE:ground-base",
+   "version": 1,
+   "kind": "ground",
+   "owner": {
+    "nodeId": "FROZEN-D08-NE",
+    "assetId": "courtyard-TC03",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     14.000001847434405,
+     0.19999992847442627,
+     -16.000003039869128
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     602.0000018474344,
+     0.19999992847442627,
+     -991.0000030398692
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    588.0,
+    0.0,
+    -975.0,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/d08/TC03-LOD1-prototype.glb",
+    "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+    "method": "kept bounds (excludeNodes removed) centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20000000298023224,
+   "portMinusTerrain_m": -7.450580596923828e-08,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "site_lot/lane removed by excludeNodes; base is the lowest kept geometry. forward = local +Z (side of site_neutral_lane in the GLB)."
+  },
+  {
+   "portId": "guangyang-gate-body:floor-base",
+   "version": 1,
+   "kind": "floor",
+   "owner": {
+    "nodeId": "wall-direct-gate-body-only",
+    "assetId": "wall-direct-gate-body-only",
+    "responsibleSeat": "unassigned (LY-006)"
+   },
+   "frames": {
+    "local": "asset frame = GLB default scene after node hierarchy bake (city-renderer loadAsset)",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     0.0,
+     6.199999809265137,
+     -489.7959899902344
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "world": {
+    "position": [
+     0.0,
+     6.199999809265137,
+     -489.7959899902344
+    ],
+    "up": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "forward": [
+     0.0,
+     0.0,
+     1.0
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "measuredFrom": {
+    "file": "assets/city-wall/direct/gate-body-only.glb",
+    "sha256": "cdba2d5c3bbf14bbf9c6ed59e3fcadf174c13e882a5ccb1522b81bc9949d5058",
+    "method": "city-absolute GLB, kept bounds centre at min y"
+   },
+   "elevationClass": "C-engineering",
+   "cityTerrainYBelow": 0.20999999344348907,
+   "portMinusTerrain_m": 5.989999815821648,
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   },
+   "note": "gate-house base at wall top level; asset is city-absolute so local == world (identity node)."
+  }
+ ],
+ "maxLocalWorldRecomputeResidual_m": 0.0
+}

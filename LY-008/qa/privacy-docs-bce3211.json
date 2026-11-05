@@ -1,0 +1,146 @@
+{
+ "checker": "ly-check 1.0 (LY-008, 2026-11-05)",
+ "checkerSha256": "39aaa491859e1a796080dd91ccabd1c47423cf7f9ef2af61c5f123b04b3dff4b",
+ "command": "privacy",
+ "reports": [
+  {
+   "subject": "docs",
+   "ok": false,
+   "errorCodes": [
+    "PRIVATE_PATH_PUBLIC_FILE"
+   ],
+   "warningCodes": [
+    "PRIVATE_PATH_WEAK"
+   ],
+   "info": {
+    "files": 3438,
+    "textFiles": 1981
+   },
+   "issues": [
+    {
+     "level": "error",
+     "code": "PRIVATE_PATH_PUBLIC_FILE",
+     "msg": "公共文件 asset-spec/README.md 含私密路径",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/creation-notebook-待传/r2026.11.06-1/model.blend`。Claude",
+       "at": 5443
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/待删-",
+       "at": 5594
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_WEAK",
+     "msg": "公共文件 studies/005/source/package.py 含 /home/、/Users/ 式通用路径（弱判据，需人工看）",
+     "hits": [
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/agent/",
+       "at": 1031
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_WEAK",
+     "msg": "公共文件 studies/005/source/run.py 含 /home/、/Users/ 式通用路径（弱判据，需人工看）",
+     "hits": [
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/agent/",
+       "at": 2183
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_WEAK",
+     "msg": "公共文件 studies/006/source/package.py 含 /home/、/Users/ 式通用路径（弱判据，需人工看）",
+     "hits": [
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/agent/|/tmp/[A-Za-z0-9_-]+",
+       "at": 1678
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_WEAK",
+     "msg": "公共文件 studies/006/source/run.py 含 /home/、/Users/ 式通用路径（弱判据，需人工看）",
+     "hits": [
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/agent/",
+       "at": 2234
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_WEAK",
+     "msg": "公共文件 studies/007/source/package.py 含 /home/、/Users/ 式通用路径（弱判据，需人工看）",
+     "hits": [
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/agent/",
+       "at": 1699
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_WEAK",
+     "msg": "公共文件 studies/007/source/run.py 含 /home/、/Users/ 式通用路径（弱判据，需人工看）",
+     "hits": [
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/agent/",
+       "at": 2207
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_WEAK",
+     "msg": "公共文件 studies/008/source/package.py 含 /home/、/Users/ 式通用路径（弱判据，需人工看）",
+     "hits": [
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/agent/",
+       "at": 3173
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_WEAK",
+     "msg": "公共文件 studies/010/web-source/freeze.py 含 /home/、/Users/ 式通用路径（弱判据，需人工看）",
+     "hits": [
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/",
+       "at": 712
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

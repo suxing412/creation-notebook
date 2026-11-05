@@ -1,0 +1,65 @@
+{
+ "seat": "LY-093",
+ "inputsFound": [
+  "lab baseline bce3211f; the local lab checkout was fast-forwarded to cad338b by someone else at 2026-11-06 00:34 during this prep (reflog; LY-093 ran read-only git only; worktree clean apart from someone else's .claude/). Every file LY-093 uses is identical between bce3211 and cad338b (git diff --stat bce3211 cad338b empty for granary-city-v1, m-luoyang-wuku, ground-atomic, city-wall; cad338b city-data has 0 wuku / 0 NE_APPROACH); city-data.mjs blob c849706b (bce3211) / d8933a32 (cad338b)",
+  "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb 5937211c: in city as node storage-main, initial:false, storage chapter (city-data.mjs:582 asset, 3717 node, 3987/3990 loadNodeIds; city-renderer.mjs:221 initial filter, 286 loadAsset)",
+  "docs/cities/luoyang/assets/city-wall/A/wall-01.glb cfbbc45a (first screen, nearest city surface 61.157 m); assets/ground-atomic/network-ground-stitched.glb fdfc3ce5 (terrain chapter, nearest walkable 1831.5 m); ground-atomic/retained.glb aed8b3d4",
+  "review batch modeling-lab/review-batches/2026-11-04-city-visible parts 01-05, concat zip 5895ef23 (re-extracted in memory in round 2, member SHAs unchanged): granary_C_with_ground 156999f1, northeast_C_access 58f2f58a, wuku_C_with_support-01 29709e25, -02 34160b9d (adapter initial:false, not in city)",
+  "docs/library/models/m-luoyang-wuku/files/wuku-B-LOD0.glb e5de60b6 (== review-batch B at 1 mm, C18), wuku-A-LOD0.glb 5daa542d; m-luoyang-workyard-shed/files/workyard-LOD0.glb 7eb9739e (not in city at bce3211)",
+  "G delivered after round 1: LY-006 registry ports.json 28bcfb68 / zones.json 6b3595ac / seams.json ca4d81f8 / seats.json a1426412 / ownership.json ecbbbcf5; LY-007 status 交付完成; LY-008 source/ly_check.py 39aaa491; LY-009 board/locks.json 5eb5ae32; LY-003 tables/admission.json dd0ab8c0",
+  "Harness: prep/scripts/acc_replay.py 86b038ac (v1, frozen) + acc_replay_v2.py af4d2bbd; baseline-config.json 73999cbb + baseline-config-v2.json a3c0020f; results out/baseline-bce3211.json + out/baseline-v2-bce3211.json d1a2208e; out/zone-overlaps-native.json ee93fb9c; out/ly008-*.json",
+  "Upstream preps read as cross-check only (numbers re-measured independently): LY-040/060/084/089 prep-status; LY-084 draft verdict: all three NE long routes prohibited"
+ ],
+ "inputsMissing": [
+  "LY-010 (tolerances, region admission, budget waiver policy, blocking policy for inherited LOD errors): directory empty, so G is not frozen; every tolerance in test-plan is provisional",
+  "Delivered packages LY-040 (+031-039), LY-060 (+051-059), LY-084, LY-089 (+081): only prep/ exists. They are the objects under acceptance; LY-093 must not rebuild them from GLB (an acceptance seat cannot produce what it accepts)",
+  "Coordinator batch manifest (selected_tasks, dependency_closure, gate_results, excluded_regions): not issued; decides which packages this seat replays",
+  "Frozen placement for local:wuku-B-v2.2 / local:wuku-A-v2 / local:work-site and the S-WUKU / S-WORK envelopes (LY-006 placement null): needed to turn the T18 cross-frame write-zone check from an assumed anchor into a real result; a contract value, cannot be rebuilt from GLB",
+  "Private mother city-C032-entry-LOD0.blend (1e8c4d2c...) and wuku B v2.2 native .blend + pivot generator: only for the true door pivot / angle range. Door-angle negatives were rebuilt from GLB with an estimated pivot (documented); the final door test needs LY-037's separate leaf + pivot instead",
+  "NE long-road pre-check document (东北长路预检): not found in the repo; a document, cannot be rebuilt from GLB; LY-084's own route measurements are used meanwhile",
+  "Accepted route polylines, port owner node names and declared port values from LY-031/032/034/036/037/039/040/052/059/060 (registry status 'declared, values filled by producer at delivery'): baseline uses LY-093 C probe routes only"
+ ],
+ "gaps": [
+  "Replay reproducible: all 40 round-1 results (21 checks + 19 negatives) identical under the v2 harness after list-order normalisation; 11/11 GLB and 5/5 contract SHAs match",
+  "External port really disconnected at bce3211: 252 ring points 0.5 m outside storage-main ground, 0 connected; nearest city surface wall-01 61.157 m (wall), nearest walkable ground C_stitch_primary 1831.5 m (BVH). The road end-E (2317.827, 3487.25) has no ground beyond it: a dead end where LY-084 would attach",
+  "City counts at bce3211 and cad338b: NE region = 1 node storage-main (2 granaries + receiving); wuku 0, 196 m C road 0, NE workyard 0",
+  "Candidate route granary ground -> C road -> wuku patch 198.613 m, 1988 samples/lane: 0/0.9/1.8 m strips 0 unsupported, max dz 0.0001 m, 0 body hits; wuku entry passes at the baked 150 deg door",
+  "Straight diagonal to granary A stair foot obstructed by the receiving cargo proxy (0.9 m strip 12 / 1.8 m strip 16 samples near (2283.1, 3657.0)); west probe passes. The accepted A route must come frozen from LY-034",
+  "Narrow stairs preserved: A 1.5 m, 4 x 0.1625 m, floor 0.85; B 1.5 m, 6 x 0.15 m, floor 1.10; 0.9/1.4 m strips pass, 1.8 m strip fails (A 2 drop-offs + 10 obstructed, B 10 obstructed)",
+  "Door angle (estimated pivots): 0/30/45 deg block the 0.9 m strip (4/6/5 samples), 60/75 deg block only 1.8 m (10/7), 90-180 deg clear",
+  "LY-006 granary-A/B step-foot ports (frozen-measured, tol 0.005 m / 0.002 m) are off the real stair: elevation 0.200 exact, but the stair centre is 0.051 m west of the declared point (true centre x 2273.713 / 2297.713 = axis +-12.0 m, registry +-11.95 m) and the first riser starts 0.0195 m (A) / 0.0295 m (B) north of it. Same on the in-city GLB (P02). Control at the measured position passes (P03); 20 mm / 10 mm shifts detected (N52/N55)",
+  "LY-006 ne-approach start / end-E ports match the road within 0.001 m (width 2.998 / 5.498 m, elevation 0.200 / 0.000); 3 mm lift, 10 mm north shift and 10 mm short east end all detected (N50/N51/N56). The port sits on the end cap, so elevation must be read 3 mm inside on the road",
+  "Cross-frame write-zone overlap that LY-006 C4 did not test (wuku frames unplaced). At the ASSUMED trial anchor: LY-036:write:004 x LY-039:write:002 = 8.50 x 1.02 x 0.60 m (5.20 m3) holding 1.5 m2 of existing locked road; LY-039:write:002 holds 5.5 m2 of the wuku support patch; LY-036:write:002 x LY-039:write:002 1.84 m3; A case LY-038:write:001 x LY-039:write:002 43.2 m3 holding 19.0 m2 of road and 3.0 m2 of A earth. Road plan 588.3 m2 = 490.5 + 97.8 inside LY-039 zones (coverage control ok)",
+  "Protected triangles inside write zones recorded for later diff (Z03): LY-031 zone 438 granary tris (fp ec759106), LY-032 44, LY-034:003 104, LY-037 1198 wuku B tris, LY-039 14 + 18 road tris; a 2 mm edit is detected (N54)",
+  "LY-008 checker on 14 region GLBs: 0 errors; warnings: wuku B 14 degenerate tris per LOD, wuku-B-LOD0 10,975,184 B / wuku-A-LOD0 10,658,276 B / batch wuku tile 10,108,456 B > 5,000,000 B advisory. lodset: LOD_BBOX error for wuku B (0.130 m), wuku A (0.130 m), workyard (0.098 m) vs 0.02 m rule; granary only tri-ratio warning 0.169 < 0.17. Inherited, not introduced",
+  "A/B exclusivity: A at the B anchor collides with B in 7 object pairs / 7121 crossing triangle pairs; A alone puts its first riser 0.52 m onto the road spur (1.5 m2 at 0.25 m grid)",
+  "Seam tolerance trap: road lifted 0.10 m still passes a 0.25 m step rule; ports now use LY-006 0.002 m, route-internal seams 0.02 m",
+  "Byte budget: wuku group 11,387,196 B > chapter budget 10,000,000 B (+1,387,196); region near set 13,464,668 B; waiver needs LY-010",
+  "Workyard drift on cad338b (outside NE): workyard-LOD0 at (638,1234) on retained ground, 1728/1728 cells supported, but yard earth coplanar with retained top z 0.20 over 94.25 m2 (+1.0 m2 stone): z-fight / double-owner candidate",
+  "Nothing to accept yet: LY-040/060/084/089 prep only, LY-010 missing; LY-003 rules the NE long road unplaceable and LY-084's draft rejects all three routes, so the expected batch verdict is 'local pass, externally disconnected' at best"
+ ],
+ "reuseCandidate": "无。没有可以直接复用的合格验收成果。可复用的只是已核实的事实，不能代替本批验收：城中 granary-city-LOD0（5937211c）与审阅批 granary_C_with_ground（156999f1）1 mm 下三角集合相同（9,508 三角，指纹 66a4effd，C17）；资产库 wuku-B-LOD0（e5de60b6）平移后与审阅批武库 B 相同（143,100 三角，指纹 4938f13a，C18）；LY-006 两个东北短路端口与实物在 0.001 m 内一致（P01）。证据：prep/out/baseline-v2-bce3211.json（d1a2208e）。",
+ "touches": [
+  "Read only: city node storage-main (granary-city-LOD0: original_city_ground_preserved, granary-group-static_timber/tile/paper__cargo_proxy)",
+  "Read only: review-batch nodes sample_ground.001, C_GRANARY_V2_L0__granary-group-static_*, C_NE_APPROACH_LOCAL (LY-039, LOCK-NE-196C), C_WUKU_ISOLATED_SUPPORT_PATCH (LY-036), C_WUKU_ENTRY22_LOD0__wuku-B-static_earth.001/timber.001/tile.001 (LOCK-WUKU-B22; door leaves = two 156-tri components in timber.001)",
+  "Read only: wuku-A-LOD0 static_earth/timber/tile (LY-038 alternative); workyard-LOD0 objects; retained.glb; wall-01; network-ground-stitched",
+  "Read only: LY-006 ports granary-A/B:step-foot:ground, ne-approach:start/end-E:road-end; write zones LY-031:001, LY-032:001, LY-034:001-003, LY-035:001, LY-036:001-004, LY-037:001, LY-038:001, LY-039:001-002",
+  "Ground seams / overlaps examined (not modified): granary ground south edge Y 3647.469 / road north cap; road E end x 2317.827 (dead end); road spur Y 3489.48-3490 vs patch south edge Y 3490 (LY-036/LY-039 zone overlap); A first riser on road spur; workyard yard earth vs retained z 0.20 (cad338b)",
+  "Future read: workpacks LY-040/060/084/089 and closures (delivery-manifest.json, assembly.json, models/, qa/), LY-010, batch manifest",
+  "Write: D:/GitHub/creation-notebook-workpacks/LY-093/prep/ only (later LY-093/qa/); never city-data.mjs, p-luoyang.asset.json, lab/data, LY-006 registry or any producer's files"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-010 still missing: G not frozen, tolerances and admission provisional; inherited LOD_BBOX errors may or may not block depending on LY-010",
+  "Long dependency chain (G + 040 [031-039] + 060 [051-059] + 084 + 089 [081]); any blocked predecessor leaves a partial batch whose remainder must be marked 本批未纳入, not passed",
+  "LY-006 port values for the granary stair feet are 5 cm off the geometry; if not corrected or re-defined before production, LY-031/033/034 will align to a wrong point and T17 will block them",
+  "Cross-frame zone overlaps (LY-036/LY-038 vs LY-039) are computed at an assumed wuku anchor; a different frozen placement changes every G14 number",
+  "The local lab checkout moves under this seat (fast-forwarded to cad338b at 00:34 by someone else): every replay must SHA-gate its inputs and bind text by git blob, never trust the working tree",
+  "Baseline drift: origin/main is cad338b; batch replays must rebuild 'before' on the batch base commit; NE files are unchanged today",
+  "Probe routes are LY-093 C choices; if producers do not freeze polylines, ports and owner node names, acceptance cannot be reproduced and must block",
+  "Door pivot estimated from baked geometry; real door-angle acceptance depends on LY-037",
+  "Detector limits: surface BVH only (no solid inclusion), zero-epsilon overlap misses some coplanar contacts (owners grid compensates), discrete samples and box envelope (not continuous body, cargo, vehicle, dynamics or structure)",
+  "Wording risk: '已入城/全城已通/物流完成/结构安全/复原成立' must not appear; the expected verdict is 'externally disconnected'"
+ ],
+ "readyAfterG": true
+}

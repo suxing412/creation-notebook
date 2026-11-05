@@ -1,0 +1,315 @@
+{
+ "seat": "LY-008",
+ "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "allPass": true,
+ "checks": [
+  {
+   "id": "C1-selftest",
+   "pass": true,
+   "detail": {
+    "cases": 77,
+    "negatives": 46,
+    "negativesCaught": 46,
+    "positives": 31,
+    "positivesPassed": 31,
+    "selftestFailures": 0
+   },
+   "bind": {
+    "source/ly_check.py": "39aaa491859e1a796080dd91ccabd1c47423cf7f9ef2af61c5f123b04b3dff4b",
+    "qa/negatives/cases.json": "1c5dfdfcbd55237ee90ebb2837bd1ecd2a4e15ec48a3eb55e0382f69b5b4b3ac",
+    "qa/selftest.json": "45a4537fbdbebe0b098546810614de4de05b88de9acb10e90d2a5cbfbdc5f6a6"
+   }
+  },
+  {
+   "id": "C2-fixtures-deterministic",
+   "pass": true,
+   "detail": {
+    "regeneratedIdentical": true,
+    "filesCheckedAgainstRecordedSha": 56,
+    "mismatch": []
+   }
+  },
+  {
+   "id": "C3-good-samples-are-LY007-bytes",
+   "pass": true,
+   "detail": {
+    "models/refsphere/lyref-A-LOD0.glb": {
+     "sha256": "0f2e69426378437c98c17227cbf8dfdf856d9d59e0e71e374c4d7f39988e83ef",
+     "ly007Manifest": "0f2e69426378437c98c17227cbf8dfdf856d9d59e0e71e374c4d7f39988e83ef"
+    },
+    "models/refsphere/lyref-A-LOD1.glb": {
+     "sha256": "5ee4849fa157df975c31a973edd3b1f96b5362af30ec4935dc44ce0e69a9d8d1",
+     "ly007Manifest": "5ee4849fa157df975c31a973edd3b1f96b5362af30ec4935dc44ce0e69a9d8d1"
+    },
+    "models/refsphere/lyref-A-LOD2.glb": {
+     "sha256": "8ae694899f5509890de5dc72b1c7374f994ce6aea2f102c2071fa9798f0b2945",
+     "ly007Manifest": "8ae694899f5509890de5dc72b1c7374f994ce6aea2f102c2071fa9798f0b2945"
+    },
+    "models/samples/G10-LOD0.glb": {
+     "sha256": "c912961f8b23061aedb5bab67ce15c0f8fa9622e47036c7dea4b55c148f09a1c",
+     "ly007Manifest": "c912961f8b23061aedb5bab67ce15c0f8fa9622e47036c7dea4b55c148f09a1c"
+    },
+    "models/samples/G10-LOD1.glb": {
+     "sha256": "d92921bef682fa3c2084d10ba2b48c7600badaf9aefa899c5189177fb1dd5f2f",
+     "ly007Manifest": "d92921bef682fa3c2084d10ba2b48c7600badaf9aefa899c5189177fb1dd5f2f"
+    },
+    "models/samples/G10-LOD2.glb": {
+     "sha256": "42f47696899037f1364c060ed58f70dcc7d7756c2ff7879d5b1f930c8ee8f933",
+     "ly007Manifest": "42f47696899037f1364c060ed58f70dcc7d7756c2ff7879d5b1f930c8ee8f933"
+    },
+    "models/samples/S84-LOD0.glb": {
+     "sha256": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b",
+     "ly007Manifest": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b"
+    },
+    "models/samples/S84-LOD1.glb": {
+     "sha256": "ccd799f25c0c93ba6cd18a8888363db204bd0538d874b4e65f3b924d45c49e88",
+     "ly007Manifest": "ccd799f25c0c93ba6cd18a8888363db204bd0538d874b4e65f3b924d45c49e88"
+    },
+    "models/samples/S84-LOD2.glb": {
+     "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+     "ly007Manifest": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a"
+    }
+   },
+   "bind": {
+    "LY-007/delivery-manifest.json": "8100f197c742fc00406d4c835b9690d2cb785a3f838012b18ae621386bc16fc1"
+   }
+  },
+  {
+   "id": "C4-official-checker",
+   "pass": true,
+   "detail": {
+    "command": "python -I lab/tools/build_assets.py --check（cwd = 导出副本；env GIT_CEILING_DIRECTORIES = 副本上一级）",
+    "spec": 1,
+    "limits": {
+     "glbMaxMB": 15,
+     "glbWarnMB": 5,
+     "trianglesMax": 500000,
+     "trianglesWarn": 150000
+    },
+    "exit": {
+     "baseline": 0,
+     "injected": 1,
+     "reverted": 0
+    },
+    "baselineCounts": {
+     "cards": 89,
+     "published": 89,
+     "drafts": 0,
+     "withErrors": 0,
+     "withWarnings": 50
+    },
+    "copyWholeTree": {
+     "blobs": 4411,
+     "mismatch": [],
+     "mismatchCount": 0,
+     "missing": [],
+     "extraBeforeRun": [],
+     "extraCountBeforeRun": 0,
+     "identical": true
+    },
+    "labRepoUnchanged": true
+   },
+   "bind": {
+    "lab/tools/build_assets.py": "ed7664a7d15c6f0114b6ffec99be9b43426ea8eee9c9ef6ad5537038c76c579e",
+    "lab/tools/glb_audit.py": "99d64d7c868ac9b74e9ac1d828499ab959a847dcaebbd27f264f5728047166ac",
+    "docs/asset-spec/categories.json": "63f41789873383a0340df13333b5cb47e3106c318a9c52f187c608bc3190f96a",
+    "docs/asset-spec/README.md": "8c16f653c2bf4af81d4d6fe1330ec4f79bd00720bec2f2c31f79c8461a832769",
+    "qa/official-runs.json": "41a54d87dfdec91e2bfe587e831aa49edba898848d7c8ed9c5f5ccaf1084e5b2"
+   }
+  },
+  {
+   "id": "C5-official-coverage-gaps",
+   "pass": true,
+   "kind": "finding",
+   "detail": [
+    {
+     "card": "ly008-neg-truncated",
+     "glbSha256": "dd15debb41ad1e99c2367fceebcfd2eda4dec58c6ea9741b748eaf7fb0c4a25a",
+     "lyCheck": [
+      "GLB_CHUNK_OVERRUN",
+      "GLB_LENGTH_MISMATCH",
+      "GLTF_BUFFERVIEW_OVERRUN",
+      "GLTF_BUFFER_OVERRUN",
+      "TEXTURE_MISSING"
+     ]
+    },
+    {
+     "card": "ly008-neg-badlen",
+     "glbSha256": "825a483c0d89b953488e5df8ecae1df3caf7fa00ea4b859c10d6b58dc5a18862",
+     "lyCheck": [
+      "GLB_LENGTH_MISMATCH"
+     ]
+    },
+    {
+     "card": "ly008-neg-nan",
+     "glbSha256": "52567f0980c590df7bddce601a6530032070e9ca93dd13a332211df4710345e5",
+     "lyCheck": [
+      "GEOM_NONFINITE"
+     ]
+    },
+    {
+     "card": "ly008-neg-notex",
+     "glbSha256": "e43d20efce44ce9e61bdd6b4059b01e2cecd023a778fed8b4a786b389cc4b4bb",
+     "lyCheck": [
+      "TEXTURE_MISSING"
+     ]
+    },
+    {
+     "card": "ly008-neg-exttex",
+     "glbSha256": "63b99082b35568e6799b9f37cfc41e0014416ca943d798d4b996d12e6907211a",
+     "lyCheck": [
+      "TEXTURE_MISSING",
+      "TEXTURE_NOT_EMBEDDED"
+     ]
+    },
+    {
+     "card": "ly008-neg-private",
+     "glbSha256": "4685973f571db0485712de0292ea30811d414c217daf21969699a48a007bd149",
+     "lyCheck": [
+      "PRIVATE_PATH_IN_JSON"
+     ]
+    }
+   ],
+   "note": "这些负例官方 build_assets --check 判为通过（退出码只受其他卡影响），ly_check 判出；所以合并队列需要两者都跑"
+  },
+  {
+   "id": "C6-census-vs-official-audit",
+   "pass": true,
+   "detail": {
+    "glbFiles": 442,
+    "statsMatch": 442,
+    "filesWithErrors": 0,
+    "warningCodeCounts": {
+     "GLB_LARGE": 9,
+     "HIGH_DRAWCALLS": 6,
+     "GEOM_TRI_HIGH": 3,
+     "GEOM_DEGENERATE": 3,
+     "NODE_NONUNIT_SCALE": 1,
+     "GEOM_DRAWN_TRI_OVER_LIMIT": 1,
+     "GLTF_UNUSED_MESH": 1
+    },
+    "shaCrossCheckWithLY001": {
+     "compared": 373,
+     "equal": 373
+    }
+   },
+   "bind": {
+    "qa/census-bce3211.json": "618688c54cd1a42e9c423fc8c32b3a6b6a32794118f5dabf948a63190ab80f3f",
+    "LY-001/qa/glb-files.csv": "9771bf0ce16b50d70d04e6f48f01abbe9cbfe062a4e97ab72cad3b56fbe0e9ff"
+   }
+  },
+  {
+   "id": "C7-predecessor-packages",
+   "pass": true,
+   "detail": {
+    "LY-001": {
+     "entries": 25,
+     "errors": [],
+     "warnings": [
+      "PRIVATE_PATH_INTERNAL_FILE"
+     ],
+     "manifestSha256": "97e94edc86ff8784e5cb460e09aeb6f670efeded757a6dca46da376e79c718b5"
+    },
+    "LY-005": {
+     "entries": 82,
+     "errors": [],
+     "warnings": [
+      "PRIVATE_PATH_INTERNAL_FILE"
+     ],
+     "manifestSha256": "642c07f056d052a224ee1e5c314b80911e1c05d4b89c5d734bbc4812155c78a0"
+    },
+    "LY-007": {
+     "entries": 95,
+     "errors": [],
+     "warnings": [
+      "PRIVATE_PATH_INTERNAL_FILE"
+     ],
+     "manifestSha256": "8100f197c742fc00406d4c835b9690d2cb785a3f838012b18ae621386bc16fc1"
+    }
+   }
+  },
+  {
+   "id": "C8-docs-privacy",
+   "pass": true,
+   "kind": "finding",
+   "detail": {
+    "files": {
+     "files": 3438,
+     "textFiles": 1981
+    },
+    "errors": [
+     "公共文件 asset-spec/README.md 含私密路径"
+    ],
+    "errorHits": [
+     "drive-absolute",
+     "drive-absolute"
+    ],
+    "weakWarnings": 8
+   },
+   "note": "bce3211 的 docs/asset-spec/README.md 有 2 处 D:/ 盘路径（源包落盘与待删目录说明）；交 LY-100/协调者定是否改写，本席位不改公共文件"
+  },
+  {
+   "id": "C9-formal-limit-vs-upload-channel",
+   "pass": true,
+   "detail": {
+    "N11-oversize-15000004": {
+     "bytes": 15000004,
+     "sha256": "3df5f9afc806019abbe9f9456a2465464736081005998128072b1bdd98a7005b",
+     "errorCodes": [
+      "GLB_OVER_FORMAL_LIMIT"
+     ],
+     "upload": {
+      "rawBytes": 15000004,
+      "base64Bytes": 20000008,
+      "encoding": "base64",
+      "limit": null,
+      "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+      "verdict": "not-judged"
+     }
+    },
+    "B11-boundary-15000000": {
+     "bytes": 15000000,
+     "sha256": "29f1afae3059a4f209e7787fb02c207490fd81c91896b9c288a2294c731bb92e",
+     "errorCodes": [],
+     "upload": {
+      "rawBytes": 15000000,
+      "base64Bytes": 20000000,
+      "encoding": "base64",
+      "limit": null,
+      "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+      "verdict": "not-judged"
+     }
+    },
+    "N12-upload-channel-14000000": {
+     "bytes": 14000000,
+     "sha256": "cf3e78c74fdf9d7c62f0f0f89e74e02af869e9482183695e83fbfa36aa58c89c",
+     "errorCodes": [
+      "UPLOAD_OVER_CHANNEL_LIMIT"
+     ],
+     "upload": {
+      "rawBytes": 14000000,
+      "base64Bytes": 18666668,
+      "encoding": "base64",
+      "limit": 15000000,
+      "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+      "carriedBytes": 18666668,
+      "verdict": "fail"
+     }
+    },
+    "B12-same-file-no-channel-limit": {
+     "bytes": 14000000,
+     "sha256": "cf3e78c74fdf9d7c62f0f0f89e74e02af869e9482183695e83fbfa36aa58c89c",
+     "errorCodes": [],
+     "upload": {
+      "rawBytes": 14000000,
+      "base64Bytes": 18666668,
+      "encoding": "base64",
+      "limit": null,
+      "note": "上传承载与正式上限分开判：正式上限只看文件字节；承载只在给出具体通道上限时判",
+      "verdict": "not-judged"
+     }
+    }
+   }
+  }
+ ]
+}

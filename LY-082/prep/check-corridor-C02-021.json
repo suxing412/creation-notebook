@@ -1,0 +1,54 @@
+{
+ "file": "corridor-C02-021.json",
+ "mode": "positive",
+ "allChecksPass": true,
+ "verdict": "PASS",
+ "checks": [
+  {
+   "check": "K1_sha_binding",
+   "pass": true,
+   "detail": "all ground inputs match"
+  },
+  {
+   "check": "K2_support_continuous",
+   "pass": true,
+   "detail": {
+    "noGroundCells": 0,
+    "firstNoGround_v_m": null
+   }
+  },
+  {
+   "check": "K3_step_slope",
+   "pass": true,
+   "detail": {
+    "maxAdjacentStep_m": 0.0,
+    "maxSlope_pct": 0.0
+   }
+  },
+  {
+   "check": "K4_boundary_height",
+   "pass": true,
+   "detail": {
+    "min": 0.2,
+    "max": 0.2
+   }
+  },
+  {
+   "check": "K5_no_stacked_floor",
+   "pass": true,
+   "detail": {
+    "cells": 0,
+    "sep": null,
+    "files": null
+   }
+  },
+  {
+   "check": "K6_body_box_clear",
+   "pass": true,
+   "detail": {
+    "LOD0": [],
+    "LOD1": []
+   }
+  }
+ ]
+}

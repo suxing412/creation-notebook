@@ -1,0 +1,48 @@
+{
+ "seat": "LY-003",
+ "status": "交付完成",
+ "summary": "按“不可配准就交缺项清单和不可落位结论”的规定交付。南宫、北宫、两宫复道、永安宫、宫墙水道和东北长接路都不可落位：项目坐标与任何测绘或发掘坐标之间的共同控制点为 0，平移、刚体、相似、仿射变换全部欠定。东北短接路的宫墙条件未决，不算放行。另外交了 15 个控制点候选和 8 份缺失图版的清单、候选比例变换及其独立校核、4 个宫区悬置区和 5 条悬置道路，以及东北 C 试放筛查区（约 56.2 公顷）。东垣残长比示意东边全长长 6.2%，三组城垣实测数字互相矛盾；旧 B 北宫东西宽是报道称“范围大致相同”的后期宫城的 1.83 倍。17 条引文全部在来源字节中逐字核到，6 个负例按预期检出，可用 source/build.py 重算。",
+ "deliverables": [
+  "brief.md",
+  "inputs.json",
+  "tables/control-points.json",
+  "tables/transforms.json",
+  "tables/hold-zones.json",
+  "tables/admission.json",
+  "tables/ne-screening-cells.json",
+  "qa/frame-rederive.json",
+  "qa/side-lengths.json",
+  "qa/error-budget.json",
+  "qa/palace-dims.json",
+  "qa/ne-checks.json",
+  "qa/quote-check.json",
+  "qa/selftest.json",
+  "qa/build-run.txt",
+  "preview/constraints-map.png",
+  "source/build.py",
+  "source/ly003_data.py",
+  "source/glbinfo.py",
+  "source/manifest.py",
+  "delivery-manifest.json",
+  "status.json"
+ ],
+ "blockers": [],
+ "openItems": [
+  "宫区配准的解除条件：取得至少 2 个（要校核则 3 个以上）双方都有数值坐标的共同点，例如城角或门址实测坐标。可能的来源是考古1973(4)初步勘查、考古学报1998(3)城垣试掘、考古1988(9)建春门；还要取得 2023 年东汉北宫东墙、南墙段和冲沟道路的发掘平面。本轮一份也没拿到。",
+  "河南省文物考古研究院 News_ID=2283（2023 十大考古新发现）和 News_ID=2810（2025 年度汇报）两个原页未能访问（ENOTFOUND，curl 000）；北宫墙段的内容目前只来自新浪、腾讯、极目新闻的转载。",
+  "旧 B 北宫南北边长约 1398 米，与北魏宫城南北长 1398 米（Q17）几乎相同，可能说明示意图借用了后期实测数字，待核。如果属实，旧 B 本身就混入了后期数据，需要 LY-002、LY-094 或协调者复核制图说明。",
+  "Q08“后期宫城南墙只有一道，始建晚于东汉”和 Q04“东汉北宫南墙利用冲沟”之间的关系没有资料可以裁定。东汉南墙可能在别处，摆动量未知。",
+  "C_NE_APPROACH_LOCAL（约 196 米 C 短路）在 bce3211 中没有找到，端点几何没法核对。LY-039 需要提供实际 GLB 和 SHA，再按 tables/hold-zones.json 与 NE-C-SCREEN 复核；这一步只能说明和旧示意不冲突，不能当作宫外证明。",
+  "北魏宫城尺寸只来自百科类三手页面；北垣有 2523、2820、3700 米三说，西垣有 3500、3510、4290 米三说，量法和是否包括金墉城都没有说明。",
+  "悬置区外扩值沿用的是仓库 c02v 的工程筛查值（宫区 200、道路 80、标签 400 米），不是历史误差范围；e3（图与地面）、e4（墙线摆动）没有量化。",
+  "本包不涉及模型读取、通行、入城、结构安全；“历史复原成立”只覆盖到位置这一项，而且结论是否定的。"
+ ],
+ "nextDependents": [
+  "LY-039",
+  "LY-070",
+  "LY-084",
+  "LY-086",
+  "LY-088",
+  "LY-094"
+ ]
+}

@@ -1,0 +1,228 @@
+{
+ "seat": "LY-003",
+ "lab_commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "read_mode": "git show 提交字节，只读；未改、未建、未删仓库文件，未运行 build_assets.py",
+ "repo_inputs": [
+  {
+   "path": "docs/cities/luoyang/data/evidence/evidence-geometry.json",
+   "bytes": 52278,
+   "sha256_commit_bytes": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/north-palace-conflict-layer.json",
+   "bytes": 7651,
+   "sha256_commit_bytes": "da9c7c198cb28ed27c215d96d00cb7bb50de158ee91a557c91669550b1a8dd5b"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/road-preconstraints.json",
+   "bytes": 8657,
+   "sha256_commit_bytes": "d369409a92fce2d26e8c57eee0e2b5864e509fe30f8458ae8a3e150e661d3c52"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/storage-interface.json",
+   "bytes": 1916,
+   "sha256_commit_bytes": "4f3ccae9891c2fcd2ae3d962c3740a4b53eac7faea872b5ce28596cf1a62c2b3"
+  },
+  {
+   "path": "docs/cities/luoyang/data/c02v/research-mask.json",
+   "bytes": 11155,
+   "sha256_commit_bytes": "d801b5e7c42acc9d32f7689abd15a3b403e515e32b6a6e4fe7080e4ada3e1275"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/source.json",
+   "bytes": 3920,
+   "sha256_commit_bytes": "30e74bda8a965f4f7c84aaa32bdb7a179680b6163150584cdeb58de3e3f12639"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+   "bytes": 1663844,
+   "sha256_commit_bytes": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "bytes": 106463,
+   "sha256_commit_bytes": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00"
+  }
+ ],
+ "prior_seat_inputs": [
+  {
+   "path": "LY-001/status.json",
+   "bytes": 2968,
+   "sha256": "a32d742a0064baf45c0f78215b10905f2a21fb9ea070b18d8055a58454fe9236"
+  },
+  {
+   "path": "LY-001/qa/city-nodes.csv",
+   "bytes": 23668,
+   "sha256": "8ab19b0553faf60717759d3580ac1d173d560a832f58512d83bb478a289f27c7"
+  },
+  {
+   "path": "LY-001/qa/glb-files.csv",
+   "bytes": 81027,
+   "sha256": "9771bf0ce16b50d70d04e6f48f01abbe9cbfe062a4e97ab72cad3b56fbe0e9ff"
+  },
+  {
+   "path": "LY-001/source/glbinfo.py",
+   "bytes": 5971,
+   "sha256": "6d75511cf8d8d3a22ba11760dd2cd74bcdc253f3044d3d71610868daee2891da"
+  },
+  {
+   "path": "LY-002/status.json",
+   "bytes": 2625,
+   "sha256": "0ac63db873219d1bb22f9269dd11c52e80e2efeec528decb5a1f0409cd92c13d"
+  },
+  {
+   "path": "LY-002/tables/evidence-ledger.json",
+   "bytes": 76865,
+   "sha256": "237a4811acad3d7f6733d4c5c95a64df0b2c67adf48b2682264eb0f0c8512b77"
+  },
+  {
+   "path": "LY-002/qa/palace-spacing-check.json",
+   "bytes": 763,
+   "sha256": "18c9f0e4f9911d736540f5a7c6224218bf43ae72efe1c5c312d88a18f8789f4e"
+  }
+ ],
+ "copied_helper": {
+  "path": "source/glbinfo.py",
+  "from": "LY-001/source/glbinfo.py",
+  "sha256": "6d75511cf8d8d3a22ba11760dd2cd74bcdc253f3044d3d71610868daee2891da"
+ },
+ "coordinate_contract": {
+  "frame": "luoyang-local-schematic-v01",
+  "units": "schematic_m",
+  "glTF": "[east, height, -north]",
+  "geographicOrigin": null,
+  "rotationToTrueNorth": null
+ },
+ "external_sources": [
+  {
+   "k": "X-GAO",
+   "title": "高崇文《东汉都城洛阳礼制文化研究》，《中原文化研究》2023年第2期",
+   "date": "2023",
+   "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/6434e64ce0ef9.pdf",
+   "file": "gao2023_raw.txt",
+   "pdf": "gao2023.pdf",
+   "kind": "期刊二手综述（城垣数字转引1973初步勘查）",
+   "read": "已读PDF文字层（LY-002同一份下载，PDF SHA一致）",
+   "sha256": "44df0769f0be7c4bfefe3f949c4ad820a6673011ec0a3c60de139647686d836d",
+   "bytes": 684076,
+   "pdf_sha256": "c10cd82d71a864f4441f539f178432d09a354dbe02f28bdcf97df301885d5b51"
+  },
+  {
+   "k": "X-SINA",
+   "title": "2023年度河南省十大考古新发现巡礼（下），手机新浪网转载",
+   "date": "2024-03-04",
+   "url": "http://henan.sina.cn/city/csgz/2024-03-04/detail-inamckxt1025059.d.html",
+   "file": "sina2024b.html",
+   "kind": "评选巡礼文字（发掘领队刘涛项目条目）的网站转载；非发掘报告、无图",
+   "read": "已读全文中汉魏洛阳故城宫城条",
+   "sha256": "685a661d4239e7bc3805f03353352d60524395d50ec70815efb448b4a34e537d",
+   "bytes": 71455
+  },
+  {
+   "k": "X-QQ",
+   "title": "洛阳三个项目入选2023年度河南省十大考古新发现（洛报融媒）",
+   "date": "2024-03-03",
+   "url": "https://news.qq.com/rain/a/20240303A07OU500",
+   "file": "qq2024.html",
+   "kind": "新闻",
+   "read": "已读全文",
+   "sha256": "a3267df5d807dc39be25eb7c5f00216d3101c61eef1801f9ad49fbefd1892f5a",
+   "bytes": 69807
+  },
+  {
+   "k": "X-CTDSB",
+   "title": "考古2023｜三国两晋南北朝考古（极目新闻／楚天都市报，社科院考古所学者年度综述）",
+   "date": "2024-06-22",
+   "url": "https://www.ctdsb.net/c1664_202406/2173744.html",
+   "file": "ctdsb2024.html",
+   "kind": "学者年度综述的新闻转载；无图",
+   "read": "已读汉魏洛阳城段",
+   "sha256": "53bdbe63f4092ddc0862ffac1f64977bed0d5f63029e1f6241fc95672f64f99d",
+   "bytes": 41274
+  },
+  {
+   "k": "X-HUANQIU",
+   "title": "汉魏洛阳城遗址考古重大发现（环球网，千秋门水道）",
+   "date": "2022",
+   "url": "https://china.huanqiu.com/article/48Nj5E1mwn0",
+   "file": "huanqiu2022.html",
+   "kind": "新闻（考古队副队长郭晓涛介绍）；无图坐标",
+   "read": "已读全文",
+   "sha256": "4b8ba31e14684695a5967c96820a505c6ee700332638b3513571746944b47749",
+   "bytes": 44266
+  },
+  {
+   "k": "X-QIAN",
+   "title": "钱国祥《汉魏洛阳故城居中宫城制度考》（中国社会科学报，全国哲学社会科学工作办公室网转载）",
+   "date": "2018-07-04",
+   "url": "https://www.nopss.gov.cn/n1/2018/0704/c373410-30125781.html",
+   "file": "nopss2018.html",
+   "kind": "发掘主持者的成果短文；无图坐标",
+   "read": "已读全文",
+   "sha256": "0e15c103bbbd16e1850524e44ab91e8d07d2489b692de802e5244d3f73f11082",
+   "bytes": 16246
+  },
+  {
+   "k": "X-CHINANEWS",
+   "title": "汉魏洛阳城遗址发现大型仓窖遗迹（光明日报，中新网转载）",
+   "date": "2023-01-16",
+   "url": "https://www.chinanews.com.cn/cul/2023/01-16/9936171.shtml",
+   "file": "chinanews2023.html",
+   "kind": "新闻；北魏遗迹",
+   "read": "已读全文",
+   "sha256": "0f6f123b2c8add970c8c6e47c132cef078002d907902e2be3fc76f5b97743eb5",
+   "bytes": 81228
+  },
+  {
+   "k": "X-CHANHE",
+   "title": "《文化瀍河》第二章第五节 汉魏洛阳故城（下）（政务号，澎湃转载）",
+   "date": "2023-08-30",
+   "url": "https://m.thepaper.cn/baijiahao_24443356",
+   "file": "chanhe2023.html",
+   "kind": "地方政务科普；分期混写",
+   "read": "已读内城遗址段",
+   "sha256": "4b8c49b8b83345f923c47edde8f6d48255cc3400e67aa9f48e2a9cd9e4e6a2a8",
+   "bytes": 51763
+  },
+  {
+   "k": "X-MAIGOO",
+   "title": "汉魏洛阳城遗址（买购网百科词条）",
+   "date": "未注",
+   "url": "https://www.maigoo.com/citiao/140672.html",
+   "file": "maigoo.html",
+   "kind": "百科（三手，无出处）",
+   "read": "已读城垣与宫城段",
+   "sha256": "63317876aa08737b9cf276262e8c260a63cfaec40ed2755f7297ac96fa82b75c",
+   "bytes": 91766
+  }
+ ],
+ "external_unreachable": [
+  {
+   "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=2283",
+   "what": "河南省文物考古研究院 2023年度十大考古新发现原页",
+   "result": "未能访问：WebFetch 报 getaddrinfo ENOTFOUND；curl 返回 000（2026-11-05）"
+  },
+  {
+   "url": "https://www.hnswwkgyjy.cn/NewsView.php?News_ID=2810",
+   "what": "同站 2025年度考古工作汇报（仓库记录称或有东汉砖砌水道）",
+   "result": "未能访问：curl 返回 000（2026-11-05）"
+  },
+  {
+   "url": "https://m.thepaper.cn/detail/30267154",
+   "what": "澎湃新闻 汉魏洛阳城相关报道（搜索结果）",
+   "result": "未能访问：HTTP 403"
+  },
+  {
+   "url": "https://zhuanlan.zhihu.com/p/2069518466340632201",
+   "what": "知乎 汉魏洛阳城宫城遗址考古最新成果",
+   "result": "未能访问：HTTP 403"
+  },
+  {
+   "url": "https://www.163.com/dy/article/L3LC7HE00556124F.html",
+   "what": "网易号 城垣实测数字转载",
+   "result": "未能访问：HTTP 404"
+  }
+ ],
+ "external_distribution": "外部网页与PDF均有版权，不随包分发；只记SHA256，重算需按URL重新下载到 --external 目录（网页可能已变，SHA不符即记未复核）。",
+ "native_sources": "本席位不涉及 .blend/源ZIP；不需要原生件。"
+}

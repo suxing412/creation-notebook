@@ -1,0 +1,1130 @@
+{
+ "seat": "LY-089",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "note": "sha256 = bytes on this Windows checkout; commitBlobSha256 = `git show <base>:<path>` bytes. For text files they can differ (CRLF, see LY-001 C8); GLBs are binary and identical.",
+ "privateSources": {
+  "status": "not available in repo or workpacks",
+  "needed": [
+   "ground-atomic source .blend / generator (network-ground-stitched C_stitch_primary/west/patch, retained, south, D08): only to explain how the pending seams/crack arose; NOT needed to build an overlay patch (edge geometry is exact in the GLB, rebuild-from-GLB is possible)",
+   "wall A/direct source .blend: only if a wall-foot patch is ever approved (LY-020 steward)",
+   "market-cluster / granary-city source .blend: slabs owned by LY-090, not by LY-089"
+  ]
+ },
+ "inputs": [
+  {
+   "role": "ground (support layer)",
+   "node": "ground-network-ground-stitched",
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "commitBlobSha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "bytes": 3565544,
+   "loadedInCity": "yes, only after the terrain chapter is opened (initial:false at bce3211)",
+   "loadedBy": "city-data.mjs chapter terrain loadNodeIds L4027-4041; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60"
+  },
+  {
+   "role": "ground (support layer)",
+   "node": "ground-retained",
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "commitBlobSha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "bytes": 629740,
+   "loadedInCity": "yes, only after the terrain chapter is opened (initial:false at bce3211)",
+   "loadedBy": "city-data.mjs chapter terrain loadNodeIds L4027-4041; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc"
+  },
+  {
+   "role": "ground (support layer)",
+   "node": "ground-south",
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "commitBlobSha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "bytes": 2623560,
+   "loadedInCity": "yes, only after the terrain chapter is opened (initial:false at bce3211)",
+   "loadedBy": "city-data.mjs chapter terrain loadNodeIds L4027-4041; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e"
+  },
+  {
+   "role": "ground (support layer)",
+   "node": "ground-D08",
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "commitBlobSha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "bytes": 6664,
+   "loadedInCity": "yes, only after the terrain chapter is opened (initial:false at bce3211)",
+   "loadedBy": "city-data.mjs chapter terrain loadNodeIds L4027-4041; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "yong-gate-near",
+   "nodes": [
+    "yong-gate-body"
+   ],
+   "path": "docs/library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+   "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+   "commitBlobSha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+   "bytes": 1570856,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "yong-gate-apron",
+   "nodes": [
+    "yong-gate-interface"
+   ],
+   "path": "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+   "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+   "commitBlobSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+   "bytes": 388208,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "courtyard-B",
+   "nodes": [
+    "C02-005",
+    "C02-009",
+    "C02-016",
+    "C02-018",
+    "C02-025",
+    "C02-029",
+    "C02-034",
+    "FROZEN-D08-E",
+    "FROZEN-D08-S2",
+    "FROZEN-D08-S4"
+   ],
+   "path": "docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb",
+   "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+   "commitBlobSha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+   "bytes": 112776,
+   "excludeNodes": [
+    "designed_loading_yard",
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "courtyard-A",
+   "nodes": [
+    "C02-007",
+    "C02-011",
+    "C02-014",
+    "C02-017",
+    "C02-019",
+    "C02-023",
+    "C02-026",
+    "C02-027",
+    "C02-030",
+    "FROZEN-D08-M",
+    "FROZEN-D08-S1",
+    "FROZEN-D08-S3"
+   ],
+   "path": "docs/cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb",
+   "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+   "commitBlobSha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+   "bytes": 92328,
+   "excludeNodes": [
+    "designed_hardpacked_activity_ground",
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "courtyard-TC03",
+   "nodes": [
+    "C02-008",
+    "C02-020",
+    "FROZEN-D08-NE",
+    "FROZEN-D08-NW"
+   ],
+   "path": "docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb",
+   "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+   "commitBlobSha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+   "bytes": 164300,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "courtyard-A2",
+   "nodes": [
+    "C02-001",
+    "C02-010",
+    "C02-013",
+    "C02-015",
+    "C02-021",
+    "C02-024",
+    "C02-028",
+    "C02-031",
+    "C02-035"
+   ],
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "commitBlobSha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "bytes": 92220,
+   "excludeNodes": [
+    "designed_hardpacked_activity_ground",
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "courtyard-B2",
+   "nodes": [
+    "C02-002",
+    "C02-004",
+    "C02-006",
+    "C02-022",
+    "C02-032",
+    "C02-033",
+    "C02-036"
+   ],
+   "path": "docs/cities/luoyang/assets/c02v/B2-LOD1-prototype.glb",
+   "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+   "commitBlobSha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+   "bytes": 113064,
+   "excludeNodes": [
+    "designed_loading_yard",
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "courtyard-TC03-2",
+   "nodes": [
+    "C02-003",
+    "C02-012"
+   ],
+   "path": "docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb",
+   "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+   "commitBlobSha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+   "bytes": 164200,
+   "excludeNodes": [
+    "designed_front_apron",
+    "designed_rear_work_ground",
+    "designed_side_passage",
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "wall-A-wall-00",
+   "nodes": [
+    "wall-A-wall-00"
+   ],
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-00.glb",
+   "sha256": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74",
+   "commitBlobSha256": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74",
+   "bytes": 2412,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "wall-A-wall-01",
+   "nodes": [
+    "wall-A-wall-01"
+   ],
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-01.glb",
+   "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95",
+   "commitBlobSha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95",
+   "bytes": 2748,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "wall-A-wall-02",
+   "nodes": [
+    "wall-A-wall-02"
+   ],
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-02.glb",
+   "sha256": "8a17587a995e6851a1c4c7e0844f79cb880cf70348edb55dfb62891434b2afa9",
+   "commitBlobSha256": "8a17587a995e6851a1c4c7e0844f79cb880cf70348edb55dfb62891434b2afa9",
+   "bytes": 2068,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "8a17587a995e6851a1c4c7e0844f79cb880cf70348edb55dfb62891434b2afa9"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "wall-A-wall-03",
+   "nodes": [
+    "wall-A-wall-03"
+   ],
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-03.glb",
+   "sha256": "cd4cb2b629c15cbf1eaaada61eca546fc96a034a1a53802acd9d7ebeb84e4762",
+   "commitBlobSha256": "cd4cb2b629c15cbf1eaaada61eca546fc96a034a1a53802acd9d7ebeb84e4762",
+   "bytes": 2072,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "cd4cb2b629c15cbf1eaaada61eca546fc96a034a1a53802acd9d7ebeb84e4762"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "wall-A-wall-04",
+   "nodes": [
+    "wall-A-wall-04"
+   ],
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-04.glb",
+   "sha256": "50d8c7aa2c7d7dce95a894edf05bc1ecd2dbc73fbcd633e1c67f36065fd893ae",
+   "commitBlobSha256": "50d8c7aa2c7d7dce95a894edf05bc1ecd2dbc73fbcd633e1c67f36065fd893ae",
+   "bytes": 2948,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "50d8c7aa2c7d7dce95a894edf05bc1ecd2dbc73fbcd633e1c67f36065fd893ae"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "wall-A-wall-05",
+   "nodes": [
+    "wall-A-wall-05"
+   ],
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-05.glb",
+   "sha256": "4e000b0c34b26504ff30b7c4c9748ede9f1b84819dcc75301b57caca85f261ae",
+   "commitBlobSha256": "4e000b0c34b26504ff30b7c4c9748ede9f1b84819dcc75301b57caca85f261ae",
+   "bytes": 1732,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "4e000b0c34b26504ff30b7c4c9748ede9f1b84819dcc75301b57caca85f261ae"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "wall-A-wall-06",
+   "nodes": [
+    "wall-A-wall-06"
+   ],
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-06.glb",
+   "sha256": "d7d3cc79fe7ea85cda3147c90531dfb7403789405f4af0671baef7d6ba89993e",
+   "commitBlobSha256": "d7d3cc79fe7ea85cda3147c90531dfb7403789405f4af0671baef7d6ba89993e",
+   "bytes": 1732,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "d7d3cc79fe7ea85cda3147c90531dfb7403789405f4af0671baef7d6ba89993e"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "wall-A-wall-07",
+   "nodes": [
+    "wall-A-wall-07"
+   ],
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-07.glb",
+   "sha256": "e7db9cff3eed1e7fe088a5199a5479d483ba68a2f440624cb68f6848373be550",
+   "commitBlobSha256": "e7db9cff3eed1e7fe088a5199a5479d483ba68a2f440624cb68f6848373be550",
+   "bytes": 1736,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "e7db9cff3eed1e7fe088a5199a5479d483ba68a2f440624cb68f6848373be550"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "wall-A-wall-10",
+   "nodes": [
+    "wall-A-wall-10"
+   ],
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-10.glb",
+   "sha256": "afb20f8e3b19dfd85a65bf1462dea09225336d336c272425fad4d7491e3cfde9",
+   "commitBlobSha256": "afb20f8e3b19dfd85a65bf1462dea09225336d336c272425fad4d7491e3cfde9",
+   "bytes": 1740,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "afb20f8e3b19dfd85a65bf1462dea09225336d336c272425fad4d7491e3cfde9"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "wall-A-wall-11",
+   "nodes": [
+    "wall-A-wall-11"
+   ],
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-11.glb",
+   "sha256": "2cfa846184cf28e36cacb832250b5d2afcdbdc6968c81c3f09957ed968e21ecd",
+   "commitBlobSha256": "2cfa846184cf28e36cacb832250b5d2afcdbdc6968c81c3f09957ed968e21ecd",
+   "bytes": 2752,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "2cfa846184cf28e36cacb832250b5d2afcdbdc6968c81c3f09957ed968e21ecd"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "wall-direct-gate-body-only",
+   "nodes": [
+    "wall-direct-gate-body-only"
+   ],
+   "path": "docs/cities/luoyang/assets/city-wall/direct/gate-body-only.glb",
+   "sha256": "cdba2d5c3bbf14bbf9c6ed59e3fcadf174c13e882a5ccb1522b81bc9949d5058",
+   "commitBlobSha256": "cdba2d5c3bbf14bbf9c6ed59e3fcadf174c13e882a5ccb1522b81bc9949d5058",
+   "bytes": 1139920,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "cdba2d5c3bbf14bbf9c6ed59e3fcadf174c13e882a5ccb1522b81bc9949d5058"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "wall-direct-wall-08",
+   "nodes": [
+    "wall-direct-wall-08"
+   ],
+   "path": "docs/cities/luoyang/assets/city-wall/direct/wall-08.glb",
+   "sha256": "221b8dc8c5702bbd9980e72e291e61f54a0544ccb05a8923bb53d0f9a62a8a90",
+   "commitBlobSha256": "221b8dc8c5702bbd9980e72e291e61f54a0544ccb05a8923bb53d0f9a62a8a90",
+   "bytes": 7252,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "221b8dc8c5702bbd9980e72e291e61f54a0544ccb05a8923bb53d0f9a62a8a90"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "wall-direct-wall-09",
+   "nodes": [
+    "wall-direct-wall-09"
+   ],
+   "path": "docs/cities/luoyang/assets/city-wall/direct/wall-09.glb",
+   "sha256": "d4fb5c1cbf3c08ff18f9dcf1b25cab67e44a36a00ade3b8b67fb5eb3679c31be",
+   "commitBlobSha256": "d4fb5c1cbf3c08ff18f9dcf1b25cab67e44a36a00ade3b8b67fb5eb3679c31be",
+   "bytes": 5020,
+   "excludeNodes": [],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "d4fb5c1cbf3c08ff18f9dcf1b25cab67e44a36a00ade3b8b67fb5eb3679c31be"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "market-main",
+   "nodes": [
+    "market-main"
+   ],
+   "path": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "commitBlobSha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "bytes": 1031928,
+   "excludeNodes": [
+    "N2_closed_stock",
+    "N2_closed_stock.001",
+    "N2_closed_stock.002",
+    "N2_counter",
+    "N2_counter.001",
+    "N2_counterleg",
+    "N2_counterleg.001",
+    "N2_counterleg.002",
+    "N2_counterleg.003",
+    "N2_floor",
+    "N2_frontbeam",
+    "N2_frontpost",
+    "N2_frontpost.001",
+    "N2_frontpost.002",
+    "N2_frontstep",
+    "N2_gable_-3.87",
+    "N2_gable_3.87",
+    "N2_rear_lintel",
+    "N2_rearstep",
+    "N2_rearwall",
+    "N2_rearwall.001",
+    "N2_shelfpost",
+    "N2_shelfpost.001",
+    "N2_shelfpost.002",
+    "N2_shelfpost.003",
+    "N2_sidewall",
+    "N2_sidewall.001",
+    "N2_store_shelf",
+    "N2_store_shelf.001",
+    "N2_store_shelf.002"
+   ],
+   "loadedInCity": "on chapter (initial:false)",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "market-N2",
+   "nodes": [
+    "market-N2"
+   ],
+   "path": "docs/cities/luoyang/assets/market/N2-replacement.glb",
+   "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "commitBlobSha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "bytes": 72984,
+   "excludeNodes": [],
+   "loadedInCity": "on chapter (initial:false)",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "storage-main",
+   "nodes": [
+    "storage-main"
+   ],
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+   "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+   "commitBlobSha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+   "bytes": 1663844,
+   "excludeNodes": [],
+   "loadedInCity": "on chapter (initial:false)",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "courtyard-B",
+   "nodes": [
+    "C02-005",
+    "C02-009",
+    "C02-016",
+    "C02-018",
+    "C02-025",
+    "C02-029",
+    "C02-034",
+    "FROZEN-D08-E",
+    "FROZEN-D08-S2",
+    "FROZEN-D08-S4"
+   ],
+   "path": "docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb",
+   "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+   "commitBlobSha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+   "bytes": 626016,
+   "excludeNodes": [
+    "designed_loading_yard",
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "courtyard-A",
+   "nodes": [
+    "C02-007",
+    "C02-011",
+    "C02-014",
+    "C02-017",
+    "C02-019",
+    "C02-023",
+    "C02-026",
+    "C02-027",
+    "C02-030",
+    "FROZEN-D08-M",
+    "FROZEN-D08-S1",
+    "FROZEN-D08-S3"
+   ],
+   "path": "docs/cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb",
+   "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+   "commitBlobSha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+   "bytes": 510536,
+   "excludeNodes": [
+    "designed_hardpacked_activity_ground",
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "courtyard-TC03",
+   "nodes": [
+    "C02-008",
+    "C02-020",
+    "FROZEN-D08-NE",
+    "FROZEN-D08-NW"
+   ],
+   "path": "docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb",
+   "sha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+   "commitBlobSha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+   "bytes": 981664,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "courtyard-A2",
+   "nodes": [
+    "C02-001",
+    "C02-010",
+    "C02-013",
+    "C02-015",
+    "C02-021",
+    "C02-024",
+    "C02-028",
+    "C02-031",
+    "C02-035"
+   ],
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+   "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "commitBlobSha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "bytes": 447064,
+   "excludeNodes": [
+    "designed_hardpacked_activity_ground",
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "courtyard-B2",
+   "nodes": [
+    "C02-002",
+    "C02-004",
+    "C02-006",
+    "C02-022",
+    "C02-032",
+    "C02-033",
+    "C02-036"
+   ],
+   "path": "docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb",
+   "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+   "commitBlobSha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+   "bytes": 569280,
+   "excludeNodes": [
+    "designed_loading_yard",
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7"
+  },
+  {
+   "role": "installed module (measured for support)",
+   "asset": "courtyard-TC03-2",
+   "nodes": [
+    "C02-003",
+    "C02-012"
+   ],
+   "path": "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb",
+   "sha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+   "commitBlobSha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+   "bytes": 943548,
+   "excludeNodes": [
+    "designed_front_apron",
+    "designed_rear_work_ground",
+    "designed_side_passage",
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "loadedInCity": "initial",
+   "loadedBy": "city-data.mjs assets/nodes; docs/cities/luoyang/city-renderer.mjs: loadAsset() L286 (excludeNodes L309, applyMatrix4 L323), rebuild() L409 (setMatrixAt L431), initial set L221, focusChapter() L595-601",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152"
+  },
+  {
+   "role": "city data (assets, nodes, chapters)",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "commitBlobSha256": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "loadedInCity": "imported by app.mjs L1",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "d8933a32a6a133b38bc8ae5591bd0b350d206f9c884e1a6c4a1adabf5fc6daf3"
+  },
+  {
+   "role": "renderer",
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "commitBlobSha256": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "loadedInCity": "dynamic import app.mjs L177",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc"
+  },
+  {
+   "role": "app entry",
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "commitBlobSha256": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "loadedInCity": "index.html",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8"
+  },
+  {
+   "role": "ground atomic contract (3-node atomic load, keep list)",
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "commitBlobSha256": "7f26720bf40fc8cd7f7d0b445398d889fcc70c407f7cc7e26e4acd0eb6332367",
+   "loadedInCity": "sourceContract of the 4 ground nodes; not executed",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "7f26720bf40fc8cd7f7d0b445398d889fcc70c407f7cc7e26e4acd0eb6332367"
+  },
+  {
+   "role": "ground actual-GLB closure record",
+   "path": "docs/cities/luoyang/data/west/ground-final-actual-GLB.json",
+   "sha256": "405db4fee6a822f1e2a54260ed5c256782d087e49a40eba457b3940f94b6ea13",
+   "commitBlobSha256": "3a58394bee372834684a9e52c38ac88b3dec670a02b98019c3081df99bc4e9d5",
+   "loadedInCity": "record only",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "3a58394bee372834684a9e52c38ac88b3dec670a02b98019c3081df99bc4e9d5"
+  },
+  {
+   "role": "ground overlap classification",
+   "path": "docs/cities/luoyang/data/west/ground-overlap-classification.json",
+   "sha256": "886390e060f04c80e4382a359c2bd2930b130144a120e250d0e841bb9a8e083c",
+   "commitBlobSha256": "9de815a86e0584ee00750f99feaa03c4432effbb8bef7dc6fb4b8004afcbdc95",
+   "loadedInCity": "record only",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "9de815a86e0584ee00750f99feaa03c4432effbb8bef7dc6fb4b8004afcbdc95"
+  },
+  {
+   "role": "city wall interface",
+   "path": "docs/cities/luoyang/data/west/city-wall-interface.json",
+   "sha256": "ad18cc65915724a850d1f97b498be8b63464cd3d25116c9d615bfd79f2570da8",
+   "commitBlobSha256": "ca75d115d49d38a53c66258af12e6e455d314f0f75548899e021276c5b100543",
+   "loadedInCity": "sourceContract of wall nodes",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "ca75d115d49d38a53c66258af12e6e455d314f0f75548899e021276c5b100543"
+  },
+  {
+   "role": "market interface",
+   "path": "docs/cities/luoyang/data/west/market-interface.json",
+   "sha256": "31c6786db03b1d7e4be79070abe8ea9a577207345a55703c85d2fb34bc479f4e",
+   "commitBlobSha256": "2957184accc87e5c2089987c71023cd09a8ef0274b2daab1fce4d39623606347",
+   "loadedInCity": "record only",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "2957184accc87e5c2089987c71023cd09a8ef0274b2daab1fce4d39623606347"
+  },
+  {
+   "role": "storage interface",
+   "path": "docs/cities/luoyang/data/west/storage-interface.json",
+   "sha256": "b910896799cdbb954717df342c7dfbb794eaaa1bdba3810b206140b84aeedba8",
+   "commitBlobSha256": "4f3ccae9891c2fcd2ae3d962c3740a4b53eac7faea872b5ce28596cf1a62c2b3",
+   "loadedInCity": "record only",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "4f3ccae9891c2fcd2ae3d962c3740a4b53eac7faea872b5ce28596cf1a62c2b3"
+  },
+  {
+   "role": "project card",
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "commitBlobSha256": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "loadedInCity": "not loaded by the city scene",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "f43d1496c85ff6c148f1c45e97fb5bcaefb2f06e1a258670d689d3b4f2b6f668"
+  },
+  {
+   "role": "palace waterway interface card (3 segments)",
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/m-luoyang-palace-waterway-interface.asset.json",
+   "sha256": "3dc81ef172880ca7c998f4b59dd782e9fdd9f32b4a5ff8bb519d0f593b4d36bf",
+   "commitBlobSha256": "c0f4284053039e0aa7ae871cb955a6d0cb3163b41b691edb49ef71ec94f0a836",
+   "loadedInCity": "NOT in city: cityPlacement null",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "c0f4284053039e0aa7ae871cb955a6d0cb3163b41b691edb49ef71ec94f0a836"
+  },
+  {
+   "role": "city milestones (mentions water system)",
+   "path": "docs/cities/luoyang/research/2026-11-03/city-milestones.json",
+   "sha256": "9d72a0a9de222a964b0a8d03e1580ea0f1897fc41a914d2f5715523e716018dd",
+   "commitBlobSha256": "23b30e705ed780f676eb7fc69a8c06a08524d04dfd34021f93859a5aa370ccfd",
+   "loadedInCity": "research page only",
+   "round": 1,
+   "reverifiedR2": true,
+   "commitBlobSha256AtCad338b": "23b30e705ed780f676eb7fc69a8c06a08524d04dfd34021f93859a5aa370ccfd"
+  },
+  {
+   "role": "assets summary",
+   "path": "lab/data/assets.json",
+   "sha256": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+   "commitBlobSha256": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "loadedInCity": "site build data, not the city scene",
+   "round": 1,
+   "reverifiedR2": false,
+   "sha256R2": "c39e8e9a2a1833f3abbc15e585f5868fba6c7d2e01f6b8e504c2b44193f16979",
+   "commitBlobSha256AtCad338b": "9a6783016a32b7f493079906591df48dc7bac3807a4bb32db08f7b15e409425f"
+  },
+  {
+   "role": "workpack input (read-only)",
+   "path": "workpacks/TASKPOOL.md",
+   "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+   "loadedInCity": "no",
+   "round": 1,
+   "reverifiedR2": true
+  },
+  {
+   "role": "workpack input (read-only)",
+   "path": "workpacks/taskboard.json",
+   "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+   "loadedInCity": "no",
+   "round": 1,
+   "reverifiedR2": true
+  },
+  {
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-005/coordinate-contract.json",
+   "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+   "loadedInCity": "no",
+   "round": 1,
+   "reverifiedR2": true
+  },
+  {
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-005/port-schema.json",
+   "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f",
+   "loadedInCity": "no",
+   "round": 1,
+   "reverifiedR2": true
+  },
+  {
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-005/qa/frames-bce3211.json",
+   "sha256": "c0f846cbe2966526535c23358b1695b830e2ba2a191fd1758adc1256687ccba6",
+   "loadedInCity": "no",
+   "round": 1,
+   "reverifiedR2": true
+  },
+  {
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-005/qa/elevation-survey.json",
+   "sha256": "ca7ef104d9aa20b288bcb953f3c5362e3995fe6ad18a8ce1e6f6e0dbe75128ed",
+   "loadedInCity": "no",
+   "round": 1,
+   "reverifiedR2": true
+  },
+  {
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-005/qa/ports-bce3211.json",
+   "sha256": "1c009bb2c95caae89af76e8b7f7462253d1829cb6794e7b7bc77820f67e2f7ca",
+   "loadedInCity": "no",
+   "round": 1,
+   "reverifiedR2": true
+  },
+  {
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-005/qa/city-data.dump.json",
+   "sha256": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98",
+   "loadedInCity": "no",
+   "round": 1,
+   "reverifiedR2": true
+  },
+  {
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-005/source/glbio.py",
+   "sha256": "2acd023b5a3f4c32bf215273d44e2aa567a574759c7fa8b00e2ac210e2e2fb6b",
+   "loadedInCity": "no",
+   "round": 1,
+   "reverifiedR2": true
+  },
+  {
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-005/source/vray.py",
+   "sha256": "ab4984f26dd298a6a848da0190aa8b9979e535e70299618d9fc69893e272eccd",
+   "loadedInCity": "no",
+   "round": 1,
+   "reverifiedR2": true
+  },
+  {
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-005/status.json",
+   "sha256": "add0f9b1a722f08e516ffd64b9dbaf97532a62d9fa18ded01df89ab7be5740ea",
+   "loadedInCity": "no",
+   "round": 1,
+   "reverifiedR2": true
+  },
+  {
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-001/status.json",
+   "sha256": "a32d742a0064baf45c0f78215b10905f2a21fb9ea070b18d8055a58454fe9236",
+   "loadedInCity": "no",
+   "round": 1,
+   "reverifiedR2": true
+  },
+  {
+   "round": 2,
+   "role": "seam-pending record for SEAM-C5 / SEAM-C1 (cuts existing_route_*: \"final seam pending\")",
+   "path": "docs/cities/luoyang/data/west/road-plan.json",
+   "sha256": "9792f217619ef72f2cb7528856112c7403a765420814a0dfe562ad23a7ebd361",
+   "commitBlobSha256": "0bc4528cbf354a18c5a74f9bbf4574bfc0ea0ee817516736e9d15ef5dca6881a",
+   "commitBlobSha256AtCad338b": "0bc4528cbf354a18c5a74f9bbf4574bfc0ea0ee817516736e9d15ef5dca6881a",
+   "loadedInCity": "NOT loaded by the current city entry; loaded by v1 archive entry docs/cities/luoyang/v1/road-layer.mjs L17 (fetch ./data/west/road-plan.json)"
+  },
+  {
+   "round": 2,
+   "role": "earlier road plan (same seam-pending reasons)",
+   "path": "docs/cities/luoyang/data/west/road-plan-original.json",
+   "sha256": "5b75d0686d7eac797a41c8eb07541255db64a16d6b6d3b8e1a12fa32e650dd03",
+   "commitBlobSha256": "1f0f947cc2f977f4bb1a20f46ac8a903e9204e36cf476addcd33494cabcf6852",
+   "commitBlobSha256AtCad338b": "1f0f947cc2f977f4bb1a20f46ac8a903e9204e36cf476addcd33494cabcf6852",
+   "loadedInCity": "not loaded"
+  },
+  {
+   "round": 2,
+   "role": "loader of road-plan.json (v1 archive)",
+   "path": "docs/cities/luoyang/v1/road-layer.mjs",
+   "sha256": "b6102a1c44421f7c6312ef841d7bec9439de59a82708948088b7bcaa55a40cd8",
+   "commitBlobSha256": "11275037da4e7829408f2a7f0c8ead6504f4132e3b46c747c4c74e4f12038952",
+   "commitBlobSha256AtCad338b": "11275037da4e7829408f2a7f0c8ead6504f4132e3b46c747c4c74e4f12038952",
+   "loadedInCity": "v1/index.html entry only"
+  },
+  {
+   "round": 2,
+   "role": "LY-006 registry v1: groundPieces owners (4 atomic grounds + market/granary slabs -> LY-090), newGroundNamespaceRule gp:<seat>:<name>, component G089-support-patches -> LY-089",
+   "path": "workpacks/LY-006/registry/ownership.json",
+   "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "LY-089 entry: writeZones [], claimProtocol true, consumes FROZEN:*",
+   "path": "workpacks/LY-006/registry/seats.json",
+   "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "173 C write/cut zones + 11 site envelopes; used for claim-zone intersection test",
+   "path": "workpacks/LY-006/registry/zones.json",
+   "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-006/registry/ports.json",
+   "sha256": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "133 seams with consumer LY-089",
+   "path": "workpacks/LY-006/registry/seams.json",
+   "sha256": "ca4d81f8f955333c089d782aa69c50c2ca83225d4da07f595f66d1ba87f3f4c1",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-006/registry/ownership-by-seat.csv",
+   "sha256": "b1600336f758e8f4ae9887b7e3b36ecd5723863efd4728c530091fa72ba1a89b",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-006/source/registry_spec.py",
+   "sha256": "4a6f30bd9caaf3a3409e8d63c73740a012282167d694967c63fb356a69324e7b",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "claim-zone validator (write-zone and envelope mutual check) to run on any LY-089 claim",
+   "path": "workpacks/LY-006/source/check_registry.py",
+   "sha256": "993b9a583df6bc99cc5c28d2fe1b5ccc14d293f0c45fc923770542c9ff30a2ed",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-006/status.json",
+   "sha256": "fe4aaa6c7cb1441f95ac8f51101e0cf63a4ab07ed53452e59c2bd897c5539aba",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-002/status.json",
+   "sha256": "0ac63db873219d1bb22f9269dd11c52e80e2efeec528decb5a1f0409cd92c13d",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-007/status.json",
+   "sha256": "2fddce70c110a19c6d08d10b90ac355440d538f5c8dcc82cca58504476ecc082",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-008/status.json",
+   "sha256": "4de552ad9689211cb155b4ae1f12818e09ab699d4ddb5c85f680b51331718f16",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-008/source/ly_check.py",
+   "sha256": "39aaa491859e1a796080dd91ccabd1c47423cf7f9ef2af61c5f123b04b3dff4b",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-009/status.json",
+   "sha256": "09a1c45415aa3a8657581ce0a5ff2e8738e6fca09da800070e36972b330e896c",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-005/source/bl_roundtrip.py",
+   "sha256": "8847e55b03494e232b5c638d17567eb8f160f5be752e122d6220317ed4295673",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "LY-081 is still PREP (not delivered): cross-check only, not a frozen input",
+   "path": "workpacks/LY-081/prep/prep-status.json",
+   "sha256": "f0ea250f10cc986d3dc11940c80ed276b37bfc2bd098e7a481d740c7efe1c99f",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-081/prep/brief-draft.md",
+   "sha256": "c0d985512fd4ab92b751e8b5d1a93679cfaa40e121fd8fa71f3ad5181ba0aa67",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-081/prep/scripts/scan_line.py",
+   "sha256": "1a4d25044172e3c83a8fd5eda1ef20bffffb04725be5e4fb127e36176d22c958",
+   "loadedInCity": "no"
+  },
+  {
+   "round": 2,
+   "role": "workpack input (read-only)",
+   "path": "workpacks/LY-081/prep/scripts/crack_width.py",
+   "sha256": "deaf3ae94a11aef68c97f569bf77762c6a1356724aac7062229edc8a0e9a532a",
+   "loadedInCity": "no"
+  }
+ ],
+ "round2": {
+  "date": "2026-11-06",
+  "reverifiedRound1": 59,
+  "round1Mismatches": [
+   "lab/data/assets.json"
+  ],
+  "added": 22,
+  "note": "GLB commit blobs at cad338b equal bce3211 for all four atomic grounds (git rev-parse blob ids identical); city-data.mjs differs (retained initial:true at cad338b)."
+ }
+}

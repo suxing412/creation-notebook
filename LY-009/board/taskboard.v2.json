@@ -1,0 +1,7573 @@
+{
+ "board": "LY-009 taskboard v2 (proposal; root taskboard.json unchanged)",
+ "generatedAt": "2026-11-05T23:35:20+08:00",
+ "source": {
+  "TASKPOOL.md": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+  "taskboard.json(worktree)": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+  "taskboard.json(commit blob)": "f6dda5f4b59e8dc5e4bd8213d053f88f21e3f5e043d2cb034be3270496009391",
+  "workpacksHead": "09536a8108072873076d3fa7c8e692fbea33a55e"
+ },
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "labOriginMainAtBuild": "cad338ba683f7277aea098f45c8feb6c915a847c",
+ "statusVocabulary": [
+  "待输入",
+  "可开工",
+  "制作中",
+  "待验收",
+  "阻断",
+  "复用完成",
+  "交付完成"
+ ],
+ "statusRules": {
+  "S1": "席位自己的 status.json：交付完成/复用完成/阻断 照录，待验 记作 待验收",
+  "S1b": "声明交付完成/复用完成但 deliverables 中有文件不存在：记作 待验收",
+  "S2": "没有 status.json、但 prep/ 之外已有文件：制作中",
+  "S3": "没有文件、依赖全部 交付完成/复用完成：可开工",
+  "S4": "其余：待输入（prep/ 里的准备工作允许，不改变状态）",
+  "note": "可开工 只说明依赖到齐；能否落城另看 LY-010 决策表、LY-094 与暂停区。"
+ },
+ "G": {
+  "members": [
+   "LY-001",
+   "LY-002",
+   "LY-005",
+   "LY-006",
+   "LY-007",
+   "LY-008",
+   "LY-009",
+   "LY-010"
+  ],
+  "frozen": false,
+  "missing": [
+   "LY-008",
+   "LY-010"
+  ]
+ },
+ "counts": {
+  "待输入": 91,
+  "可开工": 0,
+  "制作中": 1,
+  "待验收": 0,
+  "阻断": 0,
+  "复用完成": 0,
+  "交付完成": 8
+ },
+ "laneCounts": {
+  "资料契约": {
+   "待输入": 4,
+   "可开工": 0,
+   "制作中": 1,
+   "待验收": 0,
+   "阻断": 0,
+   "复用完成": 0,
+   "交付完成": 8
+  },
+  "模型补件": {
+   "待输入": 46,
+   "可开工": 0,
+   "制作中": 0,
+   "待验收": 0,
+   "阻断": 0,
+   "复用完成": 0,
+   "交付完成": 0
+  },
+  "复用装配": {
+   "待输入": 31,
+   "可开工": 0,
+   "制作中": 0,
+   "待验收": 0,
+   "阻断": 0,
+   "复用完成": 0,
+   "交付完成": 0
+  },
+  "独立验收": {
+   "待输入": 9,
+   "可开工": 0,
+   "制作中": 0,
+   "待验收": 0,
+   "阻断": 0,
+   "复用完成": 0,
+   "交付完成": 0
+  },
+  "唯一整合": {
+   "待输入": 1,
+   "可开工": 0,
+   "制作中": 0,
+   "待验收": 0,
+   "阻断": 0,
+   "复用完成": 0,
+   "交付完成": 0
+  }
+ },
+ "typeCounts": {
+  "补件/修订": 46,
+  "复用装配": 31,
+  "考据/契约": 13,
+  "独立验收": 9,
+  "唯一整合": 1
+ },
+ "typeCountsStated": {
+  "补件/修订": 46,
+  "复用装配": 31,
+  "考据/契约": 13,
+  "独立验收": 9,
+  "唯一整合": 1
+ },
+ "sections": [
+  {
+   "range": [
+    1,
+    10
+   ],
+   "title": "开工资料、坐标与接口",
+   "line": 83,
+   "intro": "先建立真正可用的输入、分区准入和写入边界。资料不够的区域可以继续研究，但不能靠C标签强行落城。"
+  },
+  {
+   "range": [
+    11,
+    20
+   ],
+   "title": "城门与城垣",
+   "line": 177,
+   "intro": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。"
+  },
+  {
+   "range": [
+    21,
+    30
+   ],
+   "title": "市肆与取水",
+   "line": 271,
+   "intro": "八铺四棚v2.1的柜台已修，当前默认五店三摊不自动替换。井体/开孔方案已有，任务是兼容与整体接入。"
+  },
+  {
+   "range": [
+    31,
+    40
+   ],
+   "title": "东北仓储与武库",
+   "line": 365,
+   "intro": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。"
+  },
+  {
+   "range": [
+    41,
+    50
+   ],
+   "title": "现有住宅与院内生活",
+   "line": 459,
+   "intro": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。"
+  },
+  {
+   "range": [
+    51,
+    60
+   ],
+   "title": "作坊、厩棚与生产服务",
+   "line": 553,
+   "intro": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。"
+  },
+  {
+   "range": [
+    61,
+    70
+   ],
+   "title": "宫院与复道",
+   "line": 647,
+   "intro": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。"
+  },
+  {
+   "range": [
+    71,
+    80
+   ],
+   "title": "城南礼制与单列北郊",
+   "line": 741,
+   "intro": "城南礼制和北郊是不同地域。模型本体已有，装配/接地和位置准入分开；北郊方坛绝不归城南。"
+  },
+  {
+   "range": [
+    81,
+    90
+   ],
+   "title": "道路、地形与水工接口",
+   "line": 835,
+   "intro": "只补已获准区域的真实接点；未建空白不等于可随意铺路。历史水系资料与可行走实体地面必须分开。"
+  },
+  {
+   "range": [
+    91,
+    100
+   ],
+   "title": "区域验收、全城回归与单点合并",
+   "line": 929,
+   "intro": "这些席位不是凑数的新模型，而是阻止100个工作包互相破坏的独立验收与唯一写入通道。"
+  }
+ ],
+ "dag": {
+  "nodes": 100,
+  "edges": 925,
+  "acyclic": true,
+  "cyclic": [],
+  "duplicates": [],
+  "unknownDeps": [],
+  "longestChainLevels": 15,
+  "oneLongestChain": [
+   "LY-001",
+   "LY-005",
+   "LY-006",
+   "LY-009",
+   "LY-010",
+   "LY-021",
+   "LY-027",
+   "LY-028",
+   "LY-029",
+   "LY-030",
+   "LY-083",
+   "LY-092",
+   "LY-098",
+   "LY-099",
+   "LY-100"
+  ],
+  "seatsAtDeepestLevel": [
+   "LY-100"
+  ]
+ },
+ "locks": "locks.json",
+ "pauseZone": "pause-zone.json",
+ "ownership": "ownership.json",
+ "handoverTemplate": "../templates/daily-handover.md",
+ "seats": [
+  {
+   "id": "LY-001",
+   "title": "锁定当前全城与资产快照",
+   "type": "考据/契约",
+   "lane": "资料契约",
+   "section": "开工资料、坐标与接口",
+   "sectionIntro": "先建立真正可用的输入、分区准入和写入边界。资料不够的区域可以继续研究，但不能靠C标签强行落城。",
+   "depsRaw": "无（首先执行）",
+   "usesG": false,
+   "depsExplicit": [],
+   "deps": [],
+   "level": 1,
+   "dependents": [
+    "LY-002",
+    "LY-003",
+    "LY-004",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-011",
+    "LY-012",
+    "LY-013",
+    "LY-014",
+    "LY-015",
+    "LY-016",
+    "LY-017",
+    "LY-018",
+    "LY-019",
+    "LY-020",
+    "LY-021",
+    "LY-022",
+    "LY-023",
+    "LY-024",
+    "LY-025",
+    "LY-026",
+    "LY-027",
+    "LY-028",
+    "LY-029",
+    "LY-030",
+    "LY-031",
+    "LY-032",
+    "LY-033",
+    "LY-034",
+    "LY-035",
+    "LY-036",
+    "LY-037",
+    "LY-038",
+    "LY-039",
+    "LY-040",
+    "LY-041",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-046",
+    "LY-047",
+    "LY-048",
+    "LY-049",
+    "LY-050",
+    "LY-051",
+    "LY-052",
+    "LY-053",
+    "LY-054",
+    "LY-055",
+    "LY-056",
+    "LY-057",
+    "LY-058",
+    "LY-059",
+    "LY-060",
+    "LY-061",
+    "LY-062",
+    "LY-063",
+    "LY-064",
+    "LY-065",
+    "LY-066",
+    "LY-067",
+    "LY-068",
+    "LY-069",
+    "LY-070",
+    "LY-071",
+    "LY-072",
+    "LY-073",
+    "LY-074",
+    "LY-075",
+    "LY-076",
+    "LY-077",
+    "LY-078",
+    "LY-079",
+    "LY-080",
+    "LY-081",
+    "LY-082",
+    "LY-083",
+    "LY-084",
+    "LY-085",
+    "LY-086",
+    "LY-087",
+    "LY-088",
+    "LY-089",
+    "LY-090",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094",
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098",
+    "LY-099",
+    "LY-100"
+   ],
+   "status": "交付完成",
+   "statusRule": "S1 本席位 status.json",
+   "statusEvidence": {
+    "dir": true,
+    "files": 26,
+    "prepFiles": 0,
+    "statusFile": {
+     "path": "LY-001/status.json",
+     "sha256": "a32d742a0064baf45c0f78215b10905f2a21fb9ea070b18d8055a58454fe9236"
+    },
+    "issues": [],
+    "declared": "交付完成",
+    "deliverables": 25,
+    "deliverablesMissing": [],
+    "blockers": [],
+    "openItems": 8,
+    "nextDependentsDeclared": [
+     "LY-002",
+     "LY-005",
+     "LY-007"
+    ]
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-001/",
+   "whitelist": [
+    "LY-001/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    87,
+    94
+   ],
+   "text": "### LY-001｜锁定当前全城与资产快照\n\n- **类型 / 依赖**：考据/契约；无（首先执行）。\n- **现有输入**：当前 main、项目卡、城市清单、已有公开资产卡与协调者提供的源包；不是概念封面。\n- **具体产物**：当前main的资产、城市节点、版本/SHA和安装状态台账；一张区域现状图。\n- **边界与排重**：区分已建模、已入城、隐藏试放和失败件；按家族去重，不按LOD、姿态和附件重数。\n- **本项验收**：资源URL、节点ID、SHA和状态逐条可追溯；城市清单的每个引用都能定位输入；重复家族和失败版本有单独去向。\n- **唯一写入区**：`workpacks/LY-001/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-002",
+   "title": "建立约180年证据与禁用表",
+   "type": "考据/契约",
+   "lane": "资料契约",
+   "section": "开工资料、坐标与接口",
+   "sectionIntro": "先建立真正可用的输入、分区准入和写入边界。资料不够的区域可以继续研究，但不能靠C标签强行落城。",
+   "depsRaw": "LY-001",
+   "usesG": false,
+   "depsExplicit": [
+    "LY-001"
+   ],
+   "deps": [
+    "LY-001"
+   ],
+   "level": 2,
+   "dependents": [
+    "LY-003",
+    "LY-004",
+    "LY-010",
+    "LY-011",
+    "LY-012",
+    "LY-013",
+    "LY-014",
+    "LY-015",
+    "LY-016",
+    "LY-017",
+    "LY-018",
+    "LY-019",
+    "LY-020",
+    "LY-021",
+    "LY-022",
+    "LY-023",
+    "LY-024",
+    "LY-025",
+    "LY-026",
+    "LY-027",
+    "LY-028",
+    "LY-029",
+    "LY-030",
+    "LY-031",
+    "LY-032",
+    "LY-033",
+    "LY-034",
+    "LY-035",
+    "LY-036",
+    "LY-037",
+    "LY-038",
+    "LY-039",
+    "LY-040",
+    "LY-041",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-046",
+    "LY-047",
+    "LY-048",
+    "LY-049",
+    "LY-050",
+    "LY-051",
+    "LY-052",
+    "LY-053",
+    "LY-054",
+    "LY-055",
+    "LY-056",
+    "LY-057",
+    "LY-058",
+    "LY-059",
+    "LY-060",
+    "LY-061",
+    "LY-062",
+    "LY-063",
+    "LY-064",
+    "LY-065",
+    "LY-066",
+    "LY-067",
+    "LY-068",
+    "LY-069",
+    "LY-070",
+    "LY-071",
+    "LY-072",
+    "LY-073",
+    "LY-074",
+    "LY-075",
+    "LY-076",
+    "LY-077",
+    "LY-078",
+    "LY-079",
+    "LY-080",
+    "LY-081",
+    "LY-082",
+    "LY-083",
+    "LY-084",
+    "LY-085",
+    "LY-086",
+    "LY-087",
+    "LY-088",
+    "LY-089",
+    "LY-090",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094",
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098",
+    "LY-099",
+    "LY-100"
+   ],
+   "status": "交付完成",
+   "statusRule": "S1 本席位 status.json",
+   "statusEvidence": {
+    "dir": true,
+    "files": 30,
+    "prepFiles": 0,
+    "statusFile": {
+     "path": "LY-002/status.json",
+     "sha256": "0ac63db873219d1bb22f9269dd11c52e80e2efeec528decb5a1f0409cd92c13d"
+    },
+    "issues": [],
+    "declared": "交付完成",
+    "deliverables": 16,
+    "deliverablesMissing": [],
+    "blockers": [],
+    "openItems": 9,
+    "nextDependentsDeclared": [
+     "LY-003",
+     "LY-004",
+     "LY-010",
+     "LY-098",
+     "LY-100"
+    ]
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-002/",
+   "whitelist": [
+    "LY-002/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    96,
+    103
+   ],
+   "text": "### LY-002｜建立约180年证据与禁用表\n\n- **类型 / 依赖**：考据/契约；LY-001。\n- **现有输入**：当前 main、项目卡、城市清单、已有公开资产卡与协调者提供的源包；不是概念封面。\n- **具体产物**：门名、区域、建筑功能、分期、参考图版和不可外推事项表。\n- **边界与排重**：同期洛阳、异地汉代、北魏及后世证据分栏；没有证据的尺寸与制度保持未知或C，不能以常见形象补定。\n- **本项验收**：每条关键事实有原文/图版定位、年代地域和支持/不支持栏；引用与模型尺度分开；争议与二手转载明确标识。\n- **唯一写入区**：`workpacks/LY-002/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-003",
+   "title": "配准南北宫与东北约束",
+   "type": "考据/契约",
+   "lane": "资料契约",
+   "section": "开工资料、坐标与接口",
+   "sectionIntro": "先建立真正可用的输入、分区准入和写入边界。资料不够的区域可以继续研究，但不能靠C标签强行落城。",
+   "depsRaw": "LY-001、LY-002",
+   "usesG": false,
+   "depsExplicit": [
+    "LY-001",
+    "LY-002"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002"
+   ],
+   "level": 3,
+   "dependents": [
+    "LY-039",
+    "LY-070",
+    "LY-084",
+    "LY-086",
+    "LY-088",
+    "LY-094"
+   ],
+   "status": "交付完成",
+   "statusRule": "S1 本席位 status.json",
+   "statusEvidence": {
+    "dir": true,
+    "files": 22,
+    "prepFiles": 0,
+    "statusFile": {
+     "path": "LY-003/status.json",
+     "sha256": "46f2872d0013340acaa7b4dd241dee822be052ab1765e2b64c251d23bb8cc129"
+    },
+    "issues": [],
+    "declared": "交付完成",
+    "deliverables": 22,
+    "deliverablesMissing": [],
+    "blockers": [],
+    "openItems": 8,
+    "nextDependentsDeclared": [
+     "LY-039",
+     "LY-070",
+     "LY-084",
+     "LY-086",
+     "LY-088",
+     "LY-094"
+    ]
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-003/",
+   "whitelist": [
+    "LY-003/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    105,
+    112
+   ],
+   "text": "### LY-003｜配准南北宫与东北约束\n\n- **类型 / 依赖**：考据/契约；LY-001、LY-002。\n- **现有输入**：当前 main、项目卡、城市清单、已有公开资产卡与协调者提供的源包；不是概念封面。\n- **具体产物**：原始宫墙/水系图版、可核控制点、候选变换、误差及禁用区域。\n- **边界与排重**：取得不了可配准资料就交缺项清单，不硬算坐标；不把北魏宫门/道路前推东汉。服务宫区及东北接路准入。\n- **本项验收**：控制点与变换自由度、轴向、误差和独立校核均可重算；不足以配准则输出不可落位结论，不制造低误差假象。\n- **唯一写入区**：`workpacks/LY-003/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-004",
+   "title": "配准城南礼制与北郊",
+   "type": "考据/契约",
+   "lane": "资料契约",
+   "section": "开工资料、坐标与接口",
+   "sectionIntro": "先建立真正可用的输入、分区准入和写入边界。资料不够的区域可以继续研究，但不能靠C标签强行落城。",
+   "depsRaw": "LY-001、LY-002",
+   "usesG": false,
+   "depsExplicit": [
+    "LY-001",
+    "LY-002"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002"
+   ],
+   "level": 3,
+   "dependents": [
+    "LY-079",
+    "LY-080",
+    "LY-085",
+    "LY-088",
+    "LY-094"
+   ],
+   "status": "交付完成",
+   "statusRule": "S1 本席位 status.json",
+   "statusEvidence": {
+    "dir": true,
+    "files": 24,
+    "prepFiles": 0,
+    "statusFile": {
+     "path": "LY-004/status.json",
+     "sha256": "c9358ea5095a6cb09d95437b80a95b1b4ebc4b044bc23dd68c7caf5cf5b27906"
+    },
+    "issues": [],
+    "declared": "交付完成",
+    "deliverables": 22,
+    "deliverablesMissing": [],
+    "blockers": [],
+    "openItems": 7,
+    "nextDependentsDeclared": [
+     "LY-079",
+     "LY-080",
+     "LY-085",
+     "LY-088",
+     "LY-094",
+     "LY-098",
+     "LY-100"
+    ]
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-004/",
+   "whitelist": [
+    "LY-004/**"
+   ],
+   "locks": [
+    "LOCK-LINGTAI-STEPS",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    114,
+    121
+   ],
+   "text": "### LY-004｜配准城南礼制与北郊\n\n- **类型 / 依赖**：考据/契约；LY-001、LY-002。\n- **现有输入**：当前 main、项目卡、城市清单、已有公开资产卡与协调者提供的源包；不是概念封面。\n- **具体产物**：灵台、明堂、辟雍、太学、南郊与北郊分别建立位置/分期约束和不确定范围。\n- **边界与排重**：北郊单列，绝不挪到城南；未知区不画精确院界。缺原图时允许保留未配准状态。\n- **本项验收**：六类地点各有独立证据条目和坐标状态；南北郊不会混组，分期不符资料不能进入180年安装层。\n- **唯一写入区**：`workpacks/LY-004/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-005",
+   "title": "统一全城坐标与高程契约",
+   "type": "考据/契约",
+   "lane": "资料契约",
+   "section": "开工资料、坐标与接口",
+   "sectionIntro": "先建立真正可用的输入、分区准入和写入边界。资料不够的区域可以继续研究，但不能靠C标签强行落城。",
+   "depsRaw": "LY-001",
+   "usesG": false,
+   "depsExplicit": [
+    "LY-001"
+   ],
+   "deps": [
+    "LY-001"
+   ],
+   "level": 2,
+   "dependents": [
+    "LY-006",
+    "LY-008",
+    "LY-010",
+    "LY-011",
+    "LY-012",
+    "LY-013",
+    "LY-014",
+    "LY-015",
+    "LY-016",
+    "LY-017",
+    "LY-018",
+    "LY-019",
+    "LY-020",
+    "LY-021",
+    "LY-022",
+    "LY-023",
+    "LY-024",
+    "LY-025",
+    "LY-026",
+    "LY-027",
+    "LY-028",
+    "LY-029",
+    "LY-030",
+    "LY-031",
+    "LY-032",
+    "LY-033",
+    "LY-034",
+    "LY-035",
+    "LY-036",
+    "LY-037",
+    "LY-038",
+    "LY-039",
+    "LY-040",
+    "LY-041",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-046",
+    "LY-047",
+    "LY-048",
+    "LY-049",
+    "LY-050",
+    "LY-051",
+    "LY-052",
+    "LY-053",
+    "LY-054",
+    "LY-055",
+    "LY-056",
+    "LY-057",
+    "LY-058",
+    "LY-059",
+    "LY-060",
+    "LY-061",
+    "LY-062",
+    "LY-063",
+    "LY-064",
+    "LY-065",
+    "LY-066",
+    "LY-067",
+    "LY-068",
+    "LY-069",
+    "LY-070",
+    "LY-071",
+    "LY-072",
+    "LY-073",
+    "LY-074",
+    "LY-075",
+    "LY-076",
+    "LY-077",
+    "LY-078",
+    "LY-079",
+    "LY-080",
+    "LY-081",
+    "LY-082",
+    "LY-083",
+    "LY-084",
+    "LY-085",
+    "LY-086",
+    "LY-087",
+    "LY-088",
+    "LY-089",
+    "LY-090",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094",
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098",
+    "LY-099",
+    "LY-100"
+   ],
+   "status": "交付完成",
+   "statusRule": "S1 本席位 status.json",
+   "statusEvidence": {
+    "dir": true,
+    "files": 88,
+    "prepFiles": 0,
+    "statusFile": {
+     "path": "LY-005/status.json",
+     "sha256": "add0f9b1a722f08e516ffd64b9dbaf97532a62d9fa18ded01df89ab7be5740ea"
+    },
+    "issues": [],
+    "declared": "交付完成",
+    "deliverables": 31,
+    "deliverablesMissing": [],
+    "blockers": [],
+    "openItems": 7,
+    "nextDependentsDeclared": [
+     "LY-006",
+     "LY-008",
+     "LY-010"
+    ]
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-005/",
+   "whitelist": [
+    "LY-005/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    123,
+    130
+   ],
+   "text": "### LY-005｜统一全城坐标与高程契约\n\n- **类型 / 依赖**：考据/契约；LY-001。\n- **现有输入**：当前 main、项目卡、城市清单、已有公开资产卡与协调者提供的源包；不是概念封面。\n- **具体产物**：米制、GLTF/Blender轴向、原点、世界矩阵、地面/门槛/楼面端口定义。\n- **边界与排重**：只测现有几何，不把C高程升级为考古高程；所有变换只应用一次，禁止为接缝悄悄缩放建筑。\n- **本项验收**：用一个已知资产往返导出检查单位、轴向和世界变换；每个端口能同时表达本地与世界坐标，旧节点不漂移。\n- **唯一写入区**：`workpacks/LY-005/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-006",
+   "title": "冻结模块端口与所有权",
+   "type": "考据/契约",
+   "lane": "资料契约",
+   "section": "开工资料、坐标与接口",
+   "sectionIntro": "先建立真正可用的输入、分区准入和写入边界。资料不够的区域可以继续研究，但不能靠C标签强行落城。",
+   "depsRaw": "LY-001、LY-005",
+   "usesG": false,
+   "depsExplicit": [
+    "LY-001",
+    "LY-005"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-005"
+   ],
+   "level": 3,
+   "dependents": [
+    "LY-009",
+    "LY-010",
+    "LY-011",
+    "LY-012",
+    "LY-013",
+    "LY-014",
+    "LY-015",
+    "LY-016",
+    "LY-017",
+    "LY-018",
+    "LY-019",
+    "LY-020",
+    "LY-021",
+    "LY-022",
+    "LY-023",
+    "LY-024",
+    "LY-025",
+    "LY-026",
+    "LY-027",
+    "LY-028",
+    "LY-029",
+    "LY-030",
+    "LY-031",
+    "LY-032",
+    "LY-033",
+    "LY-034",
+    "LY-035",
+    "LY-036",
+    "LY-037",
+    "LY-038",
+    "LY-039",
+    "LY-040",
+    "LY-041",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-046",
+    "LY-047",
+    "LY-048",
+    "LY-049",
+    "LY-050",
+    "LY-051",
+    "LY-052",
+    "LY-053",
+    "LY-054",
+    "LY-055",
+    "LY-056",
+    "LY-057",
+    "LY-058",
+    "LY-059",
+    "LY-060",
+    "LY-061",
+    "LY-062",
+    "LY-063",
+    "LY-064",
+    "LY-065",
+    "LY-066",
+    "LY-067",
+    "LY-068",
+    "LY-069",
+    "LY-070",
+    "LY-071",
+    "LY-072",
+    "LY-073",
+    "LY-074",
+    "LY-075",
+    "LY-076",
+    "LY-077",
+    "LY-078",
+    "LY-079",
+    "LY-080",
+    "LY-081",
+    "LY-082",
+    "LY-083",
+    "LY-084",
+    "LY-085",
+    "LY-086",
+    "LY-087",
+    "LY-088",
+    "LY-089",
+    "LY-090",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094",
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098",
+    "LY-099",
+    "LY-100"
+   ],
+   "status": "交付完成",
+   "statusRule": "S1 本席位 status.json",
+   "statusEvidence": {
+    "dir": true,
+    "files": 52,
+    "prepFiles": 0,
+    "statusFile": {
+     "path": "LY-006/status.json",
+     "sha256": "fe4aaa6c7cb1441f95ac8f51101e0cf63a4ab07ed53452e59c2bd897c5539aba"
+    },
+    "issues": [],
+    "declared": "交付完成",
+    "deliverables": 32,
+    "deliverablesMissing": [],
+    "blockers": [],
+    "openItems": 9,
+    "nextDependentsDeclared": [
+     "LY-009",
+     "LY-010",
+     "LY-011",
+     "LY-012",
+     "LY-013",
+     "LY-014",
+     "LY-015",
+     "LY-016",
+     "LY-017",
+     "LY-018",
+     "LY-019",
+     "LY-020",
+     "LY-021",
+     "LY-022",
+     "LY-023",
+     "LY-024",
+     "LY-025",
+     "LY-026",
+     "LY-027",
+     "LY-028",
+     "LY-029",
+     "LY-030",
+     "LY-031",
+     "LY-032",
+     "LY-033",
+     "LY-034",
+     "LY-035",
+     "LY-036",
+     "LY-037",
+     "LY-038",
+     "LY-039",
+     "LY-040",
+     "LY-041",
+     "LY-042",
+     "LY-043",
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-048",
+     "LY-049",
+     "LY-050",
+     "LY-051",
+     "LY-052",
+     "LY-053",
+     "LY-054",
+     "LY-055",
+     "LY-056",
+     "LY-057",
+     "LY-058",
+     "LY-059",
+     "LY-060",
+     "LY-061",
+     "LY-062",
+     "LY-063",
+     "LY-064",
+     "LY-065",
+     "LY-066",
+     "LY-067",
+     "LY-068",
+     "LY-069",
+     "LY-070",
+     "LY-071",
+     "LY-072",
+     "LY-073",
+     "LY-074",
+     "LY-075",
+     "LY-076",
+     "LY-077",
+     "LY-078",
+     "LY-079",
+     "LY-080",
+     "LY-081",
+     "LY-082",
+     "LY-083",
+     "LY-084",
+     "LY-085",
+     "LY-086",
+     "LY-087",
+     "LY-088",
+     "LY-089",
+     "LY-090",
+     "LY-100"
+    ]
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-006/",
+   "whitelist": [
+    "LY-006/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    132,
+    139
+   ],
+   "text": "### LY-006｜冻结模块端口与所有权\n\n- **类型 / 依赖**：考据/契约；LY-001、LY-005。\n- **现有输入**：当前 main、项目卡、城市清单、已有公开资产卡与协调者提供的源包；不是概念封面。\n- **具体产物**：各任务的空间边界、输入/输出端口、固定件/运动件分界与接口JSON模板。\n- **边界与排重**：相邻任务共用同一份冻结端口；每个源节点、地坪片和卡片字段只设一个负责人，冲突交协调者。\n- **本项验收**：每个接缝两方使用相同端口ID/版本；空间写入范围无重叠；固定/运动组件、地坪切孔和公共字段均有唯一归属。\n- **唯一写入区**：`workpacks/LY-006/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-007",
+   "title": "冻结材质与三档质量基线",
+   "type": "考据/契约",
+   "lane": "资料契约",
+   "section": "开工资料、坐标与接口",
+   "sectionIntro": "先建立真正可用的输入、分区准入和写入边界。资料不够的区域可以继续研究，但不能靠C标签强行落城。",
+   "depsRaw": "LY-001",
+   "usesG": false,
+   "depsExplicit": [
+    "LY-001"
+   ],
+   "deps": [
+    "LY-001"
+   ],
+   "level": 2,
+   "dependents": [
+    "LY-008",
+    "LY-010",
+    "LY-011",
+    "LY-012",
+    "LY-013",
+    "LY-014",
+    "LY-015",
+    "LY-016",
+    "LY-017",
+    "LY-018",
+    "LY-019",
+    "LY-020",
+    "LY-021",
+    "LY-022",
+    "LY-023",
+    "LY-024",
+    "LY-025",
+    "LY-026",
+    "LY-027",
+    "LY-028",
+    "LY-029",
+    "LY-030",
+    "LY-031",
+    "LY-032",
+    "LY-033",
+    "LY-034",
+    "LY-035",
+    "LY-036",
+    "LY-037",
+    "LY-038",
+    "LY-039",
+    "LY-040",
+    "LY-041",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-046",
+    "LY-047",
+    "LY-048",
+    "LY-049",
+    "LY-050",
+    "LY-051",
+    "LY-052",
+    "LY-053",
+    "LY-054",
+    "LY-055",
+    "LY-056",
+    "LY-057",
+    "LY-058",
+    "LY-059",
+    "LY-060",
+    "LY-061",
+    "LY-062",
+    "LY-063",
+    "LY-064",
+    "LY-065",
+    "LY-066",
+    "LY-067",
+    "LY-068",
+    "LY-069",
+    "LY-070",
+    "LY-071",
+    "LY-072",
+    "LY-073",
+    "LY-074",
+    "LY-075",
+    "LY-076",
+    "LY-077",
+    "LY-078",
+    "LY-079",
+    "LY-080",
+    "LY-081",
+    "LY-082",
+    "LY-083",
+    "LY-084",
+    "LY-085",
+    "LY-086",
+    "LY-087",
+    "LY-088",
+    "LY-089",
+    "LY-090",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094",
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098",
+    "LY-099",
+    "LY-100"
+   ],
+   "status": "交付完成",
+   "statusRule": "S1 本席位 status.json",
+   "statusEvidence": {
+    "dir": true,
+    "files": 185,
+    "prepFiles": 0,
+    "statusFile": {
+     "path": "LY-007/status.json",
+     "sha256": "2fddce70c110a19c6d08d10b90ac355440d538f5c8dcc82cca58504476ecc082"
+    },
+    "issues": [],
+    "declared": "交付完成",
+    "deliverables": 54,
+    "deliverablesMissing": [],
+    "blockers": [],
+    "openItems": 12,
+    "nextDependentsDeclared": [
+     "LY-008",
+     "LY-010",
+     "LY-011…LY-100（经 G 开工包）"
+    ]
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-007/",
+   "whitelist": [
+    "LY-007/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-14"
+   ],
+   "lines": [
+    141,
+    148
+   ],
+   "text": "### LY-007｜冻结材质与三档质量基线\n\n- **类型 / 依赖**：考据/契约；LY-001。\n- **现有输入**：当前 main、项目卡、城市清单、已有公开资产卡与协调者提供的源包；不是概念封面。\n- **具体产物**：LY_P01材质语义、纹理/UV、LOD命名与近景保留规则；基准球及样件。\n- **边界与排重**：不全库换色；不把中远档冒充高细近档；动件不能为了合批焊死，未测显存不写实测数字。\n- **本项验收**：基准物和纹理可重新读取；每档轮廓/细节差异有说明；原近景仍可恢复；材质颜色空间、UV尺度与贴图来源明确。\n- **唯一写入区**：`workpacks/LY-007/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-008",
+   "title": "建立可重跑交付检查器",
+   "type": "考据/契约",
+   "lane": "资料契约",
+   "section": "开工资料、坐标与接口",
+   "sectionIntro": "先建立真正可用的输入、分区准入和写入边界。资料不够的区域可以继续研究，但不能靠C标签强行落城。",
+   "depsRaw": "LY-001、LY-005、LY-007",
+   "usesG": false,
+   "depsExplicit": [
+    "LY-001",
+    "LY-005",
+    "LY-007"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-005",
+    "LY-007"
+   ],
+   "level": 3,
+   "dependents": [
+    "LY-010",
+    "LY-011",
+    "LY-012",
+    "LY-013",
+    "LY-014",
+    "LY-015",
+    "LY-016",
+    "LY-017",
+    "LY-018",
+    "LY-019",
+    "LY-020",
+    "LY-021",
+    "LY-022",
+    "LY-023",
+    "LY-024",
+    "LY-025",
+    "LY-026",
+    "LY-027",
+    "LY-028",
+    "LY-029",
+    "LY-030",
+    "LY-031",
+    "LY-032",
+    "LY-033",
+    "LY-034",
+    "LY-035",
+    "LY-036",
+    "LY-037",
+    "LY-038",
+    "LY-039",
+    "LY-040",
+    "LY-041",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-046",
+    "LY-047",
+    "LY-048",
+    "LY-049",
+    "LY-050",
+    "LY-051",
+    "LY-052",
+    "LY-053",
+    "LY-054",
+    "LY-055",
+    "LY-056",
+    "LY-057",
+    "LY-058",
+    "LY-059",
+    "LY-060",
+    "LY-061",
+    "LY-062",
+    "LY-063",
+    "LY-064",
+    "LY-065",
+    "LY-066",
+    "LY-067",
+    "LY-068",
+    "LY-069",
+    "LY-070",
+    "LY-071",
+    "LY-072",
+    "LY-073",
+    "LY-074",
+    "LY-075",
+    "LY-076",
+    "LY-077",
+    "LY-078",
+    "LY-079",
+    "LY-080",
+    "LY-081",
+    "LY-082",
+    "LY-083",
+    "LY-084",
+    "LY-085",
+    "LY-086",
+    "LY-087",
+    "LY-088",
+    "LY-089",
+    "LY-090",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094",
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098",
+    "LY-099",
+    "LY-100"
+   ],
+   "status": "制作中",
+   "statusRule": "S2 工作包有 prep/ 以外的文件但没有 status.json",
+   "statusEvidence": {
+    "dir": true,
+    "files": 4572,
+    "prepFiles": 0,
+    "statusFile": null,
+    "issues": []
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-008/",
+   "whitelist": [
+    "LY-008/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-14"
+   ],
+   "lines": [
+    150,
+    157
+   ],
+   "text": "### LY-008｜建立可重跑交付检查器\n\n- **类型 / 依赖**：考据/契约；LY-001、LY-005、LY-007。\n- **现有输入**：当前 main、项目卡、城市清单、已有公开资产卡与协调者提供的源包；不是概念封面。\n- **具体产物**：GLB读取、尺寸/三角/UV/纹理、路径隐私、文件清单及官方checker调用入口。\n- **边界与排重**：正式15,000,000字节/GLB与具体上传承载分开检查；程序必须有错误注入和负例，不能只报全部PASS。\n- **本项验收**：坏长度、NaN、缺纹理、超体积、越界路径等负例可失败；好样本可通过；官方规范版本和命令写入报告。\n- **唯一写入区**：`workpacks/LY-008/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-009",
+   "title": "建立任务锁与分支登记",
+   "type": "考据/契约",
+   "lane": "资料契约",
+   "section": "开工资料、坐标与接口",
+   "sectionIntro": "先建立真正可用的输入、分区准入和写入边界。资料不够的区域可以继续研究，但不能靠C标签强行落城。",
+   "depsRaw": "LY-001、LY-006",
+   "usesG": false,
+   "depsExplicit": [
+    "LY-001",
+    "LY-006"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-006"
+   ],
+   "level": 4,
+   "dependents": [
+    "LY-010",
+    "LY-011",
+    "LY-012",
+    "LY-013",
+    "LY-014",
+    "LY-015",
+    "LY-016",
+    "LY-017",
+    "LY-018",
+    "LY-019",
+    "LY-020",
+    "LY-021",
+    "LY-022",
+    "LY-023",
+    "LY-024",
+    "LY-025",
+    "LY-026",
+    "LY-027",
+    "LY-028",
+    "LY-029",
+    "LY-030",
+    "LY-031",
+    "LY-032",
+    "LY-033",
+    "LY-034",
+    "LY-035",
+    "LY-036",
+    "LY-037",
+    "LY-038",
+    "LY-039",
+    "LY-040",
+    "LY-041",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-046",
+    "LY-047",
+    "LY-048",
+    "LY-049",
+    "LY-050",
+    "LY-051",
+    "LY-052",
+    "LY-053",
+    "LY-054",
+    "LY-055",
+    "LY-056",
+    "LY-057",
+    "LY-058",
+    "LY-059",
+    "LY-060",
+    "LY-061",
+    "LY-062",
+    "LY-063",
+    "LY-064",
+    "LY-065",
+    "LY-066",
+    "LY-067",
+    "LY-068",
+    "LY-069",
+    "LY-070",
+    "LY-071",
+    "LY-072",
+    "LY-073",
+    "LY-074",
+    "LY-075",
+    "LY-076",
+    "LY-077",
+    "LY-078",
+    "LY-079",
+    "LY-080",
+    "LY-081",
+    "LY-082",
+    "LY-083",
+    "LY-084",
+    "LY-085",
+    "LY-086",
+    "LY-087",
+    "LY-088",
+    "LY-089",
+    "LY-090",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094",
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098",
+    "LY-099",
+    "LY-100"
+   ],
+   "status": "交付完成",
+   "statusRule": "S1 本席位 status.json",
+   "statusEvidence": {
+    "dir": true,
+    "files": 33,
+    "prepFiles": 0,
+    "statusFile": {
+     "path": "LY-009/status.json",
+     "sha256": "09a1c45415aa3a8657581ce0a5ff2e8738e6fca09da800070e36972b330e896c"
+    },
+    "issues": [],
+    "declared": "交付完成",
+    "deliverables": 32,
+    "deliverablesMissing": [],
+    "blockers": [],
+    "openItems": 9,
+    "nextDependentsDeclared": [
+     "LY-010",
+     "LY-011",
+     "LY-012",
+     "LY-013",
+     "LY-014",
+     "LY-015",
+     "LY-016",
+     "LY-017",
+     "LY-018",
+     "LY-019",
+     "LY-020",
+     "LY-021",
+     "LY-022",
+     "LY-023",
+     "LY-024",
+     "LY-025",
+     "LY-026",
+     "LY-027",
+     "LY-028",
+     "LY-029",
+     "LY-030",
+     "LY-031",
+     "LY-032",
+     "LY-033",
+     "LY-034",
+     "LY-035",
+     "LY-036",
+     "LY-037",
+     "LY-038",
+     "LY-039",
+     "LY-040",
+     "LY-041",
+     "LY-042",
+     "LY-043",
+     "LY-044",
+     "LY-045",
+     "LY-046",
+     "LY-047",
+     "LY-048",
+     "LY-049",
+     "LY-050",
+     "LY-051",
+     "LY-052",
+     "LY-053",
+     "LY-054",
+     "LY-055",
+     "LY-056",
+     "LY-057",
+     "LY-058",
+     "LY-059",
+     "LY-060",
+     "LY-061",
+     "LY-062",
+     "LY-063",
+     "LY-064",
+     "LY-065",
+     "LY-066",
+     "LY-067",
+     "LY-068",
+     "LY-069",
+     "LY-070",
+     "LY-071",
+     "LY-072",
+     "LY-073",
+     "LY-074",
+     "LY-075",
+     "LY-076",
+     "LY-077",
+     "LY-078",
+     "LY-079",
+     "LY-080",
+     "LY-081",
+     "LY-082",
+     "LY-083",
+     "LY-084",
+     "LY-085",
+     "LY-086",
+     "LY-087",
+     "LY-088",
+     "LY-089",
+     "LY-090",
+     "LY-091",
+     "LY-092",
+     "LY-093",
+     "LY-094",
+     "LY-095",
+     "LY-096",
+     "LY-097",
+     "LY-098",
+     "LY-099",
+     "LY-100"
+    ]
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-009/",
+   "whitelist": [
+    "LY-009/**"
+   ],
+   "locks": [
+    "LOCK-13COURT",
+    "LOCK-YONG-ROAD",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    159,
+    166
+   ],
+   "text": "### LY-009｜建立任务锁与分支登记\n\n- **类型 / 依赖**：考据/契约；LY-001、LY-006。\n- **现有输入**：当前 main、项目卡、城市清单、已有公开资产卡与协调者提供的源包；不是概念封面。\n- **具体产物**：100席位任务板、依赖DAG、分支/文件归属、暂停区与每日交接模板。\n- **边界与排重**：排除雍门接街、13院压缩等正在另做事项；代理只写自己的工作包，未领取不得顺手改邻居。\n- **本项验收**：100个ID不重复、依赖无环、排除项有锁；每个并行分支仅含自己的白名单文件，发布账户与城市写入权不下放。\n- **唯一写入区**：`workpacks/LY-009/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-010",
+   "title": "冻结首批方案与区域准入",
+   "type": "考据/契约",
+   "lane": "资料契约",
+   "section": "开工资料、坐标与接口",
+   "sectionIntro": "先建立真正可用的输入、分区准入和写入边界。资料不够的区域可以继续研究，但不能靠C标签强行落城。",
+   "depsRaw": "LY-001、LY-002、LY-005、LY-006、LY-007、LY-008、LY-009",
+   "usesG": false,
+   "depsExplicit": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009"
+   ],
+   "level": 5,
+   "dependents": [
+    "LY-011",
+    "LY-012",
+    "LY-013",
+    "LY-014",
+    "LY-015",
+    "LY-016",
+    "LY-017",
+    "LY-018",
+    "LY-019",
+    "LY-020",
+    "LY-021",
+    "LY-022",
+    "LY-023",
+    "LY-024",
+    "LY-025",
+    "LY-026",
+    "LY-027",
+    "LY-028",
+    "LY-029",
+    "LY-030",
+    "LY-031",
+    "LY-032",
+    "LY-033",
+    "LY-034",
+    "LY-035",
+    "LY-036",
+    "LY-037",
+    "LY-038",
+    "LY-039",
+    "LY-040",
+    "LY-041",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-046",
+    "LY-047",
+    "LY-048",
+    "LY-049",
+    "LY-050",
+    "LY-051",
+    "LY-052",
+    "LY-053",
+    "LY-054",
+    "LY-055",
+    "LY-056",
+    "LY-057",
+    "LY-058",
+    "LY-059",
+    "LY-060",
+    "LY-061",
+    "LY-062",
+    "LY-063",
+    "LY-064",
+    "LY-065",
+    "LY-066",
+    "LY-067",
+    "LY-068",
+    "LY-069",
+    "LY-070",
+    "LY-071",
+    "LY-072",
+    "LY-073",
+    "LY-074",
+    "LY-075",
+    "LY-076",
+    "LY-077",
+    "LY-078",
+    "LY-079",
+    "LY-080",
+    "LY-081",
+    "LY-082",
+    "LY-083",
+    "LY-084",
+    "LY-085",
+    "LY-086",
+    "LY-087",
+    "LY-088",
+    "LY-089",
+    "LY-090",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094",
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098",
+    "LY-099",
+    "LY-100"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008",
+   "statusEvidence": {
+    "dir": false,
+    "files": 0,
+    "prepFiles": 0,
+    "statusFile": null,
+    "issues": []
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-010/",
+   "whitelist": [
+    "LY-010/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-01",
+    "PZ-10"
+   ],
+   "lines": [
+    168,
+    175
+   ],
+   "text": "### LY-010｜冻结首批方案与区域准入\n\n- **类型 / 依赖**：考据/契约；LY-001、LY-002、LY-005、LY-006、LY-007、LY-008、LY-009。\n- **现有输入**：当前 main、项目卡、城市清单、已有公开资产卡与协调者提供的源包；不是概念封面。\n- **具体产物**：每区采用哪套既有候选、允许改哪些缺件、能否落城的决策表。\n- **边界与排重**：未选定的互斥方案保留；未配准区只能局部研究，不能借C标签随意填城。分区放行，不要求所有区等齐才开工。\n- **本项验收**：每区写明选中方案、可改变范围、允许的未验项及阻断项；缺证据的区不能被其他任务默认视为已放行。\n- **唯一写入区**：`workpacks/LY-010/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-011",
+   "title": "开阳中门道承托框架修订",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "城门与城垣",
+   "sectionIntro": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-012",
+    "LY-013",
+    "LY-014",
+    "LY-015"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 81,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-011/prep/prep-status.json",
+     "sha256": "ba9d0e612222d7d31b084c7f45357c886b36b07a1f75a595072b61c2aa8bf5ba"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-011/",
+   "whitelist": [
+    "LY-011/**"
+   ],
+   "locks": [
+    "LOCK-12GATES",
+    "LOCK-YONG-ROAD",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-07",
+    "PZ-14"
+   ],
+   "lines": [
+    181,
+    188
+   ],
+   "text": "### LY-011｜开阳中门道承托框架修订\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：开阳 K-v1、bearing-section-v1、开阳适配失败/实际剖面记录；现有三门地面附件。\n- **具体产物**：替代失败承托样例的柱列、地栿、横梁子件与三档。\n- **边界与排重**：解决实测门楣/横梁重叠，明确替换而非双层叠加；不改左右门道、不宣称荷载安全。\n- **本项验收**：用实际导出重测门楣/梁/柱交体和净空；旧0.0936m³问题有可定位的前后证据；柱梁底顶接触与地面端口明确。\n- **唯一写入区**：`workpacks/LY-011/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-012",
+   "title": "开阳门框门叶兼容子件",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "城门与城垣",
+   "sectionIntro": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。",
+   "depsRaw": "G、LY-011",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-011"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-011"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-015"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-011",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 10,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-012/prep/prep-status.json",
+     "sha256": "45b195f8e21e29bd1afe3385a2ac30da427d64380dff7f4916fcb144a03dc56e"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-012/",
+   "whitelist": [
+    "LY-012/**"
+   ],
+   "locks": [
+    "LOCK-12GATES",
+    "LOCK-YONG-ROAD",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-07"
+   ],
+   "lines": [
+    190,
+    197
+   ],
+   "text": "### LY-012｜开阳门框门叶兼容子件\n\n- **类型 / 依赖**：补件/修订；G、LY-011。\n- **现有输入**：开阳 K-v1、bearing-section-v1、开阳适配失败/实际剖面记录；现有三门地面附件。\n- **具体产物**：与新承托端口兼容的门框、枢接或明确固定开门组件，附开闭/角度检查。\n- **边界与排重**：只处理门口运动/固定边界，不重做屋盖和柱梁；不得用隐藏门叶取得通行通过。\n- **本项验收**：实际开/闭及指定中间角度分别检查门叶与柱梁/框/地坪；轴孔不是实心块穿轴；门关阻断和超限负例有效。\n- **唯一写入区**：`workpacks/LY-012/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-013",
+   "title": "开阳单一楼板与木土接口",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "城门与城垣",
+   "sectionIntro": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。",
+   "depsRaw": "G、LY-011",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-011"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-011"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-014",
+    "LY-015"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-011",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 7,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-013/prep/prep-status.json",
+     "sha256": "38b7a9a7aa98a6f918627d3052f8ae0a54bf81bad883e36a5d4e4c9143157cdb"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-013/",
+   "whitelist": [
+    "LY-013/**"
+   ],
+   "locks": [
+    "LOCK-12GATES",
+    "LOCK-YONG-ROAD",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-07"
+   ],
+   "lines": [
+    199,
+    206
+   ],
+   "text": "### LY-013｜开阳单一楼板与木土接口\n\n- **类型 / 依赖**：补件/修订；G、LY-011。\n- **现有输入**：开阳 K-v1、bearing-section-v1、开阳适配失败/实际剖面记录；现有三门地面附件。\n- **具体产物**：一套楼板/面层及其与门墩、梁架的安装关系。\n- **边界与排重**：旧新deck只能保留明确的一套，不能重复约21.76m³实体；承托/接触分类要检查完全包含，不只用表面BVH。\n- **本项验收**：完整模型只存在一套定义明确的楼板；对完全包含式重叠有检测；面层、梁、门墩边界与旧件替换可重放。\n- **唯一写入区**：`workpacks/LY-013/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-014",
+   "title": "开阳登临与墙顶过渡",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "城门与城垣",
+   "sectionIntro": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。",
+   "depsRaw": "G、LY-011、LY-013",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-011",
+    "LY-013"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-011",
+    "LY-013"
+   ],
+   "level": 8,
+   "dependents": [
+    "LY-015"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-011、LY-013",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 8,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-014/prep/prep-status.json",
+     "sha256": "5e800ebbe962a09c8833fdf57f917986193056fa61341805559ca2cfe88c06e2"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-014/",
+   "whitelist": [
+    "LY-014/**"
+   ],
+   "locks": [
+    "LOCK-12GATES",
+    "LOCK-YONG-ROAD",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-07"
+   ],
+   "lines": [
+    208,
+    215
+   ],
+   "text": "### LY-014｜开阳登临与墙顶过渡\n\n- **类型 / 依赖**：补件/修订；G、LY-011、LY-013。\n- **现有输入**：开阳 K-v1、bearing-section-v1、开阳适配失败/实际剖面记录；现有三门地面附件。\n- **具体产物**：地面至上层的侧口、台阶/坡段、平台与墙顶端口组件。\n- **边界与排重**：先重测高差，不机械补0.69m台阶；形制为C候选，检完整路线、足下支承与梁柱净空。\n- **本项验收**：从足下地面至最终楼面每段有支持、完整身体包络及转身空间；不能用分段高度跳变掩盖缺阶；端点精确对齐。\n- **唯一写入区**：`workpacks/LY-014/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-015",
+   "title": "开阳完整门组局部装配",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "城门与城垣",
+   "sectionIntro": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。",
+   "depsRaw": "G、LY-011、LY-012、LY-013、LY-014",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-011",
+    "LY-012",
+    "LY-013",
+    "LY-014"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-011",
+    "LY-012",
+    "LY-013",
+    "LY-014"
+   ],
+   "level": 9,
+   "dependents": [
+    "LY-085",
+    "LY-091"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-011、LY-012、LY-013、LY-014",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 11,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-015/prep/prep-status.json",
+     "sha256": "953a13707d0f2c6979cc9e1299141ae4abd80430bb880c108db2cd1d81fc2be4"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-015/",
+   "whitelist": [
+    "LY-015/**"
+   ],
+   "locks": [
+    "LOCK-12GATES",
+    "LOCK-YONG-ROAD",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    217,
+    224
+   ],
+   "text": "### LY-015｜开阳完整门组局部装配\n\n- **类型 / 依赖**：复用装配；G、LY-011、LY-012、LY-013、LY-014。\n- **现有输入**：开阳 K-v1、bearing-section-v1、开阳适配失败/实际剖面记录；现有三门地面附件。\n- **具体产物**：原门体、修订件、现有接墙件与必要地坪组成的完整三档局部包。\n- **边界与排重**：原件留存、旧新互斥；给出从城墙/地面到整门的替换清单和撤回，不直接改城市总表。\n- **本项验收**：整组三LOD读取、来源几何保留、旧新互斥及回退通过；正反CPU图和实际门道/上层路线对应同一SHA。\n- **唯一写入区**：`workpacks/LY-015/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-016",
+   "title": "平城侧门通口完整地面",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "城门与城垣",
+   "sectionIntro": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-017"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 98,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-016/prep/prep-status.json",
+     "sha256": "611fa219a37204a4df6cbf3089ff4727d086ab03a5052cb088301a87b623fa58"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-016/",
+   "whitelist": [
+    "LY-016/**"
+   ],
+   "locks": [
+    "LOCK-12GATES",
+    "LOCK-YONG-ROAD",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-04",
+    "PZ-07",
+    "PZ-14"
+   ],
+   "lines": [
+    226,
+    233
+   ],
+   "text": "### LY-016｜平城侧门通口完整地面\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：平城 P-v1、两侧地面附件、精确旧斜路与现有两翼；保持中央门关闭。\n- **具体产物**：复用两侧测试带和四片连接地面，补实际查到的支承/边缘缺口。\n- **边界与排重**：单独附件原有565/3114样点依赖旧斜路；不补开中央门、不把旧路重复包进两个地面层。\n- **本项验收**：两侧完整支持域与旧斜路依赖能重现；关闭旧路的负例仍失败；新增件不侵入固定门叶、门墩和旧路顶面。\n- **唯一写入区**：`workpacks/LY-016/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-017",
+   "title": "平城门墙旧路联合装配",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "城门与城垣",
+   "sectionIntro": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。",
+   "depsRaw": "G、LY-016",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-016"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-016"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-085",
+    "LY-091"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-016",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 108,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-017/prep/prep-status.json",
+     "sha256": "652cf6d6d9fa9bb9e5445f8499df4940c0a7ab01ee950d6c2e720ae301e0c929"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-017/",
+   "whitelist": [
+    "LY-017/**"
+   ],
+   "locks": [
+    "LOCK-12GATES",
+    "LOCK-YONG-ROAD",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-04",
+    "PZ-14"
+   ],
+   "lines": [
+    235,
+    242
+   ],
+   "text": "### LY-017｜平城门墙旧路联合装配\n\n- **类型 / 依赖**：复用装配；G、LY-016。\n- **现有输入**：平城 P-v1、两侧地面附件、精确旧斜路与现有两翼；保持中央门关闭。\n- **具体产物**：原P-v1、两翼、旧斜路和侧门地面按当前基线组合的局部包。\n- **边界与排重**：保持中央关闭，检查两侧到达/通行/回路；完整形态仍是C假说，不能认定约180年已修复。\n- **本项验收**：从旧路经两侧门再回旧路的完整路线通过约定检查，中门仍阻断；门墙/地坪无未分类侵入，旧位置无漂移。\n- **唯一写入区**：`workpacks/LY-017/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-018",
+   "title": "谷门门墩接地与墙端适配",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "城门与城垣",
+   "sectionIntro": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-091"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 20,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-018/prep/prep-status.json",
+     "sha256": "4819e028b362f78d89d4765eb21788acf2c98848aa2c335fad66af2190449127"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-018/",
+   "whitelist": [
+    "LY-018/**"
+   ],
+   "locks": [
+    "LOCK-12GATES",
+    "LOCK-YONG-ROAD",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-07"
+   ],
+   "lines": [
+    244,
+    251
+   ],
+   "text": "### LY-018｜谷门门墩接地与墙端适配\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：谷门 G-v1 及其隐藏试放/接墙接口；读取当前墙端。\n- **具体产物**：基于已做G-v1和隐藏试放的底部支承、阈值地坪及必要接墙差异件。\n- **边界与排重**：复用可用原接口，不复制夏门；实际工程原点与B示意点分别记录，不移动考据点来迎合墙端。\n- **本项验收**：当前墙端而非旧截图作为输入；底投影支持、门道端点、接面残差和隐藏/撤回测试可重现，源G门不被换成别门。\n- **唯一写入区**：`workpacks/LY-018/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-019",
+   "title": "夏门接缝与底部支承修订",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "城门与城垣",
+   "sectionIntro": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-091"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 8,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-019/prep/prep-status.json",
+     "sha256": "5cea6a43316ba0f3ae7cb2bc2deb3174a52176760b3d2ec7a861ef6f8f5dff66"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-019/",
+   "whitelist": [
+    "LY-019/**"
+   ],
+   "locks": [
+    "LOCK-12GATES",
+    "LOCK-YONG-ROAD",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-07"
+   ],
+   "lines": [
+    253,
+    260
+   ],
+   "text": "### LY-019｜夏门接缝与底部支承修订\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：夏门 B-library-v1、既有接口和隐藏试放，不使用失败中间导出。\n- **具体产物**：在既有B型和旧接口试验上补实际未闭合的门墙/地面接缝。\n- **边界与排重**：不重新造门楼或改相邻城墙；保留旧屋脊内部端盖限制，逐项说明新修订没有覆盖的问题。\n- **本项验收**：旧失败接缝对应到具体几何；三档独立检查地面和墙端，不重复旧门体；移除新增件能恢复原状态。\n- **唯一写入区**：`workpacks/LY-019/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-020",
+   "title": "城垣转角与坡地脚接口族",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "城门与城垣",
+   "sectionIntro": "十二门本体均已存在；这里补功能和接口，不再建十二套新门。雍门接街继续保留给原负责人。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-091"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 19,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-020/prep/prep-status.json",
+     "sha256": "a25bd4f0561cc3b18c16db47ce46b9aed05a979a1e2c5e7597272fced36cd8a8"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-020/",
+   "whitelist": [
+    "LY-020/**"
+   ],
+   "locks": [
+    "LOCK-12GATES",
+    "LOCK-YONG-ROAD",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-07",
+    "PZ-10"
+   ],
+   "lines": [
+    262,
+    269
+   ],
+   "text": "### LY-020｜城垣转角与坡地脚接口族\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：夯土墙身家族、当前12段城垣实际几何和地面。\n- **具体产物**：从当前城垣选真实缺口，制作短转角、渐变地脚/坡脚的有限可复用件。\n- **边界与排重**：先实测再造件；无缺口则交诊断不凑数。不得全城重造墙或凭空增加防御设施；只承诺已测参数组合。\n- **本项验收**：每个变体有实际接点来源、尺寸域、超域失败样本；相接实体的接触与内部侵入分开，未改原墙身。\n- **唯一写入区**：`workpacks/LY-020/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-021",
+   "title": "八铺门前起步踏步组件",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "市肆与取水",
+   "sectionIntro": "八铺四棚v2.1的柜台已修，当前默认五店三摊不自动替换。井体/开孔方案已有，任务是兼容与整体接入。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-022",
+    "LY-027",
+    "LY-029"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 27,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-021/prep/prep-status.json",
+     "sha256": "56e82e908c70a2b0b6d6b4a529623a0aba9d635a13cedeb0f05dfe27426249ec"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-021/",
+   "whitelist": [
+    "LY-021/**"
+   ],
+   "locks": [
+    "LOCK-MARKET-V21",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-07"
+   ],
+   "lines": [
+    275,
+    282
+   ],
+   "text": "### LY-021｜八铺门前起步踏步组件\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：店前线 v2.1、已修 S84/S86 前框、现四铺型/两棚型与7条既有路带。\n- **具体产物**：店前线v2.1八处入口的0.22米高差过渡和三档安装参数。\n- **边界与排重**：柜台已修，不再动柜台/柱网；保留四铺型差异，实际外路到柜后整段测试，不只看一条射线。\n- **本项验收**：8处入口分别给足底分层及约定身体体积检查；起步外端和店内地板都实际支持，已有柜后修订不回退。\n- **唯一写入区**：`workpacks/LY-021/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-022",
+   "title": "市肆前街连续地坪接口",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "市肆与取水",
+   "sectionIntro": "八铺四棚v2.1的柜台已修，当前默认五店三摊不自动替换。井体/开孔方案已有，任务是兼容与整体接入。",
+   "depsRaw": "G、LY-021",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-021"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-021"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-028",
+    "LY-029"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-021",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 37,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-022/prep/prep-status.json",
+     "sha256": "310382914c3977205c66a57b0985039330a354869a492138a46da218e2cd6707"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-022/",
+   "whitelist": [
+    "LY-022/**"
+   ],
+   "locks": [
+    "LOCK-MARKET-V21",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    284,
+    291
+   ],
+   "text": "### LY-022｜市肆前街连续地坪接口\n\n- **类型 / 依赖**：补件/修订；G、LY-021。\n- **现有输入**：店前线 v2.1、已修 S84/S86 前框、现四铺型/两棚型与7条既有路带。\n- **具体产物**：连接门前组件与现有7条路带的局部地坪/边缘差异件。\n- **边界与排重**：不重铺已有道路，不移动井或偷偷改变铺前线；院内/市内范围止于冻结边界，外街归083。\n- **本项验收**：所有补件端点与被冻结路带一致；没有覆盖井孔、移动铺面或形成双层路面；原道路指纹不变。\n- **唯一写入区**：`workpacks/LY-022/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-023",
+   "title": "棚摊基础与可拆脚端适配",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "市肆与取水",
+   "sectionIntro": "八铺四棚v2.1的柜台已修，当前默认五店三摊不自动替换。井体/开孔方案已有，任务是兼容与整体接入。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-028",
+    "LY-029"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 20,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-023/prep/prep-status.json",
+     "sha256": "64473ba2a266c989a83e1ac6948864cc3ff17304b457ca4b2f8b9b08ed542551"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-023/",
+   "whitelist": [
+    "LY-023/**"
+   ],
+   "locks": [
+    "LOCK-MARKET-V21",
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    293,
+    300
+   ],
+   "text": "### LY-023｜棚摊基础与可拆脚端适配\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：店前线 v2.1、已修 S84/S86 前框、现四铺型/两棚型与7条既有路带。\n- **具体产物**：既有棚/摊在选定地坪上的脚端、垫接和装配记录，仅修实际缺失支持。\n- **边界与排重**：不新造摊棚原型，不造无依据石础装饰；若现件已可靠接地，复用并交适配包即可。\n- **本项验收**：逐脚实际接触或支承面积可复核；地脚附件不挡棚下通道；已有合格脚端被识别为复用，而不是多做一层。\n- **唯一写入区**：`workpacks/LY-023/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-024",
+   "title": "一类铺型闭铺构件试案",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "市肆与取水",
+   "sectionIntro": "八铺四棚v2.1的柜台已修，当前默认五店三摊不自动替换。井体/开孔方案已有，任务是兼容与整体接入。",
+   "depsRaw": "G、LY-002",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-002"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-029"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 25,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-024/prep/prep-status.json",
+     "sha256": "ecfd3c69ba78898842be71a301496937464fedbeb1b8097f7b92b13a183863f8"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-024/",
+   "whitelist": [
+    "LY-024/**"
+   ],
+   "locks": [
+    "LOCK-MARKET-V21",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-07"
+   ],
+   "lines": [
+    302,
+    309
+   ],
+   "text": "### LY-024｜一类铺型闭铺构件试案\n\n- **类型 / 依赖**：补件/修订；G、LY-002。\n- **现有输入**：店前线 v2.1、已修 S84/S86 前框、现四铺型/两棚型与7条既有路带。\n- **具体产物**：在盘点确认缺件后，为一类铺型提供可拆门板/侧口关闭构件及开闭状态。\n- **边界与排重**：先选证据可支持的类型，全部具体构形标C；不假定八铺同制，不替换已修柜台、不掩盖真实入口。\n- **本项验收**：所选铺型的营业/关闭状态能互斥重现；实际入口、柜台和承重件均不被未分类穿插；历史支持不足部分明确C。\n- **唯一写入区**：`workpacks/LY-024/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-025",
+   "title": "市肆井和开孔地面原子包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "市肆与取水",
+   "sectionIntro": "八铺四棚v2.1的柜台已修，当前默认五店三摊不自动替换。井体/开孔方案已有，任务是兼容与整体接入。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-026",
+    "LY-029",
+    "LY-090"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 20,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-025/prep/prep-status.json",
+     "sha256": "ef3caae5aab4d74e4aa144754653009bb5a1c981ed754507cb38e87bca08a539"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-025/",
+   "whitelist": [
+    "LY-025/**"
+   ],
+   "locks": [
+    "LOCK-MARKET-V21",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    311,
+    318
+   ],
+   "text": "### LY-025｜市肆井和开孔地面原子包\n\n- **类型 / 依赖**：复用装配；G。\n- **现有输入**：well-library、market-water-placement 与井入母场景试放；当前精确 sample_ground 对应关系。\n- **具体产物**：复用现井与已有切孔地面，重新绑定当前基线的共同加载/撤回包。\n- **边界与排重**：不重新造井；禁止旧地面堵井、只有孔没有井、只有井没有孔或二次平移，失败时整体回退。\n- **本项验收**：同时验证井口、地坪孔及下方既有地层是否封堵；井/孔任一加载失败时整体还原；原始井网格与变换可追溯。\n- **唯一写入区**：`workpacks/LY-025/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-026",
+   "title": "井架操作构件兼容检查与修订",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "市肆与取水",
+   "sectionIntro": "八铺四棚v2.1的柜台已修，当前默认五店三摊不自动替换。井体/开孔方案已有，任务是兼容与整体接入。",
+   "depsRaw": "G、LY-025",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-025"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-025"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-029"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-025",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 22,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-026/prep/prep-status.json",
+     "sha256": "4150522c81962191a277afa617cfbab0d1bc7914e3dc377482106500ef0fae88"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-026/",
+   "whitelist": [
+    "LY-026/**"
+   ],
+   "locks": [
+    "LOCK-MARKET-V21",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    320,
+    327
+   ],
+   "text": "### LY-026｜井架操作构件兼容检查与修订\n\n- **类型 / 依赖**：补件/修订；G、LY-025。\n- **现有输入**：well-library、market-water-placement 与井入母场景试放；当前精确 sample_ground 对应关系。\n- **具体产物**：围绕已有轮轴、绳槽、容器的有限姿态，修确有冲突的导向/支承小件。\n- **边界与排重**：先核原图与现件，未知机构不乱补；不增加水深/水位或假称真实取水动力学、承载与卫生通过。\n- **本项验收**：构件修改前后净空/接点逐项绑定；给容器行程和轮轴有限姿态而不是虚构动力学；未知原图/机制单列停止项。\n- **唯一写入区**：`workpacks/LY-026/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-027",
+   "title": "铺内货架与货物占位兼容包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "市肆与取水",
+   "sectionIntro": "八铺四棚v2.1的柜台已修，当前默认五店三摊不自动替换。井体/开孔方案已有，任务是兼容与整体接入。",
+   "depsRaw": "G、LY-021",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-021"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-021"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-028",
+    "LY-029"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-021",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 35,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-027/prep/prep-status.json",
+     "sha256": "f4cf905d74a23f9db4f3f83346cc6278368cbb6ff843cecde0fa791b6215aace"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-027/",
+   "whitelist": [
+    "LY-027/**"
+   ],
+   "locks": [
+    "LOCK-MARKET-V21",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    329,
+    336
+   ],
+   "text": "### LY-027｜铺内货架与货物占位兼容包\n\n- **类型 / 依赖**：复用装配；G、LY-021。\n- **现有输入**：店前线 v2.1、功能市肆旧组与现柜架/货物占位；必须明确选择哪一组。\n- **具体产物**：复用现柜架，给可替换货物占位、取放空间和装载状态，不制作虚构库存。\n- **边界与排重**：货物几何只是功能代理，保留出处/未知；不得占掉店员入口，不替换全部陈设追求画面繁密。\n- **本项验收**：每种占位有可删除ID，满/空状态不会封店员路线；货架/货物与地面支持可复核，不把占位当古代实物库存。\n- **唯一写入区**：`workpacks/LY-027/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-028",
+   "title": "市肆卸货与棚下操作地面",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "市肆与取水",
+   "sectionIntro": "八铺四棚v2.1的柜台已修，当前默认五店三摊不自动替换。井体/开孔方案已有，任务是兼容与整体接入。",
+   "depsRaw": "G、LY-022、LY-023、LY-027",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-022",
+    "LY-023",
+    "LY-027"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-022",
+    "LY-023",
+    "LY-027"
+   ],
+   "level": 8,
+   "dependents": [
+    "LY-029"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-022、LY-023、LY-027",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 28,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-028/prep/prep-status.json",
+     "sha256": "ff0f1736bb6be50c145bc174cba48f907c48b85c67cfba1d86e7633d21d13932"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-028/",
+   "whitelist": [
+    "LY-028/**"
+   ],
+   "locks": [
+    "LOCK-MARKET-V21",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    338,
+    345
+   ],
+   "text": "### LY-028｜市肆卸货与棚下操作地面\n\n- **类型 / 依赖**：补件/修订；G、LY-022、LY-023、LY-027。\n- **现有输入**：店前线 v2.1、功能市肆旧组与现柜架/货物占位；必须明确选择哪一组。\n- **具体产物**：选择一处已冻结的作业边，做卸货/暂存地面及与棚下空间的接口。\n- **边界与排重**：不认定历史经营制度、不把最小分离缝称为人行路；与主行路、井操作区分别检查，不占外街。\n- **本项验收**：卸货/暂存与主行路、井操作域互不侵占；空载/占位两种状态均测试，地面连接有真实三角支持。\n- **唯一写入区**：`workpacks/LY-028/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-029",
+   "title": "八铺四棚候选的互斥与回退包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "市肆与取水",
+   "sectionIntro": "八铺四棚v2.1的柜台已修，当前默认五店三摊不自动替换。井体/开孔方案已有，任务是兼容与整体接入。",
+   "depsRaw": "G、LY-021、LY-022、LY-023、LY-024、LY-025、LY-026、LY-027、LY-028",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-021",
+    "LY-022",
+    "LY-023",
+    "LY-024",
+    "LY-025",
+    "LY-026",
+    "LY-027",
+    "LY-028"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-021",
+    "LY-022",
+    "LY-023",
+    "LY-024",
+    "LY-025",
+    "LY-026",
+    "LY-027",
+    "LY-028"
+   ],
+   "level": 9,
+   "dependents": [
+    "LY-030"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-021、LY-022、LY-023、LY-024、LY-025、LY-026、LY-027、LY-028",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 19,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-029/prep/prep-status.json",
+     "sha256": "164a5b54773981b5b3e78ad2243981d90fa6949765236697533a201d5114a12d"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-029/",
+   "whitelist": [
+    "LY-029/**"
+   ],
+   "locks": [
+    "LOCK-MARKET-V21",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    347,
+    354
+   ],
+   "text": "### LY-029｜八铺四棚候选的互斥与回退包\n\n- **类型 / 依赖**：复用装配；G、LY-021、LY-022、LY-023、LY-024、LY-025、LY-026、LY-027、LY-028。\n- **现有输入**：店前线 v2.1、功能市肆旧组与现柜架/货物占位；必须明确选择哪一组。\n- **具体产物**：新街市与现五店三摊、其他布局的节点映射、单套启用/还原包。\n- **边界与排重**：不将三套候选叠加或增加历史铺数；同样保留旧井、道路和边界，版本不匹配必须拒绝执行。\n- **本项验收**：分别从严格基线安装与撤回，旧节点/材质/矩阵恢复；不允许两个市肆变体同时出现，井和道路不得误卸。\n- **唯一写入区**：`workpacks/LY-029/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-030",
+   "title": "完整市肆区域局部交付",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "市肆与取水",
+   "sectionIntro": "八铺四棚v2.1的柜台已修，当前默认五店三摊不自动替换。井体/开孔方案已有，任务是兼容与整体接入。",
+   "depsRaw": "G、LY-029",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-029"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-029"
+   ],
+   "level": 10,
+   "dependents": [
+    "LY-083",
+    "LY-092"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-029",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 52,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-030/prep/prep-status.json",
+     "sha256": "393d2fe031e25f609bf00d66c39360b0c088fe1562a32998331a96ee402164ae"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-030/",
+   "whitelist": [
+    "LY-030/**"
+   ],
+   "locks": [
+    "LOCK-MARKET-V21",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-10"
+   ],
+   "lines": [
+    356,
+    363
+   ],
+   "text": "### LY-030｜完整市肆区域局部交付\n\n- **类型 / 依赖**：复用装配；G、LY-029。\n- **现有输入**：店前线 v2.1、功能市肆旧组与现柜架/货物占位；必须明确选择哪一组。\n- **具体产物**：带完整近景、地面、井和操作区的区域包及同机位前后图。\n- **边界与排重**：装配与默认城市启用分开；保留反面视角和实际身体路线，不能以美图替代全场测试。\n- **本项验收**：区域完整近景可独立打开；实际输出包含所有保留/新增部分，没有依赖工作区隐式对象；有限路线与负例齐全。\n- **唯一写入区**：`workpacks/LY-030/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-031",
+   "title": "太仓A门扇枢接子件",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "东北仓储与武库",
+   "sectionIntro": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-033"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 16,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-031/prep/prep-status.json",
+     "sha256": "22ff3298969fa02c60a4bb10fbc04685094ee5fa1e57881c18a392d113993daf"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-031/",
+   "whitelist": [
+    "LY-031/**"
+   ],
+   "locks": [
+    "LOCK-GRANARY-NEAR",
+    "LOCK-NE-196C",
+    "LOCK-WUKU-B22",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-07"
+   ],
+   "lines": [
+    369,
+    376
+   ],
+   "text": "### LY-031｜太仓A门扇枢接子件\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：太仓库 v2、已入城整组及 A/B/收货分件；operations 和入口体积诊断。\n- **具体产物**：A仓敞口对应的门框/门叶/轴孔/止挡和三档开闭状态。\n- **边界与排重**：A原仓、4阶、地板和收货区不改；具体门制先查同代类比，允许C方案但不能冒称洛阳太仓实测。\n- **本项验收**：A仓开闭件与实际开口、门楣、4阶及地板相容；门叶扫掠范围明确；旧仓体三角及UV未被顺便简化。\n- **唯一写入区**：`workpacks/LY-031/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-032",
+   "title": "太仓B门扇枢接子件",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "东北仓储与武库",
+   "sectionIntro": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-033"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 37,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-032/prep/prep-status.json",
+     "sha256": "40690b6be9e7bcdd57249fca8d2d5a921dd2df5fc5cb91dec1eb61eb541f8e45"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-032/",
+   "whitelist": [
+    "LY-032/**"
+   ],
+   "locks": [
+    "LOCK-GRANARY-NEAR",
+    "LOCK-NE-196C",
+    "LOCK-WUKU-B22",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-07"
+   ],
+   "lines": [
+    378,
+    385
+   ],
+   "text": "### LY-032｜太仓B门扇枢接子件\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：太仓库 v2、已入城整组及 A/B/收货分件；operations 和入口体积诊断。\n- **具体产物**：B仓实际开口对应的独立启闭件与三档。\n- **边界与排重**：不能把A直接缩放套B；保留6阶与1.10米地板关系，开启件不占现0.9米单列候选路径。\n- **本项验收**：B仓单独实测门口/6阶/地板；沿用A件时必须以实际对比证明兼容；开门与关闭负例分别复核。\n- **唯一写入区**：`workpacks/LY-032/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-033",
+   "title": "两仓启闭与搬运联合包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "东北仓储与武库",
+   "sectionIntro": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。",
+   "depsRaw": "G、LY-031、LY-032",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-031",
+    "LY-032"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-031",
+    "LY-032"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-035",
+    "LY-040"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-031、LY-032",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 27,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-033/prep/prep-status.json",
+     "sha256": "6558cfde4480775588867ff693e6f08f2b6573965cdfe6119c57c8ed94896275"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-033/",
+   "whitelist": [
+    "LY-033/**"
+   ],
+   "locks": [
+    "LOCK-GRANARY-NEAR",
+    "LOCK-NE-196C",
+    "LOCK-WUKU-B22",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    387,
+    394
+   ],
+   "text": "### LY-033｜两仓启闭与搬运联合包\n\n- **类型 / 依赖**：复用装配；G、LY-031、LY-032。\n- **现有输入**：太仓库 v2、已入城整组及 A/B/收货分件；operations 和入口体积诊断。\n- **具体产物**：门件接回两仓的完整模型、分层通行体积和闭门负例。\n- **边界与排重**：保留1.5米窄阶对1.8米压力样本的失败边界；不因增加门扇就宣称负重、双人交错或车辆可行。\n- **本项验收**：两个完整仓含新件导回检查；保留原窄阶压力失败，不以切掉门叶/柱子取得通过；安装与恢复前后同机位。\n- **唯一写入区**：`workpacks/LY-033/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-034",
+   "title": "收货核验前场接口重绑定",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "东北仓储与武库",
+   "sectionIntro": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-035",
+    "LY-039",
+    "LY-040"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 18,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-034/prep/prep-status.json",
+     "sha256": "b832b9d55b47b0ce06b9d69261b775114c12acaf7f0f1549a2caf8e3871be123"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-034/",
+   "whitelist": [
+    "LY-034/**"
+   ],
+   "locks": [
+    "LOCK-GRANARY-NEAR",
+    "LOCK-NE-196C",
+    "LOCK-WUKU-B22",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    396,
+    403
+   ],
+   "text": "### LY-034｜收货核验前场接口重绑定\n\n- **类型 / 依赖**：复用装配；G。\n- **现有输入**：太仓库 v2、已入城整组及 A/B/收货分件；operations 和入口体积诊断。\n- **具体产物**：现收货区与两仓地坪/阶前的实际端口、装配与完整路线包。\n- **边界与排重**：收货棚/台案已有，不再重造；只补测得断点，不顺手改变仓址或把功能图像当作官仓平面。\n- **本项验收**：前场—A/B阶前端口不凭名称连接；原棚/台案/地面与邻路指纹不变，实际地面支持和高差记录完整。\n- **唯一写入区**：`workpacks/LY-034/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-035",
+   "title": "仓前有限搬运与暂存变体",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "东北仓储与武库",
+   "sectionIntro": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。",
+   "depsRaw": "G、LY-033、LY-034",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-033",
+    "LY-034"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-033",
+    "LY-034"
+   ],
+   "level": 8,
+   "dependents": [
+    "LY-040"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-033、LY-034",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 14,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-035/prep/prep-status.json",
+     "sha256": "a3e4fbd25b682a2926657b2cd634b8b9346fe4c24e25f1df05a17165319afdb2"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-035/",
+   "whitelist": [
+    "LY-035/**"
+   ],
+   "locks": [
+    "LOCK-GRANARY-NEAR",
+    "LOCK-NE-196C",
+    "LOCK-WUKU-B22",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    405,
+    412
+   ],
+   "text": "### LY-035｜仓前有限搬运与暂存变体\n\n- **类型 / 依赖**：补件/修订；G、LY-033、LY-034。\n- **现有输入**：太仓库 v2、已入城整组及 A/B/收货分件；operations 和入口体积诊断。\n- **具体产物**：在不改原仓体的条件下，提供一套可关闭的暂存/转身空间差异件。\n- **边界与排重**：只是C作业变体，不为通过压力样本盲目拓宽全场；货物包络与通路分开，不能推生产率或历史制度。\n- **本项验收**：选定体积的转身/暂存与搬运路线互斥规则清楚；高负荷/大包络失败保留，不能把设计空间当现实效率证明。\n- **唯一写入区**：`workpacks/LY-035/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-036",
+   "title": "武库B外围支持地坪包",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "东北仓储与武库",
+   "sectionIntro": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-037",
+    "LY-038",
+    "LY-039",
+    "LY-040"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 19,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-036/prep/prep-status.json",
+     "sha256": "f84d8442d469630345a9f11260d967a3d4d25c6bd4cc91372e6b39f86dbda4b7"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-036/",
+   "whitelist": [
+    "LY-036/**"
+   ],
+   "locks": [
+    "LOCK-GRANARY-NEAR",
+    "LOCK-MARKET-V21",
+    "LOCK-NE-196C",
+    "LOCK-WUKU-B22",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    414,
+    421
+   ],
+   "text": "### LY-036｜武库B外围支持地坪包\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：武库 B 门框枢轴修订 v2.2、A 原v2与旧试放支持；不得回退失败 v2.1。\n- **具体产物**：复用v2.2修订B及旧支撑，补当前基线缺失的外到达地面和接地边。\n- **边界与排重**：B门轴已修，不重做；不以展示底板掩盖悬空，不把B结论套到A，宫区定位仍受003约束。\n- **本项验收**：修订B的SHA与公开门框版本一致；外到达缺支持点被真实地面覆盖；旧门体、工作台基和城市定位证据不被改写。\n- **唯一写入区**：`workpacks/LY-036/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-037",
+   "title": "武库B台前侧棚接续包",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "东北仓储与武库",
+   "sectionIntro": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。",
+   "depsRaw": "G、LY-036",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-036"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-036"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-039",
+    "LY-040"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-036",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 40,
+    "statusFile": null,
+    "issues": []
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-037/",
+   "whitelist": [
+    "LY-037/**"
+   ],
+   "locks": [
+    "LOCK-GRANARY-NEAR",
+    "LOCK-MARKET-V21",
+    "LOCK-NE-196C",
+    "LOCK-WUKU-B22",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    423,
+    430
+   ],
+   "text": "### LY-037｜武库B台前侧棚接续包\n\n- **类型 / 依赖**：补件/修订；G、LY-036。\n- **现有输入**：武库 B 门框枢轴修订 v2.2、A 原v2与旧试放支持；不得回退失败 v2.1。\n- **具体产物**：台前、侧棚、点验台之间必要高差过渡与固定150度门态的兼容接口。\n- **边界与排重**：只做已声明操作路线；其他角度会占路必须保留，不直接导出无约束动画或运行时安全联锁结论。\n- **本项验收**：固定150度路线与其他角度限制一起交付；台前到侧棚整段体积和支持检查通过，不把局部门轴合格当全角度畅通。\n- **唯一写入区**：`workpacks/LY-037/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-038",
+   "title": "武库A备选安装契约",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "东北仓储与武库",
+   "sectionIntro": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。",
+   "depsRaw": "G、LY-036",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-036"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-036"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-040"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-036",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 18,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-038/prep/prep-status.json",
+     "sha256": "9abf04938cc16bd7d4001f82c8de2ca4aecbc7f766d0a08b0f8ca3c1a40b5bc1"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-038/",
+   "whitelist": [
+    "LY-038/**"
+   ],
+   "locks": [
+    "LOCK-GRANARY-NEAR",
+    "LOCK-MARKET-V21",
+    "LOCK-NE-196C",
+    "LOCK-PROTOTYPES",
+    "LOCK-WUKU-B22",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    432,
+    439
+   ],
+   "text": "### LY-038｜武库A备选安装契约\n\n- **类型 / 依赖**：复用装配；G、LY-036。\n- **现有输入**：武库 B 门框枢轴修订 v2.2、A 原v2与旧试放支持；不得回退失败 v2.1。\n- **具体产物**：保留A原型，对当前支撑的可替换性、偏移和台阶端口做独立适配。\n- **边界与排重**：已有北移1米的旧有限试验不可当新全域结论；A/B只选一套，若不选A则交只读兼容报告，不多造一座库。\n- **本项验收**：A的台阶底域/支承和B分别测；所选偏移仅限已验范围，错误偏移能失败；A/B安装后不会重叠计数。\n- **唯一写入区**：`workpacks/LY-038/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-039",
+   "title": "东北既有196米C路重绑定",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "东北仓储与武库",
+   "sectionIntro": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。",
+   "depsRaw": "G、LY-003、LY-034、LY-036、LY-037",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-003",
+    "LY-034",
+    "LY-036",
+    "LY-037"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-003",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-034",
+    "LY-036",
+    "LY-037"
+   ],
+   "level": 8,
+   "dependents": [
+    "LY-040"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-034、LY-036、LY-037",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 27,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-039/prep/prep-status.json",
+     "sha256": "a64c379f60d1c09a29cfcbf2aae3417fc653beb630c41468a1dc9b36dcf51a6f"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-039/",
+   "whitelist": [
+    "LY-039/**"
+   ],
+   "locks": [
+    "LOCK-GRANARY-NEAR",
+    "LOCK-NE-196C",
+    "LOCK-WUKU-B22",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02",
+    "PZ-11"
+   ],
+   "lines": [
+    441,
+    448
+   ],
+   "text": "### LY-039｜东北既有196米C路重绑定\n\n- **类型 / 依赖**：复用装配；G、LY-003、LY-034、LY-036、LY-037。\n- **现有输入**：现太仓地坪、所选武库支持片、既有约196示意米 C_NE_APPROACH_LOCAL 和东北长路预检。\n- **具体产物**：已有C_NE_APPROACH_LOCAL的当前端点、缓坡、接面及可回退安装包。\n- **边界与排重**：路径早已做，不能再造；需区域准入才落城，不顺延成1.7公里主干路，不称历史物流/通行权已证。\n- **本项验收**：实际GLB两端与当前地坪标高吻合，原端盖接触保留说明；关闭道路负例能检出断开；新宫墙准入条件有明确状态。\n- **唯一写入区**：`workpacks/LY-039/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-040",
+   "title": "仓储武库功能区局部装配",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "东北仓储与武库",
+   "sectionIntro": "太仓已原位入城；武库B采用已修v2.2。约196米C短路已有，不可再造，更不能顺手延成东北主干路。",
+   "depsRaw": "G、LY-033、LY-034、LY-035、LY-036、LY-037、LY-038、LY-039",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-033",
+    "LY-034",
+    "LY-035",
+    "LY-036",
+    "LY-037",
+    "LY-038",
+    "LY-039"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-033",
+    "LY-034",
+    "LY-035",
+    "LY-036",
+    "LY-037",
+    "LY-038",
+    "LY-039"
+   ],
+   "level": 9,
+   "dependents": [
+    "LY-084",
+    "LY-093"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-033、LY-034、LY-035、LY-036、LY-037、LY-038、LY-039",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 28,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-040/prep/prep-status.json",
+     "sha256": "628f8a817527811fd16b9f60840cbaaf0dbd82f43681ce35cd9fb0401128c55a"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-040/",
+   "whitelist": [
+    "LY-040/**"
+   ],
+   "locks": [
+    "LOCK-GRANARY-NEAR",
+    "LOCK-NE-196C",
+    "LOCK-WUKU-B22",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-10"
+   ],
+   "lines": [
+    450,
+    457
+   ],
+   "text": "### LY-040｜仓储武库功能区局部装配\n\n- **类型 / 依赖**：复用装配；G、LY-033、LY-034、LY-035、LY-036、LY-037、LY-038、LY-039。\n- **现有输入**：现太仓地坪、所选武库支持片、既有约196示意米 C_NE_APPROACH_LOCAL 和东北长路预检。\n- **具体产物**：两仓、收货区、所选武库及短路的完整近景区域包。\n- **边界与排重**：保留原仓原位及单武库计数；校验所有端点，不把局部互通称全城已通，未配准的宫墙冲突不得跳过。\n- **本项验收**：组合只使用被冻结的一套武库，原仓数和位置保持；全局到达未完成时明确边界，不以区域图掩盖外路断点。\n- **唯一写入区**：`workpacks/LY-040/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-041",
+   "title": "示范住宅地基与地坪适配",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "现有住宅与院内生活",
+   "sectionIntro": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-046",
+    "LY-047",
+    "LY-049",
+    "LY-050"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 19,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-041/prep/prep-status.json",
+     "sha256": "598064f9e3c6d6af3346a72f78f401cec8dfc0a7eb519e4de246af372d154700"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-041/",
+   "whitelist": [
+    "LY-041/**"
+   ],
+   "locks": [
+    "LOCK-13COURT",
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-01",
+    "PZ-05",
+    "PZ-13"
+   ],
+   "lines": [
+    463,
+    470
+   ],
+   "text": "### LY-041｜示范住宅地基与地坪适配\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。\n- **具体产物**：从现44院中选定一院，按实际底部做必要地脚/地坪差异件。\n- **边界与排重**：不碰13院片区，不移动原院矩阵、不增院数；已有支持就复用，禁止用大底板覆盖真实孔洞和道路。\n- **本项验收**：所选院ID/源矩阵/底部三角明确；新增地脚只覆盖测得缺口，旧孔洞、邻院和道路不被大底板封盖。\n- **唯一写入区**：`workpacks/LY-041/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-042",
+   "title": "住宅内门修订接回原院",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "现有住宅与院内生活",
+   "sectionIntro": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。",
+   "depsRaw": "G、LY-041",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-041"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-048",
+    "LY-049",
+    "LY-050"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-041",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 85,
+    "statusFile": null,
+    "issues": []
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-042/",
+   "whitelist": [
+    "LY-042/**"
+   ],
+   "locks": [
+    "LOCK-13COURT",
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-01",
+    "PZ-05"
+   ],
+   "lines": [
+    472,
+    479
+   ],
+   "text": "### LY-042｜住宅内门修订接回原院\n\n- **类型 / 依赖**：复用装配；G、LY-041。\n- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。\n- **具体产物**：复用已做012内门v2等选定精确组件，按锚点接回对应院而非再造门。\n- **边界与排重**：新旧门叶互斥，保留框柱及其余木作；不能把某院修订批量套全部44院。\n- **本项验收**：新旧门准确互斥，原框柱/屋墙不变；指定开闭状态、孔轴关系与门槛支持实测，不误应用至非对应院型。\n- **唯一写入区**：`workpacks/LY-042/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-043",
+   "title": "住屋与院墙端接组件",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "现有住宅与院内生活",
+   "sectionIntro": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。",
+   "depsRaw": "G、LY-041",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-041"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-047",
+    "LY-048",
+    "LY-050"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-041",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 19,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-043/prep/prep-status.json",
+     "sha256": "bc8cc06b98cf8a6b809cfad3c06de322c415ab4882247a5891cce96e917493e2"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-043/",
+   "whitelist": [
+    "LY-043/**"
+   ],
+   "locks": [
+    "LOCK-13COURT",
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-01",
+    "PZ-05"
+   ],
+   "lines": [
+    481,
+    488
+   ],
+   "text": "### LY-043｜住屋与院墙端接组件\n\n- **类型 / 依赖**：补件/修订；G、LY-041。\n- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。\n- **具体产物**：在既有墙房样例/夯土墙族上，补所选院真实端接或角部缺口。\n- **边界与排重**：不重造已发布整套墙房样例；分清合法闭合接面与实体侵入，不用删面掩盖问题。\n- **本项验收**：墙房接面有逐区域分类和实体包含检查；没有靠删闭合面抹去问题；原构件范围和适用变体明确。\n- **唯一写入区**：`workpacks/LY-043/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-044",
+   "title": "备食与灶体院内接地包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "现有住宅与院内生活",
+   "sectionIntro": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。",
+   "depsRaw": "G、LY-041",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-041"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-048",
+    "LY-050"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-041",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 14,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-044/prep/prep-status.json",
+     "sha256": "511245712ad2a71bb9cf9e1704fbea38b47211e6b24abede6084e7fd3adcd191"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-044/",
+   "whitelist": [
+    "LY-044/**"
+   ],
+   "locks": [
+    "LOCK-13COURT",
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-01",
+    "PZ-05"
+   ],
+   "lines": [
+    490,
+    497
+   ],
+   "text": "### LY-044｜备食与灶体院内接地包\n\n- **类型 / 依赖**：复用装配；G、LY-041。\n- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。\n- **具体产物**：复用现灶A/B、备食关系与实际院坪，提供有限操作/转身和安装包。\n- **边界与排重**：W2放置关系不是新灶型；不宣称燃烧、排烟或防火验证，不给每院复制同一厨灶组合。\n- **本项验收**：灶、备食台和人行/转身域分别检测；主体、台案与地坪可整体回退；不输出燃烧或防火合格结论。\n- **唯一写入区**：`workpacks/LY-044/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-045",
+   "title": "圈厕与真实地面开口包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "现有住宅与院内生活",
+   "sectionIntro": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。",
+   "depsRaw": "G、LY-041",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-041"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-048",
+    "LY-050",
+    "LY-090"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-041",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 16,
+    "statusFile": null,
+    "issues": []
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-045/",
+   "whitelist": [
+    "LY-045/**"
+   ],
+   "locks": [
+    "LOCK-13COURT",
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-01",
+    "PZ-05"
+   ],
+   "lines": [
+    499,
+    506
+   ],
+   "text": "### LY-045｜圈厕与真实地面开口包\n\n- **类型 / 依赖**：复用装配；G、LY-041。\n- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。\n- **具体产物**：复用圈厕组，将需开口的实际局部地面、阶梯和主体作为原子装配。\n- **边界与排重**：不新造厕所原型或城市排污系统；未知坑深/用途保持未定，孔下不得被旧地面偷偷封回。\n- **本项验收**：入口、台阶、厕孔及下方地面共同检查；有孔/无孔及旧地面残留负例；未定地下深度不被当作已完成工程。\n- **唯一写入区**：`workpacks/LY-045/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-046",
+   "title": "住宅门前与檐下排水试片",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "现有住宅与院内生活",
+   "sectionIntro": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。",
+   "depsRaw": "G、LY-002、LY-041",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-002",
+    "LY-041"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-050",
+    "LY-087"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-041",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 21,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-046/prep/prep-status.json",
+     "sha256": "2a87698ef35a09b979738a2b28111dabe25eac934928e39e50354b2dea25f27e"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-046/",
+   "whitelist": [
+    "LY-046/**"
+   ],
+   "locks": [
+    "LOCK-13COURT",
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-01",
+    "PZ-05"
+   ],
+   "lines": [
+    508,
+    515
+   ],
+   "text": "### LY-046｜住宅门前与檐下排水试片\n\n- **类型 / 依赖**：补件/修订；G、LY-002、LY-041。\n- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。\n- **具体产物**：只做所选院一小段滴水/坡面/浅沟的C几何试验及明确出口端口。\n- **边界与排重**：先核同代类型，不接虚构河渠、不宣称水密/卫生/真实排水能力；无可支持出口则停在独立试片。\n- **本项验收**：坡向/端口能从实际顶点重算，局部水路不越未准入边界；没有出口则不宣称排水接通，不能用水流动画替验。\n- **唯一写入区**：`workpacks/LY-046/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-047",
+   "title": "住宅储藏与棚下安装变体",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "现有住宅与院内生活",
+   "sectionIntro": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。",
+   "depsRaw": "G、LY-041、LY-043",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-041",
+    "LY-043"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041",
+    "LY-043"
+   ],
+   "level": 8,
+   "dependents": [
+    "LY-048",
+    "LY-050"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-041、LY-043",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 11,
+    "statusFile": null,
+    "issues": []
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-047/",
+   "whitelist": [
+    "LY-047/**"
+   ],
+   "locks": [
+    "LOCK-13COURT",
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-01",
+    "PZ-05"
+   ],
+   "lines": [
+    517,
+    524
+   ],
+   "text": "### LY-047｜住宅储藏与棚下安装变体\n\n- **类型 / 依赖**：复用装配；G、LY-041、LY-043。\n- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。\n- **具体产物**：选用已登记储藏作业院/棚模块，给一套符合当前院空间的安装与操作净空包。\n- **边界与排重**：不重造棚或把所有生活设施硬塞一院；只能采用010选定的用途组合，未选就保留候选不接城。\n- **本项验收**：所选储藏/棚模块的支持和取放空间可验证；未选候选完全不加载，不造成院内功能冲突或新增建筑数量假象。\n- **唯一写入区**：`workpacks/LY-047/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-048",
+   "title": "住宅服务口与边界闭合",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "现有住宅与院内生活",
+   "sectionIntro": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。",
+   "depsRaw": "G、LY-042、LY-043、LY-044、LY-045、LY-047",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-047"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-047"
+   ],
+   "level": 9,
+   "dependents": [
+    "LY-049",
+    "LY-050"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-042、LY-043、LY-044、LY-045、LY-047",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 19,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-048/prep/prep-status.json",
+     "sha256": "58923a390476e202e335e800f934044fcdaa672afa8ef09a158bdd1a96b09815"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-048/",
+   "whitelist": [
+    "LY-048/**"
+   ],
+   "locks": [
+    "LOCK-13COURT",
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-01",
+    "PZ-05"
+   ],
+   "lines": [
+    526,
+    533
+   ],
+   "text": "### LY-048｜住宅服务口与边界闭合\n\n- **类型 / 依赖**：补件/修订；G、LY-042、LY-043、LY-044、LY-045、LY-047。\n- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。\n- **具体产物**：所选院必要的侧口/门槛/低墙收口，明确人货进入和关闭边界。\n- **边界与排重**：源服务单元已有的不重复；不擅造历史里坊制度或门禁规则，不侵入邻院。\n- **本项验收**：围界与声明的主/侧口规则一致；关闭态不会从未声明缺口穿过；工作路径和地面边界完整。\n- **唯一写入区**：`workpacks/LY-048/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-049",
+   "title": "院门至巷道边缘端口包",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "现有住宅与院内生活",
+   "sectionIntro": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。",
+   "depsRaw": "G、LY-041、LY-042、LY-048",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-041",
+    "LY-042",
+    "LY-048"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041",
+    "LY-042",
+    "LY-048"
+   ],
+   "level": 10,
+   "dependents": [
+    "LY-050",
+    "LY-082"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-041、LY-042、LY-048",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 11,
+    "statusFile": null,
+    "issues": []
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-049/",
+   "whitelist": [
+    "LY-049/**"
+   ],
+   "locks": [
+    "LOCK-13COURT",
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-01",
+    "PZ-05"
+   ],
+   "lines": [
+    535,
+    542
+   ],
+   "text": "### LY-049｜院门至巷道边缘端口包\n\n- **类型 / 依赖**：补件/修订；G、LY-041、LY-042、LY-048。\n- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。\n- **具体产物**：从示范院门到院界端口的短过渡地面/台阶；交给外部巷道任务接续。\n- **边界与排重**：任务止于冻结院界，不改巷道主网；保留当前院落与道路数量，C尺寸不得说成法规。\n- **本项验收**：从院门到冻结院界的路线、阶差和足下支持完整；边界输出供082接续，双方不各铺一层重叠地面。\n- **唯一写入区**：`workpacks/LY-049/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-050",
+   "title": "示范院完整生活组装",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "现有住宅与院内生活",
+   "sectionIntro": "只从当前44院中选示范院，保持原计数与位置；不触另行处理的13院片区，不把所有设施强塞一院。",
+   "depsRaw": "G、LY-041、LY-042、LY-043、LY-044、LY-045、LY-046、LY-047、LY-048、LY-049",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-041",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-046",
+    "LY-047",
+    "LY-048",
+    "LY-049"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-041",
+    "LY-042",
+    "LY-043",
+    "LY-044",
+    "LY-045",
+    "LY-046",
+    "LY-047",
+    "LY-048",
+    "LY-049"
+   ],
+   "level": 11,
+   "dependents": [
+    "LY-092"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-041、LY-042、LY-043、LY-044、LY-045、LY-046、LY-047、LY-048、LY-049",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 12,
+    "statusFile": null,
+    "issues": []
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-050/",
+   "whitelist": [
+    "LY-050/**"
+   ],
+   "locks": [
+    "LOCK-13COURT",
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-01",
+    "PZ-05",
+    "PZ-10",
+    "PZ-13"
+   ],
+   "lines": [
+    544,
+    551
+   ],
+   "text": "### LY-050｜示范院完整生活组装\n\n- **类型 / 依赖**：复用装配；G、LY-041、LY-042、LY-043、LY-044、LY-045、LY-046、LY-047、LY-048、LY-049。\n- **现有输入**：当前44院原型/矩阵；012内门v2、墙房样例、灶/备食、生活分区/圈厕等已登记组件。\n- **具体产物**：一处完整近景院落及可关闭设施组，提供来源/矩阵/互斥清单。\n- **边界与排重**：不增加城市院数，不升级成全城住宅范式；一次只加载所选用途，逐段验证出入与足下支持。\n- **本项验收**：可复现单院完整包，无隐含源依赖；旧院数、矩阵与旁邻保持；恢复后指纹一致，所有采用设施都有使用限制。\n- **唯一写入区**：`workpacks/LY-050/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-051",
+   "title": "厩棚系留与分栏配件",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "作坊、厩棚与生产服务",
+   "sectionIntro": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。",
+   "depsRaw": "G、LY-002",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-002"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-052",
+    "LY-060"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 10,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-051/prep/prep-status.json",
+     "sha256": "7fc7d0a2df7e6e542a05a8fbe0081b6e9a4f79f1cb0c519de5a7ba824f6b277b"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-051/",
+   "whitelist": [
+    "LY-051/**"
+   ],
+   "locks": [
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    557,
+    564
+   ],
+   "text": "### LY-051｜厩棚系留与分栏配件\n\n- **类型 / 依赖**：补件/修订；G、LY-002。\n- **现有输入**：现厩棚A/B与饲槽、既有可用性审查；系留/分隔/排水是待核缺件。\n- **具体产物**：基于已有厩棚/饲槽的一套可拆系留、分隔C组件及端口。\n- **边界与排重**：先核馆藏类比可支持到哪层，不改成现代马厩；不制造动物或假定每院配备，不认证动物适宜性。\n- **本项验收**：系留/分隔件和现槽、柱/梁、入口不冲突；接地/固定方式可见，来源与C选择分开；动物尺寸或安全未验即明示。\n- **唯一写入区**：`workpacks/LY-051/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-052",
+   "title": "厩棚操作地面与槽前接口",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "作坊、厩棚与生产服务",
+   "sectionIntro": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。",
+   "depsRaw": "G、LY-051",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-051"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-051"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-060",
+    "LY-087"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-051",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 7,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-052/prep/prep-status.json",
+     "sha256": "dce3535de46eea7056d8f363e24a24334fe714a68a4649a39fcf125087201c84"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-052/",
+   "whitelist": [
+    "LY-052/**"
+   ],
+   "locks": [
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    566,
+    573
+   ],
+   "text": "### LY-052｜厩棚操作地面与槽前接口\n\n- **类型 / 依赖**：补件/修订；G、LY-051。\n- **现有输入**：现厩棚A/B与饲槽、既有可用性审查；系留/分隔/排水是待核缺件。\n- **具体产物**：槽前、入棚与外接处的地坪差异件及有限清扫/排水几何端口。\n- **边界与排重**：不重复棚主体；仅声明局部空间和支持，不把未定出口接成城市排污网，不给真实养殖安全承诺。\n- **本项验收**：槽前/入口/清扫路线的实际支持与坡端明确；污水终端不能无端消失或假接古渠；改动不侵占相邻任务地块。\n- **唯一写入区**：`workpacks/LY-052/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-053",
+   "title": "砖瓦窑坑位与基底包",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "作坊、厩棚与生产服务",
+   "sectionIntro": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-054",
+    "LY-059",
+    "LY-060",
+    "LY-090"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 18,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-053/prep/prep-status.json",
+     "sha256": "c030eec82f36a4fc4f2004fc2a8c1b103bd799fe9a59d20eda6c459038876cfb"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-053/",
+   "whitelist": [
+    "LY-053/**"
+   ],
+   "locks": [
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    575,
+    582
+   ],
+   "text": "### LY-053｜砖瓦窑坑位与基底包\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：现砖瓦窑A/B与独立展示地坪；先锁使用哪一套。\n- **具体产物**：现A/B窑体对应的互斥实验坑、基底支持和原子切地形契约。\n- **边界与排重**：不重造窑体，移除展示地坪；操作口/排烟口不得被地形埋住，不擅定真实窑场地址。\n- **本项验收**：坑体与窑体共同加载，坑壁/基底不封操作或排烟口；尺寸与源窑对应，不使用展示底板虚托空洞。\n- **唯一写入区**：`workpacks/LY-053/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-054",
+   "title": "窑前作业与暂存地面",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "作坊、厩棚与生产服务",
+   "sectionIntro": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。",
+   "depsRaw": "G、LY-053",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-053"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-053"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-059",
+    "LY-060",
+    "LY-087"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-053",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 28,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-054/prep/prep-status.json",
+     "sha256": "3d60315981f451192bc66fcb01a41653aca43c3939467184d18c00857b9eb4b3"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-054/",
+   "whitelist": [
+    "LY-054/**"
+   ],
+   "locks": [
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    584,
+    591
+   ],
+   "text": "### LY-054｜窑前作业与暂存地面\n\n- **类型 / 依赖**：补件/修订；G、LY-053。\n- **现有输入**：现砖瓦窑A/B与独立展示地坪；先锁使用哪一套。\n- **具体产物**：与所选窑体匹配的前操作地面、接近口和有限暂存占位。\n- **边界与排重**：不讲烧成配方或认证热工/消防；不将现代生产线套汉代，不占居民/宫区未准入地块。\n- **本项验收**：操作地坪到窑口有真实支持，暂存占位与人行域分别复核；不以空间净空替代热工和生产安全验收。\n- **唯一写入区**：`workpacks/LY-054/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-055",
+   "title": "人力石磨安装与操作台脚",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "作坊、厩棚与生产服务",
+   "sectionIntro": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-058",
+    "LY-060"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 27,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-055/prep/prep-status.json",
+     "sha256": "f5939cc82375292a75539bf00c6e965548e723ea3e754641dd1fe971ffb01811"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-055/",
+   "whitelist": [
+    "LY-055/**"
+   ],
+   "locks": [
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    593,
+    600
+   ],
+   "text": "### LY-055｜人力石磨安装与操作台脚\n\n- **类型 / 依赖**：复用装配；G。\n- **现有输入**：现人力石磨A/B、足碓与踏台；复用现有轴孔/机构。\n- **具体产物**：复用现磨A/B，配实际支持面、操作净空及一套有限安装场景。\n- **边界与排重**：不是再造磨，不推产量/粮种；维持原机构范围，不用摆件位置冒充真实人体操作认证。\n- **本项验收**：磨、台脚、操作面和地坪的安装回读一致；占位/人体包络不切入主体，超限情形保留，不凭动画声称可操作。\n- **唯一写入区**：`workpacks/LY-055/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-056",
+   "title": "足碓踏台连续支承包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "作坊、厩棚与生产服务",
+   "sectionIntro": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-058",
+    "LY-060"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 28,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-056/prep/prep-status.json",
+     "sha256": "8536fb5f2980dda459ffcb0cd8a1935dff3f0b2da84dc68e3cf0ec54c6e84cfb"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-056/",
+   "whitelist": [
+    "LY-056/**"
+   ],
+   "locks": [
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    602,
+    609
+   ],
+   "text": "### LY-056｜足碓踏台连续支承包\n\n- **类型 / 依赖**：复用装配；G。\n- **现有输入**：现人力石磨A/B、足碓与踏台；复用现有轴孔/机构。\n- **具体产物**：现足碓与踏台在选定作业地坪上的落脚、转身、杵臼/扶栏兼容安装。\n- **边界与排重**：不重复足碓模块，保留已有枢轴孔；有限姿态不是连续动力学或生产安全验证。\n- **本项验收**：实际踏面、扶栏、杵臼在安装坐标下重新检查；原枢轴孔没有被新地坪或附件堵死，有限动作与身体空间明确。\n- **唯一写入区**：`workpacks/LY-056/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-057",
+   "title": "原谷物院屋面缺陷修订",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "作坊、厩棚与生产服务",
+   "sectionIntro": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-058",
+    "LY-060"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 31,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-057/prep/prep-status.json",
+     "sha256": "085bb37fcd4a96c5a7b0a2dba9c566a54a39f52b001740fc4506b366a996f1a0"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-057/",
+   "whitelist": [
+    "LY-057/**"
+   ],
+   "locks": [
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-07"
+   ],
+   "lines": [
+    611,
+    618
+   ],
+   "text": "### LY-057｜原谷物院屋面缺陷修订\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：原谷物加工院和其缺陷记录；已发布双屋作业院为不同产物，必须分清。\n- **具体产物**：对原谷物加工院工作棚的瓦落座/行缝与承件问题作范围明确修订，并补真实三档。\n- **边界与排重**：先与最新台账排重；不把已发布双屋作业院当同版本，不重造双足碓，不以低LOD掩盖近景问题。\n- **本项验收**：瓦与承件真实接点、行缝遮盖和旧缺陷对应；新三档不破坏近景源码；新旧SHA与已发布其他作业院明确区分。\n- **唯一写入区**：`workpacks/LY-057/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-058",
+   "title": "谷物院扬谷暂存通路包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "作坊、厩棚与生产服务",
+   "sectionIntro": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。",
+   "depsRaw": "G、LY-055、LY-056、LY-057",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-055",
+    "LY-056",
+    "LY-057"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-055",
+    "LY-056",
+    "LY-057"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-059",
+    "LY-060"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-055、LY-056、LY-057",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 33,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-058/prep/prep-status.json",
+     "sha256": "475e86d010f4e09fe0b0c5a070e9b9b13ce1f59fe9e7311e6173e68820b7297c"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-058/",
+   "whitelist": [
+    "LY-058/**"
+   ],
+   "locks": [
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    620,
+    627
+   ],
+   "text": "### LY-058｜谷物院扬谷暂存通路包\n\n- **类型 / 依赖**：复用装配；G、LY-055、LY-056、LY-057。\n- **现有输入**：原谷物加工院和其缺陷记录；已发布双屋作业院为不同产物，必须分清。\n- **具体产物**：复用原院与作业区，给经过实际近景检查的入院—舂作—扬谷—暂存关系。\n- **边界与排重**：留出作业空间，不擅造争议扇车/铡刀；旧地坪有用就保留，不推洛阳官仓一定附设此院。\n- **本项验收**：来料、舂作、扬谷留空和成品暂存之间的完整限定路线可重现；不添加未经辨识的机械，不冒称官营制度。\n- **唯一写入区**：`workpacks/LY-058/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-059",
+   "title": "作坊围界与服务口补件",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "作坊、厩棚与生产服务",
+   "sectionIntro": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。",
+   "depsRaw": "G、LY-053、LY-054、LY-058",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-053",
+    "LY-054",
+    "LY-058"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-053",
+    "LY-054",
+    "LY-058"
+   ],
+   "level": 8,
+   "dependents": [
+    "LY-060"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-053、LY-054、LY-058",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 22,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-059/prep/prep-status.json",
+     "sha256": "9ccadee2c702997961ee9103c87544f48031c861d7e2b6bb9efcfb1d57b38535"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-059/",
+   "whitelist": [
+    "LY-059/**"
+   ],
+   "locks": [
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    629,
+    636
+   ],
+   "text": "### LY-059｜作坊围界与服务口补件\n\n- **类型 / 依赖**：补件/修订；G、LY-053、LY-054、LY-058。\n- **现有输入**：原谷物加工院和其缺陷记录；已发布双屋作业院为不同产物，必须分清。\n- **具体产物**：为010选定的一个作业样板补测得的外围缺口、工作门口及台阶接口。\n- **边界与排重**：不重造已有院墙，不将窑/碓/磨/厩全部塞同院；具体围界属C，不认定行业分区或法定隔离距离。\n- **本项验收**：外围与服务口的开放/关闭规则清楚，现围墙不会再叠一圈；选定场所和被排除的设施都在安装清单中。\n- **唯一写入区**：`workpacks/LY-059/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-060",
+   "title": "作业设施区局部交付",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "作坊、厩棚与生产服务",
+   "sectionIntro": "窑、厩、磨、足碓和作业院原型已有，补地形、安装和真实缺件。实际作坊/窑场选址必须另获地域准入。",
+   "depsRaw": "G、LY-051、LY-052、LY-053、LY-054、LY-055、LY-056、LY-057、LY-058、LY-059",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-051",
+    "LY-052",
+    "LY-053",
+    "LY-054",
+    "LY-055",
+    "LY-056",
+    "LY-057",
+    "LY-058",
+    "LY-059"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-051",
+    "LY-052",
+    "LY-053",
+    "LY-054",
+    "LY-055",
+    "LY-056",
+    "LY-057",
+    "LY-058",
+    "LY-059"
+   ],
+   "level": 9,
+   "dependents": [
+    "LY-093"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-051、LY-052、LY-053、LY-054、LY-055、LY-056、LY-057、LY-058、LY-059",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 14,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-060/prep/prep-status.json",
+     "sha256": "3407e73e6cca9c612e1bed6b97ba50c2e7402d73251c507fa9979dd8113e6da2"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-060/",
+   "whitelist": [
+    "LY-060/**"
+   ],
+   "locks": [
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-10"
+   ],
+   "lines": [
+    638,
+    645
+   ],
+   "text": "### LY-060｜作业设施区局部交付\n\n- **类型 / 依赖**：复用装配；G、LY-051、LY-052、LY-053、LY-054、LY-055、LY-056、LY-057、LY-058、LY-059。\n- **现有输入**：本作业线已放行子包及选定作业场所；不自动全部装入一院。\n- **具体产物**：按已选择用途组装一套或明确互斥的作业场所包，交外接端口。\n- **边界与排重**：未取得城市准入则只在独立演示域；不凭空创建工业新区或用模型数量填空地。\n- **本项验收**：完整独立区域包可安装/撤回，互斥场所不能同时启用；未取得地块准入时保持独立，不增加虚构城市新区。\n- **唯一写入区**：`workpacks/LY-060/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-061",
+   "title": "无名候入院外围墙体",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "宫院与复道",
+   "sectionIntro": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-062",
+    "LY-063",
+    "LY-070"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 15,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-061/prep/prep-status.json",
+     "sha256": "1f4312d56cfa565aa12280c60195f202198be63839514a513e462fb6d629b49c"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-061/",
+   "whitelist": [
+    "LY-061/**"
+   ],
+   "locks": [
+    "LOCK-31PALACES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02",
+    "PZ-08",
+    "PZ-11"
+   ],
+   "lines": [
+    651,
+    658
+   ],
+   "text": "### LY-061｜无名候入院外围墙体\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：既有无名候入院、门卫切片、侧廊庑、对阙、德阳类殿堂及玉堂前后殿最新版。\n- **具体产物**：复用门卫/庭地/侧廊/殿阶，补一个候入院的完整外围、角部与基脚。\n- **边界与排重**：不再造原殿廊，不命名德阳或玉堂，不重复31组宫殿；实名及绝对位置不确定时只作局部C试案。\n- **本项验收**：外围无未声明漏洞，转角/基脚与原庭地吻合；原殿廊不重造，未指定宫址或殿名未被偷偷写入卡片。\n- **唯一写入区**：`workpacks/LY-061/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-062",
+   "title": "候入院侧口与工作口关闭件",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "宫院与复道",
+   "sectionIntro": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。",
+   "depsRaw": "G、LY-061",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-061"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-061"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-069",
+    "LY-070"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-061",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 29,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-062/prep/prep-status.json",
+     "sha256": "2f254c22e2ba407729e01e5373584b6f97072417b5f0e85f125caffa4f7f049a"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-062/",
+   "whitelist": [
+    "LY-062/**"
+   ],
+   "locks": [
+    "LOCK-31PALACES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02"
+   ],
+   "lines": [
+    660,
+    667
+   ],
+   "text": "### LY-062｜候入院侧口与工作口关闭件\n\n- **类型 / 依赖**：补件/修订；G、LY-061。\n- **现有输入**：既有无名候入院、门卫切片、侧廊庑、对阙、德阳类殿堂及玉堂前后殿最新版。\n- **具体产物**：与外围契约配套的侧口、工作口和关闭组件，保留明确服务路线。\n- **边界与排重**：主门闭合不等于侧边封闭；仅执行声明的边界方案，不套用真实宫廷通行制度。\n- **本项验收**：主门、侧口与工作口各自开闭状态测试；门关后是否仍可进入与声明一致，不用动画效果掩盖围界缺口。\n- **唯一写入区**：`workpacks/LY-062/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-063",
+   "title": "侧廊端部转折安装模块",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "宫院与复道",
+   "sectionIntro": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。",
+   "depsRaw": "G、LY-061",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-061"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-061"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-069",
+    "LY-070"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-061",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 20,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-063/prep/prep-status.json",
+     "sha256": "d63a34aae2766922804593e634483c29341cd7a74a9db4b5b90e96c77874a8ff"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-063/",
+   "whitelist": [
+    "LY-063/**"
+   ],
+   "locks": [
+    "LOCK-31PALACES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02"
+   ],
+   "lines": [
+    669,
+    676
+   ],
+   "text": "### LY-063｜侧廊端部转折安装模块\n\n- **类型 / 依赖**：补件/修订；G、LY-061。\n- **现有输入**：既有无名候入院、门卫切片、侧廊庑、对阙、德阳类殿堂及玉堂前后殿最新版。\n- **具体产物**：对选定八间侧廊端部提供可替换收口/转折和地坪过渡件。\n- **边界与排重**：已修入口台阶不重做，不缩放柱网；转折是C连接试验，不能外推完整宫院平面。\n- **本项验收**：端部模块与既有柱网/檐口/地坪对接，旧入口踏步指纹保持；转弯完整包络检测，不因屋顶外观相接就算通路。\n- **唯一写入区**：`workpacks/LY-063/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-064",
+   "title": "成对阙前庭接地接口",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "宫院与复道",
+   "sectionIntro": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-070"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 14,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-064/prep/prep-status.json",
+     "sha256": "4598cd79050fe2b625a1a20b45e74f63f0f32da0e326505c931a58fb90c12d2f"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-064/",
+   "whitelist": [
+    "LY-064/**"
+   ],
+   "locks": [
+    "LOCK-31PALACES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02"
+   ],
+   "lines": [
+    678,
+    685
+   ],
+   "text": "### LY-064｜成对阙前庭接地接口\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：既有无名候入院、门卫切片、侧廊庑、对阙、德阳类殿堂及玉堂前后殿最新版。\n- **具体产物**：复用成对土木阙，补实际前庭的基脚、地坪边缘与对接端口。\n- **边界与排重**：阙本体已有，不复制为新宫门；不把北魏阊阖门形制搬来，城市地址未定时不落城。\n- **本项验收**：双阙足迹均被实际地坪支持，中央/侧边通道不侵入；不把两阙重数为两座宫门，不输出未经证据的宫门地址。\n- **唯一写入区**：`workpacks/LY-064/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-065",
+   "title": "殿堂侧后台缘与维护接口",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "宫院与复道",
+   "sectionIntro": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-070"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 16,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-065/prep/prep-status.json",
+     "sha256": "85333698a2e1968f6987ca213b1a444cafaac756d46f25c67e82e7b187776f39"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-065/",
+   "whitelist": [
+    "LY-065/**"
+   ],
+   "locks": [
+    "LOCK-31PALACES",
+    "LOCK-PROTOTYPES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02"
+   ],
+   "lines": [
+    687,
+    694
+   ],
+   "text": "### LY-065｜殿堂侧后台缘与维护接口\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：既有无名候入院、门卫切片、侧廊庑、对阙、德阳类殿堂及玉堂前后殿最新版。\n- **具体产物**：在010选定的一套德阳类C殿堂原型上，补实际未连通的侧/后台缘与检修接点。\n- **边界与排重**：保留5/7间互斥关系、主阶和柱网；不推断古代御座、院界、仪礼路线或“重屋必可登楼”。\n- **本项验收**：维护接口不挡原主阶/柱网；所选A/B原型准确保留，未知上层用途不被转成已认证通路或御用设施。\n- **唯一写入区**：`workpacks/LY-065/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-066",
+   "title": "玉堂关系组可安装副本",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "宫院与复道",
+   "sectionIntro": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-070"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 27,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-066/prep/prep-status.json",
+     "sha256": "d77cc0e7520497e5daaa187713001737c4165517e368683d749d2346dcd1e1f7"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-066/",
+   "whitelist": [
+    "LY-066/**"
+   ],
+   "locks": [
+    "LOCK-31PALACES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02",
+    "PZ-08"
+   ],
+   "lines": [
+    696,
+    703
+   ],
+   "text": "### LY-066｜玉堂关系组可安装副本\n\n- **类型 / 依赖**：复用装配；G。\n- **现有输入**：既有无名候入院、门卫切片、侧廊庑、对阙、德阳类殿堂及玉堂前后殿最新版。\n- **具体产物**：复用最新版前殿—庭—后殿—廊，整理原点、边界、接地与互斥配置。\n- **边界与排重**：屋顶端部旧修订不得回退；不把文献殿名变成已确定宫址，不新造前后殿。\n- **本项验收**：所有组件世界相对关系及屋顶修订正确，外接端口可重算；宫内位置未定时cityPlacement保持空，不自动落城。\n- **唯一写入区**：`workpacks/LY-066/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-067",
+   "title": "复道A柱脚地面适配",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "宫院与复道",
+   "sectionIntro": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-069",
+    "LY-070"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 14,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-067/prep/prep-status.json",
+     "sha256": "99035d009aa237946100f30d8d87276efd1835be6d74f15620ca7c765c37968e"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-067/",
+   "whitelist": [
+    "LY-067/**"
+   ],
+   "locks": [
+    "LOCK-31PALACES",
+    "LOCK-GALLERY-A",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02"
+   ],
+   "lines": [
+    705,
+    712
+   ],
+   "text": "### LY-067｜复道A柱脚地面适配\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：高架复道A/B、A服务登临节点与旧柱脚未支持记录；选定宫院局部端口。\n- **具体产物**：对A局部片段16个旧未命中地表支点，给实际支持/基础接口或明确缺失报告。\n- **边界与排重**：A服务木梯已经做，不重做；不加假展示大底板，未配准宫区时只在冻结的局部演示域。\n- **本项验收**：原支点缺支持问题逐脚对账；没有旧城市地形时报告依赖缺失，不用假底板合格；A既有木梯不变。\n- **唯一写入区**：`workpacks/LY-067/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-068",
+   "title": "复道B层高登临兼容件",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "宫院与复道",
+   "sectionIntro": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-069",
+    "LY-070"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 8,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-068/prep/prep-status.json",
+     "sha256": "8e91acdd04ae3605ed387deae452df7d2bc2943306db30c84adc4fd990fdbc60"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-068/",
+   "whitelist": [
+    "LY-068/**"
+   ],
+   "locks": [
+    "LOCK-31PALACES",
+    "LOCK-GALLERY-A",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02"
+   ],
+   "lines": [
+    714,
+    721
+   ],
+   "text": "### LY-068｜复道B层高登临兼容件\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：高架复道A/B、A服务登临节点与旧柱脚未支持记录；选定宫院局部端口。\n- **具体产物**：为B自身端口提供独立梯台/平台方案及三档安装参数。\n- **边界与排重**：不能把A木梯直接套B；碰撞几何与渲染LOD分开，不从不同级数自动推导安全通路。\n- **本项验收**：B楼面高度与新平台端口实测一致，完整路线和支持可重现；不同LOD的楼梯/碰撞契约明确，不直接套A结论。\n- **唯一写入区**：`workpacks/LY-068/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-069",
+   "title": "复道端部宫门廊口兼容包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "宫院与复道",
+   "sectionIntro": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。",
+   "depsRaw": "G、LY-062、LY-063、LY-067、LY-068",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-062",
+    "LY-063",
+    "LY-067",
+    "LY-068"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-062",
+    "LY-063",
+    "LY-067",
+    "LY-068"
+   ],
+   "level": 8,
+   "dependents": [
+    "LY-070"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-062、LY-063、LY-067、LY-068",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 13,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-069/prep/prep-status.json",
+     "sha256": "bbf706dbc32bcff0f629f384467ad83727d87fb79869a9ba8dd637bbad264e0b"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-069/",
+   "whitelist": [
+    "LY-069/**"
+   ],
+   "locks": [
+    "LOCK-31PALACES",
+    "LOCK-GALLERY-A",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02"
+   ],
+   "lines": [
+    723,
+    730
+   ],
+   "text": "### LY-069｜复道端部宫门廊口兼容包\n\n- **类型 / 依赖**：复用装配；G、LY-062、LY-063、LY-067、LY-068。\n- **现有输入**：高架复道A/B、A服务登临节点与旧柱脚未支持记录；选定宫院局部端口。\n- **具体产物**：选择一个局部端接组合验证楼板、门口、屋檐及地面路线连续。\n- **边界与排重**：只研究局部端点，不铺“七里”或把B关系线当精确路线；不改变宫墙坐标来迎合模型。\n- **本项验收**：局部连接所有端点、门叶/屋檐和转向空间在同坐标实测；跨未知地区的连续复道仍不生成，记录未接端。\n- **唯一写入区**：`workpacks/LY-069/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-070",
+   "title": "宫院复道局部整合包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "宫院与复道",
+   "sectionIntro": "优先完成一个有边界的局部C兼容试案。新宫墙未配准时不放进实名宫区，不复制31组宫殿填空白。",
+   "depsRaw": "G、LY-003、LY-061、LY-062、LY-063、LY-064、LY-065、LY-066、LY-067、LY-068、LY-069",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-003",
+    "LY-061",
+    "LY-062",
+    "LY-063",
+    "LY-064",
+    "LY-065",
+    "LY-066",
+    "LY-067",
+    "LY-068",
+    "LY-069"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-003",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-061",
+    "LY-062",
+    "LY-063",
+    "LY-064",
+    "LY-065",
+    "LY-066",
+    "LY-067",
+    "LY-068",
+    "LY-069"
+   ],
+   "level": 9,
+   "dependents": [
+    "LY-094"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-061、LY-062、LY-063、LY-064、LY-065、LY-066、LY-067、LY-068、LY-069",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 28,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-070/prep/prep-status.json",
+     "sha256": "176ec1ef1391576b2b7ae2d192cefa481d56877976267585edb2ff02cc8cbd5d"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-070/",
+   "whitelist": [
+    "LY-070/**"
+   ],
+   "locks": [
+    "LOCK-31PALACES",
+    "LOCK-GALLERY-A",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02",
+    "PZ-08",
+    "PZ-10",
+    "PZ-11"
+   ],
+   "lines": [
+    732,
+    739
+   ],
+   "text": "### LY-070｜宫院复道局部整合包\n\n- **类型 / 依赖**：复用装配；G、LY-003、LY-061、LY-062、LY-063、LY-064、LY-065、LY-066、LY-067、LY-068、LY-069。\n- **现有输入**：高架复道A/B、A服务登临节点与旧柱脚未支持记录；选定宫院局部端口。\n- **具体产物**：单个清晰有边界的C空间实验组与可回退安装表；有准入后才提供城市矩阵。\n- **边界与排重**：不将全部宫殿候选一次装城；003失败时保留局部包，不以泛化宫殿填未知区域。\n- **本项验收**：所有选中件与地域准入相符，无多套宫殿叠加；003未通过时输出仅局部组装的明确状态，不能强行“完成宫区”。\n- **唯一写入区**：`workpacks/LY-070/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-071",
+   "title": "辟雍礼堂围护装配契约",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "城南礼制与单列北郊",
+   "sectionIntro": "城南礼制和北郊是不同地域。模型本体已有，装配/接地和位置准入分开；北郊方坛绝不归城南。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-072",
+    "LY-073",
+    "LY-094"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 10,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-071/prep/prep-status.json",
+     "sha256": "fc1f131b581dc2bbe27e03d1679680c010acdcf4edd81ab9201c20b90de8354f"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-071/",
+   "whitelist": [
+    "LY-071/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-03",
+    "PZ-11"
+   ],
+   "lines": [
+    745,
+    752
+   ],
+   "text": "### LY-071｜辟雍礼堂围护装配契约\n\n- **类型 / 依赖**：复用装配；G。\n- **现有输入**：已修辟雍礼堂A、独立围护及局部试配变换，不同原点不可直叠。\n- **具体产物**：复用入口修订礼堂A与独立围护，锁局部变换、台基/围护间接口和三档。\n- **边界与排重**：两件不能同原点直接叠载；不重复造礼堂，不把C柱网称考古平面。\n- **本项验收**：礼堂与围护的真实变换、尺度、地坪接点导回一致，原点不重复应用；两个部件未直接叠载冒充完整场所。\n- **唯一写入区**：`workpacks/LY-071/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-072",
+   "title": "辟雍跨水通道试案",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "城南礼制与单列北郊",
+   "sectionIntro": "城南礼制和北郊是不同地域。模型本体已有，装配/接地和位置准入分开；北郊方坛绝不归城南。",
+   "depsRaw": "G、LY-002、LY-071",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-002",
+    "LY-071"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-071"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-073",
+    "LY-094"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-071",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 21,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-072/prep/prep-status.json",
+     "sha256": "88927f59624f4b1f0dde6f73465f9824e347190d3db1cbf814e7cf9b46a6e6b4"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-072/",
+   "whitelist": [
+    "LY-072/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-03"
+   ],
+   "lines": [
+    754,
+    761
+   ],
+   "text": "### LY-072｜辟雍跨水通道试案\n\n- **类型 / 依赖**：补件/修订；G、LY-002、LY-071。\n- **现有输入**：已修辟雍礼堂A、独立围护及局部试配变换，不同原点不可直叠。\n- **具体产物**：一套带两端支承与明确跨度的可替换跨水板/桥C试验组件。\n- **边界与排重**：先选证据范围，不照搬后世四桥或自定深水；不能以几何支点证明承重/历史形制。\n- **本项验收**：桥/板两端支持和接岸端口清楚，三档结构轮廓保留；不只用中心射线验桥面，不把材料几何当荷载计算。\n- **唯一写入区**：`workpacks/LY-072/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-073",
+   "title": "辟雍岸缘与外侧地面",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "城南礼制与单列北郊",
+   "sectionIntro": "城南礼制和北郊是不同地域。模型本体已有，装配/接地和位置准入分开；北郊方坛绝不归城南。",
+   "depsRaw": "G、LY-071、LY-072",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-071",
+    "LY-072"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-071",
+    "LY-072"
+   ],
+   "level": 8,
+   "dependents": [
+    "LY-087",
+    "LY-094"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-071、LY-072",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 45,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-073/prep/prep-status.json",
+     "sha256": "cc5278a627839e48f4dbaee64e523575c8adc78c8fdbefe545d00747f6b606e0"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-073/",
+   "whitelist": [
+    "LY-073/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-03"
+   ],
+   "lines": [
+    763,
+    770
+   ],
+   "text": "### LY-073｜辟雍岸缘与外侧地面\n\n- **类型 / 依赖**：补件/修订；G、LY-071、LY-072。\n- **现有输入**：已修辟雍礼堂A、独立围护及局部试配变换，不同原点不可直叠。\n- **具体产物**：与选定跨水组件匹配的局部岸缘、外岸到达地面及实体边界。\n- **边界与排重**：水深、流向、真实岸线未知不硬画；与围护/桥原子组合，不把有水材质当水工验证。\n- **本项验收**：岸缘/地面与跨水件无空隙或双层覆盖；未定岸线、水深、流向写明；水材质可关闭且不影响实体支持检查。\n- **唯一写入区**：`workpacks/LY-073/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-074",
+   "title": "明堂四侧入口外到达地面",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "城南礼制与单列北郊",
+   "sectionIntro": "城南礼制和北郊是不同地域。模型本体已有，装配/接地和位置准入分开；北郊方坛绝不归城南。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-075",
+    "LY-094"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 12,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-074/prep/prep-status.json",
+     "sha256": "b8f0a1d369f79fd4f61de539f21ddc3703f7a836e96052a46c5d9907f02741e1"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-074/",
+   "whitelist": [
+    "LY-074/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-03"
+   ],
+   "lines": [
+    772,
+    779
+   ],
+   "text": "### LY-074｜明堂四侧入口外到达地面\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：现明堂A/B之一及入口体积检查；不引用北魏台基尺寸。\n- **具体产物**：复用所选A或B明堂，为四侧已有台阶到外部冻结端口补地面/必要过渡。\n- **边界与排重**：原明堂已做，不能新增未证二楼梯或环水；保留A/B互斥，四方向分别测支持。\n- **本项验收**：四侧到达与阶前支持分别测，所选A/B尺寸不混；旧台阶和九房结构保持，无未知二楼梯或北魏台基参数混入。\n- **唯一写入区**：`workpacks/LY-074/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-075",
+   "title": "明堂九房完整内部安装检查",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "城南礼制与单列北郊",
+   "sectionIntro": "城南礼制和北郊是不同地域。模型本体已有，装配/接地和位置准入分开；北郊方坛绝不归城南。",
+   "depsRaw": "G、LY-074",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-074"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-074"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-094"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-074",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 54,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-075/prep/prep-status.json",
+     "sha256": "c3b5633eb5fef393b1dd15903ec26a0735dd292d50445e2c6a8778c000572b06"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-075/",
+   "whitelist": [
+    "LY-075/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-03"
+   ],
+   "lines": [
+    781,
+    788
+   ],
+   "text": "### LY-075｜明堂九房完整内部安装检查\n\n- **类型 / 依赖**：复用装配；G、LY-074。\n- **现有输入**：现明堂A/B之一及入口体积检查；不引用北魏台基尺寸。\n- **具体产物**：完整近景各房/门槛/柱间的可达性图及仅针对实测缺口的差异件。\n- **边界与排重**：先前中轴通过不覆盖九房；不为全部标绿随意开门或删柱，无法支持的通行关系记为未知/受阻。\n- **本项验收**：各室/门槛有可达/受阻/未知逐项结果，失败不得靠删柱或开新门消除；近中远读回与选定路线范围一致。\n- **唯一写入区**：`workpacks/LY-075/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-076",
+   "title": "灵台未修台缘与绕行补件",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "城南礼制与单列北郊",
+   "sectionIntro": "城南礼制和北郊是不同地域。模型本体已有，装配/接地和位置准入分开；北郊方坛绝不归城南。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-094"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 85,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-076/prep/prep-status.json",
+     "sha256": "48462bd2a2309fd21eda9896cea93e62ec2860b1775e8ef141d0a66e179fa6f4"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-076/",
+   "whitelist": [
+    "LY-076/**"
+   ],
+   "locks": [
+    "LOCK-LINGTAI-STEPS",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-03",
+    "PZ-14"
+   ],
+   "lines": [
+    790,
+    797
+   ],
+   "text": "### LY-076｜灵台未修台缘与绕行补件\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：灵台类型与五处踏步最新修订，避开已经完成的五处；高细源仍保留。\n- **具体产物**：在最新五处踏步修订之外，选择实际仍有高差/狭窄问题的台缘或绕行点修订。\n- **边界与排重**：已做五处踏步绝不重做；不回退旧屋面/北侧问题，交近景源及可发布档位，不把中景冒充高细。\n- **本项验收**：缺口清单明确排除已修五处；新旧改动三角范围和台缘支持可核，北侧绕行限制保留，低档不能替代近景验收。\n- **唯一写入区**：`workpacks/LY-076/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-077",
+   "title": "太学A门外到达接口",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "城南礼制与单列北郊",
+   "sectionIntro": "城南礼制和北郊是不同地域。模型本体已有，装配/接地和位置准入分开；北郊方坛绝不归城南。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-078",
+    "LY-094"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 59,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-077/prep/prep-status.json",
+     "sha256": "eedc6c2bceec0501abe8649d012a498f3b8887ab72ff77d0a935fe15a4e042b2"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-077/",
+   "whitelist": [
+    "LY-077/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-03",
+    "PZ-14"
+   ],
+   "lines": [
+    799,
+    806
+   ],
+   "text": "### LY-077｜太学A门外到达接口\n\n- **类型 / 依赖**：补件/修订；G。\n- **现有输入**：太学A现入口版与独立观经关系空间；年代和设施归属保持分开。\n- **具体产物**：复用现A入口版本，补其外地面端口、阶前与局部侧向汇流关系。\n- **边界与排重**：不重新造太学，A/B不混套；门外观经空间的年代与归属未确证，未经选择不得自动焊接成一院。\n- **本项验收**：院外端口到A既有入口完整支持/体积检查；原A入口修订不变，B模型不混入，外接关系只是C时明示。\n- **唯一写入区**：`workpacks/LY-077/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-078",
+   "title": "太学观经空间外围安装包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "城南礼制与单列北郊",
+   "sectionIntro": "城南礼制和北郊是不同地域。模型本体已有，装配/接地和位置准入分开；北郊方坛绝不归城南。",
+   "depsRaw": "G、LY-002、LY-077",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-002",
+    "LY-077"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-077"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-094"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-077",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 28,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-078/prep/prep-status.json",
+     "sha256": "ea649c62b8ec816239d95ae396b3c8200701516e0569423f2adbe396d9ab3737"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-078/",
+   "whitelist": [
+    "LY-078/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-03"
+   ],
+   "lines": [
+    808,
+    815
+   ],
+   "text": "### LY-078｜太学观经空间外围安装包\n\n- **类型 / 依赖**：复用装配；G、LY-002、LY-077。\n- **现有输入**：太学A现入口版与独立观经关系空间；年代和设施归属保持分开。\n- **具体产物**：复用覆屋/围护/南口C关系，给独立街向端口、地面边界与互斥安装方案。\n- **边界与排重**：碑位留空，不造完整石经或引用三体碑尺寸；年代不支持就保留独立候选，不能标180年已运营。\n- **本项验收**：覆屋/围护/南口与端口独立可恢复，碑位保持空；来源/年代不确定不会被组合图抹去，不声称180年设施状态已定。\n- **唯一写入区**：`workpacks/LY-078/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-079",
+   "title": "南郊圆坛八陛接地包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "城南礼制与单列北郊",
+   "sectionIntro": "城南礼制和北郊是不同地域。模型本体已有，装配/接地和位置准入分开；北郊方坛绝不归城南。",
+   "depsRaw": "G、LY-004",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-004"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-004",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-094"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 11,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-079/prep/prep-status.json",
+     "sha256": "c409793f1caa662dceae88280e3b91b81cee9838b37540e13f43fd4628c7f768"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-079/",
+   "whitelist": [
+    "LY-079/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-03",
+    "PZ-11"
+   ],
+   "lines": [
+    817,
+    824
+   ],
+   "text": "### LY-079｜南郊圆坛八陛接地包\n\n- **类型 / 依赖**：复用装配；G、LY-004。\n- **现有输入**：现南郊圆坛八陛研究及其未知围界/门形约束。\n- **具体产物**：原圆坛与八陛外到达地面的精确局部安装和支持/净空包。\n- **边界与排重**：不重做坛或补未证围界/门楼；仅在南郊约束内讨论位置，不因场景空白就加祭祀建筑。\n- **本项验收**：八陛与外端口逐一核阶差/支持，原坛体不被改成具体遗址复原；位置未放行则只交局部包。\n- **唯一写入区**：`workpacks/LY-079/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-080",
+   "title": "北郊方坛四陛接地包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "城南礼制与单列北郊",
+   "sectionIntro": "城南礼制和北郊是不同地域。模型本体已有，装配/接地和位置准入分开；北郊方坛绝不归城南。",
+   "depsRaw": "G、LY-004",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-004"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-004",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-094"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 8,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-080/prep/prep-status.json",
+     "sha256": "20640c55099ab11795c539aeb3e8301671610f171283f555eab40fb2747cf0dc"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-080/",
+   "whitelist": [
+    "LY-080/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-03",
+    "PZ-10",
+    "PZ-11"
+   ],
+   "lines": [
+    826,
+    833
+   ],
+   "text": "### LY-080｜北郊方坛四陛接地包\n\n- **类型 / 依赖**：复用装配；G、LY-004。\n- **现有输入**：现北郊方坛四陛研究，独立北郊坐标约束。\n- **具体产物**：原方坛与四陛的独立北郊安装、地面端口及可撤回包。\n- **边界与排重**：严格独立于城南；围营、祠舍与具体位置未知，不将四陛模型扩称完整北郊。\n- **本项验收**：四陛全部独立核支持，文件/坐标明确属北郊；不出现南郊位置、虚构围营或祠舍，未知位置保持未知。\n- **唯一写入区**：`workpacks/LY-080/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-081",
+   "title": "建立实际地面可达网络",
+   "type": "考据/契约",
+   "lane": "资料契约",
+   "section": "道路、地形与水工接口",
+   "sectionIntro": "只补已获准区域的真实接点；未建空白不等于可随意铺路。历史水系资料与可行走实体地面必须分开。",
+   "depsRaw": "G",
+   "usesG": true,
+   "depsExplicit": [],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-082",
+    "LY-083",
+    "LY-084",
+    "LY-085",
+    "LY-087",
+    "LY-089"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 21,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-081/prep/prep-status.json",
+     "sha256": "a4b1b01a4b2c6fca93845411ab2ff7740fc7f4337a9bfab969f5fe17b47ee5bb"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-081/",
+   "whitelist": [
+    "LY-081/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    839,
+    846
+   ],
+   "text": "### LY-081｜建立实际地面可达网络\n\n- **类型 / 依赖**：考据/契约；G。\n- **现有输入**：当前四个原子地面及实际加载地形、各区域冻结端口、现宫墙水道三段、既有水系分期研究。\n- **具体产物**：由当前已加载三角面提取可支持区、端口、真实断点和禁用边的网络数据。\n- **边界与排重**：不用B标签直接连直线，不把展示底板当可走地面；明确有限样本/体积检查覆盖，不虚报全城连通。\n- **本项验收**：图中每条已通边都能回到实际面和测试；移除地面后出现断点负例，未建区域不因连线算法变成路。\n- **唯一写入区**：`workpacks/LY-081/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-082",
+   "title": "示范住宅外巷短接续",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "道路、地形与水工接口",
+   "sectionIntro": "只补已获准区域的真实接点；未建空白不等于可随意铺路。历史水系资料与可行走实体地面必须分开。",
+   "depsRaw": "G、LY-049、LY-081",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-049",
+    "LY-081"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-049",
+    "LY-081"
+   ],
+   "level": 11,
+   "dependents": [
+    "LY-092"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-049、LY-081",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 29,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-082/prep/prep-status.json",
+     "sha256": "fbed42e212a5f97f47d357edc6e6a9cd68f36163f1257c6490dd5b5408f857f8"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-082/",
+   "whitelist": [
+    "LY-082/**"
+   ],
+   "locks": [
+    "LOCK-13COURT",
+    "LOCK-YONG-ROAD",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    848,
+    855
+   ],
+   "text": "### LY-082｜示范住宅外巷短接续\n\n- **类型 / 依赖**：补件/修订；G、LY-049、LY-081。\n- **现有输入**：当前四个原子地面及实际加载地形、各区域冻结端口、现宫墙水道三段、既有水系分期研究。\n- **具体产物**：院界以外至实际已有巷道的最小合法短接续补件。\n- **边界与排重**：与049按边界分工，不触13院压缩和雍门接街；没有实际目标或区域准入时停止，不生成虚构里坊主路。\n- **本项验收**：当前院界端口与实际巷面相接，范围短且经准入；不与049叠面，关闭补件后能恢复原断开状态。\n- **唯一写入区**：`workpacks/LY-082/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-083",
+   "title": "市肆外街真实接点补件",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "道路、地形与水工接口",
+   "sectionIntro": "只补已获准区域的真实接点；未建空白不等于可随意铺路。历史水系资料与可行走实体地面必须分开。",
+   "depsRaw": "G、LY-030、LY-081",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-030",
+    "LY-081"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-030",
+    "LY-081"
+   ],
+   "level": 11,
+   "dependents": [
+    "LY-092"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-030、LY-081",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 12,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-083/prep/prep-status.json",
+     "sha256": "d6566f6a9aad88114d2cd0f570dbee068b708da5c2db5d3b80922949a924d99e"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-083/",
+   "whitelist": [
+    "LY-083/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    857,
+    864
+   ],
+   "text": "### LY-083｜市肆外街真实接点补件\n\n- **类型 / 依赖**：补件/修订；G、LY-030、LY-081。\n- **现有输入**：当前四个原子地面及实际加载地形、各区域冻结端口、现宫墙水道三段、既有水系分期研究。\n- **具体产物**：市肆区域边界到现有主地面/路段的实际接续与地坪差异件。\n- **边界与排重**：内部前街属022；不得改市场历史位置来就路，不把C连接解释为古金市真实街网。\n- **本项验收**：使用市肆边界和真实主路端点，外街长度/高差来自本次测量；不改市场内部道路或历史地块来追求接通。\n- **唯一写入区**：`workpacks/LY-083/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-084",
+   "title": "东北功能区对外连接候选",
+   "type": "考据/契约",
+   "lane": "资料契约",
+   "section": "道路、地形与水工接口",
+   "sectionIntro": "只补已获准区域的真实接点；未建空白不等于可随意铺路。历史水系资料与可行走实体地面必须分开。",
+   "depsRaw": "G、LY-003、LY-040、LY-081",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-003",
+    "LY-040",
+    "LY-081"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-003",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-040",
+    "LY-081"
+   ],
+   "level": 10,
+   "dependents": [
+    "LY-093"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-040、LY-081",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 13,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-084/prep/prep-status.json",
+     "sha256": "c845a703a112db3b8dd6d984f1c2ca8c23c2ff2f9c7051a5e76e8adb3837de5a"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-084/",
+   "whitelist": [
+    "LY-084/**"
+   ],
+   "locks": [
+    "LOCK-NE-196C",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02",
+    "PZ-11"
+   ],
+   "lines": [
+    866,
+    873
+   ],
+   "text": "### LY-084｜东北功能区对外连接候选\n\n- **类型 / 依赖**：考据/契约；G、LY-003、LY-040、LY-081。\n- **现有输入**：当前四个原子地面及实际加载地形、各区域冻结端口、现宫墙水道三段、既有水系分期研究。\n- **具体产物**：在新宫墙/水系约束下，复核既有三条长接路规划，给可建/禁建结论及合格路线契约。\n- **边界与排重**：无可配准约束不生成1.7公里路面；已有196米短路不重复。只有010追加放行后才转模型生产。\n- **本项验收**：三方案分别列碰撞、支持缺失、宫墙/水系约束；资料不足时可全部拒绝，不能仅凭最短路径选择施工。\n- **唯一写入区**：`workpacks/LY-084/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-085",
+   "title": "平城开阳城南端接路线",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "道路、地形与水工接口",
+   "sectionIntro": "只补已获准区域的真实接点；未建空白不等于可随意铺路。历史水系资料与可行走实体地面必须分开。",
+   "depsRaw": "G、LY-004、LY-015、LY-017、LY-081",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-004",
+    "LY-015",
+    "LY-017",
+    "LY-081"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-004",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-015",
+    "LY-017",
+    "LY-081"
+   ],
+   "level": 10,
+   "dependents": [
+    "LY-091"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-015、LY-017、LY-081",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 26,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-085/prep/prep-status.json",
+     "sha256": "04df74b1860767f49e04730420a1ae3fa679c0b12aed539b8532342f96f9bcea"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-085/",
+   "whitelist": [
+    "LY-085/**"
+   ],
+   "locks": [
+    "LOCK-LINGTAI-STEPS",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-03"
+   ],
+   "lines": [
+    875,
+    882
+   ],
+   "text": "### LY-085｜平城开阳城南端接路线\n\n- **类型 / 依赖**：补件/修订；G、LY-004、LY-015、LY-017、LY-081。\n- **现有输入**：当前四个原子地面及实际加载地形、各区域冻结端口、现宫墙水道三段、既有水系分期研究。\n- **具体产物**：只在已获准的具体门口/既有路端之间补最小地面接续，给两门独立包。\n- **边界与排重**：保留未建空白；不直接铺通所有城南礼制点，不能用延长路面掩盖未配准地点和门口高差。\n- **本项验收**：两门分别给当前门口至具体路端的实际支持/连续体积结果；不把未连接灵台/太学段算入通过范围。\n- **唯一写入区**：`workpacks/LY-085/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-086",
+   "title": "宫墙三段水道安装接口",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "道路、地形与水工接口",
+   "sectionIntro": "只补已获准区域的真实接点；未建空白不等于可随意铺路。历史水系资料与可行走实体地面必须分开。",
+   "depsRaw": "G、LY-002、LY-003",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-002",
+    "LY-003"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-003",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [
+    "LY-090",
+    "LY-094"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 10,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-086/prep/prep-status.json",
+     "sha256": "3c4abdb7f11d58d41cbc5c2213b029855363dbe2f8bcc732bd88332a63b2d8b2"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-086/",
+   "whitelist": [
+    "LY-086/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02",
+    "PZ-06",
+    "PZ-11"
+   ],
+   "lines": [
+    884,
+    891
+   ],
+   "text": "### LY-086｜宫墙三段水道安装接口\n\n- **类型 / 依赖**：复用装配；G、LY-002、LY-003。\n- **现有输入**：当前四个原子地面及实际加载地形、各区域冻结端口、现宫墙水道三段、既有水系分期研究。\n- **具体产物**：复用城内段/竖井/城外段，在允许的局部墙体研究块上做开口、盖板及原子安装。\n- **边界与排重**：三段本体已做，不新建整城水网；实际宫址、流向、引排用途和180年在用性未知时不接城市运营层。\n- **本项验收**：局部墙洞、青砖段/竖井/盖板关系真实且可撤回；无入城准入就不写世界位置，不认证引排功能或运营年代。\n- **唯一写入区**：`workpacks/LY-086/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-087",
+   "title": "局部排水端口一致性包",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "道路、地形与水工接口",
+   "sectionIntro": "只补已获准区域的真实接点；未建空白不等于可随意铺路。历史水系资料与可行走实体地面必须分开。",
+   "depsRaw": "G、LY-046、LY-052、LY-054、LY-073、LY-081",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-046",
+    "LY-052",
+    "LY-054",
+    "LY-073",
+    "LY-081"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-046",
+    "LY-052",
+    "LY-054",
+    "LY-073",
+    "LY-081"
+   ],
+   "level": 9,
+   "dependents": [],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-046、LY-052、LY-054、LY-073、LY-081",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 31,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-087/prep/prep-status.json",
+     "sha256": "1c8250136abd8ee089f802b5cfdc7259d68f826c47ba89c23844d7af0d92d2b7"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-087/",
+   "whitelist": [
+    "LY-087/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-06"
+   ],
+   "lines": [
+    893,
+    900
+   ],
+   "text": "### LY-087｜局部排水端口一致性包\n\n- **类型 / 依赖**：复用装配；G、LY-046、LY-052、LY-054、LY-073、LY-081。\n- **现有输入**：当前四个原子地面及实际加载地形、各区域冻结端口、现宫墙水道三段、既有水系分期研究。\n- **具体产物**：汇总各区局部排水/岸缘端口，验证坡向和终端，交互不冲突的局部演示组合。\n- **边界与排重**：不是把全部沟连成古渠；无已准入出口的端口保留未接，不用“都流向洛河”作假定。\n- **本项验收**：每个出口都有来源和去向状态，无循环/倒坡被动画掩盖；未接端不能自动接到河流，局部模型所有权不冲突。\n- **唯一写入区**：`workpacks/LY-087/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-088",
+   "title": "水系分期可视资料层",
+   "type": "考据/契约",
+   "lane": "资料契约",
+   "section": "道路、地形与水工接口",
+   "sectionIntro": "只补已获准区域的真实接点；未建空白不等于可随意铺路。历史水系资料与可行走实体地面必须分开。",
+   "depsRaw": "G、LY-002、LY-003、LY-004",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-002",
+    "LY-003",
+    "LY-004"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-003",
+    "LY-004",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ],
+   "level": 6,
+   "dependents": [],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 6,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-088/prep/prep-status.json",
+     "sha256": "7094080f1a9c34a690764f2eafb835fb64e000df9ecc2b2933e0a0e976cbf809"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-088/",
+   "whitelist": [
+    "LY-088/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02"
+   ],
+   "lines": [
+    902,
+    909
+   ],
+   "text": "### LY-088｜水系分期可视资料层\n\n- **类型 / 依赖**：考据/契约；G、LY-002、LY-003、LY-004。\n- **现有输入**：当前四个原子地面及实际加载地形、各区域冻结端口、现宫墙水道三段、既有水系分期研究。\n- **具体产物**：复用已有水利事件/关系研究，产出可切换的非几何资料数据与时期说明。\n- **边界与排重**：不重做已完成关系研究，不画未定河槽、水深和流速；不能把奏请罢渠当确定废渠日期或180年干涸。\n- **本项验收**：每条事件/关系有原文与现代解释的区分、时期/未知标志；资料层不添加河道网格或改变可达网络。\n- **唯一写入区**：`workpacks/LY-088/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-089",
+   "title": "地形支承差异片与边缘闭合",
+   "type": "补件/修订",
+   "lane": "模型补件",
+   "section": "道路、地形与水工接口",
+   "sectionIntro": "只补已获准区域的真实接点；未建空白不等于可随意铺路。历史水系资料与可行走实体地面必须分开。",
+   "depsRaw": "G、LY-005、LY-081",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-005",
+    "LY-081"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-081"
+   ],
+   "level": 7,
+   "dependents": [
+    "LY-090",
+    "LY-091",
+    "LY-093"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-081",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 19,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-089/prep/prep-status.json",
+     "sha256": "0f4f9f153e143c27cf03a8683180c0e5cff9a97b1debf8401aa65ba3321b0a90"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-089/",
+   "whitelist": [
+    "LY-089/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    911,
+    918
+   ],
+   "text": "### LY-089｜地形支承差异片与边缘闭合\n\n- **类型 / 依赖**：补件/修订；G、LY-005、LY-081。\n- **现有输入**：当前四个原子地面及实际加载地形、各区域冻结端口、现宫墙水道三段、既有水系分期研究。\n- **具体产物**：对批准区域内实际未支持的安装边界，生成最小实体地形差异片和接边记录。\n- **边界与排重**：保留已有高程与网格，不以整城大平面填空；未知考古地形不造起伏细节，越界必须停。\n- **本项验收**：新增片仅位于批准缺口范围，实际实体支持和边缘接触能重算；原地面高程/孔洞保持，不批量盖平全城。\n- **唯一写入区**：`workpacks/LY-089/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-090",
+   "title": "多地坪开孔与替换合成器",
+   "type": "复用装配",
+   "lane": "复用装配",
+   "section": "道路、地形与水工接口",
+   "sectionIntro": "只补已获准区域的真实接点；未建空白不等于可随意铺路。历史水系资料与可行走实体地面必须分开。",
+   "depsRaw": "G、LY-025、LY-045、LY-053、LY-086、LY-089",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-025",
+    "LY-045",
+    "LY-053",
+    "LY-086",
+    "LY-089"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-025",
+    "LY-045",
+    "LY-053",
+    "LY-086",
+    "LY-089"
+   ],
+   "level": 8,
+   "dependents": [
+    "LY-092"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-025、LY-045、LY-053、LY-086、LY-089",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 22,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-090/prep/prep-status.json",
+     "sha256": "8d02e8a19a661a416c8343ffb93de0f3e88cd146af3645e3961f2040a6271857"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-090/",
+   "whitelist": [
+    "LY-090/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-10"
+   ],
+   "lines": [
+    920,
+    927
+   ],
+   "text": "### LY-090｜多地坪开孔与替换合成器\n\n- **类型 / 依赖**：复用装配；G、LY-025、LY-045、LY-053、LY-086、LY-089。\n- **现有输入**：当前四个原子地面及实际加载地形、各区域冻结端口、现宫墙水道三段、既有水系分期研究。\n- **具体产物**：将井、厕、窑、水道等不重叠局部切孔计划合成单一可逆地坪差异包。\n- **边界与排重**：各代理不抢写同一地面文件；防止后一个补丁封回前一个孔，联合失败必须整组回退。\n- **本项验收**：先后应用顺序可交换或明确固定，所有既有孔仍开放；任一补丁失败都能整体还原，单一输出避免地坪写入冲突。\n- **唯一写入区**：`workpacks/LY-090/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-091",
+   "title": "城门城垣区域验收",
+   "type": "独立验收",
+   "lane": "独立验收",
+   "section": "区域验收、全城回归与单点合并",
+   "sectionIntro": "这些席位不是凑数的新模型，而是阻止100个工作包互相破坏的独立验收与唯一写入通道。",
+   "depsRaw": "G、LY-015、LY-017、LY-018、LY-019、LY-020、LY-085、LY-089",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-015",
+    "LY-017",
+    "LY-018",
+    "LY-019",
+    "LY-020",
+    "LY-085",
+    "LY-089"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-015",
+    "LY-017",
+    "LY-018",
+    "LY-019",
+    "LY-020",
+    "LY-085",
+    "LY-089"
+   ],
+   "level": 11,
+   "dependents": [
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-015、LY-017、LY-018、LY-019、LY-020、LY-085、LY-089",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 12,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-091/prep/prep-status.json",
+     "sha256": "1d6c51c03008425fc05cdd9f347c7373f6addfe292304cf171f52315e8d75697"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-091/",
+   "whitelist": [
+    "LY-091/**"
+   ],
+   "locks": [
+    "LOCK-12GATES",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    933,
+    940
+   ],
+   "text": "### LY-091｜城门城垣区域验收\n\n- **类型 / 依赖**：独立验收；G、LY-015、LY-017、LY-018、LY-019、LY-020、LY-085、LY-089。\n- **现有输入**：本批已放行工作包、最新合并基线和本文件交付契约。\n- **具体产物**：区域级三档装配、接墙接地、出入/登临、撤回和旧节点不变报告。\n- **边界与排重**：只验通过的候选，不因文件能打开就标已入城；门家族总数保持12，版本与附件不增加门数。\n- **本项验收**：门数/旧节点/整门资源与区域状态一致；真实通道、登临、地坪端口和回退均有绑定版本结果，阻断项不放行。\n- **唯一写入区**：`workpacks/LY-091/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-092",
+   "title": "市肆住宅区域验收",
+   "type": "独立验收",
+   "lane": "独立验收",
+   "section": "区域验收、全城回归与单点合并",
+   "sectionIntro": "这些席位不是凑数的新模型，而是阻止100个工作包互相破坏的独立验收与唯一写入通道。",
+   "depsRaw": "G、LY-030、LY-050、LY-082、LY-083、LY-090",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-030",
+    "LY-050",
+    "LY-082",
+    "LY-083",
+    "LY-090"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-030",
+    "LY-050",
+    "LY-082",
+    "LY-083",
+    "LY-090"
+   ],
+   "level": 12,
+   "dependents": [
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-030、LY-050、LY-082、LY-083、LY-090",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 21,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-092/prep/prep-status.json",
+     "sha256": "b182a7031f7fd4fac16d64c68688bc0443a3cd45cb74e253a52532f3850a804d"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-092/",
+   "whitelist": [
+    "LY-092/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-01",
+    "PZ-13"
+   ],
+   "lines": [
+    942,
+    949
+   ],
+   "text": "### LY-092｜市肆住宅区域验收\n\n- **类型 / 依赖**：独立验收；G、LY-030、LY-050、LY-082、LY-083、LY-090。\n- **现有输入**：本批已放行工作包、最新合并基线和本文件交付契约。\n- **具体产物**：同一当前基线中的市肆/示范院联合装配、井孔、道路、互斥和回退结果。\n- **边界与排重**：互相不能覆盖地坪或改变旧44院数量；失败要回传具体模型/三角/路线，不能以截图代验。\n- **本项验收**：原44院及所选市肆计数不变，互斥与所有孔洞联合检查；单独区域通过不能代替共同基线中的结果。\n- **唯一写入区**：`workpacks/LY-092/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-093",
+   "title": "东北与作业区验收",
+   "type": "独立验收",
+   "lane": "独立验收",
+   "section": "区域验收、全城回归与单点合并",
+   "sectionIntro": "这些席位不是凑数的新模型，而是阻止100个工作包互相破坏的独立验收与唯一写入通道。",
+   "depsRaw": "G、LY-040、LY-060、LY-084、LY-089",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-040",
+    "LY-060",
+    "LY-084",
+    "LY-089"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-040",
+    "LY-060",
+    "LY-084",
+    "LY-089"
+   ],
+   "level": 11,
+   "dependents": [
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-040、LY-060、LY-084、LY-089",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 16,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-093/prep/prep-status.json",
+     "sha256": "e688446f3471e0c93c55f228d4a24f0be6093394e67f8ba77220138a382b5734"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-093/",
+   "whitelist": [
+    "LY-093/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    951,
+    958
+   ],
+   "text": "### LY-093｜东北与作业区验收\n\n- **类型 / 依赖**：独立验收；G、LY-040、LY-060、LY-084、LY-089。\n- **现有输入**：本批已放行工作包、最新合并基线和本文件交付契约。\n- **具体产物**：仓储、武库、所选作业场及对外端口的支持、实际物件冲突和资料边界报告。\n- **边界与排重**：084未放行就明确对外仍断开；不把局部互通说成全城物流完成，保留窄阶和门角限制。\n- **本项验收**：武库/两仓/作业场与所有被接受路线在一基线检查；未接外路明确断开，错误端点或错误门角负例有效。\n- **唯一写入区**：`workpacks/LY-093/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-094",
+   "title": "宫区礼制位置与装配准入审查",
+   "type": "独立验收",
+   "lane": "独立验收",
+   "section": "区域验收、全城回归与单点合并",
+   "sectionIntro": "这些席位不是凑数的新模型，而是阻止100个工作包互相破坏的独立验收与唯一写入通道。",
+   "depsRaw": "G、LY-003、LY-004、LY-070、LY-071、LY-072、LY-073、LY-074、LY-075、LY-076、LY-077、LY-078、LY-079、LY-080、LY-086",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-003",
+    "LY-004",
+    "LY-070",
+    "LY-071",
+    "LY-072",
+    "LY-073",
+    "LY-074",
+    "LY-075",
+    "LY-076",
+    "LY-077",
+    "LY-078",
+    "LY-079",
+    "LY-080",
+    "LY-086"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-003",
+    "LY-004",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-070",
+    "LY-071",
+    "LY-072",
+    "LY-073",
+    "LY-074",
+    "LY-075",
+    "LY-076",
+    "LY-077",
+    "LY-078",
+    "LY-079",
+    "LY-080",
+    "LY-086"
+   ],
+   "level": 10,
+   "dependents": [
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-070、LY-071、LY-072、LY-073、LY-074、LY-075、LY-076、LY-077、LY-078、LY-079、LY-080、LY-086",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 19,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-094/prep/prep-status.json",
+     "sha256": "bb6ce2ebdc6e26427decb8f13651aad7d8c01aa64a5ace3e84a84360b1048b89"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-094/",
+   "whitelist": [
+    "LY-094/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-02",
+    "PZ-03",
+    "PZ-08"
+   ],
+   "lines": [
+    960,
+    967
+   ],
+   "text": "### LY-094｜宫区礼制位置与装配准入审查\n\n- **类型 / 依赖**：独立验收；G、LY-003、LY-004、LY-070、LY-071、LY-072、LY-073、LY-074、LY-075、LY-076、LY-077、LY-078、LY-079、LY-080、LY-086。\n- **现有输入**：本批已放行工作包、最新合并基线和本文件交付契约。\n- **具体产物**：逐资产判定：可接城/只能独立研究/仍阻断，附坐标与分期理由。\n- **边界与排重**：北郊不归城南；未知宫址不强行落位；资料不足是允许的结果，不通过补想象建筑完成数量目标。\n- **本项验收**：每个资产都有直接依据/类型类比/C设计/未知与准入理由；新宫墙/城南/北郊资料不混，未定址者保留未入城。\n- **唯一写入区**：`workpacks/LY-094/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-095",
+   "title": "全城碰撞与通路回归",
+   "type": "独立验收",
+   "lane": "独立验收",
+   "section": "区域验收、全城回归与单点合并",
+   "sectionIntro": "这些席位不是凑数的新模型，而是阻止100个工作包互相破坏的独立验收与唯一写入通道。",
+   "depsRaw": "G、LY-091、LY-092、LY-093、LY-094",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094"
+   ],
+   "level": 13,
+   "dependents": [
+    "LY-100"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-091、LY-092、LY-093、LY-094",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 14,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-095/prep/prep-status.json",
+     "sha256": "30d23ae04ef885031ad69775e551a66366ced594c4e78bfc4d5f10eae3c4f338"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-095/",
+   "whitelist": [
+    "LY-095/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    969,
+    976
+   ],
+   "text": "### LY-095｜全城碰撞与通路回归\n\n- **类型 / 依赖**：独立验收；G、LY-091、LY-092、LY-093、LY-094。\n- **现有输入**：本批已放行工作包、最新合并基线和本文件交付契约。\n- **具体产物**：对拟合并区域做实际三角/实体包含、有限连续通路、足下支持与关闭负例回归。\n- **边界与排重**：区分表面接触、体积侵入和完全包含；写覆盖范围与容差，不宣称所有人体/车辆/结构通过。\n- **本项验收**：报告具体覆盖体积、容差、正负例、包含/表面检测方法；每个未解决交体能定位责任包，禁止只给全城绿色结论。\n- **唯一写入区**：`workpacks/LY-095/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-096",
+   "title": "资源预算与官方规范总检",
+   "type": "独立验收",
+   "lane": "独立验收",
+   "section": "区域验收、全城回归与单点合并",
+   "sectionIntro": "这些席位不是凑数的新模型，而是阻止100个工作包互相破坏的独立验收与唯一写入通道。",
+   "depsRaw": "G、LY-008、LY-091、LY-092、LY-093、LY-094",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-008",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094"
+   ],
+   "level": 13,
+   "dependents": [
+    "LY-097",
+    "LY-099",
+    "LY-100"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-091、LY-092、LY-093、LY-094",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 62,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-096/prep/prep-status.json",
+     "sha256": "6ed48b8b61ab95fdc81bffb3882782c564f31533f1ac413dfb63fc10825f2809"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-096/",
+   "whitelist": [
+    "LY-096/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-07"
+   ],
+   "lines": [
+    978,
+    985
+   ],
+   "text": "### LY-096｜资源预算与官方规范总检\n\n- **类型 / 依赖**：独立验收；G、LY-008、LY-091、LY-092、LY-093、LY-094。\n- **现有输入**：本批已放行工作包、最新合并基线和本文件交付契约。\n- **具体产物**：每GLB大小、三档区别、纹理/材质、公共路径隐私、孤儿文件、官方checker与总载入预算报告。\n- **边界与排重**：源工程不能进docs；压缩须核解码几何/材质，不能静默降近景；传输上限与官网15MB规则分别核。\n- **本项验收**：官方checker无阻断错误，公共文件白名单与SHA一致，低档/压缩差异如实；新源工程和私密路径/凭据为零。\n- **唯一写入区**：`workpacks/LY-096/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-097",
+   "title": "真实运行与视觉回归",
+   "type": "独立验收",
+   "lane": "独立验收",
+   "section": "区域验收、全城回归与单点合并",
+   "sectionIntro": "这些席位不是凑数的新模型，而是阻止100个工作包互相破坏的独立验收与唯一写入通道。",
+   "depsRaw": "G、LY-091、LY-092、LY-093、LY-094、LY-096",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094",
+    "LY-096"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094",
+    "LY-096"
+   ],
+   "level": 14,
+   "dependents": [
+    "LY-100"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-091、LY-092、LY-093、LY-094、LY-096",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 221,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-097/prep/prep-status.json",
+     "sha256": "a7d6bf5bfc3e9bc06e68a691a321b84aaee32fa9821460c95bb2ea985b0c7f01"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-097/",
+   "whitelist": [
+    "LY-097/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    987,
+    994
+   ],
+   "text": "### LY-097｜真实运行与视觉回归\n\n- **类型 / 依赖**：独立验收；G、LY-091、LY-092、LY-093、LY-094、LY-096。\n- **现有输入**：本批已放行工作包、最新合并基线和本文件交付契约。\n- **具体产物**：在实际可用浏览器/设备上测试加载、模型选择、镜头、纹理、开孔、帧/内存及截图。\n- **边界与排重**：缺浏览器/GPU/手机环境就标未验，CPU图不能代替；视觉比较不能擅改地理布局或基础资产。\n- **本项验收**：真实设备与环境、加载失败/外观/资源用量记录完整；没有的运行环境明列未验，按010策略判断是否阻断，绝不造截图或指标。\n- **唯一写入区**：`workpacks/LY-097/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-098",
+   "title": "历史表述与完成量终审",
+   "type": "独立验收",
+   "lane": "独立验收",
+   "section": "区域验收、全城回归与单点合并",
+   "sectionIntro": "这些席位不是凑数的新模型，而是阻止100个工作包互相破坏的独立验收与唯一写入通道。",
+   "depsRaw": "G、LY-002、LY-091、LY-092、LY-093、LY-094",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-002",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-091",
+    "LY-092",
+    "LY-093",
+    "LY-094"
+   ],
+   "level": 13,
+   "dependents": [
+    "LY-099",
+    "LY-100"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-091、LY-092、LY-093、LY-094",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 12,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-098/prep/prep-status.json",
+     "sha256": "d79ebaa31cfc01a857a0a32710626ba7c2089d04e04c82e536eaa630abbb6b2c"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-098/",
+   "whitelist": [
+    "LY-098/**"
+   ],
+   "locks": [
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-09"
+   ],
+   "lines": [
+    996,
+    1003
+   ],
+   "text": "### LY-098｜历史表述与完成量终审\n\n- **类型 / 依赖**：独立验收；G、LY-002、LY-091、LY-092、LY-093、LY-094。\n- **现有输入**：本批已放行工作包、最新合并基线和本文件交付契约。\n- **具体产物**：核卡片、章节、说明、证据层和计数；输出逐条更正清单。\n- **边界与排重**：有据/类比/C/未知清楚；模型、入城、可通行、结构安全不互换；不把艺术封面当现况或考古证据。\n- **本项验收**：名称、年代、计数、章状态和证据各有来源；已建模/已入城/可达/结构安全没有串用；未验事项仍在公开说明中。\n- **唯一写入区**：`workpacks/LY-098/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-099",
+   "title": "源包与可复现交付核验",
+   "type": "独立验收",
+   "lane": "独立验收",
+   "section": "区域验收、全城回归与单点合并",
+   "sectionIntro": "这些席位不是凑数的新模型，而是阻止100个工作包互相破坏的独立验收与唯一写入通道。",
+   "depsRaw": "G、LY-096、LY-098",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-096",
+    "LY-098"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-096",
+    "LY-098"
+   ],
+   "level": 14,
+   "dependents": [
+    "LY-100"
+   ],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-096、LY-098",
+   "statusEvidence": {
+    "dir": true,
+    "files": 0,
+    "prepFiles": 24,
+    "statusFile": null,
+    "issues": [],
+    "prepStatus": {
+     "path": "LY-099/prep/prep-status.json",
+     "sha256": "8865dcd141290dee5305f7e2e0ae0e059ed337be07b4f30ad3b890e8a4e2513a"
+    }
+   },
+   "assignee": null,
+   "writeArea": "workpacks/LY-099/",
+   "whitelist": [
+    "LY-099/**"
+   ],
+   "locks": [
+    "LOCK-SOURCE-RELEASE",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [],
+   "lines": [
+    1005,
+    1012
+   ],
+   "text": "### LY-099｜源包与可复现交付核验\n\n- **类型 / 依赖**：独立验收；G、LY-096、LY-098。\n- **现有输入**：本批已放行工作包、最新合并基线和本文件交付契约。\n- **具体产物**：每批源码、参数、原生件、依赖/SHA、重建命令、许可证与净化后的交付包。\n- **边界与排重**：私密路径/凭据不进入交付；只核已授权目录，禁止覆盖旧源包；Release上传不由普通生产代理代行。\n- **本项验收**：隔离目录重建及导出哈希/差异说明可核，源包无私密材料；来源缺失阻断该源包，不假装找回原生文件。\n- **唯一写入区**：`workpacks/LY-099/`；所有公共文件另走LY-100。"
+  },
+  {
+   "id": "LY-100",
+   "title": "唯一城市整合与发布writer",
+   "type": "唯一整合",
+   "lane": "唯一整合",
+   "section": "区域验收、全城回归与单点合并",
+   "sectionIntro": "这些席位不是凑数的新模型，而是阻止100个工作包互相破坏的独立验收与唯一写入通道。",
+   "depsRaw": "G、LY-095、LY-096、LY-097、LY-098、LY-099",
+   "usesG": true,
+   "depsExplicit": [
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098",
+    "LY-099"
+   ],
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010",
+    "LY-095",
+    "LY-096",
+    "LY-097",
+    "LY-098",
+    "LY-099"
+   ],
+   "level": 15,
+   "dependents": [],
+   "status": "待输入",
+   "statusRule": "S4 未完成依赖：LY-008、LY-010、LY-095、LY-096、LY-097、LY-098、LY-099",
+   "statusEvidence": {
+    "dir": false,
+    "files": 0,
+    "prepFiles": 0,
+    "statusFile": null,
+    "issues": []
+   },
+   "assignee": "Claude（README：城景和项目卡只由 LY-100（Claude）分批合入）",
+   "writeArea": "workpacks/LY-100/",
+   "whitelist": [
+    "LY-100/**"
+   ],
+   "locks": [
+    "LOCK-13COURT",
+    "LOCK-YONG-ROAD",
+    "LOCK-SHARED-CITY",
+    "LOCK-PUBLIC-DOCS",
+    "RIGHT-PUBLISH",
+    "RIGHT-CITY-WRITE",
+    "RIGHT-TASKBOARD"
+   ],
+   "pauses": [
+    "PZ-01",
+    "PZ-09"
+   ],
+   "lines": [
+    1014,
+    1021
+   ],
+   "text": "### LY-100｜唯一城市整合与发布writer\n\n- **类型 / 依赖**：唯一整合；G、LY-095、LY-096、LY-097、LY-098、LY-099。\n- **现有输入**：本批已放行工作包、最新合并基线和本文件交付契约。\n- **具体产物**：从最新main逐包合并已放行资产，统一城市清单、项目卡、计数、构建数据和回滚记录。\n- **边界与排重**：只有此席位可写共享城市/项目文件；仍按主协调者授权提交发布。阻断项不能硬合；010已明确接受的待验项必须保留待审标识，不覆盖同期雍门接街/13院成果。\n- **本项验收**：最新main前后语义差异、官方构建、必要运行检查、授权范围和回滚清单一致；并发新增保留，分批合入，部署后再读回验证。\n- **唯一写入区**：`workpacks/LY-100/`；所有公共文件另走LY-100。"
+  }
+ ]
+}

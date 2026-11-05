@@ -1,0 +1,230 @@
+{
+ "seat": "LY-018",
+ "baselineCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "shaPolicy": "GLB 取文件字节；文本取 HEAD blob（LF），CRLF 工作树另记",
+ "worktreeDirty": [
+  "lab/data/assets.json",
+  "lab/data/glb-cache.json",
+  "lab/data/report.json"
+ ],
+ "inputs": [
+  {
+   "id": "gu-G-LOD1",
+   "path": "docs/library/models/m-luoyang-gu-gate/files/gu-G-LOD1.glb",
+   "sha256": "5195ce552b76fc60240248d671812fa9e1912e2be327a061cd52524f65a42432",
+   "bytes": 1280000,
+   "role": "G-v1 中景源门体（earth 204v，无接墙帽、门道无地面）",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "listedIn": "lab/data/assets.json（资产卡），city-data.mjs 不引用"
+  },
+  {
+   "id": "gu-G-LOD2",
+   "path": "docs/library/models/m-luoyang-gu-gate/files/gu-G-LOD2.glb",
+   "sha256": "945b3346ab16676dc62cc78aca69b5eef665758607686badea79065193587f6e",
+   "bytes": 52340,
+   "role": "G-v1 远景源门体（earth 同 LOD1，tile 72v）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "id": "gu-G-LOD0",
+   "path": null,
+   "sha256": null,
+   "bytes": 13213712,
+   "role": "G-v1 近景原件；资产卡称未上架",
+   "loadedInCity": false,
+   "missing": true
+  },
+  {
+   "id": "gu-gate-card",
+   "path": "docs/library/models/m-luoyang-gu-gate/m-luoyang-gu-gate.asset.json",
+   "sha256_HEAD_blob": "e192ac647b774d66a27bf6a24249de679f2c014f82cd2882ea1010d28a036d28",
+   "sha256_worktree_CRLF": "86d7fc9ceca4b6b70dfb2a0e2de2d692f02647047bb9e4b24eeae58f84d5e50c",
+   "loadedInCity": false,
+   "loaderCode": "站点资产卡页（lab/data/assets.json 汇总）"
+  },
+  {
+   "id": "master-gu-G-placed",
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part01..05 → chunks/city_gate_gu-G.glb",
+   "sha256": "97c4837931dbc99d02a525b7f60e79d0557713ecef153d8e16aa844361f6cfce",
+   "bytes": 1253568,
+   "zipConcatSha256": "5895ef23a684a343271183dce1e92e112fb49bba9e03e4372023d1247bb50b69",
+   "partSha256": [
+    "d3d5eb7263e9f840c5444d46082eb7ced1c8e5488e7fba9b00d1a0fc3f32a9a3",
+    "c20213e1eaa6f212f5dbf9cf41482347a26947880119ebba0f13978cd1876703",
+    "6a468122cb53a36c5fc93652c2c7f7dc13658510ceee955dc8faf0de9fc9105b",
+    "74f4cd0a08d3f69882cd44dc412efc885d84bf80a39fe0619ae6ff2043d924cb",
+    "a8a0331b4408228a23181adcc3d07d8ca17d25cd108b2179b8bf99880331de5f"
+   ],
+   "localExtract": "LY-018/prep/work/city-visible/chunks/city_gate_gu-G.glb",
+   "role": "母版 city-C032 里的谷门试放（世界矩阵，earth 276v 含 A 墙帽 ±11→±16 与 32×12×0.17 底板）",
+   "matrix": {
+    "translation_glTF": [
+     1693.22314453125,
+     0.17,
+     -3894.5302734375
+    ],
+    "yaw_deg": -10.813595933048136
+   },
+   "loadedInCity": false,
+   "loaderCode": "adapter.json visible-current-node-city_gate_gu-G initial=false；README 明说 renderer 未接入、需另建 asset.url"
+  },
+  {
+   "id": "city-visible-adapter",
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json",
+   "sha256_HEAD_blob": "8f890748d908e4551c1ed46107d98c4bfebfe28820393ae6943a6a2c2e7e0d7c",
+   "loadedInCity": false
+  },
+  {
+   "id": "master-visibility",
+   "path": "(zip) qa/visibility.json",
+   "sha256": "cdbc1faff67e1d48c99af2c8cdac3630e08c63202ce038f2653376c69d4ed82f",
+   "role": "证明 gu-G 三节点在母版 render/viewport 可见",
+   "loadedInCity": false
+  },
+  {
+   "id": "master-walls",
+   "path": "(zip) chunks/city_wall_C_profiles.glb",
+   "sha256": "e42d9f50499f3391cbb20c63b3be99fcd0af0bd6c06ff716aba63820ba221278",
+   "role": "母版墙；C_wall_A_00/01 与网站 A 墙逐顶点一致",
+   "loadedInCity": false
+  },
+  {
+   "id": "master-gate-local-ground",
+   "path": "(zip) chunks/C_gate_local_ground.glb",
+   "sha256": "6002f5a6dcc6653dc6cf081e77236dbd281e60ab9e88574a91eceb96afb6ceb6",
+   "role": "雍/平城/开阳三片门地试样；无谷门片；仅作同类先例，不改",
+   "loadedInCity": false
+  },
+  {
+   "id": "wall-A-00",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-00.glb",
+   "sha256": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74",
+   "bytes": 2412,
+   "role": "谷门西侧当前墙端（局部 x=-15.99994）",
+   "loadedInCity": true,
+   "loaderCode": [
+    "docs/cities/luoyang/city-data.mjs:171 asset wall-A-wall-00",
+    "city-data.mjs:3204 node initial:true",
+    "city-data.mjs:3778 chapter walls loadNodeIds",
+    "city-renderer.mjs:286 loadAsset / :372 transformFor",
+    "v1/wall-layer.mjs:20 (sample A via data/west/city-wall-interface.json, SHA 校验)"
+   ]
+  },
+  {
+   "id": "wall-A-01",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-01.glb",
+   "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95",
+   "bytes": 2748,
+   "role": "谷门东侧当前墙端（局部 x=+15.99988）",
+   "loadedInCity": true,
+   "loaderCode": [
+    "city-data.mjs:191 asset",
+    "city-data.mjs:3231 node initial:true",
+    "city-data.mjs:3779",
+    "city-renderer.mjs:286",
+    "v1/wall-layer.mjs:20"
+   ]
+  },
+  {
+   "id": "wall-B-00",
+   "path": "docs/cities/luoyang/assets/city-wall/B/wall-00.glb",
+   "sha256": "16a296210c1320981d236691ad450ed66ea0f6dd93b20f879711eba2b0fc2127",
+   "bytes": 2388,
+   "loadedInCity": "仅 v1 选 B 时",
+   "loaderCode": "v1/wall-layer.mjs:20"
+  },
+  {
+   "id": "wall-B-01",
+   "path": "docs/cities/luoyang/assets/city-wall/B/wall-01.glb",
+   "sha256": "91eefa47f86de7a2e36be2003a8302cd7b91ac14569d48f0aad671f9bae14c32",
+   "bytes": 2732,
+   "loadedInCity": "仅 v1 选 B 时",
+   "loaderCode": "v1/wall-layer.mjs:20"
+  },
+  {
+   "id": "city-wall-interface",
+   "path": "docs/cities/luoyang/data/west/city-wall-interface.json",
+   "sha256_HEAD_blob": "ca75d115d49d38a53c66258af12e6e455d314f0f75548899e021276c5b100543",
+   "sha256_worktree_CRLF": "ad18cc65915724a850d1f97b498be8b63464cd3d25116c9d615bfd79f2570da8",
+   "loadedInCity": true,
+   "loaderCode": "v1/wall-layer.mjs:20；city-data.mjs 各墙 sourceContract"
+  },
+  {
+   "id": "city-wall-constraints",
+   "path": "docs/cities/luoyang/data/west/city-wall-constraints.json",
+   "sha256_HEAD_blob": "e9c84bddc7bb7d867e3ba8abf8cbeb604b222ad0960901f32e979dbb995e0af3",
+   "role": "gate_gu_B C 投影 (1693.223055,3894.530178)、段 2、距离 3.490812",
+   "loadedInCity": "仅作链接",
+   "loaderCode": "v1/wall-layer.mjs:15 (href)"
+  },
+  {
+   "id": "evidence-geometry",
+   "path": "docs/cities/luoyang/data/evidence/evidence-geometry.json",
+   "sha256_HEAD_blob": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+   "role": "gate_gu_B B 点 (1693.878,3897.959)；B 城垣第 2 段方向 -10.8139°；frozen baseline SHA 一致",
+   "loadedInCity": true,
+   "loaderCode": "v1/evidence-view.mjs:28 checkedJSON（带 SHA）"
+  },
+  {
+   "id": "road-preconstraints",
+   "path": "docs/cities/luoyang/data/west/road-preconstraints.json",
+   "sha256_HEAD_blob": "d369409a92fce2d26e8c57eee0e2b5864e509fe30f8458ae8a3e150e661d3c52",
+   "role": "road_east_north_link_B = hold_palace_interface",
+   "loadedInCity": "数据文件，未查到运行时加载"
+  },
+  {
+   "id": "city-data",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256_HEAD_blob": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "role": "共享城市清单（只读；只有 LY-100 能写）",
+   "loadedInCity": true,
+   "loaderCode": "app.mjs:1 import"
+  },
+  {
+   "id": "city-renderer",
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256_HEAD_blob": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "loadedInCity": true,
+   "loaderCode": "app.mjs:177 dynamic import"
+  },
+  {
+   "id": "wall-layer",
+   "path": "docs/cities/luoyang/v1/wall-layer.mjs",
+   "sha256_HEAD_blob": "d2c1d2d69e0d9c03a2984f1c0cf48f39bb5a692627f4244f1a0fa58af28b7883",
+   "loadedInCity": true
+  },
+  {
+   "id": "project-card",
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256_HEAD_blob": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "role": "谷门列为保留独立研究（:107），成员 :555",
+   "loadedInCity": false
+  }
+ ],
+ "missing": [
+  {
+   "id": "gu-G-v1-source-package",
+   "what": "谷门 G-v1 源 ZIP / .blend（含 LOD0、原生隐藏试放 delta JSON、remove_on_rollback 清单）",
+   "use": "取原生帽/底板参数、LOD0 档、delta SHA 与撤回清单",
+   "rebuildFromGLB": "帽和底板可从公开 chunk 精确重建；LOD0 只能写成从 GLB 重建"
+  },
+  {
+   "id": "city-C032-entry-LOD0.blend",
+   "sha256": "1e8c4d2ce19827bb8ab5ff24a662fd4f3909aa5c6074fc9a90623a103b73b01b",
+   "use": "核对 2505 个隐藏 placement 里有没有谷门其他试放",
+   "rebuildFromGLB": "否；只能用公开 visibility.json 名单"
+  },
+  {
+   "id": "qa/gate-projections.json",
+   "use": "city-wall-interface.json 引用的门投影表",
+   "rebuildFromGLB": "可以用 city-wall-constraints gate_projection_diagnostics 代替"
+  },
+  {
+   "id": "G-pack",
+   "what": "LY-001/002/005/006/007/008/009/010 冻结输出",
+   "use": "高程契约、端口 ID、三档基线、检查器、准入"
+  }
+ ]
+}

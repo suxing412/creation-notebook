@@ -1,0 +1,1043 @@
+{
+ "seat": "LY-008",
+ "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "public": false,
+ "note": "本席位只交检查器与证据，不产公共文件；全部 public=false。检查器若要进仓库（如 lab/tools/ 或 CI），由 LY-100 走合并队列。",
+ "files": [
+  {
+   "path": "brief.md",
+   "bytes": 9894,
+   "sha256": "bd010b78eb24cf6355c86eae5b5dbd8e014e7450ba751a009d61063f142f9da3",
+   "class": "seat-doc",
+   "public": false
+  },
+  {
+   "path": "inputs.json",
+   "bytes": 4806,
+   "sha256": "fd72d7ba98467b54ba85ceaf690a92ea1c509e25d04c80a6e6e893a67dc60b9e",
+   "class": "seat-doc",
+   "public": false
+  },
+  {
+   "path": "assembly.json",
+   "bytes": 1487,
+   "sha256": "eb1bbac9e9d763b50a56765b28aa185e47f73c8c580e1a432132091f001f728c",
+   "class": "seat-doc",
+   "public": false
+  },
+  {
+   "path": "models/README.md",
+   "bytes": 237,
+   "sha256": "981e7322fa6c7e1ffe2d495b85eb84ea406583ba237829b955835581afbfc01c",
+   "class": "seat-doc",
+   "public": false
+  },
+  {
+   "path": "source/calibrate.py",
+   "bytes": 5298,
+   "sha256": "9484feb68a684576c0b0d1b2b8fade8e9fc26e6a0c03cc74d8a21634caadea83",
+   "class": "checker-source",
+   "public": false
+  },
+  {
+   "path": "source/checks.py",
+   "bytes": 8208,
+   "sha256": "3da102dd42e02c1b4c4ab7e8e99aea2c598a14ab7c740420e94e7d080d2c587b",
+   "class": "checker-source",
+   "public": false
+  },
+  {
+   "path": "source/draw_preview.py",
+   "bytes": 2987,
+   "sha256": "d28a009ff04db1222ddc29a751cea94d9f7ef80e632d0c6a43e7727c3f4af279",
+   "class": "checker-source",
+   "public": false
+  },
+  {
+   "path": "source/ly_check.py",
+   "bytes": 64003,
+   "sha256": "39aaa491859e1a796080dd91ccabd1c47423cf7f9ef2af61c5f123b04b3dff4b",
+   "class": "checker-source",
+   "public": false
+  },
+  {
+   "path": "source/make_manifest.py",
+   "bytes": 6583,
+   "sha256": "12c94077767a8af989c2b17805ed6f3cc5ac563e6f580556468b34e309e250b0",
+   "class": "checker-source",
+   "public": false
+  },
+  {
+   "path": "source/make_negatives.py",
+   "bytes": 24426,
+   "sha256": "d4f9011f146f4d0974b4e59079e12adff761f0603ca9a526c341ee407cfdbf9a",
+   "class": "checker-source",
+   "public": false
+  },
+  {
+   "path": "source/run_all.py",
+   "bytes": 1456,
+   "sha256": "86c2a1bc12f7add68963abb3a15c4b6481f5586f6f90003cbfcc58b79e14532f",
+   "class": "checker-source",
+   "public": false
+  },
+  {
+   "path": "source/run_official.py",
+   "bytes": 10171,
+   "sha256": "642003ba848090228c8177e24124a50e73762e73aeb497ae848ff83894f31c0a",
+   "class": "checker-source",
+   "public": false
+  },
+  {
+   "path": "source/run_selftest.py",
+   "bytes": 5312,
+   "sha256": "8aa0c1cc702754909faa174dcbf828122ea2228fe73c34ad81d4087c99a8b4be",
+   "class": "checker-source",
+   "public": false
+  },
+  {
+   "path": "qa/census-bce3211.csv",
+   "bytes": 66439,
+   "sha256": "f506894249fcb701a545649047a0c20e26863dd4202d1e60f3047e7a87d9663f",
+   "class": "qa",
+   "public": false
+  },
+  {
+   "path": "qa/census-bce3211.json",
+   "bytes": 229868,
+   "sha256": "618688c54cd1a42e9c423fc8c32b3a6b6a32794118f5dabf948a63190ab80f3f",
+   "class": "qa",
+   "public": false
+  },
+  {
+   "path": "qa/census-round1-falsepositives.json",
+   "bytes": 14395,
+   "sha256": "d691d038b1b0c04e1d64f639dd3d7e5349b10ec707ee16c7f92972227b19fdcc",
+   "class": "qa",
+   "public": false
+  },
+  {
+   "path": "qa/checks.json",
+   "bytes": 9771,
+   "sha256": "9db2250418dee8d355eb7b17d221bde3b3ee68b038c3cdf00c382a87f1b5906e",
+   "class": "qa",
+   "public": false
+  },
+  {
+   "path": "qa/lab-status-before.txt",
+   "bytes": 53,
+   "sha256": "d7acf0167a51b7d5697551ecef72b841895a236a7d8765bf71312e5a61d93d10",
+   "class": "qa",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/C00-repacked-unchanged.glb",
+   "bytes": 1114076,
+   "sha256": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": false
+  },
+  {
+   "path": "qa/negatives/L01-material-name-suffix.glb",
+   "bytes": 1114080,
+   "sha256": "c05523eb2571951cd3f2691a9dcd97c6c73c5c363f24756c29f2a7bb1b957de5",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "L01-material-name-suffix",
+    "expectCodes": [
+     "LY_MATERIAL_NAME"
+    ],
+    "profile": "ly-p01",
+    "lod": 0
+   }
+  },
+  {
+   "path": "qa/negatives/L04-static-node-trs.glb",
+   "bytes": 1114108,
+   "sha256": "553d1c6adad83c75d0053d64bdcee5cbef1f446927b024996d9222a824211aba",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "L04-static-node-trs",
+    "expectCodes": [
+     "LY_STATIC_NODE_TRS"
+    ],
+    "profile": "ly-p01",
+    "lod": 0
+   }
+  },
+  {
+   "path": "qa/negatives/L05-uv-shifted.glb",
+   "bytes": 1114076,
+   "sha256": "d787a7f4ae2f672492acaeae79756205b210eaf19a9bb26df66f462cd0552c5b",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "L05-uv-shifted",
+    "expectCodes": [
+     "LY_UV_NOT_WORLD_BOX"
+    ],
+    "profile": "ly-p01",
+    "lod": 0
+   }
+  },
+  {
+   "path": "qa/negatives/N01-bad-header-length.glb",
+   "bytes": 1114076,
+   "sha256": "825a483c0d89b953488e5df8ecae1df3caf7fa00ea4b859c10d6b58dc5a18862",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N01-bad-header-length",
+    "expectCodes": [
+     "GLB_LENGTH_MISMATCH"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N02-truncated.glb",
+   "bytes": 1113076,
+   "sha256": "dd15debb41ad1e99c2367fceebcfd2eda4dec58c6ea9741b748eaf7fb0c4a25a",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N02-truncated",
+    "expectCodes": [
+     "GLB_LENGTH_MISMATCH",
+     "GLB_CHUNK_OVERRUN"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N03-bad-bin-chunk-length.glb",
+   "bytes": 1114076,
+   "sha256": "5a66ea3fdef86e3fa6aadad1ba79721b123bc394bc33205a7aec372ec8c1091a",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N03-bad-bin-chunk-length",
+    "expectCodes": [
+     "GLB_CHUNK_OVERRUN"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N04-nan-position.glb",
+   "bytes": 1114076,
+   "sha256": "52567f0980c590df7bddce601a6530032070e9ca93dd13a332211df4710345e5",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N04-nan-position",
+    "expectCodes": [
+     "GEOM_NONFINITE"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N05-inf-uv.glb",
+   "bytes": 1114076,
+   "sha256": "3406c4bb429542dd3ce7af47b3d8c127ec55f891fea38f16cbc463ad034d5168",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N05-inf-uv",
+    "expectCodes": [
+     "GEOM_NONFINITE"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N06-nan-json.glb",
+   "bytes": 1113840,
+   "sha256": "f6017c814b35ade885e1c39890e2bf859a15692fb67cb733a18bdc4f94af6952",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N06-nan-json",
+    "expectCodes": [
+     "GLTF_JSON_NONFINITE"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N07-missing-texture-index.glb",
+   "bytes": 1114080,
+   "sha256": "e43d20efce44ce9e61bdd6b4059b01e2cecd023a778fed8b4a786b389cc4b4bb",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N07-missing-texture-index",
+    "expectCodes": [
+     "TEXTURE_MISSING"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N08-missing-image-source.glb",
+   "bytes": 1114080,
+   "sha256": "4f52261211f706273cf96fc858eab5e9bfc3837fdf0cc0cc22a9d53299689ad5",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N08-missing-image-source",
+    "expectCodes": [
+     "TEXTURE_MISSING"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N09-external-texture-missing.glb",
+   "bytes": 1114064,
+   "sha256": "63b99082b35568e6799b9f37cfc41e0014416ca943d798d4b996d12e6907211a",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N09-external-texture-missing",
+    "expectCodes": [
+     "TEXTURE_NOT_EMBEDDED",
+     "TEXTURE_MISSING"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N10-corrupt-texture-bytes.glb",
+   "bytes": 1114076,
+   "sha256": "aaa816bb2424980db5e3536314fc6dc2dff1f105f3ab7d27919447b30ca543e0",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N10-corrupt-texture-bytes",
+    "expectCodes": [
+     "TEXTURE_MIME_MISMATCH",
+     "TEXTURE_CORRUPT"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N13a-private-path-extras.glb",
+   "bytes": 1113876,
+   "sha256": "4685973f571db0485712de0292ea30811d414c217daf21969699a48a007bd149",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N13a-private-path-extras",
+    "expectCodes": [
+     "PRIVATE_PATH_IN_JSON"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N13b-private-path-nodename.glb",
+   "bytes": 1114088,
+   "sha256": "b0d4d35ff4ebc37a687a9d0cc77df1ffc181b17b0247cd10755c50513a8568ce",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N13b-private-path-nodename",
+    "expectCodes": [
+     "PRIVATE_PATH_IN_JSON"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N13c-username-generator.glb",
+   "bytes": 1114088,
+   "sha256": "c909773dd0e530c138e4741c49dfa64317f9548811abb868bb688578ba71ef34",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N13c-username-generator",
+    "expectCodes": [
+     "PRIVATE_PATH_IN_JSON"
+    ],
+    "privateTokens": [
+     "lyneguser"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N14-private-path-png-text.glb",
+   "bytes": 1298244,
+   "sha256": "d347e49021b1d1857da00abd692182861775fdedc314cc2bb58119e786edda38",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N14-private-path-png-text",
+    "expectCodes": [
+     "PRIVATE_PATH_IN_TEXTURE",
+     "PRIVATE_PATH_IN_BIN"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N15-path-escape-image-uri.glb",
+   "bytes": 1114092,
+   "sha256": "3c481f241bd36321b1df8911e625889acf0730a6a819af4ee6bb7d67f2c080aa",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N15-path-escape-image-uri",
+    "expectCodes": [
+     "PATH_ESCAPE",
+     "TEXTURE_NOT_EMBEDDED"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N16-path-escape-buffer-uri.glb",
+   "bytes": 1114124,
+   "sha256": "83a1f0f764bc6484b05195e602301ee5a14d6829947c2d91672028e064e3982a",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N16-path-escape-buffer-uri",
+    "expectCodes": [
+     "PATH_ESCAPE",
+     "GLTF_EXTERNAL_BUFFER"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N17-index-out-of-range.glb",
+   "bytes": 1114076,
+   "sha256": "a4a31f6660f43434227c4510651dea9f68fd29c58d24e4abd996ac9d26c39105",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N17-index-out-of-range",
+    "expectCodes": [
+     "GEOM_INDEX_OUT_OF_RANGE"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N18-accessor-overrun.glb",
+   "bytes": 1114080,
+   "sha256": "c4f55d6a56c0ca63f1971a289bf151cbf627d375dc23acb5a7bac0eed1dcf6d3",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N18-accessor-overrun",
+    "expectCodes": [
+     "GLTF_ACCESSOR_OVERRUN"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N19-bufferview-overrun.glb",
+   "bytes": 1114080,
+   "sha256": "02c3f2256313808c1097991262ece79b0b6cc6ad708064c451d2a31ad13703d1",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N19-bufferview-overrun",
+    "expectCodes": [
+     "GLTF_BUFFERVIEW_OVERRUN"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N20-minmax-wrong.glb",
+   "bytes": 1114080,
+   "sha256": "4fcef52c799521f1a43bd1af90a75d534d7c3c355c862cafbc9e8cbcb6af9ba1",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N20-minmax-wrong",
+    "expectCodes": [
+     "GLTF_POSITION_MINMAX_WRONG"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N21-missing-uv.glb",
+   "bytes": 1114064,
+   "sha256": "47221b975e85907eb779452f8a38361d38ee20d8c72253c45f1809f4af34911f",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N21-missing-uv",
+    "expectCodes": [
+     "UV_MISSING"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/N22-bad-magic.glb",
+   "bytes": 1114076,
+   "sha256": "716a8e82f523ffc83c1f5eeb40f2d6c11319f26d64c56aaa7d2304be36ea5b14",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N22-bad-magic",
+    "expectCodes": [
+     "GLB_BAD_MAGIC"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/S01-LOD1-is-LOD0-copy.glb",
+   "bytes": 1114076,
+   "sha256": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "lodset",
+    "case": "S01-lod0-copied-as-lod1",
+    "expectCodes": [
+     "LOD_COPY_OF_LOD0"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/cases.json",
+   "bytes": 31671,
+   "sha256": "1c5dfdfcbd55237ee90ebb2837bd1ecd2a4e15ec48a3eb55e0382f69b5b4b3ac",
+   "class": "qa",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P00-good/brief.md",
+   "bytes": 54,
+   "sha256": "cbff779cf5077b06d5c72805b0113d4f64281d07234e1f79f09452352f07cec7",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P00-good/delivery-manifest.json",
+   "bytes": 363,
+   "sha256": "77eeaf13f594f718e812264f61e4b2a3c75cfd354e3b7de550f702269c3b1604",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P00-good/models/S84-LOD2.glb",
+   "bytes": 15840,
+   "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P01-size-mismatch/brief.md",
+   "bytes": 54,
+   "sha256": "cbff779cf5077b06d5c72805b0113d4f64281d07234e1f79f09452352f07cec7",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P01-size-mismatch/delivery-manifest.json",
+   "bytes": 363,
+   "sha256": "41413a3805bf35872f6d431ee5fdf4008c97fc7f6a3428f8df39d65d42516f8c",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P01-size-mismatch/models/S84-LOD2.glb",
+   "bytes": 15840,
+   "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P02-sha-mismatch/brief.md",
+   "bytes": 54,
+   "sha256": "cbff779cf5077b06d5c72805b0113d4f64281d07234e1f79f09452352f07cec7",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P02-sha-mismatch/delivery-manifest.json",
+   "bytes": 363,
+   "sha256": "c31032bcd681594fb26253c942bca283139523b880f0517971da5e969de8565f",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P02-sha-mismatch/models/S84-LOD2.glb",
+   "bytes": 15840,
+   "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P03-missing-file/brief.md",
+   "bytes": 54,
+   "sha256": "cbff779cf5077b06d5c72805b0113d4f64281d07234e1f79f09452352f07cec7",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P03-missing-file/delivery-manifest.json",
+   "bytes": 501,
+   "sha256": "3381c4a91ba69f4e42e1908e814cde4108dac04407e4bcd72d92cbdf74d62349",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P03-missing-file/models/S84-LOD2.glb",
+   "bytes": 15840,
+   "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P04-path-escape-parent/brief.md",
+   "bytes": 54,
+   "sha256": "cbff779cf5077b06d5c72805b0113d4f64281d07234e1f79f09452352f07cec7",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P04-path-escape-parent/delivery-manifest.json",
+   "bytes": 502,
+   "sha256": "631c9c631c4fa0a2fce7a6c46178b2e418336ff31407ee726baaf0952a57aeba",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P04-path-escape-parent/models/S84-LOD2.glb",
+   "bytes": 15840,
+   "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P05-path-absolute/brief.md",
+   "bytes": 54,
+   "sha256": "cbff779cf5077b06d5c72805b0113d4f64281d07234e1f79f09452352f07cec7",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P05-path-absolute/delivery-manifest.json",
+   "bytes": 523,
+   "sha256": "dac0df24f6c806e0bf7638939ffec8181c5fc270cd191fd79eab8743fd5ea2fb",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P05-path-absolute/models/S84-LOD2.glb",
+   "bytes": 15840,
+   "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P06-private-path-public-file/brief.md",
+   "bytes": 54,
+   "sha256": "cbff779cf5077b06d5c72805b0113d4f64281d07234e1f79f09452352f07cec7",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P06-private-path-public-file/delivery-manifest.json",
+   "bytes": 516,
+   "sha256": "5eb48810d44652d8a2000ec0c28f9623dfdb531aef451504761e0657786f389c",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P06-private-path-public-file/models/S84-LOD2.glb",
+   "bytes": 15840,
+   "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P06-private-path-public-file/public-note.md",
+   "bytes": 57,
+   "sha256": "1d6666565a2e6695141857b8280cb7cb27eaa7e3c3bf6a471d45f594df99a29d",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P07-contains-bad-glb/brief.md",
+   "bytes": 54,
+   "sha256": "cbff779cf5077b06d5c72805b0113d4f64281d07234e1f79f09452352f07cec7",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P07-contains-bad-glb/delivery-manifest.json",
+   "bytes": 521,
+   "sha256": "0408015b36a99aa74c6749b92f321fc93d661fca31c544e2f32aadd5d5cd233e",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P07-contains-bad-glb/models/S84-LOD2.glb",
+   "bytes": 15840,
+   "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P07-contains-bad-glb/models/bad.glb",
+   "bytes": 1114076,
+   "sha256": "52567f0980c590df7bddce601a6530032070e9ca93dd13a332211df4710345e5",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N04-nan-position",
+    "expectCodes": [
+     "GEOM_NONFINITE"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/packages/P08-backslash-path/brief.md",
+   "bytes": 54,
+   "sha256": "cbff779cf5077b06d5c72805b0113d4f64281d07234e1f79f09452352f07cec7",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P08-backslash-path/delivery-manifest.json",
+   "bytes": 375,
+   "sha256": "90279339a0466970b8f8df8f684a1dbfa9aa4eb8bb87838632287cb0ff0eed92",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P08-backslash-path/models/S84-LOD2.glb",
+   "bytes": 15840,
+   "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P09-fixture-unexpectedly-passes/brief.md",
+   "bytes": 54,
+   "sha256": "cbff779cf5077b06d5c72805b0113d4f64281d07234e1f79f09452352f07cec7",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P09-fixture-unexpectedly-passes/delivery-manifest.json",
+   "bytes": 386,
+   "sha256": "475e30272b7dff783c4b8b02c06fbd5ea718c550c73bb884ead0984b30d8362e",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P09-fixture-unexpectedly-passes/models/S84-LOD2.glb",
+   "bytes": 15840,
+   "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P10-fixture-registered/brief.md",
+   "bytes": 54,
+   "sha256": "cbff779cf5077b06d5c72805b0113d4f64281d07234e1f79f09452352f07cec7",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P10-fixture-registered/delivery-manifest.json",
+   "bytes": 544,
+   "sha256": "6b54436187b5d4b669c560bd106365916dec9e80868e00f65d81b399ac764e32",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P10-fixture-registered/models/S84-LOD2.glb",
+   "bytes": 15840,
+   "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/packages/P10-fixture-registered/models/bad.glb",
+   "bytes": 1114076,
+   "sha256": "52567f0980c590df7bddce601a6530032070e9ca93dd13a332211df4710345e5",
+   "class": "negative-fixture",
+   "public": false,
+   "expectFail": true,
+   "fixture": {
+    "cmd": "glb",
+    "case": "N04-nan-position",
+    "expectCodes": [
+     "GEOM_NONFINITE"
+    ]
+   }
+  },
+  {
+   "path": "qa/negatives/trees/T00-clean-tree/README.md",
+   "bytes": 63,
+   "sha256": "68881a759a7378be0f2aee7b1bbf4835c91e35382f11d8a02bdfd83f1ab49ffe",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/trees/T00-clean-tree/library/models/x/x.asset.json",
+   "bytes": 53,
+   "sha256": "a0a7d4501dfc192b0b6730e4005eb3f7b3ac3e50b582043d7f3fcf7f4c518ee9",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/trees/T01-source-file/README.md",
+   "bytes": 63,
+   "sha256": "68881a759a7378be0f2aee7b1bbf4835c91e35382f11d8a02bdfd83f1ab49ffe",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/trees/T01-source-file/library/models/x/x.asset.json",
+   "bytes": 53,
+   "sha256": "a0a7d4501dfc192b0b6730e4005eb3f7b3ac3e50b582043d7f3fcf7f4c518ee9",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/trees/T01-source-file/library/models/x/x.blend",
+   "bytes": 21,
+   "sha256": "8f30a633c8f52f2bdb8d565765bb403a3d8c781ca45e9f9f3ca838021c07aabf",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/trees/T02-private-path/README.md",
+   "bytes": 63,
+   "sha256": "68881a759a7378be0f2aee7b1bbf4835c91e35382f11d8a02bdfd83f1ab49ffe",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/trees/T02-private-path/cities/luoyang/notes.md",
+   "bytes": 49,
+   "sha256": "dd9ca0c0ce4e80c2845d841f7284c3caa55f3e5b1fc955701ae9181569c53504",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/trees/T02-private-path/library/models/x/x.asset.json",
+   "bytes": 53,
+   "sha256": "a0a7d4501dfc192b0b6730e4005eb3f7b3ac3e50b582043d7f3fcf7f4c518ee9",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/trees/T03-drive-path/README.md",
+   "bytes": 63,
+   "sha256": "68881a759a7378be0f2aee7b1bbf4835c91e35382f11d8a02bdfd83f1ab49ffe",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/trees/T03-drive-path/asset-spec/HOWTO.md",
+   "bytes": 51,
+   "sha256": "f25784263ee7ce41653d19b0ebc733e3bb8670ad92be707edca78b16bba75e66",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/trees/T03-drive-path/library/models/x/x.asset.json",
+   "bytes": 53,
+   "sha256": "a0a7d4501dfc192b0b6730e4005eb3f7b3ac3e50b582043d7f3fcf7f4c518ee9",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/trees/T04-weak-only/README.md",
+   "bytes": 63,
+   "sha256": "68881a759a7378be0f2aee7b1bbf4835c91e35382f11d8a02bdfd83f1ab49ffe",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/trees/T04-weak-only/library/models/x/x.asset.json",
+   "bytes": 53,
+   "sha256": "a0a7d4501dfc192b0b6730e4005eb3f7b3ac3e50b582043d7f3fcf7f4c518ee9",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/negatives/trees/T04-weak-only/studies/x/run.py",
+   "bytes": 36,
+   "sha256": "71baf56165e594ca21d4aa8e59f483294bf3e3c5b04fc44bd17cfd8a1f230847",
+   "class": "negative-fixture",
+   "public": false
+  },
+  {
+   "path": "qa/official-runs.json",
+   "bytes": 10972,
+   "sha256": "41a54d87dfdec91e2bfe587e831aa49edba898848d7c8ed9c5f5ccaf1084e5b2",
+   "class": "qa",
+   "public": false
+  },
+  {
+   "path": "qa/privacy-docs-bce3211.json",
+   "bytes": 3728,
+   "sha256": "88d51e8f5648744e4444814738fba7f828ea3aa86578e2df73059929f6475748",
+   "class": "qa",
+   "public": false
+  },
+  {
+   "path": "qa/seat-packages.json",
+   "bytes": 15288,
+   "sha256": "9ce3a5db78fa369f5aa616e64d2cb443ea786494d50dd5b0024cb74dee02fed7",
+   "class": "qa",
+   "public": false
+  },
+  {
+   "path": "qa/self-package.json",
+   "bytes": 26537,
+   "sha256": "3e0a129b81c987792fd9cc26150adfec838b36754dd4cedeff39ea11f63c9a1f",
+   "class": "qa",
+   "public": false
+  },
+  {
+   "path": "qa/selftest.json",
+   "bytes": 56635,
+   "sha256": "45a4537fbdbebe0b098546810614de4de05b88de9acb10e90d2a5cbfbdc5f6a6",
+   "class": "qa",
+   "public": false
+  },
+  {
+   "path": "preview/selftest-matrix.png",
+   "bytes": 727350,
+   "sha256": "2df5c08ad62c49df3648c57cb00de36d124f0ba7a8db969678c713e5cfcaabbe",
+   "class": "preview",
+   "public": false
+  }
+ ],
+ "totals": {
+  "files": 102,
+  "bytes": 34009216,
+  "negativeFixtures": 77
+ },
+ "excluded": {
+  "tmp/repo": "git -C <lab> -c core.autocrlf=false archive bce3211f818ee5a8bef1773539da70695ba37b17 的导出副本（官方 checker 在这里跑）",
+  "tmp/neg-big": {
+   "why": "超过 1 MB 的体积/面数负例，按 make_negatives.py 逐字节重出",
+   "files": [
+    {
+     "id": "N23-over-triangle-limit",
+     "file": "tmp/neg-big/N23-over-triangle-limit.glb",
+     "bytes": 4114684,
+     "sha256": "6cf5b816d19b1071ec9f2dc8e1ea756d19d2294d13a84252d51856aed2b2acc3"
+    },
+    {
+     "id": "N11-oversize-15000004",
+     "file": "tmp/neg-big/N11-oversize-15000004.glb",
+     "bytes": 15000004,
+     "sha256": "3df5f9afc806019abbe9f9456a2465464736081005998128072b1bdd98a7005b"
+    },
+    {
+     "id": "B11-boundary-15000000",
+     "file": "tmp/neg-big/B11-boundary-15000000.glb",
+     "bytes": 15000000,
+     "sha256": "29f1afae3059a4f209e7787fb02c207490fd81c91896b9c288a2294c731bb92e"
+    },
+    {
+     "id": "N12-upload-channel-14000000",
+     "file": "tmp/neg-big/N12-upload-channel-14000000.glb",
+     "bytes": 14000000,
+     "sha256": "cf3e78c74fdf9d7c62f0f0f89e74e02af869e9482183695e83fbfa36aa58c89c"
+    }
+   ]
+  },
+  "tmp/selftest": "逐用例完整报告，run_selftest.py 重出",
+  "native": "本席位没有源工程",
+  "self": [
+   "delivery-manifest.json",
+   "status.json"
+  ]
+ },
+ "dependencies": {
+  "seats": {
+   "LY-001": "快照与 glb-files.csv（普查 SHA 交叉核对）",
+   "LY-005": "坐标契约（节点缩放/镜像判据来源）",
+   "LY-007": "好样本 9 个 GLB、textures/manifest.json（她的贴图字节）、baseline/*.json（ly-p01 档判据）"
+  },
+  "repo": {
+   "path": "D:/GitHub/creation-notebook-lab",
+   "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+   "access": "只读（git archive / ls-tree / show / status）"
+  },
+  "tools": [
+   "Python 3.11（python -I）",
+   "numpy 2.x",
+   "Pillow（贴图解码复核；缺了只少一项）",
+   "git、tar（导出副本）"
+  ]
+ },
+ "install_order": [
+  "1. 复制 source/ly_check.py 到任意位置（单文件，无同目录依赖）",
+  "2. 单个 GLB：python -I ly_check.py [--json out.json] glb <file.glb> [--profile ly-p01 --lod N --tex-manifest <LY-007>/textures/manifest.json]",
+  "3. 三档：python -I ly_check.py lodset <LOD0> <LOD1> <LOD2> --family house|default",
+  "4. 席位包：python -I ly_check.py package <LY-###> [--glb-profile ly-p01 --tex-manifest …]",
+  "5. 公共目录：python -I ly_check.py privacy <copy>/docs --archived <copy>/docs/asset-spec/source-archive.json",
+  "6. 官方：python -I ly_check.py official <导出副本>（含 .git 的目录会被拒绝）",
+  "退出码：有 error → 1；只有 warning → 0"
+ ],
+ "recompute": [
+  "python -I source/run_all.py . ../LY-007 D:/GitHub/creation-notebook-lab bce3211f818ee5a8bef1773539da70695ba37b17 ..",
+  "分步：python -I source/make_negatives.py . ../LY-007",
+  "      python -I source/run_selftest.py . ../LY-007",
+  "      python -I source/run_official.py . D:/GitHub/creation-notebook-lab bce3211f818ee5a8bef1773539da70695ba37b17",
+  "      python -I source/calibrate.py . ..",
+  "      python -I source/ly_check.py --json qa/privacy-docs-bce3211.json privacy tmp/repo/docs --archived tmp/repo/docs/asset-spec/source-archive.json",
+  "      python -I source/draw_preview.py .",
+  "      python -I source/checks.py . ../LY-007 D:/GitHub/creation-notebook-lab bce3211f818ee5a8bef1773539da70695ba37b17 ..",
+  "      python -I source/make_manifest.py ."
+ ]
+}

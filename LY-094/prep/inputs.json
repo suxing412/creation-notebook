@@ -1,0 +1,1525 @@
+{
+ "seat": "LY-094",
+ "phase": "prep",
+ "baselineCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "labHeadEqualsCommit": true,
+ "byteRule": "blobSha256 = bytes of the committed blob at bce3211 (what the repo/website serves); checkoutSha256 = local autocrlf checkout. All 77 scope GLBs: blob == checkout.",
+ "labCode": [
+  {
+   "path": "docs/cities/luoyang/index.html",
+   "blobSha256": "cfbf73763675397dde8f5ab08bb13f6b51fbcfa9954227552e32be756666b1bf",
+   "checkoutSha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "role": "entry page; imports app.mjs",
+   "loadedInCity": "yes (current entry)",
+   "codeLocation": "index.html"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "blobSha256": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "checkoutSha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "role": "imports city-data.mjs; study choices per chapter researchModelIds; isStudy flag",
+   "loadedInCity": "yes",
+   "codeLocation": "app.mjs:82,115-120"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "blobSha256": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "checkoutSha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "role": "manifest: study-lingtai :602, study-taixue-A :636, study-taixue-B :674; chapter ritual :4011 (researchModelIds lingtai/taixue A/B, nodeIds []); researchModels :4099-4180 (space local-study, cityPlacement null); no node for any palace/ritual/suburb family",
+   "loadedInCity": "yes",
+   "codeLocation": "city-data.mjs:602,636,674,1267-1271,4011,4101,4125,4154"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "blobSha256": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "checkoutSha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "role": "loadedIds rule :221 (initial!==false and not unlocated); chapter loadNodeIds :601; focusResearchModel :645 renders a local-study node alone and shows 城市位置尚未配准",
+   "loadedInCity": "yes",
+   "codeLocation": "city-renderer.mjs:218-221,601,645-660"
+  },
+  {
+   "path": "docs/cities/luoyang/scene.mjs",
+   "blobSha256": "00114cb9112da34194ef47f371d0850ac4fa55d5db87fea5084b9a7a3064e6b9",
+   "checkoutSha256": "00114cb9112da34194ef47f371d0850ac4fa55d5db87fea5084b9a7a3064e6b9",
+   "role": "noteOf: local-study -> 已建模 else 已入城; chapterOf default ritual",
+   "loadedInCity": "yes",
+   "codeLocation": "scene.mjs:25,32"
+  },
+  {
+   "path": "docs/cities/luoyang/data/evidence/evidence-geometry.json",
+   "blobSha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+   "checkoutSha256": "662562fa87cffc9de43b2c23564f1ab63fba8c01f2345891f255cb202bee2233",
+   "role": "B schematic layer: ritual_*_B points, palace envelopes, palaces_connector_B; no feature for 南郊 or 北郊",
+   "loadedInCity": "v1 only (evidence markers, not models)",
+   "codeLocation": "v1/evidence-view.mjs:28 checkedJSON(..., fa8b7002...)"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/evidence-view.mjs",
+   "blobSha256": "fcf2079fd635f7f76553dbd1d23b8feaa688f77e278b4edb6e4154fab74c8fac",
+   "checkoutSha256": "4f4747ba7b30e44daf71d947661da12c39f058d9473c53de846c09b1275ce59a",
+   "role": "v1 archive entry; loads evidence-geometry with expected blob SHA fa8b7002",
+   "loadedInCity": "v1 only",
+   "codeLocation": "v1/evidence-view.mjs:28"
+  },
+  {
+   "path": "docs/cities/luoyang/data/research-unplaced.json",
+   "blobSha256": "27f9e7f3429eccd8e7b5cbc1f5bbf88019a90ee9191c090b067d838d1a7bb43b",
+   "checkoutSha256": "601549ca1238edd7cb195b407653e1c0be71e3eefa642611eed1863d28b82c2b",
+   "role": "north_palace/south_palace etc. spatialState unknown-unplaced, renderable false",
+   "loadedInCity": "data only",
+   "codeLocation": "-"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "blobSha256": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "checkoutSha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "role": "project card; members[] lists the 16 scope cards; progress[6].focus research:research-lingtai",
+   "loadedInCity": "site card, not 3D",
+   "codeLocation": "-"
+  },
+  {
+   "path": "docs/model-library/lingtai/metadata.json",
+   "blobSha256": "3e28f8b9cd90f2190d570c7f7ed649c2593c257899ed492df6804e62465419ce",
+   "checkoutSha256": "cecbb8f42652a35ece5a6040dbd5602bdca3543dbfb3816a06212dcf5482a77b",
+   "role": "cityPlacement null",
+   "loadedInCity": "metadata of research-lingtai",
+   "codeLocation": "city-data.mjs:623 metadataPage"
+  },
+  {
+   "path": "docs/model-library/taixue/metadata.json",
+   "blobSha256": "d289808fd54ffd43f90e62a2ace004bdeeeef18209ce6a0cd09f1ec17139a165",
+   "checkoutSha256": "c0f51f5b9a791e6e97200466e78b5f4301044339b06da67e4bb3571ec3bf9317",
+   "role": "cityPlacement null; covers taixue B",
+   "loadedInCity": "metadata of research-taixue-B",
+   "codeLocation": "city-data.mjs:695 metadataPage"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/flat/source.json",
+   "blobSha256": "ddd1445c1dddabc7f2134b4dc0c3fae37484e619099ea549a4104bf483b486c1",
+   "checkoutSha256": "f2734dd41fd56a02dea00474e5c41ce8e0a21d9ac7cc472e76e01b3ce08d8785",
+   "role": "projection source contract of study-* flat GLBs",
+   "loadedInCity": "yes (contract)",
+   "codeLocation": "city-data.mjs projectionSourceContract"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/lingtai-A-quality-LOD1.gltf",
+   "blobSha256": "c27d581371f6eb6956983674802a6006c0f665d5dd5dcb6f36089d6fbc130220",
+   "checkoutSha256": "c27d581371f6eb6956983674802a6006c0f665d5dd5dcb6f36089d6fbc130220",
+   "role": "source of the city lingtai research view = pre-stair-revision quality-v1 (21,332 tris), not the card LOD1 (21,424 tris)",
+   "loadedInCity": "source only",
+   "codeLocation": "city-data.mjs:627 sourceAsset"
+  },
+  {
+   "path": "lab/data/assets.json",
+   "blobSha256": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "checkoutSha256": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+   "role": "summary; working tree has pre-existing uncommitted timestamp edits (not by this seat)",
+   "loadedInCity": "no",
+   "codeLocation": "-"
+  }
+ ],
+ "scopeAssets": [
+  {
+   "id": "m-luoyang-palace-admission-court",
+   "region": "palace-unassigned",
+   "registrationAuthority": "LY-003",
+   "assemblySeats": [
+    "LY-061",
+    "LY-062",
+    "LY-070"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-palace-admission-court/m-luoyang-palace-admission-court.asset.json",
+    "blobSha256": "7df2a18426266859f2718691546ae821026b2c50798035817a6f579fc693f560",
+    "checkoutSha256": "ed89a6eac40374e753b2abcc988d902888a53094fe9232e5f12e1ce4c41003e4",
+    "status": "待审",
+    "statusNote": "已建模，未入城；历史身份与绝对坐标未定。"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD0.glb",
+     "bytes": 2578472,
+     "sha256": "59c8b758a5a2523105eac0e516e9961bf769bd5e422ba2913d292492ed45c4b0",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD1.glb",
+     "bytes": 1126584,
+     "sha256": "d95bd22f9317683ece8b8d14a6d4a6719522e47c8410f976e064708890148281",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD2.glb",
+     "bytes": 278700,
+     "sha256": "01b2017fac9d8ee6190726d233973c9b048936ce76b3ec7da8fb91aedec3a33d",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0.glb",
+     "bytes": 2578388,
+     "sha256": "6ea892982b46e554bbe8c94ade9cb94ed94e3dbc6a8015b3bb963943d96500a8",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD1.glb",
+     "bytes": 1126500,
+     "sha256": "455a12153d4132d2b653cdf8bbcf4b4994a5c33451efc1ec16119ebbf21453d2",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD2.glb",
+     "bytes": 278616,
+     "sha256": "108e28a567dcef237868b2414332ae51925686d256891736355a5b40d9c0101d",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-palace-guard",
+   "region": "palace-unassigned",
+   "registrationAuthority": "LY-003",
+   "assemblySeats": [
+    "LY-062",
+    "LY-070"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-palace-guard/m-luoyang-palace-guard.asset.json",
+    "blobSha256": "6628df8326c79902d1af8fbd0fa5a1bebe96e8b9adc0a8c9bcd0941225e76cff",
+    "checkoutSha256": "b9932d281944fe4bafa3409c6fcccb377a5e910f38118230b56504908c27910c",
+    "status": "待审",
+    "statusNote": "已建模，未入城 · 独立研究模型"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-LOD0.glb",
+     "bytes": 1390736,
+     "sha256": "b06ba866692f54a2129d9673eb4ec73106d49323daa438246a772a3135b2c75e",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-LOD1.glb",
+     "bytes": 539568,
+     "sha256": "8d1e93d5e7907d671990665c8ed0c273015c5a7cefb4fa4c57f6f52dad8e587a",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-LOD2.glb",
+     "bytes": 107592,
+     "sha256": "173a925cd066b2f072f4b1e4b55db9c2faa9605d99b5ec8f4b4cd06dda23cc41",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD0.glb",
+     "bytes": 1386564,
+     "sha256": "48c511c54010cc00b5a6262dc280cab2b1d0a7c13050d847fc5856e264ce82cd",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD1.glb",
+     "bytes": 535400,
+     "sha256": "a359265f37452cae18ab078b4b7945d8bb347c941637a12b68caf449adb94af8",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD2.glb",
+     "bytes": 103424,
+     "sha256": "bf47d91d784b224fcfc0bbe81997c6e5a9a81c68375641134e29e396d9e5d63d",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD0.glb",
+     "bytes": 1386676,
+     "sha256": "1ffc1c3118766d418dd5fbb08b5f4a9b8790643465cc29a1d7c76f0bb28e53f3",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD1.glb",
+     "bytes": 535508,
+     "sha256": "42b7883dc066e1c12cff334dcc4f06705abed51a7bd1f8e42640eb388a2ffb86",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD2.glb",
+     "bytes": 103536,
+     "sha256": "6eb2c56efc5a87a4f8e15bc5958e5b51ff327410b931d52bd44bd9f484ecdf6c",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-guard/files/guard-unit-LOD0.glb",
+     "bytes": 1145796,
+     "sha256": "34c1a9474825554cfa4781e639b8d7ff0101be45b9f55029276a4835066b298d",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-guard/files/guard-unit-LOD1.glb",
+     "bytes": 420180,
+     "sha256": "7f72684b511b763b50b791478b1b0d45636418677bd668da78be1d32f9654b79",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-guard/files/guard-unit-LOD2.glb",
+     "bytes": 35532,
+     "sha256": "c5dc809c123203ac35430cd375de07b2028c7aad1b816ee53c2044c245acee68",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-palace-sidehall",
+   "region": "palace-unassigned",
+   "registrationAuthority": "LY-003",
+   "assemblySeats": [
+    "LY-063",
+    "LY-065",
+    "LY-070"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-palace-sidehall/m-luoyang-palace-sidehall.asset.json",
+    "blobSha256": "2011ab6f9f458fab72f053006bb9154d94625f014ea7361fa53acf388e83760c",
+    "checkoutSha256": "d353b3a0a80647996f254f6c70b47588053933f658137abb0f510eca643f5b85",
+    "status": "待审",
+    "statusNote": "已建模，未入城 · 独立研究模型"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD0.glb",
+     "bytes": 1555720,
+     "sha256": "bd000b1bf36419eebe884dbe1c92368f30ceab7597290aa6eafdbdbd971e32c2",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD1.glb",
+     "bytes": 562484,
+     "sha256": "547935049e53cee8d8a8c7613154365696065256722cf09f52914dc3dd3dddd1",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD2.glb",
+     "bytes": 93508,
+     "sha256": "b4c64f499c9c706649e637a9f379bf5328dbf386f9161cc50db346907c612973",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-palace-paired-que",
+   "region": "palace-unassigned",
+   "registrationAuthority": "LY-003",
+   "assemblySeats": [
+    "LY-064",
+    "LY-070"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-palace-paired-que/m-luoyang-palace-paired-que.asset.json",
+    "blobSha256": "455a167ea94a5a9dcb8ee776f2011a47524e356f61708c4c889525450c243d15",
+    "checkoutSha256": "39dffd3b9e55deb3f4d04dabe03a2894bd354bb5f936a2dfaa862ab4f22adc57",
+    "status": "待审",
+    "statusNote": "已建模，未入城 · 独立研究模型"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD0.glb",
+     "bytes": 1588776,
+     "sha256": "a022d9870594f986658be288528048ca3ea6ca69c576b46a5b1aef700e0ca23d",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD1.glb",
+     "bytes": 465904,
+     "sha256": "09839d70748ea5c5ac6c3281c4c10655859e179b9c40046f1428478d8f27a68c",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD2.glb",
+     "bytes": 49052,
+     "sha256": "9b75671b3d12f393c5b9649611f96cb84eec161042a4fae2bc35cd0fbdd01a8b",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-deyang-hall",
+   "region": "palace-north",
+   "registrationAuthority": "LY-003",
+   "assemblySeats": [
+    "LY-065",
+    "LY-070"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-deyang-hall/m-luoyang-deyang-hall.asset.json",
+    "blobSha256": "16e39d6908180c5c36c63e1123d9af9cfce8b87a454136e5b3c1a2996485de14",
+    "checkoutSha256": "ead59fbdc484be777c9ca21fc5f1b8b1990b81526154a047e8e293bb6bfcee6f",
+    "status": "待审",
+    "statusNote": "已建模，未入城 · 独立研究模型"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD0.glb",
+     "bytes": 1601276,
+     "sha256": "7736998077a8414fe9a9dcfa8b6bce161519d2ff1d2ed5ef9440a244f061b5ae",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD1.glb",
+     "bytes": 727100,
+     "sha256": "6f605ed7d79a091468e4bdc3b0e29315d4d05008f895290ad1ce3cb032553460",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD2.glb",
+     "bytes": 67160,
+     "sha256": "134b0375590b7440197dfd9a639d853ecfaa1e69023b4ab928a5ae738e2d452d",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-B-LOD0.glb",
+     "bytes": 1686752,
+     "sha256": "6ef34781443e13cddeff0c5f45d57e35b09dcb077a73bca5debfbdd19842d35d",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-B-LOD1.glb",
+     "bytes": 786704,
+     "sha256": "d9a73c76db5fd7eb87151e5076e61a42792bd7a22cc10be7c42933a4b1b00368",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-deyang-hall/files/deyang-B-LOD2.glb",
+     "bytes": 83676,
+     "sha256": "1fd999980d904342aa633d83842a93922d6f0d80698ca32468ab3aae7c6754ad",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-yutang-halls",
+   "region": "palace-south",
+   "registrationAuthority": "LY-003",
+   "assemblySeats": [
+    "LY-066",
+    "LY-070"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-yutang-halls/m-luoyang-yutang-halls.asset.json",
+    "blobSha256": "72266b3ecc7b8b156ffa3ce358451a0461e07d3b82be779c2415c7dbc3bba82b",
+    "checkoutSha256": "994be90fe84918723192c4115743b061482c9a312a8da849aea31f7284fa2123",
+    "status": "待审",
+    "statusNote": "已建模，未入城 · 独立研究模型"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD0.glb",
+     "bytes": 2349008,
+     "sha256": "6e7f06c054d07984e611f9bfdff80117feee3af246a2394eb289a35e8496e4f1",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD1.glb",
+     "bytes": 1150600,
+     "sha256": "297c11b01604122c93167ede4a8417cb5f5e54cefc050e33d9a0bb78d9d005a8",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD2.glb",
+     "bytes": 104216,
+     "sha256": "6ff5440cc0be55639148c73f7e5c16179be269b5532da5f6672312a84b2738be",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD0.glb",
+     "bytes": 2230192,
+     "sha256": "92091dbe9c51e72b717a69c9ba41f6db13a2c79e77eb5f145c1881e9570b9eba",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD1.glb",
+     "bytes": 1080232,
+     "sha256": "1566de0280fbe50d345abee80b27169254f685eda7252d3e1c254ef4cf8ad38b",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD2.glb",
+     "bytes": 100852,
+     "sha256": "965ab0b851398f1f3ac52e5ca02f5873c73648ad150730f7969377a1ea267844",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-palace-gallery",
+   "region": "palace-link",
+   "registrationAuthority": "LY-003",
+   "assemblySeats": [
+    "LY-067",
+    "LY-068",
+    "LY-069",
+    "LY-070"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-palace-gallery/m-luoyang-palace-gallery.asset.json",
+    "blobSha256": "100a78c3ed3a18e04bf5a98b8dd2c4d75e1d4b73461d96b0cf9c8893a7da3a0c",
+    "checkoutSha256": "0a31006738c46857318b0c9feed73535ff0c4f5ab31d990cbe4a695f24a05b86",
+    "status": "待审",
+    "statusNote": "已建模，未入城 · 独立研究模型"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/files/gallery-A-LOD0.glb",
+     "bytes": 1257116,
+     "sha256": "0c09279723e2334c35f21c7602c195cc867d97808ac0f99ccf6f0208d3ff3849",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/files/gallery-A-LOD1.glb",
+     "bytes": 559364,
+     "sha256": "227c3c4ecc2625629d00ef6beb274575587e4f1095f68b7a50359781e94b3e68",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/files/gallery-A-LOD2.glb",
+     "bytes": 74360,
+     "sha256": "cb26b56e1634f27a878d83997649804eaeef29f5a0bb1420b8aa959a65e137ea",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/files/gallery-B-LOD0.glb",
+     "bytes": 1203308,
+     "sha256": "c7cb279cfd1103158a3f93e071f2d56ba8a07de05c5d7422f26b9c3fe5a56a21",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/files/gallery-B-LOD1.glb",
+     "bytes": 517732,
+     "sha256": "fe72e192573df077335f7882fdd2d9db6e18ba3c1f05758e529f1e18ae2ddb08",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-gallery/files/gallery-B-LOD2.glb",
+     "bytes": 59236,
+     "sha256": "ff15e1c4ca8cb4f95a5ee486d9a53447b5a24a3671b7ec46c837b0572b9491f7",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-gallery-access",
+   "region": "palace-link",
+   "registrationAuthority": "LY-003",
+   "assemblySeats": [
+    "LY-068",
+    "LY-070"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-gallery-access/m-luoyang-gallery-access.asset.json",
+    "blobSha256": "707f298fe235a2444c1f88c357cc75dcaea270d92754835671fbdb7480ca366e",
+    "checkoutSha256": "b34d371b7f80a6396ace37ecd0ae92896edec5b9beb0112cbe068064196f3d6d",
+    "status": "待审",
+    "statusNote": "已建模，未入城 · 独立研究模型"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-gallery-access/files/access-A-LOD0.glb",
+     "bytes": 962760,
+     "sha256": "c973d325d1d08cfd53c129df5270f6276677694a5d4a96cab35fde47d3d11076",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gallery-access/files/access-A-LOD1.glb",
+     "bytes": 358456,
+     "sha256": "7b5e26f443a1e1bcecd47c7e2072aaf00d2496c944afe6bfa4068ce72553834b",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gallery-access/files/access-A-LOD2.glb",
+     "bytes": 42844,
+     "sha256": "b39c34c28ab38963be7bc90ff2650eb6360eb71d4a1d16a294c76ab344809fd9",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-gallery-access/files/access-A-collision-candidate.glb",
+     "bytes": 62432,
+     "sha256": "7327547eee27c4c0bb259b757de4533c95f640600c94882c24b881bd8b8a8209",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-palace-waterway-interface",
+   "region": "palace-wall-water",
+   "registrationAuthority": "LY-003",
+   "assemblySeats": [
+    "LY-086"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-palace-waterway-interface/m-luoyang-palace-waterway-interface.asset.json",
+    "blobSha256": "c0f4284053039e0aa7ae871cb955a6d0cb3163b41b691edb49ef71ec94f0a836",
+    "checkoutSha256": "3dc81ef172880ca7c998f4b59dd782e9fdd9f32b4a5ff8bb519d0f593b4d36bf",
+    "status": "待审",
+    "statusNote": "已建模；独立资产库待审，未入城。"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-near.glb",
+     "bytes": 1518404,
+     "sha256": "79d36565d0a4c064f85065b0dc861385d55ca56b24b6b55ba4994c18831a1a0b",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-mid.glb",
+     "bytes": 133976,
+     "sha256": "68ec04bb8d39eda5cc7e5d93aa39b8bcb4ed86cea4a1b7bc990bc4d2ca3b716f",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-far.glb",
+     "bytes": 17200,
+     "sha256": "af5e8b65e892589366e7a65ae9210301c3291421b021fc487f0f1050d90a0931",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-inspection-near.glb",
+     "bytes": 1416232,
+     "sha256": "f90094d2bd5fb376b13f6d8506bbce12cc48dd4c0f18795e0d79558fa0de1bba",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-biyong",
+   "region": "south-ritual-cluster",
+   "registrationAuthority": "LY-004",
+   "assemblySeats": [
+    "LY-071",
+    "LY-072",
+    "LY-073"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-biyong/m-luoyang-biyong.asset.json",
+    "blobSha256": "4b6f37622159dbdfee4ccca5ea1d6ecb849ae2644ffec199286f19b20785b9b1",
+    "checkoutSha256": "f6ee903096d751f2e89b3fc4d5e1720b2d04420737b4599f0588c929e9fb7aa0",
+    "status": "待审",
+    "statusNote": "已建模，未入城 · 独立研究模型"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-biyong/files/biyong-A-LOD0.glb",
+     "bytes": 1689400,
+     "sha256": "937a31922d0b0ef69c300f223d88310dad2e284312fbba054b04e8bdb437e1e8",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-biyong/files/biyong-A-LOD1.glb",
+     "bytes": 552104,
+     "sha256": "5dc71e322a3fec8731fcaec60b791c93ec7cd7fb0650d565f400e4c9fb8fcbfb",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-biyong/files/biyong-A-LOD2.glb",
+     "bytes": 78060,
+     "sha256": "482222614a0f39807743387dd841e7127bac62ee6ed95fc592ee443b1af21dd4",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD0.glb",
+     "bytes": 2303620,
+     "sha256": "88f227d05c4c7c8ebc771b2ef474f1504ae2ceed7dede01795b360db247d97df",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD1.glb",
+     "bytes": 293348,
+     "sha256": "69ae00ce019d4868a49afb1d2baaf4ea8ab8ff092c9270785a2de8ccfa7f63aa",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD2.glb",
+     "bytes": 2620,
+     "sha256": "60026711645722e1e5b61f14867a6753021e7687c94cd6e759e335d05bf50c4c",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-mingtang",
+   "region": "south-ritual-cluster",
+   "registrationAuthority": "LY-004",
+   "assemblySeats": [
+    "LY-074",
+    "LY-075"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-mingtang/m-luoyang-mingtang.asset.json",
+    "blobSha256": "d3019d6e5b531a8b18411f1c53edafd23013f4423d1d2ef0d5a7643b9ab5f34f",
+    "checkoutSha256": "34a01526382316f13b1ade14a3e8a39b80ac433c62a55e1e9563ae35e1950ba9",
+    "status": "待审",
+    "statusNote": "已建模，未入城 · 独立研究模型"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD0.glb",
+     "bytes": 1837268,
+     "sha256": "bdcc369e765df692b755c2987053d56df5d859964d982fab41f55c535e716ee2",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD1.glb",
+     "bytes": 856488,
+     "sha256": "993ec375a777d825bdf39a680ea689576c33a6b50fcfbc804b55ec22dca086a9",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD2.glb",
+     "bytes": 88960,
+     "sha256": "275f8fe20f2e6f1d1a0ea0066447f25431e67fba2323ab3ffe76a9d1d1417cda",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD0.glb",
+     "bytes": 1773216,
+     "sha256": "7337871c488c3695bfea2c12a45ac5ad31a16512955726d5380cb797cd98dda3",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD1.glb",
+     "bytes": 817968,
+     "sha256": "25035eeb0583bcae69137867d466dc3ad238747b1173c8e043f338c35b43b62e",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD2.glb",
+     "bytes": 85472,
+     "sha256": "d495219cb6bcf99655a5ab793ad1743c84b4c453b24f50d40c958a6fce987102",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-lingtai",
+   "region": "south-ritual-cluster",
+   "registrationAuthority": "LY-004",
+   "assemblySeats": [
+    "LY-076"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-lingtai/m-luoyang-lingtai.asset.json",
+    "blobSha256": "7db1211873f3a533fd6204e97509dc2007b5fdf268347d53d08b761886d82572",
+    "checkoutSha256": "f5d7cb691f1c1d0563a98e4fbcea9cd4ac66f6653635c74dc573eb1b80eae545",
+    "status": "待审",
+    "statusNote": "已建模，未入城 · 独立研究模型"
+   },
+   "loadedInCity": "research view only (local-study, cityPlacement null): research-lingtai",
+   "loadCode": "city-data.mjs researchModels + city-renderer.mjs:645 focusResearchModel",
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD1.glb",
+     "bytes": 1949148,
+     "sha256": "ffaff723c6a0c77a514d0a56fb03fad55fdbf0d880e3ee614887551884c6de0f",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD2.glb",
+     "bytes": 131700,
+     "sha256": "134ca945603a696a8dc164087a8fc3334a8a1e1b57b4439ae2b97fab2803b4cc",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-taixue-a",
+   "region": "south-ritual-cluster",
+   "registrationAuthority": "LY-004",
+   "assemblySeats": [
+    "LY-077"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-taixue-a/m-luoyang-taixue-a.asset.json",
+    "blobSha256": "18948eaa26eb3a934aaab6147083ded8639a0610822df5c6fc08611535a2bae7",
+    "checkoutSha256": "324f61ec5cd20a5cdef7a80b95f7a83a689efb3acb87e46c59473f637cb20922",
+    "status": "待审",
+    "statusNote": "已建模，未入城 · 独立研究模型"
+   },
+   "loadedInCity": "research view only (local-study, cityPlacement null): research-taixue-A",
+   "loadCode": "city-data.mjs researchModels + city-renderer.mjs:645 focusResearchModel",
+   "files": [
+    {
+     "path": "docs/cities/luoyang/progress-assets/taixue-A-v3.2/models/taixue-A-LOD1.glb",
+     "bytes": 638660,
+     "sha256": "413c2f35ec264dfbc6f24c1ceab9a0f8ce492c975b50e34fd5320ad25be391f2",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": "study-taixue-A"
+    },
+    {
+     "path": "docs/library/models/m-luoyang-taixue-a/files/taixue-A-LOD2.glb",
+     "bytes": 118848,
+     "sha256": "b911beb4c21aa7cc56d8e7d69660e23ac56dcad357635e008a3f300046e03860",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "model-library/taixue#B",
+   "region": "south-ritual-cluster",
+   "registrationAuthority": "LY-004",
+   "assemblySeats": [],
+   "card": {
+    "path": "docs/model-library/taixue/metadata.json",
+    "blobSha256": "d289808fd54ffd43f90e62a2ace004bdeeeef18209ce6a0cd09f1ec17139a165",
+    "checkoutSha256": null,
+    "status": null,
+    "statusNote": null
+   },
+   "loadedInCity": "research view only (local-study, cityPlacement null): research-taixue-B",
+   "loadCode": "city-data.mjs researchModels + city-renderer.mjs:645 focusResearchModel",
+   "files": [
+    {
+     "path": "docs/cities/luoyang/progress-assets/flat/study-taixue-B-11b01e4948be.glb",
+     "bytes": 373040,
+     "sha256": "11b01e4948be0e0e229116b9eaa939f6b932058a0d3513ac676012188a260c57",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": "study-taixue-B"
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-stoneclassic-access-court",
+   "region": "south-ritual-cluster",
+   "registrationAuthority": "LY-004",
+   "assemblySeats": [
+    "LY-078"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-stoneclassic-access-court/m-luoyang-stoneclassic-access-court.asset.json",
+    "blobSha256": "f7739797ead71d1d010b655ed670bcde0eec406a92202a6b2400680cbf8f890d",
+    "checkoutSha256": "a040819737ed6649381a9015bbd3c9ceb8c1312e860c242968da187fd2c85f7f",
+    "status": "待审",
+    "statusNote": "已建模；独立资产库待审，未入城。"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_near.glb",
+     "bytes": 8977644,
+     "sha256": "0fcb76be7171df172e6850e206532cd724fc4de5dcc8e7d157b182694cc649d5",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_middle.glb",
+     "bytes": 1934304,
+     "sha256": "5a0ff55f90105d15b4da0401e2a29db5bff67d31ce6f84696e5539b69f0c1e9f",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_far.glb",
+     "bytes": 178124,
+     "sha256": "1b45de37e02524d6866800603fa6f2d456cbbd8262d17ef252f819c689321239",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-southern-altar",
+   "region": "south-suburb",
+   "registrationAuthority": "LY-004",
+   "assemblySeats": [
+    "LY-079"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-southern-altar/m-luoyang-southern-altar.asset.json",
+    "blobSha256": "b98b85a936a7ca8f5c8305ce08385a0ff0e5685cfe6fd2a7a6eded9cd3e1db42",
+    "checkoutSha256": "b2eb06b60b398f6dfa7645682d9e9eec22e3ce92b8dda3bdd401b66316d778ad",
+    "status": "待审",
+    "statusNote": "已建模，未入城 · 独立研究模型"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-southern-altar/files/south-altar-A-LOD1.glb",
+     "bytes": 916616,
+     "sha256": "70b8f7c4c396a5ebe3809d4bbce515e25673c1bca2650cdad62dcb2f78819edc",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-southern-altar/files/south-altar-A.glb",
+     "bytes": 1023180,
+     "sha256": "57141a082a4341ac951a658528e7d6dfbc3b9eeda83d90b0aad6120f79e19afb",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-southern-altar/files/south-altar-B-LOD1.glb",
+     "bytes": 898812,
+     "sha256": "6ee4dbe0d164ae2d8ee7f925022ed8ede7e33454beb3a988329d5c33394e7309",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-southern-altar/files/south-altar-B.glb",
+     "bytes": 937892,
+     "sha256": "3382670edbc4086b4861c7bc1e5534a83c1e0dbc4c78e9cc2d8fcf73bf66d7ec",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  },
+  {
+   "id": "m-luoyang-northern-altar",
+   "region": "north-suburb",
+   "registrationAuthority": "LY-004",
+   "assemblySeats": [
+    "LY-080"
+   ],
+   "card": {
+    "path": "docs/library/models/m-luoyang-northern-altar/m-luoyang-northern-altar.asset.json",
+    "blobSha256": "9deabeb6c12a4c45cb3d86e5101a9a2dd997a5e4d8cacaa7cdf7360d50fe666c",
+    "checkoutSha256": "091332bccbc86e673bff9be230fadf0066ba9d0bd13048f2a3237226d3a18899",
+    "status": "待审",
+    "statusNote": "已建模；独立关系研究，未入城。"
+   },
+   "loadedInCity": "no (0 city nodes, 0 research views, 0 manifest SHA refs)",
+   "loadCode": null,
+   "files": [
+    {
+     "path": "docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD0.glb",
+     "bytes": 425760,
+     "sha256": "d62dce7d2130828c4e309edf42701fd8890454d39d51d2763f16fe351a8e6ebe",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD1.glb",
+     "bytes": 164836,
+     "sha256": "4842be77757597237ddcedcd1e2d2f66402db0dcde57986e9fbb926cc096d6dd",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    },
+    {
+     "path": "docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD2.glb",
+     "bytes": 25644,
+     "sha256": "7c7f3a51ac7cce90137a8a0210f3031129058b5d7e21a1eb850bc222953a1287",
+     "blobMatchesFile": true,
+     "referencedByCityManifest": null
+    }
+   ]
+  }
+ ],
+ "workpackInputs": [
+  {
+   "path": "workpacks/TASKPOOL.md",
+   "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+   "role": "task pool (LY-094 section lines 960-967)"
+  },
+  {
+   "path": "workpacks/taskboard.json",
+   "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+   "role": "task board"
+  },
+  {
+   "path": "workpacks/LY-001/status.json",
+   "sha256": "a32d742a0064baf45c0f78215b10905f2a21fb9ea070b18d8055a58454fe9236",
+   "role": "snapshot seat, 交付完成"
+  },
+  {
+   "path": "workpacks/LY-001/qa/family-ledger.json",
+   "sha256": "8eaa7c7a805d5cfb4fd1492a26c480ee0cad9095407e767648e0e9e71eadfe37",
+   "role": "54 families; scope families all 仅模型"
+  },
+  {
+   "path": "workpacks/LY-001/qa/snapshot-ledger.json",
+   "sha256": "479046caf49479cc6e58249585c63c80e84f23cafd82dc93bdc1034f9e1da7d0",
+   "role": "master ledger"
+  },
+  {
+   "path": "workpacks/LY-002/status.json",
+   "sha256": "0ac63db873219d1bb22f9269dd11c52e80e2efeec528decb5a1f0409cd92c13d",
+   "role": "evidence seat, 交付完成"
+  },
+  {
+   "path": "workpacks/LY-002/tables/evidence-ledger.json",
+   "sha256": "237a4811acad3d7f6733d4c5c95a64df0b2c67adf48b2682264eb0f0c8512b77",
+   "role": "facts E-P01..07, E-R01..08, E-H03; prohibitions X04..X19"
+  },
+  {
+   "path": "workpacks/LY-002/tables/family-binding.json",
+   "sha256": "3aeddcc065cbbef44ddd2da3995d6e72fcd37e93a75d0c46e92fe1d2a02e12b6",
+   "role": "family -> facts/prohibited binding"
+  },
+  {
+   "path": "workpacks/LY-003/status.json",
+   "sha256": "46f2872d0013340acaa7b4dd241dee822be052ab1765e2b64c251d23bb8cc129",
+   "role": "palace registration seat, 交付完成: all palace zones 不可落位"
+  },
+  {
+   "path": "workpacks/LY-003/tables/admission.json",
+   "sha256": "dd0ab8c018e714be1366cb491107ff09131e5e176b9106894a2e5b2b86e88dd3",
+   "role": "zone admission rows (input of check_admission --ly003)"
+  },
+  {
+   "path": "workpacks/LY-003/tables/control-points.json",
+   "sha256": "a92fff1937d3823f0cbae622d87751f6b0fc518b0074481f0a6b8cdbefe26307",
+   "role": "15 CP candidates, 0 common control points"
+  },
+  {
+   "path": "workpacks/LY-003/tables/hold-zones.json",
+   "sha256": "0b9bb0ff52883ac7cb90a285db701edb807f558695a08e792eb1f6dfad6bc03b",
+   "role": "palace hold zones"
+  },
+  {
+   "path": "workpacks/LY-003/tables/transforms.json",
+   "sha256": "9921dcc43c8088debb0be3b77b132de39cc6c7730833b411e7f04c36b3dc42a2",
+   "role": "candidate transforms (all under-determined)"
+  },
+  {
+   "path": "workpacks/LY-005/status.json",
+   "sha256": "add0f9b1a722f08e516ffd64b9dbaf97532a62d9fa18ded01df89ab7be5740ea",
+   "role": "coordinate contract seat, 交付完成"
+  },
+  {
+   "path": "workpacks/LY-005/coordinate-contract.json",
+   "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+   "role": "world = N.S.v, Y-rotation only, scale 1"
+  },
+  {
+   "path": "workpacks/LY-005/port-schema.json",
+   "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f",
+   "role": "port schema (world + nodeMatrix required)"
+  },
+  {
+   "path": "workpacks/LY-076/prep/brief-draft.md",
+   "sha256": "07fbb049ee985589de3d0c6d74451d6aeec1b7ef5b94c227cd9e6154a62094eb",
+   "role": "independent finding: city lingtai view = pre-revision quality-v1",
+   "note1106": "hash changed since v1 prep"
+  },
+  {
+   "path": "workpacks/LY-004/status.json",
+   "sha256": "c9358ea5095a6cb09d95437b80a95b1b4ebc4b044bc23dd68c7caf5cf5b27906",
+   "role": "dependency of LY-094; delivered"
+  },
+  {
+   "path": "workpacks/LY-006/status.json",
+   "sha256": "fe4aaa6c7cb1441f95ac8f51101e0cf63a4ab07ed53452e59c2bd897c5539aba",
+   "role": "dependency of LY-094; not delivered at prep time",
+   "note1106": "hash changed since v1 prep"
+  },
+  {
+   "path": "workpacks/LY-007/status.json",
+   "sha256": "2fddce70c110a19c6d08d10b90ac355440d538f5c8dcc82cca58504476ecc082",
+   "role": "dependency of LY-094; not delivered at prep time",
+   "note1106": "hash changed since v1 prep"
+  },
+  {
+   "path": "workpacks/LY-008/status.json",
+   "sha256": "4de552ad9689211cb155b4ae1f12818e09ab699d4ddb5c85f680b51331718f16",
+   "role": "dependency of LY-094; not delivered at prep time",
+   "note1106": "hash changed since v1 prep"
+  },
+  {
+   "path": "workpacks/LY-009/status.json",
+   "sha256": "09a1c45415aa3a8657581ce0a5ff2e8738e6fca09da800070e36972b330e896c",
+   "role": "dependency of LY-094; not delivered at prep time",
+   "note1106": "hash changed since v1 prep"
+  },
+  {
+   "path": "workpacks/LY-010/status.json",
+   "sha256": null,
+   "role": "dependency of LY-094; not delivered at prep time"
+  },
+  {
+   "path": "workpacks/LY-070/status.json",
+   "sha256": null,
+   "role": "dependency of LY-094; not delivered at prep time"
+  },
+  {
+   "path": "workpacks/LY-071/status.json",
+   "sha256": null,
+   "role": "dependency of LY-094; not delivered at prep time"
+  },
+  {
+   "path": "workpacks/LY-072/status.json",
+   "sha256": null,
+   "role": "dependency of LY-094; not delivered at prep time"
+  },
+  {
+   "path": "workpacks/LY-073/status.json",
+   "sha256": null,
+   "role": "dependency of LY-094; not delivered at prep time"
+  },
+  {
+   "path": "workpacks/LY-074/status.json",
+   "sha256": null,
+   "role": "dependency of LY-094; not delivered at prep time"
+  },
+  {
+   "path": "workpacks/LY-075/status.json",
+   "sha256": null,
+   "role": "dependency of LY-094; not delivered at prep time"
+  },
+  {
+   "path": "workpacks/LY-076/status.json",
+   "sha256": null,
+   "role": "dependency of LY-094; not delivered at prep time"
+  },
+  {
+   "path": "workpacks/LY-077/status.json",
+   "sha256": null,
+   "role": "dependency of LY-094; not delivered at prep time"
+  },
+  {
+   "path": "workpacks/LY-078/status.json",
+   "sha256": null,
+   "role": "dependency of LY-094; not delivered at prep time"
+  },
+  {
+   "path": "workpacks/LY-079/status.json",
+   "sha256": null,
+   "role": "dependency of LY-094; not delivered at prep time"
+  },
+  {
+   "path": "workpacks/LY-080/status.json",
+   "sha256": null,
+   "role": "dependency of LY-094; not delivered at prep time"
+  },
+  {
+   "path": "workpacks/LY-086/status.json",
+   "sha256": null,
+   "role": "dependency of LY-094; not delivered at prep time"
+  },
+  {
+   "path": "workpacks/LY-004/delivery-manifest.json",
+   "sha256": "cb8a7e7f1c11e087282ec2a44e916e978d3c506baff9c0195034bfbc0bed6779",
+   "role": "LY-004 whitelist (verified by crosscheck X1)",
+   "added": "2026-11-06"
+  },
+  {
+   "path": "workpacks/LY-004/tables/site-constraints.json",
+   "sha256": "633c3302ff1219e8d93d2a59107eae85a6d7c077f418f7b53300f642708eb77f",
+   "role": "input of check_admission --ly004 (normalize_ly004); sites lingtai/mingtang/biyong/taixue/nanjiao/beijiao",
+   "added": "2026-11-06"
+  },
+  {
+   "path": "workpacks/LY-004/geometry/city-south.json",
+   "sha256": "bb34e891ba54288ccf983dca161f937902ba346ce3bb020cb587548da94e1980",
+   "role": "4 marker envelopes + nanjiao text band; frameSourceSha256 = evidence-geometry blob fa8b7002",
+   "added": "2026-11-06"
+  },
+  {
+   "path": "workpacks/LY-004/geometry/north-suburb.json",
+   "sha256": "eb4ae7911c69b15cc84788aa5d45c5575238d68ead2e786ce02cd4c626140cd4",
+   "role": "three exclusive northern readings (A 4li, B 6li, C NW-corner 1li)",
+   "added": "2026-11-06"
+  },
+  {
+   "path": "workpacks/LY-004/qa/city-overlap.json",
+   "sha256": "b1ed9b9f0b46a24bcaa0c3b99d30d316b2a2b8ffcc3a65ef513be1a0a3fc079d",
+   "role": "8/8/0/0 marker-ground triangle hits; reproduced by crosscheck X4",
+   "added": "2026-11-06"
+  },
+  {
+   "path": "workpacks/LY-004/qa/phase-gate.json",
+   "sha256": "050ea1b9a262712e8e9ed854ce6bf7af3731537e5d4abb0dff0c7ae89697b858",
+   "role": "phase gate (no item into 180 install layer)",
+   "added": "2026-11-06"
+  },
+  {
+   "path": "workpacks/LY-006/registry/seats.json",
+   "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+   "role": "seat frames (local:*), placementProposal null, ownsCityNodes (LY-076 research-lingtai; LY-077 research-taixue-A/B)",
+   "added": "2026-11-06"
+  },
+  {
+   "path": "workpacks/LY-006/registry/zones.json",
+   "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+   "role": "frames table: all scope frames placement null",
+   "added": "2026-11-06"
+  },
+  {
+   "path": "workpacks/LY-006/registry/ownership.json",
+   "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+   "role": "source-object ownership",
+   "added": "2026-11-06"
+  },
+  {
+   "path": "workpacks/LY-008/source/ly_check.py",
+   "sha256": "39aaa491859e1a796080dd91ccabd1c47423cf7f9ef2af61c5f123b04b3dff4b",
+   "role": "delivery checker (glb/lodset/package/privacy/official)",
+   "added": "2026-11-06"
+  },
+  {
+   "path": "workpacks/LY-009/board/taskboard.v2.json",
+   "sha256": "bd2fcbbe02a1e68fe7b98cd706a86ae14f49bcb495f2088b68e002e2f818106a",
+   "role": "task board v2 (status read from seat dirs)",
+   "added": "2026-11-06"
+  }
+ ],
+ "loadedGround": [
+  {
+   "node": "ground-network-ground-stitched",
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "triangles": 128342,
+   "upTriangles": 124246,
+   "aabbMin": [
+    -39.0,
+    0.0,
+    -2622.461
+   ],
+   "aabbMax": [
+    2528.385,
+    0.21,
+    1224.516
+   ]
+  },
+  {
+   "node": "ground-retained",
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "triangles": 21192,
+   "upTriangles": 16919,
+   "aabbMin": [
+    480.0,
+    0.0,
+    -1250.0
+   ],
+   "aabbMax": [
+    780.0,
+    0.21,
+    -700.0
+   ]
+  },
+  {
+   "node": "ground-south",
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "triangles": 96796,
+   "upTriangles": 95520,
+   "aabbMin": [
+    486.0,
+    0.0,
+    -852.0
+   ],
+   "aabbMax": [
+    710.0,
+    0.21,
+    -706.0
+   ]
+  },
+  {
+   "node": "ground-D08",
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "triangles": 140,
+   "upTriangles": 100,
+   "aabbMin": [
+    520.0,
+    0.0,
+    -1015.0
+   ],
+   "aabbMax": [
+    640.0,
+    0.2,
+    -929.0
+   ]
+  }
+ ],
+ "prepFiles": [
+  {
+   "path": "LY-094/prep/out/admission-baseline-bce3211.json",
+   "sha256": "3541af15333f18b53bf1782721dc4bb484f3691b3cccd20497be23268f9a8d2e"
+  },
+  {
+   "path": "LY-094/prep/out/baseline-bce3211.json",
+   "sha256": "b2217d24240a288fd832f318e33edb4d75a88a561a5a2707cb376664b2d37005"
+  },
+  {
+   "path": "LY-094/prep/out/baseline-run.txt",
+   "sha256": "f1269ffdbcfd0f7a768374471eeeea78220f0367ad6e8c686c11b8fc059619da"
+  },
+  {
+   "path": "LY-094/prep/out/check-baseline-bce3211.json",
+   "sha256": "dfdd42ca83c01d80277473889ccc246e76229d42b53fe5df48825ad06366575c"
+  },
+  {
+   "path": "LY-094/prep/out/city-data.dump.json",
+   "sha256": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98"
+  },
+  {
+   "path": "LY-094/prep/out/envelope-dims-bce3211.json",
+   "sha256": "447a20303ed770bc965562d2bfcb04e2e16f9f52cd414a2dbff8c5c85a17e9b2"
+  },
+  {
+   "path": "LY-094/prep/out/ground-probe-bce3211.json",
+   "sha256": "e646b933ef1abef537005a127f4d61f0e9cdbb51505aab99e631039ee1cef89e"
+  },
+  {
+   "path": "LY-094/prep/out/rerun-1106/before.dump.json",
+   "sha256": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98"
+  },
+  {
+   "path": "LY-094/prep/out/rerun-1106/before.ground.json",
+   "sha256": "e646b933ef1abef537005a127f4d61f0e9cdbb51505aab99e631039ee1cef89e"
+  },
+  {
+   "path": "LY-094/prep/out/rerun-1106/before.json",
+   "sha256": "5e9587bc780e30057162b3199ae70f6c3ac12c871618863bf885d03ea3f907b0"
+  },
+  {
+   "path": "LY-094/prep/out/rerun-1106/check-baseline-v2.json",
+   "sha256": "dfdd42ca83c01d80277473889ccc246e76229d42b53fe5df48825ad06366575c"
+  },
+  {
+   "path": "LY-094/prep/out/rerun-1106/check_admission.v1.py",
+   "sha256": "57802e3bd58cc7a12df91b743d25bd9318718b535b30543da4aa93bda5267026"
+  },
+  {
+   "path": "LY-094/prep/out/rerun-1106/crosscheck-ly004.json",
+   "sha256": "2ffbf4b680244239cfeeced25d6e1ebf8aa8f40b5bd7d60772b815645f8b4303"
+  },
+  {
+   "path": "LY-094/prep/out/rerun-1106/projectcard-grouping-bce3211.json",
+   "sha256": "1fcbd10f7f04c5be9f12649f9c7b8c76918eced5d6fc4067b421a5a9dda720fb"
+  },
+  {
+   "path": "LY-094/prep/out/rerun-1106/selftest-v2.json",
+   "sha256": "02701733c803a38f1e849657f89ad5f48e3ef261049c5a7190d82ece8b7a00e9"
+  },
+  {
+   "path": "LY-094/prep/scripts/_patch_v2.py",
+   "sha256": "863cf6bb71e763acfad959ca7d82896fa56af73d38b7a5bb56722e11dd53c5f3"
+  },
+  {
+   "path": "LY-094/prep/scripts/baseline.py",
+   "sha256": "1f0821ea42a017f17c8c376bea68cce8d64be9ef5e0bc135a6794207ffd424e3"
+  },
+  {
+   "path": "LY-094/prep/scripts/check_admission.py",
+   "sha256": "e5d2e8ca82d563ede5a837f6e2cdd1c35e6a7c67d429e99afa58c1e70842b479"
+  },
+  {
+   "path": "LY-094/prep/scripts/crosscheck_ly004.py",
+   "sha256": "a68f2a7f619c146d2bf34b8903765a5c5914fe02e90ac4a56246b0fd334a8066"
+  },
+  {
+   "path": "LY-094/prep/scripts/glbinfo.py",
+   "sha256": "72e83e06b55c6e41c179e8259f3708973c3f590f8dd4f9af21923e06a3d67e1e"
+  },
+  {
+   "path": "LY-094/prep/scripts/ground_probe.py",
+   "sha256": "beeeb0b8f8a52603161fd5ea57f3859cf0efd521e33f1fdb53025bf8f1455582"
+  },
+  {
+   "path": "LY-094/prep/scripts/make_inputs.py",
+   "sha256": "63117d67cba446f12370a6677a6c02505cc56ecabf0d350156f32392dc58fa5e"
+  },
+  {
+   "path": "LY-094/prep/scripts/measure_envelopes.py",
+   "sha256": "4394abe81fed1ef8d2fc357e567a98b00b1159c7ef4cda42810d8fae37a7e318"
+  },
+  {
+   "path": "LY-094/prep/scripts/projectcard_grouping.py",
+   "sha256": "5e6a81da1599106d290114d02cccdd5095838204480e3cfa020e49e052054b93"
+  },
+  {
+   "path": "LY-094/prep/selftest/selftest-bce3211.json",
+   "sha256": "d112d8de0b41a59d910b5bf0ede2fbe28c1c21bfa7e8154cd465505723caa807"
+  },
+  {
+   "path": "LY-094/prep/selftest/selftest-run.txt",
+   "sha256": "c41882a766c1d962bc814c19ed3559ce2904925fa7d5cb6fa2440320ecfb7c48"
+  }
+ ],
+ "workpackInputsMissing1106": [
+  {
+   "path": "workpacks/LY-010/",
+   "role": "region admission table (G); directory absent at 2026-11-06T00:20"
+  },
+  {
+   "path": "workpacks/LY-070..080, LY-086 delivery",
+   "role": "only prep/ present; no delivery-manifest/assembly.json/qa yet"
+  }
+ ],
+ "workpackDrift1106": [
+  {
+   "path": "workpacks/LY-076/prep/brief-draft.md",
+   "v1": "f470f1cbfd398810ee8af4b95ff28af0dc943448ffbee2e4fe58b8d8fbf8097c",
+   "now": "07fbb049ee985589de3d0c6d74451d6aeec1b7ef5b94c227cd9e6154a62094eb"
+  },
+  {
+   "path": "workpacks/LY-006/status.json",
+   "v1": null,
+   "now": "fe4aaa6c7cb1441f95ac8f51101e0cf63a4ab07ed53452e59c2bd897c5539aba"
+  },
+  {
+   "path": "workpacks/LY-007/status.json",
+   "v1": null,
+   "now": "2fddce70c110a19c6d08d10b90ac355440d538f5c8dcc82cca58504476ecc082"
+  },
+  {
+   "path": "workpacks/LY-008/status.json",
+   "v1": null,
+   "now": "4de552ad9689211cb155b4ae1f12818e09ab699d4ddb5c85f680b51331718f16"
+  },
+  {
+   "path": "workpacks/LY-009/status.json",
+   "v1": null,
+   "now": "09a1c45415aa3a8657581ce0a5ff2e8738e6fca09da800070e36972b330e896c"
+  },
+  {
+   "path": "workpacks/LY-010/status.json",
+   "v1": null,
+   "now": null
+  },
+  {
+   "path": "workpacks/LY-070/status.json",
+   "v1": null,
+   "now": null
+  },
+  {
+   "path": "workpacks/LY-071/status.json",
+   "v1": null,
+   "now": null
+  },
+  {
+   "path": "workpacks/LY-072/status.json",
+   "v1": null,
+   "now": null
+  },
+  {
+   "path": "workpacks/LY-073/status.json",
+   "v1": null,
+   "now": null
+  },
+  {
+   "path": "workpacks/LY-074/status.json",
+   "v1": null,
+   "now": null
+  },
+  {
+   "path": "workpacks/LY-075/status.json",
+   "v1": null,
+   "now": null
+  },
+  {
+   "path": "workpacks/LY-076/status.json",
+   "v1": null,
+   "now": null
+  },
+  {
+   "path": "workpacks/LY-077/status.json",
+   "v1": null,
+   "now": null
+  },
+  {
+   "path": "workpacks/LY-078/status.json",
+   "v1": null,
+   "now": null
+  },
+  {
+   "path": "workpacks/LY-079/status.json",
+   "v1": null,
+   "now": null
+  },
+  {
+   "path": "workpacks/LY-080/status.json",
+   "v1": null,
+   "now": null
+  },
+  {
+   "path": "workpacks/LY-086/status.json",
+   "v1": null,
+   "now": null
+  }
+ ],
+ "updated": "2026-11-06T00:25+08:00 (rerun on bce3211; LY-004 bound; checker v2)"
+}

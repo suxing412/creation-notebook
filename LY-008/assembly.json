@@ -1,0 +1,17 @@
+{
+ "seat": "LY-008",
+ "applicable": false,
+ "reason": "本席位是检查器（考据/契约类），不产模型、不装配城市节点：没有输入节点→输出节点映射、变换、端口、高程、保留/替换/隐藏清单。",
+ "installUninstall": "检查器是单文件 source/ly_check.py，安装 = 复制，撤回 = 删除；它只读输入、只写 --json 指定的报告文件，不改任何被检文件（qa/selftest.json 里每个用例都重算了输入 SHA，检查前后一致）。",
+ "mergeQueueProposal": {
+  "for": "LY-100",
+  "order": [
+   "1. python -I ly_check.py package <LY-###>（清单大小/SHA、路径越界、私密路径、包内 GLB；负例夹具须在清单写 expectFail: true）",
+   "2. python -I ly_check.py glb --profile ly-p01 --lod N --tex-manifest <LY-007>/textures/manifest.json <新件>（LY_P01 新件）；旧件或非 LY_P01 件用 --profile base",
+   "3. python -I ly_check.py lodset <LOD0> <LOD1> <LOD2> --family house|default",
+   "4. 合并到导出副本后：python -I ly_check.py privacy <copy>/docs --archived …；python -I ly_check.py official <copy>（官方 build_assets.py --check）",
+   "两者都要过：官方 checker 不查 NaN、缺纹理、截断、私密路径（qa/checks.json C5）；ly_check 不查卡片字段（title/summary/cover 等，那是官方的事）"
+  ],
+  "notActivated": "本提案不自动接入任何 CI 或仓库；是否把 ly_check.py 放进 lab/tools/ 由 LY-100/制作人定。"
+ }
+}

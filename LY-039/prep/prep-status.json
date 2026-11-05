@@ -1,0 +1,64 @@
+{
+ "seat": "LY-039",
+ "prepVersion": 2,
+ "inputsFound": [
+  "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part01..05 (in bce3211 tree, commit 5ac1ea6; concat zip 5895ef23) -> chunks/northeast_C_access.glb 58f2f58a (413628 B, 1 node C_NE_APPROACH_LOCAL, 32 tri, 18 unique verts; = workpacks/LY-006/qa/chunks copy)",
+  "same zip qa/source-node-manifest.json 6cd13e10: C_NE_APPROACH_LOCAL t=(2285.714,3486,0) tri SHA 0f806978; C_WUKU_ISOLATED_SUPPORT_PATCH t=(2316.327,3500,0) bbox x2307.327-2329.327 y3490-3510 z-0.4..0 tri SHA 1f46fa3e",
+  "same zip chunks/wuku_C_with_support-01.glb 29709e25 (old trial wuku support patch + wuku B static earth/timber; not in city)",
+  "modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json (commit 8f890748): node visible-current-node-northeast_C_access, deploymentStatus not published",
+  "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb 5937211c (in city as storage-main; node original_city_ground_preserved = current Taicang ground)",
+  "docs/cities/luoyang/city-data.mjs (commit c849706b): storage-main asset L582, node L3717; no NE road node (also none in origin/main cad338b)",
+  "docs/cities/luoyang/data/evidence/evidence-geometry.json (commit fa8b7002), data/west/storage-precedents.json db802449, road-preconstraints.json d369409a",
+  "docs/cities/luoyang/assets/city-wall/A/wall-01.glb cfbbc45a; docs/library/models/m-luoyang-wuku/files/wuku-B-LOD0.glb e5de60b6 (v2.2, local origin)",
+  "workpacks/LY-006/registry/ports.json 28bcfb68: ne-approach:start (2285.714,0.2,-3647.469), ne-approach:end-E (2317.827,0.0,-3487.25 fwd +X), tol pos 0.005 / elev 0.002; zones LY-039:write:001/002",
+  "workpacks/LY-003/tables/admission.json dd0ab8c0 + hold-zones.json 0b9bb0ff + qa/ne-checks.json d2fe03f8: NE short road = 宫墙条件未决（不是放行）",
+  "workpacks/LY-009/board/locks.json 5eb5ae32: LOCK-NE-196C (re-bind only)"
+ ],
+ "inputsMissing": [
+  "city-C032-entry-LOD0.blend (private mother, SHA 1e8c4d2c...): native C_NE_APPROACH_LOCAL object/params and end-cap intent. Geometry fully rebuildable from GLB (18 verts, out/glb-raw-check.json); generator params not",
+  "「东北长路预检」: named as existing input in TASKPOOL but absent from lab bce3211, origin/main, origin/luoyang-content and all workpacks (LY-084 prep same finding); an analysis report, not rebuildable from GLB; coordinator must supply or declare nonexistent",
+  "LY-034 delivery: values of storage-site:forecourt-north:road-end (declared by LY-006 without position) for the north binding",
+  "LY-036 delivery: wuku-B:outer-arrival:ground selected support piece + SHA; old trial patch (rebuildable, 12-tri box) meets the stub today but is LY-036's to keep/change",
+  "LY-037 delivery: wuku-B:forecourt-side:ground (consumer seam listed for LY-039)",
+  "LY-006 port for the stub north cap (x 2314.827-2317.827, y 3490, top 0.000, facing north): registry v1 only froze end-E on the east face (x=2317.827) which faces void; values measurable here but the frozen record must come from LY-006",
+  "LY-008 checker entry and LY-010 region admission decision (not delivered)"
+ ],
+ "gaps": [
+  "Not in city: city-data.mjs (bce3211 and cad338b) has no NE road node; adapter not published; project card withholds it",
+  "South end, current city: 11/11 probes beyond stub cap y=3490 hit no ground; armory side (2316.327,3491) unreachable (out/bind-baseline.json)",
+  "South end vs existing old trial patch C_WUKU_ISOLATED_SUPPORT_PATCH (wuku_C_with_support-01 29709e25): 0/11 missing, max step 0.000 m, armory side reachable (out/bind-oldpatch.json); face contact 0.541 m2, intrusion 0 m3 -> geometry already binds, but patch is not in city and is LY-036's",
+  "North end already binds: max step 1e-5 m over 21 samples at y=3647.469 (road top 0.200 vs ground 0.200); face contact 0.540 m2, intrusion 0 (legal coplanar end-cap contact; surface BVH 5 pairs all original_city_ground_preserved)",
+  "LY-006 port mismatch: end-E port (2317.827, 0.0, -3487.25, +X) is the 5.5 m east face that faces void; the face meeting the armory support is the 3.0 m stub north cap at y=3490 -> no frozen port for the real south seam",
+  "Detection blind spots: road shifted 0.10 m south passes grid connectivity (only seam probes catch it); road shifted 0.10 m north passes connectivity AND seam probes, caught only by volume test (0.054 m3 intrusion at each end) -> test plan requires all three",
+  "Admission recheck (LY-003 asked LY-039): 10384/10384 road-surface samples inside NE-C-SCREEN; tightest hold-zone margin HZ-Y 12.87 m at road south edge y=3484.5; HZ-N margin 340.48 m (540.48 m to old B north palace); 127.54 m to city wall line. Screening only; LY-003 status remains 宫墙条件未决",
+  "LY-003 ne-checks says C_NE_APPROACH_LOCAL not found in bce3211; it is in the committed zip parts (git ls-tree bce3211), not under docs",
+  "Geometry: L strip 3.0 m wide, 0.18 m thick, centreline 161.469+30.613+4.0 = 196.08 m, top 588.246 m2; north leg 0.20 m over 159.969 m (0.125%), east leg flat z=0",
+  "No terrain around/under road: 0.18 m free side drops on both edges; city ground-network bounds end ~860 m away",
+  "Drift bce3211 -> origin/main cad338b: no change to granary-city-v1, m-luoyang-wuku, modeling-lab; new north-three courts ~2000 m away; no new entity in road region (out/city-bounds-scan-cad338b.json)"
+ ],
+ "reuseCandidate": "部分复用，不能标「复用完成」。路几何本身就是要复用的成果，无需新造：northeast_C_access.glb 58f2f58a，32三角、196.08 m；两端几何都已齐平。北端接太仓地坪，最大高差 1e-5 m，面接触 0.540 m²；南端接旧试放支持片 C_WUKU_ISOLATED_SUPPORT_PATCH，高差 0.000，面接触 0.541 m²，均无侵入。但以下几项都还不存在：安装包、撤回包，LY-034/036 冻结端口上的绑定，短头北盖端口（LY-006 缺），准入（LY-003 宫墙条件未决）。另外旧支持片不在城里，且归 LY-036。预计交付时零几何改动",
+ "touches": [
+  "source node C_NE_APPROACH_LOCAL (owner LY-039, mode keep; read-only reuse; only the 4 stub-cap verts at y=3490 inside LY-039:write:002 may change if LY-036 support top != 0.000±0.002)",
+  "chunks/northeast_C_access.glb 58f2f58a / adapter node visible-current-node-northeast_C_access (mutually exclusive with any new city node)",
+  "granary-city-LOD0.glb node original_city_ground_preserved south edge y=3647.469, x 2284.214-2287.214 (read-only; fingerprint must not change; port storage-site:forecourt-north owned by LY-034)",
+  "LY-036 armory support piece at stub north cap: x 2314.827-2317.827, y=3490, top z 0.000 (old patch C_WUKU_ISOLATED_SUPPORT_PATCH; LY-036 owns)",
+  "LY-006 ports ne-approach:start:road-end, ne-approach:end-E:road-end (steward LY-039; consumers LY-081/084/089) + missing stub-north-cap port",
+  "LY-006 zones LY-039:write:001 (x2283.714-2287.714, y3484.0-3647.469) and LY-039:write:002 (x2287.714-2318.327, y3484.0-3490.5), site S-NE-ROAD owned by LY-040",
+  "city-data.mjs storage-main asset/node and chapter storage loadNodeIds (proposal only via LY-100)",
+  "p-luoyang.asset.json NE road note (proposal only via LY-100)",
+  "LY-040 consumes this road package"
+ ],
+ "size": "S",
+ "risks": [
+  "LY-006 registry v1 lacks a port on the stub north cap; binding the armory to end-E (east face) would be a by-name connection to a face that faces void -> must be fixed by LY-006 before production, else blocked",
+  "LY-036 may resize/raise the old patch; if its top at the stub differs from 0.000±0.002 m the only allowed fix is the 4 stub-cap verts; anything more is re-making the road (LOCK-NE-196C)",
+  "LY-038 choosing armory A: LY-040 prep measured A first tread overhanging the patch by 0.52 m and overlapping the road east end 3.0 x 0.52 m -> needs frozen offset >= 0.52 m north or re-cut, which would touch this road",
+  "LY-003 admission stays 宫墙条件未决; HZ-Y margin is only 12.87 m, so any southward change of the road or a re-registration of 永安宫 can flip screening",
+  "Double-loading with city-visible chunk layer (same geometry) if both enabled",
+  "「东北长路预检」 missing: unknown prior findings may contradict current measurements",
+  "Discrete grid / surface-BVH / analytic voxel checks only; top-most ray cannot see the patch under the armory roof; must not be reported as continuous body, cart, structural or historical proof",
+  "Text-file SHA ambiguity (CRLF worktree vs commit bytes; assets.json worktree rewritten 22:29 with same commit SHA); bind commit bytes at pinned lab_ref",
+  "origin/main already moved to cad338b; LY-001 snapshot must be refreshed before production"
+ ],
+ "readyAfterG": true
+}

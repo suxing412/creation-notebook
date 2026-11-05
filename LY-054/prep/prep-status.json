@@ -1,0 +1,55 @@
+{
+  "seat": "LY-054",
+  "inputsFound": [
+    "docs/library/models/m-luoyang-tile-kiln/files/kiln-A.glb sha256 e67d5976 (blob f79eb8a7)",
+    "docs/library/models/m-luoyang-tile-kiln/files/kiln-A-LOD1.glb sha256 562b4b39 (blob 6c02cf70)",
+    "docs/library/models/m-luoyang-tile-kiln/files/kiln-B.glb sha256 4886d95d (blob b8d3dea3)",
+    "docs/library/models/m-luoyang-tile-kiln/files/kiln-B-LOD1.glb sha256 8d9db85b (blob 90c88617)",
+    "docs/library/models/m-luoyang-tile-kiln/m-luoyang-tile-kiln.asset.json sha256 99f63205 (status 待审, not in city)",
+    "docs/cities/luoyang/p-luoyang.asset.json sha256 9b5e311f (line 240 未入城, line 543 members)",
+    "docs/cities/luoyang/city-data.mjs sha256 e4115705 (0 kiln refs: not loaded)",
+    "docs/cities/luoyang/city-renderer.mjs sha256 fa0a8dcb (~line 309 excludeNodes)",
+    "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb sha256 fdfc3ce5 (loaded by v1/west-layer.mjs:35) + data/west/ground-atomic-contract.json sha256 bfc7fc83",
+    "baseline main bce3211",
+    "docs/cities/luoyang/v1/ground-atomic.mjs sha256 45e25711 (assertGroundAtomic; imported by v1/west-layer.mjs:2, road-layer.mjs:2)",
+    "2026-11-05 recheck: HEAD bce3211f, all SHA256 recomputed equal; no_ground_support.py rerun on A/B reproduces the recorded results, B-LOD1 same as B"
+  ],
+  "inputsMissing": [
+    "kiln A/B native .blend or generator: not in repo; used as editable source for the front ground pieces; can be rebuilt from GLB because all front nodes are axis-aligned boxes with measured planes",
+    "LY-053 frozen pit-rim / wall-top port and terrain-cut contract (its prep is not frozen): sets apron elevation and edge; cannot be rebuilt from GLB",
+    "LY-010 choice of A or B and site admission; LY-005 elevation contract (host ground walkable top measured 0.175-0.21 m; kiln z=0 city offset undecided); LY-006 ownership; LY-007 tier/material baseline; LY-008 checker"
+  ],
+  "gaps": [
+    "Once the display ground is excluded, nothing supports the grade-level front area: 1 m apron around the pit A 0/4880, B 0/4800; 1 m approach strip south of the stair top 0/480; 4 drying-board legs 0/4; 2496 of 4080 samples in the 0.6 m service band around the board hit nothing",
+    "A 0.07 x 1.20 m slot sits between the pit end wall and the top tread (A y -5.30/-5.23, B -4.70/-4.63); rays fall through to the pit floor 0.8 m below",
+    "The pit rim is an open 0.8 m drop with no edge: about 12.2 m (A) / 13.0 m (B) of open edge excluding the 1.8 m fire hood; the 1.2 m stair has open drops on both sides, 0.8 m at the top step down to 0.2 m",
+    "Working depth from the lowest riser to the fire-mouth face y=-2.1: A 1.69 m, B 1.09 m; the stair axis (x +/-0.6) faces the mouth (x +/-0.68), so stair traffic crosses the stoking stance",
+    "Fire mouth keep-out (measured, not changed): clear width 1.357 m at z -0.75 narrowing to 0.545 m at z 0.6; centre clear height 1.53 m; pit floor to fire floor seam dz 0.000 (3/3); no overhead obstruction within 3 m at 6 probes",
+    "Staging is a single 1.8 x 2.2 m board (top 0.72 m, 6 blanks in LOD0 only), 1.70/1.50 m from the chamber walls and 2.24/1.89 m from the pit; no walking domain or route is defined separately from staging",
+    "Coplanar contacts (leg bottoms on z=0, step bottoms on -0.8): ray sub-grid skipping the legs hit the ground top only A 21-25/25, B 13-25/25 (artefact of coplanar faces), while direct rays hit 4/4; QA must classify these as legal face contact",
+    "Only two LODs exist (LOD0/LOD1), with identical front nodes; there is no third tier; the city atomic ground has no cut mechanism",
+    "Host ground (network-ground-stitched.glb, measured): bottoms at z 0, up faces only at 0.175-0.21 m (primary 0.20-0.21, 39,074 m2 of top in a 2,485 x 3,847 m bbox, about 0.4% coverage, i.e. road strips not full terrain; west 0.175-0.21). If kiln z=0 is placed at city z=0, the apron sits 0.175-0.21 m below the host top; at most sites there is no host ground at all (host = none). retained/south/D08 grounds not measured"
+  ],
+  "reuseCandidate": "无（坑底板、4级踏步、晾坯台这几个节点可原样引用；但地面层作业带、接近带和暂存支承全靠要移除的展示地坪，排除后为 0/4880、0/480、0/4，不算合格成果）",
+  "touches": [
+    "{A,B}_operation_pit_floor (reference only; ownership conflict with LY-053 / kiln body)",
+    "{A,B}_pit_access_step .000-.003 (reference only; top-tread slot)",
+    "{A,B}_blank_drying_board_C, {A,B}_board_leg .000-.003, {A,B}_drying_blank_C .000-.005 (reference; support pad under legs, LY-053 also flags legs)",
+    "{A,B}_presentation_ground (excluded via excludeNodes; owned by LY-053 removal)",
+    "{A,B}_fire_hood front face y=-2.1 and mouth opening (keep-out only)",
+    "pit rim edge at z=0 (seam with LY-053 pit wall top)",
+    "new: grade apron ~1.0 m around the pit, approach strip ~1.2 x 1.0 m south of the stair top, staging pad ~2.4 x 2.8 m (C)",
+    "host ground tile in docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb (read only; seam port, owned by LY-100; loaded at v1/west-layer.mjs:35)",
+    "files: workpacks/LY-054/{models,assembly.json,qa,preview,delivery-manifest.json}; kiln-{A,B}{,-LOD1}.glb read only"
+  ],
+  "size": "M",
+  "risks": [
+    "Ownership overlap with LY-053 on the pit floor, the top-step slot, leg support and the rim edge; without an LY-006 ruling, two layers of ground could be stacked",
+    "The B variant has only a 1.09 m working depth (0.69 m after a 0.4 m body envelope); extending the pit would change LY-053 geometry and the kiln, which is out of scope",
+    "The host ground top is 0.175-0.21 m but the kiln's vertical offset is not fixed (LY-005) and no cut mechanism exists, so the apron edge could form a step or overlap",
+    "No evidence for the form of an Eastern Han Luoyang kiln-front work area or drying yard; all widths and areas must stay C and must not become historical claims",
+    "There is a temptation to call open drops, clearance or reachability 'safe'; space clearance does not stand in for thermal, fire or production-safety acceptance",
+    "No site admission: the local package can be finished, but it cannot count as entered into the city"
+  ],
+  "readyAfterG": true
+}

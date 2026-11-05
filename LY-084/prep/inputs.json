@@ -1,0 +1,526 @@
+{
+ "seat": "LY-084",
+ "phase": "prep round 2 (2026-11-06): G not frozen (LY-010 absent); LY-003 delivered; no delivery geometry made",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "sha_note": "text files: bind sha256_commit_blob (git cat-file at bce3211); worktree differs by CRLF. GLB worktree==blob.",
+ "frame": "GLB: glTF X east / Y up / Z=-north; measurements in native Z-up (x east, y north, z up) = evidence-geometry frame luoyang-local-schematic-v01",
+ "inputs": [
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "role": "city manifest: what is loaded",
+   "bytes": 106463,
+   "sha256_commit_blob": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "sha256_worktree": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "crlf_differs": true,
+   "loaded_in_city": true,
+   "loaded_by": "index.html -> app.mjs L1 `import manifest from ./city-data.mjs`"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "role": "page bootstrap; imports city-data.mjs, lazy-loads city-renderer.mjs",
+   "bytes": 14242,
+   "sha256_commit_blob": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "sha256_worktree": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "crlf_differs": true,
+   "loaded_in_city": true,
+   "loaded_by": "index.html module entry; L177 dynamic import city-renderer.mjs"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "role": "GLTFLoader + node transform (L374-387) + excludeNodes merge (L323)",
+   "bytes": 35785,
+   "sha256_commit_blob": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "sha256_worktree": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "crlf_differs": true,
+   "loaded_in_city": true,
+   "loaded_by": "L299 GLTFLoader.parseAsync; L374-387 node matrix/position; L323 excludeNodes merge"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "role": "project card: NE C path explicitly not connected",
+   "bytes": 23627,
+   "sha256_commit_blob": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "sha256_worktree": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "crlf_differs": true,
+   "loaded_in_city": false,
+   "loaded_by": "project card (not a runtime scene input); text: 不接入缺武库端支撑的东北C路径，外部道路仍待建"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "role": "atomic ground 1/4 (6m network)",
+   "bytes": 3565544,
+   "sha256_commit_blob": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "sha256_worktree": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "crlf_differs": false,
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs asset L431, node L3555 (position 0,0,0), chapter terrain L4027 loadNodeIds; initial:false"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "role": "atomic ground 2/4",
+   "bytes": 629740,
+   "sha256_commit_blob": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "sha256_worktree": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "crlf_differs": false,
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs asset L451, node L3582, chapter terrain L4027"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "role": "atomic ground 3/4",
+   "bytes": 2623560,
+   "sha256_commit_blob": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "sha256_worktree": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "crlf_differs": false,
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs asset L471, node L3609, chapter terrain L4027"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "role": "atomic ground 4/4 (city node position 580,0,-960)",
+   "bytes": 6664,
+   "sha256_commit_blob": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "sha256_worktree": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "crlf_differs": false,
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs asset L491, node L3636 (position 580,0,-960), chapter terrain L4027"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-00.glb",
+   "role": "C wall north-west",
+   "bytes": 2412,
+   "sha256_commit_blob": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74",
+   "sha256_worktree": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74",
+   "crlf_differs": false,
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs asset L171, node L3204, chapter walls L3774; initial:true"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-01.glb",
+   "role": "C wall north-east / east (nearest wall to all three candidates)",
+   "bytes": 2748,
+   "sha256_commit_blob": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95",
+   "sha256_worktree": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95",
+   "crlf_differs": false,
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs asset L191, node L3231, chapter walls L3774; initial:true"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-02.glb",
+   "role": "C wall east (Shangdong-Zhongdong)",
+   "bytes": 2068,
+   "sha256_commit_blob": "8a17587a995e6851a1c4c7e0844f79cb880cf70348edb55dfb62891434b2afa9",
+   "sha256_worktree": "8a17587a995e6851a1c4c7e0844f79cb880cf70348edb55dfb62891434b2afa9",
+   "crlf_differs": false,
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs asset L211, node L3258, chapter walls L3774"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-03.glb",
+   "role": "C wall east (south of Zhongdong)",
+   "bytes": 2072,
+   "sha256_commit_blob": "cd4cb2b629c15cbf1eaaada61eca546fc96a034a1a53802acd9d7ebeb84e4762",
+   "sha256_worktree": "cd4cb2b629c15cbf1eaaada61eca546fc96a034a1a53802acd9d7ebeb84e4762",
+   "crlf_differs": false,
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs asset L231, node L3285, chapter walls L3774"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+   "role": "storage-main in city (Taicang ground + 2 granaries)",
+   "bytes": 1663844,
+   "sha256_commit_blob": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+   "sha256_worktree": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+   "crlf_differs": false,
+   "loaded_in_city": true,
+   "loaded_by": "city-data.mjs asset L582, node storage-main L3717, chapter storage L3983; initial:false"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/source.json",
+   "role": "externalRoadActivated:false",
+   "bytes": 3920,
+   "sha256_commit_blob": "30e74bda8a965f4f7c84aaa32bdb7a179680b6163150584cdeb58de3e3f12639",
+   "sha256_worktree": "6cf88d6f0b2ae18c08cedc946ba783453af1a5edc1217158b8469a8cf2059224",
+   "crlf_differs": true,
+   "loaded_in_city": false,
+   "loaded_by": "sourceContract of storage-main (metadata only)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/evidence/evidence-geometry.json",
+   "role": "frozen 42 B features (frame luoyang-local-schematic-v01)",
+   "bytes": 52278,
+   "sha256_commit_blob": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+   "sha256_worktree": "662562fa87cffc9de43b2c23564f1ab63fba8c01f2345891f255cb202bee2233",
+   "crlf_differs": true,
+   "loaded_in_city": true,
+   "loaded_by": "evidence layer (v1/evidence-adapter.mjs / evidence-view.mjs); not physical ground"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/road-preconstraints.json",
+   "role": "11 road relations + palace link classification (NE lines hold_palace_interface)",
+   "bytes": 8657,
+   "sha256_commit_blob": "d369409a92fce2d26e8c57eee0e2b5864e509fe30f8458ae8a3e150e661d3c52",
+   "sha256_worktree": "8b2fa0faaf5c6fa5fcb3a9d50e2e7d412a5f5a8f47e03ce13cc641474c5f449d",
+   "crlf_differs": true,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/road-plan.json",
+   "role": "derived 6m C pieces (C_4 middle_cross east piece is the nearest built ground)",
+   "bytes": 16182,
+   "sha256_commit_blob": "0bc4528cbf354a18c5a74f9bbf4574bfc0ea0ee817516736e9d15ef5dca6881a",
+   "sha256_worktree": "9792f217619ef72f2cb7528856112c7403a765420814a0dfe562ad23a7ebd361",
+   "crlf_differs": true,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/north-palace-conflict-layer.json",
+   "role": "new north palace A walls unregistered; old B for comparison only",
+   "bytes": 7651,
+   "sha256_commit_blob": "da9c7c198cb28ed27c215d96d00cb7bb50de158ee91a557c91669550b1a8dd5b",
+   "sha256_worktree": "f0755db3e6d6e14966974dd241c60709c52a099fb9a9935f04554cd45ed16192",
+   "crlf_differs": true,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/storage-precedents.json",
+   "role": "Taicang/Wuku B points; access rule: only C service spur",
+   "bytes": 6538,
+   "sha256_commit_blob": "db8024490dad09484f9c1b24a915872c4010024817cadb7abb2ce58cd70fbd39",
+   "sha256_worktree": "acda86c8ae4067a8c665804fae5b3f7582d56e293c879bb791f1d61f1b431cf4",
+   "crlf_differs": true,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/storage-interface.json",
+   "role": "externalRoad: nearest B relation is palace-edge held",
+   "bytes": 1916,
+   "sha256_commit_blob": "4f3ccae9891c2fcd2ae3d962c3740a4b53eac7faea872b5ce28596cf1a62c2b3",
+   "sha256_worktree": "b910896799cdbb954717df342c7dfbb794eaaa1bdba3810b206140b84aeedba8",
+   "crlf_differs": true,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "role": "atomic ground contract",
+   "bytes": 1333,
+   "sha256_commit_blob": "7f26720bf40fc8cd7f7d0b445398d889fcc70c407f7cc7e26e4acd0eb6332367",
+   "sha256_worktree": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "crlf_differs": true,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/city-wall-constraints.json",
+   "role": "wall C constraints, no moat",
+   "bytes": 8554,
+   "sha256_commit_blob": "e9c84bddc7bb7d867e3ba8abf8cbeb604b222ad0960901f32e979dbb995e0af3",
+   "sha256_worktree": "b6006e319d903da8bf8f32741d3377c53d6068956867289d7a1c7210c66abcac",
+   "crlf_differs": true,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/road-interface.json",
+   "role": "road runtime assets / widths",
+   "bytes": 2633,
+   "sha256_commit_blob": "a3efd106ef508f5981e5157d9a40f9069d707957d236ba7ede24a16dd1db2a16",
+   "sha256_worktree": "ef4b334d3c75c227ca4d9cf4104d24f5eefdc6e692063dea5916df8055b5ddf0",
+   "crlf_differs": true,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json",
+   "role": "node visible-current-node-northeast_C_access (not published)",
+   "bytes": 108568,
+   "sha256_commit_blob": "8f890748d908e4551c1ed46107d98c4bfebfe28820393ae6943a6a2c2e7e0d7c",
+   "sha256_worktree": "703caeed4a7834e9e5324e1d2f1a1df78412c50d756768c6c98c3638f216934f",
+   "crlf_differs": true,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/README.zh-CN.md",
+   "role": "mother .blend SHA 1e8c4d2c... ; coordinate contract",
+   "bytes": 4151,
+   "sha256_commit_blob": "5dece919f492957d6658283b0a59825a8c5d5f8f9b3e2eaa7cd7d396c9daa36c",
+   "sha256_worktree": "d9d6913ce525aea601d14e3f8996d38491b7434a92ad611049f0d64ccf3e0adf",
+   "crlf_differs": true,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part01",
+   "role": "split zip 1/5 (road chunk container)",
+   "bytes": 10485760,
+   "sha256_commit_blob": "d3d5eb7263e9f840c5444d46082eb7ced1c8e5488e7fba9b00d1a0fc3f32a9a3",
+   "sha256_worktree": "d3d5eb7263e9f840c5444d46082eb7ced1c8e5488e7fba9b00d1a0fc3f32a9a3",
+   "crlf_differs": false,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part02",
+   "role": "split zip 2/5 (road chunk container)",
+   "bytes": 10485760,
+   "sha256_commit_blob": "c20213e1eaa6f212f5dbf9cf41482347a26947880119ebba0f13978cd1876703",
+   "sha256_worktree": "c20213e1eaa6f212f5dbf9cf41482347a26947880119ebba0f13978cd1876703",
+   "crlf_differs": false,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part03",
+   "role": "split zip 3/5 (road chunk container)",
+   "bytes": 10485760,
+   "sha256_commit_blob": "6a468122cb53a36c5fc93652c2c7f7dc13658510ceee955dc8faf0de9fc9105b",
+   "sha256_worktree": "6a468122cb53a36c5fc93652c2c7f7dc13658510ceee955dc8faf0de9fc9105b",
+   "crlf_differs": false,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part04",
+   "role": "split zip 4/5 (road chunk container)",
+   "bytes": 10485760,
+   "sha256_commit_blob": "74f4cd0a08d3f69882cd44dc412efc885d84bf80a39fe0619ae6ff2043d924cb",
+   "sha256_worktree": "74f4cd0a08d3f69882cd44dc412efc885d84bf80a39fe0619ae6ff2043d924cb",
+   "crlf_differs": false,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part05",
+   "role": "split zip 5/5 (road chunk container)",
+   "bytes": 4454445,
+   "sha256_commit_blob": "a8a0331b4408228a23181adcc3d07d8ca17d25cd108b2179b8bf99880331de5f",
+   "sha256_worktree": "a8a0331b4408228a23181adcc3d07d8ca17d25cd108b2179b8bf99880331de5f",
+   "crlf_differs": false,
+   "loaded_in_city": false,
+   "loaded_by": "not referenced by scene runtime code (data/contract/archive only)"
+  }
+ ],
+ "derived": [
+  {
+   "path": "(concat part01..05)/city-visible-web-handoff-v1-public.zip",
+   "bytes": 46397485,
+   "sha256": "5895ef23a684a343271183dce1e92e112fb49bba9e03e4372023d1247bb50b69"
+  },
+  {
+   "path": "zip:chunks/northeast_C_access.glb",
+   "bytes": 413628,
+   "sha256": "58f2f58a464183e20d5489b13902f62f2570573cb8bf96fb237df781027d076e"
+  },
+  {
+   "path": "zip:qa/source-node-manifest.json",
+   "bytes": 475817,
+   "sha256": "6cd13e10623e8bf8913a9df804cec2b939f55fe456829bfd628166cd3328d5d6"
+  },
+  {
+   "path": "LY-084/prep/out/city-nodes-ne.json",
+   "sha256": "f8485569767db75160282d2dde2ae80e84b54a5c0ca22bf04db76a8a428a1cd1",
+   "role": "node positions/bounds/chapters dumped from city-data.mjs via node import"
+  },
+  {
+   "path": "LY-084/prep/out/routes.json",
+   "sha256": "9b1eaa66d994b1653e6d2175f34c3e34bab4d19424bf37dfc7b0fbc582a0290e",
+   "role": "measurement report (measure_routes.py, Blender 5.2.1)"
+  },
+  {
+   "path": "LY-084/prep/out/plan-ne.svg",
+   "sha256": "cd64c67f90146a37d7ad56223b43130df13039c9ab4b1b281da5448f9f93495e",
+   "role": "schematic plan (plan_svg.py); not visually reviewed as image"
+  },
+  {
+   "path": "LY-084/prep/out/ly003-screen.json",
+   "sha256": "f142d5231236db5f49a41224606594dcd577d330ec0c0b909199cd62d6c4c4e2",
+   "role": "LY-003 hold-zone / NE-C-SCREEN plan screen of R1-R3 (ly003_screen.py)"
+  },
+  {
+   "path": "LY-084/prep/out/net-in-screen.json",
+   "sha256": "7b2975e9d67f48b2343f0c6732d2c58f898da6484ac68aad1b1f72e4952ce4c3",
+   "role": "raycast of loaded ground layers at 22475 NE-C-SCREEN cell centres (net_in_screen.py, Blender 5.2.1)"
+  }
+ ],
+ "scripts": [
+  {
+   "path": "hash_inputs.py",
+   "sha256": "9a0ddc54aedfc8133269ba4d417e40cf95f723b0793117e570b98ae7b986ccbc"
+  },
+  {
+   "path": "measure_routes.py",
+   "sha256": "a27cbe2b93580dab7393f2a3a2af74064aa8eea573de2bdfd9348604bb4d91a8"
+  },
+  {
+   "path": "plan_svg.py",
+   "sha256": "d668a2ffeabd001606e52b45ff16ac06673aedc49d2ca1a7240eaa2d9bc976c6"
+  },
+  {
+   "path": "ly003_screen.py",
+   "sha256": "c45ac518d5d52c9b8ca3b73024387a822fc0975f78d58cec6cad3cfc735116bd"
+  },
+  {
+   "path": "net_in_screen.py",
+   "sha256": "950cc6aac74af29c4d7ffcb8c475cb2c69ba92fb7b2f513418b661a8bc53893d"
+  }
+ ],
+ "not_in_city": [
+  {
+   "id": "C_NE_APPROACH_LOCAL",
+   "file": "zip:chunks/northeast_C_access.glb",
+   "sha256": "58f2f58a464183e20d5489b13902f62f2570573cb8bf96fb237df781027d076e",
+   "note": "existing ~196 m C road (LY-039 owns); adapter node visible-current-node-northeast_C_access, not published; grep of docs/ finds no loader reference"
+  },
+  {
+   "id": "mother gates shangdong-S / zhongdong-Z / gu-G",
+   "file": "zip:qa/source-node-manifest.json",
+   "note": "present in mother visible set, not city nodes; context only"
+  }
+ ],
+ "missing": [
+  {
+   "item": "既有三条长接路规划 (the three long connection plans named by TASKPOOL)",
+   "use": "the objects this seat must review",
+   "found": false,
+   "searched": "lab repo json/md/mjs/html/py, git log --all, mother visibility.json (2958 meshes, 27 collections), D:/GitHub grep",
+   "rebuild_from_GLB": "no (plans, not geometry). LY-084 screened three reconstructed candidates R1/R2/R3 derived from frozen B lines + current ground; coordinator must confirm they match or supply originals"
+  },
+  {
+   "item": "东北长路预检",
+   "use": "prior pre-check results for the long road",
+   "found": false,
+   "rebuild_from_GLB": "no"
+  },
+  {
+   "item": "city-C032-entry-LOD0.blend (sha256 1e8c4d2ce19827bb8ab5ff24a662fd4f3909aa5c6074fc9a90623a103b73b01b)",
+   "use": "native C_NE_APPROACH_LOCAL params; hidden placement library (2505 meshes) in case plan geometry lives there",
+   "found": false,
+   "rebuild_from_GLB": "road geometry yes (32 tris); generator params and any hidden plan objects no"
+  },
+  {
+   "item": "LY-003 delivery (2026-11-06): registration of new north palace walls / Yong'an extent",
+   "use": "palace constraint for all three candidates",
+   "found": true,
+   "rebuild_from_GLB": "no",
+   "result": "delivered, but conclusion is NOT PLACEABLE: 0 common control points; NE long road allowed=none. The unlock inputs (>=2-3 common control points with numeric coords on both sides; Eastern Han north palace east/south wall excavation plans) are missing for LY-003 too"
+  },
+  {
+   "item": "placed ancient water corridors (ancient_water_corridors_B_unplaced is null; huang2026 abstract only, no map)",
+   "use": "water constraint",
+   "found": false,
+   "rebuild_from_GLB": "no"
+  },
+  {
+   "item": "LY-040 (NE functional area package) and LY-081 (ground reachability network) deliveries",
+   "use": "frozen area boundary ports and network graph to bind any route contract",
+   "found": false,
+   "rebuild_from_GLB": "partly (LY-084 measured network contact directly)",
+   "note": "still prep only (2026-11-06); LY-006 port storage-site:region-boundary:road-end declared, values not filled"
+  },
+  {
+   "item": "G pack remainder: LY-010 admission table (workpacks/LY-010 absent). LY-001/002/005/006/007/008/009 delivered",
+   "found": false,
+   "rebuild_from_GLB": "no"
+  }
+ ],
+ "baseline_followup": {
+  "origin_main_now": "cad338ba683f7277aea098f45c8feb6c915a847c",
+  "commits_after_baseline": [
+   "f28d650",
+   "b70c495",
+   "cad338b"
+  ],
+  "city_data_cad338b_blob_sha256": "d8933a32a6a133b38bc8ae5591bd0b350d206f9c884e1a6c4a1adabf5fc6daf3",
+  "ne_relevant_change": "none: 9 NE-relevant nodes keep asset sha256 + position; no diff under assets/, data/, granary-city-v1/; only ground-retained initial false->true; NE-bbox nodes still wall-01, wall-02, network, storage-main",
+  "checked_by": [
+   "work/ne_nodes_cad338b.mjs",
+   "work/asset_sha_cad338b.mjs"
+  ]
+ },
+ "upstream_seat_files": [
+  {
+   "path": "workpacks/LY-003/status.json",
+   "sha256": "46f2872d0013340acaa7b4dd241dee822be052ab1765e2b64c251d23bb8cc129",
+   "role": "LY-003 status 交付完成; 东北长接路 不可落位，西段悬置; allowed 无",
+   "loaded_in_city": false
+  },
+  {
+   "path": "workpacks/LY-003/tables/admission.json",
+   "sha256": "dd0ab8c018e714be1366cb491107ff09131e5e176b9106894a2e5b2b86e88dd3",
+   "role": "8 admission rows incl. NE long road (ids road_northeast_gate_link_B)",
+   "loaded_in_city": false
+  },
+  {
+   "path": "workpacks/LY-003/tables/hold-zones.json",
+   "sha256": "0b9bb0ff52883ac7cb90a285db701edb807f558695a08e792eb1f6dfad6bc03b",
+   "role": "HZ-N/S/C/Y + 5 HR road bands; buffers 200/80/400 m (engineering screening)",
+   "loaded_in_city": false
+  },
+  {
+   "path": "workpacks/LY-003/tables/ne-screening-cells.json",
+   "sha256": "5bd9a5016ac879a198cb7830048f0647ad2f980f12b84a5f7870821e4703e98b",
+   "role": "NE-C-SCREEN 22475 x 5 m cells, 561875 m2",
+   "loaded_in_city": false
+  },
+  {
+   "path": "workpacks/LY-003/qa/ne-checks.json",
+   "sha256": "d2fe03f840a532ececd8f5054afefdec55ab9c538c5788bf735726133a71e633",
+   "role": "granary hull margins; C_NE_APPROACH_LOCAL not found in bce3211 (it lives in origin/luoyang-content ZIP)",
+   "loaded_in_city": false
+  },
+  {
+   "path": "workpacks/LY-005/coordinate-contract.json",
+   "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+   "role": "frame, world = N.S.v, C elevations (network top 0.21, lots 0.20, walls 0.17)",
+   "loaded_in_city": false
+  },
+  {
+   "path": "workpacks/LY-005/port-schema.json",
+   "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f",
+   "role": "port schema",
+   "loaded_in_city": false
+  },
+  {
+   "path": "workpacks/LY-006/registry/ports.json",
+   "sha256": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+   "role": "ne-approach:end-E:road-end frozen-measured glTF (2317.8269,0,-3487.25) tol 0.005/0.002; storage-site:region-boundary:road-end declared only (LY-040 fills)",
+   "loaded_in_city": false
+  },
+  {
+   "path": "workpacks/LY-006/registry/seats.json",
+   "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+   "role": "LY-084: role data, site S-CITYGROUND (owner LY-090), writeZones [], ownsGroundPieces []",
+   "loaded_in_city": false
+  },
+  {
+   "path": "workpacks/LY-006/registry/ownership.json",
+   "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+   "role": "data:LY-084:ne-route-candidates owner LY-084",
+   "loaded_in_city": false
+  },
+  {
+   "path": "workpacks/LY-006/registry/seams.json",
+   "sha256": "ca4d81f8f955333c089d782aa69c50c2ca83225d4da07f595f66d1ba87f3f4c1",
+   "role": "seams ne-approach:end-E@v1 LY-006->LY-084, storage-site:region-boundary@v1 LY-040->LY-084",
+   "loaded_in_city": false
+  },
+  {
+   "path": "workpacks/LY-006/schemas/interface.schema.json",
+   "sha256": "1e525d50965a78115b23b570e598e85beab11fba9f80a18146134d9ec5e71f74",
+   "role": "contract schema for route contract template",
+   "loaded_in_city": false
+  },
+  {
+   "path": "workpacks/LY-006/schemas/port.schema.json",
+   "sha256": "9fcdf932adbb4cdc58fecf19d52c7a1442955d273e75be7bc6bb9a1a5f494fdc",
+   "role": "port schema",
+   "loaded_in_city": false
+  }
+ ]
+}

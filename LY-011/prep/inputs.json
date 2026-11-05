@@ -1,0 +1,417 @@
+{
+ "seat": "LY-011",
+ "baselineCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "repoReadOnly": true,
+ "note": "所有 SHA 为本次 prep 实测；源包已在 prep/_src 解出，原分卷未改。",
+ "inputs": [
+  {
+   "id": "k-v1-lod0",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb",
+   "kind": "glb",
+   "bytes": 1595636,
+   "sha256": "88d9a3223ded3229f90fa1e6702c68771a675edcf15d6d09f3e0fe5f50aeefec",
+   "role": "K-v1 近景；中门道实测对象",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 m-luoyang-kaiyang-gate.asset.json files[1]；城景不加载",
+   "note": "与源包 models/kaiyang-K-LOD0.glb 字节相同"
+  },
+  {
+   "id": "k-v1-lod1",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb",
+   "kind": "glb",
+   "bytes": 495712,
+   "sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8",
+   "role": "K-v1 中景",
+   "loadedInCity": false,
+   "loadedBy": "city-data.mjs:748 sourceAsset（投影来源记录，渲染器不直接取）；资产卡 files[0]",
+   "note": "与源包同名文件字节相同"
+  },
+  {
+   "id": "k-v1-lod2",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb",
+   "kind": "glb",
+   "bytes": 55280,
+   "sha256": "13ff78a7a1fe9159ed577d715ff30c75cf3d0e8f6d2d47311968f660986ed801",
+   "role": "K-v1 远景",
+   "loadedInCity": false,
+   "loadedBy": "city-data.mjs:731 availableLod2（清单字段；渲染器 loadAsset 只取 url/nearUrl）；资产卡 files[2]",
+   "note": ""
+  },
+  {
+   "id": "k-v1-city-flat",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb",
+   "kind": "glb",
+   "bytes": 138768,
+   "sha256": "94693c58dd6308153c5900b0bb9698eff138811f39369f54f545b9034417e71e",
+   "role": "城景实际加载的 LOD1 投影",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:708 资产 study-north13-kaiyang-K → city-data.mjs:1267 映射 url → city-renderer.mjs:286-299 loadAsset；仅 researchModel research-north13-kaiyang-K（city-data.mjs:4178，space local-study, initial false, cityPlacement null）经 focusResearchModel（city-renderer.mjs:646）打开时读取",
+   "note": "三角数与 LOD1 相同（120/1148/696），按 LOD1 源对象映射拆分成功，实测结果与 LOD1 一致"
+  },
+  {
+   "id": "ground-lod0",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD0.glb",
+   "kind": "glb",
+   "bytes": 471920,
+   "sha256": "5754432ae2b9497ee0ab5cbae0ce17471f093e249e10945e61b9c08375941bcd",
+   "role": "现有三门地面附件（三条 1.8×14 m 测试带）",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files[3..5]；城景不加载",
+   "note": "无源工程/生成器；仅 GLB"
+  },
+  {
+   "id": "ground-lod1",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD1.glb",
+   "kind": "glb",
+   "bytes": 162984,
+   "sha256": "50f8550280e3992b63f0fa4f70c23ebc0d5fceb8db96ae1d0f91730e13612ee9",
+   "role": "现有三门地面附件（三条 1.8×14 m 测试带）",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files[3..5]；城景不加载",
+   "note": "无源工程/生成器；仅 GLB"
+  },
+  {
+   "id": "ground-lod2",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD2.glb",
+   "kind": "glb",
+   "bytes": 3808,
+   "sha256": "e758e45f4ce320d039549c4d0346476830b0a81154d29c32fdc4d14a7b7330d6",
+   "role": "现有三门地面附件（三条 1.8×14 m 测试带）",
+   "loadedInCity": false,
+   "loadedBy": "资产卡 files[3..5]；城景不加载",
+   "note": "无源工程/生成器；仅 GLB"
+  },
+  {
+   "id": "asset-card",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json",
+   "kind": "json",
+   "bytes": 2955,
+   "sha256": "fadab2bbd9029d793a672d2ab0da27b56e134d0524f03c94b562041fdd28dca9",
+   "role": "资产卡（状态 待审，未入城）",
+   "loadedInCity": false,
+   "loadedBy": "库页面",
+   "note": ""
+  },
+  {
+   "id": "north13-source",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/north13-gates/source.json",
+   "kind": "json",
+   "bytes": 87701,
+   "sha256": "9b07b7349ef536cd0b0a15c9bfa7134d2af7cc95e8dc402b7e2bea14d20719c1",
+   "role": "源包 placement 合同（activation false，工程原点 z 0.17）",
+   "loadedInCity": false,
+   "loadedBy": "city-data.mjs sourceContract 字段引用",
+   "note": ""
+  },
+  {
+   "id": "city-data",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-data.mjs",
+   "kind": "mjs",
+   "bytes": 111034,
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "role": "城市清单（只读，LY-100 唯一写入）",
+   "loadedInCity": true,
+   "loadedBy": "app.mjs / city-renderer.mjs",
+   "note": ""
+  },
+  {
+   "id": "city-renderer",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-renderer.mjs",
+   "kind": "mjs",
+   "bytes": 36571,
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "role": "渲染器",
+   "loadedInCity": true,
+   "loadedBy": "app.mjs:177",
+   "note": ""
+  },
+  {
+   "id": "project-card",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/p-luoyang.asset.json",
+   "kind": "json",
+   "bytes": 24215,
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "role": "项目卡（列 m-luoyang-kaiyang-gate 于 563 行）",
+   "loadedInCity": false,
+   "loadedBy": "库页面",
+   "note": ""
+  },
+  {
+   "id": "src-zip-part1",
+   "path": "D:/GitHub/creation-notebook-lab/modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part001",
+   "kind": "zip-part",
+   "bytes": 9437184,
+   "sha256": "f742fb3ce1555beb371a30a828b1a59b80f9c0c4ef7f9cc17f4f9e21633aa521",
+   "role": "源包分卷",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src-zip-part2",
+   "path": "D:/GitHub/creation-notebook-lab/modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part002",
+   "kind": "zip-part",
+   "bytes": 2014045,
+   "sha256": "72609b8bcab43c8bea6acc14ce9eaf7f862da4abe80cd98f7bff3f165a1ad0b5",
+   "role": "源包分卷",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src-zip",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/../content.zip",
+   "kind": "zip",
+   "bytes": 11451229,
+   "sha256": "bad99bb9f5b301b5b6a3450931511caec385df3da8b5ffc5b94b1664eb598c23",
+   "role": "分卷拼接后的源包 ZIP（manifest zipSHA256 一致）",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:models/kaiyang-K-LOD0.blend",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD0.blend",
+   "kind": "source",
+   "bytes": 2160111,
+   "sha256": "95568b8b54b892473a3e6222075732cc04456ecf314133d919e55f9d8042339f",
+   "role": "原生 LOD0（净化重开版）",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:models/kaiyang-K-LOD1.blend",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.blend",
+   "kind": "source",
+   "bytes": 1060639,
+   "sha256": "f283dbf9cf477fd879608e0c31d1e3a9d059b145ca4702df33ee19c9de1809f3",
+   "role": "原生 LOD1",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:models/kaiyang-K-LOD2.blend",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.blend",
+   "kind": "source",
+   "bytes": 540372,
+   "sha256": "c8ef8d100f20ab8eae9b5e8aab88a0663b816774b8ce13bc101af2cdc928e159",
+   "role": "原生 LOD2",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:city/kaiyang-K-mid-hidden-trial.blend",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/city/kaiyang-K-mid-hidden-trial.blend",
+   "kind": "source",
+   "bytes": 794987,
+   "sha256": "75c96a3f1a8bb1d6231e005ed115a0c810f0f81f4ddeb7938ce10e56659558aa",
+   "role": "隐藏试放场景",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:city/placement.json",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/city/placement.json",
+   "kind": "source",
+   "bytes": 2030,
+   "sha256": "e608e78bf746b6b7a415ceff14883b8daadffd5346821c6d2c4f7f2b11abc39a",
+   "role": "试放 placement",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:config.json",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/config.json",
+   "kind": "source",
+   "bytes": 706,
+   "sha256": "94ac52ed0418eed83520d911a780c7205523c182c21d68fc221373152479a907",
+   "role": "生成参数合同",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:source/build.py",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/source/build.py",
+   "kind": "source",
+   "bytes": 6167,
+   "sha256": "df0be5edb6136453a457e4d9a16b778e11ed3ea5e52b7227b1044182e7b9ce4a",
+   "role": "生成器",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:source/geometry.py",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/source/geometry.py",
+   "kind": "source",
+   "bytes": 2907,
+   "sha256": "47ef2902c8b160f65339acadb022ec7802c20c676c564f1bcb899585949fab08",
+   "role": "几何原语",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:source/joint-regions.py",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/source/joint-regions.py",
+   "kind": "source",
+   "bytes": 1975,
+   "sha256": "0c00ed0089b5a04358ad426e2c169e20fc4080cdab9ea41f89c334ffdcabc884",
+   "role": "原接合候选检查器",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:source/contact-audit.py",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/source/contact-audit.py",
+   "kind": "source",
+   "bytes": 2253,
+   "sha256": "e74580548df04d28759564edb60d2302822fbb62806eaba21ce9b259882c995d",
+   "role": "原边接触检查器",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:qa/source-object-ranges.json",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/qa/source-object-ranges.json",
+   "kind": "source",
+   "bytes": 60007,
+   "sha256": "a13c9f741347db813ff2deb3678b5ad6062fbc84584a3117df7a44939d42fdea",
+   "role": "三角→源对象映射（本项拆分依据）",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:qa/joint-regions.json",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/qa/joint-regions.json",
+   "kind": "source",
+   "bytes": 1994807,
+   "sha256": "0945f637b7945ec332abdb5733f53be68b4760cc93d096912d13b1acd88b010e",
+   "role": "原接合候选报告",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:qa/contact-edge-regions.json",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/qa/contact-edge-regions.json",
+   "kind": "source",
+   "bytes": 49007,
+   "sha256": "057a7e340ab1d9bd77810d6cbddf7437ef34b47506be5f678cd07537a6d62694",
+   "role": "原边接触报告",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:NATIVE-EQUIVALENCE.json",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/NATIVE-EQUIVALENCE.json",
+   "kind": "source",
+   "bytes": 1598,
+   "sha256": "a63e90e88efe18e1e74127dbfc1230ca2ac143e2859f2aabfb7447c0e3e6fcd3",
+   "role": "净化前后原生等价报告",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:PUBLIC-SHA256.json",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/PUBLIC-SHA256.json",
+   "kind": "source",
+   "bytes": 10496,
+   "sha256": "86f1b1b9ab01566a89ca1c77b44d7167e354496df0cd8fb1e68c13521e261152",
+   "role": "源包公开 SHA 表",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:docs/evidence.md",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/docs/evidence.md",
+   "kind": "source",
+   "bytes": 1149,
+   "sha256": "2276b2f5c024d38a36a36b956d9993cda80c101da390809a416ad3ef7135bae5",
+   "role": "源包证据说明",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  },
+  {
+   "id": "src:docs/review.md",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-011/prep/_src/luoyang-kaiyang-gate-study-v1/docs/review.md",
+   "kind": "source",
+   "bytes": 935,
+   "sha256": "771dea52abc79f680a321912d7cadced961dd3dbc506208db8f5c4a4b0f20126",
+   "role": "源包评审记录",
+   "loadedInCity": false,
+   "loadedBy": "—",
+   "note": ""
+  }
+ ],
+ "missing": [
+  {
+   "id": "bearing-section-v1",
+   "role": "失败承托样例（被替代对象；0.0936 m³ 的「前」证据）",
+   "searched": [
+    "lab main/origin luoyang-content/origin workpacks/origin reviews git grep",
+    "modeling-lab/review-batches 全部",
+    "D:/GitHub 文件名 *bearing*"
+   ],
+   "rebuildFromGLB": false,
+   "why": "K-v1 GLB 不含该件，K-v1 本体无任何 0.0936±0.003 m³ 交体"
+  },
+  {
+   "id": "kaiyang-adapt-failure-and-section-record",
+   "role": "开阳适配失败/实际剖面记录",
+   "searched": [
+    "同上"
+   ],
+   "rebuildFromGLB": false,
+   "why": "记录类文件；本目录 k-central-measure.json 只能作 K-v1 当前剖面基线，不等于原记录"
+  },
+  {
+   "id": "kaiyang-ground-source",
+   "role": "三门地面附件源工程/生成器",
+   "rebuildFromGLB": true,
+   "why": "三条简单带体，可从 GLB 重建但必须标「从GLB重建」"
+  },
+  {
+   "id": "G-freeze",
+   "role": "LY-001/002/005/006/007/008/009/010 冻结件（地面端口高程、端口ID、所有权、材质三档、检查器、开阳放行）",
+   "rebuildFromGLB": false
+  }
+ ],
+ "tools": [
+  {
+   "path": "prep/measure_k_central.py",
+   "sha256": "c41d6401147b39847885a0edd2b7d610742e67a1c5a6a9a102b08caddff293d5"
+  }
+ ],
+ "measurements": [
+  {
+   "path": "prep/qa/ground-LOD1-measure.json",
+   "sha256": "11ee6dfe2c0855b6a805d17618ed22617cdf4540daae2933d84e351b9412e18e"
+  },
+  {
+   "path": "prep/qa/ground-LOD2-measure.json",
+   "sha256": "93f5599dd93bbae8e27ddd9933afb4eebf87d9081ad69a3575d6f3c10a35465f"
+  },
+  {
+   "path": "prep/qa/k-allpairs-lod0.json",
+   "sha256": "ae1ec4a97f03a95bb424de23b0afdcd1d0f14a4c2c95f8ef21eb80a90b53a5e7"
+  },
+  {
+   "path": "prep/qa/k-central-measure.json",
+   "sha256": "61fac69e14b36bf614ebf86fb07f378d7b71200cba554b8e829635ba076c2aaf"
+  }
+ ]
+}

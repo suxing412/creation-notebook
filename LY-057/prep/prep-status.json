@@ -1,0 +1,51 @@
+{
+ "seat": "LY-057",
+ "inputsFound": [
+  "lab bce3211 docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb sha256 89e0a439 (LY-006 owner LY-057 modify; not in city at bce3211 or cad338b)",
+  "workshed-LOD1.glb sha256 a21c2893 / workshed-LOD2.glb sha256 7c054863",
+  "workyard-LOD0/1/2.glb sha256 7eb9739e / 6baefbd0 / 574d81d9 (two-house yard, different product, LY-058 keep; LOD2+LOD0 loaded in city on origin/main cad338b as C_NORTH_INFILL_03 / -near, city-data.mjs lines 1447-1490, 4344-4430)",
+  "card m-luoyang-workyard-shed.asset.json sha256 bc2a6289 at bce3211; cad338b version b1c040f3 (statusNote 已接入住宅试验区北缘)",
+  "foot-pestle-LOD0/1/2.glb sha256 6f0e4183 / d8759dd6 / e94416ef (LY-056 keep, do not touch)",
+  "LY-006 registry v1: ownership.json ecbbbcf5, zones.json 6b3595ac (write zone LY-057:write:001), ports.json 28bcfb68 (port workshed:shed-floor:floor -> LY-058), seats.json a1426412",
+  "LY-007 baseline: decisions.json cb2870fc (D-RIB, D-RIB-LOD1, D-RIDGE-HOUSE, D-LOD-BBOX), lod-rules.json fbf53757, LY-style-bible.frozen.md 50e51a93, samples/S84-LOD0.glb 93e02959 (rib reference)",
+  "LY-002 evidence-ledger.json 237a4811 (E-H02, E-M02); LY-001 family-ledger.json 8eaa7c7a",
+  "mq cards/m-luoyang-workyard-shed/audit.json dce70ed8 (1764/564/252 tris, 0 issues)",
+  "templates: m-luoyang-house-roof TC03-main-roof-kit.glb 804d6bab; m-eaves-shell eaves-A.glb 582767de / eaves-B.glb da3c4145"
+ ],
+ "inputsMissing": [
+  "原谷物加工院 original model: not anywhere (all lab refs, git history has only one workshed/workyard version from da1877a, other repos, D: search). Used for identity and original node names. Cannot be rebuilt from GLB because there is no GLB; LY-006 already binds the seat to workshed 89e0a439, coordinator should confirm in writing.",
+  "原谷物加工院缺陷记录 (瓦落座/行缝/承件): not found. Used to know whether the producer's complaint targets the LY-007 frozen house rib rule itself. Cannot be rebuilt; the defect class was re-measured on the GLB instead.",
+  "workshed native source (.blend/generator/source ZIP): private, Release pending. Used to regenerate all tiers from one parameter set. Can be rebuilt from GLB: bed 3 segments x [-4.05,-3.3,3.3,4.05] t 0.13 rise 1.1/2.45; ribs d 0.11 pitch 0.28 inset 0.06 lift 0.05 lift_ridge 0.05 ridge_gap 0.07, LOD1 n0//2 4-gon; must be declared 'rebuilt from GLB'.",
+  "Decision from producer or LY-010: does the shed follow LY-007 D-RIB/D-RIDGE-HOUSE (reuse) or get a recorded deviation (new shed profile)? Not derivable from any file.",
+  "LY-008 checker, LY-009 locks, LY-010 admission: not delivered (008/009 no status.json, 010 directory missing)."
+ ],
+ "gaps": [
+  "Seating: 54/54 LOD0 ribs and 26/26 LOD1 ribs: rib slope 0.4741 vs bed 0.449; lowest contact line -35 mm (embedded) at the eave to +18 mm (floating) at the ridge, station-min -32.4..+15.2 mm. BUT style_conformance.py shows this matches the LY-007 frozen house rule to 0.0 mm (eave centre inset 0.06 / lift 0.05, ridge centre gap 0.07 / lift 0.05; slope equal to LY-007 S84 sample 0.4741). It is a defect only if the frozen rule is overridden for the shed",
+  "Row joints: pitch 0.287 m in the 6.6 m middle segment, 0.375 m in the 0.75 m gable segments, clear seam 177-265 mm over flat bed, no pan-tile solid; rib x vs segment-centred rule deviation 0.0 mm (D-RIB). LOD1 13 per slope at 0.60/0.675 = n0//2 rule exactly",
+  "Ridge: 92.8 mm gap between slopes, 40/41 ridge-line samples hit bare bed; frozen D-RIDGE-HOUSE says no ridge cap (bible lines 387, 654 name workshed explicitly)",
+  "Bearers (the only gap not covered by the frozen baseline): no rafters; 1.66 m plan / about 1.82 m slope clear span between purlins, 0.49 m eave cantilever beyond eave purlin face, 0.45 m gable cantilever beyond purlin ends, 3.1 m truss spacing. Eave purlin top 3.1188 embeds about 0.099 m into bed underside, below the 90%-of-0.13 m limit (0.117). Geometry only, no structural claim",
+  "Write-zone limits (LY-006 zone, Blender x +-4.05, y -0.45..4.45, z 2.8..4.2): all 55 tile parts inside; 9/15 timber parts (6 posts, 3 beams) outside and must stay unchanged; ridge piece headroom 70 mm (rib top 4.1297); a 0.10 m deep rafter under the bed can reach only y >= about -0.227 before dropping below z 2.8",
+  "Tiers already conform to LY-007 lod-rules: LOD1/LOD0 0.320, LOD2/LOD0 0.143, LOD1 bbox = LOD0, LOD2 drop 0.0997 m (house limit 0.10). No low-LOD masking found",
+  "Drift: origin/main cad338b (3 commits past bce3211) places workyard-LOD2/LOD0 in the city, so the same rib method in the yard shed and yard houses is now in-city; LY-057 output will not reach the city through workyard (LY-058 keep)"
+ ],
+ "reuseCandidate": "Conditional reuse. If the producer or LY-010 rules that the shed follows the LY-007 frozen house rib rule (D-RIB, D-RIB-LOD1, D-RIDGE-HOUSE), the existing workshed-LOD0/1/2 (89e0a439 / a21c2893 / 7c054863) already qualify for tile seating and row joints. Evidence: out/style-zone-workshed.txt, all 6 S1 checks PASS at 0.0 mm deviation, slope 0.4741 equals the LY-007 S84 sample 93e02959, Z1 zone PASS, tiers within lod-rules. Only the bearer (rafter) gap would remain, as a separate optional C part. If the rule is overridden for the shed, there is no qualifying result and new geometry is needed.",
+ "touches": [
+  "workshed-LOD0/1/2.glb node workshed_tile (LY-006: LY-057 modify): replace with new roof layer; old node and new node mutually exclusive",
+  "workshed-LOD0/1/2.glb node workshed_timber (LY-057 modify): the 6 in-zone parts (2 eave purlins, ridge purlin, 3 king posts) stay unchanged; new rafters/bearers go in a separate node inside zone LY-057:write:001",
+  "LY-006 write zone LY-057:write:001 (local:workshed glTF box [[-4.05,2.8,-4.45],[4.05,4.2,0.45]])",
+  "LY-006 port workshed:shed-floor:floor (producer LY-057, consumer LY-058): values to be filled at delivery",
+  "read-only: workyard-LOD0/1/2 (LY-058 keep, in city on cad338b), foot-pestle-LOD0/1/2 (LY-056 keep); no ground tiles, no terrain, no city-data.mjs, no p-luoyang.asset.json, no lab/data",
+  "writes only D:/GitHub/creation-notebook-workpacks/LY-057/"
+ ],
+ "size": "M",
+ "risks": [
+  "Governance conflict: the seat's mandate (fix seating and row joints) contradicts LY-007 frozen D-RIB/D-RIDGE-HOUSE, whose status says changes need a separate seat via LY-100. Building without a recorded decision either violates the baseline or produces a no-op",
+  "Consistency: changing the rib method only on the standalone shed makes it differ from every house roof in the city and from the identical shed inside the in-city workyard (LY-058 keep)",
+  "Identity: no 原谷物加工院 bytes or defect record exist; LY-006 bound the seat to workshed by ownership, but the producer's complaint may refer to something else",
+  "Write zone is tight: z floor 2.8 equals the bed underside at the eave, so rafters cannot reach the eave without embedding in the bed or a zone change by LY-006; ridge piece headroom is 70 mm",
+  "Baseline drift: origin/main is already at cad338b; LY-001 snapshot says bce3211 = origin/main, which is no longer true",
+  "Tolerances (+-3 mm, +-1 mm rule deviation) are provisional C values until LY-008 freezes the checker",
+  "Historical tile and ridge form for Luoyang c.180 is unknown; any shed profile stays C/analogy"
+ ],
+ "readyAfterG": false
+}

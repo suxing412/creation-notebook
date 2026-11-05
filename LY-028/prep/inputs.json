@@ -1,0 +1,439 @@
+{
+ "seat": "LY-028",
+ "phase": "prep (G not frozen; no deliverable geometry)",
+ "baseline": {
+  "repo": "D:/GitHub/creation-notebook-lab/",
+  "head": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "workingTreeNote": "lab/data/assets.json, glb-cache.json, report.json carry uncommitted edits not made by this seat; every other input below is tracked and equal to HEAD (git diff --quiet)."
+ },
+ "frame": "market-local, north-positive: local = Blender world - (214.286, 1959.184, 0); Blender Y = -glTF Z; z = world height (ground top 0.20). LY-022/LY-025 write (x, z) with z = glTF Z + 1959.184, i.e. their (x, z) = our (x, -y). Library frontage files use the same x/y with z lowered by 0.20.",
+ "selectedGroup": {
+  "primary": "B: eight-shop / four-canopy frontage v2.1 as placed in city-visible master chunk C032 (chunks/market_frontage_well_routes.glb) with well A and the cut ground C_market_ground_well_A",
+  "why": [
+   "LY-028 must be checked against a well operation domain; only group B contains a well (well A local x[-19.32,-16.68] y[-8.25,-5.75])",
+   "LY-028 feeds LY-029 (eight shops / four canopies candidate); LY-021/022/025 prep target the same chunk",
+   "group A (in-city five shops / three stalls, market-cluster) is the protected default and is not auto-replaced"
+  ],
+  "reference": "A: in-city market-cluster.glb + N2-replacement.glb (+ flowB-routes.glb for flow B), measured only as comparison/precedent, never modified",
+  "finalSelectionOwner": "LY-010; must equal the group LY-027 selects. LY-028 does not proceed on a group different from LY-027."
+ },
+ "inputs": [
+  {
+   "path": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "bytes": 1031928,
+   "loadedInCityScene": true,
+   "loadedBy": [
+    "docs/cities/luoyang/city-data.mjs:511-512 (asset market-main)",
+    "city-data.mjs:3663-3671 (node market-main)",
+    "city-data.mjs:3953-3962 (chapter market)",
+    "docs/cities/luoyang/v1/west-layer.mjs:33 (market level environmentUrl)",
+    "city-renderer.mjs:285-294 (loadAsset fetch)"
+   ],
+   "role": "group A: N1/N3/S1/S2 shops, T1-T3 stalls, rear *_closed_stock placeholders, sample_ground, 7 route_*, 5 boundary_*",
+   "group": "A"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/N2-replacement.glb",
+   "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "bytes": 72984,
+   "loadedInCityScene": true,
+   "loadedBy": [
+    "city-data.mjs:562-563 (asset market-N2)",
+    "city-data.mjs:3690-3698 (node market-N2)",
+    "v1/west-layer.mjs:33,36 (extraEnvironments)",
+    "v1/market-assembly.mjs:2-6 (retires 30 original N2_* nodes)"
+   ],
+   "role": "group A N2 trade/storage C volume incl. rear N2_closed_stock.003-.005",
+   "group": "A"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/flowB-routes.glb",
+   "sha256": "43d7799f85feccb0d6f1e0412c46853e6b3339535e38a9b806e8c5d3898f845e",
+   "bytes": 9344,
+   "loadedInCityScene": "flow B only",
+   "loadedBy": [
+    "v1/west-layer.mjs:33,36 (only when s.flow==='B')",
+    "v1/market-assembly.mjs (retires the 7 route_* in flow B)"
+   ],
+   "role": "group A flow B perimeter service routes (flowB_west_service x[-27,-23])",
+   "group": "A"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/corridor-6m-market-link.glb",
+   "sha256": "b46dd450d7e8636b744d2dcd1d0cee8e98352025b7cda57b2cd0938a3da149bf",
+   "bytes": 8272,
+   "loadedInCityScene": true,
+   "loadedBy": [
+    "v1/west-layer.mjs:32-33"
+   ],
+   "role": "outer link (LY-083 side); keep-out",
+   "group": "A"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/road-junction/joined-route-terrain.glb",
+   "sha256": "f872935883fc6b4e3279c6465635411d13c2d810f50b7ad43def09ca4543d104",
+   "bytes": 4408140,
+   "loadedInCityScene": true,
+   "loadedBy": [
+    "v1/west-layer.mjs:32-33"
+   ],
+   "role": "outer terrain; does not support the market interior (LY-023 negative: 24 no_ground without sample_ground)",
+   "group": "A"
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part01..05 (in-memory reassembly)",
+   "sha256": "5895ef23a684a343271183dce1e92e112fb49bba9e03e4372023d1247bb50b69",
+   "bytes": null,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "not referenced under docs/cities/luoyang (grep for city-visible / market_frontage_well: no hit); intake.json websiteDeployed:false, mainChanged:false"
+   ],
+   "role": "container of the group B chunk",
+   "group": "B"
+  },
+  {
+   "path": "ZIP:chunks/market_frontage_well_routes.glb -> LY-028/prep/work/chunks__market_frontage_well_routes.glb",
+   "sha256": "0193ebc0cfe200292defd595ff4f4011b2b2d05388d4f53e7b4c3a19a255b4c5",
+   "bytes": 3695576,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "not loaded by the city scene"
+   ],
+   "role": "group B: C_MARKET_ENTRY_V21_LOD0 earth/tile/timber (frontage v2.1 LOD0 at glTF +(214.286, 0.20, -1959.184)), 121 A_LOD0__* well nodes, C_market_ground_well_A (208 tris, top 0.20, hole r~0.59 at local (-18,-7)), 7 route_*, 5 boundary_*",
+   "group": "B"
+  },
+  {
+   "path": "ZIP:qa/chunk-manifest.json",
+   "sha256": "5612ea341545df34bea7ea16d790f1bd221fd06468a089201df4a812c2a7a0fd",
+   "bytes": 339762,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "-"
+   ],
+   "role": "source master SHA 1e8c4d2c..., lossless split contract",
+   "group": "B"
+  },
+  {
+   "path": "ZIP:qa/source-node-manifest.json",
+   "sha256": "6cd13e10623e8bf8913a9df804cec2b939f55fe456829bfd628166cd3328d5d6",
+   "bytes": 475817,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "-"
+   ],
+   "role": "source node list",
+   "group": "B"
+  },
+  {
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/intake.json",
+   "sha256": "d4631d18ded63df9fb9c70a7516a28eb007daa10b28d2a25857fe287c9fcf009",
+   "bytes": 883,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "-"
+   ],
+   "role": "sourceMasterIncluded:false, websiteDeployed:false",
+   "group": "B"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0.glb",
+   "sha256": "46f08f41aa290218e9a3ec4e4de4e2cb676f10a80a035e9b6d3e1f8a0c5bf6f2",
+   "bytes": 1932544,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "not loaded by the city scene (only p-luoyang.asset.json:567 relates the card)"
+   ],
+   "role": "frontage v2.1 LOD0, 3 merged meshes, no ground mesh; canopy positions = chunk minus z 0.20",
+   "group": "B"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD1.glb",
+   "sha256": "03ad28cf31f05cdb518b1ee8652cdc235def6d6ca4b7aa8ca1a29c5272fb6126",
+   "bytes": 720296,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "-"
+   ],
+   "role": "LOD1",
+   "group": "B"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD2.glb",
+   "sha256": "b5b13b1c74f561903ba12489846c5c841e7b7bf7c1694228e7e12357869fa0f1",
+   "bytes": 125896,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "-"
+   ],
+   "role": "LOD2 (tables merged with supports)",
+   "group": "B"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-frontage/m-luoyang-market-frontage.asset.json",
+   "sha256": "ac85a44d46709acf2ad6e74486513fa73f02e27a70aa099dc871a80eb34103ed",
+   "bytes": 1434,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "library card"
+   ],
+   "role": "card says shed use (棚使用) is not verified; independent asset, city scene unchanged",
+   "group": "B"
+  },
+  {
+   "path": "docs/model-library/updates/m-market-functional/files/market-LOD0.glb",
+   "sha256": "acdd4391ea9a26022c5bdb22aa9e0db9403a0f99850dd63e701526eded72aa07",
+   "bytes": 2845156,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "-"
+   ],
+   "role": "library copy of group A, no ground; reference only",
+   "group": "A-lib"
+  },
+  {
+   "path": "docs/model-library/updates/m-market-functional/files/market-LOD1.glb",
+   "sha256": "e925451bf71dbf688297d889f0ed85d49dcc6c8e4fbe6d4cb261260333520683",
+   "bytes": 1448032,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "-"
+   ],
+   "role": "reference only",
+   "group": "A-lib"
+  },
+  {
+   "path": "docs/model-library/updates/m-market-functional/files/market-LOD2.glb",
+   "sha256": "ea0c235f1505b9e1a0254258743f0ee073ae8c5794160e516bc3740835ce8864",
+   "bytes": 136216,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "-"
+   ],
+   "role": "reference only",
+   "group": "A-lib"
+  },
+  {
+   "path": "docs/model-library/m-market-functional.asset.json",
+   "sha256": "911c1ea0d1bc03e00df440abb164c43bfa9fe1f0cc745f2b1070d1805a3878b4",
+   "bytes": 2231,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "library card"
+   ],
+   "role": "reference",
+   "group": "A-lib"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-flow-plan.json",
+   "sha256": "bff5bb22bac6bda21f02a4b43f4adf85e187b8070d360c0433d69832e11adbdf",
+   "bytes": 3078,
+   "loadedInCityScene": true,
+   "loadedBy": [
+    "v1/west-layer.mjs:40 (fetch, then applyMarketReplacements(value,nc,fp,flow))"
+   ],
+   "role": "only frozen goods/public routes and envelopes (person 0.6, small_hand_load 1.6, dimensionsAreC); written for market-cluster (group A), not for the v2.1 chunk"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/N2-contract.json",
+   "sha256": "10678d73111ae0d131afc3ff823162392eab339ee66bf2046e61666c2c8d9386",
+   "bytes": 9414,
+   "loadedInCityScene": true,
+   "loadedBy": [
+    "v1/west-layer.mjs:40 (fetch)",
+    "city-data.mjs:559,579,3675,3702,4513"
+   ],
+   "role": "group A N2 retirement contract"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-precedents.json",
+   "sha256": "abf2a3d248114427f51a93b913c39e3ee523c5b3dda55860bd6379f5d37f7d38",
+   "bytes": 6377,
+   "loadedInCityScene": "UI link only",
+   "loadedBy": [
+    "v1/west-layer.mjs:51 (href)"
+   ],
+   "role": "evidence boundary; proposal.components.goods_service_yard is a C functional guess"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-interface.json",
+   "sha256": "31c6786db03b1d7e4be79070abe8ea9a577207345a55703c85d2fb34bc479f4e",
+   "bytes": 1761,
+   "loadedInCityScene": "listed",
+   "loadedBy": [
+    "city-data.mjs:4517"
+   ],
+   "role": "group A interface (absolute glTF, translation 0)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "bytes": 1391,
+   "loadedInCityScene": true,
+   "loadedBy": [
+    "v1/west-layer.mjs:40 (calt levels except storage)",
+    "v1/road-layer.mjs:19"
+   ],
+   "role": "atomic ground assertion"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/market-assembly.mjs",
+   "sha256": "0145ac84d938b570d08e2bbf334eb42cc69ae13569cb0e2bdfa917351ae68ce2",
+   "bytes": 1175,
+   "loadedInCityScene": true,
+   "loadedBy": [
+    "v1/west-layer.mjs:4 (import), :40 (call)"
+   ],
+   "role": "retirement logic (exact node identity, refuses overlap)"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/west-layer.mjs",
+   "sha256": "d8c14142af2e4d993cc249dfcc605edadb38232190e5890f31640b94be9d2d4b",
+   "bytes": 18747,
+   "loadedInCityScene": true,
+   "loadedBy": [
+    "market level entry"
+   ],
+   "role": "loader"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 111034,
+   "loadedInCityScene": true,
+   "loadedBy": [
+    "shared; write-forbidden (LY-100 only)"
+   ],
+   "role": "marketShops 5 / marketStalls 3 at :4489-4490"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "bytes": 36571,
+   "loadedInCityScene": true,
+   "loadedBy": [
+    "-"
+   ],
+   "role": "loadAsset"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "bytes": 24215,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "project card; write-forbidden"
+   ],
+   "role": "relates m-luoyang-market-frontage at :567"
+  },
+  {
+   "path": "lab/data/assets.json (working tree)",
+   "sha256": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+   "bytes": 439273,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "-"
+   ],
+   "role": "MODIFIED vs HEAD (HEAD blob sha256 53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78); not used by any measurement"
+  },
+  {
+   "path": "scratchpad mq/cards/m-luoyang-market-frontage/audit.json",
+   "sha256": "65f8a4b17400e81a1195bb5c65e95c6be6bd519b0fb0c066bbf1ce0cd40e2bd7",
+   "bytes": null,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "-"
+   ],
+   "role": "LOD0: 3 meshes, 15288 tris, 0 degenerate, bbox x[-22.7,22.15]"
+  },
+  {
+   "path": "scratchpad mq/cards/m-market-functional/audit.json",
+   "sha256": "1527bb0b9bb63093970ea5876250ca32c0d08c709525e9434b027008f104a846",
+   "bytes": null,
+   "loadedInCityScene": false,
+   "loadedBy": [
+    "-"
+   ],
+   "role": "LOD0: 4 meshes, 18140 tris"
+  }
+ ],
+ "siblingPrepReadOnly": [
+  {
+   "seat": "LY-021",
+   "use": "12 openings, 0.22 m plinth, step zones only at shop fronts; nothing east of C02"
+  },
+  {
+   "seat": "LY-022",
+   "use": "claimed patch zone x[-22.7,24] x |y| in [2,5] plus x[22.15,24] x |y|<=5 (written as |z|): LY-028 stays at y>=5.0"
+  },
+  {
+   "seat": "LY-023",
+   "use": "C01/C02 pitched-canopy post-head gap 0.0751-0.1336 m; 0.030 m table-support gap on all four canopies"
+  },
+  {
+   "seat": "LY-025",
+   "use": "well A / hole binding; well operation domain to be frozen with LY-026"
+  },
+  {
+   "seat": "LY-027",
+   "use": "prep not yet written when read (20:41); placeholder IDs/dims unknown"
+  }
+ ],
+ "missing": [
+  {
+   "item": "city master C032 source .blend (sourceMasterSHA256 1e8c4d2ce19827bb8ab5ff24a662fd4f3909aa5c6074fc9a90623a103b73b01b; sourceMasterIncluded:false)",
+   "purpose": "native node names if LY-006 wants a native-side pad or a ground re-cut",
+   "rebuildFromGLB": "yes for measuring and for overlay work (the chunk is a lossless split, bufferViews byte-identical); any native edit must be labelled 'rebuilt from GLB'"
+  },
+  {
+   "item": "frontage v2.1 private source (.blend / generator) and its 72-segment entry-envelope QA definition",
+   "purpose": "canopy semantics (canopies are not nodes; the 3 meshes are merged by material)",
+   "rebuildFromGLB": "yes: canopy islands recovered by welded connectivity (32 islands = 4 canopies)"
+  },
+  {
+   "item": "LY-005 frozen datum",
+   "purpose": "ground 0.20 world vs 0.00 library-local; 0.010 route lip",
+   "rebuildFromGLB": "n/a (contract)"
+  },
+  {
+   "item": "LY-006 frozen work-edge port and ownership",
+   "purpose": "which edge is frozen; owner of the C_market_ground_well_A triangle under ST_C02E; shared edge y=5.0 with LY-022",
+   "rebuildFromGLB": "n/a"
+  },
+  {
+   "item": "LY-007 material semantic (only if a distinct pad surface is required)",
+   "purpose": "pad material / LOD rules",
+   "rebuildFromGLB": "n/a"
+  },
+  {
+   "item": "LY-008 checker",
+   "purpose": "official delivery checks",
+   "rebuildFromGLB": "n/a"
+  },
+  {
+   "item": "LY-010 group selection (B vs A)",
+   "purpose": "if A is chosen the task collapses to reuse of the market-cluster rear strips",
+   "rebuildFromGLB": "n/a"
+  },
+  {
+   "item": "goods route for group B",
+   "purpose": "market-flow-plan routes are written for market-cluster only; nothing freezes a goods path to the C02 east edge in the v2.1 chunk",
+   "rebuildFromGLB": "no; needs a contract decision"
+  },
+  {
+   "item": "LY-027 placeholder IDs, dimensions, full/empty states",
+   "purpose": "occupied-state test uses C test boxes 0.8x0.7x0.9 until then",
+   "rebuildFromGLB": "n/a"
+  },
+  {
+   "item": "LY-025/LY-026 frozen well operation domain",
+   "purpose": "keep-out; prep uses footprint + 1.0 m C ring",
+   "rebuildFromGLB": "n/a"
+  },
+  {
+   "item": "LY-023 decision on C02 post-head packers",
+   "purpose": "the chosen interface canopy has an open support gap",
+   "rebuildFromGLB": "n/a"
+  }
+ ]
+}

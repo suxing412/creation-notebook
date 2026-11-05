@@ -1,0 +1,50 @@
+{
+  "seat": "LY-021",
+  "inputsFound": [
+    "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0.glb 46f08f41",
+    "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD1.glb 03ad28cf",
+    "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD2.glb b5b13b1c",
+    "docs/library/models/m-luoyang-market-frontage/m-luoyang-market-frontage.asset.json ac85a44d",
+    "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD0/1/2.glb 8ef1f3c8/aa914dd6/2f8e217c",
+    "docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD0/1/2.glb 7f1c2e70/ef10e67a/14a7925b",
+    "modeling-lab/review-batches/2026-11-04-city-visible zip(5895ef23) -> chunks/market_frontage_well_routes.glb 0193ebc0 (frontage v2.1 + sample_ground + 7 route_* + well)",
+    "docs/cities/luoyang/assets/market/market-cluster.glb 77b8bf2e (web city, same site, old family with *_frontstep precedent)",
+    "docs/cities/luoyang/v1/market-assembly.mjs 0145ac84; v1/west-layer.mjs d8c14142; city-data.mjs e4115705",
+    "docs/cities/luoyang/data/west/market-precedents.json abf2a3d2"
+  ],
+  "inputsMissing": [
+    "frontage v2.1 private source (.blend/generator): needed for per-shop/counter node identity; GLB has only 3 merged meshes. Measurement rebuilt from GLB; the step must be an overlay, not a native edit",
+    "v2.1 original '72-segment entry envelope' QA definition: needed for exact behind-counter non-regression; approximated from GLB by a 1.60 m lateral behind-counter route + triangle-set fingerprints, cannot claim identity",
+    "master city-C032-entry-LOD0.blend (1e8c4d2c): needed for native in-situ install/withdraw; public chunk reproduces visible nodes within 0.06 mm, enough for support/clearance tests only",
+    "G contracts LY-005/006/007/008/010: ground/floor port heights, step ports and ownership, material/LOD rules, checker, and which scheme the Jin-market site uses; cannot be rebuilt from GLB"
+  ],
+  "gaps": [
+    "All 12 openings of the 8 shops step straight up 0.220 m (ground 0.000 to plinth 0.220) at |y|=5.0 in LOD0/1/2 and in the master chunk; no step, ramp or pad exists",
+    "From the route band top (0.010) the rise is 0.210, but bands stop at |y|<=2; 3.0 m of sample_ground lies between band and plinth front",
+    "Openings: 8x6/8x4 shops have 2 side openings of 1.10 m each; 6x6 shops 2.40 m; 6x4 shops 2.58 m",
+    "Step zone 0.70 m and 3.0 m deep in front of every opening is empty (z 0.005-2.40); lowest overhead is eave tile at 2.8-3.2 m",
+    "Body box 0.50x0.30x1.75 passes the route street->behind counter (1.60 m) in all 12 openings; at 1.40 m it touches the counter back (negative case works)",
+    "Standalone frontage GLB has no ground: 62 foot samples are unsupported outside, so outer-end support can only be tested on the master chunk or a LY-005 ground contract",
+    "LOD2 has no counters (openings widen to 3.4-7.0 m), so behind-counter non-regression applies to LOD0/LOD1 only",
+    "Inherited contacts: counter legs reach z=0.16 (0.06 into plinth), front posts start at z=0 through the plinth, 0.28 m wall strips coplanar with plinth top"
+  ],
+  "reuseCandidate": "无",
+  "touches": [
+    "overlay only: new step nodes in front of the 12 openings at local |y|=5.0 (2.00<|y|<5.00 zone)",
+    "read-only contact: frontage v2.1 layout__LY_P01_earth__PBR plinth front faces (LOD0/1/2)",
+    "read-only contact: C_market_ground_well_A sample_ground top (owner LY-025/LY-022)",
+    "keep-out: route_public band |y|<=2 (owner LY-022)",
+    "keep-out: counters and front posts in layout__LY_P01_timber__PBR",
+    "mutual exclusion: market-cluster.glb N*/S*_frontstep at the same site (web city)",
+    "LY-024 closed-shop boards must stay compatible with the step"
+  ],
+  "size": "M",
+  "risks": [
+    "LY-010 may keep the old five-shop family at the Jin-market site; then the step stays at the standalone-asset level",
+    "Step height split, tread depth, material and continuous-vs-per-opening layout are all C, with no c.180 Luoyang evidence",
+    "Without the v2.1 source, regression is against a GLB rebuild, not the original 72-segment QA",
+    "Ground ownership overlaps LY-022/LY-025; ground top height (local 0 = world 0.20) must be frozen by LY-005",
+    "Simple box steps make honest three-tier LOD differences small; LY-007 must say what counts as a real tier"
+  ],
+  "readyAfterG": true
+}

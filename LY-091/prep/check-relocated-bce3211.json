@@ -1,0 +1,146 @@
+{
+ "baselineSha256": "bcd6296996f19d4b1405b254cd9917f0d5b6708af7db9b616a92f434b8fd462e",
+ "baselineHead": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "candidateHead": "",
+ "manifestSha256": null,
+ "rows": [
+  {
+   "check": "C1-gate-family-12",
+   "result": "PASS",
+   "detail": {
+    "count": 12,
+    "missing": [],
+    "unexpected": []
+   }
+  },
+  {
+   "check": "C2-old-nodes-unchanged",
+   "result": "PASS",
+   "detail": {
+    "changed": [],
+    "declaredReplaced": {}
+   }
+  },
+  {
+   "check": "C3-new-nodes-declared-and-owned",
+   "result": "PASS",
+   "detail": {
+    "newNodes": [],
+    "undeclared": [],
+    "ownerNotSelected": []
+   }
+  },
+  {
+   "check": "C4-mutual-exclusion",
+   "result": "PASS",
+   "detail": []
+  },
+  {
+   "check": "C5-region-status-consistent",
+   "result": "PASS",
+   "detail": {
+    "measured": [
+     "广阳门",
+     "雍门"
+    ],
+    "declared": [
+     "广阳门",
+     "雍门"
+    ],
+    "cardInCityCount": 14,
+    "walls+gates": 14,
+    "cardResearchCount": 10,
+    "12-inCity": 10
+   }
+  },
+  {
+   "check": "C6-glb-limits",
+   "result": "PASS",
+   "detail": {
+    "overLimitOrExternalOrCompressed": [],
+    "nonFinite": [],
+    "limitBytes": 15000000
+   }
+  },
+  {
+   "check": "C7-sha-binding",
+   "result": "NOT_IN_BATCH",
+   "detail": {
+    "mismatch": [],
+    "count": 0
+   }
+  },
+  {
+   "check": "C8-site:gate_xia_B",
+   "result": "NOT_IN_BATCH",
+   "detail": "not claimed by this batch"
+  },
+  {
+   "check": "C8-site:gate_gu_B",
+   "result": "NOT_IN_BATCH",
+   "detail": "not claimed by this batch"
+  },
+  {
+   "check": "C8-site:gate_shangxi_B",
+   "result": "NOT_IN_BATCH",
+   "detail": "not claimed by this batch"
+  },
+  {
+   "check": "C8-site:gate_yong_B",
+   "result": "NOT_IN_BATCH",
+   "detail": "not claimed by this batch"
+  },
+  {
+   "check": "C8-site:gate_guangyang_B",
+   "result": "NOT_IN_BATCH",
+   "detail": "not claimed by this batch"
+  },
+  {
+   "check": "C8-site:gate_shangdong_B",
+   "result": "NOT_IN_BATCH",
+   "detail": "not claimed by this batch"
+  },
+  {
+   "check": "C8-site:gate_zhongdong_B",
+   "result": "NOT_IN_BATCH",
+   "detail": "not claimed by this batch"
+  },
+  {
+   "check": "C8-site:gate_xuan_B",
+   "result": "NOT_IN_BATCH",
+   "detail": "not claimed by this batch"
+  },
+  {
+   "check": "C8-site:gate_jin_B",
+   "result": "NOT_IN_BATCH",
+   "detail": "not claimed by this batch"
+  },
+  {
+   "check": "C8-site:gate_xiaoyuan_B",
+   "result": "NOT_IN_BATCH",
+   "detail": "not claimed by this batch"
+  },
+  {
+   "check": "C8-site:gate_pingcheng_B",
+   "result": "NOT_IN_BATCH",
+   "detail": "not claimed by this batch"
+  },
+  {
+   "check": "C8-site:gate_kaiyang_B",
+   "result": "NOT_IN_BATCH",
+   "detail": "not claimed by this batch"
+  },
+  {
+   "check": "C10-ports",
+   "result": "NOT_IN_BATCH",
+   "detail": "no ports claimed by this batch"
+  },
+  {
+   "check": "C9-rollback-reproduces-baseline",
+   "result": "PASS",
+   "detail": []
+  }
+ ],
+ "verdict": "PASS-FOR-CLAIMED-SCOPE",
+ "failed": []
+}

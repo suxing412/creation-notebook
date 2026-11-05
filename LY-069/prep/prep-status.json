@@ -1,0 +1,70 @@
+{
+ "seat": "LY-069",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-palace-gallery/files/gallery-A-LOD0.glb 0c092797 / LOD1 227c3c4e / LOD2 cb26b56e（城景未加载）",
+  "docs/library/models/m-luoyang-palace-gallery/files/gallery-B-LOD0.glb c7cb279c / LOD1 fe72e192 / LOD2 ff15e1c4（城景未加载）",
+  "docs/library/models/m-luoyang-gallery-access/files/access-A-LOD0.glb c973d325 / LOD1 7b5e26f4 / LOD2 b39c34c2 / collision-candidate 7327547e（城景未加载）",
+  "docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-closed-LOD0.glb 6ea89298 / open-LOD0 59c8b758（与 library 同名件字节相同；城景未加载）",
+  "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD0.glb 1ffc1c31 / closed-LOD0 48c511c5（共12件见 inputs.json；城景未加载）",
+  "docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD0.glb bd000b1b（城景未加载）",
+  "docs/cities/luoyang/data/evidence/evidence-geometry.json fa8b7002（palaces_connector_B 约377.69示意米；由 v1/evidence-view.mjs:28 加载，只画关系）",
+  "docs/cities/luoyang/city-data.mjs c849706b、p-luoyang.asset.json 8edb06ab（提交 blob；不含复道实例）",
+  "资产卡 m-luoyang-palace-gallery.asset.json 100a78c3、m-luoyang-gallery-access.asset.json 707f298f（提交 blob；LY-006 registry 记的是 CRLF 工作区字节 0a310067 / b34d371b）",
+  "workpacks LY-006/registry/seats.json a1426412、ports.json 28bcfb68、seams.json ca4d81f8、zones.json 6b3595ac、ownership.json ecbbbcf5（LY-069 写入区、4 个消费端口、1 个产出端口）",
+  "workpacks LY-005/coordinate-contract.json b6d7fe9d、port-schema.json 30854ed9（R1 只绕上轴、R2 缩放1、E3 容差 5 mm / 2 mm）",
+  "inputs.json 46 件提交 blob SHA 在 bce3211 逐一重核，全部一致；本席位 v2 脚本 verify_v2.py eebd9c50、verify_v2b.py 39e01fc7"
+ ],
+ "inputsMissing": [
+  "复道A/B 与登临A 的私密原生源包（.blend、源 ZIP、生成器参数）。用途：核对端梁伸到 x=6.17、柱础在 dx=6.0 重叠 0.00275 m³ 是不是设计意图，并取原拟 A↔登临装配矩阵。几何已从 GLB 重测，可以「从 GLB 重建」；原装配矩阵和参数不能从 GLB 重建，只能作为 C 装配参数重新给出",
+  "luoyang-palace-admission-court-v1.zip（私密源包：3 个 .blend、builder、finite-route/route-interfaces 检查器）。用途：复跑原检查器，证明加装复道后主路线不退化。只能用从 GLB 重建的等价脚本，并照实标注",
+  "「A 局部片段 16 个旧未命中地表支点」原始记录（旧城市变换、地形版本、射线结果）。用途：与 LY-067 逐脚对账。16 脚位置可从 GLB 重建；旧地形命中结果不能重建",
+  "G 冻结：LY-008 检查器没有 status.json，LY-010 首批方案与区域准入的目录不存在。还缺 local:palace-composite 的落位（zones.json placement=null），以及是否选 K-W 这一端接组合。都不能从 GLB 重建",
+  "LY-006 端口数值：gallery-A:feet:ground、gallery-B:landing:floor、sidehall:ends:floor、admission-court:side-opening-W:opening 的 local/world 都是 null，要由各 producer 交付时填",
+  "前件交付物：LY-062 西侧口开闭件、LY-063 侧廊端部件、LY-067 柱脚地面接口、LY-068 B 登临件，目前都只有 prep",
+  "切孔或合法埋入的裁定：登临A 两块梯脚垫 0.26 m³ 和帮木（到 −0.1302）落在 new_court_support_C（owner LY-061）体内，LY-069 的 cutZones 为空。需要 LY-006/LY-061 裁定"
+ ],
+ "gaps": [
+  "v1 更正（木构）：dx=6.000 的木构正体积 0.00114 m³ 在 v2 没有复现。5 mm 双向奇偶网格下同时在两件内部的样点为 0；端梁尾顶 3.90，登临搁栅底 3.92，留 2 cm。归为接触，v1 数值作废",
+  "v1 更正（土构）：dx=6.000 土构柱础正体积侵入是 0.00275 m³（2×0.025×0.275×0.2，11000/11000 样点），不是 0.00235；三角对 66（土28、木38）",
+  "v1 更正（梯脚）：登临A 梯脚是两块分离的 1.00×0.65×0.20 土垫，z −0.20…0，埋入，总面积 1.3 m²，没有落地平台。梯级是 19 踏面 + 平台 = 20 踢 × 0.200（LOD0/1/碰撞），LOD2 是 9 踏面 + 平台 = 10 踢 × 0.400",
+  "G0：宫院节点没有楼面在 4.0（A）或 3.5（B）。门楼瓦顶 4.28、侧廊檐瓦最低 4.44，A 梁底 3.80，只能经登临A 下到 z=0 再接门或廊",
+  "G1：dx=6.000 时三带 3×21 个样本（x 5.7–6.7，步长 5 cm）楼面顶都是 4.000，楼面连续。只剩土构 0.00275 m³ 要由 LY-006 声明为合法局部接面；dx=6.0675 有 6.75 cm 缝、0.10 m 落差、6/45 样本失败，不可行",
+  "G2：屋檐不连续。A 檐止于 x=±6.45，平台和梯段 91/91 条上射线见天；K-W 中梯脚到廊端的 2.92–3.42 m 地面也见天",
+  "G3：A 三带净宽 1.92 m（端部 1.946）。外侧带在 A 帧 x≈9.04 被平台栏杆挡住，只有中带接 2.0 m 梯。梯脚无平台，转向全靠庭地",
+  "G4：B 楼面 3.50，比登临A 平台低 0.50 m，按 0.2 踢高是 17.5 级，不是整数。LY-068 交付前 B 两端都是未接端",
+  "G5：西侧口（x −36…−34，y −16…−10）现在只是 LY-061 外围上的 6 m 空档，外围 100% 敞开，门叶件未产出，「门关后能否进入」暂时无法测",
+  "G7：K-W 中 A 的 16 块柱础和其他土件共 22 处下向射线都命中庭地 z=0。但登临A 两垫 0.26 m³ 加帮木落在庭地平板体内，属完全包含，需切孔或声明埋入",
+  "G8：未接端为 A 北端（K-W 中 y≈12，z=4.0 敞口落差）、B ±X 端、两宫间整条联系。B 关系线约 377.69 示意米，约合 31.5 段 A，不生成",
+  "G9：K-W 中接缝 y=Y0−6 与梯脚南端 y=Y0−15.92 相距 9.92 m。12 m 写入盒要同时容纳两者，又不侵入 LY-063:write:001（y −13…−10），需 Y0≥5.92。Y0=5.5 侵入 0.42 m；拟 Y0=6.0、原点 (−25.5,−4.0,0)",
+  "K-W 试放（Xc −25.5，Y0 6.0，绕上轴 −90°）：与候入院非庭地节点三角交叠 0 对；平面最小间距为侧廊 tile 2.28 m、侧廊 earth 3.08 m、殿 earth 4.18 m、殿 tile 5.66 m；组合包围盒 x −29.32…−21.68、y −9.92…12.45；梯脚到西侧廊北端 3.42 m，到西侧口 x=−34 为 8.5 m",
+  "G10：LY-006 registry 的卡片 SHA 是 CRLF 工作区字节（gallery 卡 0a310067，提交 blob 是 100a78c3），GLB 两边一致；绑定一律用提交 blob"
+ ],
+ "reuseCandidate": "无。bce3211 里没有 A↔登临、登临↔门口/廊口的装配记录或 QA；候入院 route-interfaces 只覆盖门卫→庭→殿阶，cityPlacement=null；LY-070 prep 独立核到同样结论。可复用的只是各原件本体（引用原件，不复制，不重新登记）",
+ "touches": [
+  "gallery-A-LOD0/1/2 节点 gallery-A-static_earth / static_timber / static_tile：keep，steward LY-067；只引用、加 N 变换。接缝相关件为 +X 端梁尾 x 6.0–6.17 和端柱础 x 5.75–6.25",
+  "access-A-LOD0/1/2 与 access-A-collision-candidate 节点 access-A-static_earth / static_timber / static-collision-candidate：keep，steward LY-067；只引用。涉及柱础 x 6.225–6.875（dx=6 后）、梯脚垫 z −0.2…0",
+  "admission-court new_court_support_C（owner LY-061，keep）：K-W 柱础落位面；登临垫和帮木埋入需切孔或声明，这里有所有权冲突",
+  "admission-court west_gallery__sidehall-A-static_*（owner LY-061，keep）：间距约束，只读",
+  "admission-court hall__deyang-A-static_*（owner LY-061，keep）：间距约束，只读",
+  "端口 sidehall:ends:floor（LY-063 产出，LY-063:write:001 x −29…−18.1、y −13…−10）：K-W 写入盒与它贴边",
+  "端口 admission-court:side-opening-W:opening（LY-062 产出，LY-062:write:001 x −36…−34、y −16…−10）：只做路线终点",
+  "端口 gallery-A:feet:ground（LY-067）、gallery-B:landing:floor（LY-068）：只消费",
+  "LY-069:write:001（local:palace-composite，12×9.3×12 m，拟原点 (−25.5,−4.0,0) 于候入院帧）与产出端口 gallery-end:junction:floor（消费方 LY-070）",
+  "gallery-B 全部节点：只记为未接端，不触碰",
+  "文件：只写 D:/GitHub/creation-notebook-workpacks/LY-069/**；lab 仓库只读"
+ ],
+ "size": "M",
+ "risks": [
+  "readyAfterG=false 的原因：现行 LY-006 registry v1 既没给 LY-069 切孔区（cutZones 为空），也没有 dx=6.0 柱础 0.00275 m³ 的合法接面条款，local:palace-composite 也未落位。如果 G 按现版冻结，即使前件都交了，也要等 LY-006 v2 补上这三项才能装配；LY-006 v2 补齐后可以立刻动手",
+  "土构柱础 0.00275 m³ 正体积侵入只能靠 LY-006 声明合法局部接面来消解。A 和登临A 都是 keep，若不准声明，本包就会阻断，或者要由 LY-067 出修订件",
+  "登临A 梯脚垫和帮木埋入 LY-061 的庭地，需要切孔或埋入裁定，存在跨席位所有权冲突",
+  "K-W 写入盒与 LY-063:write:001 只贴边（Y0≥5.92）；LY-063 区界或登临A 位置稍有变化就会重叠",
+  "西侧口目前只是外围空档。LY-061/062 未交付时，门口状态测试只能做开口几何，做不了开闭",
+  "复道在候入院内的 K-W 放置纯属 C 工程试放，有被误读为宫院复道史证或端点位置的风险",
+  "LOD2 梯每踢 0.40，误用会得出错误的通行结论；碰撞只认 collision-candidate",
+  "v1 用 1 cm 奇偶网格在共面处误报过木构交体；T2 必须两种方法交叉，否则会再次误报",
+  "LY-003 未配准，本包只能是局部演示域，不能入城；LY-062/063/067/068 任何一项阻断，本包只能交部分端接，并记录未接端",
+  "SHA 口径不一：LY-006 用 CRLF 工作区字节，本席位用提交 blob；LY-100 合并时要统一"
+ ],
+ "readyAfterG": false
+}

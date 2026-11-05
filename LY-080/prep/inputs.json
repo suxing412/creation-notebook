@@ -1,0 +1,224 @@
+{
+ "seat": "LY-080",
+ "baseline": {
+  "repo": "D:/GitHub/creation-notebook-lab",
+  "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "assetDirLastCommit": "c0555aa"
+ },
+ "inputs": [
+  {
+   "role": "坛体 LOD0（复用原件）",
+   "path": "docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD0.glb",
+   "sha256": "d62dce7d2130828c4e309edf42701fd8890454d39d51d2763f16fe351a8e6ebe",
+   "bytes": 425760,
+   "gitBlobSha256Equal": true,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "referencedBy": [
+    "docs/library/models/m-luoyang-northern-altar/m-luoyang-northern-altar.asset.json files[0]",
+    "lab/data/assets.json:4199-4200"
+   ]
+  },
+  {
+   "role": "坛体 LOD1（复用原件）",
+   "path": "docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD1.glb",
+   "sha256": "4842be77757597237ddcedcd1e2d2f66402db0dcde57986e9fbb926cc096d6dd",
+   "bytes": 164836,
+   "gitBlobSha256Equal": true,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "referencedBy": [
+    "asset.json files[1]",
+    "lab/data/assets.json:4218-4219"
+   ]
+  },
+  {
+   "role": "坛体 LOD2（复用原件）",
+   "path": "docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD2.glb",
+   "sha256": "7c7f3a51ac7cce90137a8a0210f3031129058b5d7e21a1eb850bc222953a1287",
+   "bytes": 25644,
+   "gitBlobSha256Equal": true,
+   "loadedInCity": false,
+   "loaderCode": null,
+   "referencedBy": [
+    "asset.json files[2]",
+    "lab/data/assets.json:4237-4238"
+   ]
+  },
+  {
+   "role": "资产卡",
+   "path": "docs/library/models/m-luoyang-northern-altar/m-luoyang-northern-altar.asset.json",
+   "sha256": "091332bccbc86e673bff9be230fadf0066ba9d0bd13048f2a3237226d3a18899",
+   "sha256GitBlob": "9deabeb6c12a4c45cb3d86e5101a9a2dd997a5e4d8cacaa7cdf7360d50fe666c",
+   "note": "检出为 CRLF，与提交 blob 不同字节",
+   "loadedInCity": false,
+   "loaderCode": "lab/tools/build_assets.py 汇总到 lab/data/assets.json:4121-4268（资产库页面，非城景）"
+  },
+  {
+   "role": "项目卡进度条目（只读，归 LY-100）",
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "lines": "179-184 进度条目；536 related；494 changelog",
+   "loadedInCity": "项目卡页面文本，非几何"
+  },
+  {
+   "role": "城市清单（确认未加载）",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "sha256GitBlob": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "finding": "assets/nodes/researchModels 中 0 处 northern/北郊；researchModels 从第 4099 行起，北郊不在其中",
+   "loaderCode": "city-renderer.mjs:218 将 manifest.nodes 与 researchModels 合并；local-study 走 focusResearchModel（city-renderer.mjs:619/647）"
+  },
+  {
+   "role": "渲染器",
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca"
+  },
+  {
+   "role": "界面",
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9"
+  },
+  {
+   "role": "城景地面（测北郊覆盖）",
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "loadedInCity": true,
+   "loaderCode": "city-data.mjs:432（asset ground-network-ground-stitched），节点 3555",
+   "measured": {
+    "minZ_upFacing": -2402.361,
+    "topY": [
+     0.2,
+     0.21
+    ]
+   }
+  },
+  {
+   "role": "城景地面",
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "loadedInCity": true,
+   "loaderCode": "city-data.mjs:452",
+   "measured": {
+    "minZ_upFacing": -1240.583
+   }
+  },
+  {
+   "role": "城景地面",
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "loadedInCity": true,
+   "loaderCode": "city-data.mjs:472",
+   "measured": {
+    "minZ_upFacing": -851.333
+   }
+  },
+  {
+   "role": "城景地面",
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "loadedInCity": true,
+   "loaderCode": "city-data.mjs:492（节点平移 520..640,-1015..-929）"
+  },
+  {
+   "role": "负例对照：南郊圆坛（不得引用）",
+   "paths": {
+    "docs/library/models/m-luoyang-southern-altar/files/south-altar-A.glb": "57141a082a4341ac951a658528e7d6dfbc3b9eeda83d90b0aad6120f79e19afb",
+    "docs/library/models/m-luoyang-southern-altar/files/south-altar-A-LOD1.glb": "70b8f7c4c396a5ebe3809d4bbce515e25673c1bca2650cdad62dcb2f78819edc",
+    "docs/library/models/m-luoyang-southern-altar/files/south-altar-B.glb": "3382670edbc4086b4861c7bc1e5534a83c1e0dbc4c78e9cc2d8fcf73bf66d7ec",
+    "docs/library/models/m-luoyang-southern-altar/files/south-altar-B-LOD1.glb": "6ee4dbe0d164ae2d8ee7f925022ed8ede7e33454beb3a988329d5c33394e7309"
+   },
+   "use": "test-plan N1：交付包内不得出现这些 SHA、ID 或南郊坐标"
+  }
+ ],
+ "priorSeats": [
+  {
+   "seat": "LY-001",
+   "status": "交付完成",
+   "use": "qa/ledger.md:173 北郊方坛四陛＝仅模型（资产卡文件），城市节点 0"
+  },
+  {
+   "seat": "LY-002",
+   "status": "交付完成",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-002/tables/evidence-ledger.json",
+   "sha256": "237a4811acad3d7f6733d4c5c95a64df0b2c67adf48b2682264eb0f0c8512b77",
+   "use": "E-R02 北郊三说、中外营门、祠舍；D-05"
+  },
+  {
+   "seat": "LY-005",
+   "status": "交付完成（frozen-candidate）",
+   "files": {
+    "D:/GitHub/creation-notebook-workpacks/LY-005/coordinate-contract.json": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+    "D:/GitHub/creation-notebook-workpacks/LY-005/port-schema.json": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f"
+   },
+   "use": "local-origin 规则、E1-E4 高程规则、端口 schema（world 必填，见缺口 G3）"
+  },
+  {
+   "seat": "LY-004",
+   "status": "交付完成",
+   "files": {
+    "D:/GitHub/creation-notebook-workpacks/LY-004/geometry/north-suburb.json": "eb4ae7911c69b15cc84788aa5d45c5575238d68ead2e786ce02cd4c626140cd4",
+    "D:/GitHub/creation-notebook-workpacks/LY-004/qa/separation.json": "b766823d26cec391bd4d5347ce0407de33454f10c63d2e824c43a42584142443",
+    "D:/GitHub/creation-notebook-workpacks/LY-004/status.json": "c9358ea5095a6cb09d95437b80a95b1b4ebc4b044bc23dd68c7caf5cf5b27906"
+   },
+   "use": "北郊未配准；A 四里/B 六里/C 西北角一里所三说互斥不出点；admittedTo180InstallLayer=false；南北最近 4738.912 m；LY-080 不能取得位置放行"
+  },
+  {
+   "seat": "LY-006",
+   "status": "交付完成",
+   "files": {
+    "D:/GitHub/creation-notebook-workpacks/LY-006/schemas/port.schema.json": "9fcdf932adbb4cdc58fecf19d52c7a1442955d273e75be7bc6bb9a1a5f494fdc",
+    "D:/GitHub/creation-notebook-workpacks/LY-006/registry/ports.json": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+    "D:/GitHub/creation-notebook-workpacks/LY-006/registry/zones.json": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+    "D:/GitHub/creation-notebook-workpacks/LY-006/registry/ownership.json": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+    "D:/GitHub/creation-notebook-workpacks/LY-006/registry/seats.json": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069"
+   },
+   "use": "site S-NORTH-ALTAR；frame local:north-altar placement=null（允许 world:null）；写区 LY-080:write:001 box [-17,-0.3,-17]..[17,0.3,17]；组件 T080-arrival fixed；唯一登记端口 north-altar:stairs:ground v1（缺口 G8：需 4 个）；源节点 north_altar_platform_four_stepped_approaches_C mode=keep；卡片字段 cover/files/notes/status/summary 为提案所有"
+  },
+  {
+   "seat": "LY-007",
+   "status": "交付完成",
+   "files": {
+    "D:/GitHub/creation-notebook-workpacks/LY-007/baseline/lod-rules.json": "fbf53757be2e243429b751899f1690d30f827849962c0e77a8ca811462789146",
+    "D:/GitHub/creation-notebook-workpacks/LY-007/qa/near-retention.json": "dc70f97061b3b4348de3b332919531a368a9ad30636e8145b370ceb21abdbaab",
+    "D:/GitHub/creation-notebook-workpacks/LY-007/qa/census-bce3211.csv": "bbac76357e12f6d8652fee1f21cbf2ffd5b9a65f285aba08c3a90e0ad3cf6581"
+   },
+   "use": "copy_ban：本件贴图分辨率不同不算 LOD0 复制；tri_ratio 1.0 超新件区间，按夯土不降档披露；census 204-206 行继承标记"
+  },
+  {
+   "seat": "LY-008",
+   "status": "交付完成",
+   "files": {
+    "D:/GitHub/creation-notebook-workpacks/LY-008/source/ly_check.py": "39aaa491859e1a796080dd91ccabd1c47423cf7f9ef2af61c5f123b04b3dff4b"
+   },
+   "use": "交付检查器与 official 子命令（仅导出副本）"
+  },
+  {
+   "seat": "LY-009",
+   "status": "交付完成",
+   "files": {
+    "D:/GitHub/creation-notebook-workpacks/LY-009/board/locks.json": "5eb5ae327f1655db4eecbc79547ac79413b9c8c95489f05d2e679eb419d4cc9d"
+   },
+   "use": "LOCK-PROTOTYPES 覆盖 docs/library/models/m-luoyang-northern-altar/**，持有者既有成果（本轮只读）"
+  },
+  {
+   "seat": "LY-010",
+   "status": "无工作包",
+   "use": "区域准入、是否允许 C 地坪片、地坪开孔/全铺选择；未冻结故 G 未冻结"
+  }
+ ],
+ "missing": [
+  {
+   "what": "config/altar.json + 生成器/.blend 原生源",
+   "use": "原尺寸参数与可编辑源；本项不改几何故非必需",
+   "rebuildFromGLB": true
+  }
+ ],
+ "prepTools": {
+  "prep/measure_altar.py": "9f7652e53897a43ba2af495d2e1bd8194b2657c3ca98f4a0de2d01bdd2d1def6",
+  "prep/blender_readback.py": "a2d66fa359b3326cf0bd2fa37f5cc0529e5c02efbf75730ea89b77518b3d9acc",
+  "prep/measure_out.json": "89c476b8eb0dc5f787bddb2906f6ddd1d06e88d51fa1f6814b61f6e9578f0a15",
+  "prep/blender_out.json": "02a7abe6efa6337543f9981609974314f76a9e0d3d88b102a20a999539fef137"
+ },
+ "recheckedAt": "2026-11-06（G 席位 status.json 复核；measure_altar.py 重跑输出与 measure_out.json 逐键相同）"
+}

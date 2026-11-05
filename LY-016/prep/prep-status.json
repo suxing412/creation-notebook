@@ -1,0 +1,55 @@
+{
+  "seat": "LY-016",
+  "inputsFound": [
+    "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD0.glb c0f70051 (4032 tris; 与城市可见集 pingcheng_ground_trial_v1 同几何，最近点差 1.87e-5 m)",
+    "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD1.glb d4de907a",
+    "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD2.glb 87e3e751",
+    "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-P-LOD0.glb 5cdd8d68",
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb 7d995a1b",
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD2.glb e6f289f7",
+    "docs/cities/luoyang/progress-assets/flat/study-north13-pingcheng-P-c8ab88f4b326.glb c8ab88f4 (城景唯一会取的平城门文件，仅独立研究视图)",
+    "docs/cities/luoyang/progress-assets/north13-gates/source.json 9b07b734 (placement 原点/θ，activation=false)",
+    "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-pingcheng-gate-study-v1/content.zip.part001+002 4b5a189f/a7ef8b66 -> ZIP 19646f31 (门体 .blend、build.py、paths.py、QA)",
+    "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part01-05 -> ZIP 5895ef23; chunks/C_ground_network__C_stitch_primary.glb 2b89e858 (精确旧斜路)",
+    "chunks/C_gate_local_ground.glb 6002f5a6, chunks/city_gate_pingcheng-P.glb a5ba1123, chunks/C_ground_network__conditional_link_A.glb 32bfcf8d, chunks/city_wall_C_profiles.glb e42d9f50",
+    "docs/library/models/m-luoyang-pingcheng-gate/m-luoyang-pingcheng-gate.asset.json 9df7acdd; docs/cities/luoyang/city-data.mjs e4115705"
+  ],
+  "inputsMissing": [
+    "地面附件源包（生成器、.blend、原 3114 样点检查器及报告）：用于逐字重现卡片「565/3114 依赖旧路」和在原生源上修订。几何可从 GLB 重建（LOD2 为 6 盒体，三档占地一致），新增件本就做独立差异件不需原件；原采样定义不能从 GLB 反推，只能按 route_check 重定义并标明",
+    "城市母版 city-C032-entry-LOD0.blend（1e8c4d2c…）及门 placement 依赖的 eabb 母版 / 660 覆盖层：用于在原母版里做安装与撤回、核对旧斜路原生数据。测量可从可见集分块 GLB 重建（1 mm 内逐三角对应），母版内安装/撤回不能"
+  ],
+  "gaps": [
+    "门道内支承宽度：测试带 1.8 m / 门道 4.2 m（42.9%）；带外缘到门墩 1.20 m、到开启门叶 0.89 m、到门框 1.00 m 无支承；两门道合计无支承地面约 48 m²（扣门叶门框脚印约 46.7 m²）；门道内无门体地面或门槛",
+    "暴露边：地面周长 119.4 m，仅 12.2 m 贴旧斜路；门道内暴露 40.0 m、门外暴露 67.2 m；落差 0.20 m（顶 local 0.04 → 底 -0.16），下方可见集无任何地表",
+    "旧斜路依赖（route_check，脚带 ±0.30 m，0.10 m 步长，三档一致）：西环 1236 点中旧路 447（36.2%）、东环 1236 点中旧路 423（34.2%），无支承 0、身体被挡 0；关闭旧路负例 447/423 点无支承（正确失败）；中门负例 8 个身体中心被关闭门叶/门框挡住（正确失败）",
+    "原卡片 565/3114（18.1%）无法逐字重现：原检查器缺失，采样定义不同",
+    "与旧路：平面重叠 0.000 m²，接缝 0 宽、高差 ≤0.0005 m；116 对 BVH 相交全部是 12.2 m 接缝共面贴边，未重复包路",
+    "地面与门体：三档同档 0 对三角相交、0 顶点在门体内、0 顶面样点在门体内",
+    "继承侵入（不由本项修，须分类）：旧斜路顶在西中门墩内 x -3.25…-3.0、y -5…5 全长（438 样点，约 0.21 m 宽 × 0.04 m 深）；旧路顶 0.04 插入关闭中门叶底 0.00，深 0.04 m",
+    "新增件硬约束：开启门叶底 local 0.05 与地面顶 0.04 仅 0.01 m 间隙；门框自 z 0 起，顶 0.04 的补地落入门框脚印即侵入 0.04 m，须开孔",
+    "整体悬空（继承，归 LY-005）：地面底 world 0.01、门墩底 0.17、旧路底 0.16，下方均无支承面",
+    "旧路北端止于 local y +13.22/+13.29，仅超出北接路片约 3.3 m；条件路 A 自 y +21.2 起，8 m 空档且不启用（归 LY-017）"
+  ],
+  "reuseCandidate": "部分复用候选：在 C 包络（脚带半宽 0.30 m、身体半径 0.30 m、5 高度）下，现有两带四片 + 旧斜路已构成两侧完整离散支承回路，LOD0/1/2 西东各 1236 点无支承 0、被挡 0，关闭旧路与中门两个负例都正确失败，地面对门体 0 侵入、对旧路 0 叠层（route-baseline.json、plan-report.json）。若 G/LY-010 冻结的包络 ≤1.2 m 宽并把暴露边交全城地表契约，本项可判复用、只交检查器与证据；若包络更宽或要求门道全宽支承/闭合暴露边，则需新增差异件",
+  "touches": [
+    "读：pingcheng_ground_trial_v1（卡片 pingcheng-ground-LOD0/1/2.glb；城市可见集 C_gate_local_ground 原子块，块内另有 yong_ground_trial_v1、kaiyang_ground_trial_v1）",
+    "读：C_stitch_primary（全城 255 三角旧斜路节点，门附近 10 三角；只读依赖，归属待 LY-006）",
+    "读：pingcheng-P-static_earth / _timber / _tile（门墩、门框、开闭门叶；不得侵入）",
+    "读不碰：C_wall_A_06、C_wall_A_05_refined_v1（|x|≥16，距地面 ≥7.2 m）；conditional_link_A（不依赖）",
+    "拟新增（G 后）：门局部坐标下独立节点，例如 pingcheng_ground_passage_margin_W/E（门道内侧缘补地，开门框/门叶孔）与 pingcheng_ground_edge_closure（门外暴露边收边），各三档",
+    "地坪片：门局部 x ±[5.8,10.0] × y [-5,5] 门道内缘带；x ±[3,8.8] × y ±[5,10] 门外暴露边；不得进入 x [-3.35,2.9] 旧斜路带与中央门道",
+    "文件：只写 workpacks/LY-016/；卡片 m-luoyang-pingcheng-gate.asset.json、city-data.mjs、assets.json 的改动走 LY-100",
+    "后继：LY-017 消费本项输出（平城门墙旧路联合装配）"
+  ],
+  "size": "M",
+  "risks": [
+    "通行包络未冻结：复用与否取决于 LY-010/LY-005 的宽度与台阶容差，宽包络会把判定翻成新造",
+    "原 565/3114 检查器缺失：验收「旧斜路依赖能重现」只能用新定义重现，需 G 认可，否则阻断",
+    "开启门叶底与地面顶仅 0.01 m 间隙：门道补地稍高即侵入门叶，需在门叶脚印内压顶或开孔",
+    "旧斜路继承侵入门墩与关闭门叶（0.04 m）：验收报告须单列为继承、不得算作新增件问题，也不得借机改旧路",
+    "C_gate_local_ground 是三门共用的原子块：新增件必须单独成节点，不能重导该块",
+    "母版不在仓库：安装/撤回只能在可见集分块上做，不能声称在原母版里通过",
+    "全城无地表承托（悬空）属 LY-005；若 G 要求局部补承托，范围可能从 M 涨到 L"
+  ],
+  "readyAfterG": true
+}

@@ -1,0 +1,70 @@
+{
+ "seat": "LY-060",
+ "inputsFound": [
+  "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-stable/files/A.glb 672beeb46faa, B.glb bd82280a76f0（各仅一档；cityNodes=0）",
+  "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-tile-kiln/files/kiln-A.glb e67d597617c3, kiln-A-LOD1.glb 562b4b398bb9, kiln-B.glb 4886d95d2238, kiln-B-LOD1.glb 8d9db85bf26e",
+  "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-hand-mill/files/hand-mill-A.glb 0fe50c2c0604, -A-LOD1 5885f619799e, hand-mill-B.glb 598cadc75933, -B-LOD1 5ec42d1118de",
+  "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD0/1/2.glb 6f0e41834121 / d8759dd6e0b0 / e94416ef3074",
+  "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0/1/2.glb 7eb9739ec09a / 6baefbd0fc1b / 574d81d91d38；workshed-LOD0/1/2.glb 89e0a43923fb / a21c2893a1cc / 7c054863f108",
+  "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb e799b5880cd1（同外框对照，无足碓）",
+  "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-data.mjs c849706b6210（提交 blob；不含任何作业节点）；city-renderer.mjs 04c6c643e44f；app.mjs cc0379c02c97；p-luoyang.asset.json 8edb06abf5e7（members:542-568 仅登记）",
+  "mq/cards/{stable,tile-kiln,hand-mill,foot-pestle,workyard-shed}/audit.json：19 个 GLB 的 SHA 与现件全部一致，issues 全空",
+  "D:/GitHub/creation-notebook-workpacks/LY-001/qa/family-ledger.json 8eaa7c7a805d：五家族 cityNodes=0，state 仅模型",
+  "G 已交付件（workpacks，只读）：LY-005/coordinate-contract.json b6d7fe9db952；LY-006/registry/seats.json（LY-060 条：writeZones/ownsGroundPieces/produces 全空）、zones.json、ownership.json ecbbbcf5614d（C02-034 frozen）、seams.json（seams[273] LY-052->LY-060、seams[391] LY-059->LY-060）；LY-006/schemas/port.schema.json 9fcdf932adbb、interface.schema.json 1e525d50965a；LY-007/baseline/lod-rules.json fbf53757be2e、texture-uv-rules.json a5bfae60c7d6；LY-009/board/taskboard.v2.json bd2fcbbe02a1（LY-060=待输入）",
+  "D:/GitHub/creation-notebook-lab/modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json（工作树 703caeed4a78；提交 blob 见 inputs.json）：私有试放节点 res_workyard_034，deploymentStatus「not published」",
+  "同目录分卷 zip 成员 chunks/res_workyard_034.glb 6ed43d99447c（1,849,736 B，只解到 scratchpad 比对）：5/5 网格与 workyard-LOD0 逐值相同，仅平移 (601.8912, 0, -1080.2) = city-data.mjs:2742 C02-034 矩阵",
+  "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md 00c2e1715e31；taskboard.json 1d1fcb9c6e5e；前置席位 LY-051..059 prep-status.json（LY-057/058 readyAfterG=false）"
+ ],
+ "inputsMissing": [
+  "LY-051..059 九个前置包的交付物（models/、assembly.json、qa/、delivery-manifest）：仍只有 prep/。这是 LY-060 的全部装配输入，不能从 GLB 代替",
+  "原谷物加工院（双足碓、工作棚瓦缺陷记录）的 GLB 与缺陷记录：本席位与 LY-057/058/059 的 prep 都在 lab 全分支、review 仓、待传目录检索 0 命中。它是 LY-057/058 的输入，也是 LY-060 的一个候选场所；没有 GLB，不能从 GLB 重建，需协调者提供来源，否则 LY-057 判阻断",
+  "G 未冻结的三项：LY-008 检查器（只有 source/ly_check.py，无 status.json）、LY-009（有任务板，无 status.json）、LY-010 选定作业样板与区域准入（目录为空）。没有 LY-010，local:work-site 没有原点和选定场所",
+  "LY-060 自己的写入区和外接端口登记：LY-006 registry v1 给 LY-060 的 writeZones=[]、ownsGroundPieces=[]、produces=[]，S-WORK envelope=null。若演示域要一块承托地坪或要「交外接端口」，须协调者/LY-006 补登；这是登记缺项，不是 GLB 能重建的",
+  "五个作业家族的原生 .blend / 源 ZIP：不在仓库，待传目录只有说明.txt。纯装配只用 GLB 节点和矩阵就够，若要合批或补 LOD 只能标「从GLB重建」",
+  "私有母版 city-C032-entry-LOD0.blend 里的 C02-034__workyard_trial__* 原生对象：只用于说明试放来源，LY-060 不用它落城；可以从 GLB 重建（试放块就是 workyard-LOD0 平移）"
+ ],
+ "gaps": [
+  "城市零落位：五个家族 19 个 GLB 在 city-data/app/renderer/index 里 0 引用，城市节点 0 个（LY-001 台账 cityNodes=0）；LY-010 没有准入，local:work-site placement=null，只能做独立演示域",
+  "高程两套约定差 0.200 m：workyard 三档底面在 +0.200（房台面 +0.420），沿用院落框约定（N.y=0 时贴世界 0.20 地块地面）；另外四族本地 y=0 为地面（厩底 −0.24、窑坑 −1.04、磨底 −0.12、碓/棚 0），符合 LY-005「本地 y=0=接地面」。同一 local:work-site 帧必须选一个基准（建议 0.20，四族 N.y=+0.20），按 E4 不得悄悄改 N 的 Y；容差按 E3 高程 2 mm",
+  "workyard 院地缺失：0.5 m 网格 1728 格里，1012 格（58.6%）无几何、251 格（14.5%）只有屋顶，合计 73.3% 的平面下面没有地面，只有 461 格的最低命中在 +0.20；院心 (0,0)、(0,−8) 射线 0 命中。workshed 160 格里 159 格只有屋顶，没有地面",
+  "足碓重复：workyard 的 workyard_stone（492 三角面）和 pestle__pestle_timber_moving（308）是 foot-pestle-LOD0 对应节点纯平移 Blender (5.0,−1.5,0.2)、glTF (5.0,0.2,1.5) 的结果；踏台静件已并入 workyard_timber，拆不开。两者在同一处必须互斥",
+  "展示地坪占地：窑 A/B 的 presentation_ground 16×19 = 304 m²，窑体只有 82.87 / 76.28 m²；磨的展示地坪 7.84 m²，磨体只有 0.86 / 1.12 m²。装配前必须换成 LY-053/055 的接地件",
+  "三档不全：厩 A/B 各一档（59,232 / 92,876 三角面，A 的瓦壳占 58,968）；窑和磨没有 LOD2；磨 LOD1 仍有 1,605,992 B（贴图 1,504,494 B 没降）",
+  "材质两套命名：REUSED_C_{earth,stone,tile,wood}（厩/窑/磨）和 LY_P01_*__PBR/FLAT（碓/院/棚）。LY-007 已定 REUSED_C_* 为旧调色板现状、新模型禁用：复用原件保持原名，LY-060 若出新几何只能用 LY_P01_*；生产族 LOD 数字在 LY-007 标「待复核」",
+  "体量：一套组合（厩 B + 窑 A + 磨 A + workyard）LOD0 合计 11,881,028 B，再加独立足碓是 12,536,536 B；合成单个 GLB 会逼近 15,000,000 B 上限，应保持分文件。包围盒面积合计约 593 m²，未计操作净空",
+  "registry v1 登记缺口：LY-060 是 S-WORK siteOwner，但 writeZones=[]、ownsGroundPieces=[]、produces=[]，envelope=null；只 consumes stable:entrance:ground（LY-052）和 work-site:service-gate:opening（LY-059）两个端口，值都待生产方交付。任务池要求「交外接端口」，在 registry 里没有对应 produces",
+  "私有试放不能复用：adapter.json 的 res_workyard_034 是 workyard-LOD0 原样平移到 C02-034（Δ=0.0，平移 601.8912, 0, −1080.2），用 workyard 顶替已入城的「住宅院落 34」；C02-034 在 LY-006 里 frozen、owner=null，deploymentStatus「not published」",
+  "前置可行性：LY-057/058 readyAfterG=false（原院缺源；workshed 瓦条 54/54 落座失败 −32.4…+15.2 mm vs ±3 mm，正脊 40/41 裸露）；LY-056 实测独立足碓与院内足碓 21/21 构件差 < 1 mm，同位即双载"
+ ],
+ "reuseCandidate": "无。workyard-LOD0/1/2（7eb9739ec09a / 6baefbd0fc1b / 574d81d91d38）是已装成的作业院，可作为一个互斥候选场所复用；私有母版里还有一次把它原样平移到 C02-034 的试放（res_workyard_034，6ed43d99447c，5/5 网格 Δ=0.0）。但 workyard 73.3% 平面无地面、内嵌足碓与独立件重复、没有安装/撤回清单；试放顶替的 C02-034 在 LY-006 里冻结且未发布，没有准入。都不满足 LY-060 验收",
+ "touches": [
+  "只读引用（不改）：m-luoyang-stable A.glb/B.glb 节点 A|B_earth_platform、*_hollow_trough_*、*_post_*",
+  "只读引用：m-luoyang-tile-kiln kiln-A/B(.LOD1).glb，其中 A|B_presentation_ground 在安装时隐藏或替换；A|B_operation_pit_floor、A|B_fire_floor、A|B_short_flue* 是开口检查对象",
+  "只读引用：m-luoyang-hand-mill hand-mill-A/B(.LOD1).glb，其中 A|B_presentation_ground 在安装时隐藏或替换",
+  "只读引用：m-luoyang-foot-pestle foot-pestle-LOD0/1/2.glb 的 pestle_stone_static / pestle_timber_moving / pestle_timber_static；与 workyard 内的 pestle_0 互斥",
+  "只读引用：m-luoyang-workyard-shed workyard-LOD0/1/2.glb 的 workyard_earth / workyard_timber / workyard_tile / workyard_stone / pestle__pestle_timber_moving；workshed-LOD0/1/2.glb 的 workshed_tile / workshed_timber",
+  "只读对照：m-luoyang-court-layout-kit compact_work-LOD0..2（同外框 18×24.15）",
+  "地坪片：城市地坪不碰（没有准入；C02-034 冻结）。按 LY-006 registry v1，厩台 gp:stable-A/B:*_earth_platform 归 LY-052，窑/磨 presentation_ground 归 LY-053/LY-055，院心 W058-flow-ground 归 LY-058，棚地 workshed:shed-floor:floor 归 LY-057；LY-060 ownsGroundPieces=[]，只引用不自做。演示域承托地坪如需要，须先由 LY-006 补登写入区",
+  "前置包交付物（只读）：workpacks/LY-051..059/models、assembly.json、qa、delivery-manifest.json",
+  "写入：只写 D:/GitHub/creation-notebook-workpacks/LY-060/（assembly.json、qa/、preview/、delivery-manifest.json）；models/demo-ground* 只有在 LY-006 补登写入区后才可出现",
+  "不碰：docs/cities/luoyang/city-data.mjs、p-luoyang.asset.json、lab/data/*、全站 UI；入城提案只交 LY-100",
+  "接缝（只读消费）：stable:entrance:ground@v1::LY-052->LY-060（seams[273]）、work-site:service-gate:opening@v1::LY-059->LY-060（seams[391]）",
+  "卡片字段：LY-006 把 m-luoyang-{foot-pestle,hand-mill,stable,tile-kiln,workyard-shed} 五张卡的字段归 LY-060，但卡片是公共文件，只交语义提案给 LY-100",
+  "只读对照（不使用）：lab modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json 的 res_workyard_034 与 city-data.mjs:2742 C02-034"
+ ],
+ "size": "L",
+ "risks": [
+  "G 仍未冻结：LY-008、LY-009 没有 status.json，LY-010 目录为空；taskboard.v2 把 LY-060 记为「待输入」",
+  "registry 登记缺口：LY-060 produces=[]、writeZones=[]。若 LY-006 不补登，任务池要求的「外接端口」和任何演示域地坪都无法合法交付，LY-060 只能交 assembly.json + qa",
+  "依赖最长：要等 G 和九个前置包都冻结；LY-057 若因原谷物加工院缺源判阻断，LY-058、LY-059 会跟着阻断，LY-060 只能交不含谷物院的子集",
+  "院地归属已由 LY-006 定给 LY-058（W058-flow-ground），LY-060 不得再做演示地坪；若 LY-058 因 LY-057 阻断而不交，workyard 院心 73.3% 无地面的问题就没有合法负责人，需协调者另派",
+  "互斥组 X4（足碓）和 X5（同外框院）要是在前置包里没写清楚，装配时容易把两具足碓叠在同一处",
+  "没有 LY-010 准入，交付只能是独立演示域；不能把它说成已入城或作坊区选址",
+  "CPU 预览不等于 GPU 或浏览器验收；表面 BVH 不等于实体碰撞穷尽；有限姿态不等于连续运动或人体操作认证",
+  "材质两套命名如果合批，可能改变 draw call 和外观，须按 LY-007 基线回读",
+  "全部形制和尺寸都是 C 或异地类比；没有约 180 年洛阳作坊的原始考古控制点，不能反推历史布局",
+  "私有试放 res_workyard_034 容易被误当成「已入城」或准入证据：它未发布，且顶替的 C02-034 冻结",
+  "PZ-10：根 taskboard.json 里 LY-060 的 text 串入下一节（宫院复道）导语，以 TASKPOOL.md:638-645 原文为准"
+ ],
+ "readyAfterG": true
+}

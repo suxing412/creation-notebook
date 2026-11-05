@@ -1,0 +1,59 @@
+{
+  "seat": "LY-074",
+  "inputsFound": [
+    "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD0.glb bdcc369e",
+    "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD1.glb 993ec375",
+    "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD2.glb 275f8fe2",
+    "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD0.glb 7337871c",
+    "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD1.glb 25035eeb",
+    "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD2.glb d495219c",
+    "docs/library/models/m-luoyang-mingtang/m-luoyang-mingtang.asset.json d3019d6e (committed blob; worktree CRLF 34a01526)",
+    "docs/cities/luoyang/data/evidence/evidence-geometry.json fa8b7002 (ritual_mingtang_B marker only; loaded by city-data.mjs:4525 -> v1/evidence-view.mjs:28)",
+    "docs/cities/luoyang/data/c01/research-candidate.json 52599ef3 (mingtang 2276.52 m outside C01)",
+    "docs/cities/luoyang/data/c02/research-mask.json d801b5e7 (mingtang 2063.858 m outside C02)",
+    "docs/cities/luoyang/p-luoyang.asset.json 8edb06ab (mingtang only in related[])",
+    "scratchpad mq/cards/m-luoyang-mingtang/audit.json e14b3047 (6 GLBs, 0 issues)",
+    "TASKPOOL.md 00c2e171 / taskboard.json 1d1fcb9c",
+    "prep/blender-crosscheck.json 8337da9c (Blender 5.2.1 independent re-read of the 6 GLBs; agrees with numpy reader)"
+  ],
+  "inputsMissing": [
+    "明堂 A/B 原生源（.blend/生成器/源ZIP）：仅在协调者要求把地面并入明堂导出时用于证明原生=GLB；本席位方案是独立节点、原 GLB 不动，因此不需要，也不必「从GLB重建」——阶脚线已从 GLB 顶点精确读出",
+    "资产卡所称「四向门道有限支持和净高射线」的原始检查记录：仓库内只有卡片文字；door_probe.py 已从 GLB 重测中心线净空（A/B 均 2.35 m），可部分替代",
+    "LY-006 明堂四侧外部冻结端口（id/本地+世界坐标/高度/宽度）：地面外缘终点，不能从 GLB 重建",
+    "LY-005 朝向（哪轴为南）与明堂本地 y=0 的世界高程：四侧命名和是否需要过渡，不能从 GLB 重建",
+    "LY-010 选 A 还是 B：决定阶脚线 r=16.64 还是 14.48",
+    "LY-007 地面材质与三档规则、LY-008 官方检查器入口"
+  ],
+  "gaps": [
+    "四侧阶前零支持：6 个 GLB × 4 侧，阶脚外 0–3 m、横向 ±6 m 带内竖直探针 0/1470 有支持；包围盒外 1 m 环 A 0/300、B 0/264；全模型 y=0 朝上可走面 0 个",
+    "末级踢面 0.15 m 落下后即为空：阶脚线 A r=16.64 y=0.00，B r=14.48 y=0.00；阶宽 4.20 m（横向 ±2.10），四侧与三档完全相同",
+    "A：台基半宽 14.00、面高 1.20、8 级 ×0.15、踏深 0.33、外伸 2.64；B：半宽 12.50、面高 0.90、6 级 ×0.15、踏深 0.33、外伸 1.98——两套阶脚线相差 2.16 m，地面不能共用",
+    "城景没有加载明堂 GLB（*.mjs/index.html 中 mingtang/明堂 0 处命中），只有 ritual_mingtang_B 示意点（B 类，not_modeled，包络 75 m，误差 null）；周围无任何城市地面，外部端口尚不存在",
+    "阶侧无垂带/栏墙：踏面横向外缘 0.04–0.9 m 全空（void 1.0）；补地后 A 顶级侧落差 1.05 m、B 0.75 m（记录，不在本席位补）",
+    "台基底面在 y=0（A 828.35 m²、B 658.26 m² 朝下面）：地面若伸入足迹即成共面双层，只能贴边",
+    "复核（第二轮）：lab HEAD 仍为 bce3211，6 GLB SHA 未变；measure-all.json 重跑逐字节相同；Blender 独立导入确认阶脚线 A 16.64 / B 14.48、台基半宽 14.00 / 12.50、earth 最低 y 0.00、全部 matrix_world 单位矩阵，缺口数字成立"
+  ],
+  "reuseCandidate": "无。明堂卡没有地面件；docs/library/models 中含地坪/场地/铺地/apron/precinct 的卡片（城门、住宅、窑等）均与明堂无关；城景 ground-atomic 属 C01 区，距明堂超过 2 km。实测阶前支持 0%，所以必须新造",
+  "touches": [
+    "只读接触：mingtang-A-static_earth / mingtang-B-static_earth（台阶与台基合在这一个网格里；接缝在各侧阶脚线 r=foot_r、y=0 和台基外缘 |x|,|z|=14.00/12.50）",
+    "新增节点（拟名，待 LY-006 定）：LY074-arrival-{A|B}-{+X,-X,+Z,-Z}-LOD{0,1,2}，每侧一片地面，端口高差非 0 时再加过渡件",
+    "地坪片：明堂四侧阶前带，外缘到 LY-006 端口；与将来明堂院落/外部地面（未分配席位）在端口处交界，需 LY-006 判归属",
+    "不碰：明堂 6 个 GLB、m-luoyang-mingtang.asset.json、city-data.mjs、p-luoyang.asset.json、evidence-geometry.json（公共文件走 LY-100）",
+    "与 LY-075 共享：明堂中心线和门道属 LY-075，LY-074 只到阶顶 r=14.00/12.50 为止",
+    "写入：D:/GitHub/creation-notebook-workpacks/LY-074/",
+    "写入（第二轮新增）：prep/blender_crosscheck.py、prep/blender-crosscheck.json"
+  ],
+  "size": "M",
+  "risks": [
+    "外部端口可能无处可接：明堂未经 LY-004 配准，城中只有示意点；LY-006 若只给本地 C 端口，交付只能是局部研究包，不能算「已入城」",
+    "朝向未定：模型无朝向标记，四侧名称（东南西北）要等 LY-005",
+    "端口高差未知：若明堂 y=0 与端口不同高，需做过渡件，规模会从 S 升到 M/L；不得改原踏步来消化高差",
+    "共面双层：台基底面在 y=0，地面一旦伸进足迹就 z-fighting 或双层，C3 检查必须过",
+    "A/B 互斥：两套阶脚线相差 2.16 m，若 LY-010 两者都保留，要做两套互斥件并在装配里写清互斥",
+    "阶侧落差 1.05/0.75 m 无垂带：通行仍受限，只能写入限制，不得借「必要过渡」改原台阶",
+    "证据：四侧入口、阶宽、踏步、台基尺寸全是 C；仅有遗址存在一句（ndrc.gov.cn 列表），无东汉台阶或阶前铺地依据；北魏台基尺寸已排除",
+    "检查只有离散竖直点探针，不覆盖连续人体扫掠、结构、GPU 或手机",
+    "文本 SHA 一律绑定提交版 blob（本机 core.autocrlf=true，磁盘 CRLF 版 SHA 不同）；第一轮记录的 lab 未提交改动已消失，lab 状态只剩 ?? .claude/"
+  ],
+  "readyAfterG": true
+}

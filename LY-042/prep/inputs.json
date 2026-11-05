@@ -1,0 +1,60 @@
+{
+ "seat": "LY-042",
+ "phase": "prep (G not frozen; no deliverable geometry made)",
+ "labBaseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "labDriftCheck": "origin/main = cad338b; git diff bce3211..origin/main touches none of assets/c02v, library/models/m-luoyang-inner-door-components, city-renderer.mjs; city-data diff has no C02-010 / courtyard-A2 lines",
+ "shaNote": "text files: sha256Committed = bytes of `git show bce3211:<path>` (canonical); sha256Worktree = local CRLF checkout (LY-001 C8). Binary GLB: one value.",
+ "inputs": [
+  {"role": "host far (city default)", "path": "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb", "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d", "loadedInCity": true,
+   "loadedBy": "city-data.mjs:88-89 assets[courtyard-A2].path; city-renderer.mjs:289-299 loadAsset (far), :309 excludeNodes", "sharedByNodes": ["C02-021","C02-024","C02-001","C02-028","C02-031","C02-010","C02-013","C02-015","C02-035"],
+   "nodesUsed": {"architecture_C_plain_timber.001": "17 islands / 360 tris; old inner leaves = islands #5 (fp bf374f3ebe09175c) and #13 (fp 5bc3835218fe33a4); frames #4, #12 keep", "architecture_C_floor_plinth.001": "#0, #2 = sill/threshold support (top 0.42)", "architecture_C_whitebox_earth_wall.001": "#4, #6 door walls (contact only)"}},
+  {"role": "host near", "path": "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb", "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7", "loadedInCity": true,
+   "loadedBy": "city-data.mjs:109 nearPath; city-renderer.mjs:289 useNear only for focused id, :616-623 focusCourtyard", "note": "timber/wall/plinth vertex fingerprints identical to LOD1; only roof differs"},
+  {"role": "door component (selected)", "path": "docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD0.glb", "sha256": "67bc127a37beff59ec7ad673e30c191ce6211c1039567003d8bef335926451b5", "loadedInCity": false, "loadedBy": null, "nodes": 1, "meshes": 1, "material": "LY_P01_timber__FLAT", "shippedPose": "static 90deg open"},
+  {"role": "door component (selected)", "path": "docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD1.glb", "sha256": "7700d105379fc58a91e0631cf37c52ff1384bfc71624bec06e0e1feeed7f1db3", "loadedInCity": false, "loadedBy": null},
+  {"role": "door component (selected, 3rd tier)", "path": "docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD2.glb", "sha256": "27dd8da0cc67ab537ac508862269f4123fd2f3214910b8a19598de851d34f6c1", "loadedInCity": false, "loadedBy": null},
+  {"role": "door component (NOT applicable to A2; negative only)", "path": "docs/library/models/m-luoyang-inner-door-components/files/single-door-LOD0.glb", "sha256": "597d81ad26c8c652a93fe6db1a846ae6742f3a53858db97958f37587e0840b67", "loadedInCity": false, "loadedBy": null},
+  {"role": "door component (NOT applicable to A2)", "path": "docs/library/models/m-luoyang-inner-door-components/files/single-door-LOD1.glb", "sha256": "cc686ed31717f13edbff3255240e56f3494ac3c87093b3957cae8811a1054916", "loadedInCity": false, "loadedBy": null},
+  {"role": "door component (NOT applicable to A2)", "path": "docs/library/models/m-luoyang-inner-door-components/files/single-door-LOD2.glb", "sha256": "a3e9a71d401e75b4fcedff6c0e9360e915cfecd1bb5bed34dcb1fd203cf318c0", "loadedInCity": false, "loadedBy": null},
+  {"role": "door component card", "path": "docs/library/models/m-luoyang-inner-door-components/m-luoyang-inner-door-components.asset.json", "sha256Committed": "38723e69f175e859cbf89e57fcc772e862ac541ef97d89187e794ca76a9f0969", "sha256Worktree": "aa7279f5eabf4a6f0533d4c3c764b4ac7ef84135ab4ef9a2c9b8024787d5b864", "loadedInCity": false, "note": "status 待审 · 已建模，未入城; commit 5268a0b; no file/tag named v2 found for '012内门v2'"},
+  {"role": "C2 UV-only host update (not loaded)", "path": "docs/model-library/updates/m-courtyard-family/files/A2-LOD0-C2.glb", "sha256": "e9981a079d799d7556a9a4852c9d09ad274bb268ff4343d8d2202a13bcbf3887", "loadedInCity": false, "note": "all node vertex fingerprints identical to A2-LOD0-prototype"},
+  {"role": "C2 UV-only host update (not loaded)", "path": "docs/model-library/updates/m-courtyard-family/files/A2-LOD1-C2.glb", "sha256": "f3f317746181635791621b4d09a7122899d0754fc1d36b583b39b3f80b02caac", "loadedInCity": false},
+  {"role": "courtyard family card (TC03 narrow door note)", "path": "docs/model-library/m-courtyard-family.asset.json", "sha256Committed": "afc231529d971a276c7d2f36780057326e117cc5b311cbee6430ff0c959d04da", "sha256Worktree": "41999fbba1fa8f29c8c1d3fcc367ef4d9f2d026043b04cfbb62cbb926b2fc995", "loadedInCity": false},
+  {"role": "city data (node C02-010 :2322, asset courtyard-A2 :88-112)", "path": "docs/cities/luoyang/city-data.mjs", "sha256Committed": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00", "sha256Worktree": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a", "loadedInCity": true, "loadedBy": "app.mjs import"},
+  {"role": "renderer (excludeNodes :309 node-name only; useNear :289; focusCourtyard :616; pigmentFor :147)", "path": "docs/cities/luoyang/city-renderer.mjs", "sha256Committed": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc", "sha256Worktree": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca", "loadedInCity": true},
+  {"role": "city matrix source", "path": "docs/cities/luoyang/data/far44/instances-calt.json", "sha256Committed": "e39fdafb016c9ff7f42e25bfcbfe37152f381fac84ffe2cca11cd6fc936fdf7e", "sha256Worktree": "c830b4e37090da5e070156b7f6199f36c5d0191c339f5a9399f0becded50ff85", "loadedInCity": false, "note": "sourceContract of city nodes"},
+  {"role": "prototype contract", "path": "docs/cities/luoyang/data/far44/preflight-contract.json", "sha256Committed": "c9aafa7d22100deb141c554deffd07da67818af711a75cb6f36144fe68f9cc50", "sha256Worktree": "90dfa0774643b90d61f057aed726525cfe3e18647e897d3c90eb64fa79426d6b", "loadedInCity": false},
+  {"role": "project card (read only)", "path": "docs/cities/luoyang/p-luoyang.asset.json", "sha256Committed": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd", "sha256Worktree": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d", "loadedInCity": false, "note": "LY-006 recorded the worktree value"},
+  {"role": "asset summary (read only)", "path": "lab/data/assets.json", "sha256Committed": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78", "loadedInCity": false},
+  {"role": "negative host", "path": "docs/cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb", "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2", "loadedInCity": true},
+  {"role": "negative host", "path": "docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb", "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7", "loadedInCity": true},
+  {"role": "negative host", "path": "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb", "sha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152", "loadedInCity": true}
+ ],
+ "workpackInputs": [
+  {"path": "workpacks/LY-006/registry/zones.json", "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0", "use": "LY-042:write:001/002 (mismatch, see prep/measure/zone-check.json)"},
+  {"path": "workpacks/LY-006/registry/ports.json", "sha256": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633", "use": "C02-010:inner-door-axes:mount (values empty), C02-010:ground-base"},
+  {"path": "workpacks/LY-006/registry/ownership.json", "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca", "use": "R042-door-leaves (moving), R042-old-leaves-hidden (state-variant); prototypes overlay-only rule; C02-010 owner LY-050"},
+  {"path": "workpacks/LY-006/registry/seats.json", "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069"},
+  {"path": "workpacks/LY-005/coordinate-contract.json", "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712"},
+  {"path": "workpacks/LY-005/port-schema.json", "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f", "use": "port kinds lack door-axis/mount"},
+  {"path": "workpacks/LY-007/baseline/LY-style-bible.frozen.md", "sha256": "50e51a9358b1ba50fe5fbfcf1afad93dbb1c8a616d4a50d3faae17a9641f276d", "use": "static leaf vs per-leaf-node (jin) rule, lines 318-320"},
+  {"path": "workpacks/LY-002/tables/evidence-ledger.md", "sha256": "ea060db64e08645e299924e3243c566587689ac59acf35cff7638e0b190fc5de", "use": "E-H01; X07/X12/X24 banned"},
+  {"path": "workpacks/LY-041/prep/prep-status.json", "sha256": "598064f9e3c6d6af3346a72f78f401cec8dfc0a7eb519e4de246af372d154700", "use": "C02-010 choice, ground support reuse"},
+  {"path": "workpacks/LY-001/qa/city-data.dump.json", "sha256": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98", "use": "instance list (anchors.py)"}
+ ],
+ "missing": [
+  {"what": "inner-door component native source (.blend / generator) and source ZIP", "use": "split leaves into separate nodes (LY-007 jin rule) or export a closed-state static file", "rebuildFromGLB": "yes: leaves are separate closed islands (276 tris each, fp e10e4e52ea4735a0 / 1b23cca8c11232c7) and pin axes are measured; can split by island and rotate about measured axis. Original authoring parameters not recoverable."},
+  {"what": "A2 prototype native source", "use": "C02-010-only derived host with old leaves as separate nodes", "rebuildFromGLB": "yes: island-level split of architecture_C_plain_timber.001 with per-island fingerprint proof; no new vertices needed"},
+  {"what": "LY-010 freeze (court choice, door state, component identity '012内门v2')", "use": "slot list and state", "rebuildFromGLB": "n/a"},
+  {"what": "LY-006 v2 write zones that contain the door planes and room-side swing", "use": "legal write area", "rebuildFromGLB": "n/a"},
+  {"what": "LY-008 checker, LY-005/008 body envelope", "use": "pass/fail on 1.005 m clear width", "rebuildFromGLB": "n/a"}
+ ],
+ "measurementScripts": [
+  {"path": "prep/measure/c02010_door_check.py", "sha256": "e4ea56e8b06312013bf31844c22ae7f168aac23de9a91c271fe925cc223dfb9b"},
+  {"path": "prep/measure/summarize_c02010.py", "sha256": "9c0032dcb7dbfa76ee53ef7818232b6c35d8af71da2dc504515b6f223b4a7175"},
+  {"path": "prep/measure/zone_check.py", "sha256": "90cf3488ddead6cddabfeef988fdbf7807da84357954b8d3a9614168a6a12c21"},
+  {"path": "prep/measure/fit_test.py", "sha256": "b5f6a77b8b4768a91f38650a4abc83a6db1a3057cc6c036c99651fdd47379f56"},
+  {"path": "prep/measure/doorways.py", "sha256": "bb3adc1cce9db24d069bc6bff6fe5d1d41a290609fa481fca5183b9f5e87c579"},
+  {"path": "prep/measure/anchors.py", "sha256": "8d08a0ff14aa469b6cc51b8622a2c3e9a032e0b4b3063845e6b1cb4a23a7da0e"}
+ ]
+}

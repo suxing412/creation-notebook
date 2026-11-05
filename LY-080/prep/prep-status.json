@@ -1,0 +1,56 @@
+{
+ "seat": "LY-080",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD0.glb sha256 d62dce7d（与 bce3211 提交 blob 相同）",
+  "docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD1.glb sha256 4842be77（与 blob 相同）",
+  "docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD2.glb sha256 7c7f3a51（与 blob 相同）",
+  "docs/library/models/m-luoyang-northern-altar/m-luoyang-northern-altar.asset.json 检出 091332bc，blob 9deabeb6（差异只是 CRLF）",
+  "docs/cities/luoyang/p-luoyang.asset.json 9b5e311f（L179-184 进度条目写“未定址”，L536 related）",
+  "docs/cities/luoyang/city-data.mjs 检出 e4115705，blob c849706b（没有北郊引用，未加载）",
+  "docs/cities/luoyang/assets/ground-atomic/ 四块地面：network-ground-stitched fdfc3ce5、retained aed8b3d4、south 4313826d、D08 3ab93310",
+  "workpacks/LY-002/tables/evidence-ledger.json 237a4811（E-R02 北郊三说）",
+  "workpacks/LY-004/geometry/north-suburb.json eb4ae791；qa/separation.json b766823d（北郊未配准，三说不出点，南北相距 4738.9 m）",
+  "workpacks/LY-005/coordinate-contract.json b6d7fe9d、port-schema.json 30854ed9",
+  "workpacks/LY-006/schemas/port.schema.json 9fcdf932（world 可为 null）；registry/ports.json 28bcfb68；zones.json 6b3595ac（local:north-altar placement=null，写区 LY-080:write:001）",
+  "workpacks/LY-007/baseline/lod-rules.json fbf53757；qa/near-retention.json dc70f970",
+  "workpacks/LY-008/source/ly_check.py 39aaa491",
+  "workpacks/LY-009/board/locks.json 5eb5ae32（LOCK-PROTOTYPES 覆盖本资产目录，只读）"
+ ],
+ "inputsMissing": [
+  "私密源 config/altar.json（GLB 中 scene.extras.sourceConfig），以及生成器或 .blend。用途：原参数与可编辑源。本项不改几何，所以不是必需。能从 GLB 完全重建：几何全部轴对齐，参数已实测（20 m / 1.2 m / 3.2 m / 6×0.2 m / 0.5 m），重建件须标“从 GLB 重建”",
+  "LY-010 工作包不存在：区域准入、是否允许本包自带 C 地坪片、地坪在坛底投影内开孔还是全铺，都没有决定；G 因此未冻结",
+  "LY-006 只登记了 1 个端口 north-altar:stairs:ground，缺 4 个按陛分开的 ground 端口（建议 north-altar:stairs:ground:E/W/S/N）和可选的 4 个陛顶 floor 端口；需要 LY-006 或协调者增登",
+  "北郊坐标：LY-004 已判未配准，没有考古控制点；不是缺件，是确定的未知，world 保持 null"
+ ],
+ "gaps": [
+  "G1 北郊没有地面：城景四块已加载地面中，最北的向上三角形在 Z=-2402.361；北城垣在 Z -2648.5 ~ -3953.8；北墙以北可支承地面 0 m²，四个脚下端口没有城市地面可接",
+  "G2 基底高差：本件底面 y=0，城市地面顶 0.20/0.21 m（城垣底 0.17 m）。直接按城市零点放在城市地面上，会埋掉整整第一级 0.200 m 踢面，端口差 -0.20/-0.21 m，是 E3 容差 2 mm 的 100 倍以上",
+  "G3 已解决：LY-006 port.schema 允许 world=null，条件是 local:north-altar placement=null，当前满足",
+  "G4 位置三说互斥（A 带距北垣 1449–1944 m，B 带 2277–2808 m，C 扇区以西北角为心、半径 207–648 m）；LY-004 判定不出点，世界坐标无法合法给出",
+  "G5 城景未加载：city-data.mjs 的 assets、nodes、researchModels 中都没有引用，连独立查看入口也没有（LY-004 R-02 研究层无北郊条目，交 LY-100）",
+  "G6 继承：三档几何哈希相同（每档 268 三角形），只有纹理分 512/256/64；按 LY-007 copy_ban 不算复制，但三角形比 1.0 超出新件区间，按夯土不降档披露；带 legacy_grey、texture_not_in_library、uv_not_1m_box 等标记；doubleSided",
+  "G7 通行只核到几何台阶：四陛各 6 级 × 0.200 m 踢面，踏深 0.500 m，宽 3.2 m，2R+T=0.90 m；坛边 1.2 m 落差无栏杆；没有做连续人体包络",
+  "G8 端口粒度：LY-006 只给 1 个 ground 端口，四个脚下 (±13,0,0)/(0,0,±13) 相距 26 m，一个 pose 表达不了；按陛独立核支持需要 4 个端口",
+  "G9 写区限制：LY-080:write:001 盒子 [-17,-0.3,-17]..[17,0.3,17]，地坪顶 ≤0.3 m；ownsGroundPieces 为空；如果全铺到坛底，y=0 会有 400 m² 共面接面，须开孔或只铺端口条带",
+  "已合格（实测，2026-11-06 重跑一致）：26×1.2×26 m，1 个连通体，非流形边 0，体积 506.88 m³（numpy 与 Blender 一致），底面 438.40 m²=400+4×9.6，四陛支承比各 1.000，y>0 处朝下面积 0 m²"
+ ],
+ "reuseCandidate": "部分复用。坛体与四陛几何可以原样引用、无需新造：三档 GLB SHA d62dce7d/4842be77/7c7f3a51 与 bce3211 blob 相同，实测闭合单体、非流形边 0、体积 506.88 m³、四陛各 6 级 × 0.200 m 踢面且支承比 1.000、无悬空（prep/measure_out.json、prep/blender_out.json）；LY-006 已把源节点登记为 mode=keep，LY-009 也锁为只读。但接地包本身（4 个端口、T080-arrival 地坪或高程处理、安装与撤回）不存在，仍要制作，所以不能判“复用完成”。",
+ "touches": [
+  "只读引用：docs/library/models/m-luoyang-northern-altar/files/northern-altar-C-LOD0/1/2.glb，节点 north_altar_platform_four_stepped_approaches_C（LY-006 mode=keep，不改字节）",
+  "端口：north-altar:stairs:ground（LY-006 v1 已登记），以及待增登的 north-altar:stairs:ground:E/W/S/N 和可选 floor 陛顶端口（producer/steward 都是 LY-080）",
+  "组件 T080-arrival（fixed）：可选的北郊局部 C 地坪片，只在写区 LY-080:write:001 内、frame local:north-altar；不碰任何既有城市地坪片（ownsGroundPieces 为空）",
+  "卡片字段提案（LY-100 写）：m-luoyang-northern-altar#cover/files/gallery/notes.*/status/statusNote/summary",
+  "提案（交 LY-100，不直接写）：city-data.mjs researchModels 新条目（local-study、cityPlacement:null）；p-luoyang.asset.json L179-184",
+  "邻接：LY-079（南郊，须隔离，S-SOUTH-ALTAR）、LY-081（地面网络）、LY-094（准入审查）"
+ ],
+ "size": "S",
+ "risks": [
+  "LY-004 已判北郊不可配准：本项只能交局部包，永远不能写“已入城”或“已定址”",
+  "LY-006 若不增登 4 个端口，按陛独立核支持无法合法提交；不能把 4 个脚下塞进 1 个 pose",
+  "落地高程是 0 还是 0.20/0.21 的选择，如果靠悄悄改 N.y 解决，就违反 E4；必须作为新版本并重算端口",
+  "自带 C 地坪片可能被误读为北郊兆域或围营边界；须限高 ≤0.05 m 并在命名中说明；全铺到坛底有 400 m² 共面 z-fighting",
+  "继承的 legacy_grey 与 texture_not_in_library 标记可能被 LY-094 拦下；本项不改字节，只能披露",
+  "2R+T=0.90 m 与无栏坛边可能被误称“通行认证”"
+ ],
+ "readyAfterG": true
+}

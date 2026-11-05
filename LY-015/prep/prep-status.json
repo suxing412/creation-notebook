@@ -1,0 +1,56 @@
+{
+ "seat": "LY-015",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb 88d9a322 (K-v1 近档，城景不加载)",
+  "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb d82f13fc (中档，city-data 仅元数据)",
+  "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb 13ff78a7 (远档，availableLod2 仅元数据)",
+  "docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb 94693c58 (城景唯一加载件；local-study，cityPlacement=null；city-data.mjs:707-752/3826/4178，city-renderer.mjs:286-293/645-660)",
+  "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD0/1/2.glb 5754432a/50f85502/e758e45f (三条门下测试带)",
+  "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part001 f742fb3c + part002 72609b8b，拼接 ZIP bad99bb9（实测吻合；含净化原生 LOD0/1/2.blend 95568b8b/f283dbf9/c8ef8d10、隐藏试放 city/kaiyang-K-mid-hidden-trial.blend 75c96a3f、placement.json e608e78b、build.py、city-trial.py、source-object-ranges.json）",
+  "docs/cities/luoyang/assets/city-wall/A/wall-05.glb 4e000b0c、wall-04.glb 50d8c7aa（已入城，端面实测在门体本地 x=-16.0/+16.0）",
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb fdfc3ce5（initial=false；门址 0/3321 命中）",
+  "docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json fadab2bb；docs/cities/luoyang/city-data.mjs e4115705；p-luoyang.asset.json 9b5e311f；progress-assets/north13-gates/source.json 9b07b734；yong-city-v1/source.json a294289642（入城装配先例）"
+ ],
+ "inputsMissing": [
+  "bearing-section-v1：任务池点名的失败承托样例，用于定位旧门楣/梁0.0936m³交体与LY-011替换对象；main bce3211、origin/luoyang-content、creation-notebook-待传（空）均无；不能从GLB重建（K-v1不含该版）",
+  "开阳适配失败/实际剖面记录：0.0936m³与21.76m³问题的前置证据；未找到；不能从GLB重建",
+  "kaiyang-ground 源工程（.blend/生成器/1782样点原QA）：仓库只有GLB；可从GLB重建（3块1.8×14×0.2m带约2mm微起伏，几何/UV/纹理全在GLB）",
+  "城市母版 eabb2a90（city-C032-wuku-facade.blend）与覆盖层 660cdf37（four-family-plus-gate-wall-overlay.blend）：placement绑定、原生2764对象回退需要；不在仓库；网页端墙帽接触可用现城墙GLB重建（端面实测±16.0），原生回退不能重建",
+  "原始未净化原生 f876be9e（LOD1）/ee0fee04（试放）：placement与旧QA绑定于此；仅有净化等价件f283dbf9/75c96a3f+NATIVE-EQUIVALENCE.json；新QA须改绑净化SHA",
+  "LY-011/012/013/014 冻结交付及替换清单：未交付；不能代做",
+  "G 冻结包（LY-001/002/005/006/007/008/009/010）：LY-001快照进行中，其余未见"
+ ],
+ "gaps": [
+  "接墙件只存在于中档隐藏试放，并焊入kaiyang-K-static_earth（144三角对公开120；土体积903.49对571.92，接墙件合计331.57m³）；无LOD0/LOD2版、无GLB、节点名与公开门体相同",
+  "公开三档门墩外端x=±12.4，现城墙端面x=±16.0：每侧3.6m空缺",
+  "上层路线不存在：三档在z0.3–5.2无任何踏面（仅门叶顶4.35，62样点）；楼板顶5.34，接墙件顶在x=12.4为5.00（下跌0.34m），以28.6%（约16.0°）升至墙顶6.03，墙顶比楼板高0.69m",
+  "楼面临空：楼板顶以上0.9m横射被挡前沿0/49、后沿0/49、两端0/25各；后沿仅6.29–6.47横栏和立柱；落差5.34m",
+  "门道净空三档相同：净高4.70m（门头4.70–5.00）；净宽3.38/4.98/3.38m（门叶处），3.60/5.20m（门框处）；z0.3/1.8/4.5贯穿无遮挡",
+  "地坪覆盖：三条测试带x[-8.5,-6.7]/[-0.9,0.9]/[6.7,8.5]、y±7、顶0.040–0.042；门道宽×14m支承比例45.0%/32.14%/45.0%；与门体三角重叠0对；门叶底0.05比带顶高8mm",
+  "门址城景地面：ground-network-ground-stitched在门址±20×±10m下射0/3321命中且initial=false",
+  "三档每档仅3个按材质合并网格；源部件三角范围在公开GLB中仍有效（5哨兵部件×3档、容差1mm全吻合；三角总数土120、木1788/1148/588、瓦6296/696/32一致），旧新互斥须按三角范围遮罩",
+  "LOD1对应4个SHA（公开d82f13fc、城景投影94693c58、原始原生f876be9e、净化原生f283dbf9），placement绑原始件，验收绑定易混",
+  "原生城市回退（母版eabb2a90+覆盖660cdf37）在本仓库不可重跑，只能做网页端GLB世界的安装/撤回"
+ ],
+ "reuseCandidate": "无。K-v1隐藏试放有门体和中档接墙件，但activation=false、无修订件、无上层路线、地坪支承仅32–45%，不满足本项验收；只能复用组件（K-v1三档原件、三条测试带、city-trial.py按档重生成接墙件、wall-04/05端面、yong-city-v1装配契约格式）",
+ "touches": [
+  "kaiyang-K-static_earth / kaiyang-K-static_timber / kaiyang-K-static_tile（LOD0/1/2，只读原件+三角范围遮罩派生件）",
+  "源部件三角范围：C_upper_deck（LY-013）、C_door_head_0..2、C_jamb_*、C_open_leaf_*、C_leaf_batten_*（LY-012）、承托相关件（以LY-011冻结清单为准）",
+  "接墙件 kaiyang-K-C-terminal--1 / kaiyang-K-C-terminal-1（试放中并入earth；需拆为独立节点三档；与LY-014墙顶过渡所有权待LY-006裁定）",
+  "城墙节点 wall-A-wall-05、wall-A-wall-04（只读，端面接触）",
+  "地坪片：kaiyang-ground-LOD0/1/2 三条测试带；门道内补地坪（与LY-016式补件/LY-085门口接路的边界待LY-006）",
+  "门口端口 y=±7（交LY-085）",
+  "文件：workpacks/LY-015/**；只读 docs/cities/luoyang/city-data.mjs、p-luoyang.asset.json、progress-assets/north13-gates/*、assets/city-wall/A/wall-04.glb、wall-05.glb"
+ ],
+ "size": "L",
+ "risks": [
+  "前置011–014任一端口或替换清单变化都会改变遮罩范围和净空，必须待冻结后装配",
+  "LY-014墙顶过渡与本席位接墙件可能是同一几何，所有权冲突",
+  "门道补地坪可能越界到LY-085（门口外）或与测试带重复叠层",
+  "合并网格遮罩派生件若误伤保留三角会破坏来源几何保留；以逐三角比较兜底",
+  "原生城市回退无法重跑，只能网页端；不能写成原生回退通过",
+  "SHA绑定混用（原始/净化/公开/投影）导致图与路线不对应同一SHA",
+  "历史层面全部C级；门址未发掘，不能借装配完成推出历史复原成立或结构安全"
+ ],
+ "readyAfterG": true
+}

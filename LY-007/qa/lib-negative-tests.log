@@ -1,0 +1,85 @@
+PASS floating detects floater [('floater', 0.3)]
+PASS intersection detects wall x column [('wall', 'col', [0.316, 0.276, 2.496])]
+PASS coplanar detects shared top face [{'a': 'slabA', 'b': 'slabB', 'area': 1.0, 'normal': [0.0, 0.0, 1.0]}]
+PASS clearance fails (narrow, low, blocked) {'clear_width': 0.64, 'clear_height': 1.7, 'blocked': 171, 'blockers': {'leaf_closed': 119, 'wall': 66, 'door_frame': 38}}
+PASS grounded detects lift {'zmin_building': 0.1, 'zmin_all': 0.1, 'grounded': False}
+INFO Draco is available, use library at D:\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at D:\Blender\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+22:47:12 | INFO: Starting glTF 2.0 export
+22:47:12 | INFO: Extracting primitive: Cube.001
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Finished glTF 2.0 export in 0.007088422775268555 s
+
+PASS inspect_glb flags bad material / TRS / ground ["材质名不合规范 'Material.001'", 'LOD0 应为 __PBR：Material.001', '静态节点 bad-A-static_earth 带变换', '网格名带 Blender 副本后缀 Cube.001', 'UV 不是世界盒式投影 0.0', '最低点 y=0.5000，未落在 y=0（地面补丁另出文件）']
+[提示] manual_bench 无 ly 记录，作为各 LOD 不变件收入
+22:47:12 | INFO: Starting glTF 2.0 export
+22:47:12 | INFO: Extracting primitive: demohut-derived-A-static_earth
+22:47:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Extracting primitive: demohut-derived-A-static_tile
+22:47:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Extracting primitive: demohut-derived-A-static_timber
+22:47:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Finished glTF 2.0 export in 0.04593515396118164 s
+
+22:47:12 | INFO: Starting glTF 2.0 export
+22:47:12 | INFO: Extracting primitive: demohut-derived-A-static_earth
+22:47:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Extracting primitive: demohut-derived-A-static_tile
+22:47:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Extracting primitive: demohut-derived-A-static_timber
+22:47:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Finished glTF 2.0 export in 0.025977611541748047 s
+
+22:47:12 | INFO: Starting glTF 2.0 export
+22:47:12 | INFO: Extracting primitive: demohut-derived-A-static_earth
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Extracting primitive: demohut-derived-A-static_tile
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Extracting primitive: demohut-derived-A-static_timber
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Finished glTF 2.0 export in 0.007001161575317383 s
+
+PASS derive LOD1/LOD2 from LOD0 objects {'got': {0: 1808, 1: 672, 2: 292}, 'want': {0: 1808, 1: 672, 2: 292}, 'issues': {0: [], 1: [], 2: []}}
+PASS eave tiles 28v/52t, removed at LOD2, supported {'n': 42, 'sig': [(28, 52)], 'lod2_left': 0, 'floating': []}
+22:47:12 | INFO: Starting glTF 2.0 export
+22:47:12 | INFO: Extracting primitive: t-leafnode-A-leaf_0_L
+22:47:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Extracting primitive: t-leafnode-A-static_earth
+22:47:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Extracting primitive: t-leafnode-A-static_timber
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Finished glTF 2.0 export in 0.010228157043457031 s
+
+22:47:12 | INFO: Starting glTF 2.0 export
+22:47:12 | INFO: Extracting primitive: t-leafnode-A-leaf_0_L
+22:47:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Extracting primitive: t-leafnode-A-static_earth
+22:47:12 | WARNING: More than one shader node tex image used for a texture. The resulting glTF sampler will behave like the first shader node tex image.
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Extracting primitive: t-leafnode-A-static_timber
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Finished glTF 2.0 export in 0.009725809097290039 s
+
+22:47:12 | INFO: Starting glTF 2.0 export
+22:47:12 | INFO: Extracting primitive: t-leafnode-A-leaf_0_L
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Extracting primitive: t-leafnode-A-static_earth
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Extracting primitive: t-leafnode-A-static_timber
+22:47:12 | INFO: Primitives created: 1
+22:47:12 | INFO: Finished glTF 2.0 export in 0.006485939025878906 s
+
+PASS separate hinged leaf node exported in all LODs {'nodes0': ['t-leafnode-A-static_earth', 't-leafnode-A-leaf_0_L', 't-leafnode-A-static_timber'], 'leaf0': {'extras': {'evidence': 'C reconstruction trial, not a surveyed building', 'metres_per_unit': 1.0, 'LOD': 0, 'hinge_axis_native': [0, 0, 1], 'pivot_native': [-0.7, 0.3, 0.21], 'angle_range_deg': [0, 90], 'swing_sign': 1}, 'name': 't-leafnode-A-leaf_0_L', 'rotation': [0, 0.2588191032409668, 0, 0.9659258127212524], 'translation': [-0.699999988079071, 0.20999999344348907, -0.30000001192092896]}, 'tris': {0: 132, 1: 132, 2: 96}, 'issues': {0: [], 1: [], 2: []}}
+TESTS ALL PASS 9/9
+Blender 5.2.1 LTS (hash 9e2066aef7ef built 2026-08-25 02:38:20)
+
+Blender quit

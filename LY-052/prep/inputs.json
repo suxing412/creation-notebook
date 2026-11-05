@@ -1,0 +1,119 @@
+{
+ "seat": "LY-052",
+ "phase": "prep (G not frozen; no delivery geometry made)",
+ "repo": "D:/GitHub/creation-notebook-lab",
+ "baselineCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "shaNote": "GLB/webp are binary (i/-text): working-tree SHA = commit bytes. JSON/mjs are i/lf w/crlf: both working-tree and commit-byte SHA listed; bind commit bytes for delivery.",
+ "inputs": [
+  {
+   "id": "m-luoyang-stable/A",
+   "path": "docs/library/models/m-luoyang-stable/files/A.glb",
+   "bytes": 4898748,
+   "sha256": "672beeb46faaee0a15f7de649099c486c639b40a39b045b89525fbe7f15b2563",
+   "role": "3-bay stable + 3 hollow troughs + 9.0x4.8x0.24 earth platform; source of floor, trough and post datums",
+   "loadedInCity": false,
+   "loaderCode": "none. grep of docs/cities/luoyang/{app.mjs,city-data.mjs,city-renderer.mjs,index.html,v1/*} finds no reference; LY-001 family-ledger C:m-luoyang-stable cityNodes=0, state 仅模型（资产卡文件）. Only the asset-card page renders it."
+  },
+  {
+   "id": "m-luoyang-stable/B",
+   "path": "docs/library/models/m-luoyang-stable/files/B.glb",
+   "bytes": 7043436,
+   "sha256": "bd82280a76f0677821788c62c39b42e8fb2314d297bbad704a92aa7d452c2cb4",
+   "role": "4-bay stable + 4 hollow troughs + 12.6x5.4x0.24 earth platform; mutually exclusive with A",
+   "loadedInCity": false,
+   "loaderCode": "none (same as A)"
+  },
+  {
+   "id": "m-luoyang-stable card",
+   "path": "docs/library/models/m-luoyang-stable/m-luoyang-stable.asset.json",
+   "sha256_worktree_crlf": "66f0e994580905874ef788ae041272bcc5d73d6d50f250d2f749ed6b523fd824",
+   "sha256_commit": "eb67038618d1e24697d2ea45e8182a13a9a4c574ada855f3cfb1d319317eb995",
+   "role": "status 待审; notes: 汉墓陶庄园功能比较, 非洛阳马厩复原; no animal scale/collision/load/GPU/mobile certified",
+   "loadedInCity": false,
+   "loaderCode": "lab/tools/build_assets.py -> lab/data/assets.json (library page only)"
+  },
+  {
+   "id": "m-luoyang-stable cover/shot",
+   "path": "docs/library/models/m-luoyang-stable/cover.webp ; shots/01.webp",
+   "sha256": "2bc69724dce7bf24f519d129096194ab5a66f78518cdb10053092d1f6b7dabaa ; d177e4fafee24d8d5cb982a1f65209f49bbd4fa417b51c126da8f13a099c5a88",
+   "loadedInCity": false,
+   "loaderCode": "card only"
+  },
+  {
+   "id": "p-luoyang project card",
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256_worktree_crlf": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "sha256_commit": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "role": "line 233 inventory row 厩棚与饲槽 A/B (已建模, 未入城, 1组); line 542 related-id link only",
+   "loadedInCity": false,
+   "loaderCode": "related list is a card link, not a scene load. Shared file: read-only for LY-052 (LY-100 only)"
+  },
+  {
+   "id": "city-data.mjs",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256_worktree_crlf": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "sha256_commit": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "role": "proves absence: no stable node; only library GLB referenced from city is yong-gate (line 1229). Ground-atomic layers lines 432-508 use data/west/ground-atomic-contract.json — no tile covers a stable site",
+   "loadedInCity": "n/a (is the loader)",
+   "loaderCode": "n/a"
+  },
+  {
+   "id": "app.mjs",
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256_worktree_crlf": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "sha256_commit": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "loadedInCity": "n/a",
+   "loaderCode": "no stable reference"
+  },
+  {
+   "id": "ground-atomic contract",
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256_worktree_crlf": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "role": "reference only for how atomic ground tiles are contracted; no stable plot assigned",
+   "loadedInCity": true,
+   "loaderCode": "city-data.mjs sourceContract lines 448/468/488/508"
+  },
+  {
+   "id": "lab/data/assets.json",
+   "path": "lab/data/assets.json",
+   "sha256_worktree_crlf": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+   "sha256_commit": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "role": "build summary; report.json warns B.glb 7.0 MB > 5 MB (below 15,000,000 B hard limit)",
+   "loadedInCity": false,
+   "loaderCode": "library"
+  },
+  {
+   "id": "geometry audit (prior, scratch)",
+   "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/cards/m-luoyang-stable/{audit.json,views.png,extra/nodes-*.txt,extra/geom-*.txt}",
+   "role": "independent confirmation: 0 degenerate, 0 non-manifold, all prims UV+normal; tile shells 360 dup faces (inherited)",
+   "loadedInCity": false
+  },
+  {
+   "id": "TASKPOOL / taskboard",
+   "path": "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md ; taskboard.json",
+   "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7 ; 1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+   "role": "LY-052 section lines 566-573; deps LY-001,002,005,006,007,008,009,010,051"
+  },
+  {
+   "id": "LY-001 snapshot (delivered)",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-001/qa/family-ledger.json",
+   "sha256": "8eaa7c7a805d5cfb4fd1492a26c480ee0cad9095407e767648e0e9e71eadfe37",
+   "role": "confirms stable family cityNodes=0"
+  },
+  {
+   "id": "LY-052 measurement",
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-052/prep/measure_stable_floor.py ; measure-A.json ; measure-B.json",
+   "sha256": "0015673260f0b5213be70b1e85d061fe3154df98945c3cf7f69a78477b3e67e5 ; 3d58bfee47a366af1565a4de5482320475e75bd936292406da669d064d28c4f8 ; 29959d3a797e999936d44a1dee51cad777181837e9108ae40162c05407a4b118",
+   "role": "this seat's measurements (Blender 4.x import of the GLBs, Z-up)"
+  }
+ ],
+ "missing": [
+  {"what": "native .blend / generator params of m-luoyang-stable A/B (private source package)", "use": "edit floor in the same parametric frame as troughs/posts; keep material slots identical", "rebuildFromGLB": "yes - every non-tile node is a 12/28-tri axis-aligned box; all datums recovered exactly from GLB vertices (see measure-*.json). Tile shells not touched. Must be labelled 从GLB重建."},
+  {"what": "LY-051 frozen tether/partition ports and floor footprints", "use": "keep trough-front floor deltas and cleaning route clear of partition feet / tether posts", "rebuildFromGLB": "no - not yet produced (LY-051 only has prep/)"},
+  {"what": "LY-005 elevation contract (ground z vs platform underside)", "use": "decides whether entry step is 0.24 m, 0 m, or something else; sets 外接 port height", "rebuildFromGLB": "no"},
+  {"what": "LY-006 port/ownership freeze", "use": "whether LY-052 may hide/replace *_earth_platform nodes or only overlay; ownership of drip/outflow strip", "rebuildFromGLB": "no"},
+  {"what": "LY-007 material baseline", "use": "packed-earth / wear-zone / drain-lining material semantics", "rebuildFromGLB": "no"},
+  {"what": "LY-010 selection (A vs B, which court/site, if any)", "use": "only the selected variant gets a delta; external port neighbour", "rebuildFromGLB": "no"},
+  {"what": "LY-002 evidence/forbidden table", "use": "classify floor/drain choices; current search found no Eastern-Han Luoyang stable floor/drain report", "rebuildFromGLB": "no"}
+ ]
+}

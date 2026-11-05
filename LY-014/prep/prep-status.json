@@ -1,0 +1,54 @@
+{
+ "seat": "LY-014",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb 88d9a322",
+  "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb d82f13fc",
+  "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb 13ff78a7",
+  "docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb 94693c58（城景仅独立研究视图加载）",
+  "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD0/1/2.glb 5754432a / 50f85502 / e758e45f",
+  "docs/cities/luoyang/assets/city-wall/A/wall-04.glb 50d8c7aa、wall-05.glb 4e000b0c（城景加载，相邻墙）",
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb fdfc3ce5",
+  "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part001+002 → ZIP bad99bb9（含净化 .blend、build.py df0be5ed、placement.json e608e78b、隐藏试放 blend 75c96a3f）",
+  "docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json fadab2bb"
+ ],
+ "inputsMissing": [
+  "bearing-section-v1：LY-011 承托剖面输入，本席位用它确认最终楼面和梁位；四个分支和待传目录里都没有。现 K-v1 的楼板和柱位可以从 GLB 实测，失败剖面本身不能从 GLB 重建",
+  "开阳适配失败/实际剖面记录（0.0936 m³、21.76 m³ 出处）：用来核对 LY-011/013 前后对比；没找到，不能从 GLB 重建",
+  "K-v1 原生未净化 .blend（native 88877470/f876be9e/7deda70c，delta ee0fee04）：不在仓库；公开净化版在 ZIP 中，NATIVE-EQUIVALENCE equal=true，可以代用，但 SHA 映射要写清",
+  "LY-011、LY-013 交付件：最终楼面标高 Zf、柱梁位置，未交付",
+  "LY-005/006/008 契约：人体包络、端口 ID、所有权、检查器入口，未冻结"
+ ],
+ "gaps": [
+  "三档 GLB（散件 179/95/48）中，顶面在 0.25 m 到楼面 −0.05 m 之间、且在门墩和门道外的登临候选件数为 0/0/0",
+  "高差：地面附件顶 0.040–0.042 → 楼面顶 5.340，差 5.298 m；门体 z0 → 楼面 5.340 m",
+  "墙顶（局部 6.030）比楼面高 0.690 m，分三段：x=±12.4 处楼面边缘到土楔顶 5.0003 有 0.34 m 竖向落差；土楔斜升 1.027 m / 3.589 m（15.97°）；到 x=±16.0 接墙顶",
+  "端接土楔只在隐藏试放 blend 75c96a3f 中（并入 kaiyang-K-static_earth），不在任何公共 GLB 或城景中",
+  "楼面四边全部无护栏：南北各 24.8/24.8 m，东西各 10.0/10.0 m；后栏 z 6.29–6.47 在 y=3.8，离北缘 1.11 m；临边落差 5.34 m",
+  "楼面端头：端柱外缘 ±11.77 到楼面端 ±12.4 只有 0.63 m 净宽；端柱之间（y ±3.63）净宽 7.26 m，墙顶宽 5.6 m（y ±2.8）",
+  "直径 0.6 m 人体（高 1.9 m）中心可站面积 203.1 m²，连通东西两端；守室门洞 2.2×2.00 m，正好等于 1.9+0.1 阈值，守室内部（约 22.4 m²）判成不连通，属边界值",
+  "净空：纵系梁底 8.44（楼面净空 3.10 m）、横系梁底 8.46（3.12 m）、守室门楣 7.34（2.00 m）；净空低于 2.0 m 的格子占 0.97%",
+  "足下支承：城景地面最近面离门原点 388.9 m；门周 5 区 4,462 个向下样点全部落空；地面附件只有 3 条 1.8×14 m 门道带，梯脚无地面可落",
+  "城中未落位：cityPlacement=null；城景里 wall-05 与 wall-04 端面之间有 32.0 m 空档",
+  "量级（C，只作排期）：楼面 5.34 m 需 30 级 0.178 m 踏步、水平投影 8.12 m，另加 ≥1.2 m 中间平台；到墙顶 6.03 m 需 34 级；1:8 坡道到楼面 42.7 m、到墙顶 48.2 m"
+ ],
+ "reuseCandidate": "无。三档 K-v1 没有任何登临、平台或护栏构件。楼面↔墙顶只有隐藏试放里的一块 15.97° 实心土楔，不在公共 GLB 里，与楼面有 0.34 m 落差，没有做过通行检查（qa/paths.json scope 写明 no upstairs route proof）",
+ "touches": [
+  "kaiyang-K-static_earth（含门墩 C_earth_pier_0/3、守室墙；隐藏试放中还并入 kaiyang-K-C-terminal-±1 土楔）——只读，土楔若替换须走 LY-006",
+  "kaiyang-K-static_timber：C_upper_deck（归 LY-013）、端柱 C_gallery_post (±11.6, ±3.8)、后栏 C_rear_guard_top_±1、C_rear_guard_post（归 LY-011/LY-013 边界）",
+  "城墙 wall-04.glb、wall-05.glb 端面 x=±16.0（局部）及墙顶 z 6.03，只读对接",
+  "地面附件 kaiyang-ground-LOD0/1/2（门道带），只读",
+  "新梯脚地坪片：门北侧墙内面区域（局部 x 12.4–30 或 −30–−12.4，y 4–14）。可能与 LY-015（门组装配地坪）、LY-085（平城开阳城南端接路线）、LY-089（地形支承差异片）冲突",
+  "新文件只在 workpacks/LY-014/（models、assembly.json、qa、preview）"
+ ],
+ "size": "L",
+ "risks": [
+  "LY-013 改变楼面标高或轮廓后，全部高差要重测；0.69 m 不是固定值",
+  "梯脚落点没有城景地面，需要新地坪片，所有权可能和 LY-015/085/089 重叠",
+  "登临形制（马道、内梯、蹬道）找不到约 180 年洛阳证据，只能出 C 候选；北魏、西汉长安的例子不能当事实用",
+  "守室门洞净高 2.00 m 正好卡在包络阈值上，判定结果取决于 G 冻结的人体高度和余量",
+  "楼面临边全开敞，护栏归属（LY-013 楼板还是 LY-014）未定",
+  "门在城中未落位，本项最多交“局部通行通过”，不能写成“已入城”",
+  "城景实际加载的压平 GLB 94693c58 未在本轮 Blender 回读（可能是 meshopt 压缩），要确认它与 LOD1 在标高上一致"
+ ],
+ "readyAfterG": true
+}

@@ -1,0 +1,800 @@
+{
+ "seat": "LY-098",
+ "phase": "prep",
+ "repo": "D:/GitHub/creation-notebook-lab",
+ "baselineCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "latestMainAtPrep": "本机 origin/main 跟踪引用 = cad338ba683f7277aea098f45c8feb6c915a847c（比基线多 3 个提交 r2026.11.05-6/7/8，只做漂移对照）；lab 检出 HEAD = bce3211；未联网，不知远端是否更新",
+ "byteBasis": "全部取 git 提交 blob（git show），不取 Windows autocrlf 检出字节；与 LY-001 qa/file-hashes.json 的口径相同",
+ "taskpool": {
+  "path": "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md",
+  "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7"
+ },
+ "taskboard": {
+  "path": "D:/GitHub/creation-notebook-workpacks/taskboard.json",
+  "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4"
+ },
+ "upstreamWorkpacks": {
+  "LY-001": {
+   "state": "status 自报交付完成；workpacks 未提交（??），视为未冻结",
+   "status.json": "a32d742a0064baf45c0f78215b10905f2a21fb9ea070b18d8055a58454fe9236",
+   "qa/family-ledger.json": "8eaa7c7a805d5cfb4fd1492a26c480ee0cad9095407e767648e0e9e71eadfe37",
+   "qa/checks.json": "993f06b8917dc9dde55920fff8bd7427d1aa4f39c88f366f95bb069e90529b94"
+  },
+  "LY-002": {
+   "state": "status 自报交付完成（33 证据、24 禁用、D-01—D-09）；workpacks 未提交，视为未冻结；R19/R20 已接入只报数",
+   "status.json": "0ac63db873219d1bb22f9269dd11c52e80e2efeec528decb5a1f0409cd92c13d",
+   "tables/evidence-ledger.json": "237a4811acad3d7f6733d4c5c95a64df0b2c67adf48b2682264eb0f0c8512b77",
+   "tables/evidence-ledger.md": "ea060db64e08645e299924e3243c566587689ac59acf35cff7638e0b190fc5de",
+   "tables/family-binding.json": "3aeddcc065cbbef44ddd2da3995d6e72fcd37e93a75d0c46e92fe1d2a02e12b6",
+   "qa/selftest.json": "88c55da0c3ed7869571d252a9e5a6621bce253ca776438b82a957b2b11c17b02",
+   "brief.md": "ee0f7a35fe573b8f66b439f2ee03ccc994a32727ac29eefb9d75b9ca3e98b572"
+  },
+  "LY-005..009": {
+   "state": "各 status 自报交付完成，均未提交",
+   "status.json": {
+    "LY-005": "add0f9b1a722f08e516ffd64b9dbaf97532a62d9fa18ded01df89ab7be5740ea",
+    "LY-006": "fe4aaa6c7cb1441f95ac8f51101e0cf63a4ab07ed53452e59c2bd897c5539aba",
+    "LY-007": "2fddce70c110a19c6d08d10b90ac355440d538f5c8dcc82cca58504476ecc082",
+    "LY-008": "4de552ad9689211cb155b4ae1f12818e09ab699d4ddb5c85f680b51331718f16",
+    "LY-009": "09a1c45415aa3a8657581ce0a5ff2e8738e6fca09da800070e36972b330e896c"
+   }
+  },
+  "LY-010": {
+   "state": "目录不存在 → G 未冻结"
+  },
+  "LY-091..094": {
+   "state": "只有 prep/，无区域结论"
+  },
+  "LY-100": {
+   "state": "目录不存在；无本批 manifest"
+  }
+ },
+ "inputs": [
+  {
+   "path": "docs/cities/luoyang/README.md",
+   "sha256": "e31b11a20f8a637f51fe1ba5cb49e4a3c490b0241e2163ab9fe26ece7396f56b",
+   "bytes": 3418,
+   "gitBlob": "fc2d827a2ac8c0b97a864d6e8cc7b6cd292f0373",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "无代码引用；公开可访问的建城日志"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "bytes": 14242,
+   "gitBlob": "467828a439e5887eb6eb0e19d3b9833c61928b34",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": true,
+   "loadedWhere": "index.html L115 <script type=\"module\" src=\"app.mjs\">"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/N2-replacement.glb",
+   "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "bytes": 72984,
+   "gitBlob": "dbacbc9bfc982cf0c46f3bf6882047089e3aed4b",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": true,
+   "loadedWhere": "city-data.mjs assets[market-*] → 市肆章按章加载；本检查只读其节点名数店/摊"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "bytes": 1031928,
+   "gitBlob": "9d40915dae9bc54337df82d9424351b031ad502b",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": true,
+   "loadedWhere": "city-data.mjs assets[market-*] → 市肆章按章加载；本检查只读其节点名数店/摊"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/posters.json",
+   "sha256": "633142d86e0fb318d46c950c636a48fb2959bb6f0466598761f6970f687cb670",
+   "bytes": 3616,
+   "gitBlob": "679057b56cc4c85d65c3ea2a926dd21923030858",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "无代码引用；海报/章图出处记录（README L17 提到）"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "bytes": 106463,
+   "gitBlob": "0c1262e202b150ae1345e7bb0bf668e22df860ac",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": true,
+   "loadedWhere": "app.mjs L1 import manifest；scene.mjs L7 import manifest；渲染器 city-renderer.mjs 由 app.mjs L177 动态导入后读 manifest"
+  },
+  {
+   "path": "docs/cities/luoyang/data/research-unplaced.json",
+   "sha256": "27f9e7f3429eccd8e7b5cbc1f5bbf88019a90ee9191c090b067d838d1a7bb43b",
+   "bytes": 4331,
+   "gitBlob": "ffceec3f44e1a13c0c08dce21ccc15ce253a4d7f",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "无代码引用（git grep 0 处，v1 除外未查）；未落位研究要素"
+  },
+  {
+   "path": "docs/cities/luoyang/index.html",
+   "sha256": "cfbf73763675397dde8f5ab08bb13f6b51fbcfa9954227552e32be756666b1bf",
+   "bytes": 15991,
+   "gitBlob": "c3060f8b58839ce06d13aaccde49b4b23eae0d58",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": true,
+   "loadedWhere": "城景页入口本身（docs/cities/luoyang/index.html）"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "bytes": 23627,
+   "gitBlob": "956064537f4eb791182794bc1b6da1517fa66579",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": true,
+   "loadedWhere": "资产库：lab/tools/build_assets.py 扫描 docs/**/<id>.asset.json（L3, L109, L233）→ lab/data/assets.json；城景页 index.html/app.mjs 不读它"
+  },
+  {
+   "path": "docs/cities/luoyang/project-stage-contract.json",
+   "sha256": "fd284f15ccb466e5999366fad5be3d7ce2f5648c7fc99a7920caf4225668dcdb",
+   "bytes": 4877,
+   "gitBlob": "1566902ed360e28d28743d99daa43474eeb07962",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "无代码引用（git grep 0 处）；阶段/验证状态记录"
+  },
+  {
+   "path": "docs/cities/luoyang/scene.mjs",
+   "sha256": "00114cb9112da34194ef47f371d0850ac4fa55d5db87fea5084b9a7a3064e6b9",
+   "bytes": 2875,
+   "gitBlob": "11de336ad0e3ee6a76e803f0dc1a914d0afd7c2c",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": true,
+   "loadedWhere": "资产库项目页：p-luoyang.asset.json \"scene\": \"scene.mjs\" → lab/tools/build_assets.py L235-240 写入 lab/data/assets.json 的 scene 字段"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-a1-neighborhood/m-luoyang-a1-neighborhood.asset.json",
+   "sha256": "a0c64f306a1cc57b7f53a2f8a2155a4c216b8e6da3f6c1381fb1cf34bb652e98",
+   "bytes": 2208,
+   "gitBlob": "43345892d081ba8ae690bc2737dded1011a61728",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-b2-facade-kit/m-luoyang-b2-facade-kit.asset.json",
+   "sha256": "791793bf7bfe77b094fae9868581bce71ee27c69dd27a1145684f37b941a9469",
+   "bytes": 1095,
+   "gitBlob": "162bbede804ba42dba45a81847666051525fc498",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-biyong/m-luoyang-biyong.asset.json",
+   "sha256": "4b6f37622159dbdfee4ccca5ea1d6ecb849ae2644ffec199286f19b20785b9b1",
+   "bytes": 1793,
+   "gitBlob": "644ef247185438a5d72a801841eb1d2f6e9cba39",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-cooking-stove/m-luoyang-cooking-stove.asset.json",
+   "sha256": "032e7eef6d0daabc4a125bf1f1a74a9d958b7b40f6b380f0862623a329b609dc",
+   "bytes": 1622,
+   "gitBlob": "00f9b50414d2c36aba7ebc3705e17c6f97ea7950",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-court-layout-kit/m-luoyang-court-layout-kit.asset.json",
+   "sha256": "63c92f947952a33f7a27555b6c71d95f7504bcb382bedc06536aa2d8e6a9de3f",
+   "bytes": 1670,
+   "gitBlob": "cc726a21c8d04c0f988d94090b25c5b1f684a00c",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-deyang-hall/m-luoyang-deyang-hall.asset.json",
+   "sha256": "16e39d6908180c5c36c63e1123d9af9cfce8b87a454136e5b3c1a2996485de14",
+   "bytes": 1821,
+   "gitBlob": "24c0704c397b82c747a07e862e017af505699d63",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-earthwall-family/m-luoyang-earthwall-family.asset.json",
+   "sha256": "22b9cc43e047a9ff0024766969069bb913c9f4329c560798e1a4fcb8171381eb",
+   "bytes": 2018,
+   "gitBlob": "4d48fed391d0aca096a874c9f60ca4df9bbdccd4",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-foot-pestle/m-luoyang-foot-pestle.asset.json",
+   "sha256": "0edeedebc0c33d511f702177149afa8dde2d6a62839f95aaa5cfb98f847d64d0",
+   "bytes": 1289,
+   "gitBlob": "1c9f998c134d170bcf440a216eb249dcda4089ea",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-gallery-access/m-luoyang-gallery-access.asset.json",
+   "sha256": "707f298fe235a2444c1f88c357cc75dcaea270d92754835671fbdb7480ca366e",
+   "bytes": 1697,
+   "gitBlob": "85d7e0ae51819d0291b6f46b2ba62d339ff61fb8",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-gu-gate/m-luoyang-gu-gate.asset.json",
+   "sha256": "e192ac647b774d66a27bf6a24249de679f2c014f82cd2882ea1010d28a036d28",
+   "bytes": 1814,
+   "gitBlob": "4eac714df2a7bbcf6fa0473e3b8be407a6d9c995",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-guangyang-gate/m-luoyang-guangyang-gate.asset.json",
+   "sha256": "cce98c6fa087a2084ccea3dffd1c048d15f8bb984c953836684a51a33970cd62",
+   "bytes": 1828,
+   "gitBlob": "3f484e190afa42566664513d1da6dbbec86204a2",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-hand-mill/m-luoyang-hand-mill.asset.json",
+   "sha256": "abb7865c0ce2ba9b1c4570e1db5a098bf1854c2d67b3d9066cf28ab60fa1f30d",
+   "bytes": 1446,
+   "gitBlob": "3a29db62389509b77afc90d5f373e7b53cca35a4",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-house-roof/m-luoyang-house-roof.asset.json",
+   "sha256": "42522d933d604873bb3738177625df37cdfb24e5dce66ff400bdce0f5d0e9441",
+   "bytes": 1488,
+   "gitBlob": "1363eeef5b5a2082d7136d8f9237e846b655fdd9",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-household-service/m-luoyang-household-service.asset.json",
+   "sha256": "f11a78af29eb891228ef057464ba1a1374300c6c652d7eca5435fb65ab34961d",
+   "bytes": 1376,
+   "gitBlob": "e476b2e4ecc9b3ef70d55a3d275f348f1b641dd3",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-inner-door-components/m-luoyang-inner-door-components.asset.json",
+   "sha256": "38723e69f175e859cbf89e57fcc772e862ac541ef97d89187e794ca76a9f0969",
+   "bytes": 2095,
+   "gitBlob": "c81dba82362f71b81d4e31b427e925103317322d",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-jin-gate/m-luoyang-jin-gate.asset.json",
+   "sha256": "22291787512599a86ae893cce37bf86b59b8491c74ab27b208bef65b13ca6032",
+   "bytes": 2042,
+   "gitBlob": "7e6ba56aaecc2027f2c99dfda090c5765054ada5",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json",
+   "sha256": "a864fd4a1b8d2cbd08abc8591cf65beac300b91c611f574d7013ed913455599a",
+   "bytes": 2903,
+   "gitBlob": "55f5a4591e7d540f93a1abb15873794a043170b6",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-lingtai/m-luoyang-lingtai.asset.json",
+   "sha256": "7db1211873f3a533fd6204e97509dc2007b5fdf268347d53d08b761886d82572",
+   "bytes": 1439,
+   "gitBlob": "c695d367fe051299ec3825f574e756ca706fe01e",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-mao-gate/m-luoyang-mao-gate.asset.json",
+   "sha256": "ed7992599850161e9f080880ab4b336c1ba35613be99f448672deaa52a81e47b",
+   "bytes": 1746,
+   "gitBlob": "41d97be66ebdfd6828f874c471422097a84db02a",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-frontage/m-luoyang-market-frontage.asset.json",
+   "sha256": "7e1e8e307c8c3820bf0d6c1c5e2fc083706f6eaa39f8e650a5861ad8c86e0718",
+   "bytes": 1397,
+   "gitBlob": "f1d8b1f32e8ea4918cf4caa009209927f4658835",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/m-luoyang-market-modular-assembly.asset.json",
+   "sha256": "7d05df76837c518bbb5ff8e5ee3b711c25e705e5ff31cdbef7be689ff882a3f1",
+   "bytes": 1958,
+   "gitBlob": "6699f17e1023d8ba5aec1fc37e9a194214932316",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-mingtang/m-luoyang-mingtang.asset.json",
+   "sha256": "d3019d6e5b531a8b18411f1c53edafd23013f4423d1d2ef0d5a7643b9ab5f34f",
+   "bytes": 1822,
+   "gitBlob": "a80b02a0796dde1f269410ca8ae1680d535c5efa",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-northern-altar/m-luoyang-northern-altar.asset.json",
+   "sha256": "9deabeb6c12a4c45cb3d86e5101a9a2dd997a5e4d8cacaa7cdf7360d50fe666c",
+   "bytes": 1699,
+   "gitBlob": "71ac8d136a03b5fe82108afae71ba9c7dba79a55",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-ordinary-house-types/m-luoyang-ordinary-house-types.asset.json",
+   "sha256": "4dc0e33e84593e9ed835d12537cc7b18b79b44e5f66b68d39f942a9db001e03f",
+   "bytes": 2107,
+   "gitBlob": "9472897e0b4b3865a637bf28b337db03638872c9",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-admission-court/m-luoyang-palace-admission-court.asset.json",
+   "sha256": "7df2a18426266859f2718691546ae821026b2c50798035817a6f579fc693f560",
+   "bytes": 2175,
+   "gitBlob": "65c5f31ebce8bfa7ed61e3180b9b0899b5c0ee28",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-gallery/m-luoyang-palace-gallery.asset.json",
+   "sha256": "100a78c3ed3a18e04bf5a98b8dd2c4d75e1d4b73461d96b0cf9c8893a7da3a0c",
+   "bytes": 1863,
+   "gitBlob": "eb8635814b39e247deb0718fa191702c037a14ef",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-guard/m-luoyang-palace-guard.asset.json",
+   "sha256": "6628df8326c79902d1af8fbd0fa5a1bebe96e8b9adc0a8c9bcd0941225e76cff",
+   "bytes": 2687,
+   "gitBlob": "af2da21538d5020a44327209fc32388c60ec8271",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-paired-que/m-luoyang-palace-paired-que.asset.json",
+   "sha256": "455a167ea94a5a9dcb8ee776f2011a47524e356f61708c4c889525450c243d15",
+   "bytes": 1508,
+   "gitBlob": "8c6a1d17af4047d402b423a8d371e7a84b63eab1",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-sidehall/m-luoyang-palace-sidehall.asset.json",
+   "sha256": "2011ab6f9f458fab72f053006bb9154d94625f014ea7361fa53acf388e83760c",
+   "bytes": 1519,
+   "gitBlob": "c463c7f41040b2e3e5e96c62e03c0252ac62cddd",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/m-luoyang-palace-waterway-interface.asset.json",
+   "sha256": "c0f4284053039e0aa7ae871cb955a6d0cb3163b41b691edb49ef71ec94f0a836",
+   "bytes": 1888,
+   "gitBlob": "b3dabdfbd954619e8e40d2948528f2e3171ed6a5",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-pingcheng-gate/m-luoyang-pingcheng-gate.asset.json",
+   "sha256": "0254f742a097094718b3760b68b3a840757333b0ff31c1db04baccc12c92c1f6",
+   "bytes": 2989,
+   "gitBlob": "8210083efe44ca2ce07e34bc0078c97951dcdec4",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-residential-life/m-luoyang-residential-life.asset.json",
+   "sha256": "8efd37b57d45ec6cedf4e2336949c540f257204b41236abc1ad5332abfaa407f",
+   "bytes": 1995,
+   "gitBlob": "4d8d75af252a4551cf3025cf0d39e5f8e30683a3",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-residential-preparation/m-luoyang-residential-preparation.asset.json",
+   "sha256": "e2e655dcbcad3b202372f911f512babb222e97ac4a8308af4398bfe5b81418e6",
+   "bytes": 1972,
+   "gitBlob": "a22dd00ab7269cfe205e39e5dc1aabc0fba5e5bd",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-service-court/m-luoyang-service-court.asset.json",
+   "sha256": "3add026e38daf82c238c18e98eb2d16f1ea0e430370b78118150e125088ab3af",
+   "bytes": 1319,
+   "gitBlob": "d508b4e69b02125dae489872d20c388fb5f76199",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-shangdong-gate/m-luoyang-shangdong-gate.asset.json",
+   "sha256": "2e69e3fee2564b301df3843e7153292dc2fbfde2f7af63fbbdc0734ef74ecfdb",
+   "bytes": 1829,
+   "gitBlob": "2bdbff5cea12fbb0534b8673933d0b9cbb14fe3e",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-shangxi-gate/m-luoyang-shangxi-gate.asset.json",
+   "sha256": "3fb4cb82c7d1c547dc34a0bac65873bf7de5c0b556428e075506757f7b33485c",
+   "bytes": 1963,
+   "gitBlob": "3b1bfe5e875aa0cbfa05b1e8c2944953ce40bf21",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-southern-altar/m-luoyang-southern-altar.asset.json",
+   "sha256": "b98b85a936a7ca8f5c8305ce08385a0ff0e5685cfe6fd2a7a6eded9cd3e1db42",
+   "bytes": 1653,
+   "gitBlob": "6ba5792d7cdec1f13a530bbfb15162ced618f13f",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-stable/m-luoyang-stable.asset.json",
+   "sha256": "eb67038618d1e24697d2ea45e8182a13a9a4c574ada855f3cfb1d319317eb995",
+   "bytes": 1133,
+   "gitBlob": "7bf51bdfe6aba13999509757ba9f06b4548baca5",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-stoneclassic-access-court/m-luoyang-stoneclassic-access-court.asset.json",
+   "sha256": "f7739797ead71d1d010b655ed670bcde0eec406a92202a6b2400680cbf8f890d",
+   "bytes": 1903,
+   "gitBlob": "67655ca9bb713016c9670a7573316c6701fe9003",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-taixue-a/m-luoyang-taixue-a.asset.json",
+   "sha256": "18948eaa26eb3a934aaab6147083ded8639a0610822df5c6fc08611535a2bae7",
+   "bytes": 1468,
+   "gitBlob": "6afc6910c45b40cbad14e4082ca572fd30651811",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-tile-kiln/m-luoyang-tile-kiln.asset.json",
+   "sha256": "737f2533ef83e12abee04e443b8d1d1e5163f03864c97b1db30524dbbcb7a724",
+   "bytes": 1389,
+   "gitBlob": "8e11b5c1ee9c37c855ac4676b89e6023514b1188",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-wall-house-court/m-luoyang-wall-house-court.asset.json",
+   "sha256": "c4ebcb1eaabdf7359023579d3d6e1096fbf7e0a99180f8e8563cb4ec58a186f5",
+   "bytes": 1401,
+   "gitBlob": "8da3e5c1cd9577e170478f96cd91bd743e9ca33d",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-workyard-shed/m-luoyang-workyard-shed.asset.json",
+   "sha256": "ddda7bde8f30ccb6e751fa7c5244824844edd21bca32f8101732f79bbe11f4bd",
+   "bytes": 1647,
+   "gitBlob": "9334c294f11f0995daa43fe9ededec54e7753065",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-wuku/m-luoyang-wuku.asset.json",
+   "sha256": "2487b3510604ed54cd9adb8d91ec03a4844d7ab8a884bc916ff40ca6dceadff3",
+   "bytes": 1871,
+   "gitBlob": "d55f305f49830777edae41d48b9aa90d3ee59d50",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-xia-gate/m-luoyang-xia-gate.asset.json",
+   "sha256": "db2dd2a7dcdf9c4e8004d7ef19147b92cfb3af76999a67f530680ce596478ccc",
+   "bytes": 1803,
+   "gitBlob": "1fa619bef34bcb90939abcf63dc6f14731db14a7",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-xiaoyuan-gate/m-luoyang-xiaoyuan-gate.asset.json",
+   "sha256": "90bb143d0cc939f468d2b2b00faf46ac0f9229c833335cef5c54fdc828527622",
+   "bytes": 1857,
+   "gitBlob": "80bfd35949c521117a9ddf82d48891f2656e5481",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-yong-gate/m-luoyang-yong-gate.asset.json",
+   "sha256": "a649f3f120e4fffb7f0160056d3b85e96f88619a89991860945f612d2fd455f8",
+   "bytes": 4250,
+   "gitBlob": "6745ca49e5521941006f8d5daa19ba3479284afc",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-yutang-halls/m-luoyang-yutang-halls.asset.json",
+   "sha256": "72266b3ecc7b8b156ffa3ce358451a0461e07d3b82be779c2415c7dbc3bba82b",
+   "bytes": 1882,
+   "gitBlob": "4ac86feb32e4f92d3cb5190b22ecf89e1bd827a9",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-zhongdong-gate/m-luoyang-zhongdong-gate.asset.json",
+   "sha256": "388ca470d6335db648fd4a4fb8c7a400bc4b9637d3fe74719dce53ae3154e933",
+   "bytes": 2018,
+   "gitBlob": "935be893672fc50b89c1e90d435be8aef84e0a3a",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/model-library/m-courtyard-family.asset.json",
+   "sha256": "afc231529d971a276c7d2f36780057326e117cc5b311cbee6430ff0c959d04da",
+   "bytes": 6094,
+   "gitBlob": "801c5b93c03af2ed8b3a12f9703b554d6cf75c2c",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/model-library/m-eaves-shell.asset.json",
+   "sha256": "85c9f0b3ec649e21651b66ec07e288e76b707cace8e03261b4d8457abb037d81",
+   "bytes": 864,
+   "gitBlob": "3cfbf6ef0c43d531ff69650f8b78f56a898ff673",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/model-library/m-gate-roof-study.asset.json",
+   "sha256": "938b0e285922790ea9c4d6b61e53342f27a74af99568cfc4d3f016874ec23786",
+   "bytes": 957,
+   "gitBlob": "c8ffb53000f85832ace6839badf0b6b7ddc1e540",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/model-library/m-market-functional.asset.json",
+   "sha256": "3d2d5e33b0e17c6671af99ff6ba233a137fc9c7b6fae73fe39abf769cc49f55f",
+   "bytes": 2172,
+   "gitBlob": "fdab6425d82c1fc7a9f7903531f4beb3e7cb3afb",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/model-library/m-passage-interface.asset.json",
+   "sha256": "cc5f744ca01741037c24c2e5bc9da9cd16da4e70ff8f9112259ff6545e0c4a60",
+   "bytes": 812,
+   "gitBlob": "9f684d02d96ebc5591d57679edd12debfd7f7275",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "docs/model-library/m-storage-functional.asset.json",
+   "sha256": "3572786f39beea07571cfd9aec458dff3d19e2420943252957c391c0d7bb119f",
+   "bytes": 4967,
+   "gitBlob": "6feea17328c0537c5bc2f7b6ceafff9d05668ae1",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": null,
+   "loadedWhere": "资产卡：build_assets.py → lab/data/assets.json；城景是否加载其文件由 R06 按 git blob 与 city-data 资产比对得出，见 report.json facts.memberCardsInCity"
+  },
+  {
+   "path": "lab/data/assets.json",
+   "sha256": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "bytes": 424754,
+   "gitBlob": "3a70eca98170ea7cf6ea34236fd3225de7fec887",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": true,
+   "loadedWhere": "资产库站点数据（build_assets.py 生成物）；城景页不读"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "bytes": 35785,
+   "gitBlob": "4a38b30f6cc39dc73a0e56f500d73edcd63e0c37",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": true,
+   "loadedWhere": "app.mjs L177 await import('./city-renderer.mjs')（打开 3D 时加载）；L140 isInferred 含 C",
+   "addedInRound": 2
+  },
+  {
+   "path": "docs/cities/luoyang/assets/city-overview.webp",
+   "sha256": "93454110e79ba62efcc6cdb7a9373035313dac0933fdd9bd52adb8274df91743",
+   "bytes": 26618,
+   "gitBlob": "73ead77945578bb7241fccc6e1cdbd33f7c77d08",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": true,
+   "loadedWhere": "app.mjs L270 $('#poster').src = 'assets/city-overview.webp'（全城视图海报）",
+   "addedInRound": 2
+  },
+  {
+   "path": "docs/cities/luoyang/assets/west/wall-city-direct-A.png",
+   "sha256": "83fdbbaedef9fb3f8930fae17e4b897578023b4bbc6b9c9c0dfe4f6ca7c8c1bf",
+   "bytes": 1223102,
+   "gitBlob": "75405c05d55af1e888f28137574578ea506fd875",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "posters.json 的 city-overview source；不被页面加载，只作出处",
+   "addedInRound": 2
+  },
+  {
+   "path": "docs/cities/luoyang/data/evidence/evidence-geometry.json",
+   "sha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7",
+   "bytes": 52278,
+   "gitBlob": "6827c19e4867837c3db778c78d089ea1f370a0e8",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "city-data.mjs L4525 provenance.sourceContracts 登记（SHA 只对 CRLF 变体成立）；v1/evidence-view.mjs 旧版使用；新城景不加载",
+   "addedInRound": 2
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/city-wall-constraints.json",
+   "sha256": "e9c84bddc7bb7d867e3ba8abf8cbeb604b222ad0960901f32e979dbb995e0af3",
+   "bytes": 8554,
+   "gitBlob": "b2304c000e1c5f377df1ed610f248c3c89548122",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "v1/wall-layer.mjs L15 作为“原始引用与制作边界”链接；新城景不加载",
+   "addedInRound": 2
+  },
+  {
+   "path": "docs/manifest.json",
+   "sha256": "0d14a81237c16f9ab5ffffa75d3f9405d372157ab643298f2d3a1ab6af30a9ee",
+   "bytes": 31746,
+   "gitBlob": "a154e4606bfffab26b1df9f97b903974f8f3dfa1",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "全站机读清单 ongoingProjects[0]；docs 与 lab 内无代码读取 ongoingProjects，公开可访问",
+   "addedInRound": 2
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/README.md",
+   "sha256": "4f7b47698bb4fb41fdf1450fb99a4e78017f1c7048f1c7974e62744ec0e3593c",
+   "bytes": 3238,
+   "gitBlob": "de66a6f59f19b28aeff1fb2127e30888662cf0e6",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "成员卡说明；无城景代码加载",
+   "addedInRound": 2
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/palace-admission-court/evidence.md",
+   "sha256": "a73422a2d2fc6641f665369069577696237e898cc248a9df30d0450ae10988d6",
+   "bytes": 5257,
+   "gitBlob": "eea7c34d01d1d9e895ad007c5ec015f78868593f",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "成员卡证据说明；无城景代码加载",
+   "addedInRound": 2
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/README.md",
+   "sha256": "4b6d5cc6a51b01cfadace069ab38a8d6cfc5175a9f76c23ef6dac0de9235fd6e",
+   "bytes": 921,
+   "gitBlob": "e5dbd1feedc608c3cadf10e43a7f9aff85b63cfe",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "太仓入城包说明；无城景代码加载",
+   "addedInRound": 2
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/yong-city-v1/README.md",
+   "sha256": "eb48d95f49f096662ac1946e6866577444d2d6a1095c6040e1c3f8a67a032b6d",
+   "bytes": 1364,
+   "gitBlob": "486302c05a3b18228de9f03a51f460d7563ee1b4",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "雍门入城包说明；无城景代码加载",
+   "addedInRound": 2
+  },
+  {
+   "path": "docs/cities/luoyang/research/2026-11-03/index.html",
+   "sha256": "e465f5711744af70c5c5e903ad44a746ea4e3752b8b93b8ca039cd0623631a58",
+   "bytes": 33261,
+   "gitBlob": "dba5e4ca05b5d061227045c4117ee6b2b4427f3e",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "docs/manifest.json researchUpdates.entry、project-stage-contract.json L151 entry；研究档案页",
+   "addedInRound": 2
+  },
+  {
+   "path": "docs/cities/luoyang/research/2026-11-03/composition-review.md",
+   "sha256": "3e0eaa4fca38fd8d52190fb43eaa3eec02deb4455fdf9f998dd66a971039c9f6",
+   "bytes": 3735,
+   "gitBlob": "0af8f58940b51389e55837bbb9056d8fd0257cbd",
+   "byteBasis": "commit blob",
+   "loadedByCityPage": false,
+   "loadedWhere": "研究档案；无代码加载",
+   "addedInRound": 2
+  }
+ ],
+ "tools": {
+  "ly098_audit.py": "7afd3e5d8c7355a8d1d21de73e3489b2e6337d205a72d1ca3d56500e25f46fd6",
+  "ly098_selftest.py": "96f112215a800c398407653ab70892b00ef797b199a341c40d0ff68c4874a7dd",
+  "eval_city_data.mjs": "597ecebdd02ce677be6400a91a4ea08161f5037cbe13a0e2bf38aa0c520abbd8",
+  "ly098_surface.py": "5d402767df0996034a88cf248100255a62e55c6789f25b9c5d29cdf0198525fd",
+  "ly098_ledger_join.py": "077fc497d8f2dfe6a6520b136ae6ee205fe3e19e409847eea46c6b0e3079c61e"
+ },
+ "privateSourcesNeeded": "无。本席位核文字、计数与状态，不重建几何；不需要 .blend 或源 ZIP",
+ "inputsNote": "第二轮另把 docs/cities/luoyang/ 下全部 154 个文本文件的 SHA/blob/是否被主检查器读取写在 baseline/bce3211/surface.json 的 files 里（cad338b 158 个见 baseline/cad338b-drift-only/surface.json）。",
+ "baselineOutputs": {
+  "baseline/bce3211/report.json": "bc85f7971d883e6215695a281c0af1f9dec2b1d6d5a35c4cd182cbba58254303",
+  "baseline/bce3211/corrections.json": "df119a7274665e0f81531717fe6f1102018b527469867114be5ee88a248831a3",
+  "baseline/bce3211/selftest.json": "4fa0f9c950beb8a983be069c2d3f26d1df21117f9b72e2406ea1ce339bb25d40",
+  "baseline/bce3211/surface.json": "47200586057fc53b2b0db4c79abb237f5af1254fe0cdf65a792c72257a6f9e2d",
+  "baseline/bce3211/surface-selftest.json": "1c1536cc1c9f1ff73458ff819fa00106687b6b329a7e90a67e41225ee0504ed1",
+  "baseline/bce3211/ledger-join.json": "1e5694e05fe8b2b2ad630612c0e4638357721bb8bd890a8079c2666c8c46495b",
+  "baseline/bce3211/ledger-join-selftest.json": "3a623f06a4119f07a98a103ce3817a17d70ae80af56a28fc8018bb295272aa10",
+  "baseline/cad338b-drift-only/report.json": "3bdfc38ae5250e9947ebff3b00d794096cec927fe7707b08efa1d55343e7ac0a",
+  "baseline/cad338b-drift-only/corrections.json": "a779d9baa1281749f34565a9a24e16784963e5356f196c84a5a40d4381d5b5f4",
+  "baseline/cad338b-drift-only/surface.json": "ebe44c003c818f2775656346690ae2343f127ec201faa7f34cee2322c8734cec"
+ },
+ "prepRound": 2,
+ "prepDate": "2026-11-06"
+}

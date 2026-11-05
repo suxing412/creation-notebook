@@ -1,0 +1,201 @@
+{
+ "registry": {
+  "zones": {
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/zones.json",
+   "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0"
+  },
+  "ports": {
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/ports.json",
+   "sha256": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633"
+  },
+  "seats": {
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/seats.json",
+   "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069"
+  },
+  "ownership": {
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/ownership.json",
+   "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca"
+  }
+ },
+ "zone": {
+  "zoneId": "LY-067:write:001",
+  "seat": "LY-067",
+  "site": "S-PALACE",
+  "class": "write",
+  "frame": "local:gallery-A",
+  "box": [
+   [
+    -6.45,
+    -0.6,
+    -3.824
+   ],
+   [
+    6.45,
+    0.0,
+    3.824
+   ]
+  ],
+  "label": "post foot support / foundation interfaces (below grade)",
+  "basis": "C-partition",
+  "exclusiveGroup": null,
+  "worldOBB": null
+ },
+ "port": {
+  "portId": "gallery-A:feet:ground",
+  "version": 1,
+  "kind": "ground",
+  "producer": "LY-067",
+  "steward": "LY-067",
+  "status": "declared (values filled by producer at delivery)",
+  "frames": {
+   "local": "local:gallery-A",
+   "world": "luoyang-local-schematic-v01"
+  },
+  "local": null,
+  "world": null,
+  "nodeMatrixColumnMajor": null,
+  "measuredFrom": null,
+  "elevationClass": "C-engineering",
+  "tolerance_m": {
+   "position": 0.005,
+   "elevation": 0.002
+  },
+  "consumers": [
+   "LY-069"
+  ]
+ },
+ "seat_frames": [
+  "local:gallery-A"
+ ],
+ "seat_components": [
+  {
+   "id": "P067-footings",
+   "class": "fixed"
+  }
+ ],
+ "frame_gallery_A": {
+  "placement": null,
+  "status": "unplaced"
+ },
+ "frame_for_access_A_registered": false,
+ "gallery": {
+  "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-palace-gallery/files/gallery-A-LOD0.glb",
+  "sha256": "0c09279723e2334c35f21c7602c195cc867d97808ac0f99ccf6f0208d3ff3849",
+  "feet": 16,
+  "plinth_union_min": [
+   -6.25,
+   0.0,
+   -3.55
+  ],
+  "plinth_union_max": [
+   6.25,
+   0.2,
+   3.55
+  ],
+  "post_x": [
+   -6.0,
+   -2.0,
+   2.0,
+   6.0
+  ],
+  "post_z": [
+   -3.3,
+   -1.1,
+   1.1,
+   3.3
+  ]
+ },
+ "all_plinths_inside_zone_xz": true,
+ "zone_margin_beyond_plinths_m": {
+  "x_neg": 0.2,
+  "x_pos": 0.2,
+  "z_neg": 0.274,
+  "z_pos": 0.274
+ },
+ "zone_y_range_m": [
+  -0.6,
+  0.0
+ ],
+ "zone_top_equals_plinth_bottom": true,
+ "plinth_edge_gap_m": {
+  "x": 3.5,
+  "z": 1.7
+ },
+ "pad_ext_used_m": 0.2,
+ "neighbour_pads_clear_m": {
+  "x": 3.1,
+  "z": 1.3
+ },
+ "zone_xz_area_m2": 98.659,
+ "plinth_total_area_m2": 4.0,
+ "access_A": {
+  "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-gallery-access/files/access-A-LOD0.glb",
+  "sha256": "c973d325d1d08cfd53c129df5270f6276677694a5d4a96cab35fde47d3d11076",
+  "bbox_min": [
+   0.0,
+   -0.2,
+   -3.325
+  ],
+  "bbox_max": [
+   9.92,
+   5.065,
+   3.325
+  ],
+  "parts_below_y0": [
+   {
+    "part": "access-A-static_earth#0.35",
+    "min": [
+     8.92,
+     -0.2,
+     0.505
+    ],
+    "max": [
+     9.92,
+     0.0,
+     1.155
+    ]
+   },
+   {
+    "part": "access-A-static_earth#0.33",
+    "min": [
+     8.92,
+     -0.2,
+     -1.155
+    ],
+    "max": [
+     9.92,
+     0.0,
+     -0.505
+    ]
+   },
+   {
+    "part": "access-A-static_timber#0.643",
+    "min": [
+     3.2711,
+     -0.1302,
+     0.7
+    ],
+    "max": [
+     9.4889,
+     3.8902,
+     0.96
+    ]
+   },
+   {
+    "part": "access-A-static_timber#0.641",
+    "min": [
+     3.2711,
+     -0.1302,
+     -0.96
+    ],
+    "max": [
+     9.4889,
+     3.8902,
+     -0.7
+    ]
+   }
+  ],
+  "relative_transform_to_gallery_A": null,
+  "note": "no frame for access-A in LY-006 zones.frames; no node/extras transform in either GLB"
+ }
+}

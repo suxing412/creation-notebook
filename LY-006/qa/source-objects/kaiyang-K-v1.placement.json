@@ -1,0 +1,67 @@
+{
+  "base_sha256": "eabb2a902d671adf9017f9835ce1d1d9673985f33d793acdce067cd435540134",
+  "requires_previous_overlay_sha256": "660cdf37adddebbad7b3b9e0b3ab1f7d859b9bb3104d2d14a032761a61b96b84",
+  "B_point_unchanged": [
+    2010.204,
+    -30.612
+  ],
+  "engineering_origin_from_existing_wall_caps": [
+    2010.3973388671875,
+    -21.3011474609375,
+    0.17000000178813934
+  ],
+  "offset_from_B_m": [
+    0.1933388671875491,
+    9.310852539062498
+  ],
+  "rotation_z_rad": -0.020743634087871412,
+  "new_ids": [
+    "kaiyang-K-static_earth",
+    "kaiyang-K-static_tile",
+    "kaiyang-K-static_timber"
+  ],
+  "hide_only_ids": [],
+  "remove_on_rollback": [
+    "kaiyang-K-static_earth",
+    "kaiyang-K-static_tile",
+    "kaiyang-K-static_timber"
+  ],
+  "delta_sha256": "ee0fee04692cb1750677a255f5e8686f7a403ff49d1cd454f2320d481f4c0408",
+  "model_sha256": "f876be9ee9ccecd8bbed1305800f2f91128c66488995e53049421ba7262a0612",
+  "contacts": [
+    {
+      "wall": "C_wall_A_05",
+      "side": -1,
+      "max_world_float_residual_m": 0.00012208521275181014,
+      "scope": "outer cap only, not whole object pair exemption",
+      "gate_inner_contact_plane_x": -12.4,
+      "gate_inner_contact_rect_yz": [
+        -5.0,
+        5.0,
+        0,
+        5.0
+      ]
+    },
+    {
+      "wall": "C_wall_A_04",
+      "side": 1,
+      "max_world_float_residual_m": 0.00012208521366119385,
+      "scope": "outer cap only, not whole object pair exemption",
+      "gate_inner_contact_plane_x": 12.4,
+      "gate_inner_contact_rect_yz": [
+        -5.0,
+        5.0,
+        0,
+        5.0
+      ]
+    }
+  ],
+  "activation": false,
+  "limits": [
+    "Origin and orientation derived from current C wall geometry, not historical precision; south-wall gate location not excavated",
+    "No new roads, no wall edits, no whole-city activation",
+    "Gate contains static fully-open door leaves, not a tested hinge rig",
+    "Upper access remains unknown",
+    "No threshold inserted; existing terrain/approach support is not validated, hidden trial only"
+  ]
+}

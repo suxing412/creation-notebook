@@ -1,0 +1,48 @@
+{
+ "seat": "LY-024",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD0.glb 8ef1f3c8 (LOD1 aa914dd6, LOD2 2f8e217c) — 宿主，未入城",
+  "docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD0.glb 7f1c2e70 (LOD1 ef10e67a, LOD2 14a7925b) — 对照，未入城",
+  "docs/library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD0.glb b599ade0 — 三铺样例，未入城",
+  "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0.glb 46f08f41 (LOD1 03ad28cf, LOD2 b5b13b1c) — 店前线v2.1，含S84型两处实例，未入城",
+  "docs/cities/luoyang/assets/market/market-cluster.glb 77b8bf2e — 城内旧五店三摊，city-data.mjs:511/3663/3953、v1/west-layer.mjs:33 加载（不替换）",
+  "docs/cities/luoyang/assets/market/N2-replacement.glb d33cbad1 — 城内，city-data.mjs:562/3690、west-layer.mjs:36（不动）",
+  "docs/library/models/m-luoyang-b2-facade-kit/files/closed-dense.glb 6d5f8307 / open-light.glb b4bc344a — 互斥静态开闭先例（洞口不同，不复用）",
+  "资产卡 m-luoyang-market-modular-assembly.asset.json c5f78747(worktree CRLF)、m-luoyang-market-frontage.asset.json ac85a44d(worktree CRLF)"
+ ],
+ "inputsMissing": [
+  "S84/S86 v1.1-entry-repair 原生 .blend/生成器与参数：用于原生/GLB一致性与精确端口；本项不改宿主，开口包络可从GLB重建（轴对齐、三档一致）",
+  "店前线 v2.1 生成器/布局参数（逐铺prototype映射）：GLB合批节点extras误标S86；实例变换已从GLB实测重建",
+  "LY-006/010 冻结身体包络与端口ID、台基顶面带归属：不能从GLB重建，当前0.6×0.4×1.75为C占位",
+  "LY-007 LY_P01_timber 材质语义冻结：贴图可从GLB内嵌读取，语义需冻结",
+  "LY-002 闭铺（门板/铺板/门扇）证据条目：不能从GLB得到；当前未找到约180年洛阳原始证据"
+ ],
+ "gaps": [
+  "S84前口完全敞开：x[-3.50,3.49]×y[0.25,3.00]，街面射线命中闭合件0/7840；四铺型及城内节点中均无任何门板/门叶构件",
+  "柱外皮|x|=3.70与山墙内皮3.72间0.02m通高(y0.25–3.00)透光缝，两侧各一（probe_facade_leaks.py）",
+  "门板可用带极窄：柱平面z[-0.26,-0.06]进深0.20m，柱前皮至台基前沿0.06m，柱后皮至柜台0.19m；额枋底y=3.00",
+  "台基顶y=0.22无槽且宿主不可改；固定地栿(0.06–0.08m)会挡v1.1通道最低样点并与LY-021争用z∈[-0.26,0]顶面带",
+  "后墙/山墙无洞口（earth闭壳76三角），全闭时唯一出入口须为可外关的侧口，门扇宽≤1.10m（侧通道实测1.10/1.10）",
+  "继承局部接触(AABB)：前柱埋入台基0.22m、柜台腿埋入0.06m、额枋与柱x向交叠0.15m且柱顶高出额枋0.119m",
+  "店前线三合批节点extras一律prototype=S86，无逐铺语义；S84型实例只能按实测变换 N(4.6,0,-5)、S(14.3,0,5)+rotY180 绑定",
+  "LOD2无柜台（S84-LOD2仅5个松散体），柜台余隙检查只能在LOD0/1做"
+ ],
+ "reuseCandidate": "无（逐查market-cluster 500节点、N2 54节点、S84/S86/店前线合批节点，均无门板/铺板/门叶；closed_stock为货物。B2门窗套件与内门组件洞口尺寸不同，只作互斥静态状态先例）",
+ "touches": [
+  "S84-LOD0/1/2：节点 S84-static-LY_P01_timber__PBR（前柱x±[3.5,3.7]、额枋y[3.0,3.2]、柜台z[-1.15,-0.45]——只贴靠不改）",
+  "S84-LOD0/1/2：节点 S84-static-LY_P01_earth__PBR（台基顶面y=0.22前沿带z∈[-0.26,0]、山墙内皮x=±3.72——只贴靠不改）",
+  "street_frontage-LOD0/1/2：layout__LY_P01_timber__PBR / layout__LY_P01_earth__PBR 中 S84型两实例 N x[0.6,8.6]z[-9,-5]、S x[10.3,18.3]z[5,9]",
+  "地坪片：S84台基顶面前沿条 z∈[-0.26,0]（与LY-021起步件、LY-022前街地坪相邻/争用，待LY-006裁定）",
+  "写入：D:/GitHub/creation-notebook-workpacks/LY-024/（models/ open,closed ×3档、assembly.json、qa/、source/）"
+ ],
+ "size": "M",
+ "risks": [
+  "选型无约180年洛阳史证，LY-002可能给不出支持→全部构形C，或判阻断",
+  "门槛/地栿归属与LY-021的0.22m起步件冲突，若LY-006判给021则闭态下档须改为挂于柱/额枋的方案",
+  "0.20m可用进深内要放门板+侧口枢接，柱内交叠易成为未分类正体积侵入",
+  "营业态门板存放位置可能侵入1.10m员工通道或柜台区",
+  "检查器为射线栅格+BVH表面重叠，非实体布尔/连续人体；身体包络为占位值",
+  "宿主未入城，成果只能是独立研究件，不能计作已入城；店前线元数据误标可能误导装配"
+ ],
+ "readyAfterG": true
+}

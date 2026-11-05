@@ -1,0 +1,160 @@
+{
+ "selftestOK": true,
+ "cases": [
+  {
+   "file": "measure-gate-LOD0.json",
+   "declaredSteps": [],
+   "expectPass": true,
+   "got": true,
+   "asExpected": true,
+   "failed": [],
+   "numbers": {
+    "maxStep_m": 0.0,
+    "minClear_m": 2.05,
+    "minFreeWidth_m": 2.12,
+    "unsupportedCells": 0,
+    "maxLayers": 1,
+    "beyondLayers": 1
+   }
+  },
+  {
+   "file": "measure-gate-LOD1.json",
+   "declaredSteps": [],
+   "expectPass": true,
+   "got": true,
+   "asExpected": true,
+   "failed": [],
+   "numbers": {
+    "maxStep_m": 0.0,
+    "minClear_m": 2.05,
+    "minFreeWidth_m": 2.12,
+    "unsupportedCells": 0,
+    "maxLayers": 1,
+    "beyondLayers": 1
+   }
+  },
+  {
+   "file": "neg-no-ground-LOD0.json",
+   "declaredSteps": [],
+   "expectPass": false,
+   "got": false,
+   "asExpected": true,
+   "failed": [
+    "K1_support_complete",
+    "K2_single_ground_layer",
+    "K3_no_layer_beyond_boundary",
+    "K5_clearance",
+    "K7_boundary_elevation",
+    "PASS"
+   ],
+   "numbers": {
+    "maxStep_m": 0.0,
+    "minClear_m": null,
+    "minFreeWidth_m": 2.12,
+    "unsupportedCells": 50647,
+    "maxLayers": 0,
+    "beyondLayers": 0
+   }
+  },
+  {
+   "file": "neg-threshold-LOD0.json",
+   "declaredSteps": [],
+   "expectPass": false,
+   "got": false,
+   "asExpected": true,
+   "failed": [
+    "K4_steps_declared",
+    "PASS"
+   ],
+   "numbers": {
+    "maxStep_m": 0.03,
+    "minClear_m": 2.02,
+    "minFreeWidth_m": 2.12,
+    "unsupportedCells": 0,
+    "maxLayers": 1,
+    "beyondLayers": 1
+   }
+  },
+  {
+   "file": "neg-threshold-LOD0.json",
+   "declaredSteps": [
+    0.03
+   ],
+   "expectPass": true,
+   "got": true,
+   "asExpected": true,
+   "failed": [],
+   "numbers": {
+    "maxStep_m": 0.03,
+    "minClear_m": 2.02,
+    "minFreeWidth_m": 2.12,
+    "unsupportedCells": 0,
+    "maxLayers": 1,
+    "beyondLayers": 1
+   }
+  },
+  {
+   "file": "neg-double-slab-LOD0.json",
+   "declaredSteps": [],
+   "expectPass": false,
+   "got": false,
+   "asExpected": true,
+   "failed": [
+    "K2_single_ground_layer",
+    "K7_boundary_elevation",
+    "PASS"
+   ],
+   "numbers": {
+    "maxStep_m": 0.002,
+    "minClear_m": 2.048,
+    "minFreeWidth_m": 2.12,
+    "unsupportedCells": 0,
+    "maxLayers": 2,
+    "beyondLayers": 1
+   }
+  },
+  {
+   "file": "neg-overrun-LOD0.json",
+   "declaredSteps": [],
+   "expectPass": false,
+   "got": false,
+   "asExpected": true,
+   "failed": [
+    "K2_single_ground_layer",
+    "K3_no_layer_beyond_boundary",
+    "PASS"
+   ],
+   "numbers": {
+    "maxStep_m": 0.0,
+    "minClear_m": 2.05,
+    "minFreeWidth_m": 2.12,
+    "unsupportedCells": 0,
+    "maxLayers": 2,
+    "beyondLayers": 2
+   }
+  },
+  {
+   "file": "standalone-LOD0.json",
+   "declaredSteps": [],
+   "expectPass": false,
+   "got": false,
+   "asExpected": true,
+   "failed": [
+    "K0_sha_bound",
+    "K2_single_ground_layer",
+    "K3_no_layer_beyond_boundary",
+    "K4_steps_declared",
+    "K7_boundary_elevation",
+    "PASS"
+   ],
+   "numbers": {
+    "maxStep_m": 0.015,
+    "minClear_m": 2.035,
+    "minFreeWidth_m": 2.12,
+    "unsupportedCells": 0,
+    "maxLayers": 2,
+    "beyondLayers": 2
+   }
+  }
+ ]
+}

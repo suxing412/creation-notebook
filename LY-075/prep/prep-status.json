@@ -1,0 +1,65 @@
+{
+ "seat": "LY-075",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD0.glb bdcc369e（工作树=HEAD）",
+  "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD1.glb 993ec375",
+  "docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD2.glb 275f8fe2",
+  "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD0.glb 7337871c",
+  "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD1.glb 25035eeb",
+  "docs/library/models/m-luoyang-mingtang/files/mingtang-B-LOD2.glb d495219c",
+  "docs/library/models/m-luoyang-mingtang/m-luoyang-mingtang.asset.json HEAD d3019d6e（工作树 34a01526，CRLF）",
+  "docs/cities/luoyang/data/evidence/evidence-geometry.json HEAD fa8b7002：城中唯一明堂数据 ritual_mingtang_B 证据点，city-data.mjs:4525 登记、v1/evidence-view.mjs:28 载入；*.mjs/*.html 对明堂 GLB 0 引用",
+  "docs/cities/luoyang/p-luoyang.asset.json HEAD 8edb06ab（members 含 m-luoyang-mingtang，非落位）",
+  "scratchpad mq/cards/m-luoyang-mingtang/audit.json e14b3047（六份 0 issues）",
+  "LY-006 registry seats.json a1426412 / zones.json 6b3595ac / ports.json 28bcfb68：LY-075=S-MINGTANG siteOwner，写区 LY-075:write:001，消费 mingtang:side-{N,E,S,W}:ground v1（declared，值 null）",
+  "LY-002 evidence-ledger.md ea060db6：E-R03（八达九房=东京赋文学意象；壍中无水），D-03",
+  "LY-004 status.json c9358ea5：明堂仅 B 示意点，不进 180 安装层",
+  "LY-009 brief.md bcd9d7db：LOCK-PROTOTYPES 含明堂",
+  "LY-008 source/ly_check.py 39aaa491（草案，仍在变）",
+  "LY-074 prep/prep-status.json 4ea2c99c（未交付）",
+  "lab 基线 bce3211f（HEAD 已核，只读）"
+ ],
+ "inputsMissing": [
+  "明堂原生源工程（.blend/生成器/源 ZIP）：仓库、creation-notebook-待传、review 副本均无；用途=万一需要差异件时保持原拓扑/UV/材质；本项检查全部从 GLB 回读，不需要原件；若将来出差异件只能「从GLB重建」并明说",
+  "LY-074 交付：A/B 选择 + 4 个端口 local/world 值 + 到达地面 GLB；用途=替换合成地面 y=0、种子放在冻结端口（P4）；不能从 GLB 重建",
+  "LY-010（目录不存在）：A/B 选择与正式通行包络；用途=替换暂定 24 组身体参数；不能从 GLB 重建",
+  "LY-008 冻结版检查器 + LOD_BBOX 族规则裁定：草案对明堂 A/B lodset 报错；不能从 GLB 重建",
+  "LY-005 local:mingtang 的世界 yaw 与 y=0 世界标高：N/S/E/W 房名与世界方位对应；不能从 GLB 重建"
+ ],
+ "gaps": [
+  "室内无几何缺口：6 份 GLB × 24 组正例（H1.75–2.3、r0–0.45、s0.16–0.20）九室 9/9 可达，N/E/S/W 四台阶各自到全部 9 室+回廊，16/16 门局部子图 24/24 直通；check_invariants T0–T9/P1–P2/N1–N3 六份全 pass",
+  "负例都能拦下：N1 H2.40→0/9 室、16/16 门阻；N2 r1.15→0/9；N3 s0.14→0/9；N4a 整门堵（w+0.2×0.6）→该门 24/24 阻、其余 15 门 pass、仍 9/9；N4b 0.3 m 柱→缝 A0.95/B0.85，r0.25 过、B r0.45 阻；N5 B 当 A 判→退出码 1",
+  "门槛不存在：16/16 sill=0.000 m，门道地坪=台面（A 1.200 / B 0.900）；只能记「模型无门槛，历史未知」",
+  "门扇/门框不存在：开闭与互斥不可检；门宽 A 2.20 / B 2.00，门头 2.35 m（H≥2.40 全阻）",
+  "GLB 无地面：台阶落脚 y=0（A 7 踏面+台面、长 2.30–2.35；B 5 踏面+台面、长 1.65；宽 4.20；踏高 0.15）；测量用合成地面；LY-006 的 4 个端口 local/world 仍为 null",
+  "台缘无护栏：回廊宽约 2.2 m，落差 A 1.2 / B 0.9 m；屋檐下最小净空 A 4.463 / B 4.261 m；跌落安全未知",
+  "立柱 16 根都在墙交点（A {±4,±12}²，B {±3.5,±10.5}²，直径 0.44），柱心到门洞边 A 2.89 m / B 2.48 m（第一版误写 B≥2.9 已更正）；九室/回廊无独立柱，没有单独的柱间通道",
+  "A-LOD2 两根角柱中心各 1–2 格（0.05 m）射线空洞（8 边形柱/墙角未封顶），只在 r=0 时出现为可达碎片，r≥0.25 无影响",
+  "LY-008 草案 ly_check lodset 对 A、B 报 LOD_BBOX：LOD2 顶部降 0.0781 / 0.0777 m > 0.02（屋脊处，不影响路线）；glb 子命令 6/6 OK；GLB 受 LY-009 锁，需 LY-008/LY-100 裁定",
+  "所有权缝：LY-075 写区 y≥0.4；A 最下两级踏面（y0.15/0.30，r 15.98–16.64）落在 LY-074 写区，B 的（r 13.82–14.48）落在 __mingtang_B_core__ 不属任何写区",
+  "「重屋」不可登临：中室净空 A 8.03（LOD2 8.30）/ B 7.57 m，无楼板/梯；上层记未知",
+  "未入城：城中仅 B 类证据点 (1795.918, −1061.224)；LY-004 判不进 180 安装层；yaw/标高未冻结"
+ ],
+ "reuseCandidate": "现有 m-luoyang-mingtang 六份 GLB 内部已合格，无需新造差异件。证据：LY-075/prep/out/check-A.json（f86817db）与 check-B.json（2f67e87e）verdict=pass（T0 SHA 绑定、T1–T9、P1–P2、N1–N3）；out/neg/A0-N4-summary.json（3541b4e8）、B0-N4-summary.json（17548524）pass；out/neg-N5-B-as-A.json 按预期 FAIL；逐项表 out/items-{A,B}{0,1,2}.md；run_all.sh（1d2c105b）可复跑，B0 全链逐字节确定。待 LY-074 端口、LY-010 包络、LY-008 正式检查器（含 LOD_BBOX 裁定）冻结后按 test-plan P4 重跑即可标「复用完成」。",
+ "touches": [
+  "只读：docs/library/models/m-luoyang-mingtang/files/mingtang-{A,B}-LOD{0,1,2}.glb，节点 mingtang-{A,B}-static_earth / -static_timber / -static_tile（受 LY-009 锁，不改）",
+  "只读：docs/library/models/m-luoyang-mingtang/m-luoyang-mingtang.asset.json（LY-006 记 LY-075 为卡片所有者；任何卡片改动走 LY-100）",
+  "只读：docs/cities/luoyang/data/evidence/evidence-geometry.json（ritual_mingtang_B）",
+  "写区：LY-006 zone LY-075:write:001（local:mingtang x,z∈[−16.64,16.64]、y∈[0.4,10.9]），本轮预计不写入任何几何",
+  "消费端口：mingtang:side-N/E/S/W:ground v1（producer/steward LY-074），seams mingtang:side-*:ground@v1::LY-074->LY-075",
+  "相邻地坪片：LY-074:write:001–004（y∈[−0.3,0.4]，|x|或|z|>14.48）；A 方案最下两级原踏面落在其中，需 LY-006 判叠层",
+  "写入：仅 D:/GitHub/creation-notebook-workpacks/LY-075/prep/；不碰 city-data.mjs、p-luoyang.asset.json、资产卡、lab 仓库"
+ ],
+ "size": "S",
+ "risks": [
+  "LY-074 若改台阶/台缘/回廊，或选 A/B 中的另一套，必须重跑；其地面伸进 A 阶脚线（r<16.64）会与原踏面双层，需 LY-006 裁定",
+  "LY-010 包络若高于 2.35 m 或宽于 2.20/2.00 m（含货物/仪仗），结论变为受阻；按规则不能加高/加宽门洞或开门来消除",
+  "LY-008 冻结后若仍对明堂判 LOD_BBOX 错误，明堂进合并队列会被拦；GLB 受原型锁，只能族规则豁免或另案处理",
+  "LY-008 检查器在核对期间变过（4beeaf57→39aaa491），正式验收必须绑冻结版 SHA 重跑",
+  "合成地面是 C 假设，LY-074 交付前不能把外部到达写成通过",
+  "无门槛、无门扇、无护栏、重屋不可登临都是未建模未知项，不能为标绿而补几何；「八达」与 4 道外门的对应关系未知，不能据此开门",
+  "方法局限：0.05 m 离散网格、7 个水平剖面、圆柱身体、8 邻接，非连续运动/动力学/结构；无 GPU/浏览器/手机实测",
+  "入城朝向未冻结：N/S/E/W 房名只在 yaw=0 时对应图面方位；明堂位置未获 LY-004 放行，只能交局部包"
+ ],
+ "readyAfterG": true
+}

@@ -1,0 +1,174 @@
+{
+ "seat": "LY-055",
+ "baseline": {
+  "repo": "D:/GitHub/creation-notebook-lab",
+  "baseline_commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "checked_out_branch": "lab/site-redesign (HEAD=bce3211)",
+  "local_main": "44c66da842eca5799d353e07ec1550b000b8855b (parent of bce3211, stale)",
+  "origin_main": "cad338ba683f7277aea098f45c8feb6c915a847c (bce3211 + 3 commits r2026.11.05-6..8; hand-mill files unchanged; city-data.mjs and p-luoyang.asset.json changed, still no hand-mill reference)",
+  "asset_last_commit": "52fceaa276d434cf474baf854726dc210c951462",
+  "sha_note": "core.autocrlf=true: text files have worktree SHA (CRLF) != git blob SHA (LF). GLBs are binary and identical. Bind text inputs to blob SHA at the commit."
+ },
+ "inputs": [
+  {
+   "id": "m-luoyang-hand-mill/A-LOD0",
+   "path": "docs/library/models/m-luoyang-hand-mill/files/hand-mill-A.glb",
+   "bytes": 1778876,
+   "sha256": "0fe50c2c0604237d9c6d011803550261b48304669b8dcb64f2155332af11c396",
+   "nodes": 18,
+   "triangles": 4670,
+   "loaded_in_city": false,
+   "loader_code": null
+  },
+  {
+   "id": "m-luoyang-hand-mill/B-LOD0",
+   "path": "docs/library/models/m-luoyang-hand-mill/files/hand-mill-B.glb",
+   "bytes": 1779100,
+   "sha256": "598cadc7593300bc399773fc469a77830cabb540ad42baffeec3dbaccd478d36",
+   "nodes": 18,
+   "triangles": 4670,
+   "loaded_in_city": false,
+   "loader_code": null
+  },
+  {
+   "id": "m-luoyang-hand-mill/A-LOD1",
+   "path": "docs/library/models/m-luoyang-hand-mill/files/hand-mill-A-LOD1.glb",
+   "bytes": 1605992,
+   "sha256": "5885f619799ef79071e6b2960866ff7cfb75fd4dcc838b341755924139fd1ede",
+   "nodes": 18,
+   "triangles": 1524,
+   "loaded_in_city": false,
+   "loader_code": null
+  },
+  {
+   "id": "m-luoyang-hand-mill/B-LOD1",
+   "path": "docs/library/models/m-luoyang-hand-mill/files/hand-mill-B-LOD1.glb",
+   "bytes": 1605928,
+   "sha256": "5ec42d1118def47115038f65c68bcd82aacf5cac208891cd2c9eb9066c0b57d3",
+   "nodes": 18,
+   "triangles": 1524,
+   "loaded_in_city": false,
+   "loader_code": null
+  },
+  {
+   "id": "m-luoyang-hand-mill/card",
+   "path": "docs/library/models/m-luoyang-hand-mill/m-luoyang-hand-mill.asset.json",
+   "bytes": 1488,
+   "loaded_in_city": false,
+   "loader_code": "lab/tools/build_assets.py builds the library card only (lab/data/assets.json:2550)",
+   "sha256_worktree_crlf": "f2c221df420ec8de33ea12e4666eb3ac5e91c7f5d78249bc0ab612550aedfaf5",
+   "sha256_blob_bce3211": "abb7865c0ce2ba9b1c4570e1db5a098bf1854c2d67b3d9066cf28ab60fa1f30d",
+   "sha256_blob_origin_main_cad338b": "abb7865c0ce2ba9b1c4570e1db5a098bf1854c2d67b3d9066cf28ab60fa1f30d"
+  },
+  {
+   "id": "p-luoyang",
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "loaded_in_city": "project card only",
+   "loader_code": "project card only: bce3211 line 247 '人力石磨 A/B' 已建模/未入城, line 544 related; origin/main lines 257/576, same status",
+   "sha256_worktree_crlf": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "sha256_blob_bce3211": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "sha256_blob_origin_main_cad338b": "f43d1496c85ff6c148f1c45e97fb5bcaefb2f06e1a258670d689d3b4f2b6f668"
+  },
+  {
+   "id": "lab-assets-summary",
+   "path": "lab/data/assets.json",
+   "sha256_HEAD_blob": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "note": "worktree differs from HEAD blob only by CRLF (CR-stripped worktree == blob 53d86312); earlier 'uncommitted edits' note withdrawn — git status is clean apart from .claude/",
+   "loaded_in_city": false,
+   "sha256_worktree_crlf": "c39e8e9a2a1833f3abbc15e585f5868fba6c7d2e01f6b8e504c2b44193f16979"
+  },
+  {
+   "id": "city-data",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "references_hand_mill": false,
+   "sha256_worktree_crlf": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "sha256_blob_bce3211": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "sha256_blob_origin_main_cad338b": "d8933a32a6a133b38bc8ae5591bd0b350d206f9c884e1a6c4a1adabf5fc6daf3",
+   "grep": "git grep -i 'hand-mill|石磨' at bce3211 and origin/main over docs/cities/luoyang/: only p-luoyang.asset.json matches"
+  },
+  {
+   "id": "city-app",
+   "path": "docs/cities/luoyang/app.mjs",
+   "references_hand_mill": false,
+   "sha256_worktree_crlf": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "sha256_blob_bce3211": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "sha256_blob_origin_main_cad338b": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "grep": "git grep -i 'hand-mill|石磨' at bce3211 and origin/main over docs/cities/luoyang/: only p-luoyang.asset.json matches"
+  },
+  {
+   "id": "city-renderer",
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "references_hand_mill": false,
+   "note": "GLTFLoader at line 2 and line 299; no hand-mill URL",
+   "sha256_worktree_crlf": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "sha256_blob_bce3211": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "sha256_blob_origin_main_cad338b": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "grep": "git grep -i 'hand-mill|石磨' at bce3211 and origin/main over docs/cities/luoyang/: only p-luoyang.asset.json matches"
+  },
+  {
+   "id": "foot-pestle (context only, LY-056 owns)",
+   "paths": {
+    "LOD0": "docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD0.glb  6f0e41834121fa26cb36303606133256e8a8226e4c49464f68dc93646d181068",
+    "LOD1": "docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD1.glb  d8759dd6e0b0880325bb033e5031723e327f132c66a3cafd1aa97fed985cdd7c",
+    "LOD2": "docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD2.glb  e94416ef307479eb4a3bf01652153d9c2ff0ba26300b4240920d580a5ae83453"
+   },
+   "loaded_in_city": false
+  },
+  {
+   "id": "card-audit (scratch, not repo)",
+   "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/cards/m-luoyang-hand-mill/audit.json",
+   "note": "4 GLB entries, issues [] each; SHAs match the four GLBs above",
+   "loaded_in_city": false
+  }
+ ],
+ "missing": [
+  {
+   "what": "hand-mill native .blend / generator + params",
+   "use": "only needed if LY-007 requires LOD2 or a re-export without presentation_ground",
+   "found": "not in lab repo, creation-notebook-待传 (only 说明.txt), or review copy; card note says previews are '同版原生模型CPU实渲', so a native model exists somewhere outside readable scope",
+   "rebuild_from_glb": "yes for assembly (hide node at overlay level, new feet/floor built from GLB coordinates); a LOD2 would be 'rebuilt from GLB' and labelled so"
+  },
+  {
+   "what": "LY-005 city coordinate/elevation contract",
+   "use": "site origin, ground height under 4 post feet, slope tolerance",
+   "found": "not frozen",
+   "rebuild_from_glb": "no"
+  },
+  {
+   "what": "LY-006 port/ownership freeze",
+   "use": "who owns the work floor patch shared with LY-056/LY-058; foot port definition",
+   "found": "not frozen",
+   "rebuild_from_glb": "no"
+  },
+  {
+   "what": "LY-007 tier/material baseline",
+   "use": "whether a reuse assembly must supply LOD2; material semantics for new feet/floor",
+   "found": "not frozen",
+   "rebuild_from_glb": "no"
+  },
+  {
+   "what": "LY-010 regional admission",
+   "use": "whether the installation scene may sit in the city or stays a local demo domain",
+   "found": "not frozen",
+   "rebuild_from_glb": "no"
+  },
+  {
+   "what": "LY-002 evidence/forbidden list",
+   "use": "posture (standing/seated) and mill-table evidence class",
+   "found": "not frozen",
+   "rebuild_from_glb": "no"
+  }
+ ],
+ "prep_tools": {
+  "blender": "D:/Blender/blender.exe (Blender 5.2.1 LTS)",
+  "scripts": {
+   "prep/scripts/dump_nodes.py": "65e0acd288179db845baf3bfb96574dc59f42d67dc0268664423aa72cd1141e4",
+   "prep/scripts/measure_mill.py": "b295d15cae58badb817ca60344df1128b45a99dd6bdf3423ca99f2e667c16434",
+   "prep/scripts/measure_sweep_reach.py": "921463fd89f05dd3cd0c065ec227a7ac8139523748437bf1c154760dba58e9b3",
+   "prep/scripts/classify_contacts.py": "add46849ab22a9dd5bee89d39fee1be26a9c002db88c7cb4938d8d96e3d24a2f",
+   "prep/scripts/make_negatives.py": "2bfb94e68c276fa13da0e0fd1d3292091b5d9b8ca54a546a9098ad54e33eafef"
+  },
+  "outputs": "prep/measure/{nodes,measure,sweep,contacts}-hand-mill-{A,B,A-LOD1,B-LOD1}.json; prep/measure/contacts-negative-{contain,intrude}.json",
+  "rerun_check": "2026-11-05 23:2x: nodes/measure/sweep for A and B re-run into scratchpad; identical to prep/measure (5-dp floats, paths ignored)"
+ }
+}

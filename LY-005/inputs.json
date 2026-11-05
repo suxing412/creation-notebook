@@ -1,0 +1,461 @@
+{
+ "seat": "LY-005",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "prerequisites": [
+  {
+   "seat": "LY-001",
+   "status": "交付完成",
+   "file": "../LY-001/status.json",
+   "sha256": "a32d742a0064baf45c0f78215b10905f2a21fb9ea070b18d8055a58454fe9236",
+   "cityDataDumpSha256": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98"
+  }
+ ],
+ "codeRead": [
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256Checkout": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256Checkout": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca"
+  },
+  {
+   "path": "docs/cities/luoyang/scene.mjs",
+   "sha256Checkout": "00114cb9112da34194ef47f371d0850ac4fa55d5db87fea5084b9a7a3064e6b9"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256Checkout": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/yong-city-v1/source.json",
+   "sha256Checkout": "a294289642c17497d7817a97e0f3f969e09604e267bfb38f5b1de091c515699c"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256Checkout": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/city-wall-interface.json",
+   "sha256Checkout": "ad18cc65915724a850d1f97b498be8b63464cd3d25116c9d615bfd79f2570da8"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/preflight-contract.json",
+   "sha256Checkout": "90dfa0774643b90d61f057aed726525cfe3e18647e897d3c90eb64fa79426d6b"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/r01-assets.mjs",
+   "sha256Checkout": "fbfd5479699d5e0b49f0d199b9e62ce8d77d6f97a0e780b20f940f9d1545ae95"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/c01-layer.mjs",
+   "sha256Checkout": "4ea01f6748a717c28e69cf8aa35554e268fbf04dd952fc5a51d539143e4b6261"
+  }
+ ],
+ "glbInputs": [
+  {
+   "asset": "courtyard-A",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb",
+   "bytes": 92328,
+   "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "courtyard-A",
+   "lod": "near",
+   "path": "docs/cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb",
+   "bytes": 510536,
+   "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "courtyard-B",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb",
+   "bytes": 112776,
+   "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "courtyard-B",
+   "lod": "near",
+   "path": "docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb",
+   "bytes": 626016,
+   "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "courtyard-TC03",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb",
+   "bytes": 164300,
+   "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "courtyard-TC03",
+   "lod": "near",
+   "path": "docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb",
+   "bytes": 981664,
+   "sha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "courtyard-A2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+   "bytes": 92220,
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "courtyard-A2",
+   "lod": "near",
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+   "bytes": 447064,
+   "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "courtyard-B2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/c02v/B2-LOD1-prototype.glb",
+   "bytes": 113064,
+   "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "courtyard-B2",
+   "lod": "near",
+   "path": "docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb",
+   "bytes": 569280,
+   "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "courtyard-TC03-2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb",
+   "bytes": 164200,
+   "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "courtyard-TC03-2",
+   "lod": "near",
+   "path": "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb",
+   "bytes": 943548,
+   "sha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "wall-A-wall-00",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-00.glb",
+   "bytes": 2412,
+   "sha256": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "wall-A-wall-01",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-01.glb",
+   "bytes": 2748,
+   "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "wall-A-wall-02",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-02.glb",
+   "bytes": 2068,
+   "sha256": "8a17587a995e6851a1c4c7e0844f79cb880cf70348edb55dfb62891434b2afa9",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "wall-A-wall-03",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-03.glb",
+   "bytes": 2072,
+   "sha256": "cd4cb2b629c15cbf1eaaada61eca546fc96a034a1a53802acd9d7ebeb84e4762",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "wall-A-wall-04",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-04.glb",
+   "bytes": 2948,
+   "sha256": "50d8c7aa2c7d7dce95a894edf05bc1ecd2dbc73fbcd633e1c67f36065fd893ae",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "wall-A-wall-05",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-05.glb",
+   "bytes": 1732,
+   "sha256": "4e000b0c34b26504ff30b7c4c9748ede9f1b84819dcc75301b57caca85f261ae",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "wall-A-wall-06",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-06.glb",
+   "bytes": 1732,
+   "sha256": "d7d3cc79fe7ea85cda3147c90531dfb7403789405f4af0671baef7d6ba89993e",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "wall-A-wall-07",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-07.glb",
+   "bytes": 1736,
+   "sha256": "e7db9cff3eed1e7fe088a5199a5479d483ba68a2f440624cb68f6848373be550",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "wall-A-wall-10",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-10.glb",
+   "bytes": 1740,
+   "sha256": "afb20f8e3b19dfd85a65bf1462dea09225336d336c272425fad4d7491e3cfde9",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "wall-A-wall-11",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-11.glb",
+   "bytes": 2752,
+   "sha256": "2cfa846184cf28e36cacb832250b5d2afcdbdc6968c81c3f09957ed968e21ecd",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "wall-direct-gate-body-only",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/direct/gate-body-only.glb",
+   "bytes": 1139920,
+   "sha256": "cdba2d5c3bbf14bbf9c6ed59e3fcadf174c13e882a5ccb1522b81bc9949d5058",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "wall-direct-wall-08",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/direct/wall-08.glb",
+   "bytes": 7252,
+   "sha256": "221b8dc8c5702bbd9980e72e291e61f54a0544ccb05a8923bb53d0f9a62a8a90",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "wall-direct-wall-09",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/direct/wall-09.glb",
+   "bytes": 5020,
+   "sha256": "d4fb5c1cbf3c08ff18f9dcf1b25cab67e44a36a00ade3b8b67fb5eb3679c31be",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "ground-network-ground-stitched",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "bytes": 3565544,
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "ground-retained",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "bytes": 629740,
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "ground-south",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "bytes": 2623560,
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "ground-D08",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "bytes": 6664,
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "market-main",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "bytes": 1031928,
+   "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "market-N2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/market/N2-replacement.glb",
+   "bytes": 72984,
+   "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "storage-main",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+   "bytes": 1663844,
+   "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-lingtai",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-lingtai-c1b58de1bff4.glb",
+   "bytes": 2071760,
+   "sha256": "c1b58de1bff44b80a8675302101435443b16acbe902d88f4526c10edbb6dfe85",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-taixue-A",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-taixue-A-ee4163421d16.glb",
+   "bytes": 248276,
+   "sha256": "ee4163421d1652b9301b8d50c7fe9f04ed09440000683b9a207ddf3f1600dda3",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-taixue-B",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-taixue-B-11b01e4948be.glb",
+   "bytes": 373040,
+   "sha256": "11b01e4948be0e0e229116b9eaa939f6b932058a0d3513ac676012188a260c57",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-north13-kaiyang-K",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb",
+   "bytes": 138768,
+   "sha256": "94693c58dd6308153c5900b0bb9698eff138811f39369f54f545b9034417e71e",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-north13-court-A2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-A2-db02f24fde89.glb",
+   "bytes": 395408,
+   "sha256": "db02f24fde899b73d5902b41391a7a5e6db64affac25b7cc609de3d46a3b0994",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-north13-court-B",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-B-6f7f84af4e7f.glb",
+   "bytes": 546768,
+   "sha256": "6f7f84af4e7f57920dc1182b747a7081bca9d15b2d595d3ec80593f60e022282",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-north13-court-B2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-B2-7d3758ce668d.glb",
+   "bytes": 502688,
+   "sha256": "7d3758ce668d06541694e7e17d947d5b380a0974311c57eba7968284214c6ac2",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-north13-court-TC03-2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-TC03-2-98bedd183667.glb",
+   "bytes": 821660,
+   "sha256": "98bedd1836674388e9aee3794af12def4235d566324dae877c6ab7baee0c3a05",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-north13-court-A",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-A-19a42b6b0b1c.glb",
+   "bytes": 444348,
+   "sha256": "19a42b6b0b1cc1f204e112fc9d63b626895bf0f9b94922cac6ab2bd1cb810ff4",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-north13-pingcheng-P",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-pingcheng-P-c8ab88f4b326.glb",
+   "bytes": 119320,
+   "sha256": "c8ab88f4b326e0c24346b97e7429cdf3d43d463a53b918017c21cf0428d74f11",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-north13-shangxi-X",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-shangxi-X-9a892e7f27f7.glb",
+   "bytes": 124096,
+   "sha256": "9a892e7f27f7b8faf8cc95cdd22b66a77da5ef5e2cf03636d40f79ac8d26f851",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-north13-yong-Y",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-yong-Y-1983dab58385.glb",
+   "bytes": 144900,
+   "sha256": "1983dab583853beb9b2a905227c9b63526b3696811b049466ccf471db58ba164",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-north13-zhongdong-Z",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-zhongdong-Z-856cfff1f015.glb",
+   "bytes": 957224,
+   "sha256": "856cfff1f015f8ce3c216cb9908a82dc9038846fa94170255730142f19693d3c",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "study-mao-gate",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-mao-gate-0ae54089b66a.glb",
+   "bytes": 1150620,
+   "sha256": "0ae54089b66a54f17db78c53ce9164b2bb99e6292b466c4c7c90f498385063e8",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "yong-gate-near",
+   "lod": "far",
+   "path": "docs/library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+   "bytes": 1570856,
+   "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+   "declaredSha256Match": true
+  },
+  {
+   "asset": "yong-gate-apron",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+   "bytes": 388208,
+   "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+   "declaredSha256Match": true
+  }
+ ],
+ "nativeSources": "无。私密 .blend/源 ZIP 拿不到，本席位也不需要原生件，全部在公开 GLB 上实测。Blender 往返导出件是从 GLB 重建的 QA 件，不是原件。",
+ "newerSnapshotReadOnly": {
+  "commit": "f28d650dbb1c079027d7c26851a6c0f483c0c647",
+  "method": "git show 到 qa/f28d650/，只读",
+  "files": {
+   "qa/f28d650/city-data.bce3211.mjs": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "qa/f28d650/city-data.mjs": "973a90d977f19fe4e482e17f5b495dc53b504720ac0b4e547aea8ce00155a926",
+   "qa/f28d650/dump-bce3211-blob.json": "ae87a0f9737cc7e59dbe314134a434fceb524a981afaff2348f346d2f87638a7",
+   "qa/f28d650/dump-f28d650.json": "541b86b7c0a364424671dce9a1cfd20d39c56ea3c91651a85c2339f3e6bf1e25",
+   "qa/f28d650/glb/yong-road-link-LOD0.glb": "456a7dd54a5fd623ab17d9823ab1a12701bd764bdd219ec8884e9538536cd93d",
+   "qa/f28d650/glb/yong-road-link-LOD2.glb": "2a32c700d401af623701a2ec84523ea2d7688fc9b5d128f22cae542a85b7b844",
+   "qa/f28d650/glb/yong-road-receiver-component209.glb": "e5baa0df8fd28e117b4ef997cab0d962b0834a4c9664bb1ed73b7746d2488e38"
+  }
+ },
+ "tools": {
+  "blender": "D:/Blender/blender.exe 5.2.1 LTS（factory-startup，headless）",
+  "python": "numpy、PIL；-I 隔离模式",
+  "node": "source/dump_city_data.mjs（复制自 LY-001）"
+ },
+ "coordinateContract": "coordinate-contract.json"
+}

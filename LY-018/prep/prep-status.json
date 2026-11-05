@@ -1,0 +1,55 @@
+{
+ "seat": "LY-018",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-gu-gate/files/gu-G-LOD1.glb sha256 5195ce55（bce3211），城景未加载",
+  "docs/library/models/m-luoyang-gu-gate/files/gu-G-LOD2.glb sha256 945b3346，城景未加载",
+  "docs/library/models/m-luoyang-gu-gate/m-luoyang-gu-gate.asset.json HEAD blob sha256 e192ac64（状态：待审、未入城）",
+  "modeling-lab/review-batches/2026-11-04-city-visible/*.zip.part01-05（拼接 sha256 5895ef23）→ chunks/city_gate_gu-G.glb sha256 97c48379：母版 city-C032 里的谷门试放，平移 (1693.2231,0.17,-3894.5303)，偏航 -10.8136°，earth 带 A 墙帽和底板；adapter.json 里 initial=false，城景未加载",
+  "docs/cities/luoyang/assets/city-wall/A/wall-00.glb 12d84a0b、A/wall-01.glb cfbbc45a：当前墙端，城景已加载（city-data.mjs:171/191/3204/3231，city-renderer.mjs:286）",
+  "docs/cities/luoyang/assets/city-wall/B/wall-00.glb 16a29621、B/wall-01.glb 91eefa47：只在 v1/wall-layer.mjs:20 选 B 时加载",
+  "(zip) chunks/city_wall_C_profiles.glb e42d9f50：母版墙 C_wall_A_00/01，与网站 A 墙逐顶点一致",
+  "docs/cities/luoyang/data/evidence/evidence-geometry.json HEAD fa8b7002（gate_gu_B B 点 1693.878,3897.959）",
+  "docs/cities/luoyang/data/west/city-wall-constraints.json HEAD e9c84bdd（C 投影 1693.223055,3894.530178，第 2 段，距离 3.490812）",
+  "docs/cities/luoyang/data/west/city-wall-interface.json HEAD ca75d115",
+  "docs/cities/luoyang/data/west/road-preconstraints.json HEAD d369409a（road_east_north_link_B 处于 hold）",
+  "docs/cities/luoyang/city-data.mjs HEAD c849706b；city-renderer.mjs HEAD 04c6c643；v1/wall-layer.mjs HEAD d2c1d2d6",
+  "(zip) qa/visibility.json cdbc1faf：gu-G 三节点在母版可见"
+ ],
+ "inputsMissing": [
+  "G-v1 源包（.blend 或源 ZIP，含 LOD0 13,213,712 字节、原生隐藏试放 delta JSON 和 remove_on_rollback 清单）。用途：取原生帽和底板参数、LOD0 档、delta SHA 与撤回清单。帽和底板可以从公开 chunk 的 72 个顶点精确重建；LOD0 档只能标为「从 GLB 重建」",
+  "city-C032-entry-LOD0.blend（sha256 1e8c4d2c…b01b，私密母版）。用途：核对 2505 个隐藏 placement 里有没有谷门其他试放。不能从 GLB 重建，只能用公开 visibility.json 代替",
+  "city-wall-interface.json 引用的 qa/gate-projections.json 不在仓库。可以用 city-wall-constraints.json 的 gate_projection_diagnostics 代替",
+  "G 包冻结输出：LY-005 高程契约（墙基 0.17 和地面基准）、LY-006 端口 ID 与所有权、LY-007 三档基线、LY-008 检查器、LY-010 准入（A 或 B，是否允许局部地片）"
+ ],
+ "gaps": [
+  "资产卡 LOD1/LOD2 的 earth 是 204 顶点，母版是 276 顶点；母版多出的 16 个面是两端 A 墙帽（x ±11→±16，底 ±4.0，顶 ±2.8，高 6.03）和 32×12×0.17 m 底板（65.28 m³）。LOD1/LOD2 按母版矩阵放置时，墙端每侧缺口 5.0 m（屋瓦处 4.0 m）；帽没有任何 LOD 档",
+  "门道里没有地面：LOD1/LOD2 三条门道 15 个下射点全部无命中。母版只有底板顶面（世界 y 0.17），在穿门 ±6 m 处结束，结束处向下 0.17 m 到世界 y 0，外面没有地面",
+  "底投影支持 0/1536（0.5 m 网格）：谷门附近 60 m 内城景没有任何地面网格，sector 地板只在原点 ±92 m 内，C_gate_local_ground 只有雍、平城、开阳三片。底板底面 y 0.00，比墙基 0.17 低 0.17 m",
+  "A 墙接面合格：端面在局部 x=-15.99994 / +15.99988，与帽相差 ≤0.0003 m；分离平面侵入深度 0.00012–0.00018 m；没有外露端面。3 向奇偶采样给出 0.003–0.017 m³，判定为共面采样误差",
+  "B 样本不合：B 墙端面底 ±5.0、顶 ±3.25、高 7.83，比帽每侧宽 1.0 m（底）、0.45 m（顶），高 1.80 m，每端约 23.59 m² 没有帽承接",
+  "工程原点在 C 投影点（偏差 ≤0.0001 m）；离 B 示意点 3.4907 m，偏差分量 (-0.655,-3.429)；偏航与 B 城垣第 2 段一致（差 0.0003°）。原点与 B 点都没有被改写",
+  "门道净宽 2.5/4.5/2.5 m（墩距 3.2/5.2/3.2 m，木框和门扇每侧约占 0.35 m），净高 5.20 m（穿门 -3 处 4.92 m）。端点外没有路：road_east_north_link_B 处于 hold，新东墙未配准",
+  "母版 earth 有 10 条边被超过 2 个面共用（LOD1 是 2 条），开放边为 0；位于帽、底板和墩的接缝"
+ ],
+ "reuseCandidate": "部分复用，不能整体免造。①接墙帽：母版试放 chunk city_gate_gu-G.glb（97c48379）的 earth 已带 A 墙帽，与当前 A/wall-00、wall-01 实测共面接触，残差 ≤0.0003 m，侵入 ≤0.0002 m，没有外露端面。帽几何可以直接从这个 GLB 拆出复用，不必重新设计。②缺口仍然存在：帽和 earth 合并成一个网格，只有近景单档，资产卡 LOD1/LOD2 都没有帽；底板悬在城景地面之外（支持 0%），也没有门内外承托；B 样本帽不合。所以底部支承和门槛地片仍需新造。",
+ "touches": [
+  "源节点（只读，不改）：gu-G-static_earth、gu-G-static_timber、gu-G-static_tile（LOD1/LOD2 与母版 chunk）",
+  "拟新增独立节点：gu-G-wallcap-A-minus/plus（三档），gu-G-threshold（底板或门槛），gu-ground-trial（门内外最小承托片）；按需加 gu-G-wallcap-B-minus/plus",
+  "墙端接触面（只读）：wall-A-wall-00 东端、wall-A-wall-01 西端（局部 x=±16）；B/wall-00、B/wall-01 同位置",
+  "地坪：谷门一带当前没有地坪片；新地片与 LY-089（地形差异片）、LY-085/后续接路任务有边界冲突风险；C_gate_local_ground.glb 里另外三门的地片不能动",
+  "文件（只读）：docs/cities/luoyang/city-data.mjs（wall-A-wall-00/01 节点；只交 overlay 给 LY-100）、data/west/city-wall-interface.json、city-wall-constraints.json、evidence-geometry.json（gate_gu_B）、road-preconstraints.json",
+  "互斥对象：city-visible 47 块层里的 city_gate_gu-G（母版合并 earth），不能和新的「原 earth + 帽」叠载",
+  "下游：LY-091 城门城垣区域验收会用到本包"
+ ],
+ "size": "M",
+ "risks": [
+  "墙基基准 0.17 与底板底面 0.00 的取舍要等 LY-005；在那之前门槛高程定不下来",
+  "新门内外地片可能和 LY-089、LY-085 的所有权重叠，需要 LY-006 划界",
+  "母版 chunk 的帽和 earth 合并成一个网格；拆成独立节点时不能改原 earth，也不能和 city-visible 层叠载",
+  "LY-010 若准入 B 样本，需要另做 B 帽（每端约 23.6 m² 缺口），工作量会增加",
+  "G-v1 源包缺席，LOD0 档帽件只能写成从 GLB 重建，不能冒称原生",
+  "历史边界：门宽、门道数、门槛、门外高程都是 C 设计或未知；不能把局部通行当成入城或历史成立",
+  "共面接触在奇偶采样里会产生假体积，验收要用分离平面检查，不能整对豁免"
+ ],
+ "readyAfterG": true
+}

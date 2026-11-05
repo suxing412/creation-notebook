@@ -1,0 +1,1090 @@
+{
+ "seat": "LY-095",
+ "labHead": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "docsDirtyAtRun": false,
+ "note": "working-tree SHA256 of text files differs from git blob hashing only by checkout line endings; GLBs are binary-identical (all 50 GLB SHA256 equal manifest sha256)",
+ "code": [
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "gitBlob": "0c1262e202b150ae1345e7bb0bf668e22df860ac",
+   "role": "city manifest: 42 assets, 66 nodes, 7 chapters, 14 research models; matrices and excludeNodes",
+   "loadedByCity": true,
+   "loadedAt": "app.mjs:1 `import manifest from ./city-data.mjs`; passed to createCityRenderer"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "gitBlob": "4a38b30f6cc39dc73a0e56f500d73edcd63e0c37",
+   "role": "loader semantics replicated by the harness",
+   "loadedByCity": true,
+   "loadedAt": "index.html importmap -> app.mjs; initial set line 221, loadAsset 286-370 (excludeNodes 309-346), transformFor 372-388, chapter union 595-614, near LOD for selected node 416"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "gitBlob": "467828a439e5887eb6eb0e19d3b9833c61928b34",
+   "role": "entry; chapter switching",
+   "loadedByCity": true,
+   "loadedAt": "index.html <script type=module src=app.mjs>"
+  },
+  {
+   "path": "docs/cities/luoyang/index.html",
+   "sha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "gitBlob": "c3060f8b58839ce06d13aaccde49b4b23eae0d58",
+   "role": "page",
+   "loadedByCity": true,
+   "loadedAt": "-"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "gitBlob": "956064537f4eb791182794bc1b6da1517fa66579",
+   "role": "project card (counts / status wording; read-only)",
+   "loadedByCity": false,
+   "loadedAt": "build data only, not fetched by the 3D view"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/network.json",
+   "sha256": "af8e5479f47ccae1dd5c41766da60e6a871e74808018737a85514895334afc73",
+   "gitBlob": "3969ddc577f1d4be84e83fa12adfbb9d0c168825",
+   "role": "14 testedDoorConnections polylines = positive route set NET-*",
+   "loadedByCity": false,
+   "loadedAt": "only legacy v1/west-layer.mjs:17 (not the current index/app view)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/c02v/routes.json",
+   "sha256": "f567ae955ae8bc1045c196d47da3b1493a514dd894fc9134274d219e98e89301",
+   "gitBlob": "7573ca985b510e94619776fdd1a922fbb67c614a",
+   "role": "102 polylines authored on c02v layout = historic set C02V-*",
+   "loadedByCity": false,
+   "loadedAt": "not fetched by any code; published as research data (projection-map.json:1010)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/c02v/layout.json",
+   "sha256": "7528f0c8dbdae41cece61295b198751db954a0a757a5a252f9ba15666c8f2fb2",
+   "gitBlob": "0270fc3d94d8e2b6a6599197783ac3b9209a4f81",
+   "role": "c02v lot positions used to rebase routes",
+   "loadedByCity": false,
+   "loadedAt": "v1/west-layer.mjs:17 (legacy)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/instances-calt.json",
+   "sha256": "c830b4e37090da5e070156b7f6199f36c5d0191c339f5a9399f0becded50ff85",
+   "gitBlob": "567d368989234cfa79f3fe83faafc3706c14940c",
+   "role": "current 44-courtyard placements (changedByCalt list) used to rebase routes",
+   "loadedByCity": false,
+   "loadedAt": "referenced as sourceContract in city-data.mjs (1382...); not fetched at runtime"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "gitBlob": "c386ef0a7052f3d7acfb0f217bcb3bc83cdd6de9",
+   "role": "ground atomic replacement contract (owner of ground cuts)",
+   "loadedByCity": false,
+   "loadedAt": "sourceContract of ground nodes in city-data.mjs"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-overlap-classification.json",
+   "sha256": "886390e060f04c80e4382a359c2bd2930b130144a120e250d0e841bb9a8e083c",
+   "gitBlob": "8b181ca8485a71a724a2906a1498454b14616a25",
+   "role": "prior residual projection classification for ground (compare with groundPair results)",
+   "loadedByCity": false,
+   "loadedAt": "research data only"
+  }
+ ],
+ "glb": [
+  {
+   "asset": "courtyard-A",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb",
+   "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+   "bytes": 92328,
+   "shaMatchesManifest": true,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_hardpacked_activity_ground"
+   ],
+   "cityNodes": [
+    "C02-019",
+    "C02-023",
+    "C02-026",
+    "C02-027",
+    "C02-030",
+    "C02-007",
+    "C02-011",
+    "C02-014",
+    "C02-017",
+    "FROZEN-D08-S1",
+    "FROZEN-D08-S3",
+    "FROZEN-D08-M"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter residential initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "courtyard-A",
+   "lod": "near",
+   "path": "docs/cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb",
+   "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+   "bytes": 510536,
+   "shaMatchesManifest": true,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_hardpacked_activity_ground"
+   ],
+   "cityNodes": [
+    "C02-019",
+    "C02-023",
+    "C02-026",
+    "C02-027",
+    "C02-030",
+    "C02-007",
+    "C02-011",
+    "C02-014",
+    "C02-017",
+    "FROZEN-D08-S1",
+    "FROZEN-D08-S3",
+    "FROZEN-D08-M"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.nearUrl; chapter residential initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "courtyard-B",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb",
+   "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+   "bytes": 112776,
+   "shaMatchesManifest": true,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_loading_yard"
+   ],
+   "cityNodes": [
+    "C02-018",
+    "C02-025",
+    "C02-029",
+    "C02-005",
+    "C02-009",
+    "C02-016",
+    "C02-034",
+    "FROZEN-D08-S2",
+    "FROZEN-D08-S4",
+    "FROZEN-D08-E"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter residential initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "courtyard-B",
+   "lod": "near",
+   "path": "docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb",
+   "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+   "bytes": 626016,
+   "shaMatchesManifest": true,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_loading_yard"
+   ],
+   "cityNodes": [
+    "C02-018",
+    "C02-025",
+    "C02-029",
+    "C02-005",
+    "C02-009",
+    "C02-016",
+    "C02-034",
+    "FROZEN-D08-S2",
+    "FROZEN-D08-S4",
+    "FROZEN-D08-E"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.nearUrl; chapter residential initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "courtyard-TC03",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb",
+   "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+   "bytes": 164300,
+   "shaMatchesManifest": true,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "cityNodes": [
+    "C02-020",
+    "C02-008",
+    "FROZEN-D08-NW",
+    "FROZEN-D08-NE"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter residential initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "courtyard-TC03",
+   "lod": "near",
+   "path": "docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb",
+   "sha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+   "bytes": 981664,
+   "shaMatchesManifest": true,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "cityNodes": [
+    "C02-020",
+    "C02-008",
+    "FROZEN-D08-NW",
+    "FROZEN-D08-NE"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.nearUrl; chapter residential initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "courtyard-A2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "bytes": 92220,
+   "shaMatchesManifest": true,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_hardpacked_activity_ground"
+   ],
+   "cityNodes": [
+    "C02-021",
+    "C02-024",
+    "C02-001",
+    "C02-028",
+    "C02-031",
+    "C02-010",
+    "C02-013",
+    "C02-015",
+    "C02-035"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter residential initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "courtyard-A2",
+   "lod": "near",
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+   "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "bytes": 447064,
+   "shaMatchesManifest": true,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_hardpacked_activity_ground"
+   ],
+   "cityNodes": [
+    "C02-021",
+    "C02-024",
+    "C02-001",
+    "C02-028",
+    "C02-031",
+    "C02-010",
+    "C02-013",
+    "C02-015",
+    "C02-035"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.nearUrl; chapter residential initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "courtyard-B2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/c02v/B2-LOD1-prototype.glb",
+   "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+   "bytes": 113064,
+   "shaMatchesManifest": true,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_loading_yard"
+   ],
+   "cityNodes": [
+    "C02-022",
+    "C02-002",
+    "C02-004",
+    "C02-006",
+    "C02-032",
+    "C02-033",
+    "C02-036"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter residential initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "courtyard-B2",
+   "lod": "near",
+   "path": "docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb",
+   "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+   "bytes": 569280,
+   "shaMatchesManifest": true,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_loading_yard"
+   ],
+   "cityNodes": [
+    "C02-022",
+    "C02-002",
+    "C02-004",
+    "C02-006",
+    "C02-032",
+    "C02-033",
+    "C02-036"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.nearUrl; chapter residential initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "courtyard-TC03-2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb",
+   "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+   "bytes": 164200,
+   "shaMatchesManifest": true,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_front_apron",
+    "designed_side_passage",
+    "designed_rear_work_ground"
+   ],
+   "cityNodes": [
+    "C02-003",
+    "C02-012"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter residential initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "courtyard-TC03-2",
+   "lod": "near",
+   "path": "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb",
+   "sha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+   "bytes": 943548,
+   "shaMatchesManifest": true,
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_front_apron",
+    "designed_side_passage",
+    "designed_rear_work_ground"
+   ],
+   "cityNodes": [
+    "C02-003",
+    "C02-012"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.nearUrl; chapter residential initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "wall-A-wall-00",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-00.glb",
+   "sha256": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74",
+   "bytes": 2412,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "wall-A-wall-00"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "wall-A-wall-01",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-01.glb",
+   "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95",
+   "bytes": 2748,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "wall-A-wall-01"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "wall-A-wall-02",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-02.glb",
+   "sha256": "8a17587a995e6851a1c4c7e0844f79cb880cf70348edb55dfb62891434b2afa9",
+   "bytes": 2068,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "wall-A-wall-02"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "wall-A-wall-03",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-03.glb",
+   "sha256": "cd4cb2b629c15cbf1eaaada61eca546fc96a034a1a53802acd9d7ebeb84e4762",
+   "bytes": 2072,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "wall-A-wall-03"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "wall-A-wall-04",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-04.glb",
+   "sha256": "50d8c7aa2c7d7dce95a894edf05bc1ecd2dbc73fbcd633e1c67f36065fd893ae",
+   "bytes": 2948,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "wall-A-wall-04"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "wall-A-wall-05",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-05.glb",
+   "sha256": "4e000b0c34b26504ff30b7c4c9748ede9f1b84819dcc75301b57caca85f261ae",
+   "bytes": 1732,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "wall-A-wall-05"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "wall-A-wall-06",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-06.glb",
+   "sha256": "d7d3cc79fe7ea85cda3147c90531dfb7403789405f4af0671baef7d6ba89993e",
+   "bytes": 1732,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "wall-A-wall-06"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "wall-A-wall-07",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-07.glb",
+   "sha256": "e7db9cff3eed1e7fe088a5199a5479d483ba68a2f440624cb68f6848373be550",
+   "bytes": 1736,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "wall-A-wall-07"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "wall-A-wall-10",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-10.glb",
+   "sha256": "afb20f8e3b19dfd85a65bf1462dea09225336d336c272425fad4d7491e3cfde9",
+   "bytes": 1740,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "wall-A-wall-10"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "wall-A-wall-11",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/A/wall-11.glb",
+   "sha256": "2cfa846184cf28e36cacb832250b5d2afcdbdc6968c81c3f09957ed968e21ecd",
+   "bytes": 2752,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "wall-A-wall-11"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "wall-direct-gate-body-only",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/direct/gate-body-only.glb",
+   "sha256": "cdba2d5c3bbf14bbf9c6ed59e3fcadf174c13e882a5ccb1522b81bc9949d5058",
+   "bytes": 1139920,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "wall-direct-gate-body-only"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "wall-direct-wall-08",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/direct/wall-08.glb",
+   "sha256": "221b8dc8c5702bbd9980e72e291e61f54a0544ccb05a8923bb53d0f9a62a8a90",
+   "bytes": 7252,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "wall-direct-wall-08"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "wall-direct-wall-09",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/city-wall/direct/wall-09.glb",
+   "sha256": "d4fb5c1cbf3c08ff18f9dcf1b25cab67e44a36a00ade3b8b67fb5eb3679c31be",
+   "bytes": 5020,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "wall-direct-wall-09"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "ground-network-ground-stitched",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "bytes": 3565544,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "ground-network-ground-stitched"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter terrain on chapter open (loadNodeIds)",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "ground-retained",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "bytes": 629740,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "ground-retained"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter terrain on chapter open (loadNodeIds)",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "ground-south",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "bytes": 2623560,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "ground-south"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter terrain on chapter open (loadNodeIds)",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "ground-D08",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "bytes": 6664,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "ground-D08"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter terrain on chapter open (loadNodeIds)",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "market-main",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "bytes": 1031928,
+   "shaMatchesManifest": true,
+   "excludeNodes": [
+    "N2_floor",
+    "N2_sidewall",
+    "N2_sidewall.001",
+    "N2_rearwall",
+    "N2_rearwall.001",
+    "N2_rear_lintel",
+    "N2_frontpost",
+    "N2_frontpost.001",
+    "N2_frontpost.002",
+    "N2_frontbeam",
+    "N2_gable_-3.87",
+    "N2_gable_3.87",
+    "N2_frontstep",
+    "N2_rearstep",
+    "N2_counter",
+    "N2_counterleg",
+    "N2_counterleg.001",
+    "N2_counter.001",
+    "N2_counterleg.002",
+    "N2_counterleg.003",
+    "N2_shelfpost",
+    "N2_shelfpost.001",
+    "N2_shelfpost.002",
+    "N2_shelfpost.003",
+    "N2_store_shelf",
+    "N2_store_shelf.001",
+    "N2_store_shelf.002",
+    "N2_closed_stock",
+    "N2_closed_stock.001",
+    "N2_closed_stock.002"
+   ],
+   "cityNodes": [
+    "market-main"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter market on chapter open (loadNodeIds)",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "market-N2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/assets/market/N2-replacement.glb",
+   "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "bytes": 72984,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "market-N2"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter market on chapter open (loadNodeIds)",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "storage-main",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+   "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+   "bytes": 1663844,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "storage-main"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter storage on chapter open (loadNodeIds)",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-lingtai",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-lingtai-c1b58de1bff4.glb",
+   "sha256": "c1b58de1bff44b80a8675302101435443b16acbe902d88f4526c10edbb6dfe85",
+   "bytes": 2071760,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-taixue-A",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-taixue-A-ee4163421d16.glb",
+   "sha256": "ee4163421d1652b9301b8d50c7fe9f04ed09440000683b9a207ddf3f1600dda3",
+   "bytes": 248276,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-taixue-B",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-taixue-B-11b01e4948be.glb",
+   "sha256": "11b01e4948be0e0e229116b9eaa939f6b932058a0d3513ac676012188a260c57",
+   "bytes": 373040,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-north13-kaiyang-K",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb",
+   "sha256": "94693c58dd6308153c5900b0bb9698eff138811f39369f54f545b9034417e71e",
+   "bytes": 138768,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-north13-court-A2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-A2-db02f24fde89.glb",
+   "sha256": "db02f24fde899b73d5902b41391a7a5e6db64affac25b7cc609de3d46a3b0994",
+   "bytes": 395408,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-north13-court-B",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-B-6f7f84af4e7f.glb",
+   "sha256": "6f7f84af4e7f57920dc1182b747a7081bca9d15b2d595d3ec80593f60e022282",
+   "bytes": 546768,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-north13-court-B2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-B2-7d3758ce668d.glb",
+   "sha256": "7d3758ce668d06541694e7e17d947d5b380a0974311c57eba7968284214c6ac2",
+   "bytes": 502688,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-north13-court-TC03-2",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-TC03-2-98bedd183667.glb",
+   "sha256": "98bedd1836674388e9aee3794af12def4235d566324dae877c6ab7baee0c3a05",
+   "bytes": 821660,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-north13-court-A",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-court-A-19a42b6b0b1c.glb",
+   "sha256": "19a42b6b0b1cc1f204e112fc9d63b626895bf0f9b94922cac6ab2bd1cb810ff4",
+   "bytes": 444348,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-north13-pingcheng-P",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-pingcheng-P-c8ab88f4b326.glb",
+   "sha256": "c8ab88f4b326e0c24346b97e7429cdf3d43d463a53b918017c21cf0428d74f11",
+   "bytes": 119320,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-north13-shangxi-X",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-shangxi-X-9a892e7f27f7.glb",
+   "sha256": "9a892e7f27f7b8faf8cc95cdd22b66a77da5ef5e2cf03636d40f79ac8d26f851",
+   "bytes": 124096,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-north13-yong-Y",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-yong-Y-1983dab58385.glb",
+   "sha256": "1983dab583853beb9b2a905227c9b63526b3696811b049466ccf471db58ba164",
+   "bytes": 144900,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-north13-zhongdong-Z",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-north13-zhongdong-Z-856cfff1f015.glb",
+   "sha256": "856cfff1f015f8ce3c216cb9908a82dc9038846fa94170255730142f19693d3c",
+   "bytes": 957224,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "study-mao-gate",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-mao-gate-0ae54089b66a.glb",
+   "sha256": "0ae54089b66a54f17db78c53ce9164b2bb99e6292b466c4c7c90f498385063e8",
+   "bytes": 1150620,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [],
+   "loadedByCity": false,
+   "loadedAt": "researchModels only (local-study space, cityPlacement null) - not part of city assembly",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "yong-gate-near",
+   "lod": "far",
+   "path": "docs/library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+   "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+   "bytes": 1570856,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "yong-gate-body"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  },
+  {
+   "asset": "yong-gate-apron",
+   "lod": "far",
+   "path": "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+   "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+   "bytes": 388208,
+   "shaMatchesManifest": true,
+   "excludeNodes": [],
+   "cityNodes": [
+    "yong-gate-interface"
+   ],
+   "loadedByCity": true,
+   "loadedAt": "docs/cities/luoyang/city-renderer.mjs:286-299 fetch via asset.url; chapter walls initial",
+   "nativeSource": "not in repo (private source package); harness needs GLB only"
+  }
+ ],
+ "harness": [
+  {
+   "path": "prep/scripts/compare.py",
+   "sha256": "8b73dcef4ed23ff8bb626e1a7c68ed6c6fe7378a143f1894b344f838eea1f133",
+   "previousSha256": "661e45e7d43353fe252d6e76ea9766618e496e922bcd00f423c15f18a892d143",
+   "changed": "2026-11-06: compare.py now lists removedNodes and charges a no-blocker support-loss route regression to them (supportLossCandidates); exit-code rules unchanged. compare-far-vs-near.json / compare-selftest-vs-baseline.json were produced by the previous version."
+  },
+  {
+   "path": "prep/scripts/dump_manifest.mjs",
+   "sha256": "78a999c0e62596dc9515de6275e94c2cd1198cc6c40075435dcc820f1b7151a5"
+  },
+  {
+   "path": "prep/scripts/glbmesh.py",
+   "sha256": "ea5f2ac128518bd78c3ec06025ce26bcb8ae28bc0bb89390c0744654c103fa64"
+  },
+  {
+   "path": "prep/scripts/ly095_regress.py",
+   "sha256": "949619e2e9a3bd52815f8a84a2cf591ae593d0a434a79aaaf32e211ae00ecb01"
+  }
+ ],
+ "baselineOutputs": [
+  {
+   "path": "prep/out/baseline-far-bce3211.json",
+   "sha256": "6ccd38c39d7f4725769190c572d934d58a2a51072010e9deb25383d90622040b"
+  },
+  {
+   "path": "prep/out/baseline-near-bce3211.json",
+   "sha256": "1d52afd937cbf58fc6fa92aacb00d2e6eed6cac7e802be227ea2d557267ee130"
+  },
+  {
+   "path": "prep/out/city-manifest.json",
+   "sha256": "2520a4e1249a1a1c00c20e93a036d3ed76226d20ab41f9dfbe9fc7e68bf98d2a"
+  },
+  {
+   "path": "prep/out/compare-far-vs-near.json",
+   "sha256": "2444cf1b29bf928c47a7ae93da1752657dbb564cff7ddd833c69a2199bb12190"
+  },
+  {
+   "path": "prep/out/compare-selftest-vs-baseline.json",
+   "sha256": "1d67b6df27a68b5f6c23664bbef97215e9c374d6587f656616ac05f50b2d1e6e"
+  },
+  {
+   "path": "prep/out/selftest-bce3211.json",
+   "sha256": "f3f47a00297bee826097b452d3c2e7e38427d056522aac11f10eb98cede43398"
+  }
+ ],
+ "tools": {
+  "blender": "D:/Blender/blender.exe 5.2.1 LTS (9e2066aef7ef)",
+  "node": "v24.22.1",
+  "python": "Blender bundled + numpy"
+ },
+ "missing": [
+  {
+   "what": "private source packages (.blend / source ZIP) of courtyard A/B/TC03 families, ground-atomic, market, storage, Yong gate",
+   "use": "only needed to localise a defect to an editable source object; LY-095 itself never edits geometry",
+   "rebuildFromGLB": "not required: every check runs on the shipped GLB triangles, which is what the city renders"
+  },
+  {
+   "what": "G freeze: LY-005 coordinate/port contract, LY-006 ownership map (node/asset -> LY-###), LY-008 checker",
+   "use": "owners.json for compare.py (responsibility per defect); port IDs for gate/threshold route endpoints; official checker entry",
+   "rebuildFromGLB": "no - contracts, not geometry"
+  },
+  {
+   "what": "LY-091..094 batch packages + batch manifest (selected_tasks, dependency_closure, gate_results, excluded_regions)",
+   "use": "overlay.json per batch for the after-run",
+   "rebuildFromGLB": "no"
+  }
+ ],
+ "overlayTests": [
+  {
+   "path": "prep/overlay-tests/OV-01-noop.json",
+   "sha256": "c044b1eec4dcdbe8eae0a33214465538c51f4ca4aa5962bf6ccb5dc97fc7cbdf"
+  },
+  {
+   "path": "prep/overlay-tests/OV-02-dup-court.json",
+   "sha256": "52e582ba5c361243e2c5f6f7e1492d85fdbbfd05de76b93265523468ce437fca"
+  },
+  {
+   "path": "prep/overlay-tests/OV-03-remove-ground.json",
+   "sha256": "75bdc7ce1645977ca29fdf28d12e08c29cf87502890fa9e7dd38f163cf689742"
+  },
+  {
+   "path": "prep/overlay-tests/owners-test.json",
+   "sha256": "bc88a74adc5f365c6cd09df02dbdb9fd2bc0aaa66890eb5976b146807c1d6a30"
+  }
+ ],
+ "replay20261106": {
+  "note": "same lab head bce3211, same manifest SHA, same regress script SHA; outputs differ from baseline only in 'manifest' path and 'seconds'",
+  "outputs": [
+   {
+    "path": "prep/out/replay-20261106/city-manifest.json",
+    "sha256": "2520a4e1249a1a1c00c20e93a036d3ed76226d20ab41f9dfbe9fc7e68bf98d2a"
+   },
+   {
+    "path": "prep/out/replay-20261106/cmp-far.json",
+    "sha256": "319c21d1556b7cc59457f8cd0b644deca7db4cf9cd20aeebebf460a997e3b544"
+   },
+   {
+    "path": "prep/out/replay-20261106/cmp-near.json",
+    "sha256": "1a12dbee8dbb1f2f7de51a60c707bdc33428aa80c9f057b8174bd30448947b00"
+   },
+   {
+    "path": "prep/out/replay-20261106/cmp-selftest.json",
+    "sha256": "211625fd858d17a58dd6facac531e08c79778b919090f0da9f4d01145b79bf70"
+   },
+   {
+    "path": "prep/out/replay-20261106/far.json",
+    "sha256": "a1acf7c819b7297b4d09191de5c10805409dc9ccf6ef024d1813f6621db72597"
+   },
+   {
+    "path": "prep/out/replay-20261106/near.json",
+    "sha256": "3d5bb202109751f608fdf01051d686eb51e80bcc72ef29fe978ff220bf98d4db"
+   },
+   {
+    "path": "prep/out/replay-20261106/selftest.json",
+    "sha256": "0364160e5340b2e42f2f993992ea250fbd682cbbff8f30f39c0fb46324fc9290"
+   },
+   {
+    "path": "prep/out/overlay-20261106/OV-01-noop.json",
+    "sha256": "e18ff59cf852876e59123dee7f608d05b4b25b7252d4515d492bd6821608c60d"
+   },
+   {
+    "path": "prep/out/overlay-20261106/OV-02-dup-court.json",
+    "sha256": "bda371452e08da6718eb40196dd179cefd9244c00a233098d095b82e53bc1c8e"
+   },
+   {
+    "path": "prep/out/overlay-20261106/OV-03-remove-ground.json",
+    "sha256": "74d274869c1effaade97a2498fb48c2a93432966eec205f246ae0312e2627296"
+   },
+   {
+    "path": "prep/out/overlay-20261106/cmp-OV-01-noop.json",
+    "sha256": "ea91a5f89a266fe3120a291d5a894a3fc40b2cdc9e86897e7410d1fbd4b26791"
+   },
+   {
+    "path": "prep/out/overlay-20261106/cmp-OV-02-dup-court.json",
+    "sha256": "21c9c6d2dcd7a81430e98a7128cafc4e58124e5294df0ed13f821d2038a558a3"
+   },
+   {
+    "path": "prep/out/overlay-20261106/cmp-OV-03-remove-ground.json",
+    "sha256": "f0f98ddcddc84de16a9aa3aab3effc4b9381f5f42cc57992c74e716b0a7de168"
+   }
+  ]
+ }
+}

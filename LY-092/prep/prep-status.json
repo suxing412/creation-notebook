@@ -1,0 +1,54 @@
+{
+ "seat": "LY-092",
+ "inputsFound": [
+  "lab 检出 HEAD bce3211f818e（任务池基线）；origin/main 已到 cad338ba683f（+f28d650、b70c495、cad338b 北缘三院）；bce3211..cad338b 之间 city-renderer.mjs 未改",
+  "docs/cities/luoyang/city-data.mjs：bce3211 blob c849706b；cad338b blob d8933a32（git show 只读取到 prep/out/originmain-cad338b/）；cad338b 的 ground-retained 节点在 L3813，C_NORTH_INFILL_01/02/03 在 L4166/4255/4344，north-three 章在 L4761，counts.courtyards=47 在 L5219",
+  "docs/cities/luoyang/city-renderer.mjs 04c6c643：excludeNodes 在 L309，transformFor 在 L372，replaces 在 L412，focusChapter 在 L595，focusCourtyard 在 L616",
+  "原 44 院 6 型 far/near：R01-A 0827fa49/93b70de2，R01-B 25f018fa/a8d94bb3，TC03 8daea250/367a7d25，A2 277e9e73/19b05202，B2 83282373/d99affca，TC03-2 d2432b7c/bf6287a5（声明=实际，城中加载）",
+  "北缘三院（只在 cad338b 入城）：court-layout-kit opposed_rooms LOD2 44366ced / LOD0 21ffb5af，compact_work 84426f91/e799b588；workyard-shed workyard 574d81d9/7eb9739e（检出与 cad338b blob 字节相同）",
+  "market-cluster.glb 77b8bf2e、N2-replacement.glb d33cbad1；ground-atomic stitched fdfc3ce5 / retained aed8b3d4 / south 4313826d / D08 3ab93310",
+  "G 包（都绑定 bce3211）：LY-001 snapshot-ledger 479046ca；LY-005 coordinate-contract b6d7fe9d；LY-006 ownership ecbbbcf5、zones 6b3595ac（切孔区 LY-025:cut:003、LY-045:cut:002）；LY-008 ly_check.py 39aaa491",
+  "本席位框架：scripts/baseline92.py、check92.py、lib92.py、glb92.py、summarize92.py、drift92.py、blender_xcheck92.py、original44.json（9194384c）；SHA 都记在 inputs.json.prepFiles"
+ ],
+ "inputsMissing": [
+  "LY-010 区域准入与首批方案：目录不存在，G 未冻结。它决定示范院选哪一院、v1 入口是否纳入、未测 GPU/手机怎么判。上游裁定，不能从 GLB 重建",
+  "LY-001 在 cad338b 或更新 main 上的重发快照：现有 G 包全部绑定 bce3211，而原 44 院计数的语义已经变成 47 院里的 44 院。不能从 GLB 重建；本席位只能先自测 drift 作参考",
+  "LY-030 市肆区域包（变体、井孔、操作区、路线和负例）：联合装配的主输入，不能重建",
+  "LY-050 示范院包（院 ID、设施互斥组、院内孔）：不能重建",
+  "LY-082 院外短巷补件和端口；LY-083 外街接点补件或复用判定：不能重建",
+  "LY-090 多地坪开孔合成包（孔清单、替换方式、顺序）：联合孔洞检查的唯一地坪来源，不能重建",
+  "私密源包（.blend/生成器/源 ZIP）：验收席位不需要，所有检查都直接读交付的 GLB 和 SHA。缺了不阻断本席位",
+  "LY-005/006 冻结的人体/货物包络数值：没有它，路线检查暂用 C 包络（半径 0.3 m、步高 0.2 m、净空 0.35–1.8 m）"
+ ],
+ "gaps": [
+  "基线漂移：cad338b 住宅变成 47 院。原 44 院指纹 44/44 不变，新增 C_NORTH_INFILL_01–03 和各自的 -near；ground-retained 改为 initial=true；区域指纹从 b1f59a7e 变成 5ff321bb。原检查 I1 写死了 ==44，在 cad338b 上 P0 会误判失败，已改成「总数=基线」加「I1c 原 44 院逐个指纹不变」",
+  "冷启动支持：bce3211 S0 下 44 院内部平均 18.23%，环带 0/44 院；cad338b 下原 44 院内部平均 59.81%，22 院 100%（坐在 retained 上），另外 22 院环带仍是 0%（C02-005…017、C02-032、8 个 FROZEN-D08）。S_terrain 和 S_all 下都是 100%",
+  "叠层：小于 2 mm 的共面在所有状态下都是 0 格；S_all 下 2–30 mm 叠层 6 对、4,969 格，两个基线相同。Blender 核过：TC03 设计地坪 0.212 m，site_lot 和地面 0.200 m，差 0.012 m，三块合计 293.6 m²。cad338b 的 S0 新出现 2 对、1,249 格（C02-020×retained 1,214，C02-003×retained 35）",
+  "栅格漂移假象：原点跟着包围盒走时，z0 从 −1244.0107 移到 −1276.0000，叠层格数假变成 4,971。改为固定栅格 grid-frozen-v1 后两个基线都是 4,969，同一输入跑两次逐字节相同",
+  "市肆：两个基线都是 524 网格、18,296 三角，5 店（N1/N2/N3/S1/S2）、3 摊（T1–T3）。exitPublic 冷启动（S_market）bce3211 0/80、cad338b 80/80；exitN、exitS 在所有状态下都是 0/80。X-market-public-cold 路线 bce3211 失败 71/289，cad338b 失败 0/289",
+  "计划孔位：井 A（196.286, −1952.184, r 0.59）在 S_market/S_all 被 market-main|sample_ground#3 封住，在 S0/S_terrain 下面是空的，井沿 0/8。LY-045 厕孔区中心（535.55, −818.65）在 S_terrain/S_all 被 ground-south|single_closed_terrain_after#78164 封住，与 LY-006 写的 ground-retained 不符。基线区内真孔 0 个（只有 6 个 drain_stone 地表件）",
+  "互斥与排除：原 12 个院落文件加北缘 6 个文件，excludeNodes 缺 0 个；9 种近档换档组合 0 错误。market-main.excludeNodes 与 N2-replacement 重名 30 个；仍然没有互斥组机制，章节只加不减，渲染器加载时不核 SHA",
+  "检查器自检：P0 加 10 个负例（N10 是新增的「空洞上的孔、井沿 0/8」），在 bce3211 和 cad338b 上都 ALL_SELFTESTS_OK=true；孔洞检查 H 新增井沿支持条件，防止把空洞判成开孔"
+ ],
+ "reuseCandidate": "无。本席位交的是联合验收结果，没有现成合格成果可以复用。029/030/041/045/082/083/090 的 prep 是被验方自测，只当线索；凡是可重测的，本席位已在 bce3211 和 cad338b 上独立重测（out/baseline-*-G.json、out/probe-holes-*.json），其中 LY-025 说的「井位下方无地层」已独立证实，LY-006 的厕孔地坪归属与实测不符",
+ "touches": [
+  "只读：city-data.mjs（bce3211 检出；cad338b 用 git show 取出），资产 courtyard-A/B/TC03/A2/B2/TC03-2、north-three-*、market-main、market-N2、ground-*；住宅、市肆、地形、north-three 四章",
+  "只读：44 院 GLB 的 site_lot/site_neutral_lane/designed_*（排除节点），以及 TC03 保留的 designed_front_apron/side_passage/rear_work_ground/drain_stone（双层地坪的归属待 050/090 说明）",
+  "只读：market-cluster 的 sample_ground（registry 归 LY-090）、route_exitPublic/exitN/exitS、30 个 N2_* 排除名；N2-replacement",
+  "只读：ground-atomic 四片地面，其中 ground-south 三角形 #78164 位于 C02-010 厕孔区，retained 在 cad338b 改为首屏加载；yong-road-receiver",
+  "只读：docs/library/models/m-luoyang-court-layout-kit 和 m-luoyang-workyard-shed 的 6 个 GLB",
+  "只读：workpacks/LY-001、005、006、008 的冻结件",
+  "写：只写 workpacks/LY-092/prep/（以后是 workpacks/LY-092/qa/）；不写任何共享城市文件或他人工作包"
+ ],
+ "size": "M",
+ "risks": [
+  "基线继续漂移：main 一天内前进了 3 个提交，住宅从 44 院变成 47 院，所有 G 包仍绑定 bce3211。如果 LY-001 不在新 main 上重发快照，各包会在不同基线上自测，联合验收就无法成立",
+  "「原44院计数不变」的语义要由 010/100 书面确认：本席位按「原 44 个 ID 逐个指纹不变，总数等于冻结基线（现为 47）」执行。若裁定只认 44 院总数，cad338b 本身就会判失败",
+  "依赖链深：030←029←021–028；050←041–049；090←025/045/053/086/089。任一环阻断，对应区只能记为「本批未纳入」，不能记为通过",
+  "LY-006 registry 写错厕孔所在的地坪片（实测在 ground-south），如果 090 按 registry 去切 retained，孔会被 south 封住。正式验收会判失败，但返工会很晚才暴露",
+  "测量是 numpy 重实现：格心采样、三角形级净空带、没有实体相交、没有浏览器或 GPU。渲染器的组合规则一变，lib92 就要同步",
+  "TC03 的 1.2 cm 双层地坪是继承问题，cad338b 起首屏就能看到。050/090 如果要动这些地坪，会和「44 院指纹不变」冲突，需要 006 裁定",
+  "v1 归档入口和北缘三院在 S_all 下的 focusCourtyard 行为都没有验，只能标为待验"
+ ],
+ "readyAfterG": true
+}

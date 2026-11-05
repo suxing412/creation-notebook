@@ -1,0 +1,1285 @@
+{
+ "summary": {
+  "negativesAllBehaveAsExpected": true,
+  "oldNodes": 66,
+  "oldNodesPresentInF28d650": 66,
+  "oldNodeMaxMatrixDiff": 0.0,
+  "oldNodesAssetOrShaChanged": [],
+  "oldNodesBoundsChanged": [],
+  "oldNodesInitialOrReplacesChanged": [
+   "yong-gate-body",
+   "yong-gate-interface",
+   "ground-network-ground-stitched"
+  ],
+  "portsWorldRecomputedFromF28d650_maxDiff_m": 0.0,
+  "addedNodes": [
+   "yong-gate-body-far",
+   "yong-gate-interface-far",
+   "yong-road-link",
+   "yong-road-link-near",
+   "yong-road-receiver"
+  ]
+ },
+ "negatives": [
+  {
+   "case": "control:yong-gate-body",
+   "expect": "pass",
+   "checks": {
+    "scaleUnit": true,
+    "yawOnly": true,
+    "detPositive": true,
+    "appliedOnceAbsolute": true,
+    "boundsMatchDeclared(<=1mm, exact vertices)": true
+   },
+   "boundsDiff_m": 0.0,
+   "ok": true
+  },
+  {
+   "case": "control:C02-018",
+   "expect": "pass",
+   "checks": {
+    "scaleUnit": true,
+    "yawOnly": true,
+    "detPositive": true,
+    "appliedOnceAbsolute": true,
+    "boundsMatchDeclared(<=1mm, exact vertices)": true
+   },
+   "boundsDiff_m": 9.464216645937995e-07,
+   "ok": true
+  },
+  {
+   "case": "control:wall-A-wall-10",
+   "expect": "pass",
+   "checks": {
+    "scaleUnit": true,
+    "yawOnly": true,
+    "detPositive": true,
+    "appliedOnceAbsolute": true,
+    "boundsMatchDeclared(<=1mm, exact vertices)": true
+   },
+   "boundsDiff_m": 4.6667480546602746e-07,
+   "ok": true
+  },
+  {
+   "case": "control:ground-D08",
+   "expect": "pass",
+   "checks": {
+    "scaleUnit": true,
+    "yawOnly": true,
+    "detPositive": true,
+    "appliedOnceAbsolute": true,
+    "boundsMatchDeclared(<=1mm, exact vertices)": true
+   },
+   "boundsDiff_m": 2.980232227667301e-09,
+   "ok": true
+  },
+  {
+   "case": "yong-gate-body matrix applied twice",
+   "expect": "fail",
+   "checks": {
+    "scaleUnit": true,
+    "yawOnly": true,
+    "detPositive": true,
+    "appliedOnceAbsolute": true,
+    "boundsMatchDeclared(<=1mm, exact vertices)": false
+   },
+   "boundsDiff_m": 1404.2682775306853,
+   "ok": true
+  },
+  {
+   "case": "C02-018 silent uniform scale 1.001",
+   "expect": "fail",
+   "checks": {
+    "scaleUnit": false,
+    "yawOnly": false,
+    "detPositive": true,
+    "appliedOnceAbsolute": true,
+    "boundsMatchDeclared(<=1mm, exact vertices)": false
+   },
+   "boundsDiff_m": 0.012149921071340941,
+   "ok": true
+  },
+  {
+   "case": "C02-018 x-stretch 1.0005",
+   "expect": "fail",
+   "checks": {
+    "scaleUnit": false,
+    "yawOnly": true,
+    "detPositive": true,
+    "appliedOnceAbsolute": true,
+    "boundsMatchDeclared(<=1mm, exact vertices)": false
+   },
+   "boundsDiff_m": 0.0045004428250194906,
+   "ok": true
+  },
+  {
+   "case": "wall-A-wall-10 (city-absolute) re-translated",
+   "expect": "fail",
+   "checks": {
+    "scaleUnit": true,
+    "yawOnly": true,
+    "detPositive": true,
+    "appliedOnceAbsolute": false,
+    "boundsMatchDeclared(<=1mm, exact vertices)": false
+   },
+   "boundsDiff_m": 1999.9999997968748,
+   "ok": true
+  },
+  {
+   "case": "C02-021 Z-up axis left unconverted",
+   "expect": "fail",
+   "checks": {
+    "scaleUnit": true,
+    "yawOnly": false,
+    "detPositive": true,
+    "appliedOnceAbsolute": true,
+    "boundsMatchDeclared(<=1mm, exact vertices)": false
+   },
+   "boundsDiff_m": 12.350001928474512,
+   "ok": true
+  },
+  {
+   "case": "C02-021 mirrored X",
+   "expect": "fail",
+   "checks": {
+    "scaleUnit": true,
+    "yawOnly": true,
+    "detPositive": false,
+    "appliedOnceAbsolute": true,
+    "boundsMatchDeclared(<=1mm, exact vertices)": true
+   },
+   "boundsDiff_m": 2.053578555205604e-06,
+   "ok": true
+  }
+ ],
+ "drift": [
+  {
+   "node": "yong-gate-body",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    false
+   ],
+   "replaces": [
+    null,
+    [
+     "yong-gate-body-far"
+    ]
+   ]
+  },
+  {
+   "node": "yong-gate-interface",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    false
+   ],
+   "replaces": [
+    null,
+    [
+     "yong-gate-interface-far"
+    ]
+   ]
+  },
+  {
+   "node": "C02-018",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-019",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-020",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-021",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-022",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-023",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-024",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-025",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-026",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-001",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-002",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-027",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-028",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-029",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-030",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-031",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-003",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-004",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-005",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-006",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-007",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-008",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-009",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-010",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-011",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-012",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-013",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-032",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-014",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-015",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-016",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-017",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-033",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-034",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-035",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "C02-036",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "FROZEN-D08-S1",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "FROZEN-D08-S2",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "FROZEN-D08-S3",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "FROZEN-D08-S4",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "FROZEN-D08-M",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "FROZEN-D08-E",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "FROZEN-D08-NW",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "FROZEN-D08-NE",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "wall-A-wall-00",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "wall-A-wall-01",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "wall-A-wall-02",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "wall-A-wall-03",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "wall-A-wall-04",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "wall-A-wall-05",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "wall-A-wall-06",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "wall-A-wall-07",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "wall-A-wall-10",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "wall-A-wall-11",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "wall-direct-gate-body-only",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "wall-direct-wall-08",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "wall-direct-wall-09",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    true,
+    true
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "ground-network-ground-stitched",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    false,
+    false
+   ],
+   "replaces": [
+    null,
+    [
+     "yong-road-receiver"
+    ]
+   ]
+  },
+  {
+   "node": "ground-retained",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    false,
+    false
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "ground-south",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    false,
+    false
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "ground-D08",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    false,
+    false
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "market-main",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    false,
+    false
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "market-N2",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    false,
+    false
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  },
+  {
+   "node": "storage-main",
+   "matrixMaxAbsDiff": 0.0,
+   "assetSame": true,
+   "assetSha256Same": true,
+   "boundsSame": true,
+   "initial": [
+    false,
+    false
+   ],
+   "replaces": [
+    null,
+    null
+   ]
+  }
+ ],
+ "addedNodesF28d650": [
+  {
+   "node": "yong-gate-body-far",
+   "asset": "yong-gate-far",
+   "matrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "initial": true,
+   "matrixDiffVs_yong-gate-body": 0.0,
+   "matrixDiffVs_yong-gate-interface": 0.0,
+   "maxScaleDeviation": 2.555346156896121e-09
+  },
+  {
+   "node": "yong-gate-interface-far",
+   "asset": "yong-apron-far",
+   "matrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "initial": true,
+   "matrixDiffVs_yong-gate-body": 0.0,
+   "matrixDiffVs_yong-gate-interface": 0.0,
+   "maxScaleDeviation": 2.555346156896121e-09
+  },
+  {
+   "node": "yong-road-link",
+   "asset": "yong-road-link-far",
+   "matrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "initial": true,
+   "matrixDiffVs_yong-gate-body": 0.0,
+   "matrixDiffVs_yong-gate-interface": 0.0,
+   "maxScaleDeviation": 2.555346156896121e-09
+  },
+  {
+   "node": "yong-road-link-near",
+   "asset": "yong-road-link-near",
+   "matrixColumnMajor": [
+    -0.01162686012685299,
+    0.0,
+    -0.9999324083328247,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.9999324083328247,
+    0.0,
+    -0.01162686012685299,
+    0.0,
+    -16.0157413482666,
+    0.17000000178813934,
+    -1397.772705078125,
+    1.0
+   ],
+   "initial": false,
+   "matrixDiffVs_yong-gate-body": 0.0,
+   "matrixDiffVs_yong-gate-interface": 0.0,
+   "maxScaleDeviation": 2.555346156896121e-09
+  },
+  {
+   "node": "yong-road-receiver",
+   "asset": "yong-road-receiver",
+   "matrixColumnMajor": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "initial": true,
+   "matrixDiffVs_yong-gate-body": 1397.772705078125,
+   "matrixDiffVs_yong-gate-interface": 1397.772705078125,
+   "maxScaleDeviation": 0.0
+  }
+ ]
+}

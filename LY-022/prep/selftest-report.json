@@ -1,0 +1,394 @@
+{
+ "chunk": "inputs/chunks__market_frontage_well_routes.glb",
+ "frozen": "frozen-baseline.json",
+ "tolerances": {
+  "plan": 0.005,
+  "height": 0.002
+ },
+ "selftest": {
+  "positive": {
+   "F1_keptFingerprintsUnchanged": {
+    "pass": true,
+    "changedOrMissing": []
+   },
+   "F2_wellOpeningClear": {
+    "pass": true,
+    "hits": []
+   },
+   "F3_noRoutePaving": {
+    "pass": true,
+    "bottomFacesOverRoute": []
+   },
+   "F4_supportedNoFloat": {
+    "pass": true,
+    "floatingBottomFaces": []
+   },
+   "F5_groundOverlayFaces": {
+    "count": 1,
+    "note": "overlay-on-ground class; allowed only if LY-006 rule says so",
+    "pass": true
+   },
+   "F6_noShopFrontIntrusion": {
+    "pass": true,
+    "verts": []
+   },
+   "F7_portsMatched": {
+    "pass": true,
+    "ports": [
+     {
+      "id": "P-route_public-N-edge-x[-20,20]",
+      "samples": 161,
+      "matched": 161,
+      "pass": true
+     }
+    ]
+   },
+   "pass": true,
+   "expect": "pass",
+   "asExpected": true
+  },
+  "neg_well_cover": {
+   "F1_keptFingerprintsUnchanged": {
+    "pass": true,
+    "changedOrMissing": []
+   },
+   "F2_wellOpeningClear": {
+    "pass": false,
+    "hits": [
+     [
+      196.288,
+      -1952.184,
+      0.21
+     ],
+     [
+      196.61,
+      -1952.184,
+      0.21
+     ],
+     [
+      196.288,
+      -1952.184,
+      0.21
+     ],
+     [
+      196.605,
+      -1952.128,
+      0.21
+     ],
+     [
+      196.288,
+      -1952.184,
+      0.21
+     ],
+     [
+      196.59,
+      -1952.074,
+      0.21
+     ],
+     [
+      196.288,
+      -1952.184,
+      0.21
+     ],
+     [
+      196.567,
+      -1952.023,
+      0.21
+     ],
+     [
+      196.845,
+      -1951.863,
+      0.21
+     ],
+     [
+      196.288,
+      -1952.184,
+      0.21
+     ]
+    ]
+   },
+   "F3_noRoutePaving": {
+    "pass": true,
+    "bottomFacesOverRoute": []
+   },
+   "F4_supportedNoFloat": {
+    "pass": false,
+    "floatingBottomFaces": [
+     [
+      196.286,
+      -1952.184,
+      0.2
+     ]
+    ]
+   },
+   "F5_groundOverlayFaces": {
+    "count": 0,
+    "note": "overlay-on-ground class; allowed only if LY-006 rule says so",
+    "pass": true
+   },
+   "F6_noShopFrontIntrusion": {
+    "pass": true,
+    "verts": []
+   },
+   "F7_portsMatched": {
+    "pass": false,
+    "ports": [
+     {
+      "id": "P-route_public-N-edge-x[-20,20]",
+      "samples": 161,
+      "matched": 0,
+      "pass": false
+     }
+    ]
+   },
+   "pass": false,
+   "expect": "fail",
+   "asExpected": true
+  },
+  "neg_route_paving": {
+   "F1_keptFingerprintsUnchanged": {
+    "pass": true,
+    "changedOrMissing": []
+   },
+   "F2_wellOpeningClear": {
+    "pass": true,
+    "hits": []
+   },
+   "F3_noRoutePaving": {
+    "pass": false,
+    "bottomFacesOverRoute": [
+     [
+      214.286,
+      -1957.384,
+      0.21
+     ]
+    ]
+   },
+   "F4_supportedNoFloat": {
+    "pass": true,
+    "floatingBottomFaces": []
+   },
+   "F5_groundOverlayFaces": {
+    "count": 0,
+    "note": "overlay-on-ground class; allowed only if LY-006 rule says so",
+    "pass": true
+   },
+   "F6_noShopFrontIntrusion": {
+    "pass": true,
+    "verts": []
+   },
+   "F7_portsMatched": {
+    "pass": false,
+    "ports": [
+     {
+      "id": "P-route_public-N-edge-x[-20,20]",
+      "samples": 161,
+      "matched": 0,
+      "pass": false
+     }
+    ]
+   },
+   "pass": false,
+   "expect": "fail",
+   "asExpected": true
+  },
+  "neg_floating": {
+   "F1_keptFingerprintsUnchanged": {
+    "pass": true,
+    "changedOrMissing": []
+   },
+   "F2_wellOpeningClear": {
+    "pass": true,
+    "hits": []
+   },
+   "F3_noRoutePaving": {
+    "pass": true,
+    "bottomFacesOverRoute": []
+   },
+   "F4_supportedNoFloat": {
+    "pass": false,
+    "floatingBottomFaces": [
+     [
+      214.286,
+      -1956.884,
+      0.25
+     ]
+    ]
+   },
+   "F5_groundOverlayFaces": {
+    "count": 0,
+    "note": "overlay-on-ground class; allowed only if LY-006 rule says so",
+    "pass": true
+   },
+   "F6_noShopFrontIntrusion": {
+    "pass": true,
+    "verts": []
+   },
+   "F7_portsMatched": {
+    "pass": false,
+    "ports": [
+     {
+      "id": "P-route_public-N-edge-x[-20,20]",
+      "samples": 161,
+      "matched": 0,
+      "pass": false
+     }
+    ]
+   },
+   "pass": false,
+   "expect": "fail",
+   "asExpected": true
+  },
+  "neg_port_gap_5cm": {
+   "F1_keptFingerprintsUnchanged": {
+    "pass": true,
+    "changedOrMissing": []
+   },
+   "F2_wellOpeningClear": {
+    "pass": true,
+    "hits": []
+   },
+   "F3_noRoutePaving": {
+    "pass": true,
+    "bottomFacesOverRoute": []
+   },
+   "F4_supportedNoFloat": {
+    "pass": true,
+    "floatingBottomFaces": []
+   },
+   "F5_groundOverlayFaces": {
+    "count": 1,
+    "note": "overlay-on-ground class; allowed only if LY-006 rule says so",
+    "pass": true
+   },
+   "F6_noShopFrontIntrusion": {
+    "pass": true,
+    "verts": []
+   },
+   "F7_portsMatched": {
+    "pass": false,
+    "ports": [
+     {
+      "id": "P-route_public-N-edge-x[-20,20]",
+      "samples": 161,
+      "matched": 0,
+      "pass": false
+     }
+    ]
+   },
+   "pass": false,
+   "expect": "fail",
+   "asExpected": true
+  },
+  "neg_shop_intrusion": {
+   "F1_keptFingerprintsUnchanged": {
+    "pass": true,
+    "changedOrMissing": []
+   },
+   "F2_wellOpeningClear": {
+    "pass": true,
+    "hits": []
+   },
+   "F3_noRoutePaving": {
+    "pass": true,
+    "bottomFacesOverRoute": []
+   },
+   "F4_supportedNoFloat": {
+    "pass": true,
+    "floatingBottomFaces": []
+   },
+   "F5_groundOverlayFaces": {
+    "count": 1,
+    "note": "overlay-on-ground class; allowed only if LY-006 rule says so",
+    "pass": true
+   },
+   "F6_noShopFrontIntrusion": {
+    "pass": false,
+    "verts": [
+     [
+      204.286,
+      -1953.584
+     ],
+     [
+      205.286,
+      -1953.584
+     ],
+     [
+      204.286,
+      -1953.584
+     ],
+     [
+      205.286,
+      -1953.584
+     ],
+     [
+      205.286,
+      -1953.584
+     ],
+     [
+      204.286,
+      -1953.584
+     ]
+    ]
+   },
+   "F7_portsMatched": {
+    "pass": false,
+    "ports": [
+     {
+      "id": "P-route_public-N-edge-x[-20,20]",
+      "samples": 161,
+      "matched": 0,
+      "pass": false
+     }
+    ]
+   },
+   "pass": false,
+   "expect": "fail",
+   "asExpected": true
+  },
+  "neg_route_fingerprint_moved": {
+   "F1_keptFingerprintsUnchanged": {
+    "pass": false,
+    "changedOrMissing": [
+     "route_public"
+    ]
+   },
+   "F2_wellOpeningClear": {
+    "pass": true,
+    "hits": []
+   },
+   "F3_noRoutePaving": {
+    "pass": true,
+    "bottomFacesOverRoute": []
+   },
+   "F4_supportedNoFloat": {
+    "pass": true,
+    "floatingBottomFaces": []
+   },
+   "F5_groundOverlayFaces": {
+    "count": 1,
+    "note": "overlay-on-ground class; allowed only if LY-006 rule says so",
+    "pass": true
+   },
+   "F6_noShopFrontIntrusion": {
+    "pass": true,
+    "verts": []
+   },
+   "F7_portsMatched": {
+    "pass": true,
+    "ports": [
+     {
+      "id": "P-route_public-N-edge-x[-20,20]",
+      "samples": 161,
+      "matched": 161,
+      "pass": true
+     }
+    ]
+   },
+   "pass": false,
+   "expect": "fail",
+   "asExpected": true
+  }
+ },
+ "selftestAllAsExpected": true
+}

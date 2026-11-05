@@ -1,0 +1,50 @@
+{
+ "seat": "LY-033",
+ "inputsFound": [
+  "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb 5937211c（城景已加载：city-data.mjs:581-599/3716-3729/3982-3990，city-renderer.mjs:287-330）",
+  "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb a1265bbf / LOD2.glb 6b2564d3（城景未加载，只记在 source.json 6cf88d6f）",
+  "docs/model-library/updates/m-storage-functional/files/granary-A-LOD0/1/2.glb 2eee3146 / 38884c1f / fe703ccb（仅资产卡）",
+  "docs/model-library/updates/m-storage-functional/files/granary-B-LOD0/1/2.glb 407403ce / 3ce46eee / 0735a9f2（仅资产卡）",
+  "docs/model-library/updates/m-storage-functional/files/granary-group-LOD0/1/2.glb 91a54eaf / 3476fc8c / 2111c6ea；granary-receiving-LOD0/1/2 9fc0b90e / 5bac6a81 / ecf34fe9",
+  "docs/cities/luoyang/assets/storage/storage-group-organized.glb b8482824（只有 v1 归档入口加载：app.mjs:6-7，v1/west-layer.mjs:39；带 A_door_lintel/B_door_lintel 命名节点）",
+  "docs/model-library/assets/storage-origin-contract.json 9bdf37f2、storage-origin-roundtrip.json c6058d88、m-storage-functional.asset.json 32af95ef（A51/B77 失败数）",
+  "docs/cities/luoyang/data/west/storage-interface.json b9108967、city-data.mjs e4115705、city-renderer.mjs fa0a8dcb",
+  "workpacks/LY-001（已交付：bce3211 快照，仓储家族去向已记账）"
+ ],
+ "inputsMissing": [
+  "LY-031 A 门件、LY-032 B 门件（三档 × 开/闭）：都还没有工作包。这是本项要装的件，不能从 GLB 重建，只能由这两个席位交件",
+  "G 包 LY-002/005/006/007/008/009/010：都没有工作包。门态的表达方式（互斥文件还是 excludeNodes）、端口归属、材质基线、检查器都要等 LY-006/007/008 冻结",
+  "私密 granary city composer v1 和 v2 的 .blend 生成源：用于原生重建。装配这一步可以从 GLB 重建，做法是在 GLB 层追加门件节点、原 bufferView 逐字节保留；不能用 Blender 重新导出原节点",
+  "私密 operations/入口体积诊断（给出 0.9/1.8 探针和 A51/B77 的那套）：用于精确复现失败边界。只能部分重建：本席位自建的有限探针在 1.8 m 下测得 A 192/2849、B 288/3441 次足下失败，但计数方法不同，不能替代原数"
+ ],
+ "gaps": [
+  "两仓门口三档全是敞口：14 个相关 GLB 都没有门框、门叶、轴孔、止挡或门槛；门洞 1.50 m 宽（1 cm 栅格测得 1.49）、2.10 m 高（A 门楣底 y2.95，B 门楣底 y3.20）",
+  "城景 GLB 按材质合并成 4 个节点，A/B 不分开；city-renderer 会把几何烘平合批，没有动画也没有状态开关，开门和闭门只能用互斥文件或 excludeNodes 表达（契约待 LY-006）",
+  "门框加门叶会压缩 1.50 m 净宽。要让 0.9 m 单列保持 0/95 净空失败、净宽不小于 1.00 m，门框加开启叶厚每侧合计不能超过 0.25 m",
+  "现在地板直通门口，台阶容差 0.02 m。如果加凸起门槛，0.9 m 条带的门平面支持检查（当前 A 0/1463、B 0/1767）会失败",
+  "外开有冲突：门外挑台只有 0.20 m（A 前墙 z3.0 到楼梯 z3.2，B 前墙 z2.5 到楼梯 z2.7），外开门叶会扫过楼梯顶；内开时到货物代理还有 1.75 m（A）和 1.25 m（B）",
+  "1.8 m 压力失败基线：A 足下 192/2849、门口净空 40/185；B 足下 288/3441、门口净空 40/185。楼梯两侧落差 A 0.65 m、B 0.90 m。装上门件后必须仍然失败，且计数不少于基线",
+  "闭门负例已证明能失败：在内存里加 0.06 m 板模拟闭门，0.9 m 条带门口净空从 0/95 变成 95/95；把门叶停在路径上为 80/95",
+  "v1 data/west/storage-interface.json 引用的 assets/warehouse-A-organized.glb、warehouse-B-organized.glb、optional-functional-overlay.glb 在 bce3211 上不存在（悬空引用，交 LY-100）"
+ ],
+ "reuseCandidate": "无。14 个现有 GLB（v2 分件和组各三档、城景三档、v1 旧组、origin-v1 组）测得两仓门口都是 1.50×2.10 m 的敞口，没有任何门件，所以不存在可以复用的「带门完整仓」。可以复用的只有坐标：分件加组偏移与城景逐三角相同，残差不超过 2.4e-7 m，门件可以用固定偏移直接装入，不需要重新对位",
+ "touches": [
+  "storage-main / granary-city-LOD0.glb、LOD1、LOD2：只读保留原 4 节点 granary-group-static_timber/_tile/_paper__cargo_proxy、original_city_ground_preserved，追加 LY031_*/LY032_* 门件节点",
+  "A 门洞区：城景 x 2272.964–2274.464、前墙面 z -3676.469（墙内面 -3676.669）、y 0.85–2.95；楼梯在 z -3676.269 到 -3674.989",
+  "B 门洞区：城景 x 2296.964–2298.464、前墙面 z -3676.969（墙内面 -3677.169）、y 1.10–3.20；楼梯在 z -3676.769 到 -3674.849",
+  "两仓地板挑台 0.20 m 和楼梯首级（与 LY-034 的阶前端口相邻，只读，不改）",
+  "LY-031/032 交件的门件 GLB（只读引用）",
+  "workpacks/LY-033/ models、assembly.json、qa、preview（唯一写入区）",
+  "交 LY-100 的提案：city-data.mjs 里 storage-main 的 path/bytes/sha256/excludeNodes，以及 m-storage-functional 资产卡（本席位不写）"
+ ],
+ "size": "M",
+ "risks": [
+  "门态表达方式未冻结：用 excludeNodes 还是互斥文件会直接改变交付件数和 city-data 提案，必须等 LY-006",
+  "LY-031/032 如果做凸起门槛或外开门叶，会和 0.9 m 通行或楼梯顶冲突。本项只能如实记录失败，不能在装配阶段削门件或改楼梯",
+  "1.8 m 失败计数有两套方法（私密 51/77，本席位 192/288），容易被误读成「失败减少了」。验收只认同一方法前后对比",
+  "原节点必须逐字节保留。如果有人走 Blender 重新导出整组，几何、UV、图像都会重新编码，导回检查会失败",
+  "与 LY-034 在阶前地面相邻，与 LY-035 共用通行体积口径，所有权要由 LY-006 划清",
+  "所有渲染都是 Blender Workbench 的 CPU 渲染，不是浏览器或 GPU；探针是有限采样，不代表连续人体、负重或车辆；门制属 C 设计，不是太仓复原"
+ ],
+ "readyAfterG": true
+}

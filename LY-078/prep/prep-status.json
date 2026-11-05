@@ -1,0 +1,66 @@
+{
+ "seat": "LY-078",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_near.glb sha256 0fcb76be (8,977,644 B, 83,084 tris, 1 node/1 mesh/4 prims; LY-006 owner LY-078 mode keep)",
+  "docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_middle.glb sha256 5a0ff55f (1,934,304 B, 17,868 tris)",
+  "docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_far.glb sha256 1b45de37 (178,124 B, 1,608 tris)",
+  "docs/library/models/m-luoyang-stoneclassic-access-court/m-luoyang-stoneclassic-access-court.asset.json blob f7739797 (CRLF a0408197)",
+  "docs/cities/luoyang/progress-assets/taixue-A-v3.2/models/taixue-A-LOD1.glb sha256 413c2f35 (research view only via flat ee416342; city-data.mjs:636, :4125)",
+  "docs/cities/luoyang/progress-assets/taixue-A-v3.2/source.json blob 535e10ae",
+  "docs/cities/luoyang/city-data.mjs blob c849706b (no stoneclassic reference); p-luoyang.asset.json blob 8edb06ab (members only)",
+  "lab HEAD bce3211 re-verified 2026-11-06, working tree clean",
+  "workpacks LY-006 registry v1: ownership.json ecbbbcf5, ports.json 28bcfb68 (stoneclassic:south-mouth:road-end v1), seams.json ca4d81f8, zones.json 6b3595ac (LY-078:write:001 [-20,-0.3,18]..[20,0.5,24]), port.schema.json 9fcdf932, validate_interface.py d6a6a078",
+  "workpacks LY-007 baseline/LY_P01-material-semantics.json + decisions.json (P-NEWMAT names LY_P01_plaster 石经院)",
+  "workpacks LY-004 tables/site-constraints.json 633c3302 (太学 install180 不放行; TX5/TX8)",
+  "workpacks LY-001 family ledger, LY-002 evidence-ledger.json 237a4811 (E-R06/E-R08/X09/X11/X18/X19), LY-005 coordinate-contract b6d7fe9d + port-schema 30854ed9"
+ ],
+ "inputsMissing": [
+  "私密源 private deterministic source/build.py（Blender 4.3.2，GLB generator 字段所写）：用于参数化再生成（柱距、门宽）和原生出处；几何/UV/材质可从GLB无损重建（顶点不焊接=3×三角数，连通件拆分自检无损），参数与可编辑性丢失，须标「从GLB重建」",
+  "私密 .blend 原生场景：卡片所称原生重开/干净重建的凭据；只能从GLB重建几何，原生历史无法找回",
+  "LY-006 registry v2（未申请/未发）：v1 把三档源对象定为 keep、写入区只在 z18–24 南带，拆分单元须先改登 modify/replace 或增「派生无损拆分副本」类",
+  "LY-008 检查器、LY-010 方案准入（均无 status.json，未交付）：G 未冻结；X2 方案准入与 world 姿态",
+  "LY-077 太学A院外端口 taixue-A:outer-entry:ground@v1（只有 prep）：仅 X2 局部C关系方案需要",
+  "LY-007 对 plaster（P-NEWMAT）与派生单元是否算「新件」的判定：制作人拍板项，不可从GLB重建"
+ ],
+ "gaps": [
+  "三档GLB均为1节点1网格4个按材质合并的primitive，覆屋/围护/南口无法单独关闭；连通件虚拟拆分0歧义0未分类：近景 cover 213件/79,496三角、enclosure 291/3,492、south_gate 3/36、ground 1/60（中景 15,732/2,040/36/60，远景 828/684/36/60）；11-06 重跑 selftest 结果一致",
+  "LY-006 v1 冲突：源对象 mode=keep，写入区 LY-078:write:001 内只有 2/83,084（中 2/17,868，远 2/1,608）三角（earth 板 z=18 南立面）；源对象向北超区 34 m、向上超区 6.04 m；覆屋/围护/南口 83,024 三角全在区外——拆分若算改/替换须 registry v2（zone_check.py）",
+  "跨单元正体积侵入2处：围护端柱(0.22×1.5×0.22, x±1.99…2.21, z9.78…10.00)插入南口门柱(0.30×3.25×0.30, x±1.80…2.10, z9.85…10.15)，各0.11×1.50×0.15=0.02475 m³，须登记为合法局部接面并定归属",
+  "无任何端口节点/extras；LY-006 冻结了 ID stoneclassic:south-mouth:road-end v1（容差0.005/0.002 m）但 local/world=null；现件街向边仅隐式 z=+18、x∈[-20,20]、y=0；若端口放写入区外缘 z=24 须新建 40×6 m=240 m² gp:LY-078 街向带",
+  "「街道样段」不是独立几何：earth 1材质5块板 z[-16,-10][-10,10][10,12][12,17][17,18] 全在y=0，底-0.3，无坡无路缘；板间8对背靠背内部面（16三角，96 m²）继承缺陷",
+  "地面边界40×34 m（1,360 m²）仅局部；LY-005城市C地坪0.20/0.21 m与本件顶面0差0.20 m须由单一N落位（R4，不得烘进网格）；LY-004 太学 install180 不放行，world 只能 null",
+  "材质与 LY-007 基线不符（material_check.py）：三档名无 __PBR/__FLAT 后缀，textures=0，doubleSided=false（基线true），粗糙度 0.95/0.82/0.78（基线0.88），底色因子与基线FLAT float32 逐位相等；LY_P01_plaster 144三角/12件为未定调第六材（P-NEWMAT）",
+  "南口实测净宽3.60 m（3.80负例碰门柱）、净高3.10 m（3.20负例碰门楣）；0.60×1.80行人中心x∈[-1.50,1.50]可过门线；2.0×2.6推车盒z18→3命中0；内部柱础处收窄至3.38 m；仅离散AABB",
+  "碑位 glTF x[-8,8] z[-3,3] y[0,3.9] 三档非地面命中0；屋瓦底4.08，覆屋投影x±12.085 z±7.03全覆盖碑位——此项已满足",
+  "与太学A无共享坐标：A台高0.6 m，三处南踏步底z=4.85（x中心−10.5/1.5/10.5，宽2.2），无院外地面；原文是「太学门外」而现无太学门模型，任何A相邻关系只能是C",
+  "城景零加载：stoneclassic 在 city-data.mjs/app.mjs/city-renderer.mjs/v1/data 无引用，只在项目卡 members 与 lab/data/assets.json"
+ ],
+ "reuseCandidate": "无（不能判复用完成）：现有三档GLB几何可原样作为输入（碑位已空、南口3.60×3.10已定、0歧义拆分、SHA与LY-006 catalog一致），但验收要求的覆屋/围护/南口/端口独立可恢复在现件中不存在（1节点1网格4材质primitive），端口 stoneclassic:south-mouth:road-end 在 LY-006 只有ID、local/world=null；须交拆分单元（待 LY-006 v2）+端口+街向带+装配清单，几何不新造",
+ "touches": [
+  "源节点 LY_stoneclassic_access_court_C_v1_near / _middle / _far（LY-006 v1 owner LY-078 mode keep；只读，拆分输出派生单元节点须 v2）",
+  "材质 LY_P01_earth / LY_P01_timber / LY_P01_tile / LY_P01_plaster（原样沿用；plaster 属 LY-007 P-NEWMAT）",
+  "地坪片：观经空间自带 earth 板 局部 x[-20,20] z[-16,18] 顶面y=0（5块板，含z10–18南口前与街样段；在写入区外）",
+  "新地坪片 gp:LY-078:street-band（写入区 LY-078:write:001 local:stoneclassic [-20,-0.3,18]..[20,0.5,24]）",
+  "接面：南面端柱 x±1.99…2.21 z9.78…10.00 ↔ 门柱 x±1.80…2.10 z9.85…10.15（enclosure/south_gate 边界）",
+  "端口 stoneclassic:south-mouth:road-end v1（local (0,0,18) 或 (0,0,24)）；构件 T078-port-ground、T078-stele-slots-empty",
+  "接缝 taixue-A:outer-entry:ground@v1 LY-077→LY-078（X2 方案；A文件只读）",
+  "卡片字段提案 m-luoyang-stoneclassic-access-court#status/statusNote/summary/files/gallery/cover/coverAlt/notes.*（LY-100 写）",
+  "docs/library/models/m-luoyang-stoneclassic-access-court/files/*.glb；docs/cities/luoyang/progress-assets/taixue-A-v3.2/models/taixue-A-LOD1.glb（只读）",
+  "city-data.mjs researchModels / p-luoyang.asset.json（不写，只交LY-100语义合并提案）",
+  "workpacks/LY-078/（唯一写入区）"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-006 v1 把源对象定为 keep 且写入区不覆盖源对象：若 v2 不批，覆屋/围护/南口独立可恢复无法交付，本项只能交街向带+端口，验收第一条阻断",
+  "端柱/门柱0.02475 m³×2 侵入若被判为不合法，需改几何，会越出「复用装配」只拆不改的范围",
+  "plaster 为 P-NEWMAT 待拍板材料；若派生单元被算作新件，暂行规则「新件只用五种」会阻断 cover 单元（12件144三角）",
+  "私密 build.py/.blend 不在：只能从GLB重建，卡片「原生重开、干净重建」不能延续到新单元",
+  "端口 world 姿态：LY-004 太学 install180 不放行、LY-010 未交；只能交 local-study 包，X2 方案可能整体阻断",
+  "LY-077 未交付且原文是「太学门外」而非讲堂外：把观经空间贴到A讲堂会造成虚构布局，X2必须标C且不得焊成一院；LY-077 前庭与本件街向带的边界需在 v2 前核体积交",
+  "城市地坪0.20/0.21 m与件内0差：落位时若烘进网格会违反LY-005 R4",
+  "连通件拆分按0.1 mm量化与位置规则；规则盒如被改宽可能把栏杆误划入覆屋，须以T1期望计数锁定",
+  "交体检查目前是件级AABB，不等于实体碰撞穷尽；未做GPU/手机",
+  "180年立碑数未知、谢承书为孙吴佚文经唐注：组合图易被误读为熹平石经原貌，须T8文本负例把关"
+ ],
+ "readyAfterG": false
+}

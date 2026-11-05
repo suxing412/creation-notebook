@@ -1,0 +1,69 @@
+{
+ "seat": "LY-073",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-biyong/files/biyong-A-LOD0.glb 937a3192 (LOD1 5dc71e32, LOD2 48222261)",
+  "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD0.glb 88f227d0 (LOD1 69ae00ce, LOD2 60026711)",
+  "docs/library/models/m-luoyang-biyong/m-luoyang-biyong.asset.json 提交 4b6f3762",
+  "modeling-lab/review-batches/2026-11-04-city-visible/*.zip.part01-05 → ZIP 5895ef23 → chunks/biyong_C_relationship.glb 1bd1c446（母版辟雍关系块：礼堂+整圈围护A-v2+岛+方形水符号+4块跨水板；网页未接入）",
+  "同 ZIP chunks/C_ground_network__C_stitch_primary.glb 2b89e858（辟雍外120 m内无三角）",
+  "modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json 提交 8f890748（biyong 节点 tier=C initial=false）",
+  "docs/cities/luoyang/city-data.mjs 提交 c849706b（无 biyong 节点）",
+  "docs/cities/luoyang/data/evidence/evidence-geometry.json 提交 fa8b7002（ritual_biyong_B 示意点，v1/evidence-view.mjs:28 载入）",
+  "workpacks/LY-002/tables/evidence-ledger.md ea060db6（E-R05 北无水、北门入；D-04）",
+  "workpacks/LY-005/coordinate-contract.json b6d7fe9d（frozen-candidate；地块顶面 0.20）",
+  "workpacks/LY-005/port-schema.json 30854ed9",
+  "workpacks/LY-006/registry/zones.json 6b3595ac（S-BIYONG 写区 LY-073:write:001/002/003，local:biyong）",
+  "workpacks/LY-006/registry/seats.json a1426412 / ports.json 28bcfb68 / seams.json ca4d81f8 / ownership.json ecbbbcf5（LY-073 为 S-BIYONG siteOwner，组件 B073-bank、B073-water-material，产出 biyong:bank-outlet:drain）",
+  "workpacks/LY-005/status.json add0f9b1、LY-006/status.json fe4aaa6c、LY-007/status.json 2fddce70、LY-009/status.json 09a1c454（均为交付完成）",
+  "workpacks/LY-071/prep/prep-status.json fc1f131b、LY-072/prep/prep-status.json 88927f59（同组前置席位的 prep，未冻结）"
+ ],
+ "inputsMissing": [
+  "城市母版 city-C032-entry-LOD0.blend（SHA 1e8c4d2c…）：用途是核对岛/水符号/跨水板原生参数、生成器和原节点矩阵；不在仓库。本项是新件，可以从 GLB 实测外沿、开口、端头重建边界，不需要原件",
+  "礼堂A、围护L/A-v2 的 .blend 源包：用途是追溯原点和三档生成参数；不在仓库。本项只读它们的外沿，可以从 GLB 重建",
+  "LY-071 冻结的礼堂/围护局部变换和台基/岛面接点：还没有工作包",
+  "LY-072 选定跨水件（端头位置、顶高、支承座、是否设北板）：还没有工作包。本项全部接缝检查都要对它的 SHA 跑",
+  "G 未齐：LY-008 没有 status.json，LY-010 没有工作包目录，LY-005 契约本体仍是 frozen-candidate；外岸地面用 0.00 还是 0.20 基准、城南区域准入要等它们定",
+  "覆盖实际岸缘位置的 S-BIYONG 写区：LY-006 现行写区不覆盖 r 67.65–90 段和另外三轴，需要 LY-006/协调者重发；不能从 GLB 重建（这是所有权决定，不是几何）",
+  "辟雍排水/出水口的任何证据或几何（用于 biyong:bank-outlet:drain 端口）：仓库内没有；只能做 C 工程端口，不能从 GLB 重建"
+ ],
+ "gaps": [
+  "外岸到达地面为零：水带外沿 r=78 以外，r=78.5/80/85/90/100/120 m 六圈共 4448 个采样点全部没有命中（母版地面网络块也是空的）",
+  "四块跨水板 8.4×8.0×0.3 m 外端越过水带 0.2 m 后悬空：每块下方 160 个 0.1 m 格是空的，离开外端 0.5 m 内 33/33 条线没有地面；内端只在岛面上搭 0.2 m×8 m＝1.6 m²",
+  "跨水板顶 0.30 m，岛面 0.00 m：内端是 0.30 m 直台阶",
+  "水符号是闭合方环（外156/内140，4736 m²，顶 -0.10、底 -0.40），北带 1099 个 1 m 格里有 1092 格有水，还有北板 A_crossing_1_1，和 E-R05「北无」冲突",
+  "岸缘只是岛箱侧面（z -1.0…0.0），比水顶高 0.10 m；外岸 r=78 处没有岸壁、坡、水底实体，关水后水带下方全空",
+  "岛面 z=0.00 与 LY-005 地块顶面 0.20/0.21 差 0.20 m，基准未定",
+  "母版岛、水、板只有一档（12/32 三角）；库卡没有岛、水、板、外岸三档",
+  "库卡礼堂 LOD0 与母版礼堂：earth/timber 有向三角 0 差；tile 顶点 0.0 m 一致，但有 472 个三角连接或朝向不同（归 LY-071）",
+  "LY-006 写区和几何错位：S-BIYONG 五个写区只在 +x 轴局部 x 20.4–40 m（岛内平地）；墙 67.65–68.35、墙外岛条 68.35–70、跨水板 69.8–78.2、水带 70–78、外岸 ≥78 与任何写区的重叠都是 0.000 m；−x、±z 三轴写区数 0，母版有 4 块跨水板（zone_check.py → out/zone-check.json）",
+  "LY-072 写区宽 5.0 m（z ±2.5），现有跨水板和围护开口都是 8.0 m",
+  "端口 biyong:bank-outlet:drain（→LY-087）已登记，值为 null，仓库内无辟雍排水证据",
+  "岛面 r 20.4–67.65 在 LY-071/072/073 三席 ownsGroundPieces 里都没有（都为 []）"
+ ],
+ "reuseCandidate": "无。母版 biyong_C_relationship.glb（1bd1c446）里的岛、水、板是 C 占位块：外岸地面为零，跨水板外端悬空，北面有水，和 E-R05 冲突，也没有三档，不满足本项验收（check_bank.py 基线 T1/T2/T4/T5 失败）",
+ "touches": [
+  "母版节点 biyong-layout__A_island（内岸/岛面，与 LY-071 台基接点共用）",
+  "母版节点 biyong-layout__A_square_water_symbol（北段要去掉或改争议方案；LY-087 消费）",
+  "母版节点 biyong-layout__A_crossing_0_-1 / 0_1 / 1_-1 / 1_1（LY-072 替换；本项只对其端头）",
+  "母版节点 C_BIYONG_ENTRY_LOD0__biyong-enclosure-A-v2-static_earth 与库卡 enclosure-L（只读外沿 68.35、开口 ±4）",
+  "母版节点 C_BIYONG_ENTRY_LOD0__biyong-A-static_earth/timber/tile 与库卡 biyong-A（只读）",
+  "辟雍局部外岸地面片：局部 r≥78 方环与北带 y∈(70,78) 干地（新件，归本席位）",
+  "不直接写 city-data.mjs、p-luoyang.asset.json、资产卡（卡片只交字段提案，由 LY-100 写）",
+  "LY-006 写区 LY-073:write:001/002/003（现位置要重发）及组件 B073-bank、B073-water-material",
+  "端口 biyong:bank-outlet:drain（生产者）、biyong:crossing-ends:ground 与 biyong:hall-enclosure:ground（消费者）；接缝 seams[105]/[106]/[108]",
+  "资产卡 m-luoyang-biyong 的 cover/files/notes/status/summary 字段提案（LY-006 定 LY-073 为提案所有者，LY-100 写公共卡）",
+  "workpacks/LY-073/（唯一写入区）"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-006 写区不重发就开工，本项岸缘、外岸地面全部越界（T9 必然失败）；如果协调者反过来按写区改布置（跨水件挪进岛内 20.4–30），母版现有围护、水带位置就要变，本项和 LY-071/072 的实测都要重做",
+  "LY-072 跨水件形状没定：端头若有支承座或台阶，T1 的缝、高差、共面判据都要跟着它重定",
+  "E-R05「北无水」与徐2019「方形环水」、考古「未闭合」三说不一，北面的处理是 C 争议方案，要标争议，不能写成复原",
+  "外侧地坪高程（0.00 还是 0.20）要等 G 冻结；选错会在所有端头造成 0.20 m 台阶",
+  "城南礼制区没有 LY-003/004 准入，本项只能交辟雍局部装配，不能声称已入城",
+  "check_bank.py 只做表面 BVH 和离散射线，不是连续人体运动、实体碰撞穷尽或承重计算",
+  "母版关系块和库卡围护网格不同（A-v2 和 L），LY-071 选哪一版会改变本项绑定的 SHA",
+  "排水端口没有证据，容易被误读成水工设计；只能标 C 工程、位置未知来源"
+ ],
+ "readyAfterG": false
+}

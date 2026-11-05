@@ -1,0 +1,120 @@
+{
+ "schematic_sides_m": {
+  "north": {
+   "path": "v0→v4（西北角至东北抹角起点，含北垣折段）",
+   "m": 2764.7
+  },
+  "north_with_chamfer": {
+   "path": "v0→v5（含东北抹角）",
+   "m": 2972.8
+  },
+  "north_straight_span": {
+   "path": "v0与v5东西坐标差",
+   "m": 2387.8
+  },
+  "east": {
+   "path": "v5→v9（东北抹角止点至南垣推定闭合点，含南段推定）",
+   "m": 3668.6
+  },
+  "west": {
+   "path": "v10→v12→v0（南垣推定闭合点至西北角）",
+   "m": 3579.6
+  },
+  "ns_extent": {
+   "path": "最北点与最南点南北差",
+   "m": 3979.6
+  },
+  "ew_extent": {
+   "path": "最东点与最西点东西差",
+   "m": 2683.7
+  }
+ },
+ "comparisons": [
+  {
+   "set": "A",
+   "quote": "Q02",
+   "side": "north",
+   "m": 2523,
+   "kind": "full",
+   "schematic_m": 2764.7,
+   "survey_over_schematic": 0.9126,
+   "verdict": "全长比例 0.913"
+  },
+  {
+   "set": "A",
+   "quote": "Q02",
+   "side": "west",
+   "m": 3500,
+   "kind": "residual",
+   "schematic_m": 3579.6,
+   "survey_over_schematic": 0.9778,
+   "verdict": "不矛盾（残长≤全边长），但不能求比例"
+  },
+  {
+   "set": "A",
+   "quote": "Q02",
+   "side": "east",
+   "m": 3895,
+   "kind": "residual",
+   "schematic_m": 3668.6,
+   "survey_over_schematic": 1.0617,
+   "verdict": "矛盾：残长大于示意全边长"
+  },
+  {
+   "set": "B",
+   "quote": "Q14",
+   "side": "north",
+   "m": 2820,
+   "kind": "full",
+   "schematic_m": 2764.7,
+   "survey_over_schematic": 1.02,
+   "verdict": "全长比例 1.020"
+  },
+  {
+   "set": "B",
+   "quote": "Q14",
+   "side": "west",
+   "m": 3510,
+   "kind": "residual",
+   "schematic_m": 3579.6,
+   "survey_over_schematic": 0.9806,
+   "verdict": "不矛盾（残长≤全边长），但不能求比例"
+  },
+  {
+   "set": "C",
+   "quote": "Q16",
+   "side": "north",
+   "m": 3700,
+   "kind": "full",
+   "schematic_m": 2764.7,
+   "survey_over_schematic": 1.3383,
+   "verdict": "全长比例 1.338"
+  },
+  {
+   "set": "C",
+   "quote": "Q16",
+   "side": "west",
+   "m": 4290,
+   "kind": "residual",
+   "schematic_m": 3579.6,
+   "survey_over_schematic": 1.1985,
+   "verdict": "矛盾：残长大于示意全边长"
+  },
+  {
+   "set": "C",
+   "quote": "Q16",
+   "side": "east",
+   "m": 3895,
+   "kind": "residual",
+   "schematic_m": 3668.6,
+   "survey_over_schematic": 1.0617,
+   "verdict": "矛盾：残长大于示意全边长"
+  }
+ ],
+ "north_ratio_range": [
+  0.9126,
+  1.3383
+ ],
+ "east_residual_lower_bound_ratio": 1.0617,
+ "reading": "三组实测数字互相不一致（北垣2523/2820/3700，西垣3500/3510/4290），且未说明是否含金墉城、量法是沿墙还是直线；只能说明示意图边长与实测差几个到十几个百分点、各边比例不一致，不能据此反算出唯一比例。"
+}

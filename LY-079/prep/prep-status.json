@@ -1,0 +1,58 @@
+{
+ "seat": "LY-079",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-southern-altar/files/south-altar-A.glb sha256 57141a08 (1,023,180 B, 35 nodes, 4,572 tris)",
+  "docs/library/models/m-luoyang-southern-altar/files/south-altar-A-LOD1.glb sha256 70b8f7c4 (916,616 B, 2,472 tris)",
+  "docs/library/models/m-luoyang-southern-altar/files/south-altar-B.glb sha256 3382670e (937,892 B, 29 nodes, 3,090 tris)",
+  "docs/library/models/m-luoyang-southern-altar/files/south-altar-B-LOD1.glb sha256 6ee4dbe0 (898,812 B, 2,242 tris)",
+  "docs/library/models/m-luoyang-southern-altar/m-luoyang-southern-altar.asset.json commit-bytes sha256 b98b85a9 (status 待审, 已建模未入城)",
+  "docs/cities/luoyang/data/research-unplaced.json:107 ritual_south commit sha256 27f9e7f3 (geometry null, unknown-unplaced, renderable false)",
+  "docs/cities/luoyang/city-data.mjs commit sha256 c849706b: no southern-altar asset/node/researchModel; ritual chapter 4011-4025 = lingtai/taixue only",
+  "docs/cities/luoyang/city-renderer.mjs:309 excludeNodes support (commit sha256 04c6c643): presentation ground node can be dropped by name",
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb sha256 fdfc3ce5 (only loaded terrain south of the wall)",
+  "workpacks/LY-005/coordinate-contract.json sha256 b6d7fe9d + port-schema.json sha256 30854ed9 (delivered G item)",
+  "workpacks/LY-001/qa/glb-files.csv rows 269-272 sha256 9771bf0c (altar GLBs = 仅模型（资产卡文件）)",
+  "原文: 後漢書卷97祭祀志上 https://zh.wikisource.org/wiki/%E5%BE%8C%E6%BC%A2%E6%9B%B8/%E5%8D%B797 「爲圓壇八陛，中又爲重壇」",
+  "复跑 2026-11-05：measure_altar.py 输出与 qa/measure-bce3211.json（09473501）去时间戳后 0 差异；mq/cards/m-luoyang-southern-altar/audit.json 四文件 issues=[]、退化三角 0"
+ ],
+ "inputsMissing": [
+  "私密源包 south-altar A/B（.blend、生成器、参数）和卡片提到的旧 qa 报告：只有改几何（补 LOD2、阶足切地）时才需要；本包不改坛，所以不需要；以后真要用，也只能标「从GLB重建」",
+  "LY-004 的南郊位置/分期结论：决定能不能有城市 N；没有就只交局部包",
+  "LY-006 的端口 ID，以及局部地坪片、excludeNodes 的所有权",
+  "LY-007 三档基线（现在每案只有 LOD0+LOD1）、LY-008 检查器、LY-010 的 A/B 选案",
+  "G 冻结的身体包络/通行判据（prep 暂用 C 参数：r=0.30 m，h=1.80 m）"
+ ],
+ "gaps": [
+  "剔除展示地面后，8 个阶足外的 24 个采样点有支撑的是 0/24（保留时 24/24，y=0.000），四个文件一致。八陛外端口唯一的支撑是展示地面：A 66x66 m、B 74x74 m，0.4 m 厚",
+  "城南墙以南（z>=40）已加载地面只覆盖 0.23%（763,884 格中 1,728 格），全在一条约 6 m 宽的条带上（x≈1610-1624）。最大完整支撑方块边长 4 m，放不下 66/74 m 展示地面，也放不下 56.5/64.5 m 外营圈",
+  "高程：坛的本地基面是 0，城中地面顶是 0.20/0.21；落位时 N.y 要等于实测地面顶，容差高程 2 mm、平面 5 mm",
+  "没有 LY-005 格式的端口：每案需要 8 个 ground、4 个 floor、8 个 threshold 端口",
+  "继承接触：门柱嵌入墙端 9-11 mm；柱顶插入门楣 0.09 m（每柱 0.00436 m3，每案 16 处，共 0.0697 m3）。需要定性，不修",
+  "三档：每案只有 LOD0/LOD1（LOD1 的阶梯数据与 LOD0 完全一致），没有远景档",
+  "台缘和梯侧临空 0.8-2.8 m，没有栏杆；不作安全结论",
+  "已合格项（不是缺口）：A 下层 8 陛 10x0.160 m、踏深 0.45、宽 2.20；A 上层 4 阶 8x0.100、0.2875、1.80；B 下层 12x0.150、0.425、2.20；B 上层 10x0.100、0.28、1.80；梯内孔洞 0；门道净宽 2.78 m、楣下 2.31 m；8/8 阶足能走到外营外，封外门负例 0/8"
+ ],
+ "reuseCandidate": "坛体几何可以原样复用，不需要新造。measure-bce3211.json 实测：A/B 各 8 陛 + 4 阶，阶高均匀（极差 0），踏面连续（孔洞 0），门道净宽 2.78 m、楣下 2.31 m，8/8 阶足地面可达，封门负例 0/8，LOD0 与 LOD1 数值相同。但接地包本身（端口、excludeNodes/互斥、剔除展示地面后的支撑）还不存在，所以本席位是「复用装配·待输入」，不是「复用完成」。",
+ "touches": [
+  "源节点（只读，只能列入 excludeNodes）：A_presentation_ground、B_presentation_ground",
+  "源节点（只读，取端口点）：A/B_lower_platform_with_stairs（8 个阶足）、A/B_upper_platform_with_stairs（4 个阶足）",
+  "源节点（只读，门道端口）：A/B_inner_plain_gate_post_C*、A/B_inner_plain_gate_lintel_C*、A/B_outer_plain_gate_post_C*、A/B_outer_plain_gate_lintel_C*、A/B_inner_earth_enclosure*、A/B_outer_earth_enclosure*",
+  "文件（只读引用）：docs/library/models/m-luoyang-southern-altar/files/south-altar-{A,A-LOD1,B,B-LOD1}.glb",
+  "新件（所有权待定，可能与 LY-081 或其他地面席位冲突）：南郊局部 C 地坪片，用来替代展示地面",
+  "外营门外 4 个 road-end 端口：与 LY-081 地面网络共用，需要 LY-006 冻结",
+  "经 LY-100 提案：city-data.mjs 礼制章的 researchModelIds/nodes；data/research-unplaced.json 的 ritual_south（归 LY-004）",
+  "不触碰：m-luoyang-northern-altar 和 LY-080 的全部文件"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-004 很可能给出「遗址未发现、不可落位」：那样本包只能交 local-study 局部包，不能算已入城",
+  "一剔除展示地面就没有支撑：替代地坪片的所有权可能与 LY-081 或其他地面席位冲突",
+  "A/B 两案要由 LY-010 选定，或者保持互斥；不能按外观选",
+  "柱顶插入门楣 0.09 m 属于正体积侵入。如果 LY-007/008 判它是未解释穿插，在「不重做坛」的约束下就会阻断，需要协调者裁定",
+  "通行检查是 0.1 m 网格加竖直射线，C 身体包络还没经 G 冻结；不代表连续人体运动，也不是规范认证",
+  "「城南七里」只是相对关系，不能换算成坐标；不能混用曹魏圜丘、北魏或明清天坛的材料",
+  "文本文件的工作区字节和提交字节 SHA 因 CRLF 不同，必须绑提交字节；lab 工作区的 lab/data/*.json 有别人没提交的改动（本席位没碰）",
+  "只有两档 LOD：如果 LY-007 强制三档而又没有源包，远景档只能「从GLB重建」并如实标注"
+ ],
+ "readyAfterG": true
+}

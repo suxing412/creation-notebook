@@ -1,0 +1,53 @@
+{
+ "seat": "LY-005",
+ "status": "交付完成",
+ "summary": "已按 bce3211 的实际渲染代码冻结全城坐标与高程契约：米制，右手系 +X东 +Y上 -Z北，无地理原点；world = N·S·v，S 在 GLB 内烘一次，N 用列主序矩阵施加一次；只许绕 Y 旋转，缩放必须为 1，city-absolute 件必须用单位节点。80 个节点、48 个 GLB 实测全部满足（缩放偏差 ≤2.6e-9，bounds 差 ≤1.4e-6 m），给出 55 个同时带本地与世界坐标的端口和实测 C 高程表（地面 0.20/0.21，城垣与雍门 0.17，44 院基底贴地，误差 ≤0.25 mm）。Blender 5.2.1 对雍门门体、雍门地坪、两院和一段城垣做了 GLB 往返，单位、轴向和世界矩阵一致；负例全部被拦下；bce3211→f28d650 旧节点零漂移，新接路片恰好接在冻结端口上（高差 8e-7 m）。九项检查都绑定了 SHA256（qa/checks.json）。",
+ "deliverables": [
+  "coordinate-contract.json",
+  "port-schema.json",
+  "brief.md",
+  "inputs.json",
+  "delivery-manifest.json",
+  "qa/checks.json",
+  "qa/frames-bce3211.json",
+  "qa/ports-bce3211.json",
+  "qa/elevation-survey.json",
+  "qa/roundtrip-results.json",
+  "qa/roundtrip/cases/",
+  "qa/roundtrip/out/",
+  "qa/negatives-and-drift.json",
+  "qa/f28d650-port-consumption.json",
+  "qa/f28d650/",
+  "qa/city-data.dump.json",
+  "qa/lab-status-before.txt",
+  "qa/lab-status-after.txt",
+  "preview/ports-and-elevations.png",
+  "source/glbio.py",
+  "source/vray.py",
+  "source/measure.py",
+  "source/elevation_ports.py",
+  "source/bl_roundtrip.py",
+  "source/compare_roundtrip.py",
+  "source/negatives_drift.py",
+  "source/draw_preview.py",
+  "source/checks.py",
+  "source/write_manifest.py",
+  "source/dump_city_data.mjs",
+  "status.json"
+ ],
+ "blockers": [],
+ "openItems": [
+  "origin/main 在开工时已前进到 f28d650（雍门接路 r2026.11.05-6）。契约基线仍是 bce3211；f28d650 只作只读漂移与端口消费核对。LY-100/协调者需决定 G 是否改以 f28d650 为准，若改，按 source/ 重跑一遍（预计无变化：66 个旧节点 N 全部未变）。",
+  "城垣/城门一族基底 0.17 与地面一族 0.20/0.21 有 3–4 cm 系统差；广阳门侧 direct 墙 08/09 墙脚比地面低 1.33 cm；多数城垣墙脚下没有已交付地面。本契约只记录不抹平，接缝高差由各区域席位按端口写明。",
+  "渲染器 transformFor() 不拒收非 1 缩放和非 Y 轴旋转。R1/R2 现在只是契约规则，建议 LY-100 在合并队列或渲染器里加一道硬校验（本席位不改代码）。",
+  "城垣各段端口和墙段间接缝的 portId 归属没有逐段冻结（只给了雍门这一侧的接墙中心线点），交给 LY-006。",
+  "f28d650 的 ground-network-ground-stitched 新增 replaces: [yong-road-receiver]，进入地形章时接路片会被隐藏，需原负责人确认是否有意为之（只读观察，未验证运行效果）。",
+  "Blender 往返只核了几何和矩阵；导出时有「More than one shader node tex image」警告，材质与采样器没有核。往返 GLB 只作 QA，不是替换件。",
+  "没有浏览器/GPU 实测，高程只用竖直射线采样，不是实体碰撞；地理原点、真北、约 180 年绝对高程均未知。"
+ ],
+ "nextDependents": [
+  "LY-006",
+  "LY-008",
+  "LY-010"
+ ]
+}

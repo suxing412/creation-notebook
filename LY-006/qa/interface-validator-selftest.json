@@ -1,0 +1,24 @@
+{
+ "LY-013.example.pass.json": {
+  "sha256": "49c47e55b455d93efa017c2530c02b5e8487487a7f3b6e638c0e2227906cb65a",
+  "errors": [],
+  "pass": true
+ },
+ "LY-013.example.fail.json": {
+  "sha256": "8d6f1bfe03ceaa81e29960e06058fada8eb22b20e0bcb967b69514e0c9dd7927",
+  "errors": [
+   "kaiyang-K-v1:C_door_head_1 is owned by LY-011, not LY-013",
+   "component K012-leaf-C-W not registered for LY-013",
+   "written box [[-12.4, 5.0, -5.0], [12.4, 5.6, 5.0]] outside LY-013:write:001 [[-12.4, 5.0, -5.0], [12.4, 5.34, 5.0]]",
+   "port kaiyang-K-v1:deck-top:floor: world != placement*local",
+   "consumed kaiyang-K-v1:central-frame-top:floor v2 != registry v1",
+   "new ground piece gp:LY-014:deck-skirt outside namespace gp:LY-013:"
+  ],
+  "pass": false
+ },
+ "expect": {
+  "LY-013.example.pass.json": "pass",
+  "LY-013.example.fail.json": "fail with >= 6 errors"
+ },
+ "ok": true
+}

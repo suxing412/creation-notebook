@@ -1,0 +1,66 @@
+{
+ "seat": "LY-082",
+ "inputsFound": [
+  "lab HEAD bce3211（docs/ 对 HEAD 无改动）",
+  "docs/cities/luoyang/assets/ground-atomic/south.glb 4313826d（single_closed_terrain_after，96,796 三角；terrain 章才加载，city-data.mjs:3609 initial false）",
+  "docs/cities/luoyang/assets/ground-atomic/retained.glb aed8b3d4（C02_design_road 等三 primitive；node :3582）",
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb fdfc3ce5（node :3555）",
+  "docs/cities/luoyang/assets/ground-atomic/D08.glb 3ab93310（node :3636，平移 580,0,-960）",
+  "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb 19b05202 / A2-LOD1-prototype.glb 277e9e73（courtyard-A2，city-data.mjs:88）",
+  "邻院 R01-B LOD0 a8d94bb3 / LOD1 25f018fa；R01-A LOD0 93b70de2 / LOD1 0827fa49；B2 LOD0 d99affca / LOD1 83282373",
+  "docs/cities/luoyang/city-data.mjs e4115705（C02-010 :2322，C02-021 :1482，residential 章 :3835，terrain 章 :4027）",
+  "docs/cities/luoyang/city-renderer.mjs fa0a8dcb（:221 initial 过滤，:309-318 excludeNodes，:600-604 章节并集，:616-623 focusCourtyard）",
+  "docs/cities/luoyang/research/2026-11-03/land-contract.json 772687b0（C02_access 巷带、C02-010-entry 留空，C road trial，不加载）",
+  "docs/cities/luoyang/data/west/ground-atomic-contract.json bfc7fc83（四原子同装）",
+  "docs/cities/luoyang/data/far44/instances-calt.json c830b4e3（C02-010 C-alt 矩阵）",
+  "docs/cities/luoyang/data/west/alt14-placement.json 802a88f1 / network.json af8e5479 / c02v/routes.json f567ae95（只被归档 v1/west-layer.mjs 读，不加载）",
+  "同侪准备稿 LY-041/prep/brief-draft.md b31fadff、LY-048/prep/gate-C02-010.json 79b32f52（未冻结，只作线索）",
+  "LY-006 registry v1（交付完成）：zones.json 6b3595ac（LY-082:write:001 世界盒 x 526-530、y -0.3-0.6、z -806.45…-796.45）、ownership.json ecbbbcf5（ground-south 归 LY-090）、ports.json 28bcfb68（C02-010:gate-boundary:road-end v1，producer LY-049，值未填）、seams.json ca4d81f8（seams[21] 049→082）",
+  "LY-081 prep：ports.json 9138694b、run-full-grid2.json fb9fcd46（door-C02-010 与 out1m 均在主分量 component 4，174,298.76 m2，y 0.2）、run-drop-ground-south.json a808736d（去掉 south 后无承托，最近 41.5 m）"
+ ],
+ "inputsMissing": [
+  "LY-010：示范院 ID 冻结与南组 14 院区域准入（没有准入就停，不出件）",
+  "LY-049：端口 C02-010:gate-boundary:road-end v1 的 local/world 数值（registry 已声明、院界已定为世界 z -806.45，但值仍是 null）",
+  "LY-081：C02_access 巷面在实际可达网络里是否是已通边、边 ID",
+  "LY-005：y 0.200 地面基准与本地/世界端口表达",
+  "LY-008：交付检查器与官方 build_assets.py --check 入口；完全包含式叠层检查",
+  "LY-002：约 180 年洛阳里巷宽度、路面、沟的证据条目（本轮未检索，记未知）",
+  "私密源包：south.glb 的源工程（.blend 或生成器、拼接参数）不在仓库。用途：万一要在 ground-south 里切孔或改过沟段时用。可以从 GLB 回读后重建，但交付时必须写「从 GLB 重建」",
+  "私密源包：A2 原型源工程不在仓库。本项不改院落，不需要",
+  "LY-090：ground-south 的唯一差异发布者；若 LY-045 厕坑切孔（registry 标签写 ground-retained，但 C02-010 院内实为 ground-south）落在 south.glb，本项证据要按新 SHA 重跑"
+ ],
+ "gaps": [
+  "几何缺口为 0：C02-010 门洞（x 526.025-529.0，宽 2.975 m）向外 12.75 m 的范围内，15,300/15,300 格（5 cm）都由 ground-south 单独承托；y 0.1757-0.2096，相邻格最大高差 1.7 mm，最大坡度 3.49%，0 格出现两个文件的上表面，LOD0/LOD1 体积盒（y 0.205-2.2）0 命中",
+  "门洞到实际巷面边缘（拱顶 z -803.0，巷面 z -803.0…-797.0，宽 6 m，y 0.200-0.210）只有 3.45 m；其中 z -806.45…-804.6 是 0.200 平地，z -804.6…-803.0 是 ground-south 已有的过沟段",
+  "已有过沟段：沟底线 z -803.7 上 2 mm 以内平整的宽度为 2.46 m（x 526.29-528.75），与 land-contract 的 C02-010-entry（x 526.3-528.7）吻合；两侧沟深 2.5 cm（y 0.175）",
+  "门洞 2.975 m 宽于过沟段 2.46 m，门洞两边各约 0.26 m 落在沟坡上，最低 0.190（低 1.0 cm）；门框最窄净宽 2.10 m（LY-048），所以人货都在平整段内",
+  "加载缺口，这才是现在的断开状态：四个地面原子都是 initial:false，residential 章 loadNodeIds 不含地面；默认加载和住宅章下，门外 15,300/15,300 格无地面（负例实测），要靠 LY-100 让院和地面同进同出",
+  "C02_access 巷带 x 380-712 全覆盖（37,184/37,184 格，0.25 m）：network x 380-486 / south 486-710 / retained 710-712 首尾相接，文件间叠层 0",
+  "备选院 C02-021：门洞向西 10 m 内 12,000/12,000 格由 retained 承托，y 全为 0.200；2.05 m 后进入 C02_design_road；台阶 0，体积盒 0 命中",
+  "旧数据与 C-alt 对不上：c02v/routes.json 的 C02-010-gate 在 x 533.676，与 527.5 差 6.176 m；network.json 写最小宽 2.3 m，比门框 2.10 m 多 0.20 m；都不加载，不能当证据",
+  "被剔除的 designed_hardpacked_activity_ground（0.215）伸到 z -802.45，比现地面高 15 mm；端口高程误用它会差 15 mm",
+  "写入区实测：门洞 x 526.025-529.0 位于 LY-082:write:001 z_min 面上；四条过沟剖面 2 mm 平整段都在区内；与他席位区相交体积 0，只有 5 个面接触（049:write:001、041:write:012/013、048:write:004/005）；区内 z -803.0…-797.0 一段 6 m 完全压在 LY-090 所有的 ground-south 巷面拱顶上，可新铺的只剩 z -806.45…-803.0 共 3.45 m，而这段已被承托"
+ ],
+ "reuseCandidate": "复用（预判，待 LY-010/049/081 冻结后确认）：现有 ground-south（4313826d…，单节点 single_closed_terrain_after）已经把 C02-010 院界（z -806.45）连续接到实际巷面拱顶（z -803.0），中间带有与 C02-010-entry 吻合的过沟段，宽 2.46 m。证据：corridor-C02-010.json 15,300/15,300 格有承托，跨文件叠层 0，最大台阶 1.7 mm，最大坡度 3.49%，体积盒 0 命中；check_lane82.py 6 项全过；Blender 43 点复核最大差 0.05 mm；去掉 ground-south 的负例 15,300 格全断，判定器能检出。备选 C02-021 同样复用 retained 的 C02_design_road。新造短接续只会在 ground-south 上叠第二层，因此不做。第二轮（2026-11-06）：重跑结果逐字相同；LY-006 registry 判 ground-south 归 LY-090、院界 z -806.45，zone_check82.py K9 五项全过；LY-081 prep 独立测得 door-C02-010/out1m 在主分量上，去掉 south 即失承托。",
+ "touches": [
+  "读：ground-south 节点 single_closed_terrain_after，门前一段 x 526.0-529.0、z -806.45…-803.0（地坪片 gp:city-node:ground-south，owner LY-090，只有 090 可发差异；与 LY-041/045/046/049 共用）",
+  "读：ground-south 内的 C02_access 巷面拱顶 z -803.0…-797.0（几何归 LY-090 的 gp:city-node:ground-south；是否为已通边由 LY-081 判；本项不写）",
+  "读：ground-retained 节点 C02_retained_outside_south_Calt_domain（C02_design_earth / C02_design_road，备选 C02-021 门外 x 695.45-705.45）",
+  "读：C02-010（city-data.mjs:2322）与 courtyard-A2 的 excludeNodes：site_lot、site_neutral_lane（z -806.45…-802.45）、designed_hardpacked_activity_ground",
+  "读：邻院 C02-005/006/009/011 的 LOD0/LOD1（只做净空检查）",
+  "提案（不写）：city-data.mjs 的 residential 章 loadNodeIds，或 ground-south 的 initial 字段，由 LY-100 合并",
+  "写：只写 D:/GitHub/creation-notebook-workpacks/LY-082/**",
+  "登记写入区：LY-006 zones LY-082:write:001（S-COURT-LANE）；新件若有，只能叫 gp:LY-082:<name> 且落在区内 z -806.45…-803.0"
+ ],
+ "size": "S",
+ "risks": [
+  "示范院没冻结：LY-010 如果选别的院，要用 measure_corridor82.py 重测。那个院的门外如果没有承托，就转为新造，工作量会变大",
+  "LY-045/046 改 ground-south（开厕孔、改沟）会改变 SHA，本项证据随之作废，必须重跑",
+  "巷面是 C road trial，land-contract 写明 not excavated width；不能把接通说成历史街巷成立",
+  "「局部通行通过」只在四原子都加载时成立；默认加载下院外没有地面，不能把加载缺口说成几何已修",
+  "方法局限：5 cm 高度场加包围盒，不是实体碰撞，也不是连续人体或车辆扫掠；叠层只查上表面，完全包含要等 LY-008",
+  "lab 工作树的 lab/data/assets.json、glb-cache.json、report.json 已被别人改过，合并时不能夹带",
+  "registry 写入区一直伸到 z -796.45，覆盖整条 6 m 巷面；如果有人照区盒铺件，会和 LY-090 的 ground-south 巷面叠层。K9 已限定新件只能在 z -806.45…-803.0"
+ ],
+ "readyAfterG": true
+}

@@ -1,0 +1,1131 @@
+{
+ "seat": "LY-060",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "workpacksHead": "09536a8",
+ "shaRule": "lab 文件一律以提交 blob SHA256 为准（git show HEAD:path | sha256sum）；GLB 两者一致，文本卡因 autocrlf 不一致",
+ "axisNote": "measured bbox 为 Blender 导入后 Z-up；glTF (x,y,z) = Blender (x,z,-y)",
+ "inputs": [
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD0.glb",
+   "sha256Committed": "6f0e41834121fa26cb36303606133256e8a8226e4c49464f68dc93646d181068",
+   "sha256Worktree": "6f0e41834121fa26cb36303606133256e8a8226e4c49464f68dc93646d181068",
+   "crlfDiffers": false,
+   "card": "m-luoyang-foot-pestle",
+   "role": "足碓与踏台（独立）",
+   "useBy": "LY-056 输入；与 workyard 内嵌足碓互斥",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 655508,
+    "bboxMin_blenderZup": [
+     -0.705,
+     -2.45,
+     0.0
+    ],
+    "bboxMax_blenderZup": [
+     0.705,
+     1.76,
+     1.705
+    ],
+    "footprintXY": [
+     1.41,
+     4.21
+    ],
+    "height": 1.705,
+    "nodes": 3,
+    "tris": 1488,
+    "nodesTouchingMinZ": [
+     "pestle_stone_static",
+     "pestle_timber_static"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD1.glb",
+   "sha256Committed": "d8759dd6e0b0880325bb033e5031723e327f132c66a3cafd1aa97fed985cdd7c",
+   "sha256Worktree": "d8759dd6e0b0880325bb033e5031723e327f132c66a3cafd1aa97fed985cdd7c",
+   "crlfDiffers": false,
+   "card": "m-luoyang-foot-pestle",
+   "role": "足碓与踏台（独立）",
+   "useBy": "LY-056 输入；与 workyard 内嵌足碓互斥",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 248208,
+    "bboxMin_blenderZup": [
+     -0.7052,
+     -2.45,
+     0.0
+    ],
+    "bboxMax_blenderZup": [
+     0.7052,
+     1.76,
+     1.7052
+    ],
+    "footprintXY": [
+     1.41,
+     4.21
+    ],
+    "height": 1.705,
+    "nodes": 3,
+    "tris": 1368,
+    "nodesTouchingMinZ": [
+     "pestle_stone_static",
+     "pestle_timber_static"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD2.glb",
+   "sha256Committed": "e94416ef307479eb4a3bf01652153d9c2ff0ba26300b4240920d580a5ae83453",
+   "sha256Worktree": "e94416ef307479eb4a3bf01652153d9c2ff0ba26300b4240920d580a5ae83453",
+   "crlfDiffers": false,
+   "card": "m-luoyang-foot-pestle",
+   "role": "足碓与踏台（独立）",
+   "useBy": "LY-056 输入；与 workyard 内嵌足碓互斥",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 79500,
+    "bboxMin_blenderZup": [
+     -0.709,
+     -2.45,
+     0.0
+    ],
+    "bboxMax_blenderZup": [
+     0.709,
+     1.76,
+     1.7087
+    ],
+    "footprintXY": [
+     1.418,
+     4.21
+    ],
+    "height": 1.709,
+    "nodes": 2,
+    "tris": 1296,
+    "nodesTouchingMinZ": [
+     "pestle_stone_static",
+     "pestle_timber_static"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-foot-pestle/m-luoyang-foot-pestle.asset.json",
+   "sha256Committed": "0edeedebc0c33d511f702177149afa8dde2d6a62839f95aaa5cfb98f847d64d0",
+   "sha256Worktree": "801fe3b1df2852f2f246a30ed459abf05ae698070bccb80d54d257e7ef82bb90",
+   "crlfDiffers": true,
+   "card": "m-luoyang-foot-pestle",
+   "role": "足碓与踏台（独立）",
+   "useBy": "LY-056 输入；与 workyard 内嵌足碓互斥",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）."
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-hand-mill/files/hand-mill-A-LOD1.glb",
+   "sha256Committed": "5885f619799ef79071e6b2960866ff7cfb75fd4dcc838b341755924139fd1ede",
+   "sha256Worktree": "5885f619799ef79071e6b2960866ff7cfb75fd4dcc838b341755924139fd1ede",
+   "crlfDiffers": false,
+   "card": "m-luoyang-hand-mill",
+   "role": "人力石磨 A/B（互斥），含 presentation_ground",
+   "useBy": "LY-055 输入",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 1605992,
+    "bboxMin_blenderZup": [
+     -1.4,
+     -1.4,
+     -0.12
+    ],
+    "bboxMax_blenderZup": [
+     1.4,
+     1.4,
+     0.982
+    ],
+    "footprintXY": [
+     2.8,
+     2.8
+    ],
+    "height": 1.102,
+    "nodes": 18,
+    "tris": 1524,
+    "nodesTouchingMinZ": [
+     "A_presentation_ground"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-hand-mill/files/hand-mill-A.glb",
+   "sha256Committed": "0fe50c2c0604237d9c6d011803550261b48304669b8dcb64f2155332af11c396",
+   "sha256Worktree": "0fe50c2c0604237d9c6d011803550261b48304669b8dcb64f2155332af11c396",
+   "crlfDiffers": false,
+   "card": "m-luoyang-hand-mill",
+   "role": "人力石磨 A/B（互斥），含 presentation_ground",
+   "useBy": "LY-055 输入",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 1778876,
+    "bboxMin_blenderZup": [
+     -1.4,
+     -1.4,
+     -0.12
+    ],
+    "bboxMax_blenderZup": [
+     1.4,
+     1.4,
+     0.982
+    ],
+    "footprintXY": [
+     2.8,
+     2.8
+    ],
+    "height": 1.102,
+    "nodes": 18,
+    "tris": 4670,
+    "nodesTouchingMinZ": [
+     "A_presentation_ground"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-hand-mill/files/hand-mill-B-LOD1.glb",
+   "sha256Committed": "5ec42d1118def47115038f65c68bcd82aacf5cac208891cd2c9eb9066c0b57d3",
+   "sha256Worktree": "5ec42d1118def47115038f65c68bcd82aacf5cac208891cd2c9eb9066c0b57d3",
+   "crlfDiffers": false,
+   "card": "m-luoyang-hand-mill",
+   "role": "人力石磨 A/B（互斥），含 presentation_ground",
+   "useBy": "LY-055 输入",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 1605928,
+    "bboxMin_blenderZup": [
+     -1.4,
+     -1.4,
+     -0.12
+    ],
+    "bboxMax_blenderZup": [
+     1.4,
+     1.4,
+     0.802
+    ],
+    "footprintXY": [
+     2.8,
+     2.8
+    ],
+    "height": 0.922,
+    "nodes": 18,
+    "tris": 1524,
+    "nodesTouchingMinZ": [
+     "B_presentation_ground"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-hand-mill/files/hand-mill-B.glb",
+   "sha256Committed": "598cadc7593300bc399773fc469a77830cabb540ad42baffeec3dbaccd478d36",
+   "sha256Worktree": "598cadc7593300bc399773fc469a77830cabb540ad42baffeec3dbaccd478d36",
+   "crlfDiffers": false,
+   "card": "m-luoyang-hand-mill",
+   "role": "人力石磨 A/B（互斥），含 presentation_ground",
+   "useBy": "LY-055 输入",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 1779100,
+    "bboxMin_blenderZup": [
+     -1.4,
+     -1.4,
+     -0.12
+    ],
+    "bboxMax_blenderZup": [
+     1.4,
+     1.4,
+     0.802
+    ],
+    "footprintXY": [
+     2.8,
+     2.8
+    ],
+    "height": 0.922,
+    "nodes": 18,
+    "tris": 4670,
+    "nodesTouchingMinZ": [
+     "B_presentation_ground"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-hand-mill/m-luoyang-hand-mill.asset.json",
+   "sha256Committed": "abb7865c0ce2ba9b1c4570e1db5a098bf1854c2d67b3d9066cf28ab60fa1f30d",
+   "sha256Worktree": "f2c221df420ec8de33ea12e4666eb3ac5e91c7f5d78249bc0ab612550aedfaf5",
+   "crlfDiffers": true,
+   "card": "m-luoyang-hand-mill",
+   "role": "人力石磨 A/B（互斥），含 presentation_ground",
+   "useBy": "LY-055 输入",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）."
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-stable/files/A.glb",
+   "sha256Committed": "672beeb46faaee0a15f7de649099c486c639b40a39b045b89525fbe7f15b2563",
+   "sha256Worktree": "672beeb46faaee0a15f7de649099c486c639b40a39b045b89525fbe7f15b2563",
+   "crlfDiffers": false,
+   "card": "m-luoyang-stable",
+   "role": "厩棚与饲槽 A/B（互斥）",
+   "useBy": "LY-051/052 输入；LY-060 只引用其交付后的差异件",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 4898748,
+    "bboxMin_blenderZup": [
+     -4.55,
+     -2.4,
+     -0.24
+    ],
+    "bboxMax_blenderZup": [
+     4.55,
+     2.4,
+     3.88
+    ],
+    "footprintXY": [
+     9.1,
+     4.8
+    ],
+    "height": 4.12,
+    "nodes": 19,
+    "tris": 59232,
+    "nodesTouchingMinZ": [
+     "A_earth_platform"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-stable/files/B.glb",
+   "sha256Committed": "bd82280a76f0677821788c62c39b42e8fb2314d297bbad704a92aa7d452c2cb4",
+   "sha256Worktree": "bd82280a76f0677821788c62c39b42e8fb2314d297bbad704a92aa7d452c2cb4",
+   "crlfDiffers": false,
+   "card": "m-luoyang-stable",
+   "role": "厩棚与饲槽 A/B（互斥）",
+   "useBy": "LY-051/052 输入；LY-060 只引用其交付后的差异件",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 7043436,
+    "bboxMin_blenderZup": [
+     -6.35,
+     -2.7,
+     -0.24
+    ],
+    "bboxMax_blenderZup": [
+     6.35,
+     2.7,
+     3.88
+    ],
+    "footprintXY": [
+     12.7,
+     5.4
+    ],
+    "height": 4.12,
+    "nodes": 22,
+    "tris": 92876,
+    "nodesTouchingMinZ": [
+     "B_earth_platform"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-stable/m-luoyang-stable.asset.json",
+   "sha256Committed": "eb67038618d1e24697d2ea45e8182a13a9a4c574ada855f3cfb1d319317eb995",
+   "sha256Worktree": "66f0e994580905874ef788ae041272bcc5d73d6d50f250d2f749ed6b523fd824",
+   "crlfDiffers": true,
+   "card": "m-luoyang-stable",
+   "role": "厩棚与饲槽 A/B（互斥）",
+   "useBy": "LY-051/052 输入；LY-060 只引用其交付后的差异件",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）."
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-tile-kiln/files/kiln-A-LOD1.glb",
+   "sha256Committed": "562b4b398bb97ea4478f0d6e06595994b16725139ee9e80ad66c28501efb69c9",
+   "sha256Worktree": "562b4b398bb97ea4478f0d6e06595994b16725139ee9e80ad66c28501efb69c9",
+   "crlfDiffers": false,
+   "card": "m-luoyang-tile-kiln",
+   "role": "砖瓦窑 A/B（互斥），含 presentation_ground 展示地坪",
+   "useBy": "LY-053/054 输入；展示地坪由 LY-053 移除",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 821880,
+    "bboxMin_blenderZup": [
+     -8.0,
+     -9.5,
+     -1.04
+    ],
+    "bboxMax_blenderZup": [
+     8.0,
+     9.5,
+     2.5
+    ],
+    "footprintXY": [
+     16.0,
+     19.0
+    ],
+    "height": 3.54,
+    "nodes": 19,
+    "tris": 884,
+    "nodesTouchingMinZ": [
+     "A_fire_floor",
+     "A_operation_pit_floor"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-tile-kiln/files/kiln-A.glb",
+   "sha256Committed": "e67d597617c3cdeb5d611f233438fa529151afddbc73ad9a2a98315cc9252f01",
+   "sha256Worktree": "e67d597617c3cdeb5d611f233438fa529151afddbc73ad9a2a98315cc9252f01",
+   "crlfDiffers": false,
+   "card": "m-luoyang-tile-kiln",
+   "role": "砖瓦窑 A/B（互斥），含 presentation_ground 展示地坪",
+   "useBy": "LY-053/054 输入；展示地坪由 LY-053 移除",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 1208676,
+    "bboxMin_blenderZup": [
+     -8.0,
+     -9.5,
+     -1.04
+    ],
+    "bboxMax_blenderZup": [
+     8.0,
+     9.5,
+     2.5
+    ],
+    "footprintXY": [
+     16.0,
+     19.0
+    ],
+    "height": 3.54,
+    "nodes": 41,
+    "tris": 1148,
+    "nodesTouchingMinZ": [
+     "A_fire_floor",
+     "A_operation_pit_floor"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-tile-kiln/files/kiln-B-LOD1.glb",
+   "sha256Committed": "8d9db85bf26e911ffca14123784f97f5b0c7677cf2cce8cf762d8dc21167a0d5",
+   "sha256Worktree": "8d9db85bf26e911ffca14123784f97f5b0c7677cf2cce8cf762d8dc21167a0d5",
+   "crlfDiffers": false,
+   "card": "m-luoyang-tile-kiln",
+   "role": "砖瓦窑 A/B（互斥），含 presentation_ground 展示地坪",
+   "useBy": "LY-053/054 输入；展示地坪由 LY-053 移除",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 820856,
+    "bboxMin_blenderZup": [
+     -8.0,
+     -9.5,
+     -1.04
+    ],
+    "bboxMax_blenderZup": [
+     8.0,
+     9.5,
+     2.5
+    ],
+    "footprintXY": [
+     16.0,
+     19.0
+    ],
+    "height": 3.54,
+    "nodes": 19,
+    "tris": 884,
+    "nodesTouchingMinZ": [
+     "B_fire_floor",
+     "B_operation_pit_floor"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-tile-kiln/files/kiln-B.glb",
+   "sha256Committed": "4886d95d22383a9b26870d36b476f2efa3b35fe68037df6b444847fd38980d91",
+   "sha256Worktree": "4886d95d22383a9b26870d36b476f2efa3b35fe68037df6b444847fd38980d91",
+   "crlfDiffers": false,
+   "card": "m-luoyang-tile-kiln",
+   "role": "砖瓦窑 A/B（互斥），含 presentation_ground 展示地坪",
+   "useBy": "LY-053/054 输入；展示地坪由 LY-053 移除",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 1207668,
+    "bboxMin_blenderZup": [
+     -8.0,
+     -9.5,
+     -1.04
+    ],
+    "bboxMax_blenderZup": [
+     8.0,
+     9.5,
+     2.5
+    ],
+    "footprintXY": [
+     16.0,
+     19.0
+    ],
+    "height": 3.54,
+    "nodes": 41,
+    "tris": 1148,
+    "nodesTouchingMinZ": [
+     "B_fire_floor",
+     "B_operation_pit_floor"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-tile-kiln/m-luoyang-tile-kiln.asset.json",
+   "sha256Committed": "737f2533ef83e12abee04e443b8d1d1e5163f03864c97b1db30524dbbcb7a724",
+   "sha256Worktree": "99f6320539659444c3317a2245378ea3215ce5e96f586159b08ace696f8311f5",
+   "crlfDiffers": true,
+   "card": "m-luoyang-tile-kiln",
+   "role": "砖瓦窑 A/B（互斥），含 presentation_ground 展示地坪",
+   "useBy": "LY-053/054 输入；展示地坪由 LY-053 移除",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）."
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb",
+   "sha256Committed": "89e0a43923fb3868452903186b07299162fdf208a667c0d82630791b554ce726",
+   "sha256Worktree": "89e0a43923fb3868452903186b07299162fdf208a667c0d82630791b554ce726",
+   "crlfDiffers": false,
+   "card": "m-luoyang-workyard-shed",
+   "role": "开敞作业棚 / 双屋足碓作业院（已发布，非原谷物加工院）",
+   "useBy": "LY-057/058/059 对照；LY-060 候选场所之一",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 721404,
+    "bboxMin_blenderZup": [
+     -4.05,
+     -0.45,
+     0.0
+    ],
+    "bboxMax_blenderZup": [
+     4.05,
+     4.45,
+     4.1297
+    ],
+    "footprintXY": [
+     8.1,
+     4.9
+    ],
+    "height": 4.13,
+    "nodes": 2,
+    "tris": 1764,
+    "nodesTouchingMinZ": [
+     "workshed_timber"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD1.glb",
+   "sha256Committed": "a21c2893a1cc7c7d8b69bb7c61b5d85f65f17fc352d003ff67ed9da4ea502671",
+   "sha256Worktree": "a21c2893a1cc7c7d8b69bb7c61b5d85f65f17fc352d003ff67ed9da4ea502671",
+   "crlfDiffers": false,
+   "card": "m-luoyang-workyard-shed",
+   "role": "开敞作业棚 / 双屋足碓作业院（已发布，非原谷物加工院）",
+   "useBy": "LY-057/058/059 对照；LY-060 候选场所之一",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 262480,
+    "bboxMin_blenderZup": [
+     -4.05,
+     -0.45,
+     0.0
+    ],
+    "bboxMax_blenderZup": [
+     4.05,
+     4.45,
+     4.1297
+    ],
+    "footprintXY": [
+     8.1,
+     4.9
+    ],
+    "height": 4.13,
+    "nodes": 2,
+    "tris": 564,
+    "nodesTouchingMinZ": [
+     "workshed_timber"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD2.glb",
+   "sha256Committed": "7c054863f1088ddc8709592dfbfe70e2a581dc8ef91d4741c02aa65a0d0a614e",
+   "sha256Worktree": "7c054863f1088ddc8709592dfbfe70e2a581dc8ef91d4741c02aa65a0d0a614e",
+   "crlfDiffers": false,
+   "card": "m-luoyang-workyard-shed",
+   "role": "开敞作业棚 / 双屋足碓作业院（已发布，非原谷物加工院）",
+   "useBy": "LY-057/058/059 对照；LY-060 候选场所之一",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 19776,
+    "bboxMin_blenderZup": [
+     -4.05,
+     -0.45,
+     0.0
+    ],
+    "bboxMax_blenderZup": [
+     4.05,
+     4.45,
+     4.03
+    ],
+    "footprintXY": [
+     8.1,
+     4.9
+    ],
+    "height": 4.03,
+    "nodes": 2,
+    "tris": 252,
+    "nodesTouchingMinZ": [
+     "workshed_timber"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
+   "sha256Committed": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e",
+   "sha256Worktree": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e",
+   "crlfDiffers": false,
+   "card": "m-luoyang-workyard-shed",
+   "role": "开敞作业棚 / 双屋足碓作业院（已发布，非原谷物加工院）",
+   "useBy": "LY-057/058/059 对照；LY-060 候选场所之一",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 1850040,
+    "bboxMin_blenderZup": [
+     -9.0,
+     -12.15,
+     0.2
+    ],
+    "bboxMax_blenderZup": [
+     9.0,
+     12.0,
+     5.1282
+    ],
+    "footprintXY": [
+     18.0,
+     24.15
+    ],
+    "height": 4.928,
+    "nodes": 5,
+    "tris": 8916,
+    "nodesTouchingMinZ": [
+     "workyard_earth",
+     "workyard_stone",
+     "workyard_timber"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD1.glb",
+   "sha256Committed": "6baefbd0fc1bc08694e2a3b226b38d308f8a214b70464c72e75e0c907dfb540f",
+   "sha256Worktree": "6baefbd0fc1bc08694e2a3b226b38d308f8a214b70464c72e75e0c907dfb540f",
+   "crlfDiffers": false,
+   "card": "m-luoyang-workyard-shed",
+   "role": "开敞作业棚 / 双屋足碓作业院（已发布，非原谷物加工院）",
+   "useBy": "LY-057/058/059 对照；LY-060 候选场所之一",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 713292,
+    "bboxMin_blenderZup": [
+     -9.0,
+     -12.15,
+     0.2
+    ],
+    "bboxMax_blenderZup": [
+     9.0,
+     12.0,
+     5.1282
+    ],
+    "footprintXY": [
+     18.0,
+     24.15
+    ],
+    "height": 4.928,
+    "nodes": 5,
+    "tris": 4148,
+    "nodesTouchingMinZ": [
+     "workyard_earth",
+     "workyard_stone",
+     "workyard_timber"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD2.glb",
+   "sha256Committed": "574d81d91d3898bf9de5e3d46b2b7d8532dd2c1b52d4ac35f7132898a1babda0",
+   "sha256Worktree": "574d81d91d3898bf9de5e3d46b2b7d8532dd2c1b52d4ac35f7132898a1babda0",
+   "crlfDiffers": false,
+   "card": "m-luoyang-workyard-shed",
+   "role": "开敞作业棚 / 双屋足碓作业院（已发布，非原谷物加工院）",
+   "useBy": "LY-057/058/059 对照；LY-060 候选场所之一",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）.",
+   "measured": {
+    "bytes": 167792,
+    "bboxMin_blenderZup": [
+     -9.0,
+     -12.15,
+     0.2
+    ],
+    "bboxMax_blenderZup": [
+     9.0,
+     12.0,
+     5.03
+    ],
+    "footprintXY": [
+     18.0,
+     24.15
+    ],
+    "height": 4.83,
+    "nodes": 4,
+    "tris": 2392,
+    "nodesTouchingMinZ": [
+     "workyard_earth",
+     "workyard_stone",
+     "workyard_timber"
+    ]
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/m-luoyang-workyard-shed.asset.json",
+   "sha256Committed": "ddda7bde8f30ccb6e751fa7c5244824844edd21bca32f8101732f79bbe11f4bd",
+   "sha256Worktree": "bc2a6289a997ca5d8936b616c829ef0f0d72bb4e68b275ac370b1755f47d42f9",
+   "crlfDiffers": true,
+   "card": "m-luoyang-workyard-shed",
+   "role": "开敞作业棚 / 双屋足碓作业院（已发布，非原谷物加工院）",
+   "useBy": "LY-057/058/059 对照；LY-060 候选场所之一",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）."
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256Committed": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "sha256Worktree": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "crlfDiffers": true,
+   "role": "项目卡：members 含五个作业家族（:542-568），只是成员登记，不是城市落位",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-data.mjs",
+   "sha256Committed": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "sha256Worktree": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "crlfDiffers": true,
+   "role": "城市清单（节点/章/研究视图）",
+   "loadedInCity": true,
+   "loaderCode": "app.mjs:1 import manifest from ./city-data.mjs"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-renderer.mjs",
+   "sha256Committed": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "sha256Worktree": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "crlfDiffers": true,
+   "role": "渲染器装载规则",
+   "loadedInCity": true,
+   "loaderCode": "app.mjs:177 dynamic import ./city-renderer.mjs"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/app.mjs",
+   "sha256Committed": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "sha256Worktree": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "crlfDiffers": true,
+   "role": "城景入口脚本",
+   "loadedInCity": true,
+   "loaderCode": "index.html <script type=module src=app.mjs>"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/index.html",
+   "sha256Committed": "cfbf73763675397dde8f5ab08bb13f6b51fbcfa9954227552e32be756666b1bf",
+   "sha256Worktree": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "crlfDiffers": true,
+   "role": "城景入口页",
+   "loadedInCity": true,
+   "loaderCode": "entry"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/lab/data/assets.json",
+   "sha256Committed": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "sha256Worktree": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+   "crlfDiffers": true,
+   "role": "官方汇总（工作树有既有时间戳改动，以提交 blob 为准）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb",
+   "sha256Committed": "e799b5880cd12a5c9255f1c2cadbb49051032027d1781e8e6dd3c27dd48c7ce2",
+   "sha256Worktree": "e799b5880cd12a5c9255f1c2cadbb49051032027d1781e8e6dd3c27dd48c7ce2",
+   "crlfDiffers": false,
+   "card": "m-luoyang-court-layout-kit",
+   "role": "普通院落两种组装（compact_work 与 workyard 同外框 18x24.15）",
+   "useBy": "仅作外框比对，不是谷物院",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）."
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-court-layout-kit/m-luoyang-court-layout-kit.asset.json",
+   "sha256Committed": "63c92f947952a33f7a27555b6c71d95f7504bcb382bedc06536aa2d8e6a9de3f",
+   "sha256Worktree": "11aa327086902424dfab8be3576e315f46a11ba736e6ff775d2cacf088a6b713",
+   "crlfDiffers": true,
+   "card": "m-luoyang-court-layout-kit",
+   "role": "普通院落两种组装（compact_work 与 workyard 同外框 18x24.15）",
+   "useBy": "仅作外框比对，不是谷物院",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "grep of docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,index.html} @bce3211: 0 hits for card id or file name; renderer only loads manifest.nodes + manifest.researchModels (city-renderer.mjs:218,221; chapters via loadNodeIds :601). LY-001 family-ledger: cityNodes=0, state 仅模型（资产卡文件）."
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md",
+   "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+   "role": "任务池原文（LY-060 节 :638-645）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-workpacks/taskboard.json",
+   "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+   "role": "依赖图：LY-060 deps = G + LY-051..059",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-001/qa/family-ledger.json",
+   "sha256": "8eaa7c7a805d5cfb4fd1492a26c480ee0cad9095407e767648e0e9e71eadfe37",
+   "role": "LY-001 快照家族账（五家族 cityNodes=0）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-001/qa/city-nodes.csv",
+   "sha256": "8ab19b0553faf60717759d3580ac1d173d560a832f58512d83bb478a289f27c7",
+   "role": "LY-001 城市节点表（无作业节点）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/render.py",
+   "sha256": "ff89761743a064f7d599835e3e3123f330ca152df43634717c312ece667d4dc7",
+   "role": "统一渲染脚本",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/cards/m-luoyang-stable/audit.json",
+   "sha256": "e6999604d36edc8b704f97c3f17d579890c637a602f2eadfabb89926fca4126c",
+   "role": "体检；SHA 与现件一致，issues=[]",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/cards/m-luoyang-tile-kiln/audit.json",
+   "sha256": "cabc9607d0a2b2992c0c58dd14e4e8a25b86ef2a6a393b6d33bf2a85de26cfc6",
+   "role": "体检；一致，issues=[]",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/cards/m-luoyang-hand-mill/audit.json",
+   "sha256": "8952a86cd1344f977128c75db79d735156839376a015b4029c0a765d39721f98",
+   "role": "体检；一致，issues=[]",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/cards/m-luoyang-foot-pestle/audit.json",
+   "sha256": "f99eb9333cfb4acc8d5b23f8d48ebc520ef1f5f7a2339508f8e30e80842623cb",
+   "role": "体检；一致，issues=[]",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/cards/m-luoyang-workyard-shed/audit.json",
+   "sha256": "dce70ed8b82e5a729f70d9447e2d9dde54ea06e3bf0b524fcf6250d63e5a3307",
+   "role": "体检；一致，issues=[]",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-001/status.json",
+   "sha256": "a32d742a0064baf45c0f78215b10905f2a21fb9ea070b18d8055a58454fe9236",
+   "role": "LY-001 快照（交付完成）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-001/qa/family-ledger.json",
+   "sha256": "8eaa7c7a805d5cfb4fd1492a26c480ee0cad9095407e767648e0e9e71eadfe37",
+   "role": "LY-001 家族台账：五个作业家族 cityNodes=0",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-002/status.json",
+   "sha256": "0ac63db873219d1bb22f9269dd11c52e80e2efeec528decb5a1f0409cd92c13d",
+   "role": "LY-002 证据与禁用表（交付完成）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-005/coordinate-contract.json",
+   "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+   "role": "LY-005 坐标/高程契约（交付完成）：+Y 上；新件 local-origin，本地 y=0=接地面；地块地面 0.20；E3 高程 2 mm/平面 5 mm",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-005/port-schema.json",
+   "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f",
+   "role": "LY-005 端口格式（local+world 双坐标）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/status.json",
+   "sha256": "fe4aaa6c7cb1441f95ac8f51101e0cf63a4ab07ed53452e59c2bd897c5539aba",
+   "role": "LY-006 端口与所有权 registry v1（交付完成）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/seats.json",
+   "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+   "role": "LY-060：site S-WORK 的 siteOwner；writeZones=[]，ownsGroundPieces=[]，produces=[]，consumes=[work-site:service-gate:opening, stable:entrance:ground]；ownsCards=五个作业卡",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/zones.json",
+   "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+   "role": "frames/local:work-site placement=null；sites/S-WORK envelope=null",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/ownership.json",
+   "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+   "role": "C02-034 owner=null status=frozen（44院原矩阵与计数不变）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/ports.json",
+   "sha256": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+   "role": "端口 stable:entrance:ground（LY-052）、work-site:service-gate:opening（LY-059），值待生产方交付",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/registry/seams.json",
+   "sha256": "ca4d81f8f955333c089d782aa69c50c2ca83225d4da07f595f66d1ba87f3f4c1",
+   "role": "接缝 seams[273] LY-052->LY-060、seams[391] LY-059->LY-060",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/schemas/interface.schema.json",
+   "sha256": "1e525d50965a78115b23b570e598e85beab11fba9f80a18146134d9ec5e71f74",
+   "role": "接口 JSON schema",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/schemas/port.schema.json",
+   "sha256": "9fcdf932adbb4cdc58fecf19d52c7a1442955d273e75be7bc6bb9a1a5f494fdc",
+   "role": "端口 schema",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/templates/interface.template.json",
+   "sha256": "df2fa1b5459d0b7362def105be7582dfc9949c2a6ad96feebbe0304c3afd6f9c",
+   "role": "接口模板",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-006/source/validate_interface.py",
+   "sha256": "d6a6a0781ac7aa34ea1eaf7998d8ce2ed82ea6f3a4741889d0a1bdacaba6cd84",
+   "role": "接口校验器（制作期自检用）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-007/baseline/lod-rules.json",
+   "sha256": "fbf53757be2e243429b751899f1690d30f827849962c0e77a8ca811462789146",
+   "role": "LY-007 LOD 规则（交付完成；生产族数字标「待复核」）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-007/baseline/texture-uv-rules.json",
+   "sha256": "a5bfae60c7d646caecbfefa7a5728aa26d60add0e2e80ec72e68380a021d7d27",
+   "role": "REUSED_C_* 为旧调色板现状，新模型禁用",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-007/baseline/decisions.json",
+   "sha256": "cb2870fc6966b59a5bd54d7071947c4f5cf588cf13a769ca41b08fc55b824598",
+   "role": "P-LEGACY 等决定",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-008/source/ly_check.py",
+   "sha256": "fda345d4fe5ab1303bb7d34c457692c0c3742085fea191638c3178451b799a80",
+   "role": "LY-008 检查器（席位尚无 status.json，未冻结）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-009/board/taskboard.v2.json",
+   "sha256": "bd2fcbbe02a1e68fe7b98cd706a86ae14f49bcb495f2088b68e002e2f818106a",
+   "role": "LY-009 任务板 v2：LY-060 状态「待输入」，S4 未完成依赖 LY-008/009/010/051..059（LY-009 尚无 status.json）",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-009/board/pause-zone.json",
+   "sha256": "eabfeb22c11cb574fb1c622506b23e837ed760df3c2f770134e8c8bcaa9f4a08",
+   "role": "PZ-10 advisory：根 taskboard.json 中 LY-060 的 text 串入下一节导语",
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-lab/modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json",
+   "sha256Committed": "8f890748d908e4551c1ed46107d98c4bfebfe28820393ae6943a6a2c2e7e0d7c",
+   "role": "私有母版可见交接 adapter：res_workyard_034 节点（单位矩阵、city-absolute，bounds x 592.89..610.89 / y 0.20..5.128 / z -1092.20..-1068.05），sourceNodeIds C02-034__workyard_trial__*；deploymentStatus「not published」",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "adapter.deploymentStatus = \"not published; no public prefix selected; JSON does not run renderer\"；docs/cities/luoyang 不读取 modeling-lab/"
+  },
+  {
+   "pass2": true,
+   "path": "D:/GitHub/creation-notebook-lab/modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part01..05 :: chunks/res_workyard_034.glb",
+   "sha256": "6ed43d99447cda1db2daccc6209e28d039bf66fad62d2abd33df7ac6cef5bb5f",
+   "bytes": 1849736,
+   "role": "作业院入城试放块（只解出这一个成员到 scratchpad 比对，不入 workpacks）。compare_trial_chunk.py：5/5 网格与 workyard-LOD0 顶点数、三角数、本地包围盒逐值相同（Δ=0.0），只多了节点平移 (601.8912, 0, -1080.2) = city-data.mjs:2742 C02-034「住宅院落 34」的矩阵；材质名带 .027/.030 后缀",
+   "loadedInCity": false,
+   "loaderCode": null,
+   "compareResult": "trial-chunk-compare.json"
+  }
+ ],
+ "missing": [
+  {
+   "what": "原谷物加工院（含双足碓、工作棚瓦缺陷记录）的 GLB 与缺陷记录",
+   "neededFor": "LY-057/058 修订后作为 LY-060 的一个可选场所",
+   "searched": "docs/** 全文 grep「谷物」0 命中；git log --all --grep 0 命中；workyard-LOD0 只有 pestle_0 一具足碓；compact_work 无足碓",
+   "rebuildFromGlb": "否：仓库里没有它的 GLB，无从重建；需协调者提供来源或由 LY-057 判阻断"
+  },
+  {
+   "what": "五个作业家族的原生 .blend / 源 ZIP（stable、tile-kiln、hand-mill、foot-pestle、workyard-shed）",
+   "neededFor": "若 LY-060 需重新导出合批或补 LOD；纯装配可不需要",
+   "searched": "D:/GitHub/creation-notebook-待传/ 只有 说明.txt",
+   "rebuildFromGlb": "可以：装配只需 GLB 节点+矩阵；如需改几何须标「从GLB重建」"
+  },
+  {
+   "what": "LY-051..059 九个前置包的交付物（models/、assembly.json、qa/）",
+   "neededFor": "LY-060 的全部装配输入",
+   "searched": "workpacks/LY-051..059 只有 prep/（部分空）",
+   "rebuildFromGlb": "不适用：须等前置席位交付"
+  },
+  {
+   "what": "LY-005 坐标/高程契约、LY-006 端口与所有权、LY-007 材质基线、LY-008 检查器、LY-010 选定作业样板与区域准入",
+   "neededFor": "原点/高程基准、外接端口格式、材质合并、检查器、能否入城",
+   "searched": "workpacks/LY-005 只有 qa/source 草稿；LY-006/007/008/010 目录不存在",
+   "rebuildFromGlb": "不适用",
+   "supersededBy": "pass2：LY-001/002/005/006/007 已交付完成（见 inputs 中 pass2 条目）；仍缺 LY-008、LY-009 冻结与 LY-010"
+  },
+  {
+   "pass2": true,
+   "what": "LY-008 冻结检查器（status.json）、LY-009 status.json、LY-010 决策表（目录为空）",
+   "neededFor": "作业样板选择、区域准入、官方检查入口；LY-010 未出则 local:work-site 无原点",
+   "rebuildFromGlb": "不适用"
+  },
+  {
+   "pass2": true,
+   "what": "LY-060 自身的写入区 / 演示域承托地坪归属",
+   "neededFor": "registry v1 给 LY-060 writeZones=[]、ownsGroundPieces=[]、produces=[]，S-WORK envelope=null；若演示域需要一块承托地坪或外接端口，须协调者/LY-006 补登，否则只能用前置包的地坪件",
+   "rebuildFromGlb": "不适用"
+  },
+  {
+   "pass2": true,
+   "what": "city-C032-entry-LOD0.blend（私有母版）中 C02-034__workyard_trial__* 的原生对象",
+   "neededFor": "只用于说明试放来源；LY-060 不使用它落城（C02-034 冻结）",
+   "rebuildFromGlb": "可以：试放块与 workyard-LOD0 网格逐值相同，只是平移"
+  }
+ ],
+ "pass2": {
+  "at": "2026-11-05T23:3x",
+  "note": "G 部分交付后的增补；pass1 条目未改"
+ }
+}

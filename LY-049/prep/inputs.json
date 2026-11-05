@@ -1,0 +1,410 @@
+{
+ "seat": "LY-049",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "frame": "glTF world, x east, y up, z = -north",
+ "court": {
+  "node": "C02-010",
+  "asset": "courtyard-A2",
+  "matrixColumnMajor": [
+   1,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   1,
+   0,
+   531,
+   0,
+   -818.45,
+   1
+  ],
+  "selectedBy": "LY-006 candidate frame; LY-010 not delivered"
+ },
+ "ports": {
+  "produces": "C02-010:gate-boundary:road-end@v1",
+  "consumes": [
+   "C02-010:ground-base@v1",
+   "C02-010:service-opening:opening@v1"
+  ]
+ },
+ "nativeSources": {
+  "status": "missing (not in repo)",
+  "items": [
+   {
+    "what": "A2 courtyard prototype native source (.blend / c02v generator)",
+    "use": "only if the gate body itself had to change; not needed for reuse",
+    "rebuildFromGLB": "yes for a new separate component (read GLB); must be labelled 从GLB重建"
+   },
+   {
+    "what": "ground-south native source / south14 composition generator",
+    "use": "only if a ground cut/diff were needed; owner LY-090",
+    "rebuildFromGLB": "possible (single node single_closed_terrain_after, 96,796 tris) but only LY-090 may emit it"
+   }
+  ]
+ },
+ "inputs": [
+  {
+   "path": "lab:docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+   "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "bytes": 447064,
+   "loadedInCity": "yes, near only",
+   "loadedBy": "city-data.mjs:109-111 nearPath; city-renderer.mjs:405-416 near = node.id === nextNearId; focusCourtyard city-renderer.mjs:616-623",
+   "use": "courtyard-A2 near; gate geometry source (measured)"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "bytes": 92220,
+   "loadedInCity": "yes, initial",
+   "loadedBy": "city-data.mjs:88-96 path + excludeNodes; node C02-010 city-data.mjs:2322 initial:true; city-renderer.mjs:221",
+   "use": "courtyard-A2 far"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "bytes": 2623560,
+   "loadedInCity": "only after terrain chapter",
+   "loadedBy": "city-data.mjs:471 asset, :3609 node initial:false; terrain chapter :4027 loadNodeIds; city-renderer.mjs:600-601 union",
+   "use": "sole support of gate passage (owner LY-090)"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "bytes": 629740,
+   "loadedInCity": "only after terrain chapter",
+   "loadedBy": "city-data.mjs:451 / :3582",
+   "use": "layer check; 0 tris in region"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "bytes": 3565544,
+   "loadedInCity": "only after terrain chapter",
+   "loadedBy": "city-data.mjs:431 / :3555",
+   "use": "layer check; 0 tris in region"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "bytes": 6664,
+   "loadedInCity": "only after terrain chapter",
+   "loadedBy": "city-data.mjs:491 / :3636 (translation 580,0,-960)",
+   "use": "layer check; 0 tris in region"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 111034,
+   "loadedInCity": "yes (manifest)",
+   "loadedBy": "app.mjs:1 import manifest",
+   "use": "node C02-010 matrix, excludeNodes, chapters (residential :3835, loadNodeIds :3884 has no ground)"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "bytes": 36571,
+   "loadedInCity": "yes",
+   "loadedBy": "app.mjs:177 dynamic import",
+   "use": "initial set :221; excludeNodes :309-318; transformFor :374-389; focusCourtyard :616"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "bytes": 14563,
+   "loadedInCity": "yes",
+   "loadedBy": "index.html module entry",
+   "use": "legacy v1 redirect app.mjs:6-7 only with mode/c01stage/c02stage query"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/index.html",
+   "sha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "bytes": 16108,
+   "loadedInCity": "yes",
+   "loadedBy": "-",
+   "use": "page"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "bytes": 24215,
+   "loadedInCity": "card (not runtime)",
+   "loadedBy": "-",
+   "use": "project card, read only, not edited"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/data/far44/instances-calt.json",
+   "sha256": "c830b4e37090da5e070156b7f6199f36c5d0191c339f5a9399f0becded50ff85",
+   "bytes": 23726,
+   "loadedInCity": "no (source contract)",
+   "loadedBy": "city-data.mjs node sourceContract",
+   "use": "C02-010 matrix provenance"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/data/far44/instances-original.json",
+   "sha256": "a854589134150c2fe74b5bbed4e404aeeb5aa5724090795eb60923c68e3d2cff",
+   "bytes": 23916,
+   "loadedInCity": "no",
+   "loadedBy": "-",
+   "use": "original layout (x 537.17635) for reconciling old routes"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/data/far44/preflight-contract.json",
+   "sha256": "90dfa0774643b90d61f057aed726525cfe3e18647e897d3c90eb64fa79426d6b",
+   "bytes": 7002,
+   "loadedInCity": "no (source contract)",
+   "loadedBy": "city-data.mjs asset sourceContract",
+   "use": "prototype list"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "bytes": 1391,
+   "loadedInCity": "no (source contract)",
+   "loadedBy": "city-data.mjs ground sourceContract",
+   "use": "ground composition"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/data/west/network.json",
+   "sha256": "af8e5479f47ccae1dd5c41766da60e6a871e74808018737a85514895334afc73",
+   "bytes": 17517,
+   "loadedInCity": "no (v1 legacy only)",
+   "loadedBy": "v1/west-layer.mjs:17",
+   "use": "C02-010_door_approach; minimumDesignedWidth 2.3 (vs exact 2.13)"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/data/c02v/routes.json",
+   "sha256": "f567ae955ae8bc1045c196d47da3b1493a514dd894fc9134274d219e98e89301",
+   "bytes": 24893,
+   "loadedInCity": "no",
+   "loadedBy": "-",
+   "use": "C02-010-gate in original layout x 533.67635 (C-alt 527.5)"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/research/2026-11-03/land-contract.json",
+   "sha256": "772687b0cbe8a7be6b967737ca850c6a56c1d0b72706dfd9d8f87aab095c61e2",
+   "bytes": 14029,
+   "loadedInCity": "no (research page)",
+   "loadedBy": "-",
+   "use": "C02-010-entry keep-clear reserve x 526.3-528.7, N 798.8-807.65"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/research/2026-11-03/gate-replacement-contract.json",
+   "sha256": "057eb65498377240a7f5b6519edf0e71df114b7cb974efa10767b097e97c514a",
+   "bytes": 4999,
+   "loadedInCity": "no (research)",
+   "loadedBy": "-",
+   "use": "gate roof study anchor (-3.5,-10.6,0); body retained"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/research/2026-11-03/south14-geometry.json",
+   "sha256": "b6949cdc60aa1edd50a466c326e477f72cd4479ffc5cbe00f40815549dc6427a",
+   "bytes": 13768,
+   "loadedInCity": "no (research)",
+   "loadedBy": "-",
+   "use": "C02-010-gate route check, original layout"
+  },
+  {
+   "path": "lab:docs/cities/luoyang/research/2026-11-03/stair-diagnosis.json",
+   "sha256": "95ad47b7c479c6c5733ef826cf99b96982b7503054d0d15b5d8180880aec13fe",
+   "bytes": 194959,
+   "loadedInCity": "no (research)",
+   "loadedBy": "-",
+   "use": "C02-010-gate_to_main stair contacts (inside court, not 049 scope)"
+  },
+  {
+   "path": "lab:docs/model-library/assets/gate-near-local.glb",
+   "sha256": "fcdfe870b7b7ee1ce878ae2c6b4d1b6c0add9b7a9ce3477b34efe42e1fca6a87",
+   "bytes": 2202468,
+   "loadedInCity": "no (library research)",
+   "loadedBy": "-",
+   "use": "gate roof study near; body identical to A2 gate"
+  },
+  {
+   "path": "lab:docs/model-library/assets/gate-original.glb",
+   "sha256": "506a7e863909444467599e7ba57114b29365ef430ed26e0ddaa159b09aec9435",
+   "bytes": 1259992,
+   "loadedInCity": "no",
+   "loadedBy": "-",
+   "use": "archived original gate"
+  },
+  {
+   "path": "lab:docs/model-library/assets/gate-roof.glb",
+   "sha256": "8bf9b4160718fce58d0cd3ee75f447fd4b569d76973ce6c72014ecabc12d6dfa",
+   "bytes": 2202404,
+   "loadedInCity": "no",
+   "loadedBy": "-",
+   "use": "gate roof candidate"
+  },
+  {
+   "path": "lab:docs/model-library/m-gate-roof-study.asset.json",
+   "sha256": "50023f4aeef709f7ad5d053e67a166d9de97b4b7a50328f9382244a90089430d",
+   "bytes": 991,
+   "loadedInCity": "card",
+   "loadedBy": "-",
+   "use": "gate roof study card"
+  },
+  {
+   "path": "lab:docs/model-library/m-courtyard-family.asset.json",
+   "sha256": "41999fbba1fa8f29c8c1d3fcc367ef4d9f2d026043b04cfbb62cbb926b2fc995",
+   "bytes": 6250,
+   "loadedInCity": "card",
+   "loadedBy": "-",
+   "use": "courtyard family card (C2 updates not loaded)"
+  },
+  {
+   "path": "lab:lab/data/assets.json",
+   "sha256": "c39e8e9a2a1833f3abbc15e585f5868fba6c7d2e01f6b8e504c2b44193f16979",
+   "bytes": 439273,
+   "loadedInCity": "no (site build data)",
+   "loadedBy": "-",
+   "use": "summary, read only"
+  },
+  {
+   "path": "workpacks:LY-006/registry/ports.json",
+   "sha256": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+   "bytes": 287590,
+   "loadedInCity": "contract",
+   "loadedBy": "-",
+   "use": "C02-010:gate-boundary:road-end v1 (null values), ground-base v1, service-opening v1"
+  },
+  {
+   "path": "workpacks:LY-006/registry/zones.json",
+   "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+   "bytes": 111303,
+   "loadedInCity": "contract",
+   "loadedBy": "-",
+   "use": "LY-049:write:001 local box [-5,-0.3,9]-[-1,3.2,12]; LY-082:write:001 world z from -806.45"
+  },
+  {
+   "path": "workpacks:LY-006/registry/seams.json",
+   "sha256": "ca4d81f8f955333c089d782aa69c50c2ca83225d4da07f595f66d1ba87f3f4c1",
+   "bytes": 189895,
+   "loadedInCity": "contract",
+   "loadedBy": "-",
+   "use": "seams[20,21,28,31]"
+  },
+  {
+   "path": "workpacks:LY-006/registry/ownership.json",
+   "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+   "bytes": 1236666,
+   "loadedInCity": "contract",
+   "loadedBy": "-",
+   "use": "R049-gate-transition fixed; ground-south owner LY-090"
+  },
+  {
+   "path": "workpacks:LY-006/registry/seats.json",
+   "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+   "bytes": 127946,
+   "loadedInCity": "contract",
+   "loadedBy": "-",
+   "use": "LY-049 seat record"
+  },
+  {
+   "path": "workpacks:LY-005/coordinate-contract.json",
+   "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+   "bytes": 11013,
+   "loadedInCity": "contract",
+   "loadedBy": "-",
+   "use": "world = N.S.v; E1-E4; tolerance 5 mm / 2 mm"
+  },
+  {
+   "path": "workpacks:LY-002/tables/evidence-ledger.json",
+   "sha256": "237a4811acad3d7f6733d4c5c95a64df0b2c67adf48b2682264eb0f0c8512b77",
+   "bytes": 76865,
+   "loadedInCity": "contract",
+   "loadedBy": "-",
+   "use": "E-H01; prohibitions X07 X12 X24"
+  }
+ ],
+ "prepArtifacts": [
+  {
+   "file": "blender-xcheck-LOD0.json",
+   "sha256": "b1b6dc7249a9b3d8351cb2a13ba18644487f35097749fa9e8baa0d6a65aa44ba"
+  },
+  {
+   "file": "blender-xcheck-LOD1.json",
+   "sha256": "a6aeeeef1b2a87591ac28a0a1e4eea2b67208d8134883cdd35261fe5b8a5c9eb"
+  },
+  {
+   "file": "blender_xcheck49.py",
+   "sha256": "2d9d2f840246500bc4dd015d1c3e263b933ef18032a3342aaef5eb54a13c81e9"
+  },
+  {
+   "file": "brief-draft.md",
+   "sha256": "0fb6babfb8b10c60767deeda5ca47d684e2d32fe5dae2b5f2c5c8d4bfe841323"
+  },
+  {
+   "file": "check_gate49.py",
+   "sha256": "80a0ad50b8328b9820f0b1b891deda1964ec2bf7fb5c3585dbb814aae737cd48"
+  },
+  {
+   "file": "gate-components.json",
+   "sha256": "54f8c9a154a6ae58ada3dcae464698cef3f0fb5727c36c40d32e2161196c1f75"
+  },
+  {
+   "file": "gate-roof-study-probe.json",
+   "sha256": "2f92ac98492ba312b6d92540e07aa764b9003c643dae58026b723a6210a4c7d3"
+  },
+  {
+   "file": "gate_components.py",
+   "sha256": "17336bf83ddcb7dbc66371032ad6dcb9366ce8cb61f282f95e1bc8eda7a3e5ca"
+  },
+  {
+   "file": "glb49.py",
+   "sha256": "55ff062f90d273f867731649752db8d55b0ffccf1a3cad4fdb6682da46851d14"
+  },
+  {
+   "file": "make_inputs49.py",
+   "sha256": "711ee48d4110062dbdff98c1eb8c9eeb268cfc798b95822d89b55e53f94b3144"
+  },
+  {
+   "file": "measure-gate-LOD0.json",
+   "sha256": "712d4d868b8b32750b22b32c523391ae86e834321e064dc7722f9e997225ac33"
+  },
+  {
+   "file": "measure-gate-LOD1.json",
+   "sha256": "1997b4153958cd4ffae98bb0c8d95f3b5b98ad8f9363fc4c8358afa9cc1c65c1"
+  },
+  {
+   "file": "measure_gate49.py",
+   "sha256": "eac900c4972323048b1e7e872dbd3fefca0109185c889c52e199686bf25ecae5"
+  },
+  {
+   "file": "neg-double-slab-LOD0.json",
+   "sha256": "097b1ad4bf25da2581adcda8261bec5129b27bee7008e1cc60078d8cf4eca6a6"
+  },
+  {
+   "file": "neg-no-ground-LOD0.json",
+   "sha256": "7617e0e91c57d22e6f3a739fcfc946a626d438c97c91dcc0a26747d19f1d88e8"
+  },
+  {
+   "file": "neg-overrun-LOD0.json",
+   "sha256": "5380385a40057e3aa8b03678243182b07c9333242e0602c8fa813bf9eb760dec"
+  },
+  {
+   "file": "neg-threshold-LOD0.json",
+   "sha256": "f33fcda050a465ce2243bad55661a598a2ef291f44bc57700bee7f033ce9a580"
+  },
+  {
+   "file": "probe_gate_roof_study.py",
+   "sha256": "f8fcf15c0f2bf329d1c7e744ae2745f62e83ea04d06284bfbd578eacf00df09e"
+  },
+  {
+   "file": "selftest-check.json",
+   "sha256": "7104af07c67ece6d1b5c84746cbc10b63d1714dce1c4a2d6b3cd23d786aaff10"
+  },
+  {
+   "file": "standalone-LOD0.json",
+   "sha256": "f66acbc8f913404f82e8c18a492d3a256698111796813130c90b01ac53e33071"
+  },
+  {
+   "file": "test-plan.md",
+   "sha256": "5b2e4fab6e17274e19314e4893b19b3c3812a8cd7492b57a7605c864fc8df87c"
+  }
+ ]
+}

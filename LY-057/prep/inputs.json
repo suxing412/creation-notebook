@@ -1,0 +1,347 @@
+{
+ "seat": "LY-057",
+ "phase": "prep (G not frozen; no delivery geometry made or changed)",
+ "baseline": {
+  "repo": "D:/GitHub/creation-notebook-lab",
+  "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "note": "core.autocrlf=true: text files below carry both the working-tree SHA256 (CRLF) and the bce3211 blob SHA256 (LF). GLB/WebP are binary and identical in both. The lab working tree also shows unrelated local modifications to lab/data/assets.json, glb-cache.json, report.json (not made by this seat).",
+  "originMainAtPrepV2": {
+   "commit": "cad338ba683f7277aea098f45c8feb6c915a847c",
+   "subject": "assets(luoyang): place three northern courts, preserve C15 budget (r2026.11.05-8)",
+   "note": "3 commits ahead of bce3211. workyard-shed GLB bytes unchanged; card asset.json changed (statusNote, notes.城市装配); city-data.mjs now loads workyard-LOD2 (far) and workyard-LOD0 (near). workshed-* still not loaded. Local branch 'main' (44c66da) is older than bce3211 and is not the baseline."
+  }
+ },
+ "taskSpec": {
+  "TASKPOOL.md": {
+   "path": "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md",
+   "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+   "section": "### LY-057 (lines 611-618)"
+  },
+  "taskboard.json": {
+   "path": "D:/GitHub/creation-notebook-workpacks/taskboard.json",
+   "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+   "deps": [
+    "LY-001",
+    "LY-002",
+    "LY-005",
+    "LY-006",
+    "LY-007",
+    "LY-008",
+    "LY-009",
+    "LY-010"
+   ]
+  }
+ },
+ "requiredButMissing": [
+  {
+   "id": "original-grain-processing-court",
+   "taskpoolName": "原谷物加工院（含工作棚、双足碓）",
+   "searched": [
+    "creation-notebook-lab: docs/, lab/, all branches incl. reviews, origin/luoyang-content, git log -S (no hit for 谷物/加工院/双足碓/grain court)",
+    "creation-notebook, creation-notebook-review, creation-notebook-待传 (only 说明.txt), D:/待删-* folders, D:/GitHub/游戏开发者终端, user memory dir",
+    "file-name search on D: (depth 6) for *grain*, *谷物*, *workyard*"
+   ],
+   "result": "not found; only the task pool and the producer's original list item 10 name it",
+   "neededFor": "identity of the product to revise, its node names, original tile/support parts, original three tiers",
+   "rebuildFromGLB": "impossible: there is no GLB of it. The nearest measurable candidate is the published workshed (below), whose identity with the 'original' must be confirmed by LY-001/producer.",
+   "v2": "LY-006 registry v1 binds LY-057 to workshed (89e0a439...) by ownership; git history shows only one version of workshed/workyard GLBs (da1877a), so no earlier 'original' bytes exist in the repo. Coordinator should confirm in writing that the original = workshed."
+  },
+  {
+   "id": "original-defect-record",
+   "taskpoolName": "原谷物加工院缺陷记录（瓦落座/行缝/承件）",
+   "searched": [
+    "reviews branch (all r* reviews + glb-audit evidence)",
+    "docs/**/qa",
+    "research/2026-11-03, 2026-11-04",
+    "main session transcript (only the producer's one-line item 10)"
+   ],
+   "result": "not found as a file; this seat re-measured the defect class on the published shed instead (out/roof-*.json)",
+   "rebuildFromGLB": "partly: defect numbers can be re-measured on the candidate GLB, but not mapped to the original record's IDs",
+   "v2": "The measured 'defects' equal the LY-007 frozen house rib rule exactly (out/style-zone-workshed.txt). Without the record it is unknown whether the producer's 瓦片落座/行缝 complaint targets this frozen rule itself."
+  },
+  {
+   "id": "workshed-native-source",
+   "what": ".blend / generator / source ZIP of m-luoyang-workyard-shed (workshed + workyard)",
+   "status": "private, not in repo; card says source Release still pending (commit 52fceaa message)",
+   "neededFor": "editing the tile-strip generator at its parameters (strip slope, pitch, ridge cap) instead of hand-editing exported meshes; regenerating LOD1/LOD2 from the same source",
+   "rebuildFromGLB": "yes, geometrically: the roof is 1 bed slab (52 tris) + N identical round strips (28 faces) + 15 timber boxes; all measured. A rebuild must be declared 'rebuilt from GLB', not a recovered original.",
+   "v2": "Rebuild parameters fully recovered: bed 3 segments x [-4.05,-3.3,3.3,4.05], t 0.13, rise 1.1/2.45, ridge 4.03; ribs d 0.11 pitch 0.28 inset 0.06 lift 0.05 lift_ridge 0.05 ridge_gap 0.07 (LOD1 n0//2, 4-gon)."
+  }
+ ],
+ "found": [
+  {
+   "id": "m-luoyang-workyard-shed/workshed-LOD0",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb",
+   "sha256": "89e0a43923fb3868452903186b07299162fdf208a667c0d82630791b554ce726",
+   "bytes": 721404,
+   "gitBlob": "178e19c4628ae84323b700422db7306675c2726e",
+   "role": "nearest candidate for the 'grain court work shed'; standalone open shed 8.1 x 4.9 x 4.13 m",
+   "nodes": [
+    "workshed_tile (1 bed slab + 54 strips)",
+    "workshed_timber (15 parts)"
+   ],
+   "loadedInCity": false,
+   "loadedBy": "library detail page only: lab/asset.html -> import('./viewer.mjs') (asset.html line 108) -> lab/viewer.mjs line 71 GLTFLoader; listed in the card's files[]",
+   "owner": "LY-057 modify (LY-006 ownership.json workshed:workshed_tile, workshed:workshed_timber)",
+   "loadedInCity_originMain_cad338b": false
+  },
+  {
+   "id": "m-luoyang-workyard-shed/workshed-LOD1",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD1.glb",
+   "sha256": "a21c2893a1cc7c7d8b69bb7c61b5d85f65f17fc352d003ff67ed9da4ea502671",
+   "bytes": 262480,
+   "role": "candidate mid tier (26 strips)",
+   "loadedInCity": false,
+   "loadedBy": "lab/viewer.mjs via card files[]",
+   "owner": "LY-057 modify (LY-006 ownership.json workshed:workshed_tile, workshed:workshed_timber)",
+   "loadedInCity_originMain_cad338b": false
+  },
+  {
+   "id": "m-luoyang-workyard-shed/workshed-LOD2",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD2.glb",
+   "sha256": "7c054863f1088ddc8709592dfbfe70e2a581dc8ef91d4741c02aa65a0d0a614e",
+   "bytes": 19776,
+   "role": "candidate far tier (bed only)",
+   "loadedInCity": false,
+   "loadedBy": "lab/viewer.mjs via card files[]",
+   "owner": "LY-057 modify (LY-006 ownership.json workshed:workshed_tile, workshed:workshed_timber)",
+   "loadedInCity_originMain_cad338b": false
+  },
+  {
+   "id": "m-luoyang-workyard-shed/workyard-LOD0",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
+   "sha256": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e",
+   "bytes": 1850040,
+   "role": "the published 'two-house work yard' (双屋作业院) — a DIFFERENT product per task pool; read-only comparison and must-not-change list. Its open shed (region x 2.5..7.5, y -5.6..2.6, Blender Z-up) is the same shed geometry rotated 90 deg and raised 0.2 m.",
+   "nodes": [
+    "workyard_earth",
+    "workyard_timber",
+    "workyard_tile",
+    "pestle__pestle_timber_moving",
+    "workyard_stone"
+   ],
+   "loadedInCity": false,
+   "loadedBy": "lab/viewer.mjs via card files[]",
+   "loadedInCity_bce3211": false,
+   "loadedInCity_originMain_cad338b": true,
+   "loadedBy_originMain": "docs/cities/luoyang/city-data.mjs (cad338b) assetRecords id north-three-workyard-near (line 1484; also nearPath of north-three-workyard-far line 1464); node C_NORTH_INFILL_03-near (asset at line 4388), chapter north-three, matrix translate (638,0,-1234)",
+   "owner": "LY-058 keep (LY-006 ownership.json workyard:*)"
+  },
+  {
+   "id": "m-luoyang-workyard-shed/workyard-LOD1",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD1.glb",
+   "sha256": "6baefbd0fc1bc08694e2a3b226b38d308f8a214b70464c72e75e0c907dfb540f",
+   "bytes": 713292,
+   "role": "must-not-change",
+   "loadedInCity": false,
+   "loadedBy": "lab/viewer.mjs via card files[]",
+   "loadedInCity_bce3211": false,
+   "loadedInCity_originMain_cad338b": false,
+   "owner": "LY-058 keep (LY-006 ownership.json workyard:*)"
+  },
+  {
+   "id": "m-luoyang-workyard-shed/workyard-LOD2",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD2.glb",
+   "sha256": "574d81d91d3898bf9de5e3d46b2b7d8532dd2c1b52d4ac35f7132898a1babda0",
+   "bytes": 167792,
+   "role": "must-not-change",
+   "loadedInCity": false,
+   "loadedBy": "lab/viewer.mjs via card files[]",
+   "loadedInCity_bce3211": false,
+   "loadedInCity_originMain_cad338b": true,
+   "loadedBy_originMain": "docs/cities/luoyang/city-data.mjs (cad338b) assetRecords id north-three-workyard-far (path line 1447, id line 1462); node C_NORTH_INFILL_03 (asset at line 4345), chapter residential, initial true, matrix translate (638,0,-1234)",
+   "owner": "LY-058 keep (LY-006 ownership.json workyard:*)"
+  },
+  {
+   "id": "card m-luoyang-workyard-shed",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/m-luoyang-workyard-shed.asset.json",
+   "sha256": "bc2a6289a997ca5d8936b616c829ef0f0d72bb4e68b275ac370b1755f47d42f9",
+   "sha256AtBce3211Blob": "ddda7bde8f30ccb6e751fa7c5244824844edd21bca32f8101732f79bbe11f4bd",
+   "role": "status 待审; 'not changing city scene'",
+   "loadedInCity": false,
+   "loadedBy": "lab/tools/build_assets.py -> lab/data/assets.json (id at line 7211)",
+   "originMain_cad338b": {
+    "gitBlob": "b4f20c4c4c540c8d66e50628807c32db01838c60",
+    "sha256": "b1c040f3cf78e08e30da5751f8706496057d13131bf55006fa825317bac89fb4",
+    "statusNote": "已有组合已接入住宅试验区北缘；原型质量继续待审。"
+   }
+  },
+  {
+   "id": "card cover/shot",
+   "paths": {
+    "cover.webp": "d45685dd47e415252e97bde595b0ae762676b9785ef879d4e510774a20d12188",
+    "shots/01.webp": "77bed68f9fc2f73fee1b963c30d15037a65cc418b81fe7a1fdf9cb2c2649a5e9"
+   }
+  },
+  {
+   "id": "m-luoyang-foot-pestle LOD0-2",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-foot-pestle/files/",
+   "sha256": {
+    "foot-pestle-LOD0.glb": "6f0e41834121fa26cb36303606133256e8a8226e4c49464f68dc93646d181068",
+    "foot-pestle-LOD1.glb": "d8759dd6e0b0880325bb033e5031723e327f132c66a3cafd1aa97fed985cdd7c",
+    "foot-pestle-LOD2.glb": "e94416ef307479eb4a3bf01652153d9c2ff0ba26300b4240920d580a5ae83453"
+   },
+   "role": "must not be rebuilt (不重造双足碓); not touched by LY-057",
+   "loadedInCity": false
+  },
+  {
+   "id": "project card",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "sha256AtBce3211Blob": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "role": "lists m-luoyang-workyard-shed as member (line 568); shared file, LY-100 only",
+   "loadedInCity": "project page"
+  },
+  {
+   "id": "city data",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "sha256AtBce3211Blob": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "role": "grep: no workyard/workshed/grain reference -> the shed is not placed in the city",
+   "loadedInCity": true,
+   "originMain_cad338b": {
+    "gitBlob": "b951a48922e4127fb1fb9aad32f94396011fa3f8",
+    "workyardRefs": "lines 1447-1490 (assetRecords), 4344-4430 (nodes C_NORTH_INFILL_03 / -near)"
+   },
+   "gitBlob_bce3211": "0c1262e202b150ae1345e7bb0bf668e22df860ac"
+  },
+  {
+   "id": "lab viewer",
+   "path": "D:/GitHub/creation-notebook-lab/lab/viewer.mjs",
+   "sha256": "d3a8329bd61ab2126e89c2ad8c24ded473556ccbe50578fff6bcdaefcb15a76d",
+   "role": "the only loader of these GLBs (GLTFLoader + MeshoptDecoder, line 71)"
+  },
+  {
+   "id": "aggregate",
+   "path": "D:/GitHub/creation-notebook-lab/lab/data/assets.json",
+   "sha256WorkingTree": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+   "sha256AtBce3211Blob": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "note": "working tree locally modified, not by this seat"
+  },
+  {
+   "id": "reference: m-luoyang-house-roof",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-house-roof/files/",
+   "sha256": {
+    "TC03-main-roof-kit.glb": "804d6bab26445dc32bf7f56ecd2b402150e0572f19c06f4ee96b1722dd059c0a",
+    "TC03-roof-medium.glb": "16994ca8a1f86b38515ae7a38fb7f468861397593b8a5b38b9d9f45967d5393d"
+   },
+   "role": "possible template (solid pan-tile grooves + cover-tile backs + overlap); not measured by this seat yet; not a reuse of the shed itself"
+  },
+  {
+   "id": "reference: m-eaves-shell",
+   "path": "D:/GitHub/creation-notebook-lab/docs/model-library/assets/",
+   "sha256": {
+    "eaves-A.glb": "582767de1dcdd28735ae7aecbdcd14d1b5bdce191ed5edd3dbfdb16030b6889a",
+    "eaves-A-LOD1.glb": "1ee5f7183bf3ca1bdcfbe71f8807fe5c477c072bd7c73b1f68583eb0b268dd85",
+    "eaves-A-LOD2.glb": "5ac415792de71ca2b7ba86394d945263276ed616d7dcd0484475f29f905e14a3",
+    "eaves-B.glb": "da3c41454cdb408daabfd3f25160f3068963a3337183dc266bac16d77e294547",
+    "eaves-B-LOD1.glb": "689893526b2fe10222547e03c69190c1c2ce514f301333f7b9537944b4259f0f",
+    "eaves-B-LOD2.glb": "1dad7e6e552dbc48e5a5ea5ad36ee45a436202c3b132a5c65d7008299363670c"
+   },
+   "role": "published pan/cover tile shell module, 3 tiers; possible component source"
+  },
+  {
+   "id": "mq card audit",
+   "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/cards/m-luoyang-workyard-shed/audit.json",
+   "sha256": "dce70ed8b82e5a729f70d9447e2d9dde54ea06e3bf0b524fcf6250d63e5a3307",
+   "role": "structural audit (0 issues, 0 degenerate, all textured); does not test tile seating"
+  },
+  {
+   "id": "mq views",
+   "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/cards/m-luoyang-workyard-shed/views.png",
+   "sha256": "203dd20cf95b486a6b091f606610522dc0cfaca78ba1a4a395a1440c3e7475b0"
+  },
+  {
+   "id": "mq render.py",
+   "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/render.py",
+   "sha256": "ff89761743a064f7d599835e3e3123f330ca152df43634717c312ece667d4dc7"
+  }
+ ],
+ "prepArtifacts": {
+  "scripts/probe_structure.py": "0677cfb938f36b4c45bb17e66fa127824a1cbcfd64189485c57679f5eab4378c",
+  "scripts/parts.py": "3516512c783d0c042096ed3c6f509b642606fcf3ca8c1da182f0b18639290835",
+  "scripts/measure_roof.py": "7514c7584f121d07899e9f53164e60b01cb21a1d0010830ad00a8830c948affb",
+  "scripts/strip_profile.py": "1907f57eb90770cf33608a5c111e5ac209ccc6a473b30fa2587fc9758e4ba44b",
+  "scripts/slab_section.py": "6833e2103074c675385d8f7203800834a529b85f954228426c042db4f4cb85dc",
+  "scripts/section_render.py": "36822f83afb126b3a0d0b8fe0d5c326a20e23c250eb83f5b73f2b5169a090339",
+  "scripts/check_roof.py": "7f3f96ade392c83150edc420689e409199df3c3b7f8f3e25c2b8e6623df4b6f0",
+  "out/roof-workshed-LOD0.json": "bb52abaa7a8ffa086067013f6723b65b40fb5b621877798905b5a8ebab091d60",
+  "out/roof-workshed-LOD1.json": "b93a4fa5ea38e3855bf55a8a85cb85d3229e14ebe9e89bb599fd3c2a3a47c40a",
+  "out/roof-workshed-LOD2.json": "e921d5ee98f95ac6bb2d1da000167476526a73c9ce1b0eb61032e15bc203383b",
+  "out/roof-workyard-LOD0-shedregion.json": "3538bfa7946cbc1c118e3279cef65325f09cd5e6ba14848f67adb26399358456",
+  "out/roof-workyard-LOD1-shedregion.json": "91cb1a748235b002299b64826517fd068f1aedcbd6560c734d1aff1c85fe16c5",
+  "out/roof-workyard-LOD2-shedregion.json": "d77d74e094e94a3511490b467fb89abd61d2ae0990cc1d1089f14b99057736d6",
+  "out/roof-workyard-LOD0-westhouse.json": "f4b14df23aeb9979af0ff8f065e36505d686ff90dcfe97ad2c2095938d40eb3d",
+  "out/roof-workyard-LOD0-northhouse.json": "871dca667ff66a532fbc901bf3e6f931b16ddb5e4ed24a0b69c5f6d10b0f3c4d",
+  "out/slab-section-workshed-LOD0.json": "1814daf1bdc0c52273c234491ce5cfb61a2cf52f157c468d79813b53f25db062",
+  "out/slab-section-workshed-LOD1.json": "ec945926ea8116ddefa9ddfad9d702e1c04c75507087450b8dafe77a67f78ddf",
+  "out/slab-section-workyard-LOD0-shed.json": "9275fa05a486349d39c0f269ad5300c9e4ba0e8568232b0dff105df62817a13c",
+  "out/strip-profile-workshed-LOD0.json": "825259c16075f6ab69be6dffb599b33dbd3bffc11e2847cec04ab2a84bd910c0",
+  "preview/workshed-LOD0-section-x0.png": "d6a865aff816af85cdc862fcaafddcdee9f13a12bc6193a63645a421a7de47db",
+  "scripts/style_conformance.py": "7022bd6f777a19f785796ace132456230494530b1283ee1add6446293d2d50c6",
+  "scripts/check_style_zone.py": "9efcddd6b30932c43b9512989810bd8f6335fafdc88fd4c1e4df00ac2a85988d",
+  "out/style-workshed-LOD0.json": "f6685d6a0ec400f3654f5dc44732d626a6769aa14aa4ad1cea94d4b97159637a",
+  "out/style-workshed-LOD1.json": "afc3ccfcdd86d0d7d21efb9a9a48153b12045ccd99d2e8ebe161af8beecd2ee7",
+  "out/style-S84-LOD0-ref.json": "0fcb570c0429bd9e012ceaa36db1b281db06385a6f7b972d49bd724834b60ccb",
+  "out/style-zone-workshed.txt": "b64f42cc6944d59c1b21fa22dc81847c8df1bc018a6a16c3e84ea8f4b39fcda7",
+  "out/style-zone-workshed-expect-deviate-negative.txt": "991da437b3d8423705e72e5cc576453d382b6f63ae8247757f182827b8a82b51"
+ },
+ "revision": "prep v2 (2026-11-05): adds LY-006/LY-007 frozen inputs, style-conformance measurement, origin/main drift",
+ "frozenSeatInputs": [
+  {
+   "seat": "LY-006",
+   "status": "交付完成",
+   "files": {
+    "registry/ownership.json": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+    "registry/seats.json": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+    "registry/zones.json": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+    "registry/ports.json": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+    "status.json": "fe4aaa6c7cb1441f95ac8f51101e0cf63a4ab07ed53452e59c2bd897c5539aba"
+   },
+   "used": "ownership workshed:workshed_tile + workshed_timber -> LY-057 modify; workyard:* -> LY-058 keep; foot-pestle:* -> LY-056 keep; write zone LY-057:write:001 glTF box [[-4.05,2.8,-4.45],[4.05,4.2,0.45]] frame local:workshed; port workshed:shed-floor:floor producer LY-057 consumer LY-058 tol pos 0.005 elev 0.002; component W057-roof-revision class fixed; siteOwner LY-060"
+  },
+  {
+   "seat": "LY-007",
+   "status": "交付完成",
+   "files": {
+    "baseline/decisions.json": "cb2870fc6966b59a5bd54d7071947c4f5cf588cf13a769ca41b08fc55b824598",
+    "baseline/lod-rules.json": "fbf53757be2e243429b751899f1690d30f827849962c0e77a8ca811462789146",
+    "baseline/LY-style-bible.frozen.md": "50e51a9358b1ba50fe5fbfcf1afad93dbb1c8a616d4a50d3faae17a9641f276d",
+    "baseline/LY_P01-material-semantics.json": "f0a04f599595d41b9d7cad39b9afd5ae3829b343222d92e174f1b49d6d9b1bf3",
+    "baseline/texture-uv-rules.json": "a5bfae60c7d646caecbfefa7a5728aa26d60add0e2e80ec72e68380a021d7d27",
+    "models/samples/S84-LOD0.glb": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b",
+    "status.json": "2fddce70c110a19c6d08d10b90ac355440d538f5c8dcc82cca58504476ecc082"
+   },
+   "used": "D-RIB, D-RIB-LOD1, D-RIDGE-HOUSE, D-U10, D-LOD-BBOX; bible §5.8 (line 348-354 rib endpoints/segment layout), §5.9 table (line 360), line 387/654 (workshed has no ridge), line 221-222 (purlin embed < 90% slab), line 585 (intersection allow-list), line 64 (workshed origin cz -2.0); lod-rules tri_ratio and bbox acceptance. S84-LOD0 sample is the reference for rib slope 0.4741."
+  },
+  {
+   "seat": "LY-002",
+   "status": "交付完成",
+   "files": {
+    "tables/evidence-ledger.json": "237a4811acad3d7f6733d4c5c95a64df0b2c67adf48b2682264eb0f0c8512b77",
+    "tables/evidence-ledger.md": "ea060db64e08645e299924e3243c566587689ac59acf35cff7638e0b190fc5de"
+   },
+   "used": "E-H02 (workshop locations unknown), E-M02 (导官令 主舂御米: functional context only); card row C:m-luoyang-workyard-shed -> E-H02, E-M02"
+  },
+  {
+   "seat": "LY-001",
+   "status": "交付完成",
+   "files": {
+    "qa/family-ledger.json": "8eaa7c7a805d5cfb4fd1492a26c480ee0cad9095407e767648e0e9e71eadfe37"
+   },
+   "used": "ledger row 开敞作业棚与足碓院 = 仅模型（资产卡文件）, 0 city nodes at bce3211"
+  },
+  {
+   "seat": "LY-008",
+   "status": "not delivered (no status.json)"
+  },
+  {
+   "seat": "LY-009",
+   "status": "not delivered (no status.json)"
+  },
+  {
+   "seat": "LY-010",
+   "status": "directory missing"
+  }
+ ]
+}

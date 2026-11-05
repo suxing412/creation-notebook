@@ -1,0 +1,510 @@
+{
+ "seat": "LY-007",
+ "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "checks": [
+  {
+   "id": "K1",
+   "criterion": "贴图字节与 manifest 一致，LY_P01 贴图与她提交 GLB 嵌入字节逐字节相同",
+   "result": "通过",
+   "measured": {
+    "n": 29,
+    "all_manifest_match": true,
+    "non_legacy": 22,
+    "non_legacy_with_byte_identical_source_in_commit": 22,
+    "legacy": 7
+   },
+   "evidence": {
+    "qa/texture-provenance.json": "c281787246fc1c485157e2c0668d2530e3e67cac1b1b56ad3751d86e540a95ab",
+    "textures/manifest.json": "4fdab75df2a679f2e0f0f55929614858d3ff234ba983f4063f103b0a8aa5fa9f"
+   },
+   "recompute": "python -I source/verify_textures.py . <lab> bce3211f818ee5a8bef1773539da70695ba37b17"
+  },
+  {
+   "id": "K2",
+   "criterion": "FLAT 线性因子 = 8-bit sRGB 整数色经换算的 float32，逐位可重算",
+   "result": "通过",
+   "measured": {
+    "earth": true,
+    "timber": true,
+    "tile": true,
+    "path": true,
+    "paper__stone": true
+   },
+   "evidence": {
+    "baseline/LY_P01-material-semantics.json": "f0a04f599595d41b9d7cad39b9afd5ae3829b343222d92e174f1b49d6d9b1bf3"
+   },
+   "recompute": "python -I source/make_semantics.py . <lab> bce3211f818ee5a8bef1773539da70695ba37b17"
+  },
+  {
+   "id": "K3",
+   "criterion": "基准球与样件经官方导入器重读：材质语义、FLAT 逐位、贴图属共享库且分辨率对档、颜色空间、世界盒式 UV、1 m 标定块",
+   "result": "通过",
+   "measured": {
+    "files": 9,
+    "files_with_issues": 0,
+    "uv_calibration": {
+     "models/refsphere/lyref-A-LOD0.glb": {
+      "lyref-A-static_earth": [
+       [
+        1.0,
+        1.0
+       ]
+      ],
+      "lyref-A-static_path": [
+       [
+        1.0,
+        1.0
+       ]
+      ],
+      "lyref-A-static_timber": [
+       [
+        1.0,
+        1.0
+       ]
+      ],
+      "lyref-A-static_tile": [
+       [
+        1.0,
+        1.0
+       ]
+      ],
+      "lyref-A-static_paper__stone": [
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "models/refsphere/lyref-A-LOD1.glb": {
+      "lyref-A-static_earth": [
+       [
+        1.0,
+        1.0
+       ]
+      ],
+      "lyref-A-static_path": [
+       [
+        1.0,
+        1.0
+       ]
+      ],
+      "lyref-A-static_timber": [
+       [
+        1.0,
+        1.0
+       ]
+      ],
+      "lyref-A-static_tile": [
+       [
+        1.0,
+        1.0
+       ]
+      ],
+      "lyref-A-static_paper__stone": [
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "models/refsphere/lyref-A-LOD2.glb": {
+      "lyref-A-static_earth": [
+       [
+        1.0,
+        1.0
+       ]
+      ],
+      "lyref-A-static_path": [
+       [
+        1.0,
+        1.0
+       ]
+      ],
+      "lyref-A-static_timber": [
+       [
+        1.0,
+        1.0
+       ]
+      ],
+      "lyref-A-static_tile": [
+       [
+        1.0,
+        1.0
+       ]
+      ],
+      "lyref-A-static_paper__stone": [
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     }
+    },
+    "colorspaces_lod0_refsphere": [
+     [
+      "earth-basecolor",
+      "sRGB"
+     ],
+     [
+      "earth-normal",
+      "Non-Color"
+     ],
+     [
+      "earth-orm",
+      "Non-Color"
+     ],
+     [
+      "stone-normal",
+      "Non-Color"
+     ],
+     [
+      "stone-orm",
+      "Non-Color"
+     ],
+     [
+      "tile-basecolor",
+      "sRGB"
+     ],
+     [
+      "tile-normal",
+      "Non-Color"
+     ],
+     [
+      "tile-orm",
+      "Non-Color"
+     ],
+     [
+      "wood-basecolor",
+      "sRGB"
+     ],
+     [
+      "wood-normal",
+      "Non-Color"
+     ],
+     [
+      "wood-orm",
+      "Non-Color"
+     ]
+    ]
+   },
+   "evidence": {
+    "qa/readback.json": "abc9bc6e75dcbb04df04fdaf7eee5a5bd01f3ba50a1f003587b14ba2f170eba0",
+    "models/refsphere/lyref-A-LOD0.glb": "0f2e69426378437c98c17227cbf8dfdf856d9d59e0e71e374c4d7f39988e83ef",
+    "models/refsphere/lyref-A-LOD1.glb": "5ee4849fa157df975c31a973edd3b1f96b5362af30ec4935dc44ce0e69a9d8d1",
+    "models/refsphere/lyref-A-LOD2.glb": "8ae694899f5509890de5dc72b1c7374f994ce6aea2f102c2071fa9798f0b2945",
+    "models/samples/S84-LOD0.glb": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b",
+    "models/samples/S84-LOD1.glb": "ccd799f25c0c93ba6cd18a8888363db204bd0538d874b4e65f3b924d45c49e88",
+    "models/samples/S84-LOD2.glb": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+    "models/samples/G10-LOD0.glb": "c912961f8b23061aedb5bab67ce15c0f8fa9622e47036c7dea4b55c148f09a1c",
+    "models/samples/G10-LOD1.glb": "d92921bef682fa3c2084d10ba2b48c7600badaf9aefa899c5189177fb1dd5f2f",
+    "models/samples/G10-LOD2.glb": "42f47696899037f1364c060ed58f70dcc7d7756c2ff7879d5b1f930c8ee8f933"
+   },
+   "recompute": "D:/Blender/blender.exe -b --factory-startup --python-exit-code 1 -P source/readback_blender.py -- . models/refsphere/*.glb models/samples/*.glb"
+  },
+  {
+   "id": "K4",
+   "criterion": "样件与她的提交字节原件：结构逐项相同，顶点（位置+法线+UV）与三角形吻合 1.0",
+   "result": "通过",
+   "measured": {
+    "S84-LOD0.glb": {
+     "generator": [
+      "Khronos glTF Blender I/O v4.3.47",
+      "Khronos glTF Blender I/O v5.2.40"
+     ],
+     "min_triangle_match": 1.0
+    },
+    "S84-LOD1.glb": {
+     "generator": [
+      "Khronos glTF Blender I/O v4.3.47",
+      "Khronos glTF Blender I/O v5.2.40"
+     ],
+     "min_triangle_match": 1.0
+    },
+    "S84-LOD2.glb": {
+     "generator": [
+      "Khronos glTF Blender I/O v4.3.47",
+      "Khronos glTF Blender I/O v5.2.40"
+     ],
+     "min_triangle_match": 1.0
+    },
+    "G10-LOD0.glb": {
+     "generator": [
+      "Khronos glTF Blender I/O v4.3.47",
+      "Khronos glTF Blender I/O v5.2.40"
+     ],
+     "min_triangle_match": 1.0
+    },
+    "G10-LOD1.glb": {
+     "generator": [
+      "Khronos glTF Blender I/O v4.3.47",
+      "Khronos glTF Blender I/O v5.2.40"
+     ],
+     "min_triangle_match": 1.0
+    },
+    "G10-LOD2.glb": {
+     "generator": [
+      "Khronos glTF Blender I/O v4.3.47",
+      "Khronos glTF Blender I/O v5.2.40"
+     ],
+     "min_triangle_match": 1.0
+    }
+   },
+   "evidence": {
+    "qa/sample-vs-original.json": "fff8427f1d2d9af1d3152f5e71868fa4e4f49f3843f6bd64c145838ad225816c"
+   },
+   "recompute": "git show <commit>:<path> > tmp/orig/...；python -I source/round2/compare.LY007.py models/samples tmp/orig qa/sample-vs-original.json"
+  },
+  {
+   "id": "K5",
+   "criterion": "样件可由冻结库 + 原字节贴图逐字节重出",
+   "result": "通过",
+   "measured": [
+    [
+     "S84-LOD0.glb",
+     true
+    ],
+    [
+     "S84-LOD1.glb",
+     true
+    ],
+    [
+     "S84-LOD2.glb",
+     true
+    ],
+    [
+     "G10-LOD0.glb",
+     true
+    ],
+    [
+     "G10-LOD1.glb",
+     true
+    ],
+    [
+     "G10-LOD2.glb",
+     true
+    ]
+   ],
+   "evidence": {
+    "qa/round2-rebuild.json": "c0e97c4cf9caa299587fdb07565a21660c3cc22f66d4d7562fd454989afd7d1f"
+   },
+   "recompute": "D:/Blender/blender.exe -b --factory-startup --python-exit-code 1 -P source/round2/build_round2.LY007.py -- tmp/rebuild；python -I source/rebuild_check.py ."
+  },
+  {
+   "id": "K6",
+   "criterion": "三档差异：面数比在验收区间、LOD1 包围盒与 LOD0 相同、无 LOD0 复制；负例被判出",
+   "result": "通过",
+   "measured": {
+    "S84": {
+     "ratio": {
+      "LOD0": 1.0,
+      "LOD1": 0.309,
+      "LOD2": 0.09
+     },
+     "bbox_delta": {
+      "LOD1": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "LOD2": [
+       0.0,
+       -0.0997,
+       0.0
+      ]
+     },
+     "copy": []
+    },
+    "G10": {
+     "ratio": {
+      "LOD0": 1.0,
+      "LOD1": 0.292,
+      "LOD2": 0.095
+     },
+     "bbox_delta": {
+      "LOD1": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "LOD2": [
+       0.0,
+       -0.0997,
+       0.0
+      ]
+     },
+     "copy": []
+    },
+    "S84_orig": {
+     "ratio": {
+      "LOD0": 1.0,
+      "LOD1": 0.309,
+      "LOD2": 0.09
+     },
+     "bbox_delta": {
+      "LOD1": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "LOD2": [
+       0.0,
+       -0.0997,
+       0.0
+      ]
+     },
+     "copy": []
+    },
+    "G10_orig": {
+     "ratio": {
+      "LOD0": 1.0,
+      "LOD1": 0.292,
+      "LOD2": 0.095
+     },
+     "bbox_delta": {
+      "LOD1": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "LOD2": [
+       0.0,
+       -0.0997,
+       0.0
+      ]
+     },
+     "copy": []
+    },
+    "lyref": {
+     "ratio": {
+      "LOD0": 1.0,
+      "LOD1": 0.328,
+      "LOD2": 0.164
+     },
+     "bbox_delta": {
+      "LOD1": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "LOD2": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "copy": []
+    },
+    "NEG_lod0_copied_as_lod1": {
+     "ratio": {
+      "LOD0": 1.0,
+      "LOD1": 1.0,
+      "LOD2": 0.09
+     },
+     "bbox_delta": {
+      "LOD1": [
+       0.0,
+       0.0,
+       0.0
+      ],
+      "LOD2": [
+       0.0,
+       -0.0997,
+       0.0
+      ]
+     },
+     "copy": [
+      "LOD1"
+     ]
+    }
+   },
+   "evidence": {
+    "qa/lod-diff.json": "506397acd12b8ac20c7cab46b504e5c9e1de591c705b431a612b7cc4bb9d540f"
+   },
+   "recompute": "python -I source/lod_diff.py qa/lod-diff.json S84=models/samples:S84-LOD{lod}.glb ...（见 recompute）"
+  },
+  {
+   "id": "K7",
+   "criterion": "原近景可恢复：城中引用提交字节 SHA 全一致、近远档字节不同、无三档复制 LOD0",
+   "result": "通过",
+   "measured": {
+    "city_refs": 46,
+    "city_refs_match": 46,
+    "near_refs": 6,
+    "near_far_pairs": 6,
+    "tier_stems": 87,
+    "stems_without_LOD0": 26
+   },
+   "evidence": {
+    "qa/near-retention.json": "dc70f97061b3b4348de3b332919531a368a9ad30636e8145b370ceb21abdbaab"
+   },
+   "recompute": "python -I source/near_retention.py . <lab> bce3211f818ee5a8bef1773539da70695ba37b17"
+  },
+  {
+   "id": "K8",
+   "criterion": "冻结库反例测试（悬空、穿插、共面、净空、落地、GLB 自检、LOD 派生、檐口瓦、门扇单独节点三档导出）",
+   "result": "通过",
+   "measured": "9/9",
+   "evidence": {
+    "qa/lib-negative-tests.json": "04c273c9b6b1e5e4cca4a5de76dea1d17e8e8c21f9414a0010dbabe174a66efe"
+   },
+   "recompute": "D:/Blender/blender.exe -b --factory-startup --python-exit-code 1 -P source/run_lib_tests.py -- . <abs>/tmp/testchecks"
+  },
+  {
+   "id": "K9",
+   "criterion": "单 GLB ≤ 15,000,000 字节",
+   "result": "通过",
+   "measured": {
+    "models/refsphere/lyref-A-LOD0.glb": 1417516,
+    "models/refsphere/lyref-A-LOD1.glb": 466176,
+    "models/refsphere/lyref-A-LOD2.glb": 33060,
+    "models/samples/S84-LOD0.glb": 1114076,
+    "models/samples/S84-LOD1.glb": 401952,
+    "models/samples/S84-LOD2.glb": 15840,
+    "models/samples/G10-LOD0.glb": 1138632,
+    "models/samples/G10-LOD1.glb": 407688,
+    "models/samples/G10-LOD2.glb": 19060
+   },
+   "evidence": {},
+   "recompute": "stat"
+  },
+  {
+   "id": "K10",
+   "criterion": "lab 仓库只读（收尾时 git status）",
+   "result": "通过",
+   "measured": [
+    "?? .claude/"
+   ],
+   "evidence": {},
+   "recompute": "git -C <lab> status --short"
+  },
+  {
+   "id": "I1",
+   "criterion": "现状普查（信息项，不判通过）",
+   "result": "记录",
+   "measured": {
+    "files": 311,
+    "compliant": 81,
+    "deviation_counts": {
+     "material_names": 125,
+     "tier_naming": 83,
+     "suffix_vs_tier": 59,
+     "uv_not_1m_box": 101,
+     "ymin!=0": 147,
+     "legacy_grey_texture": 31,
+     "not_flat_shaded": 7,
+     "texture_px_vs_tier": 9,
+     "texture_not_in_library": 5,
+     "extensions": 1,
+     "uv_1m_box_with_offset": 12,
+     "flat_factor": 1
+    },
+    "over_15MB": []
+   },
+   "evidence": {
+    "qa/census-bce3211.json": "c50ba5d4b2e644026cf48780f1fbda0cf12ebf7d8e285edcfba8ff073efef4dd",
+    "qa/census-bce3211.csv": "bbac76357e12f6d8652fee1f21cbf2ffd5b9a65f285aba08c3a90e0ad3cf6581"
+   },
+   "recompute": "python -I source/census.py . <lab> bce3211f818ee5a8bef1773539da70695ba37b17"
+  }
+ ]
+}

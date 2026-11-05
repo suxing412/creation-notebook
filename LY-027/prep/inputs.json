@@ -1,0 +1,366 @@
+{
+ "seat": "LY-027",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "generatedBy": "prep/scripts/make_inputs.py",
+ "inputs": [
+  {
+   "path": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "role": "候选组A：既有五店三摊 v1 主体（含 N1/N3/S1/S2 货架、店后 closed_stock、T1-3 摊上 closed_generic_container）",
+   "bytes": 1031928,
+   "sha256_checkout": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "loadedInCity": "已入城·按章加载（chapter market, initial=false）；N2 的 30 个节点被排除",
+   "loaderCode": [
+    "city-data.mjs:510-560 (assets[] id market-main, excludeNodes 30 项)",
+    "city-data.mjs:3662-3688 (nodes[] market-main initial:false)",
+    "city-data.mjs:3953-3963 (chapter market loadNodeIds)",
+    "city-renderer.mjs:309-346 (excludeNodes 按名剔除；matchedExclusions.size!==excluded.size 抛错)",
+    "v1/west-layer.mjs:33 (旧版 v1 archive 市肆层 environmentUrl)"
+   ],
+   "sha256_gitBlob_bce3211": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/N2-replacement.glb",
+   "role": "候选组A：N2 交易/储货修订（含货架+9 架上包、3+1 地面包、2 台板+4 台上小包、作业台）",
+   "bytes": 72984,
+   "sha256_checkout": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "loadedInCity": "已入城·按章加载（与 market-main 同章）",
+   "loaderCode": [
+    "city-data.mjs:561-581 (assets[] id market-N2)",
+    "city-data.mjs:3689-3716 (nodes[] market-N2)",
+    "v1/west-layer.mjs:33,36 (extraEnvironments)",
+    "v1/market-assembly.mjs:4-7 (retire 30 节点后断言无 N2_ 残留)"
+   ],
+   "sha256_gitBlob_bce3211": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/N2-contract.json",
+   "role": "N2 替换合同：removeExactNodeIds 30、counts/volume/nonmanifold",
+   "bytes": 9414,
+   "sha256_checkout": "10678d73111ae0d131afc3ff823162392eab339ee66bf2046e61666c2c8d9386",
+   "loadedInCity": "被 city-data.mjs sourceContracts 引用并在 v1 运行时 fetch",
+   "loaderCode": [
+    "city-data.mjs:4512-4515 sourceContracts (声明 sha 10678d73…，只等于 CRLF 检出字节)",
+    "v1/west-layer.mjs:40 fetch N2-contract.json"
+   ],
+   "sha256_gitBlob_bce3211": "498f51fcd0723da69ab1b97c56f3de004a449a86e0e322dedc6489446a00e2cd",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/flowB-routes.glb",
+   "role": "B 方案后勤绕行路带（7 路径替换）",
+   "bytes": 9344,
+   "sha256_checkout": "43d7799f85feccb0d6f1e0412c46853e6b3339535e38a9b806e8c5d3898f845e",
+   "loadedInCity": "仅 v1 archive flow=B 时加载",
+   "loaderCode": [
+    "v1/west-layer.mjs:33,36",
+    "v1/market-assembly.mjs:5"
+   ],
+   "sha256_gitBlob_bce3211": "43d7799f85feccb0d6f1e0412c46853e6b3339535e38a9b806e8c5d3898f845e"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-flow-plan.json",
+   "role": "A/B 人货路线；person 0.6 / small_hand_load 1.6 有限包络宽",
+   "bytes": 3078,
+   "sha256_checkout": "bff5bb22bac6bda21f02a4b43f4adf85e187b8070d360c0433d69832e11adbdf",
+   "loadedInCity": "v1 运行时 fetch",
+   "loaderCode": [
+    "v1/west-layer.mjs:40"
+   ],
+   "sha256_gitBlob_bce3211": "fb2416122d3b9fd7e2bbeafcaa1934ee4efcaf67cbe4654139b212e4e50ce37b",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-interface.json",
+   "role": "市肆接口（相机/边界）",
+   "bytes": 1761,
+   "sha256_checkout": "31c6786db03b1d7e4be79070abe8ea9a577207345a55703c85d2fb34bc479f4e",
+   "loadedInCity": "city-data.mjs sourceContracts 列出",
+   "loaderCode": [
+    "city-data.mjs sourceContracts"
+   ],
+   "sha256_gitBlob_bce3211": "2957184accc87e5c2089987c71023cd09a8ef0274b2daab1fce4d39623606347",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-precedents.json",
+   "role": "证据分栏：金市B点、画像砖/四川酒肆类比、goods_service_yard 为 C 功能推测",
+   "bytes": 6377,
+   "sha256_checkout": "abf2a3d248114427f51a93b913c39e3ee523c5b3dda55860bd6379f5d37f7d38",
+   "loadedInCity": "只作链接（v1 UI）",
+   "loaderCode": [
+    "v1/west-layer.mjs:51 链接"
+   ],
+   "sha256_gitBlob_bce3211": "14294a1202cb1ee7ab81938a53c80b537d2ce61e7d1072aa71809be5597f1916",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "role": "城景清单（只读，LY-100 独写）",
+   "bytes": 111034,
+   "sha256_checkout": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "loadedInCity": "入口",
+   "loaderCode": [
+    "app.mjs:1 import manifest"
+   ],
+   "sha256_gitBlob_bce3211": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "role": "加载器：excludeNodes 剔除、按 pigment 合并（运行时节点名丢失）",
+   "bytes": 36571,
+   "sha256_checkout": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "loadedInCity": "入口",
+   "loaderCode": [
+    "city-renderer.mjs:309-346"
+   ],
+   "sha256_gitBlob_bce3211": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "role": "城景入口",
+   "bytes": 14563,
+   "sha256_checkout": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "loadedInCity": "入口",
+   "loaderCode": [
+    "index.html"
+   ],
+   "sha256_gitBlob_bce3211": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/west-layer.mjs",
+   "role": "旧版 v1 归档层（市肆近景）",
+   "bytes": 18747,
+   "sha256_checkout": "d8c14142af2e4d993cc249dfcc605edadb38232190e5890f31640b94be9d2d4b",
+   "loadedInCity": "归档入口",
+   "loaderCode": [
+    "app.mjs:7 legacyView 跳转"
+   ],
+   "sha256_gitBlob_bce3211": "e406af117b112a5fd07483f1906f0d94ad767135bf844f03a82a9874f21c59fc",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/market-assembly.mjs",
+   "role": "v1 N2/B 替换器（按名 retire）",
+   "bytes": 1175,
+   "sha256_checkout": "0145ac84d938b570d08e2bbf334eb42cc69ae13569cb0e2bdfa917351ae68ce2",
+   "loadedInCity": "归档入口",
+   "loaderCode": [
+    "v1/west-layer.mjs:4,40"
+   ],
+   "sha256_gitBlob_bce3211": "343373f0b4599d376c6064981f13dfcd60f6be4c512edcf8fada4cd886dce811",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "role": "项目卡（只读，LY-100 独写）",
+   "bytes": 24215,
+   "sha256_checkout": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "loadedInCity": "—",
+   "loaderCode": [
+    "p-luoyang.asset.json:527,564,567 related 卡片"
+   ],
+   "sha256_gitBlob_bce3211": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0.glb",
+   "role": "候选组B：八铺四棚店前线 v2.1 LOD0（3 个按材质合并网格；货架仅 2 铺 6 板，悬空；无货物占位）",
+   "bytes": 1932544,
+   "sha256_checkout": "46f08f41aa290218e9a3ec4e4de4e2cb676f10a80a035e9b6d3e1f8a0c5bf6f2",
+   "loadedInCity": "未入城（仅资产卡；母版 C032 分块中可见，网页未部署）",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "46f08f41aa290218e9a3ec4e4de4e2cb676f10a80a035e9b6d3e1f8a0c5bf6f2"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD1.glb",
+   "role": "候选组B LOD1（货架同 LOD0）",
+   "bytes": 720296,
+   "sha256_checkout": "03ad28cf31f05cdb518b1ee8652cdc235def6d6ca4b7aa8ca1a29c5272fb6126",
+   "loadedInCity": "未入城",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "03ad28cf31f05cdb518b1ee8652cdc235def6d6ca4b7aa8ca1a29c5272fb6126"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD2.glb",
+   "role": "候选组B LOD2（无柜台、无货架）",
+   "bytes": 125896,
+   "sha256_checkout": "b5b13b1c74f561903ba12489846c5c841e7b7bf7c1694228e7e12357869fa0f1",
+   "loadedInCity": "未入城",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "b5b13b1c74f561903ba12489846c5c841e7b7bf7c1694228e7e12357869fa0f1"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-frontage/m-luoyang-market-frontage.asset.json",
+   "role": "候选组B 资产卡",
+   "bytes": 1434,
+   "sha256_checkout": "ac85a44d46709acf2ad6e74486513fa73f02e27a70aa099dc871a80eb34103ed",
+   "loadedInCity": "—",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "7e1e8e307c8c3820bf0d6c1c5e2fc083706f6eaa39f8e650a5861ad8c86e0718",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD0.glb",
+   "role": "S86 模块（含同款悬空三层板）",
+   "bytes": 1118984,
+   "sha256_checkout": "7f1c2e70b2b9dca980cb17c274241f37513d001070386907c3c8a66408b77ee8",
+   "loadedInCity": "未入城",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "7f1c2e70b2b9dca980cb17c274241f37513d001070386907c3c8a66408b77ee8"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD1.glb",
+   "role": "S86 LOD1",
+   "bytes": 405996,
+   "sha256_checkout": "ef10e67a81972ef52ea8a0c06d9e10cc7fb19c16201d6b198e4510ef3af686e8",
+   "loadedInCity": "未入城",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "ef10e67a81972ef52ea8a0c06d9e10cc7fb19c16201d6b198e4510ef3af686e8"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD2.glb",
+   "role": "S86 LOD2（无货架）",
+   "bytes": 16504,
+   "sha256_checkout": "14a7925bdb1458d91d187f0e194f70725d5ecd297bb62458cbad1af2b76a2601",
+   "loadedInCity": "未入城",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "14a7925bdb1458d91d187f0e194f70725d5ecd297bb62458cbad1af2b76a2601"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD0.glb",
+   "role": "S84 模块（无货架）",
+   "bytes": 1113880,
+   "sha256_checkout": "8ef1f3c8a8c3b570ac9607d4ab018b723b6450570175a0fad6752be430fa6b84",
+   "loadedInCity": "未入城",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "8ef1f3c8a8c3b570ac9607d4ab018b723b6450570175a0fad6752be430fa6b84"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/generated_788bb4c4f5f9f6c3-LOD0.glb",
+   "role": "三铺例（含一组悬空三层板）",
+   "bytes": 1367376,
+   "sha256_checkout": "b599ade0b7137c2dfccfc3a75fd3ce4420179d4562178f76ffa89e83834c1b77",
+   "loadedInCity": "未入城",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "b599ade0b7137c2dfccfc3a75fd3ce4420179d4562178f76ffa89e83834c1b77"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/m-luoyang-market-modular-assembly.asset.json",
+   "role": "模块资产卡",
+   "bytes": 2020,
+   "sha256_checkout": "c5f78747c0ec77fb19f0b433fb87134ae7eccecd46883279a9370b714fdb7f5e",
+   "loadedInCity": "—",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "7d05df76837c518bbb5ff8e5ee3b711c25e705e5ff31cdbef7be689ff882a3f1",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  },
+  {
+   "path": "docs/model-library/updates/m-market-functional/files/market-LOD0.glb",
+   "role": "候选组C：五店三摊 v2 三档（4 个按材质合并网格；含 N2 式占位但无单独 ID）",
+   "bytes": 2845156,
+   "sha256_checkout": "acdd4391ea9a26022c5bdb22aa9e0db9403a0f99850dd63e701526eded72aa07",
+   "loadedInCity": "未入城",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "acdd4391ea9a26022c5bdb22aa9e0db9403a0f99850dd63e701526eded72aa07"
+  },
+  {
+   "path": "docs/model-library/updates/m-market-functional/files/market-LOD1.glb",
+   "role": "候选组C LOD1",
+   "bytes": 1448032,
+   "sha256_checkout": "e925451bf71dbf688297d889f0ed85d49dcc6c8e4fbe6d4cb261260333520683",
+   "loadedInCity": "未入城",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "e925451bf71dbf688297d889f0ed85d49dcc6c8e4fbe6d4cb261260333520683"
+  },
+  {
+   "path": "docs/model-library/updates/m-market-functional/files/market-LOD2.glb",
+   "role": "候选组C LOD2",
+   "bytes": 136216,
+   "sha256_checkout": "ea0c235f1505b9e1a0254258743f0ee073ae8c5794160e516bc3740835ce8864",
+   "loadedInCity": "未入城",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "ea0c235f1505b9e1a0254258743f0ee073ae8c5794160e516bc3740835ce8864"
+  },
+  {
+   "path": "docs/model-library/m-market-functional.asset.json",
+   "role": "候选组A/C 资产卡（legacyPath）",
+   "bytes": 2231,
+   "sha256_checkout": "911c1ea0d1bc03e00df440abb164c43bfa9fe1f0cc745f2b1070d1805a3878b4",
+   "loadedInCity": "—",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "3d2d5e33b0e17c6671af99ff6ba233a137fc9c7b6fae73fe39abf769cc49f55f",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  },
+  {
+   "path": "docs/model-library/assets/market-A-N2-local.glb",
+   "role": "旧版对照：A+N2 local-v1（525 节点，局部原点）",
+   "bytes": 1088036,
+   "sha256_checkout": "493798b8f09f594bb2ed3015b0db273e15badd3c7a62a99f9bdda1738880c707",
+   "loadedInCity": "未入城",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "493798b8f09f594bb2ed3015b0db273e15badd3c7a62a99f9bdda1738880c707"
+  },
+  {
+   "path": "lab/data/assets.json",
+   "role": "汇总（工作区有未提交修改，非本席位造成）",
+   "bytes": 439273,
+   "sha256_checkout": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+   "loadedInCity": "—",
+   "loaderCode": [],
+   "sha256_gitBlob_bce3211": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "note_eol": "工作区为 CRLF 检出；城景/线上以 git blob 字节为准，两者 SHA 不同"
+  }
+ ],
+ "missing": [
+  {
+   "what": "五店三摊 v1 market-cluster 原生源（.blend/生成器）",
+   "use": "若要给 N1/N3/S1/S2 加 ID 化占位或改 closed_stock 位置时的可编辑源",
+   "rebuildFromGLB": "可以：节点都是 12 三角盒体，名称/包围盒/体积已由 GLB 与 N2-contract.counts 给出；但只能称“从GLB重建”"
+  },
+  {
+   "what": "N2 合同里的 assets/original-N2.glb 与 assets/replacement-N2.glb（源包路径，仓库内不存在）",
+   "use": "核对 N2-replacement.glb 与原生模块一致",
+   "rebuildFromGLB": "可以：仓库内 N2-replacement.glb(d33cbad1…) 即公开导出；原生不可得时以它为准"
+  },
+  {
+   "what": "八铺四棚 v2.1 私密源包（.blend/生成器）与 72 段入口包络 QA 定义",
+   "use": "给 v2.1 加可删除 ID 占位、判断三层板设计意图（是否本应有立柱/托架）",
+   "rebuildFromGLB": "占位可作独立叠加件从 GLB 坐标重建；三层板支承缺失若要改源件则需源包或由 LY-006 指定的补件席位，从 GLB 只能做叠加修补"
+  },
+  {
+   "what": "母版 city-C032-entry-LOD0.blend（LY-021 记 SHA 1e8c4d2c…）",
+   "use": "在母版 sample_ground 上复核占位接地",
+   "rebuildFromGLB": "可以用 LY-021 已从分卷 ZIP 抽出的 market_frontage_well_routes.glb(0193ebc0…) 代替"
+  },
+  {
+   "what": "G 冻结文件：LY-005 地面/楼面端口、LY-006 所有权表、LY-007 占位材质语义、LY-008 检查器、LY-010 金市选组",
+   "use": "决定在哪一组上装、占位材质名、谁拥有 v2.1 三层板支承",
+   "rebuildFromGLB": "不适用"
+  },
+  {
+   "what": "LY-021 冻结的 v2.1 门前踏步与入口落脚区",
+   "use": "若选 B 组，店员/顾客入口与室内落脚区不能被占位挤占",
+   "rebuildFromGLB": "不适用；目前只有 LY-021 prep 数据"
+  }
+ ],
+ "priorSeatEvidenceUsed": [
+  {
+   "path": "creation-notebook-workpacks/LY-021/prep/out/extracted-market_frontage_well_routes.glb",
+   "sha256": "0193ebc0cfe200292defd595ff4f4011b2b2d05388d4f53e7b4c3a19a255b4c5",
+   "use": "母版分块中 v2.1 三层板同样悬空（只读复测）"
+  },
+  {
+   "path": "creation-notebook-workpacks/LY-021/prep/out/entry-LOD0-vground.json",
+   "sha256": "6f2692902bb1f7667106fa01a6a5e6553d1e52d8d4ed1e93665245a1417cfd46",
+   "use": "v2.1 12 个开口外路→柜后 0.50 体包络通过（引用，不重做）"
+  },
+  {
+   "path": "creation-notebook-workpacks/LY-001/qa/city-nodes.csv",
+   "sha256": "8ab19b0553faf60717759d3580ac1d173d560a832f58512d83bb478a289f27c7",
+   "use": "market-main / market-N2 为“已入城·按章加载”"
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "seat": "LY-068",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-palace-gallery/files/gallery-B-LOD0.glb c7cb279c（B主输入；城景不加载，仅 docs/model-library/inspect.mjs:136 查看器可读）",
+  "同目录 gallery-B-LOD1.glb fe72e192 / gallery-B-LOD2.glb ff15e1c4",
+  "同目录 gallery-A-LOD0/1/2.glb 0c092797 / 227c3c4e / cb26b56e（对照，层高4.0）",
+  "docs/library/models/m-luoyang-gallery-access/files/access-A-LOD0/1/2.glb c973d325 / 7b5e26f4 / b39c34c2，access-A-collision-candidate.glb 7327547e（A登临节点，对照/负例）",
+  "两张资产卡 m-luoyang-palace-gallery.asset.json（bce3211 blob 100a78c3）、m-luoyang-gallery-access.asset.json（blob 707f298f）：状态待审，未入城；卡片写明「仅与A层高匹配，B不能直接套用」",
+  "docs/cities/luoyang/p-luoyang.asset.json（blob 8edb06ab）：members 548/576 行列两卡；city-data.mjs（blob c849706b）无复道资产引用，city-renderer.mjs:286 loadAsset 不会加载它们",
+  "docs/cities/luoyang/data/evidence/evidence-geometry.json（blob fa8b7002）palaces_connector_B：两宫复道B级关系示意线，evidence-marker-only，误差 null",
+  "bce3211..origin/main cad338b 对两张复道卡及文件 0 差异（项目卡成员行移到 580/608；city-data 仍 0 引用）",
+  "prep/qa/measure-ports.json a04b851e：同脚本重跑 prep/qa/rerun/measure-ports-rerun.json 逐字节一致（Blender 5.2.1 LTS）"
+ ],
+ "inputsMissing": [
+  "复道A/B与登临节点的私密源包（.blend、生成器、原生QA）：用于原生三角对账、构件命名与参数沿用。lab 全分支历史、modeling-lab/review-batches 全部 ZIP、D:/GitHub 下 creation-notebook* 目录都没有。可以从GLB重建端口基准：本项不改B本体，所需端口几何已实测，须标「从GLB重建」",
+  "G 冻结件：LY-005 局部演示域地坪高程与世界矩阵（平台接地），LY-006 端口ID与B哪一端归本项（与LY-069分端），LY-007 材质/三档规则，LY-008 检查器，LY-009/010 范围与放行。LY-006..010 目录尚不存在，不能从GLB重建",
+  "「旧柱脚未支持记录」原件：只见卡片文字。A的16个柱脚位置可以从GLB重算（已记录），旧城市地形不能重建；本项只作对照，逐脚对账归 LY-067",
+  "选定宫院局部端口（LY-069/070 局部组合）：平台落地与另一端接邻需要。不能从GLB重建",
+  "「复道三道行」类原文图版：本轮未亲见，转 LY-002 定位"
+ ],
+ "gaps": [
+  "层高差 0.500 m：B 楼面顶 z=3.500（64.8 m²，x±4.5 y±3.6，三档一致，0.1 m 网格 6643 点 100% 支持）；A 与 access-A 平台都是 4.000。access-A 平移到 B +x 端时，中带剖面在 x=4.5 跳 +0.500 m；接到 A 端为 0 跳变",
+  "B 总升程 3.5 m ÷ A 踢高 0.200 = 17.5 级，不是整数；整体下沉 0.5 m 会把平台柱基压到 z −0.5、梯脚垫压到 −0.7。A梯既不能删级也不能下沉套用，必须按整数级重新设计（C候选 20×0.175 或 18×0.1944）",
+  "宽度差：B 端口三带净宽 2.10 / 2.12 / 2.10 m（y −3.45..−1.35、−1.06..1.06、1.35..3.45，h+0.02..+2.10 畅通，无门槛）；access-A 平台开口 6.32 m（y±3.16），外侧两带各只剩 1.81 m。B 楼面宽 7.2 m，access-A 平台宽 6.6 m；新平台端口净开口需要 ≥6.90 m",
+  "B 端口正下方有柱脚和端柱：12 个柱脚 0.5×0.5×0.2，位于 x∈{−4.5,0,4.5}、y∈{±1.2,±3.6}，底 z0。端部一排占 x 4.25..4.75，新平台柱/基础必须退到 x≥4.75 以外，或只做局部接面",
+  "净空：B 三带内最小 2.66 m（端部 x −4.45），中位 3.43 / 4.09 / 3.44，<2.0 m 为 0 点；整块楼面最小 0.88 m（墙脚、窗台），97.26% ≥2.0，所以通行只能限于三带。B 檐下约 z 6.44（楼面 +2.94），平台栏杆顶需低于此",
+  "access-A LOD 级数不一致：LOD0/LOD1/碰撞件各 19 踏面、踢高 0.200、踏深 0.32；LOD2 9 踏面、踢高 0.400、踏深 0.64；碰撞件 extras 写「twenty treads」，实测是 19 踏面 + 平台面 = 20 踢高。B 需要单独写明碰撞件级数契约",
+  "access-A 接地：梯梁底 z −0.13、梯脚垫 z −0.2..0 埋入地下；碰撞件最低点 z 0.08，无接地件。B 新件不得照搬，接地高程等 LY-005"
+ ],
+ "reuseCandidate": "无。access-A 是唯一现成登临件，但实测只对 A 层高 4.000 成立：接到 B（3.500）时 +0.500 m 跳变，外侧两带开口从 2.10 缩到 1.81 m，17.5 级不是整数，下沉会埋脚（prep/qa/measure-ports.json a04b851e）。B 没有任何现成平台或梯，本项是补件，不是复用。",
+ "touches": [
+  "gallery-B-LOD0/1/2.glb 端口面 x=+4.5 或 −4.5（由 LY-006 指定）、楼面顶 z=3.500 端缘：只接触，不改",
+  "gallery-B 端部一排柱和柱脚 x 4.25..4.75 × y ±1.2/±3.6（避让区，只允许局部接面）",
+  "gallery-B 檐口下沿约 z 6.44（净空上限）",
+  "gallery-B 合并网格节点 gallery-B-static_earth / _timber / _tile（只读；安装前后 SHA 不变）",
+  "access-A-LOD0/1/2 与 collision-candidate（只读负例；与 access-B 互斥，不得同装在 B 上）",
+  "局部演示域地坪片（平台柱基和梯脚的落地面；所有权待 LY-005/006，可能与 LY-069/070 地坪共用）",
+  "B 另一端端口（LY-069 端部宫门廊口可能占用，需 LY-006 分端）",
+  "只写 creation-notebook-workpacks/LY-068/"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-006 若把 B 两端都分给 LY-069，本项没有端口可用，需要改为 B 侧面登临；B 侧面 h+0.1..0.5 只开 6.1%（墙/栏），要另开口，就会越界改 B",
+  "踢高/踏深/梯宽没有东汉证据，全是 C 工程；LY-007/009 可能另定口径（例如 ≤0.18 m 踢高），要重算级数",
+  "私密源包缺失：新件与 B 的构件语义、材质命名只能参照 GLB（LY_P01_*__PBR/FLAT），原生对账做不了",
+  "离散射线和盒扫掠不等于连续人体、车辆或结构认证；手机/GPU 未测，只能按 010 披露",
+  "lab 工作区 lab/data/*.json 有他人未提交修改，文本文件为 CRLF：绑定 SHA 时必须区分工作区字节和提交 blob",
+  "本机 origin/main 已新于基线（cad338b），开工时需重锁；目前复道文件 0 差异，但项目卡已变，绑定 SHA 要用 LY-001 新快照"
+ ],
+ "readyAfterG": true
+}

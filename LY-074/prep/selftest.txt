@@ -1,0 +1,10 @@
+OK  good_A                       expect=True got=True fails=[]
+OK  good_B                       expect=True got=True fails=[]
+OK  neg_gap_6mm                  expect=False got=False fails=[('+X', 'C2_foot_gap'), ('-X', 'C2_foot_gap'), ('+Z', 'C2_foot_gap'), ('-Z', 'C2_foot_gap')]
+OK  neg_raised_8mm               expect=False got=False fails=[('+X', 'C1_band_support'), ('+X', 'C2_foot_gap'), ('-X', 'C1_band_support'), ('-X', 'C2_foot_gap'), ('+Z', 'C1_band_support'), ('+Z', 'C2_foot_gap')]
+OK  neg_missing_-Z               expect=False got=False fails=[('-Z', 'C1_band_support'), ('-Z', 'C2_foot_gap')]
+OK  neg_runs_under_stair_0.5m    expect=False got=False fails=[('all', 'C3_double_cover_under_building')]
+OK  neg_A_apron_on_B             expect=False got=False fails=[('+X', 'C1_band_support'), ('+X', 'C2_foot_gap'), ('-X', 'C1_band_support'), ('-X', 'C2_foot_gap'), ('+Z', 'C1_band_support'), ('+Z', 'C2_foot_gap')]
+OK  neg_B_apron_on_A             expect=False got=False fails=[('+X', 'C1_band_support'), ('-X', 'C1_band_support'), ('+Z', 'C1_band_support'), ('-Z', 'C1_band_support'), ('all', 'C3_double_cover_under_building')]
+OK  neg_too_narrow               expect=False got=False fails=[('+X', 'C1_band_support'), ('-X', 'C1_band_support'), ('+Z', 'C1_band_support'), ('-Z', 'C1_band_support')]
+SELFTEST PASS

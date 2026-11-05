@@ -1,0 +1,54 @@
+{
+ "seat": "LY-076",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD1.glb ffaff723 (five-step revision, 21424 tris, 4 nodes lingtai-A-static_*; LY-008 glb OK)",
+  "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD2.glb 134ca945 (five-step revision, earth/path identical to LOD1)",
+  "docs/library/models/m-luoyang-lingtai/m-luoyang-lingtai.asset.json f5d7cb69 (worktree CRLF) / blob 7db12118 - notes: '五处外其他台缘仍为原高差，北侧窄绕行没有加宽'",
+  "docs/cities/luoyang/progress-assets/flat/study-lingtai-c1b58de1bff4.glb c1b58de1 (city research view; all tris == quality-v1 LOD1 515ffbbb; NO five steps)",
+  "docs/cities/luoyang/city-data.mjs e4115705 / blob c849706b (study-lingtai :602-631, url map :1266-1272, ritual chapter defaultResearchModel :4010-4025, research-lingtai :4101-4122 cityPlacement null)",
+  "modeling-lab/content/luoyang/lingtai-quality-v1/source.zip.part001-003 7aad254f/7cfcef3c/998d7945 -> zip bc30e6c0 (quality-v1 near f5fdc18a 380236 tris, LOD1 515ffbbb, input lingtai-A 1a79c9a0, native .blend c09038d8, build.py 74b79880) - pre-step lineage",
+  "docs/model-library/lingtai/metadata.json cecbb8f4 / blob 3e28f8b9",
+  "lab/data/assets.json c39e8e9a (worktree, rewritten 22:29) / blob 53d86312 (committed content unchanged)",
+  "G read-only: LY-006 seats a1426412 / zones 6b3595ac / ports 28bcfb68 (site S-LINGTAI, write zone LY-076:write:001, port lingtai:edge:ground tol 0.005/0.002 m); LY-009 locks 5eb5ae32 (LOCK-LINGTAI-STEPS); LY-002 evidence-ledger 237a4811 (E-R04, E-R08); LY-007 lod-rules fbf53757; LY-008 ly_check.py 39aaa491"
+ ],
+ "inputsMissing": [
+  "Private source pack of the five-step revision: LOD0 near GLB (26,176,944 B per card) plus its .blend / generator / route and foot-action QA. Searched lab, creation-notebook, creation-notebook-review, creation-notebook-待传 (empty) and D:/待删-* staging: not found. Needed for: editable near source of the new diff, near-tier acceptance (LY-007: 通行/接触一律在 LOD0 上做), and the exact meaning of '北侧窄绕行'. Rebuild from GLB: partly yes - quality-v1 near f5fdc18a + measured 5-notch earth diff (+107/-15 tris, ffaff723 vs 515ffbbb) + 24-tri north_v1_roof_support material reassignment gives an equivalent near model, not byte/SHA identical; must be labelled 'rebuilt from GLB'.",
+  "LY-010 (首批方案与区域准入) not delivered - workpacks/LY-010 is empty, so G is not frozen; the selected scheme and allowed unverified items for S-LINGTAI are undecided. LY-001/002/005/006/007/008/009 are delivered and bound read-only."
+ ],
+ "gaps": [
+  "Hall-floor 0.30 m risers not yet revised: 245.6 m in total (perimeter 253.6 m minus 5 x 1.6 m notches). 98.4 m face the courtyard (W/E/N 26.4 each, SW/SE 9.6 each); 147.2 m are outer sides and ends. Each hall has exactly one 1.6 m access.",
+  "Stair-side strips: 2 strips, each 1.0 m clear (0.87 m at the overhanging posts) and 3.6 m long, at x=+-1.8..2.8, y=-19.8..-16.2, between the 6 m stair side and the 0.30 m hall-end riser. S gate to courtyard (6,-14) is 22.8 m at r=0.30, but at r=0.45 the strips are blocked and the route detours to 34.3 m.",
+  "20 of 80 posts are only 0.459-0.541 supported at the foot: the post centre sits exactly on the floor end line, so 0.13 m overhangs a 0.30 m drop. Affected: W/E hall ends at y=+-14, SW/SE hall ends at x=+-14 and +-2.8, N hall ends at x=+-14. Identical in card LOD1/LOD2 and quality-v1, so it is inherited.",
+  "North bypass (to be preserved, not widened): N gate to N notch is 40.8 m against an 18.3 m straight line; to N hall floor 43.3 m against 15.5 m. The closed 28 m rear riser and infill force the detour. Narrowest points: diagonal gap at the N hall end corner 2.42 m, platform-to-N-hall band 3.0 m.",
+  "Platform top (about 22 x 22 m at 6.0 m) has about 84 m of unguarded edge, and the 3.6 m stair (30 risers of 0.20 m, treads 0.34 m) has unguarded 0-6 m sides. Evidence is unknown; not proposed for this seat.",
+  "The city research view loads the pre-step lineage (c1b58de1): no hall floor is reachable at max step 0.21 (0 cells), against all five reachable in the card LOD1. This is for LY-094/LY-100, not for this seat to change.",
+  "LOD ratio (LY-007 rule LOD1/LOD0 0.17-0.62, LOD2/LOD0 0.05-0.20): with quality-v1 near 380,236 tris as proxy LOD0, the existing LOD1 21,424 = 0.056 and LOD2 1,884 = 0.005, both below the floor. Inherited; lodset will likely flag it on delivery.",
+  "LY-008 ly-p01 profile: LY_NOT_GROUNDED warning on both card GLBs (lowest y = -0.30, ground_cell sunk). Inherited; new files must not go lower.",
+  "Evidence mismatch for LY-094: LY-002 E-R04 (二手考古) says 台四面有上下两层平台 and 残高约8 m; the model is a single 6 m platform. This is a platform-form question, not an edge fix; not changed here."
+ ],
+ "reuseCandidate": "无",
+ "touches": [
+  "SW hall floor end x=-2.8 (tile y -19.8..-16.2) and SE hall floor end x=+2.8",
+  "stair-side ground strips x +-1.8..2.8, y -19.8..-16.2 (ground_cell / C_access_stair side faces, read-only)",
+  "end posts at (+-2.8,-16.45/-19.55), (+-14,-16.45/-19.55), (+-16.45/+-19.55,+-14.0), (+-14,15.25/20.75) - timber node lingtai-A-static_timber",
+  "W/E hall floor ends y=+-14, N hall floor ends x=+-14 (earth node lingtai-A-static_earth)",
+  "files: docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD1.glb, lingtai-A-LOD2.glb (read-only inputs; new versions only via LY-100)",
+  "near source: rebuilt from modeling-lab/content/luoyang/lingtai-quality-v1 source.zip (read-only)",
+  "MUST NOT touch: five notches X-W/E/N/SW/SE, main stair, north hall roof/tiles, N hall rear y=21 and north bypass geometry, city-data.mjs, p-luoyang.asset.json",
+  "G registry: site S-LINGTAI, zone LY-076:write:001 (whole bbox minus five T1 boxes), port lingtai:edge:ground (produced), card m-luoyang-lingtai (proposal owner), city node research-lingtai (owned, not changed)",
+  "Lock conflict: LY-009 LOCK-LINGTAI-STEPS keeps docs/library/models/m-luoyang-lingtai/** read-only although LY-006 grants modify/replace -> deliver new files only in workpacks/LY-076, LY-100 places them"
+ ],
+ "size": "M",
+ "risks": [
+  "Missing five-step near source: the near tier can only be rebuilt from GLB (not SHA-identical). If the original resurfaces, the work has to be re-based.",
+  "Fixes conflict: extending the SW/SE floor ends to support the posts narrows the 1.0 m stair strips to 0.85 m. Post plinths and ramps need G/LY-002 to choose, and must be mutually exclusive options in assembly.json.",
+  "The intended meaning of '北侧窄绕行' cannot be confirmed without the original QA. Any north-end post fix must hold the T7 geodesic and transect baselines.",
+  "Every dimension is C design; there is no c.180 evidence for hall-plinth height, step form or edge guards. No parapet may be added to the platform top.",
+  "In the card the infill is merged into the earth material, which inflates support numbers unless only horizontal up-facing faces are counted.",
+  "The city view shows a different (pre-step) lineage from the card. Reviewers may confuse the two; LY-100/LY-094 must decide which one is installed.",
+  "Ownership vs lock: LY-006 lets LY-076 modify/replace lingtai-A objects, LY-009 locks the same paths read-only. LY-006/LY-009/coordinator must confirm the release before LY-100 can place a new card GLB.",
+  "Near acceptance has to run on a rebuilt LOD0 (>15 MB, not for listing). If reviewers expect the original 26,176,944 B file, the near tier stays '近景未验' until it turns up.",
+  "Inherited LOD ratio and LY_NOT_GROUNDED warnings may be read as new regressions; qa must quote the baseline numbers."
+ ],
+ "readyAfterG": true
+}

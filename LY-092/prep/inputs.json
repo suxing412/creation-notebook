@@ -1,0 +1,641 @@
+{
+ "seat": "LY-092",
+ "baseline": {
+  "repo": "D:/GitHub/creation-notebook-lab",
+  "HEAD": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "originMainAtPrep": "b70c4957e2b617c5d65fb4db995a46d1fcdf064b (2 commits ahead: f28d650, b70c495; city-data.mjs changed, yong road)",
+  "byteRule": "text files: committed blob SHA is authoritative (core.autocrlf=true worktree differs); GLB worktree==blob",
+  "originMainAt2026-11-06": "cad338ba683f7277aea098f45c8feb6c915a847c (3 commits ahead of bce3211: f28d650, b70c495, cad338b r2026.11.05-8 \"place three northern courts\"); lab checkout HEAD still bce3211; city-renderer.mjs unchanged bce3211..cad338b"
+ },
+ "regionFingerprint": {
+  "bce3211": "b1f59a7e1deb43790acdfbfeaf36085d88e52dcdba2aee035a2207abf9f35561",
+  "b70c495": "b37a817723146fedc108caceb0af383e924e9a016e07c969ed2bdc3f58784e40",
+  "cad338b": "5ff321bb54188710bb15720e7004b5ed68c257cda9449b2a145a23263bd1e3d6",
+  "note": "region fingerprint = sha256 over node fingerprints of residential+market+terrain(+replacing aliases) nodes; frozen grid does not affect it"
+ },
+ "glb": [
+  {
+   "path": "docs/cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb",
+   "kind": "far",
+   "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+   "declaredSha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+   "bytes": 92328,
+   "assetId": "courtyard-A",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:8 asset courtyard-A (far); nodes 12 (initial); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 3,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb",
+   "kind": "near",
+   "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+   "declaredSha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+   "bytes": 510536,
+   "assetId": "courtyard-A",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:8 asset courtyard-A (near = nearUrl, swapped in by city-renderer.mjs:616-624 focusCourtyard); nodes 12 (initial); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 3,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb",
+   "kind": "far",
+   "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+   "declaredSha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+   "bytes": 112776,
+   "assetId": "courtyard-B",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:35 asset courtyard-B (far); nodes 10 (initial); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 3,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb",
+   "kind": "near",
+   "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+   "declaredSha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+   "bytes": 626016,
+   "assetId": "courtyard-B",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:35 asset courtyard-B (near = nearUrl, swapped in by city-renderer.mjs:616-624 focusCourtyard); nodes 10 (initial); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 3,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb",
+   "kind": "far",
+   "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+   "declaredSha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+   "bytes": 164300,
+   "assetId": "courtyard-TC03",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:62 asset courtyard-TC03 (far); nodes 4 (initial); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 2,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb",
+   "kind": "near",
+   "sha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+   "declaredSha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+   "bytes": 981664,
+   "assetId": "courtyard-TC03",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:62 asset courtyard-TC03 (near = nearUrl, swapped in by city-renderer.mjs:616-624 focusCourtyard); nodes 4 (initial); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 2,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+   "kind": "far",
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "declaredSha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "bytes": 92220,
+   "assetId": "courtyard-A2",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:88 asset courtyard-A2 (far); nodes 9 (initial); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 3,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+   "kind": "near",
+   "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "declaredSha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "bytes": 447064,
+   "assetId": "courtyard-A2",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:88 asset courtyard-A2 (near = nearUrl, swapped in by city-renderer.mjs:616-624 focusCourtyard); nodes 9 (initial); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 3,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/B2-LOD1-prototype.glb",
+   "kind": "far",
+   "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+   "declaredSha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+   "bytes": 113064,
+   "assetId": "courtyard-B2",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:115 asset courtyard-B2 (far); nodes 7 (initial); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 3,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb",
+   "kind": "near",
+   "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+   "declaredSha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+   "bytes": 569280,
+   "assetId": "courtyard-B2",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:115 asset courtyard-B2 (near = nearUrl, swapped in by city-renderer.mjs:616-624 focusCourtyard); nodes 7 (initial); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 3,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb",
+   "kind": "far",
+   "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+   "declaredSha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+   "bytes": 164200,
+   "assetId": "courtyard-TC03-2",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:142 asset courtyard-TC03-2 (far); nodes 2 (initial); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 5,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb",
+   "kind": "near",
+   "sha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+   "declaredSha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+   "bytes": 943548,
+   "assetId": "courtyard-TC03-2",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:142 asset courtyard-TC03-2 (near = nearUrl, swapped in by city-renderer.mjs:616-624 focusCourtyard); nodes 2 (initial); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 5,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "kind": "far",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "declaredSha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "bytes": 3565544,
+   "assetId": "ground-network-ground-stitched",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:431 asset ground-network-ground-stitched (far); nodes 1 (chapter terrain loadNodeIds); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 0,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "kind": "far",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "declaredSha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "bytes": 629740,
+   "assetId": "ground-retained",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:451 asset ground-retained (far); nodes 1 (chapter terrain loadNodeIds); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 0,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "kind": "far",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "declaredSha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "bytes": 2623560,
+   "assetId": "ground-south",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:471 asset ground-south (far); nodes 1 (chapter terrain loadNodeIds); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 0,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "kind": "far",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "declaredSha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "bytes": 6664,
+   "assetId": "ground-D08",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:491 asset ground-D08 (far); nodes 1 (chapter terrain loadNodeIds); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 0,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "kind": "far",
+   "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "declaredSha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "bytes": 1031928,
+   "assetId": "market-main",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:511 asset market-main (far); nodes 1 (chapter market loadNodeIds); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 30,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/N2-replacement.glb",
+   "kind": "far",
+   "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "declaredSha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "bytes": 72984,
+   "assetId": "market-N2",
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:562 asset market-N2 (far); nodes 1 (chapter market loadNodeIds); renderer city-renderer.mjs:286-346 loadAsset (no SHA check in renderer)",
+   "excludeNodes": 0,
+   "excludeMissing": []
+  },
+  {
+   "path": "docs/model-library/assets/market-A-N2-local.glb",
+   "kind": "reference",
+   "sha256": "493798b8f09f594bb2ed3015b0db273e15badd3c7a62a99f9bdda1738880c707",
+   "bytes": 1088036,
+   "loadedInCity": false,
+   "loadedBy": "never-city copy: city A+N2 translated to origin (LY-029/030 measured 524/524 nodes equal)"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/flowB-routes.glb",
+   "kind": "reference",
+   "sha256": "43d7799f85feccb0d6f1e0412c46853e6b3339535e38a9b806e8c5d3898f845e",
+   "bytes": 9344,
+   "loadedInCity": false,
+   "loadedBy": "v1 only: v1/west-layer.mjs:33,36 (flow=B)"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/corridor-6m-market-link.glb",
+   "kind": "reference",
+   "sha256": "b46dd450d7e8636b744d2dcd1d0cee8e98352025b7cda57b2cd0938a3da149bf",
+   "bytes": 8272,
+   "loadedInCity": false,
+   "loadedBy": "v1 declared at west-layer.mjs:32-33 then overridden :36 for level=market; replaced by stitched"
+  }
+ ],
+ "text": [
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "blobSha256": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "worktreeSha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "loadedInCity": true,
+   "role": "manifest: assets L8-511+, residential nodes L1356-3200 (C02-018 L1356 ... FROZEN-D08-NE L3162), terrain nodes L3555-3636, market nodes L3663/3690, chapters residential L3835 / market L3953 / terrain L4027"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "blobSha256": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "worktreeSha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "loadedInCity": true,
+   "role": "composition rules: initial L221, loadAsset+excludeNodes strict L286-346, transformFor L372-386, rebuild+replaces L409-415, focusChapter L595-613 (never unloads), focusCourtyard L616-624"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "blobSha256": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+   "worktreeSha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "loadedInCity": true,
+   "role": "entry; imports city-data.mjs and renderer"
+  },
+  {
+   "path": "docs/cities/luoyang/index.html",
+   "blobSha256": "cfbf73763675397dde8f5ab08bb13f6b51fbcfa9954227552e32be756666b1bf",
+   "worktreeSha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "loadedInCity": true,
+   "role": "current entry page"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "blobSha256": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "worktreeSha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "loadedInCity": false,
+   "role": "project card (counts text)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/instances-calt.json",
+   "blobSha256": "e39fdafb016c9ff7f42e25bfcbfe37152f381fac84ffe2cca11cd6fc936fdf7e",
+   "worktreeSha256": "c830b4e37090da5e070156b7f6199f36c5d0191c339f5a9399f0becded50ff85",
+   "loadedInCity": false,
+   "role": "sourceContract of 44 courtyard matrices"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/preflight-contract.json",
+   "blobSha256": "c9aafa7d22100deb141c554deffd07da67818af711a75cb6f36144fe68f9cc50",
+   "worktreeSha256": "90dfa0774643b90d61f057aed726525cfe3e18647e897d3c90eb64fa79426d6b",
+   "loadedInCity": false,
+   "role": "sourceContract of 6 courtyard prototypes"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/N2-contract.json",
+   "blobSha256": "498f51fcd0723da69ab1b97c56f3de004a449a86e0e322dedc6489446a00e2cd",
+   "worktreeSha256": "10678d73111ae0d131afc3ff823162392eab339ee66bf2046e61666c2c8d9386",
+   "loadedInCity": false,
+   "role": "sourceContract market-main/N2 (30 excluded names)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "blobSha256": "7f26720bf40fc8cd7f7d0b445398d889fcc70c407f7cc7e26e4acd0eb6332367",
+   "worktreeSha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "loadedInCity": false,
+   "role": "sourceContract of 4 ground tiles"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-flow-plan.json",
+   "blobSha256": "fb2416122d3b9fd7e2bbeafcaa1934ee4efcaf67cbe4654139b212e4e50ce37b",
+   "worktreeSha256": "bff5bb22bac6bda21f02a4b43f4adf85e187b8070d360c0433d69832e11adbdf",
+   "loadedInCity": false,
+   "role": "market routes plan (not loaded geometry)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-precedents.json",
+   "blobSha256": "14294a1202cb1ee7ab81938a53c80b537d2ce61e7d1072aa71809be5597f1916",
+   "worktreeSha256": "abf2a3d248114427f51a93b913c39e3ee523c5b3dda55860bd6379f5d37f7d38",
+   "loadedInCity": false,
+   "role": "market evidence/avoid list"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/west-layer.mjs",
+   "blobSha256": "e406af117b112a5fd07483f1906f0d94ad767135bf844f03a82a9874f21c59fc",
+   "worktreeSha256": "d8c14142af2e4d993cc249dfcc605edadb38232190e5890f31640b94be9d2d4b",
+   "loadedInCity": false,
+   "role": "v1 archive loader (market level L33-37); secondary composition"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/market-assembly.mjs",
+   "blobSha256": "343373f0b4599d376c6064981f13dfcd60f6be4c512edcf8fada4cd886dce811",
+   "worktreeSha256": "0145ac84d938b570d08e2bbf334eb42cc69ae13569cb0e2bdfa917351ae68ce2",
+   "loadedInCity": false,
+   "role": "v1 N2 replacement (hard-coded 30/7)"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/r01-assets.mjs",
+   "blobSha256": "be58dd5de8d568e9bb04b6854c04ee42967412b55eecc156a17518d045d88e4e",
+   "worktreeSha256": "fbfd5479699d5e0b49f0d199b9e62ce8d77d6f97a0e780b20f940f9d1545ae95",
+   "loadedInCity": false,
+   "role": "v1 courtyard loader (removable_site_nodes)"
+  },
+  {
+   "path": "lab/data/assets.json",
+   "blobSha256": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "worktreeSha256": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+   "loadedInCity": false,
+   "role": "site asset summary (worktree differs by timestamps only per LY-001)"
+  }
+ ],
+ "originMainOnly": [
+  {
+   "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
+   "sha256": "2a32c700d401af623701a2ec84523ea2d7688fc9b5d128f22cae542a85b7b844",
+   "extractedTo": "workpacks/LY-092/prep/out/originmain-b70c495/files/yong-road-link-LOD2.glb",
+   "loadedInCity": "b70c495 only (yong-road-receiver initial=true; replaced by ground-network-ground-stitched when terrain opens)"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+   "sha256": "456a7dd54a5fd623ab17d9823ab1a12701bd764bdd219ec8884e9538536cd93d",
+   "extractedTo": "workpacks/LY-092/prep/out/originmain-b70c495/files/yong-road-link-LOD0.glb",
+   "loadedInCity": "b70c495 only (yong-road-receiver initial=true; replaced by ground-network-ground-stitched when terrain opens)"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
+   "sha256": "e5baa0df8fd28e117b4ef997cab0d962b0834a4c9664bb1ed73b7746d2488e38",
+   "extractedTo": "workpacks/LY-092/prep/out/originmain-b70c495/files/yong-road-receiver-component209.glb",
+   "loadedInCity": "b70c495 only (yong-road-receiver initial=true; replaced by ground-network-ground-stitched when terrain opens)"
+  }
+ ],
+ "upstreamPrepRead": [
+  "workpacks/LY-001 (交付完成; snapshot ledger)",
+  "workpacks/LY-029/prep",
+  "workpacks/LY-030/prep",
+  "workpacks/LY-082/prep",
+  "workpacks/LY-083/prep (read only, numbers re-measured here where possible)"
+ ],
+ "upstreamDeliverablesMissing": [
+  "LY-010 (G not frozen; directory absent)",
+  "LY-030 region package",
+  "LY-050 demo-court package",
+  "LY-082 lane patch",
+  "LY-083 outer-street patch / reuse verdict",
+  "LY-090 multi-ground hole composite",
+  "LY-001 re-snapshot on cad338b (or later main)"
+ ],
+ "prepFiles": [
+  {
+   "path": "workpacks/LY-092/prep/scripts/baseline92.py",
+   "sha256": "39824addc40064fca2971298eac5d886aefe1f1bdc133a7de7db8e036c27f999"
+  },
+  {
+   "path": "workpacks/LY-092/prep/scripts/blender_xcheck92.py",
+   "sha256": "9a2f56e67e118243a2292aaf40d5a16ce7613dfa24207df2329a25bd5d9d8612"
+  },
+  {
+   "path": "workpacks/LY-092/prep/scripts/check92.py",
+   "sha256": "ca55ca96b09adb85b63f55cae6ad0d3d6d84c35ea3626a4cfe51065aedfb235b"
+  },
+  {
+   "path": "workpacks/LY-092/prep/scripts/drift92.py",
+   "sha256": "915567c90fe5931cd5227bdae87b8eecdfd0ba65b021aab15d498e8adab9ad31"
+  },
+  {
+   "path": "workpacks/LY-092/prep/scripts/dump_city92.mjs",
+   "sha256": "e2e9c08af444fcfe7d286ab6c101e79b4639f9eb8d490238f28068fad246bd8c"
+  },
+  {
+   "path": "workpacks/LY-092/prep/scripts/glb92.py",
+   "sha256": "7a7121d0e0619504f87b52539c02996751cf6780c2950d68924418500bf91cb1"
+  },
+  {
+   "path": "workpacks/LY-092/prep/scripts/lib92.py",
+   "sha256": "a5a06d9642dee11445b13b9529c19a8d21ffde571d6413882c3c9831556c2ee4"
+  },
+  {
+   "path": "workpacks/LY-092/prep/scripts/original44.json",
+   "sha256": "4d3632ae38d67ccdd9e62b5462e12c0c271a48b10454c7f3a88e4840c8bb64ee"
+  },
+  {
+   "path": "workpacks/LY-092/prep/scripts/summarize92.py",
+   "sha256": "de3250ba05087f75975efd9edf52620f27d0fe1f34063c02c8a99cfe62a46ecc"
+  },
+  {
+   "path": "workpacks/LY-092/prep/tests/probe-planned-holes.overlay.json",
+   "sha256": "9219d0b9c9e8ed1babc48db67daaa3bb4fc966896d5f1fae32dcb7f6c19ce712"
+  },
+  {
+   "path": "workpacks/LY-092/prep/out/grid-frozen-v1.json",
+   "sha256": "6dc0110f60485cff8da474ba2c66e93631fb4ca1c28df5753ee09814a9368360"
+  },
+  {
+   "path": "workpacks/LY-092/prep/out/originmain-cad338b/overrides-grid.json",
+   "sha256": "f8ba49e37760e3f7864276bd3db242d690c6d11c33a021966b80631fa1215834"
+  },
+  {
+   "path": "workpacks/LY-092/prep/out/baseline-bce3211-G.json",
+   "sha256": "67e3fb90a40d5fede86d5950a458c94c8076d1e46885eca4dab64a41aec49a61"
+  },
+  {
+   "path": "workpacks/LY-092/prep/out/baseline-cad338b-G.json",
+   "sha256": "4c69bbc4902618643cf8604b2a2b416cb8a67592a0d2c4576d485e34743d5266"
+  },
+  {
+   "path": "workpacks/LY-092/prep/out/selftest-bce3211-G.json",
+   "sha256": "d35868b6b8d6a1fdb017b164437210acb8e6bc349d301b1e5ccbe5e03e1485e5"
+  },
+  {
+   "path": "workpacks/LY-092/prep/out/selftest-cad338b-G.json",
+   "sha256": "ab181ae42136e5c7cf28e0c3645d02fe1fde3a2c2180c5cf7e0697e292f2c309"
+  },
+  {
+   "path": "workpacks/LY-092/prep/out/drift-bce3211-to-cad338b-G.json",
+   "sha256": "e527cdec89f4fd233826bf4ae5d107a541e4419cce2da4978f170236a8016ed2"
+  },
+  {
+   "path": "workpacks/LY-092/prep/out/probe-holes-bce3211.json",
+   "sha256": "6ec502879fe3935bdc621fa302ce655d8750d07043af99349d07758b10fba659"
+  },
+  {
+   "path": "workpacks/LY-092/prep/out/probe-holes-cad338b.json",
+   "sha256": "dc9b1836a6ee3729e75ffec44886463978c4e6ea99c434c4534a7b834bdca2f1"
+  },
+  {
+   "path": "workpacks/LY-092/prep/out/blender-xcheck-TC03.json",
+   "sha256": "a3098e4566a8f1d59eb73f3375ca1ae685ae929e20b4f7a167e999c39d06b806"
+  },
+  {
+   "path": "workpacks/LY-092/prep/out/summary-G.jsonl",
+   "sha256": "0dab5d2534275a25f2a4cc3e2fe876a8a1ad55ae878529457c8d6f86895e290d"
+  }
+ ],
+ "updated": "2026-11-06 (second prep pass: origin/main moved to cad338b)",
+ "originMainCad338b": {
+  "cityData": {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "blobSha256": "d8933a32a6a133b38bc8ae5591bd0b350d206f9c884e1a6c4a1adabf5fc6daf3",
+   "extractedTo": "workpacks/LY-092/prep/out/originmain-cad338b/city-data.mjs (git show, read-only)",
+   "keyLines": {
+    "ground-retained node (initial false->true)": 3813,
+    "C_NORTH_INFILL_01..03": [
+     4166,
+     4255,
+     4344
+    ],
+    "-near": [
+     4209,
+     4298,
+     4387
+    ],
+    "chapter residential": 4526,
+    "chapter market": 4651,
+    "chapter terrain": 4725,
+    "chapter north-three": 4761,
+    "provenance.counts.courtyards=47": 5219
+   }
+  },
+  "northThreeSourceContract": {
+   "path": "docs/cities/luoyang/progress-assets/north-three-v1/source.json",
+   "blobSha256": "d2cadd21e9b5fc9a3f7cee23927681a957118734c93a047cecab1038cc39c249",
+   "inCheckout": false
+  },
+  "northThreeReadme": {
+   "path": "docs/cities/luoyang/progress-assets/north-three-v1/README.md",
+   "blobSha256": "216fea8f611ee214121c7ad195fd2891aa5e38a9e796ce4d306d2b264ada67df"
+  },
+  "glb": [
+   {
+    "path": "docs/library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD2.glb",
+    "assetId": "north-three-opposed_rooms-far",
+    "kind": "far",
+    "sha256": "44366ced8b71c5a3cbd417f8aacfafa095f92012e13f2a989735a8aac1e5ce67",
+    "blobSha256AtCad338b": "44366ced8b71c5a3cbd417f8aacfafa095f92012e13f2a989735a8aac1e5ce67",
+    "bytes": 87196,
+    "loadedInCity": "cad338b only (not referenced by bce3211 city-data.mjs; file exists byte-identical in the bce3211 checkout as a model-library card file)",
+    "loadedBy": "cad338b city-data.mjs:~1365 asset; node C_NORTH_INFILL_01 L4166 (residential, initial)"
+   },
+   {
+    "path": "docs/library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD0.glb",
+    "assetId": "north-three-opposed_rooms-near",
+    "kind": "near",
+    "sha256": "21ffb5af02cef43552a8fd41173297569e5dac7173d0e76f09a0ef408b99a9ce",
+    "blobSha256AtCad338b": "21ffb5af02cef43552a8fd41173297569e5dac7173d0e76f09a0ef408b99a9ce",
+    "bytes": 1512104,
+    "loadedInCity": "cad338b only (not referenced by bce3211 city-data.mjs; file exists byte-identical in the bce3211 checkout as a model-library card file)",
+    "loadedBy": "asset north-three-opposed_rooms-near; node C_NORTH_INFILL_01-near L4209 (chapter north-three, replaces C_NORTH_INFILL_01); also nearUrl of the far asset (focusCourtyard)"
+   },
+   {
+    "path": "docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD2.glb",
+    "assetId": "north-three-compact_work-far",
+    "kind": "far",
+    "sha256": "84426f9142947741f0944ed4772d4008dfa2f687241618306503230ac593bba0",
+    "blobSha256AtCad338b": "84426f9142947741f0944ed4772d4008dfa2f687241618306503230ac593bba0",
+    "bytes": 73328,
+    "loadedInCity": "cad338b only (not referenced by bce3211 city-data.mjs; file exists byte-identical in the bce3211 checkout as a model-library card file)",
+    "loadedBy": "node C_NORTH_INFILL_02 L4255 (residential, initial)"
+   },
+   {
+    "path": "docs/library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb",
+    "assetId": "north-three-compact_work-near",
+    "kind": "near",
+    "sha256": "e799b5880cd12a5c9255f1c2cadbb49051032027d1781e8e6dd3c27dd48c7ce2",
+    "blobSha256AtCad338b": "e799b5880cd12a5c9255f1c2cadbb49051032027d1781e8e6dd3c27dd48c7ce2",
+    "bytes": 1446320,
+    "loadedInCity": "cad338b only (not referenced by bce3211 city-data.mjs; file exists byte-identical in the bce3211 checkout as a model-library card file)",
+    "loadedBy": "node C_NORTH_INFILL_02-near L4298 (north-three)"
+   },
+   {
+    "path": "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD2.glb",
+    "assetId": "north-three-workyard-far",
+    "kind": "far",
+    "sha256": "574d81d91d3898bf9de5e3d46b2b7d8532dd2c1b52d4ac35f7132898a1babda0",
+    "blobSha256AtCad338b": "574d81d91d3898bf9de5e3d46b2b7d8532dd2c1b52d4ac35f7132898a1babda0",
+    "bytes": 167792,
+    "loadedInCity": "cad338b only (not referenced by bce3211 city-data.mjs; file exists byte-identical in the bce3211 checkout as a model-library card file)",
+    "loadedBy": "node C_NORTH_INFILL_03 L4344 (residential, initial)"
+   },
+   {
+    "path": "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
+    "assetId": "north-three-workyard-near",
+    "kind": "near",
+    "sha256": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e",
+    "blobSha256AtCad338b": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e",
+    "bytes": 1850040,
+    "loadedInCity": "cad338b only (not referenced by bce3211 city-data.mjs; file exists byte-identical in the bce3211 checkout as a model-library card file)",
+    "loadedBy": "node C_NORTH_INFILL_03-near L4387 (north-three)"
+   }
+  ],
+  "dump": {
+   "path": "workpacks/LY-092/prep/out/city-data.cad338b.dump.json",
+   "sha256": "d40088a45d012f884565f6d0802266a649da7680e9b8e05f1c1d226b4328efe9"
+  }
+ },
+ "gPackages": {
+  "note": "G = LY-001/002/005/006/007/008/009/010. 001/002/005/006/007/008/009 status=交付完成 at 2026-11-06; LY-010 directory does not exist -> G NOT frozen. All G packages are bound to bce3211, not cad338b.",
+  "items": [
+   {
+    "seat": "LY-001",
+    "path": "LY-001/qa/snapshot-ledger.json",
+    "sha256": "479046caf49479cc6e58249585c63c80e84f23cafd82dc93bdc1034f9e1da7d0",
+    "useHere": "snapshot ledger (bce3211); must be re-issued for cad338b or later"
+   },
+   {
+    "seat": "LY-005",
+    "path": "LY-005/coordinate-contract.json",
+    "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+    "useHere": "axes/units/elevations 0.20/0.21; replaces the C envelope tolerances in route checks"
+   },
+   {
+    "seat": "LY-005",
+    "path": "LY-005/port-schema.json",
+    "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f",
+    "useHere": "port record shape for 082/083 endpoints"
+   },
+   {
+    "seat": "LY-006",
+    "path": "LY-006/registry/ownership.json",
+    "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+    "useHere": "ground-piece owners (sample_ground->LY-090), cuts (well-A, C02-010 latrine -> composer LY-090)"
+   },
+   {
+    "seat": "LY-006",
+    "path": "LY-006/registry/zones.json",
+    "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+    "useHere": "cut zones LY-025:cut:003 (196.286,-1952.184) and LY-045:cut:002 (535.55,-818.65) used as planned-hole probes"
+   },
+   {
+    "seat": "LY-008",
+    "path": "LY-008/source/ly_check.py",
+    "sha256": "39aaa491859e1a796080dd91ccabd1c47423cf7f9ef2af61c5f123b04b3dff4b",
+    "useHere": "GLB/LOD/package/privacy/official checker; B-checks are read from its report"
+   },
+   {
+    "seat": "-",
+    "path": "taskboard.json",
+    "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+    "useHere": "dependency DAG"
+   },
+   {
+    "seat": "-",
+    "path": "TASKPOOL.md",
+    "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+    "useHere": "task text"
+   }
+  ]
+ }
+}

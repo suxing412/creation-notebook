@@ -1,0 +1,62 @@
+{
+ "seat": "LY-085",
+ "inputsFound": [
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb fdfc3ce5 (C_stitch_primary = Pingcheng south road, 6 m; loaded only in the terrain chapter, initial=false: city-data.mjs:3555-3576, :4027-4042; city-renderer.mjs:221, :594-603)",
+  "docs/cities/luoyang/assets/ground-atomic/retained.glb aed8b3d4 / south.glb 4313826d / D08.glb 3ab93310 (no hit near either gate)",
+  "docs/cities/luoyang/data/west/ground-atomic-contract.json bfc7fc83 (3-node atomic, modeRestriction 6m)",
+  "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-P-LOD0.glb 5cdd8d68; progress-assets/.../pingcheng-P-LOD1.glb 7d995a1b, LOD2 e6f289f7; local-study file flat/study-north13-pingcheng-P c8ab88f4 (city-renderer.mjs:645-660)",
+  "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD0/1/2.glb c0f70051 / d4de907a / 87e3e751 (card only)",
+  "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb 88d9a322; LOD1 d82f13fc, LOD2 13ff78a7; local-study file 94693c58; kaiyang-ground-LOD0/1/2 5754432a / 50f85502 / e758e45f",
+  "docs/cities/luoyang/progress-assets/north13-gates/source.json 9b07b734 (placements, activation=false)",
+  "docs/cities/luoyang/data/west/road-plan.json 9792f217 (road_pingcheng_south_link_B_C_6 + cut gate_pingcheng_B 43.1 m); road-preconstraints.json 8b2fa0fa; city-wall-constraints.json b6006e31",
+  "docs/cities/luoyang/assets/city-wall/A/wall-04.glb 50d8c7aa, wall-05.glb 4e000b0c, wall-06.glb d7d3cc79 (initial=true)",
+  "modeling-lab/review-batches/2026-11-04-city-visible ZIP 5895ef23 (undeployed mother 1e8c4d): chunks C_ground_network__C_stitch_primary 2b89e858 (reuse source), C_gate_local_ground 6002f5a6, city_gate_kaiyang-K e96a85f2, lingtai_C_with_east_access 77d5fd11, taixue_C_with_support d2c085a3, biyong_C_relationship 1bd1c446",
+  "docs/cities/luoyang/city-data.mjs e4115705; p-luoyang.asset.json 9b5e311f"
+ ],
+ "inputsMissing": [
+  "Mother city-C032-entry-LOD0.blend 1e8c4d2c... (excluded from the handoff per its README): needed for install/rollback inside the native mother. Geometry can be rebuilt from GLB (visible-set chunks match within 1 mm); native install/rollback cannot",
+  "Gate placement base eabb2a90 / overlay 660cdf37: needed for native placement rollback; cannot be rebuilt from GLB; only web-side GLB-world install/rollback is possible",
+  "network-ground-stitched generator/native source: needed to extend the road the same way it was made. Can be rebuilt from GLB (the 4 road-end vertices are measured exactly, and mother chunk 2b89e858 holds the same road to y=+13.25)",
+  "G pack not frozen: LY-005 access envelope/step tolerance/elevation, LY-006 owner of the y[-10,-6.353] wedge and the port IDs, LY-008 checker, LY-010 approval to reopen the gate_pingcheng_B cut and the choice of baseline (docs bce3211 vs mother 1e8c4d)",
+  "LY-004 south ritual registration (decides whether Kaiyang has any target road end and whether a moat/bridge goes in); LY-015/LY-017 frozen gate ports; LY-081 real ports/breakpoints: none delivered"
+ ],
+ "gaps": [
+  "Pingcheng: in the docs city, from the outer edge of the gate ground (local y=-10.0) to the north end of the south road (y=-60.454; x[-2.474,3.525], width 5.999 m) there are 50.454 m with zero support; W side-passage port to road end 50.745 m (5.426 m lateral), E 50.643 m (4.375 m lateral)",
+  "Pingcheng height: gate ground top local z 0.042 (world 0.212) vs road top 0.040 (world 0.21), only 0.002 m; road slab 0.05 m thick, bottom world 0.16 floating with no terrain beneath (inherited)",
+  "Pingcheng current discrete check (0.1 m grid, half-width 0.3/0.5 m, 1.9 m clear height): W and E stop at y=-9.7/-9.5 and never reach the road; same on LOD0/1/2",
+  "Pingcheng what-if: adding the mother segment only to y=-10 still fails (-9.7). Running it to the gate outer face y=-6.4 passes W and E down to y=-65.7 on all 3 LODs and both widths. Negatives without the gate ground / without the docs road correctly fail (not walkable / stop at -60.3). Minimal link = local y[-60.454,-6.353] x about 5.95-6.0 m, about 54.1 m long, about 322 m2",
+  "Pingcheng road centreline faces the closed central lane (road x[-3.05,2.90] at y=-10, central lane closed); the side passages x+-[6.12,9.68] reach it only sideways through the patches in y[-10,-6.9]",
+  "Pingcheng approach window clear: walls 04/05/06 hit 0 cells in local x+-25, y-70..-6; gate body has nothing at y<-6.353",
+  "Pingcheng south road continuous for 1150.82 m to y=-1224.49 (only 3 numerical misses, all on the s=0 end edge); no ground beyond the far end; Lingtai/Taixue are local-study only in docs (cityPlacement=null)",
+  "Kaiyang: in the docs city, 0 ground cells in local x+-60, y-140..+40 (0.5 m); 5 m search over 1300 m south / +-600 m found 278 cells, all on the Pingcheng road, nearest 393.86 m away at world (1620.4,-76.3); no road plan piece reaches Kaiyang",
+  "Kaiyang in mother 1e8c4d: nearest road 372 m; Taixue isolated support patch 702 m from the Kaiyang port and 724 m from the road; Biyong >=487 m from the road; all unconnected",
+  "Mother 1e8c4d Lingtai C_access_A touches the Pingcheng road at world y=-1041.8 (about 968 m south of the docs road end): a separate assembly, not counted"
+ ],
+ "reuseCandidate": "Pingcheng only, a partial reuse: mother-1e8c4d chunk C_ground_network__C_stitch_primary.glb 2b89e858 is the same road as the docs C_stitch_primary (south of the docs end, max top dz 2e-5 m over 1151 stations) but still runs from local y=-60.454 to +13.25. Its y[-60.454,-6.353] stretch is exactly the gap that road-plan cut gate_pingcheng_B removed. In the discrete test it gives W/E continuous support to the docs road on LOD0/1/2 at half-widths 0.3 and 0.5, and the negatives fail as they should (route-whatif-out.json 83ea0abd). It cannot be delivered as-is: it is not deployed, it continues past y=-6.353 into the closed central lane and the pier (owned by LY-016/017), it must be cut exactly into a separate node, and reopening the cut needs LY-010 approval. Kaiyang: no reuse candidate (no road end in any baseline)",
+ "touches": [
+  "network-ground-stitched.glb node C_stitch_primary: read only, seam contact at local y=-60.454 (world 1619.081..1625.080, -73.686..-73.738); the atomic file is not re-exported",
+  "New separate node pingcheng_south_link_C (Pingcheng local y[-60.454,-6.353]), rebuilt from GLB by cutting mother chunk 2b89e858 C_stitch_primary",
+  "pingcheng_ground_C (pingcheng-ground-LOD0/1/2, LY-016 output): edge contact only, along y[-10,-6.353] at x about -3.1 and +2.92; ownership of this wedge goes to LY-006",
+  "pingcheng-P-static_earth/_timber/_tile: no contact allowed (deliverable y_max <= -6.353)",
+  "Old road under the gate, y[-6.353,+13.25] (mother only): not touched; belongs to LY-016/LY-017",
+  "wall-A-wall-04/05/06: obstacle check only",
+  "Kaiyang: kaiyang_ground_C strips and kaiyang-K-* are read only; no geometry produced",
+  "data/west/road-plan.json cut gate_pingcheng_B: semantic change proposal to LY-100/LY-010 only, file not edited",
+  "Files: workpacks/LY-085/** only; city-data.mjs, p-luoyang.asset.json, assets.json go through LY-100"
+ ],
+ "size": "M",
+ "risks": [
+  "Reopening the gate_pingcheng_B cut overturns the road-plan's deliberate 'no new gateway crossing'; without explicit LY-010 approval the Pingcheng package is blocked too",
+  "The link has to reach the gate outer face (-6.353); stopping at -10 fails. If LY-006 gives the y[-10,-6.353] wedge to LY-016, the two seats have to deliver together or the check fails",
+  "Baseline ambiguity: if LY-010 picks mother 1e8c4d, the road already exists there and the new node must be mutually exclusive with it (no stacking)",
+  "A wider frozen envelope (>1.0 m) or a vehicle requirement may call for a flare at the side passages, which would turn the reuse into new C design",
+  "Single-plate ground: the 3 LODs would be identical; must be declared single-tier per LY-007, never copied and renamed",
+  "Floating slab (bottom world 0.16, no terrain) is inherited and belongs to LY-005; cannot be reported as verified support",
+  "If LY-002/004 add a moat south of the wall, the 50 m link crosses it and a bridge is out of scope (blocked)",
+  "Kaiyang half stays a blocked record unless LY-004/LY-010/LY-081 name a target; building 390+ m to the Pingcheng road or a road to the unplaced Taixue is forbidden",
+  "Discrete grid check is not continuous body motion, vehicle, structure or GPU/browser proof; gao2023 functional relation recorded second-hand, not re-read by this seat"
+ ],
+ "readyAfterG": true,
+ "readyAfterGNote": "Pingcheng: once G (especially the LY-010 cut approval and the LY-006 wedge owner) and LY-015/017/081 ports are frozen, the reuse segment can be cut from GLB and the test-plan run right away. Kaiyang: the deliverable is the blocked record plus negative evidence; geometry needs a target from LY-004/LY-010/LY-081",
+ "prepFiles": ["brief-draft.md", "inputs.json", "test-plan.md", "prep-status.json", "measure_south_ends.py", "measure_gap_details.py", "measure_mother_chunk.py", "route_whatif.py", "measure_mother_ritual.py", "city_nodes_near_gates.mjs", "make_inputs.py", "measure-out.json", "detail-out.json", "mother-chunk-out.json", "route-whatif-out.json", "mother-ritual-out.json", "city-nodes-out.json", ".gitignore (_extract/ = read-only copies of 6 chunks from the in-repo handoff ZIP 5895ef23)"]
+}

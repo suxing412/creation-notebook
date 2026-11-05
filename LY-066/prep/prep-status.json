@@ -1,0 +1,66 @@
+{
+ "seat": "LY-066",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-yutang-halls/files/yutang-A-LOD0.glb 6e7f06c0 (LOD1 297c11b0, LOD2 6ff5440c)",
+  "docs/library/models/m-luoyang-yutang-halls/files/yutang-B-LOD0.glb 92091dbe (LOD1 1566de02, LOD2 965ab0b8)",
+  "docs/library/models/m-luoyang-yutang-halls/m-luoyang-yutang-halls.asset.json 72266b3e(提交字节)/994be90f(CRLF检出)；无 cityPlacement 字段，status 待审·未入城",
+  "docs/library/models/m-luoyang-yutang-halls/cover.webp 4804bfe0；shots A-LOD1 f96dbe89、A-LOD2 9c5369b0、B-LOD0 8d622372",
+  "docs/cities/luoyang/p-luoyang.asset.json 8edb06ab(提交字节)：members 第549行、进度第282行、日志第479行",
+  "docs/cities/luoyang/city-data.mjs c849706b、app.mjs cc0379c0、city-renderer.mjs 04c6c643、index.html cfbf7376(提交字节)：yutang 0 引用（城中未加载，仅资产库详情页经 lab/data/assets.json 53d86312 加载）",
+  "上下文（不使用）：palace-admission-court/guard/sidehall/paired-que/deyang-hall 资产卡 SHA 见 inputs.json；progress-assets/palace-admission-court/evidence.md",
+  "引用来源：《后汉书》卷6 顺帝纪建康元年「帝崩于玉堂前殿」https://zh.wikisource.org/wiki/後漢書/卷6（原文·殿名，144年）",
+  "G 交付：LY-001 family-ledger 8eaa7c7a（cityNodes=0）；LY-002 evidence-ledger 237a4811（E-P01/P04/P05/P06/P07，X04/X05/X19）",
+  "LY-005 coordinate-contract b6d7fe9d、port-schema 30854ed9：+Z=图面南，world=N·S·v，研究模型 cityPlacement=null 时 N=单位矩阵，本地 y=0 为接地面",
+  "LY-006 registry v1：seats a1426412、ports 28bcfb68、zones 6b3595ac、ownership ecbbbcf5、seams ca4d81f8。LY-066 帧 local:yutang；写入区 [-19.5,-0.3,-33.5]..[19.5,0.3,34.9]；6 个源对象 keep；唯一产出端口 yutang:outer-port:ground v1 → LY-070",
+  "LY-007 census-bce3211：yutang 为 LY_P01 PBR 512/256 + FLAT，ymin=-0.24 标记；near-retention 三档两两不同",
+  "origin/main cad338b：六份 GLB 和资产卡的 SHA 与 bce3211 相同，city-data 中 yutang 仍为 0 处"
+ ],
+ "inputsMissing": [
+  "yutang v2.0.0 私密原生源（.blend/生成器/参数，节点 extras version 2.0.0）与同名源 Release（52fceaa 自述待补）。用途：核「屋顶端部旧修订」具体改了什么，以及若 LY-010 要求按组件拆节点重导时编辑原生件。已查 D:/GitHub/creation-notebook-待传（只有说明.txt）、D:/待删-* 深度4、D:/GitHub 深度4，均未找到。能否从 GLB 重建：本席位可以（几何原样复用，组件表、端口、互斥都是从 GLB 推导的旁注数据）；修订历史不能。",
+  "屋顶端部旧修订的前后 SHA 与说明（仓库里只有 52fceaa 一个提交触及本卡）。用途：T4 判「不回退」。不能从 GLB 重建；目前只能冻结 bce3211 现状指纹作基准。",
+  "资产卡注里「原生有向几何/UV相符、像素不变转换」所依据的私密 QA 记录。用途：复核继承结论。不能从 GLB 重建，可用 prep 脚本对 GLB 重新实测替代并如实标注。",
+  "G 未冻结：LY-008 检查器为制作中，没有 status.json；LY-010 目录不存在，A/B 选型和 S-PALACE 准入没有决定。不能从 GLB 重建。"
+ ],
+ "gaps": [
+  "组件无独立节点：每份 GLB 只有 3 个材质合并节点；A-LOD0 earth 528 三角分 33 件、timber 2,776/66 件、tile 14,848/530 件，两座殿顶和两条廊顶同在一个 tile 节点。组件关系需要从几何推导旁注组件表。",
+  "墙顶缝未声明：A/B 三档全部 7 段墙顶到屋面底净空恒为 0.552 m（每段 25/25 样点命中，无变化）。后殿墙 68 m 开敞约 37.5 m²，前殿山墙 24 m 开敞约 13.2 m²；Blender BVH earth×tile 重叠对为 0。",
+  "无端口元数据，从几何推导：前入口踏步脚 A (0,0,32.86) / B (0,0,30.36)，宽 4.0，4 级 0.15/0.34；庭踏步脚 A z=±11.14 / B ±8.64；后殿门 A z=−16.0 / B −13.5，净宽 4.0；后台缘 A z=−31.5 / B −29.0 无踏步，落差 0.6；两侧（廊外柱线 x=±13.15 以外）敞开，台缘落差 0.6，不成封闭院落。",
+  "接地：殿台和踏步底面 y=0，庭台基脚埋到 −0.24；踏步脚外资产内无任何地面，需外部 y=0 地坪。",
+  "A/B 互斥未编码：两者原点相同（庭心），B 包络 35×59.36 完全在 A 的 35×64.36 内，同时启用会让 B 的全部占地重叠。",
+  "cityPlacement：资产卡缺字段，需在包内显式写 null；城中 0 引用，符合要求。",
+  "继承侵入（AABB 粗判）：A-LOD0 共 100 对。墙×柱 16（最大 0.453 m³）、墙×础 16、墙×枋 12（其中 4 根枋宽 0.25 > 墙 0.24，两面各凸 5 mm、长 12 m）、墙×墙 4（0.078 m³）、柱×枋 52。需要逐对归类。",
+  "屋顶端部现状指纹：廊顶端部 z=±15.0（A）/ ±12.5（B），伸进殿檐（±14.287 / ±11.787）0.713 m；廊顶到殿檐底最小净空 1.2686 m，为开敞交接。旧修订内容无法核对。",
+  "有限通行（0.6×1.8 m 盒子，步长 0.25 m）：A 中轴 209 个样点、B 189 个，最大相邻高差 0.15，最小净高 5.06 m，侵入 0。廊净宽 2.06、廊枋下净高 2.85；廊台到庭面落差 0.6 且全长无踏步；前殿枋下 4.71、后殿 5.11。",
+  "LOD：earth 三档几何相同，timber LOD0 与 LOD1 相同，tile 三档不同（14,848 / 7,568 / 104），端口和包围盒三档一致；LOD2 不是 LOD0 改名。",
+  "registry 只有一个 yutang:outer-port:ground v1，但 A 前入口踏步脚在 (0,0,32.86)，B 在 (0,0,30.36)，相差 2.50 m，是容差 0.005 的 500 倍。需要 LY-010 二选一，或由 LY-006 出 registry v2 按变体拆端口",
+  "本地最低点 ymin=-0.24（庭台基脚）≠ LY-005 规定的接地面 y=0。模型为 keep，只能在端口 note 里声明为埋入",
+  "外部 y=0 地坪没有所有者：本席位没有登记的地坪片，S-PALACE 包络为 null。写入区 y 只有 ±0.3，只容得下一片 gp:LY-066:apron，而这是否算新几何要由协调者判定",
+  "LY-006 校验器空跑：草案 PASS；5 个负例（tile modify、未放置帧填 world、越区、端口 v2、外家对象）全部 FAIL"
+ ],
+ "reuseCandidate": "部分复用。几何：六份 GLB（A 6e7f06c0/297c11b0/6ff5440c，B 92091dbe/1566de02/965ab0b8）原样可用，无需新造前后殿或改殿体；实测柱、础支持落差 0，柱顶贴屋面 0.000，三档端口一致，中轴有限通行无侵入。但「可安装副本」所需的 assembly、端口、A/B 互斥、cityPlacement=null 配置包和安装/撤回记录尚不存在，所以不能标「复用完成」，需要交一份引用原件的配置包。",
+ "touches": [
+  "yutang-A-static_earth / yutang-A-static_timber / yutang-A-static_tile（A 三档，只读引用，不改）",
+  "yutang-B-static_earth / yutang-B-static_timber / yutang-B-static_tile（B 三档，只读引用，不改）",
+  "tile 节点里的廊顶端部（z=±15.0 / ±12.5）与殿檐交接：屋顶修订指纹，禁改",
+  "前入口踏步脚（A z=32.86 / B z=30.36，宽 4.0）：外接端口，需与 LY-006 演示域地坪或外部路线对接",
+  "后台缘（A z=−31.5 / B −29.0）和两侧台缘（x=±15.5/±17.5，庭台 ±13.5）：边界声明；若 LY-061 一类的围合件或别的席位要贴靠，需 LY-006 判所有权",
+  "演示域外部地坪 y=0（不属本资产，由 LY-005/006 指定所有者）",
+  "workpacks/LY-066/ 下的 assembly.json、qa/、preview/、delivery-manifest.json（唯一写入区）",
+  "共享文件不碰：m-luoyang-yutang-halls.asset.json、p-luoyang.asset.json、city-data.mjs、lab/data/assets.json（归 LY-100）",
+  "LY-006 写入区 LY-066:write:001（帧 local:yutang，y ±0.3 接地带）",
+  "端口 yutang:outer-port:ground v1（seam → LY-070）"
+ ],
+ "size": "S",
+ "risks": [
+  "墙顶 0.552 m 缝可能被判为缺陷而要求修殿体，这与本项「不新造前后殿、复用」冲突。需要协调者决定：声明为 C 设计，或另派修订席位。本席位不修。",
+  "LY-010 若要求组件级独立节点，就得重导 GLB，SHA 会变；此时还缺原生源，只能从 GLB 重建并如实标注。",
+  "「屋顶端部旧修订」无记录，T4 只能保证不偏离 bce3211 现状，不能证明旧修订本身仍在。",
+  "LY-061/063/065 等宫院席位可能想复用或贴靠玉堂组件或台缘，需要 LY-006 判所有权，避免两席位写同一边界。",
+  "证据：「玉堂前殿」殿名有原文（144 年）；「前、后殿」出自唐李贤注；《魏略》殿名列表属曹魏追述。布局全是 C，不能写宫址或复原。185/189 年火毁之后的状态（X19）不能混入。",
+  "文本输入在 CRLF 检出下的 SHA 与提交字节不同，必须以提交字节为准（LY-001 C8）。",
+  "只有 CPU 渲染和离散样点，没有 GPU、手机、连续碰撞或结构验证，不能写成通过。",
+  "A、B 都交的话，必须先有 registry v2，否则 T12/T14 阻断。这一步不能本地改端口，只能向 LY-006 申请",
+  "origin/main 已在 bce3211 之后前进 3 个提交。yutang 未受影响，但制作时要按 LY-001 新锁定的快照重定基线"
+ ],
+ "readyAfterG": true
+}

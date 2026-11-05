@@ -1,0 +1,333 @@
+{
+ "seat": "LY-022",
+ "baseline": "creation-notebook-lab HEAD bce3211f818ee5a8bef1773539da70695ba37b17 (read-only)",
+ "note": "sha256Worktree = bytes on disk; sha256GitHEAD = git blob at HEAD bce3211. For text files bind tests to sha256GitHEAD; GLB/zip parts are byte-identical. lab/data/assets.json is genuinely modified in the worktree.",
+ "inputs": [
+  {
+   "id": "market-cluster",
+   "path": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "role": "in-city 五店三摊 + sample_ground (no hole) + the 7 existing route strips + 5 boundary walls",
+   "loadedInCity": true,
+   "loader": [
+    "docs/cities/luoyang/city-data.mjs:511-512 asset market-main (excludeNodes N2_* x30)",
+    "docs/cities/luoyang/city-data.mjs:3663 node market-main chapter market initial=false",
+    "docs/cities/luoyang/city-data.mjs:3953-3962 chapter market loadNodeIds",
+    "docs/cities/luoyang/city-renderer.mjs:286-299 loadAsset / GLTFLoader.parseAsync",
+    "docs/cities/luoyang/city-renderer.mjs:309-346 excludeNodes removal",
+    "docs/cities/luoyang/city-renderer.mjs:601 chapter.loadNodeIds",
+    "docs/cities/luoyang/v1/west-layer.mjs:33 (archive ?mode=west only)"
+   ],
+   "bytes": 1031928,
+   "sha256Worktree": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "sha256GitHEAD": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "worktreeDiffersFromHEAD": false
+  },
+  {
+   "id": "market-N2",
+   "path": "docs/cities/luoyang/assets/market/N2-replacement.glb",
+   "role": "in-city N2 replacement; overlaps frontage south row if both loaded",
+   "loadedInCity": true,
+   "loader": [
+    "docs/cities/luoyang/city-data.mjs:562-563",
+    "docs/cities/luoyang/city-data.mjs:3690",
+    "docs/cities/luoyang/v1/west-layer.mjs:33,36"
+   ],
+   "bytes": 72984,
+   "sha256Worktree": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "sha256GitHEAD": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "worktreeDiffersFromHEAD": false
+  },
+  {
+   "id": "chunk-market_frontage_well_routes",
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part01",
+   "role": "zip part 1/5; the ZIP member chunks/market_frontage_well_routes.glb is the ONLY placed assembly of 店前线v2.1 (C_MARKET_ENTRY_V21_LOD0, base +0.20) + well A + C_market_ground_well_A (with opening) + same 7 routes + 5 boundary. Primary measurement input.",
+   "member": {
+    "name": "chunks/market_frontage_well_routes.glb",
+    "bytes": 3695576,
+    "sha256": "0193ebc0cfe200292defd595ff4f4011b2b2d05388d4f53e7b4c3a19a255b4c5",
+    "zipSha256": "5895ef23a684a343271183dce1e92e112fb49bba9e03e4372023d1247bb50b69",
+    "chunkManifestSha256": "5612ea341545df34bea7ea16d790f1bd221fd06468a089201df4a812c2a7a0fd",
+    "motherBlendSha256": "1e8c4d2ce19827bb8ab5ff24a662fd4f3909aa5c6074fc9a90623a103b73b01b (city-C032-entry-LOD0.blend, not in repo)",
+    "localCopy": "prep/inputs/chunks__market_frontage_well_routes.glb (extracted in memory by prep/extract_chunk.py, sha verified)"
+   },
+   "loadedInCity": false,
+   "loader": [
+    "none: modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json deploymentStatus = not published; no public prefix selected",
+    "adapter node visible-current-node-market_frontage_well_routes, chapter market_frontage_well_routes, tier C, initial false"
+   ],
+   "bytes": 10485760,
+   "sha256Worktree": "d3d5eb7263e9f840c5444d46082eb7ced1c8e5488e7fba9b00d1a0fc3f32a9a3",
+   "sha256GitHEAD": "d3d5eb7263e9f840c5444d46082eb7ced1c8e5488e7fba9b00d1a0fc3f32a9a3",
+   "worktreeDiffersFromHEAD": false
+  },
+  {
+   "id": "city-visible-adapter",
+   "path": "modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json",
+   "role": "chunk asset/node record and layer exclusivity contract",
+   "loadedInCity": false,
+   "loader": [],
+   "bytes": 112499,
+   "sha256Worktree": "703caeed4a7834e9e5324e1d2f1a1df78412c50d756768c6c98c3638f216934f",
+   "sha256GitHEAD": "8f890748d908e4551c1ed46107d98c4bfebfe28820393ae6943a6a2c2e7e0d7c",
+   "worktreeDiffersFromHEAD": true,
+   "diffKind": "CRLF checkout only (git status clean)"
+  },
+  {
+   "id": "frontage-LOD0",
+   "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0.glb",
+   "role": "店前线v2.1 library original (base 0.00, plinth top 0.22, 8 shops / 4 stalls, no ground)",
+   "loadedInCity": false,
+   "loader": [
+    "asset card only; docs/cities/luoyang/p-luoyang.asset.json:567 related id"
+   ],
+   "bytes": 1932544,
+   "sha256Worktree": "46f08f41aa290218e9a3ec4e4de4e2cb676f10a80a035e9b6d3e1f8a0c5bf6f2",
+   "sha256GitHEAD": "46f08f41aa290218e9a3ec4e4de4e2cb676f10a80a035e9b6d3e1f8a0c5bf6f2",
+   "worktreeDiffersFromHEAD": false
+  },
+  {
+   "id": "frontage-LOD1",
+   "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD1.glb",
+   "role": "LOD1, plinth 0.22",
+   "loadedInCity": false,
+   "loader": [],
+   "bytes": 720296,
+   "sha256Worktree": "03ad28cf31f05cdb518b1ee8652cdc235def6d6ca4b7aa8ca1a29c5272fb6126",
+   "sha256GitHEAD": "03ad28cf31f05cdb518b1ee8652cdc235def6d6ca4b7aa8ca1a29c5272fb6126",
+   "worktreeDiffersFromHEAD": false
+  },
+  {
+   "id": "frontage-LOD2",
+   "path": "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD2.glb",
+   "role": "LOD2, plinth 0.22",
+   "loadedInCity": false,
+   "loader": [],
+   "bytes": 125896,
+   "sha256Worktree": "b5b13b1c74f561903ba12489846c5c841e7b7bf7c1694228e7e12357869fa0f1",
+   "sha256GitHEAD": "b5b13b1c74f561903ba12489846c5c841e7b7bf7c1694228e7e12357869fa0f1",
+   "worktreeDiffersFromHEAD": false
+  },
+  {
+   "id": "frontage-card",
+   "path": "docs/library/models/m-luoyang-market-frontage/m-luoyang-market-frontage.asset.json",
+   "role": "status 待审; limits: 起步高差 / 连续步态未验",
+   "loadedInCity": false,
+   "loader": [],
+   "bytes": 1434,
+   "sha256Worktree": "ac85a44d46709acf2ad6e74486513fa73f02e27a70aa099dc871a80eb34103ed",
+   "sha256GitHEAD": "7e1e8e307c8c3820bf0d6c1c5e2fc083706f6eaa39f8e650a5861ad8c86e0718",
+   "worktreeDiffersFromHEAD": true,
+   "diffKind": "CRLF checkout only (git status clean)"
+  },
+  {
+   "id": "S84-LOD0",
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD0.glb",
+   "role": "repaired S84 front frame (plinth 0.22); reference only",
+   "loadedInCity": false,
+   "loader": [],
+   "bytes": 1113880,
+   "sha256Worktree": "8ef1f3c8a8c3b570ac9607d4ab018b723b6450570175a0fad6752be430fa6b84",
+   "sha256GitHEAD": "8ef1f3c8a8c3b570ac9607d4ab018b723b6450570175a0fad6752be430fa6b84",
+   "worktreeDiffersFromHEAD": false
+  },
+  {
+   "id": "S86-LOD0",
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/files/S86-LOD0.glb",
+   "role": "repaired S86 front frame; reference only",
+   "loadedInCity": false,
+   "loader": [],
+   "bytes": 1118984,
+   "sha256Worktree": "7f1c2e70b2b9dca980cb17c274241f37513d001070386907c3c8a66408b77ee8",
+   "sha256GitHEAD": "7f1c2e70b2b9dca980cb17c274241f37513d001070386907c3c8a66408b77ee8",
+   "worktreeDiffersFromHEAD": false
+  },
+  {
+   "id": "modular-card",
+   "path": "docs/library/models/m-luoyang-market-modular-assembly/m-luoyang-market-modular-assembly.asset.json",
+   "role": "card; 0.22 step unverified",
+   "loadedInCity": false,
+   "loader": [],
+   "bytes": 2020,
+   "sha256Worktree": "c5f78747c0ec77fb19f0b433fb87134ae7eccecd46883279a9370b714fdb7f5e",
+   "sha256GitHEAD": "7d05df76837c518bbb5ff8e5ee3b711c25e705e5ff31cdbef7be689ff882a3f1",
+   "worktreeDiffersFromHEAD": true,
+   "diffKind": "CRLF checkout only (git status clean)"
+  },
+  {
+   "id": "market-functional-card",
+   "path": "docs/model-library/m-market-functional.asset.json",
+   "role": "五店三摊 family v2; 与八铺四棚为不同组合; flowB must retire A's 7 routes",
+   "loadedInCity": false,
+   "loader": [],
+   "bytes": 2231,
+   "sha256Worktree": "911c1ea0d1bc03e00df440abb164c43bfa9fe1f0cc745f2b1070d1805a3878b4",
+   "sha256GitHEAD": "3d2d5e33b0e17c6671af99ff6ba233a137fc9c7b6fae73fe39abf769cc49f55f",
+   "worktreeDiffersFromHEAD": true,
+   "diffKind": "CRLF checkout only (git status clean)"
+  },
+  {
+   "id": "flowB-routes",
+   "path": "docs/cities/luoyang/assets/market/flowB-routes.glb",
+   "role": "alternative B route set (6 strips), archive v1 only",
+   "loadedInCity": false,
+   "loader": [
+    "docs/cities/luoyang/v1/west-layer.mjs:33,36 (flow=B)",
+    "docs/cities/luoyang/v1/market-assembly.mjs:6 retire 7 routes"
+   ],
+   "bytes": 9344,
+   "sha256Worktree": "43d7799f85feccb0d6f1e0412c46853e6b3339535e38a9b806e8c5d3898f845e",
+   "sha256GitHEAD": "43d7799f85feccb0d6f1e0412c46853e6b3339535e38a9b806e8c5d3898f845e",
+   "worktreeDiffersFromHEAD": false
+  },
+  {
+   "id": "corridor-6m-market-link",
+   "path": "docs/cities/luoyang/assets/market/corridor-6m-market-link.glb",
+   "role": "outer link (LY-083 side), top 0.21",
+   "loadedInCity": false,
+   "loader": [
+    "docs/cities/luoyang/v1/west-layer.mjs:32-33 (archive only)"
+   ],
+   "bytes": 8272,
+   "sha256Worktree": "b46dd450d7e8636b744d2dcd1d0cee8e98352025b7cda57b2cd0938a3da149bf",
+   "sha256GitHEAD": "b46dd450d7e8636b744d2dcd1d0cee8e98352025b7cda57b2cd0938a3da149bf",
+   "worktreeDiffersFromHEAD": false
+  },
+  {
+   "id": "network-ground",
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "role": "city ground; touches market only at x=244.286, z -1961.18..-1957.18 (LY-083)",
+   "loadedInCity": true,
+   "loader": [
+    "docs/cities/luoyang/city-data.mjs:431-432",
+    "docs/cities/luoyang/city-data.mjs:3555 chapter terrain initial=false"
+   ],
+   "bytes": 3565544,
+   "sha256Worktree": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "sha256GitHEAD": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "worktreeDiffersFromHEAD": false
+  },
+  {
+   "id": "market-flow-plan",
+   "path": "docs/cities/luoyang/data/west/market-flow-plan.json",
+   "role": "names the 7 routes (retireOriginalNames)",
+   "loadedInCity": false,
+   "loader": [
+    "docs/cities/luoyang/v1/west-layer.mjs:40"
+   ],
+   "bytes": 3078,
+   "sha256Worktree": "bff5bb22bac6bda21f02a4b43f4adf85e187b8070d360c0433d69832e11adbdf",
+   "sha256GitHEAD": "fb2416122d3b9fd7e2bbeafcaa1934ee4efcaf67cbe4654139b212e4e50ce37b",
+   "worktreeDiffersFromHEAD": true,
+   "diffKind": "CRLF checkout only (git status clean)"
+  },
+  {
+   "id": "N2-contract",
+   "path": "docs/cities/luoyang/data/west/N2-contract.json",
+   "role": "30-node N2 retire contract",
+   "loadedInCity": true,
+   "loader": [
+    "city-data.mjs sourceContract record",
+    "v1/west-layer.mjs:40"
+   ],
+   "bytes": 9414,
+   "sha256Worktree": "10678d73111ae0d131afc3ff823162392eab339ee66bf2046e61666c2c8d9386",
+   "sha256GitHEAD": "498f51fcd0723da69ab1b97c56f3de004a449a86e0e322dedc6489446a00e2cd",
+   "worktreeDiffersFromHEAD": true,
+   "diffKind": "CRLF checkout only (git status clean)"
+  },
+  {
+   "id": "market-interface",
+   "path": "docs/cities/luoyang/data/west/market-interface.json",
+   "role": "coordinate contract X east / Y up / Z negative north, translation 0",
+   "loadedInCity": false,
+   "loader": [
+    "city-data.mjs:4517 record"
+   ],
+   "bytes": 1761,
+   "sha256Worktree": "31c6786db03b1d7e4be79070abe8ea9a577207345a55703c85d2fb34bc479f4e",
+   "sha256GitHEAD": "2957184accc87e5c2089987c71023cd09a8ef0274b2daab1fce4d39623606347",
+   "worktreeDiffersFromHEAD": true,
+   "diffKind": "CRLF checkout only (git status clean)"
+  },
+  {
+   "id": "well-contract",
+   "path": "docs/model-library/well-study/contract.json",
+   "role": "well A/B; cityPlacement null; city ground must be deliberately opened",
+   "loadedInCity": false,
+   "loader": [],
+   "bytes": 4100,
+   "sha256Worktree": "b09677db7a8febaf7ec063141500cd6798c63e176d1fa2a878220bb038f76175",
+   "sha256GitHEAD": "867502056eae46a90016c60940fa09cb846c65f41a158e0afea228c431ed852b",
+   "worktreeDiffersFromHEAD": true,
+   "diffKind": "CRLF checkout only (git status clean)"
+  },
+  {
+   "id": "city-data",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "role": "shared city file (read only; LY-100 writes)",
+   "loadedInCity": true,
+   "loader": [
+    "app.mjs import"
+   ],
+   "bytes": 111034,
+   "sha256Worktree": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "sha256GitHEAD": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "worktreeDiffersFromHEAD": true,
+   "diffKind": "CRLF checkout only (git status clean)"
+  },
+  {
+   "id": "city-renderer",
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "role": "loader",
+   "loadedInCity": true,
+   "loader": [],
+   "bytes": 36571,
+   "sha256Worktree": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "sha256GitHEAD": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+   "worktreeDiffersFromHEAD": true,
+   "diffKind": "CRLF checkout only (git status clean)"
+  },
+  {
+   "id": "project-card",
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "role": "八铺四棚店前线 = 未入城; 市肆 已入城 = 五店三摊",
+   "loadedInCity": false,
+   "loader": [],
+   "bytes": 24215,
+   "sha256Worktree": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "sha256GitHEAD": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "worktreeDiffersFromHEAD": true,
+   "diffKind": "CRLF checkout only (git status clean)"
+  },
+  {
+   "id": "assets-summary",
+   "path": "lab/data/assets.json",
+   "role": "汇总 (worktree modified vs HEAD per git status)",
+   "loadedInCity": false,
+   "loader": [],
+   "bytes": 439273,
+   "sha256Worktree": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+   "sha256GitHEAD": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "worktreeDiffersFromHEAD": true,
+   "diffKind": "content modified in worktree (git status M)"
+  }
+ ],
+ "neighbourReadOnly": [
+  {
+   "path": "D:/GitHub/creation-notebook-workpacks/LY-021/prep/out/extracted-market_frontage_well_routes.glb",
+   "sha256": "0193ebc0cfe200292defd595ff4f4011b2b2d05388d4f53e7b4c3a19a255b4c5",
+   "note": "identical to LY-022's own extraction"
+  }
+ ],
+ "measuredHere": {
+  "nodes-market-cluster.json": "500-node inventory",
+  "nodes-chunk-market.json": "137-node inventory",
+  "islands-frontage-LOD0.json": "frontage islands",
+  "chunk-continuity.json": "street grid / entrances / route fingerprints vs market-cluster",
+  "chunk-well-hole.json": "well opening",
+  "p0-fit-Y0.20.json": "library frontage at +0.20 on market-cluster (P0 hypothesis), reproduces chunk",
+  "network-in-market.json": "network ground overlap",
+  "frozen-baseline.json": "137 node fingerprints + provisional ports",
+  "selftest-report.json": "checker selftest 7/7 as expected"
+ }
+}

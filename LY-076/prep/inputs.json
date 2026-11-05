@@ -1,0 +1,253 @@
+{
+ "seat": "LY-076",
+ "phase": "prep (G not frozen; no deliverable geometry made)",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "repo": "D:/GitHub/creation-notebook-lab (read-only)",
+ "coordinateNote": "Measurements in Blender import frame: X east, Y north, Z up, metres, origin = platform centre at ground. glTF frame is X east / Y up / Z south.",
+ "inputs": [
+  {
+   "role": "latest five-step revision, mid tier (primary input)",
+   "path": "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD1.glb",
+   "bytes": 1949148,
+   "sha256": "ffaff723c6a0c77a514d0a56fb03fad55fdbf0d880e3ee614887551884c6de0f",
+   "triangles": 21424,
+   "nodes": 4,
+   "fiveSteps": true,
+   "loadedInCity": false,
+   "loadedBy": "asset library detail page via lab/data/assets.json entry m-luoyang-lingtai.files[0] (url ../docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD1.glb)"
+  },
+  {
+   "role": "latest five-step revision, far tier",
+   "path": "docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD2.glb",
+   "bytes": 131700,
+   "sha256": "134ca945603a696a8dc164087a8fc3334a8a1e1b57b4439ae2b97fab2803b4cc",
+   "triangles": 1884,
+   "fiveSteps": true,
+   "earthPathTrianglesIdenticalToLOD1": true,
+   "loadedInCity": false,
+   "loadedBy": "lab/data/assets.json entry m-luoyang-lingtai.files[1]"
+  },
+  {
+   "role": "five-step revision near LOD0 (high detail source)",
+   "path": null,
+   "bytes": 26176944,
+   "sha256": null,
+   "status": "MISSING - only byte count stated in m-luoyang-lingtai.asset.json notes; not in lab repo, not in creation-notebook, not in creation-notebook-review",
+   "loadedInCity": false
+  },
+  {
+   "role": "asset card",
+   "path": "docs/library/models/m-luoyang-lingtai/m-luoyang-lingtai.asset.json",
+   "sha256": "f5d7cb691f1c1d0563a98e4fbcea9cd4ac66f6653635c74dc573eb1b80eae545",
+   "loadedInCity": false,
+   "blobSha256": "7db1211873f3a533fd6204e97509dc2007b5fdf268347d53d08b761886d82572"
+  },
+  {
+   "role": "card cover / gallery (CPU LOD1 renders)",
+   "paths": {
+    "docs/library/models/m-luoyang-lingtai/cover.webp": "3d1a230b048fd6dbe9a5b29e157b3dbdf57b648f945ff7d24dd3067d88d3fb38",
+    "docs/library/models/m-luoyang-lingtai/shots/lingtai-LOD1-reverse.webp": "c630112913ddf81b42246ce12806045315de5b340697343ee1dc4114506205d1"
+   }
+  },
+  {
+   "role": "city research-view runtime GLB (PRE-step lineage)",
+   "path": "docs/cities/luoyang/progress-assets/flat/study-lingtai-c1b58de1bff4.glb",
+   "bytes": 2071760,
+   "sha256": "c1b58de1bff44b80a8675302101435443b16acbe902d88f4526c10edbb6dfe85",
+   "sourceGlbSha256": "515ffbbbac8c6da5f726a87dfb2b61f50bce62da04275a6fccfdb4244f94a7ce",
+   "allTrianglesIdenticalTo515ffb": true,
+   "fiveSteps": false,
+   "loadedInCity": true,
+   "loadedBy": [
+    "docs/cities/luoyang/city-data.mjs:602-631 asset id study-lingtai (path progress-assets/flat/study-lingtai-c1b58de1bff4.glb)",
+    "docs/cities/luoyang/city-data.mjs:1266-1272 assets map -> url: cityURL(path), no nearPath",
+    "docs/cities/luoyang/city-data.mjs:4101-4122 researchModels research-lingtai (space local-study, cityPlacement null)",
+    "docs/cities/luoyang/city-renderer.mjs:286-298 loadAsset fetch(asset.url)",
+    "docs/cities/luoyang/app.mjs:118,282 researchModels lookup"
+   ],
+   "cityPlacement": null
+  },
+  {
+   "role": "city-data manifest",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "writable": false,
+   "blobSha256": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "lingtaiRefs": [
+    "602-631 asset study-lingtai",
+    "1266-1272 assets map (url only, no nearPath)",
+    "4010-4025 chapter ritual: researchModelIds [research-lingtai, research-taixue-A, research-taixue-B], defaultResearchModel research-lingtai",
+    "4101-4122 researchModels research-lingtai (space local-study, cityPlacement null)"
+   ]
+  },
+  {
+   "role": "display gltf of quality-v1 LOD1 (repo projection, referenced as sourceAsset)",
+   "path": "docs/cities/luoyang/progress-assets/lingtai-quality-v1/display/lingtai-A-quality-LOD1.gltf",
+   "sha256": "c27d581371f6eb6956983674802a6006c0f665d5dd5dcb6f36089d6fbc130220",
+   "bin": {
+    "path": "…/lingtai-A-quality-LOD1-geometry-00.bin",
+    "sha256": "712a00c5982a5f3a0b8c819ea18807af2017c8ca67008794770564270952f53a"
+   },
+   "loadedInCity": "referenced in city-data.mjs:625-631 sourceAsset; runtime fetch uses the flat GLB above"
+  },
+  {
+   "role": "model-library metadata (quality-v1)",
+   "path": "docs/model-library/lingtai/metadata.json",
+   "sha256": "cecbb8f42652a35ece5a6040dbd5602bdca3543dbfb3816a06212dcf5482a77b",
+   "loadedBy": "city-data.mjs:623 metadataPage; cover-whole.png used by city-data.mjs:4122 and assets/posters.json:64",
+   "blobSha256": "3e28f8b9cd90f2190d570c7f7ed649c2593c257899ed492df6804e62465419ce"
+  },
+  {
+   "role": "quality-v1 source archive (repo-contained, NOT the five-step source)",
+   "paths": {
+    "modeling-lab/content/luoyang/lingtai-quality-v1/source.zip.part001": "7aad254fe1e13c28034c873f6d6a52b6f03f5c2e1b8794e2c63678d7b8b6fd46",
+    "modeling-lab/content/luoyang/lingtai-quality-v1/source.zip.part002": "7cfcef3c78acc5521c164ba06fda4fb1c5e21e5218f21a421cd5a4576776c50f",
+    "modeling-lab/content/luoyang/lingtai-quality-v1/source.zip.part003": "998d7945f2d5c734d7cf09b1cfc019736f219fd200f198d2ab9f98f8194ee2cb",
+    "modeling-lab/content/luoyang/lingtai-quality-v1/archive.json": "dfd058d50c6f20cafb06f359d6dc794b31ac0a49cb2690758467fc240c5a3409",
+    "modeling-lab/content/luoyang/lingtai-quality-v1/manifest.json": "97bb7a94eb344ec15ca496f4779d496de7ffb0a311a99d926a8ecac0535441c4",
+    "modeling-lab/content/luoyang/lingtai-quality-v1/entry.json": "6af8f86569f20bec9a989a7d7615e927154d8bb8cbfe33364165f38f69e2e4e3",
+    "modeling-lab/content/luoyang/lingtai-quality-v1/README.md": "12925488353c388517084ec84bba9c264098eaaa93133b8e1626b23b15b9b69e"
+   },
+   "reassembledZipSha256": "bc30e6c01a99b356b25cdf744aea7300b0e629ec1f58790a1b39ef9d61609f36 (matches archive.json)",
+   "extractedTo": "prep/work/qv1src/ (local read copy; not a deliverable)",
+   "members": {
+    "assets/lingtai-A-quality.glb": "f5fdc18ac6c4fa85dafa291225c234fccaef01837f32a1a4494b7ca7dce6e081",
+    "assets/lingtai-A-quality-LOD1.glb": "515ffbbbac8c6da5f726a87dfb2b61f50bce62da04275a6fccfdb4244f94a7ce",
+    "inputs/lingtai-A.glb": "1a79c9a026e3d44b1d4b8cc7805c224ec6bc13ee3c49082cef0a2f4216e461b7",
+    "native/lingtai-A-quality.blend": "c09038d891936db228977dcb24fa3801c43d7d55b56133cf4f769a0ef9fab078",
+    "source/build.py": "74b798801d65fe3086687befcc80a265ee92e5c68ffdaacd94535efeb1e5ab8b",
+    "source/geometry.py": "47ef2902c8b160f65339acadb022ec7802c20c676c564f1bcb899585949fab08",
+    "source/verify.py": "67fc8ab3828975d93d2bca717bf25d07791531620f3be812947cde6133930a6b",
+    "source/contacts.py": "31937d399b1e51548a9da079804a946cfebfe021b7069afb4e47fce94007d659",
+    "contract.json": "185d1cc8e34289a2fcd46248a7828287ff2ac90307f322d765c216c17d5ca423",
+    "review.json": "ddf9c8bc2224ee07b343de8a4b80fe37ee0a1ebb6f027f803e90af1d92a68539"
+   },
+   "fiveSteps": false,
+   "nearEarthPathTrianglesIdenticalToQv1LOD1": true,
+   "loadedInCity": false
+  },
+  {
+   "role": "taskpool",
+   "paths": {
+    "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+    "D:/GitHub/creation-notebook-workpacks/taskboard.json": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4"
+   }
+  },
+  {
+   "role": "aggregate site data",
+   "path": "lab/data/assets.json",
+   "sha256": "c39e8e9a2a1833f3abbc15e585f5868fba6c7d2e01f6b8e504c2b44193f16979",
+   "writable": false,
+   "blobSha256": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "note": "first prep pass recorded 3440caa2... (working-tree bytes at 21:47); the file was re-written at 22:29 by something outside this seat. Current working tree = CRLF of the committed blob 53d86312..., so the committed content is unchanged. Bind blobSha256."
+  },
+  {
+   "role": "project card",
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "writable": false,
+   "blobSha256": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd"
+  },
+  {
+   "role": "city renderer / app (loader code)",
+   "paths": {
+    "docs/cities/luoyang/city-renderer.mjs": {
+     "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+     "blobSha256": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc",
+     "ref": "286 loadAsset(id, near) -> fetch(asset.url); 422 batch prototype load"
+    },
+    "docs/cities/luoyang/app.mjs": {
+     "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+     "blobSha256": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8",
+     "ref": "118 researchModels lookup by chapter; 282 node/researchModel lookup"
+    }
+   },
+   "writable": false
+  },
+  {
+   "role": "card geometry audit + CPU renders (coordinator scratch, read-only)",
+   "path": "<scratchpad>/mq/cards/m-luoyang-lingtai/audit.json",
+   "sha256": "5e35ec1e631d1c320505a3a00c044857091ab807000db4745023b0444d8f874d",
+   "summary": "LOD1 ffaff723 / LOD2 134ca945: issues [], 4 meshes, 0 degenerate, 0 prims without UV, bbox [-34,-0.3,-34]..[34,6,34] (glTF Y-up); LOD2 has 0 textured materials",
+   "renders": [
+    "views.png",
+    "lods.png",
+    "r/main-*.png",
+    "r/f1-iso.png"
+   ]
+  }
+ ],
+ "missing": [
+  {
+   "what": "five-step revision private source pack (.blend / generator / qa of the m-luoyang-lingtai LOD0 26,176,944 B and its LOD1/LOD2 export)",
+   "neededFor": "editable near source for the new diff; exact definition of '北侧窄绕行'; original foot-action/route QA to bind; LOD0 to carry the near-tier acceptance",
+   "rebuildFromGlb": "partially yes: quality-v1 near f5fdc1… + the measured 5-notch earth diff (+107/-15 tris, from ffaff7… vs 515ffb…) + 24-tri material reassignment of north_v1_roof_support reconstructs an equivalent near model; it will NOT be byte/SHA identical to the 26,176,944 B original and must be labelled 'rebuilt from GLB'"
+  },
+  {
+   "what": "G freeze: LY-010 (区域准入/选定方案表) not delivered; LY-001/002/005/006/007/008/009 are delivered and read-only-bound above",
+   "neededFor": "permission to produce geometry; tolerance/body envelope standard; ownership of hall floor tiles"
+  }
+ ],
+ "recheckedAt": "2026-11-06 (second prep pass; lab HEAD still bce3211f, working tree clean except untracked .claude/)",
+ "shaNote": "Binary GLB/PNG/ZIP SHA256 = committed bytes. Text files in the lab working tree are CRLF checkouts (core.autocrlf=true); 'sha256' below for text files is the working-tree CRLF bytes, 'blobSha256' is the committed LF bytes (git cat-file blob HEAD:<path>). The only difference is CRLF<->LF (verified byte-for-byte). LY-001 found the same CRLF/blob split in 12 of 13 source contracts.",
+ "gOutputs": {
+  "note": "G seats LY-001/002/005/006/007/008/009 report status '交付完成'; LY-010 directory is EMPTY, so G is NOT frozen. Read-only inputs below are what this seat will bind once G freezes.",
+  "LY-006/registry/seats.json": {
+   "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+   "LY-076": "site S-LINGTAI, siteOwner LY-076, role component+assembly, frame local:lingtai-A, writeZones [LY-076:write:001], cutZones [], ownsCityNodes [research-lingtai], ownsSourceObjects modify/replace = all lingtai-A objects of BOTH lineages (4 card nodes lingtai-A-static_* and the qv1 LOD1 object names C_access_stair, ground_cell*, *_post*, ...)"
+  },
+  "LY-006/registry/zones.json": {
+   "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+   "LY-076:write:001": "frame local:lingtai-A, box [[-34,-0.3,-34],[34,6,34]] (glTF Y-up = whole model bbox), label 'excluding the five repaired steps, enforced by LY-076 list' -> the T1 exclusion boxes in test-plan.md ARE the enforcement"
+  },
+  "LY-006/registry/ports.json": {
+   "sha256": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+   "lingtai:edge:ground": "kind ground, producer/steward LY-076, local/world null (filled by producer at delivery), elevationClass C-engineering, tolerance position 0.005 m / elevation 0.002 m, consumers []"
+  },
+  "LY-006/registry/ownership-by-seat.csv": {
+   "sha256": "b1600336f758e8f4ae9887b7e3b36ecd5723863efd4728c530091fa72ba1a89b",
+   "line": 67,
+   "card": "m-luoyang-lingtai (proposal owner)",
+   "component": "T076-edge-fixes",
+   "portProduced": "lingtai:edge:ground"
+  },
+  "LY-009/board/locks.json": {
+   "sha256": "5eb5ae327f1655db4eecbc79547ac79413b9c8c95489f05d2e679eb419d4cc9d",
+   "LOCK-LINGTAI-STEPS": "protected-work, read-only, paths docs/library/models/m-luoyang-lingtai/**, docs/cities/luoyang/progress-assets/lingtai-quality-v1/**, docs/model-library/lingtai/**; release '不再派相同修复；LY-076 只补未修台缘与绕行'. CONFLICT TO RESOLVE: the lock covers the very GLB paths LY-006 lets LY-076 modify/replace -> new versions must be delivered in workpacks/LY-076 and placed only by LY-100 under a lock release."
+  },
+  "LY-002/tables/evidence-ledger.json": {
+   "sha256": "237a4811acad3d7f6733d4c5c95a64df0b2c67adf48b2682264eb0f0c8512b77",
+   "E-R04": "灵台: 职能 (同期文献), '高三丈、十二门' (汉宫阁疏, 成书年代未核), 遗址方形围墙约200 m、台基残高约8 m、台四面上下两层平台 (二手考古 S16 p55). modelUse allowed: 方形高台、围墙、上下层平台关系; notAllowed: 十二门≠城门, 残高≠原高",
+   "E-R08": "相对排列 only; no precise courtyard limits"
+  },
+  "LY-002/tables/family-binding.json": {
+   "sha256": "3aeddcc065cbbef44ddd2da3995d6e72fcd37e93a75d0c46e92fe1d2a02e12b6",
+   "F-lingtai": "facts [E-R04, E-R08], prohibited [], cityState 仅模型·独立研究视图"
+  },
+  "LY-007/baseline/lod-rules.json": {
+   "sha256": "fbf53757be2e243429b751899f1690d30f827849962c0e77a8ca811462789146",
+   "relevant": [
+    "夯土（台、墙、墩、础、踏步、地坪）LOD0->1->2 不变",
+    "交互、通行、接触判定一律在 LOD0 上做",
+    "单 GLB > 15,000,000 B 时不静默降近景，原 LOD0 保留并如实标注交付档位，另出分块或较轻档另行命名",
+    "tri_ratio LOD1/LOD0 0.17-0.62, LOD2/LOD0 0.05-0.20",
+    "follow_family: 同卡新文件与该卡已有文件同式 (lingtai-A-LOD<n>.glb, nodes lingtai-A-static_<mat>)"
+   ]
+  },
+  "LY-008/source/ly_check.py": {
+   "sha256": "39aaa491859e1a796080dd91ccabd1c47423cf7f9ef2af61c5f123b04b3dff4b",
+   "baselineRun": "glb --profile base: LOD1/LOD2 OK, 0 errors 0 warnings (out/recheck/ly008-glb-base.json 4774dddb...); --profile ly-p01: OK, warning LY_NOT_GROUNDED (lowest y=-0.30) on both (out/recheck/ly008-glb-p01.json 5fb0e6d2...)"
+  },
+  "LY-005/coordinate-contract.json": {
+   "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+   "lingtai": "no lingtai entry (research-lingtai is local-study, cityPlacement null); local frame name comes from LY-006 (local:lingtai-A)"
+  },
+  "LY-010": "MISSING (directory empty) - region admission/selected-scheme table not frozen"
+ },
+ "reproducibility": {
+  "post_support.py on ffaff723": "byte-identical to first pass (17cbdacd...)",
+  "tri_dump.py on ffaff723": "byte-identical work/tris-card1.json (e0730595...)",
+  "riser_inventory.py": "byte-identical (2a4d9cbf...)",
+  "where": "out/recheck/"
+ }
+}

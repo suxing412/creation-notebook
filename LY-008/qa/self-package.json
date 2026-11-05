@@ -1,0 +1,979 @@
+{
+ "checker": "ly-check 1.0 (LY-008, 2026-11-05)",
+ "checkerSha256": "39aaa491859e1a796080dd91ccabd1c47423cf7f9ef2af61c5f123b04b3dff4b",
+ "command": "package",
+ "reports": [
+  {
+   "subject": "LY-008",
+   "ok": true,
+   "errorCodes": [],
+   "warningCodes": [
+    "PRIVATE_PATH_INTERNAL_FILE"
+   ],
+   "info": {
+    "manifestKey": "files",
+    "entries": 102,
+    "totalBytes": 34009216,
+    "glbs": [
+     {
+      "path": "qa/negatives/C00-repacked-unchanged.glb",
+      "sha256": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b",
+      "bytes": 1114076,
+      "expectFail": false,
+      "fixture": null,
+      "errorCodes": [],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/L01-material-name-suffix.glb",
+      "sha256": "c05523eb2571951cd3f2691a9dcd97c6c73c5c363f24756c29f2a7bb1b957de5",
+      "bytes": 1114080,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "L01-material-name-suffix",
+       "expectCodes": [
+        "LY_MATERIAL_NAME"
+       ],
+       "profile": "ly-p01",
+       "lod": 0
+      },
+      "errorCodes": [
+       "LY_LOD_MATERIAL_TIER",
+       "LY_MATERIAL_NAME"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/L04-static-node-trs.glb",
+      "sha256": "553d1c6adad83c75d0053d64bdcee5cbef1f446927b024996d9222a824211aba",
+      "bytes": 1114108,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "L04-static-node-trs",
+       "expectCodes": [
+        "LY_STATIC_NODE_TRS"
+       ],
+       "profile": "ly-p01",
+       "lod": 0
+      },
+      "errorCodes": [
+       "LY_STATIC_NODE_TRS",
+       "LY_UV_NOT_WORLD_BOX"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/L05-uv-shifted.glb",
+      "sha256": "d787a7f4ae2f672492acaeae79756205b210eaf19a9bb26df66f462cd0552c5b",
+      "bytes": 1114076,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "L05-uv-shifted",
+       "expectCodes": [
+        "LY_UV_NOT_WORLD_BOX"
+       ],
+       "profile": "ly-p01",
+       "lod": 0
+      },
+      "errorCodes": [
+       "LY_UV_NOT_WORLD_BOX"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N01-bad-header-length.glb",
+      "sha256": "825a483c0d89b953488e5df8ecae1df3caf7fa00ea4b859c10d6b58dc5a18862",
+      "bytes": 1114076,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N01-bad-header-length",
+       "expectCodes": [
+        "GLB_LENGTH_MISMATCH"
+       ]
+      },
+      "errorCodes": [
+       "GLB_LENGTH_MISMATCH"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N02-truncated.glb",
+      "sha256": "dd15debb41ad1e99c2367fceebcfd2eda4dec58c6ea9741b748eaf7fb0c4a25a",
+      "bytes": 1113076,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N02-truncated",
+       "expectCodes": [
+        "GLB_LENGTH_MISMATCH",
+        "GLB_CHUNK_OVERRUN"
+       ]
+      },
+      "errorCodes": [
+       "GLB_CHUNK_OVERRUN",
+       "GLB_LENGTH_MISMATCH",
+       "GLTF_BUFFERVIEW_OVERRUN",
+       "GLTF_BUFFER_OVERRUN",
+       "TEXTURE_MISSING"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N03-bad-bin-chunk-length.glb",
+      "sha256": "5a66ea3fdef86e3fa6aadad1ba79721b123bc394bc33205a7aec372ec8c1091a",
+      "bytes": 1114076,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N03-bad-bin-chunk-length",
+       "expectCodes": [
+        "GLB_CHUNK_OVERRUN"
+       ]
+      },
+      "errorCodes": [
+       "GLB_CHUNK_OVERRUN"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N04-nan-position.glb",
+      "sha256": "52567f0980c590df7bddce601a6530032070e9ca93dd13a332211df4710345e5",
+      "bytes": 1114076,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N04-nan-position",
+       "expectCodes": [
+        "GEOM_NONFINITE"
+       ]
+      },
+      "errorCodes": [
+       "GEOM_NONFINITE"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N05-inf-uv.glb",
+      "sha256": "3406c4bb429542dd3ce7af47b3d8c127ec55f891fea38f16cbc463ad034d5168",
+      "bytes": 1114076,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N05-inf-uv",
+       "expectCodes": [
+        "GEOM_NONFINITE"
+       ]
+      },
+      "errorCodes": [
+       "GEOM_NONFINITE"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N06-nan-json.glb",
+      "sha256": "f6017c814b35ade885e1c39890e2bf859a15692fb67cb733a18bdc4f94af6952",
+      "bytes": 1113840,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N06-nan-json",
+       "expectCodes": [
+        "GLTF_JSON_NONFINITE"
+       ]
+      },
+      "errorCodes": [
+       "GLTF_JSON_NONFINITE"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N07-missing-texture-index.glb",
+      "sha256": "e43d20efce44ce9e61bdd6b4059b01e2cecd023a778fed8b4a786b389cc4b4bb",
+      "bytes": 1114080,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N07-missing-texture-index",
+       "expectCodes": [
+        "TEXTURE_MISSING"
+       ]
+      },
+      "errorCodes": [
+       "TEXTURE_MISSING"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N08-missing-image-source.glb",
+      "sha256": "4f52261211f706273cf96fc858eab5e9bfc3837fdf0cc0cc22a9d53299689ad5",
+      "bytes": 1114080,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N08-missing-image-source",
+       "expectCodes": [
+        "TEXTURE_MISSING"
+       ]
+      },
+      "errorCodes": [
+       "TEXTURE_MISSING"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N09-external-texture-missing.glb",
+      "sha256": "63b99082b35568e6799b9f37cfc41e0014416ca943d798d4b996d12e6907211a",
+      "bytes": 1114064,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N09-external-texture-missing",
+       "expectCodes": [
+        "TEXTURE_NOT_EMBEDDED",
+        "TEXTURE_MISSING"
+       ]
+      },
+      "errorCodes": [
+       "TEXTURE_MISSING",
+       "TEXTURE_NOT_EMBEDDED"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N10-corrupt-texture-bytes.glb",
+      "sha256": "aaa816bb2424980db5e3536314fc6dc2dff1f105f3ab7d27919447b30ca543e0",
+      "bytes": 1114076,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N10-corrupt-texture-bytes",
+       "expectCodes": [
+        "TEXTURE_MIME_MISMATCH",
+        "TEXTURE_CORRUPT"
+       ]
+      },
+      "errorCodes": [
+       "TEXTURE_CORRUPT",
+       "TEXTURE_MIME_MISMATCH"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N13a-private-path-extras.glb",
+      "sha256": "4685973f571db0485712de0292ea30811d414c217daf21969699a48a007bd149",
+      "bytes": 1113876,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N13a-private-path-extras",
+       "expectCodes": [
+        "PRIVATE_PATH_IN_JSON"
+       ]
+      },
+      "errorCodes": [
+       "PRIVATE_PATH_IN_JSON"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N13b-private-path-nodename.glb",
+      "sha256": "b0d4d35ff4ebc37a687a9d0cc77df1ffc181b17b0247cd10755c50513a8568ce",
+      "bytes": 1114088,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N13b-private-path-nodename",
+       "expectCodes": [
+        "PRIVATE_PATH_IN_JSON"
+       ]
+      },
+      "errorCodes": [
+       "PRIVATE_PATH_IN_JSON"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N13c-username-generator.glb",
+      "sha256": "c909773dd0e530c138e4741c49dfa64317f9548811abb868bb688578ba71ef34",
+      "bytes": 1114088,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N13c-username-generator",
+       "expectCodes": [
+        "PRIVATE_PATH_IN_JSON"
+       ],
+       "privateTokens": [
+        "lyneguser"
+       ]
+      },
+      "errorCodes": [
+       "PRIVATE_PATH_IN_JSON"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N14-private-path-png-text.glb",
+      "sha256": "d347e49021b1d1857da00abd692182861775fdedc314cc2bb58119e786edda38",
+      "bytes": 1298244,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N14-private-path-png-text",
+       "expectCodes": [
+        "PRIVATE_PATH_IN_TEXTURE",
+        "PRIVATE_PATH_IN_BIN"
+       ]
+      },
+      "errorCodes": [
+       "PRIVATE_PATH_IN_BIN",
+       "PRIVATE_PATH_IN_TEXTURE"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N15-path-escape-image-uri.glb",
+      "sha256": "3c481f241bd36321b1df8911e625889acf0730a6a819af4ee6bb7d67f2c080aa",
+      "bytes": 1114092,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N15-path-escape-image-uri",
+       "expectCodes": [
+        "PATH_ESCAPE",
+        "TEXTURE_NOT_EMBEDDED"
+       ]
+      },
+      "errorCodes": [
+       "PATH_ESCAPE",
+       "TEXTURE_MISSING",
+       "TEXTURE_NOT_EMBEDDED"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N16-path-escape-buffer-uri.glb",
+      "sha256": "83a1f0f764bc6484b05195e602301ee5a14d6829947c2d91672028e064e3982a",
+      "bytes": 1114124,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N16-path-escape-buffer-uri",
+       "expectCodes": [
+        "PATH_ESCAPE",
+        "GLTF_EXTERNAL_BUFFER"
+       ]
+      },
+      "errorCodes": [
+       "GLTF_EXTERNAL_BUFFER",
+       "PATH_ESCAPE"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N17-index-out-of-range.glb",
+      "sha256": "a4a31f6660f43434227c4510651dea9f68fd29c58d24e4abd996ac9d26c39105",
+      "bytes": 1114076,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N17-index-out-of-range",
+       "expectCodes": [
+        "GEOM_INDEX_OUT_OF_RANGE"
+       ]
+      },
+      "errorCodes": [
+       "GEOM_INDEX_OUT_OF_RANGE"
+      ],
+      "warningCodes": [
+       "GEOM_DEGENERATE"
+      ]
+     },
+     {
+      "path": "qa/negatives/N18-accessor-overrun.glb",
+      "sha256": "c4f55d6a56c0ca63f1971a289bf151cbf627d375dc23acb5a7bac0eed1dcf6d3",
+      "bytes": 1114080,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N18-accessor-overrun",
+       "expectCodes": [
+        "GLTF_ACCESSOR_OVERRUN"
+       ]
+      },
+      "errorCodes": [
+       "GLTF_ACCESSOR_OVERRUN"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N19-bufferview-overrun.glb",
+      "sha256": "02c3f2256313808c1097991262ece79b0b6cc6ad708064c451d2a31ad13703d1",
+      "bytes": 1114080,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N19-bufferview-overrun",
+       "expectCodes": [
+        "GLTF_BUFFERVIEW_OVERRUN"
+       ]
+      },
+      "errorCodes": [
+       "GLTF_BUFFERVIEW_OVERRUN"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N20-minmax-wrong.glb",
+      "sha256": "4fcef52c799521f1a43bd1af90a75d534d7c3c355c862cafbc9e8cbcb6af9ba1",
+      "bytes": 1114080,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N20-minmax-wrong",
+       "expectCodes": [
+        "GLTF_POSITION_MINMAX_WRONG"
+       ]
+      },
+      "errorCodes": [
+       "GLTF_POSITION_MINMAX_WRONG"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N21-missing-uv.glb",
+      "sha256": "47221b975e85907eb779452f8a38361d38ee20d8c72253c45f1809f4af34911f",
+      "bytes": 1114064,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N21-missing-uv",
+       "expectCodes": [
+        "UV_MISSING"
+       ]
+      },
+      "errorCodes": [
+       "UV_MISSING"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/N22-bad-magic.glb",
+      "sha256": "716a8e82f523ffc83c1f5eeb40f2d6c11319f26d64c56aaa7d2304be36ea5b14",
+      "bytes": 1114076,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N22-bad-magic",
+       "expectCodes": [
+        "GLB_BAD_MAGIC"
+       ]
+      },
+      "errorCodes": [
+       "GLB_BAD_MAGIC"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/S01-LOD1-is-LOD0-copy.glb",
+      "expectFail": true,
+      "fixture": {
+       "cmd": "lodset",
+       "case": "S01-lod0-copied-as-lod1",
+       "expectCodes": [
+        "LOD_COPY_OF_LOD0"
+       ]
+      },
+      "checked": false
+     },
+     {
+      "path": "qa/negatives/packages/P00-good/models/S84-LOD2.glb",
+      "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+      "bytes": 15840,
+      "expectFail": false,
+      "fixture": null,
+      "errorCodes": [],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/packages/P01-size-mismatch/models/S84-LOD2.glb",
+      "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+      "bytes": 15840,
+      "expectFail": false,
+      "fixture": null,
+      "errorCodes": [],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/packages/P02-sha-mismatch/models/S84-LOD2.glb",
+      "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+      "bytes": 15840,
+      "expectFail": false,
+      "fixture": null,
+      "errorCodes": [],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/packages/P03-missing-file/models/S84-LOD2.glb",
+      "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+      "bytes": 15840,
+      "expectFail": false,
+      "fixture": null,
+      "errorCodes": [],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/packages/P04-path-escape-parent/models/S84-LOD2.glb",
+      "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+      "bytes": 15840,
+      "expectFail": false,
+      "fixture": null,
+      "errorCodes": [],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/packages/P05-path-absolute/models/S84-LOD2.glb",
+      "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+      "bytes": 15840,
+      "expectFail": false,
+      "fixture": null,
+      "errorCodes": [],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/packages/P06-private-path-public-file/models/S84-LOD2.glb",
+      "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+      "bytes": 15840,
+      "expectFail": false,
+      "fixture": null,
+      "errorCodes": [],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/packages/P07-contains-bad-glb/models/S84-LOD2.glb",
+      "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+      "bytes": 15840,
+      "expectFail": false,
+      "fixture": null,
+      "errorCodes": [],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/packages/P07-contains-bad-glb/models/bad.glb",
+      "sha256": "52567f0980c590df7bddce601a6530032070e9ca93dd13a332211df4710345e5",
+      "bytes": 1114076,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N04-nan-position",
+       "expectCodes": [
+        "GEOM_NONFINITE"
+       ]
+      },
+      "errorCodes": [
+       "GEOM_NONFINITE"
+      ],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/packages/P08-backslash-path/models/S84-LOD2.glb",
+      "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+      "bytes": 15840,
+      "expectFail": false,
+      "fixture": null,
+      "errorCodes": [],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/packages/P09-fixture-unexpectedly-passes/models/S84-LOD2.glb",
+      "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+      "bytes": 15840,
+      "expectFail": false,
+      "fixture": null,
+      "errorCodes": [],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/packages/P10-fixture-registered/models/S84-LOD2.glb",
+      "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+      "bytes": 15840,
+      "expectFail": false,
+      "fixture": null,
+      "errorCodes": [],
+      "warningCodes": []
+     },
+     {
+      "path": "qa/negatives/packages/P10-fixture-registered/models/bad.glb",
+      "sha256": "52567f0980c590df7bddce601a6530032070e9ca93dd13a332211df4710345e5",
+      "bytes": 1114076,
+      "expectFail": true,
+      "fixture": {
+       "cmd": "glb",
+       "case": "N04-nan-position",
+       "expectCodes": [
+        "GEOM_NONFINITE"
+       ]
+      },
+      "errorCodes": [
+       "GEOM_NONFINITE"
+      ],
+      "warningCodes": []
+     }
+    ],
+    "negativeFixtures": 28
+   },
+   "issues": [
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 brief.md 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/creation-notebook-lab`",
+       "at": 69
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "C:/Users/…`",
+       "at": 2106
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/…`",
+       "at": 2129
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 inputs.json 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/creation-notebook-lab",
+       "at": 181
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/creation-notebook-review/notes/tools/glb_audit.py",
+       "at": 1210
+      },
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/、/Users/",
+       "at": 3765
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 source/draw_preview.py 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "C:/Windows/Fonts/msyh.ttc",
+       "at": 465
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 source/ly_check.py 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/",
+       "at": 988
+      },
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/…、/Users/…",
+       "at": 5191
+      },
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/、/Users/",
+       "at": 48613
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 source/make_manifest.py 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/creation-notebook-lab",
+       "at": 3884
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/creation-notebook-lab",
+       "at": 4868
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/creation-notebook-lab",
+       "at": 5105
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 source/make_negatives.py 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "C:/Users/{FAKE_USER}/Desktop/S84.blend",
+       "at": 6695
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "C:/Users/",
+       "at": 6807
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/creation-notebook-lab/docs/S84",
+       "at": 6928
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 qa/census-round1-falsepositives.json 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "unc-path",
+       "strong": true,
+       "match": "\\\\ef\\f",
+       "at": 165
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 qa/negatives/cases.json 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "C:/Users/",
+       "at": 7234
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/…",
+       "at": 7648
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "C:\\\\Users\\\\",
+       "at": 8511
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 qa/negatives/packages/P05-path-absolute/delivery-manifest.json 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/creation-notebook-lab/README.md",
+       "at": 376
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 qa/negatives/packages/P06-private-path-public-file/public-note.md 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "C:\\Users\\lyneguser\\Documents\\luoyang\\S84.blend",
+       "at": 4
+      },
+      {
+       "kind": "windows-users-dir",
+       "strong": true,
+       "match": "\\Users\\lyneguser",
+       "at": 6
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 qa/negatives/trees/T02-private-path/cities/luoyang/notes.md 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "C:\\Users\\lyneguser\\Desktop\\luoyang.zip",
+       "at": 4
+      },
+      {
+       "kind": "windows-users-dir",
+       "strong": true,
+       "match": "\\Users\\lyneguser",
+       "at": 6
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 qa/negatives/trees/T03-drive-path/asset-spec/HOWTO.md 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/somewhere/r1/model.blend",
+       "at": 6
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 qa/negatives/trees/T04-weak-only/studies/x/run.py 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/agent/",
+       "at": 21
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 qa/official-runs.json 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/creation-notebook-lab",
+       "at": 12
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 qa/privacy-docs-bce3211.json 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/creation-notebook-待传/r2026.11.06-1/model.blend`。Claude",
+       "at": 638
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/待删-",
+       "at": 819
+      },
+      {
+       "kind": "posix-home",
+       "strong": false,
+       "match": "/home/、/Users/",
+       "at": 991
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 qa/self-package.json 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/creation-notebook-lab`",
+       "at": 17767
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "C:/Users/…`",
+       "at": 17914
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/…`",
+       "at": 18042
+      }
+     ]
+    },
+    {
+     "level": "warning",
+     "code": "PRIVATE_PATH_INTERNAL_FILE",
+     "msg": "内部文件 qa/selftest.json 含私密路径（不得进公共 docs）",
+     "hits": [
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "C:/Users/",
+       "at": 13056
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "D:/GitHub/…",
+       "at": 13799
+      },
+      {
+       "kind": "drive-absolute",
+       "strong": true,
+       "match": "C:\\\\Users\\\\",
+       "at": 15308
+      }
+     ]
+    },
+    {
+     "level": "info",
+     "code": "FIXTURE_NOT_SINGLE_GLB",
+     "msg": "qa/negatives/S01-LOD1-is-LOD0-copy.glb 是 lodset 夹具，单文件不判（见 qa/selftest.json）"
+    }
+   ]
+  }
+ ]
+}

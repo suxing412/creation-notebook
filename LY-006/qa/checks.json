@@ -1,0 +1,607 @@
+{
+ "seat": "LY-006",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "registryFiles": {
+  "zones": {
+   "path": "LY-006/registry/zones.json",
+   "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0"
+  },
+  "ports": {
+   "path": "LY-006/registry/ports.json",
+   "sha256": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633"
+  },
+  "seams": {
+   "path": "LY-006/registry/seams.json",
+   "sha256": "ca4d81f8f955333c089d782aa69c50c2ca83225d4da07f595f66d1ba87f3f4c1"
+  },
+  "ownership": {
+   "path": "LY-006/registry/ownership.json",
+   "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca"
+  },
+  "seats": {
+   "path": "LY-006/registry/seats.json",
+   "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069"
+  }
+ },
+ "buildInputs": {
+  "taskboard": {
+   "path": "taskboard.json",
+   "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4"
+  },
+  "ly001_ledger": {
+   "path": "LY-001/qa/snapshot-ledger.json",
+   "sha256": "479046caf49479cc6e58249585c63c80e84f23cafd82dc93bdc1034f9e1da7d0"
+  },
+  "ly001_dump": {
+   "path": "LY-001/qa/city-data.dump.json",
+   "sha256": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98"
+  },
+  "ly005_ports": {
+   "path": "LY-005/qa/ports-bce3211.json",
+   "sha256": "1c009bb2c95caae89af76e8b7f7462253d1829cb6794e7b7bc77820f67e2f7ca"
+  },
+  "ly005_contract": {
+   "path": "LY-005/coordinate-contract.json",
+   "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712"
+  },
+  "ly005_port_schema": {
+   "path": "LY-005/port-schema.json",
+   "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f"
+  },
+  "glb_index": {
+   "path": "LY-006/qa/glb-node-index.json",
+   "sha256": "a218da85fb566bb4dd4b4bf040334066f2486048bf44f1c84f4dc559c84fff8d"
+  },
+  "wall_ends": {
+   "path": "LY-006/qa/wall-end-ports.measure.json",
+   "sha256": "38f25d638403a9c12693d3ee46865099efa8604678b8560fb543cf357c4d5521"
+  },
+  "probes": {
+   "path": "LY-006/qa/frozen-ports.probes.json",
+   "sha256": "8b9b4bd7fa51caac5f712114c00268d0e18d6c572df22d4574ec3c93cbd9a7f8"
+  },
+  "chunks": {
+   "path": "LY-006/qa/chunk-measure.json",
+   "sha256": "6a7e7fc1b9016c2df9f3916b427fce6357511abecbeaff10b0138556824e9e0e"
+  },
+  "court_free": {
+   "path": "LY-006/qa/court-A2-free-space.json",
+   "sha256": "c030801ffc4749a842eed04c50408453b3c32f824c7191d0e9842f69c9ff8839"
+  },
+  "k_objects": {
+   "path": "LY-006/qa/source-objects/kaiyang-K-v1.objects.json",
+   "sha256": "19a422ea12df17d558b4a20b766053f6f5f6c6e37543e2f2cc5c658b895b1074"
+  },
+  "p_objects": {
+   "path": "LY-006/qa/source-objects/pingcheng-P-v1.objects.json",
+   "sha256": "d50cfc84128ec1a54857b493f0a36a2913c6571e1d1916f7566b6ee72b381e21"
+  },
+  "k_trial": {
+   "path": "LY-006/qa/kaiyang-hidden-trial.objects.json",
+   "sha256": "1e463795cf9614beba15c009bc2ada44f2f4e884e4dde65895d0e6cda57c6d61"
+  },
+  "p_trial": {
+   "path": "LY-006/qa/pingcheng-hidden-trial.objects.json",
+   "sha256": "f513b58558f2cb44081ac69b72e8da6b4cfbe842c97174b05e13100ec44a7136"
+  },
+  "frontage_openings": {
+   "path": "LY-006/qa/frontage-openings.from-LY-021-prep.json",
+   "sha256": "907898d14961121b84bbabf2d757a90d8627d1a4c7ece6b384e44eb2f6aad1d7"
+  },
+  "spec": {
+   "path": "LY-006/source/registry_spec.py",
+   "sha256": "4a6f30bd9caaf3a3409e8d63c73740a012282167d694967c63fb356a69324e7b"
+  }
+ },
+ "checks": [
+  {
+   "id": "C1-seats-deps-dag",
+   "pass": true,
+   "errors": [],
+   "errorCount": 0,
+   "info": {
+    "seats": 80
+   }
+  },
+  {
+   "id": "C2-unique-ownership-coverage",
+   "pass": true,
+   "errors": [],
+   "errorCount": 0,
+   "info": {
+    "sourceObjects": 2749,
+    "sourceObjectsModifyReplace": 809,
+    "cityNodesOwned": 23,
+    "cityNodesFrozen": 57,
+    "groundPieces": 23,
+    "cardFields": 1000,
+    "cardFieldsWithProposalOwner": 393,
+    "components": 104,
+    "cuts": 4
+   }
+  },
+  {
+   "id": "C3-ports-seams-versions-deps",
+   "pass": true,
+   "errors": [],
+   "errorCount": 0,
+   "info": {
+    "ports": 214,
+    "seams": 418,
+    "frozenMeasured": 77,
+    "importedLY005": 55,
+    "declaredBySeats": 81,
+    "valuePending": [
+     "pingcheng-P-v1:old-ramp:ground"
+    ],
+    "maxLocalWorldResidual_m": 4.706976532986573e-07
+   }
+  },
+  {
+   "id": "C4-spatial-write-zones",
+   "pass": true,
+   "errors": [],
+   "errorCount": 0,
+   "info": {
+    "zones": 173,
+    "writeZones": 168,
+    "cutZones": 5,
+    "envelopes": 11,
+    "pairsTested": 4767,
+    "ownedObjectsContainmentTested": 34,
+    "advisoryNodeContacts": 12
+   }
+  },
+  {
+   "id": "C5-fixed-moving",
+   "pass": true,
+   "errors": [],
+   "errorCount": 0,
+   "info": {
+    "components": 104,
+    "moving": [
+     "K012-leaf-C-E",
+     "K012-leaf-C-W",
+     "K012-leaf-E-E",
+     "K012-leaf-E-W",
+     "K012-leaf-W-E",
+     "K012-leaf-W-W",
+     "M026-container",
+     "R042-door-leaves",
+     "S031-A-leaves",
+     "S032-B-leaves",
+     "W056-pestle-beam"
+    ],
+    "stateVariant": [
+     "B037-leaf-state-150deg",
+     "M024-closing-panels",
+     "M024-side-closures",
+     "M027-load-states",
+     "M029-variant-switch",
+     "P062-closures",
+     "P062-main-leaves-state",
+     "R042-old-leaves-hidden",
+     "R048-side-openings",
+     "T078-stele-slots-empty",
+     "W059-service-gate"
+    ]
+   }
+  },
+  {
+   "id": "C6-frames-vs-measured-geometry",
+   "pass": true,
+   "errors": [],
+   "errorCount": 0,
+   "info": {
+    "local:kaiyang-K-v1": {
+     "endBayW_to_cap_m": 0.0001511627441404065,
+     "endBayE_to_cap_m": 9.662063075101298e-05
+    },
+    "local:pingcheng-P-v1": {
+     "endBayW_to_cap_m": 2.4545582408025232e-05,
+     "endBayE_to_cap_m": 2.0284297617146667e-05
+    },
+    "frontage": {
+     "motherSceneImpliedT": [
+      214.286,
+      0.2001,
+      -1959.184
+     ],
+     "frameT": [
+      214.286,
+      0.2,
+      -1959.184
+     ],
+     "diff": 9.999999999998899e-05
+    },
+    "court": {
+     "nodeT": [
+      531,
+      0,
+      -818.45
+     ],
+     "frameT": [
+      531.0,
+      0.0,
+      -818.45
+     ],
+     "diff": 0.0
+    },
+    "storage": {
+     "glbNodeTranslations": [
+      [
+       2285.714,
+       0,
+       -3673.469
+      ]
+     ],
+     "frameT": [
+      2285.714,
+      0.0,
+      -3673.469
+     ]
+    }
+   }
+  },
+  {
+   "id": "C7-sha-bindings",
+   "pass": true,
+   "errors": [],
+   "errorCount": 0,
+   "info": {
+    "glbFiles": 373,
+    "cards": 57
+   }
+  },
+  {
+   "id": "C8-lab-repo-untouched",
+   "pass": true,
+   "errors": [],
+   "errorCount": 0,
+   "info": {
+    "head": "bce3211f818ee5a8bef1773539da70695ba37b17",
+    "statusBefore": [
+     "M lab/data/assets.json",
+     " M lab/data/glb-cache.json",
+     " M lab/data/report.json",
+     "?? .claude/"
+    ],
+    "statusNow": [
+     "?? .claude/"
+    ],
+    "addedEntries": [],
+    "vanishedEntries": [
+     "M lab/data/assets.json",
+     "M lab/data/glb-cache.json",
+     "M lab/data/report.json"
+    ],
+    "rule": "pass = HEAD unchanged and no new working-tree entries; vanished entries are pre-existing uncommitted edits reverted by someone else during this seat (LY-006 never opens lab files for writing)"
+   }
+  },
+  {
+   "id": "C9-negatives",
+   "pass": true,
+   "errors": [],
+   "errorCount": 0,
+   "info": [
+    {
+     "negative": "neg_dup_owner",
+     "targetCheck": "C2-unique-ownership-coverage",
+     "failedAsExpected": true,
+     "firstError": "builder conflict: {'object': 'kaiyang-K-v1:C_upper_deck', 'kind': 'two non-keep claims (injected LY-014 replace)'}"
+    },
+    {
+     "negative": "neg_uncovered_node",
+     "targetCheck": "C2-unique-ownership-coverage",
+     "failedAsExpected": true,
+     "firstError": "uncovered city nodes ['C02-010']"
+    },
+    {
+     "negative": "neg_version",
+     "targetCheck": "C3-ports-seams-versions-deps",
+     "failedAsExpected": true,
+     "firstError": "seam C02-001:ground-base@v1::LY-005->LY-081 sides differ"
+    },
+    {
+     "negative": "neg_dep",
+     "targetCheck": "C3-ports-seams-versions-deps",
+     "failedAsExpected": true,
+     "firstError": "kaiyang-K-v1:deck-top:floor: consumer LY-011 does not depend on producer LY-013"
+    },
+    {
+     "negative": "neg_portid",
+     "targetCheck": "C3-ports-seams-versions-deps",
+     "failedAsExpected": true,
+     "firstError": "bad portId kaiyang deck top"
+    },
+    {
+     "negative": "neg_world",
+     "targetCheck": "C3-ports-seams-versions-deps",
+     "failedAsExpected": true,
+     "firstError": "kaiyang-K-v1:passage-C:threshold: world != N*local (0.00999999821186065)"
+    },
+    {
+     "negative": "neg_overlap",
+     "targetCheck": "C4-spatial-write-zones",
+     "failedAsExpected": true,
+     "firstError": "write overlap LY-011:write:001 x LY-012:write:001 (local:kaiyang-K-v1) vol 26.0568"
+    },
+    {
+     "negative": "neg_cut_outside",
+     "targetCheck": "C4-spatial-write-zones",
+     "failedAsExpected": true,
+     "firstError": "cut LY-045:cut:002 not inside LY-045 write zones (uncovered 1.000)"
+    },
+    {
+     "negative": "neg_envelope",
+     "targetCheck": "C4-spatial-write-zones",
+     "failedAsExpected": true,
+     "firstError": "envelope overlap S-GU x S-XIA"
+    },
+    {
+     "negative": "neg_object_outside",
+     "targetCheck": "C4-spatial-write-zones",
+     "failedAsExpected": true,
+     "firstError": "kaiyang-K-v1:C_upper_deck (LY-013) not inside owner zones, uncovered 0.497"
+    },
+    {
+     "negative": "neg_moving",
+     "targetCheck": "C5-fixed-moving",
+     "failedAsExpected": true,
+     "firstError": "moving S031-A-leaves (LY-031) has no mount/opening port to carry its axis/state"
+    },
+    {
+     "negative": "neg_frame",
+     "targetCheck": "C6-frames-vs-measured-geometry",
+     "failedAsExpected": true,
+     "firstError": "local:kaiyang-K-v1: end bays do not land on wall caps (0.6638, 0.6637)"
+    }
+   ]
+  },
+  {
+   "id": "C10-interface-template-validator",
+   "pass": true,
+   "errors": [],
+   "errorCount": 0,
+   "info": {
+    "template": {
+     "path": "templates/interface.template.json",
+     "sha256": "df2fa1b5459d0b7362def105be7582dfc9949c2a6ad96feebbe0304c3afd6f9c"
+    },
+    "schemas": {
+     "interface.schema.json": "1e525d50965a78115b23b570e598e85beab11fba9f80a18146134d9ec5e71f74",
+     "port.schema.json": "9fcdf932adbb4cdc58fecf19d52c7a1442955d273e75be7bc6bb9a1a5f494fdc"
+    },
+    "fixtures": {
+     "LY-013.example.pass.json": {
+      "sha256": "49c47e55b455d93efa017c2530c02b5e8487487a7f3b6e638c0e2227906cb65a",
+      "expectedPass": true,
+      "pass": true,
+      "errors": []
+     },
+     "LY-013.example.fail.json": {
+      "sha256": "8d6f1bfe03ceaa81e29960e06058fada8eb22b20e0bcb967b69514e0c9dd7927",
+      "expectedPass": false,
+      "pass": false,
+      "errors": [
+       "kaiyang-K-v1:C_door_head_1 is owned by LY-011, not LY-013",
+       "component K012-leaf-C-W not registered for LY-013",
+       "written box [[-12.4, 5.0, -5.0], [12.4, 5.6, 5.0]] outside LY-013:write:001 [[-12.4, 5.0, -5.0], [12.4, 5.34, 5.0]]",
+       "port kaiyang-K-v1:deck-top:floor: world != placement*local",
+       "consumed kaiyang-K-v1:central-frame-top:floor v2 != registry v1",
+       "new ground piece gp:LY-014:deck-skirt outside namespace gp:LY-013:"
+      ]
+     }
+    }
+   }
+  }
+ ],
+ "advisory": {
+  "worldZoneVsNodeAABB": [
+   {
+    "zone": "LY-014:write:001",
+    "node": "wall-A-wall-05",
+    "note": "AABB-level contact/overlap; not a geometry intersection test",
+    "method": "exact triangle-vs-OBB SAT on the node rendered GLB(s) (N*S*v, excludeNodes removed), zone shrunk 1 mm (touching faces do not count); surface triangles, not solids",
+    "nodeFiles": [
+     {
+      "file": "cities/luoyang/assets/city-wall/A/wall-05.glb",
+      "sha256": "4e000b0c34b26504ff30b7c4c9748ede9f1b84819dcc75301b57caca85f261ae"
+     }
+    ],
+    "trianglesTested": 12,
+    "aabbCandidates": 0,
+    "trianglesIntersectingZone": 0,
+    "verdict": "no node triangle inside zone (contact at most)"
+   },
+   {
+    "zone": "LY-014:write:002",
+    "node": "wall-A-wall-04",
+    "note": "AABB-level contact/overlap; not a geometry intersection test",
+    "method": "exact triangle-vs-OBB SAT on the node rendered GLB(s) (N*S*v, excludeNodes removed), zone shrunk 1 mm (touching faces do not count); surface triangles, not solids",
+    "nodeFiles": [
+     {
+      "file": "cities/luoyang/assets/city-wall/A/wall-04.glb",
+      "sha256": "50d8c7aa2c7d7dce95a894edf05bc1ecd2dbc73fbcd633e1c67f36065fd893ae"
+     }
+    ],
+    "trianglesTested": 20,
+    "aabbCandidates": 0,
+    "trianglesIntersectingZone": 0,
+    "verdict": "no node triangle inside zone (contact at most)"
+   },
+   {
+    "zone": "LY-014:write:003",
+    "node": "wall-A-wall-04",
+    "note": "AABB-level contact/overlap; not a geometry intersection test",
+    "method": "exact triangle-vs-OBB SAT on the node rendered GLB(s) (N*S*v, excludeNodes removed), zone shrunk 1 mm (touching faces do not count); surface triangles, not solids",
+    "nodeFiles": [
+     {
+      "file": "cities/luoyang/assets/city-wall/A/wall-04.glb",
+      "sha256": "50d8c7aa2c7d7dce95a894edf05bc1ecd2dbc73fbcd633e1c67f36065fd893ae"
+     }
+    ],
+    "trianglesTested": 20,
+    "aabbCandidates": 0,
+    "trianglesIntersectingZone": 0,
+    "verdict": "no node triangle inside zone (contact at most)"
+   },
+   {
+    "zone": "LY-031:write:001",
+    "node": "wall-A-wall-01",
+    "note": "AABB-level contact/overlap; not a geometry intersection test",
+    "method": "exact triangle-vs-OBB SAT on the node rendered GLB(s) (N*S*v, excludeNodes removed), zone shrunk 1 mm (touching faces do not count); surface triangles, not solids",
+    "nodeFiles": [
+     {
+      "file": "cities/luoyang/assets/city-wall/A/wall-01.glb",
+      "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95"
+     }
+    ],
+    "trianglesTested": 36,
+    "aabbCandidates": 0,
+    "trianglesIntersectingZone": 0,
+    "verdict": "no node triangle inside zone (contact at most)"
+   },
+   {
+    "zone": "LY-032:write:001",
+    "node": "wall-A-wall-01",
+    "note": "AABB-level contact/overlap; not a geometry intersection test",
+    "method": "exact triangle-vs-OBB SAT on the node rendered GLB(s) (N*S*v, excludeNodes removed), zone shrunk 1 mm (touching faces do not count); surface triangles, not solids",
+    "nodeFiles": [
+     {
+      "file": "cities/luoyang/assets/city-wall/A/wall-01.glb",
+      "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95"
+     }
+    ],
+    "trianglesTested": 36,
+    "aabbCandidates": 0,
+    "trianglesIntersectingZone": 0,
+    "verdict": "no node triangle inside zone (contact at most)"
+   },
+   {
+    "zone": "LY-034:write:001",
+    "node": "wall-A-wall-01",
+    "note": "AABB-level contact/overlap; not a geometry intersection test",
+    "method": "exact triangle-vs-OBB SAT on the node rendered GLB(s) (N*S*v, excludeNodes removed), zone shrunk 1 mm (touching faces do not count); surface triangles, not solids",
+    "nodeFiles": [
+     {
+      "file": "cities/luoyang/assets/city-wall/A/wall-01.glb",
+      "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95"
+     }
+    ],
+    "trianglesTested": 36,
+    "aabbCandidates": 0,
+    "trianglesIntersectingZone": 0,
+    "verdict": "no node triangle inside zone (contact at most)"
+   },
+   {
+    "zone": "LY-034:write:002",
+    "node": "wall-A-wall-01",
+    "note": "AABB-level contact/overlap; not a geometry intersection test",
+    "method": "exact triangle-vs-OBB SAT on the node rendered GLB(s) (N*S*v, excludeNodes removed), zone shrunk 1 mm (touching faces do not count); surface triangles, not solids",
+    "nodeFiles": [
+     {
+      "file": "cities/luoyang/assets/city-wall/A/wall-01.glb",
+      "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95"
+     }
+    ],
+    "trianglesTested": 36,
+    "aabbCandidates": 0,
+    "trianglesIntersectingZone": 0,
+    "verdict": "no node triangle inside zone (contact at most)"
+   },
+   {
+    "zone": "LY-034:write:003",
+    "node": "wall-A-wall-01",
+    "note": "AABB-level contact/overlap; not a geometry intersection test",
+    "method": "exact triangle-vs-OBB SAT on the node rendered GLB(s) (N*S*v, excludeNodes removed), zone shrunk 1 mm (touching faces do not count); surface triangles, not solids",
+    "nodeFiles": [
+     {
+      "file": "cities/luoyang/assets/city-wall/A/wall-01.glb",
+      "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95"
+     }
+    ],
+    "trianglesTested": 36,
+    "aabbCandidates": 0,
+    "trianglesIntersectingZone": 0,
+    "verdict": "no node triangle inside zone (contact at most)"
+   },
+   {
+    "zone": "LY-035:write:001",
+    "node": "wall-A-wall-01",
+    "note": "AABB-level contact/overlap; not a geometry intersection test",
+    "method": "exact triangle-vs-OBB SAT on the node rendered GLB(s) (N*S*v, excludeNodes removed), zone shrunk 1 mm (touching faces do not count); surface triangles, not solids",
+    "nodeFiles": [
+     {
+      "file": "cities/luoyang/assets/city-wall/A/wall-01.glb",
+      "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95"
+     }
+    ],
+    "trianglesTested": 36,
+    "aabbCandidates": 0,
+    "trianglesIntersectingZone": 0,
+    "verdict": "no node triangle inside zone (contact at most)"
+   },
+   {
+    "zone": "LY-039:write:001",
+    "node": "wall-A-wall-01",
+    "note": "AABB-level contact/overlap; not a geometry intersection test",
+    "method": "exact triangle-vs-OBB SAT on the node rendered GLB(s) (N*S*v, excludeNodes removed), zone shrunk 1 mm (touching faces do not count); surface triangles, not solids",
+    "nodeFiles": [
+     {
+      "file": "cities/luoyang/assets/city-wall/A/wall-01.glb",
+      "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95"
+     }
+    ],
+    "trianglesTested": 36,
+    "aabbCandidates": 0,
+    "trianglesIntersectingZone": 0,
+    "verdict": "no node triangle inside zone (contact at most)"
+   },
+   {
+    "zone": "LY-039:write:002",
+    "node": "wall-A-wall-01",
+    "note": "AABB-level contact/overlap; not a geometry intersection test",
+    "method": "exact triangle-vs-OBB SAT on the node rendered GLB(s) (N*S*v, excludeNodes removed), zone shrunk 1 mm (touching faces do not count); surface triangles, not solids",
+    "nodeFiles": [
+     {
+      "file": "cities/luoyang/assets/city-wall/A/wall-01.glb",
+      "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95"
+     }
+    ],
+    "trianglesTested": 36,
+    "aabbCandidates": 0,
+    "trianglesIntersectingZone": 0,
+    "verdict": "no node triangle inside zone (contact at most)"
+   },
+   {
+    "zone": "LY-082:write:001",
+    "node": "C02-010",
+    "note": "AABB-level contact/overlap; not a geometry intersection test",
+    "method": "exact triangle-vs-OBB SAT on the node rendered GLB(s) (N*S*v, excludeNodes removed), zone shrunk 1 mm (touching faces do not count); surface triangles, not solids",
+    "nodeFiles": [
+     {
+      "file": "cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+      "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d"
+     }
+    ],
+    "trianglesTested": 1156,
+    "aabbCandidates": 0,
+    "trianglesIntersectingZone": 0,
+    "verdict": "no node triangle inside zone (contact at most)"
+   }
+  ]
+ },
+ "summary": {
+  "C1-seats-deps-dag": true,
+  "C2-unique-ownership-coverage": true,
+  "C3-ports-seams-versions-deps": true,
+  "C4-spatial-write-zones": true,
+  "C5-fixed-moving": true,
+  "C6-frames-vs-measured-geometry": true,
+  "C7-sha-bindings": true,
+  "C8-lab-repo-untouched": true,
+  "C9-negatives": true,
+  "C10-interface-template-validator": true
+ }
+}

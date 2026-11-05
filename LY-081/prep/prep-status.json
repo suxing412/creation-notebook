@@ -1,0 +1,73 @@
+{
+ "seat": "LY-081",
+ "inputsFound": [
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb fdfc3ce5 (3 atomic nodes, 128342 tris; byte-identical at origin/main cad338b)",
+  "docs/cities/luoyang/assets/ground-atomic/retained.glb aed8b3d4",
+  "docs/cities/luoyang/assets/ground-atomic/south.glb 4313826d",
+  "docs/cities/luoyang/assets/ground-atomic/D08.glb 3ab93310 (translation [580,0,-960])",
+  "docs/cities/luoyang/data/west/ground-atomic-contract.json bfc7fc83",
+  "docs/cities/luoyang/city-data.mjs e4115705 (terrain chapter 4 nodes, initial:false; loaded via city-renderer.mjs:601/:286)",
+  "docs/cities/luoyang/v1/west-layer.mjs d8c14142 (:35-37 loads same 4 grounds) / v1/road-layer.mjs b6102a1c (:17-19)",
+  "docs/cities/luoyang/data/west/road-plan.json 9792f217 (7 C pieces + cuts) / road-preconstraints.json 8b2fa0fa (12 B relations)",
+  "docs/cities/luoyang/data/west/network.json af8e5479 / ground-final-actual-GLB.json 405db4fe / runtime-coverage.json 0b25c317 (prior schematic finite-path reports)",
+  "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD0.glb e52eaaf5; market-cluster.glb 77b8bf2e; N2-replacement.glb d33cbad1; granary-city-LOD0.glb 5937211c (context floors)",
+  "docs/library/models/m-luoyang-palace-waterway-interface/files/*.glb near 79d36565 / mid 68ec04bb / far af5e8b65 (study, not referenced by city-data)",
+  "docs/cities/luoyang/research/2026-11-03/city-milestones.json 9d72a0a9 + data/west/north-palace-conflict-layer.json f0755db3 (water phase research: ancient waterway B null)",
+  "DRIFT origin/main cad338b (local ref, not fetched; 3 commits past bce3211) extracted via git show to prep/drift-cad338b/: progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb 456a7dd5, LOD2 2a32c700, yong-road-receiver-component209.glb e5baa0df (209-tri component of C_stitch_primary), city-data.mjs(cad338b) with C_NORTH_INFILL_01..03",
+  "progress-assets/yong-city-v1/yong-apron-LOD2.glb fb8a5f2f (cold-open/terrain apron in cad338b)"
+ ],
+ "inputsMissing": [
+  "LY-001 decision on G baseline: working tree is bce3211 but local origin/main is already cad338b, which changes load states (cold open now loads retained+Yong link+receiver) and closes the Yong gap; cannot be decided from GLB",
+  "LY-006 frozen ports/ownership JSON: authoritative port IDs for courtyard doors, gates, market, storage; current ports.json is provisional probes only. Positions can be probed from GLB, IDs/ownership cannot be rebuilt from GLB",
+  "LY-005 coordinate/elevation contract and LY-010 region admission table: needed to freeze frame and decide which breakpoints/forbidden edges may be offered to LY-082..085; not rebuildable from GLB",
+  "Native .blend of C-ground-stitch-v1 (network/retained/south/D08) not in repo: NOT required, this seat must read the loaded GLB triangles; nothing to rebuild",
+  "B frozen evidence file with SHA fa8b7002869e... (referenced by network.json/road-plan.json): no repo file hashes to it; needed only to re-verify cut endpoints derive from unchanged B; evidence data, not rebuildable from GLB",
+  "Machine-readable door ports for the other 30 of 44 courtyards (network.json only lists 14): rebuildable by probing prototype door nodes x 44 matrices from GLB once LY-006 naming exists"
+ ],
+ "gaps": [
+  "Four atomic grounds form 5 disconnected top-surface components (strict and tolerant): main 174298.76 m2 plus 4 floating C pieces C_1 2571.59, C_4 6161.39, C_5 2941.19, C_6 6904.89 m2 (18579 m2 not connected)",
+  "C_5 west-south link cut 3.761 m from main at x 404.00-407.76, y~488 (road-plan cut: final seam pending)",
+  "C_1 west spine south cut 4.292 m from main at y 471.71-476.00, x~386.6 (final seam pending)",
+  "C_3/C_4 middle cross gap 56.202 m at x 1445.46-1501.65 = forbidden edge palaces_connector_B (grade separation unknown)",
+  "C_6 Pingcheng south link isolated ~1150 m long; north end 57.71 m from wall-06; >=913 m from any other ground",
+  "C_4 east end 49.29 m short of wall-02 (gate_zhongdong cut); C_1 south end 31.11 m from wall-07 (gate_jin cut)",
+  "Yong gate apron is a separate 539.83 m2 island at bce3211, 49.579 m (dz 0.04) from main ground. At origin/main cad338b this gap is CLOSED by yong-road-link (148.85 m2): apron-link seam 6.939 m, link-main seam 6.0 m, dz 0, one strict region 174987.43 m2; drop-link negative reopens 49.579 m",
+  "Storage yard 3744 m2 island, no atomic ground within 200 m (matches unconnected:true)",
+  "Market: market-center stands on market-main floor, 30.0 m from atomic ground; only 4.0 m of ground boundary touches market floor; N2 joins only in tolerant (<=0.18 m step) graph. NOTE measured on a 66-node union; the real terrain-chapter state (63 nodes) does not load market/storage at all",
+  "879.78 m of unwelded T-junction boundary inside main component + 6 non-manifold top edges",
+  "Real crack in C_stitch_primary 4-62 mm wide, ~4.2 m long at x 397.94-398.01, y 1845.76-1849.94 (1 mm scan: 4/33/56 mm at y 1846/1848/1849.5)",
+  "44 courtyards block the 2.0 m headroom line on 939 grid cells (2 m cells, ~3756 m2); wall-08/09 2 cells each: footprints must be subtracted from the network",
+  "Main ground dead-ends 35.2 m outside Guangyang gate at x=-39 (void)",
+  "Wall base y 0.17 vs ground top 0.21: walls embedded 0.04 m into ground, needs contact classification",
+  "Negative tests already discriminate: drop stitched -> 2 comps, D08 isolated 10320 m2, Guangyang x3 + market-link lose support; drop south -> 28 door/out1m ports lose support; drop D08 -> D08-center unsupported; drop retained -> main 89770.76 m2",
+  "Unbuilt negatives hold: city centre (1200,1900) 65.1 m from ground, north palace B (700,2400) no ground within 200 m",
+  "Cold-open load state: bce3211 loads 0 ground nodes (44 courts stand on no loaded ground); cad338b loads retained 84528.00 m2 + apron/link/receiver 21183.17 m2 as two islands 84.381 m apart, only 6 of 43 probe ports supported (28 south door ports, 3 Guangyang, D08-center unsupported)",
+  "cad338b adds 3 north courts: headroom-blocked 2 m cells rise 939 -> 1007 (C_NORTH_INFILL_01 31, 03 23, 02 14); provisional door probes x 581.2/607.2/633.2 y 1221.5 supported",
+  "Two +5.0 m platforms of 34.41 m2 on the Yong apron, planar gap 0 to ground but 5.0 m drop: unreachable until upper access exists"
+ ],
+ "reuseCandidate": "无",
+ "touches": [
+  "read-only: assets/ground-atomic/network-ground-stitched.glb nodes C_stitch_primary, C_stitch_west, C_stitch_patch",
+  "read-only: assets/ground-atomic/retained.glb node C02_retained_outside_south_Calt_domain",
+  "read-only: assets/ground-atomic/south.glb node single_closed_terrain_after",
+  "read-only: assets/ground-atomic/D08.glb node D08_shared_terrain (city node ground-D08, position [580,0,-960])",
+  "read-only as obstacles/contact: 44 residential nodes (C02-*, FROZEN-D08-*), wall-A-*, wall-direct-*, yong-gate-body, yong-gate-interface (apron), market-main, market-N2, storage-main",
+  "read-only: data/west/road-plan.json cuts, road-preconstraints.json, network.json door thresholds",
+  "write: workpacks/LY-081/ only (network data, breakpoint/forbidden-edge tables, tests); no ground slab ownership taken, no city-data/project-card writes",
+  "read-only (cad338b drift): yong-road-link, yong-road-link-near, yong-road-receiver, yong-gate-interface-far, C_NORTH_INFILL_01..03"
+ ],
+ "size": "M",
+ "risks": [
+  "Baseline drift: origin/main cad338b already differs from the bce3211 snapshot in load states and Yong connectivity; any network frozen on bce3211 is stale for G7/cold-open/north-court obstacles. Ground GLBs themselves unchanged",
+  "Ground is initial:false and loaded only by terrain chapter (main) or v1 calt 6m; the network is valid only for that load state and must be bound to city-data SHA + chapter set",
+  "v1 10m mode loads a mutually exclusive ground set (corridor-10m + route-corridor + south); mixing it would fake connectivity",
+  "road-plan/network.json B/C polylines look like a graph; using them as edges would violate 'no B straight lines' and turn unbuilt land into road",
+  "Provisional ports may differ from LY-006 frozen ports; door connectivity results must be rerun after freeze",
+  "Vertical-line headroom and 2 m grid are not body envelopes; narrow door approaches (C 2.3 m) and wall-gate passages need the 0.6 m cylinder sweep before any 'passable' claim",
+  "Neighbour seats (LY-082/083/084/085, 雍门接街 owner, LY-022 market interior) may later change ground; the network must be versioned per input SHA, not patched",
+  "Water edges cannot be evaluated: waterway B null and palace-waterway study not placed; must stay 'unknown', not 'passable'",
+  "Fixing seams/cracks is out of scope for this contract seat; reporting them may be misread as a request to edit shared ground",
+  "Prior market/storage numbers came from a cross-chapter union config; reusing them as a single load state would fake contact that the renderer never shows together"
+ ],
+ "readyAfterG": true
+}

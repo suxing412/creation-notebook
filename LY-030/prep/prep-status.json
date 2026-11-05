@@ -1,0 +1,62 @@
+{
+ "seat": "LY-030",
+ "inputsFound": [
+  "docs/cities/luoyang/assets/market/market-cluster.glb 77b8bf2e (loaded: city-data.mjs:511 market-main excl 30; v1/west-layer.mjs:33)",
+  "docs/cities/luoyang/assets/market/N2-replacement.glb d33cbad1 (loaded: city-data.mjs:562; west-layer.mjs:33/36)",
+  "docs/cities/luoyang/assets/market/flowB-routes.glb 43d7799f (v1 flow=B only, west-layer.mjs:36)",
+  "docs/cities/luoyang/assets/market/corridor-6m-market-link.glb b46dd450 (declared west-layer.mjs:33, overridden by :36 at market level)",
+  "docs/cities/luoyang/assets/ground-atomic/{network-ground-stitched fdfc3ce5, retained aed8b3d4, south 4313826d, D08 3ab93310} (v1 market loads all four; main-app market chapter does not)",
+  "docs/model-library/assets/market-A-N2-local.glb 493798b8 (not loaded; == city cluster(-30)+N2, 524/524 nodes at 1 mm)",
+  "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0/1/2.glb 46f08f41 / 03ad28cf / b5b13b1c (not loaded)",
+  "docs/library/models/m-luoyang-market-modular-assembly/files/S84,S86,generated_788bb4c4f5f9f6c3 LOD0-2 (not loaded)",
+  "docs/model-library/updates/m-market-functional/files/market-LOD0/1/2.glb acdd4391 / e925451b / ea0c235f (not loaded)",
+  "docs/model-library/well-study/assets/well-A-LOD0 6bc463f8, well-A-LOD1 e9252de3 (not loaded; no LOD2)",
+  "LY-025/prep/work/market_frontage_well_routes.glb 0193ebc0 (mother-scene trial chunk from modeling-lab/review-batches/2026-11-04-city-visible ZIP; not loaded)",
+  "docs/cities/luoyang/data/west/N2-contract.json blob 498f51fc (worktree CRLF 10678d73), market-flow-plan.json, market-interface.json, market-precedents.json, ground-atomic-contract.json",
+  "lab bce3211f818ee5a8bef1773539da70695ba37b17 (lab/data/*.json worktree differs only by timestamps)"
+ ],
+ "inputsMissing": [
+  "city-C032-entry-LOD0.blend 1e8c4d2c...3b01b (native of C_MARKET_WELL_ATOMIC_TRIAL): use = editable source of frontage+well+opened-ground trial; assembly can be rebuilt from GLB (lossless chunk), editable parametric source cannot",
+  "market-cluster / N2 / flowB native .blend + generator: use = regenerate region natively with well hole and operation ground; rebuildable from GLB (all nodes axis-aligned, no rotation/scale, local A+N2 equals city at 1 mm)",
+  "frontage v2.1 native + generator: use = per-shop semantics if LY-029 picks 八铺四棚; GLB has only 3 merged meshes, so assembly yes, per-shop editing no",
+  "LY-029 frozen variant choice and LY-021..028 deliverables (upstream seats, not yet produced)",
+  "LY-002/003 admission for placing a well in the market (market-precedents avoid list contains 因名市井而强加水井)"
+ ],
+ "gaps": [
+  "Two loaders assemble different markets: main-app chapter = cluster(-30)+N2 = 1,104,912 B; v1 = same + 4 ground-atomic = 7,930,420 B (market itself 13.9%); ground-atomic has only 2 triangles inside market box +/-2 m, retained+south+D08 (3,259,964 B) have 0",
+  "East egress 27->36 m: exitN (z=-17) and exitS (z=+17) are unsupported 125/125 samples in every composition; public opening unsupported 125/125 in main-app, standalone and trial, supported only in v1 via ga_network/corridor; main-app support depends on whether terrain chapter was opened earlier (cityIds accumulate, city-renderer.mjs:597-605)",
+  "flow-plan routes start at x=30: 5 unsupported samples each in main-app composition, 0 in v1",
+  "No well (0 nodes) and no unloading/operation area (0 nodes) in either loaded composition; trial has 122 well nodes, still 0 operation nodes",
+  "Route ribbons are 1 cm overlays (0.21 over 0.20 ground) on 3,011/10,769 cells (28.0%) for A, 3,152 for B, 2,908 for trial; 0 coplanar (<2 mm) cells; ribbons use modern C_routes marker material",
+  "Trial (八铺四棚+well) blocks old flow-plan A_public/B_public on 23 samples each (earth 21, timber 2), max step 0.22 m; all 7 ribbon centrelines pass; route set must follow the LY-029 choice",
+  "Negative controls work: straight lines through north/south rows fail in every composition (e.g. A north U14/C7/H51, trial north C84/H44)",
+  "Tiers: market-cluster, N2 and flowB single tier; well A has no LOD2; frontage and v2 have 3 tiers",
+  "City market GLBs have 0 images (flat colour) vs frontage/well 9 embedded images; mixed material semantics",
+  "No SHA verification when loading market GLBs (city-renderer loadAsset, r01-assets buildDistrictAssets) unlike wall-layer.mjs:21/road-layer.mjs:18",
+  "city-data.mjs sourceContracts SHAs are CRLF worktree hashes (N2-contract 10678d73) while committed/served blob is LF (498f51fc)",
+  "Byte budget not binding: A+N2 1.09 MB, trial 3.70 MB, frontage LOD0+well A LOD0 3.64 MB vs 15,000,000 B limit"
+ ],
+ "reuseCandidate": "Partial only. market-A-N2-local.glb (493798b8, 1,088,036 B) + anchor equals the city 5店3摊 A+N2 at 1 mm on 524/524 nodes (out/local-vs-city.json), and the mother-scene trial chunk 0193ebc0 already carries frontage v2.1 + well A + opened ground. Neither passes LY-030 acceptance: no operation area, exitN/exitS egress unsupported 125/125 in all compositions, public egress needs implicit external ground, A+N2 has no well, trial is bound to a different variant than the city loads. So LY-030 remains an assembly task, no new family.",
+ "touches": [
+  "market-cluster.glb nodes: sample_ground, route_public/east/rearN/rearS/exitPublic/exitN/exitS, boundary_west/-21.7/21.7/east_-9/east_9, N2_* (30 retired), north/south_shared_roofbed_+-1 (keep)",
+  "N2-replacement.glb 54 nodes; flowB-routes.glb flowB_* 6 nodes",
+  "frontage v2.1 C_MARKET_ENTRY_V21_LOD0__layout__LY_P01_{tile,timber,earth}__PBR (if chosen)",
+  "well A_LOD0__* 121 nodes + C_market_ground_well_A (from LY-025)",
+  "LY-026/027/028 parts (well ops guides, goods placeholders, unloading ground)",
+  "ground-atomic network-ground-stitched east entry around x=244.286, z=-1959.184 and corridor-6m-market-link (external port, read only)",
+  "proposals only: city-data.mjs market-main/market-N2/chapter market, v1/west-layer.mjs:33-36, v1/market-assembly.mjs, city-renderer.mjs excludeNodes",
+  "write: workpacks/LY-030/ only"
+ ],
+ "size": "L",
+ "risks": [
+  "LY-029 is at the end of a 9-deep dependency chain (021-028); any upstream block stalls LY-030",
+  "Well admission conflict: market-precedents avoid list vs task requiring a well; needs LY-002/003 or producer ruling",
+  "East exitN/exitS lead to void; closing them or adding exterior ground touches LY-022/083 territory; must not redo roads",
+  "Two loaders diverge (excludeNodes vs retire with hard-coded 30/7); region package must be installable in both or LY-100 must unify",
+  "SHA traceability: CRLF vs LF contract hashes; market loads unverified",
+  "Three tiers may be impossible for single-tier parts; must be disclosed, not faked",
+  "Prep renders are Workbench CPU only; no browser/GPU test",
+  "Prep measurement is discrete ray sampling (0.25 m, 5 offsets), not continuous body motion or full solid collision"
+ ],
+ "readyAfterG": true
+}

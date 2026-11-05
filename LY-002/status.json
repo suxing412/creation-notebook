@@ -1,0 +1,42 @@
+{
+ "seat": "LY-002",
+ "status": "交付完成",
+ "summary": "已建立约180年雒阳证据与禁用表：十二门表、33条四栏证据条目（同期洛阳/异地汉代/北魏及后世/未知）、24条禁用、9条仓库出入，并把LY-001的54个家族逐一绑定到证据与禁用条目；132条原文摘录全部在来源字节中逐字核到，负例与覆盖检查通过，可用source/build.py重算。主要发现是证据层“旋门”应为秏门/旄门（旋门是成皋关隘名），一门三道、门楼两重百尺属北魏实证，“两宫相去七里”与研究示意图对不上，三市方位、太仓武库“东北隅”只有研究推定；礼制区考古数字均为二手转引、分期未核。",
+ "deliverables": [
+  "brief.md",
+  "inputs.json",
+  "tables/evidence-ledger.md",
+  "tables/evidence-ledger.json",
+  "tables/family-binding.json",
+  "qa/quote-check.json",
+  "qa/selftest.json",
+  "qa/coverage.json",
+  "qa/palace-spacing-check.json",
+  "qa/build-run.txt",
+  "source/ledger_data.py",
+  "source/build.py",
+  "source/manifest.py",
+  "source/snapshots/",
+  "delivery-manifest.json",
+  "status.json"
+ ],
+ "blockers": [],
+ "openItems": [
+  "D-01：evidence-geometry.json 与 city-wall-constraints.json 的 gate_xuan_B 名为“旋门”，应改为“秏门（旄、耗异写）”；冻结证据层需由LY-100另立版本。",
+  "原考古报告未读：《汉魏洛阳故城南郊礼制建筑遗址》、1998城垣试掘、1973初步勘查；明堂、灵台、辟雍、太学数字只有高2023转引，东汉/魏晋/北魏分期未逐项核。",
+  "河南省文物考古研究院2023宫城新发现页面本轮未能访问（连接失败），北宫新墙段仍无控制点，交LY-003。",
+  "三市方位（金市城内、南市南郊、马市东郊）只见徐2019综述，东汉原文出处未核；研究图“步广里”“永和里”出处未核。",
+  "太仓、武库“城东北隅”只有研究推定；三公府“开阳门内”为高2023转引百官志一注，本轮未读该卷。",
+  "北郊位置三说（城北四里/城北六里/城西北角去城一里所）、平城门开设年两说、177/178年屋坏是否一事、讲堂广三丈/二丈异文均未裁定，交LY-004。",
+  "汉尺、汉里换算米值为C假设（0.23–0.24米/尺），未引量器出处。",
+  "D-02至D-09为卡片措辞与补件依据建议，交LY-098及相关模型席位，不阻断。",
+  "本包不涉及模型读取、通行、入城或结构安全；只覆盖历史证据部分。"
+ ],
+ "nextDependents": [
+  "LY-003",
+  "LY-004",
+  "LY-010",
+  "LY-098",
+  "LY-100"
+ ]
+}

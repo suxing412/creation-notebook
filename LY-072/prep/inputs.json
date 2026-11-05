@@ -1,0 +1,348 @@
+{
+  "seat": "LY-072",
+  "phase": "prep v2 2026-11-06 (G not frozen: LY-010 absent, LY-008 no status; no delivery geometry made)",
+  "labRepo": {
+    "path": "D:/GitHub/creation-notebook-lab",
+    "head": "bce3211f818ee5a8bef1773539da70695ba37b17",
+    "access": "read-only",
+    "workingTree": "clean except untracked .claude/ (checked 2026-11-06)"
+  },
+  "frameNote": "Blender Z-up after glTF import (glTF -Z = Blender +Y). Library GLBs each in their own origin. Trial-fit local frame = city world minus C=(2183.673095703125, -938.7760009765625, 0).",
+  "inputs": [
+    {
+      "id": "hall-A-LOD0",
+      "path": "docs/library/models/m-luoyang-biyong/files/biyong-A-LOD0.glb",
+      "sha256": "937a31922d0b0ef69c300f223d88310dad2e284312fbba054b04e8bdb437e1e8",
+      "bytes": 1689400,
+      "loadedInWebCity": false,
+      "loader": "none in docs/cities/luoyang (city-data.mjs has 0 'biyong' hits); listed only by asset card m-luoyang-biyong.asset.json files[0] and lab/data/assets.json",
+      "use": "inner landing port: stair foot at t=20.4 (own frame z=-1.2 ground, -1.0 last tread), stair width 4.0"
+    },
+    {
+      "id": "hall-A-LOD1",
+      "path": "docs/library/models/m-luoyang-biyong/files/biyong-A-LOD1.glb",
+      "sha256": "5dc71e322a3fec8731fcaec60b791c93ec7cd7fb0650d565f400e4c9fb8fcbfb",
+      "bytes": 552104,
+      "loadedInWebCity": false,
+      "loader": "asset card files[1] only"
+    },
+    {
+      "id": "hall-A-LOD2",
+      "path": "docs/library/models/m-luoyang-biyong/files/biyong-A-LOD2.glb",
+      "sha256": "482222614a0f39807743387dd841e7127bac62ee6ed95fc592ee443b1af21dd4",
+      "bytes": 78060,
+      "loadedInWebCity": false,
+      "loader": "asset card files[2] only"
+    },
+    {
+      "id": "enclosure-L-LOD0",
+      "path": "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD0.glb",
+      "sha256": "88f227d05c4c7c8ebc771b2ef474f1504ae2ceed7dede01795b360db247d97df",
+      "bytes": 2303620,
+      "loadedInWebCity": false,
+      "loader": "asset card files[3] only",
+      "use": "wall opening port; NOTE one quadrant only (x,y in [4.0,68.35]); city trial-fit uses a 4-quadrant enclosure-A-v2 whose quadrant matches LOD1 topology (2372 faces), not this LOD0 (17608 faces, 324/8806 shared verts)"
+    },
+    {
+      "id": "enclosure-L-LOD1",
+      "path": "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD1.glb",
+      "sha256": "69ae00ce019d4868a49afb1d2baaf4ea8ab8ff092c9270785a2de8ccfa7f63aa",
+      "bytes": 293348,
+      "loadedInWebCity": false,
+      "loader": "asset card files[4] only",
+      "use": "matches city quadrant: 2372/2372 faces, 1129/1188 verts equal at 1 mm rounding"
+    },
+    {
+      "id": "enclosure-L-LOD2",
+      "path": "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD2.glb",
+      "sha256": "60026711645722e1e5b61f14867a6753021e7687c94cd6e759e335d05bf50c4c",
+      "bytes": 2620,
+      "loadedInWebCity": false,
+      "loader": "asset card files[5] only"
+    },
+    {
+      "id": "asset-card",
+      "path": "docs/library/models/m-luoyang-biyong/m-luoyang-biyong.asset.json",
+      "sha256": "f6ee903096d751f2e89b3fc4d5e1720b2d04420737b4599f0588c929e9fb7aa0",
+      "loadedInWebCity": false,
+      "loader": "lab/tools/build_assets.py -> lab/data/assets.json (library page), not the city",
+      "blobSha256": "4b6f37622159dbdfee4ccca5ea1d6ecb849ae2644ffec199286f19b20785b9b1"
+    },
+    {
+      "id": "project-card",
+      "path": "docs/cities/luoyang/p-luoyang.asset.json",
+      "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+      "loadedInWebCity": "card only",
+      "loader": "line 352 inventory row '辟雍礼堂与围护' status 已建模 count 1 '未入城'; line 570 related id",
+      "blobSha256": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd"
+    },
+    {
+      "id": "lab-assets",
+      "path": "lab/data/assets.json",
+      "sha256": "c39e8e9a2a1833f3abbc15e585f5868fba6c7d2e01f6b8e504c2b44193f16979",
+      "loadedInWebCity": false,
+      "loader": "library site build output",
+      "note": "working tree now clean; checkout differs from blob only by CRLF (tr -d \r gives 53d86312). v1 note about an uncommitted copy is superseded.",
+      "blobSha256": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78"
+    },
+    {
+      "id": "city-data",
+      "path": "docs/cities/luoyang/city-data.mjs",
+      "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+      "loadedInWebCity": true,
+      "loader": "docs/cities/luoyang/app.mjs import; 0 case-insensitive biyong hits in city-data.mjs, app.mjs, city-renderer.mjs (2026-11-06)",
+      "blobSha256": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00"
+    },
+    {
+      "id": "evidence-geometry",
+      "path": "docs/cities/luoyang/data/evidence/evidence-geometry.json",
+      "sha256": "662562fa87cffc9de43b2c23564f1ab63fba8c01f2345891f255cb202bee2233",
+      "loadedInWebCity": "listed in city-data.mjs:4525-4526 resource list (declares the CRLF value 662562fa); read by archived v1/evidence-view.mjs:28 checkedJSON with fa8b7002 = the committed LF blob, i.e. the SAME content (v1 claim that the view would refuse it was wrong)",
+      "use": "ritual_biyong_B at schematic point [2183.673, -938.776], evidence_class B (gao2023_fig1, schematic digitized, not excavated), presentation_envelope_m 75, architectural_completion not_modeled",
+      "blobSha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7"
+    },
+    {
+      "id": "city-visible-handoff-zip-parts",
+      "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part01..05",
+      "sha256": {
+        "part01": "d3d5eb7263e9f840c5444d46082eb7ced1c8e5488e7fba9b00d1a0fc3f32a9a3",
+        "part02": "c20213e1eaa6f212f5dbf9cf41482347a26947880119ebba0f13978cd1876703",
+        "part03": "6a468122cb53a36c5fc93652c2c7f7dc13658510ceee955dc8faf0de9fc9105b",
+        "part04": "74f4cd0a08d3f69882cd44dc412efc885d84bf80a39fe0619ae6ff2043d924cb",
+        "part05": "a8a0331b4408228a23181adcc3d07d8ca17d25cd108b2179b8bf99880331de5f",
+        "assembledZip": "5895ef23a684a343271183dce1e92e112fb49bba9e03e4372023d1247bb50b69"
+      },
+      "loadedInWebCity": false,
+      "loader": "not loaded; adapter.json deploymentStatus 'not published', all nodes initial=false, assetURLContract unresolved"
+    },
+    {
+      "id": "biyong-trialfit-chunk",
+      "path": "(inside ZIP) chunks/biyong_C_relationship.glb",
+      "sha256": "1bd1c446f26cf5551bbbf71c4948869ab216334e50886e9253535ccd0b78ffa1",
+      "bytes": 2863488,
+      "loadedInWebCity": false,
+      "loader": "candidate only: modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json:333 asset, :1500 node visible-current-node-biyong_C_relationship (initial=false)",
+      "use": "THE existing local trial-fit transform: hall A at T=(C, z+1.2), enclosure-A-v2 at (C, 0), island +-70 (z -1..0), water symbol ring 70..78 (z -0.4..-0.1, material C_water_symbol_NOT_hydraulic), four 8.4x8.0x0.3 A_crossing slabs at t 69.8..78.2",
+      "extractedBy": "prep/extract_chunk.py (in memory, SHA-checked) to scratchpad only"
+    },
+    {
+      "id": "adapter",
+      "path": "modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json",
+      "sha256": "703caeed4a7834e9e5324e1d2f1a1df78412c50d756768c6c98c3638f216934f",
+      "loadedInWebCity": false,
+      "blobSha256": "8f890748d908e4551c1ed46107d98c4bfebfe28820393ae6943a6a2c2e7e0d7c"
+    },
+    {
+      "id": "city-master-blend",
+      "path": "luoyang-C032-paired-door-repair-v2/city/city-C032-entry-LOD0.blend (private, not in repo)",
+      "sha256": "1e8c4d2ce19827bb8ab5ff24a662fd4f3909aa5c6074fc9a90623a103b73b01b",
+      "available": false,
+      "use": "authoritative trial-fit nodes incl. hidden research nodes biyong-layout__A_wall_* x8 and A_central_platform (render_visible false)",
+      "rebuildFromGLB": "visible nodes yes (world transforms preserved in chunk + source-node-manifest matrices); hidden nodes no"
+    },
+    {
+      "id": "mq-audit",
+      "path": "<scratchpad>/mq/cards/m-luoyang-biyong/audit.json",
+      "sha256": "dcee8f610cf1c572c72486d69123da6b5302e40196c48216bdea33148fbde3b6",
+      "loadedInWebCity": false
+    },
+    {
+      "id": "taskpool",
+      "path": "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md",
+      "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7"
+    },
+    {
+      "id": "taskboard",
+      "path": "D:/GitHub/creation-notebook-workpacks/taskboard.json",
+      "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+      "note": "LY-072 deps = G + LY-071 (LY-002 included via G). Status from LY-009 taskboard.v2: 待输入, rule \"S4 未完成依赖：LY-008、LY-010、LY-071\", pause PZ-03"
+    },
+    {
+      "id": "ly002-ledger",
+      "path": "workpacks/LY-002/tables/evidence-ledger.md",
+      "sha256": "ea060db64e08645e299924e3243c566587689ac59acf35cff7638e0b190fc5de",
+      "loadedInWebCity": false,
+      "use": "E-R05 辟雍 (lines 363-375), E-R03 明堂 dry moat + bridge (335-347), D-04 (487)"
+    },
+    {
+      "id": "ly002-ledger-json",
+      "path": "workpacks/LY-002/tables/evidence-ledger.json",
+      "sha256": "237a4811acad3d7f6733d4c5c95a64df0b2c67adf48b2682264eb0f0c8512b77",
+      "loadedInWebCity": false
+    },
+    {
+      "id": "ly002-quote-check",
+      "path": "workpacks/LY-002/qa/quote-check.json",
+      "sha256": "af720831b333ce4e0dad796db2a4923ace898c57595807c970b6a2a58780d9e2",
+      "loadedInWebCity": false,
+      "use": "E-R05 quotes verified in snapshot bytes by LY-002"
+    },
+    {
+      "id": "ly002-snapshot-S10",
+      "path": "workpacks/LY-002/source/snapshots/hhs02.html",
+      "sha256": "96b9128099e2e44642e88cfeafd37965ead747a1ce03fe13feb15e41cd3523df",
+      "loadedInWebCity": false,
+      "use": "GB18030 page of 后汉书光武纪下注; LY-072 re-read: 辟雍以水周其外 ... 诸侯曰泮宫。东西南有水，北无，下天子也 (three-sided water follows 泮宫)"
+    },
+    {
+      "id": "ly005-contract",
+      "path": "workpacks/LY-005/coordinate-contract.json",
+      "sha256": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+      "loadedInWebCity": false,
+      "use": "frame luoyang-local-schematic-v01: glTF +X east, +Y up, +Z south; Blender +Y north; world = N*S*v; R1 yaw-only, R2 scale 1"
+    },
+    {
+      "id": "ly005-port-schema",
+      "path": "workpacks/LY-005/port-schema.json",
+      "sha256": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f",
+      "loadedInWebCity": false
+    },
+    {
+      "id": "ly006-zones",
+      "path": "workpacks/LY-006/registry/zones.json",
+      "sha256": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+      "loadedInWebCity": false,
+      "use": "LY-072:write:001 local:biyong box [[20.4,-1.5,-2.5],[30,1.5,2.5]] \"one crossing corridor on +x\"; frame local:biyong = hall A origin, unplaced"
+    },
+    {
+      "id": "ly006-ports",
+      "path": "workpacks/LY-006/registry/ports.json",
+      "sha256": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+      "loadedInWebCity": false,
+      "use": "biyong:crossing-ends:ground v1 (producer LY-072, consumer LY-073), biyong:hall-enclosure:ground v1 (producer LY-071); values null"
+    },
+    {
+      "id": "ly006-seams",
+      "path": "workpacks/LY-006/registry/seams.json",
+      "sha256": "ca4d81f8f955333c089d782aa69c50c2ca83225d4da07f595f66d1ba87f3f4c1",
+      "loadedInWebCity": false,
+      "use": "seams[106] LY-072->LY-073, seams[107] LY-071->LY-072"
+    },
+    {
+      "id": "ly006-seats",
+      "path": "workpacks/LY-006/registry/seats.json",
+      "sha256": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+      "loadedInWebCity": false,
+      "use": "LY-072 component B072-crossing fixed; site S-BIYONG owner LY-073"
+    },
+    {
+      "id": "ly006-ownership",
+      "path": "workpacks/LY-006/registry/ownership.json",
+      "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+      "loadedInWebCity": false,
+      "use": "no entry for biyong-layout__A_crossing_*, A_island, A_square_water_symbol"
+    },
+    {
+      "id": "ly006-interface-template",
+      "path": "workpacks/LY-006/templates/interface.template.json",
+      "sha256": "df2fa1b5459d0b7362def105be7582dfc9949c2a6ad96feebbe0304c3afd6f9c",
+      "loadedInWebCity": false
+    },
+    {
+      "id": "ly006-interface-schema",
+      "path": "workpacks/LY-006/schemas/interface.schema.json",
+      "sha256": "1e525d50965a78115b23b570e598e85beab11fba9f80a18146134d9ec5e71f74",
+      "loadedInWebCity": false
+    },
+    {
+      "id": "ly006-port-schema",
+      "path": "workpacks/LY-006/schemas/port.schema.json",
+      "sha256": "9fcdf932adbb4cdc58fecf19d52c7a1442955d273e75be7bc6bb9a1a5f494fdc",
+      "loadedInWebCity": false
+    },
+    {
+      "id": "ly007-lod-rules",
+      "path": "workpacks/LY-007/baseline/lod-rules.json",
+      "sha256": "fbf53757be2e243429b751899f1690d30f827849962c0e77a8ca811462789146",
+      "loadedInWebCity": false,
+      "use": "earth (台/墩/踏步/地坪) and beams/planks keep across tiers; round posts 16/12->8->2r box; LOD2 FLAT"
+    },
+    {
+      "id": "ly007-material-semantics",
+      "path": "workpacks/LY-007/baseline/LY_P01-material-semantics.json",
+      "sha256": "f0a04f599595d41b9d7cad39b9afd5ae3829b343222d92e174f1b49d6d9b1bf3",
+      "loadedInWebCity": false
+    },
+    {
+      "id": "ly008-checker",
+      "path": "workpacks/LY-008/source/ly_check.py",
+      "sha256": "39aaa491859e1a796080dd91ccabd1c47423cf7f9ef2af61c5f123b04b3dff4b",
+      "loadedInWebCity": false,
+      "use": "glb / lodset / package subcommands; LY-008 has no status.json (not marked delivered)"
+    },
+    {
+      "id": "ly009-board",
+      "path": "workpacks/LY-009/board/taskboard.v2.json",
+      "sha256": "bd2fcbbe02a1e68fe7b98cd706a86ae14f49bcb495f2088b68e002e2f818106a",
+      "loadedInWebCity": false
+    },
+    {
+      "id": "ly071-prep-status",
+      "path": "workpacks/LY-071/prep/prep-status.json",
+      "sha256": "98feb70cd09af2e6d861ef1a8f89149e64d8585c0570f9772a5ddc768c98d961",
+      "loadedInWebCity": false,
+      "use": "read-only peer prep: hall N=T(0,+1.2,0), enclosure = L x4 R_y (0.133 mm vs A-v2)"
+    },
+    {
+      "id": "ly073-prep-zone-check",
+      "path": "workpacks/LY-073/prep/out/zone-check.json",
+      "sha256": "37d8010f6f625eff1e383df935f6950ea9e7cd65ecab4dbb1f50f393830d56fe",
+      "loadedInWebCity": false,
+      "use": "read-only peer prep: independently finds the same zone mismatch"
+    }
+  ],
+  "pendingDependencies": [
+    {
+      "seat": "LY-010",
+      "need": "which biyong layout/instances (E only per LY-006 zone, four-way trial-fit, north-only per text reading), whether S-BIYONG local study is admitted",
+      "status": "no workpack directory"
+    },
+    {
+      "seat": "LY-006",
+      "need": "registry v2: move LY-072:write:001 to the real crossing corridor (trial-fit t 68.35-80, |lat|<=4.5) and assign owners to A_crossing x4 / island edge strip",
+      "status": "v1 delivered; v1 zone has 0.0 overlap with every trial-fit crossing"
+    },
+    {
+      "seat": "LY-002",
+      "need": "re-check E-R05 reading: in S10 东西南有水，北无 follows 诸侯曰泮宫; 辟雍 itself is 以水周其外",
+      "status": "delivered (交付完成); dispute raised by LY-072 prep only, not edited"
+    },
+    {
+      "seat": "LY-071",
+      "need": "frozen hall/enclosure transform, enclosure version, filled biyong:hall-enclosure:ground port",
+      "status": "prep only"
+    },
+    {
+      "seat": "LY-073",
+      "need": "outer bank elevation (0.00 vs 0.20) and shared values of biyong:crossing-ends:ground",
+      "status": "prep only; LY-073 depends on LY-072, so LY-072 fills the port first"
+    },
+    {
+      "seat": "LY-008",
+      "need": "checker marked delivered (status.json)",
+      "status": "package present, no status"
+    }
+  ],
+  "prepScripts": {
+    "measure_biyong.py": "b5f193bf27689346303d412e472ad6ea391a26312c9a9bd799a33115796e0a7c",
+    "weld_manifold.py": "46b70aeb89023ea7db38c2d6705ef193d5a0316f207ad3523a8cbb2d0fdf1673",
+    "extract_chunk.py": "ab9408275f18e58bb60e6658c50c3a131db1e53c87d0bac115ba7e4a76f47037",
+    "measure_trialfit.py": "f6c7736a2c119ce876dd39abfcd266be461307d90fca90b93a3af3b1ccba36ad",
+    "check_crossing.py": "05618086a893a177467cf8dc6259561c8847604190d1beadec9bdbfd775d80e9",
+    "measure_side_water.py": "b68d91b09a3e8f4371915a688a13b3d99d071072bec32a5dc6eb791389515688",
+    "zone_evidence_check.py": "a6a46e3fd0750bce2fb8efdd623966922ca53cb4c3eb68d500dfcd23464d7c3f"
+  },
+  "shaNote": "Text files: sha256 = CRLF checkout bytes (core.autocrlf=true); blobSha256 = committed LF bytes (git show HEAD:path). GLB/ZIP are binary, identical.",
+  "prepOutputs": {
+    "qa/side-water.json": "c39a214906a6f5419da316c3766e842177a54ec49fcddf5a1161f2dc2c4c21d4",
+    "qa/zone-evidence-check.json": "04712ff187ef77cd17e789871a373c3c38c27bb38c6a1b4723533b458c7f5d07",
+    "qa/measure-trialfit.json": "e43e41007e36ae5f3ce3bfe4d7dfcd8364ac0cba0742edbdd67a1f54a812179b",
+    "qa/measure-biyong.json": "16b673dec2cdcfd28afe0a42a02c674f09076d04f9f2739961c1fc591fc7489c",
+    "qa/weld-manifold.json": "27b2485ca6ac9440457cccba974584ca2664ce74ea992589e21443255e2f1291",
+    "qa/chunk-extract-record.json": "2a40e6d50c45449c5ae7510c0c0489972970a72c6249d6e30831e080dc5fdf2a",
+    "qa/baseline-placeholder-N.json": "3105d2e5ad01c7a910c25e4d94795f2891dcd574b112aaa7663f0ff13e69986c",
+    "qa/baseline-placeholder-E.json": "b8a620e2c618cfd67f8fc9d779eebf49b0373ed21e417710521b26711d55ae4d",
+    "qa/baseline-placeholder-S.json": "89a29fa5816e0e1641351af1aaabb230391412c7b337f14080f750d8b8fbcaf9",
+    "qa/baseline-placeholder-W.json": "4bbebfe8a734b47cbdca8b399a8b03573a0556fcb3b43c2e8f5d98bdd44a9318"
+  }
+}

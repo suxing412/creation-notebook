@@ -1,0 +1,50 @@
+{
+ "seat": "LY-049",
+ "inputsFound": [
+  "lab:docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb 19b05202 (近景 nearPath city-data.mjs:109-111)",
+  "lab:docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb 277e9e73 (远景 initial, city-data.mjs:88-96, 节点 C02-010 :2322)",
+  "lab:docs/cities/luoyang/assets/ground-atomic/south.glb 4313826d (门道唯一承托, initial:false :3609, 归 LY-090)",
+  "lab:docs/cities/luoyang/assets/ground-atomic/retained.glb aed8b3d4 / network-ground-stitched.glb fdfc3ce5 / D08.glb 3ab93310 (区域内 0 三角)",
+  "lab:docs/cities/luoyang/city-data.mjs e4115705; city-renderer.mjs fa0a8dcb; app.mjs 4d6b5b33",
+  "lab:docs/cities/luoyang/research/2026-11-03/land-contract.json 772687b0 (C02-010-entry 门前留空区)",
+  "lab:docs/cities/luoyang/research/2026-11-03/gate-replacement-contract.json 057eb654; docs/model-library/assets/gate-near-local.glb fcdfe870 (门楼屋面研究, 不入城)",
+  "lab:docs/cities/luoyang/data/west/network.json af8e5479 (仅 v1); data/c02v/routes.json f567ae95 (原布局坐标)",
+  "workpacks:LY-006/registry/ports.json 28bcfb68 (C02-010:gate-boundary:road-end v1 值为 null); zones.json 6b3595ac (LY-049:write:001); seams.json ca4d81f8; ownership.json ecbbbcf5; seats.json a1426412",
+  "workpacks:LY-005/coordinate-contract.json b6d7fe9d (E1-E4, 容差 5 mm / 2 mm); LY-002/tables/evidence-ledger.json 237a4811 (E-H01, X07/X12/X24)"
+ ],
+ "inputsMissing": [
+  "G 未冻结：LY-008 交付检查器未交（目录有内容、无 status.json），LY-010 首批方案与示范院冻结目录为空；示范院 C02-010 只是 LY-006 的候选帧",
+  "LY-041 院坪基准、LY-042 门叶互斥清单、LY-048 service-opening 端口（主门是否加门槛/门叶/关闭态）都只有 prep，未交付",
+  "货物包络（LY-047 / LY-010 选定用途）未定：现在只用 C 人体探针 0.60×1.80 m 测过门道 2.13×2.05 m",
+  "A2 原型私密源包（.blend / c02v 生成器）不在仓库：复用不需要，只有改门体本身才需要；新造独立小件可读 GLB「从GLB重建」并如实标注",
+  "ground-south 源工程 / south14 组合生成器不在仓库：只有切孔或局部替换才需要，且只能由 LY-090 出件；单节点 96,796 三角，技术上可从 GLB 重建"
+ ],
+ "gaps": [
+  "几何缺口 0：地面加载时，院内接近段 z 6…9 共 31,500 格、门道到院界 z 9…12 共 19,147 格（0.02 m 栅格）：无支持 0、单层、y 全为 0.200、相邻阶差 0.000、建筑台阶 0；楣下净空 2.05 m，柱间精确 2.13 m（栅格 2.12），院界门口 3.00 m（世界 x 526.0…529.0，z −806.45）；LOD0/LOD1 相同，Blender 99 条竖直射线全部落在 ground-south，y 0.2",
+  "加载缺口：四个地面原子 initial:false，residential 章 loadNodeIds（city-data.mjs:3884 起）不含地面；首页、住宅章、近景下门道 50,647 格全部无支持（neg-no-ground 负例就是实况）；需 LY-100 让 C02-010 与 ground-south 同进同出",
+  "原型单独查看（不剔除 site 节点）时，门道内 designed_hardpacked 窄带 x −4.3…−2.7 顶面 0.215 叠在 site_lot 0.200 上：2 层、15 mm 纵向阶差、净空降为 2.035 m；城景已剔除，不能拿 0.215 当基准，也不能拿资产卡预览当通行证据",
+  "端口 C02-010:gate-boundary:road-end v1 的 local/world 仍为 null；候选值 local (−3.5, 0.2, 12.0)，world (527.5, 0.2, −806.45)，forward +z",
+  "门框立柱顶 y 2.2 与楣梁底 2.25 之间有 5 cm 空隙（继承的 C 几何，属结构安全，不归本席位）",
+  "旧数据不符：network.json 最小设计宽 2.3 m，比柱间 2.13 m 宽 0.17 m；routes.json 的 C02-010-gate x 533.676，与 C-alt 门中 527.5 差 6.176 m（两者都不加载）"
+ ],
+ "reuseCandidate": "现有 ground-south（4313826d）已单层连续承托院门到冻结院界全段：门道 z −809.45…−806.45 共 19,147 格，加院内接近段 31,500 格，无支持 0、层数 1、y 0.200、阶差 0、净空 2.05 m、柱间 2.13 m；院界那一排 y 0.200，与 ground-base 端口差 ≤2 mm，并在同一文件里平接 LY-082 一侧。LOD0/LOD1 与 Blender 复核一致（measure-gate-LOD{0,1}.json、blender-xcheck-LOD{0,1}.json；check_gate49.py --selftest 的 8 个用例全部如期）。R049-gate-transition 无需新造，交付应为：填好数值的端口、复用证据、检查器、给 LY-100 的加载建议。新铺过渡地面会造成双层，负例 N3/N4 已经能抓到",
+ "touches": [
+  "只读：A2-LOD0/LOD1 节点 architecture_C_whitebox_earth_wall.001（门道夹墙 x −5.0…−4.7 / −2.3…−2.0、前墙环 z 11.65…12.0）、architecture_C_plain_timber.001（立柱、前后楣梁）、architecture_C_roof_rhythm_not_glaze_copy.001（门顶）",
+  "只读：被剔除节点 site_lot、site_neutral_lane、designed_hardpacked_activity_ground（只在 standalone 对照中使用）",
+  "只读：ground-south 节点 single_closed_terrain_after 的门道片，世界 x 526.0…530.0、z −809.45…−806.45（地坪片归 LY-090，本席位不改）",
+  "写入区 LY-049:write:001（局部 x −5…−1，y −0.3…3.2，z 9…12）；与 LY-082:write:001 在 z −806.45 面相接，相交体积 0；两侧邻接 LY-041:write:012/013 和 LY-048:write:004/005",
+  "端口：产出 C02-010:gate-boundary:road-end v1；消费 C02-010:ground-base v1、C02-010:service-opening:opening v1；seams[20,21,28,31]",
+  "land-contract 的 C02-010-entry 留空区（x 526.3…528.7，z −807.65…−798.8）内不得放件",
+  "不碰：city-data.mjs、p-luoyang.asset.json、lab/data/*、邻院 C02-009/011/006、13 院片区、雍门接街"
+ ],
+ "size": "S",
+ "risks": [
+  "门槛/门叶的写入归属有空档：LY-048 prep 可能给主门加门槛或门叶，但 048 的五个写入区都避开门口（x −5…−1、z 9…12 只属 049）；需要 048 经 service-opening 端口声明、由 049 制作，或者 LY-006 发 v2",
+  "LY-010 若改选别院，registry 041–050 的帧要整体重发，本 prep 的数值作废（脚本可按新矩阵重跑）",
+  "默认加载缺口如果 LY-100 不处理，『院门到院界足下支持完整』只能写成『地面已加载状态下成立』",
+  "货物包络若超过 2.13×2.05 m，需要声明货不走主门，或交 048 开侧口；本席位不得拓宽门道",
+  "检查只做到 CPU 高度场、0.02 m 栅格探针和 Blender 射线，不是实体碰撞、连续扫掠或 GPU 测试；小于 1 格的缝测不到",
+  "门楼屋面研究若被采用：保留的门体顶点与 A2 门逐一相同，只换 y≥2.65 的屋面，净空不变；但它的合同把『改门道碰撞/导航』列为失效条件，届时必须重跑"
+ ],
+ "readyAfterG": true
+}

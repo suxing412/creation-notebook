@@ -1,0 +1,44 @@
+{
+ "seat": "LY-007",
+ "title": "冻结材质与三档质量基线",
+ "type": "考据/契约",
+ "depends_on": {"LY-001": {"status_file": "../LY-001/status.json", "status_sha256": "a32d742a0064baf45c0f78215b10905f2a21fb9ea070b18d8055a58454fe9236", "status": "交付完成", "used": "快照提交 bce3211、城中近/远档台账、GLB 清单口径（提交 blob 为字节基准）"}},
+ "task_pool": {"TASKPOOL.md": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7", "taskboard.json": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4"},
+ "repo": {
+  "path": "D:/GitHub/creation-notebook-lab（只读）",
+  "baseline_commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "byte_basis": "一律读提交 blob（git show / git cat-file），不读 autocrlf 检出字节",
+  "drift_checked": {"origin_main_at_close": "cad338ba683f7277aea098f45c8feb6c915a847c", "luoyang_glb_new": 4, "luoyang_glb_changed": 0, "luoyang_glb_removed": 0,
+                    "note": "新增 yong-road-link-v2 三档 + receiver 共 4 个 GLB；本基线的样件原件、贴图来源文件均未变（qa/census-cad338b.json）。基线仍钉在 bce3211"},
+  "writes": "无。未运行 build_assets.py，未做 git 写操作"
+ },
+ "her_originals_used": {
+  "S84-LOD0.glb": {"path": "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD0.glb", "sha256": "8ef1f3c8a8c3b570ac9607d4ab018b723b6450570175a0fad6752be430fa6b84"},
+  "S84-LOD1.glb": {"path": "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD1.glb", "sha256": "aa914dd6f246d6238abe543150dbd81f9c665edc8d21806edc390428c0fab535"},
+  "S84-LOD2.glb": {"path": "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD2.glb", "sha256": "2f8e217c4c8d02401e9b982ee20d61a584de0ee2dad4895bcf8b409bd58e6f83"},
+  "G10-LOD0.glb": {"path": "docs/library/models/m-luoyang-ordinary-house-types/files/G10-LOD0.glb", "sha256": "f3777c2b0ae7ce6dff3637b45e2b21f09607aa7619cd6d77aa7b74c35aff7d51"},
+  "G10-LOD1.glb": {"path": "docs/library/models/m-luoyang-ordinary-house-types/files/G10-LOD1.glb", "sha256": "cf36b118d8c874c8550429c6fde146897e534224a44273b8fd573e46914fcc5f"},
+  "G10-LOD2.glb": {"path": "docs/library/models/m-luoyang-ordinary-house-types/files/G10-LOD2.glb", "sha256": "9f0db40575e11be7e37371a92800b95604f44e3be9c8abd25a038046856dd970"},
+  "material_sources": "baseline/LY_P01-material-semantics.json sources 字段（lingtai-A-LOD1/2、foot-pestle-LOD0/2、kaiyang-K-LOD0，各带提交字节 SHA）",
+  "texture_sources": "qa/texture-provenance.json her_glbs 字段"
+ },
+ "native_sources": {
+  "her_blend_or_zip": "未取得。私密源包（.blend、源 ZIP）不在仓库，本席位没有、也没有冒称找回",
+  "replicas": "S84/G10 样件是「从 GLB 量尺寸、用库函数重建」（round2），不是她的原工程；不读入、不拷贝她的几何",
+  "refsphere": "本席位自造，源工程 native/lyref-A.blend（不进 git），生成脚本 source/build_refsphere.py"
+ },
+ "style_workflow_inputs": {
+  "LY-style-bible.md": {"copied_to": "baseline/LY-style-bible.frozen.md", "sha256": "50e51a9358b1ba50fe5fbfcf1afad93dbb1c8a616d4a50d3faae17a9641f276d"},
+  "ly_style.py": {"copied_to": "source/lib/ly_style.py（字节未改）", "sha256": "b03453a2e1f52e6ca397b94ea853dd9bd7cb69bcb116689c4847086b72b920bb"},
+  "test_checks.py": {"copied_to": "source/lib/test_checks.py", "sha256": "a3dd113884131cccd3b60d96a232a07f51b2885cae63bdc700568019274df533"},
+  "demo_build.py": {"copied_to": "source/lib/demo_build.py", "sha256": "84770e591011c0092b123bb0b26c0e477d52fe71c8c4e1eea8e24c2d54c3d703"},
+  "round2 build_round2.py": {"copied_to": "source/round2/build_round2.py（原样）+ build_round2.LY007.py（只改库/贴图路径三行）", "sha256": "4f2b92e818056178bc5854e56f5aca31b34ffe05a51978b529857023f73ba98a"},
+  "round2 compare.py": {"copied_to": "source/round2/compare.py（原样）+ compare.LY007.py（原件改读提交字节、输出路径改参数）", "sha256": "e02fe26f5539cdc38c811fc9d417666c78960db200e9c0b7fdfe14fc46cf48e7"},
+  "round2 replica GLBs": {"copied_to": "models/samples/", "sha256": {"S84-LOD0": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b", "S84-LOD1": "ccd799f25c0c93ba6cd18a8888363db204bd0538d874b4e65f3b924d45c49e88", "S84-LOD2": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a", "G10-LOD0": "c912961f8b23061aedb5bab67ce15c0f8fa9622e47036c7dea4b55c148f09a1c", "G10-LOD1": "d92921bef682fa3c2084d10ba2b48c7600badaf9aefa899c5189177fb1dd5f2f", "G10-LOD2": "42f47696899037f1364c060ed58f70dcc7d7756c2ff7879d5b1f930c8ee8f933"}},
+  "textures": {"copied_to": "textures/（512、256、legacy_grey、manifest.json）", "manifest_sha256": "见 delivery-manifest.json"},
+  "render.py": {"path": "<scratch>/mq/render.py（只调用，未拷贝）", "sha256": "ff89761743a064f7d599835e3e3123f330ca152df43634717c312ece667d4dc7"}
+ },
+ "tools": {"blender": "D:/Blender/blender.exe 5.2.1 LTS (hash 9e2066aef7ef)，headless --factory-startup", "python": "系统 Python（numpy 2.4.6、Pillow 12.3.0），脚本一律 python -I"},
+ "coordinates": "glTF：米、Y 向上、正面 +Z、地面 y=0；Blender (x,y,z) → glTF (x,z,−y)",
+ "evidence_classes": {"原始考古/原文": "无（本席位不涉史实）", "异地异期类比": "无", "原始数据": "她的 GLB 提交字节实测值（材质 JSON、贴图字节、几何）", "C 工程设计": "基准球、标定块、各冻结裁决里写明的暂行做法", "未知": "decisions.json 里标「待量」「未量到」的各条"}
+}

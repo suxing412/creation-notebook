@@ -1,0 +1,467 @@
+{
+ "seat": "LY-033",
+ "phase": "prep (G not frozen)",
+ "labHead": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "labNote": "lab working tree is branch lab/site-redesign at bce3211 with pre-existing modifications to lab/data/{assets,glb-cache,report}.json (not by this seat); docs/ unmodified",
+ "frames": {
+  "city": "glTF metres, X east / Y up / Z south(-Z north); city node translation (2285.714111328125,0,-3673.468994140625); city-data position [0,0,0]",
+  "A": {
+   "localToGroup": [
+    -12,
+    0,
+    -6
+   ],
+   "cityCentre": [
+    2273.714111328125,
+    0,
+    -3679.468994140625
+   ],
+   "frontPlaneLocalZ": 3.0,
+   "floorTopY": 0.85,
+   "openingLocalX": [
+    -0.75,
+    0.75
+   ],
+   "openingHeadY": 2.95,
+   "stair": {
+    "width": 1.5,
+    "steps": 4,
+    "rise": 0.1625,
+    "tread": 0.32,
+    "localZ": [
+     3.2,
+     4.48
+    ]
+   }
+  },
+  "B": {
+   "localToGroup": [
+    12,
+    0,
+    -6
+   ],
+   "cityCentre": [
+    2297.714111328125,
+    0,
+    -3679.468994140625
+   ],
+   "frontPlaneLocalZ": 2.5,
+   "floorTopY": 1.1,
+   "openingLocalX": [
+    -0.75,
+    0.75
+   ],
+   "openingHeadY": 3.2,
+   "stair": {
+    "width": 1.5,
+    "steps": 6,
+    "rise": 0.15,
+    "tread": 0.32,
+    "localZ": [
+     2.7,
+     4.62
+    ]
+   }
+  }
+ },
+ "prerequisites": {
+  "G": [
+   "LY-001 (delivered: workpacks/LY-001/status.json 交付完成)",
+   "LY-002",
+   "LY-005",
+   "LY-006",
+   "LY-007",
+   "LY-008",
+   "LY-009",
+   "LY-010 (no workpack dirs yet)"
+  ],
+  "parts": [
+   "LY-031 A door part (no workpack yet)",
+   "LY-032 B door part (no workpack yet)"
+  ]
+ },
+ "inputs": [
+  {
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+   "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+   "bytes": 1663844,
+   "role": "install target (near tier, current city default)",
+   "loadedInCity": true,
+   "loaderCode": [
+    "docs/cities/luoyang/city-data.mjs:581-599 (assetRecords id storage-main, path, bytes, sha256, excludeNodes [])",
+    "docs/cities/luoyang/city-data.mjs:1267-1270 (url = cityURL(path))",
+    "docs/cities/luoyang/city-data.mjs:3716-3729 (node storage-main, position [0,0,0], chapter storage, initial false)",
+    "docs/cities/luoyang/city-data.mjs:3982-3990 (chapter storage nodeIds/loadNodeIds)",
+    "docs/cities/luoyang/city-renderer.mjs:287-330 (loadAsset: GLTFLoader.parseAsync, excludeNodes filter, static-mesh only, matrixWorld baked, pigment buckets)"
+   ],
+   "note": "nodes: granary-group-static_timber/_tile/_paper__cargo_proxy + original_city_ground_preserved, all translated by (2285.714111,0,-3673.468994); A and B are NOT separate nodes"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb",
+   "sha256": "a1265bbf53d10ddb6398efa6f505c1b6dee86b81b37397f7af9855acc34f2e45",
+   "bytes": 756484,
+   "role": "install target (mid/far tier, inspection only)",
+   "loadedInCity": false,
+   "loaderCode": [],
+   "note": "listed only in source.json; current entry does not load; no auto LOD switch"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD2.glb",
+   "sha256": "6b2564d3ffd76e6e982a4a7f703cfd0790ac0e0b2dfa75add4df169c4c82efe7",
+   "bytes": 462440,
+   "role": "install target (mid/far tier, inspection only)",
+   "loadedInCity": false,
+   "loaderCode": [],
+   "note": "listed only in source.json; current entry does not load; no auto LOD switch"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/source.json",
+   "sha256": "6cf88d6f0b2ae18c08cedc946ba783453af1a5edc1217158b8469a8cf2059224",
+   "bytes": 4002,
+   "role": "source contract of city tiers",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/cities/luoyang/city-data.mjs:599,3729 (sourceContract)"
+   ],
+   "note": "records sha of 3 tiers, rollback rule, limitations"
+  },
+  {
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/README.md",
+   "sha256": "10322cc5b14fc6b9c575126127fa1b31ee47552b7227da3aacc442891445474e",
+   "bytes": 928,
+   "role": "tier notes",
+   "loadedInCity": false,
+   "loaderCode": [],
+   "note": ""
+  },
+  {
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-A-LOD0.glb",
+   "sha256": "2eee31460a64201c2ba25fbc1bccc9c52f4cebc0f7b9af1f9eb9beeca68b7bf6",
+   "bytes": 1006080,
+   "role": "v2 split/group reference (warehouse-local frames)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[] (card only)"
+   ],
+   "note": "A local frame = group - (-12,0,-6); B = group - (12,0,-6); verified triangle-identical to city tier"
+  },
+  {
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-A-LOD1.glb",
+   "sha256": "38884c1f6a7fb6b07cbbc674049e37db2e910f92e4fc0fb4944aac7c1745e955",
+   "bytes": 267256,
+   "role": "v2 split/group reference (warehouse-local frames)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[] (card only)"
+   ],
+   "note": "A local frame = group - (-12,0,-6); B = group - (12,0,-6); verified triangle-identical to city tier"
+  },
+  {
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-A-LOD2.glb",
+   "sha256": "fe703ccbc9f542cb8cb37856d110485e8c4128a45dfc49b0054eb1ac3c1b4a45",
+   "bytes": 35332,
+   "role": "v2 split/group reference (warehouse-local frames)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[] (card only)"
+   ],
+   "note": "A local frame = group - (-12,0,-6); B = group - (12,0,-6); verified triangle-identical to city tier"
+  },
+  {
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-B-LOD0.glb",
+   "sha256": "407403ceeb418f6e1d3f0e86bff7d535642c0236d94691fd2b9a10c2f7866dc6",
+   "bytes": 1118304,
+   "role": "v2 split/group reference (warehouse-local frames)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[] (card only)"
+   ],
+   "note": "A local frame = group - (-12,0,-6); B = group - (12,0,-6); verified triangle-identical to city tier"
+  },
+  {
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-B-LOD1.glb",
+   "sha256": "3ce46eee0c9b1ef56fcf380c4dfec3d39251697bab7cad45a719b19c06e6ce8a",
+   "bytes": 273392,
+   "role": "v2 split/group reference (warehouse-local frames)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[] (card only)"
+   ],
+   "note": "A local frame = group - (-12,0,-6); B = group - (12,0,-6); verified triangle-identical to city tier"
+  },
+  {
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-B-LOD2.glb",
+   "sha256": "0735a9f2cc76cfef98f5e548ab621295e40870bd2aef248ce25cc10e0b10022f",
+   "bytes": 40244,
+   "role": "v2 split/group reference (warehouse-local frames)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[] (card only)"
+   ],
+   "note": "A local frame = group - (-12,0,-6); B = group - (12,0,-6); verified triangle-identical to city tier"
+  },
+  {
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-group-LOD0.glb",
+   "sha256": "91a54eafe8991ded008b499d647ab3483bf44053a0cff84ded01f7afc8a42d28",
+   "bytes": 1582228,
+   "role": "v2 split/group reference (warehouse-local frames)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[] (card only)"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-group-LOD1.glb",
+   "sha256": "3476fc8c9dfaacf80608d7f4e2ead9fda8cc558666dcecea3c76db11d874e24d",
+   "bytes": 387252,
+   "role": "v2 split/group reference (warehouse-local frames)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[] (card only)"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-group-LOD2.glb",
+   "sha256": "2111c6eab918194d4d445d16c99c48aace7573acf02726473080d7ce6e761ce2",
+   "bytes": 79024,
+   "role": "v2 split/group reference (warehouse-local frames)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[] (card only)"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD0.glb",
+   "sha256": "9fc0b90ef4c64b31371945427f1259b04c604bbc0f24b5ed38c700f3b07dff09",
+   "bytes": 386980,
+   "role": "v2 split/group reference (warehouse-local frames)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[] (card only)"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD1.glb",
+   "sha256": "5bac6a81b60d7fc0bf63ccb40b0a72a01440110673472c1f0f5554fd5a65e8e3",
+   "bytes": 187912,
+   "role": "v2 split/group reference (warehouse-local frames)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[] (card only)"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD2.glb",
+   "sha256": "ecf34fe95282af1b17241ae8619fe2bfb9d35b31edc03289c8bae38fdaafdca2",
+   "bytes": 7632,
+   "role": "v2 split/group reference (warehouse-local frames)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[] (card only)"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/assets/storage/storage-group-organized.glb",
+   "sha256": "b8482824513a101d36eb4c768a4f641e77aaac66c3e834718d7f3964104a644b",
+   "bytes": 1786124,
+   "role": "legacy v1 organized group (archive)",
+   "loadedInCity": true,
+   "loaderCode": [
+    "docs/cities/luoyang/app.mjs:6-7 (?mode/c01stage/c02stage redirect to v1/)",
+    "docs/cities/luoyang/v1/west-layer.mjs:39 (storage level environmentUrl)"
+   ],
+   "note": "legacy only; has per-part names A_door_lintel/A_frontwall_+-1/A_step_0..3/B_step_0..5; NOT an LY-033 install target, must stay byte-identical"
+  },
+  {
+   "path": "docs/model-library/assets/storage-group-organized-local.glb",
+   "sha256": "427749f86e2fb037125a9d1ad4f0978b98848e44350bbf03b8c853b98bdb3a1c",
+   "bytes": 1779988,
+   "role": "origin-v1 local legacy (card only)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[]"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/model-library/assets/warehouse-A-organized-local.glb",
+   "sha256": "60942a4c45332d41a2d47a10f946f6f729fd3e734eadab701b58abbc0e2cd7d2",
+   "bytes": 976296,
+   "role": "origin-v1 local legacy (card only)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[]"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/model-library/assets/warehouse-B-organized-local.glb",
+   "sha256": "bba89b1ec38eb43c82dee547286ab75406be6536ab8e6ea8fa93459b58fd91ca",
+   "bytes": 1050912,
+   "role": "origin-v1 local legacy (card only)",
+   "loadedInCity": false,
+   "loaderCode": [
+    "docs/model-library/m-storage-functional.asset.json files[]"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/assets/storage/warehouse-A-organized.glb",
+   "sha256": null,
+   "bytes": null,
+   "role": "referenced by data/west/storage-interface.json",
+   "loadedInCity": false,
+   "loaderCode": [],
+   "note": "MISSING on disk at bce3211 (interface lists assets/*.glb; only assets/storage/storage-group-organized.glb exists)"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/storage/warehouse-B-organized.glb",
+   "sha256": null,
+   "bytes": null,
+   "role": "referenced by data/west/storage-interface.json",
+   "loadedInCity": false,
+   "loaderCode": [],
+   "note": "MISSING on disk at bce3211 (interface lists assets/*.glb; only assets/storage/storage-group-organized.glb exists)"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/storage/optional-functional-overlay.glb",
+   "sha256": null,
+   "bytes": null,
+   "role": "referenced by data/west/storage-interface.json",
+   "loadedInCity": false,
+   "loaderCode": [],
+   "note": "MISSING on disk at bce3211 (interface lists assets/*.glb; only assets/storage/storage-group-organized.glb exists)"
+  },
+  {
+   "path": "docs/model-library/assets/storage-origin-contract.json",
+   "sha256": "9bdf37f260abe589f377752710b8f006a0108b323e1f72428bb6227e51ace15a",
+   "bytes": 141922,
+   "role": "origin contract v1 (placement matrix, image SHAs)",
+   "loadedInCity": null,
+   "loaderCode": [],
+   "note": ""
+  },
+  {
+   "path": "docs/model-library/assets/storage-origin-roundtrip.json",
+   "sha256": "c6058d880a2c77e09ffea968067c8642ed0d256ffc4a7bcdca16de8010c8d406",
+   "bytes": 128237,
+   "role": "origin roundtrip record",
+   "loadedInCity": null,
+   "loaderCode": [],
+   "note": ""
+  },
+  {
+   "path": "docs/model-library/assets/storage-origin-blender-readback.json",
+   "sha256": "a1669d085eed1c3d92cc1f0c5d828c73387c38333a2e6509279869c7c6a8f6ef",
+   "bytes": 628,
+   "role": "blender readback record",
+   "loadedInCity": null,
+   "loaderCode": [],
+   "note": ""
+  },
+  {
+   "path": "docs/model-library/m-storage-functional.asset.json",
+   "sha256": "32af95efc4abffc6aa23644833fac6f7ae9edefc7b8156207209f1c9b31856e2",
+   "bytes": 5082,
+   "role": "asset card (notes: 1.8 m strip A 51 / B 77 failures)",
+   "loadedInCity": null,
+   "loaderCode": [],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/storage-interface.json",
+   "sha256": "b910896799cdbb954717df342c7dfbb794eaaa1bdba3810b206140b84aeedba8",
+   "bytes": 1975,
+   "role": "v1 interface (camera, unconnected, counts)",
+   "loadedInCity": null,
+   "loaderCode": [],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/storage-precedents.json",
+   "sha256": "acda86c8ae4067a8c665804fae5b3f7582d56e293c879bb791f1d61f1b431cf4",
+   "bytes": 6671,
+   "role": "precedent list",
+   "loadedInCity": null,
+   "loaderCode": [],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 111034,
+   "role": "shared city manifest (LY-100 only)",
+   "loadedInCity": null,
+   "loaderCode": [],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "bytes": 36571,
+   "role": "runtime loader",
+   "loadedInCity": null,
+   "loaderCode": [],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "bytes": 14563,
+   "role": "entry / legacy redirect",
+   "loadedInCity": null,
+   "loaderCode": [],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/index.html",
+   "sha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "bytes": 16108,
+   "role": "entry page",
+   "loadedInCity": null,
+   "loaderCode": [],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/v1/west-layer.mjs",
+   "sha256": "d8c14142af2e4d993cc249dfcc605edadb38232190e5890f31640b94be9d2d4b",
+   "bytes": 18747,
+   "role": "legacy loader",
+   "loadedInCity": null,
+   "loaderCode": [],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "bytes": 24215,
+   "role": "project card (LY-100 only)",
+   "loadedInCity": null,
+   "loaderCode": [],
+   "note": ""
+  }
+ ],
+ "missing": [
+  {
+   "item": "private granary city composer v1 + v2 .blend / generation source",
+   "use": "native rebuild of tiers",
+   "rebuildFromGLB": "yes for assembly: append door nodes at GLB level keeping existing bufferViews byte-identical; Blender re-export would re-encode and is NOT acceptable for the preserved nodes"
+  },
+  {
+   "item": "operations / entrance-volume diagnostics that produced 0.9/1.8 probe results and A51/B77 failure counts",
+   "use": "exact reproduction of the stated failure boundary",
+   "rebuildFromGLB": "partially: LY-033 prep re-derived its own finite probe (A 192/2849, B 288/3441 at 1.8 m); counts differ by method, so both must be cited separately"
+  },
+  {
+   "item": "LY-031 / LY-032 door parts (3 tiers x open/closed)",
+   "use": "the parts LY-033 installs",
+   "rebuildFromGLB": "no: must come from those seats"
+  }
+ ]
+}

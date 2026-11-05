@@ -1,0 +1,62 @@
+{
+ "seat": "LY-042",
+ "inputsFound": [
+  "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb 277e9e73（远档，城景加载，city-data.mjs:89；9 院共用 courtyard-A2）",
+  "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb 19b05202（近档，nearPath city-data.mjs:109，focusCourtyard 加载）",
+  "docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD0/1/2.glb 67bc127a / 7700d105 / 27dd8da0（选用件，未入城，单节点单网格，静态 90° 开）",
+  "docs/library/models/m-luoyang-inner-door-components/files/single-door-LOD0/1/2.glb 597d81ad / cc686ed3 / a3e9a71d（不适用 A2，只作负例）",
+  "docs/library/models/m-luoyang-inner-door-components/m-luoyang-inner-door-components.asset.json 提交字节 38723e69（待审 · 未入城，commit 5268a0b）",
+  "docs/model-library/updates/m-courtyard-family/files/A2-LOD0-C2.glb e9981a07 / A2-LOD1-C2.glb f3f31774（仅 UV 更新，顶点指纹与原件全同）",
+  "docs/cities/luoyang/city-data.mjs 提交字节 c849706b（检出字节 e4115705）：C02-010 :2322，矩阵 [531,0,-818.45]；courtyard-A2 :88-112",
+  "docs/cities/luoyang/city-renderer.mjs 提交字节 04c6c643（检出字节 fa0a8dcb）：excludeNodes 按节点名 :309，useNear :289，focusCourtyard :616，pigmentFor :147",
+  "docs/cities/luoyang/data/far44/instances-calt.json 提交字节 e39fdafb（检出字节 c830b4e3）",
+  "负例宿主 R01-A-LOD0 93b70de2、B2-LOD0 d99affca、TC03-2-LOD0 bf6287a5",
+  "workpacks/LY-006/registry zones.json 6b3595ac、ports.json 28bcfb68、ownership.json ecbbbcf5（LY-042:write:001/002、C02-010:inner-door-axes:mount、R042-door-leaves、R042-old-leaves-hidden）",
+  "workpacks/LY-005/coordinate-contract.json b6d7fe9d、port-schema.json 30854ed9；LY-007 style bible 50e51a93；LY-002 evidence-ledger.md ea060db6（E-H01）；LY-041/prep/prep-status.json 598064f9"
+ ],
+ "inputsMissing": [
+  "内门组件原生源（.blend 或生成器）和源 ZIP：仓库里没有。用途：按 LY-007 把门叶拆成独立节点、原点在铰点，或导出关闭态静态件。可以从 GLB 重建：两扇门叶是独立闭合岛（各 276 三角），轴心已实测，可以按岛拆开、绕实测轴旋转。原作参数无法恢复。",
+  "A2 原型原生源：仓库里没有。用途：做 C02-010 专用派生宿主，把旧叶 timber#5、#13 拆成独立节点。可以从 GLB 重建：按岛拆分 architecture_C_plain_timber.001，其余 15 岛用逐岛指纹证明不变，不需要新顶点。",
+  "LY-010 冻结：示范院是否 C02-010；交付状态（90° 开还是关闭）；「012内门v2」是否就是 m-luoyang-inner-door-components。仓库里没有叫 v2 的文件或 tag。",
+  "LY-006 v2：写入区要罩住门框墙面和室内开叶侧；旧叶隐藏的机制要定（派生宿主还是 renderer 子网格剔除）；mount 端口值由本席位在交付时填写。",
+  "LY-008 检查器、LY-005/LY-008 人体包络：判定 1.005 m 净宽能否通过要用。LY-008 还没交付。"
+ ],
+ "gaps": [
+  "LY-006 写入区罩住的比例为 0。frame0 组件（glTF 本地 x -0.05..1.25、z -5.72..-5.13）与 LY-042:write:001（z -4.6..-3.4）在 z 向差 0.53 m；frame1（x -4.92..-4.33）与 write:002（x -4..-3）在 x 向差 0.33 m。旧叶也在区外。两个区都画在院心一侧，不含门框墙面和室内开叶侧（zone-check.json）。",
+  "旧叶互斥在现有机制下做不到。旧叶是共享节点 architecture_C_plain_timber.001（17 岛 / 360 三角，框柱也在其中）里的岛 #5（fp bf374f3ebe09175c）和 #13（fp 5bc3835218fe33a4）。excludeNodes 只认节点名（city-renderer.mjs:309），LY-006 又规定原型只能叠 overlay，overlay 不能删几何。",
+  "courtyard-A2 被 9 个节点共用。直接改 A2 GLB，就等于把一院的修订批量套给 9 院。只能为 C02-010 单独换一个资产 id。",
+  "新旧门叶叠载时，每个门位实体侵入 0.058627 m³（新左叶 0.054407 加承接件 0.004220），LOD0/LOD1/LOD2 三种组合一致。旧叶也是 1.05 × 0.055 × 1.98 m、开 90°。",
+  "净宽：现状（旧叶开着）1.0825 m；去掉旧叶后，门框平面 1.160 m；装新门后门叶带 1.005 m，比现状窄 0.0775 m。人体包络没冻结，没有判定。",
+  "门头在槛上 2.04 m。新叶顶余量 0.020 m，承接件顶余量 0.005 m。",
+  "门槛：没有独立门槛，槛面就是台基顶，本地 0.42。承接件 9 点间隙 0.000，与台基 144–145 对共面接触，实体 0。门叶离槛 0.010 m。",
+  "孔轴：枢轴 r 0.012，轴孔 r 0.018，径向间隙 0.006。下端入孔 0.035，上端入孔 0.025；是真孔，出厂态门叶与承接件三角对 0。反向超转 90° 侵入 0.008 m³，止挡有效。",
+  "组件只发布了静态 90° 开，门叶焊在单一网格里，不符合 LY-007「可开合门叶每扇单独节点」。推导出的关闭态两叶之间缝 0.020 m，左叶与承接件有 22 对面接触、实体 0。",
+  "近景 focusCourtyard 只加本院（:616–623）。门如果作为独立城市节点，近景加载不到 LOD0 门。",
+  "LY-005 端口 kind 里没有门轴或 mount 类型；LY-006 的 C02-010:inner-door-axes:mount 值为空。",
+  "负例都有效。A2 锚点放到 R01-A：门头 1.0–1.1 m，穿墙 50 mm（29–35 顶点）。放到 B2：穿墙 45–105 mm。放到 TC03-2：穿墙 98–130 mm，悬空 0.22 m。single-door 放进 A2：净宽 0.055 m。"
+ ],
+ "reuseCandidate": "门几何可以复用，不需要新造门。paired-door 三档（67bc127a / 7700d105 / 27dd8da0）按实测锚点放进 C02-010 两处门位：frame0 世界 (531.6, 0.42, -823.35) yaw 0；frame1 (526.9, 0.42, -819.05) yaw 90。与保留宿主的实体侵入 0，开口岛穿越 0，承接件支持间隙 0，孔轴间隙 0.006，三档一致。但「接回原院」这一步没有现成成果：组件未入城，旧叶互斥还没有可行机制。所以这不是「已有合格成果、复用完成」，只是「组件复用、装配待做」。",
+ "touches": [
+  "城景节点 C02-010：只读矩阵 [531,0,-818.45]；资产 id 改指派生宿主，只作提案交 LY-100，节点归 LY-050",
+  "courtyard-A2 的 A2-LOD0 19b05202 和 A2-LOD1 277e9e73，节点 architecture_C_plain_timber.001：旧叶岛 #5、#13 要隐藏或拆出（R042-old-leaves-hidden）；框柱 #4、#12 只读不变",
+  "A2 节点 architecture_C_floor_plinth.001 #0、#2：门槛承托面，只读",
+  "A2 节点 architecture_C_whitebox_earth_wall.001 #4、#6：门洞墙，面接触，只读",
+  "paired-door-LOD0/1/2：原件引用，不复制不改（R042-door-leaves）",
+  "世界体积：frame0 x 530.95..532.25、y 0.42..2.455、z -824.17..-823.58；frame1 x 526.08..526.67、y 0.42..2.455、z -819.70..-818.40。两处都不在当前 LY-042 写入区内，也不在其他席位区内",
+  "端口 C02-010:inner-door-axes:mount（本席位交付时填值）；只读消费 C02-010:ground-base",
+  "可能新增的文件（只在 workpacks/LY-042/）：assembly.json；C02-010 专用派生宿主 A2-LOD0 和 A2-LOD1（如果 LY-006 批准）；qa/；preview/",
+  "不碰：其他 8 个 A2 节点、single-door、院门外门叶、地坪片、city-data.mjs、p-luoyang.asset.json、lab/data"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-006 v1 的写入区放在门前院心带，不含门位。不发 v2，任何安装都算越界。",
+  "旧叶隐藏只有两条路：一是派生宿主，这实际是「重导出几何」，要确认仍属复用装配而不是新造；二是 renderer 子网格剔除，要改全局代码，只能由 LY-100 做。拖着不定，本项无法交付。",
+  "如果 LY-010 选的不是 C02-010，或者选了非 A2 院型，锚点和所有阈值都要重测。TC03 系院要改用 single-door，而且家族卡写明「TC03旧窄内门仍未修复」。",
+  "如果 LY-010 要求关闭态，组件没有发布这个状态，需要派生静态件或拆节点，工作量从 M 升到 L。",
+  "装新门后门叶带净宽 1.005 m，比现状 1.0825 m 窄。人体包络冻结后可能判不通过。",
+  "测量局限：实体侵入是 2 cm 网格点测；开口岛只做了顶点签名距离代理，不是实体碰撞穷尽；净宽只用离散射线测；没有做 GPU、浏览器或手机实测，也没有做结构评估。",
+  "SHA 口径：text 文件的检出字节与提交字节不一致（CRLF）。LY-006 记录的 p-luoyang SHA 是检出字节 9b5e311f，提交字节是 8edb06ab。",
+  "证据：门的形制、尺寸、开向和枢轴做法全部是 C 设计，E-H01 属未知。不能用北魏坊门、明器放大或三杨庄补。"
+ ],
+ "readyAfterG": false
+}

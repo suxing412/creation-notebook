@@ -1,0 +1,625 @@
+{
+ "seat": "LY-007",
+ "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "public": false,
+ "note": "本席位不产生公共 docs 文件；全部为工作包内的基线契约、基准件、证据。进入公共文件须另走 LY-100",
+ "excluded": {
+  "native": "native/lyref-A.blend（源工程，不进 git，不入白名单）",
+  "tmp": "tmp/（她的原件提交字节导出、重建副本、负例、渲染原图；可按 recompute 重出）",
+  "self": [
+   "delivery-manifest.json",
+   "status.json"
+  ]
+ },
+ "dependencies": {
+  "seats": [
+   "LY-001"
+  ],
+  "repo_commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "tools": [
+   "D:/Blender/blender.exe 5.2.1",
+   "python -I（numpy、Pillow）",
+   "<scratch>/mq/render.py sha256 ff89761743a064f7d599835e3e3123f330ca152df43634717c312ece667d4dc7"
+  ]
+ },
+ "install_order": [
+  "baseline/*.json 与 LY-style-bible.frozen.md（读）",
+  "textures/（贴图目录）",
+  "source/lib/ly_style.py（import 后设 ly.TEX_DIR）",
+  "models/refsphere、models/samples（对照件）",
+  "source/readback_blender.py、source/lod_diff.py（下游自检）"
+ ],
+ "recompute": [
+  "python -I source/verify_textures.py . D:/GitHub/creation-notebook-lab bce3211f818ee5a8bef1773539da70695ba37b17",
+  "python -I source/make_semantics.py . D:/GitHub/creation-notebook-lab bce3211f818ee5a8bef1773539da70695ba37b17",
+  "D:/Blender/blender.exe -b --factory-startup --python-exit-code 1 -P source/build_refsphere.py -- .",
+  "D:/Blender/blender.exe -b --factory-startup --python-exit-code 1 -P source/readback_blender.py -- . models/refsphere/lyref-A-LOD0.glb models/refsphere/lyref-A-LOD1.glb models/refsphere/lyref-A-LOD2.glb models/samples/S84-LOD0.glb models/samples/S84-LOD1.glb models/samples/S84-LOD2.glb models/samples/G10-LOD0.glb models/samples/G10-LOD1.glb models/samples/G10-LOD2.glb",
+  "python -I source/census.py . D:/GitHub/creation-notebook-lab bce3211f818ee5a8bef1773539da70695ba37b17",
+  "for each of S84/G10 LOD0-2: git -C D:/GitHub/creation-notebook-lab show bce3211f818ee5a8bef1773539da70695ba37b17:<path> > tmp/orig/<file>",
+  "D:/Blender/blender.exe -b --factory-startup --python-exit-code 1 -P source/round2/build_round2.LY007.py -- tmp/rebuild",
+  "python -I source/rebuild_check.py .",
+  "python -I source/round2/compare.LY007.py models/samples tmp/orig qa/sample-vs-original.json",
+  "cp S84-LOD0 as tmp/neg/NEG-LOD0 and NEG-LOD1, S84-LOD2 as NEG-LOD2; python -I source/lod_diff.py qa/lod-diff.json S84=models/samples:S84-LOD{lod}.glb G10=models/samples:G10-LOD{lod}.glb S84_orig=tmp/orig:S84-LOD{lod}.glb G10_orig=tmp/orig:G10-LOD{lod}.glb lyref=models/refsphere:lyref-A-LOD{lod}.glb NEG_lod0_copied_as_lod1=tmp/neg:NEG-LOD{lod}.glb",
+  "python -I source/near_retention.py . D:/GitHub/creation-notebook-lab bce3211f818ee5a8bef1773539da70695ba37b17",
+  "D:/Blender/blender.exe -b --factory-startup --python-exit-code 1 -P source/run_lib_tests.py -- . <abs LY-007>/tmp/testchecks; cp tmp/testchecks/test_report.json qa/lib-negative-tests.json",
+  "render: D:/Blender/blender.exe -b --factory-startup --python-exit-code 1 -P <scratch>/mq/render.py -- <glb> <ABSOLUTE LY-007>/tmp/r <prefix> <views>（输出目录必须写绝对路径）",
+  "python -I source/sheets.py .",
+  "python -I source/make_manifest.py ."
+ ],
+ "files": [
+  {
+   "path": "assembly.json",
+   "bytes": 967,
+   "sha256": "bd586354f49266b457265496b5b7c489745be0166c94f1b11d648581f6427c2e",
+   "class": "seat-doc"
+  },
+  {
+   "path": "brief.md",
+   "bytes": 9984,
+   "sha256": "f82ab9e71da6da6c07abda5b8d8d853bdc71b9ca097a653a19c2e976963974d8",
+   "class": "seat-doc"
+  },
+  {
+   "path": "inputs.json",
+   "bytes": 5574,
+   "sha256": "181970efb197a938559267d71c4e473387aa3b32293da9e24e7adf72fc6f8509",
+   "class": "seat-doc"
+  },
+  {
+   "path": "baseline/LY-style-bible.frozen.md",
+   "bytes": 68657,
+   "sha256": "50e51a9358b1ba50fe5fbfcf1afad93dbb1c8a616d4a50d3faae17a9641f276d",
+   "class": "baseline-contract"
+  },
+  {
+   "path": "baseline/LY_P01-material-semantics.json",
+   "bytes": 21927,
+   "sha256": "f0a04f599595d41b9d7cad39b9afd5ae3829b343222d92e174f1b49d6d9b1bf3",
+   "class": "baseline-contract"
+  },
+  {
+   "path": "baseline/decisions.json",
+   "bytes": 13105,
+   "sha256": "cb2870fc6966b59a5bd54d7071947c4f5cf588cf13a769ca41b08fc55b824598",
+   "class": "baseline-contract"
+  },
+  {
+   "path": "baseline/lod-rules.json",
+   "bytes": 7843,
+   "sha256": "fbf53757be2e243429b751899f1690d30f827849962c0e77a8ca811462789146",
+   "class": "baseline-contract"
+  },
+  {
+   "path": "baseline/texture-uv-rules.json",
+   "bytes": 4554,
+   "sha256": "a5bfae60c7d646caecbfefa7a5728aa26d60add0e2e80ec72e68380a021d7d27",
+   "class": "baseline-contract"
+  },
+  {
+   "path": "models/refsphere/lyref-A-LOD0.glb",
+   "bytes": 1417516,
+   "sha256": "0f2e69426378437c98c17227cbf8dfdf856d9d59e0e71e374c4d7f39988e83ef",
+   "class": "model-baseline（基准件/样件，研究用，未入城）"
+  },
+  {
+   "path": "models/refsphere/lyref-A-LOD1.glb",
+   "bytes": 466176,
+   "sha256": "5ee4849fa157df975c31a973edd3b1f96b5362af30ec4935dc44ce0e69a9d8d1",
+   "class": "model-baseline（基准件/样件，研究用，未入城）"
+  },
+  {
+   "path": "models/refsphere/lyref-A-LOD2.glb",
+   "bytes": 33060,
+   "sha256": "8ae694899f5509890de5dc72b1c7374f994ce6aea2f102c2071fa9798f0b2945",
+   "class": "model-baseline（基准件/样件，研究用，未入城）"
+  },
+  {
+   "path": "models/samples/G10-LOD0.glb",
+   "bytes": 1138632,
+   "sha256": "c912961f8b23061aedb5bab67ce15c0f8fa9622e47036c7dea4b55c148f09a1c",
+   "class": "model-baseline（基准件/样件，研究用，未入城）"
+  },
+  {
+   "path": "models/samples/G10-LOD1.glb",
+   "bytes": 407688,
+   "sha256": "d92921bef682fa3c2084d10ba2b48c7600badaf9aefa899c5189177fb1dd5f2f",
+   "class": "model-baseline（基准件/样件，研究用，未入城）"
+  },
+  {
+   "path": "models/samples/G10-LOD2.glb",
+   "bytes": 19060,
+   "sha256": "42f47696899037f1364c060ed58f70dcc7d7756c2ff7879d5b1f930c8ee8f933",
+   "class": "model-baseline（基准件/样件，研究用，未入城）"
+  },
+  {
+   "path": "models/samples/S84-LOD0.glb",
+   "bytes": 1114076,
+   "sha256": "93e02959878e86b790d727a40be6bab15d1a81449abfc7aa45977f45bcf45a5b",
+   "class": "model-baseline（基准件/样件，研究用，未入城）"
+  },
+  {
+   "path": "models/samples/S84-LOD1.glb",
+   "bytes": 401952,
+   "sha256": "ccd799f25c0c93ba6cd18a8888363db204bd0538d874b4e65f3b924d45c49e88",
+   "class": "model-baseline（基准件/样件，研究用，未入城）"
+  },
+  {
+   "path": "models/samples/S84-LOD2.glb",
+   "bytes": 15840,
+   "sha256": "0b8b26102db5d14e810f1e483101d3b19c44016310ac9fd133d5003e4ae4d63a",
+   "class": "model-baseline（基准件/样件，研究用，未入城）"
+  },
+  {
+   "path": "preview/refsphere-tiers.png",
+   "bytes": 939461,
+   "sha256": "7ba8a95f94d35735c78c5aab65e8c8b7a97de7001e305d657caafcfe4ec31376",
+   "class": "preview（CPU 渲染）"
+  },
+  {
+   "path": "preview/sample-G10-orig-vs-replica.png",
+   "bytes": 942192,
+   "sha256": "031f8c62d4a47b9d0672fb9ca0213af19d39739e9d4ab3b908f5b4b0633551e9",
+   "class": "preview（CPU 渲染）"
+  },
+  {
+   "path": "preview/sample-G10-tiers-wire.png",
+   "bytes": 1596825,
+   "sha256": "fa51d97a1c855422cbdc92f8c265838a2e12ebed7b8ecad9b700966b41123b07",
+   "class": "preview（CPU 渲染）"
+  },
+  {
+   "path": "preview/sample-S84-orig-vs-replica.png",
+   "bytes": 1002184,
+   "sha256": "6fd32dde754e7082321da89fbaf56f838524279a4c6ca853f95c8f112a344921",
+   "class": "preview（CPU 渲染）"
+  },
+  {
+   "path": "preview/sample-S84-tiers-wire.png",
+   "bytes": 1549494,
+   "sha256": "c45c6f278fe15b57adaf98e356180a1fff17fc34365e18cf3685c511173f58d1",
+   "class": "preview（CPU 渲染）"
+  },
+  {
+   "path": "qa/census-bce3211.csv",
+   "bytes": 125854,
+   "sha256": "bbac76357e12f6d8652fee1f21cbf2ffd5b9a65f285aba08c3a90e0ad3cf6581",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/census-bce3211.json",
+   "bytes": 314278,
+   "sha256": "c50ba5d4b2e644026cf48780f1fbda0cf12ebf7d8e285edcfba8ff073efef4dd",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/census-cad338b.csv",
+   "bytes": 127199,
+   "sha256": "cf9a8373db20dd0c9f28277ed753552ba3c1499d977dc44f2eec2097e64c00d8",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/census-cad338b.json",
+   "bytes": 317958,
+   "sha256": "883f1fbaff78c7c5560cf0d4977d6003eab8a5f470a45232d67a09f388536d9c",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/census-cad338b.log",
+   "bytes": 3519,
+   "sha256": "e0e1ca1aed6fdbfe9eb77f4c8fed5ca6d5e1a5fe1bad591df0884838abf93fdf",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/census.log",
+   "bytes": 3519,
+   "sha256": "c8755294e8a6bd6319e0e66ab3bacf7e810b33ef289ca4431abc82a726520a6a",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/checks.json",
+   "bytes": 12355,
+   "sha256": "a2111d2c2ba3b50a663c1d268f4145fd856c3b9f33f4762ab6a8d4fcf8b17986",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/lib-negative-tests.json",
+   "bytes": 2145,
+   "sha256": "04c273c9b6b1e5e4cca4a5de76dea1d17e8e8c21f9414a0010dbabe174a66efe",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/lib-negative-tests.log",
+   "bytes": 6482,
+   "sha256": "bae070f940caa60b7b8cc0dda9fa5c8e9ecae542d8c38c2437c495add99327a5",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/lod-diff.json",
+   "bytes": 36797,
+   "sha256": "506397acd12b8ac20c7cab46b504e5c9e1de591c705b431a612b7cc4bb9d540f",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/near-retention.json",
+   "bytes": 64924,
+   "sha256": "dc70f97061b3b4348de3b332919531a368a9ad30636e8145b370ceb21abdbaab",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/readback.json",
+   "bytes": 92556,
+   "sha256": "abc9bc6e75dcbb04df04fdaf7eee5a5bd01f3ba50a1f003587b14ba2f170eba0",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/readback.log",
+   "bytes": 3916,
+   "sha256": "dc5ede11b95204df5da2370e54490d9dae03736699ae7cf922b89e2510df7fc8",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/refsphere-build.json",
+   "bytes": 12161,
+   "sha256": "36dc4333ad259cf9c21809f3dab3ae710780fd8df9c4b7bd571c4a6ccf8f6b7f",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/refsphere-build.log",
+   "bytes": 7183,
+   "sha256": "1d9957563b71fbab177ad2b3c1901e57562aeb12454e219da8c92d6694d2a316",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/render-diff.json",
+   "bytes": 2003,
+   "sha256": "34d6df58fc8018819f7e7ecffdcefc1345f7e6f780016b31f7095d44150b60db",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/round2-compare.original-run.json",
+   "bytes": 22572,
+   "sha256": "fff8427f1d2d9af1d3152f5e71868fa4e4f49f3843f6bd64c145838ad225816c",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/round2-compare.original-run.txt",
+   "bytes": 8862,
+   "sha256": "7bc914ea615a4d06c116dbf04d4c7fc7149eaa21732eeb6762d631d7141ad93d",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/round2-rebuild.json",
+   "bytes": 1933,
+   "sha256": "c0e97c4cf9caa299587fdb07565a21660c3cc22f66d4d7562fd454989afd7d1f",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/round2-rebuild.log",
+   "bytes": 10950,
+   "sha256": "57e0510bf7de70ad2617e3099523c9bd079e8d3cddb41414e259da94b69fdc36",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/sample-vs-original.json",
+   "bytes": 22572,
+   "sha256": "fff8427f1d2d9af1d3152f5e71868fa4e4f49f3843f6bd64c145838ad225816c",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/sample-vs-original.txt",
+   "bytes": 8862,
+   "sha256": "7bc914ea615a4d06c116dbf04d4c7fc7149eaa21732eeb6762d631d7141ad93d",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "qa/texture-provenance.json",
+   "bytes": 40465,
+   "sha256": "c281787246fc1c485157e2c0668d2530e3e67cac1b1b56ad3751d86e540a95ab",
+   "class": "qa-evidence"
+  },
+  {
+   "path": "source/build_refsphere.py",
+   "bytes": 5239,
+   "sha256": "032c6b930b51492fc5778271c944cb5b9e8d4751322aae1002520bc9244f53aa",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/census.py",
+   "bytes": 13433,
+   "sha256": "97e69b50b998718db00fab977cfc2b38c34bef11a05305f6f0b0659c9efb81a7",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/lod_diff.py",
+   "bytes": 6461,
+   "sha256": "0775b5c8f60b2c3d6af5fef116611d74967b8b147cb0ef1ba2a8ad385f6e49a3",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/make_manifest.py",
+   "bytes": 11119,
+   "sha256": "2d1c996655ca36514fb6a11eea53ed00c3e6b89c00856de3352cac0e0f0902b2",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/make_semantics.py",
+   "bytes": 8263,
+   "sha256": "483d6a6e34ade3ab2a41797284940a87378283286812c31c19d2c4bdc6b7f9dc",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/near_retention.py",
+   "bytes": 3699,
+   "sha256": "202c9db85e461c639e0fbfa959adcbbb76c6b8196f719a41d5e551d0ee7830ca",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/readback_blender.py",
+   "bytes": 9830,
+   "sha256": "e1108d0e6cb76a0fac1ce44094af42806f1b4ab892d9f93f8e1d5ef5e3943465",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/rebuild_check.py",
+   "bytes": 1232,
+   "sha256": "fa13a4e8bb7c2e81832dcb4605371cd11291984fceebea267698ac40375bb751",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/run_lib_tests.py",
+   "bytes": 708,
+   "sha256": "881a4e3cec8c6bf7cdc356f84c0f7258b117ce6e7a15c3d5384d4c920e9d55f9",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/sheets.py",
+   "bytes": 3754,
+   "sha256": "9e8c410d77c72e107cb83e397fa4cef5bb075fda5f7bd927ca1a0951212da76a",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/verify_textures.py",
+   "bytes": 5570,
+   "sha256": "65b18c5140f9e70bd1ecbb85ca1ed4fcc53ee04f7a1314ef1b2a21d9bda94051",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/lib/demo_build.py",
+   "bytes": 6736,
+   "sha256": "84770e591011c0092b123bb0b26c0e477d52fe71c8c4e1eea8e24c2d54c3d703",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/lib/ly_style.py",
+   "bytes": 128596,
+   "sha256": "b03453a2e1f52e6ca397b94ea853dd9bd7cb69bcb116689c4847086b72b920bb",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/lib/test_checks.py",
+   "bytes": 7412,
+   "sha256": "a3dd113884131cccd3b60d96a232a07f51b2885cae63bdc700568019274df533",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/round2/build_round2.LY007.py",
+   "bytes": 9731,
+   "sha256": "f6f79afbb181708a2fa68cfa754ba2ac5c25c36ca26d53e49bb01613d3e569f4",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/round2/build_round2.log",
+   "bytes": 11069,
+   "sha256": "48f24ab035eb96b61aa8e6a42404b92f7080e8f20e37a4ce8aa156b93292bdb2",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/round2/build_round2.py",
+   "bytes": 9535,
+   "sha256": "4f2b92e818056178bc5854e56f5aca31b34ffe05a51978b529857023f73ba98a",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/round2/compare.LY007.py",
+   "bytes": 6007,
+   "sha256": "029d498d5b1b4ccbef1d0c02be3e876e2611a253c8753fe8731434e41265e4bc",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/round2/compare.py",
+   "bytes": 5919,
+   "sha256": "e02fe26f5539cdc38c811fc9d417666c78960db200e9c0b7fdfe14fc46cf48e7",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "source/round2/round2_report.json",
+   "bytes": 18696,
+   "sha256": "bd211a7ba32a3c2956c5bab9b3f8519356e71c31554dc973379ba0b67f057df0",
+   "class": "source（生成器/检查器，非公共 docs）"
+  },
+  {
+   "path": "textures/manifest.json",
+   "bytes": 12457,
+   "sha256": "4fdab75df2a679f2e0f0f55929614858d3ff234ba983f4063f103b0a8aa5fa9f",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/256/earth-basecolor.png",
+   "bytes": 41056,
+   "sha256": "9ea2f6f2c011723441839c704089d2f51682767523e8f44e91e1c8f6f3c71c6b",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/256/earth-normal.png",
+   "bytes": 62603,
+   "sha256": "a2c6ca111356e94efa6bd93a1ad4703feb55d5c75b28d1482138a94c6f81c6de",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/256/earth-orm.png",
+   "bytes": 31750,
+   "sha256": "16ebdabda5fad8925f178aa7257bfc80621dbfcf636926aff120b365b91dfd20",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/256/stone-normal.png",
+   "bytes": 759,
+   "sha256": "872a3902f9591c159cb7e44d5099f027dbcff9e366fdc4ea8e9d90aca428b687",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/256/stone-orm.png",
+   "bytes": 47959,
+   "sha256": "26d990aa17831cc177d0a39d28eef815d13ffc1f5639171a503391cfc2d806c2",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/256/tile-basecolor.png",
+   "bytes": 20045,
+   "sha256": "977b131f7332176cfab26af1a63df58ed81584dd767694bc898f03a75212e0ab",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/256/tile-normal.png",
+   "bytes": 54978,
+   "sha256": "02d338882700e6a0cc1c9859bdf6b3dba371a7de40b6567d07d88eed6ae85350",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/256/tile-orm.png",
+   "bytes": 31764,
+   "sha256": "5299af3e2a2661cf92d2343340f7b58b5d39dc475050dcac75ae316ed436d7b2",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/256/wood-basecolor.png",
+   "bytes": 41308,
+   "sha256": "cf45b370bb410bc6eaf4cdbbc9b4ed2f1731859615e3a36961e269fbc40814f9",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/256/wood-normal.png",
+   "bytes": 46577,
+   "sha256": "0d97751590c1853857644f764de4f9d7b11ede509358d670a52b5173b80eb163",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/256/wood-orm.png",
+   "bytes": 25347,
+   "sha256": "aa0fa3c978e454bd22fc66302ae2473236816a9d6d017d8f4aa41779a10640a4",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/512/earth-basecolor.png",
+   "bytes": 110352,
+   "sha256": "522d6b1f68a5ddb11472a3da5437f90421c6cf1dd895e01ac4d160dab302b4f7",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/512/earth-normal.png",
+   "bytes": 184040,
+   "sha256": "d0e0d79659027067ceb1467cf612fcdf1a98469dce2af60c46c555bf881356d0",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/512/earth-orm.png",
+   "bytes": 85622,
+   "sha256": "6c3992a3c6a49aa2a07c5fef1c994f8e3e786f15cd46d4f8584e6ea167f01606",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/512/stone-normal.png",
+   "bytes": 15877,
+   "sha256": "d5e3b8583952a23219d9f39111438e090aa8b959f650c5a521fdf08a124fe902",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/512/stone-orm.png",
+   "bytes": 237272,
+   "sha256": "8712b08b43578525b6a18deeedd78f0c7edf060bd967b3cdc3b3fa4d451095f8",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/512/tile-basecolor.png",
+   "bytes": 52944,
+   "sha256": "47ea3f24cb54b516a2c4ec988ae560bab25967f5c7edbd01e16435bbca0ab45a",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/512/tile-normal.png",
+   "bytes": 157803,
+   "sha256": "ac5451bc88080d7eadfb76ba6f8b4d8cb64e20c618ceecdd2a806c96e75358d8",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/512/tile-orm.png",
+   "bytes": 85717,
+   "sha256": "c0fe9035bf8646b2b2384aeaa5405f720a316f0533ce17139c703d73af02f8d3",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/512/wood-basecolor.png",
+   "bytes": 98357,
+   "sha256": "3383d4f1f353c96fd440281842bcd5fb4cf189c25a8f2973dc409a2c58e84bda",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/512/wood-normal.png",
+   "bytes": 143226,
+   "sha256": "a76185638832e40e720e6d0ba16fbb0b4ca2b23acfc24ed62b9c0c0098854b10",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/512/wood-orm.png",
+   "bytes": 70710,
+   "sha256": "66dea3367e89673a533d5dd3e98582bc87e7eafab00f20c7a17237289288c950",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/legacy_grey/256/earth-basecolor.png",
+   "bytes": 49525,
+   "sha256": "946d534bff86c5577f4dc5b3c2cdc746643697423a276eff881fca75379891e3",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/legacy_grey/256/tile-basecolor.png",
+   "bytes": 38426,
+   "sha256": "bddf4c7c195b9004f6fe257cf4c66ad76d1680fada54e32565723397c0128548",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/legacy_grey/256/wood-basecolor.png",
+   "bytes": 43367,
+   "sha256": "73bb24c4ace65e12fe2dbe4279c4c3cb993316cd1da4bafd66789879fb1e1bb9",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/legacy_grey/512/earth-basecolor.png",
+   "bytes": 140239,
+   "sha256": "6250b50f55419a7ed79d0412c8ceb56955a5e57cc4bc6252960479861243c325",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/legacy_grey/512/stone-basecolor.png",
+   "bytes": 494419,
+   "sha256": "48b347a639cef478843a3d640334a3398550b18a749b413ac544834f2ae56bd6",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/legacy_grey/512/tile-basecolor.png",
+   "bytes": 110503,
+   "sha256": "c3f94711b0603569701dafb90638052f0f037914fedf2a9a99105d9aff80584b",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  },
+  {
+   "path": "textures/legacy_grey/512/wood-basecolor.png",
+   "bytes": 133089,
+   "sha256": "e3c95b48a0ee6e273096b5a77c2b5d751a00217de67f553a437b281a670d0ff8",
+   "class": "baseline-texture（她的原字节贴图副本）"
+  }
+ ],
+ "totals": {
+  "count": 95,
+  "bytes": 15366932
+ }
+}

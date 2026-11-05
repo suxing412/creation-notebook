@@ -1,0 +1,156 @@
+{
+  "seat": "LY-054",
+  "phase": "prep (G not frozen; LY-053 not delivered)",
+  "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "repo": "D:/GitHub/creation-notebook-lab",
+  "inputs": [
+    {
+      "path": "docs/library/models/m-luoyang-tile-kiln/files/kiln-A.glb",
+      "sha256": "e67d597617c3cdeb5d611f233438fa529151afddbc73ad9a2a98315cc9252f01",
+      "bytes": 1208676,
+      "gitBlob": "f79eb8a7615b",
+      "role": "kiln A LOD0: pit floor, steps, drying board, fire mouth keep-out",
+      "loadedInCity": false,
+      "loaderCode": null
+    },
+    {
+      "path": "docs/library/models/m-luoyang-tile-kiln/files/kiln-A-LOD1.glb",
+      "sha256": "562b4b398bb97ea4478f0d6e06595994b16725139ee9e80ad66c28501efb69c9",
+      "bytes": 821880,
+      "gitBlob": "6c02cf700178",
+      "role": "kiln A LOD1 (same front nodes, no blanks)",
+      "loadedInCity": false,
+      "loaderCode": null
+    },
+    {
+      "path": "docs/library/models/m-luoyang-tile-kiln/files/kiln-B.glb",
+      "sha256": "4886d95d22383a9b26870d36b476f2efa3b35fe68037df6b444847fd38980d91",
+      "bytes": 1207668,
+      "gitBlob": "b8d3dea39dc7",
+      "role": "kiln B LOD0",
+      "loadedInCity": false,
+      "loaderCode": null
+    },
+    {
+      "path": "docs/library/models/m-luoyang-tile-kiln/files/kiln-B-LOD1.glb",
+      "sha256": "8d9db85bf26e911ffca14123784f97f5b0c7677cf2cce8cf762d8dc21167a0d5",
+      "bytes": 820856,
+      "gitBlob": "90c8861726af",
+      "role": "kiln B LOD1",
+      "loadedInCity": false,
+      "loaderCode": null
+    },
+    {
+      "path": "docs/library/models/m-luoyang-tile-kiln/m-luoyang-tile-kiln.asset.json",
+      "sha256": "99f6320539659444c3317a2245378ea3215ce5e96f586159b08ace696f8311f5",
+      "role": "asset card (status 待审; limits text)",
+      "loadedInCity": false,
+      "loaderCode": null
+    },
+    {
+      "path": "docs/cities/luoyang/p-luoyang.asset.json",
+      "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+      "role": "project card: line 240 status row 砖瓦窑 A/B 未入城; line 543 members id",
+      "loadedInCity": "n/a (listing only)",
+      "loaderCode": null
+    },
+    {
+      "path": "docs/cities/luoyang/city-data.mjs",
+      "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+      "role": "city asset list; 0 matches for kiln/窑",
+      "loadedInCity": true,
+      "loaderCode": "docs/cities/luoyang/app.mjs (no kiln entry)"
+    },
+    {
+      "path": "docs/cities/luoyang/city-renderer.mjs",
+      "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+      "role": "load-time excludeNodes mechanism (~line 309) for removing {P}_presentation_ground without editing GLB",
+      "loadedInCity": true,
+      "loaderCode": "city-renderer.mjs:309 excluded = new Set(asset.excludeNodes || asset.removable_site_nodes || [])"
+    },
+    {
+      "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+      "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+      "bytes": 3565544,
+      "role": "host city ground (atomic; no cut mechanism); up-face elevation measured 0.175..0.21 m, bottoms at 0; road-network strips (~0.4% coverage of primary bbox)",
+      "loadedInCity": true,
+      "loaderCode": "docs/cities/luoyang/v1/west-layer.mjs:35 (ground list with retained.glb, south.glb, D08.glb, translation [0,0,0]); city-data.mjs:431-432 id ground-network-ground-stitched; checked by v1/ground-atomic.mjs assertGroundAtomic (west-layer.mjs:40, road-layer.mjs:19)",
+      "note": "only this file measured; sibling host grounds retained.glb / south.glb / D08.glb (D08 at translation [580,0,-960]) not measured by LY-054"
+    },
+    {
+      "path": "docs/cities/luoyang/v1/ground-atomic.mjs",
+      "sha256": "45e25711f8a1e98db6751d2644f6fe5ca127e7798b60eb85eb9666db794380b0",
+      "role": "loader for atomic ground; no terrain cut",
+      "loadedInCity": true,
+      "loaderCode": "imported by v1/west-layer.mjs:2 and v1/road-layer.mjs:2"
+    },
+    {
+      "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+      "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+      "role": "atomic ground contract (allNodesRequired C_stitch_primary/west/patch)",
+      "loadedInCity": true,
+      "loaderCode": "docs/cities/luoyang/v1/ground-atomic.mjs"
+    },
+    {
+      "path": "C:/Users/suxin/AppData/Local/Temp/claude/bfd0867865ae17cc/14ddfcf2-ca06-49dc-95f8-4586da1502c1/scratchpad/mq/cards/m-luoyang-tile-kiln/audit.json",
+      "role": "card geometry audit (tris/bbox/sha match the four GLBs)",
+      "loadedInCity": false,
+      "loaderCode": null
+    }
+  ],
+  "upstreamPrep": [
+    {
+      "path": "D:/GitHub/creation-notebook-workpacks/LY-053/prep/brief-draft.md",
+      "role": "LY-053 prep (in progress, not frozen): pit walls/base, presentation ground removal, ground top ~0..0.21 m (not re-measured here)",
+      "frozen": false
+    }
+  ],
+  "missing": [
+    {
+      "what": "kiln A/B native .blend or generator",
+      "use": "editable source for front ground pieces aligned to kiln",
+      "rebuildFromGLB": true,
+      "note": "all front nodes are axis-aligned boxes; plane coordinates measured from GLB"
+    },
+    {
+      "what": "LY-053 frozen pit rim / wall-top port and terrain-cut contract",
+      "use": "elevation and edge of operation apron",
+      "rebuildFromGLB": false
+    },
+    {
+      "what": "LY-010 choice A or B + site admission; LY-005 elevation contract; LY-006 ownership",
+      "use": "which variant, where, host ground height",
+      "rebuildFromGLB": false
+    },
+    {
+      "what": "LY-007 LOD/material baseline",
+      "use": "tier naming and C material for new ground pieces",
+      "rebuildFromGLB": false
+    },
+    {
+      "what": "LY-008 delivery checker",
+      "use": "standard GLB checks and negatives",
+      "rebuildFromGLB": false
+    }
+  ],
+  "prepArtifacts": {
+    "scripts/list_nodes.py": "f5e2b8b6c8b8be7944ea623143ee72b4709bb0c0ed22a10d856ee0e0a5823915",
+    "scripts/measure_front.py": "c8441d60351064f0dd3bf710027aea85dfb364364984f7667134a80608fae72e",
+    "scripts/no_ground_support.py": "4be312b6f5d13cfcb600927b8c2a73a5a1b35b6675163e7560b7e9214120bcd1",
+    "scripts/recheck_leg.py": "9c345f93e1ff479dc45eca46a7daaa2c68f0469125f04788804fab23e4a13b60",
+    "measure/front-kiln-A.json": "7b80a438469d466a86b5e9f0b9a21d70e12da6e65c2fe056d945d1b5a9c5dca6",
+    "measure/front-kiln-B.json": "277a8a6aabf88ddffce605b579c33a38055916268c4177b28af36dfb5d76826a",
+    "measure/front-kiln-A-LOD1.json": "fb1e03fbd50245ed5952f9efeb2b5337c8e34323130c59be41ce16d901d28e06",
+    "measure/front-kiln-B-LOD1.json": "b9b12e1902fad93f2c2d40ed016a4eda5d59e9fcb209347c6cff9c043eff78bc",
+    "measure/noground-kiln-A.json": "1be53338c26eb217d3860c905531d701a1cd6d83473a6d05a9ba903bc2a6f705",
+    "measure/noground-kiln-B.json": "162312b0d29f1471d8e2dcf23db2fdbee9b2acd7c33df0e1b4f71878051101da",
+    "measure/leg-recheck.txt": "104a885696b33bc70a8d105d01feb1710d427893c2c2b776414c4e8be5bf1bfc",
+    "scripts/host_ground_range.py": "7b833355a87dc249e37353fa04464180962462bbac38b390b48a710a81050286",
+    "measure/host-ground-range.json": "6e732191924256adaf5a59e1c27e0138dafbcaec2f2a75ab555b41cdf7d5df43",
+    "measure/rerun/noground-kiln-A.json": "1be53338c26eb217d3860c905531d701a1cd6d83473a6d05a9ba903bc2a6f705",
+    "measure/rerun/noground-kiln-B.json": "162312b0d29f1471d8e2dcf23db2fdbee9b2acd7c33df0e1b4f71878051101da",
+    "measure/rerun/noground-kiln-B-LOD1.json": "9b6333f24dc40dbbf291cd8d396646b094b7c11269a567dc06367d54eb6c2c95"
+  },
+  "axes": "Blender import Z-up; glTF +Y -> Blender +Z; glTF +Z -> Blender -Y; metres; kiln local origin at centre, grade z=0",
+  "verified": "2026-11-05: HEAD bce3211f re-checked, all input SHA256 recomputed and equal; no_ground_support.py rerun on A/B reproduces measure/noground-*.json"
+}

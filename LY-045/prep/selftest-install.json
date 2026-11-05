@@ -1,0 +1,581 @@
+{
+ "allAsExpected": true,
+ "cases": [
+  {
+   "case": "P1 no-hole at candidate pose, ground-south",
+   "checks": {
+    "C0_shaBound": {
+     "pass": true,
+     "serviceCourt": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7"
+    },
+    "C1_bottomContact": {
+     "pass": true,
+     "samples": 744,
+     "noGround": 0,
+     "floating_gt5mm": 0,
+     "buried_gt5mm": 0,
+     "gap_min_max": [
+      -0.0,
+      -0.0
+     ]
+    },
+    "C2_footprint": {
+     "pass": true,
+     "insideLot": true,
+     "overlapYardCells": 0,
+     "overlapRouteCells": 0,
+     "apronBlockedCells": {
+      "stairFoot": 0,
+      "penGap": 0
+     }
+    },
+    "C3_stairEntry": {
+     "pass": true,
+     "firstRiser_m": 0.175,
+     "apronGroundY": 0.2
+    },
+    "C4_holeBelow": {
+     "pass": true,
+     "variant": "no-hole",
+     "expectedDrop_m": 1.4,
+     "drops_min_max": [
+      1.4,
+      1.4
+     ],
+     "raysWithoutHit": 0,
+     "note": "pen floor = city ground; no pit, no depth claim"
+    },
+    "C5_prototypeOldGroundExcluded": {
+     "pass": true,
+     "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_hardpacked_activity_ground"
+     ]
+    }
+   },
+   "scope": "surface raster + vertical rays; not solid collision, gait, structure, sanitation",
+   "pass": true,
+   "expected": true,
+   "asExpected": true
+  },
+  {
+   "case": "N1 datum 0.215 (prototype activity ground) -> floats 15 mm",
+   "checks": {
+    "C0_shaBound": {
+     "pass": true,
+     "serviceCourt": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7"
+    },
+    "C1_bottomContact": {
+     "pass": false,
+     "samples": 744,
+     "noGround": 0,
+     "floating_gt5mm": 744,
+     "buried_gt5mm": 0,
+     "gap_min_max": [
+      0.015,
+      0.015
+     ]
+    },
+    "C2_footprint": {
+     "pass": true,
+     "insideLot": true,
+     "overlapYardCells": 0,
+     "overlapRouteCells": 0,
+     "apronBlockedCells": {
+      "stairFoot": 0,
+      "penGap": 0
+     }
+    },
+    "C3_stairEntry": {
+     "pass": false,
+     "firstRiser_m": 0.19,
+     "apronGroundY": 0.2
+    },
+    "C4_holeBelow": {
+     "pass": false,
+     "variant": "no-hole",
+     "expectedDrop_m": 1.4,
+     "drops_min_max": [
+      1.415,
+      1.415
+     ],
+     "raysWithoutHit": 0,
+     "note": "pen floor = city ground; no pit, no depth claim"
+    },
+    "C5_prototypeOldGroundExcluded": {
+     "pass": true,
+     "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_hardpacked_activity_ground"
+     ]
+    }
+   },
+   "scope": "surface raster + vertical rays; not solid collision, gait, structure, sanitation",
+   "pass": false,
+   "expected": false,
+   "asExpected": true
+  },
+  {
+   "case": "N2 no ground loaded (default view, ground-south initial:false)",
+   "checks": {
+    "C0_shaBound": {
+     "pass": true,
+     "serviceCourt": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7"
+    },
+    "C1_bottomContact": {
+     "pass": false,
+     "samples": 744,
+     "noGround": 744,
+     "floating_gt5mm": 0,
+     "buried_gt5mm": 0,
+     "gap_min_max": null
+    },
+    "C2_footprint": {
+     "pass": false,
+     "insideLot": true,
+     "overlapYardCells": 0,
+     "overlapRouteCells": 0,
+     "apronBlockedCells": {
+      "stairFoot": 110,
+      "penGap": 120
+     }
+    },
+    "C3_stairEntry": {
+     "pass": false,
+     "firstRiser_m": null,
+     "apronGroundY": null
+    },
+    "C4_holeBelow": {
+     "pass": false,
+     "variant": "no-hole",
+     "expectedDrop_m": 1.4,
+     "drops_min_max": null,
+     "raysWithoutHit": 25,
+     "note": "pen floor = city ground; no pit, no depth claim"
+    },
+    "C5_prototypeOldGroundExcluded": {
+     "pass": true,
+     "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_hardpacked_activity_ground"
+     ]
+    }
+   },
+   "scope": "surface raster + vertical rays; not solid collision, gait, structure, sanitation",
+   "pass": false,
+   "expected": false,
+   "asExpected": true
+  },
+  {
+   "case": "N3 has-hole claimed but ground-south still seals the hole",
+   "checks": {
+    "C0_shaBound": {
+     "pass": true,
+     "serviceCourt": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7"
+    },
+    "C1_bottomContact": {
+     "pass": true,
+     "samples": 744,
+     "noGround": 0,
+     "floating_gt5mm": 0,
+     "buried_gt5mm": 0,
+     "gap_min_max": [
+      -0.0,
+      -0.0
+     ]
+    },
+    "C2_footprint": {
+     "pass": true,
+     "insideLot": true,
+     "overlapYardCells": 0,
+     "overlapRouteCells": 0,
+     "apronBlockedCells": {
+      "stairFoot": 0,
+      "penGap": 0
+     }
+    },
+    "C3_stairEntry": {
+     "pass": true,
+     "firstRiser_m": 0.175,
+     "apronGroundY": 0.2
+    },
+    "C4_holeBelow": {
+     "pass": false,
+     "variant": "has-hole",
+     "raysStoppedAtOrAboveDatum": 25,
+     "oldGroundResidueInHoleRect": {
+      "ground-south": 0.2
+     },
+     "pitDepth": "bounded by package geometry (must be declared C, not engineering)",
+     "drops": [
+      1.4
+     ]
+    },
+    "C5_prototypeOldGroundExcluded": {
+     "pass": true,
+     "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_hardpacked_activity_ground"
+     ]
+    }
+   },
+   "scope": "surface raster + vertical rays; not solid collision, gait, structure, sanitation",
+   "status_hasHole": "FAIL",
+   "pass": false,
+   "expected": false,
+   "asExpected": true
+  },
+  {
+   "case": "N4 has-hole, ground cut (MOCK) but prototype old ground loaded (exclusion dropped)",
+   "checks": {
+    "C0_shaBound": {
+     "pass": true,
+     "serviceCourt": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7"
+    },
+    "C1_bottomContact": {
+     "pass": false,
+     "samples": 744,
+     "noGround": 0,
+     "floating_gt5mm": 0,
+     "buried_gt5mm": 327,
+     "gap_min_max": [
+      -0.015,
+      -0.0
+     ]
+    },
+    "C2_footprint": {
+     "pass": true,
+     "insideLot": true,
+     "overlapYardCells": 0,
+     "overlapRouteCells": 0,
+     "apronBlockedCells": {
+      "stairFoot": 0,
+      "penGap": 0
+     }
+    },
+    "C3_stairEntry": {
+     "pass": true,
+     "firstRiser_m": 0.175,
+     "apronGroundY": 0.2
+    },
+    "C4_holeBelow": {
+     "pass": false,
+     "variant": "has-hole",
+     "raysStoppedAtOrAboveDatum": 25,
+     "oldGroundResidueInHoleRect": {
+      "prototype:site_lot": 0.2,
+      "prototype:designed_hardpacked_activity_ground": 0.215
+     },
+     "pitDepth": "bounded by package geometry (must be declared C, not engineering)",
+     "drops": [
+      1.385
+     ]
+    },
+    "C5_prototypeOldGroundExcluded": {
+     "pass": false,
+     "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_hardpacked_activity_ground"
+     ]
+    }
+   },
+   "scope": "surface raster + vertical rays; not solid collision, gait, structure, sanitation",
+   "MOCK": "TEST FIXTURE: ground treated as absent exactly inside the hole rect (in memory); not a deliverable",
+   "status_hasHole": "FAIL",
+   "pass": false,
+   "expected": false,
+   "asExpected": true
+  },
+  {
+   "case": "P2 has-hole, ground cut (MOCK fixture) -> open, depth UNDETERMINED",
+   "checks": {
+    "C0_shaBound": {
+     "pass": true,
+     "serviceCourt": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7"
+    },
+    "C1_bottomContact": {
+     "pass": true,
+     "samples": 744,
+     "noGround": 0,
+     "floating_gt5mm": 0,
+     "buried_gt5mm": 0,
+     "gap_min_max": [
+      -0.0,
+      -0.0
+     ]
+    },
+    "C2_footprint": {
+     "pass": true,
+     "insideLot": true,
+     "overlapYardCells": 0,
+     "overlapRouteCells": 0,
+     "apronBlockedCells": {
+      "stairFoot": 0,
+      "penGap": 0
+     }
+    },
+    "C3_stairEntry": {
+     "pass": true,
+     "firstRiser_m": 0.175,
+     "apronGroundY": 0.2
+    },
+    "C4_holeBelow": {
+     "pass": true,
+     "variant": "has-hole",
+     "raysStoppedAtOrAboveDatum": 0,
+     "oldGroundResidueInHoleRect": {},
+     "pitDepth": "UNDETERMINED",
+     "drops": [
+      null
+     ]
+    },
+    "C5_prototypeOldGroundExcluded": {
+     "pass": true,
+     "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_hardpacked_activity_ground"
+     ]
+    }
+   },
+   "scope": "surface raster + vertical rays; not solid collision, gait, structure, sanitation",
+   "MOCK": "TEST FIXTURE: ground treated as absent exactly inside the hole rect (in memory); not a deliverable",
+   "status_hasHole": "OPEN_UNDETERMINED_DEPTH (not a completed engineering pit)",
+   "pass": true,
+   "expected": true,
+   "asExpected": true
+  },
+  {
+   "case": "N8 has-hole cut by deleting whole 2 m ground triangles (over-cut leaves pen wall unsupported)",
+   "checks": {
+    "C0_shaBound": {
+     "pass": true,
+     "serviceCourt": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7"
+    },
+    "C1_bottomContact": {
+     "pass": false,
+     "samples": 744,
+     "noGround": 206,
+     "floating_gt5mm": 0,
+     "buried_gt5mm": 0,
+     "gap_min_max": [
+      -0.0,
+      -0.0
+     ]
+    },
+    "C2_footprint": {
+     "pass": true,
+     "insideLot": true,
+     "overlapYardCells": 0,
+     "overlapRouteCells": 0,
+     "apronBlockedCells": {
+      "stairFoot": 0,
+      "penGap": 0
+     }
+    },
+    "C3_stairEntry": {
+     "pass": true,
+     "firstRiser_m": 0.175,
+     "apronGroundY": 0.2
+    },
+    "C4_holeBelow": {
+     "pass": true,
+     "variant": "has-hole",
+     "raysStoppedAtOrAboveDatum": 0,
+     "oldGroundResidueInHoleRect": {},
+     "pitDepth": "UNDETERMINED",
+     "drops": [
+      null
+     ]
+    },
+    "C5_prototypeOldGroundExcluded": {
+     "pass": true,
+     "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_hardpacked_activity_ground"
+     ]
+    }
+   },
+   "scope": "surface raster + vertical rays; not solid collision, gait, structure, sanitation",
+   "MOCK": "TEST FIXTURE: every ground triangle touching the hole rect deleted in memory (over-cut); not a deliverable",
+   "status_hasHole": "OPEN_UNDETERMINED_DEPTH (not a completed engineering pit)",
+   "pass": false,
+   "expected": false,
+   "asExpected": true
+  },
+  {
+   "case": "N5 pose on the gate route",
+   "checks": {
+    "C0_shaBound": {
+     "pass": true,
+     "serviceCourt": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7"
+    },
+    "C1_bottomContact": {
+     "pass": true,
+     "samples": 744,
+     "noGround": 0,
+     "floating_gt5mm": 0,
+     "buried_gt5mm": 0,
+     "gap_min_max": [
+      -0.0,
+      -0.0
+     ]
+    },
+    "C2_footprint": {
+     "pass": false,
+     "insideLot": true,
+     "overlapYardCells": 389,
+     "overlapRouteCells": 687,
+     "apronBlockedCells": {
+      "stairFoot": 0,
+      "penGap": 120
+     }
+    },
+    "C3_stairEntry": {
+     "pass": true,
+     "firstRiser_m": 0.175,
+     "apronGroundY": 0.2
+    },
+    "C4_holeBelow": {
+     "pass": true,
+     "variant": "no-hole",
+     "expectedDrop_m": 1.4,
+     "drops_min_max": [
+      1.4,
+      1.4
+     ],
+     "raysWithoutHit": 0,
+     "note": "pen floor = city ground; no pit, no depth claim"
+    },
+    "C5_prototypeOldGroundExcluded": {
+     "pass": true,
+     "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_hardpacked_activity_ground"
+     ]
+    }
+   },
+   "scope": "surface raster + vertical rays; not solid collision, gait, structure, sanitation",
+   "pass": false,
+   "expected": false,
+   "asExpected": true
+  },
+  {
+   "case": "N6 pose inside the main hall",
+   "checks": {
+    "C0_shaBound": {
+     "pass": true,
+     "serviceCourt": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7"
+    },
+    "C1_bottomContact": {
+     "pass": true,
+     "samples": 744,
+     "noGround": 0,
+     "floating_gt5mm": 0,
+     "buried_gt5mm": 0,
+     "gap_min_max": [
+      -0.0,
+      -0.0
+     ]
+    },
+    "C2_footprint": {
+     "pass": false,
+     "insideLot": true,
+     "overlapYardCells": 3119,
+     "overlapRouteCells": 169,
+     "apronBlockedCells": {
+      "stairFoot": 88,
+      "penGap": 0
+     }
+    },
+    "C3_stairEntry": {
+     "pass": true,
+     "firstRiser_m": 0.175,
+     "apronGroundY": 0.2
+    },
+    "C4_holeBelow": {
+     "pass": true,
+     "variant": "no-hole",
+     "expectedDrop_m": 1.4,
+     "drops_min_max": [
+      1.4,
+      1.4
+     ],
+     "raysWithoutHit": 0,
+     "note": "pen floor = city ground; no pit, no depth claim"
+    },
+    "C5_prototypeOldGroundExcluded": {
+     "pass": true,
+     "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_hardpacked_activity_ground"
+     ]
+    }
+   },
+   "scope": "surface raster + vertical rays; not solid collision, gait, structure, sanitation",
+   "pass": false,
+   "expected": false,
+   "asExpected": true
+  },
+  {
+   "case": "N7 wrong ground file for this yard (ground-retained only)",
+   "checks": {
+    "C0_shaBound": {
+     "pass": true,
+     "serviceCourt": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7"
+    },
+    "C1_bottomContact": {
+     "pass": false,
+     "samples": 744,
+     "noGround": 744,
+     "floating_gt5mm": 0,
+     "buried_gt5mm": 0,
+     "gap_min_max": null
+    },
+    "C2_footprint": {
+     "pass": false,
+     "insideLot": true,
+     "overlapYardCells": 0,
+     "overlapRouteCells": 0,
+     "apronBlockedCells": {
+      "stairFoot": 110,
+      "penGap": 120
+     }
+    },
+    "C3_stairEntry": {
+     "pass": false,
+     "firstRiser_m": null,
+     "apronGroundY": null
+    },
+    "C4_holeBelow": {
+     "pass": false,
+     "variant": "no-hole",
+     "expectedDrop_m": 1.4,
+     "drops_min_max": null,
+     "raysWithoutHit": 25,
+     "note": "pen floor = city ground; no pit, no depth claim"
+    },
+    "C5_prototypeOldGroundExcluded": {
+     "pass": true,
+     "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_hardpacked_activity_ground"
+     ]
+    }
+   },
+   "scope": "surface raster + vertical rays; not solid collision, gait, structure, sanitation",
+   "pass": false,
+   "expected": false,
+   "asExpected": true
+  }
+ ]
+}

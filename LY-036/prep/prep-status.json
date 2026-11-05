@@ -1,0 +1,56 @@
+{
+ "seat": "LY-036",
+ "inputsFound": [
+  "lab docs/library/models/m-luoyang-wuku/files/wuku-B-LOD0.glb e5de60b6 (extras.version 2.2.0-C-entry-candidate)",
+  "lab docs/library/models/m-luoyang-wuku/files/wuku-B-LOD1.glb 5e1cc6b9",
+  "lab docs/library/models/m-luoyang-wuku/files/wuku-B-LOD2.glb e5c87306",
+  "lab docs/library/models/m-luoyang-wuku/files/wuku-A-LOD0/1/2.glb 5daa542d / 51110119 / ee0da058 (A, read-only)",
+  "lab docs/library/models/m-luoyang-wuku/m-luoyang-wuku.asset.json blob 2487b351 (crlf bc3665bb)",
+  "review site/modeling-lab/review-batches/2026-11-04-city-visible zip parts :: chunks/wuku_C_with_support-01.glb 29709e25 (old support C_WUKU_ISOLATED_SUPPORT_PATCH + B earth/timber)",
+  "same zip :: chunks/wuku_C_with_support-02.glb 34160b9d (B tile copy)",
+  "same zip :: chunks/northeast_C_access.glb 58f2f58a (C_NE_APPROACH_LOCAL, LY-039 seam partner)",
+  "lab docs/cities/luoyang/data/evidence/evidence-geometry.json blob fa8b7002 (region_wuku_B B point 2316.327,3500, not_modeled)",
+  "lab docs/cities/luoyang/data/west/storage-precedents.json blob db802449",
+  "lab docs/cities/luoyang/city-data.mjs blob c849706b (no wuku node)",
+  "workpacks LY-001/qa/city-nodes.csv 8ab19b05"
+ ],
+ "inputsMissing": [
+  "B v2.2 native .blend + generator + private QA report (point list of 'outer-arrival support missing'): used for the author's own flagged points and editable B; not needed to rebuild, B is referenced by SHA only and the points are re-derived from GLB (stair foot z=7.52, outline 62.04 m)",
+  "city-C032-entry-LOD0.blend sha256 1e8c4d2c…3b01b (native of C_WUKU_ISOLATED_SUPPORT_PATCH and C_NE_APPROACH_LOCAL): native of the old support; can be rebuilt exactly from GLB (12-triangle axis box with UV)",
+  "LY-005 ground/elevation contract at the wuku point: where the grounding edge must land; cannot be rebuilt from GLB (G contract)",
+  "LY-006 port IDs/ownership for seams with LY-037/038/039: cannot be rebuilt from GLB (G contract)"
+ ],
+ "gaps": [
+  "bce3211 city loads no wuku node; LY-001 ledger 80 node rows (66 city + 14 research) contain none; nearest city geometry wall-01 at 86.08 m, granary ground 137.47 m from the old support footprint",
+  "B alone: 9/9 arrival probes outside the stair foot (z 7.55/8.5/9.95 x -1.45/0/1.45) hit nothing; stair = 3 risers 0.1333 m, treads 0.34 m, width 3.0 m, foot at z=7.52",
+  "B base (top y=0.4, closed bottom y=0, 224.06 m2) grounding outline 62.04 m has no ground in the baseline; E/W/N/S probes 0.1 m outside all miss",
+  "old support patch 22x20x0.4 m (x -9..13, z -10..10, top y=0) exists only in the 2026-11-04 review handoff, not in main; it covers B with margins W2.5/E2.5/N3.5/S2.48 m, 0 intrusions, coplanar contact 224.06 m2",
+  "old patch has 81 of 84 m perimeter as a free 0.4 m vertical edge into void (only 3 m joins the NE road at z=10); this is the missing grounding edge and a display-base-plate risk; patch 440 m2 vs base 221 m2",
+  "NE road seam at z=10 x -1.5..1.5: width 3.0 m = stair width, top flush 0.000 m; road granary end is y=0.2 (0.2 m rise, LY-039)",
+  "old trial B == card B v2.2 (indices equal, UV residual 0, position residual 9.57e-5 m float32) but different file/SHA and renamed materials, so the package must bind card SHA e5de60b6 not 29709e25",
+  "A at same origin: stair foot z=10.52 overhangs the old patch by 0.52 m (2/2 probes miss, contact 211.02 of 213.06 m2), so B result cannot be applied to A",
+  "inherited, not this seat: B timber 14 degenerate triangles in each LOD; door leaves welded into static_timber at fixed 150 degrees"
+ ],
+ "reuseCandidate": "无（只能部分复用）。旧支撑片 C_WUKU_ISOLATED_SUPPORT_PATCH 在 chunk01 29709e25 里，覆盖了 B 的台阶脚到达区 2.48 m 和整个台基，没有侵入，可以作为几何输入复用。但它不在 main 里，84 m 周长中有 81 m 是 0.4 m 高的悬空自由边，没有接地边，所以不能判为合格复用完成。",
+ "touches": [
+  "new node LY036_WUKU_B_SUPPORT_GROUND (name provisional, LY-006) wuku-local x -9..13 z -10..10 y<=0 plus edge apron",
+  "old node C_WUKU_ISOLATED_SUPPORT_PATCH (chunk01, superseded, must be mutually exclusive)",
+  "seam port with C_NE_APPROACH_LOCAL at local z=10 x -1.5..1.5 y=0 (LY-039 owns the road)",
+  "shared boundary with LY-037: B platform outer edge (60 m) and stair foot z=7.52; LY-036 only y<=0 outside the base",
+  "LY-038 A alternative would occupy the same footprint (A stair foot z=10.52)",
+  "read-only reference: wuku-B-LOD0/1/2.glb by SHA, region_wuku_B in evidence-geometry.json",
+  "world region x 2307.33..2329.33, z -3510..-3490 (city-data.mjs only via LY-100)",
+  "workpacks/LY-036/ only"
+ ],
+ "size": "M",
+ "risks": [
+  "placement is a B-schematic label point (envelope 75 m, position error null) and the NE/palace area is gated by LY-003; LY-010 may not admit the region, so the package may stay local-only",
+  "surrounding ground elevation is unknown until LY-005; the grounding edge geometry depends on it",
+  "the old patch looks like a display base; reusing it unchanged would fail the task rule",
+  "adapter/trial B copy must not be co-loaded with card B (double count / z-fight)",
+  "coplanar y=0 contact between B bottom and ground top is hidden but exact; any re-encoding or meshopt could shift it and turn it into intrusion or a gap",
+  "probe/heightfield checks are discrete, not continuous body or vehicle motion",
+  "the v2.2 author's private QA list of 'missing support points' is unavailable; the re-derived points may differ"
+ ],
+ "readyAfterG": true
+}

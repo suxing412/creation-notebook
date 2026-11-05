@@ -1,0 +1,242 @@
+{
+ "seat": "LY-056",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "phase": "prep (G not frozen; no geometry produced)",
+ "coords": "measurements in Blender Z-up world: X right, Y = -glTF Z, Z = glTF Y; metres",
+ "inputs": [
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD0.glb",
+   "sha256": "6f0e41834121fa26cb36303606133256e8a8226e4c49464f68dc93646d181068",
+   "role": "primary reuse asset, near LOD",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries",
+   "bytes": 655508,
+   "nodes": [
+    "pestle_stone_static",
+    "pestle_timber_moving",
+    "pestle_timber_static"
+   ],
+   "pivotLocal_blender": [
+    0,
+    0,
+    1.0
+   ],
+   "pivotLocal_gltf": [
+    0,
+    1.0,
+    0
+   ],
+   "nativeSource": "missing (.blend not in repo) - rebuild from GLB possible, no native needed for reuse assembly"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD1.glb",
+   "sha256": "d8759dd6e0b0880325bb033e5031723e327f132c66a3cafd1aa97fed985cdd7c",
+   "role": "mid LOD",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries",
+   "bytes": 248208,
+   "nodes": [
+    "pestle_stone_static",
+    "pestle_timber_moving",
+    "pestle_timber_static"
+   ]
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-foot-pestle/files/foot-pestle-LOD2.glb",
+   "sha256": "e94416ef307479eb4a3bf01652153d9c2ff0ba26300b4240920d580a5ae83453",
+   "role": "far LOD, static only (moving merged)",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries",
+   "bytes": 79500,
+   "nodes": [
+    "pestle_stone_static",
+    "pestle_timber_static"
+   ]
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-foot-pestle/m-luoyang-foot-pestle.asset.json",
+   "sha256": "801fe3b1df2852f2f246a30ed459abf05ae698070bccb80d54d257e7ef82bb90",
+   "role": "asset card (read only)",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-foot-pestle/cover.webp",
+   "sha256": "722900d6ceceef68401cc1cbe82fe7d732d9ca8650ff604b40bceb7385898f30",
+   "role": "card cover (native CPU render, not GLB)",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
+   "sha256": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e",
+   "role": "reference host: existing baked pestle install, translation (5,-1.5,0.2) Blender; no floor surface; mutually exclusive with LY-056 package",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries",
+   "bytes": 1850040,
+   "pestleNodes": {
+    "moving": "pestle__pestle_timber_moving (extras pivot_m [5,-1.5,1.2] Blender-axis, allowed_pose_degrees [0,4,8])",
+    "staticTimberMergedInto": "workyard_timber",
+    "stoneMergedInto": "workyard_stone"
+   }
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD1.glb",
+   "sha256": "6baefbd0fc1bc08694e2a3b226b38d308f8a214b70464c72e75e0c907dfb540f",
+   "role": "reference host LOD1",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD2.glb",
+   "sha256": "574d81d91d3898bf9de5e3d46b2b7d8532dd2c1b52d4ac35f7132898a1babda0",
+   "role": "reference host LOD2 (no moving node)",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/m-luoyang-workyard-shed.asset.json",
+   "sha256": "bc2a6289a997ca5d8936b616c829ef0f0d72bb4e68b275ac370b1755f47d42f9",
+   "role": "asset card",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD0.glb",
+   "sha256": "89e0a43923fb3868452903186b07299162fdf208a667c0d82630791b554ce726",
+   "bytes": 721404,
+   "role": "standalone open work shelter (no pestle, no floor); alternative C host candidate for LY-010; read only",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries",
+   "nodes": [
+    "workshed_tile",
+    "workshed_timber"
+   ],
+   "measured": "LOD0: 6 posts at x=-3.1/0/3.1, y=0.15/3.85 (0.2 m sq, z 0-2.62); tie beams z 2.62-2.8; eave tile min z 2.8; no floor. out/parts-workshed-LOD0.json, out/install-probe-workshed-bayR.json"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD1.glb",
+   "sha256": "a21c2893a1cc7c7d8b69bb7c61b5d85f65f17fc352d003ff67ed9da4ea502671",
+   "bytes": 262480,
+   "role": "standalone open work shelter (no pestle, no floor); alternative C host candidate for LY-010; read only",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries",
+   "nodes": [
+    "workshed_tile",
+    "workshed_timber"
+   ],
+   "measured": "LOD0: 6 posts at x=-3.1/0/3.1, y=0.15/3.85 (0.2 m sq, z 0-2.62); tie beams z 2.62-2.8; eave tile min z 2.8; no floor. out/parts-workshed-LOD0.json, out/install-probe-workshed-bayR.json"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD2.glb",
+   "sha256": "7c054863f1088ddc8709592dfbfe70e2a581dc8ef91d4741c02aa65a0d0a614e",
+   "bytes": 19776,
+   "role": "standalone open work shelter (no pestle, no floor); alternative C host candidate for LY-010; read only",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries",
+   "nodes": [
+    "workshed_tile",
+    "workshed_timber"
+   ],
+   "measured": "LOD0: 6 posts at x=-3.1/0/3.1, y=0.15/3.85 (0.2 m sq, z 0-2.62); tie beams z 2.62-2.8; eave tile min z 2.8; no floor. out/parts-workshed-LOD0.json, out/install-probe-workshed-bayR.json"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-hand-mill/files/hand-mill-A.glb",
+   "sha256": "0fe50c2c0604237d9c6d011803550261b48304669b8dcb64f2155332af11c396",
+   "role": "shared input text with LY-055; read only, not touched",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-hand-mill/files/hand-mill-B.glb",
+   "sha256": "598cadc7593300bc399773fc469a77830cabb540ad42baffeec3dbaccd478d36",
+   "role": "shared input text with LY-055; read only",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-hand-mill/files/hand-mill-A-LOD1.glb",
+   "sha256": "5885f619799ef79071e6b2960866ff7cfb75fd4dcc838b341755924139fd1ede",
+   "role": "LY-055 read only",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-hand-mill/files/hand-mill-B-LOD1.glb",
+   "sha256": "5ec42d1118def47115038f65c68bcd82aacf5cac208891cd2c9eb9066c0b57d3",
+   "role": "LY-055 read only",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by docs/cities/luoyang/city-data.mjs (79 path entries); loader is city-renderer.mjs:285-299 loadAsset(), which only reads city-data entries"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "role": "project card: lines 261 (足碓与踏台 未入城), 338, 546, 568",
+   "loadedInCity": "n/a (card)"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "role": "city asset list; no pestle/workyard entries; ground entries at lines ~431-470",
+   "loadedInCity": true,
+   "loaderCode": "imported by app.mjs / city-renderer.mjs"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "role": "loader loadAsset() lines 285-310",
+   "loadedInCity": true
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "role": "candidate city ground (glTF Y 0..0.21); site not chosen",
+   "loadedInCity": true,
+   "loaderCode": "city-data.mjs entry id ground-network-ground-stitched (~line 431), contract data/west/ground-atomic-contract.json"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "role": "ground contract (atomic, doNotClaim collision validated)",
+   "loadedInCity": "contract"
+  },
+  {
+   "path": "D:/GitHub/creation-notebook-lab/lab/data/assets.json",
+   "sha256_HEAD": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "role": "site summary (read only). Re-check 2026-11-05: git status clean at bce3211; worktree hash differs from HEAD only by CRLF checkout (git ls-files --eol: i/lf w/crlf). Earlier prep run saw an uncommitted change (3440caa2...), now gone.",
+   "loadedInCity": false,
+   "sha256_worktree_crlf": "c39e8e9a2a1833f3abbc15e585f5868fba6c7d2e01f6b8e504c2b44193f16979"
+  }
+ ],
+ "missing": [
+  {
+   "what": "foot-pestle native .blend / generator",
+   "use": "editable source for any future revision; not needed for reuse assembly",
+   "rebuildFromGLB": true
+  },
+  {
+   "what": "workyard native .blend",
+   "use": "would allow un-baking pestle from workyard_timber/stone; LY-056 instead uses standalone GLB nodes",
+   "rebuildFromGLB": "partial (vertex-level split possible but not needed)"
+  },
+  {
+   "what": "selected work ground (LY-010 site + LY-005 elevation contract + LY-006 ground-tile owner)",
+   "use": "installation target and support surface",
+   "rebuildFromGLB": false
+  },
+  {
+   "what": "原谷物加工院 (with 双足碓) source and defect record",
+   "use": "possible alternative install site referenced by LY-057/058; not in repo",
+   "rebuildFromGLB": false
+  },
+  {
+   "what": "LY-002 evidence entry for 踏碓 (original text/plate)",
+   "use": "evidence column; current dims are C",
+   "rebuildFromGLB": false
+  }
+ ],
+ "prepTools": {
+  "scripts": "D:/GitHub/creation-notebook-workpacks/LY-056/prep/scripts/",
+  "outputsAndSHA": "D:/GitHub/creation-notebook-workpacks/LY-056/prep/out/SHA256SUMS.txt"
+ }
+}

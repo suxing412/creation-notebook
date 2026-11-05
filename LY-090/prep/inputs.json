@@ -1,0 +1,532 @@
+{
+ "seat": "LY-090",
+ "stage": "prep (G not frozen; no deliverable geometry)",
+ "labRoot": "D:/GitHub/creation-notebook-lab",
+ "labHEAD": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "labWorkingTreeDirty": [
+  "?? .claude/"
+ ],
+ "note": "sha256 = file on disk now; gitBlobAtHEAD lets a re-run prove the file still equals main",
+ "inputs": [
+  {
+   "path": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "bytes": 1031928,
+   "gitBlobAtHEAD": "9d40915dae9bc54337df82d9424351b031ad502b",
+   "role": "host ground for the well hole: node sample_ground (60x44x0.2 m closed slab, 12 tris); routes route_* (0.01 m plates) stack on it",
+   "loadedInCity": "yes (app chapter market + v1 market level)",
+   "loadedBy": [
+    "city-data.mjs:511 asset market-main (excludeNodes 30 N2_*)",
+    "city-data.mjs:3663 node market-main",
+    "city-data.mjs:3953 chapter market loadNodeIds",
+    "city-renderer.mjs:309/346 excludeNodes must all match",
+    "v1/west-layer.mjs:33 environmentUrl",
+    "v1/market-assembly.mjs:5 retire(30) / retire(7)"
+   ],
+   "note": "LY-025 proposes excluding sample_ground; LY-022/029/083 also touch this slab"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/N2-replacement.glb",
+   "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "bytes": 72984,
+   "gitBlobAtHEAD": "dbacbc9bfc982cf0c46f3bf6882047089e3aed4b",
+   "role": "co-loaded market replacement; N2_floor stacks on sample_ground",
+   "loadedInCity": "yes",
+   "loadedBy": [
+    "city-data.mjs:562",
+    "city-data.mjs:3690",
+    "v1/west-layer.mjs:33/36"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/flowB-routes.glb",
+   "sha256": "43d7799f85feccb0d6f1e0412c46853e6b3339535e38a9b806e8c5d3898f845e",
+   "bytes": 9344,
+   "gitBlobAtHEAD": "4a190087ec737deacb01d9f16bc06f1494bd2b20",
+   "role": "v1 flow=B route plates stacked on sample_ground (retire 7 route_*)",
+   "loadedInCity": "v1 only (flow=B)",
+   "loadedBy": [
+    "v1/west-layer.mjs:33/36",
+    "v1/market-assembly.mjs:5"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/corridor-6m-market-link.glb",
+   "sha256": "b46dd450d7e8636b744d2dcd1d0cee8e98352025b7cda57b2cd0938a3da149bf",
+   "bytes": 8272,
+   "gitBlobAtHEAD": "51882103f17051f7936835d0a90003e569e6bbc7",
+   "role": "v1 market env in non-calt branch only (overridden in calt)",
+   "loadedInCity": "v1 code path present, overridden for market calt",
+   "loadedBy": [
+    "v1/west-layer.mjs:33"
+   ],
+   "note": "not stacked under well (not loaded in calt market)"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "bytes": 3565544,
+   "gitBlobAtHEAD": "c0d0a137468daa09354f3901737ccf5a523372e3",
+   "role": "atomic ground (3 nodes asserted); possible future host",
+   "loadedInCity": "yes (app chapter terrain; v1 calt)",
+   "loadedBy": [
+    "city-data.mjs:431/3555",
+    "city-data.mjs:4027 chapter terrain",
+    "v1/west-layer.mjs:35",
+    "v1/ground-atomic.mjs:1 assertGroundAtomic",
+    "v1/road-layer.mjs:19"
+   ],
+   "note": "C_stitch_west 127,544 tris single node"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "bytes": 629740,
+   "gitBlobAtHEAD": "ab17602cc5818ba436d857ba2d0659cbd1392de7",
+   "role": "atomic ground under 22 courtyards; possible host for LY-045 pit",
+   "loadedInCity": "yes",
+   "loadedBy": [
+    "city-data.mjs:451/3582",
+    "v1/west-layer.mjs:35"
+   ],
+   "note": "single node 21,192 tris"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "bytes": 2623560,
+   "gitBlobAtHEAD": "a08faa8fe2deef7a2c564194e8c2018e21bef84d",
+   "role": "atomic ground under 14 courtyards; possible host",
+   "loadedInCity": "yes",
+   "loadedBy": [
+    "city-data.mjs:471/3609",
+    "v1/west-layer.mjs:31/35"
+   ],
+   "note": "single node 96,796 tris"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "bytes": 6664,
+   "gitBlobAtHEAD": "bfc29f123f806b9e6d5bb7c543d0a3d1854bbf86",
+   "role": "atomic ground under 8 courtyards; node position [580,0,-960] applied once",
+   "loadedInCity": "yes",
+   "loadedBy": [
+    "city-data.mjs:491/3636",
+    "v1/west-layer.mjs:35 translation"
+   ],
+   "note": "single node 140 tris"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "bytes": 1391,
+   "gitBlobAtHEAD": "c386ef0a7052f3d7acfb0f217bcb3bc83cdd6de9",
+   "role": "atomic contract: allNodesRequired 3, keep SHAs of retained/south/D08",
+   "loadedInCity": "yes (read by v1)",
+   "loadedBy": [
+    "v1/west-layer.mjs:40",
+    "v1/road-layer.mjs:19"
+   ],
+   "note": "any host replacement changes SHAs bound here"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/N2-contract.json",
+   "sha256": "10678d73111ae0d131afc3ff823162392eab339ee66bf2046e61666c2c8d9386",
+   "bytes": 9414,
+   "gitBlobAtHEAD": "5397dd3f9574f14d486b619f556b49af8c069326",
+   "role": "market removeExactNodeIds 30",
+   "loadedInCity": "yes",
+   "loadedBy": [
+    "v1/west-layer.mjs:40",
+    "city-data.mjs:510 sourceContract"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-flow-plan.json",
+   "sha256": "bff5bb22bac6bda21f02a4b43f4adf85e187b8070d360c0433d69832e11adbdf",
+   "bytes": 3078,
+   "gitBlobAtHEAD": "7fffa119bf903f17d199c5abb22b6e495231541f",
+   "role": "flow B retireOriginalNames 7",
+   "loadedInCity": "yes",
+   "loadedBy": [
+    "v1/west-layer.mjs:40"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-precedents.json",
+   "sha256": "abf2a3d248114427f51a93b913c39e3ee523c5b3dda55860bd6379f5d37f7d38",
+   "bytes": 6377,
+   "gitBlobAtHEAD": "300ad23c080e3f114516ab4319874df9448e852d",
+   "role": "evidence: proposal.avoid warns against forcing a well because of the term 市井",
+   "loadedInCity": "reference link only",
+   "loadedBy": [
+    "v1/west-layer.mjs:46 link"
+   ],
+   "note": "evidence conflict for the well hole"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 111034,
+   "gitBlobAtHEAD": "0c1262e202b150ae1345e7bb0bf668e22df860ac",
+   "role": "shared city manifest (read-only; LY-100 only)",
+   "loadedInCity": "yes",
+   "loadedBy": [
+    "app.mjs import"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "bytes": 36571,
+   "gitBlobAtHEAD": "4a38b30f6cc39dc73a0e56f500d73edcd63e0c37",
+   "role": "app loader: excludeNodes exact-match, node.replaces, Promise.all rebuild",
+   "loadedInCity": "yes",
+   "loadedBy": [
+    "city-renderer.mjs:286-361 loadAsset",
+    ":409-422 rebuild",
+    ":221 initial",
+    ":601/605 cityIds accumulate"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "bytes": 14563,
+   "gitBlobAtHEAD": "467828a439e5887eb6eb0e19d3b9833c61928b34",
+   "role": "app shell",
+   "loadedInCity": "yes",
+   "loadedBy": [],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/v1/west-layer.mjs",
+   "sha256": "d8c14142af2e4d993cc249dfcc605edadb38232190e5890f31640b94be9d2d4b",
+   "bytes": 18747,
+   "gitBlobAtHEAD": "c1a25e5bf50cc2ce763acdf7b85dc03985a1e471",
+   "role": "v1 loader: market calt co-loads 4 atomic grounds + market + N2 (+flowB)",
+   "loadedInCity": "yes (v1)",
+   "loadedBy": [
+    "v1/west-layer.mjs:31-40"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/v1/market-assembly.mjs",
+   "sha256": "0145ac84d938b570d08e2bbf334eb42cc69ae13569cb0e2bdfa917351ae68ce2",
+   "bytes": 1175,
+   "gitBlobAtHEAD": "171451e10b74e61d733f13c56d572086a8886cbf",
+   "role": "v1 node retire with hard-coded counts 30/7; environments have no excludeNodes",
+   "loadedInCity": "yes (v1)",
+   "loadedBy": [
+    "v1/market-assembly.mjs:2-8"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/v1/ground-atomic.mjs",
+   "sha256": "45e25711f8a1e98db6751d2644f6fe5ca127e7798b60eb85eb9666db794380b0",
+   "bytes": 441,
+   "gitBlobAtHEAD": "6ffae0bf8d7c6a52777bcd28ce644d6d7681c1e8",
+   "role": "assertGroundAtomic: each of 3 stitched nodes exactly once",
+   "loadedInCity": "yes (v1)",
+   "loadedBy": [
+    "v1/west-layer.mjs:40",
+    "v1/road-layer.mjs:19"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/v1/r01-assets.mjs",
+   "sha256": "fbfd5479699d5e0b49f0d199b9e62ce8d77d6f97a0e780b20f940f9d1545ae95",
+   "bytes": 2505,
+   "gitBlobAtHEAD": "a752ae29f9a2dce615d74b578839abeb4426c538",
+   "role": "v1 buildDistrictAssets: environments loaded whole (no node exclusion)",
+   "loadedInCity": "yes (v1)",
+   "loadedBy": [
+    "v1/r01-assets.mjs:5"
+   ],
+   "note": ""
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "bytes": 24215,
+   "gitBlobAtHEAD": "956064537f4eb791182794bc1b6da1517fa66579",
+   "role": "project card (read-only)",
+   "loadedInCity": "n/a",
+   "loadedBy": [],
+   "note": ""
+  },
+  {
+   "path": "docs/model-library/well-study/assets/well-A-LOD0.glb",
+   "sha256": "6bc463f8638df55c7e07282641d3d66d07d23ce9af8cd72a5e211be9772a38ab",
+   "bytes": 1710964,
+   "gitBlobAtHEAD": "9bf6f35180edb5bb04a19eb8bdef05d50d3fcf5f",
+   "role": "cut source well A (liner r 0.59, depth 0.65 below datum)",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-025"
+  },
+  {
+   "path": "docs/model-library/well-study/assets/well-A-LOD1.glb",
+   "sha256": "e9252de34398ef8049876aadaf60f2e4c7c9d9aebc35cd40f34b9fca55fd3255",
+   "bytes": 1346488,
+   "gitBlobAtHEAD": "3134690a9b3dcc16355880290ee0f5b72b945492",
+   "role": "cut source well A LOD1",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-025"
+  },
+  {
+   "path": "docs/model-library/well-study/contract.json",
+   "sha256": "b09677db7a8febaf7ec063141500cd6798c63e176d1fa2a878220bb038f76175",
+   "bytes": 4100,
+   "gitBlobAtHEAD": "d982702426c4cab9fbcdf27122df298e168f8909",
+   "role": "well futurePlacementOpening contract",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-025"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-service-court/files/service-A-LOD0.glb",
+   "sha256": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7",
+   "bytes": 1562188,
+   "gitBlobAtHEAD": "55ff0316ed695e0f9acef4c98a8867f7b75aa3fb",
+   "role": "cut source privy/pen A; no geometry below datum; pen has no own floor",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-045"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-service-court/files/service-A-LOD1.glb",
+   "sha256": "366e1a26442b28a8c8a440d76399a15edab149beb68d5a46d78f9bad6ba29e17",
+   "bytes": 461416,
+   "gitBlobAtHEAD": "f8210821397a8e54cf8dde98b5768f965976dafe",
+   "role": "privy/pen A LOD1",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-045"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-service-court/files/service-A-LOD2.glb",
+   "sha256": "c88104ce40192d2238c5c640743ed9374927edfeef612740495c52a1c267122a",
+   "bytes": 49320,
+   "gitBlobAtHEAD": "0e106c94284cab777f457023c99a81562adf0d5e",
+   "role": "privy/pen A LOD2",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-045"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-tile-kiln/files/kiln-A.glb",
+   "sha256": "e67d597617c3cdeb5d611f233438fa529151afddbc73ad9a2a98315cc9252f01",
+   "bytes": 1208676,
+   "gitBlobAtHEAD": "f79eb8a7615b6aacd326ba0694fe59cbdf2464af",
+   "role": "cut source kiln A (below datum to -1.04, 37.22 m2)",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-053"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-tile-kiln/files/kiln-B.glb",
+   "sha256": "4886d95d22383a9b26870d36b476f2efa3b35fe68037df6b444847fd38980d91",
+   "bytes": 1207668,
+   "gitBlobAtHEAD": "b8d3dea39dc7272fdf649be9e7261c8e1c47bfe0",
+   "role": "cut source kiln B (below datum to -1.04, 37.04 m2)",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-053"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-tile-kiln/files/kiln-A-LOD1.glb",
+   "sha256": "562b4b398bb97ea4478f0d6e06595994b16725139ee9e80ad66c28501efb69c9",
+   "bytes": 821880,
+   "gitBlobAtHEAD": "6c02cf7001783250748b046312463bba3072d137",
+   "role": "kiln A LOD1",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-053"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-tile-kiln/files/kiln-B-LOD1.glb",
+   "sha256": "8d9db85bf26e911ffca14123784f97f5b0c7677cf2cce8cf762d8dc21167a0d5",
+   "bytes": 820856,
+   "gitBlobAtHEAD": "90c8861726afd4003372262746f970e018fe4fbd",
+   "role": "kiln B LOD1",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-053"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-near.glb",
+   "sha256": "79d36565d0a4c064f85065b0dc861385d55ca56b24b6b55ba4994c18831a1a0b",
+   "bytes": 1518404,
+   "gitBlobAtHEAD": "e3bf3664f8766a794327f64bd0cc8f26e524d8d6",
+   "role": "cut source waterway (below datum 0.18, 7.35 m2)",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-086"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-mid.glb",
+   "sha256": "68ec04bb8d39eda5cc7e5d93aa39b8bcb4ed86cea4a1b7bc990bc4d2ca3b716f",
+   "bytes": 133976,
+   "gitBlobAtHEAD": "e3fdff7859034fd8152ca04872b4ee6c9d3de105",
+   "role": "waterway mid",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-086"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-far.glb",
+   "sha256": "af5e8b65e892589366e7a65ae9210301c3291421b021fc487f0f1050d90a0931",
+   "bytes": 17200,
+   "gitBlobAtHEAD": "4d5aa26db24d8147b93a03e9ca84bc57b656b4e4",
+   "role": "waterway far",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-086"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/files/palace-waterway-interface-inspection-near.glb",
+   "sha256": "f90094d2bd5fb376b13f6d8506bbce12cc48dd4c0f18795e0d79558fa0de1bba",
+   "bytes": 1416232,
+   "gitBlobAtHEAD": "a0a881130db5ec02b2bba0dd5a2465a5c25d0800",
+   "role": "waterway modern inspection split",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "LY-086"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-service-court/m-luoyang-service-court.asset.json",
+   "sha256": "02e98a9d3c60cce7e6e2e1254802484387018d9eff58e15fd412b920fd9bd1aa",
+   "bytes": 1357,
+   "gitBlobAtHEAD": "d508b4e69b02125dae489872d20c388fb5f76199",
+   "role": "card",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": ""
+  },
+  {
+   "path": "docs/library/models/m-luoyang-tile-kiln/m-luoyang-tile-kiln.asset.json",
+   "sha256": "99f6320539659444c3317a2245378ea3215ce5e96f586159b08ace696f8311f5",
+   "bytes": 1431,
+   "gitBlobAtHEAD": "8e11b5c1ee9c37c855ac4676b89e6023514b1188",
+   "role": "card",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": ""
+  },
+  {
+   "path": "docs/library/models/m-luoyang-palace-waterway-interface/m-luoyang-palace-waterway-interface.asset.json",
+   "sha256": "3dc81ef172880ca7c998f4b59dd782e9fdd9f32b4a5ff8bb519d0f593b4d36bf",
+   "bytes": 1931,
+   "gitBlobAtHEAD": "b3dabdfbd954619e8e40d2948528f2e3171ed6a5",
+   "role": "card",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": ""
+  }
+ ],
+ "workpackInputs": [
+  {
+   "path": "workpacks/LY-025/prep/work/market_frontage_well_routes.glb",
+   "role": "only existing holed ground: node C_market_ground_well_A (sample_ground outline + 48-seg r 0.59 hole), extracted by LY-025 from modeling-lab/review-batches/2026-11-04-city-visible ZIP 5895ef23",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "read-only; LY-025 owns",
+   "sha256": "0193ebc0cfe200292defd595ff4f4011b2b2d05388d4f53e7b4c3a19a255b4c5"
+  },
+  {
+   "path": "workpacks/LY-045/prep/measure-yard-fit.json",
+   "role": "privy-pen candidate pose C02-010 rot0 T=(533.8,0.2,-812.15); hole world rect x 533.59-534.01, z -814.62..-814.20 (prep candidate, not admitted)",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "read-only; LY-045 owns; pit depth undetermined",
+   "sha256": "573418af4d0a8aed23d0ad3e12bc4f810fc30d1bd8e728ee5ddd1af7d53bce4b"
+  },
+  {
+   "path": "workpacks/LY-086/prep/out/measure.json",
+   "role": "waterway measurements; LY-086 proposes a shaft cut plan 0.90x0.90 clear / 1.518x1.518 outer for LY-090; ground datum undefined (0.76 or 1.80 or other)",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "read-only; LY-086 owns",
+   "sha256": "0d93f00df49b2dda9c7268609f199fa3d4ae01554f9c1bfc3511797c6cd0a6be"
+  },
+  {
+   "path": "workpacks/LY-053/prep/openings-A.json",
+   "role": "kiln A pit / firebox / bed-recess openings (pit 3.8x3.2 m, 0.8 m to pit-floor top) - formed only by presentation_ground",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "read-only; LY-053 owns",
+   "sha256": "20c91f5c12d10c7f3d939049dd0c9c308ef03ae557f18f010c9628b79d91f3e4"
+  },
+  {
+   "path": "workpacks/LY-089/prep/prep-status.json",
+   "role": "second ground writer: planned terrain-diff-*.glb overlay nodes; states its patches must not seal LY-090 registered holes",
+   "loadedInCity": "no",
+   "loadedBy": [],
+   "note": "read-only; LY-089 owns",
+   "sha256": "0f4f9f153e143c27cf03a8683180c0e5cff9a97b1debf8401aa65ba3321b0a90"
+  }
+ ],
+ "missing": [
+  {
+   "what": "city-C032-entry-LOD0.blend (SHA 1e8c4d2c...3b01b per LY-025)",
+   "use": "native cut operation behind C_market_ground_well_A",
+   "rebuildFromGLB": "yes: hole is 48-seg r 0.590 polygon, outline identical to sample_ground"
+  },
+  {
+   "what": "LY-045 frozen pit decision (depth / footprint) for privy-pen",
+   "use": "whether a host cut exists at all",
+   "rebuildFromGLB": "no: current GLBs have zero geometry below datum; a pit is new C design owned by LY-045"
+  },
+  {
+   "what": "LY-053 pit-A/pit-B geometry and atomic cut contract",
+   "use": "kiln cut polygon and liner",
+   "rebuildFromGLB": "footprint yes (measured 37.22/37.04 m2 from GLB); liner is LY-053 new geometry"
+  },
+  {
+   "what": "LY-086 local wall study block + opening + ground datum for the waterway",
+   "use": "waterway cut host and which plate band it crosses",
+   "rebuildFromGLB": "footprint yes, per datum (out/datum-pairs.json: datum 0 -> 7.35 m2 / 0.18 m; 0.76 -> 6.54 m2 in band + 0.81 shaft; 1.80 -> only shaft ring 1.44 m2 + 0.81 clear, 5.91 m2 buried below a hollow plate); host block does not exist yet"
+  },
+  {
+   "what": "LY-089 approved gap patches",
+   "use": "second ground writer to merge",
+   "rebuildFromGLB": "n/a (not produced)"
+  },
+  {
+   "what": "G freeze: LY-001/002/005/006/007/008/009/010",
+   "use": "world placement, ownership of host nodes, datum, LOD rules, checker",
+   "rebuildFromGLB": "n/a"
+  },
+  {
+   "what": "admitted world placement for kiln, privy-pen, waterway (privy has an LY-045 prep candidate only)",
+   "use": "pairwise non-overlap test in world space",
+   "rebuildFromGLB": "no: needs LY-010 admission; none exists in city-data today"
+  },
+  {
+   "what": "private source packages (.blend / source ZIP) for market-cluster sample_ground and the four atomic grounds",
+   "use": "native-side cut instead of GLB re-triangulation",
+   "rebuildFromGLB": "yes: hosts are closed 0.20 m plates (12 / 140 / 21,192 / 96,796 / 128,342 tris); a polygon boolean on the GLB is sufficient, and must be stated as rebuilt from GLB"
+  }
+ ],
+ "measurementOutputs": [
+  "out/ground-stack.json",
+  "out/cut-plans.json",
+  "out/hole-check.json",
+  "out/hosts.json",
+  "out/well-hole-polygon.json",
+  "out/plate-thickness.txt",
+  "out/datum-pairs.json"
+ ]
+}

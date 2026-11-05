@@ -1,0 +1,56 @@
+{
+  "seat": "LY-017",
+  "inputsFound": [
+    "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-P-LOD0.glb 5cdd8d68 (no wings)",
+    "docs/cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb 7d995a1b; LOD2 e6f289f7 (no wings)",
+    "docs/cities/luoyang/progress-assets/flat/study-north13-pingcheng-P-c8ab88f4b326.glb c8ab88f4 (local-study view only, city-renderer.mjs:645 -> :286)",
+    "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD0/1/2.glb c0f70051 / d4de907a / 87e3e751 (card only, not in city)",
+    "docs/cities/luoyang/assets/city-wall/A/wall-05.glb 4e000b0c, wall-06.glb d7d3cc79 (initial=true in city-data.mjs:272/292)",
+    "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb fdfc3ce5 (no ground at the gate; nearest vertex 60.52 m south)",
+    "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-pingcheng-gate-study-v1 zip 19646f31: hidden-trial.blend 2d2b74a7 (orig bfd7a9dd), placement.json 46abecb1, source/city-trial.py 088e05f2 (wing generator)",
+    "modeling-lab/review-batches/2026-11-04-city-visible zip 5895ef23 (mother 1e8c4d visible nodes, not deployed): city_gate_pingcheng-P.glb a5ba1123 (gate+two wings, LOD1), C_ground_network__C_stitch_primary.glb 2b89e858 (exact old oblique road), C_gate_local_ground.glb 6002f5a6 (pingcheng_ground_trial_v1 = LOD0 attachment), conditional_link_A.glb 32bfcf8d, city_wall_C_profiles.glb e42d9f50"
+  ],
+  "inputsMissing": [
+    "mother eabb2a90 city-C032-wuku-facade.blend (P-v1 trial base): not in repo; for gate-area contact purposes rebuildable from the 1e8c4d visible GLB chunks (wall caps agree to 0.000122 m), not for the hidden library",
+    "overlay 660cdf37 four-family-plus-gate-wall-overlay.blend (C_wall_A_05_refined_v1): not in repo; the refined wall exists as GLB in city_wall_C_profiles chunk, so rebuildable from GLB for the cap contact",
+    "mother 1e8c4d city-C032-entry-LOD0.blend: excluded by the handoff README; the 453 visible nodes are rebuildable from GLB, the 2505 hidden placement meshes are not",
+    "ground-attachment source pack (generator + 3114-sample / 565-dependency definition): not in repo; geometry rebuildable from GLB (public GLB == mother instance within 0.002 m), sample set not reproducible",
+    "LY-016 deliverable (complete side-gate ground): not produced yet",
+    "G pack: LY-005 port/coordinate contract, LY-006 owner of the old-road slab under the gate, LY-008 checker, LY-010 decision on which baseline (docs bce3211 vs mother 1e8c4d) counts as current"
+  ],
+  "gaps": [
+    "docs city (bce3211) has NO old road at the gate: zero ground faces within gate-local +-20 x +-40 m; nearest stitched vertex 60.52 m south (road-plan cut gate_pingcheng_B 'no new gateway crossing'). Exact old road only in undeployed mother-1e8c4d chunk",
+    "public P-v1 GLBs (all 3 LODs) lack the two wings: earth x=+-12.8 vs wall caps x=+-16.0 -> 3.2 m gap each side; wings exist only for LOD1 (hidden trial / chunk earth x [-16.0,16.0001], 24 outer verts, max 0.000122 m to docs wall vertices)",
+    "old road slab (top +0.04, 0.05 thick, drifts 0.53 m over 43 m, ~0.70 deg) intrudes gate solids, unclassified: W central pier 2.121 m2 x 0.04 = 0.085 m3; under closed central leaves 1.051 m2 = 0.042 m3; central jambs 0.064 + 0.0128 m2 = 0.0031 m3; E pier 0",
+    "attachment patches vs old road: 0.01 m seam on both sides at all 8 measured rows, no overlap (0.0004 m2 numerical)",
+    "inner arrival broken: inner old road ends at local y=13.25, conditional_link_A starts y=21.25 -> 8.0 m unsupported; grid reach R1=false (local loop still closes)",
+    "public attachment LOD0/1/2 vs mother instance: coverage mismatch 45/98/156 of 9373 samples (0.5/1.0/1.7%), max top dz 0/0.001/0.002 m",
+    "3114/565 foot-sample dependency not reproducible (source pack missing); proxy negative N2 (no old road -> W patch cannot reach E patch) = false as expected",
+    "measured passages (all 3 LODs identical): side clear x[-9.68,-6.12] = 3.56 m at z 0.1-4.0; door head underside 4.70 m, deck 5.00 m; centre x[-3,3] blocked at every tested height 0.1-4.5; strips 0.82-0.87 m from open-leaf battens",
+    "grid loop (0.1 m cells, 0.3 m half-width, 1.9 m head, mother composition): P1 W in=true, P2 E out=true, N1 centre-only=false, N2 no-road=false, N4 leaf-removed=true; also true with public LOD0/1/2 attachments. Discrete local check only",
+    "old position: chunk gate matrix vs placement T max diff 1.85e-5 (no drift)"
+  ],
+  "reuseCandidate": "None (no qualified result ready to deliver). Usable as a starting point: in the city-visible handoff (mother 1e8c4d, chunks a5ba1123 + 2b89e858 + 6002f5a6) the gate, two wings, old road and LOD0 side-gate ground already coexist, and the grid loop P1/P2/N1/N2/N4 all come out as expected. But it has only LOD1 wings, three unclassified intrusions (0.085 / 0.042 / 0.0031 m3), is absent from the docs city, and has had no install/rollback against the baseline, so it does not meet acceptance",
+  "touches": [
+    "pingcheng-P-static_earth (incl. two terminal-adapter wings), pingcheng-P-static_tile, pingcheng-P-static_timber - read/reference, wings to be carried to LOD0/LOD2",
+    "C_stitch_primary old-road segment, gate-local y -40..13.25, x ~[-3.37,3.15] (slab under central lane and W pier) - ownership conflict with LY-016 / road owner",
+    "pingcheng_ground_trial_v1 / pingcheng-ground-LOD0/1/2.glb (strips x +-[7.0,8.8], patches |y| 6.9-10) - LY-016 output, read only",
+    "C_wall_A_05_refined_v1 / docs wall-05.glb and C_wall_A_06 / docs wall-06.glb end caps at x=+-16.0 - contact only, no edit",
+    "conditional_link_A (reach report only, no edit)",
+    "city-data.mjs assets[study-north13-pingcheng-P] / researchModels[research-north13-pingcheng-P] - LY-100 only, LY-017 proposes overlay",
+    "workpacks/LY-017/** only"
+  ],
+  "size": "M",
+  "risks": [
+    "Baseline ambiguity: the docs city has no old road at the gate, so 'current baseline' must be fixed by LY-010; assembling onto the docs city would require bringing the old-road chunk in, which is a road change outside LY-017",
+    "Intrusion disposition (old road into W pier / under leaves) needs an owner decision (LY-006): cutting the road belongs to the road/LY-016 owner; 'legal embed' needs explicit sign-off",
+    "LY-016 may change strip/patch extents; every 3x3 LOD combination must be re-run and bound to the delivered SHA",
+    "Wing geometry for LOD0/LOD2 does not exist; reusing the LOD1 adapter boxes is cheap but must be disclosed as a reuse, not a new LOD",
+    "Grid BFS is discrete (0.1 m, square erosion); it is not continuous body motion, vehicles, structure or GPU/browser proof; an early test version gave a false 'centre passes' because the clearance ray started above embedded leaves (fixed: start 0.1 m below gate base)",
+    "Inner arrival gap 8.0 m to conditional_link_A means the loop is local only; must not be described as gate access from the city",
+    "Historical: 177/178 damage records differ, c.180 repair unknown; closed central leaf is a C display choice; evidence URLs in P-v1 evidence.md were not re-verified by this seat"
+  ],
+  "readyAfterG": true,
+  "readyAfterGNote": "All geometry inputs exist as GLB in the repo; can start once G fixes baseline, ports and owners and LY-016 delivers. If LY-010 chooses the docs city without the old road, the seat becomes blocked on a road decision",
+  "prepFiles": ["brief-draft.md", "inputs.json", "test-plan.md", "prep-status.json", "measure_loop.py", "measure_assembly.py", "probe_city_ground.py", "probe_visible_chunks.py", "loop-result.json", "measure-result.json", "probe-result.json", "probe-visible-result.json", ".gitignore (_extract/ = read-only reassembled public ZIP contents)"]
+}

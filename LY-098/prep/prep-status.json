@@ -1,0 +1,67 @@
+{
+ "seat": "LY-098",
+ "inputsFound": [
+  "lab@bce3211 docs/cities/luoyang/p-luoyang.asset.json 8edb06ab（提交字节）",
+  "lab@bce3211 docs/cities/luoyang/city-data.mjs c849706b（提交 106463 B；检出 CRLF 111034 B 不用）",
+  "lab@bce3211 index.html cfbf7376 / app.mjs cc0379c0 / city-renderer.mjs 04c6c643 / scene.mjs 00114cb9 / README.md e31b11a2",
+  "lab@bce3211 assets/posters.json 633142d8 / city-overview.webp 93454110 / west/wall-city-direct-A.png 83fdbbae / project-stage-contract.json fd284f15 / data/research-unplaced.json 27f9e7f3",
+  "lab@bce3211 data/evidence/evidence-geometry.json fa8b7002 / data/west/city-wall-constraints.json e9c84bdd（含 gate_xuan_B 旋门）",
+  "lab@bce3211 docs/manifest.json 0d14a812（全站 ongoingProjects 洛阳条目）/ lab/data/assets.json 53d86312",
+  "lab@bce3211 55 张成员卡 + docs/cities/luoyang 下 154 个文本文件，逐个 SHA 见 prep/inputs.json 与 prep/baseline/bce3211/surface.json",
+  "workpacks TASKPOOL.md 00c2e171 / taskboard.json 1d1fcb9c",
+  "workpacks LY-001 status a32d742a、family-ledger 8eaa7c7a（未提交）",
+  "workpacks LY-002 status 0ac63db8、evidence-ledger.json 237a4811、family-binding.json 3aeddcc0、selftest 88c55da0（未提交）",
+  "lab 本机 origin/main cad338b（漂移对照，非终审基线）",
+  "本席位检查器 ly098_audit.py 7afd3e5d / ly098_selftest.py 96f11221 / ly098_surface.py 5d402767 / ly098_ledger_join.py 077fc497 / eval_city_data.mjs 597ecebd"
+ ],
+ "inputsMissing": [
+  "LY-010 首批方案与区域准入：目录不存在，G 未冻结；终审要按它判断哪些未验项允许公开待验；不可从 GLB 重建",
+  "LY-001、LY-002、LY-005—009 的冻结提交：都已交但 workpacks 未提交，R20 史源绑定现只报数；不可从 GLB 重建",
+  "LY-091/092/093/094 区域验收结论：终审要逐条对照章与 progress 状态；只有 prep；不可从 GLB 重建",
+  "LY-100 本批 manifest（selected_tasks/dependency_closure/gate_results/excluded_regions）与批次基线提交；不可从 GLB 重建",
+  "LY-002 对 m-gate-roof-study、m-eaves-shell、m-passage-interface 三张成员卡的证据绑定（family-binding 54 族未覆盖）",
+  "卡片三级图例 ↔ LY-002 五级 ↔ 任务池四类的对应表（谁定：LY-002/LY-007 或协调者）",
+  "远端最新 main 提交号：本席位不联网，本机 origin/main=cad338b 是否最新未知",
+  "私密源包（.blend/源 ZIP）：本席位不需要——只核文字、计数、状态与出处字节，不重建几何"
+ ],
+ "gaps": [
+  "主检查器基线 bce3211 重跑与存档逐字段一致：14 条规则 5 条 FAIL，共 16 FAIL / 41 WARN / 51 条更正草稿；自测 22/22",
+  "R07：6 处“六门/六座城门研究候选”vs 卡片“城门研究 10 座”vs 研究视图 6（含已入城雍门）；3 处“只有一座广阳门门体”vs 实测 2；3 处“六章/SIX CHAPTERS”vs 7 章",
+  "R05：雍门已入城（yong-gate-body），研究视图 research-north13-yong-Y 仍称“已建研究候选”",
+  "R03：礼制章“已建模”、城市节点 0，引导语“把新的地标，记进城中。”",
+  "覆盖面：docs/cities/luoyang 154 个文本文件，主检查器只读 9 个；48 个带中文文件、2587 个中文句段未扫（cad338b 50 个、2663 段）",
+  "R16/G-N1：证据层 evidence-geometry.json 与 city-wall-constraints.json 门名“旋门”（gate_xuan_B），站内其余用“旄门”；全城海报画面也烧进“旋门”；与 LY-002 D-01 互证",
+  "R08b/G-N2：city-renderer.mjs L140 isInferred 含 'C'，C 工程设计与推测同笔触；city-data 3 处 tier=C 无图例（cad338b 15 处）",
+  "R17/G-N3：docs/manifest.json 洛阳条目标题“洛阳 · 证据之城”≠项目卡“洛阳”；最后修改 2026-11-03T14:32 早于项目卡 2026-11-05T18:51，描述停在“C02 变体/屋顶覆盖 5.10%”阶段，evidence 指向重定向到 v1 的页",
+  "R18/G-N4：city-data provenance.sourceContracts 13 对 path+sha256 中 12 对只对 CRLF 变体成立、与提交/线上字节不符（cad338b 14 对中 12 对）",
+  "M01/G-N5：全城海报 city-overview.webp（原图 2026-11-03）画面写“已有14院与广阳局部更细”，页面作为“这一版”全城图展示；实测 44 院、门体 2 座",
+  "R20：项目卡 55 成员中 52 张接到 LY-002 facts，3 张无绑定（m-gate-roof-study、m-eaves-shell、m-passage-interface）",
+  "R19：68 个公开文本里禁用项关键词命中 11 次，8 次有限定，3 次待人工复核（项目卡“市与里坊”=X07/D-07；palace-admission-court/evidence.md L31 东掖门；kaiyang 卡 L44 洛河），无 FAIL",
+  "R11：项目卡限制未写真实手机未验（stage-contract realMobile=false）、未写全城连续碰撞未做",
+  "漂移：cad338b 47 院、8 章，城景页/便签 7 处仍写“44 院”；基线 16 条 FAIL 一条未修"
+ ],
+ "reuseCandidate": "无。LY-001 checks 与 LY-002 D-01—D-09 是对照输入（D-01 与本席位 G-N1 互证），不能替代终审；本席位此前只有第一轮准备产物，无终审产物。",
+ "touches": [
+  "只读：docs/cities/luoyang/p-luoyang.asset.json（summary、coverAlt、chapters[*]、progress[*]、evidence、journal[*].batch、notes、members）",
+  "只读：docs/cities/luoyang/city-data.mjs（chapters、nodes title/basis/tier/replaces、researchModels、provenance.counts/limits/sourceContracts）",
+  "只读：docs/cities/luoyang/index.html、app.mjs、city-renderer.mjs、scene.mjs、README.md、assets/posters.json 与 8 张海报及其原图",
+  "只读：docs/cities/luoyang/data/evidence/evidence-geometry.json、data/west/city-wall-constraints.json、data/research-unplaced.json、project-stage-contract.json",
+  "只读：docs/cities/luoyang/progress-assets/*/README.md、source.json、evidence.md；v1/*；research/2026-11-0{3,4}/*",
+  "只读：docs/manifest.json ongoingProjects 洛阳条目；lab/data/assets.json；55 张成员资产卡",
+  "只读：workpacks LY-001/qa/family-ledger.json、LY-002/tables/*",
+  "不碰任何源节点几何、地坪片或 GLB；更正清单的目标字段（含证据层门名、manifest 条目、provenance SHA）归 LY-100 合并，SHA 口径归 LY-096/099",
+  "写：仅 workpacks/LY-098/prep/"
+ ],
+ "size": "M",
+ "risks": [
+  "基线已漂移：本机 origin/main=cad338b 比 bce3211 多 3 个提交，远端是否更新未知；终审必须在 LY-100 批次基线上重跑",
+  "ly098_surface.py / ly098_ledger_join.py 还没有 --overlay，只能在合并提交上跑；补上后须重跑自测并更新 SHA",
+  "R09/R15/R19 的否定与限定按句段启发式判断，有漏报（如“无名”的“无”被当否定）和误报（洛河、东掖门），INFO/WARN 都要人工抽查",
+  "R20 依赖未提交的 LY-001/LY-002 字节；冻结时若字节变化须重跑，现结果不能写成通过",
+  "公开文本靠正则抽取，运行时拼接的文字可能漏抽；海报画面里烧进的文字只能人工看图（M01），终审前应补一次真实页面文本抓取对照（LY-097 环境）",
+  "R06 入城判定按 git blob 逐字节比对，同一模型重新导出会被判未入城，需配合 LY-001 家族台账",
+  "城景页与资产库项目页、全站 manifest 是三套文字源，LY-100 只改一处会再次产生 R07/R03/R17 差异",
+  "“旋门/旄门/秏门”用字和 D-07“里坊”是否改由 LY-002/协调者定；本席位只核一致性，不裁史实"
+ ],
+ "readyAfterG": true
+}

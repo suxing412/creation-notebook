@@ -1,0 +1,5295 @@
+{
+ "tool": "measure_closure.py",
+ "cell_m": 0.05,
+ "heights_world_y": [
+  0.233,
+  0.353,
+  0.553,
+  0.953,
+  1.453,
+  1.953
+ ],
+ "lotTop": 0.2,
+ "personHeight_world_y": 0.953,
+ "minPassWidth_m_C": 0.6,
+ "scope": "horizontal slice outlines of retained (city-rendered) triangles rasterised on a 0.05 m grid; 4-connected free-space labelling inside the site_lot rectangle; ring = 1 cell inside the lot edge. Not solid collision, not continuous body sweep, not GPU.",
+ "inputs": {
+  "docs/cities/luoyang/city-data.mjs": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+  "docs/cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+  "docs/cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+  "docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+  "docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+  "docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+  "docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+  "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+  "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+  "docs/cities/luoyang/assets/c02v/B2-LOD1-prototype.glb": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+  "docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+  "docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+  "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+  "docs/cities/luoyang/assets/ground-atomic/retained.glb": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+  "docs/cities/luoyang/assets/ground-atomic/south.glb": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+  "docs/cities/luoyang/assets/ground-atomic/D08.glb": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a"
+ },
+ "prototypes": {
+  "courtyard-A/LOD1": {
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_hardpacked_activity_ground"
+   ],
+   "excludeNodesMissing": [],
+   "retainedNodes": {
+    "architecture_C_whitebox_earth_wall": 624,
+    "architecture_C_roof_rhythm_not_glaze_copy": 100,
+    "architecture_C_plain_timber": 360,
+    "architecture_C_floor_plinth": 72
+   },
+   "lotRect_xz": [
+    -9.0,
+    9.0,
+    -12.0,
+    12.0
+   ],
+   "heights": {
+    "0.233": {
+     "yardArea_m2": 323.49,
+     "components": 1,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 43404,
+     "solidInteriorsFilled": 13,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 3.35,
+       "to": 6.25,
+       "width": 2.9,
+       "mid_xz": [
+        4.825,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        323.49
+       ]
+      }
+     ]
+    },
+    "0.353": {
+     "yardArea_m2": 324.77,
+     "components": 1,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 42893,
+     "solidInteriorsFilled": 11,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 3.35,
+       "to": 6.25,
+       "width": 2.9,
+       "mid_xz": [
+        4.825,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        324.77
+       ]
+      }
+     ]
+    },
+    "0.553": {
+     "yardArea_m2": 384.68,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17846,
+     "solidInteriorsFilled": 13,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 3.35,
+       "to": 6.25,
+       "width": 2.9,
+       "mid_xz": [
+        4.825,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        384.68
+       ]
+      }
+     ]
+    },
+    "0.953": {
+     "yardArea_m2": 384.68,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17846,
+     "solidInteriorsFilled": 13,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 3.35,
+       "to": 6.25,
+       "width": 2.9,
+       "mid_xz": [
+        4.825,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        384.68
+       ],
+       "verticalHits_atMid": [
+        2.65,
+        2.792
+       ]
+      }
+     ]
+    },
+    "1.453": {
+     "yardArea_m2": 384.78,
+     "components": 7,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 18261,
+     "solidInteriorsFilled": 17,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 3.35,
+       "to": 6.25,
+       "width": 2.9,
+       "mid_xz": [
+        4.825,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        384.78
+       ]
+      }
+     ]
+    },
+    "1.953": {
+     "yardArea_m2": 385.27,
+     "components": 1,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 18694,
+     "solidInteriorsFilled": 21,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 3.35,
+       "to": 6.25,
+       "width": 2.9,
+       "mid_xz": [
+        4.825,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        385.27
+       ]
+      }
+     ]
+    }
+   },
+   "file": "assets/r01/R01-A-LOD1-prototype.glb",
+   "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+   "shaMatchesCityData": true
+  },
+  "courtyard-A/LOD0": {
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_hardpacked_activity_ground"
+   ],
+   "excludeNodesMissing": [],
+   "retainedNodes": {
+    "architecture_C_whitebox_earth_wall": 624,
+    "architecture_C_roof_rhythm_not_glaze_copy": 6436,
+    "architecture_C_plain_timber": 360,
+    "architecture_C_floor_plinth": 72
+   },
+   "lotRect_xz": [
+    -9.0,
+    9.0,
+    -12.0,
+    12.0
+   ],
+   "heights": {
+    "0.233": {
+     "yardArea_m2": 323.49,
+     "components": 1,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 43404,
+     "solidInteriorsFilled": 13,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 3.35,
+       "to": 6.25,
+       "width": 2.9,
+       "mid_xz": [
+        4.825,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        323.49
+       ]
+      }
+     ]
+    },
+    "0.353": {
+     "yardArea_m2": 324.77,
+     "components": 1,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 42893,
+     "solidInteriorsFilled": 11,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 3.35,
+       "to": 6.25,
+       "width": 2.9,
+       "mid_xz": [
+        4.825,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        324.77
+       ]
+      }
+     ]
+    },
+    "0.553": {
+     "yardArea_m2": 384.68,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17846,
+     "solidInteriorsFilled": 13,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 3.35,
+       "to": 6.25,
+       "width": 2.9,
+       "mid_xz": [
+        4.825,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        384.68
+       ]
+      }
+     ]
+    },
+    "0.953": {
+     "yardArea_m2": 384.68,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17846,
+     "solidInteriorsFilled": 13,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 3.35,
+       "to": 6.25,
+       "width": 2.9,
+       "mid_xz": [
+        4.825,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        384.68
+       ],
+       "verticalHits_atMid": [
+        2.65,
+        2.792,
+        2.837
+       ]
+      }
+     ]
+    },
+    "1.453": {
+     "yardArea_m2": 384.78,
+     "components": 7,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 18261,
+     "solidInteriorsFilled": 17,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 3.35,
+       "to": 6.25,
+       "width": 2.9,
+       "mid_xz": [
+        4.825,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        384.78
+       ]
+      }
+     ]
+    },
+    "1.953": {
+     "yardArea_m2": 385.27,
+     "components": 1,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 18694,
+     "solidInteriorsFilled": 21,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 3.35,
+       "to": 6.25,
+       "width": 2.9,
+       "mid_xz": [
+        4.825,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        385.27
+       ]
+      }
+     ]
+    }
+   },
+   "file": "assets/r01/R01-A-LOD0-prototype.glb",
+   "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+   "shaMatchesCityData": true
+  },
+  "courtyard-B/LOD1": {
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_loading_yard"
+   ],
+   "excludeNodesMissing": [],
+   "retainedNodes": {
+    "architecture_C_whitebox_earth_wall": 648,
+    "architecture_C_roof_rhythm_not_glaze_copy": 120,
+    "architecture_C_plain_timber": 540,
+    "architecture_C_floor_plinth": 132
+   },
+   "lotRect_xz": [
+    -9.0,
+    9.0,
+    -12.0,
+    12.0
+   ],
+   "heights": {
+    "0.233": {
+     "yardArea_m2": 328.96,
+     "components": 7,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 40862,
+     "solidInteriorsFilled": 18,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        328.96
+       ]
+      }
+     ]
+    },
+    "0.353": {
+     "yardArea_m2": 330.52,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 40221,
+     "solidInteriorsFilled": 12,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        330.52
+       ]
+      }
+     ]
+    },
+    "0.553": {
+     "yardArea_m2": 357.45,
+     "components": 15,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 29003,
+     "solidInteriorsFilled": 12,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        357.45
+       ]
+      }
+     ]
+    },
+    "0.953": {
+     "yardArea_m2": 383.55,
+     "components": 15,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 18220,
+     "solidInteriorsFilled": 14,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        383.55
+       ],
+       "verticalHits_atMid": [
+        2.65,
+        2.792
+       ]
+      }
+     ]
+    },
+    "1.453": {
+     "yardArea_m2": 385.2,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 18009,
+     "solidInteriorsFilled": 17,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        385.2
+       ]
+      }
+     ]
+    },
+    "1.953": {
+     "yardArea_m2": 385.27,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17981,
+     "solidInteriorsFilled": 16,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        385.27
+       ]
+      }
+     ]
+    }
+   },
+   "file": "assets/r01/R01-B-LOD1-prototype.glb",
+   "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+   "shaMatchesCityData": true
+  },
+  "courtyard-B/LOD0": {
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_loading_yard"
+   ],
+   "excludeNodesMissing": [],
+   "retainedNodes": {
+    "architecture_C_whitebox_earth_wall": 648,
+    "architecture_C_roof_rhythm_not_glaze_copy": 7896,
+    "architecture_C_plain_timber": 540,
+    "architecture_C_floor_plinth": 132
+   },
+   "lotRect_xz": [
+    -9.0,
+    9.0,
+    -12.0,
+    12.0
+   ],
+   "heights": {
+    "0.233": {
+     "yardArea_m2": 328.96,
+     "components": 1,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 41218,
+     "solidInteriorsFilled": 24,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        328.96
+       ]
+      }
+     ]
+    },
+    "0.353": {
+     "yardArea_m2": 330.52,
+     "components": 6,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 40409,
+     "solidInteriorsFilled": 17,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        330.52
+       ]
+      }
+     ]
+    },
+    "0.553": {
+     "yardArea_m2": 357.45,
+     "components": 10,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 29191,
+     "solidInteriorsFilled": 17,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        357.45
+       ]
+      }
+     ]
+    },
+    "0.953": {
+     "yardArea_m2": 383.55,
+     "components": 13,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 18391,
+     "solidInteriorsFilled": 16,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        383.55
+       ],
+       "verticalHits_atMid": [
+        2.65,
+        2.792,
+        2.837
+       ]
+      }
+     ]
+    },
+    "1.453": {
+     "yardArea_m2": 385.2,
+     "components": 10,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 18124,
+     "solidInteriorsFilled": 18,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        385.2
+       ]
+      }
+     ]
+    },
+    "1.953": {
+     "yardArea_m2": 385.27,
+     "components": 10,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 18096,
+     "solidInteriorsFilled": 17,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        385.27
+       ]
+      }
+     ]
+    }
+   },
+   "file": "assets/r01/R01-B-LOD0-prototype.glb",
+   "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+   "shaMatchesCityData": true
+  },
+  "courtyard-TC03/LOD1": {
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "excludeNodesMissing": [],
+   "retainedNodes": {
+    "architecture_C_earth_wall": 1116,
+    "architecture_C_roof_rhythm": 164,
+    "architecture_C_plain_timber": 648,
+    "architecture_C_plinth": 144,
+    "designed_front_apron": 40,
+    "designed_side_passage": 52,
+    "designed_rear_work_ground": 20,
+    "architecture_C_drain_stone": 36
+   },
+   "lotRect_xz": [
+    0.0,
+    28.0,
+    -36.0,
+    0.0
+   ],
+   "heights": {
+    "0.233": {
+     "yardArea_m2": 753.83,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 101641,
+     "solidInteriorsFilled": 24,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        753.83
+       ]
+      }
+     ]
+    },
+    "0.353": {
+     "yardArea_m2": 762.46,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 98189,
+     "solidInteriorsFilled": 18,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        762.46
+       ]
+      }
+     ]
+    },
+    "0.553": {
+     "yardArea_m2": 903.86,
+     "components": 21,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 38561,
+     "solidInteriorsFilled": 22,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        903.86
+       ]
+      }
+     ]
+    },
+    "0.953": {
+     "yardArea_m2": 903.86,
+     "components": 21,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 38561,
+     "solidInteriorsFilled": 22,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        903.86
+       ],
+       "verticalHits_atMid": [
+        0.2,
+        0.212,
+        2.65,
+        2.792
+       ]
+      }
+     ]
+    },
+    "1.453": {
+     "yardArea_m2": 904.31,
+     "components": 9,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 39818,
+     "solidInteriorsFilled": 36,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        904.31
+       ]
+      }
+     ]
+    },
+    "1.953": {
+     "yardArea_m2": 905.02,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 41164,
+     "solidInteriorsFilled": 38,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        905.02
+       ]
+      }
+     ]
+    }
+   },
+   "file": "assets/d08/TC03-LOD1-prototype.glb",
+   "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+   "shaMatchesCityData": true
+  },
+  "courtyard-TC03/LOD0": {
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane"
+   ],
+   "excludeNodesMissing": [],
+   "retainedNodes": {
+    "architecture_C_earth_wall": 1116,
+    "architecture_C_roof_rhythm": 12548,
+    "architecture_C_plain_timber": 648,
+    "architecture_C_plinth": 144,
+    "designed_front_apron": 40,
+    "designed_side_passage": 52,
+    "designed_rear_work_ground": 20,
+    "architecture_C_drain_stone": 36
+   },
+   "lotRect_xz": [
+    0.0,
+    28.0,
+    -36.0,
+    0.0
+   ],
+   "heights": {
+    "0.233": {
+     "yardArea_m2": 753.83,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 101641,
+     "solidInteriorsFilled": 24,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        753.83
+       ]
+      }
+     ]
+    },
+    "0.353": {
+     "yardArea_m2": 762.46,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 98189,
+     "solidInteriorsFilled": 18,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        762.46
+       ]
+      }
+     ]
+    },
+    "0.553": {
+     "yardArea_m2": 903.86,
+     "components": 16,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 39311,
+     "solidInteriorsFilled": 27,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        903.86
+       ]
+      }
+     ]
+    },
+    "0.953": {
+     "yardArea_m2": 903.86,
+     "components": 16,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 39311,
+     "solidInteriorsFilled": 27,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        903.86
+       ],
+       "verticalHits_atMid": [
+        0.2,
+        0.212,
+        2.65,
+        2.792,
+        2.837
+       ]
+      }
+     ]
+    },
+    "1.453": {
+     "yardArea_m2": 904.31,
+     "components": 8,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 40068,
+     "solidInteriorsFilled": 37,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        904.31
+       ]
+      }
+     ]
+    },
+    "1.953": {
+     "yardArea_m2": 905.02,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 41164,
+     "solidInteriorsFilled": 38,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        905.02
+       ]
+      }
+     ]
+    }
+   },
+   "file": "assets/d08/TC03-LOD0-prototype.glb",
+   "sha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+   "shaMatchesCityData": true
+  },
+  "courtyard-A2/LOD1": {
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_hardpacked_activity_ground"
+   ],
+   "excludeNodesMissing": [],
+   "retainedNodes": {
+    "architecture_C_whitebox_earth_wall.001": 624,
+    "architecture_C_roof_rhythm_not_glaze_copy.001": 100,
+    "architecture_C_plain_timber.001": 360,
+    "architecture_C_floor_plinth.001": 72
+   },
+   "lotRect_xz": [
+    -9.0,
+    9.0,
+    -12.0,
+    12.0
+   ],
+   "heights": {
+    "0.233": {
+     "yardArea_m2": 335.66,
+     "components": 1,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 38537,
+     "solidInteriorsFilled": 13,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -4.95,
+       "to": -2.0,
+       "width": 2.95,
+       "mid_xz": [
+        -3.475,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        335.66
+       ]
+      }
+     ]
+    },
+    "0.353": {
+     "yardArea_m2": 336.95,
+     "components": 1,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 38019,
+     "solidInteriorsFilled": 11,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -4.95,
+       "to": -2.0,
+       "width": 2.95,
+       "mid_xz": [
+        -3.475,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        336.95
+       ]
+      }
+     ]
+    },
+    "0.553": {
+     "yardArea_m2": 386.49,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17358,
+     "solidInteriorsFilled": 14,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -4.95,
+       "to": -2.0,
+       "width": 2.95,
+       "mid_xz": [
+        -3.475,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        386.49
+       ]
+      }
+     ]
+    },
+    "0.953": {
+     "yardArea_m2": 386.49,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17358,
+     "solidInteriorsFilled": 14,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -4.95,
+       "to": -2.0,
+       "width": 2.95,
+       "mid_xz": [
+        -3.475,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        386.49
+       ],
+       "verticalHits_atMid": [
+        2.65,
+        2.792
+       ]
+      }
+     ]
+    },
+    "1.453": {
+     "yardArea_m2": 386.6,
+     "components": 7,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17622,
+     "solidInteriorsFilled": 19,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -4.95,
+       "to": -2.0,
+       "width": 2.95,
+       "mid_xz": [
+        -3.475,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        386.6
+       ]
+      }
+     ]
+    },
+    "1.953": {
+     "yardArea_m2": 387.11,
+     "components": 1,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17958,
+     "solidInteriorsFilled": 25,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -4.95,
+       "to": -2.0,
+       "width": 2.95,
+       "mid_xz": [
+        -3.475,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        387.11
+       ]
+      }
+     ]
+    }
+   },
+   "file": "assets/c02v/A2-LOD1-prototype.glb",
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "shaMatchesCityData": true
+  },
+  "courtyard-A2/LOD0": {
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_hardpacked_activity_ground"
+   ],
+   "excludeNodesMissing": [],
+   "retainedNodes": {
+    "architecture_C_whitebox_earth_wall.001": 624,
+    "architecture_C_roof_rhythm_not_glaze_copy.001": 5476,
+    "architecture_C_plain_timber.001": 360,
+    "architecture_C_floor_plinth.001": 72
+   },
+   "lotRect_xz": [
+    -9.0,
+    9.0,
+    -12.0,
+    12.0
+   ],
+   "heights": {
+    "0.233": {
+     "yardArea_m2": 335.66,
+     "components": 1,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 38537,
+     "solidInteriorsFilled": 13,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -4.95,
+       "to": -2.0,
+       "width": 2.95,
+       "mid_xz": [
+        -3.475,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        335.66
+       ]
+      }
+     ]
+    },
+    "0.353": {
+     "yardArea_m2": 336.95,
+     "components": 1,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 38019,
+     "solidInteriorsFilled": 11,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -4.95,
+       "to": -2.0,
+       "width": 2.95,
+       "mid_xz": [
+        -3.475,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        336.95
+       ]
+      }
+     ]
+    },
+    "0.553": {
+     "yardArea_m2": 386.49,
+     "components": 9,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17591,
+     "solidInteriorsFilled": 16,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -4.95,
+       "to": -2.0,
+       "width": 2.95,
+       "mid_xz": [
+        -3.475,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        386.49
+       ]
+      }
+     ]
+    },
+    "0.953": {
+     "yardArea_m2": 386.49,
+     "components": 9,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17591,
+     "solidInteriorsFilled": 16,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -4.95,
+       "to": -2.0,
+       "width": 2.95,
+       "mid_xz": [
+        -3.475,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        386.49
+       ],
+       "verticalHits_atMid": [
+        2.65,
+        2.792,
+        2.837
+       ]
+      }
+     ]
+    },
+    "1.453": {
+     "yardArea_m2": 386.6,
+     "components": 6,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17698,
+     "solidInteriorsFilled": 20,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -4.95,
+       "to": -2.0,
+       "width": 2.95,
+       "mid_xz": [
+        -3.475,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        386.6
+       ]
+      }
+     ]
+    },
+    "1.953": {
+     "yardArea_m2": 387.11,
+     "components": 1,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17958,
+     "solidInteriorsFilled": 25,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -4.95,
+       "to": -2.0,
+       "width": 2.95,
+       "mid_xz": [
+        -3.475,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        387.11
+       ]
+      }
+     ]
+    }
+   },
+   "file": "assets/c02v/A2-LOD0-prototype.glb",
+   "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "shaMatchesCityData": true
+  },
+  "courtyard-B2/LOD1": {
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_loading_yard"
+   ],
+   "excludeNodesMissing": [],
+   "retainedNodes": {
+    "architecture_C_whitebox_earth_wall.001": 648,
+    "architecture_C_roof_rhythm_not_glaze_copy.001": 120,
+    "architecture_C_plain_timber.001": 540,
+    "architecture_C_floor_plinth.001": 132
+   },
+   "lotRect_xz": [
+    -9.0,
+    9.0,
+    -12.0,
+    12.0
+   ],
+   "heights": {
+    "0.233": {
+     "yardArea_m2": 335.72,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 38152,
+     "solidInteriorsFilled": 18,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        335.72
+       ]
+      }
+     ]
+    },
+    "0.353": {
+     "yardArea_m2": 337.29,
+     "components": 7,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 37510,
+     "solidInteriorsFilled": 12,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        337.29
+       ]
+      }
+     ]
+    },
+    "0.553": {
+     "yardArea_m2": 364.22,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 26292,
+     "solidInteriorsFilled": 12,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        364.22
+       ]
+      }
+     ]
+    },
+    "0.953": {
+     "yardArea_m2": 384.82,
+     "components": 15,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17915,
+     "solidInteriorsFilled": 14,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        384.82
+       ],
+       "verticalHits_atMid": [
+        2.65,
+        2.792
+       ]
+      }
+     ]
+    },
+    "1.453": {
+     "yardArea_m2": 386.41,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17724,
+     "solidInteriorsFilled": 17,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        386.41
+       ]
+      }
+     ]
+    },
+    "1.953": {
+     "yardArea_m2": 386.48,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17696,
+     "solidInteriorsFilled": 16,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        386.48
+       ]
+      }
+     ]
+    }
+   },
+   "file": "assets/c02v/B2-LOD1-prototype.glb",
+   "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+   "shaMatchesCityData": true
+  },
+  "courtyard-B2/LOD0": {
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_loading_yard"
+   ],
+   "excludeNodesMissing": [],
+   "retainedNodes": {
+    "architecture_C_whitebox_earth_wall.001": 648,
+    "architecture_C_roof_rhythm_not_glaze_copy.001": 7032,
+    "architecture_C_plain_timber.001": 540,
+    "architecture_C_floor_plinth.001": 132
+   },
+   "lotRect_xz": [
+    -9.0,
+    9.0,
+    -12.0,
+    12.0
+   ],
+   "heights": {
+    "0.233": {
+     "yardArea_m2": 335.72,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 38152,
+     "solidInteriorsFilled": 18,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        335.72
+       ]
+      }
+     ]
+    },
+    "0.353": {
+     "yardArea_m2": 337.29,
+     "components": 7,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 37510,
+     "solidInteriorsFilled": 12,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        337.29
+       ]
+      }
+     ]
+    },
+    "0.553": {
+     "yardArea_m2": 364.22,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 26292,
+     "solidInteriorsFilled": 12,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        364.22
+       ]
+      }
+     ]
+    },
+    "0.953": {
+     "yardArea_m2": 384.82,
+     "components": 15,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17915,
+     "solidInteriorsFilled": 14,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        384.82
+       ],
+       "verticalHits_atMid": [
+        2.65,
+        2.792,
+        2.837
+       ]
+      }
+     ]
+    },
+    "1.453": {
+     "yardArea_m2": 386.41,
+     "components": 10,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17834,
+     "solidInteriorsFilled": 18,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        386.41
+       ]
+      }
+     ]
+    },
+    "1.953": {
+     "yardArea_m2": 386.48,
+     "components": 11,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 17696,
+     "solidInteriorsFilled": 16,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": -6.25,
+       "to": -3.3,
+       "width": 2.95,
+       "mid_xz": [
+        -4.775,
+        11.975
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        386.48
+       ]
+      }
+     ]
+    }
+   },
+   "file": "assets/c02v/B2-LOD0-prototype.glb",
+   "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+   "shaMatchesCityData": true
+  },
+  "courtyard-TC03-2/LOD1": {
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_front_apron",
+    "designed_side_passage",
+    "designed_rear_work_ground"
+   ],
+   "excludeNodesMissing": [],
+   "retainedNodes": {
+    "architecture_C_earth_wall.001": 1116,
+    "architecture_C_roof_rhythm.001": 164,
+    "architecture_C_plain_timber.001": 648,
+    "architecture_C_plinth.001": 144,
+    "architecture_C_drain_stone.001": 36
+   },
+   "lotRect_xz": [
+    0.0,
+    28.0,
+    -36.0,
+    0.0
+   ],
+   "heights": {
+    "0.233": {
+     "yardArea_m2": 763.03,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 97961,
+     "solidInteriorsFilled": 24,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        763.03
+       ]
+      }
+     ]
+    },
+    "0.353": {
+     "yardArea_m2": 771.21,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 94689,
+     "solidInteriorsFilled": 18,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        771.21
+       ]
+      }
+     ]
+    },
+    "0.553": {
+     "yardArea_m2": 904.9,
+     "components": 21,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 38335,
+     "solidInteriorsFilled": 22,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        904.9
+       ]
+      }
+     ]
+    },
+    "0.953": {
+     "yardArea_m2": 904.9,
+     "components": 21,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 38335,
+     "solidInteriorsFilled": 22,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        904.9
+       ],
+       "verticalHits_atMid": [
+        2.65,
+        2.792
+       ]
+      }
+     ]
+    },
+    "1.453": {
+     "yardArea_m2": 905.35,
+     "components": 9,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 39487,
+     "solidInteriorsFilled": 36,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        905.35
+       ]
+      }
+     ]
+    },
+    "1.953": {
+     "yardArea_m2": 906.07,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 40744,
+     "solidInteriorsFilled": 39,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        906.07
+       ]
+      }
+     ]
+    }
+   },
+   "file": "assets/c02v/TC03-2-LOD1-prototype.glb",
+   "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+   "shaMatchesCityData": true
+  },
+  "courtyard-TC03-2/LOD0": {
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_front_apron",
+    "designed_side_passage",
+    "designed_rear_work_ground"
+   ],
+   "excludeNodesMissing": [],
+   "retainedNodes": {
+    "architecture_C_earth_wall.001": 1116,
+    "architecture_C_roof_rhythm.001": 11972,
+    "architecture_C_plain_timber.001": 648,
+    "architecture_C_plinth.001": 144,
+    "architecture_C_drain_stone.001": 36
+   },
+   "lotRect_xz": [
+    0.0,
+    28.0,
+    -36.0,
+    0.0
+   ],
+   "heights": {
+    "0.233": {
+     "yardArea_m2": 763.03,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 97961,
+     "solidInteriorsFilled": 24,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        763.03
+       ]
+      }
+     ]
+    },
+    "0.353": {
+     "yardArea_m2": 771.21,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 94689,
+     "solidInteriorsFilled": 18,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        771.21
+       ]
+      }
+     ]
+    },
+    "0.553": {
+     "yardArea_m2": 904.9,
+     "components": 16,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 38845,
+     "solidInteriorsFilled": 27,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        904.9
+       ]
+      }
+     ]
+    },
+    "0.953": {
+     "yardArea_m2": 904.9,
+     "components": 16,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 38845,
+     "solidInteriorsFilled": 27,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        904.9
+       ],
+       "verticalHits_atMid": [
+        2.65,
+        2.792,
+        2.837
+       ]
+      }
+     ]
+    },
+    "1.453": {
+     "yardArea_m2": 905.35,
+     "components": 7,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 39657,
+     "solidInteriorsFilled": 38,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        905.35
+       ]
+      }
+     ]
+    },
+    "1.953": {
+     "yardArea_m2": 906.07,
+     "components": 3,
+     "yardReachableFromOutside": true,
+     "blockedLotCells": 40744,
+     "solidInteriorsFilled": 39,
+     "openings": [
+      {
+       "side": "front(+z)",
+       "along": "x",
+       "from": 7.55,
+       "to": 10.5,
+       "width": 2.95,
+       "mid_xz": [
+        9.025,
+        -0.025
+       ],
+       "normal_xz": [
+        0,
+        1
+       ],
+       "connectsYard": true,
+       "componentAreas_m2": [
+        906.07
+       ]
+      }
+     ]
+    }
+   },
+   "file": "assets/c02v/TC03-2-LOD0-prototype.glb",
+   "sha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+   "shaMatchesCityData": true
+  }
+ },
+ "world": {
+  "lotPairsWithin3m": [
+   {
+    "a": "C02-006",
+    "b": "C02-032",
+    "gap_m": 2.55
+   }
+  ],
+  "C02-018": {
+   "asset": "courtyard-B",
+   "lotRect_world_xz": [
+    715.063,
+    733.063,
+    -995.8,
+    -971.8
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        728.838,
+        -996.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-018"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        728.838,
+        -996.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-018"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        728.838,
+        -998.275
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-018"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-019": {
+   "asset": "courtyard-A",
+   "lotRect_world_xz": [
+    736.089,
+    754.089,
+    -995.8,
+    -971.8
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 3.35,
+     "to": 6.25,
+     "width": 2.9,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        740.264,
+        -996.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-019"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        740.264,
+        -996.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-019"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        740.264,
+        -998.275
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-019"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-020": {
+   "asset": "courtyard-TC03",
+   "lotRect_world_xz": [
+    738.989,
+    766.989,
+    -1040.2,
+    -1004.2
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 7.55,
+     "to": 10.5,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        748.014,
+        -1003.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-020"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        748.014,
+        -1003.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-020"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        748.014,
+        -1001.725
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-020"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-021": {
+   "asset": "courtyard-A2",
+   "lotRect_world_xz": [
+    705.45,
+    729.45,
+    -902.643,
+    -884.643
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -4.95,
+     "to": -2.0,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        705.225,
+        -897.118
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-021"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        704.475,
+        -897.118
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-021"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        702.975,
+        -897.118
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-021"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-022": {
+   "asset": "courtyard-B2",
+   "lotRect_world_xz": [
+    705.45,
+    729.45,
+    -932.302,
+    -914.302
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        705.225,
+        -928.077
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-022"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        704.475,
+        -928.077
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-022"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        702.975,
+        -928.077
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-022"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-023": {
+   "asset": "courtyard-A",
+   "lotRect_world_xz": [
+    705.45,
+    729.45,
+    -958.716,
+    -940.716
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 3.35,
+     "to": 6.25,
+     "width": 2.9,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        705.225,
+        -944.891
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-023"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        704.475,
+        -944.891
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-023"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        702.975,
+        -944.891
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-023"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-024": {
+   "asset": "courtyard-A2",
+   "lotRect_world_xz": [
+    705.45,
+    729.45,
+    -1034.211,
+    -1016.211
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -4.95,
+     "to": -2.0,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        705.225,
+        -1028.686
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-024"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        704.475,
+        -1028.686
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-024"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        702.975,
+        -1028.686
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-024"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-025": {
+   "asset": "courtyard-B",
+   "lotRect_world_xz": [
+    705.45,
+    729.45,
+    -1062.256,
+    -1044.256
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        705.225,
+        -1058.031
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-025"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        704.475,
+        -1058.031
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-025"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        702.975,
+        -1058.031
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-025"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-026": {
+   "asset": "courtyard-A",
+   "lotRect_world_xz": [
+    705.45,
+    729.45,
+    -1093.582,
+    -1075.582
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 3.35,
+     "to": 6.25,
+     "width": 2.9,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        705.225,
+        -1079.757
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-026"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        704.475,
+        -1079.757
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-026"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        702.975,
+        -1079.757
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-026"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-001": {
+   "asset": "courtyard-A2",
+   "lotRect_world_xz": [
+    670.139,
+    688.139,
+    -1188.2,
+    -1164.2
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -4.95,
+     "to": -2.0,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        675.664,
+        -1163.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-001"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        675.664,
+        -1163.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-001"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        675.664,
+        -1161.725
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-001"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-002": {
+   "asset": "courtyard-B2",
+   "lotRect_world_xz": [
+    624.974,
+    642.974,
+    -1188.2,
+    -1164.2
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        629.199,
+        -1163.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-002"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        629.199,
+        -1163.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-002"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        629.199,
+        -1161.725
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-002"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-027": {
+   "asset": "courtyard-A",
+   "lotRect_world_xz": [
+    662.078,
+    680.078,
+    -1155.8,
+    -1131.8
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 3.35,
+     "to": 6.25,
+     "width": 2.9,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        666.253,
+        -1156.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-027"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        666.253,
+        -1156.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-027"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        666.253,
+        -1158.275
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-027"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-028": {
+   "asset": "courtyard-A2",
+   "lotRect_world_xz": [
+    625.036,
+    643.036,
+    -1155.8,
+    -1131.8
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -4.95,
+     "to": -2.0,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        637.511,
+        -1156.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-028"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        637.511,
+        -1156.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-028"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        637.511,
+        -1158.275
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-028"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-029": {
+   "asset": "courtyard-B",
+   "lotRect_world_xz": [
+    599.783,
+    617.783,
+    -1155.8,
+    -1131.8
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        613.558,
+        -1156.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-029"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        613.558,
+        -1156.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-029"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        613.558,
+        -1158.275
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-029"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-030": {
+   "asset": "courtyard-A",
+   "lotRect_world_xz": [
+    566.35,
+    584.35,
+    -1155.8,
+    -1131.8
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 3.35,
+     "to": 6.25,
+     "width": 2.9,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        570.525,
+        -1156.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-030"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        570.525,
+        -1156.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-030"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        570.525,
+        -1158.275
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-030"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-031": {
+   "asset": "courtyard-A2",
+   "lotRect_world_xz": [
+    624.2,
+    648.2,
+    -1214.011,
+    -1196.011
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -4.95,
+     "to": -2.0,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        623.975,
+        -1208.486
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-031"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        623.225,
+        -1208.486
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-031"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        621.725,
+        -1208.486
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-031"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-003": {
+   "asset": "courtyard-TC03-2",
+   "lotRect_world_xz": [
+    579.8,
+    615.8,
+    -1192.955,
+    -1164.955
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 7.55,
+     "to": 10.5,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        616.025,
+        -1173.98
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-003"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        616.775,
+        -1173.98
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-003"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        618.275,
+        -1173.98
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-003"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-004": {
+   "asset": "courtyard-B2",
+   "lotRect_world_xz": [
+    705.45,
+    729.45,
+    -1166.819,
+    -1148.819
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        705.225,
+        -1162.594
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-004"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        704.475,
+        -1162.594
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-004"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        702.975,
+        -1162.594
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-004"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-005": {
+   "asset": "courtyard-B",
+   "lotRect_world_xz": [
+    505.0,
+    523.0,
+    -794.55,
+    -770.55
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        518.775,
+        -794.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-005"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        518.775,
+        -795.525
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-005"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        518.775,
+        -797.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-005"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-006": {
+   "asset": "courtyard-B2",
+   "lotRect_world_xz": [
+    528.0,
+    546.0,
+    -793.55,
+    -769.55
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        541.775,
+        -793.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-006"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        541.775,
+        -794.525
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-006"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        541.775,
+        -796.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-006"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-007": {
+   "asset": "courtyard-A",
+   "lotRect_world_xz": [
+    581.0,
+    599.0,
+    -794.55,
+    -770.55
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 3.35,
+     "to": 6.25,
+     "width": 2.9,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        585.175,
+        -794.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-007"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        585.175,
+        -795.525
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-007"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        585.175,
+        -797.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-007"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-008": {
+   "asset": "courtyard-TC03",
+   "lotRect_world_xz": [
+    630.0,
+    658.0,
+    -794.55,
+    -758.55
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 7.55,
+     "to": 10.5,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        648.975,
+        -794.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-008"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        648.975,
+        -795.525
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-008"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        648.975,
+        -797.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-008"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-009": {
+   "asset": "courtyard-B",
+   "lotRect_world_xz": [
+    499.0,
+    517.0,
+    -829.45,
+    -805.45
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        503.225,
+        -805.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-009"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        503.225,
+        -804.475
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-009"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        503.225,
+        -802.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-009"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-010": {
+   "asset": "courtyard-A2",
+   "lotRect_world_xz": [
+    522.0,
+    540.0,
+    -830.45,
+    -806.45
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -4.95,
+     "to": -2.0,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        527.525,
+        -806.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-010"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        527.525,
+        -805.475
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-010"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        527.525,
+        -803.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-010"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-011": {
+   "asset": "courtyard-A",
+   "lotRect_world_xz": [
+    545.0,
+    563.0,
+    -829.45,
+    -805.45
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 3.35,
+     "to": 6.25,
+     "width": 2.9,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        558.825,
+        -805.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-011"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        558.825,
+        -804.475
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-011"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        558.825,
+        -802.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-011"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-012": {
+   "asset": "courtyard-TC03-2",
+   "lotRect_world_xz": [
+    570.0,
+    598.0,
+    -841.45,
+    -805.45
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 7.55,
+     "to": 10.5,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        579.025,
+        -805.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-012"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        579.025,
+        -804.475
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-012"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        579.025,
+        -802.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-012"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-013": {
+   "asset": "courtyard-A2",
+   "lotRect_world_xz": [
+    603.0,
+    621.0,
+    -829.45,
+    -805.45
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -4.95,
+     "to": -2.0,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        608.525,
+        -805.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-013"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        608.525,
+        -804.475
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-013"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        608.525,
+        -802.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-013"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-032": {
+   "asset": "courtyard-B2",
+   "lotRect_world_xz": [
+    536.8,
+    560.8,
+    -767.0,
+    -749.0
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        561.025,
+        -753.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-032"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        561.775,
+        -753.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-032"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        563.275,
+        -753.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-032"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-014": {
+   "asset": "courtyard-A",
+   "lotRect_world_xz": [
+    575.0,
+    593.0,
+    -740.8,
+    -716.8
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 3.35,
+     "to": 6.25,
+     "width": 2.9,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        579.175,
+        -741.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-014"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        579.175,
+        -741.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-014"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        579.175,
+        -743.275
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-014"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-015": {
+   "asset": "courtyard-A2",
+   "lotRect_world_xz": [
+    598.0,
+    616.0,
+    -740.8,
+    -716.8
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -4.95,
+     "to": -2.0,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        610.475,
+        -741.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-015"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        610.475,
+        -741.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-015"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        610.475,
+        -743.275
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-015"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-016": {
+   "asset": "courtyard-B",
+   "lotRect_world_xz": [
+    604.0,
+    622.0,
+    -773.2,
+    -749.2
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        608.225,
+        -748.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-016"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        608.225,
+        -748.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-016"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        608.225,
+        -746.725
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-016"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-017": {
+   "asset": "courtyard-A",
+   "lotRect_world_xz": [
+    638.0,
+    662.0,
+    -834.0,
+    -816.0
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 3.35,
+     "to": 6.25,
+     "width": 2.9,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        662.225,
+        -829.825
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-017"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        662.975,
+        -829.825
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-017"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        664.475,
+        -829.825
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-017"
+       ],
+       "ground": {
+        "supplier": "ground-south",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-033": {
+   "asset": "courtyard-B2",
+   "lotRect_world_xz": [
+    630.101,
+    648.101,
+    -1092.2,
+    -1068.2
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        634.326,
+        -1067.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-033"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        634.326,
+        -1067.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-033"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        634.326,
+        -1065.725
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-033"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-034": {
+   "asset": "courtyard-B",
+   "lotRect_world_xz": [
+    592.891,
+    610.891,
+    -1092.2,
+    -1068.2
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        597.116,
+        -1067.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-034"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        597.116,
+        -1067.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-034"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        597.116,
+        -1065.725
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-034"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-035": {
+   "asset": "courtyard-A2",
+   "lotRect_world_xz": [
+    539.323,
+    557.323,
+    -1092.2,
+    -1068.2
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -4.95,
+     "to": -2.0,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        544.848,
+        -1067.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-035"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        544.848,
+        -1067.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-035"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        544.848,
+        -1065.725
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-035"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "C02-036": {
+   "asset": "courtyard-B2",
+   "lotRect_world_xz": [
+    511.563,
+    529.563,
+    -1092.2,
+    -1068.2
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        515.788,
+        -1067.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-036"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        515.788,
+        -1067.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-036"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        515.788,
+        -1065.725
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "C02-036"
+       ],
+       "ground": {
+        "supplier": "ground-retained",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "FROZEN-D08-S1": {
+   "asset": "courtyard-A",
+   "lotRect_world_xz": [
+    534.0,
+    552.0,
+    -957.0,
+    -933.0
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 3.35,
+     "to": 6.25,
+     "width": 2.9,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        538.175,
+        -957.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-S1"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        538.175,
+        -957.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-S1"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        538.175,
+        -959.475
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-S1",
+        "FROZEN-D08-NW"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "FROZEN-D08-S2": {
+   "asset": "courtyard-B",
+   "lotRect_world_xz": [
+    556.0,
+    574.0,
+    -957.0,
+    -933.0
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        569.775,
+        -957.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-S2"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        569.775,
+        -957.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-S2"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        569.775,
+        -959.475
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-S2",
+        "FROZEN-D08-M"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "FROZEN-D08-S3": {
+   "asset": "courtyard-A",
+   "lotRect_world_xz": [
+    580.0,
+    598.0,
+    -957.0,
+    -933.0
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 3.35,
+     "to": 6.25,
+     "width": 2.9,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        584.175,
+        -957.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-S3"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        584.175,
+        -957.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-S3"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        584.175,
+        -959.475
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-S3"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "FROZEN-D08-S4": {
+   "asset": "courtyard-B",
+   "lotRect_world_xz": [
+    602.0,
+    620.0,
+    -957.0,
+    -933.0
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        615.775,
+        -957.225
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-S4"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        615.775,
+        -957.975
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-S4"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        615.775,
+        -959.475
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-S4"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "FROZEN-D08-M": {
+   "asset": "courtyard-A",
+   "lotRect_world_xz": [
+    566.0,
+    584.0,
+    -987.0,
+    -963.0
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 3.35,
+     "to": 6.25,
+     "width": 2.9,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        579.825,
+        -962.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-M"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        579.825,
+        -962.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-M"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        579.825,
+        -960.525
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-M"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "FROZEN-D08-E": {
+   "asset": "courtyard-B",
+   "lotRect_world_xz": [
+    620.0,
+    638.0,
+    -987.0,
+    -963.0
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": -6.25,
+     "to": -3.3,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        624.225,
+        -962.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-E"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        624.225,
+        -962.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-E"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        624.225,
+        -960.525
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-E"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "FROZEN-D08-NW": {
+   "asset": "courtyard-TC03",
+   "lotRect_world_xz": [
+    534.0,
+    562.0,
+    -999.0,
+    -963.0
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 7.55,
+     "to": 10.5,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        543.025,
+        -962.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-NW"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        543.025,
+        -962.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-NW"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        543.025,
+        -960.525
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-S1",
+        "FROZEN-D08-NW"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "FROZEN-D08-NE": {
+   "asset": "courtyard-TC03",
+   "lotRect_world_xz": [
+    588.0,
+    616.0,
+    -1011.0,
+    -975.0
+   ],
+   "openings_personHeight": [
+    {
+     "side": "front(+z)",
+     "from": 7.55,
+     "to": 10.5,
+     "width": 2.95,
+     "connectsYard": true,
+     "probes": [
+      {
+       "d_m": 0.25,
+       "world_xz": [
+        597.025,
+        -974.775
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-NE"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 1.0,
+       "world_xz": [
+        597.025,
+        -974.025
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-NE"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      },
+      {
+       "d_m": 2.5,
+       "world_xz": [
+        597.025,
+        -972.525
+       ],
+       "insideOtherLot": [],
+       "insideLaneOf": [
+        "FROZEN-D08-NE"
+       ],
+       "ground": {
+        "supplier": "ground-D08",
+        "top_y": 0.2
+       }
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,938 @@
+{
+ "gate_glb": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb",
+ "gate_sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8",
+ "ground": {
+  "sha256": "50f8550280e3992b63f0fa4f70c23ebc0d5fceb8db96ae1d0f91730e13612ee9",
+  "meshes": [
+   "kaiyang_ground_C"
+  ],
+  "triangles": 576,
+  "islands": 111,
+  "strips": [
+   {
+    "min": [
+     -8.5,
+     -7.0,
+     -0.16
+    ],
+    "max": [
+     -6.7,
+     7.0,
+     0.041
+    ]
+   },
+   {
+    "min": [
+     -0.9,
+     -7.0,
+     -0.16
+    ],
+    "max": [
+     0.9,
+     7.0,
+     0.041
+    ]
+   },
+   {
+    "min": [
+     6.7,
+     -7.0,
+     -0.16
+    ],
+    "max": [
+     8.5,
+     7.0,
+     0.041
+    ]
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "name": "kaiyang-K-static_earth",
+   "mesh": "kaiyang-K-static_earth",
+   "triangles": 120,
+   "materials": [
+    "LY_P01_earth__PBR"
+   ]
+  },
+  {
+   "name": "kaiyang-K-static_timber",
+   "mesh": "kaiyang-K-static_timber",
+   "triangles": 1148,
+   "materials": [
+    "LY_P01_timber__PBR"
+   ]
+  },
+  {
+   "name": "kaiyang-K-static_tile",
+   "mesh": "kaiyang-K-static_tile",
+   "triangles": 696,
+   "materials": [
+    "LY_P01_tile__PBR"
+   ]
+  }
+ ],
+ "leaf_independent_node": false,
+ "range_validation": {
+  "leaves_box_ok": true,
+  "jambs_box_ok": true,
+  "heads_box_ok": true,
+  "piers_box_ok": true
+ },
+ "counts": {
+  "timber_parts": 69,
+  "leaves": 6,
+  "jambs": 6,
+  "heads": 3,
+  "battens": 18,
+  "piers": 4
+ },
+ "openings_x": [
+  [
+   -9.6,
+   -5.6,
+   4.0
+  ],
+  [
+   -2.8,
+   2.8,
+   5.6
+  ],
+  [
+   5.6,
+   9.6,
+   4.0
+  ]
+ ],
+ "passages": [
+  {
+   "index": 0,
+   "x_range": [
+    -9.6,
+    -5.6
+   ],
+   "width_m": 4.0,
+   "leaves": [
+    {
+     "side": -1,
+     "min": [
+      -9.43,
+      -4.55,
+      0.05
+     ],
+     "max": [
+      -9.29,
+      -2.79,
+      4.35
+     ],
+     "leaf_length_m": 1.76,
+     "thickness_m": 0.14,
+     "height_m": 4.3,
+     "battens": 3,
+     "bottom_above_z0_m": 0.05,
+     "ground_top_under_leaf_m": null,
+     "bottom_gap_to_ground_m": null,
+     "top_gap_to_head_soffit_m": 0.35,
+     "front_end_gap_to_jamb_back_m": 0.09,
+     "side_gap_to_pier_face_m": 0.17,
+     "hinge_inferred_xy": [
+      -9.36,
+      -4.55
+     ],
+     "contact_or_pivot_found": false
+    },
+    {
+     "side": 1,
+     "min": [
+      -5.91,
+      -4.55,
+      0.05
+     ],
+     "max": [
+      -5.77,
+      -2.79,
+      4.35
+     ],
+     "leaf_length_m": 1.76,
+     "thickness_m": 0.14,
+     "height_m": 4.3,
+     "battens": 3,
+     "bottom_above_z0_m": 0.05,
+     "ground_top_under_leaf_m": null,
+     "bottom_gap_to_ground_m": null,
+     "top_gap_to_head_soffit_m": 0.35,
+     "front_end_gap_to_jamb_back_m": 0.09,
+     "side_gap_to_pier_face_m": 0.17,
+     "hinge_inferred_xy": [
+      -5.84,
+      -4.55
+     ],
+     "contact_or_pivot_found": false
+    }
+   ],
+   "jambs": [
+    {
+     "min": [
+      -9.6,
+      -4.96,
+      0.0
+     ],
+     "max": [
+      -9.4,
+      -4.64,
+      5.0
+     ]
+    },
+    {
+     "min": [
+      -5.8,
+      -4.96,
+      0.0
+     ],
+     "max": [
+      -5.6,
+      -4.64,
+      5.0
+     ]
+    }
+   ],
+   "heads": [
+    {
+     "min": [
+      -9.4,
+      -4.96,
+      4.7
+     ],
+     "max": [
+      -5.8,
+      -4.64,
+      5.0
+     ],
+     "soffit_z": 4.7
+    }
+   ],
+   "open_clear_width_between_leaves_m": 3.29,
+   "hinge_inference": {
+    "left_closed_tip_x": -7.6,
+    "right_closed_tip_x": -7.6,
+    "meeting_gap_m": 0.0,
+    "opening_centre_x": -7.6
+   },
+   "swing_sweep": [
+    {
+     "closing_deg": 0,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.09,
+     "left_min_clear_ground_m": 0.7901,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.09,
+     "right_min_clear_ground_m": 0.7901,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 5,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0931,
+     "left_min_clear_ground_m": 0.637,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0931,
+     "right_min_clear_ground_m": 0.637,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 15,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0973,
+     "left_min_clear_ground_m": 0.337,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0973,
+     "right_min_clear_ground_m": 0.337,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 30,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0979,
+     "left_min_clear_ground_m": 0.0099,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0979,
+     "right_min_clear_ground_m": 0.0099,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 45,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0919,
+     "left_min_clear_ground_m": 0.0095,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0919,
+     "right_min_clear_ground_m": 0.0096,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 60,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0796,
+     "left_min_clear_ground_m": 0.0094,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0796,
+     "right_min_clear_ground_m": 0.0094,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 75,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0623,
+     "left_min_clear_ground_m": 0.0094,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0623,
+     "right_min_clear_ground_m": 0.0094,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 85,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0504,
+     "left_min_clear_ground_m": 0.0094,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0504,
+     "right_min_clear_ground_m": 0.0095,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 90,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0447,
+     "left_min_clear_ground_m": 0.0095,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0447,
+     "right_min_clear_ground_m": 0.0095,
+     "leaf_vs_leaf_pairs": 14
+    },
+    {
+     "closing_deg": 95,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0395,
+     "left_min_clear_ground_m": 0.0095,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0395,
+     "right_min_clear_ground_m": 0.0095,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 100,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0349,
+     "left_min_clear_ground_m": 0.0095,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0349,
+     "right_min_clear_ground_m": 0.0095,
+     "leaf_vs_leaf_pairs": 0
+    }
+   ],
+   "passage_tests": {
+    "open_0deg": {
+     "samples": 81,
+     "blocked_samples": 0,
+     "first_block_y": null
+    },
+    "closed_90deg": {
+     "samples": 81,
+     "blocked_samples": 10,
+     "first_block_y": -4.8
+    },
+    "half_45deg": {
+     "samples": 81,
+     "blocked_samples": 0,
+     "first_block_y": null
+    },
+    "open_widest_centred_body_m": 3.25
+   },
+   "closed_slots": {
+    "left_side_slot_x_m": 0.04,
+    "right_side_slot_x_m": 0.04,
+    "closed_leaf_front_face_y": -4.62,
+    "jamb_back_face_y": -4.64,
+    "closed_leaf_to_jamb_back_gap_y_m": 0.02,
+    "closed_leaf_bottom_z": 0.05,
+    "top_slot_z_m": 0.35,
+    "note": "leaf closes behind the jamb plane (y>jamb back face); no rebate/stop overlaps the leaf edge"
+   }
+  },
+  {
+   "index": 1,
+   "x_range": [
+    -2.8,
+    2.8
+   ],
+   "width_m": 5.6,
+   "leaves": [
+    {
+     "side": -1,
+     "min": [
+      -2.63,
+      -4.55,
+      0.05
+     ],
+     "max": [
+      -2.49,
+      -1.99,
+      4.35
+     ],
+     "leaf_length_m": 2.56,
+     "thickness_m": 0.14,
+     "height_m": 4.3,
+     "battens": 3,
+     "bottom_above_z0_m": 0.05,
+     "ground_top_under_leaf_m": null,
+     "bottom_gap_to_ground_m": null,
+     "top_gap_to_head_soffit_m": 0.35,
+     "front_end_gap_to_jamb_back_m": 0.09,
+     "side_gap_to_pier_face_m": 0.17,
+     "hinge_inferred_xy": [
+      -2.56,
+      -4.55
+     ],
+     "contact_or_pivot_found": false
+    },
+    {
+     "side": 1,
+     "min": [
+      2.49,
+      -4.55,
+      0.05
+     ],
+     "max": [
+      2.63,
+      -1.99,
+      4.35
+     ],
+     "leaf_length_m": 2.56,
+     "thickness_m": 0.14,
+     "height_m": 4.3,
+     "battens": 3,
+     "bottom_above_z0_m": 0.05,
+     "ground_top_under_leaf_m": null,
+     "bottom_gap_to_ground_m": null,
+     "top_gap_to_head_soffit_m": 0.35,
+     "front_end_gap_to_jamb_back_m": 0.09,
+     "side_gap_to_pier_face_m": 0.17,
+     "hinge_inferred_xy": [
+      2.56,
+      -4.55
+     ],
+     "contact_or_pivot_found": false
+    }
+   ],
+   "jambs": [
+    {
+     "min": [
+      -2.8,
+      -4.96,
+      0.0
+     ],
+     "max": [
+      -2.6,
+      -4.64,
+      5.0
+     ]
+    },
+    {
+     "min": [
+      2.6,
+      -4.96,
+      0.0
+     ],
+     "max": [
+      2.8,
+      -4.64,
+      5.0
+     ]
+    }
+   ],
+   "heads": [
+    {
+     "min": [
+      -2.6,
+      -4.96,
+      4.7
+     ],
+     "max": [
+      2.6,
+      -4.64,
+      5.0
+     ],
+     "soffit_z": 4.7
+    }
+   ],
+   "open_clear_width_between_leaves_m": 4.89,
+   "hinge_inference": {
+    "left_closed_tip_x": 0.0,
+    "right_closed_tip_x": -0.0,
+    "meeting_gap_m": -0.0,
+    "opening_centre_x": 0.0
+   },
+   "swing_sweep": [
+    {
+     "closing_deg": 0,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.09,
+     "left_min_clear_ground_m": 1.59,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.09,
+     "right_min_clear_ground_m": 1.59,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 5,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0931,
+     "left_min_clear_ground_m": 1.3672,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0931,
+     "right_min_clear_ground_m": 1.3672,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 15,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0973,
+     "left_min_clear_ground_m": 0.9299,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0973,
+     "right_min_clear_ground_m": 0.9299,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 30,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0979,
+     "left_min_clear_ground_m": 0.3195,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0979,
+     "right_min_clear_ground_m": 0.3195,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 45,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0919,
+     "left_min_clear_ground_m": 0.0097,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0919,
+     "right_min_clear_ground_m": 0.0097,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 60,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0796,
+     "left_min_clear_ground_m": 0.0094,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0796,
+     "right_min_clear_ground_m": 0.0094,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 75,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0623,
+     "left_min_clear_ground_m": 0.0094,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0623,
+     "right_min_clear_ground_m": 0.0094,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 85,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0504,
+     "left_min_clear_ground_m": 0.0094,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0504,
+     "right_min_clear_ground_m": 0.0094,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 90,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0447,
+     "left_min_clear_ground_m": 0.0095,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0447,
+     "right_min_clear_ground_m": 0.0095,
+     "leaf_vs_leaf_pairs": 11
+    },
+    {
+     "closing_deg": 95,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0395,
+     "left_min_clear_ground_m": 0.0095,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0395,
+     "right_min_clear_ground_m": 0.0095,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 100,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0349,
+     "left_min_clear_ground_m": 0.0096,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0349,
+     "right_min_clear_ground_m": 0.0096,
+     "leaf_vs_leaf_pairs": 0
+    }
+   ],
+   "passage_tests": {
+    "open_0deg": {
+     "samples": 81,
+     "blocked_samples": 0,
+     "first_block_y": null
+    },
+    "closed_90deg": {
+     "samples": 81,
+     "blocked_samples": 10,
+     "first_block_y": -4.8
+    },
+    "half_45deg": {
+     "samples": 81,
+     "blocked_samples": 0,
+     "first_block_y": null
+    },
+    "open_widest_centred_body_m": 4.85
+   },
+   "closed_slots": {
+    "left_side_slot_x_m": 0.04,
+    "right_side_slot_x_m": 0.04,
+    "closed_leaf_front_face_y": -4.62,
+    "jamb_back_face_y": -4.64,
+    "closed_leaf_to_jamb_back_gap_y_m": 0.02,
+    "closed_leaf_bottom_z": 0.05,
+    "top_slot_z_m": 0.35,
+    "note": "leaf closes behind the jamb plane (y>jamb back face); no rebate/stop overlaps the leaf edge"
+   }
+  },
+  {
+   "index": 2,
+   "x_range": [
+    5.6,
+    9.6
+   ],
+   "width_m": 4.0,
+   "leaves": [
+    {
+     "side": -1,
+     "min": [
+      5.77,
+      -4.55,
+      0.05
+     ],
+     "max": [
+      5.91,
+      -2.79,
+      4.35
+     ],
+     "leaf_length_m": 1.76,
+     "thickness_m": 0.14,
+     "height_m": 4.3,
+     "battens": 3,
+     "bottom_above_z0_m": 0.05,
+     "ground_top_under_leaf_m": null,
+     "bottom_gap_to_ground_m": null,
+     "top_gap_to_head_soffit_m": 0.35,
+     "front_end_gap_to_jamb_back_m": 0.09,
+     "side_gap_to_pier_face_m": 0.17,
+     "hinge_inferred_xy": [
+      5.84,
+      -4.55
+     ],
+     "contact_or_pivot_found": false
+    },
+    {
+     "side": 1,
+     "min": [
+      9.29,
+      -4.55,
+      0.05
+     ],
+     "max": [
+      9.43,
+      -2.79,
+      4.35
+     ],
+     "leaf_length_m": 1.76,
+     "thickness_m": 0.14,
+     "height_m": 4.3,
+     "battens": 3,
+     "bottom_above_z0_m": 0.05,
+     "ground_top_under_leaf_m": null,
+     "bottom_gap_to_ground_m": null,
+     "top_gap_to_head_soffit_m": 0.35,
+     "front_end_gap_to_jamb_back_m": 0.09,
+     "side_gap_to_pier_face_m": 0.17,
+     "hinge_inferred_xy": [
+      9.36,
+      -4.55
+     ],
+     "contact_or_pivot_found": false
+    }
+   ],
+   "jambs": [
+    {
+     "min": [
+      5.6,
+      -4.96,
+      0.0
+     ],
+     "max": [
+      5.8,
+      -4.64,
+      5.0
+     ]
+    },
+    {
+     "min": [
+      9.4,
+      -4.96,
+      0.0
+     ],
+     "max": [
+      9.6,
+      -4.64,
+      5.0
+     ]
+    }
+   ],
+   "heads": [
+    {
+     "min": [
+      5.8,
+      -4.96,
+      4.7
+     ],
+     "max": [
+      9.4,
+      -4.64,
+      5.0
+     ],
+     "soffit_z": 4.7
+    }
+   ],
+   "open_clear_width_between_leaves_m": 3.29,
+   "hinge_inference": {
+    "left_closed_tip_x": 7.6,
+    "right_closed_tip_x": 7.6,
+    "meeting_gap_m": 0.0,
+    "opening_centre_x": 7.6
+   },
+   "swing_sweep": [
+    {
+     "closing_deg": 0,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.09,
+     "left_min_clear_ground_m": 0.7901,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.09,
+     "right_min_clear_ground_m": 0.7901,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 5,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0931,
+     "left_min_clear_ground_m": 0.637,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0931,
+     "right_min_clear_ground_m": 0.637,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 15,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0973,
+     "left_min_clear_ground_m": 0.337,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0973,
+     "right_min_clear_ground_m": 0.337,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 30,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0979,
+     "left_min_clear_ground_m": 0.0099,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0979,
+     "right_min_clear_ground_m": 0.0099,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 45,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0919,
+     "left_min_clear_ground_m": 0.0095,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0919,
+     "right_min_clear_ground_m": 0.0096,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 60,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0796,
+     "left_min_clear_ground_m": 0.0094,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0796,
+     "right_min_clear_ground_m": 0.0094,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 75,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0623,
+     "left_min_clear_ground_m": 0.0094,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0623,
+     "right_min_clear_ground_m": 0.0094,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 85,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0504,
+     "left_min_clear_ground_m": 0.0094,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0504,
+     "right_min_clear_ground_m": 0.0095,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 90,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0447,
+     "left_min_clear_ground_m": 0.0095,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0447,
+     "right_min_clear_ground_m": 0.0095,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 95,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0395,
+     "left_min_clear_ground_m": 0.0095,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0395,
+     "right_min_clear_ground_m": 0.0095,
+     "leaf_vs_leaf_pairs": 0
+    },
+    {
+     "closing_deg": 100,
+     "left_vs_static_pairs": 0,
+     "left_vs_ground_pairs": 0,
+     "left_min_clear_static_m": 0.0349,
+     "left_min_clear_ground_m": 0.0095,
+     "right_vs_static_pairs": 0,
+     "right_vs_ground_pairs": 0,
+     "right_min_clear_static_m": 0.0349,
+     "right_min_clear_ground_m": 0.0095,
+     "leaf_vs_leaf_pairs": 0
+    }
+   ],
+   "passage_tests": {
+    "open_0deg": {
+     "samples": 81,
+     "blocked_samples": 0,
+     "first_block_y": null
+    },
+    "closed_90deg": {
+     "samples": 81,
+     "blocked_samples": 10,
+     "first_block_y": -4.8
+    },
+    "half_45deg": {
+     "samples": 81,
+     "blocked_samples": 0,
+     "first_block_y": null
+    },
+    "open_widest_centred_body_m": 3.25
+   },
+   "closed_slots": {
+    "left_side_slot_x_m": 0.04,
+    "right_side_slot_x_m": 0.04,
+    "closed_leaf_front_face_y": -4.62,
+    "jamb_back_face_y": -4.64,
+    "closed_leaf_to_jamb_back_gap_y_m": 0.02,
+    "closed_leaf_bottom_z": 0.05,
+    "top_slot_z_m": 0.35,
+    "note": "leaf closes behind the jamb plane (y>jamb back face); no rebate/stop overlaps the leaf edge"
+   }
+  }
+ ]
+}

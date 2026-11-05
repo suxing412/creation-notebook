@@ -1,0 +1,266 @@
+{
+ "tool": "selftest_junctions.py",
+ "input": "cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+ "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+ "cases": {
+  "P0-unmodified": {
+   "boxes": 88,
+   "ringBoxes": 5,
+   "pairs": {
+    "part-part": {
+     "face-contact": 166,
+     "separate": 193,
+     "edge-or-corner-contact": 48
+    },
+    "ring-timber": {
+     "separate": 4
+    },
+    "ring-ring": {
+     "face-contact": 4
+    },
+    "ring-earth": {
+     "face-contact": 2
+    }
+   },
+   "earthOpenEdges": 0,
+   "earthBoxes": 52,
+   "earthUnmatchedRects": 0,
+   "earthNonAxisTris": 0,
+   "earthSameFacingDup": 0,
+   "earthNormalVsWinding": 0,
+   "intrusions": [],
+   "ringEarth": [
+    {
+     "class": "face-contact",
+     "contactArea_m2": 0.33,
+     "gap_m": 0.0
+    },
+    {
+     "class": "face-contact",
+     "contactArea_m2": 0.33,
+     "gap_m": 0.0
+    }
+   ]
+  },
+  "N1-delete-ring-end-face": {
+   "boxes": 87,
+   "ringBoxes": 4,
+   "pairs": {
+    "part-part": {
+     "face-contact": 166,
+     "separate": 193,
+     "edge-or-corner-contact": 48
+    },
+    "ring-timber": {
+     "separate": 2
+    },
+    "ring-ring": {
+     "face-contact": 3
+    },
+    "ring-earth": {
+     "face-contact": 1
+    }
+   },
+   "earthOpenEdges": 4,
+   "earthBoxes": 51,
+   "earthUnmatchedRects": 5,
+   "earthNonAxisTris": 0,
+   "earthSameFacingDup": 0,
+   "earthNormalVsWinding": 0,
+   "intrusions": [],
+   "ringEarth": [
+    {
+     "class": "face-contact",
+     "contactArea_m2": 0.33,
+     "gap_m": 0.0
+    }
+   ],
+   "removedTriangles": 2
+  },
+  "N2-pier-pushed-0.05m-into-ring": {
+   "boxes": 88,
+   "ringBoxes": 5,
+   "pairs": {
+    "part-part": {
+     "face-contact": 164,
+     "separate": 195,
+     "edge-or-corner-contact": 48
+    },
+    "ring-timber": {
+     "separate": 4
+    },
+    "ring-ring": {
+     "face-contact": 4
+    },
+    "ring-earth": {
+     "intrusion": 1,
+     "face-contact": 1
+    }
+   },
+   "earthOpenEdges": 0,
+   "earthBoxes": 52,
+   "earthUnmatchedRects": 0,
+   "earthNonAxisTris": 0,
+   "earthSameFacingDup": 1,
+   "earthNormalVsWinding": 0,
+   "intrusions": [
+    {
+     "class": "intrusion",
+     "overlapVolume_m3": 0.0165,
+     "kind": "ring-earth"
+    }
+   ],
+   "ringEarth": [
+    {
+     "class": "intrusion",
+     "contactArea_m2": null,
+     "gap_m": 0.0
+    },
+    {
+     "class": "face-contact",
+     "contactArea_m2": 0.33,
+     "gap_m": 0.0
+    }
+   ],
+   "movedTriangles": 12,
+   "expectedOverlap_m3": 0.0165
+  },
+  "N3-pier-pulled-0.02m-from-ring": {
+   "boxes": 88,
+   "ringBoxes": 5,
+   "pairs": {
+    "part-part": {
+     "face-contact": 164,
+     "separate": 193,
+     "edge-or-corner-contact": 48,
+     "intrusion": 2
+    },
+    "ring-timber": {
+     "separate": 4
+    },
+    "ring-ring": {
+     "face-contact": 4
+    },
+    "ring-earth": {
+     "separate": 1,
+     "face-contact": 1
+    }
+   },
+   "earthOpenEdges": 0,
+   "earthBoxes": 52,
+   "earthUnmatchedRects": 0,
+   "earthNonAxisTris": 0,
+   "earthSameFacingDup": 0,
+   "earthNormalVsWinding": 0,
+   "intrusions": [
+    {
+     "class": "intrusion",
+     "overlapVolume_m3": 0.0024,
+     "kind": "part-part"
+    },
+    {
+     "class": "intrusion",
+     "overlapVolume_m3": 0.0024,
+     "kind": "part-part"
+    }
+   ],
+   "ringEarth": [
+    {
+     "class": "separate",
+     "contactArea_m2": null,
+     "gap_m": 0.02
+    },
+    {
+     "class": "face-contact",
+     "contactArea_m2": 0.33,
+     "gap_m": 0.0
+    }
+   ],
+   "movedTriangles": 12
+  },
+  "N4-duplicate-face": {
+   "boxes": 88,
+   "ringBoxes": 5,
+   "pairs": {
+    "part-part": {
+     "face-contact": 166,
+     "separate": 193,
+     "edge-or-corner-contact": 48
+    },
+    "ring-timber": {
+     "separate": 4
+    },
+    "ring-ring": {
+     "face-contact": 4
+    },
+    "ring-earth": {
+     "face-contact": 2
+    }
+   },
+   "earthOpenEdges": 4,
+   "earthBoxes": 52,
+   "earthUnmatchedRects": 1,
+   "earthNonAxisTris": 0,
+   "earthSameFacingDup": 1,
+   "earthNormalVsWinding": 0,
+   "intrusions": [],
+   "ringEarth": [
+    {
+     "class": "face-contact",
+     "contactArea_m2": 0.33,
+     "gap_m": 0.0
+    },
+    {
+     "class": "face-contact",
+     "contactArea_m2": 0.33,
+     "gap_m": 0.0
+    }
+   ],
+   "duplicatedTriangles": 2
+  },
+  "N5-flip-winding-keep-normals": {
+   "boxes": 87,
+   "ringBoxes": 4,
+   "pairs": {
+    "part-part": {
+     "face-contact": 166,
+     "separate": 193,
+     "edge-or-corner-contact": 48
+    },
+    "ring-timber": {
+     "separate": 2
+    },
+    "ring-ring": {
+     "face-contact": 3
+    },
+    "ring-earth": {
+     "face-contact": 1
+    }
+   },
+   "earthOpenEdges": 0,
+   "earthBoxes": 51,
+   "earthUnmatchedRects": 6,
+   "earthNonAxisTris": 0,
+   "earthSameFacingDup": 1,
+   "earthNormalVsWinding": 2,
+   "intrusions": [],
+   "ringEarth": [
+    {
+     "class": "face-contact",
+     "contactArea_m2": 0.33,
+     "gap_m": 0.0
+    }
+   ],
+   "flippedTriangles": 2
+  }
+ },
+ "verdict": {
+  "P0": true,
+  "N1": true,
+  "N2": true,
+  "N3": true,
+  "N4": true,
+  "N5": true
+ },
+ "allPass": true
+}

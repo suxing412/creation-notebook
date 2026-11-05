@@ -1,0 +1,235 @@
+{
+ "seat": "LY-078",
+ "phase": "prep (G not frozen; no delivery geometry)",
+ "baseline": {
+  "repo": "D:/GitHub/creation-notebook-lab",
+  "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "note": "re-verified 2026-11-06: lab HEAD bce3211, working tree clean except untracked .claude/; text-file SHAs give the commit blob first, CRLF checkout second (lab/data/assets.json checkout c39e8e9a…, commit blob 53d86312…)"
+ },
+ "inputs": [
+  {
+   "role": "source model near (LOD0)",
+   "path": "docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_near.glb",
+   "bytes": 8977644,
+   "sha256": "0fcb76be7171df172e6850e206532cd724fc4de5dcc8e7d157b182694cc649d5",
+   "triangles": 83084,
+   "nodes": [
+    "LY_stoneclassic_access_court_C_v1_near"
+   ],
+   "loadedInCity": false,
+   "loaderCode": null,
+   "loadEvidence": "no reference in docs/cities/luoyang/{city-data.mjs,app.mjs,city-renderer.mjs,scene.mjs,v1/*,data/*}; LY-001 family ledger: 仅模型（资产卡文件）, cityNodes 0"
+  },
+  {
+   "role": "source model middle (LOD1)",
+   "path": "docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_middle.glb",
+   "bytes": 1934304,
+   "sha256": "5a0ff55f90105d15b4da0401e2a29db5bff67d31ce6f84696e5539b69f0c1e9f",
+   "triangles": 17868,
+   "nodes": [
+    "LY_stoneclassic_access_court_C_v1_middle"
+   ],
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "source model far (LOD2)",
+   "path": "docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_far.glb",
+   "bytes": 178124,
+   "sha256": "1b45de37e02524d6866800603fa6f2d456cbbd8262d17ef252f819c689321239",
+   "triangles": 1608,
+   "nodes": [
+    "LY_stoneclassic_access_court_C_v1_far"
+   ],
+   "loadedInCity": false,
+   "loaderCode": null
+  },
+  {
+   "role": "asset card (evidence text, statuses)",
+   "path": "docs/library/models/m-luoyang-stoneclassic-access-court/m-luoyang-stoneclassic-access-court.asset.json",
+   "sha256CommitBlob": "f7739797ead71d1d010b655ed670bcde0eec406a92202a6b2400680cbf8f890d",
+   "sha256CheckoutCRLF": "a040819737ed6649381a9015bbd3c9ceb8c1312e860c242968da187fd2c85f7f",
+   "loadedInCity": false,
+   "loaderCode": "asset library only (lab/data/assets.json line 6689 in working tree)"
+  },
+  {
+   "role": "asset card cover / shots (reference only)",
+   "paths": {
+    "cover.webp": "874053bd2039d9df50fc1df1ba02f1977c846a0a616a862dda0aa5d38a9d39ab",
+    "shots/02-interior-complete.webp": "26d1dacf25e707ffb457eda46c94e74fc4c7589e57443fe1f29a19f3a90d203c",
+    "shots/03-far-overview.webp": "cebe5b66fa1058f445d0324459b8e07263e331244381fd33228c25fa245bec64",
+    "shots/04-entrance-complete.webp": "574410f9ce353c1e3df92868a9fa340a4617af251488bc3e5ede5bad04c35f94",
+    "shots/06-middle-overview.webp": "0647f4840af98b29fa4c6df3cce2efd3c0c1b96996f7ea02f4b066d0d444ef2d"
+   },
+   "loadedInCity": false
+  },
+  {
+   "role": "Taixue A v3.2 LOD1 (read-only neighbour; LY-077 owns its outer port)",
+   "path": "docs/cities/luoyang/progress-assets/taixue-A-v3.2/models/taixue-A-LOD1.glb",
+   "bytes": 638660,
+   "sha256": "413c2f35ec264dfbc6f24c1ceab9a0f8ce492c975b50e34fd5320ad25be391f2",
+   "loadedInCity": "research view only (space=local-study, cityPlacement=null)",
+   "loaderCode": "city-data.mjs:636-672 asset study-taixue-A -> flat projection progress-assets/flat/study-taixue-A-ee4163421d16.glb (sha256 ee4163421d1652b9301b8d50c7fe9f04ed09440000683b9a207ddf3f1600dda3); researchModels entry city-data.mjs:4125; chapter ritual city-data.mjs:4018; rendered by city-renderer.mjs:646 focusResearchModel -> loadAsset (line 286)"
+  },
+  {
+   "role": "Taixue A source contract",
+   "path": "docs/cities/luoyang/progress-assets/taixue-A-v3.2/source.json",
+   "sha256CommitBlob": "535e10ae94ef57dda5bd608f0d16a8736a71370774b5b08c732c1fcbe9653083",
+   "sha256CheckoutCRLF": "5f2a8078e2faa3c32c070c607bf65b96f191d638a4b1ef13710d3e9d972ed76d",
+   "loadedInCity": "referenced by city-data.mjs provenance (line 4541) and studyReplacements"
+  },
+  {
+   "role": "Taixue A card LOD2 (read-only)",
+   "path": "docs/library/models/m-luoyang-taixue-a/files/taixue-A-LOD2.glb",
+   "sha256": "b911beb4c21aa7cc56d8e7d69660e23ac56dcad357635e008a3f300046e03860",
+   "loadedInCity": false
+  },
+  {
+   "role": "city manifest (read-only; LY-100 only)",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256CommitBlob": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00",
+   "sha256CheckoutCRLF": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "loadedInCity": true,
+   "loaderCode": "app.mjs / city-renderer.mjs createCityRenderer (line 211)"
+  },
+  {
+   "role": "city renderer (read-only)",
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256CheckoutCRLF": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "sha256CommitBlob": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc (from LY-005)"
+  },
+  {
+   "role": "project card (members list only, line 534)",
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256CommitBlob": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd",
+   "sha256CheckoutCRLF": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d"
+  },
+  {
+   "role": "flat projection contract",
+   "path": "docs/cities/luoyang/progress-assets/flat/source.json",
+   "sha256CommitBlob": "ddd1445c1dddabc7f2134b4dc0c3fae37484e619099ea549a4104bf483b486c1",
+   "sha256CheckoutCRLF": "f2734dd41fd56a02dea00474e5c41ce8e0a21d9ac7cc472e76e01b3ce08d8785"
+  },
+  {
+   "role": "lab asset summary",
+   "path": "lab/data/assets.json",
+   "sha256CommitBlob": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+   "note": "checkout CRLF c39e8e9a2a1833f3abbc15e585f5868fba6c7d2e01f6b8e504c2b44193f16979; git status clean"
+  }
+ ],
+ "upstreamWorkpacks": [
+  {
+   "seat": "LY-001",
+   "status": "交付完成",
+   "used": "qa/family-ledger.json: C:m-luoyang-stoneclassic-access-court 仅模型 cityNodes 0"
+  },
+  {
+   "seat": "LY-002",
+   "status": "交付完成",
+   "used": "tables/evidence-ledger.json E-R06, E-R08, X09, X11, X18, X19, D-09"
+  },
+  {
+   "seat": "LY-005",
+   "status": "交付完成",
+   "used": "coordinate-contract.json (axes +X east +Y up +Z south; N·S·v; C terrain 0.20/0.21), port-schema.json (LY-005-port-v1)"
+  },
+  {
+   "seat": "LY-006",
+   "status": "交付完成",
+   "statusSha256": "fe4aaa6c7cb1441f95ac8f51101e0cf63a4ab07ed53452e59c2bd897c5539aba",
+   "used": "registry v1: port stoneclassic:south-mouth:road-end v1 (road-end, producer/steward LY-078, tol 0.005/0.002, local/world null); components T078-port-ground fixed, T078-stele-slots-empty state-variant; seam taixue-A:outer-entry:ground@v1 LY-077->LY-078; zone LY-078:write:001 local:stoneclassic [-20,-0.3,18]..[20,0.5,24]; 3 source objects mode keep (modify/replace empty); site S-TAIXUE owner LY-078",
+   "files": {
+    "registry/ownership.json": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+    "registry/ports.json": "28bcfb68cd7d7fe0026f62de23ae3e45ba8f714a139e38c0b0957039f12fc633",
+    "registry/seams.json": "ca4d81f8f955333c089d782aa69c50c2ca83225d4da07f595f66d1ba87f3f4c1",
+    "registry/zones.json": "6b3595ac735d180866e823ddeb4e3676ffc0e816d083f6be2d57d6e4df0821c0",
+    "registry/seats.json": "a1426412c84cab875713a63846fc9c487c6d01a9f8c445d5268c02187d959069",
+    "schemas/port.schema.json": "9fcdf932adbb4cdc58fecf19d52c7a1442955d273e75be7bc6bb9a1a5f494fdc",
+    "source/validate_interface.py": "d6a6a0781ac7aa34ea1eaf7998d8ce2ed82ea6f3a4741889d0a1bdacaba6cd84",
+    "templates/interface.template.json": "df2fa1b5459d0b7362def105be7582dfc9949c2a6ad96feebbe0304c3afd6f9c"
+   },
+   "conflict": "split of keep objects into units = modify/replace outside write zone (2/83,084 tris inside); needs registry v2 (qa/zone-check.json)"
+  },
+  {
+   "seat": "LY-007",
+   "status": "交付完成",
+   "statusSha256": "2fddce70c110a19c6d08d10b90ac355440d538f5c8dcc82cca58504476ecc082",
+   "used": "baseline/LY_P01-material-semantics.json (five materials, __PBR LOD0/1, __FLAT LOD2, doubleSided true, FLAT roughness 0.88); decisions P-NEWMAT (LY_P01_plaster 石经院 named), P-LEGACY interim no migration",
+   "files": {
+    "baseline/LY_P01-material-semantics.json": "f0a04f599595d41b9d7cad39b9afd5ae3829b343222d92e174f1b49d6d9b1bf3",
+    "baseline/decisions.json": "cb2870fc6966b59a5bd54d7071947c4f5cf588cf13a769ca41b08fc55b824598"
+   }
+  },
+  {
+   "seat": "LY-008",
+   "status": "未交付 (no status.json at 2026-11-06)",
+   "needed": "rerunnable delivery checker"
+  },
+  {
+   "seat": "LY-009",
+   "status": "交付完成",
+   "statusSha256": "09a1c45415aa3a8657581ce0a5ff2e8738e6fca09da800070e36972b330e896c",
+   "needed": "task lock / whitelist (board v2)"
+  },
+  {
+   "seat": "LY-010",
+   "status": "未交付 (no status.json at 2026-11-06)",
+   "needed": "admission: whether X2 (C relation to Taixue A port) is allowed; world pose stays null until then"
+  },
+  {
+   "seat": "LY-077",
+   "status": "prep only (no status.json)",
+   "needed": "frozen Taixue A outer ground port (for X2 only)"
+  },
+  {
+   "seat": "LY-004",
+   "status": "交付完成 (not a listed dep)",
+   "statusSha256": "c9358ea5095a6cb09d95437b80a95b1b4ebc4b044bc23dd68c7caf5cf5b27906",
+   "used": "tables/site-constraints.json: 太学 B研究示意描点, install180 不放行 (P08), research marker 放行 (P19); TX5 刻石立于太学门外, TX8 谢承书[孙吴]; 180年已立石经碑数 未知",
+   "files": {
+    "tables/site-constraints.json": "633c3302ff1219e8d93d2a59107eae85a6d7c077f418f7b53300f642708eb77f"
+   }
+  }
+ ],
+ "missingPrivateSources": [
+  {
+   "item": "private deterministic source/build.py (Blender 4.3.2) for stoneclassic access court",
+   "use": "parametric regeneration (column spacing, gate width) and native provenance",
+   "rebuildFromGLB": "yes for geometry/UV/materials: GLB vertices are unwelded (verts = 3 x tris), 4 named materials, 1 UV layer; split by connected parts is lossless (qa/selftest-*.json). Parameters/editability are lost."
+  },
+  {
+   "item": ".blend native scene for the same",
+   "use": "native re-open / clean rebuild proof claimed on the card",
+   "rebuildFromGLB": "geometry yes; native scene history no — must be labelled 从GLB重建"
+  },
+  {
+   "item": "modeling-lab/review-batches/2026-11-04-taixue-A-v3.2 (web-replacement-contract.json b8b2ae08…)",
+   "use": "only to cross-check A entrance data for LY-077 adjacency",
+   "rebuildFromGLB": "not needed for this seat; A is read-only"
+  }
+ ],
+ "prepTools": {
+  "measure_parts.py": "b16d5337843d152f30d56ac9d0d8451073eec0930b5f79bf3aab68a122b31b89",
+  "analyze_layout.py": "4ac07e567a3a97158615726b7dcac8053c31139a5ed8f4174ecdf5bcfb4c9005",
+  "classify.py": "86afec26f2d74cd0cdd3a2125b603f489b51b5281a9abf8a83ef767ec6c87a73",
+  "check_units.py": "2f3f730b09ddb09be1587821ab1342161740d9d2075a92bcf053f3449316b2db",
+  "cross_unit_overlap.py": "ebdb94ba83024f1fc5d8dc418a09a5a553fc486c89f8a9410f5e2045a807db12",
+  "corridor_check.py": "4cd792df46cafb08ff09de1004182ee76f40da66c2f19610a054fa78033a4ac4",
+  "earth_faces.py": "1444e3dbe11b8fd5d3adba991d06c0ee149981fcf63d23ce87d98b307e74609a",
+  "enclosure_sides.py": "570a75151033ff394aabf83e3c0d0f3784b0d079ba9e30873bfe2a82ff9ad88d",
+  "taixue_a_steps.py": "7795624e129537a906c14fc7a9a81eb72d3e2690969517c050846ff4d97bcbd5",
+  "bl_import_check.py": "aee3c6722ee1c6d3bf4484744e9a827fd6f9a9c0e8b5901cb3400afd522c7063",
+  "zone_check.py": "6a43e9a438ad89992393d953280a384b77263559503fecb3129f421ca3108419",
+  "material_check.py": "5d4523f5d37a379a98af0149c3f3172a023f336254d79df9a89e03e87f878ef8"
+ },
+ "prepReports": {
+  "zone-check.json": "4a687eef814ea62b9f39e99d20fe12d9fe983e5ab708ebd8f1c010bb37fb392e",
+  "material-check.json": "c1792046bb181122ebb4f1ffe5ca2445f9a28743186a34356d3c125dfb0e68bd",
+  "selftest-near.json": "04431079bf1abbda0a5c09c990acf24260659d18cefa5c9a37fa348bf20c37a6",
+  "classify-near.json": "5f415c2479116c285c8b32fbb61068fe42f7b631d2510368199bb7e28faf3282",
+  "cross-unit-near.json": "ea6b513d3c04e4fb065e227982ec3730dc8366fcccca564e2c3c7fb6ff5a37ea",
+  "corridor-near.json": "6ec3b38c3fa71c92350b50bd99292aca6c844a73fdb008b60a98396a9354c721",
+  "blender-readback.json": "377f0a147732b70a73756e83b1f4c52733389f9893ec02e9cb39777714a85206"
+ },
+ "reverified": "2026-11-06: all source GLB / A LOD1 / city-data / project-card SHAs unchanged; check_units --selftest near rerun identical"
+}

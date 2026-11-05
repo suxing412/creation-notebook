@@ -1,0 +1,47 @@
+[
+ {
+  "test": "floating detects floater",
+  "pass": true,
+  "detail": "[('floater', 0.3)]"
+ },
+ {
+  "test": "intersection detects wall x column",
+  "pass": true,
+  "detail": "[('wall', 'col', [0.316, 0.276, 2.496])]"
+ },
+ {
+  "test": "coplanar detects shared top face",
+  "pass": true,
+  "detail": "[{'a': 'slabA', 'b': 'slabB', 'area': 1.0, 'normal': [0.0, 0.0, 1.0]}]"
+ },
+ {
+  "test": "clearance fails (narrow, low, blocked)",
+  "pass": true,
+  "detail": "{'clear_width': 0.64, 'clear_height': 1.7, 'blocked': 171, 'blockers': {'leaf_closed': 119, 'wall': 66, 'door_frame': 38}}"
+ },
+ {
+  "test": "grounded detects lift",
+  "pass": true,
+  "detail": "{'zmin_building': 0.1, 'zmin_all': 0.1, 'grounded': False}"
+ },
+ {
+  "test": "inspect_glb flags bad material / TRS / ground",
+  "pass": true,
+  "detail": "[\"材质名不合规范 'Material.001'\", 'LOD0 应为 __PBR：Material.001', '静态节点 bad-A-static_earth 带变换', '网格名带 Blender 副本后缀 Cube.001', 'UV 不是世界盒式投影 0.0', '最低点 y=0.5000，未落在 y=0（地面补丁另出文件）']"
+ },
+ {
+  "test": "derive LOD1/LOD2 from LOD0 objects",
+  "pass": true,
+  "detail": "{'got': {0: 1808, 1: 672, 2: 292}, 'want': {0: 1808, 1: 672, 2: 292}, 'issues': {0: [], 1: [], 2: []}}"
+ },
+ {
+  "test": "eave tiles 28v/52t, removed at LOD2, supported",
+  "pass": true,
+  "detail": "{'n': 42, 'sig': [(28, 52)], 'lod2_left': 0, 'floating': []}"
+ },
+ {
+  "test": "separate hinged leaf node exported in all LODs",
+  "pass": true,
+  "detail": "{'nodes0': ['t-leafnode-A-static_earth', 't-leafnode-A-leaf_0_L', 't-leafnode-A-static_timber'], 'leaf0': {'extras': {'evidence': 'C reconstruction trial, not a surveyed building', 'metres_per_unit': 1.0, 'LOD': 0, 'hinge_axis_native': [0, 0, 1], 'pivot_native': [-0.7, 0.3, 0.21], 'angle_range_deg': [0, 90], 'swing_sign': 1}, 'name': 't-leafnode-A-leaf_0_L', 'rotation': [0, 0.2588191032409668, 0, 0.9659258127212524], 'translation': [-0.699999988079071, 0.20999999344348907, -0.30000001192092896]}, 'tris': {0: 132, 1: 132, 2: 96}, 'issues': {0: [], 1: [], 2: []}}"
+ }
+]

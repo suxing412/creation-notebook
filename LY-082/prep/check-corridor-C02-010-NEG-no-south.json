@@ -1,0 +1,51 @@
+{
+ "file": "corridor-C02-010-NEG-no-south.json",
+ "mode": "negative",
+ "allChecksPass": false,
+ "verdict": "PASS",
+ "checks": [
+  {
+   "check": "K1_sha_binding",
+   "pass": true,
+   "detail": "all ground inputs match"
+  },
+  {
+   "check": "K2_support_continuous",
+   "pass": false,
+   "detail": {
+    "noGroundCells": 15300,
+    "firstNoGround_v_m": 0.025
+   }
+  },
+  {
+   "check": "K3_step_slope",
+   "pass": false,
+   "detail": {
+    "maxAdjacentStep_m": null,
+    "maxSlope_pct": null
+   }
+  },
+  {
+   "check": "K4_boundary_height",
+   "pass": false,
+   "detail": null
+  },
+  {
+   "check": "K5_no_stacked_floor",
+   "pass": true,
+   "detail": {
+    "cells": 0,
+    "sep": null,
+    "files": null
+   }
+  },
+  {
+   "check": "K6_body_box_clear",
+   "pass": true,
+   "detail": {
+    "LOD0": [],
+    "LOD1": []
+   }
+  }
+ ]
+}

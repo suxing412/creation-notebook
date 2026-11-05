@@ -1,0 +1,67 @@
+[
+ {
+  "id": "C1 城市清单每个 GLB 引用都能定位",
+  "result": "pass",
+  "detail": "48 个 far/near 引用；缺失 []"
+ },
+ {
+  "id": "C2 声明字节数与提交字节一致",
+  "result": "pass",
+  "detail": "不符 []"
+ },
+ {
+  "id": "C3 声明 SHA256 与提交字节一致（有声明者）",
+  "result": "pass",
+  "detail": "48/48 个引用带 SHA 声明；无声明：[]"
+ },
+ {
+  "id": "C4 excludeNodes 在 GLB 中全部命中（渲染器严格校验）",
+  "result": "pass",
+  "detail": "13 个带排除节点的引用"
+ },
+ {
+  "id": "C5 运行实测首屏请求集合 = 静态推断首屏 far 集合",
+  "result": "pass",
+  "detail": "首屏实测 21 个 GLB；差集 实测-静态=[] 静态-实测=[]"
+ },
+ {
+  "id": "C6 运行实测遍历后请求的 far 集合 = 清单全部 far",
+  "result": "pass",
+  "detail": "清单 far 42 个；未被请求 []"
+ },
+ {
+  "id": "C7 全城下载字节与清单 allCityModelBytes 一致",
+  "result": "pass",
+  "detail": "实测“本次已载入模型 13.47 MB”，清单 allCityModelBytes=13466348；首屏 3.87 MB 对 initialModelBytes=3872084"
+ },
+ {
+  "id": "C8 provenance.sourceContracts 的 SHA 与提交（线上）字节一致",
+  "result": "fail",
+  "detail": "1/13 与提交字节一致；12 个只与本机 autocrlf 检出字节一致"
+ },
+ {
+  "id": "C9 隐藏试放包模型 SHA 与 source.json 声明一致",
+  "result": "pass",
+  "detail": "20 个模型文件"
+ },
+ {
+  "id": "C10 隐藏试放在当前入口不被加载",
+  "result": "pass",
+  "detail": "实测请求集合与 north13 试放模型文件无交集（城景用的是 flat 转换件）"
+ },
+ {
+  "id": "C11 研究模型全部 cityPlacement=null",
+  "result": "pass",
+  "detail": "14 件"
+ },
+ {
+  "id": "C12 lab 仓库未被本席位改动",
+  "result": "pass",
+  "detail": "快照时与收尾时的已跟踪改动一致：['M lab/data/assets.json', 'M lab/data/glb-cache.json', 'M lab/data/report.json']（均为既有时间戳改动）；docs/cities/luoyang、docs/library、docs/model-library 无改动；HEAD 不变"
+ },
+ {
+  "id": "C13 单 GLB ≤ 15,000,000 字节（快照内全部 GLB）",
+  "result": "pass",
+  "detail": "373 个 GLB，超限 []"
+ }
+]

@@ -1,0 +1,69 @@
+{
+ "seat": "LY-065",
+ "inputsFound": [
+  "lab@bce3211 docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD0.glb 77369980",
+  "lab@bce3211 docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD1.glb 6f605ed7",
+  "lab@bce3211 docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD2.glb 134b0375",
+  "lab@bce3211 docs/library/models/m-luoyang-deyang-hall/files/deyang-B-LOD0.glb 6ef34781",
+  "lab@bce3211 docs/library/models/m-luoyang-deyang-hall/files/deyang-B-LOD1.glb d9a73c76",
+  "lab@bce3211 docs/library/models/m-luoyang-deyang-hall/files/deyang-B-LOD2.glb 1fd99998",
+  "lab@bce3211 docs/library/models/m-luoyang-deyang-hall/m-luoyang-deyang-hall.asset.json 16e39d69（提交字节；本机 CRLF 字节 ead59fbd）",
+  "lab@bce3211 docs/cities/luoyang/progress-assets/palace-admission-court/palace-admission-court-open-LOD0.glb 59c8b758（原样复用 deyang-A，单位矩阵；归 LY-061 keep）",
+  "lab@bce3211 docs/cities/luoyang/progress-assets/palace-admission-court/source.json 1653e115（提交字节）",
+  "lab@bce3211 docs/cities/luoyang/p-luoyang.asset.json 8edb06ab（只有 members 元数据提到 deyang；城景运行时 0 命中）",
+  "lab@bce3211 docs/cities/luoyang/city-data.mjs c849706b（deyang/admission 0 命中）",
+  "lab@bce3211 lab/data/assets.json 53d86312（详情页数据源，提到 deyang 33 处）",
+  "workpacks/LY-006/registry/seats.json a1426412（LY-065 component，local:deyang，P065-maintenance fixed）",
+  "workpacks/LY-006/registry/zones.json 6b3595ac（LY-065:write:001 [[-22.3,-0.3,-13.9],[22.3,1.6,19.0]]）",
+  "workpacks/LY-006/registry/ports.json 28bcfb68（deyang:maintenance-edge:floor v1 declared，local/world null）",
+  "workpacks/LY-006/registry/ownership.json ecbbbcf5（deyang-A/B 六个 static 节点 owner LY-065 keep）",
+  "workpacks/LY-006/registry/seams.json ca4d81f8（LY-065->LY-070）",
+  "workpacks/LY-005/coordinate-contract.json b6d7fe9d；port-schema.json 30854ed9",
+  "workpacks/LY-007/baseline/LY_P01-material-semantics.json f0a04f59；lod-rules.json fbf53757；textures/manifest.json 4fdab75d",
+  "workpacks/LY-008/source/ly_check.py fda345d4（未冻结；selftest 记录的是 80d98fd4）"
+ ],
+ "inputsMissing": [
+  "LY-010 选型（A 五间 / B 七间；独立 local:deyang 还是经 LY-070 进宫院组合）：决定唯一原型，未定之前不能出几何；目录不存在",
+  "LY-008 冻结检查器（无 status.json，SHA 仍在变）：交付 qa 要绑它的 SHA；现有 fda345d4 只能作预检基线",
+  "LY-006 registry v2 或书面裁定：v1 写入区 y 上限 1.6 m 低于台顶（A 1.80 / B 2.10 m），台顶交接、floor 端口都落在区外；按 LY-006 brief 不得自行越区",
+  "deyang A/B 原生 .blend、生成器与参数（私密，不在仓库）：用于 native/ 源交付。原型是 keep，不需要改；新件是独立节点，原型 GLB 原样引用，所以装配可以从 GLB 重建，并如实写明不是原件",
+  "luoyang-palace-admission-court-v1.zip（私密）：本席不需要，组合内装配归 LY-070/LY-061；能否从 GLB 重建的判断也交给它们"
+ ],
+ "gaps": [
+  "侧/后台缘与地面零连通：只有前主阶（宽 7.0 m；A 11 个踏面 × 0.15 m，B 14 × 0.14 m）。左、右、后三侧登台面 0 个；台缘外 0.30 m 下打射线 0/31 命中。A 有 85.0 m 台缘（25+25+35）直落 1.80 m，B 有 88.2 m（23.8+23.8+40.6）直落 2.10 m",
+  "台顶是一整块平面（A 877.38 m²，B 968.66 m²），侧后带只能从主阶上来绕前廊进入。带宽：离地 +1.0 m 处 3.35 m，地面处 3.12 m（柱础边 ±14.38 / ±17.18）",
+  "侧墙、后墙在 +0.5 / +1.0 / +1.6 m 各 200 个采样都没有开口（深穿只出现在墙端以外的角区），没有侧门或后门",
+  "1.80 / 2.10 m 落差的台缘上没有任何防护几何",
+  "瓦面外缘比台缘向内缩 A 1.486 m、B 1.484 m（LOD2 缩 1.50 m）。檐口离台顶 A 7.02 m、B 7.42 m，台缘外约 1.49 m 是露天，没有排水件",
+  "没有上层楼面：台顶 2.5 m 以上的朝上面只有墙顶（4.2 / 5.04 m²）和梁顶（5.68 / 6.8 m²），A 18 片、B 12 片，「重屋可登」没有几何依据",
+  "LY-006 v1 写入区封顶 1.6 m，比台顶低 A 0.20 m、B 0.50 m（zone_fit.py 实测，LOD0 = LOD2）",
+  "写入区在台外的余量：A 左右 4.8 m、后 1.4 m；B 三侧各 2.0 m。直跑水平长度 A 2.25–3.3 m、B 2.75–3.9 m，所以垂直台缘的直跑只放得下 A 的左右侧，其余都要平行台缘",
+  "写入区平面包住了主阶（前侧 z 上限 19.0，A 主阶 z 12.84–16.58，B 12.24–17.0）和柱网，新件必须列精确包络并证明与它们的交集为 0",
+  "继承的检查器警告：B 的 lodset LOD1/LOD0 三角比 0.636，超出 [0.17, 0.62]（LY-008 未冻结版）；A 和六份单档 GLB 都是 OK",
+  "三档 earth 几何相同（A 436 三角，B 556 三角，包围盒、台阶、柱轴都一致），一套端口可以三档共用"
+ ],
+ "reuseCandidate": "无。A、B 两套原型和宫院组合都没有侧/后登台面（三侧 0 个，台外下打射线 0/31），宫院组合只接通前主阶。没有合格的侧后台缘接口可以复用。",
+ "touches": [
+  "deyang-{A|B}-static_earth（keep，只读；侧后台面和台缘是对接面）",
+  "deyang-{A|B}-static_timber / _tile（keep，只读；柱、柱础和滴水线是净距对象）",
+  "LY-006 写入区 LY-065:write:001（local:deyang）",
+  "端口 deyang:maintenance-edge:floor v1（producer/steward 是 LY-065，consumer 是 LY-070）",
+  "组件 P065-maintenance（fixed，新增独立节点）",
+  "宫院组合 hall__deyang-A-static_* 与 new_court_support_C：归 LY-061，本席不碰，只给 LY-070 提供端口值",
+  "docs/library/models/m-luoyang-deyang-hall/m-luoyang-deyang-hall.asset.json：卡片归 LY-070（ownsCards），本席只提语义提案，经 LY-100 合并",
+  "workpacks/LY-065/**（唯一写入区）"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-006 v1 写入区高度不够，不拿到 v2 就无法交付合规的台顶交接；自行越区会被判阻断。所以 readyAfterG=false：要等 G 冻结并且拿到 v2 或书面裁定",
+  "LY-010 可能选 B，或者选进组合：两套尺寸不同（台顶 1.80 / 2.10 m，台缘 85 / 88.2 m，余量 1.4–4.8 / 2.0 m），prep 两套都量了",
+  "台外余量窄（A 后 1.4 m、B 2.0 m），只能做平行台缘的窄梯段；如果需要更宽，也要走 v2",
+  "台缘防护做不做会改变外观定性，没有定论；不得悄悄加上，也不得声称安全",
+  "滴水线在台顶带上，落足件放在哪要明说，不能暗示防水",
+  "容易被诱导去开后门、做登顶梯，把未知变成已认证路线，这是边界明令禁止的",
+  "原生 .blend 缺失：native/ 只能写装配从 GLB 重建，不能冒称找回原型源",
+  "LY-008 检查器还在变，预检基线到时要重跑并换成冻结 SHA",
+  "史料只支持殿大、殿下引水（《漢官典職》「周旋容萬人」），没有侧阶或后阶的出处，所有新几何都是 C"
+ ],
+ "readyAfterG": false
+}

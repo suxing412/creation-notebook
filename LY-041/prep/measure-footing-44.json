@@ -1,0 +1,7773 @@
+{
+ "tool": "measure_footing.py",
+ "grid_m": 0.1,
+ "contactTol_m": 0.005,
+ "baseBand_m": 0.05,
+ "scope": "surface heightfield on a 0.10 m grid at cell centres plus edge splats; not solid collision, not GPU, not walking simulation",
+ "inputs": {
+  "assets/r01/R01-A-LOD1-prototype.glb": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+  "assets/r01/R01-A-LOD0-prototype.glb": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+  "assets/r01/R01-B-LOD1-prototype.glb": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+  "assets/r01/R01-B-LOD0-prototype.glb": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+  "assets/d08/TC03-LOD1-prototype.glb": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+  "assets/d08/TC03-LOD0-prototype.glb": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+  "assets/c02v/A2-LOD1-prototype.glb": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+  "assets/c02v/A2-LOD0-prototype.glb": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+  "assets/c02v/B2-LOD1-prototype.glb": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+  "assets/c02v/B2-LOD0-prototype.glb": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+  "assets/c02v/TC03-2-LOD1-prototype.glb": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+  "assets/c02v/TC03-2-LOD0-prototype.glb": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+  "assets/ground-atomic/network-ground-stitched.glb": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+  "assets/ground-atomic/retained.glb": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+  "assets/ground-atomic/south.glb": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+  "assets/ground-atomic/D08.glb": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+  "data/far44/instances-calt.json": "c830b4e37090da5e070156b7f6199f36c5d0191c339f5a9399f0becded50ff85",
+  "data/far44/instances-original.json": "a854589134150c2fe74b5bbed4e404aeeb5aa5724090795eb60923c68e3d2cff"
+ },
+ "prototypes": {
+  "A/LOD1": {
+   "file": "assets/r01/R01-A-LOD1-prototype.glb",
+   "nodes": {
+    "designed_hardpacked_activity_ground": {
+     "tris": 48,
+     "bbox": [
+      [
+       -3.2,
+       0.2,
+       -4.18
+      ],
+      [
+       6.5,
+       0.215,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "architecture_C_floor_plinth": {
+     "tris": 72,
+     "bbox": [
+      [
+       -7.7,
+       0.2,
+       -9.7
+      ],
+      [
+       3.6,
+       0.42,
+       3.9
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plain_timber": {
+     "tris": 360,
+     "bbox": [
+      [
+       -5.305,
+       0.2,
+       -6.105
+      ],
+      [
+       6.0,
+       2.65,
+       11.8
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_roof_rhythm_not_glaze_copy": {
+     "tris": 100,
+     "bbox": [
+      [
+       -9.0,
+       2.4,
+       -12.0
+      ],
+      [
+       9.0,
+       4.49,
+       12.15
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_whitebox_earth_wall": {
+     "tris": 624,
+     "bbox": [
+      [
+       -9.0,
+       0.2,
+       -12.0
+      ],
+      [
+       9.0,
+       3.22,
+       12.0
+      ]
+     ],
+     "excluded": false
+    },
+    "site_neutral_lane": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       12.0
+      ],
+      [
+       9.0,
+       0.2,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "site_lot": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       -12.0
+      ],
+      [
+       9.0,
+       0.2,
+       12.0
+      ]
+     ],
+     "excluded": true
+    }
+   },
+   "excludeNodesMissing": [],
+   "retainedTris": 1156,
+   "retainedBBox": [
+    [
+     -9.0,
+     0.2,
+     -12.0
+    ],
+    [
+     9.0,
+     4.49,
+     12.15
+    ]
+   ],
+   "siteLotBBox": [
+    [
+     -9.0,
+     0.0,
+     -12.0
+    ],
+    [
+     9.0,
+     0.2,
+     12.0
+    ]
+   ],
+   "siteLotTop": 0.20000000298023224,
+   "footprintCells": 11165,
+   "lotCells": 43200,
+   "retainedBottomInLot": {
+    "n": 11165,
+    "min": 0.2,
+    "p05": 0.2,
+    "median": 0.2,
+    "p95": 0.2,
+    "max": 0.2
+   },
+   "retainedBelowLotTopCells": 0,
+   "removedDesignedGroundTop": {
+    "site_neutral_lane": {
+     "n": 7200,
+     "min": 0.2,
+     "p05": 0.2,
+     "median": 0.2,
+     "p95": 0.2,
+     "max": 0.2
+    },
+    "designed_hardpacked_activity_ground": {
+     "n": 10324,
+     "min": 0.215,
+     "p05": 0.215,
+     "median": 0.215,
+     "p95": 0.215,
+     "max": 0.215
+    }
+   }
+  },
+  "A/LOD0": {
+   "file": "assets/r01/R01-A-LOD0-prototype.glb",
+   "nodes": {
+    "designed_hardpacked_activity_ground": {
+     "tris": 48,
+     "bbox": [
+      [
+       -3.2,
+       0.2,
+       -4.18
+      ],
+      [
+       6.5,
+       0.215,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "architecture_C_floor_plinth": {
+     "tris": 72,
+     "bbox": [
+      [
+       -7.7,
+       0.2,
+       -9.7
+      ],
+      [
+       3.6,
+       0.42,
+       3.9
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plain_timber": {
+     "tris": 360,
+     "bbox": [
+      [
+       -5.305,
+       0.2,
+       -6.105
+      ],
+      [
+       6.0,
+       2.65,
+       11.8
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_roof_rhythm_not_glaze_copy": {
+     "tris": 6436,
+     "bbox": [
+      [
+       -9.0,
+       2.4,
+       -12.0
+      ],
+      [
+       9.0,
+       4.49,
+       12.15
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_whitebox_earth_wall": {
+     "tris": 624,
+     "bbox": [
+      [
+       -9.0,
+       0.2,
+       -12.0
+      ],
+      [
+       9.0,
+       3.22,
+       12.0
+      ]
+     ],
+     "excluded": false
+    },
+    "site_neutral_lane": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       12.0
+      ],
+      [
+       9.0,
+       0.2,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "site_lot": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       -12.0
+      ],
+      [
+       9.0,
+       0.2,
+       12.0
+      ]
+     ],
+     "excluded": true
+    }
+   },
+   "excludeNodesMissing": [],
+   "retainedTris": 7492,
+   "retainedBBox": [
+    [
+     -9.0,
+     0.2,
+     -12.0
+    ],
+    [
+     9.0,
+     4.49,
+     12.15
+    ]
+   ],
+   "siteLotBBox": [
+    [
+     -9.0,
+     0.0,
+     -12.0
+    ],
+    [
+     9.0,
+     0.2,
+     12.0
+    ]
+   ],
+   "siteLotTop": 0.20000000298023224,
+   "footprintCells": 11165,
+   "lotCells": 43200,
+   "retainedBottomInLot": {
+    "n": 11165,
+    "min": 0.2,
+    "p05": 0.2,
+    "median": 0.2,
+    "p95": 0.2,
+    "max": 0.2
+   },
+   "retainedBelowLotTopCells": 0,
+   "removedDesignedGroundTop": {
+    "site_neutral_lane": {
+     "n": 7200,
+     "min": 0.2,
+     "p05": 0.2,
+     "median": 0.2,
+     "p95": 0.2,
+     "max": 0.2
+    },
+    "designed_hardpacked_activity_ground": {
+     "n": 10324,
+     "min": 0.215,
+     "p05": 0.215,
+     "median": 0.215,
+     "p95": 0.215,
+     "max": 0.215
+    }
+   }
+  },
+  "B/LOD1": {
+   "file": "assets/r01/R01-B-LOD1-prototype.glb",
+   "nodes": {
+    "designed_loading_yard": {
+     "tris": 60,
+     "bbox": [
+      [
+       -5.6,
+       0.2,
+       -4.38
+      ],
+      [
+       2.72,
+       0.215,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "architecture_C_floor_plinth": {
+     "tris": 132,
+     "bbox": [
+      [
+       -7.14,
+       0.2,
+       -9.5
+      ],
+      [
+       7.4,
+       0.65,
+       5.34
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plain_timber": {
+     "tris": 540,
+     "bbox": [
+      [
+       -7.09,
+       0.2,
+       -6.6
+      ],
+      [
+       5.005,
+       3.8,
+       11.8
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_roof_rhythm_not_glaze_copy": {
+     "tris": 120,
+     "bbox": [
+      [
+       -9.0,
+       2.4,
+       -12.0
+      ],
+      [
+       9.0,
+       5.52,
+       12.15
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_whitebox_earth_wall": {
+     "tris": 648,
+     "bbox": [
+      [
+       -9.0,
+       0.2,
+       -12.0
+      ],
+      [
+       9.0,
+       4.25,
+       12.0
+      ]
+     ],
+     "excluded": false
+    },
+    "site_neutral_lane": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       12.0
+      ],
+      [
+       9.0,
+       0.2,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "site_lot": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       -12.0
+      ],
+      [
+       9.0,
+       0.2,
+       12.0
+      ]
+     ],
+     "excluded": true
+    }
+   },
+   "excludeNodesMissing": [],
+   "retainedTris": 1440,
+   "retainedBBox": [
+    [
+     -9.0,
+     0.2,
+     -12.0
+    ],
+    [
+     9.0,
+     5.52,
+     12.15
+    ]
+   ],
+   "siteLotBBox": [
+    [
+     -9.0,
+     0.0,
+     -12.0
+    ],
+    [
+     9.0,
+     0.2,
+     12.0
+    ]
+   ],
+   "siteLotTop": 0.20000000298023224,
+   "footprintCells": 10638,
+   "lotCells": 43200,
+   "retainedBottomInLot": {
+    "n": 10638,
+    "min": 0.2,
+    "p05": 0.2,
+    "median": 0.2,
+    "p95": 0.2,
+    "max": 0.2
+   },
+   "retainedBelowLotTopCells": 0,
+   "removedDesignedGroundTop": {
+    "site_neutral_lane": {
+     "n": 7200,
+     "min": 0.2,
+     "p05": 0.2,
+     "median": 0.2,
+     "p95": 0.2,
+     "max": 0.2
+    },
+    "designed_loading_yard": {
+     "n": 7599,
+     "min": 0.215,
+     "p05": 0.215,
+     "median": 0.215,
+     "p95": 0.215,
+     "max": 0.215
+    }
+   }
+  },
+  "B/LOD0": {
+   "file": "assets/r01/R01-B-LOD0-prototype.glb",
+   "nodes": {
+    "designed_loading_yard": {
+     "tris": 60,
+     "bbox": [
+      [
+       -5.6,
+       0.2,
+       -4.38
+      ],
+      [
+       2.72,
+       0.215,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "architecture_C_floor_plinth": {
+     "tris": 132,
+     "bbox": [
+      [
+       -7.14,
+       0.2,
+       -9.5
+      ],
+      [
+       7.4,
+       0.65,
+       5.34
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plain_timber": {
+     "tris": 540,
+     "bbox": [
+      [
+       -7.09,
+       0.2,
+       -6.6
+      ],
+      [
+       5.005,
+       3.8,
+       11.8
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_roof_rhythm_not_glaze_copy": {
+     "tris": 7896,
+     "bbox": [
+      [
+       -9.0,
+       2.4,
+       -12.0
+      ],
+      [
+       9.0,
+       5.52,
+       12.15
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_whitebox_earth_wall": {
+     "tris": 648,
+     "bbox": [
+      [
+       -9.0,
+       0.2,
+       -12.0
+      ],
+      [
+       9.0,
+       4.25,
+       12.0
+      ]
+     ],
+     "excluded": false
+    },
+    "site_neutral_lane": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       12.0
+      ],
+      [
+       9.0,
+       0.2,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "site_lot": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       -12.0
+      ],
+      [
+       9.0,
+       0.2,
+       12.0
+      ]
+     ],
+     "excluded": true
+    }
+   },
+   "excludeNodesMissing": [],
+   "retainedTris": 9216,
+   "retainedBBox": [
+    [
+     -9.0,
+     0.2,
+     -12.0
+    ],
+    [
+     9.0,
+     5.52,
+     12.15
+    ]
+   ],
+   "siteLotBBox": [
+    [
+     -9.0,
+     0.0,
+     -12.0
+    ],
+    [
+     9.0,
+     0.2,
+     12.0
+    ]
+   ],
+   "siteLotTop": 0.20000000298023224,
+   "footprintCells": 10638,
+   "lotCells": 43200,
+   "retainedBottomInLot": {
+    "n": 10638,
+    "min": 0.2,
+    "p05": 0.2,
+    "median": 0.2,
+    "p95": 0.2,
+    "max": 0.2
+   },
+   "retainedBelowLotTopCells": 0,
+   "removedDesignedGroundTop": {
+    "site_neutral_lane": {
+     "n": 7200,
+     "min": 0.2,
+     "p05": 0.2,
+     "median": 0.2,
+     "p95": 0.2,
+     "max": 0.2
+    },
+    "designed_loading_yard": {
+     "n": 7599,
+     "min": 0.215,
+     "p05": 0.215,
+     "median": 0.215,
+     "p95": 0.215,
+     "max": 0.215
+    }
+   }
+  },
+  "TC03/LOD1": {
+   "file": "assets/d08/TC03-LOD1-prototype.glb",
+   "nodes": {
+    "architecture_C_drain_stone": {
+     "tris": 36,
+     "bbox": [
+      [
+       26.6,
+       0.2,
+       -23.22
+      ],
+      [
+       27.0,
+       0.29,
+       -3.0
+      ]
+     ],
+     "excluded": false
+    },
+    "designed_rear_work_ground": {
+     "tris": 20,
+     "bbox": [
+      [
+       8.7,
+       0.2,
+       -29.0
+      ],
+      [
+       19.0,
+       0.212,
+       -25.6
+      ]
+     ],
+     "excluded": false
+    },
+    "designed_side_passage": {
+     "tris": 52,
+     "bbox": [
+      [
+       20.0,
+       0.2,
+       -27.0
+      ],
+      [
+       26.0,
+       0.212,
+       -5.0
+      ]
+     ],
+     "excluded": false
+    },
+    "designed_front_apron": {
+     "tris": 40,
+     "bbox": [
+      [
+       7.3,
+       0.2,
+       -17.78
+      ],
+      [
+       22.5,
+       0.212,
+       4.0
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plinth": {
+     "tris": 144,
+     "bbox": [
+      [
+       2.5,
+       0.2,
+       -33.5
+      ],
+      [
+       25.5,
+       0.42,
+       -7.5
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plain_timber": {
+     "tris": 648,
+     "bbox": [
+      [
+       4.85,
+       0.2,
+       -30.705
+      ],
+      [
+       25.45,
+       2.65,
+       -0.2
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_roof_rhythm": {
+     "tris": 164,
+     "bbox": [
+      [
+       -0.0,
+       2.0,
+       -36.0
+      ],
+      [
+       28.0,
+       4.54,
+       0.15
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_earth_wall": {
+     "tris": 1116,
+     "bbox": [
+      [
+       0.0,
+       0.2,
+       -36.0
+      ],
+      [
+       28.0,
+       3.27,
+       0.0
+      ]
+     ],
+     "excluded": false
+    },
+    "site_neutral_lane": {
+     "tris": 12,
+     "bbox": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       28.0,
+       0.2,
+       4.0
+      ]
+     ],
+     "excluded": true
+    },
+    "site_lot": {
+     "tris": 12,
+     "bbox": [
+      [
+       0.0,
+       0.0,
+       -36.0
+      ],
+      [
+       28.0,
+       0.2,
+       0.0
+      ]
+     ],
+     "excluded": true
+    }
+   },
+   "excludeNodesMissing": [],
+   "retainedTris": 2220,
+   "retainedBBox": [
+    [
+     -0.0,
+     0.2,
+     -36.0
+    ],
+    [
+     28.0,
+     4.54,
+     4.0
+    ]
+   ],
+   "siteLotBBox": [
+    [
+     0.0,
+     0.0,
+     -36.0
+    ],
+    [
+     28.0,
+     0.2,
+     0.0
+    ]
+   ],
+   "siteLotTop": 0.20000000298023224,
+   "footprintCells": 56102,
+   "lotCells": 100800,
+   "retainedBottomInLot": {
+    "n": 56102,
+    "min": 0.2,
+    "p05": 0.2,
+    "median": 0.2,
+    "p95": 0.2,
+    "max": 0.2
+   },
+   "retainedBelowLotTopCells": 0,
+   "removedDesignedGroundTop": {
+    "site_neutral_lane": {
+     "n": 11200,
+     "min": 0.2,
+     "p05": 0.2,
+     "median": 0.2,
+     "p95": 0.2,
+     "max": 0.2
+    }
+   }
+  },
+  "TC03/LOD0": {
+   "file": "assets/d08/TC03-LOD0-prototype.glb",
+   "nodes": {
+    "architecture_C_drain_stone": {
+     "tris": 36,
+     "bbox": [
+      [
+       26.6,
+       0.2,
+       -23.22
+      ],
+      [
+       27.0,
+       0.29,
+       -3.0
+      ]
+     ],
+     "excluded": false
+    },
+    "designed_rear_work_ground": {
+     "tris": 20,
+     "bbox": [
+      [
+       8.7,
+       0.2,
+       -29.0
+      ],
+      [
+       19.0,
+       0.212,
+       -25.6
+      ]
+     ],
+     "excluded": false
+    },
+    "designed_side_passage": {
+     "tris": 52,
+     "bbox": [
+      [
+       20.0,
+       0.2,
+       -27.0
+      ],
+      [
+       26.0,
+       0.212,
+       -5.0
+      ]
+     ],
+     "excluded": false
+    },
+    "designed_front_apron": {
+     "tris": 40,
+     "bbox": [
+      [
+       7.3,
+       0.2,
+       -17.78
+      ],
+      [
+       22.5,
+       0.212,
+       4.0
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plinth": {
+     "tris": 144,
+     "bbox": [
+      [
+       2.5,
+       0.2,
+       -33.5
+      ],
+      [
+       25.5,
+       0.42,
+       -7.5
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plain_timber": {
+     "tris": 648,
+     "bbox": [
+      [
+       4.85,
+       0.2,
+       -30.705
+      ],
+      [
+       25.45,
+       2.65,
+       -0.2
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_roof_rhythm": {
+     "tris": 12548,
+     "bbox": [
+      [
+       -0.0,
+       2.0,
+       -36.0
+      ],
+      [
+       28.0,
+       4.54,
+       0.15
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_earth_wall": {
+     "tris": 1116,
+     "bbox": [
+      [
+       0.0,
+       0.2,
+       -36.0
+      ],
+      [
+       28.0,
+       3.27,
+       0.0
+      ]
+     ],
+     "excluded": false
+    },
+    "site_neutral_lane": {
+     "tris": 12,
+     "bbox": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       28.0,
+       0.2,
+       4.0
+      ]
+     ],
+     "excluded": true
+    },
+    "site_lot": {
+     "tris": 12,
+     "bbox": [
+      [
+       0.0,
+       0.0,
+       -36.0
+      ],
+      [
+       28.0,
+       0.2,
+       0.0
+      ]
+     ],
+     "excluded": true
+    }
+   },
+   "excludeNodesMissing": [],
+   "retainedTris": 14604,
+   "retainedBBox": [
+    [
+     -0.0,
+     0.2,
+     -36.0
+    ],
+    [
+     28.0,
+     4.54,
+     4.0
+    ]
+   ],
+   "siteLotBBox": [
+    [
+     0.0,
+     0.0,
+     -36.0
+    ],
+    [
+     28.0,
+     0.2,
+     0.0
+    ]
+   ],
+   "siteLotTop": 0.20000000298023224,
+   "footprintCells": 56102,
+   "lotCells": 100800,
+   "retainedBottomInLot": {
+    "n": 56102,
+    "min": 0.2,
+    "p05": 0.2,
+    "median": 0.2,
+    "p95": 0.2,
+    "max": 0.2
+   },
+   "retainedBelowLotTopCells": 0,
+   "removedDesignedGroundTop": {
+    "site_neutral_lane": {
+     "n": 11200,
+     "min": 0.2,
+     "p05": 0.2,
+     "median": 0.2,
+     "p95": 0.2,
+     "max": 0.2
+    }
+   }
+  },
+  "A2/LOD1": {
+   "file": "assets/c02v/A2-LOD1-prototype.glb",
+   "nodes": {
+    "designed_hardpacked_activity_ground": {
+     "tris": 44,
+     "bbox": [
+      [
+       -4.3,
+       0.2,
+       -4.18
+      ],
+      [
+       4.8,
+       0.215,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "architecture_C_floor_plinth.001": {
+     "tris": 72,
+     "bbox": [
+      [
+       -7.7,
+       0.2,
+       -9.7
+      ],
+      [
+       4.8,
+       0.42,
+       2.1
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plain_timber.001": {
+     "tris": 360,
+     "bbox": [
+      [
+       -5.305,
+       0.2,
+       -6.105
+      ],
+      [
+       3.85,
+       2.65,
+       11.8
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_roof_rhythm_not_glaze_copy.001": {
+     "tris": 100,
+     "bbox": [
+      [
+       -9.0,
+       2.4,
+       -12.0
+      ],
+      [
+       9.0,
+       4.49,
+       12.15
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_whitebox_earth_wall.001": {
+     "tris": 624,
+     "bbox": [
+      [
+       -9.0,
+       0.2,
+       -12.0
+      ],
+      [
+       9.0,
+       3.22,
+       12.0
+      ]
+     ],
+     "excluded": false
+    },
+    "site_neutral_lane": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       12.0
+      ],
+      [
+       9.0,
+       0.2,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "site_lot": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       -12.0
+      ],
+      [
+       9.0,
+       0.2,
+       12.0
+      ]
+     ],
+     "excluded": true
+    }
+   },
+   "excludeNodesMissing": [],
+   "retainedTris": 1156,
+   "retainedBBox": [
+    [
+     -9.0,
+     0.2,
+     -12.0
+    ],
+    [
+     9.0,
+     4.49,
+     12.15
+    ]
+   ],
+   "siteLotBBox": [
+    [
+     -9.0,
+     0.0,
+     -12.0
+    ],
+    [
+     9.0,
+     0.2,
+     12.0
+    ]
+   ],
+   "siteLotTop": 0.20000000298023224,
+   "footprintCells": 9933,
+   "lotCells": 43200,
+   "retainedBottomInLot": {
+    "n": 9933,
+    "min": 0.2,
+    "p05": 0.2,
+    "median": 0.2,
+    "p95": 0.2,
+    "max": 0.2
+   },
+   "retainedBelowLotTopCells": 0,
+   "removedDesignedGroundTop": {
+    "site_neutral_lane": {
+     "n": 7200,
+     "min": 0.2,
+     "p05": 0.2,
+     "median": 0.2,
+     "p95": 0.2,
+     "max": 0.2
+    },
+    "designed_hardpacked_activity_ground": {
+     "n": 9437,
+     "min": 0.215,
+     "p05": 0.215,
+     "median": 0.215,
+     "p95": 0.215,
+     "max": 0.215
+    }
+   }
+  },
+  "A2/LOD0": {
+   "file": "assets/c02v/A2-LOD0-prototype.glb",
+   "nodes": {
+    "designed_hardpacked_activity_ground": {
+     "tris": 44,
+     "bbox": [
+      [
+       -4.3,
+       0.2,
+       -4.18
+      ],
+      [
+       4.8,
+       0.215,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "architecture_C_floor_plinth.001": {
+     "tris": 72,
+     "bbox": [
+      [
+       -7.7,
+       0.2,
+       -9.7
+      ],
+      [
+       4.8,
+       0.42,
+       2.1
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plain_timber.001": {
+     "tris": 360,
+     "bbox": [
+      [
+       -5.305,
+       0.2,
+       -6.105
+      ],
+      [
+       3.85,
+       2.65,
+       11.8
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_roof_rhythm_not_glaze_copy.001": {
+     "tris": 5476,
+     "bbox": [
+      [
+       -9.0,
+       2.4,
+       -12.0
+      ],
+      [
+       9.0,
+       4.49,
+       12.15
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_whitebox_earth_wall.001": {
+     "tris": 624,
+     "bbox": [
+      [
+       -9.0,
+       0.2,
+       -12.0
+      ],
+      [
+       9.0,
+       3.22,
+       12.0
+      ]
+     ],
+     "excluded": false
+    },
+    "site_neutral_lane": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       12.0
+      ],
+      [
+       9.0,
+       0.2,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "site_lot": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       -12.0
+      ],
+      [
+       9.0,
+       0.2,
+       12.0
+      ]
+     ],
+     "excluded": true
+    }
+   },
+   "excludeNodesMissing": [],
+   "retainedTris": 6532,
+   "retainedBBox": [
+    [
+     -9.0,
+     0.2,
+     -12.0
+    ],
+    [
+     9.0,
+     4.49,
+     12.15
+    ]
+   ],
+   "siteLotBBox": [
+    [
+     -9.0,
+     0.0,
+     -12.0
+    ],
+    [
+     9.0,
+     0.2,
+     12.0
+    ]
+   ],
+   "siteLotTop": 0.20000000298023224,
+   "footprintCells": 9933,
+   "lotCells": 43200,
+   "retainedBottomInLot": {
+    "n": 9933,
+    "min": 0.2,
+    "p05": 0.2,
+    "median": 0.2,
+    "p95": 0.2,
+    "max": 0.2
+   },
+   "retainedBelowLotTopCells": 0,
+   "removedDesignedGroundTop": {
+    "site_neutral_lane": {
+     "n": 7200,
+     "min": 0.2,
+     "p05": 0.2,
+     "median": 0.2,
+     "p95": 0.2,
+     "max": 0.2
+    },
+    "designed_hardpacked_activity_ground": {
+     "n": 9437,
+     "min": 0.215,
+     "p05": 0.215,
+     "median": 0.215,
+     "p95": 0.215,
+     "max": 0.215
+    }
+   }
+  },
+  "B2/LOD1": {
+   "file": "assets/c02v/B2-LOD1-prototype.glb",
+   "nodes": {
+    "designed_loading_yard": {
+     "tris": 68,
+     "bbox": [
+      [
+       -5.6,
+       0.2,
+       -6.0
+      ],
+      [
+       2.72,
+       0.215,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "architecture_C_floor_plinth.001": {
+     "tris": 132,
+     "bbox": [
+      [
+       -6.3,
+       0.2,
+       -9.5
+      ],
+      [
+       7.4,
+       0.65,
+       4.14
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plain_timber.001": {
+     "tris": 540,
+     "bbox": [
+      [
+       -6.0,
+       0.2,
+       -7.7
+      ],
+      [
+       5.005,
+       3.8,
+       11.8
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_roof_rhythm_not_glaze_copy.001": {
+     "tris": 120,
+     "bbox": [
+      [
+       -9.0,
+       2.4,
+       -12.0
+      ],
+      [
+       9.0,
+       5.27,
+       12.15
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_whitebox_earth_wall.001": {
+     "tris": 648,
+     "bbox": [
+      [
+       -9.0,
+       0.2,
+       -12.0
+      ],
+      [
+       9.0,
+       4.25,
+       12.0
+      ]
+     ],
+     "excluded": false
+    },
+    "site_neutral_lane": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       12.0
+      ],
+      [
+       9.0,
+       0.2,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "site_lot": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       -12.0
+      ],
+      [
+       9.0,
+       0.2,
+       12.0
+      ]
+     ],
+     "excluded": true
+    }
+   },
+   "excludeNodesMissing": [],
+   "retainedTris": 1440,
+   "retainedBBox": [
+    [
+     -9.0,
+     0.2,
+     -12.0
+    ],
+    [
+     9.0,
+     5.27,
+     12.15
+    ]
+   ],
+   "siteLotBBox": [
+    [
+     -9.0,
+     0.0,
+     -12.0
+    ],
+    [
+     9.0,
+     0.2,
+     12.0
+    ]
+   ],
+   "siteLotTop": 0.20000000298023224,
+   "footprintCells": 9929,
+   "lotCells": 43200,
+   "retainedBottomInLot": {
+    "n": 9929,
+    "min": 0.2,
+    "p05": 0.2,
+    "median": 0.2,
+    "p95": 0.2,
+    "max": 0.2
+   },
+   "retainedBelowLotTopCells": 0,
+   "removedDesignedGroundTop": {
+    "site_neutral_lane": {
+     "n": 7200,
+     "min": 0.2,
+     "p05": 0.2,
+     "median": 0.2,
+     "p95": 0.2,
+     "max": 0.2
+    },
+    "designed_loading_yard": {
+     "n": 4566,
+     "min": 0.215,
+     "p05": 0.215,
+     "median": 0.215,
+     "p95": 0.215,
+     "max": 0.215
+    }
+   }
+  },
+  "B2/LOD0": {
+   "file": "assets/c02v/B2-LOD0-prototype.glb",
+   "nodes": {
+    "designed_loading_yard": {
+     "tris": 68,
+     "bbox": [
+      [
+       -5.6,
+       0.2,
+       -6.0
+      ],
+      [
+       2.72,
+       0.215,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "architecture_C_floor_plinth.001": {
+     "tris": 132,
+     "bbox": [
+      [
+       -6.3,
+       0.2,
+       -9.5
+      ],
+      [
+       7.4,
+       0.65,
+       4.14
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plain_timber.001": {
+     "tris": 540,
+     "bbox": [
+      [
+       -6.0,
+       0.2,
+       -7.7
+      ],
+      [
+       5.005,
+       3.8,
+       11.8
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_roof_rhythm_not_glaze_copy.001": {
+     "tris": 7032,
+     "bbox": [
+      [
+       -9.0,
+       2.4,
+       -12.0
+      ],
+      [
+       9.0,
+       5.27,
+       12.15
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_whitebox_earth_wall.001": {
+     "tris": 648,
+     "bbox": [
+      [
+       -9.0,
+       0.2,
+       -12.0
+      ],
+      [
+       9.0,
+       4.25,
+       12.0
+      ]
+     ],
+     "excluded": false
+    },
+    "site_neutral_lane": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       12.0
+      ],
+      [
+       9.0,
+       0.2,
+       16.0
+      ]
+     ],
+     "excluded": true
+    },
+    "site_lot": {
+     "tris": 12,
+     "bbox": [
+      [
+       -9.0,
+       0.0,
+       -12.0
+      ],
+      [
+       9.0,
+       0.2,
+       12.0
+      ]
+     ],
+     "excluded": true
+    }
+   },
+   "excludeNodesMissing": [],
+   "retainedTris": 8352,
+   "retainedBBox": [
+    [
+     -9.0,
+     0.2,
+     -12.0
+    ],
+    [
+     9.0,
+     5.27,
+     12.15
+    ]
+   ],
+   "siteLotBBox": [
+    [
+     -9.0,
+     0.0,
+     -12.0
+    ],
+    [
+     9.0,
+     0.2,
+     12.0
+    ]
+   ],
+   "siteLotTop": 0.20000000298023224,
+   "footprintCells": 9929,
+   "lotCells": 43200,
+   "retainedBottomInLot": {
+    "n": 9929,
+    "min": 0.2,
+    "p05": 0.2,
+    "median": 0.2,
+    "p95": 0.2,
+    "max": 0.2
+   },
+   "retainedBelowLotTopCells": 0,
+   "removedDesignedGroundTop": {
+    "site_neutral_lane": {
+     "n": 7200,
+     "min": 0.2,
+     "p05": 0.2,
+     "median": 0.2,
+     "p95": 0.2,
+     "max": 0.2
+    },
+    "designed_loading_yard": {
+     "n": 4566,
+     "min": 0.215,
+     "p05": 0.215,
+     "median": 0.215,
+     "p95": 0.215,
+     "max": 0.215
+    }
+   }
+  },
+  "TC03-2/LOD1": {
+   "file": "assets/c02v/TC03-2-LOD1-prototype.glb",
+   "nodes": {
+    "architecture_C_drain_stone.001": {
+     "tris": 36,
+     "bbox": [
+      [
+       26.6,
+       0.2,
+       -21.72
+      ],
+      [
+       27.0,
+       0.29,
+       -3.0
+      ]
+     ],
+     "excluded": false
+    },
+    "designed_rear_work_ground": {
+     "tris": 16,
+     "bbox": [
+      [
+       8.7,
+       0.2,
+       -27.5
+      ],
+      [
+       18.5,
+       0.212,
+       -23.6
+      ]
+     ],
+     "excluded": true
+    },
+    "designed_side_passage": {
+     "tris": 52,
+     "bbox": [
+      [
+       19.0,
+       0.2,
+       -25.0
+      ],
+      [
+       25.5,
+       0.212,
+       -5.0
+      ]
+     ],
+     "excluded": true
+    },
+    "designed_front_apron": {
+     "tris": 40,
+     "bbox": [
+      [
+       7.3,
+       0.2,
+       -16.28
+      ],
+      [
+       22.0,
+       0.212,
+       4.0
+      ]
+     ],
+     "excluded": true
+    },
+    "architecture_C_plinth.001": {
+     "tris": 144,
+     "bbox": [
+      [
+       2.5,
+       0.2,
+       -33.5
+      ],
+      [
+       25.0,
+       0.42,
+       -7.0
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plain_timber.001": {
+     "tris": 648,
+     "bbox": [
+      [
+       4.85,
+       0.2,
+       -29.705
+      ],
+      [
+       24.95,
+       2.65,
+       -0.2
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_roof_rhythm.001": {
+     "tris": 164,
+     "bbox": [
+      [
+       -0.0,
+       2.0,
+       -36.0
+      ],
+      [
+       28.0,
+       4.54,
+       0.15
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_earth_wall.001": {
+     "tris": 1116,
+     "bbox": [
+      [
+       0.0,
+       0.2,
+       -36.0
+      ],
+      [
+       28.0,
+       3.27,
+       0.0
+      ]
+     ],
+     "excluded": false
+    },
+    "site_neutral_lane": {
+     "tris": 12,
+     "bbox": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       28.0,
+       0.2,
+       4.0
+      ]
+     ],
+     "excluded": true
+    },
+    "site_lot": {
+     "tris": 12,
+     "bbox": [
+      [
+       0.0,
+       0.0,
+       -36.0
+      ],
+      [
+       28.0,
+       0.2,
+       0.0
+      ]
+     ],
+     "excluded": true
+    }
+   },
+   "excludeNodesMissing": [],
+   "retainedTris": 2108,
+   "retainedBBox": [
+    [
+     -0.0,
+     0.2,
+     -36.0
+    ],
+    [
+     28.0,
+     4.54,
+     0.15
+    ]
+   ],
+   "siteLotBBox": [
+    [
+     0.0,
+     0.0,
+     -36.0
+    ],
+    [
+     28.0,
+     0.2,
+     0.0
+    ]
+   ],
+   "siteLotTop": 0.20000000298023224,
+   "footprintCells": 25726,
+   "lotCells": 100800,
+   "retainedBottomInLot": {
+    "n": 25726,
+    "min": 0.2,
+    "p05": 0.2,
+    "median": 0.2,
+    "p95": 0.2,
+    "max": 0.23
+   },
+   "retainedBelowLotTopCells": 0,
+   "removedDesignedGroundTop": {
+    "site_neutral_lane": {
+     "n": 11200,
+     "min": 0.2,
+     "p05": 0.2,
+     "median": 0.2,
+     "p95": 0.2,
+     "max": 0.2
+    },
+    "designed_front_apron": {
+     "n": 16354,
+     "min": 0.212,
+     "p05": 0.212,
+     "median": 0.212,
+     "p95": 0.212,
+     "max": 0.212
+    },
+    "designed_side_passage": {
+     "n": 6419,
+     "min": 0.212,
+     "p05": 0.212,
+     "median": 0.212,
+     "p95": 0.212,
+     "max": 0.212
+    },
+    "designed_rear_work_ground": {
+     "n": 3741,
+     "min": 0.212,
+     "p05": 0.212,
+     "median": 0.212,
+     "p95": 0.212,
+     "max": 0.212
+    }
+   }
+  },
+  "TC03-2/LOD0": {
+   "file": "assets/c02v/TC03-2-LOD0-prototype.glb",
+   "nodes": {
+    "architecture_C_drain_stone.001": {
+     "tris": 36,
+     "bbox": [
+      [
+       26.6,
+       0.2,
+       -21.72
+      ],
+      [
+       27.0,
+       0.29,
+       -3.0
+      ]
+     ],
+     "excluded": false
+    },
+    "designed_rear_work_ground": {
+     "tris": 16,
+     "bbox": [
+      [
+       8.7,
+       0.2,
+       -27.5
+      ],
+      [
+       18.5,
+       0.212,
+       -23.6
+      ]
+     ],
+     "excluded": true
+    },
+    "designed_side_passage": {
+     "tris": 52,
+     "bbox": [
+      [
+       19.0,
+       0.2,
+       -25.0
+      ],
+      [
+       25.5,
+       0.212,
+       -5.0
+      ]
+     ],
+     "excluded": true
+    },
+    "designed_front_apron": {
+     "tris": 40,
+     "bbox": [
+      [
+       7.3,
+       0.2,
+       -16.28
+      ],
+      [
+       22.0,
+       0.212,
+       4.0
+      ]
+     ],
+     "excluded": true
+    },
+    "architecture_C_plinth.001": {
+     "tris": 144,
+     "bbox": [
+      [
+       2.5,
+       0.2,
+       -33.5
+      ],
+      [
+       25.0,
+       0.42,
+       -7.0
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_plain_timber.001": {
+     "tris": 648,
+     "bbox": [
+      [
+       4.85,
+       0.2,
+       -29.705
+      ],
+      [
+       24.95,
+       2.65,
+       -0.2
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_roof_rhythm.001": {
+     "tris": 11972,
+     "bbox": [
+      [
+       -0.0,
+       2.0,
+       -36.0
+      ],
+      [
+       28.0,
+       4.54,
+       0.15
+      ]
+     ],
+     "excluded": false
+    },
+    "architecture_C_earth_wall.001": {
+     "tris": 1116,
+     "bbox": [
+      [
+       0.0,
+       0.2,
+       -36.0
+      ],
+      [
+       28.0,
+       3.27,
+       0.0
+      ]
+     ],
+     "excluded": false
+    },
+    "site_neutral_lane": {
+     "tris": 12,
+     "bbox": [
+      [
+       0.0,
+       0.0,
+       0.0
+      ],
+      [
+       28.0,
+       0.2,
+       4.0
+      ]
+     ],
+     "excluded": true
+    },
+    "site_lot": {
+     "tris": 12,
+     "bbox": [
+      [
+       0.0,
+       0.0,
+       -36.0
+      ],
+      [
+       28.0,
+       0.2,
+       0.0
+      ]
+     ],
+     "excluded": true
+    }
+   },
+   "excludeNodesMissing": [],
+   "retainedTris": 13916,
+   "retainedBBox": [
+    [
+     -0.0,
+     0.2,
+     -36.0
+    ],
+    [
+     28.0,
+     4.54,
+     0.15
+    ]
+   ],
+   "siteLotBBox": [
+    [
+     0.0,
+     0.0,
+     -36.0
+    ],
+    [
+     28.0,
+     0.2,
+     0.0
+    ]
+   ],
+   "siteLotTop": 0.20000000298023224,
+   "footprintCells": 25726,
+   "lotCells": 100800,
+   "retainedBottomInLot": {
+    "n": 25726,
+    "min": 0.2,
+    "p05": 0.2,
+    "median": 0.2,
+    "p95": 0.2,
+    "max": 0.23
+   },
+   "retainedBelowLotTopCells": 0,
+   "removedDesignedGroundTop": {
+    "site_neutral_lane": {
+     "n": 11200,
+     "min": 0.2,
+     "p05": 0.2,
+     "median": 0.2,
+     "p95": 0.2,
+     "max": 0.2
+    },
+    "designed_front_apron": {
+     "n": 16354,
+     "min": 0.212,
+     "p05": 0.212,
+     "median": 0.212,
+     "p95": 0.212,
+     "max": 0.212
+    },
+    "designed_side_passage": {
+     "n": 6419,
+     "min": 0.212,
+     "p05": 0.212,
+     "median": 0.212,
+     "p95": 0.212,
+     "max": 0.212
+    },
+    "designed_rear_work_ground": {
+     "n": 3741,
+     "min": 0.212,
+     "p05": 0.212,
+     "median": 0.212,
+     "p95": 0.212,
+     "max": 0.212
+    }
+   }
+  }
+ },
+ "courtyards": [
+  {
+   "id": "C02-018",
+   "variant": "B",
+   "position": [
+    724.06335,
+    983.8
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "C02-019",
+   "variant": "A",
+   "position": [
+    745.08936,
+    983.8
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-020",
+   "variant": "TC03",
+   "position": [
+    738.98936,
+    1004.2
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 100800,
+     "lotArea_m2": 1008.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 100800,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 100800
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 56102,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 56102,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 56102,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 11200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0
+    },
+    "LOD0": {
+     "lotCells": 100800,
+     "lotArea_m2": 1008.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 100800,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 100800
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 56102,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 56102,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 56102,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 11200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0
+    }
+   }
+  },
+  {
+   "id": "C02-021",
+   "variant": "A2",
+   "position": [
+    717.45,
+    893.64308
+   ],
+   "rotationDegrees": 270,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-022",
+   "variant": "B2",
+   "position": [
+    717.45,
+    923.30228
+   ],
+   "rotationDegrees": 270,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "C02-023",
+   "variant": "A",
+   "position": [
+    717.45,
+    949.71557
+   ],
+   "rotationDegrees": 270,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-024",
+   "variant": "A2",
+   "position": [
+    717.45,
+    1025.21097
+   ],
+   "rotationDegrees": 270,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-025",
+   "variant": "B",
+   "position": [
+    717.45,
+    1053.25621
+   ],
+   "rotationDegrees": 270,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "C02-026",
+   "variant": "A",
+   "position": [
+    717.45,
+    1084.58194
+   ],
+   "rotationDegrees": 270,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-001",
+   "variant": "A2",
+   "position": [
+    679.1392,
+    1176.2
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-002",
+   "variant": "B2",
+   "position": [
+    633.97426,
+    1176.2
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "C02-027",
+   "variant": "A",
+   "position": [
+    671.07752,
+    1143.8
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-028",
+   "variant": "A2",
+   "position": [
+    634.03585,
+    1143.8
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-029",
+   "variant": "B",
+   "position": [
+    608.78268,
+    1143.8
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "C02-030",
+   "variant": "A",
+   "position": [
+    575.35019,
+    1143.8
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-031",
+   "variant": "A2",
+   "position": [
+    636.2,
+    1205.0107
+   ],
+   "rotationDegrees": 270,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-003",
+   "variant": "TC03-2",
+   "position": [
+    615.8,
+    1164.95544
+   ],
+   "rotationDegrees": 90,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 100800,
+     "lotArea_m2": 1008.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 100800,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 100800
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 25726,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 25726,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.03
+     },
+     "footprintFloatingCells_gt_tol": 10,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 25716,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 11200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_front_apron": {
+      "n": 16354,
+      "min": 0.012,
+      "p05": 0.012,
+      "median": 0.012,
+      "p95": 0.012,
+      "max": 0.012
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_front_apron": 0,
+     "removedDesignedGround_vs_cityGround_designed_side_passage": {
+      "n": 6419,
+      "min": 0.012,
+      "p05": 0.012,
+      "median": 0.012,
+      "p95": 0.012,
+      "max": 0.012
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_side_passage": 0,
+     "removedDesignedGround_vs_cityGround_designed_rear_work_ground": {
+      "n": 3741,
+      "min": 0.012,
+      "p05": 0.012,
+      "median": 0.012,
+      "p95": 0.012,
+      "max": 0.012
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_rear_work_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 100800,
+     "lotArea_m2": 1008.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 100800,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 100800
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 25726,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 25726,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.03
+     },
+     "footprintFloatingCells_gt_tol": 10,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 25716,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 11200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_front_apron": {
+      "n": 16354,
+      "min": 0.012,
+      "p05": 0.012,
+      "median": 0.012,
+      "p95": 0.012,
+      "max": 0.012
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_front_apron": 0,
+     "removedDesignedGround_vs_cityGround_designed_side_passage": {
+      "n": 6419,
+      "min": 0.012,
+      "p05": 0.012,
+      "median": 0.012,
+      "p95": 0.012,
+      "max": 0.012
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_side_passage": 0,
+     "removedDesignedGround_vs_cityGround_designed_rear_work_ground": {
+      "n": 3741,
+      "min": 0.012,
+      "p05": 0.012,
+      "median": 0.012,
+      "p95": 0.012,
+      "max": 0.012
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_rear_work_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-004",
+   "variant": "B2",
+   "position": [
+    717.45,
+    1157.81935
+   ],
+   "rotationDegrees": 270,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "C02-005",
+   "variant": "B",
+   "position": [
+    514,
+    782.55
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0165
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0165
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "C02-006",
+   "variant": "B2",
+   "position": [
+    537,
+    781.55
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.005,
+      "p05": -0.0026,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0153
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.005,
+      "p05": -0.0026,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0153
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "C02-007",
+   "variant": "A",
+   "position": [
+    590,
+    782.55
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0165
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0165
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-008",
+   "variant": "TC03",
+   "position": [
+    658,
+    794.55
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 100800,
+     "lotArea_m2": 1008.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 100800,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 100800
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 56102,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 56102,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 56102,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 11200,
+      "min": -0.0025,
+      "p05": -0.0015,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0
+    },
+    "LOD0": {
+     "lotCells": 100800,
+     "lotArea_m2": 1008.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 100800,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 100800
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 56102,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 56102,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 56102,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 11200,
+      "min": -0.0025,
+      "p05": -0.0015,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0
+    }
+   }
+  },
+  {
+   "id": "C02-009",
+   "variant": "B",
+   "position": [
+    508,
+    817.45
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0165
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0165
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "C02-010",
+   "variant": "A2",
+   "position": [
+    531,
+    818.45
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0049,
+      "p05": -0.0026,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0153
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0049,
+      "p05": -0.0026,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0153
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-011",
+   "variant": "A",
+   "position": [
+    554,
+    817.45
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-012",
+   "variant": "TC03-2",
+   "position": [
+    570,
+    805.45
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 100800,
+     "lotArea_m2": 1008.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 100800,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 100800
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 25726,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 25726,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.03
+     },
+     "footprintFloatingCells_gt_tol": 10,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 25716,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 11200,
+      "min": -0.0025,
+      "p05": -0.0015,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_front_apron": {
+      "n": 16354,
+      "min": 0.012,
+      "p05": 0.012,
+      "median": 0.012,
+      "p95": 0.012,
+      "max": 0.012
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_front_apron": 0,
+     "removedDesignedGround_vs_cityGround_designed_side_passage": {
+      "n": 6419,
+      "min": 0.012,
+      "p05": 0.012,
+      "median": 0.012,
+      "p95": 0.012,
+      "max": 0.012
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_side_passage": 0,
+     "removedDesignedGround_vs_cityGround_designed_rear_work_ground": {
+      "n": 3741,
+      "min": 0.012,
+      "p05": 0.012,
+      "median": 0.012,
+      "p95": 0.012,
+      "max": 0.012
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_rear_work_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 100800,
+     "lotArea_m2": 1008.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 100800,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 100800
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 25726,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 25726,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.03
+     },
+     "footprintFloatingCells_gt_tol": 10,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 25716,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 11200,
+      "min": -0.0025,
+      "p05": -0.0015,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_front_apron": {
+      "n": 16354,
+      "min": 0.012,
+      "p05": 0.012,
+      "median": 0.012,
+      "p95": 0.012,
+      "max": 0.012
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_front_apron": 0,
+     "removedDesignedGround_vs_cityGround_designed_side_passage": {
+      "n": 6419,
+      "min": 0.012,
+      "p05": 0.012,
+      "median": 0.012,
+      "p95": 0.012,
+      "max": 0.012
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_side_passage": 0,
+     "removedDesignedGround_vs_cityGround_designed_rear_work_ground": {
+      "n": 3741,
+      "min": 0.012,
+      "p05": 0.012,
+      "median": 0.012,
+      "p95": 0.012,
+      "max": 0.012
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_rear_work_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-013",
+   "variant": "A2",
+   "position": [
+    612,
+    817.45
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0159
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0159
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-032",
+   "variant": "B2",
+   "position": [
+    548.8,
+    758
+   ],
+   "rotationDegrees": 90,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0157
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0157
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "C02-014",
+   "variant": "A",
+   "position": [
+    584,
+    728.8
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0156
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0156
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-015",
+   "variant": "A2",
+   "position": [
+    607,
+    728.8
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0155
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0155
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-016",
+   "variant": "B",
+   "position": [
+    613,
+    761.2
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0156
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": 0.0,
+      "p95": 0.0215,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0156
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "C02-017",
+   "variant": "A",
+   "position": [
+    650,
+    825
+   ],
+   "rotationDegrees": 90,
+   "changedByCalt": true,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": -0.0037,
+      "p95": 0.0205,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0191
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-south": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.01,
+      "p05": -0.01,
+      "median": -0.0037,
+      "p95": 0.0205,
+      "max": 0.025
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.0191
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-033",
+   "variant": "B2",
+   "position": [
+    639.10105,
+    1080.2
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "C02-034",
+   "variant": "B",
+   "position": [
+    601.89119,
+    1080.2
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "C02-035",
+   "variant": "A2",
+   "position": [
+    548.32284,
+    1080.2
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9933,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9933,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9933,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 9437,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "C02-036",
+   "variant": "B2",
+   "position": [
+    520.56271,
+    1080.2
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": false,
+   "sourceGroup": "C02_36",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-retained": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 9929,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 9929,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 9929,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 4566,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "FROZEN-D08-S1",
+   "variant": "A",
+   "position": [
+    543,
+    945
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": false,
+   "sourceGroup": "old8_shared_prototypes",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "FROZEN-D08-S2",
+   "variant": "B",
+   "position": [
+    565,
+    945
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": false,
+   "sourceGroup": "old8_shared_prototypes",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "FROZEN-D08-S3",
+   "variant": "A",
+   "position": [
+    589,
+    945
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": false,
+   "sourceGroup": "old8_shared_prototypes",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "FROZEN-D08-S4",
+   "variant": "B",
+   "position": [
+    611,
+    945
+   ],
+   "rotationDegrees": 180,
+   "changedByCalt": false,
+   "sourceGroup": "old8_shared_prototypes",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "FROZEN-D08-M",
+   "variant": "A",
+   "position": [
+    575,
+    975
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": false,
+   "sourceGroup": "old8_shared_prototypes",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 11165,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 11165,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 11165,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_hardpacked_activity_ground": {
+      "n": 10324,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_hardpacked_activity_ground": 0
+    }
+   }
+  },
+  {
+   "id": "FROZEN-D08-E",
+   "variant": "B",
+   "position": [
+    629,
+    975
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": false,
+   "sourceGroup": "old8_shared_prototypes",
+   "lods": {
+    "LOD1": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    },
+    "LOD0": {
+     "lotCells": 43200,
+     "lotArea_m2": 432.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 43200,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 43200
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 10638,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 10638,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 10638,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 7200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0,
+     "removedDesignedGround_vs_cityGround_designed_loading_yard": {
+      "n": 7599,
+      "min": 0.015,
+      "p05": 0.015,
+      "median": 0.015,
+      "p95": 0.015,
+      "max": 0.015
+     },
+     "removedDesignedGroundCellsWithoutCityGround_designed_loading_yard": 0
+    }
+   }
+  },
+  {
+   "id": "FROZEN-D08-NW",
+   "variant": "TC03",
+   "position": [
+    534,
+    963
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": false,
+   "sourceGroup": "old8_shared_prototypes",
+   "lods": {
+    "LOD1": {
+     "lotCells": 100800,
+     "lotArea_m2": 1008.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 100800,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 100800
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 56102,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 56102,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 56102,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 11200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0
+    },
+    "LOD0": {
+     "lotCells": 100800,
+     "lotArea_m2": 1008.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 100800,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 100800
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 56102,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 56102,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 56102,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 11200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0
+    }
+   }
+  },
+  {
+   "id": "FROZEN-D08-NE",
+   "variant": "TC03",
+   "position": [
+    588,
+    975
+   ],
+   "rotationDegrees": 0,
+   "changedByCalt": false,
+   "sourceGroup": "old8_shared_prototypes",
+   "lods": {
+    "LOD1": {
+     "lotCells": 100800,
+     "lotArea_m2": 1008.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 100800,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 100800
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 56102,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 56102,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 56102,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 11200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0
+    },
+    "LOD0": {
+     "lotCells": 100800,
+     "lotArea_m2": 1008.0,
+     "lotGroundCoverage": 1.0,
+     "lotNoGroundCells": 0,
+     "lotNoGroundArea_m2": 0.0,
+     "lotGroundTop": {
+      "n": 100800,
+      "min": 0.2,
+      "p05": 0.2,
+      "median": 0.2,
+      "p95": 0.2,
+      "max": 0.2
+     },
+     "lotGroundSuppliers": {
+      "ground-D08": 100800
+     },
+     "lotMultiFileGroundCells": 0,
+     "footprintCells": 56102,
+     "footprintNoGroundCells": 0,
+     "footprintGap": {
+      "n": 56102,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "footprintFloatingCells_gt_tol": 0,
+     "footprintBuriedCells_lt_minus_tol": 0,
+     "footprintContactCells": 56102,
+     "openLotVoidCells": 0,
+     "removedDesignedGround_vs_cityGround_site_neutral_lane": {
+      "n": 11200,
+      "min": -0.0,
+      "p05": -0.0,
+      "median": 0.0,
+      "p95": 0.0,
+      "max": 0.0
+     },
+     "removedDesignedGroundCellsWithoutCityGround_site_neutral_lane": 0
+    }
+   }
+  }
+ ],
+ "grounds": {
+  "ground-network-ground-stitched": {
+   "file": "assets/ground-atomic/network-ground-stitched.glb",
+   "tris": 128342,
+   "bbox": [
+    [
+     -39.0,
+     0.0,
+     -2622.4607
+    ],
+    [
+     2528.3855,
+     0.21,
+     1224.5156
+    ]
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ]
+  },
+  "ground-retained": {
+   "file": "assets/ground-atomic/retained.glb",
+   "tris": 21192,
+   "bbox": [
+    [
+     480.0,
+     0.0,
+     -1250.0
+    ],
+    [
+     780.0,
+     0.21,
+     -700.0
+    ]
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ]
+  },
+  "ground-south": {
+   "file": "assets/ground-atomic/south.glb",
+   "tris": 96796,
+   "bbox": [
+    [
+     486.0,
+     0.0,
+     -852.0
+    ],
+    [
+     710.0,
+     0.21,
+     -706.0
+    ]
+   ],
+   "translation": [
+    0,
+    0,
+    0
+   ]
+  },
+  "ground-D08": {
+   "file": "assets/ground-atomic/D08.glb",
+   "tris": 140,
+   "bbox": [
+    [
+     520.0,
+     0.0,
+     -1015.0
+    ],
+    [
+     640.0,
+     0.2,
+     -929.0
+    ]
+   ],
+   "translation": [
+    580,
+    0,
+    -960
+   ]
+  }
+ },
+ "lotWorldRects": [
+  {
+   "id": "C02-018",
+   "xmin": 715.0634,
+   "xmax": 733.0634,
+   "zmin": -995.8,
+   "zmax": -971.8
+  },
+  {
+   "id": "C02-019",
+   "xmin": 736.0894,
+   "xmax": 754.0894,
+   "zmin": -995.8,
+   "zmax": -971.8
+  },
+  {
+   "id": "C02-020",
+   "xmin": 738.9894,
+   "xmax": 766.9894,
+   "zmin": -1040.2,
+   "zmax": -1004.2
+  },
+  {
+   "id": "C02-021",
+   "xmin": 705.45,
+   "xmax": 729.45,
+   "zmin": -902.6431,
+   "zmax": -884.6431
+  },
+  {
+   "id": "C02-022",
+   "xmin": 705.45,
+   "xmax": 729.45,
+   "zmin": -932.3023,
+   "zmax": -914.3023
+  },
+  {
+   "id": "C02-023",
+   "xmin": 705.45,
+   "xmax": 729.45,
+   "zmin": -958.7156,
+   "zmax": -940.7156
+  },
+  {
+   "id": "C02-024",
+   "xmin": 705.45,
+   "xmax": 729.45,
+   "zmin": -1034.211,
+   "zmax": -1016.211
+  },
+  {
+   "id": "C02-025",
+   "xmin": 705.45,
+   "xmax": 729.45,
+   "zmin": -1062.2562,
+   "zmax": -1044.2562
+  },
+  {
+   "id": "C02-026",
+   "xmin": 705.45,
+   "xmax": 729.45,
+   "zmin": -1093.5819,
+   "zmax": -1075.5819
+  },
+  {
+   "id": "C02-001",
+   "xmin": 670.1392,
+   "xmax": 688.1392,
+   "zmin": -1188.2,
+   "zmax": -1164.2
+  },
+  {
+   "id": "C02-002",
+   "xmin": 624.9743,
+   "xmax": 642.9743,
+   "zmin": -1188.2,
+   "zmax": -1164.2
+  },
+  {
+   "id": "C02-027",
+   "xmin": 662.0775,
+   "xmax": 680.0775,
+   "zmin": -1155.8,
+   "zmax": -1131.8
+  },
+  {
+   "id": "C02-028",
+   "xmin": 625.0358,
+   "xmax": 643.0358,
+   "zmin": -1155.8,
+   "zmax": -1131.8
+  },
+  {
+   "id": "C02-029",
+   "xmin": 599.7827,
+   "xmax": 617.7827,
+   "zmin": -1155.8,
+   "zmax": -1131.8
+  },
+  {
+   "id": "C02-030",
+   "xmin": 566.3502,
+   "xmax": 584.3502,
+   "zmin": -1155.8,
+   "zmax": -1131.8
+  },
+  {
+   "id": "C02-031",
+   "xmin": 624.2,
+   "xmax": 648.2,
+   "zmin": -1214.0107,
+   "zmax": -1196.0107
+  },
+  {
+   "id": "C02-003",
+   "xmin": 579.8,
+   "xmax": 615.8,
+   "zmin": -1192.9554,
+   "zmax": -1164.9554
+  },
+  {
+   "id": "C02-004",
+   "xmin": 705.45,
+   "xmax": 729.45,
+   "zmin": -1166.8194,
+   "zmax": -1148.8194
+  },
+  {
+   "id": "C02-005",
+   "xmin": 505.0,
+   "xmax": 523.0,
+   "zmin": -794.55,
+   "zmax": -770.55
+  },
+  {
+   "id": "C02-006",
+   "xmin": 528.0,
+   "xmax": 546.0,
+   "zmin": -793.55,
+   "zmax": -769.55
+  },
+  {
+   "id": "C02-007",
+   "xmin": 581.0,
+   "xmax": 599.0,
+   "zmin": -794.55,
+   "zmax": -770.55
+  },
+  {
+   "id": "C02-008",
+   "xmin": 630.0,
+   "xmax": 658.0,
+   "zmin": -794.55,
+   "zmax": -758.55
+  },
+  {
+   "id": "C02-009",
+   "xmin": 499.0,
+   "xmax": 517.0,
+   "zmin": -829.45,
+   "zmax": -805.45
+  },
+  {
+   "id": "C02-010",
+   "xmin": 522.0,
+   "xmax": 540.0,
+   "zmin": -830.45,
+   "zmax": -806.45
+  },
+  {
+   "id": "C02-011",
+   "xmin": 545.0,
+   "xmax": 563.0,
+   "zmin": -829.45,
+   "zmax": -805.45
+  },
+  {
+   "id": "C02-012",
+   "xmin": 570.0,
+   "xmax": 598.0,
+   "zmin": -841.45,
+   "zmax": -805.45
+  },
+  {
+   "id": "C02-013",
+   "xmin": 603.0,
+   "xmax": 621.0,
+   "zmin": -829.45,
+   "zmax": -805.45
+  },
+  {
+   "id": "C02-032",
+   "xmin": 536.8,
+   "xmax": 560.8,
+   "zmin": -767.0,
+   "zmax": -749.0
+  },
+  {
+   "id": "C02-014",
+   "xmin": 575.0,
+   "xmax": 593.0,
+   "zmin": -740.8,
+   "zmax": -716.8
+  },
+  {
+   "id": "C02-015",
+   "xmin": 598.0,
+   "xmax": 616.0,
+   "zmin": -740.8,
+   "zmax": -716.8
+  },
+  {
+   "id": "C02-016",
+   "xmin": 604.0,
+   "xmax": 622.0,
+   "zmin": -773.2,
+   "zmax": -749.2
+  },
+  {
+   "id": "C02-017",
+   "xmin": 638.0,
+   "xmax": 662.0,
+   "zmin": -834.0,
+   "zmax": -816.0
+  },
+  {
+   "id": "C02-033",
+   "xmin": 630.101,
+   "xmax": 648.101,
+   "zmin": -1092.2,
+   "zmax": -1068.2
+  },
+  {
+   "id": "C02-034",
+   "xmin": 592.8912,
+   "xmax": 610.8912,
+   "zmin": -1092.2,
+   "zmax": -1068.2
+  },
+  {
+   "id": "C02-035",
+   "xmin": 539.3228,
+   "xmax": 557.3228,
+   "zmin": -1092.2,
+   "zmax": -1068.2
+  },
+  {
+   "id": "C02-036",
+   "xmin": 511.5627,
+   "xmax": 529.5627,
+   "zmin": -1092.2,
+   "zmax": -1068.2
+  },
+  {
+   "id": "FROZEN-D08-S1",
+   "xmin": 534.0,
+   "xmax": 552.0,
+   "zmin": -957.0,
+   "zmax": -933.0
+  },
+  {
+   "id": "FROZEN-D08-S2",
+   "xmin": 556.0,
+   "xmax": 574.0,
+   "zmin": -957.0,
+   "zmax": -933.0
+  },
+  {
+   "id": "FROZEN-D08-S3",
+   "xmin": 580.0,
+   "xmax": 598.0,
+   "zmin": -957.0,
+   "zmax": -933.0
+  },
+  {
+   "id": "FROZEN-D08-S4",
+   "xmin": 602.0,
+   "xmax": 620.0,
+   "zmin": -957.0,
+   "zmax": -933.0
+  },
+  {
+   "id": "FROZEN-D08-M",
+   "xmin": 566.0,
+   "xmax": 584.0,
+   "zmin": -987.0,
+   "zmax": -963.0
+  },
+  {
+   "id": "FROZEN-D08-E",
+   "xmin": 620.0,
+   "xmax": 638.0,
+   "zmin": -987.0,
+   "zmax": -963.0
+  },
+  {
+   "id": "FROZEN-D08-NW",
+   "xmin": 534.0,
+   "xmax": 562.0,
+   "zmin": -999.0,
+   "zmax": -963.0
+  },
+  {
+   "id": "FROZEN-D08-NE",
+   "xmin": 588.0,
+   "xmax": 616.0,
+   "zmin": -1011.0,
+   "zmax": -975.0
+  }
+ ],
+ "lotOverlaps": [],
+ "seconds": 12.4
+}

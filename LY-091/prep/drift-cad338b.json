@@ -1,0 +1,336 @@
+{
+ "purpose": "read-only drift replay of origin/main cad338b against the bce3211 'before' baseline; NOT an acceptance of any LY batch",
+ "originMain": "cad338ba683f7277aea098f45c8feb6c915a847c",
+ "baselineCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "method": "git -c core.autocrlf=false archive cad338b docs/cities/luoyang docs/library/models docs/model-library | tar -x -C <scratch>; node dump_city.mjs; baseline_ly091.py; check_region.py --rollback (no manifest)",
+ "baselineSha256": "bcd6296996f19d4b1405b254cd9917f0d5b6708af7db9b616a92f434b8fd462e",
+ "candidateMeasureSha256": "38e90bd7ebad82521c989bf0ca081838273df094024ead8eb5f6271fe9bc85b7",
+ "candidateDumpSha256": "ce3a0a831282ece33e7944afed5673881edb5142612e90fccda4e19f0c80c08e",
+ "verdict": "BLOCK",
+ "failed": [
+  "C2-old-nodes-unchanged",
+  "C3-new-nodes-declared-and-owned",
+  "C9-rollback-reproduces-baseline"
+ ],
+ "rows": [
+  {
+   "check": "C1-gate-family-12",
+   "result": "PASS",
+   "detail": {
+    "count": 12,
+    "missing": [],
+    "unexpected": []
+   }
+  },
+  {
+   "check": "C2-old-nodes-unchanged",
+   "result": "FAIL",
+   "detail": {
+    "changed": [
+     {
+      "node": "yong-gate-body",
+      "why": "cityNodeRecordSha256",
+      "base": "47a073aa0e33f23e",
+      "cand": "fad50d7f8e3b51df"
+     },
+     {
+      "node": "yong-gate-interface",
+      "why": "cityNodeRecordSha256",
+      "base": "f290d06323e8e6c9",
+      "cand": "5ff3110164280959"
+     },
+     {
+      "node": "ground-network-ground-stitched",
+      "why": "cityNodeRecordSha256",
+      "base": "6276b37e9b2b096f",
+      "cand": "b54b3062b187bad5"
+     },
+     {
+      "node": "ground-retained",
+      "why": "cityNodeRecordSha256",
+      "base": "220ea94307745e89",
+      "cand": "a5fcd3ed6373ac86"
+     }
+    ],
+    "declaredReplaced": {}
+   }
+  },
+  {
+   "check": "C3-new-nodes-declared-and-owned",
+   "result": "FAIL",
+   "detail": {
+    "newNodes": [
+     "yong-gate-body-far",
+     "yong-gate-interface-far",
+     "yong-road-link",
+     "yong-road-link-near",
+     "yong-road-receiver"
+    ],
+    "undeclared": [
+     "yong-gate-body-far",
+     "yong-gate-interface-far",
+     "yong-road-link",
+     "yong-road-link-near",
+     "yong-road-receiver"
+    ],
+    "ownerNotSelected": []
+   }
+  },
+  {
+   "check": "C4-mutual-exclusion",
+   "result": "PASS",
+   "detail": []
+  },
+  {
+   "check": "C5-region-status-consistent",
+   "result": "PASS",
+   "detail": {
+    "measured": [
+     "广阳门",
+     "雍门"
+    ],
+    "declared": [
+     "广阳门",
+     "雍门"
+    ],
+    "cardInCityCount": 14,
+    "walls+gates": 14,
+    "cardResearchCount": 10,
+    "12-inCity": 10
+   }
+  },
+  {
+   "check": "C6-glb-limits",
+   "result": "PASS",
+   "detail": {
+    "overLimitOrExternalOrCompressed": [],
+    "nonFinite": [],
+    "limitBytes": 15000000
+   }
+  },
+  {
+   "check": "C9-rollback-reproduces-baseline",
+   "result": "FAIL",
+   "detail": [
+    {
+     "node": "ground-network-ground-stitched",
+     "why": "cityNodeRecordSha256"
+    },
+    {
+     "node": "ground-retained",
+     "why": "cityNodeRecordSha256"
+    },
+    {
+     "node": "ground-retained",
+     "why": "visibleByDefault"
+    },
+    {
+     "node": "yong-gate-body",
+     "why": "cityNodeRecordSha256"
+    },
+    {
+     "node": "yong-gate-body",
+     "why": "visibleByDefault"
+    },
+    {
+     "node": "yong-gate-body-far",
+     "why": "left behind after rollback"
+    },
+    {
+     "node": "yong-gate-interface",
+     "why": "cityNodeRecordSha256"
+    },
+    {
+     "node": "yong-gate-interface",
+     "why": "visibleByDefault"
+    },
+    {
+     "node": "yong-gate-interface-far",
+     "why": "left behind after rollback"
+    },
+    {
+     "node": "yong-road-link",
+     "why": "left behind after rollback"
+    },
+    {
+     "node": "yong-road-link-near",
+     "why": "left behind after rollback"
+    },
+    {
+     "node": "yong-road-receiver",
+     "why": "left behind after rollback"
+    },
+    {
+     "why": "gateFamily cards differ"
+    },
+    {
+     "site": "gate_yong_B",
+     "why": "site measurement differs"
+    },
+    {
+     "why": "project card sha differs"
+    }
+   ]
+  }
+ ],
+ "regionState": {
+  "regionNodeIds": [
+   "wall-A-wall-00",
+   "wall-A-wall-01",
+   "wall-A-wall-02",
+   "wall-A-wall-03",
+   "wall-A-wall-04",
+   "wall-A-wall-05",
+   "wall-A-wall-06",
+   "wall-A-wall-07",
+   "wall-A-wall-10",
+   "wall-A-wall-11",
+   "wall-direct-gate-body-only",
+   "wall-direct-wall-08",
+   "wall-direct-wall-09",
+   "yong-gate-body",
+   "yong-gate-interface"
+  ],
+  "regionNodesNotInChapterList": [
+   "yong-gate-body-far",
+   "yong-gate-interface-far"
+  ],
+  "replacedWhenRegionOpen": [
+   "yong-gate-body-far",
+   "yong-gate-interface-far",
+   "yong-road-link",
+   "yong-road-receiver"
+  ],
+  "replacedByDefault": []
+ },
+ "yongTiersInCity": [
+  {
+   "nodeId": "yong-gate-body",
+   "assetId": "yong-gate-near",
+   "bytes": 1570856,
+   "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+   "triangles": 8228,
+   "visibleByDefault": false,
+   "drawnWhenRegionOpen": true,
+   "replaces": [
+    "yong-gate-body-far"
+   ],
+   "nearSha256": null
+  },
+  {
+   "nodeId": "yong-gate-interface",
+   "assetId": "yong-gate-apron",
+   "bytes": 388208,
+   "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+   "triangles": 68,
+   "visibleByDefault": false,
+   "drawnWhenRegionOpen": true,
+   "replaces": [
+    "yong-gate-interface-far"
+   ],
+   "nearSha256": null
+  },
+  {
+   "nodeId": "yong-gate-body-far",
+   "assetId": "yong-gate-far",
+   "bytes": 58612,
+   "sha256": "7406a24cf7124fcde7409a30f2961251a873a64ea9a3ab6a3e9e206085ad6074",
+   "triangles": 788,
+   "visibleByDefault": true,
+   "drawnWhenRegionOpen": false,
+   "replaces": [],
+   "nearSha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e"
+  },
+  {
+   "nodeId": "yong-gate-interface-far",
+   "assetId": "yong-apron-far",
+   "bytes": 7564,
+   "sha256": "fb8a5f2f93aace63e0229cdc4a9c65d0c1450bb80bf8965e75da0fd92cad529a",
+   "triangles": 68,
+   "visibleByDefault": true,
+   "drawnWhenRegionOpen": false,
+   "replaces": [],
+   "nearSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb"
+  },
+  {
+   "nodeId": "yong-road-link",
+   "assetId": "yong-road-link-far",
+   "bytes": 2252,
+   "sha256": "2a32c700d401af623701a2ec84523ea2d7688fc9b5d128f22cae542a85b7b844",
+   "triangles": 12,
+   "visibleByDefault": true,
+   "drawnWhenRegionOpen": false,
+   "replaces": [],
+   "nearSha256": "456a7dd54a5fd623ab17d9823ab1a12701bd764bdd219ec8884e9538536cd93d"
+  },
+  {
+   "nodeId": "yong-road-link-near",
+   "assetId": "yong-road-link-near",
+   "bytes": 382876,
+   "sha256": "456a7dd54a5fd623ab17d9823ab1a12701bd764bdd219ec8884e9538536cd93d",
+   "triangles": 12,
+   "visibleByDefault": false,
+   "drawnWhenRegionOpen": true,
+   "replaces": [
+    "yong-road-link"
+   ],
+   "nearSha256": null
+  },
+  {
+   "nodeId": "yong-road-receiver",
+   "assetId": "yong-road-receiver",
+   "bytes": 9140,
+   "sha256": "e5baa0df8fd28e117b4ef997cab0d962b0834a4c9664bb1ed73b7746d2488e38",
+   "triangles": 209,
+   "visibleByDefault": true,
+   "drawnWhenRegionOpen": false,
+   "replaces": [],
+   "nearSha256": null
+  }
+ ],
+ "yongSiteDelta": {
+  "groundSupport": [
+   2148,
+   2274,
+   5040
+  ],
+  "passageSupportFraction": [
+   0.475,
+   0.5537
+  ],
+  "unsupportedAlongV": [
+   [
+    [
+     -19.75,
+     -9.75,
+     10.5
+    ],
+    [
+     9.75,
+     19.75,
+     10.5
+    ]
+   ],
+   [
+    [
+     -19.75,
+     -9.75,
+     10.5
+    ],
+    [
+     9.75,
+     19.75,
+     10.5
+    ]
+   ]
+  ],
+  "throughClearRunsU_same": true
+ },
+ "reading": [
+  "Wall GLBs/geometry and wall node records unchanged (C2 lists no wall node).",
+  "Yong gate body/apron node records changed (initial true->false, replaces *-far); five new nodes undeclared (no manifest): expected, these are the Yong-road owner's commits r2026.11.05-6/7, protected work, not LY-091 candidates.",
+  "In-city Yong now has two tiers: far LOD2 by default, LOD0 near when the chapter opens; LOD1 not in city.",
+  "ground-retained became initial:true; Guangyang default-state support still 0/1200.",
+  "C9 FAIL here only means cad338b is not a rollback of bce3211; the next acceptance baseline must be re-measured on the LY-001/LY-100-locked main."
+ ]
+}

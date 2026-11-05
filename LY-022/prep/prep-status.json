@@ -1,0 +1,58 @@
+{
+ "seat": "LY-022",
+ "inputsFound": [
+  "docs/cities/luoyang/assets/market/market-cluster.glb 77b8bf2e (in city: market-main, 五店三摊 + sample_ground + 7 routes + 5 boundary)",
+  "docs/cities/luoyang/assets/market/N2-replacement.glb d33cbad1 (in city: market-N2)",
+  "modeling-lab/review-batches/2026-11-04-city-visible/*.zip.part01-05 (zip 5895ef23) -> chunks/market_frontage_well_routes.glb 0193ebc0: only placed assembly of 店前线v2.1 + well A + C_market_ground_well_A + same 7 routes; NOT loaded in city (adapter: not published)",
+  "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0/1/2.glb 46f08f41 / 03ad28cf / b5b13b1c (not in city)",
+  "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD0.glb 8ef1f3c8, S86-LOD0.glb 7f1c2e70 (reference)",
+  "docs/cities/luoyang/data/west/market-flow-plan.json (HEAD fb241612) names the 7 routes",
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb fdfc3ce5 (touches market only at x=244.286)",
+  "docs/model-library/well-study/contract.json (HEAD 86750205) cityPlacement null",
+  "docs/cities/luoyang/city-data.mjs HEAD c849706b (worktree e4115705 CRLF only); city-renderer.mjs HEAD 04c6c643"
+ ],
+ "inputsMissing": [
+  "city-C032-entry-LOD0.blend (sha 1e8c4d2c...b01b), the mother scene that placed 店前线v2.1 + well + ground at +0.20; would be used for native-vs-GLB equality of the placed chunk and as the editable source if an existing ground node had to change. LY-022 must not edit existing nodes, so measurement and new patches can be rebuilt from GLB (chunk 0193ebc0); native equality stays 未验",
+  "店前线v2.1 native .blend / generator (not in repo): only needed to regenerate frontage; LY-022 does not edit it, GLB suffices (从GLB重建 for reference only)",
+  "market-cluster native source: not needed (routes are frozen, read from GLB)",
+  "LY-021 delivered step outer-end ports and heights (not yet delivered) - required for endpoints",
+  "LY-005 datum (frontage +0.20 vs 0.21 route datum), LY-006 port IDs / ownership of C_market_ground_well_A vs sample_ground / definition of 双层路面 / lip tolerance, LY-010 market scheme choice (店前线 vs 默认五店三摊) and region release - all not frozen",
+  "LY-025 well + opening ground package (which ground variant is frozen) - not frozen",
+  "Placed LOD1/LOD2 of the frontage assembly do not exist (chunk is LOD0 only)"
+ ],
+ "gaps": [
+  "Scheme mismatch: city chapter market loads only market-main (五店三摊) + market-N2; 店前线v2.1 is placed only in unpublished chunk 0193ebc0. Under the same placement N2 overlaps the frontage south row by about 2.5 m in z, so LY-010/LY-029 must pick and swap first",
+  "Datum: library frontage base 0.00, plinth 0.22; chunk raises it +0.20, plinth 0.42; ground top 0.20; route top 0.21; 五店三摊 steps 0.30, floors 0.39",
+  "Street band local x[-24,24], |z|<4.875 at 0.25 m: 7720 points, 0 MISS (4608 ground 0.20, 3072 route_public 0.21, 40 route_east 0.21); 408 adjacent jumps >5 mm, all exactly 0.010 m (route edge lips at z=+-2 over 51 m and at x=24)",
+  "8 entrances: plinth 0.42, rise 0.22 to ground 0.20; every front is 3.00 m from the route_public edge with continuous ground in between (rise belongs to LY-021)",
+  "Well opening at local (-18.00, +7.00), r 0.5875-0.5925 m, open (no ground or non-well hit); well footprint local x[-19.32,-16.68] z[5.75,8.25], 0.75 m outside the street band, 5.0 m from route_public; in-city sample_ground (12 tris) has no opening and no well",
+  "Inherited stacking: 7 routes are 0.20-0.21 slabs on the 0.20 ground top, coplanar contact 772 m2; whether this counts as 双层 is undefined",
+  "Stall front posts protrude 0.02 m into the band at z[-5.12,-4.98] (x -22.57..-22.43, -19.57..-19.43, 18.83..18.97, 21.03..21.17) - LY-023",
+  "Minimum eave over street band 2.55 m (2.35 m above ground) at local (-20.5, -4.875)",
+  "Outer interface: network ground meets market only at x=244.286, z -1961.18..-1957.18 (5 samples, 0.21) - LY-083",
+  "7 routes + 5 boundaries are vertex-identical between in-city market-cluster and the chunk (12/12 fingerprints equal); only the ground differs (opening)"
+ ],
+ "reuseCandidate": "Conditional reuse, not final. In chunk 0193ebc0 the existing C_market_ground_well_A (0.20) plus the 7 routes (0.21) already support the whole front street continuously: 7720/7720 grid hits, 0 MISS, the only discontinuity is a 0.010 m route lip, every shop front is 3.00 m from route_public over continuous ground, and the well opening is outside the band and uncovered. If G freezes this placement (+0.20, no rotation), LY-006 tolerance is >=0.01 m, and LY-021 step outer ends land on the 0.20 ground band, LY-022 needs zero new geometry and should deliver as 复用 (source, fingerprints, measurement report). Evidence: prep/chunk-continuity.json, prep/chunk-well-hole.json, prep/frozen-baseline.json",
+ "touches": [
+  "route_public, route_east, route_rearN, route_rearS, route_exitPublic, route_exitN, route_exitS (read-only, port edges at z=+-2 and x=24)",
+  "C_market_ground_well_A (chunk) / sample_ground (market-cluster): support surface the patch abuts; owner to be fixed by LY-006/LY-025",
+  "C_MARKET_ENTRY_V21_LOD0 earth/timber/tile (adjacency at the 8 fronts, local z=+-5)",
+  "A_LOD0__short_liner / circular_collar and the other well nodes (exclusion column r 0.6425 m at local -18,+7)",
+  "boundary_west, boundary_-21.7, boundary_21.7, boundary_east_-9, boundary_east_9 (read-only)",
+  "Patch zone: local x[-22.7,24] x |z|[2,5] plus x[22.15,24] x |z|<=5, at most about 280 m2",
+  "Files: chunks/market_frontage_well_routes.glb, docs/cities/luoyang/assets/market/market-cluster.glb, street_frontage-LOD0/1/2.glb, LY-021 port JSON; city-data.mjs market-main / market-N2 nodes only through LY-100"
+ ],
+ "size": "S",
+ "risks": [
+  "If LY-010 keeps the default 五店三摊, there are no 店前线 entrances in the city and LY-022 has nothing to connect (blocked, not 复用)",
+  "Two ground variants (sample_ground without opening vs C_market_ground_well_A with opening); using the wrong one covers the well",
+  "If the LY-006/LY-008 step tolerance is <0.01 m the existing routes themselves fail at their edges, and fixing that would mean re-paving roads, which is forbidden - conflict must go to the coordinator",
+  "The 772 m2 route-on-ground stack may be classed as 双层 by LY-006",
+  "N2-replacement (market-N2) overlaps the frontage if it stays loaded with the chunk",
+  "A datum choice of 0.21 instead of 0.20 makes the frontage float 0.01 m above the ground",
+  "Placed LOD1/LOD2 of the assembly do not exist; three-tier patches must be matched to library LOD1/2 at +0.20",
+  "Lab text files differ from git HEAD by CRLF on disk; bind to HEAD blob SHA; lab/data/assets.json is truly modified in the worktree",
+  "The mother .blend is absent, so native-vs-GLB equality of the placed chunk cannot be verified here"
+ ],
+ "readyAfterG": true
+}

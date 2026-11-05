@@ -1,0 +1,349 @@
+{
+ "seat": "LY-083",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "repo": "D:/GitHub/creation-notebook-lab (read-only)",
+ "coordinateNote": "glTF X east, Y up, Z=-north; measurements in Blender X east, Y north, Z up",
+ "reuseNodes": {
+  "outerStreet": {
+   "file": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "node": "C_stitch_primary",
+   "span": "x 244.286..392.40 @ y 1959.184, width 4.00->6.0 m over 10 m, top 0.21"
+  },
+  "marketPublicExit": {
+   "file": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "node": "route_exitPublic",
+   "span": "x 242.286..244.286, y 1957.184..1961.184, top 0.21"
+  }
+ },
+ "dependenciesNotDelivered": [
+  "G (LY-001/002/005/006/007/008/009/010)",
+  "LY-030 market region package / frozen boundary",
+  "LY-081 actual ground reachability network"
+ ],
+ "privateSourcesMissing": [
+  "C-ground-stitch-v1 generator/.blend for network-ground-stitched.glb",
+  "market-cluster native .blend",
+  "market-link-continuity checker (sha 37aa804cca95b716ae257cf14bd9e477faa0ca729b236a94e020a765391af161)",
+  "yong-road-link-v2 source pack (README: 源码另存Release) - not needed by LY-083; receiver is read as GLB"
+ ],
+ "inputs": [
+  {
+   "path": "docs/cities/luoyang/assets/market/market-cluster.glb",
+   "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+   "bytes": 1031928,
+   "runtime": "loaded",
+   "loadedAt": "v2: city-data.mjs L511 asset market-main (+excludeNodes N2 x30), chapter market loadNodeIds L3953; city-renderer.mjs focusChapter L595-613. v1: west-layer.mjs L33 environmentUrl",
+   "note": "market box; route_exitPublic/exitN/exitS, sample_ground, boundary_east_±9 at x=244.286"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/N2-replacement.glb",
+   "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+   "bytes": 72984,
+   "runtime": "loaded",
+   "loadedAt": "v2: city-data.mjs L562 market-N2; v1: west-layer.mjs L36",
+   "note": "N2 replacement, not touched"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/flowB-routes.glb",
+   "sha256": "43d7799f85feccb0d6f1e0412c46853e6b3339535e38a9b806e8c5d3898f845e",
+   "bytes": 9344,
+   "runtime": "loaded-only-flowB",
+   "loadedAt": "v1: west-layer.mjs L36 when flow=B; not in v2 city-data",
+   "note": "flowB_entry ends at x=244.286, same 0.21"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "bytes": 3565544,
+   "runtime": "loaded-conditional",
+   "loadedAt": "v2: city-data.mjs L431, chapter terrain L4027 (initial:false; NOT in market chapter); v1: west-layer.mjs L35-36 (market level, calt)",
+   "note": "C_stitch_primary carries the 151.09 m outer street (reuse candidate)"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "bytes": 629740,
+   "runtime": "loaded-conditional",
+   "loadedAt": "same as stitched (atomic group)",
+   "note": "no triangles near market"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "bytes": 2623560,
+   "runtime": "loaded-conditional",
+   "loadedAt": "same as stitched (atomic group)",
+   "note": "no triangles near market"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "bytes": 6664,
+   "runtime": "loaded-conditional",
+   "loadedAt": "same; translation [580,0,-960] (west-layer.mjs L35)",
+   "note": "no triangles near market"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/market/corridor-6m-market-link.glb",
+   "sha256": "b46dd450d7e8636b744d2dcd1d0cee8e98352025b7cda57b2cd0938a3da149bf",
+   "bytes": 8272,
+   "runtime": "loaded-v1-original-only",
+   "loadedAt": "v1 archive ?mode=west&view=market&layout=original: west-layer.mjs L33 (market level, non-calt) loads it; L32 also for non-market calt-off levels; L34-37 replace it only when layout=calt (default per west-state.mjs readState). Not in v2 city-data. Replaced per ground-atomic-contract.replaceResources.",
+   "note": "old outer street, footprint identical to stitched at 6 sampled x; S1 measured: in v1 original market view the old link node C_main_road_width_6 carries x 244.5-398.25 at 0.21 with 0 gaps"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/road-junction/joined-route-terrain.glb",
+   "sha256": "f872935883fc6b4e3279c6465635411d13c2d810f50b7ad43def09ca4543d104",
+   "bytes": 4408140,
+   "runtime": "loaded-v1-original-only",
+   "loadedAt": "v1 archive ?mode=west&view=market&layout=original: west-layer.mjs L33 (market level, non-calt) loads it; L32 also for non-market calt-off levels; L34-37 replace it only when layout=calt (default per west-state.mjs readState). Not in v2 city-data. Replaced per ground-atomic-contract.replaceResources.",
+   "note": "replaced"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "bytes": 1391,
+   "runtime": "loaded",
+   "loadedAt": "west-layer.mjs L40 assertGroundAtomic (v1); v2 provenance city-data.mjs ~L4509",
+   "note": "atomic 3-node rule",
+   "blobSha256LF": "7f26720bf40fc8cd7f7d0b445398d889fcc70c407f7cc7e26e4acd0eb6332367"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/N2-contract.json",
+   "sha256": "10678d73111ae0d131afc3ff823162392eab339ee66bf2046e61666c2c8d9386",
+   "bytes": 9414,
+   "runtime": "loaded",
+   "loadedAt": "west-layer.mjs L40 applyMarketReplacements; city-data excludeNodes",
+   "note": "",
+   "blobSha256LF": "498f51fcd0723da69ab1b97c56f3de004a449a86e0e322dedc6489446a00e2cd"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-flow-plan.json",
+   "sha256": "bff5bb22bac6bda21f02a4b43f4adf85e187b8070d360c0433d69832e11adbdf",
+   "bytes": 3078,
+   "runtime": "loaded",
+   "loadedAt": "west-layer.mjs L40",
+   "note": "routes use only public entry",
+   "blobSha256LF": "fb2416122d3b9fd7e2bbeafcaa1934ee4efcaf67cbe4654139b212e4e50ce37b"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-interface.json",
+   "sha256": "31c6786db03b1d7e4be79070abe8ea9a577207345a55703c85d2fb34bc479f4e",
+   "bytes": 1761,
+   "runtime": "provenance-only",
+   "loadedAt": "city-data.mjs L4517 provenance list; not fetched by loader",
+   "note": "STALE: still names corridor-6m-market-link as active",
+   "blobSha256LF": "2957184accc87e5c2089987c71023cd09a8ef0274b2daab1fce4d39623606347"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-link-continuity.json",
+   "sha256": "d2da6a6ce89c9f7f4128d41566d026f8429350ddf7c172b78b2d3d669fe47dd8",
+   "bytes": 17650,
+   "runtime": "not-loaded",
+   "loadedAt": "evidence only",
+   "note": "154 samples 0.21, checker script absent",
+   "blobSha256LF": "a0686753a51f73be4455608e8b07bfa5371b8f5cf005a225912dd841a4719fcd"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/road-plan.json",
+   "sha256": "9792f217619ef72f2cb7528856112c7403a765420814a0dfe562ad23a7ebd361",
+   "bytes": 16893,
+   "runtime": "loaded",
+   "loadedAt": "v1/road-layer.mjs L17 (road sample layer)",
+   "note": "road_west_spine_B_C_0 endpoints -> spine x at market axis",
+   "blobSha256LF": "0bc4528cbf354a18c5a74f9bbf4574bfc0ea0ee817516736e9d15ef5dca6881a"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/road-interface.json",
+   "sha256": "ef4b334d3c75c227ca4d9cf4104d24f5eefdc6e692063dea5916df8055b5ddf0",
+   "bytes": 2724,
+   "runtime": "loaded",
+   "loadedAt": "v1/road-layer.mjs L17",
+   "note": "marketLink: 151 schematic metre C branch",
+   "blobSha256LF": "a3efd106ef508f5981e5157d9a40f9069d707957d236ba7ede24a16dd1db2a16"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-final-actual-GLB.json",
+   "sha256": "405db4fee6a822f1e2a54260ed5c256782d087e49a40eba457b3940f94b6ea13",
+   "bytes": 156964,
+   "runtime": "not-loaded",
+   "loadedAt": "evidence only",
+   "note": "stitched aggregate closed; per-chunk open",
+   "blobSha256LF": "3a58394bee372834684a9e52c38ac88b3dec670a02b98019c3081df99bc4e9d5"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/market-precedents.json",
+   "sha256": "abf2a3d248114427f51a93b913c39e3ee523c5b3dda55860bd6379f5d37f7d38",
+   "bytes": 6377,
+   "runtime": "linked",
+   "loadedAt": "west-layer.mjs L51 link",
+   "note": "evidence classes for jin market",
+   "blobSha256LF": "14294a1202cb1ee7ab81938a53c80b537d2ce61e7d1072aa71809be5597f1916"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/west-layer.mjs",
+   "sha256": "d8c14142af2e4d993cc249dfcc605edadb38232190e5890f31640b94be9d2d4b",
+   "bytes": 18747,
+   "runtime": "code",
+   "loadedAt": "",
+   "note": "",
+   "blobSha256LF": "e406af117b112a5fd07483f1906f0d94ad767135bf844f03a82a9874f21c59fc"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/market-assembly.mjs",
+   "sha256": "0145ac84d938b570d08e2bbf334eb42cc69ae13569cb0e2bdfa917351ae68ce2",
+   "bytes": 1175,
+   "runtime": "code",
+   "loadedAt": "",
+   "note": "",
+   "blobSha256LF": "343373f0b4599d376c6064981f13dfcd60f6be4c512edcf8fada4cd886dce811"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/ground-atomic.mjs",
+   "sha256": "45e25711f8a1e98db6751d2644f6fe5ca127e7798b60eb85eb9666db794380b0",
+   "bytes": 441,
+   "runtime": "code",
+   "loadedAt": "",
+   "note": "",
+   "blobSha256LF": "b9aec1f15c20bd7141e0eb27f537a6a0132d7f1411fb08f5d507a5cd0108b792"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 111034,
+   "runtime": "code(shared, no-write)",
+   "loadedAt": "",
+   "note": "",
+   "blobSha256LF": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "bytes": 36571,
+   "runtime": "code(shared, no-write)",
+   "loadedAt": "",
+   "note": "",
+   "blobSha256LF": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "bytes": 14563,
+   "runtime": "code",
+   "loadedAt": "",
+   "note": "",
+   "blobSha256LF": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8"
+  },
+  {
+   "path": "docs/cities/luoyang/index.html",
+   "sha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "bytes": 16108,
+   "runtime": "entry",
+   "loadedAt": "loads app.mjs",
+   "note": "",
+   "blobSha256LF": "cfbf73763675397dde8f5ab08bb13f6b51fbcfa9954227552e32be756666b1bf"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "bytes": 24215,
+   "runtime": "project card (no-write)",
+   "loadedAt": "",
+   "note": "",
+   "blobSha256LF": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd"
+  },
+  {
+   "path": "docs/cities/luoyang/v1/west-state.mjs",
+   "sha256": "1ca602502911dd4983c0480d97a79f7c25291bafc794b9f0edb9e5abe27ed6f1",
+   "blobSha256LF": "ece2a6e92e157a498204a71c7f8c6c9c923e33aef1fff0deb14067f30fc280be",
+   "runtime": "code",
+   "loadedAt": "readState(): layout defaults to calt unless ?layout=original",
+   "note": ""
+  }
+ ],
+ "prepOutputs": [
+  {
+   "path": "LY-083/prep/measure/measure_outer_street.py",
+   "sha256": "2db874edfdd4a1f20cb2038f83c7dc854a5234e6ca0449f30cd2dfebfbc78f0e"
+  },
+  {
+   "path": "LY-083/prep/measure/measure_fine_and_render.py",
+   "sha256": "a246239e08cfd37f1500043fbe2df552bd2c0ed9be8493e522203f6c730132e7"
+  },
+  {
+   "path": "LY-083/prep/measure/measure_supplement.py",
+   "sha256": "ea5016592ec51e44a67ab2bf7aa679dc303993311759b2c36a30de54bcd74593"
+  },
+  {
+   "path": "LY-083/prep/measure/measure_drift_cad338b.py",
+   "sha256": "2516be24cad9634f87e3d8f321d7de694e4924bb2272cdf615b624abd9f715a0"
+  },
+  {
+   "path": "LY-083/prep/measure/outer_street_measure.json",
+   "sha256": "1bba3cd921e6f1452e8a78d6b75836b971a2c5f450f5bd383108114ba1a90e7b"
+  },
+  {
+   "path": "LY-083/prep/measure/rerun/outer_street_measure.json",
+   "sha256": "1bba3cd921e6f1452e8a78d6b75836b971a2c5f450f5bd383108114ba1a90e7b"
+  },
+  {
+   "path": "LY-083/prep/measure/fine_measure.json",
+   "sha256": "b37d41f3b72ca3b064db95fbac10d97992a752b20a418d00d933598c1399710e"
+  },
+  {
+   "path": "LY-083/prep/measure/supplement_measure.json",
+   "sha256": "e45e0facc5b127400d7fa06c8a4c171d12e9b7a66f205eda96664fad5e30b8aa"
+  },
+  {
+   "path": "LY-083/prep/measure/drift_cad338b_measure.json",
+   "sha256": "dd68c7a31bc7c28e92bb9654ad60ade60470ad2eb9f66b433b7c7c3e12d483e7"
+  },
+  {
+   "path": "LY-083/prep/preview/before-top-market-to-spine.png",
+   "sha256": "e95505fecc7f1514df6298ca108ca5c69540d3c1be751174fe10ecdcc515d48f"
+  },
+  {
+   "path": "LY-083/prep/preview/before-seam-market-edge.png",
+   "sha256": "72131b4df09ba82445cb88996b97630d9dc22a56620d1bdd48f52ea8cc584073"
+  },
+  {
+   "path": "LY-083/prep/preview/before-junction-spine.png",
+   "sha256": "b7ccc904e7156224cdba4bb6a9984ea938191d52de28ee2370db20772b93ba17"
+  },
+  {
+   "path": "LY-083/prep/preview/before-reverse-from-spine.png",
+   "sha256": "da8fff52c0a1c6eef879abd02fccfb3cb24a20d7248793e1f9c9de3b04bb4443"
+  }
+ ],
+ "tool": "D:/Blender/blender.exe 5.2.1 LTS",
+ "shaNote": "sha256 = working-tree bytes at D:/GitHub/creation-notebook-lab (Windows checkout, core.autocrlf=true -> text files are CRLF). blobSha256LF = bytes of `git show bce3211:<path>` (LF). GLB/PNG are binary: both identical.",
+ "secondPass": "2026-11-06: all 26 SHAs re-verified against bce3211 worktree; measure_outer_street.py re-run -> rerun/outer_street_measure.json byte-identical (1bba3cd9...)",
+ "driftOriginMain": {
+  "commit": "cad338ba683f7277aea098f45c8feb6c915a847c (origin/main, 3 commits after bce3211: f28d650, b70c495, cad338b)",
+  "changedInScope": "only city-data.mjs and p-luoyang.asset.json changed among LY-083 inputs; all GLBs, data/west/*, v1/*, city-renderer.mjs, app.mjs, index.html unchanged",
+  "inputs": [
+   {
+    "path": "docs/cities/luoyang/city-data.mjs @cad338b",
+    "blobSha256LF": "d8933a32a6a133b38bc8ae5591bd0b350d206f9c884e1a6c4a1adabf5fc6daf3",
+    "runtime": "code(shared, no-write)",
+    "loadedAt": "market chapter L~4651 loadNodeIds still market-main+market-N2; node yong-road-receiver initial:true (L4138); ground-retained now initial:true",
+    "note": "read via git show to scratch, not checked out"
+   },
+   {
+    "path": "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb @cad338b",
+    "sha256": "e5baa0df8fd28e117b4ef997cab0d962b0834a4c9664bb1ed73b7746d2488e38",
+    "bytes": 9140,
+    "runtime": "loaded (initial:true, cold open)",
+    "loadedAt": "city-data.mjs@cad338b asset L1347, node L4138, terrain chapter L3809; city-renderer.mjs L221 loadedIds = initial!==false",
+    "note": "node C_stitch_primary_yong_receiver_component209, 209 tris; carries outer street x 244.5-398.25 @0.21, width identical to C_stitch_primary at 7 sampled x (measure/drift_cad338b_measure.json). README: replaced by network when terrain chapter opens."
+   },
+   {
+    "path": "docs/cities/luoyang/p-luoyang.asset.json @cad338b",
+    "blobSha256LF": "f43d1496c85ff6c148f1c45e97fb5bcaefb2f06e1a258670d689d3b4f2b6f668",
+    "runtime": "project card (no-write)",
+    "loadedAt": "",
+    "note": ""
+   }
+  ]
+ }
+}

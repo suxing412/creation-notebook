@@ -1,0 +1,58 @@
+{
+ "seat": "LY-062",
+ "inputsFound": [
+  "lab bce3211 docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0/1/2.glb 6ea89298/455a1215/108e28a5, open-LOD0/1/2 59c8b758/d95bd22f/01b2017f（progress-assets 同名逐字节相同；城景 0 引用，仅 docs/model-library/inspect.mjs:127-136 详情页加载）",
+  "lab docs/library/models/m-luoyang-palace-guard/files/guard-slice-closed-LOD0 48c511c5 / closed-LOD2 bf47d91d 等 12 个 GLB（全表见 inputs.json）",
+  "lab progress-assets/palace-admission-court/qa/finite-routes.json 3b57011c（99 带；outer_ground_join x±0.4 y−66.5…−65 为主门外接带）",
+  "lab 资产卡 m-luoyang-palace-admission-court.asset.json 7df2a184、m-luoyang-palace-guard.asset.json 6628df83（自述侧边/工作口仍开放）",
+  "workpacks LY-006/registry/zones.json 6b3595ac（LY-062:write:001/002/003）、ports.json 28bcfb68、seams.json ca4d81f8、ownership.json ecbbbcf5、seats.json a1426412、schemas/port.schema.json 9fcdf932",
+  "workpacks LY-005/coordinate-contract.json b6d7fe9d（Blender (X,Y,Z)=glTF (x,−z,y)，−Z 北）、port-schema.json 30854ed9",
+  "workpacks LY-007/baseline LY_P01-material-semantics.json f0a04f59、lod-rules.json fbf53757、texture-uv-rules.json a5bfae60",
+  "workpacks LY-002/tables/evidence-ledger.md ea060db6（E-P03 宫掖门本注原文已核：宫门凭符准入、凡七门；禁用 X04/X05/X19）",
+  "workpacks LY-001/002/005/006/007/009 status.json 均为「交付完成」；LY-061/prep/prep-status.json add7fb6e（仅 prep）"
+ ],
+ "inputsMissing": [
+  "LY-061 交付：admission-court:enclosure:wall-end 端口值、墙厚/高、侧口与南口两侧墙端几何——侧口门框贴合的必需前件；现仅 prep，不能从 GLB 重建（墙尚不存在）",
+  "LY-008 可重跑交付检查器：目录在建，无 status.json——用于 G7 交付检查；不能从 GLB 重建",
+  "LY-010 首批方案与区域准入：目录不存在——决定方案 A/B 与本院是否只作独立演示域",
+  "协调者/LY-006 对 C1（write:003 实为南轴主入口）与 C2（门卫线关闭件无写入区）的裁决或 registry v2",
+  "私密源包 luoyang-palace-admission-court-v1.zip（3 个 .blend、builder、配置、纹理、原检查器 finite-routes bf82ede6 / route-interfaces ec77a791）：用途是重跑原 99 带检查器、clean-rebuild 比对。LY-062 关闭件为 overlay，门框/地面/端口可从 GLB 实测，可「从 GLB 重建」；原检查器只能按公开 QA 带坐标重写，须标注为重写版，不能称原检查器重跑",
+  "门卫切片 revision02 原生源（.blend+生成器）：仅当把关闭件并入原门卫网格时需要；overlay 方案不需要，可从 GLB 重建"
+ ],
+ "gaps": [
+  "闭门 LOD0/1/2 及独立门卫件：门卫切片内 6 条 ≥0.8 m 直线通道——S1 ±[2.10,3.14] 1.04/1.06 m，单元开间 ±[3.46,4.48] 1.04 m、±[5.12,6.04] 0.94 m；主门叶中缝 0.04 m、边缝 2×0.04 m 仅透光（继承）",
+  "LY-006 v1 三个写入区（Blender x −36…−34 / 34…36, y −16…−10；x ±3, y −69…−67）内 0 个地面采样（只有板边 x=−34 / y=−67 一排 25 点 z=0.0）、0 个既有障碍：门槛与地坪须新建 gp:LY-062:*",
+  "write:003 正对主门轴：x ±2.5/±3.0 射线直通 S1 到 y −49；位于 QA outer_ground_join（x±0.4, y−66.5…−65）外 0.5–2.5 m 同轴；是 LY-061 南墙 v1 区唯一缺口——标为 rear work opening 与 −Z 北相反（C1）",
+  "夹具状态矩阵（closed/open LOD0、closed LOD2）：外墙+三口全闭→封闭；任一口开→出界；只开南口时闭门仍可入院；需同时封 S1×2、单元前檐 3.12 m×2、后檐 3.205 m×2、横墙 ±6.79→±34（各约 27.2 m）才能使闭门封闭（情景 7），去掉任一件即漏（情景 8/9）；这些位置无任何 v1 写入区（C2）",
+  "侧口内路：廊台东北角 (−18.1,−13.0) 与殿台西南角 (−17.5,−12.5) 对角净距 0.78 m <0.8 m 身体，廊台高 0.47 m；侧口只能经 x −34…−29 板边窄带绕到廊南端进庭",
+  "门卫单元端墙外皮实测 x=±6.797（LOD0）/±6.76（LOD2），z 0.25–2.8，y −60.2…−55.8；±7.0 只是 z≤0.18 台基——LY-061 prep 记的 ±7.0 偏 0.20–0.24 m，LOD 间差 0.037 m",
+  "LOD2 闭门门叶 y 至 −56.265（LOD0 −56.185），侧缝中心可行宽 0.7 m vs 0.6 m：关闭件须三档各自贴合",
+  "LY-005 port-schema 的 kind 无 opening，LY-006 port.schema 有；write:003 无端口声明（C3/C4）"
+ ],
+ "reuseCandidate": "无。现有候入院与门卫 GLB 均无侧口/工作口关闭件；闭门实测仍直线可穿（measure/rays-court-closed-LOD*.json），v1 写入区内连地面都没有（measure/zones-closed-LOD0.json）；两张资产卡自述该缺口。",
+ "touches": [
+  "LY-062:write:001 / :002 / :003（LY-006 v1 写入区；新 overlay 节点前缀 ly062_，新地坪 gp:LY-062:*）",
+  "admission-court:side-opening-W:opening、side-opening-E:opening（本席产出端口，消费者 LY-069/LY-070）",
+  "admission-court:enclosure:wall-end（LY-061 产出，本席消费；接缝 LY-061->LY-062@v1）",
+  "new_court_support_C 板边 x=±34、y=−67（只贴合不改，owner LY-061）",
+  "guard__guard-slice-portal-timber / west-timber / east-timber / west-earth / east-earth / leaf_L / leaf_R（只读、只测；owner LY-061 keep；方案 B 的关闭件贴其接面）",
+  "west_gallery__sidehall-A-static_earth、east_gallery__…、hall__deyang-A-static_earth（侧口内路净距约束，只读）",
+  "组件 P062-closures、P062-main-leaves-state（state-variant，本席所有）",
+  "palace-guard:* 15 对象（独立门卫资产，本席 keep，只读）",
+  "QA 带 outer_ground_join、guard_main_outer、guard_*_work_*、guard_*_patrol_*、guard_inner_cross_patrol（回归）",
+  "写入：仅 D:/GitHub/creation-notebook-workpacks/LY-062/"
+ ],
+ "size": "M",
+ "risks": [
+  "C1：若按 v1 字面把 write:003 做成『工作口』并关闭，主门外接带被切断、主门失去意义；须先裁决改名为南轴口或移位",
+  "C2：不补门卫线写入区，只能声明『主门闭合不控制入院』（方案 A）；若选方案 B，席位规模升为 L，并与 LY-061 横墙/所有权重划",
+  "三个写入区都在板外且只有 2 m 深，门槛/地坪与 LY-061 外缘带、LY-069/070 接路三方共边，高程差需 ≤0.30 m（C）",
+  "侧口内路依赖绕廊后窄带；LY-063 廊端转折件若占用 x −29…−18.1、y −13…−10 或 −54…−51，会改变或切断侧口内路",
+  "2D 截面与 0.30 m 步高代理会把 0.47 m 廊台当障碍、0.18 m 单元台当可行，均为 C 判定；不证明翻越、门扇扫掠或实体碰撞",
+  "原检查器在私密源包内，安装后只能用重写版复测，不能宣称原检查器重跑",
+  "端墙外皮 LOD0/LOD2 差 0.037 m，若用 AABB ±7.0 贴合会产生 0.2 m 缝或正体积侵入",
+  "任何口不得命名为史载门名（LY-002 E-P03 只支持宫门凭符准入功能；X04/X05 禁用）"
+ ],
+ "readyAfterG": false,
+ "readyAfterGNote": "LY-008 与 LY-010 尚未交付，G 未冻结完毕。即使 G 冻结、LY-061 交付 wall-end，write:003 的语义（C1）和门卫线写入区（C2）仍须协调者或 LY-006 v2 裁决，否则验收第 2 条『门关后是否仍可进入与声明一致』没有可执行的声明。侧口 W/E 两件在 LY-061 端口值到手后可以立刻开工。"
+}

@@ -1,0 +1,276 @@
+{
+  "seat": "LY-019",
+  "phase": "prep (G not frozen; no delivery geometry made or modified)",
+  "repo": "D:/GitHub/creation-notebook-lab",
+  "repoHead": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "taskpool": {
+    "path": "D:/GitHub/creation-notebook-workpacks/TASKPOOL.md",
+    "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7"
+  },
+  "taskboard": {
+    "path": "D:/GitHub/creation-notebook-workpacks/taskboard.json",
+    "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4"
+  },
+  "inputs": [
+    {
+      "id": "xia-B-library-v1-LOD1",
+      "role": "primary gate body (B-library-v1), read-only",
+      "path": "docs/library/models/m-luoyang-xia-gate/files/gate-B-LOD1.glb",
+      "bytes": 1246480,
+      "sha256": "7c5999df87f17f0278481c33734ab7af79f6ea57a07bb4d4faba8938f532f760",
+      "nodes": [
+        "gate-B-static_earth (104 tris)",
+        "gate-B-static_timber (436)",
+        "gate-B-static_tile (13660)"
+      ],
+      "origin": "local, centred x/z, base y=0; bbox [-12,0,-5.5]..[12,10.658,5.5]",
+      "loadedInCity": false,
+      "loaderCode": "none; only listed in p-luoyang.asset.json related list (line 554) and lab/data/assets.json"
+    },
+    {
+      "id": "xia-B-library-v1-LOD2",
+      "role": "primary gate body far tier, read-only",
+      "path": "docs/library/models/m-luoyang-xia-gate/files/gate-B-LOD2.glb",
+      "bytes": 39672,
+      "sha256": "802a1fee2f1028c431b232cb8b6b12d3bf7b7026e56cbe1a01b4f6fda7c018ed",
+      "note": "earth and timber vertex-identical to LOD1 (vhash 12f982f3e8526921 / ecd2fdbf86888beb); only tile reduced 13660->36 tris; no textures",
+      "loadedInCity": false,
+      "loaderCode": "none"
+    },
+    {
+      "id": "xia-B-library-v1-LOD0",
+      "role": "near tier",
+      "path": null,
+      "bytes": 16054944,
+      "sha256": null,
+      "loadedInCity": false,
+      "status": "MISSING: not on public card (exceeds 15,000,000 B); card says original kept privately"
+    },
+    {
+      "id": "xia-card",
+      "path": "docs/library/models/m-luoyang-xia-gate/m-luoyang-xia-gate.asset.json",
+      "sha256": "3911af0080f957cb3a25ab154cd93370c3f7d9030faf4a182926c20f972002c0",
+      "loadedInCity": false,
+      "headBlobSha256": "db2dd2a7dcdf9c4e8004d7ef19147b92cfb3af76999a67f530680ce596478ccc"
+    },
+    {
+      "id": "xia-card-cover",
+      "path": "docs/library/models/m-luoyang-xia-gate/cover.webp",
+      "sha256": "2113d09758efc5b0031862c462fc97d572a28777379163c5ace0329427fadf7b",
+      "loadedInCity": false
+    },
+    {
+      "id": "xia-card-detail",
+      "path": "docs/library/models/m-luoyang-xia-gate/shots/detail.webp",
+      "sha256": "4b4d4e820e4d6da23f90c3e3fb7a9c4d4cccf26e13f7a02bc3982da6062d53e3",
+      "loadedInCity": false
+    },
+    {
+      "id": "wall-A-wall-11",
+      "role": "west neighbour of Xia gap (sample A, city default), read-only",
+      "path": "docs/cities/luoyang/assets/city-wall/A/wall-11.glb",
+      "bytes": 2752,
+      "sha256": "2cfa846184cf28e36cacb832250b5d2afcdbdc6968c81c3f09957ed968e21ecd",
+      "loadedInCity": true,
+      "loaderCode": "docs/cities/luoyang/city-data.mjs asset L351, node L3447 (initial:true), chapter walls L3774; also v1/wall-layer.mjs choose() L19 when sample A selected"
+    },
+    {
+      "id": "wall-A-wall-00",
+      "role": "east neighbour of Xia gap (sample A), read-only",
+      "path": "docs/cities/luoyang/assets/city-wall/A/wall-00.glb",
+      "bytes": 2412,
+      "sha256": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74",
+      "loadedInCity": true,
+      "loaderCode": "docs/cities/luoyang/city-data.mjs asset L171, node L3204 (initial:true); v1/wall-layer.mjs L19"
+    },
+    {
+      "id": "wall-B-wall-11",
+      "role": "exclusive sample B west neighbour, read-only",
+      "path": "docs/cities/luoyang/assets/city-wall/B/wall-11.glb",
+      "bytes": 2732,
+      "sha256": "9f0a8fffa8157e46bc31a6d479c854dbf6b6eacd0928a9e02b0164f641746c2e",
+      "loadedInCity": "on user selection only",
+      "loaderCode": "docs/cities/luoyang/v1/wall-layer.mjs choose('B') L19 via data/west/city-wall-interface.json assets[sample=B]"
+    },
+    {
+      "id": "wall-B-wall-00",
+      "path": "docs/cities/luoyang/assets/city-wall/B/wall-00.glb",
+      "bytes": 2388,
+      "sha256": "16a296210c1320981d236691ad450ed66ea0f6dd93b20f879711eba2b0fc2127",
+      "loadedInCity": "on user selection only",
+      "loaderCode": "docs/cities/luoyang/v1/wall-layer.mjs L19"
+    },
+    {
+      "id": "city-wall-interface",
+      "path": "docs/cities/luoyang/data/west/city-wall-interface.json",
+      "sha256": "ad18cc65915724a850d1f97b498be8b63464cd3d25116c9d615bfd79f2570da8",
+      "loadedInCity": true,
+      "loaderCode": "v1/wall-layer.mjs L19 fetch('./data/west/city-wall-interface.json'); city-data.mjs sourceContract",
+      "headBlobSha256": "ca75d115d49d38a53c66258af12e6e455d314f0f75548899e021276c5b100543"
+    },
+    {
+      "id": "city-wall-constraints",
+      "path": "docs/cities/luoyang/data/west/city-wall-constraints.json",
+      "sha256": "b6006e319d903da8bf8f32741d3377c53d6068956867289d7a1c7210c66abcac",
+      "loadedInCity": "linked only (wall-layer.mjs anchor)",
+      "use": "gate_xia_B projection: B_point [734.694,3571.429], C_projection_only [734.488869,3566.136697], segment 0, dist 5.296277 schematic_m; C_only_parameters incl. gate_gap_width, ground_elevation",
+      "headBlobSha256": "e9c84bddc7bb7d867e3ba8abf8cbeb604b222ad0960901f32e979dbb995e0af3"
+    },
+    {
+      "id": "evidence-geometry",
+      "path": "docs/cities/luoyang/data/evidence/evidence-geometry.json",
+      "sha256": "662562fa87cffc9de43b2c23564f1ab63fba8c01f2345891f255cb202bee2233",
+      "loadedInCity": "evidence view only",
+      "use": "gate_xia_B: evidence_class B, source gao2023_fig1, schematic_digitized, architectural_completion not_modeled",
+      "headBlobSha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7"
+    },
+    {
+      "id": "c01-research-candidate",
+      "path": "docs/cities/luoyang/data/c01/research-candidate.json",
+      "sha256": "2f240a84ce238b71cb2b96e16d0a7fda41b88161dc04caf485839b337b44b41e",
+      "loadedInCity": "c01 layer marker only",
+      "headBlobSha256": "52599ef31ee5b1ffc4553d9c40cd9bae8829ade2c78f56e9534c6bdda4b38d3f"
+    },
+    {
+      "id": "city-data",
+      "path": "docs/cities/luoyang/city-data.mjs",
+      "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+      "loadedInCity": true,
+      "note": "no node within 60 m of the Xia placement except wall-A-wall-00 and wall-A-wall-11; no ground node there",
+      "headBlobSha256": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00"
+    },
+    {
+      "id": "city-renderer",
+      "path": "docs/cities/luoyang/city-renderer.mjs",
+      "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+      "loadedInCity": true,
+      "headBlobSha256": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc"
+    },
+    {
+      "id": "app",
+      "path": "docs/cities/luoyang/app.mjs",
+      "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+      "loadedInCity": true,
+      "headBlobSha256": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8"
+    },
+    {
+      "id": "index",
+      "path": "docs/cities/luoyang/index.html",
+      "sha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+      "loadedInCity": true,
+      "headBlobSha256": "cfbf73763675397dde8f5ab08bb13f6b51fbcfa9954227552e32be756666b1bf"
+    },
+    {
+      "id": "wall-layer",
+      "path": "docs/cities/luoyang/v1/wall-layer.mjs",
+      "sha256": "73372f7a2c076e278165dae29cd86e6173f9807d9e200302c28a69138320abf0",
+      "loadedInCity": true,
+      "headBlobSha256": "d2c1d2d69e0d9c03a2984f1c0cf48f39bb5a692627f4244f1a0fa58af28b7883"
+    },
+    {
+      "id": "west-layer",
+      "path": "docs/cities/luoyang/v1/west-layer.mjs",
+      "sha256": "d8c14142af2e4d993cc249dfcc605edadb38232190e5890f31640b94be9d2d4b",
+      "loadedInCity": true,
+      "headBlobSha256": "e406af117b112a5fd07483f1906f0d94ad767135bf844f03a82a9874f21c59fc"
+    },
+    {
+      "id": "project-card",
+      "path": "docs/cities/luoyang/p-luoyang.asset.json",
+      "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+      "loadedInCity": "card",
+      "use": "L107: Xia among 10 gates kept as independent research; L554 related id",
+      "headBlobSha256": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd"
+    },
+    {
+      "id": "assets-summary",
+      "path": "lab/data/assets.json",
+      "sha256": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+      "loadedInCity": false,
+      "headBlobSha256": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78"
+    },
+    {
+      "id": "city-visible-handoff-README",
+      "path": "modeling-lab/review-batches/2026-11-04-city-visible/README.zh-CN.md",
+      "sha256": "d9d6913ce525aea601d14e3f8996d38491b7434a92ad611049f0d64ccf3e0adf",
+      "loadedInCity": false,
+      "headBlobSha256": "5dece919f492957d6658283b0a59825a8c5d5f8f9b3e2eaa7cd7d396c9daa36c"
+    },
+    {
+      "id": "city-visible-adapter",
+      "path": "modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json",
+      "sha256": "703caeed4a7834e9e5324e1d2f1a1df78412c50d756768c6c98c3638f216934f",
+      "loadedInCity": false,
+      "note": "Xia nodes visible-current-node-city_gate_xia-B-01 and -02-fragment-001..004, initial:false, tier C, atomic group visible-current-atomic-xia-B-static_tile; adapter not deployed (relativePath only, renderer cannot consume)",
+      "headBlobSha256": "8f890748d908e4551c1ed46107d98c4bfebfe28820393ae6943a6a2c2e7e0d7c"
+    },
+    {
+      "id": "city-visible-zip-parts",
+      "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part01..05",
+      "sha256": [
+        "d3d5eb7263e9f840c5444d46082eb7ced1c8e5488e7fba9b00d1a0fc3f32a9a3",
+        "c20213e1eaa6f212f5dbf9cf41482347a26947880119ebba0f13978cd1876703",
+        "6a468122cb53a36c5fc93652c2c7f7dc13658510ceee955dc8faf0de9fc9105b",
+        "74f4cd0a08d3f69882cd44dc412efc885d84bf80a39fe0619ae6ff2043d924cb",
+        "a8a0331b4408228a23181adcc3d07d8ca17d25cd108b2179b8bf99880331de5f"
+      ],
+      "zipSha256": "5895ef23a684a343271183dce1e92e112fb49bba9e03e4372023d1247bb50b69 (re-verified by concatenation in prep)",
+      "loadedInCity": false
+    },
+    {
+      "id": "master-xia-B-01-chunk",
+      "role": "existing interface trial (city variant of xia-B: earth with wings + 0.17 pad, raised upper); read-only reference",
+      "path": "zip member chunks/city_gate_xia-B-01.glb (extracted to scratchpad/ly019/cv/chunks for measurement only)",
+      "bytes": 733612,
+      "sha256": "9563ec11100b36245db3c4f4dc76fc40e7b0e052845ad0be7eb0e5e0c108be55",
+      "sourceNodes": [
+        "xia-B-static_earth (data city_B_earth, 140 tris)",
+        "xia-B-static_timber (460 tris)"
+      ],
+      "worldMatrix_Zup": "rotZ -2.21988 deg, T (734.4888916, 3566.1367188, 0)",
+      "loadedInCity": false
+    },
+    {
+      "id": "master-xia-B-02-tile-fragments",
+      "path": "zip members chunks/city_gate_xia-B-02-fragment-001..004.glb",
+      "sha256": [
+        "6688db0137259a14f2300beba7967f614be4ed8cd51f0c61e4b6b62c1d518136",
+        "6f6b863502efe23590ba43bec9f99cd2ecfd9748ee01f1412e4bad10d5d3ac53",
+        "156e961ceba9157c6b31d84e9d8e9d24def4f1b781f5adb933e608ae2eddeabb",
+        "7994ce07c7f72ed3835a8077ec55eb7c9c12d4c10d4651365ed5b1b92f95b05a"
+      ],
+      "note": "xia-B-static_tile 217,996 tris (LOD0-level), welded closed manifold 3.98 m3",
+      "loadedInCity": false
+    },
+    {
+      "id": "master-source-node-manifest",
+      "path": "zip member qa/source-node-manifest.json",
+      "sha256": "6cd13e10623e8bf8913a9df804cec2b939f55fe456829bfd628166cd3328d5d6",
+      "loadedInCity": false
+    },
+    {
+      "id": "city-master-blend",
+      "path": null,
+      "sha256": "1e8c4d2ce19827bb8ab5ff24a662fd4f3909aa5c6074fc9a90623a103b73b01b",
+      "name": "city-C032-entry-LOD0.blend",
+      "status": "MISSING (private; SHA known from handoff README/adapter)",
+      "loadedInCity": false
+    }
+  ],
+  "prepScripts": [
+    {
+      "path": "prep/measure_seam.py",
+      "sha256": "cff8001ceeb717e3e19451c70a8d175def53b8efa7cf748335d0e86430ee1e55",
+      "output": "prep/measure-out/measure.json",
+      "outputSha256": "31db22c2421bd03faccb61b0d4542f6946ebe08d90cd143d72bfd5dd11fee578"
+    },
+    {
+      "path": "prep/measure_detail.py",
+      "sha256": "52ad5b1c5b8e87bbdc1e1290bce8d8cff5ec5d7a3ab2b51db567b654207d55a1",
+      "output": "prep/measure-out/detail.json",
+      "outputSha256": "efa8655d030dc946c4f2ea3af40081b99467952b7dbe7d187e76039c0270b198"
+    }
+  ],
+  "blender": "D:/Blender/blender.exe 5.2.1 LTS, -b --factory-startup --python-exit-code 1",
+  "shaNote": "sha256 = bytes of the working-tree file (core.autocrlf=true, so text files carry CRLF). headBlobSha256 = sha256 of `git show bce3211:<path>` (LF), and that is the value to bind. Binary GLB/webp/zip parts are identical in both. evidence-geometry headBlobSha256 fa8b7002... equals the frozen_baseline sha in city-wall-constraints.json. The lab working tree had pre-existing uncommitted edits to lab/data/assets.json, glb-cache.json and report.json (not made by this seat), so the HEAD value is authoritative."
+}

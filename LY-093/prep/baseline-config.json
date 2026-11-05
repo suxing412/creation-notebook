@@ -1,0 +1,1598 @@
+{
+ "seat": "LY-093",
+ "label": "baseline-bce3211-prep",
+ "labBaseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "reviewBatchZipSha256": "5895ef23a684a343271183dce1e92e112fb49bba9e03e4372023d1247bb50b69",
+ "frame": "native metres X east, Y north, Z up (= Blender after glTF import)",
+ "inputs": {
+  "city_granary": {
+   "path": "${LAB}/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+   "display": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+   "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93"
+  },
+  "city_wall01": {
+   "path": "${LAB}/cities/luoyang/assets/city-wall/A/wall-01.glb",
+   "display": "docs/cities/luoyang/assets/city-wall/A/wall-01.glb",
+   "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95"
+  },
+  "city_net": {
+   "path": "${LAB}/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "display": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60"
+  },
+  "city_retained": {
+   "path": "${LAB}/cities/luoyang/assets/ground-atomic/retained.glb",
+   "display": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc"
+  },
+  "rb_granary": {
+   "path": "${RB}/chunks__granary_C_with_ground.glb",
+   "display": "review-batch 2026-11-04 zip::chunks/granary_C_with_ground.glb",
+   "sha256": "156999f1dfe0df0634c72af4f4390a279b53827243a7df0c823b15656cb6ec91"
+  },
+  "rb_road": {
+   "path": "${RB}/chunks__northeast_C_access.glb",
+   "display": "review-batch 2026-11-04 zip::chunks/northeast_C_access.glb",
+   "sha256": "58f2f58a464183e20d5489b13902f62f2570573cb8bf96fb237df781027d076e"
+  },
+  "rb_wuku1": {
+   "path": "${RB}/chunks__wuku_C_with_support-01.glb",
+   "display": "review-batch 2026-11-04 zip::chunks/wuku_C_with_support-01.glb",
+   "sha256": "29709e25f77f6becaf2566555a4d55b0525e244f73ede92ae344a78cc1a57b37"
+  },
+  "rb_wuku2": {
+   "path": "${RB}/chunks__wuku_C_with_support-02.glb",
+   "display": "review-batch 2026-11-04 zip::chunks/wuku_C_with_support-02.glb",
+   "sha256": "34160b9d5c1ec0add696c2a7aec272c882d2ed68d4344b1d7d3b96d7da749429"
+  },
+  "lib_wukuB": {
+   "path": "${LAB}/library/models/m-luoyang-wuku/files/wuku-B-LOD0.glb",
+   "display": "docs/library/models/m-luoyang-wuku/files/wuku-B-LOD0.glb",
+   "sha256": "e5de60b6ff972e6b9446bb60c9c8b79572d345c69be7124dfc855181ac87dfd3",
+   "offset": [
+    2316.326904296875,
+    3500.0,
+    0.0
+   ]
+  },
+  "lib_wukuA": {
+   "path": "${LAB}/library/models/m-luoyang-wuku/files/wuku-A-LOD0.glb",
+   "display": "docs/library/models/m-luoyang-wuku/files/wuku-A-LOD0.glb",
+   "sha256": "5daa542da405dcb8b9b2d0ac3387d5aa4fc5b3df0ef25f1cd8b5bd1ef24cea5c",
+   "offset": [
+    2316.326904296875,
+    3500.0,
+    0.0
+   ]
+  },
+  "lib_workyard0": {
+   "path": "${LAB}/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
+   "display": "docs/library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
+   "sha256": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e",
+   "offset": [
+    638.0,
+    1234.0,
+    0.0
+   ],
+   "note": "C_NORTH_INFILL_03 matrix on origin/main cad338b: glTF (638,0,-1234) -> native (638,1234,0); NOT in city at bce3211"
+  }
+ },
+ "scenes": {
+  "S0_city_bce3211": {
+   "inputs": [
+    "city_granary",
+    "city_wall01",
+    "city_net"
+   ],
+   "note": "what the storage chapter + terrain chapter actually load at bce3211 near the NE region"
+  },
+  "S1_ne_candidate": {
+   "inputs": [
+    "rb_granary",
+    "rb_road",
+    "rb_wuku1",
+    "rb_wuku2"
+   ],
+   "note": "review-batch composition (not in city; adapter initial:false)"
+  },
+  "S1_fp": {
+   "inputs": [
+    "city_granary",
+    "rb_granary",
+    "lib_wukuB",
+    "rb_wuku1",
+    "rb_wuku2"
+   ],
+   "note": "identity checks only"
+  },
+  "S1_A_alt": {
+   "inputs": [
+    "rb_road",
+    "rb_wuku1",
+    "lib_wukuA"
+   ],
+   "note": "A original v2 dropped on the B anchor with B removed (LY-038 alternative; read-only probe)"
+  },
+  "S2_workyard_cad338b": {
+   "inputs": [
+    "lib_workyard0",
+    "city_retained"
+   ],
+   "note": "origin/main drift: workyard near model on retained ground"
+  }
+ },
+ "checks": [
+  {
+   "id": "C00_bbox_city",
+   "scene": "S0_city_bce3211",
+   "kind": "bbox",
+   "params": {
+    "objects": [
+     "city_granary:*",
+     "city_wall01:*"
+    ]
+   }
+  },
+  {
+   "id": "C01_ring_external_city",
+   "scene": "S0_city_bce3211",
+   "kind": "ring",
+   "params": {
+    "rect": [
+     2249.714,
+     3647.469,
+     2321.714,
+     3699.469
+    ],
+    "offset_out": 0.5,
+    "step": 1.0,
+    "z_ref": 0.2,
+    "dz_tol": 0.25,
+    "external": [
+     "city_wall01:*",
+     "city_net:*"
+    ]
+   },
+   "expect": {
+    "path": "disconnected",
+    "equals": true
+   },
+   "note": "storage-main ground edge ring vs every other NE-relevant city surface: must stay DISCONNECTED until LY-084 is released"
+  },
+  {
+   "id": "C02_nearest_city",
+   "scene": "S0_city_bce3211",
+   "kind": "nearest",
+   "params": {
+    "from": [
+     "city_granary:original_city_ground"
+    ],
+    "to": [
+     "city_wall01:*",
+     "city_net:*"
+    ],
+    "max_pts": 50
+   }
+  },
+  {
+   "id": "C09_bbox_candidate",
+   "scene": "S1_ne_candidate",
+   "kind": "bbox",
+   "params": {
+    "objects": [
+     "rb_granary:*",
+     "rb_road:*",
+     "rb_wuku1:*",
+     "rb_wuku2:*"
+    ]
+   }
+  },
+  {
+   "id": "C10_route_road",
+   "scene": "S1_ne_candidate",
+   "kind": "route",
+   "params": {
+    "polyline": [
+     [
+      2285.714,
+      3649.0
+     ],
+     [
+      2285.714,
+      3486.0
+     ],
+     [
+      2316.327,
+      3486.0
+     ],
+     [
+      2316.327,
+      3491.0
+     ]
+    ],
+    "support": [
+     "rb_granary:sample_ground",
+     "rb_road:*",
+     "rb_wuku1:SUPPORT_PATCH"
+    ],
+    "obstacles": [
+     "rb_granary:static_timber",
+     "rb_granary:cargo_proxy",
+     "rb_granary:static_tile",
+     "rb_wuku1:static_timber",
+     "rb_wuku1:static_earth",
+     "rb_wuku2:*"
+    ],
+    "z0": 0.2,
+    "strips": [
+     {
+      "name": "0",
+      "width": 0
+     },
+     {
+      "name": "0.9",
+      "width": 0.9,
+      "lanes": 3
+     },
+     {
+      "name": "1.8",
+      "width": 1.8,
+      "lanes": 5
+     }
+    ],
+    "step": 0.1,
+    "step_event": 0.02,
+    "step_fail": 0.25,
+    "body": {
+     "height": 1.8,
+     "length": 0.3,
+     "clear_above": 0.25,
+     "every": 1
+    },
+    "ray_head": 0.6
+   },
+   "note": "granary ground -> C_NE_APPROACH_LOCAL -> wuku support patch (probe centreline = road centreline)"
+  },
+  {
+   "id": "C11_route_wuku_entry",
+   "scene": "S1_ne_candidate",
+   "kind": "route",
+   "params": {
+    "polyline": [
+     [
+      2316.327,
+      3490.6
+     ],
+     [
+      2316.327,
+      3498.5
+     ]
+    ],
+    "support": [
+     "rb_wuku1:SUPPORT_PATCH",
+     "rb_wuku1:static_earth"
+    ],
+    "obstacles": [
+     "rb_wuku1:static_timber",
+     "rb_wuku1:static_earth",
+     "rb_wuku2:*"
+    ],
+    "z0": 0.0,
+    "strips": [
+     {
+      "name": "0",
+      "width": 0
+     },
+     {
+      "name": "0.9",
+      "width": 0.9,
+      "lanes": 3
+     },
+     {
+      "name": "1.8",
+      "width": 1.8,
+      "lanes": 5
+     }
+    ],
+    "step": 0.1,
+    "step_event": 0.02,
+    "step_fail": 0.25,
+    "body": {
+     "height": 1.8,
+     "length": 0.3,
+     "clear_above": 0.25,
+     "every": 1
+    },
+    "ray_head": 0.6
+   },
+   "note": "patch -> B stair (2 risers) -> platform 0.4 -> through 150 deg door into hall"
+  },
+  {
+   "id": "C12_route_A_forecourt",
+   "scene": "S1_ne_candidate",
+   "kind": "route",
+   "params": {
+    "polyline": [
+     [
+      2285.714,
+      3649.0
+     ],
+     [
+      2285.714,
+      3652.0
+     ],
+     [
+      2273.714,
+      3674.8
+     ]
+    ],
+    "support": [
+     "rb_granary:sample_ground"
+    ],
+    "obstacles": [
+     "rb_granary:static_timber",
+     "rb_granary:cargo_proxy",
+     "rb_granary:static_tile",
+     "rb_wuku1:static_timber",
+     "rb_wuku1:static_earth",
+     "rb_wuku2:*"
+    ],
+    "z0": 0.2,
+    "strips": [
+     {
+      "name": "0",
+      "width": 0
+     },
+     {
+      "name": "0.9",
+      "width": 0.9,
+      "lanes": 3
+     },
+     {
+      "name": "1.8",
+      "width": 1.8,
+      "lanes": 5
+     }
+    ],
+    "step": 0.1,
+    "step_event": 0.02,
+    "step_fail": 0.25,
+    "body": {
+     "height": 1.8,
+     "length": 0.3,
+     "clear_above": 0.25,
+     "every": 1
+    },
+    "ray_head": 0.6
+   }
+  },
+  {
+   "id": "C12b_route_A_forecourt_west",
+   "scene": "S1_ne_candidate",
+   "kind": "route",
+   "params": {
+    "polyline": [
+     [
+      2285.714,
+      3649.0
+     ],
+     [
+      2279.0,
+      3652.0
+     ],
+     [
+      2273.714,
+      3672.0
+     ],
+     [
+      2273.714,
+      3674.8
+     ]
+    ],
+    "support": [
+     "rb_granary:sample_ground"
+    ],
+    "obstacles": [
+     "rb_granary:static_timber",
+     "rb_granary:cargo_proxy",
+     "rb_granary:static_tile",
+     "rb_wuku1:static_timber",
+     "rb_wuku1:static_earth",
+     "rb_wuku2:*"
+    ],
+    "z0": 0.2,
+    "strips": [
+     {
+      "name": "0",
+      "width": 0
+     },
+     {
+      "name": "0.9",
+      "width": 0.9,
+      "lanes": 3
+     },
+     {
+      "name": "1.8",
+      "width": 1.8,
+      "lanes": 5
+     }
+    ],
+    "step": 0.1,
+    "step_event": 0.02,
+    "step_fail": 0.25,
+    "body": {
+     "height": 1.8,
+     "length": 0.3,
+     "clear_above": 0.25,
+     "every": 1
+    },
+    "ray_head": 0.6
+   },
+   "note": "second probe to A that keeps west of the cargo proxy"
+  },
+  {
+   "id": "C13_route_B_forecourt",
+   "scene": "S1_ne_candidate",
+   "kind": "route",
+   "params": {
+    "polyline": [
+     [
+      2285.714,
+      3649.0
+     ],
+     [
+      2292.0,
+      3653.0
+     ],
+     [
+      2297.714,
+      3672.0
+     ],
+     [
+      2297.714,
+      3674.7
+     ]
+    ],
+    "support": [
+     "rb_granary:sample_ground"
+    ],
+    "obstacles": [
+     "rb_granary:static_timber",
+     "rb_granary:cargo_proxy",
+     "rb_granary:static_tile",
+     "rb_wuku1:static_timber",
+     "rb_wuku1:static_earth",
+     "rb_wuku2:*"
+    ],
+    "z0": 0.2,
+    "strips": [
+     {
+      "name": "0",
+      "width": 0
+     },
+     {
+      "name": "0.9",
+      "width": 0.9,
+      "lanes": 3
+     },
+     {
+      "name": "1.8",
+      "width": 1.8,
+      "lanes": 5
+     }
+    ],
+    "step": 0.1,
+    "step_event": 0.02,
+    "step_fail": 0.25,
+    "body": {
+     "height": 1.8,
+     "length": 0.3,
+     "clear_above": 0.25,
+     "every": 1
+    },
+    "ray_head": 0.6
+   }
+  },
+  {
+   "id": "C14_stair_A",
+   "scene": "S1_ne_candidate",
+   "kind": "stairstrip",
+   "params": {
+    "polyline": [
+     [
+      2273.714,
+      3674.6
+     ],
+     [
+      2273.714,
+      3677.5
+     ]
+    ],
+    "support": [
+     "rb_granary:sample_ground",
+     "rb_granary:static_timber"
+    ],
+    "obstacles": [
+     "rb_granary:static_timber",
+     "rb_granary:cargo_proxy",
+     "rb_granary:static_tile"
+    ],
+    "z0": 0.2,
+    "strips": [
+     {
+      "name": "0",
+      "width": 0
+     },
+     {
+      "name": "0.9",
+      "width": 0.9,
+      "lanes": 3
+     },
+     {
+      "name": "1.8",
+      "width": 1.8,
+      "lanes": 5
+     },
+     {
+      "name": "1.4",
+      "width": 1.4,
+      "lanes": 5
+     }
+    ],
+    "step": 0.05,
+    "step_event": 0.02,
+    "step_fail": 0.25,
+    "body": {
+     "height": 1.8,
+     "length": 0.3,
+     "clear_above": 0.25,
+     "every": 1
+    },
+    "ray_head": 0.6
+   },
+   "expect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   },
+   "note": "narrow-stair limit must be PRESERVED: 1.5 m stair, 1.8 m pressure strip must fail"
+  },
+  {
+   "id": "C15_stair_B",
+   "scene": "S1_ne_candidate",
+   "kind": "stairstrip",
+   "params": {
+    "polyline": [
+     [
+      2297.714,
+      3674.5
+     ],
+     [
+      2297.714,
+      3677.5
+     ]
+    ],
+    "support": [
+     "rb_granary:sample_ground",
+     "rb_granary:static_timber"
+    ],
+    "obstacles": [
+     "rb_granary:static_timber",
+     "rb_granary:cargo_proxy",
+     "rb_granary:static_tile"
+    ],
+    "z0": 0.2,
+    "strips": [
+     {
+      "name": "0",
+      "width": 0
+     },
+     {
+      "name": "0.9",
+      "width": 0.9,
+      "lanes": 3
+     },
+     {
+      "name": "1.8",
+      "width": 1.8,
+      "lanes": 5
+     },
+     {
+      "name": "1.4",
+      "width": 1.4,
+      "lanes": 5
+     }
+    ],
+    "step": 0.05,
+    "step_event": 0.02,
+    "step_fail": 0.25,
+    "body": {
+     "height": 1.8,
+     "length": 0.3,
+     "clear_above": 0.25,
+     "every": 1
+    },
+    "ray_head": 0.6
+   },
+   "expect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   }
+  },
+  {
+   "id": "C16_overlap_candidate",
+   "scene": "S1_ne_candidate",
+   "kind": "overlap",
+   "params": {
+    "objects": [
+     "rb_granary:*",
+     "rb_road:*",
+     "rb_wuku1:*",
+     "rb_wuku2:*",
+     "lib_wukuA:*"
+    ],
+    "focus": "lib_wukuA"
+   }
+  },
+  {
+   "id": "C17_fp_granary_city_vs_rb",
+   "scene": "S1_fp",
+   "kind": "fingerprint",
+   "params": {
+    "a": [
+     "city_granary:*"
+    ],
+    "b": [
+     "rb_granary:*"
+    ]
+   },
+   "expect": {
+    "path": "equal_1mm",
+    "equals": true
+   }
+  },
+  {
+   "id": "C18_fp_wukuB_lib_vs_rb",
+   "scene": "S1_fp",
+   "kind": "fingerprint",
+   "params": {
+    "a": [
+     "lib_wukuB:*"
+    ],
+    "b": [
+     "rb_wuku1:static",
+     "rb_wuku2:*"
+    ]
+   },
+   "expect": {
+    "path": "equal_1mm",
+    "equals": true
+   }
+  },
+  {
+   "id": "C19_bbox_A_alt",
+   "scene": "S1_A_alt",
+   "kind": "bbox",
+   "mutate": {
+    "remove": [
+     "rb_wuku1:static"
+    ]
+   },
+   "params": {
+    "objects": [
+     "lib_wukuA:*",
+     "rb_wuku1:*",
+     "rb_road:*"
+    ]
+   }
+  },
+  {
+   "id": "C19b_overlap_A_alt",
+   "scene": "S1_A_alt",
+   "kind": "overlap",
+   "mutate": {
+    "remove": [
+     "rb_wuku1:static"
+    ]
+   },
+   "params": {
+    "objects": [
+     "lib_wukuA:*",
+     "rb_wuku1:*",
+     "rb_road:*"
+    ]
+   }
+  },
+  {
+   "id": "C20_owners_candidate",
+   "scene": "S1_ne_candidate",
+   "kind": "owners",
+   "params": {
+    "rect": [
+     2280.0,
+     3484.0,
+     2330.0,
+     3652.0
+    ],
+    "cell": 0.25,
+    "objects": [
+     "rb_granary:sample_ground",
+     "rb_road:*",
+     "rb_wuku1:SUPPORT_PATCH",
+     "rb_wuku1:static_earth"
+    ],
+    "z_top": 1.0,
+    "depth": 3.0
+   }
+  },
+  {
+   "id": "C20b_owners_A_alt",
+   "scene": "S1_A_alt",
+   "kind": "owners",
+   "mutate": {
+    "remove": [
+     "rb_wuku1:static"
+    ]
+   },
+   "params": {
+    "rect": [
+     2305.0,
+     3484.0,
+     2330.0,
+     3495.0
+    ],
+    "cell": 0.25,
+    "objects": [
+     "rb_road:*",
+     "rb_wuku1:SUPPORT_PATCH",
+     "lib_wukuA:static_earth"
+    ],
+    "z_top": 1.0,
+    "depth": 3.0
+   },
+   "note": "A stair foot lands on the road spur, not on the patch"
+  },
+  {
+   "id": "C30_grid_workyard_on_retained",
+   "scene": "S2_workyard_cad338b",
+   "kind": "grid",
+   "params": {
+    "rect": [
+     629.0,
+     1222.0,
+     647.0,
+     1246.0
+    ],
+    "cell": 0.5,
+    "ground": [
+     "city_retained:*",
+     "lib_workyard0:workyard_earth"
+    ],
+    "all": [
+     "city_retained:*",
+     "lib_workyard0:*"
+    ],
+    "ground_band": [
+     0.15,
+     0.25
+    ]
+   }
+  },
+  {
+   "id": "C32_owners_workyard_retained",
+   "scene": "S2_workyard_cad338b",
+   "kind": "owners",
+   "params": {
+    "rect": [
+     629.0,
+     1222.0,
+     647.0,
+     1246.0
+    ],
+    "cell": 0.25,
+    "objects": [
+     "city_retained:*",
+     "lib_workyard0:workyard_earth",
+     "lib_workyard0:workyard_stone"
+    ],
+    "z_top": 0.3,
+    "depth": 0.25
+   },
+   "note": "surfaces between z 0.05 and 0.30 only: coplanar yard pieces on retained ground = z-fight / double-owner candidates"
+  },
+  {
+   "id": "C31_overlap_workyard_retained",
+   "scene": "S2_workyard_cad338b",
+   "kind": "overlap",
+   "params": {
+    "objects": [
+     "lib_workyard0:*",
+     "city_retained:*"
+    ]
+   }
+  }
+ ],
+ "negatives": [
+  {
+   "id": "N01_city_fake_connector",
+   "base": "C01_ring_external_city",
+   "mutate": {
+    "slab": [
+     {
+      "label": "city_net",
+      "name": "NEG_fake_connector",
+      "min": [
+       2284.214,
+       3640.0,
+       0.0
+      ],
+      "max": [
+       2287.214,
+       3647.469,
+       0.2
+      ]
+     }
+    ]
+   },
+   "detect": {
+    "path": "connected_points",
+    "gt": 0
+   },
+   "note": "a 3 m slab glued to the south edge must be seen as an external connection (sensitivity of C01)"
+  },
+  {
+   "id": "N10_road_removed",
+   "base": "C10_route_road",
+   "mutate": {
+    "remove": [
+     "rb_road:*"
+    ]
+   },
+   "detect": {
+    "path": "strips/0/pass",
+    "equals": false
+   }
+  },
+  {
+   "id": "N11_road_endpoint_south_1m",
+   "base": "C10_route_road",
+   "mutate": {
+    "translate": {
+     "rb_road:*": [
+      0,
+      -1.0,
+      0
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/0/pass",
+    "equals": false
+   },
+   "note": "wrong endpoint: both caps move 1 m"
+  },
+  {
+   "id": "N12_road_lifted_0.10",
+   "base": "C10_route_road",
+   "mutate": {
+    "translate": {
+     "rb_road:*": [
+      0,
+      0,
+      0.1
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/0/max_dz",
+    "gt": 0.05
+   },
+   "note": "wrong elevation at seams"
+  },
+  {
+   "id": "N13_road_lateral_3.6m",
+   "base": "C10_route_road",
+   "mutate": {
+    "translate": {
+     "rb_road:*": [
+      3.6,
+      0,
+      0
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/0/pass",
+    "equals": false
+   }
+  },
+  {
+   "id": "N19_forecourt_blocker",
+   "base": "C12_route_A_forecourt",
+   "mutate": {
+    "slab": [
+     {
+      "label": "rb_granary",
+      "name": "NEG_cargo_timber_block",
+      "min": [
+       2279.0,
+       3662.0,
+       0.2
+      ],
+      "max": [
+       2281.0,
+       3664.0,
+       1.2
+      ]
+     }
+    ]
+   },
+   "detect": {
+    "path": "strips/0.9/obstructed",
+    "gt": 0
+   },
+   "note": "body sweep sensitivity: 2x2x1 m block on the probe line"
+  },
+  {
+   "id": "N20_wuku_A_and_B_both",
+   "base": "C16_overlap_candidate",
+   "mutate": {
+    "add": [
+     "lib_wukuA"
+    ]
+   },
+   "detect": {
+    "path": "focus_pairs",
+    "gt": 0
+   },
+   "note": "A/B must be exclusive: loading A at the B anchor must collide"
+  },
+  {
+   "id": "N3x_door_000deg",
+   "base": "C11_route_wuku_entry",
+   "mutate": {
+    "door": {
+     "object": "rb_wuku1:static_timber",
+     "leaves": [
+      {
+       "bbox": [
+        [
+         2314.1721,
+         3494.5497,
+         0.4
+        ],
+        [
+         2315.1949,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2315.1924,
+        3495.1589
+       ],
+       "delta_deg": 150
+      },
+      {
+       "bbox": [
+        [
+         2317.4589,
+         3494.5497,
+         0.4
+        ],
+        [
+         2318.4817,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2317.4613,
+        3495.1586
+       ],
+       "delta_deg": -150
+      }
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   },
+   "note": "constructed door-angle state (pivot estimated from baked leaf geometry, not the v2.2 source parameter); 150 deg is the delivered state"
+  },
+  {
+   "id": "N3x_door_030deg",
+   "base": "C11_route_wuku_entry",
+   "mutate": {
+    "door": {
+     "object": "rb_wuku1:static_timber",
+     "leaves": [
+      {
+       "bbox": [
+        [
+         2314.1721,
+         3494.5497,
+         0.4
+        ],
+        [
+         2315.1949,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2315.1924,
+        3495.1589
+       ],
+       "delta_deg": 120
+      },
+      {
+       "bbox": [
+        [
+         2317.4589,
+         3494.5497,
+         0.4
+        ],
+        [
+         2318.4817,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2317.4613,
+        3495.1586
+       ],
+       "delta_deg": -120
+      }
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   },
+   "note": "constructed door-angle state (pivot estimated from baked leaf geometry, not the v2.2 source parameter); 150 deg is the delivered state"
+  },
+  {
+   "id": "N3x_door_045deg",
+   "base": "C11_route_wuku_entry",
+   "mutate": {
+    "door": {
+     "object": "rb_wuku1:static_timber",
+     "leaves": [
+      {
+       "bbox": [
+        [
+         2314.1721,
+         3494.5497,
+         0.4
+        ],
+        [
+         2315.1949,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2315.1924,
+        3495.1589
+       ],
+       "delta_deg": 105
+      },
+      {
+       "bbox": [
+        [
+         2317.4589,
+         3494.5497,
+         0.4
+        ],
+        [
+         2318.4817,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2317.4613,
+        3495.1586
+       ],
+       "delta_deg": -105
+      }
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   },
+   "note": "constructed door-angle state (pivot estimated from baked leaf geometry, not the v2.2 source parameter); 150 deg is the delivered state"
+  },
+  {
+   "id": "N3x_door_060deg",
+   "base": "C11_route_wuku_entry",
+   "mutate": {
+    "door": {
+     "object": "rb_wuku1:static_timber",
+     "leaves": [
+      {
+       "bbox": [
+        [
+         2314.1721,
+         3494.5497,
+         0.4
+        ],
+        [
+         2315.1949,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2315.1924,
+        3495.1589
+       ],
+       "delta_deg": 90
+      },
+      {
+       "bbox": [
+        [
+         2317.4589,
+         3494.5497,
+         0.4
+        ],
+        [
+         2318.4817,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2317.4613,
+        3495.1586
+       ],
+       "delta_deg": -90
+      }
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   },
+   "note": "constructed door-angle state (pivot estimated from baked leaf geometry, not the v2.2 source parameter); 150 deg is the delivered state"
+  },
+  {
+   "id": "N3x_door_075deg",
+   "base": "C11_route_wuku_entry",
+   "mutate": {
+    "door": {
+     "object": "rb_wuku1:static_timber",
+     "leaves": [
+      {
+       "bbox": [
+        [
+         2314.1721,
+         3494.5497,
+         0.4
+        ],
+        [
+         2315.1949,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2315.1924,
+        3495.1589
+       ],
+       "delta_deg": 75
+      },
+      {
+       "bbox": [
+        [
+         2317.4589,
+         3494.5497,
+         0.4
+        ],
+        [
+         2318.4817,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2317.4613,
+        3495.1586
+       ],
+       "delta_deg": -75
+      }
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   },
+   "note": "constructed door-angle state (pivot estimated from baked leaf geometry, not the v2.2 source parameter); 150 deg is the delivered state"
+  },
+  {
+   "id": "N3x_door_090deg",
+   "base": "C11_route_wuku_entry",
+   "mutate": {
+    "door": {
+     "object": "rb_wuku1:static_timber",
+     "leaves": [
+      {
+       "bbox": [
+        [
+         2314.1721,
+         3494.5497,
+         0.4
+        ],
+        [
+         2315.1949,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2315.1924,
+        3495.1589
+       ],
+       "delta_deg": 60
+      },
+      {
+       "bbox": [
+        [
+         2317.4589,
+         3494.5497,
+         0.4
+        ],
+        [
+         2318.4817,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2317.4613,
+        3495.1586
+       ],
+       "delta_deg": -60
+      }
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   },
+   "note": "constructed door-angle state (pivot estimated from baked leaf geometry, not the v2.2 source parameter); 150 deg is the delivered state"
+  },
+  {
+   "id": "N3x_door_105deg",
+   "base": "C11_route_wuku_entry",
+   "mutate": {
+    "door": {
+     "object": "rb_wuku1:static_timber",
+     "leaves": [
+      {
+       "bbox": [
+        [
+         2314.1721,
+         3494.5497,
+         0.4
+        ],
+        [
+         2315.1949,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2315.1924,
+        3495.1589
+       ],
+       "delta_deg": 45
+      },
+      {
+       "bbox": [
+        [
+         2317.4589,
+         3494.5497,
+         0.4
+        ],
+        [
+         2318.4817,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2317.4613,
+        3495.1586
+       ],
+       "delta_deg": -45
+      }
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   },
+   "note": "constructed door-angle state (pivot estimated from baked leaf geometry, not the v2.2 source parameter); 150 deg is the delivered state"
+  },
+  {
+   "id": "N3x_door_120deg",
+   "base": "C11_route_wuku_entry",
+   "mutate": {
+    "door": {
+     "object": "rb_wuku1:static_timber",
+     "leaves": [
+      {
+       "bbox": [
+        [
+         2314.1721,
+         3494.5497,
+         0.4
+        ],
+        [
+         2315.1949,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2315.1924,
+        3495.1589
+       ],
+       "delta_deg": 30
+      },
+      {
+       "bbox": [
+        [
+         2317.4589,
+         3494.5497,
+         0.4
+        ],
+        [
+         2318.4817,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2317.4613,
+        3495.1586
+       ],
+       "delta_deg": -30
+      }
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   },
+   "note": "constructed door-angle state (pivot estimated from baked leaf geometry, not the v2.2 source parameter); 150 deg is the delivered state"
+  },
+  {
+   "id": "N3x_door_135deg",
+   "base": "C11_route_wuku_entry",
+   "mutate": {
+    "door": {
+     "object": "rb_wuku1:static_timber",
+     "leaves": [
+      {
+       "bbox": [
+        [
+         2314.1721,
+         3494.5497,
+         0.4
+        ],
+        [
+         2315.1949,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2315.1924,
+        3495.1589
+       ],
+       "delta_deg": 15
+      },
+      {
+       "bbox": [
+        [
+         2317.4589,
+         3494.5497,
+         0.4
+        ],
+        [
+         2318.4817,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2317.4613,
+        3495.1586
+       ],
+       "delta_deg": -15
+      }
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   },
+   "note": "constructed door-angle state (pivot estimated from baked leaf geometry, not the v2.2 source parameter); 150 deg is the delivered state"
+  },
+  {
+   "id": "N3x_door_165deg",
+   "base": "C11_route_wuku_entry",
+   "mutate": {
+    "door": {
+     "object": "rb_wuku1:static_timber",
+     "leaves": [
+      {
+       "bbox": [
+        [
+         2314.1721,
+         3494.5497,
+         0.4
+        ],
+        [
+         2315.1949,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2315.1924,
+        3495.1589
+       ],
+       "delta_deg": -15
+      },
+      {
+       "bbox": [
+        [
+         2317.4589,
+         3494.5497,
+         0.4
+        ],
+        [
+         2318.4817,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2317.4613,
+        3495.1586
+       ],
+       "delta_deg": 15
+      }
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   },
+   "note": "constructed door-angle state (pivot estimated from baked leaf geometry, not the v2.2 source parameter); 150 deg is the delivered state"
+  },
+  {
+   "id": "N3x_door_180deg",
+   "base": "C11_route_wuku_entry",
+   "mutate": {
+    "door": {
+     "object": "rb_wuku1:static_timber",
+     "leaves": [
+      {
+       "bbox": [
+        [
+         2314.1721,
+         3494.5497,
+         0.4
+        ],
+        [
+         2315.1949,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2315.1924,
+        3495.1589
+       ],
+       "delta_deg": -30
+      },
+      {
+       "bbox": [
+        [
+         2317.4589,
+         3494.5497,
+         0.4
+        ],
+        [
+         2318.4817,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2317.4613,
+        3495.1586
+       ],
+       "delta_deg": 30
+      }
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   },
+   "note": "constructed door-angle state (pivot estimated from baked leaf geometry, not the v2.2 source parameter); 150 deg is the delivered state"
+  },
+  {
+   "id": "N39_door_150deg_identity",
+   "base": "C11_route_wuku_entry",
+   "mutate": {
+    "door": {
+     "object": "rb_wuku1:static_timber",
+     "leaves": [
+      {
+       "bbox": [
+        [
+         2314.1721,
+         3494.5497,
+         0.4
+        ],
+        [
+         2315.1949,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2315.1924,
+        3495.1589
+       ],
+       "delta_deg": 0
+      },
+      {
+       "bbox": [
+        [
+         2317.4589,
+         3494.5497,
+         0.4
+        ],
+        [
+         2318.4817,
+         3495.1803,
+         2.85
+        ]
+       ],
+       "pivot": [
+        2317.4613,
+        3495.1586
+       ],
+       "delta_deg": 0
+      }
+     ]
+    }
+   },
+   "detect": {
+    "path": "strips/1.8/pass",
+    "equals": false
+   },
+   "note": "control: rotating by 0 must reproduce C11"
+  }
+ ]
+}

@@ -1,0 +1,158 @@
+{
+ "frame": "luoyang-local-schematic-v01",
+ "units": "schematic_m",
+ "rule": "点到 base 几何的距离 ≤ buffer_m 即在悬置区内；base 为冻结 evidence-geometry 要素",
+ "buffer_policy_source": {
+  "path": "docs/cities/luoyang/data/c02v/research-mask.json",
+  "buffer_policy": {
+   "B_road_centerlines_m": 80,
+   "B_palace_candidates_m": 200,
+   "B_city_boundary_m": 80,
+   "regional_label_points_m": 400,
+   "status": "chosen engineering screening only, not historical uncertainty or real extents"
+  }
+ },
+ "zones": [
+  {
+   "id": "HZ-N",
+   "base": "north_palace_extent_gao2023_B",
+   "buffer_m": 200,
+   "presentation_m": 75,
+   "meaning": "北宫悬置区：旧B北宫外扩200米（沿用仓库 c02v buffer_policy 的宫区筛查值）。不是宫墙位置；新东/南墙可能在其内或其外。",
+   "bbox_buffered": [
+    310.2,
+    1851.0,
+    1944.9,
+    3679.6
+   ],
+   "e1_e2_max_shift_m": 169.3,
+   "buffer_covers_e1_e2": true
+  },
+  {
+   "id": "HZ-S",
+   "base": "south_palace_candidate_gao2023_B",
+   "buffer_m": 200,
+   "presentation_m": 75,
+   "meaning": "南宫悬置区：同上；南宫位置未勘查清（Q01）。",
+   "bbox_buffered": [
+    769.4,
+    -169.4,
+    2189.8,
+    1883.7
+   ],
+   "e1_e2_max_shift_m": 105.9,
+   "buffer_covers_e1_e2": true
+  },
+  {
+   "id": "HZ-C",
+   "base": "palaces_connector_B",
+   "buffer_m": 80,
+   "presentation_m": 75,
+   "meaning": "两宫复道示意线外扩80米（仓库道路中心线筛查值）。",
+   "bbox_buffered": [
+    1389.4,
+    1593.5,
+    1559.6,
+    2131.0
+   ],
+   "e1_e2_max_shift_m": 108.6,
+   "buffer_covers_e1_e2": false
+  },
+  {
+   "id": "HZ-Y",
+   "base": "region_yongan_B",
+   "buffer_m": 400,
+   "presentation_m": 75,
+   "meaning": "永安宫标签点外扩400米（仓库区域标签筛查值）；永安宫范围未知。",
+   "bbox_buffered": [
+    1793.9,
+    2681.6,
+    2593.9,
+    3481.6
+   ],
+   "e1_e2_max_shift_m": 152.4,
+   "buffer_covers_e1_e2": true
+  },
+  {
+   "id": "HR-northwest_gate_link",
+   "base": "road_northwest_gate_link_B",
+   "buffer_m": 80,
+   "presentation_m": 75,
+   "meaning": "仓库 road-preconstraints 已列 hold_palace_interface 的示意道路；靠宫缘部分悬置，外扩80米。",
+   "bbox_buffered": [
+    -100.4,
+    2542.4,
+    600.4,
+    2712.7
+   ],
+   "e1_e2_max_shift_m": 133.3,
+   "buffer_covers_e1_e2": false
+  },
+  {
+   "id": "HR-northeast_gate_link",
+   "base": "road_northeast_gate_link_B",
+   "buffer_m": 80,
+   "presentation_m": 75,
+   "meaning": "仓库 road-preconstraints 已列 hold_palace_interface 的示意道路；靠宫缘部分悬置，外扩80米。",
+   "bbox_buffered": [
+    1644.5,
+    2511.8,
+    2559.6,
+    2702.4
+   ],
+   "e1_e2_max_shift_m": 132.9,
+   "buffer_covers_e1_e2": false
+  },
+  {
+   "id": "HR-central_south_spine",
+   "base": "road_central_south_spine_B",
+   "buffer_m": 80,
+   "presentation_m": 75,
+   "meaning": "仓库 road-preconstraints 已列 hold_palace_interface 的示意道路；靠宫缘部分悬置，外扩80米。",
+   "bbox_buffered": [
+    818.0,
+    -90.2,
+    988.2,
+    2141.2
+   ],
+   "e1_e2_max_shift_m": 109.0,
+   "buffer_covers_e1_e2": false
+  },
+  {
+   "id": "HR-east_north_link",
+   "base": "road_east_north_link_B",
+   "buffer_m": 80,
+   "presentation_m": 75,
+   "meaning": "仓库 road-preconstraints 已列 hold_palace_interface 的示意道路；靠宫缘部分悬置，外扩80米。",
+   "bbox_buffered": [
+    1613.9,
+    1736.3,
+    1916.7,
+    3978.0
+   ],
+   "e1_e2_max_shift_m": 187.1,
+   "buffer_covers_e1_e2": false
+  },
+  {
+   "id": "HR-east_south_link",
+   "base": "road_east_south_link_B",
+   "buffer_m": 80,
+   "presentation_m": 75,
+   "meaning": "仓库 road-preconstraints 已列 hold_palace_interface 的示意道路；靠宫缘部分悬置，外扩80米。",
+   "bbox_buffered": [
+    1879.2,
+    379.2,
+    2549.4,
+    539.2
+   ],
+   "e1_e2_max_shift_m": 126.3,
+   "buffer_covers_e1_e2": false
+  }
+ ],
+ "forbidden_in_zone": [
+  "任何带城市矩阵的宫殿、宫墙、宫门、复道、宫墙水道安装",
+  "把示意线端点当宫门",
+  "在悬置区边界上描东汉墙线"
+ ],
+ "not_meaning": "悬置区外≠已证明在宫外；只说明不与旧研究示意相冲突。e3/e4 未量化。"
+}

@@ -1,0 +1,57 @@
+{
+ "seat": "LY-041",
+ "inputsFound": [
+  "docs/cities/luoyang/city-data.mjs e4115705（:2322 C02-010 节点 courtyard-A2，matrix 531,0,-818.45，initial:true；:88-112 courtyard-A2 excludeNodes/nearPath；:3609 ground-south initial:false）",
+  "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb 277e9e73（远档，城景加载）",
+  "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb 19b05202（近档，focusCourtyard 加载）",
+  "docs/cities/luoyang/assets/ground-atomic/south.glb 4313826d（单节点 single_closed_terrain_after，96,796 三角，承托 C02-010 全地块，仅 terrain 章加载）",
+  "docs/cities/luoyang/assets/ground-atomic/retained.glb aed8b3d4 / network-ground-stitched.glb fdfc3ce5 / D08.glb 3ab93310",
+  "docs/cities/luoyang/data/far44/instances-calt.json c830b4e3（城景矩阵来源）；instances-original.json a8545891（对照）；preflight-contract.json 90dfa077",
+  "docs/cities/luoyang/data/west/ground-atomic-contract.json bfc7fc83；alt14-placement.json 802a88f1（C02-010 gate 527.5,806.45）；network.json af8e5479（C02-010_door_approach）",
+  "docs/cities/luoyang/city-renderer.mjs fa0a8dcb（:221 初始集合按 initial 过滤，:309/:346 excludeNodes，:595-606 focusChapter 并集，:616-623 focusCourtyard 只加本院）",
+  "docs/model-library/updates/m-courtyard-family/files/A2-LOD0-C2.glb e9981a07 / A2-LOD1-C2.glb f3f31774（C2 只更新 UV，待审，不加载）",
+  "docs/library/models/m-luoyang-residential-life/files/life-block-LOD2.glb（13 院片区，只取 AABB x480-640 z-1060..-962 排除选院）",
+  "docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD0.glb（放置坐标 489.4,0.2,-1003.8，属 13 院布局）",
+  "lab/data/assets.json @bce3211 53d86312（工作树副本已被本地修改，未使用）",
+  "workpacks/LY-041/prep/blender-crosscheck-C02-010.json 8f6e4c0e（Blender 独立复核 PASS）；check_footing.py 97e90f17 重跑 PASS，selftest allBehaved；measure_c02010_exact.py fa8fee84 重跑结果与存档逐项相同"
+ ],
+ "inputsMissing": [
+  "A2 原型的原生源（.blend 或生成器）：仓库里没有。只有确需新造地脚时才用得上；几何是简单闭合盒体，可以从 GLB 重建。按实测结论是复用，不需要。",
+  "ground-south 的原生源或生成器：仓库里没有。用途是 LY-045 开厕孔、或 LY-006 要求把 C02-010 地块从南区整板拆成局部片时做切分。可以从 GLB 重建局部切口：地块内 1,140 三角完全在内，另有 120 三角跨地块边界，要重新三角化。原作者的坡面和槽线意图从 GLB 重建不出来。",
+  "LY-005 高程契约：地面基准 0.200 与原型院坪 0.215 之间差 15 mm，以哪个为准要冻结，还没交付。",
+  "LY-006 所有权：ground-south 是 14 院共用的单网格，地坪切孔和局部片归谁，还没冻结。",
+  "LY-010 选院和布局：calt 还是 original；示范院是否就是 C02-010。还没冻结。",
+  "LY-002 证据表：东汉宅院台基和地脚做法可用的证据等级，还没交付。",
+  "lane 浅槽（z≈-803.7，比 0.2 低 25 mm）的设计意图：仓库里没有说明文件，不知道是排水设计还是建模残差。"
+ ],
+ "gaps": [
+  "地面打开时没有几何缺口：C02-010 地块 432 m²，ground-south 覆盖率 1.0，顶面 y 全部是 0.200，只有一个承托文件。足迹 9,933 格（0.1 m 栅格，约 99.3 m²）中，LOD0 和 LOD1 悬空（>5 mm）0、埋入 0、无地面 0。精确检查 54 个底部顶点，间隙全部为 0.000000 m。",
+  "默认视图和近景下院落没有地面：地面四节点都是 initial:false，focusCourtyard 只加本院。足迹 9,876 格全部无地面，lotCoverage 为 0，底部 y 0.2 下面是空的。这是加载配置问题，要 LY-100 合并时把 ground-south 和 C02-010 同进同出。",
+  "院坪基准差 15 mm：被剔除的 designed_hardpacked_activity_ground 顶面是 0.215，城景地面是 0.200，差 0.015–0.0153 m，面积约 94.4 m²。LY-044、045、047 放置时必须按 0.200。",
+  "门前 lane 有浅凹：原型 lane 是平的 0.2；城景 lane 带 z -806.45..-802.45 的实际范围是 0.175–0.205。出院门约 1.9 m 是平的，随后约 0.85 m 内降 25 mm，再升到 0.205。这一段归 LY-049 和 LY-082。",
+  "底部三角（LOD0 和 LOD1 相同）：台基底面 12 三角 62.352 m²，土墙 14 三角 29.300 m²，木作 4 三角 0.154 m²，屋面 0；没有任何三角低于 0.2。",
+  "旁证：44 院中 42 院足迹异常格为 0。C02-003 和 C02-012（TC03-2）各有 10 格悬空 0.03 m，来自原型 plain_timber 在局部 x23.35、z-22.85..-21.95 处的木件（底面 0.23）。44 个地块两两重叠为 0。FROZEN-D08-M、E、NW、NE 和 13 院片区 AABB 相交（432、432、1008、1008 m²）。",
+  "独立复核：用 Blender 5.2.1 自带 glTF 导入器加 BVH 射线（blender_crosscheck.py c7a1d6ed，结果 8f6e4c0e）。LOD0 和 LOD1 的底部顶点为台基 72、木作 24、土墙 84，无地面 0，间隙在 −2.4e−7 到 0 m 之间。地块 1,728 个采样点无地面 0，顶面 0.200±1e−6。和 glbio 结果一致。"
+ ],
+ "reuseCandidate": "C02-010（A2，C-alt 矩阵 [1,0,0,0,0,1,0,0,0,0,1,0,531,0,-818.45,1]）落在现有 ground-south（4313826d）上已有完整支持。地块覆盖率 1.0，足迹悬空、埋入、无地面都是 0，精确顶点间隙 0。地块内没有孔洞，44 院原型都不含井孔或厕孔。没有可覆盖的缺口，check_footing.py 的 C3 对任何新底板都判失败（自检负例已验证）。按「已有支持就复用」判为复用：不新造地脚或地坪，只交选院、矩阵、底部三角清单、ground-south 同载安装说明和可重跑检查器。默认视图不加载地面属于 LY-100 的加载配置问题，不靠新几何解决。",
+ "touches": [
+  "城景节点 C02-010：只读矩阵，不移动",
+  "资产 courtyard-A2：A2-LOD1 277e9e73 / A2-LOD0 19b05202 的保留节点 architecture_C_floor_plinth.001、architecture_C_plain_timber.001、architecture_C_whitebox_earth_wall.001（只读底部三角）；剔除节点 site_lot、site_neutral_lane、designed_hardpacked_activity_ground 仍然剔除",
+  "地坪片：ground-south.glb 的 single_closed_terrain_after，C02-010 地块区 x522..540、z-830.45..-806.45（地块内 1,140 三角、跨边界 120 三角），只读。若要切孔或拆局部片，归属待 LY-006",
+  "邻接、只读：lane 带 z-806.45..-802.45（LY-049/082）；邻院 C02-009 x499..517、C02-011 x545..563、路北 C02-006",
+  "城景加载配置提案（只交提案，不写）：city-data.mjs 的 ground-south 节点 initial 标志或 residential 章 loadNodeIds，交给 LY-100",
+  "新文件（只写 workpacks/LY-041/）：assembly.json（恒等映射加同载规则）、qa/（check_footing、exact、bottom-tris、selftest 结果）、delivery-manifest.json；不交 models/",
+  "不碰：13 院片区 life-block、W2 放置层、p-luoyang.asset.json、lab/data/*"
+ ],
+ "size": "S",
+ "risks": [
+  "LY-010 可能选 original 布局或别的院：C02-010 在 original 下平移为 537.17635,0,-817.45，承托仍是 ground-south（实测为 0 缺口），但矩阵基线要换；换院就要整套重跑 T1 到 T4。",
+  "LY-045 开厕孔必须切 ground-south。它是 14 院共用的单网格，没有原生源，局部切口只能从 GLB 重建；如果用局部片加隐藏的办法，不能把孔下又用旧地面封回。",
+  "院坪 0.200 和 0.215 的 15 mm 基准差：如果 LY-005 不冻结，下游设施会悬空 15 mm 或被误补底板。",
+  "lane 浅槽 25 mm 的意图不明，LY-049 可能误判为缺口去铺新面，和 ground-south 叠层。",
+  "默认视图无地面是加载问题；如果有人用补底板的办法解决，就违反了「禁止大底板」。",
+  "测量是 0.1 m 表面高度场加边线撒点，不是实体碰撞穷尽；格数随栅格原点漂移；没有做 GPU、浏览器或手机实测，也没有做结构评估。",
+  "证据：本院的形态和落位都是 C 设计，没有东汉宅址实测；地脚埋深和台基做法未知，不能用北魏、西汉长安或画像砖材料补。"
+ ],
+ "readyAfterG": true
+}

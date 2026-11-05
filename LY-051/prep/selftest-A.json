@@ -1,0 +1,193 @@
+{
+ "variant": "A",
+ "host": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-stable/files/A.glb",
+ "hostSha256": "672beeb46faaee0a15f7de649099c486c639b40a39b045b89525fbe7f15b2563",
+ "hostShaBound": true,
+ "checks": {},
+ "limits": [
+  "surface BVH + 5 mm grid parity sampling; not an exhaustive solid collision proof",
+  "geometry only: animal size, tether strength, partition load, animal suitability NOT verified",
+  "no browser / GPU run"
+ ],
+ "hostInteriorPostAxesX": [
+  -1.4,
+  1.4
+ ],
+ "zone": {
+  "id": "LY-051:write:001",
+  "gltfBox": [
+   [
+    -4.5,
+    0.05,
+    -2.4
+   ],
+   [
+    4.5,
+    2.7,
+    2.4
+   ]
+  ],
+  "blenderBox": [
+   [
+    -4.5,
+    -2.4,
+    0.05
+   ],
+   [
+    4.5,
+    2.4,
+    2.7
+   ]
+  ]
+ },
+ "troughCavities": {
+  "A_hollow_trough_0": [
+   [
+    -3.825,
+    1.175,
+    0.18
+   ],
+   [
+    -1.775,
+    1.625,
+    0.68
+   ]
+  ],
+  "A_hollow_trough_1": [
+   [
+    -1.025,
+    1.175,
+    0.18
+   ],
+   [
+    1.025,
+    1.625,
+    0.68
+   ]
+  ],
+  "A_hollow_trough_2": [
+   [
+    1.775,
+    1.175,
+    0.18
+   ],
+   [
+    3.825,
+    1.625,
+    0.68
+   ]
+  ]
+ },
+ "selftest": {
+  "P1_partition_post_to_post": {
+   "expectPass": true,
+   "pass": true,
+   "ok": true,
+   "fail": []
+  },
+  "P2_tether_peg_on_rear_wall": {
+   "expectPass": true,
+   "pass": true,
+   "ok": true,
+   "fail": []
+  },
+  "P3_peg_plus_ring_chain": {
+   "expectPass": true,
+   "pass": true,
+   "ok": true,
+   "fail": []
+  },
+  "N1_peg_in_trough_cavity": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "tether_N1: enters cavity of A_hollow_trough_1",
+    "tether_N1: floating (no contact chain to host post / rear wall / trough)"
+   ]
+  },
+  "N2_floating_partition": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "partition_N2: floating (no contact chain to host post / rear wall / trough)"
+   ]
+  },
+  "N3_thick_partition_intrudes_posts": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "partition_N3 x A_post_2_-1.9400000000000002: positive intrusion 0.010350 m3",
+    "partition_N3 x A_post_2_1.9400000000000002: positive intrusion 0.010285 m3",
+    "partition_N3: blocks entrance of bay 1",
+    "partition_N3: blocks entrance of bay 2",
+    "partition_N3: floating (no contact chain to host post / rear wall / trough)"
+   ]
+  },
+  "N4_partition_below_zone_on_platform": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "partition_N4: 4 vertices outside LY-051:write:001 (e.g. (1.35, -1.85, 0.0))"
+   ]
+  },
+  "N5_bar_across_entrance": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "tether_N5: blocks entrance of bay 0"
+   ]
+  },
+  "N6_wrong_variant_axis": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "partition_N6 x A_hollow_trough_2: positive intrusion 0.018065 m3",
+    "partition_N6: enters cavity of A_hollow_trough_2",
+    "partition_N6: floating (no contact chain to host post / rear wall / trough)",
+    "partition_N6: axis x=3.000 not on host interior post axes [-1.4, 1.4] (port mismatch)"
+   ]
+  },
+  "N7_bad_footprint_port": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "footprint partition_N7: declared {'part': 'partition_N7', 'x': 1.4, 'z': 0.0, 'y': 0.0} vs measured x=1.400 z=-0.000 y=0.050"
+   ]
+  },
+  "N8_host_matrix_change_detected": {
+   "ok": true
+  },
+  "T4.3_host_restored_after_probe_removal": {
+   "ok": true
+  }
+ },
+ "selftestAllOk": true,
+ "hostFingerprint": {
+  "A_earth_platform": "88c440f500977ddca38e209a11ea909e9ef4443d10c99bfdc938b5b642ee5577",
+  "A_hollow_trough_0": "f483881e09c55093198f7c0e95ea8add3a85c2f580c14cd789c25066dd225a24",
+  "A_hollow_trough_1": "d6d7d9b166c05b8b43bd036e4910e9bd4fe1ef1f4b8c0d19256e9959bcf3e661",
+  "A_hollow_trough_2": "c2e788b2ac92dfd95497ff9bb168183640ce9279d446f9e728e9f9d248d65ff5",
+  "A_post_0_-1.9400000000000002": "e055f5aacdadc7b0fc5e43d44ddeaa1f72f6c578bf53b79bd26f1f1314b51376",
+  "A_post_0_1.9400000000000002": "75dc2f95b8b07204191720fb1a06cc6ce9a3b2326c5bb7c9778b71d6109291a2",
+  "A_post_1_-1.9400000000000002": "bbe89fb689848ba6593dd7ef7b27598b2d806f82c9dc73fd34b5fa79579e0958",
+  "A_post_1_1.9400000000000002": "c2cc5a3d94608b4ab2ce24ebfb2e4b2a919a9c999b9b9622d1e511bab58f1c9c",
+  "A_post_2_-1.9400000000000002": "04a8d9b773d5982ade50d28fd632b7275b36b1b49984b590a62e13f987f19c17",
+  "A_post_2_1.9400000000000002": "b44f711acc9e004e110adffe1c1384d0324bf647e90cc6258a3b23175bd409ef",
+  "A_post_3_-1.9400000000000002": "d75c4734b8264b3d08bcae1f252171cc2b90dc4717af44d0a2fc4ce78e05ecaa",
+  "A_post_3_1.9400000000000002": "a6ddb3618ebde79ad690530d1b90608e86668f04273059d3c5073349fb532ce6",
+  "A_rear_wall": "b0103572270c5ea4591eb233e68db23f50b2f0ba0893b5522070e45fb530614c",
+  "A_shelter_ridge_cap_C": "3c4c5cd332f100b6d1e1851f3024617c6f240189220d25593473dacb903ee0ce",
+  "A_shelter_roof_board": "6e205c35abad97c919d40900ff4e073720066eb629ca9e3afb75dab0eb2c2aa7",
+  "A_shelter_roof_board.001": "c4e8237e96735b29d8a96f256bc9625731d4b8798624addedd738c0dddced9e2",
+  "A_shelter_tile_shells": "23691776ae950fbd8d9b1f9906fd41ce38c61349fca2682c6dd5d037bbf52605",
+  "A_wallplate_-1.9400000000000002": "b4f007c489550df1274fa1a3077d6999d4641195791ff29be836b4e054bbfc0b",
+  "A_wallplate_1.9400000000000002": "39e01db7393cf0efc9f85e2e5b6f33679784be590cea1b338c544593b299ae18"
+ }
+}

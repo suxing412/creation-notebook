@@ -1,0 +1,57 @@
+{
+ "seat": "LY-084",
+ "inputsFound": [
+  "lab bce3211 (=LY-001 baseline); origin/main now cad338b: 9 NE-relevant nodes unchanged (asset sha + position), city-data.cad338b blob d8933a32",
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb fdfc3ce5 (city-data asset L431, node L3555, terrain chapter)",
+  "docs/cities/luoyang/assets/ground-atomic/retained.glb aed8b3d4 / south.glb 4313826d / D08.glb 3ab93310 (terrain; D08 pos 580,0,-960)",
+  "docs/cities/luoyang/assets/city-wall/A/wall-00..03.glb 12d84a0b / cfbbc45a / 8a17587a / cd4cb2b6 (walls chapter)",
+  "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb 5937211c (storage-main, storage chapter)",
+  "city-visible ZIP part01..05 concat 5895ef23 -> chunks/northeast_C_access.glb 58f2f58a (existing ~196 m C road, NOT in city; LY-006 measured the same SHA)",
+  "docs/cities/luoyang/data/evidence/evidence-geometry.json commit blob fa8b7002 (frozen 42)",
+  "docs/cities/luoyang/data/west/road-preconstraints.json d369409a; north-palace-conflict-layer da9c7c19; storage-precedents db802449; storage-interface 4f3ccae9",
+  "docs/cities/luoyang/p-luoyang.asset.json 8edb06ab: 不接入缺武库端支撑的东北C路径，外部道路仍待建",
+  "workpacks/LY-003 delivered: hold-zones 0b9bb0ff, ne-screening-cells 5bd9a501, admission dd0ab8c0 (东北长接路 不可落位，allowed 无), ne-checks d2fe03f8",
+  "workpacks/LY-006 ports.json 28bcfb68: ne-approach:end-E:road-end frozen native (2317.827,3487.25) tol 0.005/0.002; LY-084 owns data:LY-084:ne-route-candidates only",
+  "workpacks/LY-005 coordinate-contract b6d7fe9d (network top 0.21, lots 0.20, walls 0.17)"
+ ],
+ "inputsMissing": [
+  "「既有三条长接路规划」: not in lab repo, git history, mother visibility list (2958 meshes / 27 collections) or D:/GitHub; plans cannot be rebuilt from GLB. Screened reconstructed R1/R2/R3 instead; coordinator must confirm or supply originals (rerun measure_routes.py + ly003_screen.py with their polylines)",
+  "「东北长路预检」: absent; cannot be rebuilt",
+  "city-C032-entry-LOD0.blend (private, 1e8c4d2c…): native C_NE_APPROACH_LOCAL parameters and hidden placement library; road geometry can be rebuilt from GLB (32 tris), parameters and any hidden plan objects cannot",
+  "Unlock inputs for LY-003's 不可落位: >=2 (3 to check) common control points with numeric coordinates on both sides, plus excavation plans of the Eastern Han north palace east/south walls; LY-003 did not obtain them either; cannot be rebuilt",
+  "Placed ancient water corridors (ancient_water_corridors_B_unplaced = null; LY-088 prep only); cannot be rebuilt",
+  "LY-010 admission table (workpacks/LY-010 absent) -> G not frozen",
+  "LY-040 values for port storage-site:region-boundary:road-end (declared only) and LY-081 reachability graph (prep only)"
+ ],
+ "gaps": [
+  "Support: R1 1671.0 m to first network contact (2316.327,1813.5), 1670.0 m (99.94%) unsupported; R2 2167.3 m, 99.95% unsupported; R3 2094.8 m, 100% unsupported",
+  "LY-003 hold zones (union): R1 922.0 m (55.2%), mostly HZ-Y 762 m (y 2701-3462) plus HR-northeast_gate_link 160 m; R2 2123.3 m (98.0%); R3 1753.9 m (83.7%), including HZ-N 1696.9 m and HR-east_north_link 1727 m",
+  "Outside NE-C-SCREEN: R1 1157.0 m (69.2%), R2 2118.3 m (97.7%), R3 1758.9 m (84.0%)",
+  "NE-C-SCREEN (22475 cells, 56.2 ha) holds 0 network-ground hits and 0 other-ground hits (positive control: granary ground 154 cells / 3850 m2 vs 3744 m2 hull). So every NE-to-network route must leave the only area LY-003 allows, and no admissible long route exists",
+  "R1 start is 3.13 m from LY-006 frozen port ne-approach:end-E:road-end; formal runs must re-anchor (tolerance 0.005 m)",
+  "Collisions: 0 surface-BVH overlaps with loaded walls/granaries at 3 m and 6 m clearance prisms, 0 containment; nearest solid wall-01 139.25 m. Palace walls and water have no geometry, so they cannot be checked",
+  "Elevation: start 0.00 -> network 0.21, grade ~0.01% for all three; not a limiting factor",
+  "Negatives and positives as expected: east wall 18 pairs; granary 296 pairs; network removed -> no contact; 10 m beyond stub 100% unsupported; C_4 987 m and existing 196 m road 0% unsupported; ly003_screen self-tests 6/6"
+ ],
+ "reuseCandidate": "无（不新造）。没有可复用的东北长接路；三案都需要新造 1.67–2.17 km 地面。东北唯一的实体路是已有的约 196 m C_NE_APPROACH_LOCAL（58f2f58a，归 LY-039），不重复制作。本席位结论草案：三案全部禁建，并且按 LY-003 的准入框架，东北长接路目前没有合法路线。只交审查表和有条件契约模板，不交几何",
+ "touches": [
+  "read-only: ground-network-ground-stitched (C_stitch_primary / C_stitch_west / C_stitch_patch); contact points (2316.327,1813.5) and (1826.57,1822.1-1822.4) on road_middle_cross C_3/C_4",
+  "read-only: LY-006 port ne-approach:end-E:road-end v1 (steward LY-039) and storage-site:region-boundary:road-end v1 (LY-040) as start ports",
+  "read-only: storage-main original_city_ground_preserved and granary objects (LY-034 / LY-040 own)",
+  "read-only: wall-A-wall-01 / wall-02 (nearest solids)",
+  "read-only: evidence-geometry B lines road_northeast_gate_link_B, road_east_north_link_B, road_middle_cross_B; region_yongan_B, north_palace_extent_gao2023_B, south_palace_candidate_gao2023_B",
+  "read-only: LY-003 hold-zones / NE-C-SCREEN tables",
+  "writes only workpacks/LY-084/ (data object data:LY-084:ne-route-candidates per LY-006); no ground pieces, no city nodes, no city-data.mjs / p-luoyang.asset.json proposal"
+ ],
+ "size": "S",
+ "risks": [
+  "R1-R3 may not be the TASKPOOL's original three plans; if the originals surface, rerun the three scripts with their polylines",
+  "Pressure to accept R1 because it is shortest, flat and collision-free; zero collisions only reflects loaded solids, palace walls and water have no geometry",
+  "LY-003 unlock data (control points, excavation plans) may never arrive -> NE stays disconnected; LY-040 and the city must show the break rather than hide it",
+  "If later main commits add ground inside NE-C-SCREEN, test N7 flips and the no-admissible-route conclusion must be redone",
+  "Outside hold zones means only no conflict with the old schematic, not outside the palace (LY-003: e3/e4 unquantified)",
+  "Surface BVH + bbox containment + discrete stations + 5 m cell sampling only; no continuous body/cart sweep, solid volume, structural or historical claim",
+  "The Yong'an palace location sentence was seen only in a search summary (zywhyj 643503e5 PDF), not read firsthand"
+ ],
+ "readyAfterG": true
+}

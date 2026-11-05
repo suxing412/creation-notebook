@@ -1,0 +1,96 @@
+{
+ "baselineSha256": "692964ac1747cd22649aae61823bba1dd79823b240b5a422ebf2956b17fc95ba",
+ "baselineHead": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "cases": [
+  {
+   "case": "P1-baseline-self",
+   "expectFail": false,
+   "verdict": {
+    "verdict": "PASS-FOR-CLAIMED-SCOPE",
+    "failed": []
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N1-old-wall-moved-1cm",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "BLOCK",
+    "failed": [
+     "C2-old-nodes-unchanged"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N2-duplicate-body-coloaded",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "BLOCK",
+    "failed": [
+     "C3-new-nodes-declared-and-owned",
+     "C4-mutual-exclusion"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N3-apron-removed-support-claim",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "BLOCK",
+    "failed": [
+     "C8-site:gate_yong_B"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N4-claim-kaiyang-not-in-city",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "BLOCK",
+    "failed": [
+     "C5-region-status-consistent",
+     "C8-site:gate_kaiyang_B"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N5-sha-mismatch",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "BLOCK",
+    "failed": [
+     "C7-sha-binding"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N6-claim-climb-yong",
+   "expectFail": true,
+   "verdict": {
+    "verdict": "BLOCK",
+    "failed": [
+     "C8-site:gate_yong_B"
+    ]
+   },
+   "selftestOk": true
+  },
+  {
+   "case": "N7-bad-glb-length",
+   "expectFail": true,
+   "verdict": "reader refused: GLB header length 1736 != file length 1732",
+   "selftestOk": true
+  },
+  {
+   "case": "N8-thirteenth-gate-card",
+   "expectFail": true,
+   "verdict": "count=13",
+   "selftestOk": true
+  }
+ ],
+ "allOk": true
+}

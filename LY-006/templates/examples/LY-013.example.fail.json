@@ -1,0 +1,184 @@
+{
+ "schema": "LY-006-interface-v1",
+ "seat": "LY-013",
+ "registryVersion": 1,
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "frames": [
+  "local:kaiyang-K-v1"
+ ],
+ "claims": {
+  "sourceObjects": [
+   {
+    "objectId": "kaiyang-K-v1:C_upper_deck",
+    "mode": "replace"
+   },
+   {
+    "objectId": "kaiyang-K-v1:C_door_head_1",
+    "mode": "modify"
+   }
+  ],
+  "cityNodes": [],
+  "groundPieces": [],
+  "cuts": [],
+  "cardFields": [
+   {
+    "field": "m-luoyang-kaiyang-gate#notes.限制与待解决",
+    "proposal": "（示例）单一楼板替换 C_upper_deck；荷载未验。"
+   }
+  ],
+  "components": [
+   {
+    "id": "K013-deck",
+    "class": "fixed"
+   },
+   {
+    "id": "K013-surface",
+    "class": "fixed"
+   },
+   {
+    "id": "K012-leaf-C-W",
+    "class": "moving"
+   }
+  ]
+ },
+ "zonesUsed": [
+  {
+   "zoneId": "LY-013:write:001",
+   "boxesWritten": [
+    [
+     [
+      -12.4,
+      5.0,
+      -5.0
+     ],
+     [
+      12.4,
+      5.6,
+      5.0
+     ]
+    ]
+   ]
+  }
+ ],
+ "portsProduced": [
+  {
+   "portId": "kaiyang-K-v1:deck-top:floor",
+   "version": 1,
+   "kind": "floor",
+   "producer": "LY-013",
+   "steward": "LY-013",
+   "consumers": [
+    "LY-014",
+    "LY-015"
+   ],
+   "frames": {
+    "local": "local:kaiyang-K-v1",
+    "world": "luoyang-local-schematic-v01"
+   },
+   "local": {
+    "position": [
+     0.0,
+     5.34,
+     0.0
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0,
+     0,
+     -1
+    ]
+   },
+   "world": {
+    "position": [
+     2010.3973388671875,
+     5.710000001788139,
+     21.3011474609375
+    ],
+    "up": [
+     0,
+     1,
+     0
+    ],
+    "forward": [
+     0.02074214646127322,
+     0,
+     -0.999784858537165
+    ]
+   },
+   "nodeMatrixColumnMajor": [
+    0.999784858537165,
+    0,
+    0.02074214646127322,
+    0,
+    0,
+    1,
+    0,
+    0,
+    -0.02074214646127322,
+    0,
+    0.999784858537165,
+    0,
+    2010.3973388671875,
+    0.17000000178813934,
+    21.3011474609375,
+    1
+   ],
+   "measuredFrom": {
+    "file": "(example) models/kaiyang-deck-LOD0.glb",
+    "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "method": "(example) deck top face"
+   },
+   "elevationClass": "C-engineering",
+   "tolerance_m": {
+    "position": 0.005,
+    "elevation": 0.002
+   }
+  }
+ ],
+ "portsConsumed": [
+  {
+   "portId": "kaiyang-K-v1:central-frame-top:floor",
+   "version": 2,
+   "ack": "accepted",
+   "measuredResidual_m": 0.0
+  }
+ ],
+ "newGroundPieces": [
+  {
+   "id": "gp:LY-014:deck-skirt",
+   "zoneId": "LY-013:write:001"
+  }
+ ],
+ "install": {
+  "order": [
+   "(example) mask C_upper_deck triangle range, add K013-deck"
+  ],
+  "replaces": [
+   "kaiyang-K-v1:C_upper_deck"
+  ],
+  "hides": [],
+  "rollback": [
+   "(example) remove K013-deck, restore range"
+  ],
+  "exclusiveWith": []
+ },
+ "evidence": {
+  "原始考古/原文": [],
+  "异地异期类比": [],
+  "C工程设计": [
+   "（示例）楼板厚度沿用 K-v1 0.34 m"
+  ],
+  "未知": [
+   "真实楼板构造"
+  ]
+ },
+ "notClaimed": [
+  "模型能读取 ≠ 局部通行通过 ≠ 已入城 ≠ 真实结构安全 ≠ 历史复原成立"
+ ],
+ "files": [],
+ "_note": "NEGATIVE FIXTURE: six injected violations; the validator must report each"
+}

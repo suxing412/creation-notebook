@@ -1,0 +1,53 @@
+{
+  "seat": "LY-023",
+  "inputsFound": [
+    "docs/cities/luoyang/assets/market/market-cluster.glb 77b8bf2e (in city: city-data.mjs:511 market-main; v1/west-layer.mjs:33)",
+    "docs/cities/luoyang/assets/market/N2-replacement.glb d33cbad1 (in city; no stall feet)",
+    "docs/cities/luoyang/assets/market/flowB-routes.glb 43d7799f",
+    "docs/cities/luoyang/assets/market/corridor-6m-market-link.glb b46dd450",
+    "docs/cities/luoyang/assets/road-junction/joined-route-terrain.glb f8729358",
+    "docs/model-library/updates/m-market-functional/files/market-LOD0/1/2.glb acdd4391/e925451b/ea0c235f (not in city)",
+    "docs/library/models/m-luoyang-market-frontage/files/street_frontage-LOD0/1/2.glb 46f08f41/03ad28cf/b5b13b1c (not in city)",
+    "docs/library/models/m-luoyang-market-modular-assembly/files/S84-LOD0.glb 8ef1f3c8, S86-LOD0.glb 7f1c2e70 (no stalls)",
+    "docs/cities/luoyang/data/west/market-flow-plan.json bff5bb22, market-interface.json 31c6786d, N2-contract.json 10678d73, market-precedents.json abf2a3d2, runtime-coverage.json 0b25c317",
+    "docs/cities/luoyang/city-data.mjs e4115705, city-renderer.mjs fa0a8dcb, v1/west-layer.mjs d8c14142, v1/market-assembly.mjs 0145ac84",
+    "lab/data/assets.json HEAD 53d86312 / worktree 3440caa2"
+  ],
+  "inputsMissing": [
+    "G not frozen: LY-005 elevation/coordinate contract (decides whether sample_ground top 0.2 remains the stall datum), LY-006 ownership (T-nodes, frontage shed islands)",
+    "LY-022 selected ground for the frontage street (not a formal dependency, but '选定地坪' for 店前线 sheds is undefined; frontage GLB has no ground mesh, prep used inferred datum z=0.0)",
+    "Private native source of market-cluster v1 (.blend/generator): only needed for in-place foot edits; not needed because T1-T3 are reuse",
+    "Private native source of street_frontage v2.1: needed only for in-place trestle/post edits; shims can be rebuilt from GLB as separate overlay (从GLB重建 for the adapter only, not the original)",
+    "No archaeological/textual evidence for stall foot bases/stones: stays 未知, hence no stone base"
+  ],
+  "gaps": [
+    "v1 city T1-T3: 0 gaps. 24/24 feet contact sample_ground at z=0.2 (81/81 samples gap 0.0000 m, tol 5 mm); contact area 0.0100 m2 per canopy post, 0.0144 m2 per table leg, 0.0976 m2 per stall; 24/24 tops touch canopy/table 100%",
+    "v1 city: sample_ground is the only support (without it 24/24 = no_ground; external roads do not cover stalls)",
+    "v1 city: route_public and flowB_public pass 0.85 m (plan) from T1/T2/T3 canopy edge; any foot attachment must not reduce this",
+    "All families: no person-width under-canopy passage exists now (table to canopy edge 0.15-0.20 m v1, 0.175-0.275 m frontage < 0.6 m envelope); test can only enforce 'not reduced'",
+    "v2 library stalls: 24/24 feet contact only an inferred datum z=0.2 (GLB has no ground mesh); LOD0/1/2 identical",
+    "Frontage 4 sheds: 16 posts (0.0147 m2) + 8 trestles (0.192 m2) contact inferred datum z=0.0 only (no ground mesh)",
+    "Frontage gap A: table underside floats 0.030 m above all 8 trestle tops (z 0.86 vs 0.89), LOD0 and LOD1; LOD2 merged, not measurable",
+    "Frontage gap B: pitched sheds C01/C02, 8 post tops end 0.075-0.134 m below the canopy underside (0% touch), all three LODs; flat sheds C00/C03 touch 100%"
+  ],
+  "reuseCandidate": "v1 城内 T1-T3（market-cluster.glb 77b8bf2e…c5c8，节点 T?_leg×4、T?_canopypost×4）已可靠接地：24/24 脚对 sample_ground(z=0.2) 全采样接触，逐脚面积 0.0100/0.0144 m²、每摊 0.0976 m²，上端 24/24 全接触；负例去掉 sample_ground 即 24 no_ground。判复用，只交适配包（SHA 绑定+逐脚记录），不新增脚件。证据：LY-023/prep/out/city-market-cluster.json、neg-city-no-sample-ground.json、measure_stall_feet.py。",
+  "touches": [
+    "read-only: market-cluster.glb nodes T1_leg..T3_leg.003 (12), T1_canopypost..T3_canopypost.003 (12), T1_table..T3_table, T1_canopy..T3_canopy, sample_ground, route_public (and other 6 route_*)",
+    "read-only: flowB-routes.glb flowB_public etc.",
+    "conditional write (only if LY-006 assigns and LY-022/029 selects frontage): new overlay GLB under workpacks/LY-023/models/ for street_frontage shed islands: 8 trestle-table shims (sheds C00-C03) and 8 pitched-shed post-head packers (C01 at x -22.02..-19.98 y 9.83..12.17; C02 at x 18.83..21.17 y 4.98..7.02, Blender coords of frontage local frame)",
+    "never: city-data.mjs, p-luoyang.asset.json, sample_ground geometry, LY-021 counters/columns, LY-022 ground tiles, LY-025 well/opening ground",
+    "workpacks/LY-023/** only"
+  ],
+  "size": "S",
+  "risks": [
+    "LY-005 may change the elevation datum or LY-022 may replace sample_ground under the market: the reuse verdict is bound to sample_ground top z=0.2 in 77b8bf2e and must be rerun (test-plan P1 with --no-sample-ground)",
+    "LY-025 well/opening ground could cut holes near stalls; the stall feet then lose their only support",
+    "Frontage and v2 results rely on an inferred datum, not a ground mesh; they are not proof of grounding in any city placement",
+    "Frontage gaps A/B are upper-support gaps, not foot ends; whether they belong to LY-023 (垫接) or the frontage owner must be decided by LY-006; fixing them is not a new stall prototype",
+    "runtime-coverage.json records stale code SHAs (market-assembly.mjs 343373f0… vs actual 0145ac84…; west-layer.mjs f0baa3bb… vs actual d8c14142…); do not cite it as current",
+    "lab worktree has uncommitted edits to lab/data/assets.json (HEAD 53d86312 vs worktree 3440caa2), not made by this seat",
+    "Contact is vertical-ray sampling on bottom faces (9x9, tol 5 mm) plus top sampling (5x5); it is not solid collision, structural safety, GPU/browser validation or historical support",
+    "v2 shop front posts (15, bottom z 0.39) report 'floating' against datum 0.2; they stand on shop plinths and belong to LY-021, must not be reported as stall gaps"
+  ],
+  "readyAfterG": true
+}

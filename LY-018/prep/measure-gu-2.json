@@ -1,0 +1,275 @@
+{
+ "open_edges": {
+  "lib_LOD1:gu-G-static_earth": {
+   "open_edges_after_weld_1e-4": 0,
+   "edges_with_gt2_faces": 2
+  },
+  "lib_LOD1:gu-G-static_tile": {
+   "open_edges_after_weld_1e-4": 0,
+   "edges_with_gt2_faces": 4
+  },
+  "lib_LOD1:gu-G-static_timber": {
+   "open_edges_after_weld_1e-4": 0,
+   "edges_with_gt2_faces": 6
+  },
+  "lib_LOD2:gu-G-static_earth.001": {
+   "open_edges_after_weld_1e-4": 0,
+   "edges_with_gt2_faces": 2
+  },
+  "lib_LOD2:gu-G-static_tile.001": {
+   "open_edges_after_weld_1e-4": 0,
+   "edges_with_gt2_faces": 4
+  },
+  "lib_LOD2:gu-G-static_timber.001": {
+   "open_edges_after_weld_1e-4": 0,
+   "edges_with_gt2_faces": 6
+  },
+  "master_gu:gu-G-static_earth.002": {
+   "open_edges_after_weld_1e-4": 0,
+   "edges_with_gt2_faces": 10
+  },
+  "master_gu:gu-G-static_tile.002": {
+   "open_edges_after_weld_1e-4": 0,
+   "edges_with_gt2_faces": 4
+  },
+  "master_gu:gu-G-static_timber.002": {
+   "open_edges_after_weld_1e-4": 0,
+   "edges_with_gt2_faces": 6
+  },
+  "A_wall_00:C_wall_A_00": {
+   "open_edges_after_weld_1e-4": 0,
+   "edges_with_gt2_faces": 0
+  },
+  "A_wall_01:C_wall_A_01": {
+   "open_edges_after_weld_1e-4": 0,
+   "edges_with_gt2_faces": 0
+  },
+  "B_wall_00:C_wall_B_00": {
+   "open_edges_after_weld_1e-4": 0,
+   "edges_with_gt2_faces": 0
+  },
+  "B_wall_01:C_wall_B_01": {
+   "open_edges_after_weld_1e-4": 0,
+   "edges_with_gt2_faces": 0
+  }
+ },
+ "overlap_majority3": {
+  "A_wall_00": {
+   "grid_step_m": 0.1,
+   "x_scan_local": [
+    -16.45,
+    -15.05
+   ],
+   "wall_inside_|x|<16_m3": 0.0,
+   "wall∩gate_earth_m3": 0.003
+  },
+  "A_wall_01": {
+   "grid_step_m": 0.1,
+   "x_scan_local": [
+    15.05,
+    16.45
+   ],
+   "wall_inside_|x|<16_m3": 0.036,
+   "wall∩gate_earth_m3": 0.017
+  },
+  "B_wall_00": {
+   "grid_step_m": 0.1,
+   "x_scan_local": [
+    -16.45,
+    -15.05
+   ],
+   "wall_inside_|x|<16_m3": 0.0,
+   "wall∩gate_earth_m3": 0.009
+  },
+  "B_wall_01": {
+   "grid_step_m": 0.1,
+   "x_scan_local": [
+    15.05,
+    16.45
+   ],
+   "wall_inside_|x|<16_m3": 0.058,
+   "wall∩gate_earth_m3": 0.036
+  }
+ },
+ "gate_cap_profiles": {
+  "cap_minus": {
+   "face_x": -16.0,
+   "base_through": [
+    -4.000518798828125,
+    3.999847412109375
+   ],
+   "top_through": [
+    -2.800567626953125,
+    2.799407958984375
+   ],
+   "height_local": 6.029999732971191,
+   "area_m2": 41.00502870173659,
+   "note": "cap face only (slab end face 32x12x0.17 excluded)"
+  },
+  "cap_plus": {
+   "face_x": 16.0,
+   "base_through": [
+    -4.00018310546875,
+    3.99945068359375
+   ],
+   "top_through": [
+    -2.80047607421875,
+    2.79974365234375
+   ],
+   "height_local": 6.029999732971191,
+   "area_m2": 41.003556533833034,
+   "note": "cap face only (slab end face 32x12x0.17 excluded)"
+  }
+ },
+ "wall_end_profiles": {
+  "A_wall_00": {
+   "end_x": -15.99993896484375,
+   "base_through": [
+    -4.000274658203125,
+    3.999847412109375
+   ],
+   "top_through": [
+    -2.800323486328125,
+    2.799652099609375
+   ],
+   "height_local": 6.029999732971191,
+   "area_m2": 41.00429261778481,
+   "face_plane_residual_m": 6.103515625e-05,
+   "base_half_width_diff_m": -0.0001220703125,
+   "top_half_width_diff_m": 0.0,
+   "height_diff_m": 0.0,
+   "wall_face_area_not_backed_by_cap_m2(approx, nested trapezoids)": 0.0
+  },
+  "A_wall_01": {
+   "end_x": 15.9998779296875,
+   "base_through": [
+    -4.00018310546875,
+    3.99969482421875
+   ],
+   "top_through": [
+    -2.80023193359375,
+    2.79974365234375
+   ],
+   "height_local": 6.029999732971191,
+   "area_m2": 41.003556533833034,
+   "face_plane_residual_m": 0.0001220703125,
+   "base_half_width_diff_m": 0.0001220703125,
+   "top_half_width_diff_m": -0.0001220703125,
+   "height_diff_m": 0.0,
+   "wall_face_area_not_backed_by_cap_m2(approx, nested trapezoids)": 0.0
+  },
+  "B_wall_00": {
+   "end_x": -15.99993896484375,
+   "base_through": [
+    -5.00006103515625,
+    4.999664306640625
+   ],
+   "top_through": [
+    -3.250457763671875,
+    3.24981689453125
+   ],
+   "height_local": 7.829999923706055,
+   "area_m2": 64.59749937057495,
+   "face_plane_residual_m": 6.103515625e-05,
+   "base_half_width_diff_m": 0.9996795654296875,
+   "top_half_width_diff_m": 0.4501495361328125,
+   "height_diff_m": 1.8000001907348633,
+   "wall_face_area_not_backed_by_cap_m2(approx, nested trapezoids)": 23.59247066883836
+  },
+  "B_wall_01": {
+   "end_x": 15.99993896484375,
+   "base_through": [
+    -5.000213623046875,
+    4.999725341796875
+   ],
+   "top_through": [
+    -3.250396728515625,
+    3.2498779296875
+   ],
+   "height_local": 7.829999923706055,
+   "area_m2": 64.59833570479532,
+   "face_plane_residual_m": 6.103515625e-05,
+   "base_half_width_diff_m": 1.000152587890625,
+   "top_half_width_diff_m": 0.4500274658203125,
+   "height_diff_m": 1.8000001907348633,
+   "wall_face_area_not_backed_by_cap_m2(approx, nested trapezoids)": 23.594779170962283
+  }
+ },
+ "separating_plane_x": {
+  "A_wall_00": {
+   "wall_max_x": -15.99993896484375,
+   "gate_earth_min_x": -16.00006103515625,
+   "max_interpenetration_depth_m": 0.0001220703125
+  },
+  "A_wall_01": {
+   "wall_min_x": 15.9998779296875,
+   "gate_earth_max_x": 16.00006103515625,
+   "max_interpenetration_depth_m": 0.00018310546875
+  },
+  "B_wall_00": {
+   "wall_max_x": -15.99993896484375,
+   "gate_earth_min_x": -16.00006103515625,
+   "max_interpenetration_depth_m": 0.0001220703125
+  },
+  "B_wall_01": {
+   "wall_min_x": 15.99993896484375,
+   "gate_earth_max_x": 16.00006103515625,
+   "max_interpenetration_depth_m": 0.0001220703125
+  }
+ },
+ "library_LOD_at_master_matrix_gap": {
+  "lib_LOD1:gu-G-static_earth": {
+   "x_min": -11.0,
+   "x_max": 11.0,
+   "gap_to_wall_end_minus_m": 5.0,
+   "gap_to_wall_end_plus_m": 5.0
+  },
+  "lib_LOD1:gu-G-static_tile": {
+   "x_min": -12.0,
+   "x_max": 12.0,
+   "gap_to_wall_end_minus_m": 4.0,
+   "gap_to_wall_end_plus_m": 4.0
+  },
+  "lib_LOD1:gu-G-static_timber": {
+   "x_min": -11.0,
+   "x_max": 11.0,
+   "gap_to_wall_end_minus_m": 5.0,
+   "gap_to_wall_end_plus_m": 5.0
+  },
+  "lib_LOD2:gu-G-static_earth.001": {
+   "x_min": -11.0,
+   "x_max": 11.0,
+   "gap_to_wall_end_minus_m": 5.0,
+   "gap_to_wall_end_plus_m": 5.0
+  },
+  "lib_LOD2:gu-G-static_tile.001": {
+   "x_min": -12.0,
+   "x_max": 12.0,
+   "gap_to_wall_end_minus_m": 4.0,
+   "gap_to_wall_end_plus_m": 4.0
+  },
+  "lib_LOD2:gu-G-static_timber.001": {
+   "x_min": -11.0,
+   "x_max": 11.0,
+   "gap_to_wall_end_minus_m": 5.0,
+   "gap_to_wall_end_plus_m": 5.0
+  }
+ },
+ "slab": {
+  "local_x": [
+   -16,
+   16
+  ],
+  "local_through": [
+   -6,
+   6
+  ],
+  "local_up": [
+   -0.17,
+   0.0
+  ],
+  "volume_m3": 65.28,
+  "world_y_bottom": 0.0,
+  "wall_base_world_y": 0.17
+ }
+}

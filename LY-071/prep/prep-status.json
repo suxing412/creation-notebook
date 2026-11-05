@@ -1,0 +1,68 @@
+{
+ "seat": "LY-071",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-biyong/files/biyong-A-LOD0.glb 937a3192 (bce3211)",
+  "docs/library/models/m-luoyang-biyong/files/biyong-A-LOD1.glb 5dc71e32",
+  "docs/library/models/m-luoyang-biyong/files/biyong-A-LOD2.glb 48222261",
+  "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD0.glb 88f227d0",
+  "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD1.glb 69ae00ce",
+  "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD2.glb 60026711",
+  "docs/library/models/m-luoyang-biyong/m-luoyang-biyong.asset.json blob 4b6f3762 (checkout f6ee9037)",
+  "modeling-lab/review-batches/2026-11-04-city-visible part01-05 -> zip 5895ef23 -> chunks/biyong_C_relationship.glb 1bd1c446（局部试配实物；本席位自解压复核，重跑 compare_trial_fit 逐值一致）",
+  "modeling-lab/review-batches/2026-11-04-city-visible/adapter/adapter.json blob 8f890748（node matrix identity, initial=false）",
+  "zip 内 qa/source-node-manifest.json 6cd13e10（原生世界矩阵）",
+  "docs/cities/luoyang/city-data.mjs blob c849706b（biyong 0 次；不加载）",
+  "docs/cities/luoyang/city-renderer.mjs checkout fa0a8dcb（transformFor 372，focusResearchModel 645 单资产）",
+  "docs/cities/luoyang/data/evidence/evidence-geometry.json blob fa8b7002（ritual_biyong_B B 类示意点，evidence-view.mjs:28 加载，仅标记）",
+  "docs/cities/luoyang/p-luoyang.asset.json blob 8edb06ab（辟雍 已建模未入城）",
+  "LY-005/coordinate-contract.json b6d7fe9d；port-schema.json 30854ed9",
+  "LY-006/registry v1（交付完成）ports.json 28bcfb68、zones.json 6b3595ac、ownership.json ecbbbcf5、seats.json a1426412：端口 biyong:hall-enclosure:ground v1 归 LY-071，frame local:biyong = hall A origin",
+  "LY-001/qa/family-ledger.json 8eaa7c7a（辟雍 仅模型，cityNodes 0）",
+  "LY-007/baseline/lod-rules.json fbf53757；qa/near-retention.json（biyong 三档非复制）"
+ ],
+ "inputsMissing": [
+  "私密母版 city-C032-entry-LOD0.blend（声明 SHA 1e8c4d2c…）：试配变换的原生来源、隐藏 placement 库里是否另有辟雍候选。可从 GLB 重建：本项只需变换，已由导出分块+公开 GLB 重算到 ≤0.133 mm；不能冒称找回原件",
+  "礼堂 A 入口修订与围护 v2 的 .blend/生成器/源 ZIP：可编辑源与原生有向几何 SHA 对照。可从 GLB 重建：本项不改几何，装配只引用公开 GLB",
+  "LY-006 registry v2：S-BIYONG 区盒按实测重划、围护环带写入区、岛面地坪归属、踏步/轴口子端口 ID。不能从 GLB 重建，需协调；依据 zone-check.json",
+  "LY-008（无 status.json）与 LY-010（目录不存在）：G 未冻结",
+  "LY-002 辟雍证据条目：本次未检到可核东汉辟雍发掘原文；不能从 GLB 重建"
+ ],
+ "gaps": [
+  "原点不同：礼堂 A 本地 y=0 是台面顶，台底/踏步脚 y=-1.2；围护 L 本地 y=0 是墙底。同原点直叠时礼堂脚比围护底低 1.200 m（负例 N1）",
+  "单位矩阵错叠时 BVH 三角形交叠数=0（9 组 LOD 组合全 0），碰撞检测查不出，必须用高程端口查",
+  "锁定变换（LY-006 local:biyong = hall A origin）：N_hall=I，N_encl,k=T(0,-1.2,0)R_y(k·90°)；等价组框架写法 hall +1.2 与试配 Hausdorff 0.119 mm；两种写法叠用即悬空/沉降 1.200 m（负例 N2）",
+  "公开卡围护只有 1 个象限（东北 L，臂端 4.0，中心线 68.0，底厚 0.70/顶厚 0.50，高 2.0）；完整围护=L×4，与试配 A-v2 Hausdorff 0.133 mm；只放 1 个 L 偏差 154 m",
+  "试配节点名 ENTRY_LOD0，但围护是 LOD1 几何（每象限 2,372 三角形，共 9,488）；公开 LOD0（每象限 17,608，共 70,432）从未参与试配，三档映射需重写",
+  "城景 researchModels 只支持单资产单位矩阵（city-renderer.mjs:645），表达不了 5 件组合；预合成 GLB 的围护（|68|）落在 LY-071:write:001（±20.4，y -1.2..0）之外，需 LY-006 v2 才能交",
+  "LY-006 v1 辟雍区盒与实测不符：LY-072 跨水区 x20.4-30、LY-073 岸缘区到 x40，全在围护内墙脚 67.65 以内的旱地岛面；试配跨水 r69.8-78.2、水环 70-78，差 29.8 m（zone-check.json）",
+  "组内地面无人负责：r20.4-67.65 与 68.35-70 只有试配岛替身（140×140，y-1..0）；LY-071/072/073 ownsGroundPieces 均为空",
+  "继承网格缺陷（焊接 1e-5）：礼堂 earth 三档各 20 条非流形边，tile LOD1 7 条，timber LOD2 2 条；围护三档闭合 0/0。本项只记基线、不修",
+  "接口实测：踏步脚 y=0=围护底=试配岛顶（共面接面）；轴口宽 8.0，踏步宽 4.0 同轴；踏步外缘到内墙脚 47.25 m 无路面",
+  "城市位置未准入：试配在 B 类示意点 (2183.673, 0, 938.776)；城内地面族 0.20/0.21，入城会有 0.20 m 高差",
+  "LOD 表面偏差：围护 LOD0↔1 最大 14.6 mm、1↔2 3.1 mm；礼堂 LOD0→1 59.6 mm、1→2 324 mm（仅木作/瓦，earth 为 0）"
+ ],
+ "reuseCandidate": "几何全部复用，不需新造：公开 biyong-A-LOD0/1/2（937a3192/5dc71e32/48222261）与 enclosure-L-LOD0/1/2（88f227d0/69ae00ce/60026711）六个 GLB 体检 issues=[]，正是试配分块 biyong_C_relationship.glb（1bd1c446）所用几何：礼堂 LOD0 +1.2 偏差 0.119 mm，L-LOD1×4(R_y) 偏差 0.133 mm（trial-fit-compare.json，2026-11-06 自解压重跑一致）。但装配契约本身（assembly.json、端口 biyong:hall-enclosure:ground v1 取值、三档映射、互斥、撤回）尚无交付物，G 后仍需制作，不是「复用完成」。",
+ "touches": [
+  "源节点（keep，LY-006 登记 owner LY-071）biyong-A:biyong-A-static_earth / static_timber / static_tile（LOD0-2）",
+  "源节点（keep，owner LY-071）biyong-enclosure-L:biyong-enclosure-L-static_earth（LOD0-2，4 实例）",
+  "试配分块节点（只读对照）C_BIYONG_ENTRY_LOD0__biyong-A-static_*、C_BIYONG_ENTRY_LOD0__biyong-enclosure-A-v2-static_earth",
+  "试配 layout 替身（不碰，归 LY-072/073）biyong-layout__A_island、A_square_water_symbol、A_crossing_0_-1/0_1/1_-1/1_1",
+  "端口 biyong:hall-enclosure:ground v1（producer/steward LY-071；seams→LY-072、LY-073）；踏步脚/轴口/臂端只作 subPoints，新 ID 需 v2",
+  "写入区 LY-071:write:001（frame local:biyong，[-20.4,-1.2,-20.4]-[20.4,0,20.4]）；围护环带 67.65-68.35 不在任何写入区",
+  "地坪：岛面 r20.4-67.65 及 68.35-70 归属未定（LY-006 v2）；城市地面片不涉及",
+  "文件：只写 workpacks/LY-071/；语义合并提案交 LY-100（city-data.mjs researchModels/ritual 章）；卡片 m-luoyang-biyong 字段提案负责人为 LY-073"
+ ],
+ "size": "M",
+ "risks": [
+  "G 未冻结（LY-008 无 status、LY-010 无目录）",
+  "LY-006 v1 辟雍区盒与实测布局差 29.8 m；若不出 v2，LY-072/073 会在围护内旱地造跨水/岸缘，或越区",
+  "研究模型机制只支持单资产：要么 LY-100 改渲染器，要么交预合成 GLB；后者既需 v2 写入区，又须防 +1.2/−1.2 重复施加",
+  "礼堂原点不在接地面，违反 LY-005 新资产规则；只能靠端口声明，不改 GLB 字节",
+  "试配 LOD 标签与实际几何不符，沿用会把中景围护当近景",
+  "继承 20 条非流形边若被他人修复会改变 SHA，需重绑输入",
+  "私密母版不可得，试配只能经导出分块核对；母版隐藏库是否有别的辟雍变换未知",
+  "城市位置未准入（LY-004）且 y=0 与城内 0.20 地面族不同；不得写城市矩阵",
+  "柱网、尺度、围护形态全为 C；未做通行（47.25 m 无路面）、结构、GPU；不得称完整辟雍或历史平面"
+ ],
+ "readyAfterG": true
+}

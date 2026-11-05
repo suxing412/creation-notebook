@@ -1,0 +1,685 @@
+# 优化清单（按执行方分组，待制作人拍板）
+
+- **auto**：Claude 可机械执行、不改外观（卡片字段、命名、删冗余 UV/退化面、补拍图）。
+- **manual**：Claude 能用 Blender 做，但会改几何或外观，需要逐项同意。
+- **isuria**：创作/考据层面，或城景点名、要同步改哈希的文件，交伊苏里亚。
+
+## auto（258 项）
+
+- [high] **小苑门** `m-luoyang-xiaoyuan-gate` · 材质：LOD2 把贴图的 sRGB 均值直接写成线性 baseColorFactor，远景档整体发亮发灰，换档时会跳色 —— 改法：只改 LOD2：把五个 *__FLAT 材质的 baseColorFactor 换成贴图逐像素转线性后的均值（earth 0.117/0.054/0.015，timber 0.009/0.005/0.003，metal 0.006/0.005/0.004，stone 0.068/0.062/0.047，tile 0.009/0.010/0.008），然后在 lods.png 的同一机位和 LOD0 对比。三档去贴图、改用纯色，另请伊苏里
+- [high] **连接工坊** `s-sd01` · 展示：详情页默认打开不含展品的 environment.glb，完整场景排在第 5 个 —— 改法：把 files 改成显式列表，写上中文标签，完整场景放第一：jointworks.glb「完整场景（底座＋折臂灯＋插接件）」、hinge.glb「折臂灯 · 初始姿态」、hinge-folded.glb「折臂灯 · 收拢姿态」、hinge-extended.glb「折臂灯 · 展开姿态」、slot.glb「插接件（两轨三隔板）」、environment.glb「环境底座（原型运行时加载，不含展品）」。
+- [medium] **阙影·标界** `m-014` · 展示：图集混入已被取代的 v02 白盒，却没有用带标注的三方案对照图；封面只有 1000 px —— 改法：图集改成以下顺序，不超过 12 张：refined-contact-sheet.png、A-elevation.png、B-elevation.png、C-top.png、A-joint.png、B-joint.png、A-side.png、A-rear.png、A-top.png、B-front.png、C-front.png。v02-A-front.png 移出，或放到最后并在 notes 里写明「v02 白盒，已被取代」。从 qu
+- [medium] **阙影·标界** `m-014` · 展示：三个文件的 label 只是文件名，看不出每个方案比较的是什么 —— 改法：label 改为「A · 近半高 · 直抵」「B · 高子体试验 · 阶折基台」「C · 低子体 · 侧路折入」。
+- [medium] **住宅院落模块组** `m-courtyard-family` · 卫生：C2 十二件各自夹带一整份旧版几何的死数据，顶点又全部拆散，体积约为旧版的 2.6 倍 —— 改法：对 12 个 C2 文件做两步处理：先删掉未被引用的 accessor 和 bufferView，再只合并位置、法线、UV 完全相同的顶点。几何和外观都不变。节点名和材质名一律不动，免得影响城景按节点名替换。处理后 A-LOD0-C2 预计回到约 0.5 MB。
+- [medium] **住宅院落模块组** `m-courtyard-family` · 展示：封面描述与封面画面不符，summary 和 notes 满是内部代号，读者看不出这是什么 —— 改法：coverAlt 改成描述画面，例如「A 型住宅院落斜俯视：前墙一侧设门屋，院内是一门两窗的正房和一座厢房，夯土院墙围合，门前有街面」。summary 先说这是什么（东汉雒阳普通住宅院落的六种原型，每种有近、远两级），再用一句话交代屋面近景分支。notes 保留结论，但把代号解释一次（例如 C2 是第二轮米制 UV 修订）。
+- [medium] **板筒瓦薄壳模块** `m-eaves-shell` · 展示：卡片说明几乎全空：notes、图集、封面描述、英文名、related都没写 —— 改法：notes写两条。「已完成的检查」：六档退化面、重复面、非流形边为0，卷绕一致、体积为正，导出前后有向三角一致，BVH相交对为0。「限制与待解决」：檐端筒瓦敞口，未建瓦当；每排沿法向整体抬约21 mm，板瓦层间空12.5–12.8 mm，筒瓦离本排板瓦约24 mm，同排板瓦留1 mm缝；筒瓦无瓦舌，接头台阶约21 mm；无UV和贴图，法线为逐面平直；两侧边垄无筒瓦，不能直接并排；支承、脊、防水接口未定；尺寸是设计参数，0.35 m是瓦长
+- [medium] **板筒瓦薄壳模块** `m-eaves-shell` · 展示：summary、文件标签和状态说不清这是什么、到了哪一步 —— 改法：summary改为：「门楼檐口用的东汉板瓦+筒瓦局部薄壳试样：A（6垄、垄距0.28 m、坡0.3）与B（7垄、0.26 m、坡0.4）各三档LOD；未含瓦当与承托，仅供研究。」label改为「A（6垄·坡0.3）· LOD0 近景」「A · LOD1」「A · LOD2 远景」，B同理。status改为「归档」，statusNote写「研究试样 · 未完成设计验收 · 未装门楼」；如果要按本评审继续修，则用「建设中」。
+- [medium] **完整单门楼屋面研究** `m-gate-roof-study` · 展示：summary 只讲原点契约，没交代这是哪座门；「不新增模型」与新屋面矛盾，status 也偏乐观 —— 改法：summary 改成例如「C02-010（A2 院落）院门的屋面质量样例：保留原夯土墙、门扇和门楣，新做两坡筒板瓦屋面与素脊；近中远三档共用门楼地面中心原点，未入城。」标题可以改为「C02-010 院门屋面研究」。status 改为「待审」，或者在 statusNote 里写「研究候选 · 未完成设计验收 · 未入城」。
+- [medium] **完整单门楼屋面研究** `m-gate-roof-study` · 展示：notes、coverAlt、英文名和图集都是空的，已有的检查与限制没有搬进卡片 —— 改法：notes「已完成的检查」：三档零退化面；340 个新网格闭合（gate-geometry-contact-export.json）；逐片板瓦支承最小间隙约 −0.13 µm；local-origin 两种摆放的往返测试与 Blender 读回。「限制与待解决」：承托层和脊柱是 C 设计，不是历史构造；山面透空；无瓦当；342 批未合；远景沿用原门楼屋面（脊低 23.5 cm）；模型底在 y≈0.2（共享门楼地面中心原点，不逐 LOD 
+- [medium] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · 展示：三张图机位几乎相同，缺少能看清建筑的近景 —— 改法：用 LOD1 补拍两张近景：一张单院斜视（参照 extra/lod1-c01.png 的机位），一张沿街铺面（参照 extra/lod1-shops.png），放在图集前面。LOD2 总览可以改成与 LOD1 并排的对比图，或者直接去掉。
+- [medium] **B2门窗开口套件** `m-luoyang-b2-facade-kit` · 展示：coverAlt 没有描述画面，summary 和 notes 满是内部黑话 —— 改法：coverAlt 改成描述画面，例如「开门态：双扇板门向内开约 75°，右侧为三棂直棂窗，灰底渲染」。notes 的「已完成的检查」改成直白的话：回读 GLB，确认 14 个构件都是闭合盒体、法线朝外、UV 完整；人体样点测试显示，开门态两扇之间净宽约 0.77 米，可以通过，关门态不能通过。再补上尺寸事实：外框 1.3×2.1 米，净洞约 1.14×2.02 米；窗外框 0.8×0.8 米，窗台高 1.0 米；开门角约 75°。「C级
+- [medium] **辟雍礼堂与围护** `m-luoyang-biyong` · 展示：卡片完全没有围护的图像，也没说清围护是什么、该怎么放 —— 改法：从 enclosure-L-LOD0 拍一张贴近墙体的斜视图，要显示顶点色，不要用灰模，加进 gallery。notes 里只补能从几何读出的事实：这是 L 形转角的一段，墙高 2.0 m，底厚 0.70 m、顶厚 0.50 m（两面收分），北臂 x 从 4 到 68.35 m，东臂 z 从 -68.35 到 -4 m。拼装方式和变换请伊苏里亚另写。
+- [medium] **普通院落两种组装** `m-luoyang-court-layout-kit` · 展示：summary、coverAlt、notes 满是内部术语，coverAlt 没有描述画面 —— 改法：summary 改成直白的句子，例如「同一院墙内两种布局：正堂加东西厢的三屋对置，以及正堂、西厢加敞棚作业院，各有三档精度」；coverAlt 改为描述画面，例如「斜俯视：夯土院墙围合，左前角门屋，后为正堂，东西两厢相对」；notes 去掉内部术语，只留可核对的检查项和限制
+- [medium] **德阳殿空间研究** `m-luoyang-deyang-hall` · 展示：封面和三张图集是同一个远景斜视角度，看不出近景构造，也看不出 A/B 两个方案的差别 —— 改法：从现有模型重拍一组图：A 和 B 的正立面并排对比图、檐口和柱头近景、室内柱网图，加上 LOD0、LOD1、LOD2 的同机位对比图。按重要性排序后放进 gallery。
+- [medium] **夯土墙身家族** `m-luoyang-earthwall-family` · 展示：两张图集都是长达数百米、上千米的细线，看不到截面、夯层和 LOD 差异 —— 改法：从模型重拍图集，并统一尺寸和背景。建议拍：A 段端面截面图；A-LOD0 夯层斜光近景；A 段 LOD0/1/2 并排对比；C 段只截取 30–50 m 一段的斜视；西垣段若要出现，配一个人或车的尺度参照，或改成局部放大。
+- [medium] **广阳门** `m-luoyang-guangyang-gate` · 展示：图集里唯一的 detail 图和封面同机位同构图，看不到任何细节 —— 改法：从模型重拍图集：正立面（看三门道比例）、檐口和柱头近景、LOD1/LOD2 并排对比（标清楚哪张是哪级），最能看清形制的一张放第一。
+- [medium] **低墙生活分区单元** `m-luoyang-household-service` · 展示：没有图集，封面宽度只有 1000px —— 改法：从 LOD0 GLB 重拍一张不小于 1200 px 的封面，再补 3–4 张图集：斜俯视、山面立面看屋面、棚内看梁、三档 LOD 对比。如果封面改用 GLB 渲染，要同步改 notes 里『图为同版原生模型CPU实渲』这句。
+- [medium] **住宅内门修订组件** `m-luoyang-inner-door-components` · 展示：coverAlt、summary、notes 满是内部行话，读者看不懂 —— 改法：coverAlt 改成描述画面，例如「单扇内门开到 90°：左为带上下枢块的门叶，右侧细立条是闭门止挡，灰底，没有门框和墙」。summary 里的「C设计」改成通俗说法，例如「尺寸与构造为推测设计，非考古实测」。notes 第一段改写成读者能懂的检查结论，内部校验细节移出卡片或单独放一段。
+- [medium] **住宅内门修订组件** `m-luoyang-inner-door-components` · 展示：封面和图集里构件很小、又没有宿主参照，止挡孤立在远处，看不出构件之间的关系 —— 改法：从实际发布的 GLB 重拍封面和图集：镜头收紧到构件；加一张轴孔和枢块的近景；在图上用文字标注「门叶 / 上枢块 / 下枢块 / 止挡」，或者用半透明线框示意原门框的位置（只作示意，不进 GLB）；换一个浅色背景。
+- [medium] **津门** `m-luoyang-jin-gate` · 展示：图集里唯一的 detail 图和封面几乎同角度，六扇门叶、转枢和门限都看不清 —— 改法：从模型补拍：一张门道近景（能看清门叶、枢轴和 0.12 m 门限），一张正立面，一张线框或剖切图，替换现在的 detail；coverAlt 也按实际可见内容改。
+- [medium] **灵台类型与踏步研究** `m-luoyang-lingtai` · 展示：封面和唯一的图集都是远距离总览，没有一张能看清卡片主题「踏步」 —— 改法：从 LOD1 重拍 3–4 张近景加进 gallery：南向主踏步、廊台基内收踏步（每处一张或一张拼图）、北侧窄绕行；第一张放踏步近景。
+- [medium] **旄门** `m-luoyang-mao-gate` · 展示：summary 和 notes 满是内部流程术语，没有说明模型是什么 —— 改法：summary 改成一句访客能看懂的介绍，例如：东汉雒阳城东面南门旄门的推测复原，夯土墩台开三条门道，台上建庑殿顶门楼。notes 去掉内部流程编号和过程性说法，保留依据级别、未入城、LOD 差异和异写名。
+- [medium] **旄门** `m-luoyang-mao-gate` · 展示：封面用的是去贴图的 LOD1，图集只有一张背面，看不到带贴图的近景版和门道细部 —— 改法：从 LOD0 重拍封面，或至少补一张 LOD0 正面斜视放在图集第一张；再补门道排叉柱近景、正立面和登临梯侧面。
+- [medium] **八铺四棚店前线** `m-luoyang-market-frontage` · 卫生：两间6米进深铺子的隔墙穿出山墙外皮，端面和外墙面共面同向重叠，封面和图集上露出黑色竖缝 —— 改法：在三档里删掉每段隔墙落在外墙面上的那个端面（每段2个三角形，共8个），或者把隔墙在墙体里的那0.28米截掉，让它从墙内皮开始。外观不变。然后从模型重拍封面和图集。这几个文件不在城景点名清单里。
+- [medium] **市肆模块与组装** `m-luoyang-market-modular-assembly` · 展示：文件 label 用的是哈希和内部代号，排列顺序也乱 —— 改法：label 改成读者看得懂的说法，例如「浅铺 S84（面阔 8 m，进深 4 m）· LOD0」「深铺 S86（面阔 8 m，进深 6 m，带中柱和后壁搁板）· LOD0」「三铺两摊组合样例 · LOD0」。进深用墙体尺寸 4.0/6.0 m；4.9/6.9 m 是含出檐的包围盒。顺序按「组合 → S86 → S84」、每组内 LOD0→2 排列，让默认打开的第一个文件和封面或标题对应。summary 改写成普通读者能懂的一句话。只改 
+- [medium] **明堂形制假说** `m-luoyang-mingtang` · 展示：封面和三张图集都是同一个斜视角，看不到九格布局、立面和 A/B 差别 —— 改法：从模型重拍：一张正立面、一张檐下近景、一张去掉屋面的平面或剖切（显示九格）、一张 A/B 同比例并排。
+- [medium] **连续住宅生活片区** `m-luoyang-residential-life` · LOD：节点 extras 里嵌了大量导出流水线元数据，LOD2 文件 78% 是 JSON —— 改法：运行 GLB 的节点 extras 只保留 role、family、placement_id，其余溯源元数据原样移到侧车 JSON（或卡片 notes），不要直接丢掉。剥离后按规范收批，原件进 Release。
+- [medium] **连续住宅生活片区** `m-luoyang-residential-life` · 展示：图集里的 detail 图其实是另一角度的全景，没有任何院落或屋檐近景 —— 改法：从 LOD0 重拍 2–3 张近景放进图集：单院俯视、屋檐和台基特写、巷道人视角；封面裁紧一些，减少上下的灰色留白。
+- [medium] **院内备食关系** `m-luoyang-residential-preparation` · 展示：卡片标题讲“备食关系”，封面和图集却只拍了灶和板，工作位、后退湾、通行路线都看不到 —— 改法：把life-block-LOD1.glb（或LOD0）和W2-stove-A-LOD0.glb一起导入，不需要再摆位。对准W2院拍一张斜视或顶视，放在图集第一张，加一个1.6m的人体剪影作尺度参照。在notes里写明本层放在住宅层的W2院。工作位、后退湾和路线的标注，等伊苏里亚提供数据后再加；标题要不要收窄，由创作者决定。
+- [medium] **圈厕关系 A** `m-luoyang-service-court` · 展示：图集两张和封面同一机位，只换了LOD档且没有标注，卡片强调的地板孔和门口没有图可看 —— 改法：从 GLB 重拍图集，四个机位：①圈内仰视楼板孔和内侧两柱，参考 extra/lod0-hole-up.png；②剖掉屋顶俯视楼板孔和门，参考 extra/lod0-interior-top.png；③土阶与侧门近景，参考 extra/lod0-stair-door.png；④背面斜视，参考 r/main-back.png。如果要保留 LOD 对比，合成一张三档并排图，标上 LOD0/1/2。
+- [medium] **圈厕关系 A** `m-luoyang-service-court` · 展示：coverAlt 与 summary 用内部术语，没有描述画面内容 —— 改法：coverAlt 改成描述画面，例如「东汉圈厕复原斜视：圆形土墙围圈，墙头有深灰墙帽，前方留约 1.3 m 缺口；悬山瓦顶厕屋由四根木柱架在圈墙后侧之上，土阶通到山墙上的门」。「C级」不要只在这一张卡里改：要么全库统一换成白话（如「推测设计」），要么在项目页给它下定义。
+- [medium] **上东门** `m-luoyang-shangdong-gate` · 展示：图集唯一一张 shots/detail.webp 并不是细节图，而是 LOD2 的同角度重拍 —— 改法：从 LOD1 重拍 2–4 张图集：门道与开启门扇的近景、檐口瓦当近景、露台与栏杆、正立面。如果要保留 LOD2 对比图，就改名为 lod2.webp，放在图集最后，并在 notes 里注明。
+- [medium] **南郊圆坛八陛** `m-luoyang-southern-altar` · 展示：files的label只是文件名，没说明A/B是什么假说、LOD1是什么用途 —— 改法：改成例如「A 圆形双营·完整（4.6k面）」「A 圆形双营·简化LOD1」「B 方形双营·完整」「B 方形双营·简化LOD1」，并把完整版排在前面。
+- [medium] **南郊圆坛八陛** `m-luoyang-southern-altar` · 展示：notes写满内部流程术语，读者看不懂 —— 改法：改写成读者能懂的话：例如「四个文件已复查朝向、台阶、门洞净空与支承」；把「C设计」写成「属推测性设计（无直接文献或考古依据）」。哈希、CPU图之类的流程细节移出公开卡片。
+- [medium] **南郊圆坛八陛** `m-luoyang-southern-altar` · 展示：两张顶视图对比度低，阶道看不清，缺少八陛与营门的近景 —— 改法：从模型重拍图集：用一张阶道加营门的上前方近景替换其中一张顶视图，另加一张立面或剖切视角交代上下坛与营墙的高度；顶视图降低阴影强度或改成斜顶视角。
+- [medium] **厩棚与饲槽 A/B** `m-luoyang-stable` · 展示：封面和图集是同一个角度，噪点很重，看不到后墙、山面和屋架 —— 改法：从 GLB 重拍并降噪。封面用 B 的斜视，模型约占画面 70%。图集补三类：背面斜视（看后墙）、山面正投影（看屋架和出檐）、檐口与饲槽近景各一张。如果按 F1/F3/F4 改了模型，改完再拍。
+- [medium] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · 卫生：近景/中景瓦面里有大量重合反向的内部封口面（看不见，纯浪费） —— 改法：只在交付的 GLB 里成对删掉这些重合面，再把相邻段沿接缝的顶点焊上，外观不变。近景会降到 50,012 面，中景 12,972 面。私有 build.py 如果需要逐瓦闭合体，可以留在源文件里。
+- [medium] **墙房相接住宅样例** `m-luoyang-wall-house-court` · 展示：封面和两张图集是同一个机位拍的三档预览，看不到墙房相接这个主题 —— 改法：从 LOD0 重拍一张至少 1600×1200 的封面。图集换成四张：墙房相接节点近景、街面视平线看南屋、院内看北屋和棚、三档对比条。coverAlt 写明画面：南屋跨南院墙而立，北屋在院北，东侧有开敞棚，四周夯土院墙围合。
+- [medium] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · 展示：详情页默认打开的是空的独立棚，不是封面上的足碓院；文件顺序交错，标签只有英文 —— 改法：files 改成分组顺序：workyard 的 LOD0/1/2 在前，workshed 的 LOD0/1/2 在后。label 改成中文，例如「足碓院（北屋·西屋·门屋·足碓棚）· LOD0」「独立作业棚 · LOD0」。
+- [medium] **武库收纳与点验** `m-luoyang-wuku` · 展示：summary、coverAlt、notes 满是内部术语；summary 没交代 A、B 两个主屋本身就不一样，六个 label 也只是文件名 —— 改法：summary 改成：「东汉武库库房的两种布局：A 是 12×7 m 库房加前棚，B 是 9×9 m 库房加侧棚，棚下各设点验台。B 带本轮的门框枢轴修订，通过了 150° 开门核验；A 保留早期 v2。容量盒只是功能占位，不复原兵器库存。」coverAlt 改成：「B 方案斜俯视：悬山筒板瓦顶库房坐在土台基上，正面双扇门向外开约 150°，右侧山墙外另立一座平顶侧棚，棚下摆着点验台。」label 写成「B · LOD0 近景（逐片瓦）
+- [medium] **夏门** `m-luoyang-xia-gate` · 展示：唯一的图集图 detail.webp 是同一机位的 LOD2，比封面细节还少 —— 改法：从 LOD1 重拍图集：正立面、门道人视、檐口角部特写、城墙高度看上层，再加一张 LOD1/LOD2 对比；现有的 detail.webp 改名为 LOD2 对比图，或者删掉。
+- [medium] **玉堂前后殿关系** `m-luoyang-yutang-halls` · 展示：封面和三张图集是同一机位的同一画面，看不出近景、A/B 差别和庭院尺度 —— 改法：从模型重拍以下几张：A/B 同比例并排的顶视平面（标注庭长）、站在庭中看后殿的人视图、廊内透视、前殿檐下近景。LOD 对比合成一张即可。
+- [medium] **市肆功能组** `m-market-functional` · 展示：8 个文件里 5 个是旧版装配件，标签写的是装配指令，卡片面数也取自旧版 —— 改法：files 只留 v2 三档和一件旧版对照 market-A-N2-local，标签改成白话，例如「旧版 v1 · 整组（含 N2 仓房替换，局部坐标）」；同时删掉这件的 30 个孤儿网格、合并重名材质。城市坐标的三件（market-cluster、N2-replacement、flowB-routes）和两件路径补丁移出 files，在 notes 里写明路径和用途；只改卡片，不动城景点名文件本身。也可以另开一张旧版归档卡。
+- [medium] **通行接口试件 · WFC方法研究** `m-passage-interface` · 展示：notes 为空，详情页显示「这件资产还没有写制作记录」；方法研究的检查和限制早已写好，却没有上卡 —— 改法：按评审员的三条写 notes，并改两处措辞。（1）summary.json 的 8 项里，deterministic、propagation_occurs、local_all_solved 不是负例，应写成「8 项约束与负例检查全部通过」。（2）notes 引用 passage-contract.json 时要注明：该文件按原字节保留，其中 status「not public」、limitations「not yet WFC solve
+- [medium] **通行接口试件 · WFC方法研究** `m-passage-interface` · 展示：标题写「WFC方法研究」，卡片上却看不到任何组合结果：gallery 为空，三张真实组合渲染图没上卡，封面只有 1000 px —— 改法：把三张组合图按 seed 7、15、18 的顺序加进 gallery，每张配一句说明（如「seed 7：3×3 组合，9 条内部边，环路秩 1」）。从四件 GLB 按现封面的 2×2 排布重拍一张宽度 ≥1200 px 的封面，可以在图上标注件名和 N 向。可选：把 methods/passage-wfc/assets/seed-7.glb 等作为额外 files（label 如「组合 · seed 7」）上卡，让 3D 视图直接看到组
+- [medium] **仓储作业功能组** `m-storage-functional` · 展示：summary只讲文件管理，看不出画的是什么；coverAlt开头描述的是渲染流程 —— 改法：summary改写成对象描述，例如「东汉雒阳太仓示意点旁的仓储作业组：两座架空悬山顶低仓、一座收货棚与计验案台，C级功能推测；含完整组与分件三档LOD」，档位说明挪到statusNote或notes。coverAlt改成画面描述，例如「斜俯视：素土地坪中部两座架空悬山顶木仓（南侧各有台阶）和一座四柱收货棚，棚下有案台，棚旁放着粮袋」。
+- [medium] **井栏与井架** `m-well-family` · 卫生：所有曲面都是平直着色，圆柱、筒瓦、轮、绳、罐近看都是一条条棱面 —— 改法：按角度自动平滑（约 35°）重算法线后重新导出：圆柱侧面、筒瓦弧面、轮环、绳、罐体都平滑，端面、口沿和方料的折角保持硬边。顶点数也会随之下降。
+- [medium] **井栏与井架** `m-well-family` · 展示：卡片上只看得到 A 方案：图集、coverAlt、english、notes 全空，状态和措辞也不准 —— 改法：图集依次放：B 整体（从 GLB 重拍，不裁屋脊）、A 井口近景、轮绳机构（只放一张）、B 井口近景，每张配 alt。coverAlt 直接用 index.html 里现成的「四坡亭覆盖开放井口，两侧木架托起提水轮绳，井栏围绕井口排列」，english 也补上。notes 从 README「实际检查与限制」里整理成「已完成的检查」「限制与待解决」两条，并注明包围盒包含 3.3 m 演示地坪和 0.65/0.70 m 的地下短井壁。sta
+- [medium] **轨与翼** `s-f01` · 展示：summary 和 notes 写的是 F01 网页，详情页看不到；GLB 自己的检查和限制没写 —— 改法：「已完成的检查」补上导出 GLB 的几何检查：零面积 0、同网格重复三角面 0、AABB 广相位只剩门框接头。「限制与待解决」补三条：0.25 m 悬浮间隙是有意的；门框接头有重叠；继承自 001/002 的已知限制。summary 改成写详情页上真能看到的展厅模型：东西两座展台、中央玉色索引碑、前排步道。网页的三章导航挪进 notes，注明页面在 fusions/F01/index.html。如果想在库里直接浏览这个网页，另建一张 w
+- [medium] **观测的尺度** `s-f02` · 展示：详情页默认打开的是玄瞳副本 iris.glb，组合场景排在第三，文件标签只是文件名 —— 改法：把 files 改成显式列表，scales-scene.glb 放第一，label 写「组合场景 · 玄瞳 + 岬界 + 概念基面」。两件副本有两种处理：一是从 files 去掉（F02 不在 library/ 标准目录，不会触发孤儿 GLB 提醒）；二是保留并放在后面，分别标为「玄瞳原件副本（同 m-003）」「岬界原件副本（同 m-004）」。
+- [medium] **案上秩序** `s-f03` · 展示：files 写成 auto：标签只是文件名，带地面的场景排在第一，另两件与 m-005、m-006 重复 —— 改法：按评审员的写法改成显式 files 列表并写清 label。F1 修好之前，把 desk-atlas.glb 排在最后。
+- [medium] **案上秩序** `s-f03` · 展示：作品本体是三章节的空间网页，卡片里却没有入口 —— 改法：卡片加 page: "index.html"，站点把 asset.html 的实况模式放宽到所有有 page 的卡。站点改好之前，先在 notes 里注明完整作品在 fusions/F03/index.html。
+- [medium] **孔与隙** `s-f04` · 展示：files 用 auto 收录五个 GLB，标签只是文件名，看不出 aperture-atlas.glb 是另外四件的合并件，体积也算重了一遍 —— 改法：把 "files": "auto" 改成显式列表并写中文标签，例如 assets/veil.glb「孔幕 VEIL（6×8 孔弧形陶板）」、assets/orison.glb「回环 ORISON」、assets/aperture-atlas.glb「整场：幕＋台面＋两件物」、assets/plinth.glb「台面」、assets/backdrop.glb「弧形背景幕」。在 F1 的展示件做好之前，先把孔幕或回环放第一位，让默认 3D 
+- [medium] **孔与隙** `s-f04` · 展示：summary 与 notes 讲的是 F04 网页实验，不是这几个 GLB：没说两件物是什么，还指向卡片上点不到的复用页和源包 —— 改法：summary 改成一句描述物件的话（≤80 字），例如「弧形背景幕里，一块 6×8 圆孔的弧形陶板立在泪滴形回环前，换个位置看，回环从被遮挡、透过孔洞到完整显露。」。notes 补一条文件层面的检查：米制、Y 向上；孔幕、回环、台面为闭合流形；背景幕是法线朝内的开放曲面；veil/orison 的 SHA-256 与 scene.json 一致。写明 Latitude（横向回环）和 Horizon（宽低孔幕）是复用页里的替换几何，复用
+- [medium] **连接工坊** `s-sd01` · 展示：图集第 1 张与封面是同一张图，summary 说的「提起中间隔板」却没有画面 —— 改法：gallery 删掉 final-overview.png，补上 slot-raised-task.png 和 slot-contact.png，可以放在两张关节特写旁边。封面不要裁原图：按原机位从 jointworks.glb 重拍一张宽度不小于 1200 px、岛板占画面七成以上的图，或者请创作者用原来的 Cycles 场景重出。图版 3 的旧布局图另见 V1。
+- [medium] **连接工坊** `s-sd01` · 展示：缺 coverAlt；english 写成了类别名；summary 的「三个灯臂样本」容易读成三款灯 —— 改法：补 coverAlt，例如「浅色岛板上三处展区：左后方粉色环墙围着青色圆台和折臂灯，右后方梳齿廊的青色展台上插着三块浅色隔板，前方 Y 形广场通向入口门槛和两根门柱」。english 改为 "JOINTWORKS"。summary 改为「在转动庭切换一盏折臂灯的初始、收拢、展开三个姿态，在插接廊逐级提起中间隔板」。
+- [medium] **岔径·望场** `s-sd02` · 展示：资产库详情页看不到这件空间作品本身，只能逐个转三个零件 —— 改法：卡片加 "page": "index.html"；asset.html 第 50 行把条件放宽为：有 page 就开「实况」（或把 spaces 加进去），空间类有 page 时默认先开实况。注意：视口小于 260×480 时 SD02 会自动退成静态路线，详情页 16:10 的图版在窄屏上会触发这种降级，可以接受。可选：另出一个整场预览 GLB，按 app.js 的偏移合成（仓 [-13,0,-5]、院 [10,0,-6]），放在 f
+- [medium] **岔径·望场** `s-sd02` · 展示：封面只有 750 px、没有 coverAlt，图集为空，现成的证据图没用上 —— 改法：重拍时比入口机位再收紧一些，让两座建筑在画面里占更大比例，输出至少 1200 px。另存为新文件（例如卡片旁的 cover.webp），让卡片的 cover 指向它，entry.png 原样保留。gallery 依次放 granary-low、courtyard-low、runtime-courtyard、entry；reuse-B 注明「013 B 方案迁移实验」后再放。补 coverAlt，例如：「入口低位远望：左为 012 高仓与
+- [low] **阙影·标界** `m-014` · 展示：summary 和 notes 没写参照对象与尺度口径，检查条目用的是内部行话 —— 改法：summary 补一句「以雅安高颐西阙为参照的墓阙形体研究」。「已完成的检查」改成白话：「A/B/C 与 4 组极值参数都实际建出并检查：封闭流形，无退化或重复面，无超出容差的穿插（A/C 各 2 处、B 1 处是厚度小于 1e-5 的共面接触），GLB 与原模三角形一致」。「限制与待解决」补上「过渡四层为光滑倒锥，未做仿木斗栱；尺寸为美术尺度，不是实测米」。
+- [low] **阙影·标界** `m-014` · 卫生：材质和网格名带 Blender 的重名后缀与默认名，节点前缀 B_/C_ 和方案字母撞车 —— 改法：去掉 .001/.002 后缀，把 Cube.0xx 网格名改成所属节点的名字，节点前缀不动。改完在 model-contract.json 里记下新哈希，注明「只改了名字，几何未变」，原哈希保留，作为创作者校验时对应的版本。
+- [low] **阙影·标界** `m-014` · 卫生：7 个材质全开了 doubleSided，而网格全部封闭、法线朝外 —— 改法：7 个材质的 doubleSided 设为 false。和 F8 一起改，一次完成，改完同步 model-contract.json 里的哈希，并注明几何未变。
+- [low] **住宅院落模块组** `m-courtyard-family` · 展示：图集 7 张里有 5 张是几乎一样的预设对照，缺六型总览和 LOD 对照，其中 3 张噪点明显 —— 改法：从模型重拍。第一张换成六型同框总览（统一灰底、同一机位），再加一张 A 型 LOD0 与 LOD1 并排。浅廊和深廊合成一张带文字标注的对照图，北移、基准、南移也合成一张。02～04 用足够的采样重渲，或做降噪。
+- [low] **住宅院落模块组** `m-courtyard-family` · 展示：files 标签写法不统一；「TC03 主堂屋面v1」其实是在 TC03-2 的底版上做的 —— 改法：统一写成「TC03-2 · LOD0 · C2」。三个预设改为「前C2功能变体 · B2 · 棚架北移 / 基准 / 南移」。TC03 屋面分支的 label 和 notes 改成「TC03-2 主堂屋面v1」；如果本意是做在 TC03 底版上，交伊苏里亚确认后重做。A 院分支去掉「完整院落」，或者补回地面后再保留。
+- [low] **板筒瓦薄壳模块** `m-eaves-shell` · 展示：封面只有A样本，垫着模型里没有的棕色底板，宽度不足1200px —— 改法：从GLB重拍封面，宽度≥1600px，A/B并排或以B为主。去掉辅助底板，或在coverAlt里说明它不属于模型。再补一张正对檐口的近景放进图集，让瓦当和接缝的状态一眼可见。
+- [low] **板筒瓦薄壳模块** `m-eaves-shell` · LOD：单一材质却拆成44/52个绘制批次，相同瓦件各存一份网格 —— 改法：网页用的版本把每档瓦件合并成1个primitive（或板瓦、筒瓦各1个），逐片分件版留在批次Release里供研究复核。也可以改成2个共享网格加节点实例。改完同步更新契约、registry和旧页里登记的SHA。
+- [low] **完整单门楼屋面研究** `m-gate-roof-study` · 展示：五个文件里有两对是同一模型，标签分不出来 —— 改法：五项都保留（或把成对的两项折叠显示），标签沿用旧模型页 docs/model-library/gate-roof-study.html 的叫法，并写明成对关系：「近景 · 新屋面源件」「近景 · 新屋面 · local-origin-v1 包装（BIN 与源件相同，多一个 identity 根节点）」「中景 · 新屋面（6 段弧）· local-origin-v1」「远景 · 原门楼屋面源件」「远景 · 原门楼屋面 · local-or
+- [low] **完整单门楼屋面研究** `m-gate-roof-study` · 展示：封面是城景研究目录里一张 1.3 MB 的 PNG，构建报告已提醒转 WebP，评审员没列 —— 改法：把封面另存一份 WebP（例如 docs/model-library/gate-roof-study-cover.webp，质量 88），卡片 cover 改指向它。研究页继续用原 PNG，docs/cities/ 里的文件不动。
+- [low] **完整单门楼屋面研究** `m-gate-roof-study` · 展示：related 是空的，没关联它所依据的瓦作方法件和来源院落原型 —— 改法：related 加上 m-eaves-shell 和 m-courtyard-family，并在 m-eaves-shell 卡的 related 里回链 m-gate-roof-study。
+- [low] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · 卫生：模型放在世界坐标里，离原点约 1.3 km，节点原点约定不一致 —— 改法：不要动顶点。可以在 notes 里写明模型以城景世界坐标交付、包围盒中心在哪里，确认详情页查看器按包围盒居中。以后新件最好统一成每栋建筑一个局部原点，再加一个父节点做世界平移。
+- [low] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · 卫生：材质名带 Blender 复制产生的 .007 后缀 —— 改法：材质名去掉 .007；mesh 名改成与节点同名（例如 A1__C01__tile）。两项都只改 JSON 块，二进制数据不动。
+- [low] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · 展示：文件标签只讲编码方式，没讲用途和解码依赖 —— 改法：改成「LOD1 · 中景（细瓦面）」和「LOD2 · 远景（平屋面）」。
+- [low] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · 展示：summary 说「三档」实际只给两档，notes 术语太密 —— 改法：notes 每条先用一句白话说明（例如：三档都做过行人入口和路线的碰撞检查，没有穿模），再附专业细节。summary 里的「C级」「保留局部台阶精度修复」可以换成白话；「三档」保留，或写成「LOD0–LOD2 三档」。
+- [low] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · LOD：15 个批次带着没有材质引用的第二套 UV，LOD2 无贴图却仍带 UV —— 改法：两档都删掉 TEXCOORD_1，外观不会变化。LOD2 如果城景不打算换成带贴图的材质，也把 TEXCOORD_0 删掉。
+- [low] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · 卫生：LOD1 有 4264 个位置重合、绕序相反的内部重复三角形 —— 改法：删掉位置相同、绕序相反的成对内部面。两处同向共面核对后，删掉多余的那一层。
+- [low] **B2门窗开口套件** `m-luoyang-b2-facade-kit` · 展示：文件标签「closed · dense / open · light」含义不清，容易被当成 LOD —— 改法：改成「关门 · 五棂窗」「开门 · 三棂窗」，和库里其它卡片的中文 label 风格保持一致。
+- [low] **B2门窗开口套件** `m-luoyang-b2-facade-kit` · 结构：门和窗放在同一个文件里共用原点，窗没有自己的放置点，窗棂疏密还和门的开合绑在一起 —— 改法：在 notes 里写清放置约定：原点是门洞底边中点，地坪 y=0；门框前表面在 z=-0.06、背面在 z=-0.22，门扇向 -z 一侧开启，最远伸入约 0.73 米；窗中心在 x=+2.4 米，窗台高 y=1.0 米。拆成独立的门、窗文件，等别的房型也要复用时再考虑（那一步属于 manual）。
+- [low] **B2门窗开口套件** `m-luoyang-b2-facade-kit` · 卫生：材质名和贴图名带 Blender 的重复编号后缀，封闭盒体不必开双面 —— 改法：只去掉 Blender 的重复编号：材质名改回 REUSED_C_wood，三张贴图名去掉 .006；doubleSided 设为 false。
+- [low] **B2门窗开口套件** `m-luoyang-b2-facade-kit` · 展示：卡片说匹配既有 B2 开口，却没在 related 里挂 B2 宿主卡，也没说明 B2 是什么 —— 改法：确认 B2 指的就是这个院落原型后，在 related 里加 "m-courtyard-family"，并在 summary 或 notes 里写一句「B2 为院落原型 B2，见 m-courtyard-family」。
+- [low] **B2门窗开口套件** `m-luoyang-b2-facade-kit` · 卫生：节点名 window_rail_1.03 / window_rail_1.77 带点号，three.js 加载后会被改名 —— 改法：改名为 window_rail_bottom / window_rail_top（或 window_rail_1_03 / window_rail_1_77），只改名字，不动几何。
+- [low] **辟雍礼堂与围护** `m-luoyang-biyong` · 展示：summary 和 coverAlt 里充斥内部工作用语，访客看不懂 —— 改法：summary 可以写成：「辟雍中心开放礼堂（台基 36.8 m 见方，四面六级踏道）与一段 L 形夯土围墙，各三档 LOD；尺寸与柱网是设计推测，不是考古复原；环水尚未建模。」删掉「两件分别下载」。coverAlt 可以写成：「方形夯土台基上的开放式庑殿顶礼堂，斜俯视。」notes 里的「原生有向几何」「路线体」「离散踏面」换成普通说法，意思不改。
+- [low] **辟雍礼堂与围护** `m-luoyang-biyong` · 展示：files 的 label 直接用文件名，看不出是哪个部件、哪一档 —— 改法：改成「礼堂 · 近景 LOD0」「礼堂 · 中景 LOD1」「礼堂 · 远景 LOD2」「围墙转角 · 近景 LOD0」等。
+- [low] **辟雍礼堂与围护** `m-luoyang-biyong` · 卫生：礼堂和围护的竖向基准不统一：礼堂台基底在 y=-1.2，围护底在 y=0 —— 改法：不动几何。在 notes 里写明竖向基准：礼堂原点在台面（±0.000），台基底在 -1.2 m；围护原点在墙基。是否统一基准，由伊苏里亚决定。
+- [low] **辟雍礼堂与围护** `m-luoyang-biyong` · 展示：封面和图集是低采样的 CPU 渲染，屋檐下的阴影里满是噪点；封面只有 1000 px 宽 —— 改法：按原来的机位重新渲染，打开降噪或提高采样，出一张不小于 1200 px 宽的封面。如果创作者想把原始 CPU 渲染留作「实际导出」的证据，可以把它放进图集。
+- [low] **庖厨炉灶 A/B** `m-luoyang-cooking-stove` · 展示：封面和图集不是从 GLB 渲的，色调和实际模型不一致，两张图又都是同一个斜视角度 —— 改法：保留现有两张，颜色可信。从 GLB 补拍几张：背面斜视看出烟口，正立面看灶门直通，俯视看火眼和釜，再加 A/B 并排和三档 LOD 对比。封面可以换成 A/B 并排，和标题对上。
+- [low] **庖厨炉灶 A/B** `m-luoyang-cooking-stove` · 展示：coverAlt 写得笼统，没描述画面内容，而且写「A/B」，可封面里只有 A —— 改法：改成描述画面的句子，例如「A 型灶体斜视：长方土灶，顶面一个带翼缘的釜，正面方形灶门，左侧一张木桌」。C 级的说明留在 notes 里。如果封面换成 A/B 并排，coverAlt 跟着改。
+- [low] **庖厨炉灶 A/B** `m-luoyang-cooking-stove` · 展示：files 的 label 没说明 A、B 的差别和各档用途，排列顺序也是交错的 —— 改法：按 A0/A1/A2/B0/B1/B2 排列，A-LOD0 仍放第一个。label 写成「A 单孔方火口 · LOD0 近景」「B 双孔弧顶火口 · LOD2 远景」这样的形式。
+- [low] **普通院落两种组装** `m-luoyang-court-layout-kit` · 展示：files 的 label 是英文 id，顺序也交错 —— 改法：按布局分组排序（先 opposed_rooms 三档，再 compact_work 三档），label 改成「三屋对置 · LOD0 近景」「紧凑作业 · LOD1」这样的中文
+- [low] **普通院落两种组装** `m-luoyang-court-layout-kit` · 展示：图集只有一张同角度斜视，没有近景或立面 —— 改法：从实际 GLB 补拍几张：门屋近景、正堂立面、作业棚近景、两种布局的正顶对比，并在 notes 里标明哪张是哪种布局
+- [low] **普通院落两种组装** `m-luoyang-court-layout-kit` · LOD：三种材质全部双面渲染 —— 改法：六个文件里的三种材质（包括 LOD2 的 __FLAT）一律设为 doubleSided=false。
+- [low] **普通院落两种组装** `m-luoyang-court-layout-kit` · 卫生：mesh 名和节点 extras 是旧原型的遗留，与实际内容不符 —— 改法：把 mesh 改名为 <布局>_earth、_timber、_tile；按每个节点的实际内容改写 extras.role，例如「土墙与屋身」「木构与门窗」「屋面与墙帽」。外观不变。
+- [low] **普通院落两种组装** `m-luoyang-court-layout-kit` · 展示：卡片没有关联它所用住屋的来源资产，notes 也没写是哪一版 —— 改法：related 加上 m-luoyang-ordinary-house-types。notes 里用直白的话写明：正堂、厢房、紧凑正堂分别是 H96、H72、H64 的冻结旧版，门屋来自哪套原型，以及它们和最新近景版（每座 2–2.9 万面）差在哪里。
+- [low] **德阳殿空间研究** `m-luoyang-deyang-hall` · 展示：卡片写着「未入城、城市位置为空」，但没有说明 A 方案已经被宫门内庭资产复用，并被城景按哈希锁定 —— 改法：在 related 里加上 m-luoyang-palace-admission-court，在「限制与待解决」里补一句：A 方案三档已作为宫院通行组合的殿身输入，文件哈希被锁定。
+- [low] **德阳殿空间研究** `m-luoyang-deyang-hall` · 展示：files 的 label 直接用文件名，卡片里也没写 A 和 B 两个方案差在哪里 —— 改法：把 label 改成「A 方案 · 近景 LOD0」「B 方案 · 远景 LOD2」这种格式；在 notes 里补一句两个方案的面阔、进深、高度和开间数差异。
+- [low] **德阳殿空间研究** `m-luoyang-deyang-hall` · 展示：coverAlt 写的是制作流程用语，没有描述画面 —— 改法：改成描述画面内容，例如：「德阳殿 A 方案斜视：单檐庑殿顶，前檐开敞柱廊，夯土台基正中一道踏道。」
+- [low] **夯土墙身家族** `m-luoyang-earthwall-family` · 卫生：所有文件都是闭合壳且绕序正确，却都开着 doubleSided —— 改法：把 11 个 GLB 的材质都改成 doubleSided: false。
+- [low] **夯土墙身家族** `m-luoyang-earthwall-family` · 卫生：westwall10 两个文件的节点、mesh、材质命名和 extras 键名与家族其它文件不统一 —— 改法：只给 westwall10 两个文件的 extras 补上 variant 和 version，节点、mesh、材质名都不改。如果要统一命名，应该把 earthwall-* 往项目约定靠（例如改成 earthwall-A-static_earth），改之前先确认城景没有引用这些节点名。
+- [low] **夯土墙身家族** `m-luoyang-earthwall-family` · 展示：coverAlt、summary、files 的 label 术语多，信息少：没写画面内容、长度和档位用途 —— 改法：coverAlt 改成描述画面，例如「两段梯形收分夯土短墙，左为 A 段 16 m、右为 B 段 24 m，侧面有水平夯层色带」。summary 用白话分别说明 A/B 短段（底宽 14 m）、C 长段（356 m）和西垣 A10 段（1.2 km，沿用城中墙身截面，只有中远档）。label 写成「A 短段 16 m · LOD0 近景」「西垣 A10 段 1.2 km · LOD1 中景」这类，files 按 A、B、C、西垣分组排列
+- [low] **足碓与踏台** `m-luoyang-foot-pestle` · 展示：封面和两张图集是同一个机位，看不清杠杆、支轴和杵臼的关系 —— 改法：从 GLB 重拍：01 换成侧立面（参照 main-side.png 的机位，能看出踏端、轴、杵、臼之间的高差），再加一张支轴和杵臼的近景；02 留作 LOD2 对比。如果还想保留 LOD1 对比，就把它挪到图集最后，并在说明里写明是 LOD1。
+- [low] **足碓与踏台** `m-luoyang-foot-pestle` · 展示：coverAlt 写的是渲染来源，file label 和“C级”术语也没说清 —— 改法：coverAlt 改成描述画面，例如“斜上方看足碓：左为两级台阶和带扶栏的木踏台，中间是架在支轴上的长杠杆，右端木杵落进白色石臼”。label 改成“LOD0 · 近景（贴图）”“LOD1 · 中景（低分辨率贴图）”“LOD2 · 远景（纯色，杠杆不可动）”。在 notes 里用一句话解释 C 级是什么意思（功能推测、无直接实物依据）。
+- [low] **足碓与踏台** `m-luoyang-foot-pestle` · 卫生：网格名 approach_step 实际装着全部静态木构 —— 改法：只改网格名：LOD0/LOD1 改成 pestle_0_timber_static，LOD2 的合并网格改成 pestle_0_timber_merged。材质名保持不动。如果觉得调色板命名需要说明，在项目层面统一写一次。
+- [low] **复道服务登临节点** `m-luoyang-gallery-access` · 卫生：所有材质都开了双面渲染，对闭合构件没有必要 —— 改法：只关掉 LOD0–2 三个展示文件的 doubleSided，最好在导出模板里统一处理；碰撞件不用动。
+- [low] **复道服务登临节点** `m-luoyang-gallery-access` · 展示：files 的 label 只是裸文件名，看不出各档用途 —— 改法：改成「LOD0 近景」「LOD1 中景」「LOD2 远景」「静态碰撞候选（不用于显示）」，不写面数。
+- [low] **复道服务登临节点** `m-luoyang-gallery-access` · 展示：coverAlt 只写渲染方式，没有描述模型本身 —— 改法：改成例如「四根圆木柱托起的登临平台，三面设栏，一侧接一段二十级的直跑木梯，柱下垫方形础石」。
+- [low] **复道服务登临节点** `m-luoyang-gallery-access` · 展示：图集三张几乎同一角度，缺少近景和碰撞件的图 —— 改法：从模型补拍柱下仰视和梯口近景各一张，再加一张碰撞候选与 LOD0 叠放的斜视图；如果按 F3 换了贴图，封面和三张图都要重拍。
+- [low] **复道服务登临节点** `m-luoyang-gallery-access` · 展示：notes 术语堆叠，一般读者难以看懂 —— 改法：白话改写时保留每一项检查；「有限楼板支持」「2.4米宽压力点」两个词先问创作者是什么意思再改；梯级那一句改成「LOD0/LOD1 为 20 级，LOD2 并成 10 级；碰撞候选固定 20 级」。
+- [low] **谷门** `m-luoyang-gu-gate` · 展示：唯一的图集图 detail.webp 其实是 LOD2 平涂整体图，和封面同一角度，看不到任何细节 —— 改法：从模型重拍图集：檐口和柱头近景、中门道和全开门扇近景、正立面、LOD1/LOD2 对照。detail.webp 要么换成真正的近景，要么改名为 lod2.webp 放到最后。
+- [low] **谷门** `m-luoyang-gu-gate` · 展示：notes「限制与待解决」里句号后面多了一个半角空格 —— 改法：删掉这个空格，也可以把这条拆成两句，分开写城景落位和验收范围。
+- [low] **谷门** `m-luoyang-gu-gate` · 展示：coverAlt 写成「CPU三分之四视图」：分数写反了，还夹着流程术语 —— 改法：改为「谷门候选模型的四分之三视角：较厚门墩、三条门道、静态全开门扇与双坡上屋。」
+- [low] **广阳门** `m-luoyang-guangyang-gate` · 展示：coverAlt 写成了“三分之四视图”，还带着“CPU”这种渲染术语；notes 里有一个多余的空格 —— 改法：coverAlt 改为“广阳门候选模型的四分之三视图：夯土三门道、通长双坡上屋及两侧短墙。”；删掉 notes·限制与待解决里句号后的空格；其余措辞不动。
+- [low] **人力石磨 A/B** `m-luoyang-hand-mill` · LOD：LOD1仍有18个绘制批次，与近景档一样 —— 改法：LOD1 按材质合并网格，降到3个（去掉地台后为2个）批次；外观不变。
+- [low] **人力石磨 A/B** `m-luoyang-hand-mill` · 展示：coverAlt、文件 label 和 notes 没有说清楚内容 —— 改法：coverAlt 改成描述画面的话，例如「A型：高脚方木台上的双扇石磨，带接粉圈和侧柄」；label 改为「A 高方台·近景」「B 矮长台·近景」「A 高方台·简化档」等；notes 改成读者看得懂的说法。
+- [low] **人力石磨 A/B** `m-luoyang-hand-mill` · 材质：三个材质全部双面，材质名也不表意 —— 改法：在四个文件里把三个材质的 doubleSided 设为 false。材质不必改名。
+- [low] **人力石磨 A/B** `m-luoyang-hand-mill` · 卫生：节点名里留着 Blender 复制产生的 .001 后缀 —— 改法：改成能表示位置的名字，例如 A_stand_post_FL/FR/BL/BR、A_stand_apron_front/back。
+- [low] **住宅主屋面** `m-luoyang-house-roof` · 展示：图集里没有能看清瓦件细节的近景图 —— 改法：从近景件补拍三张近景：檐口、正脊、山面出际；再加一张近景件和中景件同角度的对比图，都放进 gallery，近景放第一张。
+- [low] **住宅主屋面** `m-luoyang-house-roof` · 展示：coverAlt 和 files 的 label 用的是技术行话和文件名 —— 改法：coverAlt 改成画面描述，例如「青灰色两坡悬山屋面斜视全景，筒瓦成列，正脊平直，两端山面出际」。label 改成「近景 · 实体瓦件」「中景 · 简化屋面」，不写面数。「C设计」改成「C级（推测性）设计」，或者在 notes 里解释一次。
+- [low] **低墙生活分区单元** `m-luoyang-household-service` · 卫生：墙体网格叫 west_lowwall，实际装着全部墙段；三个材质都是双面 —— 改法：三档同步改名：west_lowwall 改为 service_lowwall（或与节点同名），shelter_post 改为 service_timber；三个材质的 doubleSided 改为 false。只改名字和这个标志，不动几何。
+- [low] **低墙生活分区单元** `m-luoyang-household-service` · 展示：三档文件 label 只有 LOD 序号，没写用途 —— 改法：改为『LOD0 · 近景（512² PBR）』『LOD1 · 中景（瓦垄减半，256² 贴图）』『LOD2 · 远景（纯色，无瓦垄）』。
+- [low] **低墙生活分区单元** `m-luoyang-household-service` · 展示：coverAlt 只交代了图的来源，没有描述画面 —— 改法：改为『斜俯视：低矮土墙围成方院，一侧墙上留门洞；后半院四根木柱撑起两坡筒瓦棚，前院放着一只木槽。形体和尺寸为C级设计。』
+- [low] **住宅内门修订组件** `m-luoyang-inner-door-components` · 卫生：封闭实体材质开着双面渲染 —— 改法：法线朝外的前提下，把材质的 doubleSided 关掉，外观不会变，还能省掉背面绘制。
+- [low] **住宅内门修订组件** `m-luoyang-inner-door-components` · 展示：kind「构件」不在分类表里，构建检查会报提醒 —— 改法：把 kind 改成表里已有的「城市构件」，和 m-luoyang-b2-facade-kit、m-luoyang-earthwall-family 这些组件卡保持一致。如果想保留「构件」这个新类型，就先把它加进 categories.json 的 models.kinds，这样 m-luoyang-house-roof 也一起解决。
+- [low] **住宅内门修订组件** `m-luoyang-inner-door-components` · 卫生：承接件残留布尔运算的近重合顶点和针状三角形，网格名是默认的 Cube.004 —— 改法：每个部件内部按 1 mm 以内的距离合并顶点。部件之间最小的有意间隙是 5 mm，按部件分开合并不会误焊。再对共面的面做有限溶解，重新三角化。mesh 改成和节点同名（single-door_timber / paired-door_timber）。外观不变。
+- [low] **住宅内门修订组件** `m-luoyang-inner-door-components` · 展示：标题「住宅内门修订组件」用了流程用语「修订」 —— 改法：标题改成描述对象本身的说法，例如「住宅内门组件（单扇/双扇）」，并同步 p-luoyang 里 progress 的同名条目。修订经过写进 notes 或项目 journal。
+- [low] **津门** `m-luoyang-jin-gate` · 展示：卡片没有写出津门的方位和研究出处，「门名、相对方位分开记录」在卡片里查不到 —— 改法：在 notes「证据等级」里补一句：津门位于南垣（B 级示意定位，来源高崇文 2023 图 1），记录见 docs/cities/luoyang/data/evidence/evidence-geometry.json 的 gate_jin_B；门楼与屋面形制没有研究依据，属 C 设计。
+- [low] **津门** `m-luoyang-jin-gate` · 材质：三种材质都开了双面渲染，没有必要 —— 改法：把三档三个材质的 doubleSided 改为 false 后重新导出（或直接改 GLB 的 JSON 块）。这几个文件不在城景点名清单里，不涉及城景哈希。
+- [low] **开阳门** `m-luoyang-kaiyang-gate` · 展示：图集里唯一一张 detail 图和封面机位相同，不是细节图 —— 改法：从 LOD0 重拍三张：正立面一张；门道内部加门扉的近景一张；楼层守室加开廊的近景一张，最好顺带拍到人字叉手。用它们替换 detail.webp，并在 gallery 里登记；notes 里「本卡图像来自该版模型的既有CPU渲染」也要同步改写。
+- [low] **开阳门** `m-luoyang-kaiyang-gate` · 展示：coverAlt 写成「三分之四视图」，应为「四分之三视图」；写到的中央守室在封面里基本看不见 —— 改法：改成「开阳门候选模型（LOD1）的四分之三视图：三孔夯土门台、楼层开廊与通长双坡屋盖」；守室要么从 alt 里删掉，要么换一个能看到守室的封面。
+- [low] **灵台类型与踏步研究** `m-luoyang-lingtai` · 卫生：static_tile 在两个 LOD 中各有 10 个完全重合的重复面，有 Z-fighting 风险 —— 改法：把每对内部接缝面两份都删掉，让两块屋面板合成一个闭合体。重新导出两个 LOD，确认面数减少 10、外观不变。
+- [low] **灵台类型与踏步研究** `m-luoyang-lingtai` · 展示：coverAlt 写的是文件出处而不是画面内容；files 的 label 只是重复文件名 —— 改法：coverAlt 改成描述画面，例如「斜俯视灵台院落：中央夯土方台南面一道直跑踏步，四面木构廊，外围院墙」；label 改成「中景 LOD1 · 带贴图」「远景 LOD2 · 纯色」。
+- [low] **灵台类型与踏步研究** `m-luoyang-lingtai` · 展示：notes 用了读者看不懂的内部术语 —— 改法：只把含义确定的词换成白话，例如「独立CPU总览」改为「用 Blender CPU 渲染的实际 LOD1 总览」，「C推测」改为「推测（C 级）」。「原生有向几何」「有限足部动作检查」等拿不准的词，先请伊苏里亚确认原意再改，不新增原文没有的检查内容。
+- [low] **旄门** `m-luoyang-mao-gate` · 卫生：三种材质都开了 doubleSided，而墩台、柱子、瓦面都是封闭实体 —— 改法：确认法线朝外后，LOD1 的三种材质改为单面，减少背面绘制。LOD0 已被城景点名，需要同步更新哈希后再改。
+- [low] **旄门** `m-luoyang-mao-gate` · 展示：文件 label 没说清两级的差别 —— 改法：改为「LOD1 · 轻量版（无贴图，屋面简化）」和「LOD0 · 近景完整版（带夯土、木、瓦贴图）」。
+- [low] **旄门** `m-luoyang-mao-gate` · 展示：封面和图集里有大片没收敛的渲染噪点，檐下台面看起来像碎石 —— 改法：用更高的采样数并打开降噪，重新渲染封面和图集；换用 Eevee 或 Workbench 渲染也可以。重拍时按 F6 的建议改用 LOD0，并补几张细部图。
+- [low] **八铺四棚店前线** `m-luoyang-market-frontage` · 卫生：三档GLB各有96对背靠背重合的内部面 —— 改法：在三档里删掉这些成对重合的内部接缝面（墙底压在地台顶面上的那部分内部面也可以一起删），合并顶点时保留原来的平直法线。纯清理，外观不变。
+- [low] **八铺四棚店前线** `m-luoyang-market-frontage` · 展示：封面和唯一一张图集几乎是同一个远处斜视角，看不到铺面内部和v2.1修订的柜台侧向入口 —— 改法：先修V1，再从模型重拍：封面保留一张总览；图集加三张，一张在街道视高看开口铺面（柜台、侧向入口、货架），一张顺着街道轴线看两排对开，一张看棚。
+- [low] **八铺四棚店前线** `m-luoyang-market-frontage` · 展示：summary、coverAlt、notes里有很多内部流程用语，读者看不懂 —— 改法：把“C级”改写成“推测性设计，非遗址原状”。coverAlt改成描述画面，例如“两排各四间夯土墙瓦顶店铺隔街相对，两端各有小棚”。notes里的检查项改用平实的话写。label加上用途，例如“LOD0 · 近景”。title里的“店前线”也可以考虑改成“列肆街段”这类通行说法。
+- [low] **八铺四棚店前线** `m-luoyang-market-frontage` · 卫生：三档GLB的网格名和extras沿用单铺原型S86的旧名，和实际内容不符 —— 改法：把三个网格改成和节点一致的名字，例如layout_earth、layout_tile、layout_timber；extras里的module改为layout，或删掉S86字样。不动几何。
+- [low] **市肆模块与组装** `m-luoyang-market-modular-assembly` · 展示：coverAlt 没有描述封面画面 —— 改法：coverAlt 改成例如「S86 深铺单铺斜视：三面夯土墙、悬山筒瓦屋面，前口两根角柱加一根中柱，铺内一条长柜台和后壁三层搁板」，「C级设计，非遗址原状」挪到 notes。在 notes 里注明封面是 S86-LOD0，两张图集分别是组合样例的前斜视和后斜视。
+- [low] **市肆模块与组装** `m-luoyang-market-modular-assembly` · 展示：三铺组合里的中铺和两座摊棚没有单独文件，卡片也没交代来源 —— 改法：在 notes 里按实测写明组合构成：左铺即 S86，右铺即 S84；中铺是 6×6 m 墙体、檐高 3.0 m、带后部储物隔间和 1.8 m 门洞的第三种铺型；前方两座 2.2×1.9 m 柱网的摊棚。中铺和摊棚出自哪个模块或家族，请创作者补一句。如果它们也要当作可复用模块，再请创作者单独导出。
+- [low] **市肆模块与组装** `m-luoyang-market-modular-assembly` · 卫生：网格名是合并时遗留下来的，和内容对不上 —— 改法：把每个 mesh 改成和所在节点同名，例如 S84-static-LY_P01_earth，去掉 .001 后缀，几何和材质都不动。这些文件不在城景点名清单里，不涉及哈希登记。
+- [low] **市肆模块与组装** `m-luoyang-market-modular-assembly` · 展示：封面只有 1000 px 宽，构建检查已经报了提醒 —— 改法：用 S86-LOD0 按现在的封面角度重拍一张 ≥1200 px 的封面，例如和图集一样的 1600 宽，替换 cover.webp 后重跑检查。
+- [low] **明堂形制假说** `m-luoyang-mingtang` · 展示：coverAlt 用词不准：写成了「四侧台基」，还混入「实际原生CPU渲染」这类流程术语 —— 改法：改为：「明堂 A 方案斜视：方形夯土台基，可见两面踏道，上下两重灰瓦四阿屋面。」
+- [low] **明堂形制假说** `m-luoyang-mingtang` · 展示：summary 和 files.label 没说清 A/B 各是什么，「C解释」也和 A/B 方案字母相撞 —— 改法：label 改为「A 方案 · LOD0 近景」「A 方案 · LOD1 中景」「A 方案 · LOD2 远景（无贴图）」，B 同理，不写面数和尺寸。在 summary 或 notes 里用设计参数说明差别：A 开间 8m、台高 1.2m；B 开间 7m、台高 0.9m。「C解释」改成「推测性解释」。
+- [low] **明堂形制假说** `m-luoyang-mingtang` · 卫生：三个材质全部设为双面，可能掩盖法线问题，并让片元开销翻倍 —— 改法：把六份 GLB 里 3 个材质的 doubleSided 改为 false（或在 Blender 里勾选 Backface Culling 后重导），改前改后各渲一张，对比确认没有破面。
+- [low] **明堂形制假说** `m-luoyang-mingtang` · 展示：封面只有 1000px 宽，构建检查已给出提醒 —— 改法：按 F6 重拍时，封面和图集用 1200px 以上（如 1600×1200）出图，消掉这条提醒。
+- [low] **北郊方坛四陛** `m-luoyang-northern-altar` · 展示：coverAlt 写“土色方坛”，封面画面却是接近白色的坛体 —— 改法：F3 定下颜色之前，先把 coverAlt 改成“浅米色方坛……”；如果 F3 改回黄褐色，再重拍封面，沿用原 alt。
+- [low] **北郊方坛四陛** `m-luoyang-northern-altar` · 展示：图集里 LOD1、LOD2 两张总览和封面的机位、画面几乎相同，没有带来新信息 —— 改法：从模型重拍：用一张正立面（显示 1.2 米坛高和 6 级踏步）和一张带 1.7 米人形尺度参照的低机位斜视，替换两张重复的总览。
+- [low] **北郊方坛四陛** `m-luoyang-northern-altar` · 卫生：坛顶扇形剖分出狭长三角形，闭合实体还开着双面渲染 —— 改法：在 Blender 里对坛顶和坛底两个平面做 Limited Dissolve，去掉 ±9.9 处的 16 个接缝点，再按 Beauty 方式三角化，外观不变。三档材质的 doubleSided 都改为 false。
+- [low] **北郊方坛四陛** `m-luoyang-northern-altar` · 展示：summary 写“保留未知围营和祠舍”有歧义，容易读成模型里含有围营和祠舍；notes 的“20米边长”和属性表的 26 米包围盒并列，没有说明 —— 改法：把 summary 改成“……四梯与坛体连成一体；围营和祠舍未知、未建模，不代表北郊全场，也未定址。”；把 notes 里的尺寸写成“坛身20米见方、连四陛总宽26米”。
+- [low] **普通住屋与门房四型** `m-luoyang-ordinary-house-types` · 展示：封面和图集只拍了三型住屋，四型之一的 G10 门房没有展示 —— 改法：从 G10-LOD0.glb 补拍一张图集图，最好再加一张四型并排的总览图。
+- [low] **普通住屋与门房四型** `m-luoyang-ordinary-house-types` · 展示：文件 label 和 summary 用内部代号，读者分不清哪个是门房、各型有何区别 —— 改法：label 改成类似「G10 门房 · 面阔 10.9 m · LOD0」「H96 住屋 · 双窗 · LOD0」的写法；summary 改成描述四型差异的一句话，记账说明移到 notes。
+- [low] **普通住屋与门房四型** `m-luoyang-ordinary-house-types` · 展示：coverAlt 不描述封面画面 —— 改法：改写为描述画面的句子，例如「H64 住屋斜视：夯土墙、悬山两坡筒板瓦顶、敞开门洞与前檐两角木柱」，C 级设计的说明可以保留在句尾。
+- [low] **普通住屋与门房四型** `m-luoyang-ordinary-house-types` · 卫生：G10 节点名前缀是 layout__，与其它三型的类型前缀不一致 —— 改法：12 个文件一起改：节点统一命名为 <型号>__LY_P01_<earth|timber|tile>，网格改名为 <型号>_<earth|timber|tile>，extras 统一用同一套键（family/profile/LOD/role/evidence）。
+- [low] **普通住屋与门房四型** `m-luoyang-ordinary-house-types` · 展示：详情页默认 3D 打开的是旧版 G10 门房，和封面 H64 不一致 —— 改法：调整卡片 files 的顺序：把和封面一致的 H64-LOD0（或最能代表新构件包的 H96-LOD0）放在第一位，四型的 LOD0 在前，LOD1/LOD2 在后。
+- [low] **无名宫院通行组合** `m-luoyang-palace-admission-court` · 展示：图集里开门和闭门两张几乎一样，另外两张总览和封面同机位，变体差别没有展示出来 —— 改法：从模型重拍一组更近的开闭对照，让门道占画面宽度的三分之一以上（例如从庭内朝南平视，参照extra/cr/cr-gate-inside.png的机位）；再补一张殿前檐或廊庑的平视近景。两张LOD对照图保留。
+- [low] **无名宫院通行组合** `m-luoyang-palace-admission-court` · 展示：notes「已完成的检查」术语过密，读者看不懂 —— 改法：改写成通俗说法，并写明原生文件是luoyang-palace-admission-court-v1.zip、随哪个批次的Release补传。
+- [low] **高架复道局部模块** `m-luoyang-palace-gallery` · 展示：封面和图集都是同一个外部斜视角，看不到研究重点「三条并行通行带」 —— 改法：从模型重拍图集：第一张换成端立面（用 r/main-side.png 的机位）或剖面，标出三条通行带；加一张从端口望进通道的内景（参考 extra/x2/A0-port.png）；A-LOD1、A-LOD2、B-LOD0 三张同机位的图合成一张并排对比图。
+- [low] **高架复道局部模块** `m-luoyang-palace-gallery` · 展示：文件 label 只是文件名，A/B 两型的差别和用途没有说明 —— 改法：把 label 改成例如「A 型 · 三开间 12.9m · LOD0 近景」「B 型 · 两开间 9.9m · LOD2 远景」。summary 或 notes 补一句 A/B 的尺寸、楼面高度差异，以及两型是否打算互相拼接。
+- [low] **高架复道局部模块** `m-luoyang-palace-gallery` · 展示：coverAlt 写的是渲染方式而不是画面内容，notes 术语晦涩 —— 改法：coverAlt 改成描述画面，例如「三开间高架复道片段斜视：十六根木柱立在方形柱础上，承托楼板和带窗洞的木板围墙，上覆两坡悬山顶，端部敞开」。notes 保留技术结论，内部术语换成白话或加括注，例如「C推测（无直接考古依据的推测）」。
+- [low] **宫门值守核验切片** `m-luoyang-palace-guard` · 展示：封面标称开门态，但与图集第一张闭门图几乎分不出来 —— 改法：把 rear 开门图设为封面，或从模型补拍一张门屋近景开门图作封面；coverAlt 相应改写，例如「宫门值守切片开门态背面斜视：两扇门向后开启，两侧为值守亭」。
+- [low] **宫门值守核验切片** `m-luoyang-palace-guard` · 展示：12 个文件的 label 只是文件名，看不出哪组带动画、哪组是静态姿态、unit 指什么 —— 改法：改为可读的 label，例如「切片·开闭动画·LOD0」「切片·闭门静态·LOD0」「切片·开门静态·LOD0」「单体值守亭·LOD0」，并依次标出 LOD1、LOD2。
+- [low] **宫门值守核验切片** `m-luoyang-palace-guard` · 展示：notes 的「已完成的检查」术语过密，普通读者难以理解 —— 改法：改写为平实的说法，例如「已逐个核对 12 个 GLB 的几何、UV 和门扇层级；开门时通道可通行，闭门时中央通口被阻断；封面和图集用最终姿态渲染，没有后期修图」。
+- [low] **宫前土木对阙** `m-luoyang-palace-paired-que` · 展示：封面和图集是同一机位的三张斜视图，看不到上屋和构造细节 —— 改法：从 LOD0 重拍：封面保留斜视总览；图集换成上屋近景、正立面、侧立面各一张，档位对比合成一张并排图；渲染时提高采样或开降噪，去掉上屋内部的噪点。
+- [low] **宫前土木对阙** `m-luoyang-palace-paired-que` · 展示：coverAlt 只写渲染方式，没写画面内容 —— 改法：改成描述画面内容，例如「斜俯视下的一对宫前阙：收分夯土台上立木构上屋，覆深灰两坡瓦顶，台身有成排纴木头」。
+- [low] **宫前土木对阙** `m-luoyang-palace-paired-que` · 展示：files 的 label 只是文件名，notes 用了读者看不懂的内部用语 —— 改法：label 改成「LOD0 近景」「LOD1 中景」「LOD2 远景（无贴图）」；notes 用公开等级「推测」替代「C设计」，流程用语删去或解释，删去本卡没有的「前庭组合」；summary 去掉「不是既有石阙改名」。
+- [low] **宫廷侧廊庑** `m-luoyang-palace-sidehall` · 展示：图集只有一张入口近景，封面看不清房门、背面和侧面构架 —— 改法：从 LOD0 补拍几张：人眼高度的正立面、山面斜视、背面、三档并排对比。封面换一个光线能照进前廊的角度，并按 V2 出到 1200 像素以上。
+- [low] **宫廷侧廊庑** `m-luoyang-palace-sidehall` · 展示：summary 写成了修订记录，coverAlt 是工序描述 —— 改法：只把中间那句换成对资产本身的描述，例如「前廊后室，悬山两坡顶，第五间前有一组三级踏步」。尺寸和面数由构建自动读出，不必手写进 summary。coverAlt 改成画面描述，例如「灰底斜俯视的长条两坡顶廊庑，前檐九根柱，第五间前有三级踏步」。
+- [low] **宫廷侧廊庑** `m-luoyang-palace-sidehall` · 展示：notes 满是内部术语，读者看不懂 —— 改法：改成白话，例如「C功能设计」改成「为通行方便设计的入口位置，非汉代规制」，「路线体检查」改成「0.8 米宽、1.8 米高的人行通道可以从踏步走到每间房门」。
+- [low] **宫廷侧廊庑** `m-luoyang-palace-sidehall` · 展示：files 的 label 没写各档用途，也没解释方案 A —— 改法：label 写成「LOD0 · 近景」「LOD1 · 中景」「LOD2 · 远景（纯色，无贴图）」，不写数字；在 notes 里用一句话说明 A 指的是哪个方案。
+- [low] **宫廷侧廊庑** `m-luoyang-palace-sidehall` · 展示：封面和图集都只有 1000 像素宽，低于规范建议的 1200 像素，检查会出提醒 —— 改法：从模型重渲封面（图集也一起），出到 1600×1200 以上的 WebP。可以和 F5 的补拍一起做。
+- [low] **宫墙水道三段接口** `m-luoyang-palace-waterway-interface` · 展示：图集 04-horizontal-port 是正交端视图，读不出渠口，顶部还被裁掉 —— 改法：从近景模型重拍：用带透视的斜向近景看进渠口，能看到内腔和竖井底；另补一张竖井与渠道交接处的砖缝近景，替换 04 号图。
+- [low] **宫墙水道三段接口** `m-luoyang-palace-waterway-interface` · 展示：notes 和 files label 里内部术语太多，访客读不懂；Y=0 的含义也没写 —— 改法：把「已完成的检查」改写成访客能读懂的话，保留每项检查的原意；读不懂的项先向创作者确认含义再改。label 可改成「近景 LOD0 · 组装」「中景 LOD1 · 组装」「远景 LOD2 · 组装」「拆解检视 · 现代示意」，不要写入面数。可选：在 notes 里补一句「Y=0 为渠底（底板顶面），底板向下0.18 m」。
+- [low] **宫墙水道三段接口** `m-luoyang-palace-waterway-interface` · 卫生：封闭实体全部用双面材质，掩盖了法线朝向是否正确 —— 改法：可选清理：把四个文件里 LY_P01_brick 的 doubleSided 改为 false。前提（全部闭合、法线朝外）已经核实，不需要重算法线，改后外观不变。长条细三角不处理。
+- [low] **平城门** `m-luoyang-pingcheng-gate` · 展示：唯一的图集和封面同机位同构图，“detail”里看不到细节 —— 改法：从模型重拍 3–4 张：门道近景、背面斜视、檐下仰视，再加一张地面附件单独的图；detail 换成真正的局部近景。
+- [low] **平城门** `m-luoyang-pingcheng-gate` · 展示：summary 和 notes 里内部术语多，访客读不懂 —— 改法：summary 改成白话，但保留年代上的保留意见，例如“东汉雒阳平城门的三道门楼设计候选，近中远三档；177、178 年有损坏记载，180 年是否已修复未定”。coverAlt 去掉“CPU”。notes 里的样点统计压缩成一句“单独使用时约两成落脚点要靠旧路”。
+- [low] **连续住宅生活片区** `m-luoyang-residential-life` · 展示：files[] 的面数是唯一网格数，不是实例展开后的实际渲染量；LOD1 和 LOD2 的展开量卡片没写 —— 改法：在 notes 或各档 label 里补上「实例展开约 50.7 万 / 26 万 / 8.6k 三角，表中面数是唯一网格数」。另外建议 glb_audit.py 增加一项实例展开面数，并用它检查面数上限（这是站点代码，不改模型）。
+- [low] **院内备食关系** `m-luoyang-residential-preparation` · 卫生：两个材质都设了双面，可封闭的灶体和板件并不需要 —— 改法：把源灶stove-A与W2三档的earth、timber材质一起改为doubleSided=false，保持两边一致，同时在notes里注明这一处偏离了“逐字节一致”的说法。
+- [low] **院内备食关系** `m-luoyang-residential-preparation` · 展示：coverAlt写的是渲染方式，没描述画面内容；summary里“两节点放置附层”术语化 —— 改法：coverAlt改为：“斜视：长方土灶正面开方形火门，灶面坐一口带腰沿的釜；左后方一张四腿木备食板，灰底，无地面。”summary里的“两节点放置附层”改为“按住宅W2院原位摆放的灶与侧板两件”。
+- [low] **院内备食关系** `m-luoyang-residential-preparation` · 展示：related没有写源卡m-luoyang-cooking-stove，读者看不出本卡模型是庖厨炉灶A的原样副本 —— 改法：在related里加上"m-luoyang-cooking-stove"。summary里的“复用既有灶体与侧备食板”改为“复用庖厨炉灶A（stove-A）三档的原样几何与贴图”。
+- [low] **圈厕关系 A** `m-luoyang-service-court` · 展示：notes 措辞晦涩，看不出具体所指 —— 改法：notes 改成白话，屋脊那句按几何回读如实写，例如「顶排筒瓦上端伸进脊块底约 2 cm，属局部穿插，被脊块遮住」。V1 修完后同步改写。其余部分可以写成：未做卫生功能、牲畜活动、人体连续动线、结构受力和网页 GPU 的实测。
+- [low] **圈厕关系 A** `m-luoyang-service-court` · 展示：封面宽只有 1000 px，构建检查已经提醒 —— 改法：从模型重拍封面，宽不小于 1200 px（例如 1600×1200），和 F1 的图集一起重拍，构图可以沿用现在的封面机位。
+- [low] **上东门** `m-luoyang-shangdong-gate` · 卫生：三种材质全部设为双面 —— 改法：先在 Blender 里用 Face Orientation 确认法线全部朝外，然后把 earth 和 timber 设为单面；屋面如果是单层薄片，可以保留双面或补上厚度。外观应当不变。
+- [low] **上东门** `m-luoyang-shangdong-gate` · 展示：notes 里夹着内部流程用语，还有多余空格 —— 改法：「版本与展示」改成「原 LOD0 约 17.2MB，超过单个 GLB 15MB 的上限，未上架；原件保留」，并删掉多余空格。
+- [low] **上西门** `m-luoyang-shangxi-gate` · 展示：图集唯一一张 detail.webp 和封面机位、构图完全相同，不是细节图 —— 改法：从 LOD0 重拍 2 到 3 张图集：门道近景（门扇和门额）、檐下或上层敞廊近景、正立面，替换或补充 detail.webp，卡片的 gallery 同步更新。
+- [low] **上西门** `m-luoyang-shangxi-gate` · 展示：coverAlt 把「四分之三视图」写成了「三分之四视图」，还夹着「CPU」这样的管线用语 —— 改法：coverAlt 改成「上西门候选模型的四分之三斜视图：三孔土木门体、通长上层与四坡短脊屋盖。」其它门卡可以顺手批量改。
+- [low] **上西门** `m-luoyang-shangxi-gate` · 展示：封面和图集的暗部有明显的渲染噪点 —— 改法：重拍封面和图集时提高采样数或开启降噪，可以和 F4 一起做。
+- [low] **南郊圆坛八陛** `m-luoyang-southern-altar` · LOD：每个文件只有2种材质，却拆成35/29个绘制批次 —— 改法：按材质合并网格（earth一个、wood一个），外观不变，批次降到2–3个；如果需要保留展示地面的独立开关，就让它单独成一个网格。
+- [low] **南郊圆坛八陛** `m-luoyang-southern-altar` · 卫生：封闭实体用了双面材质，节点名带Blender的.001后缀 —— 改法：两种材质改为单面（法线已正确，外观不变）；节点按方位重命名，如A_inner_gate_N_post_W、A_outer_enclosure_NE。
+- [low] **南郊圆坛八陛** `m-luoyang-southern-altar` · 展示：coverAlt用了「实际CPU渲染」这类流程术语 —— 改法：改为「南郊圆坛A方案斜视图：两层圆坛，下坛八面出阶、上坛四阶，外围两重圆形营墙四面开门。」
+- [low] **厩棚与饲槽 A/B** `m-luoyang-stable` · 展示：coverAlt 不描述画面，还写成 A/B；文件标签只有字母 —— 改法：coverAlt 改成「三开间悬山灰瓦厩棚（A）斜俯视：方木柱承檐檩，前檐与两山开敞，后侧 1.3 m 矮土墙前每间一只木饲槽。」label 改成「A · 三开间」和「B · 四开间」。
+- [low] **厩棚与饲槽 A/B** `m-luoyang-stable` · 展示：notes 用了内部术语；项目卡的进度说明写了这张卡并没有的「姿态和 LOD」 —— 改法：只改本卡的 notes：把两处术语改成白话，含义拿不准的先问创作者，再删掉多余的空格。p-luoyang 里的计件口径不动。
+- [low] **厩棚与饲槽 A/B** `m-luoyang-stable` · 卫生：节点名带浮点尾巴和 Blender 的复制后缀 —— 改法：按前后檐改名：名字里是 -2.24 或 -1.94 的在开敞的前檐，是正值的在靠后墙的后檐。例如改成 B_post_0_front / B_post_0_rear、B_wallplate_front / B_wallplate_rear、B_roof_board_front / B_roof_board_rear（不带后缀的 roof_board 是前坡，.001 是后坡）。这两个文件没有被城景点名，可以直接改。
+- [low] **厩棚与饲槽 A/B** `m-luoyang-stable` · 卫生：三种材质都开了双面，但所有网格都是法线朝外的闭合实体 —— 改法：把 REUSED_C_earth、REUSED_C_wood、REUSED_C_tile 三种材质的 doubleSided 都改成 false。外观不变，GPU 可以剔除 9 万多面瓦面的背面。
+- [low] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · 结构：细节分配和用途错位：研究对象碑位预留区在模型里毫无标示 —— 改法：和 F10 合并：用正顶平面替换 06，用虚线框标出 extras 记录的预留区（16×6 m）和南门到街道的路线，图注写明「C 级示意，不建碑」。要不要在模型里加地面标示，留给伊苏里亚定。
+- [low] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · LOD：三个 GLB 的顶点完全不共享，近景 8.98 MB 超过 5 MB 提醒线 —— 改法：沿用原改法：只合并位置、法线、UV 完全相同的顶点，中景、远景改用 uint16 索引。和 F5 一起做。
+- [low] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · 展示：卡片文字内部术语太密，没有点名熹平石经，coverAlt 写了看不见的内容 —— 改法：coverAlt 只写画面里看得见的内容：灰瓦悬山覆屋、四面栏障、南面门框，碑位留空。在 notes 补一句说明 C 级是什么意思。notes 的检查项改成白话，所有限制原样保留。summary 改白话时保留「设施归属与年代待考」；要不要点名「熹平石经」，由伊苏里亚定。
+- [low] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · 展示：图集里一张与封面重复，没有平面或路线视角 —— 改法：把 06 换成标出碑位预留区和南门到街道路线的正顶平面（和 F3 合并），或者把近、中、远三档并排拼成一张，在画面里标出档位。04 保留。
+- [low] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · 材质：石质柱础用的材质名叫 plaster —— 改法：改名为 LY_P01_stone，只改名、不动颜色，三个 LOD 同步。
+- [low] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · 展示：related 没有回链太学长堂 A —— 改法：在本卡的 related 里加上 m-luoyang-taixue-a。
+- [low] **太学长堂 A** `m-luoyang-taixue-a` · 展示：封面和图集噪点重，coverAlt 只写来源、不描述画面，图集只有一张 —— 改法：从 LOD1 重拍封面（开降噪或提高采样）。coverAlt 改成画面描述，例如「灰底斜俯视：十二开间、前檐敞开的长堂，灰色两坡悬山顶，夯土台基前出三座踏步」。图集补正立面、室内讲席与坐席、檐下梁架近景和 LOD2 对照。
+- [low] **太学长堂 A** `m-luoyang-taixue-a` · 展示：summary 与文件标签用的是流程术语，看不出建筑内容和两档区别 —— 改法：summary 改成描述句，保留「布局和尺寸为设计推测」。notes 注明 B 方案目前只出现在城景的研究视图里，尚未入库。label 可以选择补一句两档的差异（例如「LOD1 · 贴图、梁架、坐席」），不强制。
+- [low] **太学长堂 A** `m-luoyang-taixue-a` · 卫生：材质全部 doubleSided，但网格都是封闭朝外的实体，双面渲染没有必要 —— 改法：把 LOD2 三个材质的 doubleSided 改为 false：外观不变，背面不再光栅化。LOD1 同样改要同步城景哈希，交伊苏里亚在下次修改时一并做。
+- [low] **砖瓦窑 A/B** `m-luoyang-tile-kiln` · 卫生：火膛拱道尽端和三个烟道口有同向共面重叠面，近看出现 Z-fighting —— 改法：删掉 A_chamber_walls 门洞里被 A_fire_hood 内弧完全覆盖的那圈面；把三座 short_flue 的前脸从 z=-4.51 挪到墙外皮 -4.6（B 为 -3.81→-3.9），去掉与吸火口重合的 9 cm 段。两处都不改外观，四个文件同改。
+- [low] **砖瓦窑 A/B** `m-luoyang-tile-kiln` · 展示：summary 主打的低火膛、较高窑床和后壁吸火口，封面和图集里都看不到 —— 改法：从模型补拍两张放进 gallery：一张隐藏 A_detachable_roof_C 的掀顶斜视，一张沿 x=0 的纵剖（火膛底→窑床→吸火口→烟囱）。新图存为 shots/03、04，同时更新卡片的 gallery 列表。
+- [low] **砖瓦窑 A/B** `m-luoyang-tile-kiln` · 展示：coverAlt 写的是「砖瓦窑 A/B」，但封面只有 A，也没有描述画面 —— 改法：改成描述画面的句子，例如：「砖瓦窑 A 斜视：前方下沉的操作坑与台阶，拱顶火膛口通向方形窑室，右侧晾坯台上摆着六块坯，整体放在浅色展示地坪上（C 级设计）。」
+- [low] **砖瓦窑 A/B** `m-luoyang-tile-kiln` · 展示：文件标签没说清 A/B 差别和档位，卡片显示的尺寸是展示地坪而不是窑 —— 改法：label 改为「A 纵长窑室 · 近景 LOD0」「B 横宽窑室 · 近景 LOD0」「A · 简化 LOD1（去垫条与坯）」「B · 简化 LOD1」。notes 补一句尺寸：A 窑室外廓 4.4×5.0 m、顶高 2.5 m；B 为 5.0×4.3 m；火膛与坑底 -0.8 m；展示地坪 16×19×1 m。
+- [low] **墙房相接住宅样例** `m-luoyang-wall-house-court` · 展示：summary 和 notes 用语晦涩，也没记下已知缺陷 —— 改法：用平实语言重写这两条 notes，把 F1–F3 写进「限制与待解决」，修好后再删。summary 去掉「固定」二字，或者说明 C 级的含义（推测性设计）。
+- [low] **墙房相接住宅样例** `m-luoyang-wall-house-court` · 卫生：网格名和内容对不上 —— 改法：把网格改名为和节点一致的 wall-house_earth、wall-house_timber、wall-house_tile，不影响外观。
+- [low] **墙房相接住宅样例** `m-luoyang-wall-house-court` · 材质：三个材质都开了 doubleSided，其实不需要 —— 改法：三档把 3 个材质的 doubleSided 都改成 false，重拍 iso 和 close 两个视角对比，确认外观没变。
+- [low] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · 展示：图集只有一张，底部还有约 105 px 的黑/深灰空带；独立棚没有任何展示图 —— 改法：重拍 shots/01，或裁掉底部空带；从 GLB 实渲补一张独立 workshed 的斜视图和一张 LOD0/1/2 对比图，放进 gallery。
+- [low] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · 展示：coverAlt 写的是出处而不是画面，summary 和 notes 用的是内部记账语 —— 改法：coverAlt 改成描述画面，例如「斜俯视：夯土围墙院，北屋居后、西屋朝东、西南角门屋，东侧开敞棚下有一套足碓。C 级设计，非遗址原状。」summary 改成面向读者的一句话，例如「独立开敞作业棚，以及一座含北屋、西屋、门屋和足碓棚的作业院，各三档 LOD」。删掉多余的空格，把未解决的问题写进「限制与待解决」。
+- [low] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · 卫生：网格数据名是处理残留（preserved_boundary.*、H72_roof_left），石臼材质名里带 paper —— 改法：网格改成与节点同名（workyard_earth / workyard_timber / workyard_tile，workshed_tile / workshed_timber），材质改名为 LY_P01_stone__PBR / __FLAT；不动几何。
+- [low] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · LOD：所有材质都开了双面渲染，但所有网格都是闭合实体 —— 改法：把所有材质的 doubleSided 改为 false，不动几何；改完在详情页转一圈，确认没有破面。
+- [low] **武库收纳与点验** `m-luoyang-wuku` · 卫生：B 三档都带着 14 个零面积三角形（在门框枢轴组件上），各档屋脊处有一对背靠背的重合面，B 的门框立柱整根埋在柱子里 —— 改法：六个文件都融并一遍零面积面，删掉屋脊处那对内部重合面并焊接两半屋面板，删掉 B 三档里埋着的两根门框立柱，然后重导出。之后 audit 的 degenerateTris 应该归零，外观不变。
+- [low] **武库收纳与点验** `m-luoyang-wuku` · 展示：图集没拍到库内收纳和点验台，跟「收纳与点验」这个题目对不上；封面和图集都只有 1000 px 宽 —— 改法：从模型重拍：封面宽度至少 1200 px；补拍库内剖视（拿掉屋面，露出货架和容量盒）、B 侧棚点验台近景、A 前棚全景；Cycles 提高采样数或开降噪。图集也拍到 1200 px 宽只是建议，不是规范要求。
+- [low] **武库收纳与点验** `m-luoyang-wuku` · 材质：三个材质都开了双面，但所有网格都是封闭的、法线朝外，没必要开 —— 改法：六个文件里把 LY_P01_earth、LY_P01_timber、LY_P01_tile 的 doubleSided 都改成 false，再到详情页抽查棚板底面、门扇、屋面板底，确认显示正常。
+- [low] **夏门** `m-luoyang-xia-gate` · 展示：coverAlt 把『四分之三』写成『三分之四』，夹带 CPU 术语，『夯土门台』也与模型不符 —— 改法：改为：『夏门 B 型候选的四分之三视图：四座夯土墩夹三道平顶门道，上承木平台与通长两坡顶敞廊。』
+- [low] **夏门** `m-luoyang-xia-gate` · 展示：summary 的『关系处』读不通，notes 用『未验收』掩盖了『未建模』 —— 改法：summary 改成直接描述模型，例如：『夏门三门道 B 型候选：四墩承木平台，上覆通长两坡顶敞廊；尺寸与上部为 C 级推测，未入城。』；notes 把『未验收』改为『未建模（无楼梯或马道，两端无城墙接茬）』，并补一句『LOD1 只比 LOD2 多出檐口瓦片和贴图，夯土与木构网格相同』。
+- [low] **夏门** `m-luoyang-xia-gate` · 卫生：屋脊面留有两对重合的内部三角形，三种材质全部双面 —— 改法：删除屋脊面这 4 个内部三角形，按极小距离合并两坡在脊线上的顶点；绕序已核对一致，可把三种材质改为单面（doubleSided=false），改完重新跑 audit 复核。
+- [low] **小苑门** `m-luoyang-xiaoyuan-gate` · 展示：封面和唯一一张图集都是全景斜俯视，上屋是黑影，没有门道和细部图；coverAlt 里的「CPU」是渲染设备信息 —— 改法：从 LOD0 重拍三张：正立面、上屋檐下近景、门道内景（必要时提高曝光），把 detail.webp 换成真正的细部图或改名；coverAlt 删掉「CPU」，只描述画面；三个 label 补上「门扇开启」。
+- [low] **小苑门** `m-luoyang-xiaoyuan-gate` · LOD：三档的 5 个材质都开了双面渲染，但网格全是闭合实体 —— 改法：把三档 5 个材质的 doubleSided 改为 false（直接改 glTF JSON，或在 Blender 里打开背面剔除后重导出）；再在同一机位对比 iso 和 close 渲染，确认没有破面。
+- [low] **小苑门** `m-luoyang-xiaoyuan-gate` · 卫生：网格名沿用了合并前第一个物体的名字，和内容对不上 —— 改法：把五个 mesh 改名，与节点和材质一致（如 LY_P01_timber、LY_P01_earth），几何和节点名都不动。
+- [low] **雍门** `m-luoyang-yong-gate` · 展示：图集唯一一张 detail.webp 与封面同机位，没有任何近景 —— 改法：保留 context.webp 和 entry.webp。把 detail.webp 换成真正的近景，上层前廊与端室、檐下、山面任选；可再加一张 LOD0/1/2 对比图。都从现有模型重拍，不改模型。
+- [low] **雍门** `m-luoyang-yong-gate` · 展示：coverAlt 把「四分之三视图」写成「三分之四」，还夹带了渲染方式 —— 改法：改为「雍门候选模型的四分之三视图：三门道夯土门台、上层双端室与有顶前廊、两坡悬山瓦顶。」
+- [low] **玉堂前后殿关系** `m-luoyang-yutang-halls` · 展示：卡片措辞：summary 的「真实长短配置」容易误读，文件 label 只是文件名，coverAlt 和 notes 里内部术语多 —— 改法：summary 改成「A 庭长 25 m、B 庭长 20 m 两种配置」。label 写成「A 配置（庭长 25 m）· LOD0 近景」这类。coverAlt 只描述画面内容。notes 改成平白话，并把墙顶缝、缺斗栱和梁架、山面无瓦垄写进「限制与待解决」。
+- [low] **中东门** `m-luoyang-zhongdong-gate` · 展示：唯一一张图集 detail.webp 其实是 LOD2 的同机位全景，不是近景 —— 改法：用 LOD1 重拍图集，最重要的放第一张：正立面、檐口近景、门道内景、上屋侧面。现有的 LOD2 同机位图改名为 shots/lod2-iso.webp，放在最后，并在 notes 里注明它是远景简化档。
+- [low] **中东门** `m-luoyang-zhongdong-gate` · 展示：summary、coverAlt、notes 用了内部流程术语，有几处说法不准确 —— 改法：summary 改成说明对象和构成，评审给的写法可以直接用。coverAlt 改为「四分之三俯视：四座土墩夹三条门道，门扇全开，上为通长敞廊和双坡瓦顶，两端是土山墙。」notes 删掉 Base64 传输这类细节，「贴图内嵌」注明只有 LOD1，并删掉多余的空格。
+- [low] **市肆功能组** `m-market-functional` · 展示：coverAlt、summary、notes 术语太多，related 漏了 summary 里点名的店前线 —— 改法：coverAlt 写画面内容（两排相对的店铺，北排店前三座席棚摊，后门外堆着货，斜俯视，LOD0）。summary 用白话说清这是什么、几店几摊、有几档。notes 把术语换成白话，并注明用的是哪个坐标轴。related 加上 m-luoyang-market-frontage。
+- [low] **市肆功能组** `m-market-functional` · 展示：封面和两张图集是同一机位的远景，只是换了 LOD —— 改法：从 LOD0 重拍：一张 1600×1200 以上、构图更紧的封面，再加 3–4 张近景（店面柜台、席棚摊位、后门出货、檐口）。三档对比可以合成一张三联图。
+- [low] **通行接口试件 · WFC方法研究** `m-passage-interface` · 展示：缺 coverAlt 和 english；文件 label 只有 straight/elbow/tee/end 这几个英文词，没有中文，也没写开口方向 —— 改法：coverAlt 写成「2×2 排布的四块 4 米方形地坪，矮木挡板分别围出直通、转弯、三岔和端头开口」；english 填 PASSAGE INTERFACE TILES · WFC STUDY；label 改为「直通 · N/S 开口」「转弯 · N/E 开口」「三岔 · N/E/W 开口」「端头 · S 开口」。
+- [low] **通行接口试件 · WFC方法研究** `m-passage-interface` · 展示：statusNote 丢掉了「未完成设计验收」，看起来比创作者自己的登记更完成 —— 改法：statusNote 改为「已公开 · 研究候选 · 未完成设计验收 · 未接入洛阳」，与 registry 的 status 和 cityUse 一致。是否把 status 改成「待审」由创作者决定。
+- [low] **仓储作业功能组** `m-storage-functional` · 展示：图集第一张与封面是同一张图，封面里建筑太小，三档远景没有区别，也缺近景 —— 改法：从gallery删掉LOD0.webp，或换成近景；封面以35.5×25.8 m的建筑组为主体重新取景；补一张收货棚近景和一张仓门台阶的人视图；三档对比合成一张带标注的图。
+- [low] **仓储作业功能组** `m-storage-functional` · 展示：20个文件标签中英混杂，没说明A/B/receiving分别是什么，新旧版本说法混乱 —— 改法：标签改成中文，并写清角色，例如「分件 · A仓（9×6 m）· LOD0 近档」「分件 · 收货棚 · LOD2 远档」「v2 完整组（无地坪）· LOD0」。旧版五个文件集中放到列表末尾，统一标「旧版对照（不推荐使用）」，或移到notes。考虑把v2完整组LOD0放到files[0]，作为默认3D。
+- [low] **井栏与井架** `m-well-family` · 材质：9 张 512² 贴图几乎是常数，白占体积和显存；5 个材质全部开了双面 —— 改法：ORM 换成 metallicFactor 0 加 roughnessFactor（土约 0.91、木 0.78、瓦 0.84）；土和瓦的底色按平均色改成 baseColorFactor，删掉那两张近乎平的法线；木的底色和法线保留。doubleSided 改成 false，回看确认没有破洞。同步更新 contract.json 里的 SHA 和 README 里的体积说明。
+- [low] **轨与翼** `s-f01` · 展示：封面和图集的 Cycles 渲染带黑方块和颗粒噪点 —— 改法：F1 修好后，用 spatial-index.blend 里的原相机重渲 hall、orbit、tide 三张，打开降噪（OpenImageDenoise）或提高采样，替换 assets 下的同名文件。资产库的 webp 会在构建时重新生成。
+- [low] **轨与翼** `s-f01` · 展示：缺 coverAlt，详情页只能拿标题当替代文字 —— 改法：在卡片里加 coverAlt，直接用这句，可以按 hall.png 的画面微调。
+- [low] **轨与翼** `s-f01` · 展示：related 为空，没有和 001、002 互链 —— 改法：卡片加 "related": ["m-001", "m-002"]，也可以再加 w-001、w-002；同时在 m-001、m-002 的卡片里回链 s-f01。
+- [low] **轨与翼** `s-f01` · 卫生：网格名多是默认名，合批网格的名字也和内容对不上 —— 改法：把每个网格改成与节点同名：Blender 里是一行 o.data.name = o.name，或者直接改 GLB JSON 里的 meshes[].name，然后重新导出。几何和外观都不变。
+- [low] **观测的尺度** `s-f02` · 展示：related 为空，没有链回两件原作 —— 改法：related 填 ["m-003","m-004","w-003","w-004"]，并视需要在 m-003、m-004 的 related 里回写 s-f02。
+- [low] **观测的尺度** `s-f02` · 展示：notes 只记录了网页 QA，没有模型层面的检查与限制 —— 改法：重写两条 notes。「已完成的检查」列出上面这些模型层面的数字；「限制与待解决」写明：虹膜悬空是设计；观测所离基面 0.20–0.45 m，待修（见 F1）；尺度是概念设计单位；未经真实 GPU 和手机验收。
+- [low] **观测的尺度** `s-f02` · 展示：缺 coverAlt（封面描述） —— 改法：加 coverAlt，例如「灰色概念基面上，左侧悬空竖立着黑钢八叶玄瞳，右侧岩岸上是浅色双拱观测所，带楼梯和望远镜平台，Blender Cycles 离线渲染」。
+- [low] **观测的尺度** `s-f02` · 展示：summary 的章节名和顺序与作品不符，status 与 statusNote 相互矛盾 —— 改法：summary 改成「构造、抵达、观测三个位置」；图集按章节顺序排成 structure、observation。status：如果已经定了要重做，改为「建设中」；如果保留「待审」，就把 statusNote 改成具体在等什么。
+- [low] **观测的尺度** `s-f02` · 展示：封面和图集是 48 采样、未降噪的 Cycles 图，暗部颗粒明显 —— 改法：等 F1 修完，用 scene.json 的三个机位和同样的垂直 48° 视角重渲三张图，开 OpenImageDenoise 或把采样提到 256 以上。这三张也是 F02 网页的章节图，一并替换。
+- [low] **观测的尺度** `s-f02` · LOD：组合场景有 182 个绘制批次，64 个刻度各占一批 —— 改法：只处理 F02 自己的 scales-scene.glb：分 iris、limen、基面三组，组内按材质合并静态网格。虹膜在 F02 里固定在 27.5°，用不到叶片层级。这样绘制批次可降到 13 个左右，几何和外观都不变。iris.glb、limen.glb 不动，保持与 m-003、m-004 原件一致。
+- [low] **观测的尺度** `s-f02` · 材质：13 个材质全部设为双面，而所有网格都是闭合实体 —— 改法：在 scales-scene.glb 里把 13 个材质的 doubleSided 改为 false。网格都是闭合的，外观不变，背面可以被剔除。两件原件副本跟着 m-003、m-004 的原件一起处理，或保持原样。
+- [low] **案上秩序** `s-f03` · 展示：related 为空，但两件原件和 m-005、m-006 的文件逐字节相同 —— 改法：related 加 ["m-005", "m-006"]，可以再加 w-005、w-006。notes 里补一句「暮灯、折页为 005/006 冻结原件，逐字节未改」。
+- [low] **案上秩序** `s-f03` · 展示：缺 coverAlt，封面的替代文字退回成标题 —— 改法：优先沿用创作者已有的措辞，不另写：可以用 index.html 海报图的 alt「真实 Blender CPU 桌面全景：左侧暮灯、右侧折页，中间保留工作空处。」，也可以用 docs/catalog.json 里 F03 原有的 alt。
+- [low] **案上秩序** `s-f03` · 卫生：新增的桌板和地面网格还叫 Cube.001、Cube.002 —— 改法：随 F1 一起重导时改名（desk-atlas.glb 和 desk.glb 同一批），哈希只在 assets/asset-registry.json 里更新，并注明是复核后的改动；reports/independently-reviewed-sha256.json 保留原样。
+- [low] **孔与隙** `s-f04` · 材质：四个材质全部是双面，三件闭合体用不着；背景幕的双面正是 F1 外壳不透明的原因 —— 改法：在 aperture-atlas.glb 里把 VEIL、ORISON、support 三个材质改成单面：它们闭合且法线朝外，外观不变，片元开销减半。backdrop 按 F1 处理。单独的 veil.glb、orison.glb 的哈希登记在 scene.json，先不动，或交给创作者在重做时一起改。
+- [low] **孔与隙** `s-f04` · 展示：缺 coverAlt，封面没有文字描述 —— 改法：加 coverAlt，例如「深色台面上，米色弧形圆孔陶板立在前方，后面象牙色的泪滴形回环从板的左侧露出一段，其余透过孔洞可见，背景是灰蓝色弧形幕。」
+- [low] **孔与隙** `s-f04` · 卫生：台面网格沿用 Blender 默认名 Cube.001，同一个部件有 plinth / support / desk 三个名字 —— 改法：在 aperture-atlas.glb 里把这个 mesh 改名为 "Aperture Atlas / support"（或者统一叫 plinth），卡片标签也用同一个名字。plinth.glb 的哈希登记在 reports/transfer/blender-audit.json，要改它就同步那份报告，或者留到重做时再改。
+- [low] **孔与隙** `s-f04` · 展示：孔幕、回环是 m-008、m-007 的原件（逐字节相同），备注里的 Latitude/Horizon 也是这两张卡里的变体，但 related 为空，读者找不到来源作品 —— 改法：在 s-f04 卡片加 "related": ["m-007", "m-008"]（可以再加 w-007、w-008），并在 m-007、m-008 的 related 里回写 s-f04。notes 补一句：veil.glb、orison.glb 就是 m-008、m-007 的原件（SHA-256 相同）；Latitude、Horizon 是这两张卡里的 latitude、horizon 变体，可以在那里查看。
+- [low] **连接工坊** `s-sd01` · 展示：notes 只谈网页原型的验证边界，看不出模型查过什么、几份 GLB 是什么关系 —— 改法：改成两条平白话。已完成的检查：「46 个网格全部闭合、无退化面、法线朝外，米制、Y 朝上；灯的三个姿态和插接件与 m-009/m-010 源文件哈希一致；复盘见 review/index.html」。限制与待解决：「GPU 主体验、真机触屏未验；环墙、展台、广场臂等按设计插入地坪，列出未核验的 19 对包容关系分别是哪些构件；入口门槛悬出板沿、回廊转角缺角待修」。
+- [low] **连接工坊** `s-sd01` · 材质：环境网格沿用 Blender 默认数据名，材质命名风格混杂，UV 和双面设置不统一 —— 改法：auto 只做不改外观的部分：environment.glb 和 jointworks.glb 的 mesh 名改成与节点同名；环境材质名统一成 hinge/slot 那种写法；没有贴图的批次删掉 TEXCOORD_0。doubleSided 保持现状。如果要改，作为 manual 单独做，并在原型和资产库查看器里前后对比阴影。
+- [low] **连接工坊** `s-sd01` · 展示：图集第 2 张（详情页图版 3）whitebox-overview.png 是旧布局，与现有 GLB 不符，卡片没有说明 —— 改法：从 gallery 删掉 whitebox-overview.png。如果想保留设计过程，就在 notes 里加一句「图版 n 为白模阶段的旧布局，回廊和梳齿廊后来改过」。
+- [low] **岔径·望场** `s-sd02` · 展示：文件标签只是文件名，没说明两件是 012/013 原件副本，单位也没交代 —— 改法：files 改成显式列表：environment.glb 放第一，label 写「SD02 连续地景 · 含两处 25 cm 地台浅槽」；另两件写「012 高仓 A · 原件副本（同 m-012）」和「013 围院 A · 原件副本（同 m-013）」。notes 补一句：「单位为原创美术单位、非历史尺寸，两件按各自原件比例并置」。「已完成的检查」照 review.html 列出具体项：CPU 检查（环境闭合、地台浅槽齐平、GLB 有向
+- [low] **岔径·望场** `s-sd02` · 展示：summary 写「在院门看通隙」，和作品自己的说法不符 —— 改法：把 summary 改得与作品自述一致，例如：「从低位入口分岔，在仓前看梯廊、在院门看门洞；主动抬升俯读内屋、院心与通隙」（80 字以内）。
+- [low] **岔径·望场** `s-sd02` · 展示：english 写的是类型「SPATIAL DESIGN PROTOTYPE」，不是作品名 —— 改法：改为作品的英文名，例如「FORKED PATHS / VIEWING FIELD」，或者沿用页面上的「SD02 · SPATIAL STUDY」。
+
+## manual（152 项）
+
+- [high] **板筒瓦薄壳模块** `m-eaves-shell` · 结构：瓦件之间全部悬空不接触，侧面和檐下透光 —— 改法：从参数根上改：rowRise从0.022降到约0.0094（A）/0.0097（B），让每排法向抬升约等于8 mm板厚加不超过1 mm，板瓦下口落在下一排板瓦上。筒瓦随之再下移约15 mm（不是3 mm），使它在搭接段离上一排板瓦不超过1 mm。瓦脚下剩余约9 mm的悬空，可以让每块筒瓦绕上端微倾约1.4°，把下口压到本排板瓦上；也可以按局部分类登记隐藏接触。上下节筒瓦的间隙同样不超过1 mm。改完复跑BVH（目标是0对相交，或逐处分类
+- [high] **完整单门楼屋面研究** `m-gate-roof-study` · LOD：近景和中景各有 342 个绘制批次，中景完全没有减批 —— 改法：另出一份运行时版本：按材质合并成 5 个 primitive（瓦、承托、脊木、木、土各 1），中景同样处理；逐片版留作研究源。合并版要重新登记 SHA，并更新 gate-origin-contract.json 里的契约记录。
+- [high] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · LOD：LOD1 有 22.8 万面、12 MB，约 96% 在波纹瓦上，超出中景预算 —— 改法：按评审员的方案另做一档 3–5 万面的中景件：只改 tile 网格，不动 earth 节点变换。新件出来之前，可以先把卡片 files 的顺序改成 LOD2 在前，让详情页默认加载 0.67 MB 的远景件；这一步只改卡片字段，可以 auto。
+- [high] **厩棚与饲槽 A/B** `m-luoyang-stable` · LOD：一座 C 级厩棚 9.3 万面、7.0 MB，99.7% 的面在一张瓦面网格里，而且没有任何 LOD —— 改法：保留评审员的方案：现有瓦面作为 LOD0，A、B 各补 LOD1（瓦垄贴在屋面上，约 3–5 千面）和 LOD2（几百面，按材质合并成 3 个网格），files 按 A/B-LOD0/1/2 登记。LOD1 可以参照 m-luoyang-house-roof 里 TC03-roof-medium 的瓦垄做法：18×6 m 屋面只有 5,012 面，用的也是 REUSED_C_tile 材质。暂时不入城的话，至少把 B 压到 5 MB 以
+- [high] **墙房相接住宅样例** `m-luoyang-wall-house-court` · 结构：两座住屋的四道檐墙都没砌到屋面，墙顶和屋面板之间有一道通长约 0.4 m 的空缝 —— 改法：把四道檐墙的顶面改成随坡斜面，顶到屋面底：北屋外皮约 3.40、内皮约 3.53，南屋外皮约 3.44、内皮约 3.59。也可以在墙顶补檐檩和椽头加封檐，把缝封死。三档都要改，改完重跑竖向射线，核对缝高为 0。
+- [high] **墙房相接住宅样例** `m-luoyang-wall-house-court` · 结构：开敞棚的屋面悬空，比 4 根柱的柱顶高约 0.2 m，柱间也没有梁檩 —— 改法：4 根柱加高约 0.2 m 顶住屋面底，柱顶切成随坡斜面；或者在两排柱顶沿 X（4.05–8.35）各补一根约 0.2×0.2 m 的檩来承托屋面板。另外，棚西端离北屋山墙 0.45 m、东端离东院墙内皮 0.3 m，这两处要不要接上，也一并确认。
+- [high] **市肆功能组** `m-market-functional` · 结构：五间店的后墙都外移了一个墙厚：墙脚悬空、墙顶不接屋面、后角缺口 —— 改法：三档同步修改：台基板和两侧山墙向外延到 |z|=13.26；后墙底降到 0.21 m，顶面按屋面坡度抬到屋面底（外皮约 3.22 m，内皮约 3.31 m）；补齐后角。改完重跑闭合检查和上面的射线。v1 城景点名件有同样问题，那边归伊苏里亚。
+- [high] **观测的尺度** `s-f02` · 结构：组合场景里观测所整体悬在概念基面上方，楼梯入口踏台悬空近半米 —— 改法：只改「Interpretive ground」一个节点：把基面顶面从 -0.55 抬到约 -0.08。这样踏台埋入 2 cm，岩体下部埋入约 0.2–0.27 m，也避开了共面。iris、limen 的变换不动，transforms.json 依然有效。改完后重跑 geometry.json 的相机净空检查，再按 scene.json 的三个机位重渲 arrival、observation、structure。虹膜悬空是设计，保留不动。
+- [high] **案上秩序** `s-f03` · 展示：主文件 desk-atlas.glb 带 200 m 地面，详情页默认 3D 里桌面只剩一个点，而且拉不近 —— 改法：只在导出 desk-atlas.glb 时去掉「Desk Atlas / ground」。优先整件删除，不必裁成 3×2 m，资产库查看器自带地面。desk-atlas.blend 保持原样，Cycles 离线图还需要这块背景地面。重导后在 assets/asset-registry.json 更新 desk-atlas.glb 的 bytes 和 SHA-256，把 generatedScene.newGeometry 里的「grou
+- [high] **孔与隙** `s-f04` · 展示：详情页默认载入的整场 GLB 被 4 米背景幕包住，打开只看到一只空杯，两件主体完全看不见 —— 改法：首选方案 (1)：另导出一个不含 backdrop 的展示合并件（台面＋孔幕＋回环），放在 files 第一位，含背景幕的整场放后面。最快的临时办法是先按 F2 把 veil.glb 或 orison.glb 排到第一位。不要只靠把背景幕改成单面：查看器给所有网格开投影，近侧墙仍会把台面整个投进阴影。改完从详情页默认视角重截一张核对。
+- [medium] **住宅院落模块组** `m-courtyard-family` · 卫生：A 院屋面分支和 B2 北/基准预设没有地面层：单独查看时整院悬空 0.2 m，院里没有地面 —— 改法：从对应的 C2 文件（A-LOD0-C2、B2-LOD0-C2）拷回 site_lot、site_neutral_lane 和 designed_* 地面节点，让包围盒与家族其余文件一致（y 从 0 起，z 到 16）。城景照旧用 excludeNodes 剔除，入城不受影响。如果有意保留裁剪版，就在 label 写明「无地面层，需放在 y=0.2 的地块上」。south.glb 同样有这个问题，见 F10。
+- [medium] **住宅院落模块组** `m-courtyard-family` · LOD：两份屋面分支各约 15.5 万面、11 MB，超过规范提醒线，又没有低级 LOD；瓦壳占九成面数，却用的是平直着色 —— 改法：瓦壳改成平滑法线，然后把弧向分段数减半。也可以把单片筒瓦和板瓦做成实例（EXT_mesh_gpu_instancing）。另外导出一份 LOD1：把瓦壳合成整片波形屋面，参照 C2 LOD0 的棱条屋面，让详情页先加载这一份。
+- [medium] **板筒瓦薄壳模块** `m-eaves-shell` · 结构：逐排抬升让模块实际坡度比标称陡约4°，照标称坡度安装时每排多爬约22 mm —— 改法：和F2一起改：rowRise降到约0.0095后，逐排坡度降到约0.335/0.435。再定清楚「坡度」指什么：要么让瓦件比椽面略缓，使逐排包络正好等于标称坡度；要么在contract、registry和卡片notes里同时写明瓦件坡度和逐排包络坡度。改完核对上坡端点（finiteEndpointSamples）。
+- [medium] **完整单门楼屋面研究** `m-gate-roof-study` · LOD：三档级差不均匀，远景换成另一套旧屋面，切档时会跳形 —— 改法：用新屋面做真正的中、远两档。中景合并瓦片、去掉熊头细节（目标约 3–5k 面、不超过 5 批）。远景按新屋面的包络（脊高 3.755、相同外挑）做闭合简化体，瓦垄用贴图或少量棱线表达（不超过 1.5k 面、1–2 张贴图）。如果仍沿用原门楼作远景，在卡片里写明两者的差异和切换距离。
+- [medium] **B2门窗开口套件** `m-luoyang-b2-facade-kit` · 结构：关门态门扇不搭门框，三条竖缝和门底都透光，与卡片说的「闭态阻断」矛盾 —— 改法：把门扇外缘加宽到压住门框背面 2–3 厘米（x≈±0.60），中缝做 1 厘米搭接或加掩缝条；门扇前表面放在门框背面之后 2–3 毫米，不要正好共面贴合；门底留 1 厘米以内，或者落到门槛上（见 F2）。转轴同步外移到门框背后（约 x=±0.60），重算开门态的平移和旋转，让开启后门扇的转轴边藏在门框后面，再重跑人体样点通行测试。notes 里「阻断」那句不用删，按 F5 改成直白说法即可。
+- [medium] **辟雍礼堂与围护** `m-luoyang-biyong` · LOD：围护 LOD0 面数过密：一道 2 m 矮墙用了 1.7 万面、5 万顶点 —— 改法：近档直接改用现有的 LOD1（2,372 面）；或者重新导出 LOD0：去掉逐层的毫米级错动，同一墙面共用法线，删掉 COLOR_0，改用和 LOD2 相同的 LY_P01_earth__FLAT（两者颜色差小于 0.012）。如果要表现夯层，用 0.125 m 间距的法线或底色条纹贴图。
+- [medium] **足碓与踏台** `m-luoyang-foot-pestle` · LOD：三档 LOD 几乎没有减面，远档面数仍是近档的 87% —— 改法：在 LOD1 和 LOD2 里，只减看不见或多余的分段，轮廓不动。臼身圆周：LOD1 降到 24 段，LOD2 降到 12–16 段。杠杆通孔和支柱轴槽：LOD1 降到 12 段，LOD2 直接封掉，杠杆和支柱回到 12 三角的盒体，那批长条细三角也就没了。轴和杵：从 24 段降到 12 段和 8 段。台阶和踏台不用动。目标是 LOD1 约 800 三角、LOD2 约 400 三角，做完对照 lods.png 检查轮廓。
+- [medium] **足碓与踏台** `m-luoyang-foot-pestle` · 材质：五张 512² 贴图几乎都是常数，却占了 LOD0 体积的 86% —— 改法：石材法线图完全为平，可以直接去掉，外观不会变。其余几张建议改用 baseColorFactor、roughnessFactor 加常数，或者合成一张 128–256² 的小图（木纹法线可以保留成一张低分辨率图）。这样 LOD0 应能降到 100 KB 以下。如果要保留木纹，就做一张真正带纹理的木材贴图，不要用近似纯色的 512 图。
+- [medium] **复道服务登临节点** `m-luoyang-gallery-access` · 材质：LOD2 改用纯色后明显变暗，础石变色，切档会跳色 —— 改法：先请创作者确认浅色是不是有意的（例如服务梯用素木、础石想表现石材）。如果不是有意的：把 LOD0/1 两个材质的贴图换回项目标准 LY_P01 贴图（和 gallery-A-LOD0 用同一套），然后重拍封面和图集。如果是有意的：给浅色木料和础石单独起材质名，不要再沿用 LY_P01_*，并把 LOD2 两个 FLAT 颜色改成浅色贴图的线性均值（木≈0.27/0.20/0.13，础石≈0.55/0.50/0.41）。
+- [medium] **复道服务登临节点** `m-luoyang-gallery-access` · LOD：碰撞候选没有柱子和础石，却保留了细栏杆和逐级踏步，面数偏高 —— 改法：保留 20 级踏板；补上 4 根柱子和 2 根斜梁的方盒碰撞体；扶手全部换成方盒，去掉立杆，或者每面改成一块到扶手高的薄墙。目标约 400–500 面，仍然单材质。
+- [medium] **谷门** `m-luoyang-gu-gate` · 材质：LOD2 的平涂底色和 LOD1 贴图色差明显，切换LOD时会跳色 —— 改法：先请伊苏里亚确认，谷门这套浅灰色板是不是有意为之。如果没有特别用意，就改 LOD1：把三张 basecolor 换成同族贴图，或重新着色到同族色板，然后重拍封面。夏门 gate-B-LOD1 的三张 basecolor 均值正好等于 LOD2 平涂值；它的 normal、ORM 贴图和谷门的字节数也相同，可以直接对照。只有确认浅色是有意的，才反过来改 LOD2 的 baseColorFactor。上东门有同样的问题，宜一并处理。
+- [medium] **人力石磨 A/B** `m-luoyang-hand-mill` · LOD：四个GLB各自内嵌同一套1.5 MB的PNG贴图，LOD1几乎不减体积 —— 改法：不用另外转 WebP，部署时已经转了。真正要做的是让 LOD1 的贴图降到 256²，或者让两档共用一套外部贴图；删掉全平的石材法线图；再按 V1 用标量因子代替近乎常量的 ORM 图。目标是 LOD1 发布后的体积明显小于近景档。
+- [medium] **人力石磨 A/B** `m-luoyang-hand-mill` · 结构：2.8 m见方的展示地台被打进了每个GLB，包围盒被撑大到实物的约3倍 —— 改法：交付用的GLB里去掉 presentation_ground，或者把它另存为独立的展示底座文件。这样包围盒回到实物尺寸（约1 m），地面材质和它的3张贴图也一起省掉，便于放进城景。
+- [medium] **住宅主屋面** `m-luoyang-house-roof` · LOD：中景件的轮廓、脊高、山面和檐口颜色都与近景不一致，切换会明显跳变 —— 改法：从近景件重新派生中景：保留正脊高度和宽度、0.5 m 出际、山面后退、木色檐边和土色山面（分开材质），瓦垄间距对齐近景的 0.28 m，只把瓦件简化成瓦垄条或烘成法线。
+- [medium] **低墙生活分区单元** `m-luoyang-household-service` · 结构：筒瓦在屋脊附近脱离屋面板悬空，两坡瓦垄在脊部不闭合 —— 改法：用 Blender 脚本把每道筒瓦绕檐端底线转 -3.8°，转到 22.4°，再整体下移，让底线贴住板面或埋入不超过 5 mm，LOD0 和 LOD1 同步修。脊端的缺口留给 F2 的正脊去盖，不必把两坡瓦垄伸到交线处互相穿插。文件不在城景点名清单里，但会改变几何，归 manual。
+- [medium] **低墙生活分区单元** `m-luoyang-household-service` · 形体：筒瓦垄没有居中：+X 山面（门洞一侧）约 0.45 m 屋面板没铺瓦，LOD1 宽达 0.73 m —— 改法：用脚本把 12 道瓦垄整体向 +X 平移 0.19 m 居中（中心 -1.54…1.54，两端各留 0.255 m），或者重排成 13 道（间距约 0.288 m，覆盖 -1.73…1.73）。LOD1 从修好的 LOD0 里对称地抽 6–7 道。文件不在城景点名清单里，但会改变外观，所以归 manual。
+- [medium] **津门** `m-luoyang-jin-gate` · LOD：默认展示的 LOD1 屋面瓦垄从 97 条骤降到 23 条，读成光板加稀疏接缝，和封面对不上 —— 改法：LOD1 保持 0.374 m 的瓦垄节奏：用低段数条带代替圆筒，每条约 12 面，共约 1.2k 面；或者把 LOD0 的瓦垄烘焙进 LOD1 瓦面的法线和底色贴图。
+- [medium] **灵台类型与踏步研究** `m-luoyang-lingtai` · 结构：五座廊共 20 根端柱正骑在台基端边上，半个柱脚悬空 0.3 m —— 改法：把五座廊的台基两端各加长至少 0.4 m，与屋面 0.4 m 的出际对齐：东西廊 z 到 ±14.4，北廊 x 到 ±14.4，南短廊到 x=±2.4 和 ±14.4（离踏步仍有 0.6 m）。两个 LOD 一起改，改完确认五处内收踏步不受影响。
+- [medium] **旄门** `m-luoyang-mao-gate` · LOD：LOD1 屋面压条方向错误：前后坡的竖向压条直接穿进两端撒头坡面，读起来像金属直立锁边屋面 —— 改法：LOD1 屋面保留平板，加一张从 LOD0 筒瓦烘焙出来的平铺 normal 贴图（可以带 AO）来表达瓦垄；或者把压条换成低边数的半圆瓦垄，把间距缩到 0.5–0.7 m，面数控制在 2000–3000 以内。撒头补瓦和 F7 一起考虑。
+- [medium] **北郊方坛四陛** `m-luoyang-northern-altar` · 材质：三张嵌入贴图几乎是纯色，占了 LOD0 体积的 96%，却没有带来可见的纹理 —— 改法：去掉三张贴图，改用以下系数：
+- baseColorFactor≈[0.546,0.503,0.407,1]，这是 sRGB 195,188,171 换成线性后的值；如果 F3 定为黄土色，就换成那个颜色的线性值，例如 sRGB 164,138,100 对应约 [0.371,0.254,0.127,1]。
+- roughnessFactor≈0.91。
+- metallicFactor=0，必须显式写出。
+如果想保留肌理，换成有真实变化
+- [medium] **普通住屋与门房四型** `m-luoyang-ordinary-house-types` · LOD：住屋 LOD1 只减了约一半面数，LOD1 到 LOD2 却骤降 97%，级差失衡 —— 改法：重做 LOD1：把瓦垄降为单段或低段数截面（参照 G10-LOD1 的 688 面做法），目标约 2–4 千面，必要时用法线贴图保留瓦垄起伏，使三级大致成 1 : 0.1 : 0.015 的级差。
+- [medium] **普通住屋与门房四型** `m-luoyang-ordinary-house-types` · 结构：前后檐墙顶和屋面望板之间有一条通长空槽，屋面只搁在山墙和前檐枋上 —— 改法：把前后檐墙顶做成随屋面坡度的斜顶，或者补封檐、檐檩，把空槽封死，LOD0–2 同步。如果要表达檩椽，由创作者补檐檩和椽档封泥。
+- [medium] **高架复道局部模块** `m-luoyang-palace-gallery` · 结构：楼板悬空：楼板底面比纵向楼面梁顶面高出3厘米，正立面能透光 —— 改法：把楼板底面降到纵向梁顶面（A 降到3.85，B 降到3.35），或把纵向梁抬高3厘米。六个文件同步改，然后重拍封面和图集。这些文件不在城景点名清单里。
+- [medium] **宫前土木对阙** `m-luoyang-palace-paired-que` · 卫生：8 个额枋端头与泥山墙外面共面重叠，会出现 Z-fighting —— 改法：把 8 个枋头端面向墙内收 2 cm（x 改为 10.62–17.38）；如果有意外露枋头，就让它凸出墙面至少 3 cm。三档同步修改。
+- [medium] **连续住宅生活片区** `m-luoyang-residential-life` · LOD：瓦面逐片建模占据绝大部分面数，LOD1 仍约 26 万三角，LOD1 到 LOD2 级差约 30 倍 —— 改法：LOD1 改成整片屋面，瓦垄交给法线贴图或少量瓦垄条，目标整片 3–5 万三角；LOD0 减少瓦片分段，把实例展开量压到 50 万以下。改完同机位对比 LOD0、LOD1、LOD2 的轮廓。
+- [medium] **上东门** `m-luoyang-shangdong-gate` · LOD：LOD2 的底色比 LOD1 暗得多、偏色明显，切换距离时会跳色 —— 改法：把 LOD1 三张底色贴图的均值换算成线性值，写进 LOD2 三个 __FLAT 材质的 baseColorFactor，再并排渲染核对两级颜色。这个文件不在城景点名清单里，可以直接改。
+- [medium] **上东门** `m-luoyang-shangdong-gate` · 材质：九张贴图几乎都是均匀噪声，屋面看不出瓦垄，夯土看不出夯层 —— 改法：给屋面重做一张带筒瓦、板瓦垄的平铺底色加法线贴图（可以从高模烘焙，或程序生成），给夯土加水平夯层纹理并核对 UV 比例。如果短期不做，可以先把这 9 张贴图换成底色常量，省下约 380KB。
+- [medium] **南郊圆坛八陛** `m-luoyang-southern-altar` · LOD：6张贴图几乎是纯色，每个文件757 KB、四个文件重复嵌入约3 MB，占资产总体积八成 —— 改法：去掉近乎平的法线图和恒定AO，基色改成baseColorFactor（或只保留一张小尺寸噪点图，转为JPEG/WebP或KTX2）；roughness改用roughnessFactor。预计每个文件能降到0.3 MB以下。改完重拍封面，确认观感不变。
+- [medium] **南郊圆坛八陛** `m-luoyang-southern-altar` · 材质：展示地面、坛体、营墙共用同一种偏灰白的土色，坛与地融成一片 —— 改法：至少给展示地面单独一种材质（略深或略偏冷的地色），坛体和营墙改用更接近洛阳黄土夯土的暖黄褐色；颜色取向需要伊苏里亚确认。
+- [medium] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · 材质：街道样段与院内地面同材质、同标高，渲图里看不出街道 —— 改法：先请伊苏里亚确认哪条是街道（看起来是 z 12–17 m 那条），把它换成调色板里的 LY_P01_path；门前 z 10–12 m 那条视需要另用一色。降低几厘米、加边沟属于形制改动，交给伊苏里亚。三档同步改。
+- [medium] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · LOD：近景瓦面的六万多面几乎看不出差别：筒瓦和脊条被切成共线短段，近景和中景的瓦面在近处一样 —— 改法：两条路选一条，和 F1 一起定。(a) 如果要保留逐瓦分段，就让分段真的看得见：每段做搭接错台或收分，檐口补瓦当（见 F1），这样近景的面数才用得值。(b) 否则把每条筒瓦每坡合成一段连续挤出、脊条合成一段，外观不变：近景瓦面约 5.6 千面、整件约 1.2 万面，中景同理约 0.7 万面，再按需要重新拉开三档级差。
+- [medium] **太学长堂 A** `m-luoyang-taixue-a` · 结构：LOD2 删掉全部梁架后，屋面悬在 26 根柱顶之上 0.24–0.40 m —— 改法：在 LOD2 前后檐各补一根通长方截面檐枋：x ±18.1，z ±(2.81–3.19)，底面 y 3.83，顶面按坡度抬到屋面底（4.33–4.51）。每根 12 面，共 24 面，能同时托住柱顶、窗条顶和屋面。想保留梁架轮廓，再把 13 榀叉手简化成方盒。LOD2 不在城景点名清单里，可以直接重导，之后重算卡片数据。
+- [medium] **砖瓦窑 A/B** `m-luoyang-tile-kiln` · 结构：火膛拱顶两侧与地坪开洞之间各有一道 10 cm 宽、1.7 m 长的楔形黑缝 —— 改法：让地坪开洞沿拱顶外皮收口（开洞边改到 ±0.80 并补斜面），或者把拱顶下部外皮放宽到 ±0.90 落到洞边。四个文件同改。
+- [medium] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · 结构：北屋、西屋的前后檐墙顶比屋面板底低 0.20–0.38 m，墙与屋面之间留着通长空缝 —— 改法：把四道檐墙的墙顶抬到屋面板底：可以把墙顶做成随坡的斜面，也可以在墙顶加一条通长的檐檩或压檐枋把缝填满，并接上两根檐柱。如果沿用的冻结住屋已经有修好的新版，直接换成新版更省事。
+- [medium] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · LOD：workyard LOD2 原样保留了足碓部件，近一半面数藏在棚下看不见，木构网格反而比 LOD1 多 —— 改法：LOD2 把整套足碓换成 3–4 个盒子，或者直接删去；石臼换成 8 边柱（约 30 面）；目标是 LOD2 约 1.2k–1.4k 面。LOD1 的石臼也减到 16 边左右（约 120 面）。修改说明里不要再用「木构比 LOD1 多」作依据。
+- [medium] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · 材质：11 张 512² 贴图几乎是纯色，白占显存和体积；石臼用纸色占位 —— 改法：两条路选一条：一是 LOD0/LOD1 去掉底色、ORM 和近平的法线贴图，改用与 LOD2 完全相同的颜色和粗糙度常量，外观基本不变，只损失木纹法线；二是由伊苏里亚画出真正的夯土层线、木纹和瓦面深浅，再保留贴图。石臼底色改成灰褐石色（约 sRGB #8C857A），或者加一张石材底色贴图。
+- [medium] **武库收纳与点验** `m-luoyang-wuku` · 结构：屋面板没落在檐檩上，门额上方也没封：檐口一路都有 0.1–0.2 m 的缝，门洞上方还有一条横缝直通屋内 —— 改法：LOD0/LOD1：把前后檐檩各抬高约 0.15 m，顶住屋面板底；也可以在檐檩和板之间补一层简化椽（截面约 0.1 m，间距 0.3–0.4 m，只做看得见的檐口段也行）。沿檐口加封檐板，檐檩和脊檩伸出山墙，一直到出际边缘。LOD2 至少保留两根简化檐檩和山面封板，把墙顶、山尖板顶到屋面板底的缝封住。门额上方的空当，先问伊苏里亚是不是有意留的高窗：是的话就补直棂，并在 notes 写明；不是就补墙或横披。改完重导六个文件。
+- [medium] **武库收纳与点验** `m-luoyang-wuku` · LOD：LOD0 有 98% 的面花在 2,790 片逐片建模的瓦上，文件 10.7–11 MB，超过规范 5 MB 的提醒线 —— 改法：用脚本把每一垄筒瓦、板瓦合成连续条带，删掉朝下和被遮挡的面，只在檐口保留完整瓦头。extra/A0-eave-tiles.png 里能看到筒瓦搭接的一道道台阶，要保留它们，每片瓦留一圈低段数的搭接环，或者改用烘焙法线来表现。这样外观会有轻微变化，需要逐张目视对比。目标是 LOD0 在 3–4 万面、3 MB 以内，A、B 的 LOD0 各做一份。
+- [medium] **武库收纳与点验** `m-luoyang-wuku` · LOD：LOD0 到 LOD1 一步降了 98%，LOD1 的屋面只剩一块光板，瓦垄和檐口瓦头全没了 —— 改法：从 LOD0 往 LOD1 的屋面板烘一套瓦垄法线和 AO/底色，按屋面板的世界坐标 UV 平铺，跟瓦距对齐；檐口加一条带瓦头轮廓的低模。也可以在 LOD0 和 LOD1 之间加一档 3–6k 面的中间 LOD，用低段数的瓦垄条带。
+- [medium] **夏门** `m-luoyang-xia-gate` · LOD：LOD1 的预算几乎全花在 262 片檐口瓦上，夯土与木构网格和 LOD2 完全相同 —— 改法：把 LOD1 的面数挪到中景看得见的构件上：檐口瓦改成一条连续的低面数檐口条（筒瓦 3–4 段，去掉内壁和端圈），或者把逐片瓦留给 LOD0；省下的面数用在 F2、F3 补上的梁架、斗栱和正脊上，LOD1 仍控制在约 1.5 万面以内。
+- [medium] **夏门** `m-luoyang-xia-gate` · 材质：9 张内嵌贴图近乎纯色：屋面看不出瓦垄，夯土看不出夯层，白占 355 KB —— 改法：二选一。一是去掉这 9 张贴图，改用与 LOD2 相同的 baseColorFactor 和 roughnessFactor，文件约减 355 KB，外观基本不变。二是烘焙有信息量的贴图：瓦面按约 0.36 m 一垄画出筒瓦与板瓦的法线和颜色，夯土加 8–12 cm 的夯层横纹，木纹做成无缝。
+- [medium] **小苑门** `m-luoyang-xiaoyuan-gate` · 卫生：后梯顶部平台和台面铺装共面重叠，会出现 Z-fighting 闪烁 —— 改法：把平台板裁到门台边缘 z=−4.0 为止，或者整体抬高 1–2 cm，然后重导出三档。这三个文件不在城景点名清单里，可以直接改。
+- [medium] **小苑门** `m-luoyang-xiaoyuan-gate` · LOD：楼梯在三档里都没减面（都是 970 面），LOD2 只减到 LOD0 的 46%，远景仍保留全部踏板和栏杆细杆 —— 改法：LOD2 的楼梯换成一块斜板加两根扶手（约 30–50 面），删掉屋壳下的椽和檩；LOD1 去掉栏杆立杆。目标大约是 LOD1 2000 面、LOD2 500 面，并在同一机位比对轮廓。
+- [medium] **玉堂前后殿关系** `m-luoyang-yutang-halls` · 结构：墙顶与屋面板之间留着 0.55 m 的通缝，廊枋与廊顶之间悬空 5 cm —— 改法：墙线处的板底沿墙长是常数（6.192 m / 6.592 m），所以把前殿两道山墙和后殿四面墙的顶面整体抬高 0.552 m 即可，不必沿坡度做斜顶。廊枋上移 5 cm 贴住廊顶。A/B 各三档同步重导。如果改用额枋加栱眼壁来封缝，那属于形制决定，交给伊苏里亚。
+- [medium] **玉堂前后殿关系** `m-luoyang-yutang-halls` · 材质：9 张贴图几乎是纯色，白占 LOD0 42% 的体积和约 12 MB 显存；柱础、踏步与夯土墙共用一个材质 —— 改法：二选一：把 LOD0/LOD1 的贴图换成同值的 baseColorFactor 和 roughnessFactor，外观基本不变，体积约减半；或者真正画出夯土层理、木纹、瓦垄阴影，并接上 AO。柱础和踏步另给一个石材材质（多 1 个绘制批次）。
+- [medium] **市肆功能组** `m-market-functional` · 结构：相邻两店之间留了 0.4 m 通缝，从街上能直接看穿到后面 —— 改法：如果不是有意留的防火或排水间隙，就用一道 0.4 m 厚的共用隔墙补满（或把相邻两道山墙并成一道），前后两端和屋面底都封上。如果是有意的，请伊苏里亚在 notes 里写明依据。
+- [medium] **轨与翼** `s-f01` · 卫生：门框横梁和立柱的接头前后面共面重叠，转角错位成台阶 —— 改法：立柱只做到横梁底（y 0→5.91），横梁两端各加长 0.09 m，与立柱外皮齐平（左门 x −10.09→−3.91，右门 3.91→10.09）。也可以把每座门框合成一个网格，删掉内部面。在 spatial-index.blend 和生成脚本里一起改，重新导出 GLB，再按 F7 重渲三张图。这个文件不在城景点名清单里，不用改登记的哈希。
+- [medium] **连接工坊** `s-sd01` · 结构：入口门槛块悬出岛板前沿：37 mm 底面悬空，15 mm 伸出板外 —— 改法：门槛连同两根门柱沿 −z 内移至少 0.037 m（门槛 z_max ≤ 1.028）。如果本意就是码头式的悬挑踏步，就改成明确的悬挑薄板，或向下包住板沿，并在 notes 里写明。
+- [medium] **连接工坊** `s-sd01` · 结构：外圈回廊转角缺半宽方块，接转动庭的斜段交接处有 V 形缺口 —— 改法：同评审员的改法：在 Blender 里把各段在转角处沿中线外延半个带宽，或者做 45° 斜接，再合并；斜段与直段交接处补齐外侧的三角。前右钩的转角也要补。顺手把背段中部的宽度统一成 65 mm。environment.glb 和 jointworks.glb 要同步重新导出。
+- [medium] **岔径·望场** `s-sd02` · 卫生：仓体两根地梁的端面与山墙外皮共面，墙脚出现 Z-fighting 方斑 —— 改法：地梁两端各外伸 3–5 cm 做成出头，或各缩进 1 cm 藏到墙内；梁底抬高 1 cm，离开墙底面。granary-A.glb 与 studies/012/assets/granary-A.glb 逐字节相同（SHA-256 8c340f35…），应在 012 原件上改，再同步 SD02 副本，并更新 source-identity.json 和源包中关于原 GLB 字节不变的记录。
+- [medium] **岔径·望场** `s-sd02` · LOD：瓦件逐块成节点，整场 424 个绘制批次只画约 1.4 万面 —— 改法：不动原件字节的做法：在 SD02 app.js 的 asset() 里加载完成后，用 vendor 已带的 BufferGeometryUtils.mergeGeometries 按材质合并静态网格（先套用 matrixWorld），三件可降到约 15 批，标签遮挡射线也会变快；改完同步源包记录。若要改原件：在 012/013 里把每个屋面的瓦件 Join 成一个对象，筒瓦 52 面可降到约 20 面，远看没有差别。
+- [low] **阙影·标界** `m-014` · 结构：子阙身四层是没有倒角的方盒，层缝只靠色差，和主阙身的倒角层缝不一致 —— 改法：只给 B_sub_shaft_0…3 直接加微倒角，参数和主阙身相同。被主阙裁切的子阙过渡、檐、盖保持不倒角。最好在创作者的生成器里改，三个方案同步。改完重跑交集和承接检查，并在 model-contract.json 里记下新哈希，原哈希保留，它是创作者校验时绑定的版本。
+- [low] **阙影·标界** `m-014` · 材质：28 个图元里 15 个没有 UV，有没有 UV 取决于构件当初的生成方式 —— 改法：准备贴图时统一做盒投影 UV，按 1 m 一格的世界尺度。如果确定不贴图，可以删掉其余 13 个图元里用不上的 UV，保持一致。
+- [low] **住宅院落模块组** `m-courtyard-family` · 材质：前 C2 分支里还有 5 个地面图元没有 UV —— 改法：按 C2 的米制盒投影给这几个图元补上 TEXCOORD_0（1 个 UV 单位等于 1 m），与同院其他地面保持一致。
+- [low] **板筒瓦薄壳模块** `m-eaves-shell` · LOD：LOD只减弧段：LOD1与LOD0几乎无差，LOD2仍是逐瓦实体，缺远景代理 —— 改法：先把曲面法线改为平滑（见V1），再把LOD0的板瓦降到8段、筒瓦降到10–12段，或直接用现在的LOD1作近景。LOD2删掉瓦腹内壁和被压住的搭接段，合成一个网格。远景代理（连续波纹面，每块约100–200面）等真要用于门楼或城景时再做。各档保持同一原点和包围盒。
+- [low] **板筒瓦薄壳模块** `m-eaves-shell` · 材质：六个文件都没有UV和贴图，所有瓦同一种平涂色 —— 改法：沿瓦长方向给每块瓦展UV（米制统一密度），为以后共享的可平铺绳纹法线/粗糙度贴图做准备；需要时再用顶点色做±5%的逐瓦明度差。底色保持中性青灰。
+- [low] **板筒瓦薄壳模块** `m-eaves-shell` · 卫生：六个文件的法线全是逐面平直法线，曲面瓦出现纵向棱带，LOD2筒瓦成了棱柱 —— 改法：按角度平滑瓦的上下表皮（约30–40°，端面和瓦边保持锐边）后重新导出，之后再按F4降低LOD0的段数。确认闭合壳没有翻面后，把doubleSided改为false。明暗外观会变，改完重拍图，并更新contract、registry和旧页里登记的SHA。
+- [low] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · 材质：三种材质全部双面，而模型都是封闭实体 —— 改法：试着关掉 earth 和 timber 的双面属性，在近景里确认没有背面破洞后再保留；tile 若有单片檐口可以继续用双面。这会影响外观判断，所以要人工核对。
+- [low] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · 结构：院墙 32 个外转角都缺一块 0.14×0.28 m，形成通高竖槽 —— 改法：把南北两面墙的两端各延长 0.14 m，或者在每个角补一块 0.14×0.28×1.6 m 的实体。在 earth 网格的局部坐标里改，不重新烘焙世界坐标；补块在墙体外轮廓以内，不碰通行地面。
+- [low] **B2门窗开口套件** `m-luoyang-b2-facade-kit` · LOD：同一个材质拆成 14 和 12 个绘制批次，每批只是一个 12 面的盒子 —— 改法：入城或批量实例化之前再做：每个状态把门框（两根门框加门额）和整樘窗合成 1 个静态 primitive，两扇门保持为独立节点（开合状态靠节点变换表达）；合并前先确认没有宿主按 door_jamb_*、window_* 这些节点名引用构件。
+- [low] **辟雍礼堂与围护** `m-luoyang-biyong` · 结构：东西两坡各有 4 处木构件顶端贴着屋面外皮，露出黑色短划 —— 改法：把这 8 个方块下调至少 3 cm，让顶面不高于 6.19 m（和柱顶齐平），或者把外侧按 20.6° 的坡度斜切。LOD0 和 LOD1 一起改。南北面和内柱的方块不用动。
+- [low] **辟雍礼堂与围护** `m-luoyang-biyong` · 材质：礼堂三套 PBR 贴图几乎是纯色，占了 LOD0 文件的 58%，却看不出效果 —— 改法：二选一。一是给贴图画上真正的内容（夯土层理、木纹、板瓦和筒瓦面），这要伊苏里亚来做。二是 LOD0 和 LOD1 也改用 LOD2 那三种 __FLAT 材质，去掉 9 张图，外观几乎不变，大约能省 1 MB。走第二条之前，要先确认创作者不打算再往贴图里加内容。
+- [low] **辟雍礼堂与围护** `m-luoyang-biyong` · LOD：礼堂 LOD1 把瓦垄间距从 0.4 m 抽到 1.2 m，截面也改成尖棱，切档时撒头上会冒出稀疏亮线 —— 改法：LOD1 保持 0.4 m 的间距，改用更低的截面（或者只保留八棱管的上半圈）；也可以干脆不建几何瓦垄，改用 0.4 m 间距的条纹法线或底色贴图。目标是从 LOD0 切到 LOD1 时，条纹的疏密不发生跳变。
+- [low] **庖厨炉灶 A/B** `m-luoyang-cooking-stove` · LOD：LOD0 的面数大多花在占位容器上，容器还和灶壳并成一个网格，没法单独隐藏或替换 —— 改法：按松散部件把釜拆成独立节点（A_vessel_01、B_vessel_01/02）。LOD0 的釜降到 48 段左右，同时给釜、火眼孔壁和拱券设按角度平滑的法线（约 30°），保持近景外观不变。LOD2 可以去掉釜埋在灶膛里、从外面看不到的下半段。改完重出 LOD0/LOD1/LOD2。
+- [low] **庖厨炉灶 A/B** `m-luoyang-cooking-stove` · 卫生：灶面和正立面用长条扇形三角面连到火眼和灶门，拓扑质量差 —— 改法：在 Blender 里对这几个平面重新三角化：围绕火眼和灶门加一圈过渡环边，或者用 grid fill。外观不变。
+- [low] **庖厨炉灶 A/B** `m-luoyang-cooking-stove` · 材质：占位釜和灶体共用一个土材质、一个绘制批次，看上去像灶面上的土圈沿，看不出是一口锅 —— 改法：和 F8 一起做：把釜拆成独立节点后，单独给一个陶釜或铁釜材质，例如深灰陶或铁黑。选哪种请创作者确认；P01 调色板里有对应条目就用它。这会改变外观，所以归 manual。
+- [low] **普通院落两种组装** `m-luoyang-court-layout-kit` · 卫生：六个文件的底部都在 Y=0.2，放到原点会悬空 0.2 m，院内也没有地面 —— 改法：先确认 0.2 m 是否与 m-courtyard-family 住屋用的是同一个地块台面约定。如果是，就在 notes 写明「底面在 Y=0.2，对齐地块台面」，几何不动；如果不是，再把六个文件整体下移 0.2 m。院内不用另补地坪。
+- [low] **普通院落两种组装** `m-luoyang-court-layout-kit` · LOD：LOD 切换时屋面明暗会跳变 —— 改法：贴图不动，只重做 compact_work-LOD1 和 opposed_rooms-LOD1 的瓦垄：保留 5–6 棱的半管截面并用平滑的侧面法线；或者行数不减，只减棱数。门屋瓦件按整行减，不要隔块减。LOD2 保持现状。
+- [low] **普通院落两种组装** `m-luoyang-court-layout-kit` · 材质：9 张 PBR 贴图几乎是纯色，却占了文件大半体积，两种布局还各存一份 —— 改法：参照 LOD2 的做法，改用 roughness≈0.88、metallic=0 的材质参数并去掉 ORM；去掉土和瓦近乎平面的法线图；basecolor 缩到 128²，或直接改用底色；木纹法线可以保留。这样 LOD0 大约能降到 0.5 MB。那层淡噪声要不要保留需要判断。
+- [low] **德阳殿空间研究** `m-luoyang-deyang-hall` · LOD：LOD0 到 LOD1 只减了约 38% 的面，瓦棱一项就占了 LOD0 面数的 73% —— 改法：B-LOD1 的瓦棱改成半边截面或更稀的长条（棒的下半截埋在板里，那部分面白白浪费），同时给柱子降边数，目标约为 LOD0 的 30% 到 40%。顺带把 B-LOD2 earth 里的 32 块础石和踏步简化掉。
+- [low] **德阳殿空间研究** `m-luoyang-deyang-hall` · 材质：LOD0 和 LOD1 里嵌的 9 张贴图几乎是纯色，占了文件体积的一大半，却几乎看不出效果 —— 改法：B 方案没被城景点名，可以把三份材质改成和 LOD2 一样的常量材质（__FLAT），或者只留一张共享的小尺寸细节贴图；改完对比近景，确认观感。A 方案归 F10 处理。
+- [low] **夯土墙身家族** `m-luoyang-earthwall-family` · LOD：LOD0 只有约 ±2.5 cm 的几何浮雕，却花了数十倍面数，C-LOD0 体积已接近 5 MB 提醒线 —— 改法：如果要减负，有两条路，都会改变外观，属 manual，不需要另做压缩：一是改成平滑法线，只在色带行界和 UV 接缝处拆点，A-LOD0 约 12676→8576、C-LOD0 约 99428→58584 个顶点，还能顺带消掉 extra/earthwall-A-LOD0-close 里非平面四边形对角线造成的三角闪面；二是减少 C-LOD0 的 X 分段。
+- [low] **夯土墙身家族** `m-luoyang-earthwall-family` · 材质：LOD2 的纯色比 LOD0/1 顶点色均值亮约 10%，切换档位会跳色；westwall10-LOD2 换成了另一种材质模式 —— 改法：LOD2 的侧面和端面改用 LOD0/1 侧面的均值（约 0.342/0.235/0.118），顶面保持 0.376/0.258/0.130。earthwall-* 的 LOD2 已经带 COLOR_0，逐面赋色即可。westwall10-LOD2 如果也要分顶、侧两色，需要加 COLOR_0 或拆成两个材质。
+- [low] **夯土墙身家族** `m-luoyang-earthwall-family` · LOD：LOD1 的夯层色带是隔行点采样，浮雕阴影也整层消失，LOD0 切到 LOD1 时会跳变 —— 改法：LOD1 每行颜色改为 LOD0 对应两行的均值（盒式降采样）；C-LOD1 按它覆盖的 LOD0 行加权平均。和 F5 的 LOD2 侧面色一起改。
+- [low] **足碓与踏台** `m-luoyang-foot-pestle` · 卫生：运动件 pestle_timber_moving 的枢轴在地面原点，不在支轴上 —— 改法：把节点原点移到支轴中心：node.translation 设为 [0, ~1.0, 0]，网格顶点相应下移，世界坐标位置不变。LOD0 和 LOD1 同步改。LOD2 已经把杠杆合进静态网格，如果远档也要动，就把杠杆拆回独立节点。
+- [low] **足碓与踏台** `m-luoyang-foot-pestle` · 材质：UV 按世界轴投影，木纹在竖向构件上横着走，立柱和杵都是横箍纹 —— 改法：把竖向构件（扶栏柱、支柱、台腿、杵）侧面的 UV 岛转 90°，让 U 顺着构件的长轴，然后重导 LOD0 和 LOD1；LOD2 没有贴图，不受影响。如果按 F2 去掉木纹贴图、改用常数材质，这条就不用做了。
+- [low] **复道服务登临节点** `m-luoyang-gallery-access` · LOD：LOD2 踏步从 18 级减到约 10 级，切档时每级高度约翻倍 —— 改法：LOD2 保留 20 块进深 0.32 m 的踏板，每块 12 面，总共只多 120 面（576→约 696）；立杆照旧精简。
+- [low] **复道服务登临节点** `m-luoyang-gallery-access` · 结构：圆木斜梁在每级踏板的后缘顶出板面约 2–3 厘米 —— 改法：三档一起改：把两根斜梁整体下移约 4 cm；或者把踏板整体上抬 4 cm，扶手同步上抬；也可以在斜梁上切出承托踏板的平槽。
+- [low] **谷门** `m-luoyang-gu-gate` · LOD：LOD1 的面数几乎全部花在檐口筒瓦短段上，预算严重失衡 —— 改法：不急。可以把檐口瓦件每件从 52 面降到 16–20 面左右（筒瓦用 5–6 段半圆，板瓦用 3–4 段弧），保留檐口锯齿轮廓，LOD1 能降到 5–6k 面。也可以等 LOD0 上架以后，再统一定 LOD1 的预算分配。
+- [low] **广阳门** `m-luoyang-guangyang-gate` · 材质：屋面大面看不出瓦垄，和檐口逐件建模的筒瓦头不协调 —— 改法：给屋面做一张能看出筒瓦、板瓦垄的法线贴图或底色贴图（UV 沿坡向排布），让中景下读得出瓦垄；檐口的瓦件可以相应简化（见 F7）。
+- [low] **广阳门** `m-luoyang-guangyang-gate` · LOD：LOD1 的面数大多花在中景看不清的瓦头和圆柱分段上 —— 改法：只处理檐口瓦件：每坡改成一条带瓦头起伏的连续檐口条，或把每件降到十几个面，或改用贴图加法线表达；省下的预算留给 F3 的斗栱和 V2 的梁架。圆柱不必再减。
+- [low] **广阳门** `m-luoyang-guangyang-gate` · 材质：9 张内嵌贴图几乎是均匀色，没有表达夯层和瓦垄 —— 改法：二选一。①让贴图承担信息：夯土做可见的水平夯层（与城墙 C 版“轻微层理”的做法一致），瓦面做瓦垄（与 F6 一起做）。②保持平涂风格：把 LOD1 里近乎均匀的 8 张贴图（底色、ORM、土和瓦的法线）换成与 LOD2 相同的颜色因子，只留木纹法线，可省约 31 万字节。
+- [low] **广阳门** `m-luoyang-guangyang-gate` · 结构：正脊悬空：脊条底面比屋面脊线高 8mm，两侧露出最宽约 5cm 的楔形缝 —— 改法：把正脊下移约 5cm，让底面嵌进两坡；或者给脊条加一个贴合两坡的三角形底。两级 LOD 同改。
+- [low] **人力石磨 A/B** `m-luoyang-hand-mill` · 结构：上下两扇之间有一道贯通的展示缝，上扇看上去悬空 —— 改法：四个文件里把上扇、进料圈、隔梁、手柄一起下移 2 mm，让上扇落在下扇上。如果要保留展示间隔，就把轴加长（A 约 13 mm，B 约 19 mm），让它顶到轴套顶面来承托上扇，外观不变，同时在 notes 里写清楚。
+- [low] **人力石磨 A/B** `m-luoyang-hand-mill` · 材质：三张 ORM 贴图近乎常量，石材和地台的法线图近乎全平，却占了发布后贴图体积的约三分之二 —— 改法：三张 ORM 贴图改用标量：roughnessFactor 分别取 0.91（土）、0.78（木）、0.86（石），metallicFactor 取 0。删掉石材法线图，地台法线图也可以删，木纹法线图保留。四个文件同样处理。
+- [low] **住宅主屋面** `m-luoyang-house-roof` · LOD：近景件 14.5 万三角、10.4MB，没有压缩 —— 改法：不用另做压缩件，部署会自动压缩。如果要瘦身：给筒瓦和板瓦的曲面设平滑法线（保留厚度边缘的硬边），删掉贴在望板上的板瓦底面。这样会改变近景观感，需要人工对比确认后再替换；原件保留作研究底本。
+- [low] **住宅主屋面** `m-luoyang-house-roof` · 结构：正脊和两坡瓦面之间露缝，能看到底下的棕色望板 —— 改法：在正脊下方两侧补当沟或压脊瓦，或者把脊座做成贴合两坡的断面并下压到瓦面，脊端与瓦面对齐。
+- [low] **低墙生活分区单元** `m-luoyang-household-service` · 材质：每档内嵌 9 张 PNG 贴图，与面数相比偏重 —— 改法：部署时 slim_site 会转成 WebP 并做 meshopt 压缩，因此不急；长期可以把 LOD1 的 normal 和 orm 贴图去掉，只留 basecolor，或者在城景里改成共享贴图。
+- [low] **住宅内门修订组件** `m-luoyang-inner-door-components` · LOD：面数几乎全花在轴孔上，LOD2 仍保留轴孔，三档轮廓完全一样 —— 改法：LOD0：轴孔从 64 段降到 16–24 段，门轴从 32 段降到 12–16 段，3.6 cm 的孔在近景下也够圆。LOD1：再减半。LOD2：去掉轴孔和门轴，枢块封成实心盒，单扇约 60 个、双扇约 100 个三角形。导出后对比轮廓和包围盒。这些文件不在城景点名清单里。
+- [low] **津门** `m-luoyang-jin-gate` · LOD：LOD2 远景档有 71% 的面花在从远处看不见的门道内木构上 —— 改法：LOD2 删去 12 个圆形门枢座和 12 块枢座垫块；门道内只保留门框和最外侧一对排叉柱及过梁；门叶减成单块板，保留 6 个节点和开合动画。目标约 1k 面。
+- [low] **津门** `m-luoyang-jin-gate` · LOD：12 个门枢圆盘面数过高，LOD0 占 23%，默认展示的 LOD1 占 31% —— 改法：LOD0 降到约 24 段（约 96 面），LOD1 降到约 12 段（约 48 面）。近景外观几乎不变，但会改几何，需要看一眼。
+- [low] **津门** `m-luoyang-jin-gate` · 卫生：门道地面板比墩台底低 0.16 m，详情页按包围盒最低点落地时墩台悬空 16 cm —— 改法：把墩台底面下延到 y=-0.16 作为埋深，与地面板底齐平。地面以上的外观不变，原点仍在门道地面。
+- [low] **灵台类型与踏步研究** `m-luoyang-lingtai` · LOD：瓦垄全部用几何做出，占 LOD1 面数的 68%，对中远景模型偏重 —— 改法：作为可选优化：另做带瓦垄条纹的法线贴图（以及有明暗变化的底色贴图），LOD1 屋面改成平板加贴图；或者只保留檐口一排瓦垄几何。近看的外观会变，需要人工判断。
+- [low] **灵台类型与踏步研究** `m-luoyang-lingtai` · 结构：院墙四个外角各缺一块 0.3×0.6 m、通高 2.3 m 的竖槽 —— 改法：把南北墙端段的两头从 x=±32.0 延长到 ±32.3，封住四个墙角。两个 LOD 一起改。
+- [low] **灵台类型与踏步研究** `m-luoyang-lingtai` · 材质：甬道在 LOD1 里和地面完全同色，到 LOD2 却变成浅色带，远近切换时会突然出现 —— 改法：让两档一致，两种做法选一：给 LOD1 甬道做一张偏浅的底色贴图（glTF 的 baseColorFactor 只能调暗，不能调亮）；或者让 LOD2 甬道改用 earth 的颜色，乃至直接并入 earth，省一个批次。这是外观取舍，需要人工判断。
+- [low] **旄门** `m-luoyang-mao-gate` · 材质：LOD1 去掉了全部贴图，夯土墩台只剩 96 个三角面的纯色块，夯层和木纹都没了 —— 改法：如果要补，直接复用 LOD0 的 earth 和 wood 平铺贴图，降到 256² 并转 WebP。LOD1 的 UV 已经是按米的世界投影，可以直接平铺，体积控制在约 100 KB 内。瓦垄的识别度归 F3 处理。
+- [low] **八铺四棚店前线** `m-luoyang-market-frontage` · 结构：两间铺子后墙前的三层货架悬空：没有托架或立柱，和后墙、山墙都不接触 —— 改法：把货架往后挪0.12米贴住后墙，两端各加长0.22米插进山墙；或者每层加两根立柱或托木。LOD0和LOD1一起改。
+- [low] **市肆模块与组装** `m-luoyang-market-modular-assembly` · 卫生：3 个材质全部开了双面渲染 —— 改法：三个材质打开 Backface Culling（导出时 doubleSided=false），9 个文件全部重新导出。替换前逐个视角检查，确认没有翻面或露底；组合样例重新生成时同步处理。
+- [low] **市肆模块与组装** `m-luoyang-market-modular-assembly` · 结构：S86 后壁三层搁板悬空：不贴墙，也没有任何支撑 —— 改法：把三块板的后缘延到 z −5.72 贴住后墙，两端延到 x ±3.72 插进山墙；或者在板下加 2–3 根立柱或三角托木。S86 的 LOD0/LOD1 和组合样例同步重新生成；LOD2 没有搁板，不用改。
+- [low] **市肆模块与组装** `m-luoyang-market-modular-assembly` · 材质：LY_P01 的 PBR 贴图几乎是纯色，占了大半体积却几乎不增加细节 —— 改法：二选一。一是 LOD0/LOD1 也改用现成的 __FLAT 材质，或把贴图降到 64–128 px，外观几乎不变，体积减少约八成。二是请创作者把贴图做出信息量：夯土加横向夯层和版筑痕，瓦面法线做出板瓦沟；这一项与 F1 一起做。
+- [low] **普通住屋与门房四型** `m-luoyang-ordinary-house-types` · 结构：屋面瓦层和山墙顶之间有透光缝，瓦面像浮在墙上 —— 改法：在望板和瓦层之间补一层苫背（草泥垫层）实体，把 4–6 cm 的空隙填满；或者把瓦层整体落到望板上，去掉挂瓦条。改完用正交侧视复查不再透光。H64/H72/H96 的 LOD0 和 LOD1 都要改；LOD2 的整片屋面已经贴着望板，没有这条缝。
+- [low] **高架复道局部模块** `m-luoyang-palace-gallery` · LOD：贴图占体积大头但视觉贡献很小，LOD0→LOD1 面数级差偏小 —— 改法：把近乎纯色的 basecolor、ORM，以及夯土和瓦的法线图换成材质常数：颜色取现有均值（就是 LOD2 的 FLAT 值），粗糙度取0.78–0.90。只保留木纹法线图，或者把它缩成一张可平铺的小图；LOD1 要不要连木纹法线也去掉，再定。面数级差可以参考 LOD2 的做法，比如 LOD1 的柱子改用8边形，把减面幅度拉到40%左右。外观几乎不变，但这是材质重做，归 manual。
+- [low] **宫前土木对阙** `m-luoyang-palace-paired-que` · 材质：夯土台面没有夯层纹理，近景是平涂的土色 —— 改法：在 earth 的底色和法线贴图里加入水平夯层带，利用已有的米制 UV 按层高平铺；LOD2 的纯色材质保持不变。
+- [low] **宫前土木对阙** `m-luoyang-palace-paired-que` · 材质：九张 PBR 贴图几乎都是纯色，约 1.3 MB PNG 没带来材质信息 —— 改法：二选一：给贴图真正的内容（夯层、板瓦/筒瓦、木纹，可与 F4 一起做）；或者把近似纯色的贴图换成 baseColorFactor/roughnessFactor（像 LOD2 那样），只保留木纹法线。后一种做法下 LOD0 约可从 1.59 MB 降到 0.6 MB。
+- [low] **宫前土木对阙** `m-luoyang-palace-paired-que` · 结构：泥山墙底边比承托它的额枋低 0.27 m，底部悬空 —— 改法：把四片山墙底边的 4 个顶点抬到约 10.5 m（略高于额枋底面，避免产生新的共面）；或者把额枋降到 10.2 m 托住墙底。三档同步修改。
+- [low] **平城门** `m-luoyang-pingcheng-gate` · LOD：地面附件 LOD0 有 4032 面，和 LOD2 的 72 面看不出差别 —— 改法：确认 LOD0 的微起伏是否真的需要；不需要的话，把 LOD0 减到 LOD1 的量级，或者干脆只保留两档。
+- [low] **连续住宅生活片区** `m-luoyang-residential-life` · 卫生：地台 L 形一角的顶点偏了 1 m，底边成了斜边 —— 改法：把 (520, 963) 改到 (520, 962)，三档同步，让地台成为正交 L 形。
+- [low] **连续住宅生活片区** `m-luoyang-residential-life` · 材质：夯土墙、台基、院地和地台共用一种土色，层次分不出来 —— 改法：给 C_life_block_ground_removable 单独配一个略浅、偏灰的踩实土材质（三档同步），院墙和屋墙保持现在的夯土色；改完对比封面角度的渲染，确认院落轮廓更清楚。
+- [low] **连续住宅生活片区** `m-luoyang-residential-life` · 卫生：3 个材质全部双面渲染，封闭实体用不着 —— 改法：确认法线朝外后把 earth 和 timber 改成单面；瓦面如果有单层面片，可以保留双面。改完要回看是否露出背面破洞。
+- [low] **连续住宅生活片区** `m-luoyang-residential-life` · 材质：9 张 PBR 贴图几乎是纯色，近 1 MB 只换来看不出的噪点 —— 改法：ORM 换成 metallicFactor=0、roughnessFactor≈0.78/0.84/0.91，外观几乎不变。底色和法线二选一：要么做出看得见的版筑夯层、瓦色差和木纹，要么也换成颜色因子，可省下约 1 MB（LOD0）和 0.36 MB（LOD1）。改完做同机位对比渲染。
+- [low] **院内备食关系** `m-luoyang-residential-preparation` · 材质：备食板四条腿的木纹横着绕腿走，与腿长方向垂直 —— 改法：把四条腿共16个侧面的UV旋转90°，让U顺着Y方向。在源灶stove-A的LOD0和LOD1上改，再同步重建W2的LOD0和LOD1；notes里“保持原逐角UV”的说法也要相应修改。
+- [low] **圈厕关系 A** `m-luoyang-service-court` · 结构：屋脊块悬在屋面板上方，脊下有一条贯通全长、高 1–4 cm 的透光缝，三档都有 —— 改法：三档都把脊块下移约 1 cm，并把脊底做成贴合屋面 18.4° 坡度的倒 V，或者加一条压在屋面板上的脊座（当沟）填块，让缝闭合。改完后更新 notes 里屋脊那句。如果 notes 里说的「保留」指的就是这里，先和伊苏里亚确认。
+- [low] **上东门** `m-luoyang-shangdong-gate` · LOD：LOD1 有 88% 的面数花在檐口瓦当上，和「中景」定位不匹配 —— 改法：把瓦当减到每个十几个面，或者改成一条带法线贴图的瓦当条；省下的面数留给 F2 的斗栱和椽子。
+- [low] **南郊圆坛八陛** `m-luoyang-southern-altar` · LOD：LOD1只减了面，体积和绘制批次几乎没变 —— 改法：先按F1处理贴图，LOD1的体积优势就会显现；LOD1里门柱和横木这类小构件可以合并成一个网格，或在远景下直接去掉，以减少批次。
+- [low] **厩棚与饲槽 A/B** `m-luoyang-stable` · 材质：9 张贴图几乎是纯色，每个文件白占 1.1 MB，画面也因此显得平 —— 改法：放到项目材质库层面统一决定：要么整个库把近纯色的 basecolor 和 ORM 换成因子，只保留木纹法线；要么整个库给瓦、土、木加上真正的变化。本卡跟随库的决定，不单独另搞一套。
+- [low] **厩棚与饲槽 A/B** `m-luoyang-stable` · 结构：正脊悬空：脊下有一条 1–4 cm 高、贯通全长的缝 —— 改法：把正脊下沿降到约 3.72 m，并加宽到约 ±0.15 m，压住最上一排瓦；或者在脊下补一条通长的垫脊（当沟）把缝填满。如果按 F4 重做叠瓦脊，就一并解决。A、B 都要改。
+- [low] **厩棚与饲槽 A/B** `m-luoyang-stable` · 材质：材质用的是 REUSED_C 浅色系，和同一批及同类建筑的 LY_P01 深色系不一致 —— 改法：先和创作者确认项目以哪一套为准。如果并入 LY_P01，就把 A、B 的三种材质换成 LY_P01_earth / timber / tile__PBR（外观会变深），然后重拍封面。如果坚持用 REUSED_C，就在 notes 里写明原因和适用范围。
+- [low] **太学长堂 A** `m-luoyang-taixue-a` · LOD：LOD2 的面数大半花在远景看不见的窗条和柱础上 —— 改法：每间窗条合并成一块深色窗带面片，或在墙顶加一条深色带；柱础并入柱身或删去。这样 LOD2 可以压到约 600–800 面，省下的面留给 F3 的梁架。
+- [low] **砖瓦窑 A/B** `m-luoyang-tile-kiln` · LOD：LOD1 只删了 22 个小方块，真正的开销（近乎纯色的贴图和绘制批次）原样保留 —— 改法：贴图改用 baseColorFactor/roughnessFactor，或换成 64–128² 的共享小图，并去掉近乎平的法线图。LOD1 按材质合并图元，再简化火膛拱和桌腿。网格都是闭合的，可以关掉 doubleSided。
+- [low] **砖瓦窑 A/B** `m-luoyang-tile-kiln` · 卫生：操作坑底和火膛底从展示地坪底面穿出 4 cm，地坪底面还漏一条 10 cm 缝 —— 改法：把两块坑底盒的底面抬到 -1.0，或把地坪底整体降到 -1.04；A_fire_floor 向后延到 z=-0.1，或者把地坪那段开洞补上。四个文件同改。
+- [low] **砖瓦窑 A/B** `m-luoyang-tile-kiln` · 结构：坑口最上一级台阶离坑壁差 7 cm，留下一条 0.8 m 深的竖缝 —— 改法：把最上一级（或整段台阶）朝坑壁方向延长 7 cm，贴住坑壁。四个文件同改。
+- [low] **砖瓦窑 A/B** `m-luoyang-tile-kiln` · 结构：火膛尽端，窑床前脸下有一道 20 cm 高的空槽，窑床与火膛之间的台阶没有落到火膛底 —— 改法：在 x ±0.9、z -0.1–0.4、y -0.8 到 -0.6 补一块实体，或者把 A_kiln_bed 前 0.5 m 的底面降到 -0.8，让窑床前脸落到火膛底。同时按 F7 把 A_fire_floor 向后延到 z=-0.1。四个文件同改。
+- [low] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · 卫生：workyard 整院比原点地面高出 0.2 m，碓杆动件的枢轴也不在碓轴上 —— 改法：不要移动整院，在 notes 里写明「院地标高 y=0.2，与住宅家族一致」。把碓杆节点的原点移到横轴中心 (5.0, 1.2, 1.5)，网格反向平移，世界位置不变；两档同步（LOD0 和 LOD1，LOD2 已把碓杆并入 timber）。
+- [low] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · LOD：LOD1 把瓦垄数量砍了一半，中距离换档时屋面纹理明显跳变 —— 改法：LOD1 保留全部瓦垄，每根改成 6 面左右的三角断面棱柱：院子 252×6≈1.5k 面，与现在 LOD1 瓦面的 1824 面相当；workshed 54×6+60≈384 面，与现在的 372 面相当。这样换档时纹理频率不变。
+- [low] **武库收纳与点验** `m-luoyang-wuku` · LOD：B-LOD2 有 69% 的面花在门扇和枢轴框上，A-LOD2 面数最多的一组是四块 10 cm 的铰件 —— 改法：LOD2 里把门扇和枢轴框都换成 12 面的长方体，删掉铰件和门轴细杆，把省下来的面数用来保留 F3 说的简化檐檩。
+- [low] **小苑门** `m-luoyang-xiaoyuan-gate` · 卫生：22×23.2 m 的展示地台和夯土门台合在同一个图元里，入城时去不掉，卡片尺寸也被它撑大 —— 改法：把地台拆成单独的节点和图元（多一个绘制批次），或者从三档文件里去掉、改由展示页提供地面；在 notes 里写上门台本体尺寸（18×8 m，台面高 5.7 m，女墙顶 6.6 m，屋脊 11.31 m）。
+- [low] **玉堂前后殿关系** `m-luoyang-yutang-halls` · 卫生：压在山墙顶上的通长横梁比墙只宽 1 cm，梁侧面离墙面 5 mm，形成约 27 m² 的异材质近共面 —— 改法：把这四根梁改成与墙同宽并完全埋进墙里，或者直接删掉埋在墙内的那段；如果要露出来，至少凸出 2 cm。
+- [low] **市肆功能组** `m-market-functional` · 材质：木纹在柱、杆、桌腿这些竖向构件上横着走 —— 改法：竖向木构件（前檐柱、棚杆、桌腿、货架立柱）的 UV 旋转 90°，或按构件长轴重新投影；梁、桌面、搁板不动。LOD0 和 LOD1 同步改。
+- [low] **市肆功能组** `m-market-functional` · 卫生：v2 三档整体抬高了 0.2 m，落地面不在原点 —— 改法：三档统一下移 0.2 m，让落地面在 y=0。如果要和 v1 地板对位，就在 notes 写明「原点在样地板底面」。
+- [low] **市肆功能组** `m-market-functional` · 卫生：额枋端头和墙端共面，近看会闪烁 —— 改法：把额枋正面往里退 1–2 cm（或把额枋截到墙内皮），货架立柱顶面降 1 cm；三档同步。
+- [low] **仓储作业功能组** `m-storage-functional` · LOD：收货棚LOD1与LOD0几何完全相同，只降了贴图；中档面数的36%花在5只粮袋上 —— 改法：LOD1把每只粮袋减到20–30面（或合并成一个低面体），案台保留；A仓、B仓LOD1里看不到的4个货箱也可以删掉。只改v2分件和组装件；城景的granary-city-LOD1是点名文件，如需同步，由伊苏里亚改并更新哈希。
+- [low] **仓储作业功能组** `m-storage-functional` · 卫生：v2分件的原点约定不统一：收货棚仍在组内坐标，所有分件都悬在y=0.2 —— 改法：把收货棚三档按棚体中心平移到原点，与A仓、B仓一致；分件和v2组装件统一下移0.2 m落地。在notes里记下复装偏移：A仓约(-12,0,-6)，B仓约(+12,0,-6)，收货棚为平移量的反向。城景件不动。
+- [low] **井栏与井架** `m-well-family` · 结构：正脊脊帽悬在屋脊上方，两侧各有 4–4.6 cm 的楔形缝 —— 改法：脊帽下移约 4 cm，底面做成贴合两坡的 V 形，或者垫三角块；A 脊帽两端和斜坡的交接处一起封住。四个 GLB 同步改。
+- [low] **井栏与井架** `m-well-family` · LOD：LOD1 的面没减在该减的地方，绘制批次也没合并 —— 改法：LOD1 里绳改成 6 边，罐和轮环的段数减半，轴、毂、辐合成一件。静态构件按材质合并，只保留 demonstration_apron_opening、绳、罐这几个独立命名节点，批次降到 10 个以内。改完对照 lods.png，确认轮廓不变。
+- [low] **轨与翼** `s-f01` · 形体：章节标牌在序厅视角下被门框横梁切掉字顶 —— 改法：三种改法任选：两块标牌整体下移约 0.4 m（字顶不高于 y≈4.85）；横梁抬高 0.4 m 以上；或者把标牌移到台座正面。改完用 hall 相机复核一次，再重新导出 GLB。
+- [low] **轨与翼** `s-f01` · LOD：星轨原样放入全精度 m-001，一件展品占了全场八成面数 —— 改法：先把环境的静态盒体按材质合并：34 个图元并成 5 个，全场降到约 20 个批次，外观不变；F01 的点选用的是独立的热区盒，不受影响。星轨减面件只作为可选，真要做，就在 orbit 相机下和现有的 orbit.png 对比，确认环和肋没有折角再替换。
+- [low] **轨与翼** `s-f01` · 材质：「02 / TIDE」标牌在沙色背墙上对比太低，序厅视角里很淡 —— 改法：给 02 标牌单独换一个深色材质，比如沿用场景里已有的「02 | deep petrol underside」或深铜色；也可以在字后加一块深色衬板。如果按 F2 把 02 背墙压暗，这一条会一起解决。改完用 hall 和 tide 两个相机复核可读性，再重新导出 GLB、重渲三张图。这个文件不在城景点名清单里。
+- [low] **观测的尺度** `s-f02` · 展示：34×32 m 的概念基面远大于内容，库内 3D 初始取景时主体很小 —— 改法：把基面缩到约 20×18 m，并重检三个章节机位：确认基面边缘不会入画，并重跑 geometry.json。如果为了展陈效果必须保留 34×32 m，就在 notes 里说明这一点。
+- [low] **连接工坊** `s-sd01` · 卫生：插接廊地台后沿与梳齿脊墙背面共面，16 mm 高的条带 Z-fighting —— 改法：地台后沿内收 1–2 mm（z ≥ −0.728），或者脊墙后移 1 mm。顺手检查其他贴边构件，都错开至少 1 mm。
+- [low] **连接工坊** `s-sd01` · LOD：折臂灯面数集中在毫米级小件，三个姿态文件各存一整份几何 —— 改法：轴、端盖、脚垫降到 24–32 段，臂端圆头降到 16–24 段。在 studies/009/model/assets/hinge/ 下的三个姿态源文件上统一减面，再拷贝到 SD01，并更新 space.json 里的 sourceSha。如果是有意保留近景精度，就在 notes 里写明。
+- [low] **岔径·望场** `s-sd02` · 卫生：地景是逐面拆分法线，缓坡和土丘呈方块状明暗 —— 改法：只对 earth 区域按距离合并顶点，并以约 30° 自动平滑重算法线；路面、槽口和地块侧边保持硬边。顶点数大约能降到原来的三分之一。environment.glb 是 SD02 用 build-environment.py 自己生成的，改后要同步源包里 a-regression 的 SHA 记录（aed3d338…）。
+- [low] **岔径·望场** `s-sd02` · 材质：三件并置的材质参数不统一：院落粗糙度 0.4、全部双面、UV 时有时无 —— 改法：院落 5 个材质的粗糙度调到 0.85–0.9。确认法线朝外后（audit 显示无镜像节点），把闭合体的材质改成单面。没有贴图计划的话，UV 可以不补。courtyard-A 与 studies/013 以及城景的 quality-reference-013-A.glb 是同一份字节，若要三处保持一致，需要同步 cities/luoyang/projection-map.json 里登记的哈希。
+
+## isuria（257 项）
+
+- [high] **完整单门楼屋面研究** `m-gate-roof-study` · 结构：屋面薄壳不落在任何构件上，整片悬空，山面因此透空 —— 改法：补一套说得通的木构：前后门楣和墙顶上置檐檩，墙顶加梁和叉手或蜀柱，托住金檩与脊檩；檩上铺椽和望板（或苇箔），让承托层（苫背）贴着椽望走。也可以把两道夯土墙砌成山尖，直接承檩并封住山面。脊柱、脊檩的断面放大到可信尺寸（脊檩直径约 15–20 cm）。补构架时注明依据（汉画像石、陶门楼明器等），近景、中景两档一起改。
+- [high] **完整单门楼屋面研究** `m-gate-roof-study` · 形体：檐口筒瓦端头敞口，缺东汉屋面标志性的瓦当 —— 改法：26 根檐口筒瓦补圆形瓦当：直径与筒瓦外径一致（约 13 cm），带边轮，当面可以先做素面或浅浮雕云纹。中景用简化圆盘，远景用贴图表达。在卡片 notes 里写明参照的出土瓦当类型。
+- [high] **德阳殿空间研究** `m-luoyang-deyang-hall` · 结构：屋面薄壳悬在柱顶上方 0.18 米处，中间没有任何承托构件 —— 改法：补柱头栌斗，加檐檩、金檩、脊檩和檐椽层，让屋面落在椽上，消除 0.18 米的空隙；梁上的空档用蜀柱和檩条托起；墙顶也要和檩椽接上。A 方案三档改完要同步更新城景登记的哈希。
+- [high] **德阳殿空间研究** `m-luoyang-deyang-hall` · 形体：柱头完全没有斗栱，与东汉最高等级殿堂的形制不符 —— 改法：至少在外檐柱头补栌斗加栱（一斗二升或一斗三升），补间可以暂时省略，并在 notes 里注明依据。A 方案文件被城景点名，归创作者处理。
+- [high] **德阳殿空间研究** `m-luoyang-deyang-hall` · 形体：屋面看起来像金属压型板，没有筒瓦和板瓦的瓦垄，也没有瓦当、正脊和垂脊 —— 改法：把细棒改成筒瓦和板瓦交替的瓦垄，筒瓦直径约 0.15 到 0.2 米，檐口补一排瓦当；把正脊加到有体量的脊身，补四条垂脊，脊端可以微微起翘。A 方案文件被城景点名，归创作者。
+- [high] **广阳门** `m-luoyang-guangyang-gate` · 形体：门道贯通墩台全高，墩台被拆成四个独立土块，整体像架在墩子上的廊桥 —— 改法：把墩台改成一整块连续夯土台，门道开在台体内（两壁排叉柱加木过梁，门道上方保留台体）；隔墙加厚；按研究依据核定三门道的宽度（现为 3/6/3m）。墩台顶不低于城中 A 样墙顶 6.2m，外壁做收分；门楼坐在墩台顶面上，不再坐在一块木楼板上。
+- [high] **住宅主屋面** `m-luoyang-house-roof` · 形体：檐口筒瓦没有瓦当，端头是空的半圆管 —— 改法：沿檐口每列筒瓦的端头补圆形瓦当，直径和筒瓦外径一致。模型的筒瓦比常见东汉瓦当（约 14–16 cm）细，补之前先由创作者定下瓦件尺度的依据，必要时把筒瓦、板瓦和列距一起放大。瓦当纹样（卷云纹或文字）和依据写进卡片 notes。
+- [high] **津门** `m-luoyang-jin-gate` · 形体：屋面像现代压型钢板，没有筒瓦、板瓦交替的瓦垄，也没有瓦当 —— 改法：改成筒瓦压在板瓦上的瓦垄（低模可以用半圆筒加凹槽），檐口加一排瓦当，正脊加厚并做出脊头；LOD1 和 LOD2 再相应简化。
+- [high] **开阳门** `m-luoyang-kaiyang-gate` · 形体：瓦面看起来像现代瓦楞铁皮或压型钢板，看不到东汉筒瓦、板瓦的瓦垄，也没有瓦当 —— 改法：按东汉筒瓦压板瓦重做瓦面：筒瓦要明显加粗（现在的凸棱只有 7 厘米宽），垄间做出板瓦凹弧，不要平板；檐口每垄加圆形瓦当，用低面数圆盘或贴片即可。LOD1 不要只留 27 条间距 0.97 米的几何棱，应把和 LOD0 一致的瓦垄节奏烘进 tile 的法线和底色贴图（现在是通用噪声）；LOD2 保留整体色块即可。LOD1、LOD2 在城景点名清单里；城景另有一份由 LOD1 派生的 cities/luoyang/progress-asse
+- [high] **普通住屋与门房四型** `m-luoyang-ordinary-house-types` · 形体：四型屋面都没有正脊，两坡瓦垄直接在顶上相交 —— 改法：四型都补正脊：用筒瓦压脊或叠瓦脊，两端可以略起翘，盖住两坡瓦垄的断口；LOD1 和 LOD2 的轮廓同步补上。
+- [high] **宫廷侧廊庑** `m-luoyang-palace-sidehall` · 形体：屋面看起来像现代金属立边板，没有瓦垄、瓦当和脊饰 —— 改法：保留约 0.4 米的垄距，把细杆改成直径约 0.15 米的半圆筒瓦，垄间做出板瓦的下凹；每垄在檐口端头加瓦当；正脊改成叠瓦脊，两端微微起翘。LOD1 和 LOD2 用法线贴图表达瓦垄。三个文件的哈希被宫院组合锁定，改完要同步更新。
+- [high] **宫廷侧廊庑** `m-luoyang-palace-sidehall` · 结构：柱头没有斗栱或栌斗，前后檐外挑约 2.3 米却没有承挑构件 —— 改法：檐柱柱头补栌斗，再加一斗二升或一斗三升，或者用插栱、挑檐枋承托檐口；出挑过大的话就缩短。和 V1 一起改，改完同步更新被锁定的哈希。
+- [high] **宫廷侧廊庑** `m-luoyang-palace-sidehall` · 结构：屋面下没有檩条和椽子，屋面板直接压在柱头上，梁枋悬在屋面下不承重 —— 改法：在前后檐柱头加檐檩，中柱顶加脊檩，需要的话中间再加金檩，一直通到 1.8 米的悬山出际；屋面板下加一层椽子，至少 LOD0 的檐口要露出椽头。把梁枋抬到柱头，或者补蜀柱、叉手，让梁、檩、屋面连成一条受力链。三个文件的哈希都被宫院组合锁定，改完要同步更新。
+- [high] **平城门** `m-luoyang-pingcheng-gate` · 形体：门楼缺斗栱、檐椽和脊饰，东汉形制要素不足 —— 改法：在门楼檐下补柱头斗栱（汉式一斗二升或一斗三升，至少做成块状抽象）和檐椽，正脊两端补起翘。LOD1/LOD2 已被城景点名，需要同步更新城景里登记的哈希。
+- [high] **上东门** `m-luoyang-shangdong-gate` · 形体：上屋是长边全敞的悬山棚屋，缺少东汉都城门楼应有的围合与屋顶等级 —— 改法：由创作者补研究依据后决定：上屋是否改为四阿（庑殿）顶或加重脊；长边是否补槛墙、直棂窗、板门等围合，至少做成「前廊加内屋」两层次；正脊两端是否加起翘的脊头。
+- [high] **厩棚与饲槽 A/B** `m-luoyang-stable` · 结构：整层屋架缺失：没有梁、脊檩、叉手和椽子，屋面是两块 10 cm 厚的板直接搭在檐檩上 —— 改法：每一缝柱（A 4 缝，B 5 缝）在前后檐柱之间加一根通长梁（约 0.20×0.25 m），梁上用蜀柱或人字叉手托住脊檩；前后坡中部各加一道檩；把 10 cm 的屋面板改成椽子加望板，檐口露出椽头；悬山两山的檩挑出山面，承托 0.25 m 的出际。改完重新导出 A、B。
+- [high] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · 形体：屋面看上去像现代压型铁皮：没有瓦当、没有板瓦曲面，正脊只是一根扁条 —— 改法：每条筒瓦的檐口端补圆瓦当（直径约 0.15–0.17 m，东汉洛阳常见云纹瓦当）。板瓦面做出凹弧，至少每 0.4–0.5 m 做一道搭接错台；可以用 F5 删内部面省下的约 3.3 万面来做。正脊加高成叠瓦脊（约 0.4–0.6 m，两端微微起翘），中景、远景同步保留脊的体量。
+- [high] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · 形体：所有屋面都没有正脊，两坡筒瓦垄在脊线处各自冒出圆头、排成梳齿，檐口也没有瓦当 —— 改法：北屋、西屋、院内足碓棚和独立 workshed 各加一道正脊：用叠瓦脊或简化脊块，高约 0.25–0.35 m、宽度能盖住两坡瓦垄的端头，两端可做汉式微翘。LOD0 和 LOD1 都要有，LOD2 用一个长方体脊块保住轮廓；门屋的细脊同步加粗。LOD0 檐口可给筒瓦端头加圆瓦当，薄圆片即可。
+- [high] **武库收纳与点验** `m-luoyang-wuku` · 结构：前棚和侧棚都只是四根角柱托一块 12 cm 厚的木板：A 柱距 12 m，B 柱距 9 m，板下既没有梁枋，也没有中间柱 —— 改法：按主屋 3 m 开间补中间柱：A 每条长边补到约 5 根，B 补到约 4 根。柱头加额枋或檐枋，板下加檩和椽，棚柱下补础石；屋面同时按 F2 改成坡顶。如果本意是帷幄类布幔，就改用织物材质，做出下垂和拉绳，并在 notes 写明依据。A、B 各三档都要重导。
+- [high] **夏门** `m-luoyang-xia-gate` · 形体：门台不成台：四座窄墩托一层木平台，读起来是廊桥，不是汉代墩台式城门 —— 改法：请伊苏里亚确定 B 型的依据。若按汉代城门通例（门楼坐在连续的夯土墩台上，墩台中开过梁式门道），就把墩台在门道上方连成整体、加高到城墙顶，门道只开到过梁高度，相应加厚隔墙，两端留出与城墙相接的墙体。若『四墩承木平台』是有意的推测，就在 notes 的『证据等级』里写明参照和理由。
+- [high] **夏门** `m-luoyang-xia-gate` · 结构：上层敞廊没有梁架：9 m 进深的屋面板只搭在前后檐檩和薄山墙上，内部空、前后通透 —— 改法：在 x=±10、±4 四个柱位各加一榀前后向梁架（大梁加蜀柱或叉手，承托脊檩），屋面下补檩和椽，至少做出一层椽底面；山面改成木构山面（梁架加博风），或把山墙加厚到夯土墙可信的厚度。栏板如果保留，可改成汉式勾栏。
+- [high] **雍门** `m-luoyang-yong-gate` · 形体：屋面读作现代压型金属板：瓦垄是细圆管，没有瓦当，正脊是一根圆管 —— 改法：按汉代筒瓦—板瓦屋面重做瓦垄：筒瓦径取十几厘米，垄间露出板瓦沟；每垄檐口加圆瓦当；正脊加高加厚，做略翘的脊头；悬山两端加垂脊和博风板。LOD1/LOD2 是城景点名文件，改后要同步更新城景登记的哈希。
+- [high] **雍门** `m-luoyang-yong-gate` · 结构：檐下没有斗栱、椽和檩头，2 米出檐与 1.8 米出际悬空 —— 改法：柱头加一斗二升（或一斗三升）斗栱和替木；檐下加椽和挑檐檩，檩/槫伸出山面承托出际；把屋面落到檐檩上，消除缝隙；大梁截面按跨度加高。
+- [high] **玉堂前后殿关系** `m-luoyang-yutang-halls` · 结构：木构不成体系：柱头没有斗栱，柱间没有阑额，屋面板下没有梁架，殿内横梁不承托任何东西 —— 改法：补柱头栌斗和东汉常见的一斗二升/一斗三升，柱间补阑额。屋架补脊檩、檐檩和椽，或用叉手加蜀柱托住脊檩。12 m 进深加内柱，或给出不加的依据；梁截面按跨度加大。门洞补门框、门扇、门额。补完后重导 A/B 三档 LOD。
+- [high] **中东门** `m-luoyang-zhongdong-gate` · 材质：LOD1 与 LOD2 用了两套色板，切换时明显跳色，LOD1 也和同墙其它城门不一致 —— 改法：以 P01 为准：材质名、本件 LOD2 和同批所有城门用的都是 P01。由创作者重调 LOD1 的三张底色图，让它们的线性均值等于 LOD2 的 baseColorFactor。改完重做 flat 投影，并同步更新 north13-gates/source.json、flat/source.json、city-data.mjs 里登记的 SHA-256。
+- [high] **井栏与井架** `m-well-family` · 形体：檐口筒瓦是敞口的空心半管，四个文件都没有瓦当 —— 改法：每列檐口筒瓦的端头加圆形瓦当：直径约 0.10–0.12 m，16 边左右，比板檐略出 1–2 cm。A 约 36 个，B 每坡一排；LOD1 用低段数版本。有余力的话，把垄间平板改成板瓦凹面。四个 GLB 同步改，contract.json 和 README 里的面数、SHA 一起更新。
+- [medium] **阙影·标界** `m-014` · 形体：过渡段四层都是连续斜面的倒锥，主阙侧立面读成灯柱，缺少汉阙楼部逐层出挑的仿木节奏 —— 改法：四层过渡改成立面竖直、逐层外挑的叠涩块：每层比下层多挑约 0.08–0.12 m，总外扩量不变。第 2、3 层加简化的枋头或一斗二升方块节奏，让侧轮廓呈阶梯而不是斜线。子阙的过渡段同样处理。改完重跑交集和承接检查。
+- [medium] **住宅院落模块组** `m-courtyard-family` · 形体：近景屋面分支的檐口筒瓦没有瓦当，正脊只是一根与瓦面几乎齐平的细方条 —— 改法：在两份近景屋面分支的檐口，给每列筒瓦端头加圆瓦当（做一个低面数的瓦当实例沿檐口阵列，纹样可以交给法线或贴图）。正脊按叠瓦脊加高到约 0.3–0.4 m，两端做汉式的微翘或瓦当收头。门屋和厢房一起改。
+- [medium] **住宅院落模块组** `m-courtyard-family` · 结构：近景只升级了瓦面，同一画面里两套精度并存；檐下、墙帽、柱脚还是白模 —— 改法：近景分支二选一。一是整院统一升级：正房、厢房、后房的瓦面，两坡覆瓦墙帽，檐下露出椽头，廊柱下加础石。二是在 label 和 notes 里写明只升级了哪几座屋面。不管选哪种，A2 的廊顶和正房屋面至少要用同一种瓦面表达。
+- [medium] **板筒瓦薄壳模块** `m-eaves-shell` · 形体：檐口筒瓦端头敞口，没有瓦当 —— 改法：等檐端承托（连檐、瓦口）一起设计时再补圆瓦当：直径约等于筒瓦外径0.13 m，当面厚1.5–2 cm，带边轮，首版做素面。做成独立的eave_end_*节点，或另出带瓦当的A/B变体，不带瓦当的薄壳保留可复用。板瓦檐口保持平头，不加滴水。补之前先在notes里写明「檐端筒瓦敞口，瓦当未建（研究延后）」。
+- [medium] **板筒瓦薄壳模块** `m-eaves-shell` · 形体：筒瓦接头做成外套台阶、没有瓦舌，整垄像一节节套管 —— 改法：先按F2把逐排抬升降下来（或改成瓦件微倾），让上下节筒瓦基本同轴；再给每节筒瓦上端加3–5 cm长、外径收进一个壳厚的瓦舌，上一节下口套上后，外表面台阶不超过2 mm。依据不足时，至少在notes里写明「未建瓦舌，暂作外套搭接，接头台阶约21 mm」。
+- [medium] **完整单门楼屋面研究** `m-gate-roof-study` · 形体：悬山山面和正脊没有收头：无博风板，阶梯状承托层端面外露，正脊是 1.5 cm 薄折板 —— 改法：山面沿坡加博风板，遮住檩头和承托层端面；或者在边垄用筒瓦收边。正脊改成有体量的瓦条叠砌脊（高约 15–25 cm），两端可以略微起翘；薄折板只留给中远景用。
+- [medium] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · 形体：院墙只有 1.6 m 高、0.28 m 厚，不像东汉夯土院墙 —— 改法：由创作者按东汉陶院落和夯土墙的依据定尺寸：墙加高到接近檐口，加厚到 0.5 m 以上，并加墙帽。
+- [medium] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · 形体：院门没有门屋，屋面没有正脊和瓦当，瓦面看起来像波纹板 —— 改法：每院补一座门屋，或者至少补带小顶的门楼和门扇；屋脊补正脊，两端可以微翘。现有的筒瓦板瓦断面保留，不用重做；瓦当留到近景 LOD0 再加。
+- [medium] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · 结构：公共地面有露底缺口和一道窄缝 —— 改法：请创作者先确认意图。若是有意留空，在 notes 写明，并考虑另加一块只供详情页展示、不参与路线测试的底板；若不是，补齐 GROUND，再按原流程重跑入口和路线检查。
+- [medium] **B2门窗开口套件** `m-luoyang-b2-facade-kit` · 形体：缺门槛、门砧（门臼）、连楹和铺首，门扇没有承托也没有转轴 —— 改法：由创作者按研究依据补：门槛（高度要和 B2 宿主的地坪一起定）、门内侧左右两块带门臼的门砧、门额内侧承上轴的横木，门扇背面加两三道穿带；铺首衔环可加可不加。补完后连同 F1 一起重算开门态。
+- [medium] **辟雍礼堂与围护** `m-luoyang-biyong` · 形体：东汉礼制建筑的关键构件缺失：柱头没有斗栱，檐口没有瓦当，屋脊没有收头 —— 改法：柱头补一斗二升或一斗三升的低多边形斗栱，可以只做外檐一圈。檐口补一圈圆瓦当（近档用几何，远档用贴图）。正脊两端做汉式的翘起或收头。
+- [medium] **辟雍礼堂与围护** `m-luoyang-biyong` · 结构：礼堂屋面下没有梁架：屋面板直接压在 24 个柱头方块上，从内部往上看是一整块光板 —— 改法：LOD0 至少补三样：内外两圈柱之间的进深梁（每根内柱向外各 2 根）、屋面板下的檩（间距约 1.2–1.5 m）、檐口一排椽头。LOD1 可以只留梁和檩，LOD2 不变。补构件属于形制和结构设计，由伊苏里亚处理。
+- [medium] **庖厨炉灶 A/B** `m-luoyang-cooking-stove` · 形体：没有烟囱，排烟只靠后墙一个小方孔，从灶门能直接看穿到后面 —— 改法：创作者按汉代陶灶依据，在出烟端加烟囱：灶面末端开烟孔，再立一段烟囱。后墙中部的直通孔改成从灶膛末端向上走的烟道。和 F2 的灶门位置一起定，改完三档 LOD 全部重出。
+- [medium] **庖厨炉灶 A/B** `m-luoyang-cooking-stove` · 形体：灶门开在长边中部、火眼横排，也没有挡火墙，和汉代长方陶灶「前端灶门、火眼沿长轴排列」的常见布局不符 —— 改法：由创作者按依据（例如洛阳烧沟汉墓陶灶）定型：把灶门移到一端的窄面，门上加挡火墙，让火从前釜底经过后釜底，再到对端的烟囱。和 F1 一起改，三档 LOD 全部重出。如果保留长边开门，就在 notes 里写明依据或推测理由。
+- [medium] **普通院落两种组装** `m-luoyang-court-layout-kit` · 形体：各屋宇没有台基，檐柱也没有柱础，墙和柱直接落在地上 —— 改法：把现有 0.22 m 土台向外放出约 0.4–0.6 m 作台明，把前檐柱包进台面；台帮用略浅或偏灰的土色与墙身区分；檐柱下加简单柱础；门口按 0.22 m 的高差补一级踏步。opposed_rooms 和 compact_work 的三档同步改。
+- [medium] **普通院落两种组装** `m-luoyang-court-layout-kit` · 结构：屋顶缺正脊，背坡瓦垄的端头在脊线上露成锯齿 —— 改法：各屋加一条正脊（平民宅可以用简单的瓦条脊，两端稍微起翘），盖住两坡瓦垄的端头；有余力的话，檐口再补一排瓦当
+- [medium] **德阳殿空间研究** `m-luoyang-deyang-hall` · 形体：台基只有 2.1 米高的一层，配一道中央踏道，撑不起德阳殿高台大殿的等级 —— 改法：请创作者决定是否抬高台基、做成分层台基，或改成两阶；如果保持现在的尺度，就在 notes 里列出处，并写明不采用文献规模的理由。
+- [medium] **德阳殿空间研究** `m-luoyang-deyang-hall` · 形体：柱子过细：0.46 米的柱径配 7.4 到 9.9 米的柱高，高径比 16 到 22，看上去像细杆 —— 改法：请创作者把柱径加到柱高的 1/9 到 1/11（檐柱约 0.7 到 0.9 米），础石相应放大；或者降低柱高、抬高台基，可以和 F4 一起考虑。A 方案三档被城景点名，改后要同步更新登记的哈希。
+- [medium] **德阳殿空间研究** `m-luoyang-deyang-hall` · 材质：用料和色彩是通用的褐色木构加黄土台基，没有回应文献里德阳殿「朱梁、金柱、文石作坛、玉阶」的描述，卡片也没列出处 —— 改法：请创作者决定：是否把梁柱改成朱色（柱身可以加三道带饰），台基和踏道改成石作或石包边。如果不采用，就在 notes 里列出蔡质《汉仪》的出处，并写明不采用的理由。A 方案三档被城景点名，改材质要同步更新哈希。
+- [medium] **夯土墙身家族** `m-luoyang-earthwall-family` · 形体：西垣 A10 段沿用底宽 8 m、高 6 m 的 C 截面，明显窄于汉魏洛阳城墙的已知夯土宽度 —— 改法：创作者补西垣截面的研究依据：引用发掘报告中西垣的宽度和残高，必要时把西垣段的底宽和高度改到有据的数值。若有意取窄截面，在 notes 里写明理由。
+- [medium] **足碓与踏台** `m-luoyang-foot-pestle` · 结构：踏端离台面只有 0.19 m，杵最多抬起约 0.18 m，静止时还悬在臼底上方 —— 改法：由伊苏里亚定一个工作行程（例如杵头抬起 0.35–0.5 m）。做法可以是压低踏台，或在踏端下方的台面开槽或做踏坑，或降低支轴、改变两侧力臂比例。另外把静止姿态改成杵落在臼底（杠杆略向杵端倾斜），或者在卡片里写明这是行程中间的姿态。
+- [medium] **足碓与踏台** `m-luoyang-foot-pestle` · 形体：高踏台加台阶、高支轴、地上石臼的组合缺少东汉依据 —— 改法：请伊苏里亚补上参照（例如汉墓出土陶踏碓或碓房模型、画像石里的舂米图），据此决定是否保留高踏台，以及是否降低支轴、把臼半埋或改成地臼、给杵加碓头。补完后在 notes 里写一句形制依据。
+- [medium] **足碓与踏台** `m-luoyang-foot-pestle` · 结构：0.158 m 的轴孔开在 0.18 m 高的杠杆上，上下各只剩约 1.1 cm 木料 —— 改法：请伊苏里亚定一种做法：把轴径缩到约 0.06–0.08 m；或者把杠杆在支点处局部加高到 0.25–0.30 m，也可以两侧加夹板；或者改成杠杆下方另设轴座、用销子连接。要和 F3 一起改，因为支点高度和两侧臂长会同时影响行程。
+- [medium] **复道服务登临节点** `m-luoyang-gallery-access` · 结构：平台楼板直接压在柱头上，缺少梁、枋和柱头承托 —— 改法：在柱头之间加额枋或楼板梁，板下加龙骨；梯口的板边加一根承梁，把两根斜梁的顶端托住；柱头可以加栌斗，让「柱—梁—板」的传力关系看得出来。
+- [medium] **复道服务登临节点** `m-luoyang-gallery-access` · 形体：栏杆和梯子的样式偏近现代，看不出东汉勾栏形制 —— 改法：只改栏杆：加地栿和盆唇，栏身用直棂或卧棂，望柱略粗于棂条；如果坚持现在的做法，就在研究依据里补出处。梯段的圆木斜梁加踏板可以保留。
+- [medium] **谷门** `m-luoyang-gu-gate` · 形体：它被做成一座独立门屋：没有接墙，门墩以上也没有夯土墩台，作为城门读不出城台 —— 改法：请伊苏里亚在门族层面定三件事：门墩的高度和进深，要不要和北垣所用墙身的截面一致；门道以上要不要补夯土墩台；两端接墙的接口怎么做，是留切口面，还是带一小段墙。独立展示时，可以在两端各带一段短墙。
+- [medium] **谷门** `m-luoyang-gu-gate` · 结构：上屋柱直接顶到屋面下，柱头没有栌斗或斗栱，也看不到阑额 —— 改法：保留现有的檐枋，只在 8 根柱头补栌斗，需要时再加一斗二升的横栱和两个散斗。用低段数方块体做，每组十几到三十几面。具体形制由伊苏里亚按研究依据定。
+- [medium] **广阳门** `m-luoyang-guangyang-gate` · 结构：门楼柱头直接顶檐，没有斗栱、椽子和出檐构件 —— 改法：柱头加简化的一斗二升或一斗三升，檐下加一排椽头，出檐随斗栱外挑加深，正脊加高并做出汉式起翘的脊头。中景可以用少面数的块体表达，面数从 F7 省下的瓦件预算里出。
+- [medium] **人力石磨 A/B** `m-luoyang-hand-mill` · 形体：承磨台是带牙板加腿间横枨的高脚方桌，接近后世高型家具，缺少东汉依据 —— 改法：补上东汉石磨承台的依据（例如汉墓陶磨明器里的承盘、磨台形制）；如果找不到，改为夯土或砖石磨台、圆形承盘这类较低的承托，或去掉牙板和横枨，弱化明清桌凳的特征。
+- [medium] **住宅主屋面** `m-luoyang-house-roof` · 形体：正脊只是一根 0.2×0.12 米的方盒，和精细瓦面不相称 —— 改法：参照汉代陶楼明器和画像石，改成瓦条叠砌的正脊，两端做收头或微微起翘，依据写进卡片。
+- [medium] **住宅主屋面** `m-luoyang-house-roof` · 结构：檐下是一整块平板，没有椽子和椽头 —— 改法：在出檐范围内补低面数的方椽或圆椽阵列，至少要露出椽头；保留望板。是否补脊檩，由创作者按房身的梁架决定。
+- [medium] **低墙生活分区单元** `m-luoyang-household-service` · 形体：悬山屋面缺正脊（脊筒瓦或脊瓦条） —— 改法：沿脊线补一道简化正脊（叠瓦脊或一根脊筒），两端可以略微起翘，与洛阳其它瓦顶资产的脊做法保持一致，三档同步补上。
+- [medium] **住宅内门修订组件** `m-luoyang-inner-door-components` · 形体：单扇门叶宽约 1.3 m，比双扇整副门洞还宽，作住宅内门比例偏大 —— 改法：请创作者复核单扇内门洞口：门叶实宽 1.44 m，净洞口约 1.42 m，明显宽于双扇门的 1.06 m 整副门洞。如果宿主院落的原门洞确实这么宽，可以考虑改成双扇，或者收窄洞口；如果是有意为之，在 notes 里写明依据和对应的宿主洞口。改门叶宽度时要同步移动止挡。
+- [medium] **津门** `m-luoyang-jin-gate` · 结构：屋盖靠几根短柱直接搁在墙顶，柱头没有栌斗或斗栱，墙顶和檐下之间留着一条空档 —— 改法：柱头加栌斗（可做一斗二升），柱脚加础石，或沿墩台顶加一圈地栿，檐下补椽子和椽头。如果上部确定不做门楼，用矮墙或勾栏封住 0.75 m 空档。LOD1 和 LOD2 相应简化。
+- [medium] **津门** `m-luoyang-jin-gate` · 形体：上部只有一个屋盖，没有门楼的楼身，整体轮廓读成长条矮房，不像城门 —— 改法：补一层门楼：平坐、楼身和上层屋面，或至少做出可以从远处辨认的城楼体量；如果研究上决定不做，就在 notes 里写明依据。
+- [medium] **津门** `m-luoyang-jin-gate` · 形体：四阿顶两端的山面坡完全没有瓦垄，是光板 —— 改法：两端坡面补上顺坡向（x 方向）下铺的瓦垄，由垂脊截断，间距与前后坡一致，檐口同样收瓦当；LOD1 按同一节奏简化。
+- [medium] **开阳门** `m-luoyang-kaiyang-gate` · 结构：约 2.5 米出檐没有支承，柱头直接顶住屋面，缺东汉门楼常见的斗栱 —— 改法：在楼层柱头加栌斗加一斗三升（或一斗二升）斗栱，再加阑额或檐枋来承托檐檩；也可以把出檐缩短到斗栱能挑出的范围。属于补构件，交创作者处理，涉及的 LOD1 和 LOD2 是城景点名文件。
+- [medium] **开阳门** `m-luoyang-kaiyang-gate` · 形体：门楼是一整条 27 米的悬山通长屋顶，没有正脊体量和脊饰，层级也太弱，轮廓读成棚屋 —— 改法：由创作者按依据定门楼屋顶。至少把 18 厘米圆杆换成有体量的正脊，并做出脊头起翘；檐下斗栱见 F2。如果依据支持，再考虑庑殿顶，或者中段抬高、两廊降低的层级，并在 notes 里写明类比来源。LOD2 要一起改（城景点名文件），LOD1 的 flat 派生件同步重建，城景登记的哈希同步更新。
+- [medium] **开阳门** `m-luoyang-kaiyang-gate` · 结构：楼层栏杆只在背面两端间各有一段，正面（门扇一侧）、两山和背面中间两跨都敞开，楼面离地 5.34 米 —— 改法：由创作者沿楼面外沿补齐勾阑：正面、两山，以及背面中间两跨。也可以改成实墙或女墙，与「中室双廊」的设计保持一致。LOD1、LOD2 是城景点名文件，LOD1 还有 flat 派生件；改完要重建派生件，并同步更新城景登记的 SHA-256。
+- [medium] **灵台类型与踏步研究** `m-luoyang-lingtai` · 形体：台体是单层素面截锥，台顶空无一物，回廊不依台而建，缺少灵台的标志性形制 —— 改法：由创作者按研究依据决定：至少把台体改成两层（下层台面加环廊，廊屋背靠台壁），台顶补观测平台或亭屋、女墙，并在卡片 notes 写明每项的依据等级。
+- [medium] **灵台类型与踏步研究** `m-luoyang-lingtai` · 形体：整体尺度明显偏小：院落 68 m 见方，台高仅 6 m —— 改法：创作者核对灵台遗址的发掘数据，判断是否放大台体和院落，或在 summary/notes 中明确说明这是缩尺的「类型」示意，不按遗址尺度。
+- [medium] **旄门** `m-luoyang-mao-gate` · 形体：上部门楼是四面敞开的凉亭式，柱子直接顶檐，看不到阑额和斗栱，也没有墙体和窗棂 —— 改法：栌斗上加一斗二升或一斗三升的栱，或者做挑梁，来承托 2.7–3 m 的出檐。考虑加柱缩小 7.4–8.7 m 的开间，并适当抬高檐下净空，让柱头的栌斗和额枋在常用视角下露出来。考虑补墙体或窗棂。研究依据写进 notes。LOD0 被城景点名，改动后要同步更新登记的哈希。
+- [medium] **旄门** `m-luoyang-mao-gate` · 结构：登临梯体没有贴住收分的墩台端面，两者之间有一条 0 到约 0.8 m 的贯通楔形缝 —— 改法：把梯体内侧面改成随墩台收分的斜面，台顶处收到 x≈13.4；或者在缝里补一块夯土楔体，让梯体贴实墩台。如果按 F2 把登临移走，就一并处理。LOD0 被城景点名，改动后要同步更新登记的哈希。
+- [medium] **八铺四棚店前线** `m-luoyang-market-frontage` · 形体：八座铺子的屋顶都没有正脊，两坡筒瓦在屋顶最高处直接断开 —— 改法：给八座铺子各加一道正脊（叠瓦脊或矩形脊体，宽约0.25到0.3米，高0.2到0.3米，两端可以略微起翘），盖住两坡筒瓦之间约0.1米的空当。LOD1保留脊体，LOD2只留一条低面数的矩形条。
+- [medium] **市肆模块与组装** `m-luoyang-market-modular-assembly` · 形体：屋面缺正脊、瓦当和板瓦，筒瓦直接压在平板上，读感像波纹铁皮 —— 改法：先加正脊：低多边形方脊，两端可略微起翘。再补板瓦：几何上压一层浅凹仰瓦，或至少做一张有板瓦沟的法线图。瓦当可选，在檐口端头加稍大的圆盘即可。LOD1 保留正脊，LOD2 保留正脊体量，所以 9 个文件都要重新导出，组合样例也要重新生成。
+- [medium] **明堂形制假说** `m-luoyang-mingtang` · 结构：外墙顶到檐下留了一圈约 1.4 米的通透缝，没有阑额或梁枋封接 —— 改法：把外墙和内隔墙都升到圈梁底（A 升到 5.667m，B 升到 5.144m），封掉通透带。如果这条带是有意表达「八达」或牖，就建出窗框和窗棂，并在 notes 里写明依据。六份 GLB 一起改。
+- [medium] **明堂形制假说** `m-luoyang-mingtang` · 形体：柱头没有栌斗和斗栱，檐口出挑约 1.3 米却没有承托 —— 改法：LOD0/LOD1 的外檐柱头补栌斗，再加一斗二升或一斗三升；转角可以加插栱承檐。LOD2 可以省略。
+- [medium] **明堂形制假说** `m-luoyang-mingtang` · 形体：上下两层屋面都没有正脊和垂脊，瓦垄在戗角处直接人字相接 —— 改法：给两层屋面加正脊、四条垂脊（可做汉式两端微翘的脊头），檐口加一排瓦当或滴水收边。
+- [medium] **明堂形制假说** `m-luoyang-mingtang` · 形体：A 和 B 只是尺寸不同，形体几乎一样，没有覆盖「上圆下方」这类最常被引用的文献形制 —— 改法：二选一：增加一个回应「规天矩地」的方案（例如上层或台体取圆）；或者在 notes 的「限制与待解决」里写明不取上圆、只开四门而不做八达的理由。A/B 维持纯尺度对照也可以，但要在卡片上写明。
+- [medium] **明堂形制假说** `m-luoyang-mingtang` · 结构：外圈梁和内柱之间没有任何梁架，重屋檐墙板悬在下檐屋面板的内缘上 —— 改法：在外柱和内柱之间补乳栿或抱头梁，每面至少 4 道对位；把重屋檐墙移到内柱线上，或在檐墙下补承椽枋或童柱。LOD2 可以只保留梁的体量。notes 已写明「未做结构…验收」，补完后再做一次结构自查。
+- [medium] **北郊方坛四陛** `m-luoyang-northern-altar` · 材质：底色是浅灰米色，在封面上接近白色石膏或水泥，不像雒阳一带的黄土夯土 —— 改法：由创作者决定表面做法：如果是素夯土，底色改成偏暖的黄褐（例如 sRGB 约 165,135,95 一带）；如果有意表现涂垩或白灰面，就在 notes 里写明依据，并把 coverAlt 和 summary 的“土色”改掉。
+- [medium] **无名宫院通行组合** `m-luoyang-palace-admission-court` · 形体：门卫通口孤立在空地上，廊庑和殿、门都没连起来，宫院没有围合，「准入」在空间上不成立 —— 改法：要升级成宫院复原时，由伊苏里亚在门组两侧补院墙或回廊，接到廊庑南端，并封住廊庑北端与殿台基之间的角部。6个GLB都要重新导出，并同步更新城景登记的哈希。卡片文字不用再改。
+- [medium] **无名宫院通行组合** `m-luoyang-palace-admission-court` · 形体：殿身檐下没有斗栱，檐口只是一块薄板，看不出宫殿等级 —— 改法：在德阳A源件的殿身柱头补汉式一斗二升或一斗三升（至少LOD0要有），檐口可以补椽头；然后重新导出本组合的6个GLB，并更新登记的哈希。瓦当已有轮廓，不必另补。
+- [medium] **无名宫院通行组合** `m-luoyang-palace-admission-court` · 结构：廊庑夯土墙顶和屋檐之间留着通长约1米的空缝，平视能看穿整座廊庑 —— 改法：在廊庑源件（m-luoyang-palace-sidehall的sidehall-A）里把墙体加高到檐下的枋子，或在这条墙带里补木板壁或窗棂；如果本意是做高窗，就补上窗框，并在notes里写明。然后重新组合、导出6个GLB，更新城景登记的哈希。
+- [medium] **高架复道局部模块** `m-luoyang-palace-gallery` · 形体：屋面读成现代金属直立锁边板：没有筒瓦/板瓦交替，没有瓦当 —— 改法：筒瓦改成宽约0.15米的半圆截面，垄间加略凹的板瓦面，檐口每垄加一个低多边形圆瓦当。屋脊加高加厚，脊端起翘或做收头。A/B 的 LOD0 和 LOD1 同步改；LOD2 可以保留平板，但檐口和脊的轮廓要跟上。颜色保持现在的中性深灰。尺寸依据写进 notes。
+- [medium] **高架复道局部模块** `m-luoyang-palace-gallery` · 形体：檐下没有斗栱，出檐很浅，东汉宫廷木构特征不足 —— 改法：改法同评审员：外檐柱头加低多边形的一斗二升或替木，出檐加深，用挑梁或斗栱承托。出檐一变，所有档位的轮廓都会变，所以 A/B 的 LOD0–LOD2 六个文件都要同步改。山面出际要不要加大，先看端口怎么和其他构件衔接，作为可选项。
+- [medium] **高架复道局部模块** `m-luoyang-palace-gallery` · 结构：屋面没有檩条和椽子：屋面板只搭在每榀一对叉手和柱头上，两榀之间4米没有支承 —— 改法：在脊下、内柱头和外檐柱头各加一道通长檩条（低多边形，方或圆截面）。檐口加一排低多边形圆椽头；可以只做檐部一段，室内用板底贴椽的简化做法。内柱顶落到檩下，叉手上端承托脊檩。至少改 A/B 的 LOD0 和 LOD1，LOD2 可以不加。檩椽的尺寸和间距属于推测，要写进 notes。
+- [medium] **宫门值守核验切片** `m-luoyang-palace-guard` · 材质：9 张 PBR 贴图几乎是纯色，占掉约七成文件体积，还在 8 个文件里重复嵌入 —— 改法：把 basecolor/ORM 换成 baseColorFactor/roughnessFactor 等材质常量，删掉近乎平直的 normal 贴图；若想保留木纹，只留 wood-normal 并改用 WebP 或 KTX2。预计单个 LOD0 能从约 1.39MB 降到约 0.4MB。closed/open 两组文件被候入院组合的 QA 按 SHA-256 登记，改动必须同步更新登记的哈希，所以这项归创作者处理。
+- [medium] **宫门值守核验切片** `m-luoyang-palace-guard` · 形体：瓦面是等距细长方条，读起来像现代金属压条屋面；没有筒瓦板瓦的起伏，也没有瓦当和正脊 —— 改法：把肋条换成半圆或拱形截面的筒瓦，与平铺的板瓦交替排布；檐口加圆形瓦当头（低多边形用 8 边截面即可）；正脊加厚，两端可略翘或加简化的鸱尾、瓦当垒脊。
+- [medium] **宫门值守核验切片** `m-luoyang-palace-guard` · 结构：闭门态正立面透光：门板之间、门扇与门框之间、门额两角都有贯通缝 —— 改法：门板改为一整块带刻缝的板，或让板缝背后有连续的穿带或衬板；把门额角部的方孔补实，或者明确做成门簪/门轴孔并让它不透光；封住门框与墙板、檐下之间的缝。closed/open 文件被 QA 按哈希登记，需由创作者改。
+- [medium] **宫前土木对阙** `m-luoyang-palace-paired-que` · 形体：屋面是两坡悬山加开敞望楼，缺汉阙常见的四阿（庑殿）顶和子阙 —— 改法：由创作者定形制：把上屋屋面改成四阿顶（必要时做重檐），考虑在外侧加矮一级的子阙；如果有意保留悬山，就在 notes 里写明这一选择的依据。
+- [medium] **宫前土木对阙** `m-luoyang-palace-paired-que` · 结构：柱头直接顶住屋面，檐下没有栌斗和一斗二升斗栱 —— 改法：柱头加栌斗和一斗二升（或一斗三升）承檐；补上檩和至少檐口一排椽头；中间一榀加横梁承托人字木；同步到 LOD1（LOD2 可以省）。
+- [medium] **宫前土木对阙** `m-luoyang-palace-paired-que` · 形体：筒瓦垄过细过密，约为汉瓦尺寸的一半，屋面像波纹板，也没有瓦当 —— 改法：由创作者定瓦作尺寸（例如筒瓦径约 0.15 m、垄距约 0.33 m），檐口补瓦当。垄数减半后 LOD0 约可省 2600 个面。
+- [medium] **宫廷侧廊庑** `m-luoyang-palace-sidehall` · 结构：后室墙体顶不到梁底和屋面，两端山面全部敞开 —— 改法：把后室前墙、后墙和端墙砌到梁底或檩下，山面补夯土山墙或木板山花，悬山出际处补博风板。
+- [medium] **宫墙水道三段接口** `m-luoyang-palace-waterway-interface` · 结构：渠道内壁、底面和竖井内壁全是光面，青砖只做在外立面，细节分布颠倒 —— 改法：在两段渠道的内壁、竖井四面内壁补上与外壁同模数（0.3×0.12 m）的砖缝浮雕，底板可做平铺砖缝；中景按同模数简化。按外壁浮雕密度（约1300三角/m²）估算，近景会增加约2万三角、到4万左右，仍远低于规范15万的提醒线，所以不必为此删外壁砖缝（资产库里外壁是主要观看面）。拆解件与近景同步。
+- [medium] **平城门** `m-luoyang-pingcheng-gate` · 结构：门楼墙顶和檐之间有一条开口带，不清楚是设计还是缺构件 —— 改法：由创作者决定。如果是有意的通风带或窗带，在 notes 里写明，并补直棂窗；如果不是，就在四面补阑额或檐檩（两山面目前一根梁都没有），或者把墙一直砌到檐檩底。和 F1 一起处理；三档同步修改，LOD1/LOD2 改完要更新城景哈希。
+- [medium] **平城门** `m-luoyang-pingcheng-gate` · 结构：前后檐柱网不对位：前檐少一根中柱，11.8 米独跨的檐檩跨中还压着叉手 —— 改法：在前檐 x=0 补柱（门洞改成两扇，或改在柱两侧开洞），或者在门洞两侧 x=±2.2 各立一根柱，让前后柱网对齐、檐檩分跨。三档同步修改，LOD1/LOD2 改完要更新城景登记的哈希。
+- [medium] **连续住宅生活片区** `m-luoyang-residential-life` · 形体：标题叫「连续」片区，实际是孤立院落散布在大片空地上，院型高度重复 —— 改法：按里坊的密度重排：院墙相邻处共用或紧贴，沿巷道形成连续的界面，压缩空地或把它明确为巷、场；再补一两种院型或对院型做镜像、旋转变化，减少重复感。属于布局设计，需要创作者判断。
+- [medium] **连续住宅生活片区** `m-luoyang-residential-life` · 形体：院门只是院墙上的缺口，没有门道、门屋或门扇；院墙也没有墙帽 —— 改法：A 型在 2.8 m 缺口处补门道和门扇（或衡门），可以直接参照本卡 C 型的 G10 门屋。B 型补前墙和院门；如果是有意做成临街敞院，要在卡片里写明依据。所有院墙加低多边形墙帽（瓦顶或草泥顶），做成一个共享网格。
+- [medium] **连续住宅生活片区** `m-luoyang-residential-life` · 形体：26 屋的瓦屋面全部没有正脊：两坡瓦垄在脊线直接对接，脊缝透空 —— 改法：在住宅原型里补低多边形正脊（脊瓦叠砌，或简化的脊身，可带汉式脊端起翘），封住脊缝后重新组合三档。节点 extras 记录的来源是 ordinary-house-near-kit-v1 的 H64、h72-near-structure-v1.1 的 H72 等。LOD2 用一根简单的脊条保留轮廓。
+- [medium] **院内备食关系** `m-luoyang-residential-preparation` · 形体：灶型缺少汉代陶灶的标志构件：烟囱、挡火墙、釜/甑都没有，火门开在长边 —— 改法：在源灶stove-A（library/models/m-luoyang-cooking-stove/files/stove-A-LOD0/1/2.glb）上复核：火门上方补挡火墙，后端补烟囱；如果要保留出烟孔，就在卡片里写明依据的是哪一类出烟孔明器。火门放在短端还是长边，一并复核。改完后重建W2三档，更新extras.source_sha256和notes。如果决定保持现状，就在本卡notes补一句：“灶型沿用C级stove-A，非典型
+- [medium] **圈厕关系 A** `m-luoyang-service-court` · 形体：圈墙留了1.27m的敞口，没有门、门槛或门柱，圈内也没有猪舍或遮蔽，作为圈厕功能不完整 —— 改法：给 1.27 m 的圈口补门扇（栅门或板门）、两侧门柱和门槛；如果要保持敞口，就在卡片里写明依据。不要无依据地收窄缺口。猪舍不是必需的，要不要另补小舍，按所参考的器物来定。同时在 notes 里写明参考了哪些汉代圈厕明器（出土地或馆藏）。
+- [medium] **上东门** `m-luoyang-shangdong-gate` · 结构：柱头到屋面之间没有斗栱、椽子，屋面薄板直接压在檐枋上 —— 改法：在檐柱柱头补栌斗和一斗二升（或一斗三升）斗栱，在檐下补一排椽子出头，让屋面有出檐的支撑关系；同时屋面板加上可见厚度，或补连檐、檐檩。
+- [medium] **上东门** `m-luoyang-shangdong-gate` · 形体：门道宽度偏窄且宽窄不一，需要补尺度依据 —— 改法：创作者核对汉魏洛阳城门址发掘数据，补一条尺度依据；如果改成三门道等宽（每道约 6m 以上），门台总宽需要相应加大，同时注意门台进深要和城墙厚度对应。
+- [medium] **上西门** `m-luoyang-shangxi-gate` · 结构：上层敞廊的柱子直接顶到屋面底板，没有栌斗、斗栱、阑额和椽 —— 改法：柱头补栌斗，加一斗二升或一斗三升斗栱。现有通长梁可以保留，当阑额或檐枋用，屋面整体抬高一个斗栱的高度。檐下补椽：LOD0 用方椽，LOD1 可以用带椽纹的檐下板。上层要不要加墙或窗属于研究判断，可以一并评估。LOD1/LOD2 在城景点名清单里，改完要同步更新城景登记的 SHA-256。
+- [medium] **上西门** `m-luoyang-shangxi-gate` · 形体：瓦面是从脊到檐不断开的直肋或宽板条，没有筒瓦、板瓦的分节和瓦当，看起来像金属压型板 —— 改法：LOD0 把瓦垄改成筒瓦压板瓦的分节形态，加大肋径和垄距，檐口补一排瓦当。LOD1 改用带瓦垄的法线贴图或少量分节，不要再用稀疏细肋。正脊加厚，脊端做收头或起翘。LOD1 是城景点名文件，改完要同步更新哈希。
+- [medium] **上西门** `m-luoyang-shangxi-gate` · 形体：夯土墩台直上直下没有收分，进深只有约 11.5 米，门道内壁是光面 —— 改法：墩台外壁按相邻 C 墙的断面做收分，并对齐高度；或者在卡片 notes 里写明接缝怎么处理。考虑加高墩台，在门道顶和台面之间留出夯土层。门道两壁补排叉柱和地栿。LOD1/LOD2 是城景点名文件，改完要同步更新哈希。
+- [medium] **上西门** `m-luoyang-shangxi-gate` · 结构：庑殿两端撒头的瓦垄整片横铺，和端檐平行，方向错了 —— 改法：两端撒头的瓦垄改成垂直于端檐（沿 ±X 方向）铺设，在垂脊处斜切收口；长坡的瓦垄止于垂脊。LOD0 和 LOD1 一起改。LOD1 是城景点名文件，改完要同步更新城景登记的 SHA-256。
+- [medium] **厩棚与饲槽 A/B** `m-luoyang-stable` · 形体：出檐太浅，台基比屋檐还宽，檐口滴水落在台面上 —— 改法：前后檐出挑加大到柱中线外约 0.8–1.0 m：屋面板和瓦面向外延伸，或者结合 F1 用挑出的椽子承托，让滴水线落在台基边以外 0.2–0.3 m。如果平面包络不允许外延，就把台基收到柱中线外约 0.3 m。
+- [medium] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · 形体：柱头没有栌斗/斗栱，梁直接压在柱顶，靠斜撑顶托，像现代亭棚 —— 改法：柱头补栌斗承托纵横梁，在 C 级范围内选一斗二升或栌斗+替木。斜撑如果没有汉代依据就删掉，或在 notes 写明来源。中景、远景至少保留栌斗块体。
+- [medium] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · 形体：没有台基，覆屋地面和街面一样高 —— 改法：加一个低夯土台基（约 0.3–0.6 m，带散水和踏步），或者在 notes 写明「为公众出入有意不设台基」的理由。
+- [medium] **太学长堂 A** `m-luoyang-taixue-a` · 形体：偶数十二开间让中柱落在中轴，中间踏步偏到东侧一间，前檐三阶不对称 —— 改法：偶数开间在汉代有先例，但中柱落在轴线上时，前阶应按东西两阶对称。最小改动：在 x −2.6…−0.4 补一座同样的踏步，与现有 0.4…2.6 的一座构成中柱两侧的两阶，并与后檐开口对位（两端 ±10.5 m 的阶保留）。另一种办法是改成奇数开间，让明间居中。LOD1 是城景点名件，改后要重生成 flat/study-taixue-A 投影件，并更新 city-data.mjs 与 source.json 里登记的 SHA-256；LO
+- [medium] **太学长堂 A** `m-luoyang-taixue-a` · 形体：出檐过浅且比台基短，雨水落在夯土台明上；檐口只是 10 cm 厚的薄板 —— 改法：把前后檐和两山出际外推到盖过台基边（例如离柱中线 1.0–1.2 m，使上出大于下出），檐口加连檐或瓦当带，厚到 0.25–0.3 m；或者把台基边收进滴水线以内。包围盒会变，需同步更新城景登记的 bounds 与 SHA-256；LOD2 一并改。
+- [medium] **太学长堂 A** `m-luoyang-taixue-a` · 材质：LOD1 的瓦面与夯土贴图几乎是平色，屋面看不出瓦垄 —— 改法：瓦面贴图画出筒瓦—板瓦瓦垄并配法线（UV 为 1 单位 = 1 m，256 px 一格可以画 3–4 垄），夯土画出夯层；近乎平直的法线图和 mat 的两张常数图改用材质因子。由伊苏里亚出图，改后同步城景哈希。
+- [medium] **砖瓦窑 A/B** `m-luoyang-tile-kiln` · 形体：整座窑室立在地面上，火膛外置在窑室前方，偏离东汉半地穴式馒头窑的布局 —— 改法：请伊苏里亚定：按东汉中原砖瓦窑的常见做法把窑室下沉（窑床低于地面约 1–1.5 m，操作坑相应加深）；火膛移进窑室前部，与窑床同在一个穹顶下，窑床只占后部约 2/3；地面以上只露覆土穹顶和烟囱。若保留现在的布局，在 notes「限制与待解决」里写明依据。可以和 notes 已列的「展示地坪与坑位需重新适配」一起处理。
+- [medium] **墙房相接住宅样例** `m-luoyang-wall-house-court` · 形体：三处屋面都没有正脊，两坡筒瓦在脊线处露出锯齿状端头 —— 改法：两座住屋和棚各补一道叠瓦正脊，压住两坡筒瓦的端头，脊头可略起翘；LOD1 用简化截面，LOD2 用一根方条。
+- [medium] **墙房相接住宅样例** `m-luoyang-wall-house-court` · 结构：木构只有孤立的柱子，柱间没有梁枋檩椽，柱面还和墙面离开 4 cm —— 改法：由作者定结构体系。如果是土墙承重，柱子改成半嵌入墙体的壁柱，墙砌到屋面底；如果是檐柱承檐，柱间补檐檩或阑额，按开间排柱，并补出椽头。
+- [medium] **墙房相接住宅样例** `m-luoyang-wall-house-court` · 形体：院墙是平顶土墙，没有墙帽，按夯土墙看厚度也偏薄 —— 改法：给院墙加两坡瓦顶墙帽（小筒瓦，或简化成带出檐的盖顶），三档同步。核对院墙的厚度依据：取夯土就加厚，取土坯墙就在 notes 里写明。
+- [medium] **武库收纳与点验** `m-luoyang-wuku` · 形体：两个棚顶都是完全水平的木板，没铺瓦也没铺草，看上去像现代车棚，不是东汉棚屋的形制 —— 改法：改成向外排水的单坡披檐：A 的前棚收到主屋檐下，把门前的空当盖住；B 的侧棚可以接在山墙上做单坡，也可以做成独立的两坡小棚。棚顶铺筒板瓦或草，坡度可以比主屋缓一些。如果本意是布幔，就按 F1 的织物方案处理。
+- [medium] **武库收纳与点验** `m-luoyang-wuku` · 形体：土墙只有 0.22 m 厚，比 0.32 m 的柱子还薄；如果要表现的是夯土墙，这个厚度太薄了 —— 改法：二选一。做夯土墙：把墙加厚到明显超过柱径，把柱子包进墙里，往上收分。做木骨泥墙：在 3 m 开间里补间柱和地栿，把柱子做成和墙面齐平或嵌在墙里。无论哪种，都在 notes 写明墙体做法和依据，A、B 各三档重导。
+- [medium] **武库收纳与点验** `m-luoyang-wuku` · 形体：檐口没有瓦当，正脊只是一根 12 cm 高的光方条，东汉瓦屋面最有辨识度的两处细节都缺了 —— 改法：两侧檐口每一垄筒瓦的端头加一个圆瓦当，用 10–12 段的低模圆片就够；正脊改成板瓦叠砌、筒瓦压顶的瓦条脊，要明显高出瓦面，两端微微起翘。LOD1 用烘焙贴图加一条低模代替。A、B 的 LOD0、LOD1 都要改。
+- [medium] **夏门** `m-luoyang-xia-gate` · 形体：汉式标志构件缺失：没有斗栱，正脊只是一根细条，筒瓦端头无瓦当，山面无博风 —— 改法：柱头补一斗二升或一斗三升斗栱（每柱一组）；正脊加高到在立面上能读出来（几皮瓦叠砌的高度，脊端可略起翘），并落实压在屋面上，消除悬空；檐口筒瓦补圆形瓦当（低边数的薄圆片即可）；悬山山面加博风板。
+- [medium] **夏门** `m-luoyang-xia-gate` · 结构：城门本身的构件没做：无门扇、门框、排叉柱，无登临楼梯或马道，两端也无城墙接茬 —— 改法：门道中段补门扇和门框（门槛、门砧），两壁补排叉柱承托平台；补登城的马道或楼梯；两端加一小段城墙接茬，或在卡片里说明接续方式。
+- [medium] **小苑门** `m-luoyang-xiaoyuan-gate` · 形体：单门道、门台只有 18×8 m，与同在南墙的开阳门、津门的三道门不一致，上屋前后几乎没有走道 —— 改法：按同项目三道门的基准补一个三道方案作对照；如果坚持单道，把依据写进研究笔记，并在 summary 里说明为什么和开阳门、津门不同。同时建议按相邻城门采用的城墙厚度加深门台，让上屋前后留出能走人的巡道。
+- [medium] **小苑门** `m-luoyang-xiaoyuan-gate` · 形体：夯土门台四壁完全垂直、没有收分，台面铺装层一直伸到外壁，四面露出一道灰色腰线 —— 改法：按夯土版筑给四壁做收分（例如每侧内收几度，顶面相应缩小，女墙随之内移）。铺装层只铺到女墙内皮，让女墙和台体成为连续的夯土，外壁不再露出石层。
+- [medium] **小苑门** `m-luoyang-xiaoyuan-gate` · 形体：后部登临梯是细柱架空、无踢板、单根扶手的直跑木梯，看上去接近现代平台梯 —— 改法：先补登城方式的研究依据（沿墙内侧的夯土踏道、马道，或门楼内梯）。如果保留木梯，就加踢板、改成封闭梯帮，现有的 0.22×0.30 m 斜梁可以留作承重；栏杆改为汉代明器常见的卧棂或直棂式样。
+- [medium] **小苑门** `m-luoyang-xiaoyuan-gate` · 结构：庑殿顶两山坡面没有瓦作，檐口也没有瓦当 —— 改法：两山坡面补上和前后坡一致的瓦垄，在垂脊处裁切；檐口每条筒瓦垄的端头补圆形瓦当（LOD0 用低面数多棱柱，LOD1 用贴图表现或省略）。
+- [medium] **小苑门** `m-luoyang-xiaoyuan-gate` · 结构：上屋柱头只有一块平板，没有拱和升，缺东汉门楼常见的一斗二升或一斗三升 —— 改法：柱头补栌斗加一斗二升（或一斗三升）拱，至少把前后檐做出来；LOD0 做实体，LOD1、LOD2 可以简化成一块方体。补完后核对与额枋、檐檩的搭接高度。
+- [medium] **小苑门** `m-luoyang-xiaoyuan-gate` · 材质：上屋的木构、瓦面、铁件都接近纯黑，结构读不出来，瓦色也不像汉代的灰陶瓦 —— 改法：按研究依据重定上屋色板，例如瓦面用中灰（sRGB 约 0.35–0.45），木构用赭红、朱色或木本色，铁件保持深色，并在 notes 里写明颜色依据。改色后重拍封面。
+- [medium] **雍门** `m-luoyang-yong-gate` · LOD：LOD1 瓦垄从 111 根骤减到 27 根，默认展示版像直立锁边金属屋面 —— 改法：只改 LOD1：F1 重做瓦面后，按新瓦垄间距把筒瓦与板瓦的起伏烘进 LOD1 现有的 tile 法线和底色贴图，几何保留檐口瓦当和正脊轮廓（或保留同间距的低段数瓦垄）。LOD2 维持无贴图的平板。也可以让资产库默认展示与城景一致的 LOD0。改后同步更新城景登记的哈希。
+- [medium] **雍门** `m-luoyang-yong-gate` · 形体：门台读作四根墩柱托一块薄木板，门道缺排叉柱和过梁 —— 改法：让夯土墩台在门道顶以上连续（压低门道或加高台体，高度与将来的城墙对齐）；门道两壁按汉唐过梁式门道加排叉柱和过梁，城楼起在台顶；墩外侧预留与城墙的接口。
+- [medium] **雍门** `m-luoyang-yong-gate` · 结构：上层前廊离地 5.34 米却没有勾阑，栏杆只在后侧中段 —— 改法：前廊外缘和两端补勾阑（汉代陶楼平坐上常见的寻杖勾阑），后侧栏杆补到端室墙边；或者在 notes 里写明前廊不供上人。
+- [medium] **雍门** `m-luoyang-yong-gate` · 结构：端室墙顶与梁架之间留 36 cm 通缝，山面三角敞开、可以看穿 —— 改法：端室墙砌到梁底或额底，或在 7.82 处加顶板；端室上方的山面加山花板或山墙，外侧加博风板，让山面闭合。
+- [medium] **雍门** `m-luoyang-yong-gate` · 形体：门台顶比所接城墙低约 0.7–1.0 米，两翼用斜顶过渡块收口 —— 改法：与 F4 一并处理：把门台（墩台）加高到不低于墙顶 6.03 m，并在门道顶以上连续；平台板改为台顶铺面；再按新高度重做两翼过渡块，让墙顶走道水平接入。同步更新城景里 yong-gate-near 和 yong-gate-apron 登记的哈希与 bounds。
+- [medium] **玉堂前后殿关系** `m-luoyang-yutang-halls` · 形体：台基、墙厚、柱径都是民居尺度：台基 0.6 m，夯土墙 0.24 m，比嵌在墙里的柱子还薄；后殿反比前殿高 0.4 m —— 改法：补台基高度、墙厚、柱径的依据。没有更强证据时，按东汉宫殿的高夯土台基加陛阶抬高两殿台基，加厚夯土墙，加粗柱径。另请确认前殿、后殿的主次高低是否有意为之。
+- [medium] **玉堂前后殿关系** `m-luoyang-yutang-halls` · 形体：瓦面像金属直立锁边屋面：瓦垄过细、没有瓦当，正脊是一根细圆管，檐口是光板 —— 改法：筒瓦垄按 15 cm 级直径做成半圆，垄间做出板瓦沟；檐口每垄加瓦当，低面数圆片即可。正脊加高加厚，两端做脊头。檐口露出椽头和连檐。远景 LOD 用法线或贴图表现这些细节。
+- [medium] **玉堂前后殿关系** `m-luoyang-yutang-halls` · 形体：庑殿顶缺四条垂脊，两端山面（三角坡）上一条瓦垄也没有 —— 改法：请伊苏里亚定垂脊截面和脊端做法，然后在两殿四条斜脊上补垂脊，四个山面按檐口垂直方向铺瓦垄，在斜脊处裁齐。LOD1 的瓦垄同步减半，LOD2 只保留垂脊。A/B 共 6 个文件重导。
+- [medium] **中东门** `m-luoyang-zhongdong-gate` · 结构：上屋没有梁架、檩椽和斗栱，7.4–7.7 m 柱距上的细檐枋直接托着 8 cm 厚的折板 —— 改法：至少补出简化的屋架：中间两组柱之间的横向梁架（抬梁或叉手）、脊檩和檐檩；柱头加一斗二升或一斗三升承托檐枋，檐下露出椽头；屋面底面改用木或望板材质。建议加柱把开间细分到约 3.8 m（6 间），否则要说明大跨的依据；栏板改为嵌在柱间。如果完整细节只在未上架的 LOD0 里，可以把 LOD0 压到 15 MB 以下，作为近景层上架。
+- [medium] **中东门** `m-luoyang-zhongdong-gate` · 形体：屋面缺东汉标志构件：筒瓦没有瓦当，瓦垄只做了檐口一截，正脊细小、两端不起翘 —— 改法：筒瓦端头加圆形瓦当（直径约 0.15–0.18 m，8–12 边形即可，加上后可以顺便删掉内壳）。檐口以上用法线贴图或简化几何，做出整坡通长的筒瓦垄。正脊加高加宽，两端起翘。山面出际补一列排山筒瓦。
+- [medium] **中东门** `m-luoyang-zhongdong-gate` · 形体：门台是四座分离的土墩上架一块木楼板，门道开到台顶，两壁也没有排叉柱 —— 改法：按过梁式门道补出排叉柱和过梁，并让门道顶低于台顶，过梁以上留一段土体，使门台读作一整块夯土台。例如门道净高降到约 4.4 m（现有 4.26 m 高的门扇仍放得下），过梁以上留约 0.8 m 土体。如果受项目 5.2 m 墙高限制不能这样做，就在 notes 里写明取舍。
+- [medium] **市肆功能组** `m-market-functional` · 形体：瓦顶读成现代波纹板：正脊只是一根细条，瓦垄通长光滑，檐口没有瓦当 —— 改法：请伊苏里亚参照东汉陶楼和画像砖的屋面修改：正脊做成数层叠瓦，两端起翘；筒瓦分节（或在法线、底色贴图里画出瓦节和板瓦搭接）；LOD0 檐口加一排圆瓦当和连檐。LOD1 至少保留正脊和瓦当的轮廓。
+- [medium] **市肆功能组** `m-market-functional` · 结构：屋面下没有檩、椽、梁，开敞店面抬头只看到平黑的板底 —— 改法：LOD0 至少在前檐出挑段补檐檩和一排椽头（东汉檐下露椽很常见），店内补脊檩和一两道梁。LOD1、LOD2 可以不加。
+- [medium] **市肆功能组** `m-market-functional` · LOD：城景仍在用 v1 散件：500+54+6 个绘制批次，主件 1 MB 未压缩 —— 改法：v2 审过后，由伊苏里亚在城景里换用 v2 三档（或把 v1+N2+B 烘焙成按材质合并的一件），用 gltfpack -cc 压缩，同步更新 city-data.mjs 里登记的哈希，并去掉 excludeNodes 和叠加补丁这套逻辑。
+- [medium] **仓储作业功能组** `m-storage-functional` · 形体：收货棚是6°薄木板平顶直接压在四根细柱上，没有梁枋、檩椽和屋面层，读作现代凉棚或桌子 —— 改法：按汉式棚屋改：柱头之间加檐枋或梁，上面架檩和椽；屋面改成草顶或板瓦筒瓦，单坡至少15–20°，或改成两坡悬山；8 m开间考虑加中柱。粮袋改成顶部收口的袋形。城景三档是点名文件，改后要同步city-data.mjs里的bytes和sha256。
+- [medium] **仓储作业功能组** `m-storage-functional` · LOD：城景近档1.66 MB原样发布、未用meshopt压缩，其中61%是城景渲染器根本不采样的PBR贴图 —— 改法：给城景单独出一版：保留材质名（城景靠它取色），删掉9张PNG贴图，城景外观不变；再跑gltfpack -cc（要保持坐标逐位一致可加-noq），同步更新city-data.mjs和source.json里的bytes和sha256。带贴图的版本只留给资产库详情页。旧版storage-group-organized.glb同样压缩，或让v1页面改指新文件。
+- [medium] **仓储作业功能组** `m-storage-functional` · 形体：两座仓缺少粮仓识别构件：没有气窗，门洞没有门框门扇，正脊只有8 cm，檐口没有瓦当 —— 改法：补上粮仓识别构件：墙高处或山尖开小气窗（可带棂条）；门洞加门框和两扇门（关着或半开）；正脊加高到约0.3 m，做出脊端起翘；LOD0檐口加圆瓦当，LOD1用贴图示意。依据可引汉代陶仓、仓楼明器，并写进notes。
+- [medium] **井栏与井架** `m-well-family` · 展示：单独展示时地下短井壁露在外面、井底透空，演示地坪看上去像托盘架在一截圆柱上 —— 改法：照 demonstration_apron_opening 的规则，再加一个可删除的展示件：把演示地坪做成包住短井壁的土台（顶面在 y=0，底面平到 −0.70）；井筒下面接一段内壁渐暗的延长筒，或在深处放一块暗色圆盘，命名如 demonstration_shaft_backdrop。把它登记进 contract.json 的 removeNodes，城景引用时和地坪一起删掉。这会碰到作者「井口不加假地板」的约定，需要伊苏里亚拍板；另一
+- [medium] **井栏与井架** `m-well-family` · 形体：A 方案的「井字栏」平面不成井字，纵栏几乎没有承托 —— 改法：把横栏延长到 x=±0.85，和纵栏对称、各出头约 9 cm，让纵栏压在横栏上，四个角都成十字交叉（可以做半榫搭接）。横栏内侧面退出井圈，或者顶面降 2–3 mm，消掉共面条带。LOD0 和 LOD1 同步改。
+- [medium] **井栏与井架** `m-well-family` · 结构：A 的四坡顶没有垂脊，四条斜脊处瓦列收头参差，露出锯齿状光板 —— 改法：沿四条斜脊加垂脊：用瓦材质，截面约 0.10×0.08 m，从正脊端头一直到檐角。瓦列按斜脊线斜切收头，压在垂脊下面。LOD1 同步改。
+- [medium] **井栏与井架** `m-well-family` · 结构：屋面承托不完整：A 两侧坡下面没有椽也没有枋，A/B 前后檐枋反而比瓦檐多伸出 5 cm —— 改法：A 的两侧坡补上檐枋和四根角梁，至少补侧坡的椽。A/B 都把前后檐枋往里收 15–20 cm，或者把屋面板和瓦列往外延，让瓦檐压过檐枋形成出檐。四个 GLB 同步改。
+- [medium] **岔径·望场** `s-sd02` · 形体：012 仓与 013 院按不同比例并置在同一片连续场地里 —— 改法：由伊苏里亚决定。方案一：SD02 放置 013 院时整体放大约 1.6 倍（门洞约 2.2 m，屋门约 1.8 m），用 build-environment.py 重算浅槽、路线和院门视高；这会突破「只有可追溯平移」的规则。方案二：保持原比例，在卡片和页面上明说「两件按各自原件比例并置」（文字部分见 F6）。
+- [low] **阙影·标界** `m-014` · 形体：主、子阙的脊块太薄：侧看主脊只剩一根小立柱，子脊只是一片薄片 —— 改法：正脊加厚到约 0.15–0.2 m，两端略起脊头，长度不变。子脊按子阙尺度加厚到约 0.08–0.1 m。仍保持省略脊鹰的素块抽象。
+- [low] **阙影·标界** `m-014` · 形体：道路只有约 1.3–1.5 m 宽，比主阙的檐还窄，读起来像田间小径，不像阙所标示的道路 —— 改法：如果要表达阙旁的道路或神道，把路宽放到约 3–4 m，地块相应加宽。如果本意就是踏径，在 summary 和 notes 里写成「踏径」，并说明尺度意图。
+- [low] **阙影·标界** `m-014` · 形体：子阙顶是截锥，只升高约 9 cm 就停在一块平台上，没有收成庑殿正脊 —— 改法：子阙顶改成单檐庑殿：前后两坡加外端一坡（贴主阙一侧不起坡），收到一条沿面阔方向的正脊，去掉平台。和 F4 的子脊加厚一起做，三个方案同步。改完重跑交集和承接检查。
+- [low] **住宅院落模块组** `m-courtyard-family` · 卫生：south.glb 和 baseline/north 一样没有地面、悬空 0.2 m，但它在城景点名清单里，改动要走伊苏里亚 —— 改法：请伊苏里亚确认城景是否真的用到这一份 south.glb。如果没用到，修正点名清单，再按 F1 一并补地面；如果用到，补地面时同步更新城景登记的哈希。
+- [low] **板筒瓦薄壳模块** `m-eaves-shell` · 结构：两侧边垄没有筒瓦，左右并排时接缝缺一垄，拼接接口未定义 —— 改法：定一条拼接规则，例如只在一侧边缘加一整垄筒瓦（另一侧不加），或两侧各半垄、拼合后成一垄。上坡端写明与下一块的搭接长度（nominalOverlap 0.08 m）。做一张2×2拼接验证图放进图集，并写进契约。
+- [low] **完整单门楼屋面研究** `m-gate-roof-study` · 结构：门扇顶端离门楣 5 cm、离墙 6.5 cm，没有门框，转轴无处着落 —— 改法：请创作者按汉代枢轴门的做法补门砧（下）和连楹（上，装在门楣内侧），门轴伸进两者；门框、门槛要不要补一并决定。门扇尺寸不动。五个文件里的原门楼木构相同，要一起改。
+- [low] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · 材质：铺面与院落的屋瓦密度相差很大，同一档里不统一 —— 改法：重做 LOD1 时（见 F1）统一两类建筑的瓦面做法和密度。
+- [low] **八宅三铺街区 A1** `m-luoyang-a1-neighborhood` · LOD：LOD2 作为远景件仍拆成 35 个绘制批次 —— 改法：考虑给城景另出一个按材质合并成 3 个批次的远景件。但合并要改节点变换，与 notes「保留局部顶点和节点变换」的精度约束冲突，需要创作者决定原点和精度方案。
+- [low] **辟雍礼堂与围护** `m-luoyang-biyong` · 形体：屋面坡度太平：前后坡只有 14°，举高约为进深的 1/8 —— 改法：请伊苏里亚确认依据。如果没有特别的依据，把正脊抬到檐口以上约 5–6 m（前后坡约 23–27°），撒头同步调整；如果有依据，就在 notes 里写明为什么取 14°。
+- [low] **庖厨炉灶 A/B** `m-luoyang-cooking-stove` · 材质：灶体颜色均匀干净，灶门和火眼周围没有烟熏、火烧痕迹，贴图细节在渲染里几乎看不出来 —— 改法：由创作者在 P01 调色板层面决定，有两条路：一是给土、木贴图画出真正的抹泥、土坯和木纹细节，灶门上沿和火眼周围的烟熏用灶专用材质或顶点色来做，不动共用贴图；二是全项目改用 baseColorFactor/roughnessFactor（LOD2 已经这样），每个 LOD0 能省约 690 KB。只改这一件会和 P01 体系脱节，不建议单独动。
+- [low] **庖厨炉灶 A/B** `m-luoyang-cooking-stove` · 形体：备食板是一张约 0.54 米高的四腿高桌，不像东汉常见的跪坐操作用低俎、低案 —— 改法：创作者核对依据：改成矮足的俎或案（台面高 0.15–0.3 米），或者在 notes 里写明这个高度的依据。
+- [low] **普通院落两种组装** `m-luoyang-court-layout-kit` · 形体：各屋门洞都空着，没有门扇或门框 —— 改法：屋门可以复用库里已有的 m-luoyang-inner-door-components（单扇宽 1.5 m，另有双扇），改到 1.6 m 的门洞上并加门框，开合姿态和门屋保持一致。如果屋门敞开是有意的设计，就在 notes 里说明。
+- [low] **普通院落两种组装** `m-luoyang-court-layout-kit` · 材质：门屋屋面的瓦作做法和正堂、厢房不统一 —— 改法：全院统一成一种瓦作，二选一：门屋改成通长瓦垄，或者各屋都改成分块筒瓦。同时和 F2 一起统一脊的做法。
+- [low] **德阳殿空间研究** `m-luoyang-deyang-hall` · 材质：A 方案文件被城景锁定，发布时会原样上线，贴图是未压缩的 PNG，也没有用 meshopt 压缩 —— 改法：由创作者决定：把 A 方案改成常量材质，或者用 gltfpack -cc 压缩并把贴图转成 WebP。无论哪种，都要同步更新 palace-admission-court 的 qa/independent-geometry-review.json 里锁定的哈希，并重建、重验那个组合。
+- [low] **德阳殿空间研究** `m-luoyang-deyang-hall` · 结构：后墙和山墙只有 0.3 米厚，比嵌在墙里的 0.46 米柱子还薄 —— 改法：请创作者决定墙体做法：按夯土墙加厚，同时调整柱和墙的关系；或者明确做成木骨泥墙，并在 notes 里说明。补屋架（F1）时，让墙顶和檩、椽接上。
+- [low] **夯土墙身家族** `m-luoyang-earthwall-family` · 形体：家族内 A/B 短段与 C、西垣长段截面完全不同，无法对接，却称「兼容」 —— 改法：创作者在 notes 里写明两套截面的分工：C 与西垣 A10 沿用城中既有墙身（底 8 / 顶 5.6 / 高 6.03 m），以便和已入城的门体衔接；A/B（底 14 / 顶 10 / 高 8 m）用在哪里、依据是什么。如果要让 A/B 取代 C，再补过渡段或统一截面。
+- [low] **夯土墙身家族** `m-luoyang-earthwall-family` · 形体：夯层起伏周期约 0.5 m，远厚于汉代夯层常见厚度；B 段网格是从 A 段拉伸来的，起伏密度不一致 —— 改法：创作者决定夯层的表现尺度：要么保留 0.25 m 的风格化色带，并在 notes 里写明；要么改用约 0.1 m 的色带或贴图。B 段不需要重新分段。
+- [low] **谷门** `m-luoyang-gu-gate` · 结构：筒瓦只在檐口做了约0.6米长的短段，坡面其余部分是平板贴图，在近景里读起来像突然截断 —— 改法：二选一：一是让瓦垄通长铺到脊（低段数），二是坡面加一张瓦垄法线贴图，并让檐口瓦头和贴图的瓦垄间距对齐，消除截断感。
+- [low] **谷门** `m-luoyang-gu-gate` · 形体：正脊只是一根很细的方条，端头平切，没有汉式脊端起翘；檐下也看不到椽 —— 改法：加高正脊，两端做起翘的脊头；檐口补一排低段数椽头，或者用贴图示意。这一条属于形制表现，由伊苏里亚按研究依据决定。
+- [low] **谷门** `m-luoyang-gu-gate` · LOD：库里没有LOD0，现在最高只有降低了细节的 LOD1 —— 改法：等传输通道允许时，把原 LOD0 原样提交到 files/，部署会自动瘦身；不需要自己压缩，也不必另上 Draco。label 写「LOD0 · 近景高细」。
+- [low] **谷门** `m-luoyang-gu-gate` · 形体：檐口筒瓦是空心半管，管口没有瓦当 —— 改法：给 130 个檐口筒瓦各加一个圆形瓦当：6–8 段圆盘，每个约 6–8 面，合计约 1k 面。云纹或文字可以用贴图示意。瓦当式样由伊苏里亚定。
+- [low] **谷门** `m-luoyang-gu-gate` · 结构：上屋没有梁架：前后两排柱之间没有横梁，也没有檩和椽 —— 改法：在每对前后柱上补一根横梁（共 4 根），加一根脊檩，需要时再加前后金檩，都用低段数方块体，合计约 100 面。具体梁架形制由伊苏里亚定。
+- [low] **谷门** `m-luoyang-gu-gate` · 形体：门道两壁是光面土墙，没有过梁式门道常见的排叉柱 —— 改法：由伊苏里亚按研究依据决定：要不要在每条门道两壁各补一排低段数的排叉柱和地栿（每侧 3–4 根方柱就够）。如果定为不做，就在 notes 里写明这是简化。
+- [low] **广阳门** `m-luoyang-guangyang-gate` · 形体：三条门道全是空口，没有门扇、门砧和门道内的排叉柱 —— 改法：随 F1 的门道改造一起做：门道两壁排叉柱、过梁、门框、门砧一次建好；门扇至少做一种状态（开启时贴侧壁即可）；依据不足时在 notes 写明参照。
+- [low] **广阳门** `m-luoyang-guangyang-gate` · 结构：门楼内没有横向梁架，8m 进深的屋面只靠两端山墙和前后檐枋 —— 改法：每个柱缝补一榀简化梁架（大梁加叉手，或短柱托脊檩，用块体表达即可），明间阑额加高；面数从 F7 省下的瓦件预算里出。
+- [low] **住宅主屋面** `m-luoyang-house-roof` · 结构：山面出际边缘没有收边瓦，瓦面比望板短 4 厘米 —— 改法：在山面边缘补一列压边筒瓦或收边瓦，盖住最外一列板瓦的外沿和板边。
+- [low] **住宅内门修订组件** `m-luoyang-inner-door-components` · 结构：门叶是一整块光板，没有拼板缝、背面穿带或门钉，近景细节不足 —— 改法：可选增强：门叶加竖向拼板浅缝，背面加 2–3 道穿带（楅），几十个三角形就够。面数可以从 LOD0 那 64 段的轴孔里挪过来，花在看得见的细节上。加不加、加几道，由创作者按依据决定。
+- [low] **住宅内门修订组件** `m-luoyang-inner-door-components` · 结构：下枢做成贯通孔，门轴下端外露悬空，门叶压在枢板上，不像门臼承轴 —— 改法：请创作者重定下枢做法。下枢块（门枕或门砧，用木还是石按依据定）落到 y=0，顶面开一个不贯通的臼窝，让门轴下端坐在臼底承重；门叶底边和枢块之间留出转动缝，不要贴面。单扇的挑出薄板改成落地的枕块。改完重导三档，并复核原来做过的枢接姿态检查。这些文件不在城景点名清单里。
+- [low] **开阳门** `m-luoyang-kaiyang-gate` · 形体：三条门道两壁是素夯土，门道顶是一整块楼面板直接跨过，缺汉代过梁式门道的排叉柱和过梁 —— 改法：沿三条门道两壁补排叉柱，每侧一排立柱，上面承过梁或额枋，楼面板下补承托梁。LOD0、LOD1 做实体，LOD2 可以省略。属于补构件，交创作者处理；LOD1 是城景点名文件，改完要同步更新哈希。
+- [low] **灵台类型与踏步研究** `m-luoyang-lingtai` · 结构：外院墙由一段段互不相连的独立墙片组成，墙段间是敞口，南入口也没有门 —— 改法：在 notes 里写明 12 处开口的用意和依据等级。如果它们表示门，至少给南面中轴门补上门道、门屋或门阙，其余门由创作者决定；不必把院墙连成一圈。
+- [low] **灵台类型与踏步研究** `m-luoyang-lingtai` · 材质：北廊屋面是光面「旧屋面」，与其余三面的瓦垄屋面做法不一致 —— 改法：创作者把北廊屋面换成与其他廊一致的瓦垄做法（或统一改用法线贴图表现瓦垄），同时处理 F6 的重复面。
+- [low] **灵台类型与踏步研究** `m-luoyang-lingtai` · 结构：东、西和南面两座短廊共四座屋面没有正脊，瓦垄停在脊线前，脊上是一道敞缝；只有北廊有脊 —— 改法：由创作者给这四座廊补正脊：至少与北廊的脊截面相同，或按汉式两端略起翘。与 F5 一起，把五座廊的屋面做法统一。
+- [low] **旄门** `m-luoyang-mao-gate` · 形体：登临梯是贴在东端山面上的直跑陡梯，配两道横杆的细栏杆，有现代钢梯的感觉，而且占住了城墙应该接续的端面 —— 改法：入城接城墙时，把登临移出墩台端面（例如改成城墙内侧的踏道或坡道），或者干脆不带 access 模块。台顶栏杆可以参照汉代图像，改成带卧棂或直棂的勾阑，或者改成女墙。研究依据写进 notes。
+- [low] **旄门** `m-luoyang-mao-gate` · 结构：LOD0 两端撒头坡面没有筒瓦几何，与前后坡的瓦垄不一致 —— 改法：在撒头坡面补上垂直于该面檐口的筒瓦垄（LOD0 已被城景点名，改动后需要同步更新城景登记的哈希）。
+- [low] **旄门** `m-luoyang-mao-gate` · LOD：两份 GLB 都没有压缩，LOD0 的贴图是 9 张 PNG —— 改法：由创作者决定是否对 LOD0 运行 gltfpack -cc（贴图转 WebP 或 KTX2），并同步更新城景登记的哈希。LOD1 不用动。
+- [low] **旄门** `m-luoyang-mao-gate` · 形体：三条门道都没有门扇，也没有门砧或门槛，城门读起来像三条通透的隧道 —— 改法：在门道里补上门扇，可以做成开启后贴着门道墙的样子，不挡通行；同时补门砧和门槛，具体位置按研究依据定，依据写进 notes。
+- [low] **八铺四棚店前线** `m-luoyang-market-frontage` · 形体：四座棚的顶是平板，用的是瓦材质，不像临时的棚 —— 改法：由创作者决定棚顶的形制：东汉市里的摊棚更可能是苇席或草顶，可以换成单独的席或草材质，或者在木材质上加席纹；如果确实要瓦顶，就补上筒瓦，与铺子一致。
+- [low] **市肆模块与组装** `m-luoyang-market-modular-assembly` · 结构：前檐下没有檐枋；S84 前口约 8 米只靠两根角柱 —— 改法：S84 前口补一根中柱，与 S86 同规格，放在 x=0、z≈−0.16，柜台不用动；或者把枋加高到 0.4 m 以上，并让屋面落在枋上。S84 的三档 LOD 和组合右铺要同步。S86 不需要改。
+- [low] **明堂形制假说** `m-luoyang-mingtang` · 形体：屋面坡度很平：A 下檐约 12.7°，上檐前后坡约 16.8° —— 改法：把下檐坡度提到 1:2.5 至 1:2 左右，上檐相应调整。如果有意取平缓坡度，就在 notes 里写明依据。
+- [low] **北郊方坛四陛** `m-luoyang-northern-altar` · 形体：坛壁完全垂直、没有收分，阶梯两侧敞开、没有垂带或侧墙，形制停在最简示意 —— 改法：如果要升级为城景近景件，请创作者依据汉魏洛阳礼制建筑遗址等材料决定：坛壁是否加小幅收分；四陛是否加夯土挡土侧壁，或改成慢道。这些改动在 notes 里注明仍是假设。不要加垂带。如果只作关系研究件，可以维持现状。
+- [low] **普通住屋与门房四型** `m-luoyang-ordinary-house-types` · LOD：G10 门房和三型住屋的 LOD0 精度不在一个档位 —— 改法：把 G10 升级到和住屋同一版本的近景构件包，或在 label 和 notes 里明确标出 G10 是旧版精度。
+- [low] **普通住屋与门房四型** `m-luoyang-ordinary-house-types` · 形体：檐口筒瓦端头只有半圆截面，没有圆形瓦当 —— 改法：在檐口那排筒瓦端头加圆形瓦当，用低面数圆盘即可；LOD1 保留轮廓，LOD2 可以省掉。如果研究依据认为普通住屋不用瓦当，就在 notes 里写明依据。
+- [low] **普通住屋与门房四型** `m-luoyang-ordinary-house-types` · 材质：LOD0/LOD1 的 PBR 贴图几乎是纯色，占了仓库原件近一半体积，却几乎看不出细节 —— 改法：由创作者决定：如果要近景质感，就重做带夯层、木纹、瓦面起伏的贴图；如果不需要，就像 LOD2 一样改用常量底色和粗糙度，去掉这 9 张 PNG。
+- [low] **无名宫院通行组合** `m-luoyang-palace-admission-court` · 材质：9个材质实际是3个材质各复制3份，引用同一组贴图 —— 改法：把副本合并成3个材质；LOD2可以按材质合并网格。改完同步更新城景登记的哈希。
+- [low] **无名宫院通行组合** `m-luoyang-palace-admission-court` · LOD：开门、闭门两套各三级整份重复，只差两扇门，总共约8MB —— 改法：每档只保留一份，网页里按节点名旋转guard__guard-slice-leaf_L-timber和leaf_R-timber来切换开闭；或者至少让城景只引用其中一套。这涉及城景登记的文件。
+- [low] **无名宫院通行组合** `m-luoyang-palace-admission-court` · 材质：夯土墙、台基和庭地同一土色，木构接近黑色，建筑底部和地面分不开 —— 改法：可选：给庭地单独设一个略浅或偏灰的地面色，与夯土台基、墙拉开明度。木构用色由伊苏里亚决定；保留素木的话，在notes里写一句理由。改动涉及城景点名的文件。
+- [low] **无名宫院通行组合** `m-luoyang-palace-admission-court` · 卫生：9个材质全部设为双面 —— 改法：9个材质全部关掉doubleSided，门扇和瓦片也不必保留双面。文件被城景点名，改完同步更新登记的哈希。
+- [low] **无名宫院通行组合** `m-luoyang-palace-admission-court` · 材质：9张512²贴图几乎是纯色，占了LOD0约1MB，却几乎没有可见细节 —— 改法：LOD0、LOD1也改用baseColor和roughness因子，与LOD2保持一致；或者把贴图降到128²以内，并改用WebP或JPEG。重新导出后更新城景登记的哈希。
+- [low] **无名宫院通行组合** `m-luoyang-palace-admission-court` · LOD：同一套6个GLB在城景目录里还存了一份，两份都被钉住、原样发布 —— 改法：只留一份：要么让卡片的files直接引用progress-assets里的文件（像mao-gate那样），要么删掉城景目录里的副本，并把source.json和README改成指向资产库里的文件。可以和开、闭两套合并的事一起处理。
+- [low] **高架复道局部模块** `m-luoyang-palace-gallery` · 形体：墙板开窗是素面方洞，没有棂格或栏杆，近景细节密度不够 —— 改法：窗洞加低多边形直棂（几根竖条即可）。如果研究上允许，端口和窗下可以加汉代画像砖常见的勾阑。
+- [low] **宫门值守核验切片** `m-luoyang-palace-guard` · 形体：两侧值守亭的柱头直接承檐，没有栌斗或一斗二升；柱脚也没有柱础 —— 改法：柱头加一个简化的栌斗，若能再加一斗二升最好，每柱约 20–40 面；柱脚加方形或覆盆础石，与门屋保持一致。
+- [low] **宫前土木对阙** `m-luoyang-palace-paired-que` · 结构：上屋没有任何登临路径 —— 改法：由创作者决定登临方式，例如台内暗梯、背面木梯或与宫墙相连的阁道；如果暂不建模，就在 notes 里明确写「未建模登临」。
+- [low] **宫廷侧廊庑** `m-luoyang-palace-sidehall` · 材质：LOD1 屋面的条纹宽度与 LOD0 的瓦垄几何对不上，切换时会跳变 —— 改法：不要靠重新烘焙贴图解决。LOD1 要么保留和 LOD0 相同位置、相同间距的瓦垄，要么去掉细杆，把 LOD0 的瓦垄烘进 LOD1 和 LOD2 的法线贴图。并入 F1 的屋面重做，改完更新宫院组合 QA 里锁定的哈希。
+- [low] **宫廷侧廊庑** `m-luoyang-palace-sidehall` · LOD：近、中两档各带 9 张 PNG 贴图，占了文件体积的大头 —— 改法：贴图转成 WebP（EXT_texture_webp）或 KTX2，或者像 LOD2 那样直接改用纯色材质。改完同步更新宫院组合 QA 里锁定的哈希。
+- [low] **宫廷侧廊庑** `m-luoyang-palace-sidehall` · 材质：柱子的木纹方向错了：盒式投影 UV 让木纹横着一圈圈绕在柱身上 —— 改法：把柱子侧面的 UV 旋转 90 度，或者给柱子换一张竖纹贴图，让木纹顺着构件长度走。文件的哈希被锁定，改完要同步更新。
+- [low] **宫廷侧廊庑** `m-luoyang-palace-sidehall` · 材质：27 个柱础用的是夯土材质，看起来是土块，不是石础 —— 改法：把柱础拆成单独的石材质（灰色、粗糙），或者归进一个石材 primitive，会多一个绘制批次；也可以在 earth 贴图上用顶点色区分。文件的哈希被锁定，改完要同步更新。
+- [low] **宫墙水道三段接口** `m-luoyang-palace-waterway-interface` · 形体：盖板每段是一整块约2.5 m长的无缝平板，读起来像现代混凝土预制板 —— 改法：盖板本来就标了推测，但可以改成横铺的砖或分块石板，留出分缝，与青砖砌体的材料逻辑一致，并在 notes 里说明所取的盖法。
+- [low] **宫墙水道三段接口** `m-luoyang-palace-waterway-interface` · 结构：竖井朝渠道的两个侧面，砖缝只铺在中间约1 m宽的一条，两侧边带是光面 —— 改法：把砖缝浮雕铺满竖井侧面全宽，在转角处与正、背面的砖层交错咬合。
+- [low] **宫墙水道三段接口** `m-luoyang-palace-waterway-interface` · LOD：中景 LOD 把砖模数放大了一倍（约0.6×0.24 m），读起来像大石块，和近景砖的尺度对不上 —— 改法：中景保持和近景相同的砖模数：可以只保留0.12 m 的皮缝线、省掉竖缝来控制面数，或者干脆去掉浮雕只留平面，让 LOD 切换时砖的尺度不跳。改后核对三档轮廓和开口。
+- [low] **平城门** `m-luoyang-pingcheng-gate` · 结构：6 处木构件顶部穿出瓦面，顶视图上能看到黑色小斑 —— 改法：把 x=-8/0/8 三对叉手下端（y=±3.836）的上缘压到瓦层底面以下（下移约 5 厘米，或截短）。LOD0 可以用脚本改；LOD1/LOD2 已被城景点名，交创作者改，并同步更新城景登记的哈希。
+- [low] **平城门** `m-luoyang-pingcheng-gate` · 形体：夯土墩台四壁垂直，没有收分 —— 改法：给墩台外侧和端面加 1/8 到 1/10 左右的收分；改动后要同步调整门道木框和地面附件的接口。
+- [low] **平城门** `m-luoyang-pingcheng-gate` · 结构：门道两壁没有排叉柱，过梁式门道缺少承托构件 —— 改法：在三个门道两壁各补一排贴壁方柱（间距约 1–1.5 米），柱头加纵向托梁；LOD1 可以减成稀排，LOD2 可以省略。LOD1 改动后要更新城景哈希。
+- [low] **平城门** `m-luoyang-pingcheng-gate` · 形体：楼面外沿一圈约 1 米宽的平台没有勾阑，前墙门洞直通临空边 —— 改法：沿楼面外沿补一圈汉式卧棂勾阑（做成低多边形条框即可）；或者封掉前墙门洞，把楼面板收到墙根。LOD1 同步修改，并更新城景哈希。
+- [low] **连续住宅生活片区** `m-luoyang-residential-life` · 形体：檐口筒瓦没有瓦当，端头是空心半圆断面 —— 改法：给檐口最外一排筒瓦补圆瓦当，用低多边形圆片做成共享网格即可，纹样按研究依据定。LOD1 起可以省略。
+- [low] **院内备食关系** `m-luoyang-residential-preparation` · LOD：贴图在体积里占大头：一个2米道具的LOD0有866KB，其中PNG贴图约692KB —— 改法：不要在仓库里转码。由创作者在源灶stove-A上判断：earth材质可以去掉法线图，ORM图改成roughnessFactor≈0.9、metallicFactor=0；timber的法线图有木纹，保留。改完后重建W2三档，更新source_sha256和notes。
+- [low] **院内备食关系** `m-luoyang-residential-preparation` · 形体：侧备食板做成约0.53米高的四腿立式工作台，和汉代跽坐操作的低俎、低案习惯不一致，缺少依据 —— 改法：对照庖厨画像中俎和案的高度，确认取立式还是跽坐式操作。要改尺寸，就在源灶stove-A上改，再重建W2；如果有依据，就在notes里补一句出处。
+- [low] **院内备食关系** `m-luoyang-residential-preparation` · 材质：占位釜和灶身共用土色earth材质，看起来像灶面上的一圈凸沿，认不出是一口釜 —— 改法：由创作者确定是陶釜还是铁釜，在源灶stove-A上给釜单独一个材质（例如灰陶色或发黑的铁色），然后重建W2三档。这样会增加1个绘制批次。
+- [low] **上东门** `m-luoyang-shangdong-gate` · 结构：露台和上屋没有登临构件（坡道或阶梯） —— 改法：创作者按研究依据确定登城方式（城内侧马道或门台侧踏道），再补上构件；入城前要和城墙接合一起考虑。
+- [low] **上西门** `m-luoyang-shangxi-gate` · LOD：PNG 贴图占了文件体积的大头 —— 改法：只处理 LOD1，有两种做法：一是像 LOD2 那样直接用纯色因子（LOD2 的 FLAT 颜色已经和贴图均值一致）；二是换成真正带瓦垄或夯层的贴图。如果保留现有贴图，可以用 gltfpack 压缩。改完要同步城景登记的哈希。LOD0 交给部署瘦身，不用动。
+- [low] **上西门** `m-luoyang-shangxi-gate` · 结构：上层柱网和墩台、梁架都不对位：中柱落在中门道跨中，两端梁架不在柱缝上 —— 改法：上层柱位和墩台的隔墙对齐；或者在中门道上方补足过梁和夯土层，承托中柱。两端梁架移到柱缝上。LOD0、LOD1、LOD2 一起改；LOD1/LOD2 改完要同步更新哈希。
+- [low] **南郊圆坛八陛** `m-luoyang-southern-altar` · 形体：营门是0.22 m细杆加出挑横木的框，读起来像临时脚手架或球门 —— 改法：如果没有更好的依据，可加粗门柱、加门槛或门道铺地，或干脆只留门道缺口、不放门框，以免像后世的牌坊或棂星门；需要伊苏里亚判断。
+- [low] **南郊圆坛八陛** `m-luoyang-southern-altar` · 形体：营墙1.4 m高，与1.6 m高的下坛几乎齐平，从营外几乎看不到坛体 —— 改法：确认营墙与坛的高差是否有意为之；如果没有依据，可考虑把营墙压低成矮壝，或在notes里写明这个比例的设计理由。
+- [low] **厩棚与饲槽 A/B** `m-luoyang-stable` · 形体：缺东汉屋面和柱脚细部：檐口没有瓦当，正脊只是一根细方条，柱下没有础石 —— 改法：檐口每垄筒瓦补素面圆瓦当，直径约 0.15 m；没有找到依据前不加纹饰。正脊可以加高成叠瓦脊，两端是否起翘由创作者按依据决定。础石列为可选，不作必改。A、B 一起改。
+- [low] **厩棚与饲槽 A/B** `m-luoyang-stable` · 形体：研究依据没有落到具体出处 —— 改法：在 notes 里写明参照的具体器物或壁画：名称、出土地、馆藏或图录页码。最好在 reference.md 补一条厩或牛马圈的参照。没有直接依据的部分，比如开间数、槽高 0.68 m，明确标成设计假定。
+- [low] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · 形体：栏障做成了现代尖桩式栅栏，没有地栿和寻杖 —— 改法：改成望柱+寻杖+地栿夹直棂的汉式栏杆，直棂上下都收进横枋；或者按官署行马、梐枑一类障设计。远景仍可只留柱和横档。
+- [low] **太学门外观经空间** `m-luoyang-stoneclassic-access-court` · 形体：卡片没有交代覆屋规模和碑数、碑列排布的关系 —— 改法：在 notes 里写明：这座单一矩形覆屋表现的是全部碑列、其中一段样段，还是只表现「瓦屋覆之」这层关系；为什么不按三行布置。如果要表现整个设施，规模或平面需要重做。
+- [low] **太学长堂 A** `m-luoyang-taixue-a` · 结构：后檐中间两间敞开却没有踏步，0.6 m 台帮直落地面 —— 改法：请伊苏里亚确认后檐开口的用途：如果是通道，补后阶并与前阶对位；如果只为采光通风，补槛墙和直棂窗，与其余十间一致。结论写进 notes。
+- [low] **太学长堂 A** `m-luoyang-taixue-a` · 形体：柱头没有栌斗，两山没有博风，官式木构细部缺位 —— 改法：LOD1 的柱头加简化栌斗（方斗，每个约 12 面，26 个约 312 面）；做不做一斗二升，按研究依据定。博风和山花封闭留作研究项，不硬性要求。LOD1 是城景点名件，改后要同步城景登记的哈希。
+- [low] **太学长堂 A** `m-luoyang-taixue-a` · LOD：缺可近看的 LOD0，详情页近看只能落到 3,864 面的 LOD1 —— 改法：LOD0 用 gltfpack -cc 压缩、减面或拆分，降到 5 MB 以下再收入；做好之前，summary 里保持「中远景」的说法。
+- [low] **太学长堂 A** `m-luoyang-taixue-a` · 结构：LOD1 正脊条悬在屋脊上方 1–6 cm，37.3 m 通长都有透缝 —— 改法：把正脊条的底面下移到约 y 5.93，让它嵌进屋面约 2 cm；或者改成骑在两坡上的人字形或梯形截面。LOD1 是城景点名件，改后要重生成 flat 投影件，并同步 city-data.mjs 和 source.json 里登记的 SHA-256。
+- [low] **墙房相接住宅样例** `m-luoyang-wall-house-court` · 形体：两座住屋都没有窗，门洞也没有门框和门扇 —— 改法：在前檐墙补直棂窗（窗洞加棂条），门洞补门框，或者做成开启状态的门扇，这样不影响穿行。
+- [low] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · 形体：住屋和棚都没有看得见的台基与柱础，檐柱直接立在院地上 —— 改法：先给所有外露木柱加方形础石，约 0.35×0.35×0.1 m：北屋和西屋檐柱共 4 根，院内棚 6 根，独立棚 6 根。LOD0 和 LOD1 都加，LOD2 可以省。台明是否外伸，由伊苏里亚决定，不作为必改项。
+- [low] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · 形体：院墙和屋墙偏薄、直上直下，读起来像板墙，不像夯土墙 —— 改法：院墙加厚到约 0.5–0.8 m，并做 1:10 左右的收分（顶窄底宽）；屋墙加厚到约 0.4–0.5 m，墙帽随之加宽。这属于比例调整，具体尺寸请伊苏里亚来定。
+- [low] **开敞作业棚与足碓院** `m-luoyang-workyard-shed` · 结构：北屋、西屋的门洞是光洞，没有门框、门扇和过梁 —— 改法：LOD0 和 LOD1 给两座住屋的门洞加门框、门楣（过梁）和门槛，门扇可以做成半开的两扇板门；LOD2 不用加。
+- [low] **武库收纳与点验** `m-luoyang-wuku` · 形体：点验台按今天的站立工作高度做，台面离地约 0.75 m；东汉起居以席地跪坐、用矮案为主，这个高度缺依据 —— 改法：请伊苏里亚核对依据。如果找不到东汉站立点验台的图像或文献，就改成高约 0.3–0.4 m 的矮案，配上席，台面上的简牍按卷册或木牍的真实尺度做；如果有依据，就在 notes 里写明出处。A、B 的 LOD0/LOD1 都要改，LOD2 本来就不含点验台。
+- [low] **夏门** `m-luoyang-xia-gate` · LOD：近景版 LOD0 没有上架，详情页只能看降细节的 LOD1 —— 改法：把 LOD0 用 gltfpack -cc（meshopt）压缩，或者去掉近乎纯色的贴图（见 F6），压到 15 MB 以下，再作为『LOD0 · 近景』加进 files；原件提供后，压缩这一步 Claude 可以代做。
+- [low] **小苑门** `m-luoyang-xiaoyuan-gate` · 结构：门道两壁是素面夯土，没有排叉柱，只有前后门框和两道横梁 —— 改法：沿门道两壁按约 1–1.5 m 间距补排叉柱和柱础，柱顶托纵向木枋，再承横梁；LOD2 可以省略。
+- [low] **雍门** `m-luoyang-yong-gate` · 材质：9 张贴图几乎是纯色：夯土没有夯层，瓦面没有瓦垄，却占文件体积的六七成 —— 改法：二选一：要么换成只用 baseColorFactor/roughnessFactor 的参数材质（与 LOD2 的 __FLAT 一样）；要么烘出有信息量的贴图——夯土加约 10 cm 一层的夯层横纹，瓦面加垄沟，木构保留木纹。
+- [low] **雍门** `m-luoyang-yong-gate` · LOD：城景默认常驻未压缩的 LOD0，两翼附件又重复内嵌同一套 380 KB 夯土贴图 —— 改法：由伊苏里亚选择做法：门体与两翼合并成一个城景文件，共用一套贴图；或者两翼改用 __FLAT 参数材质。城景用的 LOD0 按规范用 gltfpack -cc 压缩，或者接上远距离切换到 LOD1。两翼的 3 个 primitive 合并为 1 个，网格和贴图改成可读的名字。改后同步更新城景登记的哈希。
+- [low] **玉堂前后殿关系** `m-luoyang-yutang-halls` · 形体：殿庭没有围合：两侧低廊内外通透、没有外墙；廊中线落在后殿山墙线上，廊端一半顶着墙角、一半朝外 —— 改法：请伊苏里亚在 notes 里写明两廊是否为围合殿庭的廊庑，以及依据。如果是，外侧设墙，做成单面廊；如果不是，保持现状，写明理由即可。
+- [low] **玉堂前后殿关系** `m-luoyang-yutang-halls` · 展示：卡片说「文献支持殿名与庭的关系」，却没有任何出处；「保留嘉德异文」也没有说明是哪段异文、影响了什么 —— 改法：在 notes 里加一条「依据」，列出支持玉堂前殿、后殿与庭关系的文献出处，说明「嘉德异文」指的是什么、模型采用了哪种读法。这一条只能由伊苏里亚来写。
+- [low] **玉堂前后殿关系** `m-luoyang-yutang-halls` · 结构：两条廊顶是实心三角棱柱：底面是 3.70 m 处的平顶，檐口是零厚度的刀口，与殿顶 16 cm 坡面板的做法不一致 —— 改法：廊顶改成随坡的薄板，给出与殿顶一致的檐口厚度，并按 F1 补廊的檩、椽，或用蜀柱托住脊檩。屋架做法由伊苏里亚定，A/B 各三档同步重导。
+- [low] **中东门** `m-luoyang-zhongdong-gate` · LOD：LOD1 有 95% 的面数在檐口 0.42 m 宽的瓦件条上，两档之间只差这条瓦件 —— 改法：和 F4 的瓦当一起重做檐口瓦件条：筒瓦用 6–8 边外壳，端头封瓦当，去掉内壳和厚度环；板瓦改成单面波形带。也可以先只用 gltfpack -cc 压缩。两种做法都要重做 flat 投影，并更新三处登记的哈希。LOD2 不用动。
+- [low] **中东门** `m-luoyang-zhongdong-gate` · 材质：9 张贴图几乎是纯色，占 LOD1 体积 29%，却不提供细节 —— 改法：二选一：删掉 9 张贴图，改用 baseColorFactor 和 roughnessFactor（和 F1 一起定色）；或者让贴图真正承载信息，比如瓦面的筒瓦垄法线、夯土的分层纹理，再据此削减几何。三个材质的 doubleSided 都可以关掉。
+- [low] **中东门** `m-luoyang-zhongdong-gate` · 卫生：正脊方条浮在屋面上方 0.8–5 cm，端头透光 —— 改法：把正脊盒整体下沉约 5 cm，让底面低于 10.288、嵌进两坡；或者把底面改成贴合两坡的 V 形。LOD1、LOD2 两个文件都要改，并更新登记的哈希。
+- [low] **中东门** `m-luoyang-zhongdong-gate` · 形体：上屋用直坡悬山双坡和到顶的实心土山墙，卡片没有给出屋顶形式的依据 —— 改法：在 notes 的「证据等级」里补一句上屋选双坡悬山的理由和参照（例如汉代明器或画像中的门楼形象）。是否另做一个四阿顶对照候选由创作者决定，不作要求。
+- [low] **市肆功能组** `m-market-functional` · 形体：货箱、货架、陶罐的造型偏现代 —— 改法：请伊苏里亚按东汉器用改：用竹笥、筐、麻袋、高身陶瓮或陶罐；货架用更粗的木料并加横撑；席棚单独用一个布或席的材质（如 LY_P01_cloth），不和货物共用 paper。
+- [low] **通行接口试件 · WFC方法研究** `m-passage-interface` · 结构：全厚挡板向内缩 4 cm，四角留缝：单件每个角有约 4 cm 的通缝，拼接后每条内部接缝变成两层板夹约 8 cm 的槽，四格交点成十字缝 —— 改法：作为 v02 的方向，二选一：把挡板改成半厚（0.06 m）贴格边放置，两件拼接后合成一道 0.12 m 的墙；或者规定每条边只由一侧格块持有墙体。两种做法都在格点补角柱，封住角缝。注意四件 GLB 被方法研究按 SHA-256 锁定（登记在 passage-contract.json 和 public-layout-map.json，methods/passage-wfc/render.py 会 assert），改几何必须出新版本，重
+- [low] **通行接口试件 · WFC方法研究** `m-passage-interface` · LOD：每块板单独一个 mesh：单件 6–8 个绘制批次只画 72–96 面，3×3 组合有 65 个批次和 18 份重复材质 —— 改法：源件保留每块板一个节点、一个 mesh 的结构。需要大批量拼装时，在网页端按「件型 × 朝向」用 InstancedMesh 实例化，或者加载后再按材质合并。组合导出（seed-*.glb）前，把 .001…008 这些重复材质并回 2 个，然后重跑 audit_combined.py 和 geometry-checks。关掉 doubleSided、给 mesh 改名，放到 v02 新版本里，和重新登记 SHA 一起做。
+- [low] **仓储作业功能组** `m-storage-functional` · 结构：架空仓底的础石太稀，地栿跨度4.4–5.4 m，撑不住满仓粮食 —— 改法：在z=0加一排中础，或改成间距1.5–2 m的础网，地栿相应分段；架空仓明器常见密布的短柱，可以照此调整。城景件改后要同步更新哈希。
+- [low] **仓储作业功能组** `m-storage-functional` · 材质：墙身、础石、地栿、地板、台阶和收货棚顶共用一套木纹材质，城景里会刷成同一种褐色 —— 改法：至少拆出两个材质：墙体（夯土或白灰抹面，名字带wall或earth，城景会自动取#c2a17d）和础石（名字带stone）；木材只留给地板、地栿、台阶和门。收货棚顶随F1改用草或瓦材质。城景件改后要同步更新哈希。
+- [low] **井栏与井架** `m-well-family` · 展示：README「复现」一节引用的生成器、检查脚本和复盘图，仓库里都没有 —— 改法：请伊苏里亚按提交规范第 7 节把生成器和检查脚本放进批次 Release（或者作为 .py 直接提交进本目录），补上 manifest 和 history 图。做不到的话，就把 README 改成只写实际存在的文件。viewer.js 删掉，或注明已停用。
+- [low] **轨与翼** `s-f01` · 形体：潮翼展位在序厅总览里太弱，几乎读不出来 —— 改法：交给伊苏里亚在重做时一起定。最省事的做法是把 02 台座和背墙换成比瓷白深一档的颜色，这样也一并解决 V1 的标牌对比问题；把潮翼抬高或前缘上扬展示，作为可选。改完用 hall 相机复核一次，看两座展位的分量是否相当。
+- [low] **轨与翼** `s-f01` · 结构：星轨的车削底座悬在台面上方 0.25 m，看上去像没放好 —— 改法：由伊苏里亚定，两种做法：一是星轨下移 0.25 m 坐到台面上，只保留潮翼悬浮；二是保留悬浮，但在底座下加一圈发光或接触阴影，让悬浮读得出来，并把「有意悬浮」写进卡片 notes（见 F3）。
+- [low] **孔与隙** `s-f04` · 结构：台面悬空：1.12×0.96 m、4 cm 厚的台板底面离背景幕地面 14 cm，下面没有任何支撑 —— 改法：请创作者确认。如果是有意的，在 notes 里写一句「悬浮展台，离地 14 cm」即可，零改动。如果不是，再按原方案二选一：把背景幕地面抬到 −0.04，或给台面做落地底座。两种都要同步 scene.json，并重渲三张展示图。
+- [low] **孔与隙** `s-f04` · 结构：回环 ORISON 靠圆头尖端立在台面上，接触面只有约 15×7 mm，31×39 cm 的陶环实际立不住 —— 改法：如果要当作可信的实物：把底端压出一小段平底，或者加一个销座或小底托。如果「点立」是有意的不可能平衡，就在 notes 里说明。orison.glb 的 SHA-256 登记在 scene.json，原页面也声称原始 GLB 逐字节保留，所以改动要由创作者决定，并同步哈希。
+- [low] **孔与隙** `s-f04` · LOD：孔幕 VEIL 一块 35×50 cm 的板占了全场 68% 的面数，平均每个孔约 1.4k 面 —— 改法：重做时把孔壁分段降到 48–64 段，倒角环减到 1–2 圈，目标 ≤30k 面，近景外观基本不变。veil.glb 的哈希登记在 scene.json，并声明逐字节保留，所以交给创作者在重做时处理。
+- [low] **岔径·望场** `s-sd02` · 结构：仓顶只落在两山上，前后檐墙顶与屋面之间留出通长缝 —— 改法：如果这是有意的通风缝，在卡片和 012 释读里说明一句；否则在前后墙顶加压檐枋或檐檩（作为 B_ 推定构件），把缝封到屋面底。在 012 原件上改，再同步 SD02 副本。
+- [low] **岔径·望场** `s-sd02` · 形体：仓顶收头过简：筒瓦檐端敞口、没有瓦当，正脊只是一根薄平条 —— 改法：瓦当不列为必改项。作者若想消除近景里的 C 形空腔，可以在每列筒瓦檐端加一个素面圆形封头，不带纹样，符合 reference 里的克制原则。正脊建议加高到约 20 cm，让远景能读出来；要不要起翘由作者按依据决定。在 012 原件上改，再同步 SD02 副本。
+- [low] **岔径·望场** `s-sd02` · 结构：院门前的路线在地台边断开：两段路之间隔着 20 cm 院地底色，宽度也突然收窄 —— 改法：由伊苏里亚决定。方案一：把 013 原件的 C_arrival 延长到地台边（局部 z=9.2），必要时加宽到与地景路面同宽。这会打破 SD02「原形不改」的规则，并需要同步 studies/013、城景 quality-reference-013-A.glb 和 SD02 的身份记录。方案二：保持原样，在 013 和 SD02 的释读里说明这是原件地台的留边。

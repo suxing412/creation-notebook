@@ -1,0 +1,34 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "LY-006-port-v1",
+ "title": "Luoyang module port (LY-006 v1; extends LY-005-port-v1)",
+ "description": "Same fields and invariants as LY-005 port-schema.json (local + world, column-major node matrix, measuredFrom with SHA256). LY-006 adds four kinds, producer/steward/consumers, and allows world=null only while the local frame has no placement (frames listed in registry/zones.json).",
+ "type": "object",
+ "required": ["portId", "version", "kind", "producer", "frames", "local", "world", "nodeMatrixColumnMajor", "measuredFrom", "elevationClass", "tolerance_m"],
+ "properties": {
+  "portId": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+(:[A-Za-z0-9_.-]+){1,3}$"},
+  "version": {"type": "integer", "minimum": 1},
+  "kind": {"enum": ["ground", "threshold", "floor", "wall-end", "road-end", "mount", "opening", "cut", "drain"]},
+  "producer": {"type": "string", "description": "seat that measured/built it (LY-005 / LY-006 for ports on existing geometry)"},
+  "steward": {"type": ["string", "null"], "description": "seat that may bump the version; a bump needs every consumer to re-ack"},
+  "consumers": {"type": "array", "items": {"type": "string"}},
+  "frames": {"type": "object", "required": ["local", "world"], "properties": {"local": {"type": "string"}, "world": {"const": "luoyang-local-schematic-v01"}}},
+  "local": {"$ref": "#/$defs/pose"},
+  "world": {"oneOf": [{"$ref": "#/$defs/pose"}, {"type": "null"}]},
+  "nodeMatrixColumnMajor": {"oneOf": [{"type": "array", "items": {"type": "number"}, "minItems": 16, "maxItems": 16}, {"type": "null"}]},
+  "measuredFrom": {"type": "object", "description": "file path(s) + sha256 + method; must allow recomputation"},
+  "elevationClass": {"enum": ["C-engineering", "measured-archaeological", "unknown"]},
+  "tolerance_m": {"type": "object", "required": ["position", "elevation"], "properties": {"position": {"type": "number"}, "elevation": {"type": "number"}}},
+  "note": {"type": "string"}
+ },
+ "$defs": {
+  "vec3": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
+  "pose": {"type": "object", "required": ["position", "up", "forward"], "properties": {"position": {"$ref": "#/$defs/vec3"}, "up": {"$ref": "#/$defs/vec3"}, "forward": {"$ref": "#/$defs/vec3"}}}
+ },
+ "x-invariants": [
+  "all LY-005 x-invariants (world = N*local, residual <= 1e-6 m; forward/up rotate with N; N equals the frame placement or city-data node matrix)",
+  "world == null only if registry frame placement == null; it must be filled in the same version once a placement is frozen by LY-010/LY-100 (that is a new version if the value changes)",
+  "both sides of a seam reference the same portId and version (registry/seams.json)",
+  "kinds mount/opening carry hinge axes or opening state; cut carries the boundary of a ground/wall opening; drain carries an outlet with downhill forward"
+ ]
+}

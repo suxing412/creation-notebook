@@ -1,0 +1,207 @@
+{
+ "seat": "LY-045",
+ "labHead": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "note": "all docs/ inputs equal HEAD; lab/data/assets.json working tree has unrelated uncommitted edits (HEAD blob sha below)",
+ "labDataAssetsJson_HEAD_blob_sha256": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78",
+ "inputs": [
+  {
+   "path": "docs/library/models/m-luoyang-service-court/files/service-A-LOD0.glb",
+   "sha256": "cc02f68fa0f0412ea491e903dedefb028ba88a444a6ff6384250e483f82d23d7",
+   "bytes": 1562188,
+   "role": "reuse: 圈厕关系 A LOD0 (9,456 tris; nodes static_tile/static_timber/static_earth)",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by any docs/cities/luoyang *.mjs/*.json/*.html; only p-luoyang.asset.json:254 lists 圈厕关系 A as 已建模, note 未入城"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-service-court/files/service-A-LOD1.glb",
+   "sha256": "366e1a26442b28a8c8a440d76399a15edab149beb68d5a46d78f9bad6ba29e17",
+   "bytes": 461416,
+   "role": "reuse: LOD1 (1,656 tris)",
+   "loadedInCity": false,
+   "loaderCode": "not referenced"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-service-court/files/service-A-LOD2.glb",
+   "sha256": "c88104ce40192d2238c5c640743ed9374927edfeef612740495c52a1c267122a",
+   "bytes": 49320,
+   "role": "reuse: LOD2 (696 tris, no textures)",
+   "loadedInCity": false,
+   "loaderCode": "not referenced"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-service-court/m-luoyang-service-court.asset.json",
+   "sha256": "02e98a9d3c60cce7e6e2e1254802484387018d9eff58e15fd412b920fd9bd1aa",
+   "bytes": 1357,
+   "role": "asset card (status 待审; checks/limits text)",
+   "loadedInCity": false,
+   "loaderCode": "library card only; lab/data/assets.json aggregates it"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-service-court/cover.webp",
+   "sha256": "b25af8e0e29b74484ae75eb7b6b2815154e9bae95f3b5cc506d7a6c12cf7643f",
+   "bytes": 259540,
+   "role": "card cover (CPU render of native model, per card note)",
+   "loadedInCity": false,
+   "loaderCode": "library only"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-service-court/shots/01.webp",
+   "sha256": "6b4e2742a3fbebf66c5c933db46ca0b57f79a83719a671bde4e2a94679f8f962",
+   "bytes": 254476,
+   "role": "card shot",
+   "loadedInCity": false,
+   "loaderCode": "library only"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-service-court/shots/02.webp",
+   "sha256": "fda049b69454c0a1c915d1970ce4a08513c2873d823f1b76f0e535f8289df3d6",
+   "bytes": 253648,
+   "role": "card shot",
+   "loadedInCity": false,
+   "loaderCode": "library only"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "bytes": 92220,
+   "role": "C02-010 / C02-021 far prototype courtyard-A2",
+   "loadedInCity": true,
+   "loaderCode": "city-data.mjs:88-108 asset courtyard-A2 path; excludeNodes site_lot/site_neutral_lane/designed_hardpacked_activity_ground culled at city-renderer.mjs:309, all must match :346"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+   "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "bytes": 447064,
+   "role": "courtyard-A2 near prototype (measured yard geometry)",
+   "loadedInCity": true,
+   "loaderCode": "city-data.mjs:109-111 nearPath; only the focused node goes near, city-renderer.mjs:416; focusCourtyard :616"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/instances-calt.json",
+   "sha256": "c830b4e37090da5e070156b7f6199f36c5d0191c339f5a9399f0becded50ff85",
+   "bytes": 23726,
+   "role": "44-yard matrices (C02-010 T=(531,0,-818.45); C02-021 rotY 270 T=(717.45,0,-893.64308))",
+   "loadedInCity": true,
+   "loaderCode": "sourceContract of city-data nodes C02-010 (city-data.mjs:2322) and C02-021 (:1482)"
+  },
+  {
+   "path": "docs/cities/luoyang/data/c02v/layout.json",
+   "sha256": "7528f0c8dbdae41cece61295b198751db954a0a757a5a252f9ba15666c8f2fb2",
+   "bytes": 81479,
+   "role": "lots[].localRoutes gate_to_main / yard_to_side (route corridors kept free)",
+   "loadedInCity": false,
+   "loaderCode": "data file; routes not drawn by the renderer for this yard (read by prep only)"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "bytes": 2623560,
+   "role": "ground-south: single node single_closed_terrain_after, 96,796 tris, slab y 0.0/0.2; real ground of C02-010 and of the pen floor",
+   "loadedInCity": true,
+   "loaderCode": "asset city-data.mjs:471; node :3609 chapter terrain initial:false -> not in the default load set (city-renderer.mjs:221)"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "bytes": 629740,
+   "role": "ground-retained: real ground of C02-021 (alternative yard), 21,192 tris, coarse (13-38 m edges at the hole)",
+   "loadedInCity": true,
+   "loaderCode": "asset city-data.mjs:451; node :3582 initial:false"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "bytes": 3565544,
+   "role": "ground-network (0 cells in either candidate lot)",
+   "loadedInCity": true,
+   "loaderCode": "asset city-data.mjs:431; node :3555 initial:false"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/D08.glb",
+   "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+   "bytes": 6664,
+   "role": "ground-D08 (0 cells in either candidate lot)",
+   "loadedInCity": true,
+   "loaderCode": "asset city-data.mjs:491; node :3636 position [580,0,-960] initial:false"
+  },
+  {
+   "path": "docs/cities/luoyang/data/west/ground-atomic-contract.json",
+   "sha256": "bfc7fc83c3d8f34c79e9395532b74c324987b4dbf0c4342328b7581ebc2be584",
+   "bytes": 1391,
+   "role": "ground composition contract",
+   "loadedInCity": false,
+   "loaderCode": "sourceContract of the four ground assets"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 111034,
+   "role": "shared manifest (read only)",
+   "loadedInCity": true,
+   "loaderCode": "imported by app.mjs"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "bytes": 36571,
+   "role": "renderer: initial set :221, excludeNodes :309/:346, near tier :416, focusCourtyard :616",
+   "loadedInCity": true,
+   "loaderCode": "imported by app.mjs"
+  },
+  {
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "bytes": 14563,
+   "role": "city app entry",
+   "loadedInCity": true,
+   "loaderCode": "index.html"
+  },
+  {
+   "path": "docs/cities/luoyang/index.html",
+   "sha256": "a6402920b2378870069ce0d0ae9f3a25710e5f15cfe81454bb4a222c720d5cc6",
+   "bytes": 16108,
+   "role": "city page",
+   "loadedInCity": true,
+   "loaderCode": "-"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "bytes": 24215,
+   "role": "project card: 圈厕关系 A entry at :254 (已建模, 未入城)",
+   "loadedInCity": false,
+   "loaderCode": "library/project card"
+  },
+  {
+   "path": "docs/library/models/m-luoyang-household-service/files/service-enclosure-LOD0.glb",
+   "sha256": "507c6e706fff27b52f8516ee7ddf3c06ec02ee95f429b071b46e9f2a710972a1",
+   "bytes": 1056252,
+   "role": "low-wall service enclosure; card says it contains no toilet system -> not part of this package",
+   "loadedInCity": false,
+   "loaderCode": "not referenced"
+  }
+ ],
+ "privateSourcesMissing": [
+  {
+   "what": "圈厕关系 A native source (.blend / generator / batch source ZIP)",
+   "use": "only if service-A geometry had to change (it must not; package reuses the GLB unchanged) and to re-render native CPU shots",
+   "rebuildFromGLB": "yes for geometry (3 static nodes, no animation); native parameters not recoverable"
+  },
+  {
+   "what": "card QA package behind 有限门口、孔口和台阶检查",
+   "use": "inherit the card pass claims",
+   "rebuildFromGLB": "no (test definitions); re-derived here by measure_service_court.py and check_install.py"
+  },
+  {
+   "what": "ground-south native source / generator (single_closed_terrain_after)",
+   "use": "clean local cut for the has-hole variant",
+   "rebuildFromGLB": "yes for a local patch: the slab is a regular 2 m grid (edge 2.0-2.828 m) with flat top 0.2 / bottom 0.0"
+  }
+ ],
+ "priorSameSeatArtifacts": [
+  "inventory.py",
+  "measure_service.py",
+  "out/inventory-LOD{0,1,2}.json",
+  "out/measure-LOD{0,1,2}.json (2026-11-05 20:46-20:48, BVH ray casts; consistent with this prep: hole x +-0.21, no hit below hole, pen gap 76.5-103.5 deg)"
+ ]
+}

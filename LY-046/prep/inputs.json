@@ -1,0 +1,281 @@
+{
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "seat": "LY-046",
+ "inputs": [
+  {
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
+   "sha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+   "bytes": 447064,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:109 courtyard-A2.nearPath -> city-renderer.mjs:289-293 (near when node is nextNearId, :416)",
+   "use": "C02-010 主线院型近景（LY-041 测量对象，未冻结）"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+   "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+   "bytes": 92220,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:89 courtyard-A2.path -> city-renderer.mjs:293",
+   "use": "C02-010 远景"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb",
+   "sha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+   "bytes": 943548,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:165 courtyard-TC03-2.nearPath",
+   "use": "现成 architecture_C_drain_stone.001（复用核查）"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb",
+   "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+   "bytes": 164200,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:143 courtyard-TC03-2.path",
+   "use": "同上远景"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb",
+   "sha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+   "bytes": 981664,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:82 courtyard-TC03.nearPath",
+   "use": "现成 architecture_C_drain_stone"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb",
+   "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+   "bytes": 164300,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:63 courtyard-TC03.path",
+   "use": "同上远景"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb",
+   "sha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+   "bytes": 510536,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:29",
+   "use": "对照：无排水节点"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb",
+   "sha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+   "bytes": 626016,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:56",
+   "use": "对照：无排水节点"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb",
+   "sha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+   "bytes": 569280,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:136",
+   "use": "对照：无排水节点"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/south.glb",
+   "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+   "bytes": 2623560,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:471 ground-south (terrain chapter) -> city-renderer.mjs:285",
+   "use": "C02-010/C02-012 院内与门前地面，单节点 single_closed_terrain_after"
+  },
+  {
+   "path": "docs/cities/luoyang/assets/ground-atomic/retained.glb",
+   "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+   "bytes": 629740,
+   "loadedInCity": true,
+   "loadedBy": "city-data.mjs:452",
+   "use": "C02-003/C02-020 地面"
+  },
+  {
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "bytes": 111034,
+   "loadedInCity": true,
+   "loadedBy": "index.html/app.mjs 导入；C02-010 节点 :2322，C02-012 :2406，assets 映射 :1266-1272",
+   "use": "共享文件，禁写；矩阵与 excludeNodes 来源"
+  },
+  {
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "bytes": 36571,
+   "loadedInCity": true,
+   "loadedBy": "loadAsset :285，excludeNodes :309",
+   "use": "加载逻辑"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/instances-calt.json",
+   "sha256": "c830b4e37090da5e070156b7f6199f36c5d0191c339f5a9399f0becded50ff85",
+   "bytes": 23726,
+   "loadedInCity": false,
+   "loadedBy": "sourceContract（city-data 节点引用，不在运行时 fetch）",
+   "use": "44院原矩阵"
+  },
+  {
+   "path": "docs/cities/luoyang/data/far44/preflight-contract.json",
+   "sha256": "90dfa0774643b90d61f057aed726525cfe3e18647e897d3c90eb64fa79426d6b",
+   "bytes": 7002,
+   "loadedInCity": false,
+   "loadedBy": "courtyard-* sourceContract",
+   "use": "院型契约"
+  },
+  {
+   "path": "docs/cities/luoyang/research/2026-11-03/land-contract.json",
+   "sha256": "772687b0cbe8a7be6b967737ca850c6a56c1d0b72706dfd9d8f87aab095c61e2",
+   "bytes": 14029,
+   "loadedInCity": false,
+   "loadedBy": "研究页，不被城景加载",
+   "use": "C02-010-entry 入口禁区及 changePolicy"
+  },
+  {
+   "path": "docs/cities/luoyang/research/2026-11-03/eaves-evidence.json",
+   "sha256": "4d8b2bf15806266a9211226239f777708a74e73d7f2ba197ef9d52fa55ee6bb7",
+   "bytes": 3275,
+   "loadedInCity": false,
+   "loadedBy": "研究页",
+   "use": "瓦件证据边界"
+  },
+  {
+   "path": "docs/cities/luoyang/research/2026-11-03/density-evidence.json",
+   "sha256": "8fca4b52c2b989cd00b3f783fb9b54618b09c0ef295b13bfaf82c36d89d4d27f",
+   "bytes": 6871,
+   "loadedInCity": false,
+   "loadedBy": "研究页",
+   "use": "SD-05 洛阳西郊砖砌水道线索（原报告未读）"
+  },
+  {
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "bytes": 24215,
+   "loadedInCity": false,
+   "loadedBy": "项目卡，禁写",
+   "use": "成员与状态"
+  },
+  {
+   "path": "lab/data/assets.json",
+   "sha256": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+   "bytes": 439273,
+   "loadedInCity": false,
+   "loadedBy": "全站汇总，禁写",
+   "use": "m-courtyard-family 记录（库内 C2 版不在城景）"
+  },
+  {
+   "path": "docs/model-library/updates/m-courtyard-family/files/A2-LOD0-C2.glb",
+   "sha256": "e9981a079d799d7556a9a4852c9d09ad274bb268ff4343d8d2202a13bcbf3887",
+   "bytes": 1164812,
+   "loadedInCity": false,
+   "loadedBy": "仅资产库，城景不加载",
+   "use": "C2 米制UV版，若 LY-007 指定以 C2 为基须重测"
+  },
+  {
+   "path": "docs/model-library/updates/m-courtyard-family/files/TC03-2-LOD0-C2.glb",
+   "sha256": "eb00ff99877742e212a32c5031a26262d1b83a9e53b5d108e5432c92136b234c",
+   "bytes": 2467560,
+   "loadedInCity": false,
+   "loadedBy": "仅资产库",
+   "use": "同上"
+  }
+ ],
+ "cityNodes": {
+  "C02-010": {
+   "asset": "courtyard-A2",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    531,
+    0,
+    -818.45,
+    1
+   ],
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_hardpacked_activity_ground"
+   ],
+   "initial": true,
+   "tier": "推测"
+  },
+  "C02-012": {
+   "asset": "courtyard-TC03-2",
+   "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    570,
+    0,
+    -805.45,
+    1
+   ],
+   "excludeNodes": [
+    "site_lot",
+    "site_neutral_lane",
+    "designed_front_apron",
+    "designed_side_passage",
+    "designed_rear_work_ground"
+   ],
+   "drainStoneLoaded": true
+  }
+ },
+ "missing": [
+  {
+   "item": "courtyard A2 / TC03 原生 .blend 与生成器源包",
+   "use": "在原坐标系下编辑檐口、地坪并保留材质语义",
+   "rebuildFromGLB": "可以：试片为独立新节点，只需 GLB 顶点作参照；不得冒称找回原件"
+  },
+  {
+   "item": "ground-atomic 源工程（south.glb 生成参数）",
+   "use": "若出口需与路肩低带衔接，需路面纵坡与边界定义",
+   "rebuildFromGLB": "只能从 GLB 三角读高程；不改地面，所有权属 LY-081/082"
+  },
+  {
+   "item": "G 包冻结文件：LY-005 坐标/端口、LY-006 所有权与端口ID、LY-007 材质LOD、LY-008 检查器、LY-010 区域准入",
+   "use": "端口命名、写入边界、材质、检查入口",
+   "rebuildFromGLB": "不适用"
+  },
+  {
+   "item": "LY-041 冻结选院与地坪差异件",
+   "use": "试片所在院与落点地坪",
+   "rebuildFromGLB": "不适用"
+  },
+  {
+   "item": "LY-002 证据/禁用表；郭宝钧1956《洛阳西郊汉代居住遗迹》原文",
+   "use": "同代类型核查",
+   "rebuildFromGLB": "不适用"
+  }
+ ],
+ "prepScripts": {
+  "glbio.py": "fbcad71b1b12783a0522ac2c68e9cd9732053f34a00d64ab9fb973823b58aa50",
+  "inventory.py": "71058d0112839315cd6134948c5c523aa7ba214dc73dc91bf86219bb241bf4ae",
+  "measure_drip.py": "b08a031b5e2881c82cb8d13c7e1333741a0df54a245c380801152c4966fa64dc",
+  "probe_outlet.py": "6cd5d93106301921b831381d5bd04f96dbf56c3ee3f0f1c2f865b3a58889e70b",
+  "probe_door_drain.py": "1a72b0cce8059c0cdfca374ca439dd16a48b392a22d5f40a821a9cb9e81c5be4"
+ },
+ "prepOutputs": {
+  "out/inventory.json": "ee7627b19c71d5c3e80d6962a4b64a06bf299d600073a7cbf6772e3ffd1d59b6",
+  "out/measure-drip.json": "cc5360315db77ffbec4057f4160bf6ca0b7aa6692122f10172cad9adc9be9746",
+  "out/probe-outlet.json": "b41dc4ee6e3684b4889c5de114e300c68766f95af14997ef93b339ae3b5e67ec",
+  "out/probe-door-drain.json": "b8035da6f8ad9f60ad47958952a28d1e4f98c5b5cd6506d84085c258b9f9e41b"
+ }
+}

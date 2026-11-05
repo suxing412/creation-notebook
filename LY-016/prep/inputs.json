@@ -1,0 +1,167 @@
+{
+  "seat": "LY-016",
+  "phase": "prep (G not frozen; no deliverable geometry made)",
+  "labRepo": "D:/GitHub/creation-notebook-lab",
+  "labCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "frame": {
+    "gateLocal": "inverse(T(origin) * Rz(theta)) * world, Blender Z-up; local z 0 == world z 0.17",
+    "origin_world": [1622.80908203125, -13.259963035583496, 0.17000000178813934],
+    "theta_rad": -0.0207437532713328,
+    "source": "docs/cities/luoyang/progress-assets/north13-gates/source.json -> packages[luoyang-pingcheng-gate-study-v1].placement (activation=false)"
+  },
+  "inputs": [
+    {
+      "role": "地面附件 LOD0（两条1.8x20侧门测试带+四片接旧路地面，单一网格 pingcheng_ground_C）",
+      "path": "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD0.glb",
+      "bytes": 562936,
+      "sha256": "c0f700516af7bdd942048ac68494c8d7bf3a7aca4a6416382b0005ffd181aba6",
+      "addedInCommit": "c07ecc5",
+      "loadedInCity": false,
+      "loadedBy": "仅资产卡/模型库查看器（docs/library 卡片 files[]）；city-data.mjs 无引用",
+      "measured": "bbox local x[-8.8,8.8] y[-10,10] z[-0.16,0.042]; 4032 tris; plan area 119.995 m2; top z 0.040-0.042"
+    },
+    {
+      "role": "地面附件 LOD1",
+      "path": "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD1.glb",
+      "bytes": 189364,
+      "sha256": "d4de907ad9c14da39c8ee00e999165ed837bd27510d77111ae636327fa047687",
+      "loadedInCity": false,
+      "loadedBy": "仅资产卡",
+      "measured": "1152 tris; footprint identical to LOD0 at 0.05 m raster (0 mismatch cells)"
+    },
+    {
+      "role": "地面附件 LOD2",
+      "path": "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-ground-LOD2.glb",
+      "bytes": 6368,
+      "sha256": "87e3e751efc8768ed4ceb3dc7dc09f0b20651d4ffc30c2113897396c7701628f",
+      "loadedInCity": false,
+      "loadedBy": "仅资产卡",
+      "measured": "72 tris (6 boxes); footprint identical to LOD0 (0 mismatch cells)"
+    },
+    {
+      "role": "平城门 P-v1 LOD0（门体，固定门叶）",
+      "path": "docs/library/models/m-luoyang-pingcheng-gate/files/pingcheng-P-LOD0.glb",
+      "bytes": 1693932,
+      "sha256": "5cdd8d68a8d7338b3f5897ba494631838ff518d649fba9529897e381c94c6546",
+      "byteIdenticalTo": "源ZIP内 luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD0.glb",
+      "loadedInCity": false,
+      "loadedBy": "仅资产卡"
+    },
+    {
+      "role": "平城门 P-v1 LOD1",
+      "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb",
+      "bytes": 476264,
+      "sha256": "7d995a1b95026cb3d626bf6ad6bdd01edcf89d7c5baab87ffff341360d51f102",
+      "loadedInCity": false,
+      "loadedBy": "city-data.mjs:1042 仅作 sourceAsset 元数据，渲染器不取；资产卡 files[0]"
+    },
+    {
+      "role": "平城门 P-v1 LOD2",
+      "path": "docs/cities/luoyang/progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD2.glb",
+      "bytes": 42072,
+      "sha256": "e6f289f78dc05c2d0c5ea6ef11726748be6b35ffb68315a5b7fc1186f3c5551e",
+      "loadedInCity": false,
+      "loadedBy": "city-data.mjs:1025 availableLod2 元数据，渲染器不取"
+    },
+    {
+      "role": "城景实际加载的平城门：LOD1 扁平投影（独立研究视图，不在城市坐标）",
+      "path": "docs/cities/luoyang/progress-assets/flat/study-north13-pingcheng-P-c8ab88f4b326.glb",
+      "bytes": 119320,
+      "sha256": "c8ab88f4b326e0c24346b97e7429cdf3d43d463a53b918017c21cf0428d74f11",
+      "loadedInCity": "仅在用户点选研究候选时加载（initial:false, space:local-study, cityPlacement:null），不是已入城",
+      "loadedBy": "city-data.mjs:1002（asset study-north13-pingcheng-P）, :4340（researchModel research-north13-pingcheng-P）, :3827（walls 章 researchModelIds）; app.mjs:118 renderStudyChoices; city-renderer.mjs:646 focusResearchModel -> :285 loadAsset(fetch asset.url)"
+    },
+    {
+      "role": "门体 placement 契约（原点、旋转、hidden trial、activation=false）",
+      "path": "docs/cities/luoyang/progress-assets/north13-gates/source.json",
+      "bytes": 87701,
+      "sha256": "9b07b7349ef536cd0b0a15c9bfa7134d2af7cc95e8dc402b7e2bea14d20719c1",
+      "loadedInCity": "仅 sourceContract 链接（app.mjs showNote）",
+      "loadedBy": "city-data.mjs:1020 sourceContract"
+    },
+    {
+      "role": "门体源包分卷（含 .blend 原生、build.py、paths.py、QA）",
+      "path": "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-pingcheng-gate-study-v1/content.zip.part001 + part002",
+      "sha256": {
+        "part001": "4b5a189f76c733f45835af786d14c56c9b1af05dd82220a71a29304d67bd2abb",
+        "part002": "a7ef8b66cf48467bf88dbcda91e17b6b22750c1836e23ae04dc632f9beeb7c48",
+        "reassembledZip": "19646f31c10acb3fbc90cbf19c84cdecc7acb40f6b5aec1635a52397958043ac"
+      },
+      "loadedInCity": false,
+      "extractedTo": "LY-016/prep/src-zip/luoyang-pingcheng-gate-study-v1/ (prep 只读副本)",
+      "nativeInside": {
+        "models/pingcheng-P-LOD0.blend": "4a63981ede4daeaa04adcded9f653c14dce1296d576aa5849534ec3d9282525b",
+        "models/pingcheng-P-LOD1.blend": "0fe79f8735d3c4699a5b032d98aa33674fbe54a376ec8f10528f175de2030f06",
+        "models/pingcheng-P-LOD2.blend": "9df5e65df3e6d96531cf6f62f0f33750245a8028330f75744a40e8f2e1fef7a3",
+        "city/pingcheng-P-mid-hidden-trial.blend": "2d2b74a742d76478681646768760673963a88eedebdb1c5648ebb15cd48aa806",
+        "source/build.py": "05639ae94c2ff7df20a011d45d0abe909b387342d7e075cb758c92d619b0a2ea",
+        "source/paths.py": "15c83fbe12205f5e8dcaec6f185e6c2db1d3e3dcb6ed4fbeaf21320ccdf785ca"
+      },
+      "note": "公开 .blend 为净化版，SHA 与 qa/*.json 里的 nativeSHA256（原件）不同，映射在 PUBLICATION-MAP.json；GLB 字节不变。"
+    },
+    {
+      "role": "当前可见城市分块（母版 city-C032-entry-LOD0.blend 的可见集导出，含旧斜路与城内地面试件）",
+      "path": "modeling-lab/review-batches/2026-11-04-city-visible/city-visible-web-handoff-v1-public.zip.part01..05",
+      "sha256": {
+        "part01": "d3d5eb7263e9f840c5444d46082eb7ced1c8e5488e7fba9b00d1a0fc3f32a9a3",
+        "part02": "c20213e1eaa6f212f5dbf9cf41482347a26947880119ebba0f13978cd1876703",
+        "part03": "6a468122cb53a36c5fc93652c2c7f7dc13658510ceee955dc8faf0de9fc9105b",
+        "part04": "74f4cd0a08d3f69882cd44dc412efc885d84bf80a39fe0619ae6ff2043d924cb",
+        "part05": "a8a0331b4408228a23181adcc3d07d8ca17d25cd108b2179b8bf99880331de5f",
+        "reassembledZip": "5895ef23a684a343271183dce1e92e112fb49bba9e03e4372023d1247bb50b69"
+      },
+      "loadedInCity": false,
+      "loadedBy": "无。adapter.json implementationStatus='declarative only'，渲染器不消费该层",
+      "chunksUsed": {
+        "chunks/C_ground_network__C_stitch_primary.glb": {
+          "sha256": "2b89e8586c53378c19b9b9311791377e229f6a436cdc4cae16930ca05dae1386",
+          "node": "C_stitch_primary（255 tris 全城；门附近 10 tris = 一条 6 m 宽、0.05 m 厚斜直板）",
+          "measured_local": "顶 z 0.04（world 0.21），底 z -0.01；北端止于 y +13.218/+13.292；向南直到 y -1211；在门处 x 约 [-3.21, 2.79]，相对门轴偏西约 0.21 m"
+        },
+        "chunks/C_gate_local_ground.glb": {
+          "sha256": "6002f5a6dcc6653dc6cf081e77236dbd281e60ab9e88574a91eceb96afb6ceb6",
+          "node": "pingcheng_ground_trial_v1（同块另有 yong/kaiyang 试件，原子块共享）",
+          "measured": "4032 tris，与卡片 ground-LOD0 变换到门局部后逐点最近距离最大 1.87e-5 m：同一几何"
+        },
+        "chunks/city_gate_pingcheng-P.glb": {
+          "sha256": "a5ba112333e5cee1b390ed48ec1b2706eacc1272fcbcbecea5a1cc9acbcdae1f",
+          "note": "母版里门体 = LOD1 + 两侧墙端适配（earth 144 tris, x ±16）"
+        },
+        "chunks/C_ground_network__conditional_link_A.glb": {
+          "sha256": "32bfcf8d553dccddca6be89bd04d09c413849037e436d06846ea2587bfc7770f",
+          "note": "旧条件性绕南宫路，起点 y +21.2，与 C_stitch_primary 北端 y +13.29 之间留 8 m 空档；不启用，LY-016 不依赖"
+        },
+        "chunks/city_wall_C_profiles.glb": {
+          "sha256": "e42d9f50499f3391cbb20c63b3be99fcd0af0bd6c06ff716aba63820ba221278",
+          "note": "C_wall_A_06 / C_wall_A_05_refined_v1 在 |x|>=16，距地面附件 >=7.2 m，不接触"
+        }
+      }
+    },
+    {
+      "role": "资产卡与汇总（只读，公共文件归 LY-100）",
+      "path": "docs/library/models/m-luoyang-pingcheng-gate/m-luoyang-pingcheng-gate.asset.json",
+      "bytes": 3041,
+      "sha256": "9df7acdd7c1527b08c403d6a5ba5b2a811ac7cbb533a8f55da9358af715c8536",
+      "loadedInCity": false,
+      "related": {
+        "lab/data/assets.json": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+        "docs/cities/luoyang/p-luoyang.asset.json": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+        "docs/cities/luoyang/city-data.mjs": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+        "docs/cities/luoyang/city-renderer.mjs": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+        "docs/cities/luoyang/app.mjs": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9"
+      }
+    }
+  ],
+  "missing": [
+    {
+      "what": "地面附件源包（生成器、.blend、原 3114 样点检查器与其报告）",
+      "usedFor": "逐字重现卡片所写「3114 个脚下样点中 565 个依赖旧路」；在原生源上续做修订",
+      "rebuildFromGLB": "几何可以：LOD2 是 6 个盒体，LOD0 是带 0.040-0.042 微起伏的同一占地；新增件本来就是独立差异件，不需要改原件。原 565/3114 的采样定义无法从 GLB 反推，只能按新检查器重定义并如实标注"
+    },
+    {
+      "what": "城市母版 city-C032-entry-LOD0.blend（1e8c4d2c...）与门体 placement 依赖的 eabb 母版 / 660 覆盖层",
+      "usedFor": "在原母版里做安装与撤回测试、确认旧斜路节点的原生数据",
+      "rebuildFromGLB": "测量可以：可见集分块与母版 1 mm 内逐三角对应（intake.json），本 prep 的旧斜路数据取自分块 GLB；安装/撤回到母版本身不行"
+    }
+  ]
+}

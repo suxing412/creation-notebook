@@ -1,0 +1,863 @@
+{
+ "baselineCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "ly001FamilyCount": 54,
+ "binding": [
+  {
+   "family": "F-citywall",
+   "name": "城垣（A 段＋direct 转接段）",
+   "cityState": "已入城·首屏默认加载",
+   "facts": [
+    "E-W01"
+   ],
+   "prohibited": [
+    "X06",
+    "X18",
+    "X22"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "F-courtyard",
+   "name": "住宅院落家族（R01-A/B、TC03、A2/B2/TC03-2 变体）",
+   "cityState": "已入城·首屏默认加载",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "F-gate-guangyang",
+   "name": "广阳门",
+   "cityState": "已入城·首屏默认加载",
+   "facts": [
+    "E-G01",
+    "E-G02",
+    "E-G06",
+    "E-G07",
+    "E-G08"
+   ],
+   "prohibited": [
+    "X01",
+    "X02",
+    "X03",
+    "X21"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "F-gate-yong",
+   "name": "雍门",
+   "cityState": "已入城·首屏默认加载",
+   "facts": [
+    "E-G01",
+    "E-G02",
+    "E-G07",
+    "E-G08"
+   ],
+   "prohibited": [
+    "X01",
+    "X02",
+    "X03",
+    "X21"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "F-ground-road",
+   "name": "道路与地面（ground-atomic）",
+   "cityState": "已入城·按章加载（initial=false）",
+   "facts": [
+    "E-G09",
+    "E-H03"
+   ],
+   "prohibited": [
+    "X15",
+    "X23"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "F-market",
+   "name": "市肆功能组（五店三摊＋N2 替换）",
+   "cityState": "已入城·按章加载（initial=false）",
+   "facts": [
+    "E-M01"
+   ],
+   "prohibited": [
+    "X13"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "F-storage",
+   "name": "仓储作业组（太仓候选附近）",
+   "cityState": "已入城·按章加载（initial=false）",
+   "facts": [
+    "E-S01"
+   ],
+   "prohibited": [
+    "X08"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "F-gate-kaiyang",
+   "name": "开阳门",
+   "cityState": "隐藏试放（activation=false）",
+   "facts": [
+    "E-G01",
+    "E-G02",
+    "E-G05",
+    "E-G07",
+    "E-G08"
+   ],
+   "prohibited": [
+    "X01",
+    "X02",
+    "X03",
+    "X21"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "F-gate-pingcheng",
+   "name": "平城门",
+   "cityState": "隐藏试放（activation=false）",
+   "facts": [
+    "E-G01",
+    "E-G02",
+    "E-G04",
+    "E-G07",
+    "E-G08"
+   ],
+   "prohibited": [
+    "X01",
+    "X02",
+    "X03",
+    "X21"
+   ],
+   "repoIssues": [
+    "D-02"
+   ]
+  },
+  {
+   "family": "F-gate-shangxi",
+   "name": "上西门",
+   "cityState": "隐藏试放（activation=false）",
+   "facts": [
+    "E-G01",
+    "E-G02",
+    "E-G07",
+    "E-G08"
+   ],
+   "prohibited": [
+    "X01",
+    "X02",
+    "X03",
+    "X21"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "F-gate-zhongdong",
+   "name": "中东门",
+   "cityState": "隐藏试放（activation=false）",
+   "facts": [
+    "E-G01",
+    "E-G02",
+    "E-G07",
+    "E-G08"
+   ],
+   "prohibited": [
+    "X01",
+    "X02",
+    "X03",
+    "X21"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "F-gate-mao",
+   "name": "旄门",
+   "cityState": "仅模型·独立研究视图（cityPlacement=null，城中不渲染）",
+   "facts": [
+    "E-G01",
+    "E-G02",
+    "E-G03",
+    "E-G07",
+    "E-G08"
+   ],
+   "prohibited": [
+    "X01",
+    "X02",
+    "X03",
+    "X20",
+    "X21"
+   ],
+   "repoIssues": [
+    "D-01"
+   ]
+  },
+  {
+   "family": "F-lingtai",
+   "name": "灵台",
+   "cityState": "仅模型·独立研究视图（cityPlacement=null，城中不渲染）",
+   "facts": [
+    "E-R04",
+    "E-R08"
+   ],
+   "prohibited": [],
+   "repoIssues": []
+  },
+  {
+   "family": "F-taixue-hall",
+   "name": "太学长堂（A/B 两方案）",
+   "cityState": "仅模型·独立研究视图（cityPlacement=null，城中不渲染）",
+   "facts": [
+    "E-R06",
+    "E-R08"
+   ],
+   "prohibited": [
+    "X09",
+    "X11"
+   ],
+   "repoIssues": [
+    "D-08",
+    "D-09"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-a1-neighborhood",
+   "name": "八宅三铺街区 A1",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-b2-facade-kit",
+   "name": "B2门窗开口套件",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-biyong",
+   "name": "辟雍礼堂与围护",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-R05",
+    "E-R08"
+   ],
+   "prohibited": [
+    "X10"
+   ],
+   "repoIssues": [
+    "D-04"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-cooking-stove",
+   "name": "庖厨炉灶 A/B",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-court-layout-kit",
+   "name": "普通院落两种组装",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-deyang-hall",
+   "name": "德阳殿空间研究",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-P01",
+    "E-P04",
+    "E-P05",
+    "E-P06",
+    "E-P07"
+   ],
+   "prohibited": [
+    "X04",
+    "X05",
+    "X19"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-earthwall-family",
+   "name": "夯土墙身家族",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-W01"
+   ],
+   "prohibited": [
+    "X06",
+    "X18",
+    "X22"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-foot-pestle",
+   "name": "足碓与踏台",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H02",
+    "E-M02"
+   ],
+   "prohibited": [],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-gallery-access",
+   "name": "复道服务登临节点",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-P01",
+    "E-P02",
+    "E-P05",
+    "E-P06",
+    "E-P07"
+   ],
+   "prohibited": [
+    "X04",
+    "X05",
+    "X16",
+    "X19"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-gu-gate",
+   "name": "谷门",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-G01",
+    "E-G02",
+    "E-G07",
+    "E-G08"
+   ],
+   "prohibited": [
+    "X01",
+    "X02",
+    "X03",
+    "X21"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-hand-mill",
+   "name": "人力石磨 A/B",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H02",
+    "E-M02"
+   ],
+   "prohibited": [],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-house-roof",
+   "name": "住宅主屋面",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-household-service",
+   "name": "低墙生活分区单元",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-inner-door-components",
+   "name": "住宅内门修订组件",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-jin-gate",
+   "name": "津门",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-G01",
+    "E-G02",
+    "E-G07",
+    "E-G08"
+   ],
+   "prohibited": [
+    "X01",
+    "X02",
+    "X03",
+    "X21"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-market-frontage",
+   "name": "八铺四棚店前线",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-M01"
+   ],
+   "prohibited": [
+    "X13"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-market-modular-assembly",
+   "name": "市肆模块与组装",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-M01"
+   ],
+   "prohibited": [
+    "X13"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-mingtang",
+   "name": "明堂形制假说",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-R03",
+    "E-R08"
+   ],
+   "prohibited": [],
+   "repoIssues": [
+    "D-03"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-northern-altar",
+   "name": "北郊方坛四陛",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-R02"
+   ],
+   "prohibited": [],
+   "repoIssues": [
+    "D-05"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-ordinary-house-types",
+   "name": "普通住屋与门房四型",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-palace-admission-court",
+   "name": "无名宫院通行组合",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-P01",
+    "E-P03",
+    "E-P05",
+    "E-P06",
+    "E-P07"
+   ],
+   "prohibited": [
+    "X04",
+    "X05",
+    "X19"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-palace-gallery",
+   "name": "高架复道局部模块",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-P01",
+    "E-P02",
+    "E-P05",
+    "E-P06",
+    "E-P07"
+   ],
+   "prohibited": [
+    "X04",
+    "X05",
+    "X16",
+    "X19"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-palace-guard",
+   "name": "宫门值守核验切片",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-P01",
+    "E-P03",
+    "E-P05",
+    "E-P06",
+    "E-P07"
+   ],
+   "prohibited": [
+    "X04",
+    "X05",
+    "X19"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-palace-paired-que",
+   "name": "宫前土木对阙",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-P01",
+    "E-P03",
+    "E-P05",
+    "E-P06",
+    "E-P07"
+   ],
+   "prohibited": [
+    "X04",
+    "X05",
+    "X19"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-palace-sidehall",
+   "name": "宫廷侧廊庑",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-P01",
+    "E-P04",
+    "E-P05",
+    "E-P06",
+    "E-P07"
+   ],
+   "prohibited": [
+    "X04",
+    "X05",
+    "X19"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-palace-waterway-interface",
+   "name": "宫墙水道三段接口",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H03",
+    "E-P01",
+    "E-P05",
+    "E-P06",
+    "E-P07"
+   ],
+   "prohibited": [
+    "X04",
+    "X05",
+    "X15",
+    "X19"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-residential-life",
+   "name": "连续住宅生活片区",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-residential-preparation",
+   "name": "院内备食关系",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-service-court",
+   "name": "圈厕关系 A",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-shangdong-gate",
+   "name": "上东门",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-G01",
+    "E-G02",
+    "E-G07",
+    "E-G08"
+   ],
+   "prohibited": [
+    "X01",
+    "X02",
+    "X03",
+    "X21"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-southern-altar",
+   "name": "南郊圆坛八陛",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-R01"
+   ],
+   "prohibited": [
+    "X17"
+   ],
+   "repoIssues": [
+    "D-06"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-stable",
+   "name": "厩棚与饲槽 A/B",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-stoneclassic-access-court",
+   "name": "太学门外观经空间",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-R06"
+   ],
+   "prohibited": [
+    "X09",
+    "X11"
+   ],
+   "repoIssues": [
+    "D-08",
+    "D-09"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-tile-kiln",
+   "name": "砖瓦窑 A/B",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H02"
+   ],
+   "prohibited": [],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-wall-house-court",
+   "name": "墙房相接住宅样例",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H01"
+   ],
+   "prohibited": [
+    "X07",
+    "X12",
+    "X24"
+   ],
+   "repoIssues": [
+    "D-07"
+   ]
+  },
+  {
+   "family": "C:m-luoyang-workyard-shed",
+   "name": "开敞作业棚与足碓院",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-H02",
+    "E-M02"
+   ],
+   "prohibited": [],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-wuku",
+   "name": "武库收纳与点验",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-S02"
+   ],
+   "prohibited": [
+    "X14"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-xia-gate",
+   "name": "夏门",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-G01",
+    "E-G02",
+    "E-G07",
+    "E-G08"
+   ],
+   "prohibited": [
+    "X01",
+    "X02",
+    "X03",
+    "X21"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-xiaoyuan-gate",
+   "name": "小苑门",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-G01",
+    "E-G02",
+    "E-G07",
+    "E-G08"
+   ],
+   "prohibited": [
+    "X01",
+    "X02",
+    "X03",
+    "X21"
+   ],
+   "repoIssues": []
+  },
+  {
+   "family": "C:m-luoyang-yutang-halls",
+   "name": "玉堂前后殿关系",
+   "cityState": "仅模型（资产卡文件）",
+   "facts": [
+    "E-P01",
+    "E-P04",
+    "E-P05",
+    "E-P06",
+    "E-P07"
+   ],
+   "prohibited": [
+    "X04",
+    "X05",
+    "X19"
+   ],
+   "repoIssues": []
+  }
+ ]
+}

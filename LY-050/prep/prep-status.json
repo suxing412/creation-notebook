@@ -1,0 +1,66 @@
+{
+ "seat": "LY-050",
+ "inputsFound": [
+  "docs/cities/luoyang/city-data.mjs e4115705（:2322 C02-010 asset courtyard-A2，matrix 531,0,-818.45，initial:true，residential 第 24 院；:88-112 courtyard-A2 excludeNodes；:471/:3609 ground-south initial:false；:3835 residential 章；:4027 terrain 章）",
+  "docs/cities/luoyang/city-renderer.mjs fa0a8dcb（:221 首屏 initial 过滤；:309-322 excludeNodes 必须全部命中；:412 replaces（0 个节点在用）；:416 近档只给聚焦节点；:595 章节累加；:616 focusCourtyard；:147-161 按材质名取颜色，丢弃贴图）",
+  "docs/cities/luoyang/app.mjs 4d6b5b33（:78-80 按 chapter==='residential' 编「第 N 院」；:25/:297 写死 44 座）",
+  "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb 277e9e73（首屏远档，9 节点共用）/ A2-LOD0-prototype.glb 19b05202（聚焦近档）",
+  "docs/cities/luoyang/assets/ground-atomic/south.glb 4313826d（C02-010 唯一承托，地块内 1,428 三角，顶面 y=0.200）",
+  "docs/cities/luoyang/data/c02v/layout.json 7528f0c8（C02-010 localRoutes，当前入口不读）",
+  "docs/library/models/m-luoyang-cooking-stove stove-A-LOD0 88e6f590 / stove-B-LOD0 3bde10b5（待审，未入城）",
+  "docs/library/models/m-luoyang-service-court service-A-LOD0 cc02f68f（待审，未入城）",
+  "docs/library/models/m-luoyang-household-service service-enclosure-LOD0 507c6e70（待审，未入城）",
+  "docs/library/models/m-luoyang-workyard-shed workshed-LOD0 89e0a439（待审，未入城）",
+  "docs/library/models/m-luoyang-inner-door-components paired-door-LOD0 67bc127a / single-door-LOD0 597d81ad（未入城）",
+  "docs/library/models/m-luoyang-residential-preparation W2-stove-A-LOD0 b7aa02d1；m-luoyang-residential-life life-block-LOD0 27099872（13 院受保护片区，只读对照）",
+  "workpacks/LY-006/registry zones.json 6b3595ac、seats.json a1426412、ports.json 28bcfb68（LY-050 = S-COURT 场地负责人，拥有节点 C02-010 和 6 张卡，消费 3 个端口）",
+  "workpacks/LY-002/tables/evidence-ledger.json 237a4811（E-H01 住宅=未知+类比；X07/X12/X24）",
+  "workpacks/LY-041/043/044/046/048 prep-status（选院候选 C02-010，均未冻结）"
+ ],
+ "inputsMissing": [
+  "041–049 的交付包（models/、assembly.json、delivery-manifest.json）：组装的全部原料，现在只有 prep。不能从 GLB 重建，这些是别的席位的产物，必须等交付",
+  "LY-010 选定的示范院用途组合：决定一次加载哪些设施、哪些只留候选。目录不存在。不能重建，要等决策",
+  "LY-008/LY-009 冻结结果（LY-008 有 qa 但没有 status.json，LY-009 没有 status 和 qa）：用于官方检查和任务板状态",
+  "私密源包：A2 原型、灶 A/B、圈厕 A、低墙生活分区、作业棚的 .blend 和源 ZIP 都不在仓库。用途只是可编辑溯源。本项只做节点级组合和矩阵，可以「从 GLB 重建」，不需要改网格，也不得冒称找回原件",
+  "LY-006 registry v2（如果 LY-047 区放宽）：v1 的 LY-047 区放不下任何储藏候选"
+ ],
+ "gaps": [
+  "前置未交付：G 中 001/002/005/006/007 已交付，008 没有 status.json，009 没有 status 和 qa，010 没有目录；041–049 只有 prep，0 个交付包",
+  "城景没有可关闭设施组机制：设施单独成节点时，聚焦 C02-010 仍是远档（renderer:416）；replaces 有 0 个节点在用；设施节点若带 chapter:'residential'，院数会从 44 变 45，「第 N 院」编号错位（app.mjs:78）。courtyard-A2 被 9 院共用，不能改它的 GLB",
+  "默认视图院坪无地面：4 个地面节点都是 initial:false。打开 terrain 后，ground-south 覆盖 C02-010 地块 172,800/172,800 格（0.05 m），顶面 y=0.200",
+  "宿主 A2 的 LOD0 和 LOD1 实体投影完全相同：实体 93.23 m²（墙 41.9、台基 62.28、木作 2.265），开敞 338.77 m²，其中有屋面遮盖 30.24 m²，开敞处屋面底面最低 2.65 m，台基阶 0.22 m",
+  "院内路线 gate_to_main 和 yard_to_side（半宽 0.4 m）在身体带 0.25–2.0 m 内阻挡 0 m²；进屋处是 0.22 m 的阶（1.1 / 1.06 m²）；只是栅格检查，不是连续人体",
+  "yard_to_side 穿过 LY-046 滴水试片区 0.64 m²（半宽 0.6 m 时 0.96）；gate_to_main 在半宽 0.6 m 时擦到 LY-045 区 0.18 m²",
+  "LY-047 区（x 4.1..8.0、z -11..-4）西侧 0.7 m 是正屋东山墙（1.68 m²，y 0.42–3.22）和台基（3.36 m²），整列都空的只有宽 3.20 m。低墙分区（3.7×3.25）两个朝向都是 0 个可放位，差 0.05 m；作业棚（8.1×4.9）0 个可放位。放宽到院墙内皮 8.65 后宽 3.85 m，可以放下",
+  "LY-045 圈厕（6.749×7.562）只在 yaw 0 放得下，4 个可放位，余量 x 0.15 m、z 0.04 m；yaw 90 是 0 个",
+  "LY-044 灶区：stove-A 有 2,904/3,640 个可放位，stove-B 有 2,064/3,024 个，不是瓶颈",
+  "044、045、047 设施区合计占开敞地 95.1 m²（28.07%）",
+  "预算：宿主 6,532 三角，加 5 个设施候选 20,748 三角（含二选一，是上限）；字节 5,685,460，低于 15,000,000。设施每个带 0.6–1.0 MB 的 PNG，城景渲染时丢弃",
+  "邻院间距：C02-009/011 是 5.0 m，C02-005/006 是 11.6/12.6 m。S-COURT 包络只和 3 个地面节点相交",
+  "基线指纹 total 50486e22（66 节点、42 资产、44 院、首屏 59 节点）；自检 5 个负例全部检出，键序正例差异 0"
+ ],
+ "reuseCandidate": "无。44 院里没有任何一院装了生活设施（城景引用 0 处）。13 院生活片区 life-block（27099872）是现有的完整生活组装，但它属于受保护片区，不在 44 院内，没有入城，W2 的 87 个底点有 0 个落在城景地面上（LY-044 实测），所以不能当本项成果。本项本身就是复用装配：设施 GLB 原样引用，不新造几何。",
+ "touches": [
+  "城景节点 C02-010（LY-050 拥有）：矩阵只读，不移动；资产字段可能要改成 C02-010 专用资产，只交提案",
+  "资产记录 courtyard-A2（9 院共用）：不改 GLB、不改 excludeNodes；另外 8 院 C02-001/013/015/021/024/028/031/035 必须不变",
+  "A2 保留节点 architecture_C_whitebox_earth_wall.001、architecture_C_floor_plinth.001、architecture_C_plain_timber.001、architecture_C_roof_rhythm_not_glaze_copy.001（只读，用于净空和侵入检查）",
+  "地坪片 ground-south.glb single_closed_terrain_after（只读；LY-045 若切孔，撤回必须恢复 4313826d），C02-010 地块世界 x 522..540、z -830.45..-806.45",
+  "LY-006 写入区 LY-042:write:001/002、LY-044:write:001、LY-045:write:001/cut:002、LY-046:write:001、LY-047:write:001、LY-048:write:001-005、LY-049:write:001（组装时读取，不写）",
+  "端口 C02-010:gate-boundary:road-end、drip-outlet:drain、service-opening:opening（消费）；C02-010:ground-base（LY-005 冻结）",
+  "卡片文件 stove-A/B、service-A、service-enclosure、workshed、paired/single-door 的 GLB（只引用）",
+  "共享文件提案（只交 LY-100，不写）：city-data.mjs 的 C02-010 资产或设施节点、地面同载、residential 章；app.mjs 院数和编号；renderer 的近档和开关规则；p-luoyang.asset.json 状态",
+  "只写 workpacks/LY-050/"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-047 用 registry v1 的区域放不下任何候选：如果 LY-006 不出 v2，储藏用途就只能留作候选",
+  "开关和近档机制取决于 LY-100 改不改 renderer/app。不改的话，完整近景院落只能并成一个 C02-010 专用资产，这会让 A2 共用数从 9 变 8，也会改 C02-010 的记录 SHA，需要提前列进指纹白名单",
+  "LY-045 切孔要改 ground-south，而这个地面片被整个南区共用；撤回必须逐字节恢复，否则 T3 不通过",
+  "LY-046 浅沟穿过 yard_to_side，足下支承要由 046 的盖板或声明台阶解决",
+  "圈厕余量只有 0.04 m：041–049 任何一席的差异件稍微挪一点，就可能放不下",
+  "LY-010 用途组合还没定：一次只加载所选用途，未选的不能偷偷加载",
+  "设施贴图在城景里被丢弃，近景观感和卡片渲染不一样，不能用卡片图证明城景效果",
+  "所有设施都是 C 设计加类比（E-H01 未知），不能写成历史复原，也不能写成燃烧、卫生、结构合格"
+ ],
+ "readyAfterG": true
+}

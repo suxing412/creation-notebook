@@ -1,0 +1,457 @@
+{
+ "seat": "LY-005",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "allPass": true,
+ "checks": [
+  {
+   "id": "C1",
+   "title": "city-data dump equals LY-001 snapshot dump",
+   "pass": true,
+   "evidence": {
+    "LY005": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98",
+    "LY001": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98"
+   },
+   "files": {
+    "qa/city-data.dump.json": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98"
+   }
+  },
+  {
+   "id": "C2",
+   "title": "all 80 nodes satisfy R1-R5; all 48 GLB files match declared SHA and bounds",
+   "pass": true,
+   "evidence": {
+    "nodes": 80,
+    "assetFiles": 48,
+    "nodeMaxScaleDeviation": 2.555346156896121e-09,
+    "nodeMaxTilt": 0.0,
+    "nodeMinDeterminant": 1.0,
+    "nodeMaxAxisDot": 0.0,
+    "nodesMatrixAndTRS": [],
+    "nodesDoubleApplicationRisk": [],
+    "nodeDeclaredBoundsMaxDiff_m": 1.37069298489223e-06,
+    "assetDeclaredBoundsMaxDiff_m": 1.3706928712053923e-06,
+    "shaMismatch": [],
+    "excludeIncomplete": [],
+    "yawValuesDeg": [
+     -180.0,
+     -90.0,
+     -0.0,
+     90.0,
+     90.6662
+    ]
+   },
+   "files": {
+    "qa/frames-bce3211.json": "c0f846cbe2966526535c23358b1695b830e2ba2a191fd1758adc1256687ccba6",
+    "source/measure.py": "bda4f9e8095a150ff1d366ce86ab348ad8ef494f2d0df26d9b7d9af7c3e6ea3f",
+    "source/glbio.py": "2acd023b5a3f4c32bf215273d44e2aa567a574759c7fa8b00e2ac210e2e2fb6b"
+   }
+  },
+  {
+   "id": "C3",
+   "title": "Blender 5.2.1 GLB import->export->re-import keeps units, axes and world matrix (5 nodes); wrong-asset negative fails",
+   "pass": true,
+   "evidence": {
+    "C02-018": {
+     "source": "docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb",
+     "sourceSha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+     "checks": {
+      "unitsMetricScale1": true,
+      "importMatchesRaw": true,
+      "axisMappingExact": true,
+      "localRoundTripMatchesRaw": true,
+      "placedRoundTripMatchesCityWorld": true,
+      "exportedNodeMatrixEqualsCityData": true,
+      "exportedNodeScaleUnit": true,
+      "noExtraRootFromLocalExport": true,
+      "placedBoundsEqualCityDataBounds": true
+     },
+     "import1_vs_raw_m": 0.0,
+     "local_vs_raw_m": 0.0,
+     "placed_vs_world_m": 5.830951889872128e-05,
+     "exportedNodeMatrixDiff": 1.2207031204525265e-05,
+     "placedBoundsVsCityData_m": 4.358790465630591e-05,
+     "nativeBlenderMatrixDiff": null
+    },
+    "C02-021": {
+     "source": "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
+     "sourceSha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+     "checks": {
+      "unitsMetricScale1": true,
+      "importMatchesRaw": true,
+      "axisMappingExact": true,
+      "localRoundTripMatchesRaw": true,
+      "placedRoundTripMatchesCityWorld": true,
+      "exportedNodeMatrixEqualsCityData": true,
+      "exportedNodeScaleUnit": true,
+      "noExtraRootFromLocalExport": true,
+      "placedBoundsEqualCityDataBounds": true
+     },
+     "import1_vs_raw_m": 0.0,
+     "local_vs_raw_m": 0.0,
+     "placed_vs_world_m": 5.385164804093828e-05,
+     "exportedNodeMatrixDiff": 1.3593750054496923e-05,
+     "placedBoundsVsCityData_m": 2.093083958243369e-05,
+     "nativeBlenderMatrixDiff": null
+    },
+    "NEG-C02-018-wrong-asset": {
+     "source": "docs/cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb",
+     "sourceSha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+     "checks": {
+      "unitsMetricScale1": true,
+      "importMatchesRaw": true,
+      "axisMappingExact": true,
+      "localRoundTripMatchesRaw": true,
+      "placedRoundTripMatchesCityWorld": true,
+      "exportedNodeMatrixEqualsCityData": true,
+      "exportedNodeScaleUnit": true,
+      "noExtraRootFromLocalExport": true,
+      "placedBoundsEqualCityDataBounds": false
+     },
+     "import1_vs_raw_m": 0.0,
+     "local_vs_raw_m": 0.0,
+     "placed_vs_world_m": 6.403124244347885e-05,
+     "exportedNodeMatrixDiff": 1.2207031204525265e-05,
+     "placedBoundsVsCityData_m": 1.0300002288818355,
+     "nativeBlenderMatrixDiff": null
+    },
+    "wall-A-wall-10": {
+     "source": "docs/cities/luoyang/assets/city-wall/A/wall-10.glb",
+     "sourceSha256": "afb20f8e3b19dfd85a65bf1462dea09225336d336c272425fad4d7491e3cfde9",
+     "checks": {
+      "unitsMetricScale1": true,
+      "importMatchesRaw": true,
+      "axisMappingExact": true,
+      "localRoundTripMatchesRaw": true,
+      "placedRoundTripMatchesCityWorld": true,
+      "exportedNodeMatrixEqualsCityData": true,
+      "exportedNodeScaleUnit": true,
+      "noExtraRootFromLocalExport": true,
+      "placedBoundsEqualCityDataBounds": true
+     },
+     "import1_vs_raw_m": 0.0,
+     "local_vs_raw_m": 0.0,
+     "placed_vs_world_m": 0.0,
+     "exportedNodeMatrixDiff": 0.0,
+     "placedBoundsVsCityData_m": 4.6667480546602746e-07,
+     "nativeBlenderMatrixDiff": null
+    },
+    "yong-gate-body": {
+     "source": "docs/library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+     "sourceSha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+     "checks": {
+      "unitsMetricScale1": true,
+      "importMatchesRaw": true,
+      "axisMappingExact": true,
+      "localRoundTripMatchesRaw": true,
+      "placedRoundTripMatchesCityWorld": true,
+      "exportedNodeMatrixEqualsCityData": true,
+      "exportedNodeScaleUnit": true,
+      "noExtraRootFromLocalExport": true,
+      "placedBoundsEqualCityDataBounds": true,
+      "blenderMatrixEqualsDeclaredNative": true
+     },
+     "import1_vs_raw_m": 0.0,
+     "local_vs_raw_m": 0.0,
+     "placed_vs_world_m": 6.939415941682357e-05,
+     "exportedNodeMatrixDiff": 4.437012535163376e-08,
+     "placedBoundsVsCityData_m": 5.5840487220848445e-05,
+     "nativeBlenderMatrixDiff": 0.0
+    },
+    "yong-gate-interface": {
+     "source": "docs/cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+     "sourceSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+     "checks": {
+      "unitsMetricScale1": true,
+      "importMatchesRaw": true,
+      "axisMappingExact": true,
+      "localRoundTripMatchesRaw": true,
+      "placedRoundTripMatchesCityWorld": true,
+      "exportedNodeMatrixEqualsCityData": true,
+      "exportedNodeScaleUnit": true,
+      "noExtraRootFromLocalExport": true,
+      "placedBoundsEqualCityDataBounds": true,
+      "blenderMatrixEqualsDeclaredNative": true
+     },
+     "import1_vs_raw_m": 0.0,
+     "local_vs_raw_m": 0.0,
+     "placed_vs_world_m": 5.0952203001881583e-05,
+     "exportedNodeMatrixDiff": 4.437012535163376e-08,
+     "placedBoundsVsCityData_m": 5.60687828965456e-05,
+     "nativeBlenderMatrixDiff": 0.0
+    }
+   },
+   "files": {
+    "qa/roundtrip-results.json": "8e8207e448a239192d3a2a92268fec93c1ff116af8b4165880d9b6164fd80264",
+    "source/bl_roundtrip.py": "8847e55b03494e232b5c638d17567eb8f160f5be752e122d6220317ed4295673",
+    "source/compare_roundtrip.py": "b329d6f5d42908c55918571e94cc0915b2424f044d88a7b0b66090daaf7ccdec",
+    "qa/roundtrip/out/C02-018.local-roundtrip.glb": "12038bd4e166ebd31c9d7a2bafb4e834e799d071e701ca22e9b9102abf68cfc4",
+    "qa/roundtrip/out/C02-018.placed-roundtrip.glb": "7c4e906b835a48e30862777b8b769e2dd025cf129ff8cfcf1bd95a6842f75d75",
+    "qa/roundtrip/cases/C02-018.json": "3577498b1ddcc33bd72f5807e14e1289c09652c6028e44576148c9d12636c96f",
+    "qa/roundtrip/out/C02-018.blender-report.json": "110cb373bffed58fc9021140214842b3f02b7e386acdc225bef4adec691c9a2a",
+    "qa/roundtrip/out/C02-021.local-roundtrip.glb": "41c6d881664b0782b438ee2e795b564876e4edfbd82be55a440ac96f9bb42570",
+    "qa/roundtrip/out/C02-021.placed-roundtrip.glb": "b575f34dc1f258d50bcee367f4baaf8c0a880e5d8f6602a9c9634d24cf2f2dda",
+    "qa/roundtrip/cases/C02-021.json": "baf686ba606d71beff08f05eed12bab9e478b48f7c00a60c50245d2a2d147f98",
+    "qa/roundtrip/out/C02-021.blender-report.json": "e1f0481599a97b248bad6674a5c17cef9a1e34219b9dde60da0bdc54194f3596",
+    "qa/roundtrip/out/NEG-C02-018-wrong-asset.local-roundtrip.glb": "0a0adcc76230a539dfe58f5c70631defffd35a79aa470b4717ad5d74ac519c15",
+    "qa/roundtrip/out/NEG-C02-018-wrong-asset.placed-roundtrip.glb": "246ed376efbdaccb72a15394e884bba81e7ffc1aff8f3b6af71db370bdb2b9f5",
+    "qa/roundtrip/cases/NEG-C02-018-wrong-asset.json": "11d9909d621b46be1fb09528b1aad2aad75875f339cc46d93c3ca8c79ceb94fa",
+    "qa/roundtrip/out/NEG-C02-018-wrong-asset.blender-report.json": "7c097d626616512d857449302bffdbaa6e7aba25e562c61c9deab6004c72ed29",
+    "qa/roundtrip/out/wall-A-wall-10.local-roundtrip.glb": "9e457e4d517c046a8bf2838c815c04fdbaf46c871117e42fe69a73e17beb8692",
+    "qa/roundtrip/out/wall-A-wall-10.placed-roundtrip.glb": "65c612308dd48c26b89a93d780b4bd62ee13f3468406d99d3296e7b251d082bf",
+    "qa/roundtrip/cases/wall-A-wall-10.json": "99718256d6eca966221379cb0d7c415684de9043e37483d4947055978778c756",
+    "qa/roundtrip/out/wall-A-wall-10.blender-report.json": "b439dc4449c7473702f14e362ba21cc61cdf877b4f8269a5a7e97bf0468bcbc5",
+    "qa/roundtrip/out/yong-gate-body.local-roundtrip.glb": "fb742e3107ef9385994c1447f41a8a0d6bda2476bb7530d0dac1c1de12d94c50",
+    "qa/roundtrip/out/yong-gate-body.placed-roundtrip.glb": "7f9324d9e83bbb6c04a14d348653d09776746cf5d332ccb83bd99ef8d986b2da",
+    "qa/roundtrip/cases/yong-gate-body.json": "2efadab3a3192310fd5384ae9da054cb58e45436506b305771e375e1608045df",
+    "qa/roundtrip/out/yong-gate-body.blender-report.json": "f7f6bfa56bc2c6b3326565db21eda49ad938221e7a32c07fd0f677cba2809430",
+    "qa/roundtrip/out/yong-gate-interface.local-roundtrip.glb": "35c0df710e6fcfd2f15402e9f52615668b0c0f9942aed0a7666a39e6532bbd9a",
+    "qa/roundtrip/out/yong-gate-interface.placed-roundtrip.glb": "31fe0195b97caea583149d7cf616cb76072bb6e8e814f74ae2526cbee1d954cc",
+    "qa/roundtrip/cases/yong-gate-interface.json": "a6fc0d498491218483528df1c24ead705ebf535103b21a23ab3fa26232ca172c",
+    "qa/roundtrip/out/yong-gate-interface.blender-report.json": "92b594e73b5e9a95de6ad3db3e6584c2d9ce007131687a29dc04a5c3375e8d78"
+   }
+  },
+  {
+   "id": "C4",
+   "title": "contract checks reject double application, silent scale, x-stretch, re-translated absolute asset, unconverted Z-up, mirror; controls pass",
+   "pass": true,
+   "evidence": [
+    {
+     "case": "control:yong-gate-body",
+     "expect": "pass",
+     "failed": [],
+     "boundsDiff_m": 0.0
+    },
+    {
+     "case": "control:C02-018",
+     "expect": "pass",
+     "failed": [],
+     "boundsDiff_m": 9.464216645937995e-07
+    },
+    {
+     "case": "control:wall-A-wall-10",
+     "expect": "pass",
+     "failed": [],
+     "boundsDiff_m": 4.6667480546602746e-07
+    },
+    {
+     "case": "control:ground-D08",
+     "expect": "pass",
+     "failed": [],
+     "boundsDiff_m": 2.980232227667301e-09
+    },
+    {
+     "case": "yong-gate-body matrix applied twice",
+     "expect": "fail",
+     "failed": [
+      "boundsMatchDeclared(<=1mm, exact vertices)"
+     ],
+     "boundsDiff_m": 1404.2682775306853
+    },
+    {
+     "case": "C02-018 silent uniform scale 1.001",
+     "expect": "fail",
+     "failed": [
+      "scaleUnit",
+      "yawOnly",
+      "boundsMatchDeclared(<=1mm, exact vertices)"
+     ],
+     "boundsDiff_m": 0.012149921071340941
+    },
+    {
+     "case": "C02-018 x-stretch 1.0005",
+     "expect": "fail",
+     "failed": [
+      "scaleUnit",
+      "boundsMatchDeclared(<=1mm, exact vertices)"
+     ],
+     "boundsDiff_m": 0.0045004428250194906
+    },
+    {
+     "case": "wall-A-wall-10 (city-absolute) re-translated",
+     "expect": "fail",
+     "failed": [
+      "appliedOnceAbsolute",
+      "boundsMatchDeclared(<=1mm, exact vertices)"
+     ],
+     "boundsDiff_m": 1999.9999997968748
+    },
+    {
+     "case": "C02-021 Z-up axis left unconverted",
+     "expect": "fail",
+     "failed": [
+      "yawOnly",
+      "boundsMatchDeclared(<=1mm, exact vertices)"
+     ],
+     "boundsDiff_m": 12.350001928474512
+    },
+    {
+     "case": "C02-021 mirrored X",
+     "expect": "fail",
+     "failed": [
+      "detPositive"
+     ],
+     "boundsDiff_m": 2.053578555205604e-06
+    }
+   ],
+   "files": {
+    "qa/negatives-and-drift.json": "d83fcb5eac002f6ac0a843887dbe7fb1b0be97ec2e93839b361cd0ce6b55826e",
+    "source/negatives_drift.py": "28d2435c399d23246a024d91f69c12331ba95a74ddb75dff68907b851128ae8f"
+   }
+  },
+  {
+   "id": "C5",
+   "title": "old 66 nodes keep identical N, asset SHA and bounds from bce3211 to f28d650; port world coords recompute identically",
+   "pass": true,
+   "evidence": {
+    "negativesAllBehaveAsExpected": true,
+    "oldNodes": 66,
+    "oldNodesPresentInF28d650": 66,
+    "oldNodeMaxMatrixDiff": 0.0,
+    "oldNodesAssetOrShaChanged": [],
+    "oldNodesBoundsChanged": [],
+    "oldNodesInitialOrReplacesChanged": [
+     "yong-gate-body",
+     "yong-gate-interface",
+     "ground-network-ground-stitched"
+    ],
+    "portsWorldRecomputedFromF28d650_maxDiff_m": 0.0,
+    "addedNodes": [
+     "yong-gate-body-far",
+     "yong-gate-interface-far",
+     "yong-road-link",
+     "yong-road-link-near",
+     "yong-road-receiver"
+    ]
+   },
+   "files": {
+    "qa/negatives-and-drift.json": "d83fcb5eac002f6ac0a843887dbe7fb1b0be97ec2e93839b361cd0ce6b55826e",
+    "qa/f28d650/dump-f28d650.json": "541b86b7c0a364424671dce9a1cfd20d39c56ea3c91651a85c2339f3e6bf1e25",
+    "qa/f28d650/dump-bce3211-blob.json": "ae87a0f9737cc7e59dbe314134a434fceb524a981afaff2348f346d2f87638a7",
+    "qa/f28d650/city-data.mjs": "973a90d977f19fe4e482e17f5b495dc53b504720ac0b4e547aea8ce00155a926",
+    "qa/f28d650/city-data.bce3211.mjs": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00"
+   }
+  },
+  {
+   "id": "C6",
+   "title": "every port carries local+world, schema fields, and world = N*local with N equal to city-data",
+   "pass": true,
+   "evidence": {
+    "ports": 55,
+    "bad": [],
+    "maxMatrixVsCityData": 0.0
+   },
+   "files": {
+    "qa/ports-bce3211.json": "1c009bb2c95caae89af76e8b7f7462253d1829cb6794e7b7bc77820f67e2f7ca",
+    "port-schema.json": "30854ed927c6088ce4a5c89c38097086ae5227769b314673ad81dcb29480332f",
+    "qa/city-data.dump.json": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98",
+    "source/elevation_ports.py": "3e0039fbb2bb346552fe7d7fc574cd5a67b1d87033b9f22100d77f364e8805db",
+    "source/vray.py": "ab4984f26dd298a6a848da0190aa8b9979e535e70299618d9fc69893e272eccd"
+   }
+  },
+  {
+   "id": "C7",
+   "title": "44 courtyard bases sit on delivered terrain within 2 mm (220 vertical samples)",
+   "pass": true,
+   "evidence": {
+    "courtyards": 44,
+    "gapMin_m": -0.000250074267387157,
+    "gapMax_m": -7.450580596923828e-08,
+    "groundNodes": {
+     "ground-network-ground-stitched": {
+      "asset": "ground-network-ground-stitched",
+      "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+      "triangles": 128342
+     },
+     "ground-retained": {
+      "asset": "ground-retained",
+      "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+      "triangles": 21192
+     },
+     "ground-south": {
+      "asset": "ground-south",
+      "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+      "triangles": 96796
+     },
+     "ground-D08": {
+      "asset": "ground-D08",
+      "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+      "triangles": 140
+     }
+    }
+   },
+   "files": {
+    "qa/elevation-survey.json": "ca7ef104d9aa20b288bcb953f3c5362e3995fe6ad18a8ce1e6f6e0dbe75128ed"
+   }
+  },
+  {
+   "id": "C8",
+   "title": "f28d650 yong-road-link starts on port yong-gate:apron-edge-inner:ground with |step| <= 2 mm and identical N",
+   "pass": true,
+   "evidence": {
+    "port": "yong-gate:apron-edge-inner:ground",
+    "portLocal": [
+     0.0,
+     0.0,
+     9.5
+    ],
+    "portWorld": [
+     -6.516383469104767,
+     0.17000000178813934,
+     -1397.88316024933
+    ],
+    "consumer": {
+     "snapshot": "f28d650",
+     "node": "yong-road-link-near",
+     "asset": "yong-road-link-near",
+     "file": "docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+     "sha256": "456a7dd54a5fd623ab17d9823ab1a12701bd764bdd219ec8884e9538536cd93d",
+     "nodeMatrixEqualsPortOwnerMatrix": 0.0
+    },
+    "roadSurfaceLocalYAtPort": 8.059562675610781e-07,
+    "roadSurfaceWorldAtPort": [
+     -6.516383469104767,
+     0.1700008077444069,
+     -1397.88316024933
+    ],
+    "elevationStep_m": 8.059562675577503e-07,
+    "roadEdgeVerticesAtPortZ": 18,
+    "roadEdgeLocalXRange": [
+     -1.5001014471054077,
+     1.5001014471054077
+    ],
+    "roadEndLocalY": 0.03999999165534973,
+    "roadEndWorldY": 0.20999999344348907,
+    "note": "f28d650 is newer than the LY-005 baseline bce3211; used only as an independent consumer of the frozen port. Read via git show, nothing written to the lab repo."
+   },
+   "files": {
+    "qa/f28d650-port-consumption.json": "11065e700e9cfa23018d701c6c4addbd7df90056ac6b9e1a6e275ef4c4988831",
+    "qa/f28d650/glb/yong-road-link-LOD0.glb": "456a7dd54a5fd623ab17d9823ab1a12701bd764bdd219ec8884e9538536cd93d"
+   }
+  },
+  {
+   "id": "C9",
+   "title": "lab repo HEAD and working-tree status unchanged by LY-005",
+   "pass": true,
+   "evidence": {
+    "headBefore": "bce3211f818ee5a8bef1773539da70695ba37b17",
+    "headAfter": "bce3211f818ee5a8bef1773539da70695ba37b17",
+    "statusBefore": [
+     " M lab/data/assets.json",
+     " M lab/data/glb-cache.json",
+     " M lab/data/report.json",
+     "?? .claude/"
+    ],
+    "statusAfter": [
+     " M lab/data/assets.json",
+     " M lab/data/glb-cache.json",
+     " M lab/data/report.json",
+     "?? .claude/"
+    ]
+   },
+   "files": {
+    "qa/lab-status-before.txt": "d628d30e2e63efd94ae2669e9a4ebc5a37e78c17b2ae7bec05e9162b2ad7b647",
+    "qa/lab-status-after.txt": "1a703375fe08d15758d86fdd1e62dfc192bd48c15786e4b558d26c7d52dc96f5"
+   }
+  }
+ ]
+}

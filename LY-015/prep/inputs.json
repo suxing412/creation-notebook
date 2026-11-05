@@ -1,0 +1,357 @@
+{
+ "baseline_commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "package_zip_sha256_expected": "bad99bb9f5b301b5b6a3450931511caec385df3da8b5ffc5b94b1664eb598c23",
+ "package_restore": "cat content.zip.part001 content.zip.part002 > content.zip; sha256 must equal expected; unzip into scratch only",
+ "inputs": [
+  {
+   "id": "gate-LOD0",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb",
+   "bytes": 1595636,
+   "sha256": "88d9a3223ded3229f90fa1e6702c68771a675edcf15d6d09f3e0fe5f50aeefec",
+   "role": "K-v1 gate body near LOD (merged 3 meshes)",
+   "loadedInCity": false,
+   "loaderCode": "not referenced by city-data.mjs; only asset card files[1] (library viewer)"
+  },
+  {
+   "id": "gate-LOD1",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb",
+   "bytes": 495712,
+   "sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8",
+   "role": "K-v1 gate body mid LOD",
+   "loadedInCity": false,
+   "loaderCode": "city-data.mjs:744-749 sourceAsset metadata only (not fetched); asset card files[0]"
+  },
+  {
+   "id": "gate-LOD2",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb",
+   "bytes": 55280,
+   "sha256": "13ff78a7a1fe9159ed577d715ff30c75cf3d0e8f6d2d47311968f660986ed801",
+   "role": "K-v1 gate body far LOD",
+   "loadedInCity": false,
+   "loaderCode": "city-data.mjs:729-743 availableLod2 metadata only (not fetched); asset card files[2]"
+  },
+  {
+   "id": "gate-flat-city",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb",
+   "bytes": 138768,
+   "sha256": "94693c58dd6308153c5900b0bb9698eff138811f39369f54f545b9034417e71e",
+   "role": "site projection of LOD1 (same 1964 tris and volumes); the only Kaiyang file the city fetches",
+   "loadedInCity": "conditional: only when the research model is opened in the walls chapter; space=local-study, cityPlacement=null, not drawn in city coordinates",
+   "loaderCode": "city-data.mjs:707-752 asset study-north13-kaiyang-K; city-data.mjs:3774/3826 walls.researchModelIds; city-data.mjs:4178-4200 researchModels; app.mjs:117-118 study choices; city-renderer.mjs:218, 286-293 loadAsset(asset.url), 619 and 645-660 focusResearchModel"
+  },
+  {
+   "id": "ground-LOD0",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD0.glb",
+   "bytes": 471920,
+   "sha256": "5754432ae2b9497ee0ab5cbae0ce17471f093e249e10945e61b9c08375941bcd",
+   "role": "existing gate-underside test strips (3 x 1.8 x 14 m) near",
+   "loadedInCity": false,
+   "loaderCode": "asset card files[4] only"
+  },
+  {
+   "id": "ground-LOD1",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD1.glb",
+   "bytes": 162984,
+   "sha256": "50f8550280e3992b63f0fa4f70c23ebc0d5fceb8db96ae1d0f91730e13612ee9",
+   "role": "test strips mid",
+   "loadedInCity": false,
+   "loaderCode": "asset card files[3] only"
+  },
+  {
+   "id": "ground-LOD2",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD2.glb",
+   "bytes": 3808,
+   "sha256": "e758e45f4ce320d039549c4d0346476830b0a81154d29c32fdc4d14a7b7330d6",
+   "role": "test strips far",
+   "loadedInCity": false,
+   "loaderCode": "asset card files[5] only"
+  },
+  {
+   "id": "asset-card",
+   "path": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json",
+   "bytes": 2955,
+   "sha256": "fadab2bbd9029d793a672d2ab0da27b56e134d0524f03c94b562041fdd28dca9",
+   "role": "public card (status 待审, 未入城)",
+   "loadedInCity": false,
+   "loaderCode": "lab/data/assets.json build input"
+  },
+  {
+   "id": "wall-A-04",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/assets/city-wall/A/wall-04.glb",
+   "bytes": 2948,
+   "sha256": "50d8c7aa2c7d7dce95a894edf05bc1ecd2dbc73fbcd633e1c67f36065fd893ae",
+   "role": "current city wall east of the gate gap; end cap at gate-local x=+16.0 (measured)",
+   "loadedInCity": true,
+   "loaderCode": "city-data.mjs:251 asset, :3312 node initial=true"
+  },
+  {
+   "id": "wall-A-05",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/assets/city-wall/A/wall-05.glb",
+   "bytes": 1732,
+   "sha256": "4e000b0c34b26504ff30b7c4c9748ede9f1b84819dcc75301b57caca85f261ae",
+   "role": "current city wall west of the gate gap; end cap at gate-local x=-16.0 (measured)",
+   "loadedInCity": true,
+   "loaderCode": "city-data.mjs:271 asset, :3339 node initial=true"
+  },
+  {
+   "id": "ground-stitched",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb",
+   "bytes": 3565544,
+   "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+   "role": "current city ground layer; 0 of 3321 downward rays over the gate footprint hit it",
+   "loadedInCity": "no: node initial=false",
+   "loaderCode": "city-data.mjs:431 asset, :3555 node initial=false"
+  },
+  {
+   "id": "city-data",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-data.mjs",
+   "bytes": 111034,
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "role": "city manifest (read-only; LY-100 owns writes)",
+   "loadedInCity": true,
+   "loaderCode": "index.html -> app.mjs import"
+  },
+  {
+   "id": "city-renderer",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/city-renderer.mjs",
+   "bytes": 36571,
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "role": "renderer (local-study path)",
+   "loadedInCity": true,
+   "loaderCode": "app.mjs"
+  },
+  {
+   "id": "app",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/app.mjs",
+   "bytes": 14563,
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "role": "UI shell",
+   "loadedInCity": true,
+   "loaderCode": "index.html"
+  },
+  {
+   "id": "project-card",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/p-luoyang.asset.json",
+   "bytes": 24215,
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "role": "project card (read-only)",
+   "loadedInCity": false,
+   "loaderCode": "site build"
+  },
+  {
+   "id": "north13-source-contract",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/north13-gates/source.json",
+   "bytes": 87701,
+   "sha256": "9b07b7349ef536cd0b0a15c9bfa7134d2af7cc95e8dc402b7e2bea14d20719c1",
+   "role": "source contract incl. a copy of placement",
+   "loadedInCity": false,
+   "loaderCode": "sourceContract in city-data.mjs:725"
+  },
+  {
+   "id": "wall-constraints",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/data/west/city-wall-constraints.json",
+   "bytes": 8806,
+   "sha256": "b6006e319d903da8bf8f32741d3377c53d6068956867289d7a1c7210c66abcac",
+   "role": "gate_kaiyang_B B point (2010.204,-30.612) and C projection (2010.39717,-21.301146)",
+   "loadedInCity": false,
+   "loaderCode": "data file; not fetched by the renderer for this gate"
+  },
+  {
+   "id": "wall-interface",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/data/west/city-wall-interface.json",
+   "bytes": 12102,
+   "sha256": "ad18cc65915724a850d1f97b498be8b63464cd3d25116c9d615bfd79f2570da8",
+   "role": "wall interface contract",
+   "loadedInCity": false,
+   "loaderCode": "sourceContract of wall nodes"
+  },
+  {
+   "id": "yong-precedent",
+   "path": "D:/GitHub/creation-notebook-lab/docs/cities/luoyang/progress-assets/yong-city-v1/source.json",
+   "bytes": 6574,
+   "sha256": "a294289642c17497d7817a97e0f3f969e09604e267bfb38f5b1de091c515699c",
+   "role": "precedent of an admitted gate assembly (matrix, annex, rollback counts)",
+   "loadedInCity": true,
+   "loaderCode": "city-data.mjs:1316 yong-gate-interface"
+  },
+  {
+   "id": "pkg-part001",
+   "path": "D:/GitHub/creation-notebook-lab/modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part001",
+   "bytes": 9437184,
+   "sha256": "f742fb3ce1555beb371a30a828b1a59b80f9c0c4ef7f9cc17f4f9e21633aa521",
+   "role": "K-v1 source package part 1",
+   "loadedInCity": false,
+   "loaderCode": "-"
+  },
+  {
+   "id": "pkg-part002",
+   "path": "D:/GitHub/creation-notebook-lab/modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part002",
+   "bytes": 2014045,
+   "sha256": "72609b8bcab43c8bea6acc14ce9eaf7f862da4abe80cd98f7bff3f165a1ad0b5",
+   "role": "K-v1 source package part 2",
+   "loadedInCity": false,
+   "loaderCode": "-"
+  },
+  {
+   "id": "pkg-manifest",
+   "path": "D:/GitHub/creation-notebook-lab/modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/manifest.json",
+   "bytes": 747,
+   "sha256": "5503a363f53839b8ea1cbf189155fb5a162b3e1c147cc1b893e938abed73ada5",
+   "role": "zipSHA256 bad99bb9..., restore rule",
+   "loadedInCity": false,
+   "loaderCode": "-"
+  },
+  {
+   "id": "build-tool",
+   "path": "D:/GitHub/creation-notebook-lab/lab/tools/build_assets.py",
+   "bytes": 21633,
+   "sha256": "6dc990b410c4e18eb21973f0e37ed66270b460183465f01050d56407daa62bb0",
+   "role": "official checker (only --check, at production time; never run during prep)",
+   "loadedInCity": false,
+   "loaderCode": "-"
+  },
+  {
+   "id": "native-LOD0",
+   "path": "luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD0.blend  (inside content.zip)",
+   "bytes": 2160111,
+   "sha256": "95568b8b54b892473a3e6222075732cc04456ecf314133d919e55f9d8042339f",
+   "role": "sanitized native LOD0 (original SHA 88877470... per qa/dimensions.json)",
+   "loadedInCity": false,
+   "loaderCode": "not public; source package only"
+  },
+  {
+   "id": "native-LOD1",
+   "path": "luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.blend  (inside content.zip)",
+   "bytes": 1060639,
+   "sha256": "f283dbf9cf477fd879608e0c31d1e3a9d059b145ca4702df33ee19c9de1809f3",
+   "role": "sanitized native LOD1 (original f876be9e... = placement.model_sha256)",
+   "loadedInCity": false,
+   "loaderCode": "not public; source package only"
+  },
+  {
+   "id": "native-LOD2",
+   "path": "luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.blend  (inside content.zip)",
+   "bytes": 540372,
+   "sha256": "c8ef8d100f20ab8eae9b5e8aab88a0663b816774b8ce13bc101af2cdc928e159",
+   "role": "sanitized native LOD2 (original 7deda70c...)",
+   "loadedInCity": false,
+   "loaderCode": "not public; source package only"
+  },
+  {
+   "id": "trial-blend",
+   "path": "luoyang-kaiyang-gate-study-v1/city/kaiyang-K-mid-hidden-trial.blend  (inside content.zip)",
+   "bytes": 794987,
+   "sha256": "75c96a3f1a8bb1d6231e005ed115a0c810f0f81f4ddeb7938ce10e56659558aa",
+   "role": "hidden trial: LOD1 + two terminal wall adapters joined into earth (original delta ee0fee04...)",
+   "loadedInCity": false,
+   "loaderCode": "not public; source package only"
+  },
+  {
+   "id": "placement",
+   "path": "luoyang-kaiyang-gate-study-v1/city/placement.json  (inside content.zip)",
+   "bytes": 2030,
+   "sha256": "e608e78bf746b6b7a415ceff14883b8daadffd5346821c6d2c4f7f2b11abc39a",
+   "role": "engineering origin (2010.3973,-21.3011,0.17), rot_z -0.020743634 rad, activation=false",
+   "loadedInCity": false,
+   "loaderCode": "not public; source package only"
+  },
+  {
+   "id": "interface-input",
+   "path": "luoyang-kaiyang-gate-study-v1/qa/interface-input.json  (inside content.zip)",
+   "bytes": 18494,
+   "sha256": "cbe10dfd0512f09f34bb2e0cad6b94d1fbe2c7954e746e48925a6f8f0b55bc98",
+   "role": "wall cap faces from mother eabb2a90...",
+   "loadedInCity": false,
+   "loaderCode": "not public; source package only"
+  },
+  {
+   "id": "source-ranges",
+   "path": "luoyang-kaiyang-gate-study-v1/qa/source-object-ranges.json  (inside content.zip)",
+   "bytes": 60007,
+   "sha256": "a13c9f741347db813ff2deb3678b5ad6062fbc84584a3117df7a44939d42fdea",
+   "role": "per-source-object triangle ranges (verified to hold in the public GLBs)",
+   "loadedInCity": false,
+   "loaderCode": "not public; source package only"
+  },
+  {
+   "id": "build-py",
+   "path": "luoyang-kaiyang-gate-study-v1/source/build.py  (inside content.zip)",
+   "bytes": 6167,
+   "sha256": "df0be5edb6136453a457e4d9a16b778e11ed3ea5e52b7227b1044182e7b9ce4a",
+   "role": "deterministic generator of K-v1",
+   "loadedInCity": false,
+   "loaderCode": "not public; source package only"
+  },
+  {
+   "id": "city-trial-py",
+   "path": "luoyang-kaiyang-gate-study-v1/source/city-trial.py  (inside content.zip)",
+   "bytes": 5381,
+   "sha256": "826a5ebd5058712d06defd7dd6014d1dd2ed9720e59b4d64e4a02d025e48d5aa",
+   "role": "generator of the terminal adapters and placement",
+   "loadedInCity": false,
+   "loaderCode": "not public; source package only"
+  },
+  {
+   "id": "evidence-md",
+   "path": "luoyang-kaiyang-gate-study-v1/docs/evidence.md  (inside content.zip)",
+   "bytes": 1149,
+   "sha256": "2276b2f5c024d38a36a36b956d9993cda80c101da390809a416ad3ef7135bae5",
+   "role": "evidence note (text sources; C design)",
+   "loadedInCity": false,
+   "loaderCode": "not public; source package only"
+  },
+  {
+   "id": "readback-rollback",
+   "path": "luoyang-kaiyang-gate-study-v1/qa/city-readback-rollback.json  (inside content.zip)",
+   "bytes": 1138,
+   "sha256": "0996fa535a1fa825350457e771da7a946c79fc6dfe3fdf373bc0d92983b6bf24",
+   "role": "2764 old mesh objects unchanged, rollback exact (bound to original SHAs)",
+   "loadedInCity": false,
+   "loaderCode": "not public; source package only"
+  }
+ ],
+ "missing": [
+  {
+   "id": "bearing-section-v1",
+   "need": "named by TASKPOOL as an input; the failed bearing frame and lintel/beam overlap (0.0936 m3) that LY-011 replaces",
+   "searched": "lab main bce3211 (git grep), origin/luoyang-content, D:/GitHub/creation-notebook-待传 (only 说明.txt), D:/GitHub grep",
+   "rebuildFromGLB": "no: it is a different, failed version; K-v1 GLBs do not contain it"
+  },
+  {
+   "id": "kaiyang adaptation-failure / actual-section records",
+   "need": "before-evidence for the 0.0936 m3 and 21.76 m3 issues",
+   "searched": "same as above",
+   "rebuildFromGLB": "no"
+  },
+  {
+   "id": "kaiyang-ground source (.blend, generator, 1782-sample QA)",
+   "need": "editable source and original QA of the 3 test strips",
+   "searched": "commit c07ecc5 added only GLBs",
+   "rebuildFromGLB": "yes: 3 boxes 1.8 x 14 x 0.2 m with about 2 mm micro-relief; the GLBs carry the full geometry, UV and textures"
+  },
+  {
+   "id": "mother eabb2a90... (city-C032-wuku-facade.blend) and overlay 660cdf37... (four-family-plus-gate-wall-overlay.blend)",
+   "need": "placement.json binds both; strict native install/rollback",
+   "searched": "not in repo; README of the batch says they are not repackaged",
+   "rebuildFromGLB": "partly: the current city wall-04/05 GLBs reproduce both caps at gate-local x=+/-16.0, enough for the web-side contact check, not for re-running the native 2764-object rollback"
+  },
+  {
+   "id": "original pre-sanitization natives f876be9e... / ee0fee04...",
+   "need": "placement.json and the old QA are bound to these SHAs",
+   "searched": "only sanitized equivalents f283dbf9... / 75c96a3f... plus NATIVE-EQUIVALENCE.json",
+   "rebuildFromGLB": "not needed: equivalence report exists; new QA must bind the sanitized SHAs"
+  },
+  {
+   "id": "LY-011/012/013/014 deliverables",
+   "need": "the revision parts this seat assembles",
+   "searched": "workpacks LY-011..014: only LY-011/prep/_src",
+   "rebuildFromGLB": "no: must wait"
+  },
+  {
+   "id": "G frozen contracts (LY-001/002/005/006/007/008/009/010)",
+   "need": "ports, ownership, LOD/material baseline, checker, admission",
+   "searched": "workpacks: LY-001 ledger in progress, rest absent",
+   "rebuildFromGLB": "no"
+  }
+ ]
+}

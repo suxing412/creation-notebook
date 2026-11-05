@@ -1,0 +1,209 @@
+{
+ "variant": "B",
+ "host": "D:/GitHub/creation-notebook-lab/docs/library/models/m-luoyang-stable/files/B.glb",
+ "hostSha256": "bd82280a76f0677821788c62c39b42e8fb2314d297bbad704a92aa7d452c2cb4",
+ "hostShaBound": true,
+ "checks": {},
+ "limits": [
+  "surface BVH + 5 mm grid parity sampling; not an exhaustive solid collision proof",
+  "geometry only: animal size, tether strength, partition load, animal suitability NOT verified",
+  "no browser / GPU run"
+ ],
+ "hostInteriorPostAxesX": [
+  -3.0,
+  0.0,
+  3.0
+ ],
+ "zone": {
+  "id": "LY-051:write:002",
+  "gltfBox": [
+   [
+    -6.3,
+    0.05,
+    -2.7
+   ],
+   [
+    6.3,
+    2.7,
+    2.7
+   ]
+  ],
+  "blenderBox": [
+   [
+    -6.3,
+    -2.7,
+    0.05
+   ],
+   [
+    6.3,
+    2.7,
+    2.7
+   ]
+  ]
+ },
+ "troughCavities": {
+  "B_hollow_trough_0": [
+   [
+    -5.625,
+    1.475,
+    0.18
+   ],
+   [
+    -3.375,
+    1.925,
+    0.68
+   ]
+  ],
+  "B_hollow_trough_1": [
+   [
+    -2.625,
+    1.475,
+    0.18
+   ],
+   [
+    -0.375,
+    1.925,
+    0.68
+   ]
+  ],
+  "B_hollow_trough_2": [
+   [
+    0.375,
+    1.475,
+    0.18
+   ],
+   [
+    2.625,
+    1.925,
+    0.68
+   ]
+  ],
+  "B_hollow_trough_3": [
+   [
+    3.375,
+    1.475,
+    0.18
+   ],
+   [
+    5.625,
+    1.925,
+    0.68
+   ]
+  ]
+ },
+ "selftest": {
+  "P1_partition_post_to_post": {
+   "expectPass": true,
+   "pass": true,
+   "ok": true,
+   "fail": []
+  },
+  "P2_tether_peg_on_rear_wall": {
+   "expectPass": true,
+   "pass": true,
+   "ok": true,
+   "fail": []
+  },
+  "P3_peg_plus_ring_chain": {
+   "expectPass": true,
+   "pass": true,
+   "ok": true,
+   "fail": []
+  },
+  "N1_peg_in_trough_cavity": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "tether_N1: enters cavity of B_hollow_trough_1",
+    "tether_N1: floating (no contact chain to host post / rear wall / trough)"
+   ]
+  },
+  "N2_floating_partition": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "partition_N2: floating (no contact chain to host post / rear wall / trough)"
+   ]
+  },
+  "N3_thick_partition_intrudes_posts": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "partition_N3 x B_post_2_-2.2399999999999998: positive intrusion 0.010350 m3",
+    "partition_N3 x B_post_2_2.2399999999999998: positive intrusion 0.010274 m3",
+    "partition_N3: blocks entrance of bay 1",
+    "partition_N3: blocks entrance of bay 2",
+    "partition_N3: floating (no contact chain to host post / rear wall / trough)"
+   ]
+  },
+  "N4_partition_below_zone_on_platform": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "partition_N4: 4 vertices outside LY-051:write:002 (e.g. (-0.05, -2.15, 0.0))"
+   ]
+  },
+  "N5_bar_across_entrance": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "tether_N5: blocks entrance of bay 0"
+   ]
+  },
+  "N6_wrong_variant_axis": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "partition_N6 x B_hollow_trough_2: positive intrusion 0.017742 m3",
+    "partition_N6: enters cavity of B_hollow_trough_2",
+    "partition_N6: floating (no contact chain to host post / rear wall / trough)",
+    "partition_N6: axis x=1.400 not on host interior post axes [-3.0, 0.0, 3.0] (port mismatch)"
+   ]
+  },
+  "N7_bad_footprint_port": {
+   "expectPass": false,
+   "pass": false,
+   "ok": true,
+   "fail": [
+    "footprint partition_N7: declared {'part': 'partition_N7', 'x': 0.0, 'z': 0.0, 'y': 0.0} vs measured x=0.000 z=-0.000 y=0.050"
+   ]
+  },
+  "N8_host_matrix_change_detected": {
+   "ok": true
+  },
+  "T4.3_host_restored_after_probe_removal": {
+   "ok": true
+  }
+ },
+ "selftestAllOk": true,
+ "hostFingerprint": {
+  "B_earth_platform": "467896a58f2feb0a703e85ad979609b1c5f3ea8fe3b66bc6e9a3dfdbd54f7ca9",
+  "B_hollow_trough_0": "b919f201d63eeff02ef8f9cf2a11c2ae631d6e2c30d2b2f7483d938b08191f16",
+  "B_hollow_trough_1": "d4ec12bc09f62c2a2ee3bfc0e79934bcece65d209ea586870fb4663695ea380c",
+  "B_hollow_trough_2": "b883c3e6d2b8debf15ce3a2cd9c4d14612235e1b367344c199dae9a155bc63db",
+  "B_hollow_trough_3": "0600272fda7887239309dd5088d38fb5ba30c5667f2e98a7ce6404ae439a8281",
+  "B_post_0_-2.2399999999999998": "fbf7b5117b8e3d71cf7286090d11821a5e679607d2916984cfe261ed07033cde",
+  "B_post_0_2.2399999999999998": "4465c883f1253e9d2f988056d0fddcea0a8925da2492a4aae3634d340250a597",
+  "B_post_1_-2.2399999999999998": "f50192e5d01084e45e49d8b20ed569a0f2b3f9dc7d32606b0597c9901a3fdced",
+  "B_post_1_2.2399999999999998": "bcca25962e90c266ae8c0c5e710332aab251d407e9a518fc4f7167ed18478b57",
+  "B_post_2_-2.2399999999999998": "5df8595ea0a0159f7a24f2399b28aad331724ba8c9ba3971bc489aca09f1f10c",
+  "B_post_2_2.2399999999999998": "14bdfe98ebb08720405c8a0a60f970e8d4d6768f25f74b338329557de1014f0c",
+  "B_post_3_-2.2399999999999998": "d8be8717fb5c963aa1337552928efff8114bff10e1ef9083bfd6aff36df6da1e",
+  "B_post_3_2.2399999999999998": "b8461060b6eed1c86fdd07af02ce2f612598910c86fef589ecc19c3744a93df7",
+  "B_post_4_-2.2399999999999998": "9c7b94409d0b68e12b2816713a8b963052fbd3474478ee14d51f1b8404d0d380",
+  "B_post_4_2.2399999999999998": "5b5ed0a396be2fcfa57fb8c6a119d8b13421e9d9a0ebc4ac101600b31e84554c",
+  "B_rear_wall": "793860e31afe06727e4e1a702fad6516fef1da170967cf4939b52a08a10d5ba4",
+  "B_shelter_ridge_cap_C": "32f46196a936652748695da896b4c8687a70ae393a22e49c1bb8c2f86eb974fe",
+  "B_shelter_roof_board": "da1d29164f98ad2bb31fa086741614354aeffca0126a7d8f59f660822d017c87",
+  "B_shelter_roof_board.001": "7f96a698755f26942984b249d1c686c420b933a23f2ce9c36137933ef8fa28d3",
+  "B_shelter_tile_shells": "f9f2a0d77a506f4176fd48aa3646fe96d7cc955cc408ab90aec6519f1c4105ed",
+  "B_wallplate_-2.2399999999999998": "96065bcf5cb1a6d0f0da578e8ac2bc8e0e654af98b3f44eba5ede857016f010b",
+  "B_wallplate_2.2399999999999998": "96f001047a9cf1228b82270d30a8d834113e125eba7108f038c23f3bcec8eaf9"
+ }
+}

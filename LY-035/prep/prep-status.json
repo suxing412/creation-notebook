@@ -1,0 +1,57 @@
+{
+ "seat": "LY-035",
+ "inputsFound": [
+  "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb 5937211c（城景唯一加载件：city-data.mjs:582 资产 storage-main → :1266-1270 cityURL → city-renderer.mjs:286 loadAsset；节点 :3717 initial=false；章节 :3983）",
+  "同目录 granary-city-LOD1.glb a1265bbf / LOD2.glb 6b2564d3（城景不加载；LOD2 无货物代理）",
+  "同目录 source.json 6cf88d6f（坐标/保留/限制/回退契约）",
+  "docs/cities/luoyang/assets/storage/storage-group-organized.glb b8482824（241 命名节点，部件身份唯一来源；只由 v1/west-layer.mjs:39 加载）",
+  "docs/model-library/assets/optional-functional-overlay-local.glb 07b7c65b（现代讲解分区，含 diagram_暂存 16×6 m；不加载）",
+  "docs/model-library/assets/storage-origin-contract.json 9bdf37f2（锚点 2285.714111,0,-3673.468994）",
+  "docs/model-library/updates/m-storage-functional/files/granary-{group,A,B,receiving}-LOD{0,1,2}.glb（12 个，SHA 见 inputs.json）",
+  "docs/model-library/m-storage-functional.asset.json 32af95ef（A51/B77 1.8 m 失败记录）",
+  "docs/cities/luoyang/data/west/storage-interface.json b9108967、storage-precedents.json acda86c8",
+  "docs/cities/luoyang/city-data.mjs e4115705、city-renderer.mjs fa0a8dcb、app.mjs 4d6b5b33、p-luoyang.asset.json 9b5e311f（只读）"
+ ],
+ "inputsMissing": [
+  "granary-city-v1 私密原生工程与 composer/验证源（source.json 写明不在仓库）：用于按原生层级编辑合并网格；本项只新增附加件、不改原件，可从 GLB 重建参照几何（已实测），不阻断",
+  "v2『operations/入口体积诊断』探针源码与原始结果（卡片 A 51 / B 77 处 1.8 m 失败）：用于逐条复现不可改写的失败基线；只能部分从 GLB 重建——本席位自建探针得 A 80/380、B 120/570，口径不同，不能替代原计数",
+  "storage-interface.json 声明的 assets/optional-functional-overlay.glb（e44c4f20，6948 B）：仓库现版与全部历史都没有；可由 -local 版 07b7c65b 按原点契约（binaryChunkByteEqual=true）换算，不阻断",
+  "LY-033 门件与门叶扫掠体积、闭门负例：转身/暂存必须避开门叶；属前置产物，不能从 GLB 重建",
+  "LY-034 收货前场—A/B 阶前冻结端口与路线包：替换本 prep 的 3 个临时端口并定义走廊；不能从 GLB 重建",
+  "G：LY-005 端口契约、LY-006 所有权、LY-007 材质/三档、LY-008 检查器、LY-010 区域准入、LY-002 证据表"
+ ],
+ "gaps": [
+  "地面空间不是瓶颈：仓前区 34.5×11.12 m 有 99.65% 空地；0.9/1.2/1.8/2.4/3.0 m 宽包络都能从收货北口走到 A、B 阶脚（A 最短路径 15.75–16.18 m，B 16.01–16.18 m）。所以「为过压力样本拓宽全场」既不必要也不允许",
+  "硬限制在阶梯和平台：A 仓 4 级每级 0.1625 m、共 0.65 m；B 仓 6 级每级 0.15 m、共 0.90 m；阶宽和门宽都是 1.5 m，门净高 2.10 m；门前平台只有 0.52 m（最上一级 0.32 m 加地板伸出 0.20 m），无法在门口转身，转身只能放在地面阶脚",
+  "1.8 m 包络的横向探针：A 80/380 个落到阶外，最大落差 0.65 m；B 120/570 个，最大落差 0.90 m。0.9、1.2、1.5 m 包络为 0 处。卡片原记录 A 51 / B 77 口径不同，两组都要保留",
+  "现有暂存和路线冲突：货物代理 U2/U3（各 0.9×0.6×0.62 m，x 2288.264–2290.164，z −3667.769…−3667.169）正好压在收货→B 阶脚的直线上（距离 0.000 m），沿直线能通过的最大包络为 0 m，只能绕行（约多走 0.57 m）",
+  "讲解层 diagram_暂存（96 m²）与 0.9 m 走廊重叠 8.14 m²（A）/ 8.20 m²（B），与 1.8 m 走廊重叠 16.20 m² / 16.29 m²；diagram_入仓分流与 1.8 m 走廊重叠 11.64 m² / 11.69 m²。现有资产里没有任何暂存与通路的互斥规则",
+  "U2/U3 不能单独开关：城景 LOD0 的货物代理焊成一个 primitive（676 个三角形），LOD2 里没有货物代理。变体只能新增，不能移走它们",
+  "暂存候选位置充足（只是 C 候选）：4×4 m 块留 0.3 m 边距、离两条直线路线至少 0.9 m，可放中心的面积有 384.14 m²；最近的位置在两仓之间 (2285.689, −3674.944)，两仓间距 13.5 m",
+  "檐下净空：A 3.27 m（比最上一级高 2.42 m），B 3.72 m（高 2.62 m）；门净高 2.10 m 是货物加人员高度的约束，只记录约束，不当作通过",
+  "身份绑定：城景 LOD0 的 9496 个建筑三角形与 v1 命名件在 1e-4 m 内完全相同，地坪也相同；0.05 m 占用栅格只有 4 格不同。地块周边 20 m 内只有 storage-main 一个节点，最近城垣 61.6 m"
+ ],
+ "reuseCandidate": "无。现有的 diagram_暂存（07b7c65b）只是现代讲解分区，城景不加载，还和两条走廊重叠 8.1–16.3 m²；U2/U3 焊在合并网格里，不能开关。两者都不是可关闭、带互斥规则的物理差异件。场地空间本身够用，可以作为新附加件的落位依据，但不等于已有合格成果",
+ "touches": [
+  "storage-main 节点（city-data.mjs:582 资产 / :3717 节点 / :3983 章节）：只读；新附加件另提节点或 overlay 语义合并提案，由 LY-100 合并",
+  "granary-city-LOD0/1/2.glb 全部 4 个节点，含 original_city_ground_preserved 地坪片（12 个三角形，顶面 y=0.200）：只读，附加件压在地坪上方（底面 ≥ 0.202），不切孔",
+  "granary-group-static_paper__cargo_proxy 中的 U2/U3（以及 U0/U1/checking）：作为固定障碍引用，不改",
+  "A_step_0..3、B_step_0..5 阶脚地面区（A 阶脚 z −3674.989、B 阶脚 z −3674.849 往南约 3 m）：与 LY-033（门叶扫掠）、LY-034（阶前端口）共用接缝",
+  "仓前区 x 2269.214–2303.714 × z −3674.989…−3663.869，以及两仓之间 x 2278.214–2291.714 的空地：拟放暂存/转身体积",
+  "讲解层 diagram_暂存 / diagram_入仓分流（optional-functional-overlay-local.glb）：只作对照，不改",
+  "m-storage-functional.asset.json、p-luoyang.asset.json 的仓储条目：不写，交给 LY-100",
+  "D:/GitHub/creation-notebook-workpacks/LY-035/（唯一写入区）"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-033 的门叶如果向外开，会占用 0.52 m 平台或阶脚，转身圆就得南移，暂存候选可能要重新选",
+  "LY-034 的实际路线如果不是直线，现有走廊重叠和候选面积都要重算；临时端口不能带进交付",
+  "附加件底面贴近地坪顶 0.200 时会闪烁（z-fight）；抬到 ≥ 0.202 又可能被看成悬空。需要 LY-007 给出贴地或贴花规则",
+  "合并网格让 U2/U3 无法开关：如果协调者要求变体开启时清走 U2/U3，就必须改原件，超出本席位边界，要交协调者裁决",
+  "卡片 A51/B77 与本席位的 A80/B120 口径不同，容易被误读成失败数变了，交付时必须并列写明",
+  "设计空间可能被当成效率或历史证明（T11 文案检查拦截）；车辆、负重、双人交错都没有证据，不能写",
+  "仓储区准入（LY-010）以及与北宫新墙未配准的冲突（LY-003）会影响能否入城；不影响局部研究包",
+  "只做了 CPU 表面采样测量，没有 GPU 或浏览器实测，也没有实体碰撞穷举"
+ ],
+ "readyAfterG": true
+}

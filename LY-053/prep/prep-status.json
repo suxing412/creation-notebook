@@ -1,0 +1,56 @@
+{
+ "seat": "LY-053",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-tile-kiln/files/kiln-A.glb sha256 e67d5976 (blob f79eb8a, == HEAD bce3211)",
+  "docs/library/models/m-luoyang-tile-kiln/files/kiln-B.glb sha256 4886d95d (blob b8d3dea)",
+  "docs/library/models/m-luoyang-tile-kiln/files/kiln-A-LOD1.glb sha256 562b4b39 (blob 6c02cf7)",
+  "docs/library/models/m-luoyang-tile-kiln/files/kiln-B-LOD1.glb sha256 8d9db85b (blob 90c8861)",
+  "docs/library/models/m-luoyang-tile-kiln/m-luoyang-tile-kiln.asset.json sha256 99f63205 (status 待审, source commit 52fceaa)",
+  "docs/cities/luoyang/city-data.mjs sha256 e4115705: no kiln record, kiln not in city",
+  "docs/cities/luoyang/city-renderer.mjs sha256 fa0a8dcb: line 309 excludeNodes can drop <V>_presentation_ground at load",
+  "docs/cities/luoyang/v1/ground-atomic.mjs sha256 45e25711 + data/west/ground-atomic-contract.json sha256 bfc7fc83: atomic ground template, no cut support",
+  "docs/cities/luoyang/assets/ground-atomic/network-ground-stitched.glb sha256 fdfc3ce5 (flat ground top y 0..0.21)",
+  "docs/cities/luoyang/p-luoyang.asset.json sha256 9b5e311f: 砖瓦窑 A/B listed 已建模/未入城",
+  "scratchpad mq/cards/m-luoyang-tile-kiln/audit.json sha256 cabc9607 (0 issues, bbox 16x3.54x19 incl. display ground)"
+ ],
+ "inputsMissing": [
+  "Kiln native source (.blend/generator/source ZIP): not in the repo or anywhere under D:/GitHub. Would be used to re-export the kiln without the display ground. Not needed: the kiln stays read-only, the ground is dropped by excludeNodes, and the pit/base parts are axis-aligned boxes that can be rebuilt from measured GLB planes.",
+  "G pack not frozen: LY-005 axes/ports, LY-006 ownership (pit floor / board legs / pit rim vs LY-054), LY-007 material names and LOD rule, LY-008 checker, LY-010 admission.",
+  "Site admission for a real kiln yard (LY-010/LY-003): no host ground tile, so the atomic cut contract keeps host=null. Cannot be rebuilt from the GLB.",
+  "Primary evidence for an Eastern Han Luoyang tile kiln (pit depth/plan): two searches found none. All pit numbers stay C. Cannot be rebuilt from the GLB."
+ ],
+ "gaps": [
+  "The pit is made entirely of the display ground. {A,B}_presentation_ground is a 16.0x19.0x1.0 m solid (z -1.0..0, 72 tris), present in LOD0 and LOD1. It is the only geometry that forms the pit walls (A 3.8x3.2 m, B 4.8x2.6 m, 0.8 m to the pit floor top at -0.8), the firebox slot walls (1.8 m wide, y -2.1..0.1) and the kiln-bed recess (A 4.4x5.0, B 5.0x4.3, 0.6 deep).",
+  "With the display ground excluded, 15/40 parts are not fully supported (8/41 with it; tol 0.02 m, 4x4 bottom grid). kiln_bed has 0/16 support; each short_flue has 2/10 (its rear 0.59 m hangs: A y 4.6..5.19, B y 3.9..4.49); the 4 board legs have 0/12; pit-centre rays toward +-X hit nothing (3/3 None).",
+  "Even with the display ground, the pit floor and fire floor have no support underneath: both are 0.24 m slabs at z -1.04..-0.8 with 0/16 support, sit 0.04 m below the slab bottom (-1.0), and are held only by coplanar side contact. The slab itself floats with nothing below z -1.0.",
+  "The flue shafts have no floor. Down-rays hit the display ground at z 0; with it excluded, 3/3 rays fall through. Flue outlet top z 1.22, outer 0.70x0.68 m, inner clear 0.2-0.4 m (0.1 m grid).",
+  "Firebox slot gap: the fire floor ends at y 0 but the slot wall is at y 0.1, leaving a 1.8 x 0.10 m gap open to the underside (z -1.0..-0.6). There is a 0.2 m high void under the kiln bed at y -0.4..0.1.",
+  "There is a 0.07 m gap between the pit end wall and the top step (A y -5.3/-5.23, B -4.7/-4.63). Stairs: 4 risers of 0.20 m, 0.36 m treads, 1.20 m wide.",
+  "Operation mouth keep-clear zone: the hood face is at y -2.1 (hood x+-0.9, z -0.8..0.95). The mouth below ground is 1.30 m wide (x+-0.65) from -0.8 up to at least -0.49. Clear pit floor in front of the mouth, measured to the lowest step riser: A 1.69 m, B 1.09 m.",
+  "Only two LODs exist (LOD0 1148 tris, LOD1 884 tris); there is no third tier. LOD1 also contains the display ground.",
+  "The city has no ground-cut mechanism: the atomic ground is flat (y 0..0.21) and assertGroundAtomic only counts 3 nodes. A pit 0.8-1.04 m deep needs a whole host tile replaced, and that contract does not exist yet.",
+  "Inherited intersections inside the kiln, out of scope for this seat: kiln_bed x fire_hood 54 surface tri-pairs and chamber_walls x fire_hood about 160. These are surface BVH counts only, not exhaustive solid collision."
+ ],
+ "reuseCandidate": "无。The only existing pit is the display ground that must be removed, and it does not support the pit floor or the fire floor (0/16 each).",
+ "touches": [
+  "Excluded (not edited): A_presentation_ground, B_presentation_ground in kiln-A/B.glb and kiln-A/B-LOD1.glb",
+  "Supported from below (read-only contact): {A,B}_kiln_bed (top of new bearing pad at -0.6), {A,B}_operation_pit_floor and {A,B}_fire_floor (base at -1.04), {A,B}_short_flue/.001/.002 (base pad at 0, also closes the shaft floor)",
+  "Keep-clear references (must not be covered): {A,B}_fire_hood front y -2.1, {A,B}_pit_access_step/.001/.002/.003, flue inner openings z 0..1.22 and above",
+  "Ownership to settle in LY-006: {A,B}_board_leg x4 + {A,B}_blank_drying_board_C lose support (LY-053 or LY-054); pit rim at z 0 and pit-floor surface use (LY-054 front operation ground / staging)",
+  "Ground tiles: none in the city today. A future host tile (e.g. a part of network-ground-stitched.glb) would need an atomic replacement through LY-100, after LY-010 admission",
+  "Files read: city-renderer.mjs (excludeNodes), v1/ground-atomic.mjs, data/west/ground-atomic-contract.json, city-data.mjs. Only workpacks/LY-053/ is written"
+ ],
+ "size": "M",
+ "risks": [
+  "No site admission: the pit pack stays a standalone kiln-local study, and the cut contract has host=null until LY-010/LY-003 decide.",
+  "The city renderer cannot cut terrain. Fitting a 0.8-1.04 m deep pit means replacing an atomic ground tile, which depends on LY-100 and the terrain seats (81-90).",
+  "Ownership overlap with LY-054 (pit rim, pit floor use, drying board legs). Without an LY-006 ruling, either seat could cover or leave unsupported the same zone.",
+  "Node names such as .001 come from the GLB importer. Exclusion and ports should key on the exact names in this baseline; if the kiln is re-exported, the SHA binding breaks and prep must be redone.",
+  "Coplanar contacts (bed bottom -0.6, flue base 0, floor bottom -1.04) can z-fight or be misclassified as intrusion. The test plan separates legal coplanar faces from positive penetration (>0.002 m).",
+  "Inherited kiln-internal intersections (kiln_bed x fire_hood) could be misattributed to the pit pack. The baseline counts are recorded and must stay unchanged.",
+  "All dimensions are C (card text). No ~180 CE Luoyang kiln evidence was found, so nothing may be described as a historical reconstruction.",
+  "Only two LODs exist, so the pit pack cannot honestly supply a third tier.",
+  "Surface BVH and discrete rays do not prove solid collision, structural safety, thermal behaviour or human passage. All of these are reported as unverified."
+ ],
+ "readyAfterG": true
+}

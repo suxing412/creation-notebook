@@ -1,0 +1,305 @@
+{
+ "seat": "LY-031",
+ "phase": "prep (G not frozen; no delivery geometry made)",
+ "repo": "D:/GitHub/creation-notebook-lab",
+ "baselineCommit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "coordinates": "glTF metres, X east / Y up / Z negative north. A local -> group: +(-12, 0, -6). Group -> city: node translation (2285.714111328125, 0, -3673.468994140625). A local -> city world: +(2273.714111, 0, -3679.468994). No rotation or scale anywhere.",
+ "inputs": [
+  {
+   "id": "A0",
+   "role": "granary A standalone LOD0 (primary measuring input)",
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-A-LOD0.glb",
+   "bytes": 1006080,
+   "sha256": "2eee31460a64201c2ba25fbc1bccc9c52f4cebc0f7b9af1f9eb9beeca68b7bf6",
+   "loadedInCity": false,
+   "loadedBy": "asset card only (docs/model-library/m-storage-functional.asset.json files[]); not referenced by city-data.mjs"
+  },
+  {
+   "id": "A1",
+   "role": "granary A standalone LOD1",
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-A-LOD1.glb",
+   "bytes": 267256,
+   "sha256": "38884c1f6a7fb6b07cbbc674049e37db2e910f92e4fc0fb4944aac7c1745e955",
+   "loadedInCity": false,
+   "loadedBy": "asset card only"
+  },
+  {
+   "id": "A2",
+   "role": "granary A standalone LOD2",
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-A-LOD2.glb",
+   "bytes": 35332,
+   "sha256": "fe703ccbc9f542cb8cb37856d110485e8c4128a45dfc49b0054eb1ac3c1b4a45",
+   "loadedInCity": false,
+   "loadedBy": "asset card only"
+  },
+  {
+   "id": "G0",
+   "role": "v2 group LOD0 (A at -12,0,-6)",
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-group-LOD0.glb",
+   "bytes": 1582228,
+   "sha256": "91a54eafe8991ded008b499d647ab3483bf44053a0cff84ded01f7afc8a42d28",
+   "loadedInCity": false,
+   "loadedBy": "asset card only"
+  },
+  {
+   "id": "G1",
+   "role": "v2 group LOD1",
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-group-LOD1.glb",
+   "bytes": 387252,
+   "sha256": "3476fc8c9dfaacf80608d7f4e2ead9fda8cc558666dcecea3c76db11d874e24d",
+   "loadedInCity": false,
+   "loadedBy": "asset card only"
+  },
+  {
+   "id": "G2",
+   "role": "v2 group LOD2",
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-group-LOD2.glb",
+   "bytes": 79024,
+   "sha256": "2111c6eab918194d4d445d16c99c48aace7573acf02726473080d7ce6e761ce2",
+   "loadedInCity": false,
+   "loadedBy": "asset card only"
+  },
+  {
+   "id": "C0",
+   "role": "in-city complete group LOD0 (the only granary file the city loads)",
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+   "bytes": 1663844,
+   "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+   "loadedInCity": true,
+   "loadedBy": "docs/cities/luoyang/city-data.mjs:582-599 (asset storage-main, path) -> city-data.mjs:1270 url: cityURL(path) -> node storage-main city-data.mjs:3717-3729 position [0,0,0] -> chapter storage loadNodeIds city-data.mjs:3983-3990 -> city-renderer.mjs:285-299 loadAsset() fetch + GLTFLoader.parseAsync; excludeNodes [] (city-renderer.mjs:309)"
+  },
+  {
+   "id": "C1",
+   "role": "in-city group LOD1 (inspection only)",
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb",
+   "bytes": 756484,
+   "sha256": "a1265bbf53d10ddb6398efa6f505c1b6dee86b81b37397f7af9855acc34f2e45",
+   "loadedInCity": false,
+   "loadedBy": "asset card files[] only; source.json cityRuntime.midAndFar says separate inspection files, no auto LOD"
+  },
+  {
+   "id": "C2",
+   "role": "in-city group LOD2 (inspection only)",
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD2.glb",
+   "bytes": 462440,
+   "sha256": "6b2564d3ffd76e6e982a4a7f703cfd0790ac0e0b2dfa75add4df169c4c82efe7",
+   "loadedInCity": false,
+   "loadedBy": "asset card files[] only"
+  },
+  {
+   "id": "B0",
+   "role": "granary B LOD0 (read only; for 'do not scale A onto B' boundary with LY-032)",
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-B-LOD0.glb",
+   "bytes": 1118304,
+   "sha256": "407403ceeb418f6e1d3f0e86bff7d535642c0236d94691fd2b9a10c2f7866dc6",
+   "loadedInCity": false,
+   "loadedBy": "asset card only"
+  },
+  {
+   "id": "B1",
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-B-LOD1.glb",
+   "sha256": "3ce46eee0c9b1ef56fcf380c4dfec3d39251697bab7cad45a719b19c06e6ce8a",
+   "loadedInCity": false
+  },
+  {
+   "id": "B2",
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-B-LOD2.glb",
+   "sha256": "0735a9f2cc76cfef98f5e548ab621295e40870bd2aef248ce25cc10e0b10022f",
+   "loadedInCity": false
+  },
+  {
+   "id": "R0",
+   "role": "receiving LOD0 (not touched; LY-034 owns)",
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD0.glb",
+   "bytes": 386980,
+   "sha256": "9fc0b90ef4c64b31371945427f1259b04c604bbc0f24b5ed38c700f3b07dff09",
+   "loadedInCity": false
+  },
+  {
+   "id": "R1",
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD1.glb",
+   "sha256": "5bac6a81b60d7fc0bf63ccb40b0a72a01440110673472c1f0f5554fd5a65e8e3",
+   "loadedInCity": false
+  },
+  {
+   "id": "R2",
+   "path": "docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD2.glb",
+   "sha256": "ecf34fe95282af1b17241ae8619fe2bfb9d35b31edc03289c8bae38fdaafdca2",
+   "loadedInCity": false
+  },
+  {
+   "id": "OLD_V1",
+   "role": "legacy organized v1 group (rollback / legacy archive view)",
+   "path": "docs/cities/luoyang/assets/storage/storage-group-organized.glb",
+   "sha256": "b8482824513a101d36eb4c768a4f641e77aaac66c3e834718d7f3964104a644b",
+   "loadedInCity": "legacy v1 archive view only",
+   "loadedBy": "docs/cities/luoyang/v1/west-layer.mjs:39 (level 'storage' environmentUrl); reached via app.mjs:7 legacyView redirect / index.html:111 archive link. Not the current city. LY-031 must not add doors there."
+  },
+  {
+   "id": "SRC_JSON",
+   "role": "granary-city-v1 source contract",
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/source.json",
+   "sha256": "6cf88d6f0b2ae18c08cedc946ba783453af1a5edc1217158b8469a8cf2059224",
+   "loadedInCity": "metadata",
+   "loadedBy": "city-data.mjs:599 and :3729 sourceContract",
+   "sha256_lf_blob": "30e74bda8a965f4f7c84aaa32bdb7a179680b6163150584cdeb58de3e3f12639"
+  },
+  {
+   "id": "README",
+   "path": "docs/cities/luoyang/progress-assets/granary-city-v1/README.md",
+   "sha256": "10322cc5b14fc6b9c575126127fa1b31ee47552b7227da3aacc442891445474e",
+   "loadedInCity": false,
+   "sha256_lf_blob": "4b6d5cc6a51b01cfadace069ab38a8d6cfc5175a9f76c23ef6dac0de9235fd6e"
+  },
+  {
+   "id": "CARD",
+   "path": "docs/model-library/m-storage-functional.asset.json",
+   "sha256": "32af95efc4abffc6aa23644833fac6f7ae9edefc7b8156207209f1c9b31856e2",
+   "loadedInCity": false,
+   "loadedBy": "lab/tools/build_assets.py -> lab/data/assets.json (not run)",
+   "sha256_lf_blob": "3572786f39beea07571cfd9aec458dff3d19e2420943252957c391c0d7bb119f"
+  },
+  {
+   "id": "ASSETS_JSON",
+   "path": "lab/data/assets.json",
+   "sha256": "3440caa2a38a0893e4c27177c0127fc46ea6ffec31694ab3c1d6980d212c3f7a",
+   "loadedInCity": false,
+   "sha256_lf_blob": "53d863121bb583b362bf9929bf18c1d91aaf6f36fb8d3808e70a8a3e4825df78"
+  },
+  {
+   "id": "STORAGE_IFACE",
+   "path": "docs/cities/luoyang/data/west/storage-interface.json",
+   "sha256": "b910896799cdbb954717df342c7dfbb794eaaa1bdba3810b206140b84aeedba8",
+   "loadedInCity": "manifest list",
+   "loadedBy": "city-data.mjs:4521 (sha matches)",
+   "sha256_lf_blob": "4f3ccae9891c2fcd2ae3d962c3740a4b53eac7faea872b5ce28596cf1a62c2b3"
+  },
+  {
+   "id": "STORAGE_PREC",
+   "path": "docs/cities/luoyang/data/west/storage-precedents.json",
+   "sha256": "acda86c8ae4067a8c665804fae5b3f7582d56e293c879bb791f1d61f1b431cf4",
+   "loadedInCity": false,
+   "sha256_lf_blob": "db8024490dad09484f9c1b24a915872c4010024817cadb7abb2ce58cd70fbd39"
+  },
+  {
+   "id": "CITY_DATA",
+   "path": "docs/cities/luoyang/city-data.mjs",
+   "sha256": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a",
+   "loadedInCity": true,
+   "note": "shared file, LY-100 only",
+   "sha256_lf_blob": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00"
+  },
+  {
+   "id": "RENDERER",
+   "path": "docs/cities/luoyang/city-renderer.mjs",
+   "sha256": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca",
+   "loadedInCity": true,
+   "sha256_lf_blob": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc"
+  },
+  {
+   "id": "APP",
+   "path": "docs/cities/luoyang/app.mjs",
+   "sha256": "4d6b5b33d8d6124793082d194fa3169f6e5eaa782a589b5471b26797773d0df9",
+   "loadedInCity": true,
+   "sha256_lf_blob": "cc0379c02c97d9560898b16b26f05dec8f74fc27289fbb3f94074388ad2849d8"
+  },
+  {
+   "id": "WEST_LAYER_V1",
+   "path": "docs/cities/luoyang/v1/west-layer.mjs",
+   "sha256": "d8c14142af2e4d993cc249dfcc605edadb38232190e5890f31640b94be9d2d4b",
+   "loadedInCity": "legacy v1 only",
+   "sha256_lf_blob": "e406af117b112a5fd07483f1906f0d94ad767135bf844f03a82a9874f21c59fc"
+  },
+  {
+   "id": "PROJECT_CARD",
+   "path": "docs/cities/luoyang/p-luoyang.asset.json",
+   "sha256": "9b5e311f077aa6c2fb433ba36cca6dc291542848769134335418a558b92b089d",
+   "loadedInCity": false,
+   "note": "shared file, LY-100 only",
+   "sha256_lf_blob": "8edb06abf5e7d874334a932e3108079590b327ec5afbb78290df2f66424f95bd"
+  },
+  {
+   "id": "DOOR_REF_PAIRED",
+   "role": "checked reuse candidate (rejected, see brief)",
+   "path": "docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD0.glb",
+   "sha256": "67bc127a37beff59ec7ad673e30c191ce6211c1039567003d8bef335926451b5",
+   "loadedInCity": false
+  },
+  {
+   "id": "DOOR_REF_SINGLE",
+   "role": "checked reuse candidate (rejected)",
+   "path": "docs/library/models/m-luoyang-inner-door-components/files/single-door-LOD0.glb",
+   "sha256": "597d81ad26c8c652a93fe6db1a846ae6742f3a53858db97958f37587e0840b67",
+   "loadedInCity": false
+  }
+ ],
+ "missing": [
+  {
+   "what": "granary v2 native .blend / private generator ('Luoyang private granary city composer v1', Blender I/O 4.3.47 sources)",
+   "use": "editable A wall/lintel if a rebate or socket were ever cut into the old body",
+   "rebuildFromGLB": "not needed: LY-031 must not modify the A body; door subparts are new geometry fitted to GLB-measured ports"
+  },
+  {
+   "what": "operations diagnostics and entrance-volume diagnostics (the reports behind 'A 51 / B 77 stair-edge failures of the 1.8 m strip')",
+   "use": "reproduce the original passage negative baseline exactly",
+   "rebuildFromGLB": "partly: prep/probe_passage.py is an independent finite body-box probe on the same GLB; it does NOT reproduce the 51-failure count (different probe definition)"
+  },
+  {
+   "what": "frozen LY-005 ports / LY-006 ownership / LY-007 materials and LOD rules / LY-008 checker / LY-002 evidence table / LY-010 zone decision",
+   "use": "port IDs, UV convention, material names, checker command, door-type evidence class",
+   "rebuildFromGLB": "no (contracts, not geometry)"
+  }
+ ],
+ "prepOutputs": [
+  {
+   "path": "prep/glbread.py",
+   "sha256": "3041001d523d6f3e79cfe141e67ebef94097bc8dd9ee9642781ca1ab64e85fe5"
+  },
+  {
+   "path": "prep/measure_A.py",
+   "sha256": "f0e3b1ffed2bb23a000b8a7f69d2b0362d2a06bc8371a128fe7b465ea46935d5"
+  },
+  {
+   "path": "prep/probe_passage.py",
+   "sha256": "6875bec4f9017b563d091a2085e9bd49764253aa40ba1cffa09a3f9ded82f989"
+  },
+  {
+   "path": "prep/blender_ray_check.py",
+   "sha256": "33f06ae734c34e552161fc68624f1149239b2dda31fe7c0b8669379827e795f1"
+  },
+  {
+   "path": "prep/measure_A.out.json",
+   "sha256": "d30e8eb6cb5006a1f9804b0c44feeb5bca990c7c1f18e2b2a790c29c78250ca7"
+  },
+  {
+   "path": "prep/probe_open_baseline.json",
+   "sha256": "3f00e0fa818b054fb0867bb6f9e54426685bac12d1327636d7e569e694063ca8"
+  },
+  {
+   "path": "prep/probe_closed_negative.json",
+   "sha256": "962361b9cfd229f666aec0a6d652487af81312501fcc066cc8d3e44d6afd1687"
+  },
+  {
+   "path": "prep/probe_closed_outer_face_virtual.json",
+   "sha256": "1acda731f08b175532c4bfa7828fc3703ebf7b7b67b0f9c21c165fe4320b23ec"
+  },
+  {
+   "path": "prep/probe_paired_open90_virtual.json",
+   "sha256": "dd64793a2406068b3b3e1a140824f7c6d31eca48ac0ea815c11f555af3b643f4"
+  },
+  {
+   "path": "prep/blender_ray_A_LOD0.json",
+   "sha256": "7c1d1fa3e5b4073b733d3cc1ae4629e6824970ab4e195b3e3277ace9fe6bab62"
+  },
+  {
+   "path": "prep/blender_ray_A_LOD1.json",
+   "sha256": "b23694681ee73bad739aa1da9e2bb186607ac04b35913e365f61b2442c4f7b14"
+  },
+  {
+   "path": "prep/blender_ray_A_LOD2.json",
+   "sha256": "61710374f7a0144e273e66a7bc05a67ca97b006d17cf11c31883c100d7615670"
+  }
+ ],
+ "shaNote": "GLB sha256 = bytes identical in working tree and git blob at bce3211. Text files: 'sha256' is the Windows checkout (core.autocrlf=true, CRLF); 'sha256_lf_blob' is the committed LF content served by GitHub Pages. lab/data/assets.json working tree is additionally locally modified (uncommitted, not by LY-031), so use the LF blob hash as baseline.",
+ "sideFinding": "city-data.mjs:4521 records storage-interface.json sha256 b9108967... which equals the CRLF checkout; the committed LF blob hashes 4f3ccae9... Reported to LY-001/LY-008, not LY-031 scope."
+}

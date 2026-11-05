@@ -1,0 +1,55 @@
+{
+ "seat": "LY-012",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-K-LOD0.glb 88d9a322",
+  "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb d82f13fc",
+  "docs/cities/luoyang/progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb 13ff78a7",
+  "docs/cities/luoyang/progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb 94693c58（城景唯一加载的开阳件，仅 local-study 研究视图）",
+  "docs/library/models/m-luoyang-kaiyang-gate/files/kaiyang-ground-LOD0/1/2.glb 5754432a / 50f85502 / e758e45f",
+  "modeling-lab/review-batches/2026-11-04-north13-gates/luoyang-kaiyang-gate-study-v1/content.zip.part001+002 f742fb3c+72609b8b，拼接后 bad99bb9（与 manifest 一致），内含 build.py df0be5ed、geometry.py 47ef2902、LOD0/1/2 .blend、qa/source-object-ranges.json a13c9f74",
+  "docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json fadab2bb",
+  "docs/cities/luoyang/progress-assets/north13-gates/source.json 9b07b734",
+  "docs/cities/luoyang/city-data.mjs e4115705（:708 资产、:4178 研究节点 local-study/cityPlacement null/initial false）",
+  "docs/cities/luoyang/city-renderer.mjs fa0a8dcb（:286 loadAsset、:645 focusResearchModel）",
+  "lab/data/assets.json @bce3211 53d86312（工作树副本已被本地修改，未使用）"
+ ],
+ "inputsMissing": [
+  "bearing-section-v1：中门道承托剖面和门框安装面。lab bce3211、origin/luoyang-content、creation-notebook、review、待传目录都找不到；没有公开 GLB，不能从 GLB 重建。需协调者提供源包和 SHA，或由 LY-011 交付的端口取代。",
+  "开阳适配失败/实际剖面记录（旧 0.0936 m³ 门楣/梁交体、约 21.76 m³ 重复 deck）：本地没有，不能从 GLB 重建；用来定位替换前后的门楣、梁与门额、立颊的关系。",
+  "LY-011 交付端口（柱列、地栿、横梁、门叶停放包络）：前置席位产物，尚未交付。",
+  "G 冻结件（LY-005 坐标与门槛端口、LY-006 端口 ID 与地坪切孔归属、LY-007 三档/材质、LY-008 检查器、LY-010 枢接或固定开门的方案选择）：尚未冻结。",
+  "门下地面附件的源工程/生成器：仓库里没有；单网格 GLB 可以重建几何，但地坪写入权要由 LY-006 指派。"
+ ],
+ "gaps": [
+  "门叶不是独立节点：三档 GLB 各只有 3 个节点，6 片门叶焊在 kaiyang-K-static_timber 里（LOD0 共 1788 三角）。",
+  "没有枢接，门叶悬空：门叶底 z=0.05 m，比测试带顶面（z≈0.040–0.042）高 0.0088–0.0100 m；前端距立颊背面 0.09 m，距门墩面 0.17 m；6 片都没有接触、轴或孔。",
+  "只有固定全开态：开态叶间净宽为左右门道 3.29 m、中门道 4.89 m（LOD2 无横带，3.38/4.98 m）；居中体块最宽可过 3.25/4.85 m；门额底 4.7 m。",
+  "按推断枢轴扫 0–100°：与门墩、立颊、门额、地坪的表面交叉对全为 0；扫过测试带时最小离地 0.0087 m；90° 时距立颊 0.0447 m。",
+  "闭合态漏缝：侧缝 0.04 m，全高 4.3 m；顶缝 0.35 m（门叶顶 4.35 m，门额底 4.7 m）；门叶在立颊背后，y 向隔 0.02 m，没有裁口或搭接；中缝 0.000 m 共面，交叉对计数在 14、11、0 之间漂移，判定不稳。",
+  "超限负例无效：95° 和 100° 时交叉对为 0，没有止挡、门槛或门砧，超限无法被判失败。",
+  "门关阻断只是离散检查：0.5×0.3×1.7 m 体块，闭合态阻断 10/81 样点（LOD2 为 9/81），开态和 45° 为 0/81。",
+  "地面附件覆盖不到门叶和立颊：三条 1.8 m 测试带在 x −8.5..−6.7、−0.9..0.9、6.7..8.5，门叶停放区和立颊底都不在带上，下枢件没有可接的地坪。",
+  "中门道开态门叶占 x ±[2.445,2.63]、y [−4.55,−1.99]、z [0.05,4.35]，扫掠半径 2.56 m，和 LY-011 沿门道壁布置的柱、地栿在空间上会冲突。",
+  "城景加载的去图投影 94693c58 实测与 LOD1 门几何完全一致。"
+ ],
+ "reuseCandidate": "无。K-v1 的门叶是焊死的固定开态，没有独立节点、枢接、止挡和闭合封堵，超限负例无法失败，不满足本项验收。住宅内门组件和武库 B 门框枢轴 v2.2 只能借检查方法，尺度和构造不能移用，按保护清单也不能改动。",
+ "touches": [
+  "K-v1 源节点 kaiyang-K-static_timber 中 C_open_leaf_(0..2,±1) 6 片、C_leaf_batten_* 18 根（LOD2 无）、C_jamb_(0..2,±1) 6 根、C_door_head_0..2 3 根；源 ZIP 三角范围见 prep/ref/k-v1-source-object-ranges.json",
+  "只读邻接、不修改：kaiyang-K-static_earth 中 C_earth_pier_0..3（门墩）、C_upper_deck（门额顶接面 z=5.0）",
+  "LY-011 中门道（x −2.8..2.8）的柱列、地栿、横梁端口：门框安装面和门叶停放包络",
+  "地坪片：kaiyang-ground-LOD0/1/2 三条测试带（x −8.5..−6.7、−0.9..0.9、6.7..8.5，y −7..7）；下枢臼、门砧、门槛要切孔或接触，归属待 LY-006 判定",
+  "新文件（制作期，只写 workpacks/LY-012/）：models/kaiyang-door-*-LOD{0,1,2}.glb、assembly.json（隐藏或替换 K-v1 门叶、立颊、门额的互斥规则）、qa/、source/",
+  "不碰：city-data.mjs、p-luoyang.asset.json、m-luoyang-kaiyang-gate.asset.json、lab/data/*（全部交 LY-100）"
+ ],
+ "size": "M",
+ "risks": [
+  "bearing-section-v1 和适配失败记录本地都没有；如果 LY-011 不交代替它们的端口，中门道门框的位置无法定下来。",
+  "门叶从 static_timber 拆出来要改宿主网格（删 6 片门叶、18 根横带），等于改了 K-v1 的固定件，需要 LY-006 判定这些三角归谁，并按“隐藏/替换”写进 assembly，同时保留原件可回退。",
+  "地坪写入权：门砧、下枢臼或门槛需要地坪切孔，地面附件又只是 C 测试带，未覆盖门叶区。",
+  "LY-010 可能选“固定开门”。即便如此，仍需独立节点、真实支承和超限负例，不能沿用悬空的焊死门叶。",
+  "门叶有无、数量、开向、枢接形式都没有约 180 年开阳门的原始证据，全部是 C 设计；不能拿异地或北魏门砧当事实。",
+  "现在的测量是表面 BVH 加 5 cm 采样，枢轴是推断的；制作期要按 test-plan 加实体包含检测和 1 cm 采样。",
+  "LY-013 的 deck 和 LY-014 的登临可能改门额顶面（z=5.0）或门道净空，需要同一冻结端口。"
+ ],
+ "readyAfterG": true
+}

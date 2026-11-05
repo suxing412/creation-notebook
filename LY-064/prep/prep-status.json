@@ -1,0 +1,58 @@
+{
+ "seat": "LY-064",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD0.glb sha256 a022d987 (1,588,776 B, 7,888 tris)",
+  "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD1.glb sha256 09839d70 (465,904 B, 1,600 tris)",
+  "docs/library/models/m-luoyang-palace-paired-que/files/palaceque-Q-LOD2.glb sha256 9b75671b (49,052 B, 656 tris)",
+  "docs/library/models/m-luoyang-palace-paired-que/m-luoyang-palace-paired-que.asset.json sha256 39dffd3b (status 待审, 未入城)",
+  "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD0.glb sha256 59c8b758 (candidate docking ground new_court_support_C)",
+  "docs/library/models/m-luoyang-palace-guard/files/guard-slice-open-LOD0.glb sha256 1ffc1c31",
+  "docs/cities/luoyang/progress-assets/palace-admission-court/source.json sha256 d02c1d8e; qa/finite-routes.json band outer_ground_join",
+  "docs/cities/luoyang/city-data.mjs sha256 e4115705 (no que reference)",
+  "docs/cities/luoyang/p-luoyang.asset.json sha256 9b5e311f (que only in members[] line 550)",
+  "docs/library/models/m-luoyang-palace-admission-court/files/ open-LOD1 d95bd22f, open-LOD2 01b2017f, closed-LOD0 6ea89298, closed-LOD1 455a1215, closed-LOD2 108e28a5",
+  "docs/cities/luoyang/progress-assets/palace-admission-court/qa/finite-routes.json sha256 0fba7079",
+  "Repo HEAD re-verified bce3211f; all que/court/guard/city SHAs unchanged"
+ ],
+ "inputsMissing": [
+  "Possible local forecourt combination for the que in the private delivery package (que card note says 局部前庭组合不代表全城激活): no such file in repo (git grep) or D:/GitHub/creation-notebook-待传 (only 说明.txt). Use: would turn LY-064 into a reuse. Rebuild from GLB: no; coordinator must confirm whether it exists.",
+  "Native .blend / generator / source ZIP for palaceque-Q (LY_P01 materials): not in repo nor D:/GitHub/creation-notebook-待传. Use: only needed if que geometry itself were edited; LY-064 keeps que bytes unchanged, so non-blocking. Rebuild from GLB: yes (simple batter frustum + timber + roof, textures extractable), must be labelled rebuilt-from-GLB.",
+  "Admission-court native package luoyang-palace-admission-court-v1.zip (not in public dir). Use: only if forecourt must be fused into court ground mesh; prefer separate forecourt piece docking at z=+67 port. Rebuild from GLB: ground slab yes, but owner is not LY-064.",
+  "LY-006 port/ownership template (not frozen): port IDs, owner of court front edge z=+67. Not rebuildable from GLB.",
+  "LY-010 selected scheme (not frozen): standalone forecourt vs docked to admission court; pedestrian/cart envelope and min clear width. Not rebuildable from GLB."
+ ],
+ "gaps": [
+  "Forecourt ground: 0 upward faces at y=0 in all 3 que LODs (upward faces only at y=7.2/7.56/8.74/10.76-10.77); no ground slab exists.",
+  "Footing: each que base is a closed 9.0x9.0 m bottom (81.0 m2 downward area) exactly at y=0, embed depth 0, 0 vertices below 0; no plinth/skirt; placement on y=0 ground gives 2x81=162 m2 coplanar contact.",
+  "Ports/orientation: 3 mesh nodes only (earth/timber/tile, both que merged), 0 port/empty nodes; pair mirror-symmetric in x and symmetric in z (+/-4.5), no front side defined.",
+  "Clear passage: central clear width 19.0 m at ground (inner faces x=+/-9.5), 19.73 m at y=2.2, 21.0 m at y=6.0 (batter 0.1667 m per m); eaves max |x|=18.4 < base 18.5, no side-lane overhang.",
+  "Admission-court front: court ground x -34..34 (68 m), z -20..67, top y=0, 0.2 m thick; que pair (37 x 9 m) at tz=72 has 0/1296 probes supported per que, at tz=66 792/1296 (61.1%); only fits fully inside existing court (tz<=62.5), beside the guard slice with 2.5 m lateral clearance (2.13 m to guard eaves), not a forecourt.",
+  "Placement at tz=40 inside court (corrected): bbox claim of 0.4 m intrusion was wrong. Gallery earth inner edge is |x|=19.0, only entry steps reach 18.1 (east z 32.5-36.5, west z 28-32). volume_overlap.py measured 0.0503 m3 overlap with east entry step (x 18.125-18.475, z 35.5-36.2) and 0 with west; matches the 3 ray-probe anomalies.",
+  "City: not loaded anywhere in docs/cities/luoyang code/data; palace positions unknown-unplaced in research-unplaced.json.",
+  "Lane volume baseline (out/volume-overlap.json, allPass): central box x+/-9.49 at 2.2/4.0/13 m height and side boxes |x| 18.51-24 give 0 volume/0 verts/0 surface hits in all 3 LODs; negative controls give 4.701 m3 (+/-9.8) and 2.3505 m3 (from 18.2). Eave inner edge |x|=9.6 at y~12.",
+  "Closure: que welded non-manifold edges LOD0 0, LOD1 22, LOD2 6; gallery earth 46; parity volume only trustworthy on closed parts, so new forecourt/footing must be closed (0 open edges, 0 odd-parity columns)."
+ ],
+ "reuseCandidate": "无。对阙本体（三档 GLB）合格，可以原样复用，三档 sha 已绑定（a022d987/09839d70/9b75671b）。但在所有公开资产里，前庭地坪、基脚、地坪边缘和端口的数量都是 0（实测：y=0 处没有向上的面，地下体积为 0，没有端口节点），所以必须新造。只有一种情况例外：协调者确认私密交付包里已经有合格的局部前庭组合（卡片备注提到过），那时改判为复用。",
+ "touches": [
+  "palaceque-Q-LOD0/1/2.glb nodes palaceque-Q-static_earth / _timber / _tile (read-only, bytes preserved; only an assembly transform)",
+  "new: forecourt ground slab node(s) x3 LOD (LY-064 owned)",
+  "new: footing/skirt nodes around both que bases (x in [-18.5,-9.5] and [9.5,18.5], z in [-4.5,4.5])",
+  "new: forecourt edge trim nodes and named ports (front street join, rear court join, central lane, two side lanes)",
+  "palace-admission-court new_court_support_C front edge z=+67 and guard__guard-slice-ground-earth (only if LY-010 picks docking; owned by admission-court / LY-061/LY-066, interface via LY-006 port, no edit)",
+  "D:/GitHub/creation-notebook-workpacks/LY-064/** (only write area)",
+  "read-only test neighbours: east_gallery__sidehall-A-static_earth (entry step z 32.5-36.5) and west_gallery__sidehall-A-static_earth (entry step z 28-32) if the que is ever placed inside the court"
+ ],
+ "size": "M",
+ "risks": [
+  "Ownership conflict at admission-court front edge z=+67 with LY-061 (perimeter) / LY-066 / LY-062; LY-006 must assign it before any docking.",
+  "Coplanar 162 m2 base-ground contact may z-fight if footing is a top-flush slab; choose embedded footing or explicit contact class.",
+  "Que has no defined front; orientation chosen in assembly could be misread as historical axis.",
+  "Temptation to name the gate (e.g. via Beiwei Changhe/que form) or count the pair as two palace gates; forbidden.",
+  "Ray-only support/intrusion checks miss probes starting inside volumes; volume_overlap.py (column integration + vertex-in-box + BVH surface overlap, with negative controls) now added in prep/scripts and must be used for T3/T3b.",
+  "No native source for que; any accidental que edit would force rebuilt-from-GLB labelling.",
+  "Footing outward growth e reduces 19.0 m central clear width; min width awaits LY-010 envelope.",
+  "Earlier bbox-based intrusion figure (0.4 m) was an overstatement; any test that relies on bbox or ray only can mis-size conflicts either way. Use the column-volume checker.",
+  "If the private package already holds a forecourt combination, building a new one would duplicate it; confirm with coordinator before production."
+ ],
+ "readyAfterG": true
+}

@@ -1,0 +1,57 @@
+{
+ "seat": "LY-052",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-stable/files/A.glb sha256 672beeb4 (4,898,748 B, 19 nodes, 59,232 tris) — not loaded in city",
+  "docs/library/models/m-luoyang-stable/files/B.glb sha256 bd82280a (7,043,436 B, 22 nodes, 92,876 tris) — not loaded in city",
+  "docs/library/models/m-luoyang-stable/m-luoyang-stable.asset.json commit-bytes eb670386 (worktree CRLF 66f0e994), status 待审",
+  "docs/cities/luoyang/p-luoyang.asset.json commit-bytes 8edb06ab: line 233 inventory row, line 542 related link only",
+  "docs/cities/luoyang/city-data.mjs commit-bytes c849706b: no stable node (only library GLB in city is yong-gate, line 1229)",
+  "docs/cities/luoyang/app.mjs commit-bytes cc0379c0: no stable reference",
+  "workpacks/LY-001/qa/family-ledger.json 8eaa7c7a: C:m-luoyang-stable cityNodes=0",
+  "scratch mq/cards/m-luoyang-stable/audit.json: 0 degenerate, 0 non-manifold, tile shells 360 dup faces (inherited)",
+  "workpacks/LY-052/prep/measure_stable_floor.py 00156732 + measure-A.json 3d58bfee / measure-B.json 29959d3a"
+ ],
+ "inputsMissing": [
+  "native .blend / generator params for stable A/B (private source package): used to keep floor deltas in the same parametric frame and material slots; CAN be rebuilt from GLB — all non-tile nodes are axis-aligned 12/28-tri boxes, datums recovered exactly; must be labelled 从GLB重建",
+  "LY-051 frozen tether/partition ports and floor footprints (only prep/ exists): needed to place trough-front band and cleaning route; cannot be rebuilt from GLB",
+  "LY-005 elevation contract (city ground z vs platform underside -0.24): decides entry step 0.24 m vs 0; cannot be rebuilt from GLB",
+  "LY-006 ownership freeze: overlay vs hide+replace *_earth_platform; ownership of drip/outflow strip",
+  "LY-007 material baseline for packed-earth wear zone / drain lining",
+  "LY-010 selection of A or B and the host site/court (if any); external port neighbour",
+  "LY-002 evidence/forbidden table; web search found no Eastern-Han Luoyang stable floor/drain report (only Qin-Han stone floor drain at Langyatai, non-stable, other region)"
+ ],
+ "gaps": [
+  "Platform floor is a 24-vertex box: all 12 top vertices at z=0.000000 in A and B, slope 0%; no fall, no gutter, no sump, no outlet",
+  "Entry is a vertical 0.24 m platform edge on all four sides, no ramp/threshold; actual step depends on LY-005",
+  "Trough-front work depth to platform front: A 3.475 m, B 4.075 m, single REUSED_C_earth material, no differentiated wear/clean zone",
+  "Troughs sit directly on the floor (z 0→0.68, inner floor 0.18); gap trough-back to rear wall 0.215 m, to rear post 0.125 m, trough end to post 0.185 m, trough spacing 0.55 m — rear of troughs not reachable for cleaning",
+  "Front and rear eave drip lines fall 0.05 m inside the platform edges (A and B); no apron or drip channel; 0.30 m ledge behind rear wall, wall ends 0.30 m short of platform sides",
+  "Free floor (0.05 m ray grid): A 37.195 of 43.2 m2 (31.34 m2 in front of trough line); B 59.165 of 68.04 m2 (50.978 m2 in front)",
+  "Front clear bays A 2.62 m x3, B 2.82 m x4; headroom to wallplate underside A 2.759 m, B 2.741 m; front post face 0.37 m from platform front",
+  "Inherited positive-volume interpenetration rear posts into rear wall: A 4 posts total 0.0632 m3, B 5 posts total 0.0842 m3 (not this seat's fix, to be listed as inherited)",
+  "No city node, plot, port or elevation for the stable: external interface can only be declared in local frame"
+ ],
+ "reuseCandidate": "无。现平台无坡、无沟、无集水/终端、无入口过渡、无外接端口（measure-A/B.json），不满足本项验收；平台盒体可作差异件承托基底保留。",
+ "touches": [
+  "A.glb/B.glb node A_earth_platform / B_earth_platform (overlay or hide+replace, per LY-006)",
+  "A_hollow_trough_0..2 / B_hollow_trough_0..3 (read-only clearance datums; no edits)",
+  "A_post_* / B_post_* front and rear posts (read-only clearance; route must avoid)",
+  "A_rear_wall / B_rear_wall and 0.30 m rear ledge (drip/drain strip behind wall)",
+  "Eave drip strip under A/B_shelter_tile_shells edges (y = ±2.35 / ±2.65), read-only",
+  "LY-051 partition/tether floor footprints in trough-front band (spatial conflict)",
+  "Host court/site ground tile chosen by LY-010 (e.g. LY-047/LY-050 court ground) — external port only, no overlapping floor",
+  "workpacks/LY-052/ only; no writes to city-data.mjs, p-luoyang.asset.json or any city drainage/canal layer"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-051 partition feet may occupy the trough-front band and force re-layout of cleaning route",
+  "Unknown city ground elevation: entry delta could be ramp (0.24 m) or nothing; designing before LY-005 risks rework",
+  "If LY-006 forbids replacing *_earth_platform, an overlay slab must sit above z=0 and would raise floor relative to trough base (trough rim 0.68 effectively lowered) — needs explicit decision",
+  "No Eastern-Han Luoyang evidence for stable floors/drains: all slope/channel/sump values are C design, must not be presented as history",
+  "Temptation to connect outlet to a city channel; must terminate in local sump or declared undetermined port",
+  "Hidden rear-of-trough 0.215 m slot cannot be cleaned by the route; must be disclosed, not claimed",
+  "Inherited post-wall interpenetration could be mistaken as new defect or silently 'fixed' outside scope",
+  "JSON/mjs worktree bytes are CRLF; binding wrong SHA (worktree vs commit) breaks verification"
+ ],
+ "readyAfterG": true
+}

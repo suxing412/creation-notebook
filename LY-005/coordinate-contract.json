@@ -1,0 +1,136 @@
+{
+ "id": "LY-005-luoyang-coordinate-elevation-contract",
+ "version": "1.0",
+ "status": "frozen-candidate (契约；只描述并约束现有几何，不改任何公共文件)",
+ "baseline": {
+  "repo": "D:/GitHub/creation-notebook-lab",
+  "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "cityData": {"path": "docs/cities/luoyang/city-data.mjs", "sha256CommitBlob": "c849706b6210813c74851b86cfd3353183a47badc0e019a1151247db1e34bf00", "sha256CheckoutCRLF": "e4115705aeab28f2f6cc2635fbedfabf4158a08af9c626f6dd493ee27d430a1a"},
+  "cityRenderer": {"path": "docs/cities/luoyang/city-renderer.mjs", "sha256CommitBlob": "04c6c643e44f007e2f579842bfc9d943038a0e5a30aa6776624b432bb9fecbcc", "sha256CheckoutCRLF": "fa0a8dcbfaa5f5f8bd410f3d2295d788f32480c4dab316dd291a561d40d026ca"},
+  "cityDataDumpSha256": "28ce130c13bfe9d2e91fe11ecd30b7d7621a3c251aca23b591da54bc82f03d98",
+  "note": "origin/main 在本席位开工时已前进到 f28d650（雍门接路 r2026.11.05-6）。本契约以 bce3211 为准，另用 f28d650 只做旧节点漂移与端口消费核对（qa/negatives-and-drift.json、qa/f28d650-port-consumption.json）。"
+ },
+
+ "frame": {
+  "id": "luoyang-local-schematic-v01",
+  "units": "metre. 1 glTF unit = 1 m（glTF 2.0 规定线性单位为米）。城市数值是示意工程米，不是测绘米。",
+  "handedness": "right-handed",
+  "axes": {"+X": "图面东", "+Y": "上", "+Z": "图面南（-Z = 图面北）"},
+  "origin": "(0,0,0) 只是 luoyang-local-schematic-v01 的工程原点，没有地理意义",
+  "geographicOrigin": null,
+  "rotationToTrueNorth": null,
+  "evidenceClass": "C 工程设计",
+  "sameAsCityData": "city-data.mjs provenance.coordinateFrame（id、axes、geographicOrigin=null、rotationToTrueNorth=null）"
+ },
+
+ "planNotation": {
+  "rule": "二维平面记号 (east, north) 对应 glTF (x = east, z = -north)",
+  "observedUses": [
+   "v1/r01-assets.mjs、r01-view.mjs：mat.setPosition(l.position[0], 0, -l.position[1])，旋转为 makeRotationY(l.rotation 度)",
+   "v1/c01-layer.mjs：placement.translationEastNorth 必须为 [580,960]，对应 ground-D08 节点 position [580,0,-960]",
+   "data/west/ground-atomic-contract.json：D08.glb translation [580,0,-960]"
+  ]
+ },
+
+ "blender": {
+  "importMapping": "Blender (X, Y, Z) = glTF (x, -z, y)。Blender +Y = 图面北，+Z = 上。",
+  "matrixConversion": "M_blender = C · M_gltf · C⁻¹，C = [[1,0,0],[0,0,-1],[0,1,0]]（作用在列向量上）",
+  "sceneUnits": "factory 场景：METRIC，scale_length = 1.0；不改单位缩放",
+  "export": "export_format=GLB, export_yup=True（官方说明：Export using glTF convention, +Y up）。静态件不用 apply 物体缩放；城市落位不烘进网格。",
+  "verifiedBy": "qa/roundtrip-results.json（Blender 5.2.1，6 个用例含 1 个负例）",
+  "declaredNativeMatrixCheck": "progress-assets/yong-city-v1/source.json 的 nativeBlenderPlacementMatrixRowMajor 与 C·M·C⁻¹ 逐元素差为 0.0"
+ },
+
+ "worldTransform": {
+  "rule": "world = N · S · v",
+  "S": "GLB 默认场景内的节点层级矩阵（glTF 列主序 matrix 或 T·R·S），city-renderer.mjs loadAsset() 用 geometry.applyMatrix4(object.matrixWorld) 烘一次",
+  "N": "城市节点矩阵：node.matrix（16 个数，列主序）存在就用它；否则 compose(position, 绕 +Y 的 rotationY 弧度, scale)。由 InstancedMesh.setMatrixAt 施加一次",
+  "excludeNodes": "在 S 之后、N 之前按祖先名删除子树；渲染器要求清单里的名字全部命中，否则报错",
+  "researchModels": "space=local-study、cityPlacement=null：N 为单位矩阵，只在独立研究视图单独渲染，不进城市坐标",
+  "rendererGuards": "transformFor() 拒收：非有限数、零长轴、det ≤ 0、轴间剪切（|dot| > 1e-5）。渲染器本身不拒收非 1 缩放和非 Y 轴旋转，所以下面两条由本契约补上",
+  "contractRules": [
+   "R1 只允许绕 +Y 旋转：N 的 R[1][0]、R[1][2]、R[0][1]、R[2][1] 绝对值 ≤ 1e-6，R[1][1] 与 1 相差 ≤ 1e-6",
+   "R2 缩放必须为 1：各轴长度与 1 相差 ≤ 1e-6（只容许 float32 存储舍入）。禁止为了合缝缩放建筑；需要改尺寸就交新几何和新 SHA",
+   "R3 det(R) > 0，不允许镜像",
+   "R4 只施加一次：city-absolute 资产的 N 必须是单位矩阵；local-origin 资产只能由一个 N 落位，GLB 内部不得再放城市平移；节点不能同时写 matrix 和 position/rotationY/scale",
+   "R5 节点 bounds 与 N·S·v 的实测世界包围盒差 ≤ 1 mm（按实际顶点算，不用包围盒八角近似；非 90° 偏航时八角法会多出约 2.6 mm）",
+   "R6 同一节点的近景 LOD0 与远景档基底高差为 0（现有 44 院实测 0）",
+   "R7 每次换档、替换或叠加（replaces）都不得改变旧节点的 N；改了就是新节点、新版本"
+  ],
+  "measuredAtBaseline": "qa/frames-bce3211.json：80 个节点（66 城市 + 14 研究）全部满足 R1–R5。最大缩放偏差 2.555e-9（雍门两节点的 float32 cos/sin），最大轴点积 0，最小 det 1.0，bounds 最大差 1.37e-6 m，双重施加 0 例，matrix 与 TRS 并存 0 例。偏航只有 0°、±90°、180°、90.6662°（雍门）五种"
+ },
+
+ "originClasses": {
+  "city-absolute": {
+   "meaning": "顶点直接写在城市坐标里，N 为单位矩阵",
+   "atBaseline": ["wall-A-wall-00..07,10,11", "wall-direct-gate-body-only", "wall-direct-wall-08/09", "ground-network-ground-stitched", "ground-retained", "ground-south", "market-main", "market-N2", "storage-main"],
+   "note": "market/storage 的城市平移写在 GLB 内部节点上（例：granary-group-* translation [2285.714,0,-3673.469]），也算 city-absolute。坐标最大约 3954 m，float32 ULP 2.44e-4 m"
+  },
+  "local-origin": {
+   "meaning": "模型以自身原点建模，由一个 N 落位",
+   "atBaseline": ["courtyard-A/B/TC03/A2/B2/TC03-2（44 院）", "ground-D08", "yong-gate-near", "yong-gate-apron", "14 个研究模型"],
+   "requiredForNewAssets": true,
+   "newAssetRules": [
+    "本地 +Y 向上，单位米，原点放在设计地面或基底面上（本地 y=0 = 本件接地面；不是 0 就在端口里写明）",
+    "原点靠近模型中心或角点，|坐标| < 100 m，让 float32 精度保持在 1e-5 m 量级",
+    "本件的朝向在端口 forward 里写明，不靠约定猜：现有雍门本地 -Z 朝城外、+Z 朝城内；院落 site_neutral_lane 在本地 +Z 一侧",
+    "城市落位只写在 city-data 节点 N 里（由 LY-100 合并），不烘进网格"
+   ]
+  },
+  "classifier": "包围盒中心离原点 < 100 m 记 local-origin，否则 city-absolute（source/measure.py）"
+ },
+
+ "elevation": {
+  "datum": "Y = 0 是 luoyang-local-schematic-v01 的工程零点（C）。没有任何绝对高程、古地面高程或考古层位与它对应过",
+  "measuredLevelsAtBaseline": [
+   {"what": "道路与缝合地面顶面", "worldY": 0.21, "source": "ground-network-ground-stitched C_stitch_primary 向上面积约 38,556 m²"},
+   {"what": "地块与院落地面顶面", "worldY": 0.20, "source": "ground-retained 约 80,694 m²、ground-south 约 29,434 m²、ground-D08 约 9,396 m²"},
+   {"what": "44 院基底（删去 site_lot 后最低几何）", "worldY": 0.20, "baseMinusTerrain_m": "-0.00025 ~ 0（220 个采样点全部落在地面上）"},
+   {"what": "城垣底 / 顶", "worldY": [0.17, 6.2], "note": "12 段城垣底都是 0.17；大部分墙脚下没有已交付地面网格（采样无命中）"},
+   {"what": "广阳门 direct 墙 08/09 靠门端", "worldY": 0.17, "terrainY": 0.1833, "note": "墙脚比地面低 1.33 cm（埋入）"},
+   {"what": "广阳门 direct 门体", "worldY": [6.2, 10.3], "note": "门楼底在墙顶 6.2"},
+   {"what": "雍门门体底 / 门道行走面", "worldY": 0.17, "note": "门体在门道内没有地面几何，门道行走面是接口地坪顶面（本地 y=0）"},
+   {"what": "雍门接口地坪底", "worldY": -0.03},
+   {"what": "市肆、仓储最低几何", "worldY": 0.0}
+  ],
+  "knownSteps": [
+   "城垣/城门一族以 0.17 为基底，地面一族以 0.20/0.21 为顶面，二者有 3–4 cm 的系统差。这是现状，不是考古结论；本契约不抹平，新接缝必须用端口写出实际高差",
+   "f28d650 的 yong-road-link-LOD0 从雍门内侧地坪边（0.17）起坡到 0.21 接上缝合路面，起点高差 8.1e-7 m（qa/f28d650-port-consumption.json）"
+  ],
+  "rules": [
+   "E1 C 高程不能升级为考古高程。所有端口 elevationClass 默认 C-engineering；要写 measured-archaeological 必须给原始报告页码与原文",
+   "E2 接地面高程必须在实际地面网格上量（竖直射线取最高向上面），不是照抄节点 Y",
+   "E3 端口高程容差 2 mm，平面位置容差 5 mm；超出就记为台阶并说明",
+   "E4 不许为了贴地悄悄改 N 的 Y；要改就是新版本，并重算受影响端口"
+  ]
+ },
+
+ "ports": {
+  "schema": "port-schema.json",
+  "kinds": {
+   "ground": "本件与地面或路面相接的点，up = 世界 +Y",
+   "threshold": "门道或门槛上的行走面点，forward 指向通行方向",
+   "floor": "楼面、台面或平台面上的点",
+   "wall-end": "墙端或接墙面中心线的基点",
+   "road-end": "道路件的端点（供后续路网用）"
+  },
+  "mustCarry": "每个端口同时写 local（资产帧，S 已烘）和 world（= N·local），以及所用 N、测量文件的 SHA256；world 必须能用 city-data 的 N 重算出来",
+  "idRule": "<家族或节点>:<部位>:<种类>，加 version。邻接双方用同一个 portId 和 version（由 LY-006 冻结归属）",
+  "measuredInstances": "qa/ports-bce3211.json：55 个（雍门 10、44 院各 1 个 ground-base、广阳门体 1 个）。local→world 重算残差 0.0；用 f28d650 的矩阵重算，差 0.0"
+ },
+
+ "precision": {
+  "storage": "GLB 顶点与 three.js 实例矩阵都是 float32",
+  "maxULPAtCityExtent_m": 0.000244140625,
+  "blenderRoundTripPlacedResidual_m": "≤ 6.94e-5（float32 往返），本地往返 ≤ 1e-5（按 5 位小数取整比较）"
+ },
+
+ "evidenceClassification": {
+  "原始考古/原文": "本契约没有用到。坐标框架、原点、方向和高程都没有考古控制点",
+  "异地异期类比": "没有用到。北魏洛阳、西汉长安、画像砖的尺寸平面都没有进入数值",
+  "C工程设计": ["luoyang-local-schematic-v01 的全部数值", "0.17 / 0.20 / 0.21 各级地面与基底", "雍门 90.666° 落位（由现有 C 墙端推得）"],
+  "未知": ["地理原点与真北偏角", "约 180 年洛阳的绝对高程和城内地面起伏", "城门门槛、路面的真实高差"]
+ },
+
+ "notClaimed": ["模型能读取 ≠ 局部通行通过 ≠ 已入城 ≠ 真实结构安全 ≠ 历史复原成立。本契约只证明坐标、单位、轴向、矩阵施加次数和现有高程的数值一致性", "没有做浏览器或 GPU 实测；渲染器行为按源码复现", "没有做实体碰撞；高程采样只是竖直射线"]
+}

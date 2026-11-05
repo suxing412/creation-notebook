@@ -1,0 +1,59 @@
+{
+  "seat": "LY-072",
+  "inputsFound": [
+    "lab bce3211f (clean tree): docs/library/models/m-luoyang-biyong/files/biyong-A-LOD0/1/2.glb 937a3192 / 5dc71e32 / 48222261",
+    "docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD0/1/2.glb 88f227d0 / 69ae00ce / 60026711",
+    "docs/library/models/m-luoyang-biyong/m-luoyang-biyong.asset.json blob 4b6f3762 (checkout f6ee9030)",
+    "docs/cities/luoyang/city-data.mjs blob c849706b (checkout e4115705): 0 biyong nodes; app.mjs and city-renderer.mjs 0 hits",
+    "docs/cities/luoyang/data/evidence/evidence-geometry.json blob fa8b7002 (checkout 662562fa, CRLF only): ritual_biyong_B schematic B point",
+    "modeling-lab/review-batches/2026-11-04-city-visible zip part01-05 -> ZIP 5895ef23 -> chunks/biyong_C_relationship.glb 1bd1c446 (trial-fit with 4 A_crossing); adapter.json blob 8f890748 not published",
+    "workpacks/LY-002/tables/evidence-ledger.md ea060db6 (E-R05, E-R03, D-04); snapshot LY-002/source/snapshots/hhs02.html 96b91280",
+    "workpacks/LY-005/coordinate-contract.json b6d7fe9d, port-schema.json 30854ed9",
+    "workpacks/LY-006/registry zones.json 6b3595ac, ports.json 28bcfb68, seams.json ca4d81f8, seats.json a1426412, ownership.json ecbbbcf5",
+    "workpacks/LY-007/baseline/lod-rules.json fbf53757; LY-008/source/ly_check.py 39aaa491; LY-009/board/taskboard.v2.json bd2fcbbe"
+  ],
+  "inputsMissing": [
+    "LY-010 decision table (no workpack directory): which biyong layout and how many/which crossing instances; whether S-BIYONG local study is admitted. Cannot be rebuilt from GLB",
+    "LY-006 registry v2: v1 zone LY-072:write:001 (x 20.4-30, lat +-2.5) does not contain any trial-fit crossing, and the 4 A_crossing nodes plus the island edge strip have no owner. Cannot be rebuilt from GLB",
+    "LY-071 frozen transform, enclosure version and filled biyong:hall-enclosure:ground port (inner port values). Measurement reference rebuildable from GLB (LY-071 prep: 0.119/0.133 mm), the frozen contract is not",
+    "LY-073 outer-bank elevation (0.00 vs 0.20) and shared values of biyong:crossing-ends:ground. LY-073 depends on LY-072, so LY-072 fills the port first",
+    "LY-002 re-check of E-R05: in S10 '东西南有水，北无，下天子也' follows '诸侯曰泮宫'; the 辟雍 itself is '以水周其外'. This decides whether a north crossing is allowed",
+    "Private city master city-C032-entry-LOD0.blend (sha 1e8c4d2c): native trial-fit nodes and hidden research nodes. Visible nodes rebuildable from the chunk GLB plus manifest matrices; hidden nodes are not",
+    "Native .blend or generator for hall A and enclosure L/A-v2: editable port definition. Can only be rebuilt from GLB as a measurement reference, not as the original",
+    "No primary source on any Eastern Han 辟雍 bridge (count, width, span, structure). Not recoverable; stays C plus unknown"
+  ],
+  "gaps": [
+    "All 4 existing A_crossing: outer bearing 0.0 m, nothing below t 78.0-78.2; 40-41 empty samples per lateral line within 2 m past the outer end; unsupported underside 97.0-98.2 %",
+    "Inner bearing only 0.20 m (sampled 0.15-0.25, step 0.05) coplanar on the island top, with no abutment",
+    "Deck top 0.30 m above the island with no transition; the hall stair rise is 0.20 m",
+    "Existing crossing is one 12-triangle 8.4x8.0x0.3 box: one tier, no structural outline",
+    "LY-006 v1 zone overlap with every trial-fit crossing = 0.0 under both elevation readings; zone ends at x=30.0, 40.0 m short of the water inner edge 70.0; zone width 5.0 m vs opening 8.0 m",
+    "Registry v1 has no owner for biyong-layout__A_crossing_* x4, A_island or A_square_water_symbol; ports biyong:crossing-ends:ground and biyong:hall-enclosure:ground have local/world = null",
+    "Water band present on all four sides (N/S/E/W 1248/1248 1 m cells each, top z -0.10), with one crossing per side (64 cells); conflicts with LY-002 E-R05 'north no water', but the S10 text read in place supports 'water all round' -> evidence dispute",
+    "Design budget (C): only 1.45 m of island between the wall outer foot 68.35 and the deck start 69.8 (1.65 m to the water edge); island-to-water 0.10 m; a 0.30 m deck with clearance >= 0 needs its top >= +0.20 (one 0.20 step, or a ramp <= 13.8 %)",
+    "Trial-fit enclosure is L-LOD1-class (2372 faces/quadrant), not LOD0; hall earth has 20 inherited non-manifold edges"
+  ],
+  "reuseCandidate": "无。现有 4 块 biyong-layout__A_crossing_*（分块 1bd1c446）实测：外端支承 0.0 m，内端支承 0.20 m，高差 0.30 m，只有一档 12 三角形盒，写入区包含率 0.0；不满足本项验收，只能作负例和被替换的节点（qa/baseline-placeholder-*.json，qa/zone-evidence-check.json）。",
+  "touches": [
+    "source nodes biyong-layout__A_crossing_0_1 (E) / 0_-1 (W) / 1_1 (N) / 1_-1 (S) in biyong_C_relationship.glb: to be hidden or replaced, currently ownerless in LY-006 v1",
+    "biyong-layout__A_island edge strip t 68.35-70.0 (inner abutment seat; shared with LY-071/LY-073, ownerless)",
+    "biyong-layout__A_square_water_symbol band t 70.0-78.0 (clearance only, no write; north band handling belongs to LY-073/LY-010)",
+    "outer bank ground t >= 78.0 (LY-073 zones; outer port shared via seam biyong:crossing-ends:ground@v1::LY-072->LY-073)",
+    "enclosure axial openings |lat| < 4.0 at t 67.65-68.35 and hall stair foot t 20.4 (LY-071, read only; port biyong:hall-enclosure:ground@v1)",
+    "LY-006 zone LY-072:write:001 (must move in registry v2); component B072-crossing (fixed)",
+    "files: only workpacks/LY-072/; public card m-luoyang-biyong (owned by LY-073 per registry) and city files via LY-100"
+  ],
+  "size": "M",
+  "risks": [
+    "G as delivered is not enough: the LY-006 v1 zone sits on dry island 40 m inside the water, so building inside it would produce a crossing over no water; building outside it is a boundary violation. Needs registry v2 or a matching LY-010 layout",
+    "Evidence dispute on the north side (LY-002 E-R05 reading vs the S10 text): it flips whether a north crossing is required or forbidden; LY-072 does not decide it",
+    "No primary evidence for any Eastern Han 辟雍 bridge; the only same-city text bridge is the 明堂 dry-moat bridge, a different building; risk of importing later four-bridge imagery",
+    "Circular port dependency with LY-073: the outer port must be filled by LY-072 and accepted unchanged by LY-073",
+    "Water ring position and width are C (70-78); if LY-071/073 move it the span changes, so the component is built span-parametric",
+    "Outer elevation 0.00 vs 0.20 is undecided; choosing wrong puts a 0.20 m step at every outer end",
+    "Enclosure version ambiguity (L x4 vs A-v2, LOD1-class) changes bound SHAs",
+    "CPU raycast/BVH only; no GPU test, no continuous body motion, no load check; local passage is not city entry and not historical proof",
+    "WebSearch lead for the Zheng commentary (泮之言半也) was not opened (zdic 404); recorded as a lead only"
+  ],
+  "readyAfterG": false
+}

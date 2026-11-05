@@ -1,0 +1,48 @@
+{
+ "seat": "LY-001",
+ "status": "交付完成",
+ "summary": "已锁定 bce3211（=origin/main）的洛阳城景快照：当前入口 42 个资产、66 个城市节点（59 首屏 + 7 按章）、14 个独立研究视图、8 个隐藏试放包（20 GLB），与 373 个 GLB、973 个文件的提交字节 SHA256 逐条入账，按 54 个家族去重并为重复/被替代/失败版本给出去向；静态推断与本机浏览器实测请求集合一致，区域现状图已画。发现 13 条来源合同中 12 条声明 SHA 只匹配本机 CRLF 检出字节、雍门入城后仍以研究候选重复展示、v1 与当前入口仓储版本不同等问题，留给 LY-100/协调者。",
+ "deliverables": [
+  "brief.md",
+  "inputs.json",
+  "qa/snapshot-ledger.json",
+  "qa/file-hashes.json",
+  "qa/city-nodes.csv",
+  "qa/glb-files.csv",
+  "qa/family-ledger.json",
+  "qa/checks.json",
+  "qa/ledger.md",
+  "qa/runtime-load-capture.raw.json",
+  "qa/runtime-load-capture-v1.raw.json",
+  "qa/lab-status-before-after.txt",
+  "qa/city-data.dump.json",
+  "qa/assets.HEAD.json",
+  "preview/region-status-map.png",
+  "source/dump_city_data.mjs",
+  "source/glbinfo.py",
+  "source/inventory.py",
+  "source/families.py",
+  "source/render_ledger.py",
+  "source/draw_map.py",
+  "source/serve_readonly.py",
+  "source/serve_git_head.py",
+  "delivery-manifest.json",
+  "status.json"
+ ],
+ "blockers": [],
+ "openItems": [
+  "C8 未通过：city-data.mjs provenance.sourceContracts 13 条中 12 条声明 SHA 只与 Windows autocrlf 检出字节一致、与提交/线上字节不一致（仅 progress-assets/flat/source.json 一致）；v1 内置期望值为提交字节，二者矛盾。需 LY-100 统一按提交字节重算。",
+  "雍门已入城（首屏），城墙章仍列 research-north13-yong-Y「雍门 · 研究候选」且显示「城市位置尚未配准」；建议标为同家族旧研究档或撤出 walls.researchModelIds。",
+  "旧版 v1 入口太仓视图仍加载 storage-group-organized.glb，当前入口为 granary-city-LOD0.glb；granary LOD1/2 未在城中使用。",
+  "progress-assets/palace-admission-court 6 个 GLB 与资产卡文件逐字节重复且无入口加载；d08/D08-environment.glb 与 ground-atomic/D08.glb 字节相同。",
+  "既有体检标记未复核：market-cluster.glb（城中按章加载）HIGH_DRAWCALLS 500；武库 B 三档 14 个退化三角；A1 需 meshopt。",
+  "「被停用的 31 组重复宫殿」在 bce3211 的 docs、lab/data 与 git 历史中未找到，需协调者提供来源清单。",
+  "未逐一触发其余 5 种院落近景 LOD0 换档（仅静态 SHA 核对）；v1 的 c01stage/c02stage=original 等视图未逐一运行。无 GPU 性能/手机/画面正确性验收。",
+  "本地 main 引用落后于 origin/main（44c66da vs bce3211）；lab/data 三个文件有既有未提交时间戳改动。"
+ ],
+ "nextDependents": [
+  "LY-002",
+  "LY-005",
+  "LY-007"
+ ]
+}

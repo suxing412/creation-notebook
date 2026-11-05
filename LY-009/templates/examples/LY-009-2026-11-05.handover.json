@@ -1,0 +1,185 @@
+{
+ "seat": "LY-009",
+ "date": "2026-11-05",
+ "time": "2026-11-05T23:35:20+08:00",
+ "status": "交付完成",
+ "baseline": "bce3211f818ee5a8bef1773539da70695ba37b17",
+ "baselineNote": "lab origin/main 构建时为 cad338b，见暂停区 PZ-01",
+ "dependencies": [
+  {
+   "seat": "LY-001",
+   "status": "交付完成",
+   "statusSha256": "a32d742a0064baf45c0f78215b10905f2a21fb9ea070b18d8055a58454fe9236"
+  },
+  {
+   "seat": "LY-006",
+   "status": "交付完成",
+   "statusSha256": "fe4aaa6c7cb1441f95ac8f51101e0cf63a4ab07ed53452e59c2bd897c5539aba"
+  }
+ ],
+ "products": [
+  {
+   "path": "board/taskboard.v2.json",
+   "bytes": 228788,
+   "sha256": "bd2fcbbe02a1e68fe7b98cd706a86ae14f49bcb495f2088b68e002e2f818106a",
+   "readBack": true,
+   "note": "100 席任务板 v2（提案，根 taskboard.json 未改）"
+  },
+  {
+   "path": "board/locks.json",
+   "bytes": 167867,
+   "sha256": "5eb5ae327f1655db4eecbc79547ac79413b9c8c95489f05d2e679eb419d4cc9d",
+   "readBack": true
+  },
+  {
+   "path": "board/pause-zone.json",
+   "bytes": 15214,
+   "sha256": "eabfeb22c11cb574fb1c622506b23e837ed760df3c2f770134e8c8bcaa9f4a08",
+   "readBack": true
+  },
+  {
+   "path": "board/ownership.json",
+   "bytes": 60312,
+   "sha256": "a1b91bf1ea40e496229f8d50c8f054e8b3c89fe2a447f8daa3ee487d08f4d21c",
+   "readBack": true
+  },
+  {
+   "path": "board/dag.json",
+   "bytes": 48392,
+   "sha256": "0480db37712caac4a97c948c12cbe5f0750b53ed99ab71b7c0c0c17369925b7e",
+   "readBack": true
+  },
+  {
+   "path": "board/board.md",
+   "bytes": 18160,
+   "sha256": "da6665abb05846ed1bb32daa7de4b77282201d9862a82622c2dbe1949df457e2",
+   "readBack": true
+  },
+  {
+   "path": "qa/parse-compare.json",
+   "bytes": 2326,
+   "sha256": "a2c28c18c794bb5cd772437765fe416a963e0371e03379136960212a9087063d",
+   "readBack": true
+  },
+  {
+   "path": "qa/whitelist-scan.json",
+   "bytes": 58084,
+   "sha256": "796491668e47509c43306e7bbca90f348c3077fdaf7c8cbf0e632b0487a3dfbd",
+   "readBack": true
+  }
+ ],
+ "sources": [
+  {
+   "what": "任务池原文",
+   "path": "workpacks/TASKPOOL.md",
+   "sha256": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+   "bytesKind": "本机检出字节"
+  },
+  {
+   "what": "协调者解析的任务板",
+   "path": "workpacks/taskboard.json",
+   "sha256": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4",
+   "bytesKind": "本机检出字节"
+  },
+  {
+   "what": "LY-006 所有权表",
+   "path": "workpacks/LY-006/registry/ownership.json",
+   "sha256": "ecbbbcf5614d41bf7c7bf3b04416504ae70891e212c7551456de4ff1a417b4ca",
+   "bytesKind": "本机生成"
+  },
+  {
+   "what": "LY-001 城市节点表",
+   "path": "workpacks/LY-001/qa/city-nodes.csv",
+   "sha256": "8ab19b0553faf60717759d3580ac1d173d560a832f58512d83bb478a289f27c7",
+   "bytesKind": "本机生成"
+  }
+ ],
+ "openItems": [
+  {
+   "item": "根 taskboard.json 9 处 text 串入下一节导语；是否以 v2 替换",
+   "to": "主协调者",
+   "pause": "PZ-10"
+  },
+  {
+   "item": "22 个源工程/超限 GLB 在 6 个席位目录里，未跟踪；native/ 规则冲突",
+   "to": "主协调者",
+   "pause": "PZ-14"
+  },
+  {
+   "item": "雍门接街、13院压缩的持锁人身份与 13院锁边界",
+   "to": "主协调者",
+   "pause": "PZ-12"
+  }
+ ],
+ "cityReadiness": "不涉及城市",
+ "fiveClaims": {
+  "模型能读取": {
+   "result": "不适用",
+   "evidence": "本席位只交任务板、锁、白名单与模板，不涉及模型、通行、入城、结构或史实"
+  },
+  "局部通行通过": {
+   "result": "不适用",
+   "evidence": "本席位只交任务板、锁、白名单与模板，不涉及模型、通行、入城、结构或史实"
+  },
+  "已入城": {
+   "result": "不适用",
+   "evidence": "本席位只交任务板、锁、白名单与模板，不涉及模型、通行、入城、结构或史实"
+  },
+  "真实结构安全": {
+   "result": "不适用",
+   "evidence": "本席位只交任务板、锁、白名单与模板，不涉及模型、通行、入城、结构或史实"
+  },
+  "历史复原成立": {
+   "result": "不适用",
+   "evidence": "本席位只交任务板、锁、白名单与模板，不涉及模型、通行、入城、结构或史实"
+  }
+ },
+ "next": [
+  {
+   "direction": "交给",
+   "seat": "LY-010",
+   "what": "任务板 v2、锁表、暂停区（LY-010 依赖 LY-009）"
+  },
+  {
+   "direction": "等待",
+   "seat": "LY-008",
+   "what": "交付后 G 才可能冻结（LY-010 还缺 008）"
+  }
+ ],
+ "writeCheck": {
+  "ruleset": "LY-009 whitelist v1",
+  "verdict": "PASS",
+  "paths": 33,
+  "failReasons": []
+ },
+ "locksRead": [
+  "LOCK-YONG-ROAD",
+  "LOCK-13COURT",
+  "LOCK-SHARED-CITY",
+  "RIGHT-TASKBOARD"
+ ],
+ "pausesRaised": [
+  "PZ-01",
+  "PZ-02",
+  "PZ-03",
+  "PZ-04",
+  "PZ-05",
+  "PZ-06",
+  "PZ-07",
+  "PZ-08",
+  "PZ-09",
+  "PZ-10",
+  "PZ-11",
+  "PZ-12",
+  "PZ-13",
+  "PZ-14"
+ ],
+ "pausesCleared": [],
+ "evidence": [
+  {
+   "claim": "本席位没有新的史实或尺寸结论",
+   "class": "C工程设计",
+   "ref": "brief.md §证据分类"
+  }
+ ]
+}

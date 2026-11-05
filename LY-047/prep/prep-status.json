@@ -1,0 +1,59 @@
+{
+ "seat": "LY-047",
+ "inputsFound": [
+  "docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb 25f018fa（courtyard-B 远档，已入城 10 院，city-data.mjs:36；剔除 site_lot、site_neutral_lane、designed_loading_yard）",
+  "docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb a8d94bb3（B 近档，nearPath city-data.mjs:56，只在 focusCourtyard 时加载，city-renderer.mjs:416）",
+  "docs/cities/luoyang/assets/c02v/B2-LOD1-prototype.glb 83282373 / B2-LOD0-prototype.glb d99affca（courtyard-B2，已入城 7 院，city-data.mjs:116/136）",
+  "docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb 277e9e73 / A2-LOD0-prototype.glb 19b05202（C02-010 原型，city-data.mjs:2322；LY-041/043/044 准备稿提议的示范院）",
+  "docs/library/models/m-luoyang-workyard-shed/files/workshed-LOD0/1/2.glb 89e0a439 / a21c2893 / 7c054863（独立开敞棚，卡片状态待审，城景零引用）",
+  "docs/model-library/updates/m-courtyard-family/files/baseline.glb 9be87724、north.glb b119cbef、south.glb c2db3239（B2 前 C2 棚位预设，不加载）",
+  "docs/cities/luoyang/progress-assets/flat/study-north13-court-B-6f7f84af4e7f.glb 6f7f84af、study-north13-court-B2-7d3758ce668d.glb 7d3758ce（北区「储藏作业院」研究模型，local-study，cityPlacement null，city-data.mjs:4233/4260）",
+  "docs/cities/luoyang/assets/ground-atomic/south.glb 4313826d、retained.glb aed8b3d4、network-ground-stitched.glb fdfc3ce5、D08.glb 3ab93310（四个地面节点都是 initial:false，city-data.mjs:3555-3645）",
+  "docs/cities/luoyang/data/r01/model-contract.json 工作树 ab921fad / HEAD ca713fba（变体 B「居住兼储藏作业院」；证据栏写明是河南明器异地类比，布局和箱子是 C）",
+  "docs/cities/luoyang/city-data.mjs 工作树 e4115705 / HEAD c849706b；city-renderer.mjs 工作树 fa0a8dcb / HEAD 04c6c643（:221 初始集合，:309/:346 excludeNodes，:416 近档，:612-623 focusCourtyard）",
+  "workpacks/LY-047/prep/measure_ly047.py de2adbd1 → measure-ly047.json；selftest_ly047.py 47eb6399 → selftest-ly047.json（allBehaved=true）；blender_crosscheck.py 078a16d8 → blender-crosscheck.json 60cdb115（Blender 5.2.1）；完整 41 项见 inputs.json"
+ ],
+ "inputsMissing": [
+  "R01-B 和 B2 原型的原生源（.blend 或生成器；合同里 B 的 source_sha256 是 65e4e69b…）：仓库里没有。只有在 LY-010 要求把 B 院原位棚改成可单独卸载、替换时才用得上，用来把棚件从全院共用节点里拆出来。箱、柱、梁、台案都是简单盒体，可以从 GLB 重建（已识别出 4 柱、4 础、2 梁、2 箱、台面和 4 腿）。棚屋面要从 7,896 三角的整片屋面节点里按区域切出来，作者意图重建不出来。",
+  "workshed 的原生 .blend 和 workyard-shed、courtyard-family 预设的源 ZIP 或 Release 包：不在仓库。卡片上写的「棚屋承托」「0/4/8 度姿态」「预设路线检查」的 QA 定义拿不到，这些结论不能继承，只能重测（支承和净空本稿已经重测）。安装本身是刚体放置，不需要原生源；从 GLB 直接引用即可。",
+  "LY-010 决策表：示范院是哪一院，以及有没有选储藏或棚下用途。路线 R（B/B2 原位）和路线 W（A2 装 workshed）由它决定。",
+  "LY-005 高程契约：y +0.200 平移和 0.200 / 0.215 院面基准，要由它冻结。",
+  "LY-006 所有权：A2 院面格子归谁（LY-044 灶、LY-045 厕、LY-047 棚、LY-048 服务口），还没冻结。",
+  "LY-002 证据表：约 180 年洛阳住户储藏屋和棚的证据等级。本席位没有查外部资料。",
+  "LY-041 / LY-043 交付：选院、地坪基准，以及 A2 墙房端接是否改变檐口净空。"
+ ],
+ "gaps": [
+  "示范院和储藏模块错位：LY-041/043/044 都把示范院定为 C02-010（A2「低层偏门生活院」）。A2 原型里棚和储物件都是 0。已登记的储藏作业院只有 B（10 院）和 B2（7 院），17 院都已入城。走 A2 就只能装 workshed，等于新增一座 8.1 × 4.9 m（39.7 m²）的棚。",
+  "B 和 B2 的棚不能单独加载：B LOD0 的棚件共 2,072 三角（LOD1 248），B2 LOD0 共 1,688 三角。它们全部并在全院共用的 plain_timber（540）、floor_plinth（132）和 roof（B 7,896 / B2 7,032）节点里，没有独立节点。要单独卸载或替换，必须改原型节点。",
+  "workshed 原点差 0.200 m：6 根柱、12 个底点都在 y=0.0，院面和城景地面是 0.200。不平移就全部埋入 0.200 m（负例 N1 已检出）。平移 +0.200 后，在 409 个可行位上测了 2,454 个柱脚点，承托只有 ground-south，间隙 −3e−9 m。",
+  "workshed 在 A2 院里的可行安装位：0.5 m 步长、两个朝向，共试 3,626 个，可行 409 个（0° 198、90° 211），A2 LOD1 复核也是 409 个。不可行的：出院界 2,148，檐口碰现有构件 1,068，切断屋门路线 1。离 LY-044 灶台试放点（局部 2.0、3.45）1.5 m 以外的只有 65 个。A2 院里任何高度都空着的面积是 303.95 m²，一座棚约占 13%。",
+  "默认视图下棚和储藏都悬空：四个地面节点 initial:false。默认视图和近景里，17 个 B/B2 院的 36–40 个落地底点下面都没有地面。打开 terrain 章后逐院实测：无地面 0、悬空大于 5 mm 0、埋入 0；承托是 ground-retained 9 院、ground-south 5 院、ground-D08 3 院。这是加载配置问题，归 LY-100。",
+  "原位取放的实测限制：空手（r 0.30）时，每个箱子和台案四个面都在 0.325–0.375 m 以内可达。带货（r 0.45）时，B 和 B2 的箱子朝台案那一面（间距 0.5 m）要绕 4.1 m，不可达；0.9 m 操作带内遮挡 40–48 格（0.10–0.12 m²）。箱子上方净空 1.91 m，台案上方 1.67 m，梁底离地 2.15 m，棚内屋面最低处 2.45 m。LOD0 和 LOD1 一致。",
+  "储藏屋实测：B 和 B2 东屋地台高出院面 0.45 m，三级踏步每级高 0.15、深 0.36，宽 2.0 m。门洞净宽 1.66 m，净高 2.24 m，门扇开启并向屋内转入约 1.05 m。屋内 r 0.30 可达面积：B 18.76 m²（地台 32.4 m²），B2 14.44 m²（地台 25.92 m²）；r 0.45 时为 15.52 和 11.75 m²。屋内净高 3.6 m。没有做车辆检查。",
+  "被剔除的 designed_loading_yard（顶面 0.215）不影响棚的支承：棚件 40 个底点全部落在它之外的 0.200 面上。它只是原型里的作业地坪表现，城景里由地面 0.200 代替，差 15 mm 的事归 LY-041 和 LY-005。",
+  "文本文件 SHA 有两种口径：core.autocrlf=true，city-data.mjs 工作树是 e4115705，HEAD 是 c849706b。city-data 的 provenance 里记录的 instances-calt SHA（c830b4e3）对应工作树 CRLF 版，不是提交版（e39fdafb）。验收绑定 SHA 前，要由 LY-008 定一个口径。"
+ ],
+ "reuseCandidate": "条件复用。如果 LY-010 把示范院定在 B 或 B2 院（城景已有 17 院，例如 C02-010 西邻的 C02-009 是 B 院，承托为 ground-south），院内原位的作业棚（2 箱 1 台案）和东侧抬高储藏屋本身就是已登记的「居住兼储藏作业院」，不需要新造。实测证据：17 院共 36–40 个落地底点（逐院测），地面打开时间隙 0、无地面 0、埋入 0；柱坐础间隙 0；空手时箱子和台案四个面都可达，距离 ≤ 0.375 m；梁底 2.15 m；储藏屋门洞 1.66 × 2.24 m，踏步 3 × 0.15 m；Blender 自带导入器复核一致。这时交付物只有选院、子件清单、使用限制（带货只能从外侧三面取放）、加载配置提案和检查器。如果示范院仍是 A2 C02-010，就没有可复用的合格成果：workshed 原件可以原样引用，但城景 44 院里没有已装好的实例。还要做放置变换（y +0.200）、和 LY-044/045/048 的占位协调，以及互斥登记，所以不能判为复用完成。",
+ "touches": [
+  "原型节点（只读）：courtyard-B 的 architecture_C_plain_timber、architecture_C_floor_plinth、architecture_C_roof_rhythm_not_glaze_copy（棚区 x −7.7…−3.9、z −0.9…5.9）和东屋（x 2.72…7.4、z −7.8…1.2）；courtyard-B2 对应的 .001 节点（棚区 x −5.2…0.2、z 0.3…4.7）；designed_loading_yard 继续剔除",
+  "城景节点（只读矩阵）：17 个 B/B2 院，C02-018、022、025、002、029、004、005、006、009、032、016、033、034、036，以及 FROZEN-D08-S2、S4、E",
+  "C02-010（A2，矩阵平移 531,0,−818.45，city-data.mjs:2322）的院面：参考安装位的檐口是局部 x −8.55…−0.45、z 3.05…7.95，世界坐标 x 522.45…530.55、z −815.40…−810.50。和 LY-044 灶、LY-045 厕、LY-048 服务口共用这块院子，归属等 LY-006 定",
+  "地坪片（只读）：ground-south 的 single_closed_terrain_after（C02-010 与 5 个 B/B2 院）、ground-retained（9 院）、ground-D08（3 院）。不切、不叠",
+  "引用但不复制：workshed-LOD0/1/2.glb；可能从 B GLB 切出原箱和台案（只在 010 要求棚下放储物件时做，标「从 GLB 重建」）",
+  "合并提案（只交 LY-100，不写）：city-data.mjs 新增 workshed 实例节点（路线 W）或示范院加载配置；地面节点 initial 与示范院同进同出",
+  "新文件（只写 workpacks/LY-047/）：assembly.json、qa/、preview/、delivery-manifest.json；路线 R 不交 models/",
+  "不碰：p-luoyang.asset.json、lab/data/*、13 院片区 life-block、B2 三预设、C2 修订件、北区研究院"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-010 如果选 A2 C02-010 又要储藏用途，就要在该院新增一座 39.7 m² 的棚，会和灶、厕、服务口争院面。可行位里只有 65 个避开灶台试放点。LY-044/045 的最终占位一变，可行集就要重算。",
+  "如果 010 要求示范院的储物件「可单独关闭」，B 院做不到：棚件并在全院节点里，原生源又不在仓库，只能从 GLB 切分重建，并标明不是原件。",
+  "workshed 卡片是「待审」，QA 定义不在仓库；卡片上的承托和姿态结论不能直接继承。",
+  "y +0.200 和 0.200 / 0.215 基准没有冻结，可能导致埋入 0.2 m，或者有人补一块大底板。",
+  "默认视图没有地面：如果有人用补底板的办法处理，就违反「禁止大底板」。",
+  "文本文件 CRLF / LF 两种 SHA 口径不统一，会让 T0 绑定误报。",
+  "测量方法有局限：0.05 m 栅格、竖直射线、圆盘膨胀，不是实体碰撞穷尽，也不是连续人体或货物运动；人体和货物包络是 C 参数；没有做 GPU、浏览器、手机、结构、承载、防火或卫生检查。",
+  "证据：B 院只是河南明器的异地类比，箱子、台案、抬高地台和 workshed 都是 C；约 180 年洛阳住户的储藏方式未知，不能用北魏、西汉长安或画像砖材料补。"
+ ],
+ "readyAfterG": true
+}

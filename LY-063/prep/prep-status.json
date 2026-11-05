@@ -1,0 +1,58 @@
+{
+ "seat": "LY-063",
+ "inputsFound": [
+  "docs/library/models/m-luoyang-palace-sidehall/files/sidehall-A-LOD0.glb bd000b1b / LOD1 54793504 / LOD2 b4c64f49 (eight-bay sidehall; equals the court's independent-geometry-review.json inputs/sidehall-A-* locks = latest entry-step revision)",
+  "docs/library/models/m-luoyang-palace-sidehall/m-luoyang-palace-sidehall.asset.json commit 2011ab6f (worktree CRLF d353b3a0)",
+  "docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD0/1/2.glb 59c8b758 / d95bd22f / 01b2017f; closed-LOD0/1/2 6ea89298 / 455a1215 / 108e28a5 (progress-assets copies byte-identical)",
+  "docs/cities/luoyang/progress-assets/palace-admission-court/qa/finite-routes.json, route-interfaces.json, independent-geometry-review.json, source.json (commit-byte SHAs in inputs.json sha256Commit)",
+  "docs/library/models/m-luoyang-deyang-hall/files/deyang-A-LOD0.glb 77369980 (north neighbour); m-luoyang-palace-guard guard-slice-open/closed-LOD0 1ffc1c31 / 48c511c5 (south neighbour); paired-que a022d987 and yutang A/B 6e7f06c0 / 92091dbe registered only",
+  "city loading: none; city-data.mjs / app.mjs / city-renderer.mjs 0 matches for sidehall|admission|palace; GLBs load only in detail pages lab/asset.html:35,112 and docs/model-library/inspect.mjs:136",
+  "G inputs already delivered: LY-006/registry/zones.json, ports.json, seams.json, seats.json, ownership.json; LY-005/coordinate-contract.json; LY-009/board/ownership.json, pause-zone.json (SHAs in inputs.json gSeatInputs)",
+  "lab main bce3211f818ee5a8bef1773539da70695ba37b17; core.autocrlf=true, 22 of 55 text inputs differ worktree vs commit bytes, QA binds sha256Commit"
+ ],
+ "inputsMissing": [
+  "sidehall-A native .blend + generator/params (entry-step revision source pack): use = authoring end modules on native column/eave/platform objects; not in repo; rebuild from GLB = yes for measurement and an overlay end module (GLB geometry rigid and fully decoded), no native-reproduction claim; LY-009 also forbids *.blend in this workpack, so source ships as a generator script",
+  "luoyang-palace-admission-court-v1.zip (3 native .blend, builder d4cd1cc4, config 9de34dcc, lock 54837b14, route checkers bf82ede6 / ec77a791): use = byte-reproducible court rebuild and route numbers comparable to the original 99 bands; not in repo; rebuild from GLB = partly (court reassembled from the 6 GLBs as overlay; original checker not recoverable, LY-063 uses turn_envelope_check.py and says so)",
+  "LY-008 delivery checker (no status.json yet): cannot be rebuilt from GLB",
+  "LY-010 scheme/area admission (directory missing): which of the 4 ends, closure vs floor transition vs turn, and whether gap A / gap B are granted; cannot be rebuilt from GLB",
+  "LY-061 delivery: values of port admission-court:enclosure:wall-end v1 (null in registry), target of any turn; only unfrozen prep exists; cannot be rebuilt from GLB",
+  "Any ~AD180 Luoyang evidence for gallery end/corner form: unknown; LY-002 ledger has none (E-S03 only shows multi-bay 庑 existed, in the 三公府); turn stays C"
+ ],
+ "gaps": [
+  "All 4 gallery ends (W-N, W-S, E-N, E-S) are open across 3 lanes (front apron 1.6 m, porch 3.1 m, rear apron 1.3 m = 6.0 m) ending in a 0.45 m vertical drop to court z=0.00, no step or barrier; identical in all 6 court GLBs",
+  "Envelope baseline (0.8x0.5x1.8 m box, max riser 0.16), re-run byte-identical: N1-N4 walking off each end fail with overhang 10 + riser 1 (0.45 m); P1/P2 porch straights pass with 0 failures",
+  "No turn on the existing platform: end column plinth 0.65x0.65x0.20 m leaves 0.675 m to the platform end (< 0.8 m body); T1/T2 fail overhang 30, riser 2, collision 12",
+  "Original court route QA never covers the last 3.25 m of each end (corridor bands stop at y -47.75 / -16.25)",
+  "North ends vs hall: plan gap 1.3 m to hall platform corner (+-17.5, -12.5), 0.6 m from the LY-063 write zone; rise 1.35 m (0.45 -> 1.80) needs ~9 risers / 2.7 m run in 0.5 m; T3 collision 26; roofs 2.18 m apart in plan",
+  "LY-006 write zones (4 boxes 10.9 x 3.0 m, z -0.2..6.4) measured: 3,270/3,270 ground samples hit new_court_support_C z=0.000, 3,269 body-free z 0.01-1.81 (32.69 m2); only original geometry inside is the 0.8 m end eave overhang (864 samples, z 4.44-6.33)",
+  "Gap A: original rear eave in the end band reaches x=+-29.809 (z 4.44-4.65), 0.809 m beyond the zone edge +-29.0 (0.800 m LOD1/2); an eave-following end cap cannot stay inside its zone",
+  "Gap B: the 5.0 m strip x +-29.0..+-34.0 on all 4 end bands is in no seat's write zone; LY-062 side openings (y -16..-10) are 5.0 m from the north-end zones; a turn consuming port admission-court:enclosure:wall-end has nowhere to go",
+  "No cut rights: court nodes and new_court_support_C are LY-061 keep, LY-063 cutZones/groundPieces empty; floor transitions must sit on the slab, not cut it",
+  "Sidehall earth identical LOD0/1/2 (780 tris, fingerprint 8c31be28); entry-step fingerprints local aae2fb16, court W c68de40c, E 4855d60c"
+ ],
+ "reuseCandidate": "无。sidehall card has only 3 whole-building GLBs and the court has no end pieces; m-passage-interface elbow/end presets are self-described roofless box tests, not Han gallery pieces (no column grid/eaves/material semantics). Only the entry-step parameters (0.15 m risers, 0.30 m treads, 4.0 m width) are reusable as a C template.",
+ "touches": [
+  "west_gallery__sidehall-A-static_earth/_timber/_tile and east_gallery__sidehall-A-static_earth/_timber/_tile (read-only, owner LY-061 keep, fingerprint-locked; end faces y=-13.000 / -51.000 are the declared contact faces)",
+  "palace-sidehall:sidehall-A-static_{earth,timber,tile} (LY-063 keep steward, no modification)",
+  "LY-063:write:001..004 (frame local:admission-court; Blender x +-18.1..+-29.0, y -13..-10 and -54..-51, z -0.2..6.4): only place for new end modules",
+  "new_court_support_C top z=0 inside the 4 zones (floor transition sits on it; owner LY-061 keep, no cut)",
+  "original end-eave overhang inside zones (y 0.8 m band, z 4.44-6.33) and outside (x +-29.0..+-29.809): avoidance or declared contact line",
+  "port sidehall:ends:floor v1 (produced, consumer LY-069); port admission-court:enclosure:wall-end v1 (consumed from LY-061)",
+  "unowned strip x +-29..+-34 next to LY-061:write:004..007 and LY-062:write:001/002 (only if LY-006 amends zones)",
+  "hall__deyang-A-static_earth side face x=+-17.5 near y -12.5 (constraint only; LY-065/LY-070)",
+  "files: workpacks/LY-063/** only"
+ ],
+ "size": "M",
+ "risks": [
+  "LY-010 may choose a turn toward the perimeter wall / side opening, which cannot be built inside the current write zones (gap B, 5 m); LY-006 must amend registry v1 first, otherwise the seat becomes blocked",
+  "An eave-matching end cap overshoots the zone by 0.809 m (gap A); alternatives are a hipped/stopped cap inside x +-29.0 (changes the roof read) or a zone amendment",
+  "A turn toward the hall needs ~2.7 m stair run where 0.5 m exists; infeasible without moving originals (forbidden) and would enter LY-065's platform edge",
+  "A turn-module roof could visually join gallery and hall roofs and be mistaken for a passage; a roof-only negative path (expect no_support) is required",
+  "Native sources missing and *.blend barred from the workpack: end modules authored against GLB-decoded geometry with a generator script; Blender 5.2.1 here vs 4.3.x for the court, so install as an overlay, never re-export the court",
+  "LOD2 sidehall tile is 32 triangles; an end-module LOD2 must match that simplification without copying LOD0",
+  "West and east galleries are rotated (not mirrored) copies with offset entry steps; author each end in its own local frame, no negative-scale mirroring (LY-005 R3)",
+  "LY-007 marks palace-family numbers 待复核; material/LOD budget may shift",
+  "Envelope check is a discrete box sweep with a surface BVH, not solid, gait or structural proof"
+ ],
+ "readyAfterG": true
+}

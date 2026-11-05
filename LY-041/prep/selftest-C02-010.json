@@ -1,0 +1,63 @@
+{
+ "selftest": [
+  {
+   "case": "positive_baseline",
+   "expectPass": true,
+   "gotPass": true,
+   "ok": true,
+   "failedChecks": []
+  },
+  {
+   "case": "neg_ground_raised_20mm(buried)",
+   "expectPass": false,
+   "gotPass": false,
+   "ok": true,
+   "failedChecks": [
+    "C1_footprint_contact_LOD1",
+    "C1_footprint_contact_LOD0"
+   ]
+  },
+  {
+   "case": "neg_ground_lowered_20mm(floating)",
+   "expectPass": false,
+   "gotPass": false,
+   "ok": true,
+   "failedChecks": [
+    "C1_footprint_contact_LOD1",
+    "C1_footprint_contact_LOD0"
+   ]
+  },
+  {
+   "case": "neg_drop_ground_south(no support)",
+   "expectPass": false,
+   "gotPass": false,
+   "ok": true,
+   "failedChecks": [
+    "C1_footprint_contact_LOD1",
+    "C2_lot_single_continuous_ground_LOD1",
+    "C1_footprint_contact_LOD0",
+    "C2_lot_single_continuous_ground_LOD0"
+   ]
+  },
+  {
+   "case": "neg_big_plate_over_lot_lane_neighbours",
+   "expectPass": false,
+   "gotPass": false,
+   "ok": true,
+   "failedChecks": [
+    "C3_candidate_only_on_measured_gap_LOD1",
+    "C3_candidate_only_on_measured_gap_LOD0"
+   ]
+  },
+  {
+   "case": "neg_matrix_shift_0.1m",
+   "expectPass": false,
+   "gotPass": false,
+   "ok": true,
+   "failedChecks": [
+    "C4_matrix_unchanged"
+   ]
+  }
+ ],
+ "allBehaved": true
+}

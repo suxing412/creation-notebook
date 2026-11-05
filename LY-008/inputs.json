@@ -1,0 +1,48 @@
+{
+ "seat": "LY-008",
+ "title": "建立可重跑交付检查器",
+ "type": "考据/契约",
+ "nativeSource": "不适用：本席位不产模型，没有 .blend / 源 ZIP；负例由脚本从 LY-007 好样件的 GLB 字节注入生成（从 GLB 派生，不冒称原件）",
+ "repo": {
+  "path": "D:/GitHub/creation-notebook-lab",
+  "commit": "bce3211f818ee5a8bef1773539da70695ba37b17",
+  "access": "只读：git archive（-c core.autocrlf=false）、ls-tree、show、rev-parse、status；不 checkout、不写文件、不在原仓库跑 build_assets.py",
+  "officialChecker": {
+   "lab/tools/build_assets.py": "ed7664a7d15c6f0114b6ffec99be9b43426ea8eee9c9ef6ad5537038c76c579e",
+   "lab/tools/glb_audit.py": "99d64d7c868ac9b74e9ac1d828499ab959a847dcaebbd27f264f5728047166ac",
+   "docs/asset-spec/categories.json": "63f41789873383a0340df13333b5cb47e3106c318a9c52f187c608bc3190f96a",
+   "docs/asset-spec/README.md": "8c16f653c2bf4af81d4d6fe1330ec4f79bd00720bec2f2c31f79c8461a832769",
+   "docs/asset-spec/source-archive.json": "8b80a86d7b93e91812bcaa799e768bcb5efe86f31fd02221eb638da810b89653",
+   "shaKind": "提交 blob 字节的 SHA256（git show <commit>:<path>）",
+   "specVersion": 1,
+   "limitsUsed": {"glbMaxMB": 15, "glbWarnMB": 5, "trianglesMax": 500000, "trianglesWarn": 150000, "mbMeans": "1e6 字节（build_assets: bytes/1e6 > glbMaxMB）"}
+  },
+  "reviewCopyOfGlbAudit": {"path": "D:/GitHub/creation-notebook-review/notes/tools/glb_audit.py", "sha256": "99d64d7c868ac9b74e9ac1d828499ab959a847dcaebbd27f264f5728047166ac", "sameAsCommit": true}
+ },
+ "taskpool": {
+  "TASKPOOL.md": "00c2e1715e312d575faab519ff321dd32395f5bd2f2f239929199541788566c7",
+  "taskboard.json": "1d1fcb9c6e5ea22bb64b053d0ca30e10c3c588ffffb4edcbbbf73db6d4d65ae4"
+ },
+ "predecessors": {
+  "LY-001": {"status.json": "a32d742a0064baf45c0f78215b10905f2a21fb9ea070b18d8055a58454fe9236", "qa/glb-files.csv": "9771bf0ce16b50d70d04e6f48f01abbe9cbfe062a4e97ab72cad3b56fbe0e9ff",
+             "usedFor": "普查 GLB 的提交字节 SHA 交叉核对（qa/checks.json C6）；被检查的交付包之一（C7）"},
+  "LY-005": {"status.json": "add0f9b1a722f08e516ffd64b9dbaf97532a62d9fa18ded01df89ab7be5740ea", "coordinate-contract.json": "b6d7fe9db9523569383bf656df39aef63e7d80e8a1d5877196ba0bcab8747712",
+             "usedFor": "R2 缩放为 1、R3 无镜像 → GLB 内网格节点的 NODE_NONUNIT_SCALE / NODE_MIRRORED 警告（城市节点 N 不在 GLB 里，本检查器不判 N）；被检查的交付包之一"},
+  "LY-007": {"status.json": "2fddce70c110a19c6d08d10b90ac355440d538f5c8dcc82cca58504476ecc082", "delivery-manifest.json": "8100f197c742fc00406d4c835b9690d2cb785a3f838012b18ae621386bc16fc1",
+             "textures/manifest.json": "4fdab75df2a679f2e0f0f55929614858d3ff234ba983f4063f103b0a8aa5fa9f",
+             "baseline/lod-rules.json": "fbf53757be2e243429b751899f1690d30f827849962c0e77a8ca811462789146",
+             "baseline/texture-uv-rules.json": "a5bfae60c7d646caecbfefa7a5728aa26d60add0e2e80ec72e68380a021d7d27",
+             "baseline/LY_P01-material-semantics.json": "f0a04f599595d41b9d7cad39b9afd5ae3829b343222d92e174f1b49d6d9b1bf3",
+             "source/lib/ly_style.py": "b03453a2e1f52e6ca397b94ea853dd9bd7cb69bcb116689c4847086b72b920bb",
+             "goodSamples": "models/samples/{S84,G10}-LOD{0,1,2}.glb、models/refsphere/lyref-A-LOD{0,1,2}.glb（9 个，SHA 与 LY-007 清单逐个一致，见 qa/checks.json C3）",
+             "usedFor": "好样本；ly-p01 档的判据数值（材质名正则、LOD0 512²/LOD1 256²/LOD2 无图、禁用项、静态节点无 TRS、世界盒式 UV、三角比 [0.17,0.62]/[0.05,0.20]、包围盒 LOD1 逐值相同 / LOD2 ≤0.02 m / house 族顶部降 ≤0.10 m）；inspect_glb 的 UV 判据被移植为 numpy 版"}
+ },
+ "parameters": {
+  "formalGlbLimitBytes": 15000000,
+  "formalLimitRule": "文件字节 > 15,000,000 才错；恰好 15,000,000 通过（与官方一致）",
+  "uploadChannel": "只在 --upload-limit 给出具体通道上限时判；按 raw 或 base64（4·ceil(n/3)）承载计；不给就记 not-judged，不与正式上限混用",
+  "triangleCount": "官方口径（每个 mesh 定义计一次，与 glb_audit 相同）判上限；另报按场景实例的绘制三角数，超限只记警告 GEOM_DRAWN_TRI_OVER_LIMIT",
+  "privacy": "强判据：盘符绝对路径、UNC、带盘符/家目录的 file://、Windows Users 目录、AppData、本机用户名（运行时取 USERNAME/USER/USERPROFILE + --private-token）；弱判据：/home/、/Users/ 式通用路径。GLB 的 JSON 块用全部判据（任何命中 = 错误）；BIN 块只用成词的严格判据 + 用户名（避开像素里的反斜杠误报）",
+  "fakeUserInFixtures": "负例里的私密路径用虚构占位用户名 lyneguser，不含本机真实用户名"
+ }
+}

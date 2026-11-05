@@ -1,0 +1,16 @@
+{
+ "_usage": "登记暂停区条目：复制本文件到自己目录 LY-###/pause-requests/PZ-request-<日期>-<序号>.json，由协调者并入 LY-009/source/pause_spec.py 后重跑 build_board；席位不得直接改 LY-009。",
+ "id": "PZ-??（协调者编号）",
+ "title": "一句话事项",
+ "effect": "blocks-merge | blocks-city | blocks-start | advisory",
+ "seats": ["LY-###"],
+ "detail": "现状、为什么本席位解决不了、不做会怎样",
+ "decider": "谁能解除（席位 / 主协调者 / 制作人）",
+ "unblock": "可检查的解除条件",
+ "sources": [
+  {"file": "LY-###/status.json（workpacks 相对路径）", "quote": "能在该文件里原样找到的一句"},
+  {"lab-git": "<commit>:<path>", "quote": "能在该提交的该文件里原样找到的一句"}
+ ],
+ "raisedBy": "LY-###",
+ "raisedAt": "YYYY-MM-DDTHH:MM+08:00"
+}
