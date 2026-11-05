@@ -1,0 +1,47 @@
+# Publish the site on every push to main.
+# docs/ stays at the site root exactly as before (all existing URLs keep working);
+# the asset library (lab/) is published at /lab/, with its "../docs/" references pointed at the root.
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble the site
+        run: |
+          mkdir -p _site
+          cp -a docs/. _site/
+          cp -a lab _site/lab
+          rm -rf _site/lab/tools
+          find _site/lab -type f \( -name '*.html' -o -name '*.mjs' -o -name '*.js' -o -name '*.json' -o -name '*.css' \) \
+            -exec sed -i 's#\.\./docs/#../#g' {} +
+          touch _site/.nojekyll
+          du -sh _site _site/lab
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
