@@ -142,7 +142,7 @@
     "封面说明": "暂用依据分区截图生成的AI概念封面，表达项目意向；不作为当前城景实渲或考古复原依据。"
    },
    "stats": {
-    "模型文件": 103
+    "模型文件": 106
    },
    "state": "建设中",
    "status": "建设中 · 从城垣，走进已建街区",
@@ -338,7 +338,7 @@
      "unit": "组",
      "chapter": "storage",
      "focus": "storage",
-     "note": "完整仓储组；外部连接待建。 补齐v2组装与单元三档，狭窄阶梯局限未解决，不增加既有作业组计数。"
+     "note": "完整仓储组；外部连接待建。 补齐v2组装与单元三档，狭窄阶梯局限未解决，不增加既有作业组计数。 现将同一既有组的完整近档原位接入并保留原地坪；中远档独立备选，未启用自动LOD。外部道路仍待建，不新增仓址或建筑数量。"
     },
     {
      "title": "灵台与太学",
@@ -689,6 +689,12 @@
     }
    ],
    "journal": [
+    {
+     "date": "2026-11-05",
+     "batch": null,
+     "title": "仓储既有组原位三档接入",
+     "text": "保留现有两仓、收货区、地坪和城市位置，将完整近档原位接入；中远档留作独立备选，未改网页档位接口。旧件和v2组装/分件资料均保留；不接入缺武库端支撑的东北C路径，外部道路仍待建。附注tag与源工程Release待补。"
+    },
     {
      "date": "2026-11-05",
      "batch": null,
@@ -9561,23 +9567,75 @@
    "kind": "城市构件",
    "title": "仓储作业功能组",
    "english": "STORAGE OPERATIONS FAMILY",
-   "summary": "两仓与收货核验区的既有家族更新为v2三档，整组与A/B/收货区互斥使用，不重复计建筑。",
-   "alt": "仓储作业功能组实际模型CPU预览；C级设计。",
+   "summary": "既有两仓与收货区保留v2组装和分件三档，并补原位完整组三档；城景仅接完整近档，中远档独立备选，不重复计建筑。",
+   "alt": "从最终近档GLB导入后CPU渲染的仓储功能组；包括两座低仓、收货棚、计验区和原地坪，均为C级设计。",
    "cover": {
     "small": {
-     "src": "media/model-library-updates-m-storage-functional-cover-720.webp",
+     "src": "media/cities-luoyang-progress-assets-granary-city-v1-cover-720.webp",
      "w": 720,
-     "h": 540
+     "h": 514
     },
     "large": {
-     "src": "media/model-library-updates-m-storage-functional-cover-1800.webp",
-     "w": 1000,
-     "h": 750
+     "src": "media/cities-luoyang-progress-assets-granary-city-v1-cover-1800.webp",
+     "w": 1400,
+     "h": 1000
     },
-    "original": "../docs/model-library/updates/m-storage-functional/cover.webp"
+    "original": "../docs/cities/luoyang/progress-assets/granary-city-v1/cover.webp"
    },
    "coverIsShot": false,
    "gallery": [
+    {
+     "small": {
+      "src": "media/cities-luoyang-progress-assets-granary-city-v1-LOD0-720.webp",
+      "w": 720,
+      "h": 514
+     },
+     "large": {
+      "src": "media/cities-luoyang-progress-assets-granary-city-v1-LOD0-1800.webp",
+      "w": 1400,
+      "h": 1000
+     },
+     "original": "../docs/cities/luoyang/progress-assets/granary-city-v1/LOD0.webp"
+    },
+    {
+     "small": {
+      "src": "media/cities-luoyang-progress-assets-granary-city-v1-LOD1-720.webp",
+      "w": 720,
+      "h": 514
+     },
+     "large": {
+      "src": "media/cities-luoyang-progress-assets-granary-city-v1-LOD1-1800.webp",
+      "w": 1400,
+      "h": 1000
+     },
+     "original": "../docs/cities/luoyang/progress-assets/granary-city-v1/LOD1.webp"
+    },
+    {
+     "small": {
+      "src": "media/cities-luoyang-progress-assets-granary-city-v1-LOD2-720.webp",
+      "w": 720,
+      "h": 514
+     },
+     "large": {
+      "src": "media/cities-luoyang-progress-assets-granary-city-v1-LOD2-1800.webp",
+      "w": 1400,
+      "h": 1000
+     },
+     "original": "../docs/cities/luoyang/progress-assets/granary-city-v1/LOD2.webp"
+    },
+    {
+     "small": {
+      "src": "media/model-library-updates-m-storage-functional-cover-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/model-library-updates-m-storage-functional-cover-1800.webp",
+      "w": 1000,
+      "h": 750
+     },
+     "original": "../docs/model-library/updates/m-storage-functional/cover.webp"
+    },
     {
      "small": {
       "src": "media/model-library-updates-m-storage-functional-shots-01-720.webp",
@@ -9632,6 +9690,63 @@
     }
    ],
    "files": [
+    {
+     "label": "原位完整组 LOD0（三档互斥）",
+     "path": "cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+     "url": "../docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+     "format": "GLB",
+     "bytes": 1663844,
+     "triangles": 9508,
+     "vertices": 18161,
+     "primitives": 4,
+     "materials": 4,
+     "images": 9,
+     "size": [
+      72.0,
+      5.15,
+      52.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "原位完整组 LOD1（三档互斥）",
+     "path": "cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb",
+     "url": "../docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb",
+     "format": "GLB",
+     "bytes": 756484,
+     "triangles": 1604,
+     "vertices": 3437,
+     "primitives": 4,
+     "materials": 4,
+     "images": 9,
+     "size": [
+      72.0,
+      5.15,
+      52.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "原位完整组 LOD2（三档互斥）",
+     "path": "cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD2.glb",
+     "url": "../docs/cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD2.glb",
+     "format": "GLB",
+     "bytes": 462440,
+     "triangles": 760,
+     "vertices": 1349,
+     "primitives": 3,
+     "materials": 3,
+     "images": 3,
+     "size": [
+      72.0,
+      5.15,
+      52.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
     {
      "label": "v2 · granary · group · LOD0",
      "path": "model-library/updates/m-storage-functional/files/granary-group-LOD0.glb",
@@ -9959,18 +10074,20 @@
    "page": null,
    "notes": {
     "已完成的检查": "十二GLB回读与分件复装；分区平地接近0.9/1.8米探针通过，楼梯仅0.9米横向条带通过。",
-    "限制与待解决": "原1.5米窄阶未扩宽：1.8米条带A仓51处、B仓77处高差失败。仅单列人力候选，非车辆登阶路线；不代表整个仓区禁车。有限探针非连续人体、负重、消防或GPU认证。"
+    "限制与待解决": "原1.5米窄阶未扩宽：1.8米条带A仓51处、B仓77处高差失败。仅单列人力候选，非车辆登阶路线；不代表整个仓区禁车。有限探针非连续人体、负重、消防或GPU认证。",
+    "原位接入检查": "最终GLB坐标、原地坪保留、近档逐三角对应、UV、现有加载器解析与有限入口通路检查。实际最终GLB导入后CPU渲染，不是浏览器实测。",
+    "原位接入范围": "C级功能研究，不是洛阳太仓发掘复原。外部道路仍未接通；窄阶只通过0.9米有限条带，1.8米压力测试失败保留。城景只接完整近档，中远档供独立查看，未启用自动切换；未验GPU、车辆、承重或连续人体。"
    },
    "stats": {},
    "state": "待审",
-   "status": "待审 · 既有家族修订待审，不改变城市场景。",
+   "status": "待审 · 完整近档已原位接入；新增版本待审，中远档独立备选。",
    "public": true,
-   "updated": "2026-11-05T15:41:32+08:00",
+   "updated": "2026-11-05T16:22:54+08:00",
    "related": [
     "p-luoyang"
    ],
    "card": "model-library/m-storage-functional.asset.json",
-   "bytes": 10971832,
+   "bytes": 13854600,
    "triangles": 9508,
    "textured": true
   },

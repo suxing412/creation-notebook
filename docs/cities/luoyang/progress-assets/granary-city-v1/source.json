@@ -1,0 +1,82 @@
+{
+  "id": "granary-city-v1",
+  "sourceCommit": "da1877a3012d431da4f5e7324c07b06747aa5733",
+  "status": "Runtime integrated at existing storage-main; model review, annotated tag and source Release remain pending",
+  "evidence": "C inherited functional model at frozen B schematic region point; not measured Taicang buildings or boundary",
+  "coordinates": "Absolute glTF metres: X east/Y up/Z negative north; node position stays [0,0,0]; translation applied once inside each GLB",
+  "oldCityFile": {
+    "path": "../../assets/storage/storage-group-organized.glb",
+    "sha256": "b8482824513a101d36eb4c768a4f641e77aaac66c3e834718d7f3964104a644b"
+  },
+  "files": [
+    {
+      "path": "granary-city-LOD0.glb",
+      "bytes": 1663844,
+      "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+      "lod": 0
+    },
+    {
+      "path": "granary-city-LOD1.glb",
+      "bytes": 756484,
+      "sha256": "a1265bbf53d10ddb6398efa6f505c1b6dee86b81b37397f7af9855acc34f2e45",
+      "lod": 1
+    },
+    {
+      "path": "granary-city-LOD2.glb",
+      "bytes": 462440,
+      "sha256": "6b2564d3ffd76e6e982a4a7f703cfd0790ac0e0b2dfa75add4df169c4c82efe7",
+      "lod": 2
+    }
+  ],
+  "cityRuntime": {
+    "default": "granary-city-LOD0.glb",
+    "midAndFar": "separate inspection files only; current project page lacks near-selection adapter, so no quality-reducing mid default or automatic tier claim",
+    "nodeId": "storage-main",
+    "nodePosition": [
+      0,
+      0,
+      0
+    ],
+    "newNodes": 0,
+    "countChange": 0,
+    "externalRoadActivated": false
+  },
+  "preservation": [
+    "Original 12-triangle city ground geometry, UV and image bytes retained",
+    "LOD0 architecture one-to-one triangle match; maximum vertex residual 0.000012159347534179688m inherited from previous cargo re-encoding",
+    "Old files remain for rollback; no original courtyard, city wall, road, camera or placement changed"
+  ],
+  "checks": [
+    "Final actual GLB world geometry and nondegenerate finite UV",
+    "Current unmodified Three GLTFLoader and current renderer transform sequence",
+    "Finite floor/stair probes plus negative controls; 1.8m stair pressure failures retained",
+    "Actual final GLB CPU preview; not GPU or browser render"
+  ],
+  "sources": [
+    {
+      "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/6434e64ce0ef9.pdf",
+      "supports": "2023 regional diagram/text supports northeastern granary/armory relationship only",
+      "limits": "B schematic location not excavated parcel; newer northern palace walls not registered"
+    },
+    {
+      "url": "https://www.chnmuseum.cn/zp/zpml/kgfjp/202110/t20211028_251928.shtml",
+      "supports": "Raised granary and entry stair as a regional Han mingqi functional analogy",
+      "limits": "Not Luoyang Taicang dimensions or state institution plan"
+    },
+    {
+      "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/bwzl/yyhxzzjd/cpsx/article301047e1d5a04c6c9900a0e722289cab.html",
+      "supports": "Houshigu tomb granary imagery: carrying, bags, receiving activity",
+      "limits": "Funerary model, not royal granary construction drawing"
+    }
+  ],
+  "limitations": [
+    "All architecture, dimensions and workflow remain C design",
+    "Existing route and placement of unregistered Northern Palace walls not resolved",
+    "0.9m stair strip passes; 1.8m strip fails at stair edges, not vehicle or safety acceptance",
+    "Constant original 512px ground maps retained in all LODs; no full texture streaming guarantee",
+    "Current city renderer uses flat pigments, not full PBR; renderer not changed",
+    "Private native and generation/validation sources are outside repository"
+  ],
+  "rollback": "Restore old storage-main record, its original basis/sourceContract, and prior card/project fields; retain old GLB; no ground reconstruction needed",
+  "integrationBaseCommit": "c07ecc515dabfe39de986f1445bb3558ec63f592"
+}

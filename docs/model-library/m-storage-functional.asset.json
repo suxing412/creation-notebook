@@ -5,11 +5,23 @@
   "kind": "城市构件",
   "title": "仓储作业功能组",
   "english": "STORAGE OPERATIONS FAMILY",
-  "summary": "两仓与收货核验区的既有家族更新为v2三档，整组与A/B/收货区互斥使用，不重复计建筑。",
+  "summary": "既有两仓与收货区保留v2组装和分件三档，并补原位完整组三档；城景仅接完整近档，中远档独立备选，不重复计建筑。",
   "status": "待审",
-  "statusNote": "既有家族修订待审，不改变城市场景。",
-  "cover": "updates/m-storage-functional/cover.webp",
+  "statusNote": "完整近档已原位接入；新增版本待审，中远档独立备选。",
+  "cover": "../cities/luoyang/progress-assets/granary-city-v1/cover.webp",
   "files": [
+    {
+      "path": "../cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD0.glb",
+      "label": "原位完整组 LOD0（三档互斥）"
+    },
+    {
+      "path": "../cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD1.glb",
+      "label": "原位完整组 LOD1（三档互斥）"
+    },
+    {
+      "path": "../cities/luoyang/progress-assets/granary-city-v1/granary-city-LOD2.glb",
+      "label": "原位完整组 LOD2（三档互斥）"
+    },
     {
       "path": "updates/m-storage-functional/files/granary-group-LOD0.glb",
       "label": "v2 · granary · group · LOD0"
@@ -80,15 +92,21 @@
     }
   ],
   "legacyPath": true,
-  "coverAlt": "仓储作业功能组实际模型CPU预览；C级设计。",
+  "coverAlt": "从最终近档GLB导入后CPU渲染的仓储功能组；包括两座低仓、收货棚、计验区和原地坪，均为C级设计。",
   "related": [
     "p-luoyang"
   ],
   "notes": {
     "已完成的检查": "十二GLB回读与分件复装；分区平地接近0.9/1.8米探针通过，楼梯仅0.9米横向条带通过。",
-    "限制与待解决": "原1.5米窄阶未扩宽：1.8米条带A仓51处、B仓77处高差失败。仅单列人力候选，非车辆登阶路线；不代表整个仓区禁车。有限探针非连续人体、负重、消防或GPU认证。"
+    "限制与待解决": "原1.5米窄阶未扩宽：1.8米条带A仓51处、B仓77处高差失败。仅单列人力候选，非车辆登阶路线；不代表整个仓区禁车。有限探针非连续人体、负重、消防或GPU认证。",
+    "原位接入检查": "最终GLB坐标、原地坪保留、近档逐三角对应、UV、现有加载器解析与有限入口通路检查。实际最终GLB导入后CPU渲染，不是浏览器实测。",
+    "原位接入范围": "C级功能研究，不是洛阳太仓发掘复原。外部道路仍未接通；窄阶只通过0.9米有限条带，1.8米压力测试失败保留。城景只接完整近档，中远档供独立查看，未启用自动切换；未验GPU、车辆、承重或连续人体。"
   },
   "gallery": [
+    "../cities/luoyang/progress-assets/granary-city-v1/LOD0.webp",
+    "../cities/luoyang/progress-assets/granary-city-v1/LOD1.webp",
+    "../cities/luoyang/progress-assets/granary-city-v1/LOD2.webp",
+    "updates/m-storage-functional/cover.webp",
     "updates/m-storage-functional/shots/01.webp",
     "updates/m-storage-functional/shots/02.webp",
     "updates/m-storage-functional/shots/03.webp",

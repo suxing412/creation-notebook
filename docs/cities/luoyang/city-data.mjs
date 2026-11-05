@@ -580,9 +580,9 @@ const assetRecords = [
   },
   {
     "id": "storage-main",
-    "path": "assets/storage/storage-group-organized.glb",
-    "bytes": 1786124,
-    "sha256": "b8482824513a101d36eb4c768a4f641e77aaac66c3e834718d7f3964104a644b",
+    "path": "progress-assets/granary-city-v1/granary-city-LOD0.glb",
+    "bytes": 1663844,
+    "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
     "excludeNodes": [],
     "bounds": {
       "min": [
@@ -596,7 +596,7 @@ const assetRecords = [
         -3647.468994
       ]
     },
-    "sourceContract": "data/west/storage-interface.json"
+    "sourceContract": "progress-assets/granary-city-v1/source.json"
   },
   {
     "id": "study-lingtai",
@@ -3607,8 +3607,8 @@ export const nodes = [
     "chapter": "storage",
     "initial": false,
     "tier": "推测",
-    "basis": "太仓示意点附近的仓储功能研究组，采用已整理的完整组合。地块范围、仓房形态与作业组织为设计推测，外部道路尚未连接。",
-    "sourceContract": "data/west/storage-interface.json",
+    "basis": "太仓示意点附近的既有仓储功能组，保留原位置和地坪。城市保持完整近档展示；中远档仅作为独立备选，不宣称自动切换。三档为同一组，不叠加计数。地块及形态为设计推测，外部道路尚未连接。",
+    "sourceContract": "progress-assets/granary-city-v1/source.json",
     "bounds": {
       "min": [
         2249.714111,
