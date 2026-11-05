@@ -315,7 +315,7 @@
      "unit": "件",
      "chapter": "walls",
      "focus": "walls",
-     "note": "12段既有城垣及广阳、雍门两座门体入城；雍门附件与远近档不另计门数。全城默认远档，进入雍门章加载完整近档，内侧接街连到现有模型道路，上层登临仍待建。"
+     "note": "12段既有城垣及广阳、雍门两座门体入城；雍门附件与远近档不另计门数。全城默认远档，进入雍门章加载完整近档，内侧接街连到现有模型道路，上层登临仍待建。 约49.6米接街与原路接收片作为雍门配套附件，不单列建模作品。"
     },
     {
      "title": "城门研究",
@@ -694,15 +694,6 @@
      "chapter": null,
      "focus": null,
      "note": "独立C研究组件，变体、姿态与LOD合计一组，不增加已放置的城市建筑实例。"
-    },
-    {
-     "title": "雍门内侧接街",
-     "status": "已入城",
-     "count": 1,
-     "unit": "段",
-     "chapter": "yong-gate",
-     "focus": "yong-gate",
-     "note": "约49.6米C级工程接驳连至既有六米主路；receiver是原路显示派生，不另计新路。"
     }
    ],
    "evidence": [
@@ -720,6 +711,12 @@
     }
    ],
    "journal": [
+    {
+     "date": "2026-11-05",
+     "batch": "r2026.11.05-7",
+     "title": "雍门接街归入配套附件",
+     "text": "按作品口径纠正：接街三档和既有主路接收片统一收进雍门卡，撤下单独路面卡与项目独立成员/进度项。所有GLB、城景几何与加载关系不变，r2026.11.05-6原件和源包归属保留。"
+    },
     {
      "date": "2026-11-05",
      "batch": "r2026.11.05-6",
@@ -890,8 +887,7 @@
     "m-luoyang-earthwall-family",
     "m-luoyang-b2-facade-kit",
     "m-luoyang-inner-door-components",
-    "m-luoyang-house-roof",
-    "m-luoyang-yong-link"
+    "m-luoyang-house-roof"
    ],
    "bytes": 0,
    "triangles": 0,
@@ -7853,6 +7849,45 @@
       "h": 1100
      },
      "original": "../docs/cities/luoyang/progress-assets/yong-city-v1/entry.webp"
+    },
+    {
+     "small": {
+      "src": "media/cities-luoyang-progress-assets-yong-road-link-v2-context-720.webp",
+      "w": 720,
+      "h": 450
+     },
+     "large": {
+      "src": "media/cities-luoyang-progress-assets-yong-road-link-v2-context-1800.webp",
+      "w": 1600,
+      "h": 1000
+     },
+     "original": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/context.webp"
+    },
+    {
+     "small": {
+      "src": "media/cities-luoyang-progress-assets-yong-road-link-v2-apron-joint-720.webp",
+      "w": 720,
+      "h": 450
+     },
+     "large": {
+      "src": "media/cities-luoyang-progress-assets-yong-road-link-v2-apron-joint-1800.webp",
+      "w": 1600,
+      "h": 1000
+     },
+     "original": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/apron-joint.webp"
+    },
+    {
+     "small": {
+      "src": "media/cities-luoyang-progress-assets-yong-road-link-v2-road-joint-720.webp",
+      "w": 720,
+      "h": 450
+     },
+     "large": {
+      "src": "media/cities-luoyang-progress-assets-yong-road-link-v2-road-joint-1800.webp",
+      "w": 1600,
+      "h": 1000
+     },
+     "original": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/road-joint.webp"
     }
    ],
    "files": [
@@ -8026,82 +8061,9 @@
      ],
      "primsNoUV": 0,
      "extUsed": []
-    }
-   ],
-   "page": null,
-   "notes": {
-    "已完成的检查": "已逐一核对所选GLB版本、字节数和SHA256，复用文件与现有公开路径逐字节一致。模型可独立解析，贴图内嵌；本卡图像来自该版模型的既有CPU渲染。 本轮三档30项连续矩形通路、四墩与两翼底投影支承通过；旧墙端最大接触残差0.076mm，两翼源几何及逐角UV回读保持。旧64城景节点、原门体与原附件未改。",
-    "限制与待解决": "形制和落位均为C级设计，非雍门测绘复原。上层仍无楼梯，固定全开门扇无动画。新接街仅完成当前模型到既有主路的空间衔接，不证明历史御道、完整交通、结构或排水。实际加载代码CPU验证不等于浏览器/GPU验收。",
-    "证据等级": "门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。",
-    "版本与展示": "门体Y-v1及原地坪三档不改；全城默认LOD2，雍门章加载原完整LOD0并替换远档，已有近看操作沿用nearPath。无自动距离LOD；近档加载后保留至新会话。旧三条测试带仍与已入城汇流地坪互斥。附件与LOD不另计新门。",
-    "地面附件范围": "另附三条1.8×14米门下测试带，门体不在附件内；三档与同版门体局部配对无表面相交，各1782个脚下离散样点有支承。条带终端未连接外部街路，不表示全门地基或城市通路完成。 地面厚度约0.2米，尺度、高程和微起伏均为C工程试验；这是行走测试地面，不是承重地基、考古铺地或结构安全验收。选择附件仅显示地面，不自动叠加到城门或城景。 本批另附完整接墙/地面方案：覆盖四墩及两翼足迹，并连通三门道双侧；仍非承重地基或考古铺地。该新方案与旧三条测试带互斥，不叠载。附件仍不含门体，项目场景才按确定矩阵组合。 现行城景使用独立49.616米接街（m-luoyang-yong-link）接到既有主路分量；旧三条测试带自身的断路限制不改变。"
-   },
-   "stats": {},
-   "state": "待审",
-   "status": "待审 · 已入城 · 远档默认可见 · 完整近档按章加载",
-   "public": true,
-   "updated": "2026-11-05T18:16:11+08:00",
-   "related": [
-    "p-luoyang"
-   ],
-   "card": "library/models/m-luoyang-yong-gate/m-luoyang-yong-gate.asset.json",
-   "bytes": 3309468,
-   "triangles": 8228,
-   "textured": true
-  },
-  {
-   "id": "m-luoyang-yong-link",
-   "category": "models",
-   "kind": "城市构件",
-   "title": "雍门内侧接驳地面",
-   "english": "YONG GATE INNER ROAD LINK",
-   "summary": "约49.6米C级工程接驳，连接雍门汇流地坪与既有六米主路接点；默认全城可见，非历史御道复原。",
-   "alt": "真实候选组合的CPU斜俯视：雍门、汇流地坪和狭长接驳通向现有主路。",
-   "cover": {
-    "small": {
-     "src": "media/cities-luoyang-progress-assets-yong-road-link-v2-context-720.webp",
-     "w": 720,
-     "h": 450
-    },
-    "large": {
-     "src": "media/cities-luoyang-progress-assets-yong-road-link-v2-context-1800.webp",
-     "w": 1600,
-     "h": 1000
-    },
-    "original": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/context.webp"
-   },
-   "coverIsShot": false,
-   "gallery": [
-    {
-     "small": {
-      "src": "media/cities-luoyang-progress-assets-yong-road-link-v2-apron-joint-720.webp",
-      "w": 720,
-      "h": 450
-     },
-     "large": {
-      "src": "media/cities-luoyang-progress-assets-yong-road-link-v2-apron-joint-1800.webp",
-      "w": 1600,
-      "h": 1000
-     },
-     "original": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/apron-joint.webp"
     },
     {
-     "small": {
-      "src": "media/cities-luoyang-progress-assets-yong-road-link-v2-road-joint-720.webp",
-      "w": 720,
-      "h": 450
-     },
-     "large": {
-      "src": "media/cities-luoyang-progress-assets-yong-road-link-v2-road-joint-1800.webp",
-      "w": 1600,
-      "h": 1000
-     },
-     "original": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/road-joint.webp"
-    }
-   ],
-   "files": [
-    {
-     "label": "LOD1 · 接街单体，不含门体或接收道路",
+     "label": "附件 · 内侧接街 LOD1（雍门配套，不含门体）",
      "path": "cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD1.glb",
      "url": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD1.glb",
      "format": "GLB",
@@ -8120,7 +8082,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD0 · 接街单体，不含门体或接收道路",
+     "label": "附件 · 内侧接街 LOD0（雍门配套，不含门体）",
      "path": "cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
      "url": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
      "format": "GLB",
@@ -8139,7 +8101,7 @@
      "extUsed": []
     },
     {
-     "label": "LOD2 · 接街单体，不含门体或接收道路",
+     "label": "附件 · 内侧接街 LOD2（雍门配套，不含门体）",
      "path": "cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
      "url": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
      "format": "GLB",
@@ -8158,7 +8120,7 @@
      "extUsed": []
     },
     {
-     "label": "装配依赖 · 既有主路209三角连通片，非新建道路",
+     "label": "装配附件 · 既有主路209三角接收片（原路派生，非新建道路）",
      "path": "cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
      "url": "../docs/cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
      "format": "GLB",
@@ -8179,24 +8141,26 @@
    ],
    "page": null,
    "notes": {
-    "实际范围": "新接街49.616米、净宽3米、升高40毫米；三档几何相同，每档12三角。接收片是现有道路的无损显示派生，范围约1.4×1.8千米，不额外增加道路计数。",
-    "已完成的检查": "三档实际GLB端口在10微米容差内，连续支承/净空核至现路内3米。四个新运行件由独立源包重新生成，SHA一致；实际加载器CPU运行验证远近互斥、整路替换及失败重试。",
-    "显示与载荷": "默认门体/地坪和接街用远档，雍门章加载完整近档；完整道路章加载原network并替换接收片。无自动距离LOD，不修改网页或部署压缩。",
-    "限制与待解决": "C级工程设计，不证明古御道定位/形制、完整全城交通、车辆、结构或排水。上层登临仍缺。原接收片没有UV，按原件保留无纹理材质；不是新纹理资产。浏览器/GPU与发布后冷开传输仍须复核。",
-    "图像说明": "封面和两端图为Blender组合CPU实渲。卡片3D只显示所选单体，未把组合渲染冒称网页画面。"
+    "已完成的检查": "已逐一核对所选GLB版本、字节数和SHA256，复用文件与现有公开路径逐字节一致。模型可独立解析，贴图内嵌；本卡图像来自该版模型的既有CPU渲染。 本轮三档30项连续矩形通路、四墩与两翼底投影支承通过；旧墙端最大接触残差0.076mm，两翼源几何及逐角UV回读保持。旧64城景节点、原门体与原附件未改。",
+    "限制与待解决": "形制和落位均为C级设计，非雍门测绘复原。上层仍无楼梯，固定全开门扇无动画。新接街仅完成当前模型到既有主路的空间衔接，不证明历史御道、完整交通、结构或排水。实际加载代码CPU验证不等于浏览器/GPU验收。",
+    "证据等级": "门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。",
+    "版本与展示": "门体Y-v1及原地坪三档不改；全城默认LOD2，雍门章加载原完整LOD0并替换远档，已有近看操作沿用nearPath。无自动距离LOD；近档加载后保留至新会话。旧三条测试带仍与已入城汇流地坪互斥。附件与LOD不另计新门。",
+    "地面附件范围": "另附三条1.8×14米门下测试带，门体不在附件内；三档与同版门体局部配对无表面相交，各1782个脚下离散样点有支承。条带终端未连接外部街路，不表示全门地基或城市通路完成。 地面厚度约0.2米，尺度、高程和微起伏均为C工程试验；这是行走测试地面，不是承重地基、考古铺地或结构安全验收。选择附件仅显示地面，不自动叠加到城门或城景。 本批另附完整接墙/地面方案：覆盖四墩及两翼足迹，并连通三门道双侧；仍非承重地基或考古铺地。该新方案与旧三条测试带互斥，不叠载。附件仍不含门体，项目场景才按确定矩阵组合。 现行城景使用雍门配套49.616米接街接到既有主路分量；四个接街/接收文件统一归入本卡附件，不作为独立建模作品，也不新增门或道路作品计数。旧三条测试带自身的断路限制不改变。",
+    "接街附件与接收范围": "接街长49.616米、净宽3米、升高40毫米，三档同为12三角实体；接收片为既有主路209三角完整连通分量，约1.4×1.8千米，不是新建道路或50米短片。原接收片无UV，按既有无纹理材质保留。完整network加载成功后替换接收片，不叠加。",
+    "接街检查与版本": "附件端口在10微米容差内，连续支承/净空仅核至现路内3米；固定源包可重建四件。线上首屏23份GLB的gzip响应体合计1,238,579字节，原始GLB合计1,990,588字节；这是HTTP响应体核验，不是浏览器/GPU验收。GLB原件归属r2026.11.05-6，源码ZIP仍待追加到该Release；本次只纠正作品归属，路径、几何和装配不变。",
+    "接街图像说明": "新增接街全景和两端接口图为Blender组合CPU实渲，不是网站截图；卡片3D仍只展示所选门体或附件，不自动组合。"
    },
    "stats": {},
    "state": "待审",
-   "status": "待审 · 已入城 · 近档按章加载 · C级工程连接",
+   "status": "待审 · 已入城 · 远档默认可见 · 完整近档按章加载",
    "public": true,
    "updated": "2026-11-05T20:03:58+08:00",
    "related": [
-    "m-luoyang-yong-gate",
     "p-luoyang"
    ],
-   "card": "library/models/m-luoyang-yong-link/m-luoyang-yong-link.asset.json",
-   "bytes": 532536,
-   "triangles": 209,
+   "card": "library/models/m-luoyang-yong-gate/m-luoyang-yong-gate.asset.json",
+   "bytes": 3842004,
+   "triangles": 8228,
    "textured": true
   },
   {

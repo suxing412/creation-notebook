@@ -13,7 +13,10 @@
   "gallery": [
     "shots/detail.webp",
     "../../../cities/luoyang/progress-assets/yong-city-v1/context.webp",
-    "../../../cities/luoyang/progress-assets/yong-city-v1/entry.webp"
+    "../../../cities/luoyang/progress-assets/yong-city-v1/entry.webp",
+    "../../../cities/luoyang/progress-assets/yong-road-link-v2/context.webp",
+    "../../../cities/luoyang/progress-assets/yong-road-link-v2/apron-joint.webp",
+    "../../../cities/luoyang/progress-assets/yong-road-link-v2/road-joint.webp"
   ],
   "files": [
     {
@@ -51,6 +54,22 @@
     {
       "path": "../../../cities/luoyang/progress-assets/yong-city-v1/yong-apron-LOD2.glb",
       "label": "附件 · 接墙两翼与汇流地面 LOD2 · 远景（不含门体）"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD1.glb",
+      "label": "附件 · 内侧接街 LOD1（雍门配套，不含门体）"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+      "label": "附件 · 内侧接街 LOD0（雍门配套，不含门体）"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
+      "label": "附件 · 内侧接街 LOD2（雍门配套，不含门体）"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
+      "label": "装配附件 · 既有主路209三角接收片（原路派生，非新建道路）"
     }
   ],
   "notes": {
@@ -58,7 +77,10 @@
     "限制与待解决": "形制和落位均为C级设计，非雍门测绘复原。上层仍无楼梯，固定全开门扇无动画。新接街仅完成当前模型到既有主路的空间衔接，不证明历史御道、完整交通、结构或排水。实际加载代码CPU验证不等于浏览器/GPU验收。",
     "证据等级": "门名、相对方位与建筑形制分开记录；模型的具体尺寸、上部、材料和构造均为C级设计候选，不是约180年的实测复原。",
     "版本与展示": "门体Y-v1及原地坪三档不改；全城默认LOD2，雍门章加载原完整LOD0并替换远档，已有近看操作沿用nearPath。无自动距离LOD；近档加载后保留至新会话。旧三条测试带仍与已入城汇流地坪互斥。附件与LOD不另计新门。",
-    "地面附件范围": "另附三条1.8×14米门下测试带，门体不在附件内；三档与同版门体局部配对无表面相交，各1782个脚下离散样点有支承。条带终端未连接外部街路，不表示全门地基或城市通路完成。 地面厚度约0.2米，尺度、高程和微起伏均为C工程试验；这是行走测试地面，不是承重地基、考古铺地或结构安全验收。选择附件仅显示地面，不自动叠加到城门或城景。 本批另附完整接墙/地面方案：覆盖四墩及两翼足迹，并连通三门道双侧；仍非承重地基或考古铺地。该新方案与旧三条测试带互斥，不叠载。附件仍不含门体，项目场景才按确定矩阵组合。 现行城景使用独立49.616米接街（m-luoyang-yong-link）接到既有主路分量；旧三条测试带自身的断路限制不改变。"
+    "地面附件范围": "另附三条1.8×14米门下测试带，门体不在附件内；三档与同版门体局部配对无表面相交，各1782个脚下离散样点有支承。条带终端未连接外部街路，不表示全门地基或城市通路完成。 地面厚度约0.2米，尺度、高程和微起伏均为C工程试验；这是行走测试地面，不是承重地基、考古铺地或结构安全验收。选择附件仅显示地面，不自动叠加到城门或城景。 本批另附完整接墙/地面方案：覆盖四墩及两翼足迹，并连通三门道双侧；仍非承重地基或考古铺地。该新方案与旧三条测试带互斥，不叠载。附件仍不含门体，项目场景才按确定矩阵组合。 现行城景使用雍门配套49.616米接街接到既有主路分量；四个接街/接收文件统一归入本卡附件，不作为独立建模作品，也不新增门或道路作品计数。旧三条测试带自身的断路限制不改变。",
+    "接街附件与接收范围": "接街长49.616米、净宽3米、升高40毫米，三档同为12三角实体；接收片为既有主路209三角完整连通分量，约1.4×1.8千米，不是新建道路或50米短片。原接收片无UV，按既有无纹理材质保留。完整network加载成功后替换接收片，不叠加。",
+    "接街检查与版本": "附件端口在10微米容差内，连续支承/净空仅核至现路内3米；固定源包可重建四件。线上首屏23份GLB的gzip响应体合计1,238,579字节，原始GLB合计1,990,588字节；这是HTTP响应体核验，不是浏览器/GPU验收。GLB原件归属r2026.11.05-6，源码ZIP仍待追加到该Release；本次只纠正作品归属，路径、几何和装配不变。",
+    "接街图像说明": "新增接街全景和两端接口图为Blender组合CPU实渲，不是网站截图；卡片3D仍只展示所选门体或附件，不自动组合。"
   },
   "related": [
     "p-luoyang"
