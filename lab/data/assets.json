@@ -137,7 +137,7 @@
     "限制与待解决": "实际画面、交互和 GPU 性能待线上验收；北宫新墙与古水系配准资料待补；礼制建筑的城市落位待配准。"
    },
    "stats": {
-    "模型文件": 97
+    "模型文件": 103
    },
    "state": "建设中",
    "status": "建设中 · 从城垣，走进已建街区",
@@ -352,6 +352,15 @@
      "chapter": "terrain",
      "focus": "terrain",
      "note": "四个原子地面文件整体载入；古河渠位置仍未配准。"
+    },
+    {
+     "title": "无名宫院通行组合",
+     "status": "已建模",
+     "count": 1,
+     "unit": "组",
+     "chapter": null,
+     "focus": null,
+     "note": "门卫切片、庭地、两侧廊与殿阶的未定位C级连接方案；复用原件不另计新建筑。"
     }
    ],
    "evidence": [
@@ -369,6 +378,12 @@
     }
    ],
    "journal": [
+    {
+     "date": "2026-11-05",
+     "batch": "r2026.11.05-4",
+     "title": "接通无名宫院通行接口",
+     "text": "完成一组门内分流—庭地—侧廊—殿阶的独立连接模型，保留开放/闭门姿态与三档LOD。几何和支承检查通过，历史布局仍属推测，未放入城景。"
+    },
     {
      "date": "2026-11-05",
      "batch": "r2026.11.05-1",
@@ -400,11 +415,222 @@
     "m-storage-functional",
     "m-gate-roof-study",
     "m-eaves-shell",
-    "m-passage-interface"
+    "m-passage-interface",
+    "m-luoyang-palace-admission-court"
    ],
    "bytes": 0,
    "triangles": 0,
    "textured": false
+  },
+  {
+   "id": "m-luoyang-palace-admission-court",
+   "category": "models",
+   "kind": "城市构件",
+   "title": "无名宫院通行组合",
+   "english": "UNNAMED PALACE ADMISSION COURT",
+   "summary": "门卫、庭地、侧廊与殿阶的未定位C级连接试案。复用既有原件，新增实体地面并检查通行接口，不认定实名宫殿布局。",
+   "alt": "无名门卫通口位于前方，两侧廊庑分列庭地两边，后方殿堂设正面台阶，所有建筑位于同一实体支承面。",
+   "cover": {
+    "small": {
+     "src": "media/library-models-m-luoyang-palace-admission-court-cover-720.webp",
+     "w": 720,
+     "h": 540
+    },
+    "large": {
+     "src": "media/library-models-m-luoyang-palace-admission-court-cover-1800.webp",
+     "w": 1280,
+     "h": 960
+    },
+    "original": "../docs/library/models/m-luoyang-palace-admission-court/cover.png"
+   },
+   "coverIsShot": false,
+   "gallery": [
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-palace-admission-court-shots-entry-open-LOD0-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-palace-admission-court-shots-entry-open-LOD0-1800.webp",
+      "w": 1280,
+      "h": 960
+     },
+     "original": "../docs/library/models/m-luoyang-palace-admission-court/shots/entry-open-LOD0.png"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-palace-admission-court-shots-entry-closed-LOD0-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-palace-admission-court-shots-entry-closed-LOD0-1800.webp",
+      "w": 1280,
+      "h": 960
+     },
+     "original": "../docs/library/models/m-luoyang-palace-admission-court/shots/entry-closed-LOD0.png"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-palace-admission-court-shots-overview-open-LOD1-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-palace-admission-court-shots-overview-open-LOD1-1800.webp",
+      "w": 1280,
+      "h": 960
+     },
+     "original": "../docs/library/models/m-luoyang-palace-admission-court/shots/overview-open-LOD1.png"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-palace-admission-court-shots-overview-open-LOD2-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-palace-admission-court-shots-overview-open-LOD2-1800.webp",
+      "w": 1280,
+      "h": 960
+     },
+     "original": "../docs/library/models/m-luoyang-palace-admission-court/shots/overview-open-LOD2.png"
+    }
+   ],
+   "files": [
+    {
+     "label": "LOD0 · 开门",
+     "path": "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD0.glb",
+     "format": "GLB",
+     "bytes": 2578472,
+     "triangles": 23464,
+     "vertices": 44260,
+     "primitives": 16,
+     "materials": 9,
+     "images": 9,
+     "size": [
+      68.0,
+      12.74,
+      87.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "LOD1 · 开门",
+     "path": "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD1.glb",
+     "format": "GLB",
+     "bytes": 1126584,
+     "triangles": 10776,
+     "vertices": 21062,
+     "primitives": 16,
+     "materials": 9,
+     "images": 9,
+     "size": [
+      68.0,
+      12.74,
+      87.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "LOD2 · 开门",
+     "path": "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-open-LOD2.glb",
+     "format": "GLB",
+     "bytes": 278700,
+     "triangles": 3648,
+     "vertices": 7096,
+     "primitives": 16,
+     "materials": 9,
+     "images": 0,
+     "size": [
+      68.0,
+      12.74,
+      87.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "LOD0 · 闭门",
+     "path": "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD0.glb",
+     "format": "GLB",
+     "bytes": 2578388,
+     "triangles": 23464,
+     "vertices": 44260,
+     "primitives": 16,
+     "materials": 9,
+     "images": 9,
+     "size": [
+      68.0,
+      12.74,
+      87.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "LOD1 · 闭门",
+     "path": "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD1.glb",
+     "format": "GLB",
+     "bytes": 1126500,
+     "triangles": 10776,
+     "vertices": 21062,
+     "primitives": 16,
+     "materials": 9,
+     "images": 9,
+     "size": [
+      68.0,
+      12.74,
+      87.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "LOD2 · 闭门",
+     "path": "library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-palace-admission-court/files/palace-admission-court-closed-LOD2.glb",
+     "format": "GLB",
+     "bytes": 278616,
+     "triangles": 3648,
+     "vertices": 7096,
+     "primitives": 16,
+     "materials": 9,
+     "images": 0,
+     "size": [
+      68.0,
+      12.74,
+      87.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    }
+   ],
+   "page": null,
+   "notes": {
+    "已完成的检查": "六份实际GLB的原件几何、UV、材质与贴图字节比对；新增地面闭合和接缝检查；每份99个有限通行区域、18,487个支承点及73条接口邻接。闭门和殿柱负对照有效，输入独立重建结果与交付GLB字节一致。原生文件打包贴图经异地重开验证。",
+    "限制与待解决": "全部空间尺寸与布置为C级设计。《后汉书》仅支持准入与值守功能，不证明此连续路线。来源殿堂的德阳名称仅作追溯，不是本组合的历史身份。未入城、无完整围墙；未认证步态、连续门扇动画、结构安全或GPU性能。"
+   },
+   "stats": {},
+   "state": "待审",
+   "status": "待审 · 已建模，未入城；历史身份与绝对坐标未定。",
+   "public": true,
+   "updated": "2026-11-05T10:22:16+08:00",
+   "related": [
+    "p-luoyang"
+   ],
+   "card": "library/models/m-luoyang-palace-admission-court/m-luoyang-palace-admission-court.asset.json",
+   "bytes": 7967260,
+   "triangles": 23464,
+   "textured": true
   },
   {
    "id": "m-courtyard-family",
