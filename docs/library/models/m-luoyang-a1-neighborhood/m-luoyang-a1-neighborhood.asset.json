@@ -1,0 +1,36 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-a1-neighborhood",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "八宅三铺街区 A1",
+  "english": "A1 EIGHT COURTS THREE SHOPS",
+  "summary": "八院三铺的C级布局研究，保留局部台阶精度修复。提供无损编码的LOD1及原LOD2，近景LOD0暂不入库；三档属于同一街区家族。",
+  "status": "待审",
+  "statusNote": "已建模，未入城 · 本卡提供LOD1/LOD2",
+  "cover": "cover.webp",
+  "coverAlt": "八院三铺街区v3的独立LOD1实渲，两排院落与三间沿街店铺连接公共通行地面。",
+  "gallery": [
+    "shots/reverse.webp",
+    "shots/LOD2-overview.webp"
+  ],
+  "files": [
+    {
+      "path": "files/A1-v3-LOD1.glb",
+      "label": "LOD1 · 无损法线/UV压缩版"
+    },
+    {
+      "path": "files/A1-v3-LOD2.glb",
+      "label": "LOD2 · 原始远景版"
+    }
+  ],
+  "related": [
+    "p-luoyang",
+    "m-luoyang-residential-life"
+  ],
+  "notes": {
+    "已完成的检查": "三档v3的936段入口运动、318段路线在指定内缩测试下严格命中0，支承/转向检查通过，几何及UV与修复前绑定核对。发布LOD1仅重编码法线与UV，解码逐字节一致，位置/索引/贴图及节点变换保持；已用当前实际Three加载器对比全部属性、索引、矩阵与纹理绑定。图为最终v3等价几何的独立CPU实渲，没有借用旧版城中上下文。",
+    "限制与待解决": "模型布局与放置均为C级设计，未入城。不得重新烘焙大世界float32，否则原513处微量命中会回来；保留局部顶点和节点变换。0命中仅针对各边内缩10微米的既定身体测试，未提供真人余量、完整步态、结构或GPU认证。LOD1要求EXT_meshopt_compression解码器；官方审计可读真实位置/索引，法线/UV另以解码等价独核。LOD0当前可保真编码仍超过单文件15 MB限额，未列入下载；不得将本卡称完整近景交付。",
+    "预览与版本": "封面与反向图使用LOD1，第三图使用LOD2。LOD1压缩前后几何、UV、法线、贴图和节点变换等价，不是减面版；不另增建筑家族，不把原版/西缝v2/台阶v3重复计件。"
+  }
+}

@@ -392,6 +392,33 @@
      "chapter": "terrain",
      "focus": null,
      "note": "三部分水道的未定位C级连接试案；尺寸、流向、用途和180年在用性未定。"
+    },
+    {
+     "title": "连续住宅生活片区",
+     "status": "已建模",
+     "count": 1,
+     "unit": "组",
+     "chapter": "residential",
+     "focus": null,
+     "note": "13院、26屋的未入城布局候选；复用既有原型，三档只计一组。"
+    },
+    {
+     "title": "院内备食关系",
+     "status": "已建模",
+     "count": 1,
+     "unit": "组",
+     "chapter": "residential",
+     "focus": null,
+     "note": "一组灶与侧备食板的未入城放置关系；不新增建筑家族，不计入院落数量。"
+    },
+    {
+     "title": "八院三铺街区 A1",
+     "status": "已建模",
+     "count": 1,
+     "unit": "组",
+     "chapter": "residential",
+     "focus": null,
+     "note": "一组八院三铺C级候选；独立卡提供台阶局部表示修复后的LOD1/LOD2，近景LOD0待体积优化，未入城。"
     }
    ],
    "evidence": [
@@ -409,6 +436,12 @@
     }
    ],
    "journal": [
+    {
+     "date": "2026-11-05",
+     "batch": null,
+     "title": "补齐住宅与备食关系模型卡",
+     "text": "连续住宅生活片区、八院三铺A1与院内备食关系建立独立运行卡，保留未入城状态。A1仅收LOD1/LOD2，近景LOD0仍超单文件限额；原型、修订与LOD不重复计件。 本批附注 tag 与同名 Release 待补。"
+    },
     {
      "date": "2026-11-05",
      "batch": null,
@@ -457,11 +490,126 @@
     "m-luoyang-mao-gate",
     "m-luoyang-stoneclassic-access-court",
     "m-luoyang-palace-waterway-interface",
-    "m-luoyang-northern-altar"
+    "m-luoyang-northern-altar",
+    "m-luoyang-residential-preparation",
+    "m-luoyang-residential-life",
+    "m-luoyang-a1-neighborhood"
    ],
    "bytes": 0,
    "triangles": 0,
    "textured": false
+  },
+  {
+   "id": "m-luoyang-a1-neighborhood",
+   "category": "models",
+   "kind": "城市构件",
+   "title": "八宅三铺街区 A1",
+   "english": "A1 EIGHT COURTS THREE SHOPS",
+   "summary": "八院三铺的C级布局研究，保留局部台阶精度修复。提供无损编码的LOD1及原LOD2，近景LOD0暂不入库；三档属于同一街区家族。",
+   "alt": "八院三铺街区v3的独立LOD1实渲，两排院落与三间沿街店铺连接公共通行地面。",
+   "cover": {
+    "small": {
+     "src": "media/library-models-m-luoyang-a1-neighborhood-cover-720.webp",
+     "w": 720,
+     "h": 495
+    },
+    "large": {
+     "src": "media/library-models-m-luoyang-a1-neighborhood-cover-1800.webp",
+     "w": 1600,
+     "h": 1100
+    },
+    "original": "../docs/library/models/m-luoyang-a1-neighborhood/cover.webp"
+   },
+   "coverIsShot": false,
+   "gallery": [
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-a1-neighborhood-shots-reverse-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-a1-neighborhood-shots-reverse-1800.webp",
+      "w": 1600,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-a1-neighborhood/shots/reverse.webp"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-a1-neighborhood-shots-LOD2-overview-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-a1-neighborhood-shots-LOD2-overview-1800.webp",
+      "w": 1600,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-a1-neighborhood/shots/LOD2-overview.webp"
+    }
+   ],
+   "files": [
+    {
+     "label": "LOD1 · 无损法线/UV压缩版",
+     "path": "library/models/m-luoyang-a1-neighborhood/files/A1-v3-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-a1-neighborhood/files/A1-v3-LOD1.glb",
+     "format": "GLB",
+     "bytes": 11954084,
+     "triangles": 228112,
+     "vertices": 368562,
+     "primitives": 35,
+     "materials": 3,
+     "images": 9,
+     "size": [
+      204.358,
+      5.094,
+      60.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": [
+      "EXT_meshopt_compression"
+     ]
+    },
+    {
+     "label": "LOD2 · 原始远景版",
+     "path": "library/models/m-luoyang-a1-neighborhood/files/A1-v3-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-a1-neighborhood/files/A1-v3-LOD2.glb",
+     "format": "GLB",
+     "bytes": 670244,
+     "triangles": 8536,
+     "vertices": 15984,
+     "primitives": 35,
+     "materials": 3,
+     "images": 0,
+     "size": [
+      204.358,
+      5.03,
+      60.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    }
+   ],
+   "page": null,
+   "notes": {
+    "已完成的检查": "三档v3的936段入口运动、318段路线在指定内缩测试下严格命中0，支承/转向检查通过，几何及UV与修复前绑定核对。发布LOD1仅重编码法线与UV，解码逐字节一致，位置/索引/贴图及节点变换保持；已用当前实际Three加载器对比全部属性、索引、矩阵与纹理绑定。图为最终v3等价几何的独立CPU实渲，没有借用旧版城中上下文。",
+    "限制与待解决": "模型布局与放置均为C级设计，未入城。不得重新烘焙大世界float32，否则原513处微量命中会回来；保留局部顶点和节点变换。0命中仅针对各边内缩10微米的既定身体测试，未提供真人余量、完整步态、结构或GPU认证。LOD1要求EXT_meshopt_compression解码器；官方审计可读真实位置/索引，法线/UV另以解码等价独核。LOD0当前可保真编码仍超过单文件15 MB限额，未列入下载；不得将本卡称完整近景交付。",
+    "预览与版本": "封面与反向图使用LOD1，第三图使用LOD2。LOD1压缩前后几何、UV、法线、贴图和节点变换等价，不是减面版；不另增建筑家族，不把原版/西缝v2/台阶v3重复计件。"
+   },
+   "stats": {},
+   "state": "待审",
+   "status": "待审 · 已建模，未入城 · 本卡提供LOD1/LOD2",
+   "public": true,
+   "updated": "2026-11-05T15:12:01+08:00",
+   "related": [
+    "p-luoyang",
+    "m-luoyang-residential-life"
+   ],
+   "card": "library/models/m-luoyang-a1-neighborhood/m-luoyang-a1-neighborhood.asset.json",
+   "bytes": 12624328,
+   "triangles": 228112,
+   "textured": true
   },
   {
    "id": "m-luoyang-mao-gate",
@@ -1080,6 +1228,236 @@
    "bytes": 3085812,
    "triangles": 18420,
    "textured": false
+  },
+  {
+   "id": "m-luoyang-residential-life",
+   "category": "models",
+   "kind": "城市构件",
+   "title": "连续住宅生活片区",
+   "english": "RESIDENTIAL LIFE BLOCK",
+   "summary": "13院、26屋的连续布局候选，复用既有住宅原型及近景构件，组织院内与公共通行空间。三档为同一片区，不是13件新作品或新的建筑家族。",
+   "alt": "连续住宅生活片区独立模型的CPU渲染，展示13院的建筑、院墙与通行地面。",
+   "cover": {
+    "small": {
+     "src": "media/library-models-m-luoyang-residential-life-cover-720.webp",
+     "w": 720,
+     "h": 495
+    },
+    "large": {
+     "src": "media/library-models-m-luoyang-residential-life-cover-1800.webp",
+     "w": 1600,
+     "h": 1100
+    },
+    "original": "../docs/library/models/m-luoyang-residential-life/cover.webp"
+   },
+   "coverIsShot": false,
+   "gallery": [
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-residential-life-shots-detail-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-residential-life-shots-detail-1800.webp",
+      "w": 1600,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-residential-life/shots/detail.webp"
+    }
+   ],
+   "files": [
+    {
+     "label": "LOD0 · 近景",
+     "path": "library/models/m-luoyang-residential-life/files/life-block-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-residential-life/files/life-block-LOD0.glb",
+     "format": "GLB",
+     "bytes": 8744148,
+     "triangles": 116108,
+     "vertices": 182222,
+     "primitives": 10,
+     "materials": 3,
+     "images": 9,
+     "size": [
+      160,
+      5.112,
+      98
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "LOD1 · 中景",
+     "path": "library/models/m-luoyang-residential-life/files/life-block-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-residential-life/files/life-block-LOD1.glb",
+     "format": "GLB",
+     "bytes": 4526768,
+     "triangles": 59460,
+     "vertices": 94734,
+     "primitives": 10,
+     "materials": 3,
+     "images": 9,
+     "size": [
+      160,
+      5.094,
+      98
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "LOD2 · 远景",
+     "path": "library/models/m-luoyang-residential-life/files/life-block-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-residential-life/files/life-block-LOD2.glb",
+     "format": "GLB",
+     "bytes": 638000,
+     "triangles": 2004,
+     "vertices": 3966,
+     "primitives": 10,
+     "materials": 3,
+     "images": 0,
+     "size": [
+      160,
+      5.03,
+      98
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    }
+   ],
+   "page": null,
+   "notes": {
+    "已完成的检查": "三档最终运行模型的来源几何与逐角UV复核；90个入口、1,080段入口运动、231段院内连接、45段公共带检查及174,522个支承点未检出侵入或缺支承。26屋共975对、13院共234对包围盒分离检查通过。13处近景房屋替换保留既有位置、墙阶与地坪，40个建筑层节点及材料关系经核对。",
+    "限制与待解决": "全部布局与绝对位置仍属C类设计推测，不是约公元180年洛阳住宅的实测复原。只提供自包含运行GLB，不含可编辑源工程；灶与侧板为另卡独立附层，本下载不含该层。GLB采用米制Y-up及既有示意坐标，保留节点变换，不重复施加城市位置或轴转换。三档互斥加载，未入城；有限刚体通行检查不证明人体步态、无障碍、结构安全、全域共面或GPU性能。近景实例展开506,828三角，未测浏览器帧率、显存或实际绘制调用。"
+   },
+   "stats": {},
+   "state": "待审",
+   "status": "待审 · 已建模，未入城 · 独立运行模型",
+   "public": true,
+   "updated": "2026-11-05T15:12:01+08:00",
+   "related": [
+    "p-luoyang",
+    "m-luoyang-residential-preparation"
+   ],
+   "card": "library/models/m-luoyang-residential-life/m-luoyang-residential-life.asset.json",
+   "bytes": 13908916,
+   "triangles": 116108,
+   "textured": true
+  },
+  {
+   "id": "m-luoyang-residential-preparation",
+   "category": "models",
+   "kind": "城市构件",
+   "title": "院内备食关系",
+   "english": "COURTYARD PREPARATION RELATION",
+   "summary": "复用既有灶体与侧备食板，研究一处院内备食位置及其工作、后退与通行关系。两节点放置附层，不是新灶型或新建筑家族；位置和尺寸均为设计推测。",
+   "alt": "灶体与侧备食板的独立CPU渲染；模型本身不含地面。",
+   "cover": {
+    "small": {
+     "src": "media/library-models-m-luoyang-residential-preparation-cover-720.webp",
+     "w": 720,
+     "h": 495
+    },
+    "large": {
+     "src": "media/library-models-m-luoyang-residential-preparation-cover-1800.webp",
+     "w": 1600,
+     "h": 1100
+    },
+    "original": "../docs/library/models/m-luoyang-residential-preparation/cover.webp"
+   },
+   "coverIsShot": false,
+   "gallery": [
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-residential-preparation-shots-detail-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-residential-preparation-shots-detail-1800.webp",
+      "w": 1600,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-residential-preparation/shots/detail.webp"
+    }
+   ],
+   "files": [
+    {
+     "label": "LOD0 · 近景",
+     "path": "library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD0.glb",
+     "format": "GLB",
+     "bytes": 866432,
+     "triangles": 2864,
+     "vertices": 4779,
+     "primitives": 2,
+     "materials": 2,
+     "images": 6,
+     "size": [
+      1.975,
+      0.75,
+      0.85
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "LOD1 · 中景",
+     "path": "library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD1.glb",
+     "format": "GLB",
+     "bytes": 316796,
+     "triangles": 1076,
+     "vertices": 1803,
+     "primitives": 2,
+     "materials": 2,
+     "images": 6,
+     "size": [
+      1.975,
+      0.75,
+      0.85
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "LOD2 · 远景",
+     "path": "library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-residential-preparation/files/W2-stove-A-LOD2.glb",
+     "format": "GLB",
+     "bytes": 30856,
+     "triangles": 464,
+     "vertices": 778,
+     "primitives": 2,
+     "materials": 2,
+     "images": 0,
+     "size": [
+      1.975,
+      0.75,
+      0.85
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    }
+   ],
+   "page": null,
+   "notes": {
+    "已完成的检查": "三档灶与侧板保持原几何、索引、逐角UV和嵌入贴图，放置层独立重建字节一致。与对应住宅地面组合检查时，每档14条指定路线、2个固定朝向工作位、2个后退转身湾及65条保护路线通过限定碰撞与支承检查；错误工作位负例仍检出侵入。三档分别为2,864、1,076、464三角。",
+    "限制与待解决": "本下载只含灶与侧板运行GLB，不含地面、住宅或可编辑源工程，不能作为完整地面场景直接行走。地面支承结论依赖配套住宅层，不属于此独立文件自身。保留米制Y-up节点与既有放置坐标，不再次施加位置；每次加载一档。未入城，非确定的历史院落设计；固定朝向工作位不等于可任意原地转身。木侧板距灶壳约75毫米，热工风险未评估，无生火安全、消防、烟气、通风、食品卫生、结构或GPU性能认证。"
+   },
+   "stats": {},
+   "state": "待审",
+   "status": "待审 · 已建模，未入城 · 独立运行模型",
+   "public": true,
+   "updated": "2026-11-05T15:12:01+08:00",
+   "related": [
+    "p-luoyang",
+    "m-luoyang-residential-life"
+   ],
+   "card": "library/models/m-luoyang-residential-preparation/m-luoyang-residential-preparation.asset.json",
+   "bytes": 1214084,
+   "triangles": 2864,
+   "textured": true
   },
   {
    "id": "m-luoyang-stoneclassic-access-court",
