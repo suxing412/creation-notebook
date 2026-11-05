@@ -1,0 +1,54 @@
+{
+  "spec": 1,
+  "about": "造物之匣资产库的分类表与质量下限。改这里就能加分类、调门槛；构建脚本与网页都从这里读。",
+  "statuses": [
+    { "id": "草稿", "public": false, "desc": "还在做，不上网页；本地检查照常跑。" },
+    { "id": "建设中", "public": true, "desc": "已能看，持续更新。" },
+    { "id": "待审", "public": true, "desc": "做完了，等制作人或评审确认。" },
+    { "id": "已发布", "public": true, "desc": "确认过的正式版本。" },
+    { "id": "归档", "public": true, "desc": "不再更新，留作记录。" }
+  ],
+  "categories": [
+    {
+      "id": "projects", "zh": "大型项目", "en": "Projects",
+      "desc": "由大量模型与页面组成、持续建设中的项目。",
+      "kinds": ["城市", "世界观", "系列"],
+      "requires": ["scene", "chapters"], "autoStats": ["glbCount"]
+    },
+    {
+      "id": "models", "zh": "3D 模型", "en": "3D Models",
+      "desc": "可下载、可在浏览器中查看的 GLB 模型，按家族归档，含变体、姿态与 LOD。",
+      "kinds": ["器物", "建筑", "城市构件", "角色", "载具", "植物"],
+      "requires": ["files"]
+    },
+    {
+      "id": "web", "zh": "网页设计", "en": "Web Design",
+      "desc": "为单件作品设计的独立介绍网页。",
+      "kinds": ["作品介绍页", "专题页", "交互原型"],
+      "requires": ["page"]
+    },
+    {
+      "id": "spaces", "zh": "空间设计", "en": "Spatial Design",
+      "desc": "把多件模型组织成可走动、可阅读的空间。",
+      "kinds": ["空间原型", "历史实验"],
+      "requires": []
+    }
+  ],
+  "limits": {
+    "id": "^[a-z0-9][a-z0-9-]{1,48}$",
+    "titleMax": 24,
+    "summaryMax": 120, "summaryWarn": 80,
+    "coverMinWidth": 600, "coverWarnWidth": 1200,
+    "imageTypes": [".png", ".jpg", ".jpeg", ".webp"],
+    "galleryMax": 12,
+    "glbMaxMB": 15, "glbWarnMB": 5,
+    "trianglesMax": 500000, "trianglesWarn": 150000,
+    "standardFolder": "library/<category>/<id>/"
+  },
+  "project": {
+    "about": "大型项目卡片的额外字段：scene（实时场景模块）、chapters、progress、evidence、journal、members。",
+    "progressStatuses": ["已入城", "已建模", "研究中", "待建"],
+    "evidenceLevels": ["有据", "推测", "未知"],
+    "chaptersMax": 12, "chapterImageMinWidth": 600
+  }
+}

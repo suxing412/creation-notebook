@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>资产 · 造物手记</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+SC:wght@500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="eras.css">
+<link rel="stylesheet" href="project.css">
+<script type="importmap">{"imports": {"three": "../docs/fusions/F01/vendor/three.module.js", "three/addons/": "../docs/fusions/F01/vendor/addons/"}}</script>
+</head>
+<body>
+<main id="main"></main>
+<script type="module">
+import { data, esc, size, tris, date, img, card, header } from './lib.js';
+const d = await data;
+const id = new URLSearchParams(location.search).get('id');
+const a = d.assets.find(x => x.id === id);
+const main = document.getElementById('main');
+header(d, a?.category ?? '');
+if (!a) { main.innerHTML = `<p class="empty" style="padding:40px var(--gutter)">找不到这个资产。<a href="index.html">回到总览</a></p>`; throw 0; }
+const c = d.categories.find(x => x.id === a.category);
+document.title = `${a.title} · 数字资产库`;
+if (a.category === 'projects' && a.chapters?.length) {
+  // large projects get their own page: live scene, chapters, progress, research notes, member assets
+  const { renderProject } = await import('./project.mjs');
+  renderProject({ main, a, c, d, esc, img, card, date });
+} else {
+const shots = [a.cover, ...a.gallery].filter(Boolean);
+const glbs = a.files;
+const related = a.related.map(r => d.assets.find(x => x.id === r)).filter(Boolean);
+const props = [
+  ['资产 ID', a.id], ['分类', c.zh], ['类型', a.kind],
+  ...(glbs.length ? [['格式', 'glTF 2.0 · GLB'], ['贴图', a.textured ? '有' : '无（纯材质）']] : []),
+  ['状态', a.status || '—'], ['最近更新', date(a.updated)],
+];
+// headline figures: what this kind of asset is measured by
+const figs = [
+  ...(glbs.length ? [['文件', glbs.length, '个'], ['总体积', size(a.bytes).split(' ')[0], size(a.bytes).split(' ')[1]], ['最高面数', tris(a.triangles), '']] : []),
+  ...Object.entries(a.stats || {}).map(([k, v]) => [k, v, '']),
+  ['图片', shots.length, '张'],
+].slice(0, 4);
+const notes = Object.entries(a.notes || {});
+// the plate is the final view: a live 3D model when there is one, the live page for web designs, images otherwise
+const modes = [...(glbs.length ? [['3d', '3D']] : []), ...(a.page && a.category === 'web' ? [['live', '实况']] : []), ['image', '图片']];
+main.innerHTML = `<article class="ad">
+<nav class="crumbs" aria-label="位置"><a href="index.html">总览</a> / <a href="index.html#${c.id}">${esc(c.zh)}</a> / ${esc(a.title)}</nav>
+<header class="ad-head">
+  <div>
+    <div class="meta"><span>${esc(c.en)}</span><span>·</span><span>${esc(a.kind)}</span>${a.state ? `<span class="ad-state" data-s="${esc(a.state)}">${esc(a.state)}</span>` : ''}</div>
+    <h1>${esc(a.title)}</h1>${a.english ? `<div class="en">${esc(a.english)}</div>` : ''}
+    <p class="sum">${esc(a.summary)}</p>
+  </div>
+  <dl class="ad-figs">${figs.map(([k, v, u]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}${u ? `<small>${esc(u)}</small>` : ''}</dd></div>`).join('')}</dl>
+</header>
+
+<section class="ad-plate" aria-label="图版">
+  <div class="preview">
+    <div class="pv-stage" id="stage">${img(a.cover, { alt: a.alt || a.title, sizes: '(max-width: 960px) 100vw, 80vw', eager: true })}</div>
+    <div class="pv-foot"><span class="cap"><b id="pv-k"></b><span id="pv-cap"></span></span>
+      <span class="pv-ctl">${glbs.length > 1 ? `<select id="variant" aria-label="选择模型文件">${glbs.map((f, i) => `<option value="${i}">${esc(f.label)} · ${size(f.bytes)}</option>`).join('')}</select>` : ''}
+      ${modes.length > 1 ? `<span class="pv-modes" role="group" aria-label="查看方式">${modes.map(([m, t]) => `<button data-mode="${m}" aria-pressed="false">${t}</button>`).join('')}</span>` : ''}</span></div>
+  </div>
+  ${shots.length > 1 ? `<div class="thumbs" role="group" aria-label="切换图版">${shots.map((s, i) => `<button data-i="${i}" aria-pressed="${!i}" aria-label="第 ${i + 1} 张">${img(s, { sizes: '104px' })}</button>`).join('')}</div>` : ''}
+</section>
+
+<div class="ad-body">
+  <section><h2>制作记录${notes.length ? `<small>${notes.length}</small>` : ''}</h2>
+    ${notes.length ? `<dl class="ad-notes">${notes.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : '<p class="ad-empty">这件资产还没有写制作记录。</p>'}
+  </section>
+  <aside class="ad-card" aria-label="档案"><h2>档案</h2><dl class="props">${props.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl></aside>
+</div>
+
+${glbs.length ? `<section class="ad-sect"><h2>文件<small>${glbs.length}</small></h2><div class="tablewrap"><table class="list"><thead><tr><th>文件</th><th>路径</th><th class="n">体积</th><th class="n">面数</th><th class="n">贴图</th><th class="n">包围盒（米）</th><th></th></tr></thead><tbody>
+  ${glbs.map((f, i) => `<tr><td><b style="font-family:var(--serif)">${esc(f.label)}</b></td><td style="font:12px var(--mono);color:var(--muted)">${esc(f.path)}</td><td class="n">${size(f.bytes)}</td><td class="n">${tris(f.triangles)}</td><td class="n">${f.images || '—'}</td><td class="n">${f.size ? f.size.map(n => +n.toFixed(2)).join(' × ') : '—'}</td>
+  <td class="n"><button class="btn" data-open="${i}" style="min-height:32px;display:inline-flex;padding:0 10px">3D</button> <a class="dl-link" href="${f.url}" download>下载</a></td></tr>`).join('')}</tbody></table></div></section>` : ''}
+${related.length ? `<section class="ad-sect"><h2>关联资产<small>${related.length}</small></h2><div class="cards">${related.map(card).join('')}</div></section>` : ''}
+</article>`;
+
+// ---- the plate ----
+const stage = document.getElementById('stage'), capEl = document.getElementById('pv-cap'), kEl = document.getElementById('pv-k'), sel = document.getElementById('variant');
+let viewer = null, mode = null, cur = 0, token = 0;
+const setMode = (m, k, cap) => { mode = m; kEl.textContent = k; capEl.textContent = cap; main.querySelectorAll('.pv-modes button').forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m)); };
+const closeViewer = () => { viewer?.dispose(); viewer = null; };
+const showImage = (i, note) => {
+  token++; closeViewer(); cur = i;
+  stage.innerHTML = img(shots[i], { alt: i ? a.title : (a.alt || a.title), sizes: '(max-width: 960px) 100vw, 80vw', eager: true });
+  setMode('image', `图版 ${i + 1} / ${shots.length}`, note || (glbs.length ? '预览图' : ''));
+  main.querySelectorAll('.thumbs button').forEach((b, k) => b.setAttribute('aria-pressed', k === i));
+};
+const showLive = () => {
+  token++; closeViewer();
+  stage.innerHTML = `<iframe class="pv-live" src="${a.page}" title="${esc(a.title)} · 网页实况"></iframe>`;
+  setMode('live', '网页实况', '可以直接在框里浏览和操作');
+  main.querySelectorAll('.thumbs button').forEach(b => b.setAttribute('aria-pressed', false));
+};
+// inspection tools: view mode, light, background — remembered for this browser
+const VIEWS = [['shaded', '实体'], ['clay', '白模'], ['wire', '线框'], ['normal', '法线']];
+const BGS = [['#2a2926', '墨'], ['#efe9dd', '纸'], ['#f8f8f6', '白'], ['#8e8b85', '灰'], ['#0c0c0d', '黑']];
+let look = { view: 'shaded', key: 2.2, az: 35, el: 52, env: 0.9, bg: '#2a2926', open: false };
+try { Object.assign(look, JSON.parse(localStorage.getItem('lab-viewer') || '{}')); } catch {}
+const saveLook = () => { try { localStorage.setItem('lab-viewer', JSON.stringify(look)); } catch {} };
+const toolsHTML = () => `<div class="vw-tools" data-fold="${look.open}">
+  <button class="vw-fold" aria-expanded="${look.open}">${look.open ? '收起调节' : '调节视图'}</button>
+  <div class="vw-group" role="group" aria-label="视图"><span>视图</span>${VIEWS.map(([k, t]) => `<button data-view="${k}" aria-pressed="${look.view === k}">${t}</button>`).join('')}</div>
+  <div class="vw-group" aria-label="光照"><span>光照</span>
+    <label>主光<input type="range" data-k="key" min="0" max="5" step="0.1" value="${look.key}"></label>
+    <label>方向<input type="range" data-k="az" min="0" max="360" step="5" value="${look.az}"></label>
+    <label>高度<input type="range" data-k="el" min="8" max="85" step="1" value="${look.el}"></label>
+    <label>环境<input type="range" data-k="env" min="0" max="2" step="0.05" value="${look.env}"></label>
+    <button data-reset-light>复位</button></div>
+  <div class="vw-group" role="group" aria-label="背景"><span>背景</span>${BGS.map(([c, t]) => `<button class="sw" data-bg="${c}" aria-pressed="${look.bg === c}" title="${t}" aria-label="背景：${t}"><i style="background:${c}"></i></button>`).join('')}</div>
+</div>`;
+function bindTools() {
+  const box = stage.querySelector('.vw-tools'); if (!box) return;
+  const sync = () => { box.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', b.dataset.view === look.view)); box.querySelectorAll('[data-bg]').forEach(b => b.setAttribute('aria-pressed', b.dataset.bg === look.bg)); box.querySelectorAll('input[data-k]').forEach(r => { r.value = look[r.dataset.k]; }); };
+  box.addEventListener('click', e => {
+    const b = e.target.closest('button'); if (!b) return;
+    if (b.classList.contains('vw-fold')) { look.open = !look.open; box.dataset.fold = look.open; b.textContent = look.open ? '收起调节' : '调节视图'; b.setAttribute('aria-expanded', look.open); }
+    else if (b.dataset.view) look.view = b.dataset.view;
+    else if (b.dataset.bg) look.bg = b.dataset.bg;
+    else if ('resetLight' in b.dataset) Object.assign(look, { key: 2.2, az: 35, el: 52, env: 0.9 });
+    viewer?.set(look); sync(); saveLook();
+  });
+  box.addEventListener('input', e => { const r = e.target.closest('input[data-k]'); if (!r) return; look[r.dataset.k] = +r.value; viewer?.set(look); saveLook(); });
+}
+async function open3d(i = sel ? +sel.value : 0) {
+  const my = ++token; closeViewer(); if (sel) sel.value = i;
+  stage.innerHTML = `<div class="viewer-host" id="vh"></div><div class="pv-status" id="vs">正在加载模型…</div>`;
+  setMode('3d', glbs[i].label, '拖动旋转 · 滚轮缩放 · R 复位');
+  main.querySelectorAll('.thumbs button').forEach(b => b.setAttribute('aria-pressed', false));
+  try {
+    const { createViewer } = await import('./viewer.mjs');
+    const v = await createViewer(document.getElementById('vh'));
+    if (my !== token) { v.dispose(); return; }
+    viewer = v; viewer.set(look); await viewer.load(glbs[i].url);
+    if (my !== token) return;
+    document.getElementById('vs').textContent = '';
+    stage.insertAdjacentHTML('beforeend', toolsHTML()); bindTools();
+  } catch (err) {
+    if (my !== token) return;
+    // 3D is the default view; when it cannot load, fall back to the preview image and say why
+    showImage(0, /WebGL/i.test(err.message) ? '这台设备无法显示 3D，显示预览图' : '3D 模型加载失败，显示预览图');
+  }
+}
+main.querySelector('.thumbs')?.addEventListener('click', e => { const b = e.target.closest('button'); if (b) showImage(+b.dataset.i); });
+main.querySelector('.pv-modes')?.addEventListener('click', e => { const b = e.target.closest('button'); if (!b || b.dataset.mode === mode) return; b.dataset.mode === '3d' ? open3d() : b.dataset.mode === 'live' ? showLive() : showImage(cur); });
+sel?.addEventListener('change', () => open3d(+sel.value));
+main.addEventListener('click', e => { const b = e.target.closest('[data-open]'); if (b) { open3d(+b.dataset.open); document.querySelector('.ad-plate').scrollIntoView({ behavior: 'smooth', block: 'start' }); } });
+if (glbs.length) open3d(0); else showImage(0);
+addEventListener('pagehide', () => viewer?.dispose());
+}
+</script>
+</body>
+</html>

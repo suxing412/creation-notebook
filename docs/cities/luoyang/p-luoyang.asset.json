@@ -1,0 +1,94 @@
+{
+  "spec": 1,
+  "id": "p-luoyang",
+  "category": "projects",
+  "kind": "城市",
+  "title": "洛阳",
+  "english": "LUOYANG",
+  "summary": "东汉雒阳，约公元 180 年。持续建设中的城：城垣、十二门、南北两宫、市与里坊，有据与推测分开表达。",
+  "status": "建设中",
+  "statusNote": "从城垣，走进已建街区",
+  "cover": "assets/city-poster.webp",
+  "coverAlt": "南侧十四座已建住宅院落的鸟瞰渲染，院落沿道路排列",
+  "gallery": [
+    "assets/city-overview.webp",
+    "assets/chapter-2.webp",
+    "assets/chapter-3.webp",
+    "assets/chapter-4.webp",
+    "assets/chapter-5.webp",
+    "assets/chapter-6.webp"
+  ],
+  "scene": "scene.mjs",
+  "chapters": [
+    {
+      "id": "walls", "title": "城垣与城门", "status": "已入城", "statusNote": "城垣已入城 · 六座城门已建模",
+      "line": "从城门，认出城的边界。",
+      "text": "沿已布置的城墙与门楼观察边界，再回到街区，看城门怎样与道路相接。旄门等六座城门有独立的研究模型。",
+      "image": "progress-assets/mao-gate/mao-cover.webp", "focus": "walls"
+    },
+    {
+      "id": "residential", "title": "住宅街区", "status": "已入城", "statusNote": "44 院已入城 · 北院新研究",
+      "line": "一方院落，接着另一方。",
+      "text": "现有住宅原型已在街区中布置。近看门前、院心与沿边房屋，远看院落如何连成片。",
+      "image": "assets/chapter-2.webp", "focus": "residential"
+    },
+    {
+      "id": "market", "title": "市肆", "status": "已入城",
+      "line": "街边，开始有了买卖。",
+      "text": "店铺和摊位组成一处市肆。沿街读它的入口、货物和留给人行的地方。",
+      "image": "assets/chapter-3.webp", "focus": "market"
+    },
+    {
+      "id": "storage", "title": "仓储作业", "status": "已入城",
+      "line": "仓房之外，还有一片前场。",
+      "text": "仓体、收纳棚与作业区域一同保留，观察货物抵达、暂存和搬运的空间关系。",
+      "image": "assets/chapter-4.webp", "focus": "storage"
+    },
+    {
+      "id": "ritual", "title": "礼制建筑", "status": "已建模",
+      "line": "把新的地标，记进城中。",
+      "text": "灵台与太学长堂已有研究模型。这里记录它们的形体与当前接入进度，城市中的关系继续补上。",
+      "image": "assets/chapter-5.webp", "focus": "ritual"
+    },
+    {
+      "id": "terrain", "title": "道路与地形", "status": "已入城",
+      "line": "让分散的建筑，有路相连。",
+      "text": "从地面和道路读城市的骨架，查看现有模型怎样接入同一个街区。",
+      "image": "assets/chapter-6.webp", "focus": "terrain"
+    }
+  ],
+  "progress": [
+    { "title": "城垣与广阳门", "status": "已入城", "count": 13, "unit": "件", "chapter": "walls", "focus": "walls", "note": "既有 A/direct 城垣组合；十二门位有示意关系，实体门楼目前仅广阳门。" },
+    { "title": "城门研究", "status": "已建模", "count": 6, "unit": "座", "chapter": "walls", "focus": "research:research-mao-gate", "note": "开阳门、平城门、上西门、雍门、中东门与旄门，各自独立研究，尚未落位。" },
+    { "title": "住宅院落", "status": "已入城", "count": 44, "unit": "院", "chapter": "residential", "focus": "residential", "note": "36 个 C02 院与 8 个 D08 院共用原交付矩阵，六种原型。" },
+    { "title": "北区院落研究", "status": "已建模", "count": 5, "unit": "种", "chapter": "residential", "focus": "research:research-north13-court-A", "note": "生活院、储藏作业院及其修订、周边院落。" },
+    { "title": "市肆", "status": "已入城", "count": 8, "unit": "处", "chapter": "market", "focus": "market", "note": "五店三摊，含交易与储货空间；金市位置取自既有研究示意点。" },
+    { "title": "仓储作业", "status": "已入城", "count": 1, "unit": "组", "chapter": "storage", "focus": "storage", "note": "完整仓储组；外部连接待建。" },
+    { "title": "灵台与太学", "status": "已建模", "count": 3, "unit": "件", "chapter": "ritual", "focus": "research:research-lingtai", "note": "灵台类型研究、太学长堂 A/B 方案；城市位置等待资料配准。" },
+    { "title": "道路与地面", "status": "已入城", "count": 4, "unit": "件", "chapter": "terrain", "focus": "terrain", "note": "四个原子地面文件整体载入；古河渠位置仍未配准。" }
+  ],
+  "evidence": [
+    { "level": "有据", "text": "位置、范围或形制有来源支持，可展开查看具体依据。" },
+    { "level": "推测", "text": "在已有资料上补全的布局与形制，同时记录推测理由。" },
+    { "level": "未知", "text": "资料尚不足以确定，保留空白并记录待查问题。" }
+  ],
+  "journal": [
+    { "date": "2026-11-05", "batch": "r2026.11.05-1", "title": "接入旄门", "text": "伊苏里亚交付的旄门完整近景研究模型接入城垣与城门章节，按一个门楼家族计数，保留独立研究状态。" },
+    { "date": "2026-11-04", "batch": "r2026.11.04-5", "title": "新版建城手记", "text": "围绕现有城市模型重建页面，旧应用归档到 v1。首屏先看南侧十四院，章节共用原有城市坐标和四十四院矩阵。" },
+    { "date": "2026-11-04", "title": "研究模型入口", "text": "灵台、太学 A/B、五种北侧院落与六座新城门提供独立研究模型入口；未配准的候选保留独立空间。" },
+    { "date": "2026-11-03", "title": "住宅样板与模型库", "text": "发布 C01、C02、D08 院落设计样板与可复用模型库，保留各版本历史。" }
+  ],
+  "members": [
+    "m-courtyard-family",
+    "m-market-functional",
+    "m-storage-functional",
+    "m-gate-roof-study",
+    "m-eaves-shell",
+    "m-passage-interface"
+  ],
+  "notes": {
+    "已完成的检查": "源文件、资源引用、模型身份、矩阵与预算的静态检查。",
+    "限制与待解决": "实际画面、交互和 GPU 性能待线上验收；北宫新墙与古水系配准资料待补；礼制建筑的城市落位待配准。"
+  },
+  "legacyPath": true
+}
