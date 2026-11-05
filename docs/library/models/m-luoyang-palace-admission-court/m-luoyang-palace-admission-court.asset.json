@@ -1,0 +1,52 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-palace-admission-court",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "无名宫院通行组合",
+  "english": "UNNAMED PALACE ADMISSION COURT",
+  "summary": "门卫、庭地、侧廊与殿阶的未定位C级连接试案。复用既有原件，新增实体地面并检查通行接口，不认定实名宫殿布局。",
+  "status": "待审",
+  "statusNote": "已建模，未入城；历史身份与绝对坐标未定。",
+  "cover": "cover.png",
+  "coverAlt": "无名门卫通口位于前方，两侧廊庑分列庭地两边，后方殿堂设正面台阶，所有建筑位于同一实体支承面。",
+  "gallery": [
+    "shots/entry-open-LOD0.png",
+    "shots/entry-closed-LOD0.png",
+    "shots/overview-open-LOD1.png",
+    "shots/overview-open-LOD2.png"
+  ],
+  "files": [
+    {
+      "path": "files/palace-admission-court-open-LOD0.glb",
+      "label": "LOD0 · 开门"
+    },
+    {
+      "path": "files/palace-admission-court-open-LOD1.glb",
+      "label": "LOD1 · 开门"
+    },
+    {
+      "path": "files/palace-admission-court-open-LOD2.glb",
+      "label": "LOD2 · 开门"
+    },
+    {
+      "path": "files/palace-admission-court-closed-LOD0.glb",
+      "label": "LOD0 · 闭门"
+    },
+    {
+      "path": "files/palace-admission-court-closed-LOD1.glb",
+      "label": "LOD1 · 闭门"
+    },
+    {
+      "path": "files/palace-admission-court-closed-LOD2.glb",
+      "label": "LOD2 · 闭门"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "六份实际GLB的原件几何、UV、材质与贴图字节比对；新增地面闭合和接缝检查；每份99个有限通行区域、18,487个支承点及73条接口邻接。闭门和殿柱负对照有效，输入独立重建结果与交付GLB字节一致。原生文件打包贴图经异地重开验证。",
+    "限制与待解决": "全部空间尺寸与布置为C级设计。《后汉书》仅支持准入与值守功能，不证明此连续路线。来源殿堂的德阳名称仅作追溯，不是本组合的历史身份。未入城、无完整围墙；未认证步态、连续门扇动画、结构安全或GPU性能。"
+  },
+  "related": [
+    "p-luoyang"
+  ]
+}
