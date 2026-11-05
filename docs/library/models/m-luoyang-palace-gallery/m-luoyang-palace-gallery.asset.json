@@ -1,0 +1,51 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-palace-gallery",
+  "category": "models",
+  "kind": "建筑",
+  "title": "高架复道局部模块",
+  "english": "PALACE GALLERY MODULES",
+  "summary": "两种高架复道局部片段，各含三档LOD，研究柱架、楼板与三条并行通行带。并非建成整条两宫复道，也不把三条通行带称作三层。",
+  "status": "待审",
+  "statusNote": "已建模，未入城 · 独立研究模型",
+  "cover": "cover.webp",
+  "coverAlt": "A型高架复道局部模块的实际原生CPU渲染。",
+  "gallery": [
+    "shots/gallery-B-LOD0-CPU.webp",
+    "shots/gallery-A-LOD1-CPU.webp",
+    "shots/gallery-A-LOD2-CPU.webp"
+  ],
+  "files": [
+    {
+      "path": "files/gallery-A-LOD0.glb",
+      "label": "gallery-A-LOD0"
+    },
+    {
+      "path": "files/gallery-A-LOD1.glb",
+      "label": "gallery-A-LOD1"
+    },
+    {
+      "path": "files/gallery-A-LOD2.glb",
+      "label": "gallery-A-LOD2"
+    },
+    {
+      "path": "files/gallery-B-LOD0.glb",
+      "label": "gallery-B-LOD0"
+    },
+    {
+      "path": "files/gallery-B-LOD1.glb",
+      "label": "gallery-B-LOD1"
+    },
+    {
+      "path": "files/gallery-B-LOD2.glb",
+      "label": "gallery-B-LOD2"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "六份GLB实际回读与原生有向三角匹配，米制UV和贴图逐档核对；指定局部楼板支持与2米头部射线通过。近景几何只排除原展示底板；图片为同资产CPU图，WebP像素无损。",
+    "限制与待解决": "端口在高起楼板高度，不能直接作为地面可达通路。宽2.2米压力样本碰柱，聚合共享边及反向屋脊端盖保留，不宣称无共面或全模型无穿插。所有尺寸与走线为C推测，城市候选柱脚支承未解决，因此未入城；无结构、车辆、GPU或手机认证。"
+  },
+  "related": [
+    "p-luoyang"
+  ]
+}

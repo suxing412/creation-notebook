@@ -1,0 +1,51 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-deyang-hall",
+  "category": "models",
+  "kind": "建筑",
+  "title": "德阳殿空间研究",
+  "english": "DEYANG HALL STUDY",
+  "summary": "德阳殿名与朝会功能启发的两种独立殿堂方案，各有近中远三档。全部形体、柱网与尺度为设计推测，未确定北宫中的位置。",
+  "status": "待审",
+  "statusNote": "已建模，未入城 · 独立研究模型",
+  "cover": "cover.webp",
+  "coverAlt": "A方案德阳殿空间研究的实际原生模型CPU渲染。",
+  "gallery": [
+    "shots/deyang-B-LOD0-CPU.webp",
+    "shots/deyang-A-LOD1-CPU.webp",
+    "shots/deyang-A-LOD2-CPU.webp"
+  ],
+  "files": [
+    {
+      "path": "files/deyang-A-LOD0.glb",
+      "label": "deyang-A-LOD0"
+    },
+    {
+      "path": "files/deyang-A-LOD1.glb",
+      "label": "deyang-A-LOD1"
+    },
+    {
+      "path": "files/deyang-A-LOD2.glb",
+      "label": "deyang-A-LOD2"
+    },
+    {
+      "path": "files/deyang-B-LOD0.glb",
+      "label": "deyang-B-LOD0"
+    },
+    {
+      "path": "files/deyang-B-LOD1.glb",
+      "label": "deyang-B-LOD1"
+    },
+    {
+      "path": "files/deyang-B-LOD2.glb",
+      "label": "deyang-B-LOD2"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "六份实际GLB与对应原生有向几何、米制UV及嵌入贴图核对；近景保留原件非展示地板几何。中央通道与踏面有限射线检查通过。原生CPU图与导出一致性链保留，图像转WebP像素不变。",
+    "限制与待解决": "A/B和各LOD互斥，不作两座已建历史宫殿计数。只支持名称与功能语境，不是考古复原。6米横向压力样本仍碰柱，未穷尽全殿碰撞、结构、承重与真实人体步态。城市位置为空；未入城，无GPU、手机或游戏引擎验收。"
+  },
+  "related": [
+    "p-luoyang"
+  ]
+}

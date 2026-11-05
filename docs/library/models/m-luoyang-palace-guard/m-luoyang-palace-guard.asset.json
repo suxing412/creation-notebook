@@ -1,0 +1,76 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-palace-guard",
+  "category": "models",
+  "kind": "建筑",
+  "title": "宫门值守核验切片",
+  "english": "PALACE GUARD CHECKPOINT",
+  "summary": "值守单元与双侧核验通口的一组独立功能研究，提供三档以及开闭静态姿态和动画。宫门实名、位置、房屋数量与尺度均未确定。",
+  "status": "待审",
+  "statusNote": "已建模，未入城 · 独立研究模型",
+  "cover": "cover.webp",
+  "coverAlt": "宫门值守切片的实际开门态CPU渲染，两侧核验单元围绕中央通口。",
+  "gallery": [
+    "shots/guard-C-slice_closed-CPU.webp",
+    "shots/guard-C-unit_work-CPU.webp",
+    "shots/guard-C-slice_rear-CPU.webp"
+  ],
+  "files": [
+    {
+      "path": "files/guard-slice-LOD0.glb",
+      "label": "guard-slice-LOD0"
+    },
+    {
+      "path": "files/guard-slice-LOD1.glb",
+      "label": "guard-slice-LOD1"
+    },
+    {
+      "path": "files/guard-slice-LOD2.glb",
+      "label": "guard-slice-LOD2"
+    },
+    {
+      "path": "files/guard-slice-closed-LOD0.glb",
+      "label": "guard-slice-closed-LOD0"
+    },
+    {
+      "path": "files/guard-slice-closed-LOD1.glb",
+      "label": "guard-slice-closed-LOD1"
+    },
+    {
+      "path": "files/guard-slice-closed-LOD2.glb",
+      "label": "guard-slice-closed-LOD2"
+    },
+    {
+      "path": "files/guard-slice-open-LOD0.glb",
+      "label": "guard-slice-open-LOD0"
+    },
+    {
+      "path": "files/guard-slice-open-LOD1.glb",
+      "label": "guard-slice-open-LOD1"
+    },
+    {
+      "path": "files/guard-slice-open-LOD2.glb",
+      "label": "guard-slice-open-LOD2"
+    },
+    {
+      "path": "files/guard-unit-LOD0.glb",
+      "label": "guard-unit-LOD0"
+    },
+    {
+      "path": "files/guard-unit-LOD1.glb",
+      "label": "guard-unit-LOD1"
+    },
+    {
+      "path": "files/guard-unit-LOD2.glb",
+      "label": "guard-unit-LOD2"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "采用revision02最终资产，逐GLB与原生有向几何、UV和运动层级核对；开门态指定分层通路、支承点、闭门负例及有限开启姿态已复核。原生CPU渲染帧与最终开闭姿态绑定，图像像素保持。",
+    "限制与待解决": "独立单元不含外围地面，组合自带局部C展示地坪；一次仅加载一档和一种姿态，不能叠加。门闭只阻中央通口，切片侧边和工作口仍开放。有限运动并非连续时间物理机构或人体步态认证，无锁闩、防上提、完整宫墙、历史地址、承重、GPU或手机验收。该单元被候入院组合复用，不再重复计新建筑。"
+  },
+  "related": [
+    "p-luoyang",
+    "m-luoyang-palace-admission-court"
+  ]
+}
