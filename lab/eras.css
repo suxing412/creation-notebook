@@ -1,0 +1,166 @@
+/* =====================================================================
+   Era skins. theme.css is the ancient (典雅) default; each era below
+   re-maps the same tokens and adds its own few signature details.
+   html[data-era] is set by the overview and remembered for the other pages.
+   ===================================================================== */
+body, .app-head, .ov-era, .ov-clock, .ov-night, .ov-nav, .zone-label, .ov-card, .btn, .card .ph, .tab { transition: background-color .9s ease, color .9s ease, border-color .9s ease, box-shadow .9s ease, border-radius .6s ease; }
+
+/* ---------------- 近代 · Republic-era deco: aged cream, deep teal, brass, double rules ---------------- */
+html[data-era="early"] {
+  --paper: #efe6d2; --paper-2: #e3d6bb; --tile: #e0d2b5; --card: #f6efe0;
+  --ink: #1d2b2a; --ink-2: #34443f; --muted: #7d7a68; --line: rgba(29, 43, 42, .18);
+  --gold: #a9853f; --gold-soft: rgba(169, 133, 63, .6); --accent: #8e2f28; --seal: #8e2f28;
+  --serif: "Noto Serif SC", "Songti SC", serif; --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+html[data-era="early"] .app-head { background: linear-gradient(var(--ink), var(--ink)) 0 100% / 100% 3px no-repeat, linear-gradient(var(--gold), var(--gold)) 0 calc(100% - 6px) / 100% 1px no-repeat, var(--paper); }
+html[data-era="early"] .brand .seal { background: var(--ink); color: #e9d9a8; border-radius: 50%; box-shadow: 0 0 0 2px var(--paper), 0 0 0 3px var(--gold); }
+html[data-era="early"] .brand b { letter-spacing: .3em; }
+html[data-era="early"] .tab[aria-current="page"]::before { background: var(--gold); transform: rotate(45deg); }
+html[data-era="early"] .tab::after { height: 2px; background: var(--ink); }
+html[data-era="early"] .ov-era, html[data-era="early"] .ov-nav, html[data-era="early"] .ov-clock, html[data-era="early"] .zone-label, html[data-era="early"] .ov-card {
+  border: 1px solid var(--ink); box-shadow: inset 0 0 0 3px var(--card), inset 0 0 0 4px var(--gold-soft); background: var(--card); }
+html[data-era="early"] .ov-card { box-shadow: inset 0 0 0 5px var(--card), inset 0 0 0 6px var(--gold), 0 20px 40px rgba(29, 43, 42, .16); }
+html[data-era="early"] .ov-card .stamp { background: none; color: var(--seal); border: 2px solid var(--seal); border-radius: 50%; }
+html[data-era="early"] .ov-era .thumb::after { background: var(--gold); transform: rotate(45deg); width: 7px; height: 7px; margin-left: -3.5px; }
+html[data-era="early"] .ov-nav button[aria-pressed="true"]::before { background: var(--gold); transform: rotate(45deg); }
+html[data-era="early"] .ov-clock { font-family: var(--mono); letter-spacing: .2em; }
+html[data-era="early"] .btn.solid { background: var(--ink); border-color: var(--ink); }
+html[data-era="early"] .btn.solid:hover { background: var(--seal); border-color: var(--seal); }
+html[data-era="early"] .ov-stats b, html[data-era="early"] .cat-sum b { font-family: var(--mono); }
+
+/* ---------------- 现代 · Swiss modern: white, black, grid, sans-serif, one signal colour ---------------- */
+html[data-era="modern"] {
+  --paper: #f3f3f1; --paper-2: #e8e8e5; --tile: #e4e4e1; --card: #ffffff;
+  --ink: #111111; --ink-2: #333333; --muted: #7a7a7a; --line: rgba(17, 17, 17, .12);
+  --gold: #111111; --gold-soft: rgba(17, 17, 17, .22); --accent: #ff4a1c; --seal: #ff4a1c;
+  --serif: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+html[data-era="modern"] h1, html[data-era="modern"] h2, html[data-era="modern"] h3, html[data-era="modern"] .brand b { letter-spacing: 0 !important; font-weight: 700 !important; }
+html[data-era="modern"] .meta { letter-spacing: .08em; }
+html[data-era="modern"] .app-head { background: linear-gradient(var(--ink), var(--ink)) 0 100% / 100% 2px no-repeat, var(--card); }
+html[data-era="modern"] .brand .seal { background: var(--seal); border-radius: 0; font-family: var(--sans); }
+html[data-era="modern"] .brand span { border-left-color: var(--ink); }
+html[data-era="modern"] .tab, html[data-era="modern"] .ov-era button, html[data-era="modern"] .ov-nav button { letter-spacing: .02em; font-weight: 600; }
+html[data-era="modern"] .tab + .tab, html[data-era="modern"] .ov-era button + button, html[data-era="modern"] .ov-nav button + button { border-left-color: transparent; }
+html[data-era="modern"] .ov-era, html[data-era="modern"] .ov-nav, html[data-era="modern"] .ov-clock, html[data-era="modern"] .ov-night, html[data-era="modern"] .zone-label {
+  background: var(--card); border: 2px solid var(--ink); backdrop-filter: none; }
+html[data-era="modern"] .ov-clock, html[data-era="modern"] .ov-night { border-radius: 0; }
+html[data-era="modern"] .ov-era .thumb { bottom: 0; height: 4px; background: var(--seal); }
+html[data-era="modern"] .ov-era .thumb::after { display: none; }
+html[data-era="modern"] .ov-nav button[aria-pressed="true"] { background: var(--ink); color: #fff; box-shadow: none; }
+html[data-era="modern"] .ov-nav button[aria-pressed="true"]::before { background: var(--seal); }
+html[data-era="modern"] .zone-label::after { background: var(--ink); width: 2px; }
+html[data-era="modern"] .ov-card { border: 2px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); }
+html[data-era="modern"] .ov-card .stamp { border-radius: 0; background: var(--seal); }
+html[data-era="modern"] .btn { border-width: 2px; font-weight: 600; letter-spacing: .02em; }
+html[data-era="modern"] .btn.solid:hover { background: var(--seal); border-color: var(--seal); color: #fff; }
+html[data-era="modern"] .card .ph { border: 2px solid var(--ink); }
+
+/* ---------------- 未来 · frosted glass, rounded, mono, cyan glow ---------------- */
+html[data-era="future"] {
+  --paper: #e9f0f5; --paper-2: #dde7ee; --tile: #dbe6ee; --card: rgba(255, 255, 255, .58);
+  --ink: #0f1d2b; --ink-2: #2b3e50; --muted: #6a7f92; --line: rgba(15, 29, 43, .12);
+  --gold: #2ec7ff; --gold-soft: rgba(46, 199, 255, .45); --accent: #00a9e8; --seal: #00b4f0;
+  --serif: "IBM Plex Mono", ui-monospace, monospace;
+}
+html[data-era="future"] body { background: radial-gradient(120% 80% at 70% 0%, #f6fbff, var(--paper)); }
+html[data-era="future"] h1, html[data-era="future"] h2 { letter-spacing: .04em !important; font-weight: 500 !important; }
+html[data-era="future"] .app-head { background: rgba(255, 255, 255, .55); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--gold-soft), 0 6px 24px rgba(46, 199, 255, .08); }
+html[data-era="future"] .brand .seal { background: linear-gradient(135deg, #5fe0ff, #0090e0); border-radius: 8px; box-shadow: 0 0 14px rgba(46, 199, 255, .55); }
+html[data-era="future"] .tab::after { background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+html[data-era="future"] .tab[aria-current="page"]::before { border-radius: 50%; background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+html[data-era="future"] .ov-era, html[data-era="future"] .ov-nav, html[data-era="future"] .ov-clock, html[data-era="future"] .ov-night, html[data-era="future"] .zone-label, html[data-era="future"] .ov-card, html[data-era="future"] .bubble {
+  background: rgba(255, 255, 255, .52); border: 1px solid rgba(46, 199, 255, .45); border-radius: 12px; backdrop-filter: blur(14px); box-shadow: 0 8px 30px rgba(15, 29, 43, .08), inset 0 0 0 1px rgba(255, 255, 255, .6); }
+html[data-era="future"] .ov-clock, html[data-era="future"] .ov-night { border-radius: 999px; }
+html[data-era="future"] .ov-era button + button, html[data-era="future"] .ov-nav button + button { border-left-color: rgba(46, 199, 255, .2); }
+html[data-era="future"] .ov-era .thumb { bottom: 4px; height: 3px; background: var(--gold); border-radius: 3px; box-shadow: 0 0 10px var(--gold); }
+html[data-era="future"] .ov-era .thumb::after { display: none; }
+html[data-era="future"] .ov-nav button[aria-pressed="true"] { box-shadow: inset 0 -2px 0 var(--gold); color: var(--ink); }
+html[data-era="future"] .ov-nav button[aria-pressed="true"]::before { border-radius: 50%; background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+html[data-era="future"] .zone-label::after { background: linear-gradient(var(--gold), transparent); }
+html[data-era="future"] .ov-card .stamp { border-radius: 10px; background: linear-gradient(135deg, #5fe0ff, #0090e0); box-shadow: 0 0 16px rgba(46, 199, 255, .5); }
+html[data-era="future"] .btn { border-radius: 999px; border-color: var(--gold); }
+html[data-era="future"] .btn.solid { background: linear-gradient(135deg, #24b8ef, #0a7fd0); border-color: transparent; color: #fff; box-shadow: 0 0 18px rgba(46, 199, 255, .35); }
+html[data-era="future"] .btn.solid:hover { background: linear-gradient(135deg, #5fe0ff, #0090e0); }
+html[data-era="future"] .card .ph { border-radius: 12px; border-color: rgba(46, 199, 255, .35); }
+html[data-era="future"] .preview { border-radius: 14px; box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--gold-soft), 0 0 30px rgba(46, 199, 255, .15); }
+
+/* =====================================================================
+   Era transition overlays (.ov-fx gets .play.fx-<era>; children are throwaway)
+   ===================================================================== */
+.ov-fx { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 3; --ox: 80%; --oy: 12%; }
+.ov-banner, .ov-intro, .ov-stats, .ov-era, .ov-time, .ov-nav, .ov-card { z-index: 5; } /* the controls and the era caption stay above the transition */
+.ov-fx i { position: absolute; display: block; }
+
+/* 古代 · ink bloom: blots spread out from the era rule, then the ink thins away */
+.fx-ancient .ink { left: var(--ox); top: var(--oy); width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(28, 24, 20, .92) 0 45%, rgba(28, 24, 20, .7) 60%, rgba(28, 24, 20, 0) 72%); filter: blur(6px);
+  animation: ink-bloom 2.3s cubic-bezier(.2, .6, .2, 1) forwards; }
+.fx-ancient .ink.b { animation-delay: .12s; background: radial-gradient(circle, rgba(60, 52, 44, .7) 0 40%, rgba(60, 52, 44, 0) 70%); }
+.fx-ancient .ink.c { animation-delay: .26s; background: radial-gradient(circle, rgba(168, 64, 47, .25) 0 30%, rgba(168, 64, 47, 0) 70%); }
+@keyframes ink-bloom { 0% { transform: scale(0); opacity: 1; } 45% { transform: scale(70); opacity: .95; } 100% { transform: scale(95); opacity: 0; } }
+
+/* 近代 · old film: sepia wash, grain, scratches, an iris that closes and opens */
+.fx-early .sepia { inset: 0; background: #6b4f2c; mix-blend-mode: color; animation: film-sepia 2.4s ease forwards; }
+.fx-early .grain { inset: -20%; opacity: 0; background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .15  0 0 0 0 .1  0 0 0 0 .05  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>") 0 0 / 160px 160px;
+  animation: film-grain .12s steps(2) infinite, film-fade 2.4s ease forwards; }
+.fx-early .scratch { inset: 0; background: linear-gradient(90deg, transparent 18%, rgba(30, 20, 10, .35) 18.1%, transparent 18.3%, transparent 63%, rgba(255, 250, 230, .4) 63.1%, transparent 63.25%);
+  animation: film-scratch .2s steps(3) infinite, film-fade 2.4s ease forwards; }
+.fx-early .iris { left: 50%; top: 50%; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; box-shadow: 0 0 0 200vmax #1b140d; animation: film-iris 2.4s cubic-bezier(.6, 0, .3, 1) forwards; }
+@keyframes film-sepia { 0% { opacity: 0; } 15% { opacity: .85; } 70% { opacity: .7; } 100% { opacity: 0; } }
+@keyframes film-fade { 0% { opacity: 0; } 12% { opacity: 1; } 75% { opacity: .8; } 100% { opacity: 0; } }
+@keyframes film-grain { 0% { transform: translate(0, 0); } 50% { transform: translate(-3%, 2%); } 100% { transform: translate(2%, -3%); } }
+@keyframes film-scratch { 0% { transform: translateX(0); } 50% { transform: translateX(-6%); } 100% { transform: translateX(4%); } }
+@keyframes film-iris { 0% { transform: scale(400); } 38% { transform: scale(0); } 52% { transform: scale(0); } 100% { transform: scale(400); } }
+
+/* 现代 · shutters: white panels drop in one by one, then lift away */
+.fx-modern .shutter { top: 0; bottom: 0; width: calc(100% / 7 + 1px); left: calc(var(--i) * 100% / 7); background: #f6f6f4; border-right: 2px solid #111;
+  transform: translateY(-101%); animation: shutter 2.1s cubic-bezier(.7, 0, .3, 1) forwards; animation-delay: calc(var(--i) * .05s); }
+.fx-modern .shutter:nth-child(4)::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 6px; background: #ff4a1c; }
+@keyframes shutter { 0% { transform: translateY(-101%); } 35%, 55% { transform: translateY(0); } 100% { transform: translateY(101%); } }
+
+/* 未来 · digital scan: a cyan line sweeps down over a flickering grid */
+.fx-future .grid { inset: 0; background: linear-gradient(rgba(46, 199, 255, .18) 1px, transparent 1px) 0 0 / 100% 28px, linear-gradient(90deg, rgba(46, 199, 255, .18) 1px, transparent 1px) 0 0 / 28px 100%;
+  animation: fut-grid 2.2s ease forwards; }
+.fx-future .scan { left: 0; right: 0; top: 0; height: 120px; background: linear-gradient(180deg, transparent, rgba(46, 199, 255, .28) 70%, rgba(190, 245, 255, .95) 96%, transparent);
+  box-shadow: 0 0 40px rgba(46, 199, 255, .6); animation: fut-scan 2.2s cubic-bezier(.5, 0, .3, 1) forwards; }
+@keyframes fut-grid { 0% { opacity: 0; } 10% { opacity: 1; } 20% { opacity: .4; } 30% { opacity: 1; } 75% { opacity: .7; } 100% { opacity: 0; } }
+@keyframes fut-scan { 0% { transform: translateY(-130px); } 100% { transform: translateY(calc(100vh + 20px)); } }
+
+/* ==========================================================================
+   UI morph on era switch: the old skin leaves in its manner, the new one arrives in its manner.
+   html gets .ui-out (with data-ui-from) then .ui-in; each element carries a stagger --s.
+   Uses the individual translate/scale/rotate properties so element transforms (labels, card) are untouched.
+   ========================================================================== */
+:root:is(.ui-out, .ui-in) :is(.app-head .brand, .app-head .tab, .gsearch, .ov-intro, .ov-stats > div, .ov-era, .ov-time, .ov-nav, .ov-card.show, .zone-label.shown) { transition: none !important; }
+
+/* out — fast, stagger compressed so everything is gone before the swap */
+:root.ui-out[data-ui-from="ancient"] :is(.app-head .brand, .app-head .tab, .gsearch, .ov-intro, .ov-stats > div, .ov-era, .ov-time, .ov-nav, .ov-card.show, .zone-label.shown) { animation: m-ink-out .34s ease-in calc(var(--s, 0ms) * .35) both; }
+:root.ui-out[data-ui-from="early"] :is(.app-head .brand, .app-head .tab, .gsearch, .ov-intro, .ov-stats > div, .ov-era, .ov-time, .ov-nav, .ov-card.show, .zone-label.shown) { animation: m-flap-out .26s cubic-bezier(.6, 0, 1, .6) calc(var(--s, 0ms) * .35) both; }
+:root.ui-out[data-ui-from="modern"] :is(.app-head .brand, .app-head .tab, .gsearch, .ov-intro, .ov-stats > div, .ov-era, .ov-time, .ov-nav, .ov-card.show, .zone-label.shown) { animation: m-wipe-out .28s cubic-bezier(.7, 0, .9, .4) calc(var(--s, 0ms) * .35) both; }
+:root.ui-out[data-ui-from="future"] :is(.app-head .brand, .app-head .tab, .gsearch, .ov-intro, .ov-stats > div, .ov-era, .ov-time, .ov-nav, .ov-card.show, .zone-label.shown) { animation: m-glitch-out .34s steps(8, end) calc(var(--s, 0ms) * .35) both; }
+
+/* in — staggered wave in the new era's manner */
+:root.ui-in[data-era="ancient"] :is(.app-head .brand, .app-head .tab, .gsearch, .ov-intro, .ov-stats > div, .ov-era, .ov-time, .ov-nav, .ov-card.show, .zone-label.shown) { animation: m-ink-in .8s cubic-bezier(.2, .7, .2, 1) var(--s, 0ms) both; }
+:root.ui-in[data-era="ancient"] :is(.brand .seal, .ov-card.show .stamp) { animation: m-seal .55s cubic-bezier(.3, 1.6, .5, 1) calc(var(--s, 0ms) + 380ms) both; }
+:root.ui-in[data-era="early"] :is(.app-head .brand, .app-head .tab, .gsearch, .ov-intro, .ov-stats > div, .ov-era, .ov-time, .ov-nav, .ov-card.show, .zone-label.shown) { transform-origin: 50% 0; animation: m-flap-in .62s cubic-bezier(.3, .8, .3, 1) var(--s, 0ms) both; }
+:root.ui-in[data-era="modern"] :is(.app-head .brand, .app-head .tab, .gsearch, .ov-intro, .ov-stats > div, .ov-era, .ov-time, .ov-nav, .ov-card.show, .zone-label.shown) { animation: m-wipe-in .5s cubic-bezier(.7, 0, .2, 1) var(--s, 0ms) both; }
+:root.ui-in[data-era="future"] :is(.app-head .brand, .app-head .tab, .gsearch, .ov-intro, .ov-stats > div, .ov-era, .ov-time, .ov-nav, .ov-card.show, .zone-label.shown) { animation: m-scan-in .7s cubic-bezier(.4, 0, .2, 1) var(--s, 0ms) both; }
+
+/* 古代 · ink: dissolves into a blur, then condenses and settles; the seal is pressed down */
+@keyframes m-ink-out { to { opacity: 0; filter: blur(7px); scale: 1.03; } }
+@keyframes m-ink-in { 0% { opacity: 0; filter: blur(9px); translate: 0 -6px; } 55% { opacity: 1; filter: blur(1.5px); } 100% { opacity: 1; filter: none; translate: 0 0; } }
+@keyframes m-seal { 0% { opacity: 0; scale: 2.4; rotate: -14deg; } 55% { opacity: 1; scale: .88; rotate: 2deg; } 100% { opacity: 1; scale: 1; rotate: 0deg; } }
+/* 近代 · split-flap: folds flat, then flips down with a small bounce */
+@keyframes m-flap-out { to { opacity: .2; scale: 1 0; } }
+@keyframes m-flap-in { 0% { opacity: 0; scale: 1 0; } 50% { opacity: 1; scale: 1 1.14; } 72% { scale: 1 .94; } 88% { scale: 1 1.03; } 100% { opacity: 1; scale: 1 1; } }
+/* 现代 · hard wipe: erased leftward, drawn out left-to-right with a short push */
+@keyframes m-wipe-out { from { clip-path: inset(-20px -20px -40px -20px); } to { clip-path: inset(-20px 100% -40px -20px); translate: -8px 0; } }
+@keyframes m-wipe-in { from { clip-path: inset(-20px 100% -40px -20px); translate: -14px 0; } to { clip-path: inset(-20px -20px -40px -20px); translate: 0 0; } }
+/* 未来 · glitch out, scan in with a cyan flash */
+@keyframes m-glitch-out { 0% { opacity: 1; } 20% { opacity: .25; translate: 3px 0; } 35% { opacity: 1; translate: -3px 0; filter: brightness(1.8); } 55% { opacity: .15; translate: 1px 0; } 70% { opacity: .7; scale: 1 .5; } 100% { opacity: 0; scale: 1 .04; } }
+@keyframes m-scan-in { 0% { opacity: 1; clip-path: inset(-20px -20px 100% -20px); filter: brightness(2.4) drop-shadow(0 0 6px rgba(82, 208, 255, .9)); } 55% { clip-path: inset(-20px -20px -40px -20px); filter: brightness(1.7) drop-shadow(0 0 8px rgba(82, 208, 255, .8)); } 70% { opacity: .6; } 80% { opacity: 1; } 100% { opacity: 1; clip-path: inset(-20px -20px -40px -20px); filter: none; } }
+
+@media (prefers-reduced-motion: reduce) { :root:is(.ui-out, .ui-in) * { animation: none !important; } }
+
+@media (prefers-reduced-motion: reduce) { .ov-fx { display: none; } }

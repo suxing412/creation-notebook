@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>投稿规范 · 造物手记</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+SC:wght@500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="eras.css">
+<style>
+  .spec-wrap { max-width: 1120px; }
+  .spec-nav { display: flex; flex-wrap: wrap; gap: 6px 18px; padding: 0 var(--gutter) 26px; font-size: 14px; }
+  .spec-nav a { color: var(--ink-2); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+  .spec-nav a:hover { color: var(--ink); border-color: var(--ink); }
+  .lead { max-width: 46em; color: var(--ink-2); line-height: 1.9; margin: 0 0 18px; }
+  .tree { font: 500 13px/1.9 var(--mono); background: var(--card, #fbf8f1); border: 1px solid var(--line); padding: 16px 20px; margin: 0; overflow-x: auto; white-space: pre; }
+  .tree em { font-style: normal; color: var(--muted); }
+  .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+  pre.code { font: 500 12.5px/1.75 var(--mono); background: #1f1d1a; color: #ece6da; padding: 16px 18px; margin: 0; overflow-x: auto; }
+  pre.code .k { color: #e2b872; } pre.code .s { color: #b9d39a; } pre.code .c { color: #8c867a; }
+  table.list td code, .lead code, li code { font: 500 12.5px var(--mono); background: var(--paper-2, #f1ece2); padding: 1px 5px; }
+  .req { font: 600 11px var(--mono); padding: 2px 6px; border: 1px solid currentColor; white-space: nowrap; }
+  .req.must { color: var(--seal, #a8402f); } .req.opt { color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; } .chips span { font-size: 12px; border: 1px solid var(--line); padding: 2px 8px; }
+  .counts { display: flex; flex-wrap: wrap; gap: 10px 34px; margin: 0 0 16px; }
+  .counts div { display: grid; } .counts dt { font: 500 11px var(--mono); letter-spacing: .1em; color: var(--muted); } .counts dd { margin: 0; font: 600 26px/1.2 var(--serif); }
+  .counts .bad dd { color: var(--seal, #a8402f); }
+  .rep-filter { display: flex; gap: 6px; margin: 0 0 12px; flex-wrap: wrap; }
+  .rep-filter button { border: 1px solid var(--line); background: none; padding: 6px 12px; cursor: pointer; font: inherit; font-size: 13px; color: var(--ink-2); }
+  .rep-filter button[aria-pressed="true"] { border-color: var(--ink); color: var(--ink); background: var(--card, #fbf8f1); }
+  .rep td { vertical-align: top !important; }
+  .rep ul { margin: 0; padding-left: 1.1em; font-size: 13px; color: var(--ink-2); }
+  .rep li.e { color: var(--seal, #a8402f); }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; background: #6f9a5a; }
+  .dot.w { background: #c79a3a; } .dot.e { background: var(--seal, #a8402f); }
+  ol.steps { margin: 0; padding-left: 1.4em; line-height: 2; color: var(--ink-2); max-width: 52em; }
+  @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main id="main"></main>
+<script type="module">
+import { data, esc, header } from './lib.js';
+const d = await data;
+header(d, 'spec');
+const [spec, rep] = await Promise.all([fetch('../docs/asset-spec/categories.json').then(r => r.json()), fetch('data/report.json').then(r => r.json()).catch(() => null)]);
+const L = spec.limits;
+const FIELDS = [
+  ['spec', true, '规范版本，现在固定写 ' + spec.spec, String(spec.spec)],
+  ['id', true, '全库唯一。小写字母、数字、连字符；文件名必须是 <code>&lt;id&gt;.asset.json</code>', 'm-bronze-lamp'],
+  ['category', true, '分类 id，见下方分类表', 'models'],
+  ['kind', true, '分类里的类型；新类型先加进分类表', '器物'],
+  ['title', true, `中文名，≤ ${L.titleMax} 字`, '错金铜灯'],
+  ['english', false, '英文名，大写', 'BRONZE LAMP'],
+  ['summary', true, `一句话介绍，≤ ${L.summaryMax} 字（建议 ≤ ${L.summaryWarn}）`, '……'],
+  ['status', true, '状态，见下方状态表', '待审'],
+  ['statusNote', false, '状态补充说明，一句话', '等制作人看 LOD1'],
+  ['cover', true, `封面图，宽 ≥ ${L.coverMinWidth}px（建议 ≥ ${L.coverWarnWidth}px）`, 'cover.webp'],
+  ['coverAlt', false, '封面的文字描述，给读屏和图片加载失败时用', '……'],
+  ['coverIsShot', false, '封面是网页截图时写 true', 'true'],
+  ['gallery', false, `图集，最多 ${L.galleryMax} 张，第一张最重要`, '["shots/front.webp"]'],
+  ['files', '模型必填', `GLB 列表 <code>[{"path","label"}]</code>；或写 <code>"auto"</code> 收录本目录全部 GLB`, '[{"path":"files/lamp-LOD0.glb","label":"LOD0"}]'],
+  ['page', '网页必填', '作品网页本身，在详情页的「实况」里直接浏览', 'index.html'],
+  ['notes', false, '制作记录。建议至少写「已完成的检查」「限制与待解决」两条', '{"已完成的检查":"……"}'],
+  ['stats', false, '额外的数字，显示在属性表里', '{"章节":6}'],
+  ['related', false, '关联资产的 id', '["w-bronze-lamp"]'],
+];
+const TEMPLATE = `{
+  <span class="k">"spec"</span>: 1,
+  <span class="k">"id"</span>: <span class="s">"m-bronze-lamp"</span>,
+  <span class="k">"category"</span>: <span class="s">"models"</span>,
+  <span class="k">"kind"</span>: <span class="s">"器物"</span>,
+  <span class="k">"title"</span>: <span class="s">"错金铜灯"</span>,
+  <span class="k">"english"</span>: <span class="s">"BRONZE LAMP"</span>,
+  <span class="k">"summary"</span>: <span class="s">"汉代错金银铜灯，一盏三枝，可拆的灯盘做成 LOD 变体。"</span>,
+  <span class="k">"status"</span>: <span class="s">"待审"</span>,
+  <span class="k">"cover"</span>: <span class="s">"cover.webp"</span>,
+  <span class="k">"coverAlt"</span>: <span class="s">"灰底上的三枝铜灯，正面略俯视"</span>,
+  <span class="k">"gallery"</span>: [<span class="s">"shots/front.webp"</span>, <span class="s">"shots/detail.webp"</span>],
+  <span class="k">"files"</span>: [
+    { <span class="k">"path"</span>: <span class="s">"files/lamp-LOD0.glb"</span>, <span class="k">"label"</span>: <span class="s">"LOD0 · 近景"</span> },
+    { <span class="k">"path"</span>: <span class="s">"files/lamp-LOD1.glb"</span>, <span class="k">"label"</span>: <span class="s">"LOD1 · 城市"</span> }
+  ],
+  <span class="k">"notes"</span>: {
+    <span class="k">"已完成的检查"</span>: <span class="s">"法线朝外、无重叠面、贴图 1K"</span>,
+    <span class="k">"限制与待解决"</span>: <span class="s">"灯焰还是静态"</span>
+  },
+  <span class="k">"related"</span>: [<span class="s">"w-bronze-lamp"</span>]
+}`;
+const ERR = [
+  ['卡片', '不是合法 JSON；缺 spec / id / category / kind / title / summary / status / cover；文件名不是 &lt;id&gt;.asset.json；id 重复'],
+  ['取值', 'category、status 不在表里；title 超过 ' + L.titleMax + ' 字；summary 超过 ' + L.summaryMax + ' 字'],
+  ['路径', '任何路径找不到，或跑出了 docs/；图片不是 ' + L.imageTypes.join(' / ')],
+  ['封面', `宽度小于 ${L.coverMinWidth}px`],
+  ['模型', `模型分类没有 GLB；GLB 读不出来；单个 GLB 超过 ${L.glbMaxMB} MB；面数超过 ${L.trianglesMax.toLocaleString()}`],
+  ['入口', '网页设计没有 page'],
+];
+const WARN = [
+  ['内容', '缺 english、coverAlt；notes 缺「已完成的检查」或「限制与待解决」；模型、空间、项目没有图集'],
+  ['尺寸', `封面窄于 ${L.coverWarnWidth}px；summary 长于 ${L.summaryWarn} 字；GLB 大于 ${L.glbWarnMB} MB；面数高于 ${L.trianglesWarn.toLocaleString()}`],
+  ['归类', 'kind 不在分类表；related 指向不存在的 id；新资产没放在标准目录；标准目录里有没被任何卡片引用的 GLB'],
+];
+const byId = Object.fromEntries((rep?.items ?? []).map(i => [i.id, i]));
+const main = document.getElementById('main');
+main.innerHTML = `
+<header class="cat-head"><div><div class="meta">Submission spec · v${spec.spec}</div><h1>投稿规范</h1>
+  <p>造物之匣里的每一件数字资产，都由一张卡片 <code>&lt;id&gt;.asset.json</code> 描述。卡片写对、推送，网页就自动收录；写错了，检查会拦下并说明哪里不对。</p></div></header>
+<nav class="spec-nav" aria-label="本页目录"><a href="#where">放在哪里</a><a href="#card">卡片格式</a><a href="#cats">分类与类型</a><a href="#status">状态</a><a href="#rules">质量下限</a><a href="#proj">大型项目</a><a href="#flow">提交流程</a><a href="#report">检查报告</a></nav>
+
+<section class="sect spec-wrap" id="where"><h2>一 · 放在哪里</h2>
+  <p class="lead">新资产一件一个文件夹，放在 <code>docs/library/&lt;分类&gt;/&lt;id&gt;/</code>。卡片、封面、图集、模型都放在这个文件夹里，卡片里的路径一律写<b>相对卡片自己</b>的路径。</p>
+  <pre class="tree">docs/library/
+└─ models/                     <em>← 分类 id</em>
+   └─ m-bronze-lamp/           <em>← 资产 id，和卡片文件名一致</em>
+      ├─ m-bronze-lamp.asset.json   <em>← 卡片（唯一必需的文本文件）</em>
+      ├─ cover.webp                 <em>← 封面</em>
+      ├─ shots/  front.webp  detail.webp   <em>← 图集</em>
+      ├─ files/  lamp-LOD0.glb  lamp-LOD1.glb  <em>← 模型</em>
+      └─ index.html                 <em>← 网页设计的作品网页本身</em></pre>
+  <p class="lead" style="margin-top:14px">已有的旧资产留在原处，卡片里写了 <code>"legacyPath": true</code>，不用搬。id 前缀建议：项目 <code>p-</code>、模型 <code>m-</code>、网页 <code>w-</code>、空间 <code>s-</code>；同一件作品的模型和网页用同一个后缀，方便互相关联。</p>
+</section>
+
+<section class="sect spec-wrap" id="card"><h2>二 · 卡片格式<small>${FIELDS.length} 个字段</small></h2>
+  <div class="two">
+    <div class="tablewrap"><table class="list"><thead><tr><th>字段</th><th>必填</th><th>说明</th></tr></thead><tbody>
+      ${FIELDS.map(([k, m, t]) => `<tr><td><code>${k}</code></td><td>${m === true ? '<span class="req must">必填</span>' : m ? `<span class="req must">${m}</span>` : '<span class="req opt">选填</span>'}</td><td>${t}</td></tr>`).join('')}
+    </tbody></table></div>
+    <div><pre class="code"><span class="c">// docs/library/models/m-bronze-lamp/m-bronze-lamp.asset.json</span>
+${TEMPLATE}</pre>
+    <p class="lead" style="margin-top:12px;font-size:13px">空白模板在 <code>docs/asset-spec/template.json</code>。面数、体积、贴图数、包围盒、更新时间都由构建自动读出，不要手写。<br>详情页就是最终查看页：有 GLB 的资产默认打开实时 3D（加载失败才退回预览图），网页在「实况」里直接浏览，不放跳出去的外链。</p></div>
+  </div>
+</section>
+
+<section class="sect spec-wrap" id="cats"><h2>三 · 分类与类型<small>${spec.categories.length} 类</small></h2>
+  <div class="tablewrap"><table class="list"><thead><tr><th>id</th><th>分类</th><th>说明</th><th>类型 kind</th><th>必需</th></tr></thead><tbody>
+    ${spec.categories.map(c => `<tr><td><code>${c.id}</code></td><td><b style="font-family:var(--serif)">${esc(c.zh)}</b></td><td>${esc(c.desc)}</td><td><div class="chips">${c.kinds.map(k => `<span>${esc(k)}</span>`).join('')}</div></td><td>${c.requires.map(r => `<code>${r}</code>`).join(' ')}</td></tr>`).join('')}
+  </tbody></table></div>
+  <p class="lead" style="margin-top:12px">加分类或类型：改 <code>docs/asset-spec/categories.json</code>，总览的小城会多出一块「待建」地。</p>
+</section>
+
+<section class="sect spec-wrap" id="status"><h2>四 · 状态</h2>
+  <div class="tablewrap"><table class="list"><thead><tr><th>status</th><th>上网页</th><th>什么时候用</th></tr></thead><tbody>
+    ${spec.statuses.map(s => `<tr><td><b style="font-family:var(--serif)">${esc(s.id)}</b></td><td>${s.public ? '上' : '不上'}</td><td>${esc(s.desc)}</td></tr>`).join('')}
+  </tbody></table></div>
+</section>
+
+<section class="sect spec-wrap" id="rules"><h2>五 · 质量下限</h2>
+  <div class="two">
+    <div><p class="lead"><span class="dot e"></span><b>错误</b>：这张卡片不上网页；推送前的检查失败。</p>
+      <div class="tablewrap"><table class="list"><tbody>${ERR.map(([a, b]) => `<tr><td style="white-space:nowrap">${a}</td><td>${b}</td></tr>`).join('')}</tbody></table></div></div>
+    <div><p class="lead"><span class="dot w"></span><b>提醒</b>：照常上网页，但会列在下方报告里，评审时会看。</p>
+      <div class="tablewrap"><table class="list"><tbody>${WARN.map(([a, b]) => `<tr><td style="white-space:nowrap">${a}</td><td>${b}</td></tr>`).join('')}</tbody></table></div></div>
+  </div>
+</section>
+
+<section class="sect spec-wrap" id="proj"><h2>六 · 大型项目</h2>
+  <p class="lead">大型项目的详情页是首屏实时场景，下面依次是章节、建设进度、研究手记和组成资产。这些内容都写在项目卡片里，样例是 <code>docs/cities/luoyang/p-luoyang.asset.json</code>。</p>
+  <div class="tablewrap"><table class="list"><thead><tr><th>字段</th><th>必填</th><th>说明</th></tr></thead><tbody>
+    <tr><td><code>scene</code></td><td><span class="req must">必填</span></td><td>实时场景模块 <code>.mjs</code>，导出 <code>mountScene(canvas, {signal, onSelect, onStatus})</code>，返回 <code>{focus(target), reset(), setEvidence(on), dispose()}</code></td></tr>
+    <tr><td><code>chapters</code></td><td><span class="req must">必填</span></td><td>章节：<code>id</code> <code>title</code> <code>status</code> <code>line</code> <code>image</code>，可选 <code>statusNote</code> <code>text</code> <code>focus</code></td></tr>
+    <tr><td><code>progress</code></td><td><span class="req opt">建议</span></td><td>建设进度：<code>title</code> <code>status</code>，可选 <code>count</code> <code>unit</code> <code>chapter</code> <code>focus</code> <code>note</code></td></tr>
+    <tr><td><code>evidence</code></td><td><span class="req opt">建议</span></td><td>史料等级：<code>level</code>（${(spec.project?.evidenceLevels || []).join(' / ')}）与 <code>text</code></td></tr>
+    <tr><td><code>journal</code></td><td><span class="req opt">建议</span></td><td>建设记录：<code>date</code>（YYYY-MM-DD）<code>title</code>，可选 <code>batch</code> <code>text</code>；按日期倒序显示</td></tr>
+    <tr><td><code>members</code></td><td><span class="req opt">选填</span></td><td>组成这个项目的资产 id</td></tr>
+  </tbody></table></div>
+  <p class="lead" style="margin-top:12px">章节与进度的 status：${(spec.project?.progressStatuses || []).map(x => `<code>${x}</code>`).join(' ')}。每交付一批，都要在 <code>progress</code> 里更新对应条目，并在 <code>journal</code> 最前面加一条记录。</p>
+</section>
+
+<section class="sect spec-wrap" id="flow"><h2>七 · 提交流程</h2>
+  <ol class="steps">
+    <li>在 <code>docs/library/&lt;分类&gt;/&lt;id&gt;/</code> 里放好文件，写卡片（从 <code>template.json</code> 复制）。</li>
+    <li>运行检查：<code>python -I lab/tools/build_assets.py --check</code>。有错误会逐条列出，并以非零退出。</li>
+    <li>只剩提醒或全绿，就提交；提交说明写清是哪件资产，例如 <code>Add m-bronze-lamp: bronze lamp LOD0/LOD1</code>。</li>
+    <li>推送到 main。部署接好之后，推送会自动重跑这项检查并发布；检查不过，网站保持上一版。</li>
+    <li>一批做完照旧打 <code>rYYYY.MM.DD-N</code> tag，Claude 按版本评审。</li>
+  </ol>
+</section>
+
+<section class="sect spec-wrap" id="report"><h2>八 · 检查报告<small>${rep ? esc(rep.generated.replace('T', ' ').slice(0, 16)) : '未生成'}</small></h2>
+  ${rep ? `<dl class="counts"><div><dt>卡片</dt><dd>${rep.counts.cards}</dd></div><div><dt>上网页</dt><dd>${rep.counts.published}</dd></div><div><dt>草稿</dt><dd>${rep.counts.drafts}</dd></div>
+    <div class="${rep.counts.withErrors ? 'bad' : ''}"><dt>有错误</dt><dd>${rep.counts.withErrors}</dd></div><div><dt>有提醒</dt><dd>${rep.counts.withWarnings}</dd></div></dl>
+  <div class="rep-filter" role="group" aria-label="筛选"><button data-f="all" aria-pressed="true">全部</button><button data-f="e" aria-pressed="false">有错误</button><button data-f="w" aria-pressed="false">有提醒</button><button data-f="ok" aria-pressed="false">全绿</button></div>
+  <div class="tablewrap"><table class="list rep"><thead><tr><th>资产</th><th>卡片</th><th>状态</th><th>问题</th></tr></thead><tbody id="rep-rows"></tbody></table></div>
+  ${rep.orphans.length ? `<p class="lead" style="margin-top:12px"><span class="dot w"></span>没有卡片引用的 GLB：${rep.orphans.map(o => `<code>${esc(o)}</code>`).join(' ')}</p>` : ''}` : '<p class="lead">还没有报告。运行 <code>python -I lab/tools/build_assets.py</code> 生成。</p>'}
+</section>`;
+if (rep) {
+  const rows = document.getElementById('rep-rows');
+  const draw = f => {
+    const list = rep.items.filter(i => f === 'all' || (f === 'e' ? i.errors.length : f === 'w' ? !i.errors.length && i.warnings.length : !i.errors.length && !i.warnings.length));
+    rows.innerHTML = list.map(i => { const lv = i.errors.length ? 'e' : i.warnings.length ? 'w' : '';
+      return `<tr><td><span class="dot ${lv}"></span>${i.errors.length ? `<b style="font-family:var(--serif)">${esc(i.title || i.id || '?')}</b>` : `<a href="asset.html?id=${encodeURIComponent(i.id)}"><b>${esc(i.title)}</b></a>`}<div style="font:500 11px var(--mono);color:var(--muted)">${esc(i.id || '')}</div></td>
+        <td style="font:12px var(--mono);color:var(--muted)">${esc(i.card)}</td><td>${esc(i.status || '—')}</td>
+        <td>${i.errors.length || i.warnings.length ? `<ul>${i.errors.map(e => `<li class="e">${esc(e)}</li>`).join('')}${i.warnings.map(w => `<li>${esc(w)}</li>`).join('')}</ul>` : '<span style="color:var(--muted)">全绿</span>'}</td></tr>`; }).join('') || '<tr><td colspan="4" style="color:var(--muted)">没有。</td></tr>';
+  };
+  draw('all');
+  main.querySelector('.rep-filter').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; main.querySelectorAll('.rep-filter button').forEach(x => x.setAttribute('aria-pressed', x === b)); draw(b.dataset.f); });
+}
+</script>
+</body>
+</html>

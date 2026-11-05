@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>数字资产库 · 造物手记</title>
+<meta name="description" content="造物手记的数字资产库：大型项目、3D 模型、网页设计与空间设计。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Noto+Sans+SC:wght@500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="eras.css">
+<script type="importmap">{"imports": {"three": "../docs/fusions/F01/vendor/three.module.js", "three/addons/": "../docs/fusions/F01/vendor/addons/"}}</script>
+</head>
+<body>
+<main id="main"></main>
+<script type="module">
+import { data, esc, size, tris, date, img, card, specs, header } from './lib.js';
+const d = await data;
+const main = document.getElementById('main');
+const H = header(d, '', { onSearch: q => { if (route().view !== 'list' || route().id !== 'all') { location.hash = 'all'; } state.q = q; renderList(); } });
+const state = { q: '', kind: '', sort: 'default', view: (() => { try { return localStorage.getItem('lab-view') || 'grid'; } catch { return 'grid'; } })() };
+let ov = null;
+
+const route = () => { const h = location.hash.slice(1); return !h ? { view: 'overview' } : { view: 'list', id: h }; };
+
+// ---------- overview ----------
+async function renderOverview() {
+  const files = d.assets.reduce((s, a) => s + a.files.length, 0), bytes = d.assets.reduce((s, a) => s + a.bytes, 0);
+  // every visit starts in a random era at a random time of day
+  const ERA_IDS = ['ancient', 'early', 'modern', 'future'], era = ERA_IDS[Math.floor(Math.random() * 4)], tod0 = Math.random();
+  main.innerHTML = `<section class="ov" aria-label="资产总览（3D 小城）">
+    <div class="ov-sky" aria-hidden="true"><i></i><i></i></div>
+    <div class="ov-canvas" style="position:absolute;inset:0"></div>
+    <div class="ov-banner" aria-hidden="true"><b></b><span></span></div>
+    <div class="ov-labels" style="position:absolute;inset:0;pointer-events:none"></div>
+    <div class="ov-fx" aria-hidden="true"></div>
+    <div class="ov-intro"><div class="meta">造物之匣 · Asset library</div><h1>造物之城</h1><p>城里每栋建筑是一个分类。点一栋建筑走近看看；路上的小人和车可以拎起来。</p></div>
+    <aside class="ov-card" id="ov-card" aria-live="polite"></aside>
+    <div class="ov-time"><span class="ov-clock" id="ov-clock" aria-live="off">--:--</span><button class="ov-night" id="ov-night" aria-pressed="false" aria-label="快进到夜晚"><span class="sun">☀</span><span class="moon">☾</span></button></div>
+    <div class="ov-era" role="group" aria-label="年代"><span class="thumb" aria-hidden="true"></span>${['ancient:古代', 'early:近代', 'modern:现代', 'future:未来'].map(x => { const [k, v] = x.split(':'); return `<button data-era="${k}" aria-pressed="${k === era}">${v}</button>`; }).join('')}</div>
+    <div class="ov-stats" aria-label="资产统计">
+      <div><b>${d.assets.length}</b><span class="meta">资产</span></div>
+      <div><b>${files}</b><span class="meta">GLB 文件</span></div>
+      <div><b>${size(bytes)}</b><span class="meta">模型体积</span></div>
+      <div><b>${d.categories.length}</b><span class="meta">分类</span></div></div>
+    <nav class="ov-nav" aria-label="走到分类"><button data-go="-1" aria-label="上一个分类">‹</button><button data-go="home" aria-pressed="true">全城</button>${d.categories.map(c => `<button data-go="${c.id}" aria-pressed="false">${esc(c.zh)}</button>`).join('')}<button data-go="+1" aria-label="下一个分类">›</button></nav>
+    <div class="ov-loading">正在建城…</div>
+  </section>
+  <section class="ov-fallback" id="ov-2d" hidden></section>`;
+  try {
+    const { mountOverview } = await import('./city3d.mjs');
+    if (route().view !== 'overview') return;
+    const sec = main.querySelector('.ov'), cardBox = document.getElementById('ov-card'), nav = main.querySelector('.ov-nav');
+    let cur = null;
+    // era transition overlays (pure CSS animations; the markup is thrown away when they finish)
+    const FX = {
+      ancient: () => '<i class="ink a"></i><i class="ink b"></i><i class="ink c"></i>',
+      early: () => '<i class="sepia"></i><i class="grain"></i><i class="scratch"></i><i class="iris"></i>',
+      modern: () => Array.from({ length: 7 }, (_, i) => `<i class="shutter" style="--i:${i}"></i>`).join(''),
+      future: () => '<i class="grid"></i><i class="scan"></i>',
+    };
+    let fxTimer = 0;
+    const playFx = id => {
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const fx = sec.querySelector('.ov-fx'), b = main.querySelector(`.ov-era [data-era="${id}"]`), r = sec.getBoundingClientRect(), br = b?.getBoundingClientRect();
+      if (br) { fx.style.setProperty('--ox', (br.left + br.width / 2 - r.left) + 'px'); fx.style.setProperty('--oy', (br.top + br.height / 2 - r.top) + 'px'); }
+      clearTimeout(fxTimer); fx.className = 'ov-fx'; fx.innerHTML = ''; void fx.offsetWidth;
+      fx.innerHTML = FX[id](); fx.className = `ov-fx play fx-${id}`;
+      fxTimer = setTimeout(() => { fx.className = 'ov-fx'; fx.innerHTML = ''; }, 2600);
+    };
+    // UI morph: the old skin leaves in its own manner, the skin swaps while the overlay covers, the new one arrives in its manner
+    const UI_SEL = '.app-head .brand, .app-head .tab, .gsearch, .ov-intro, .ov-stats > div, .ov-era, .ov-time, .ov-nav, .ov-card.show, .zone-label.shown';
+    let morphT = [];
+    const morphUI = id => {
+      const root = document.documentElement, from = root.dataset.era || 'ancient';
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) { root.dataset.era = id; return; }
+      morphT.forEach(clearTimeout); morphT = [];
+      document.querySelectorAll(UI_SEL).forEach((el, i) => el.style.setProperty('--s', (i * 28) + 'ms'));
+      root.classList.remove('ui-in'); root.dataset.uiFrom = from; root.classList.add('ui-out');
+      morphT.push(setTimeout(() => {
+        root.dataset.era = id; root.classList.remove('ui-out'); void root.offsetWidth; root.classList.add('ui-in'); setTimeout(() => moveThumb(false), 30);
+      }, 460));
+      morphT.push(setTimeout(() => { root.classList.remove('ui-in'); delete root.dataset.uiFrom; moveThumb(true); }, 460 + 1500));
+    };
+    const ERA_NAMES = { ancient: ['古代', 'Ancient'], early: ['近代', 'Early modern'], modern: ['现代', 'Modern'], future: ['未来', 'Future'] };
+    const moveThumb = (animate = true) => { const sw = main.querySelector('.ov-era'), th = sw.querySelector('.thumb'), b = sw.querySelector('[aria-pressed="true"]'); if (!b) return;
+      th.classList.toggle('instant', !animate); th.style.width = b.offsetWidth + 'px'; th.style.transform = `translateX(${b.offsetLeft - 3}px)`; };
+    addEventListener('resize', () => moveThumb(false));
+    const setNav = id => nav.querySelectorAll('[data-go]').forEach(b => b.setAttribute('aria-pressed', b.dataset.go === (id || 'home')));
+    const clockEl = document.getElementById('ov-clock'), nightBtn = document.getElementById('ov-night');
+    let isNight = null;
+    ov = await mountOverview(sec, d, {
+      era, tod: tod0,
+      onBusy: busy => { const box = main.querySelector('.ov-era'); box?.classList.toggle('busy', busy); box?.setAttribute('aria-busy', busy); },
+      onTime: (tod, nk, warm) => {
+        sec.style.setProperty('--night', nk.toFixed(3)); sec.style.setProperty('--warm', warm.toFixed(3));
+        const mins = Math.floor(tod * 1440), txt = String(Math.floor(mins / 60)).padStart(2, '0') + ':' + String(mins % 60).padStart(2, '0');
+        if (clockEl.textContent !== txt) clockEl.textContent = txt;
+        const n = nk > 0.5; if (n !== isNight) { isNight = n; sec.classList.toggle('night', n); nightBtn.setAttribute('aria-pressed', n); nightBtn.setAttribute('aria-label', n ? '快进到白天' : '快进到夜晚'); }
+      },
+      onEra: (id, p) => {
+        const hex = n => '#' + n.toString(16).padStart(6, '0');
+        // sky: paint the hidden layer with the new gradient, then cross-fade to it
+        const layers = sec.querySelectorAll('.ov-sky i'), next = layers[sec.dataset.sky === '1' ? 0 : 1];
+        next.style.background = `radial-gradient(130% 100% at 50% 0%, ${hex(p.sky[0])} 0%, ${hex(p.sky[1])} 100%)`;
+        sec.dataset.sky = next === layers[0] ? '0' : '1';
+        layers.forEach(l => l.classList.toggle('on', l === next));
+        const first = !sec.dataset.era; sec.dataset.era = id; try { sessionStorage.setItem('lab-era', id); } catch {}
+        if (first) document.documentElement.dataset.era = id; else { playFx(id); morphUI(id); }
+        main.querySelectorAll('.ov-era button').forEach(b => b.setAttribute('aria-pressed', b.dataset.era === id));
+        moveThumb(!first); setTimeout(() => moveThumb(true), 60); setTimeout(() => moveThumb(true), 950); // re-measure once the new skin's fonts and spacing apply
+        if (!first) { // big era caption
+          const ban = sec.querySelector('.ov-banner'), e = ERA_NAMES[id];
+          ban.querySelector('b').textContent = e[0]; ban.querySelector('span').textContent = e[1];
+          ban.classList.remove('play'); void ban.offsetWidth; ban.classList.add('play');
+          const sw = main.querySelector('.ov-era'); sw.classList.remove('bump'); void sw.offsetWidth; sw.classList.add('bump');
+        }
+      },
+      onZone: (c, info) => {
+        cardBox.classList.remove('show');
+        if (!c) { cur = null; if (!sec.classList.contains('focused')) setNav(''); return; }
+        cur = c; setNav(c.id);
+        const list = d.assets.filter(a => a.category === c.id), nf = list.reduce((s, a) => s + a.files.length, 0), nb = list.reduce((s, a) => s + a.bytes, 0);
+        cardBox.innerHTML = `<i class="stamp" aria-hidden="true">${esc((info.typology || "").slice(0, 1))}</i><div class="meta">${esc(info.era.zh)} · ${esc(info.building || info.typology)}</div>
+          <h2>${esc(c.zh)}</h2><div class="en">${esc(c.en)}</div>
+          <p>${esc(c.desc)}</p>
+          <dl class="ov-card-stats"><div><dt>资产</dt><dd>${list.length}</dd></div>${nf ? `<div><dt>文件</dt><dd>${nf}</dd></div><div><dt>体积</dt><dd>${size(nb)}</dd></div>` : ''}</dl>
+          <div class="ov-card-thumbs">${list.slice(0, 4).map(a => `<a href="asset.html?id=${encodeURIComponent(a.id)}" title="${esc(a.title)}">${img(a.cover, { alt: a.title, sizes: '90px' })}</a>`).join('')}${list.length > 4 ? `<a class="more" href="#${c.id}">+${list.length - 4}</a>` : ''}</div>
+          <div class="ov-card-actions"><a class="btn solid" href="#${c.id}">进入${esc(c.zh)}<span>→</span></a><button class="btn" data-home>回到全城</button></div>`;
+        cardBox.querySelector('[data-home]').onclick = () => { ov.home(); setNav(''); };
+        setTimeout(() => cardBox.classList.add('show'), 30);
+      },
+    });
+    nightBtn.onclick = () => { nightBtn.classList.remove('spin'); void nightBtn.offsetWidth; nightBtn.classList.add('spin'); ov.skipTo(isNight ? 0.5 : 0.0); };
+    const eraBox = main.querySelector('.ov-era');
+    eraBox.onclick = e => { const b = e.target.closest('[data-era]'); if (!b) return; if (!ov.setEra(b.dataset.era) && ov.busy) { eraBox.classList.remove('nope'); void eraBox.offsetWidth; eraBox.classList.add('nope'); } };
+    nav.onclick = e => { const b = e.target.closest('[data-go]'); if (!b) return; const g = b.dataset.go, ids = d.categories.map(c => c.id);
+      if (g === 'home') { ov.home(); setNav(''); } else if (g === '-1' || g === '+1') { const i = cur ? ids.indexOf(cur.id) : -1; const id = ids[(i + (g === '+1' ? 1 : -1) + ids.length) % ids.length]; ov.focus(id); setNav(id); } else { ov.focus(g); setNav(g); } };
+  } catch (err) {
+    console.error(err);
+    main.querySelector('.ov').remove();
+    const fb = document.getElementById('ov-2d'); fb.hidden = false;
+    fb.innerHTML = `<p class="meta">这台设备无法显示 3D 总览，下面是列表版。</p>` + d.categories.map(c => {
+      const list = d.assets.filter(a => a.category === c.id);
+      return `<div class="sect" style="padding-inline:0"><h2>${esc(c.zh)}<small>${list.length}</small><a href="#${c.id}" style="margin-left:auto;font-size:14px;font-family:var(--sans)">查看全部 →</a></h2><div class="cards">${list.slice(0, 4).map(card).join('')}</div></div>`;
+    }).join('');
+  }
+}
+
+// ---------- list (category or all) ----------
+function renderListShell(id) {
+  const c = d.categories.find(c => c.id === id);
+  const pool = c ? d.assets.filter(a => a.category === id) : d.assets;
+  const groups = c ? [...new Set(pool.map(a => a.kind))] : d.categories.map(c => c.id);
+  const label = k => c ? k : d.categories.find(x => x.id === k).zh;
+  const count = k => pool.filter(a => (c ? a.kind : a.category) === k).length;
+  main.innerHTML = `<header class="cat-head"><div><div class="meta">${esc(c ? c.en : 'All assets')}</div><h1>${esc(c ? c.zh : '全部资产')}</h1><p>${esc(c ? c.desc : '库中的全部数字资产。')}</p></div>
+    <div class="cat-sum"><div><b>${pool.length}</b><span class="meta">资产</span></div>${pool.some(a => a.files.length) ? `<div><b>${pool.reduce((s, a) => s + a.files.length, 0)}</b><span class="meta">文件</span></div><div><b>${size(pool.reduce((s, a) => s + a.bytes, 0))}</b><span class="meta">体积</span></div>` : ''}</div></header>
+  <div class="layout">
+    <aside class="filters" aria-label="筛选"><div><h3 class="meta">${c ? '类型' : '分类'}</h3><div class="fl" id="fl">
+      <button data-k="" aria-pressed="true">全部<small>${pool.length}</small></button>
+      ${groups.map(k => `<button data-k="${esc(k)}" aria-pressed="false">${esc(label(k))}<small>${count(k)}</small></button>`).join('')}</div></div></aside>
+    <section><div class="bar"><span class="count" id="count"></span><div class="ctl">
+      <select id="sort" aria-label="排序"><option value="default">默认顺序</option><option value="updated">最近更新</option><option value="name">名称</option>${pool.some(a => a.files.length) ? '<option value="bytes">文件体积</option><option value="tris">面数</option>' : ''}</select>
+      <div class="seg" role="group" aria-label="视图"><button data-v="grid" aria-label="卡片视图">▦</button><button data-v="list" aria-label="列表视图">☰</button></div></div></div>
+      <div id="results" aria-live="polite"></div></section></div>`;
+  main.querySelector('#fl').onclick = e => { const b = e.target.closest('button'); if (!b) return; state.kind = b.dataset.k; main.querySelectorAll('#fl button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderList(); };
+  const sortSel = main.querySelector('#sort'); sortSel.value = state.sort; sortSel.onchange = () => { state.sort = sortSel.value; renderList(); };
+  main.querySelector('.seg').onclick = e => { const b = e.target.closest('button'); if (!b) return; state.view = b.dataset.v; try { localStorage.setItem('lab-view', state.view); } catch {} renderList(); };
+  return { c, pool };
+}
+let cur = null;
+function renderList() {
+  if (!cur) return;
+  const { c, pool } = cur, q = state.q.trim().toLowerCase();
+  let list = pool.filter(a => (!state.kind || (c ? a.kind : a.category) === state.kind) && (!q || [a.title, a.english, a.summary, a.kind].join(' ').toLowerCase().includes(q)));
+  const cmp = { name: (x, y) => x.title.localeCompare(y.title, 'zh-Hans-CN-u-co-pinyin'), updated: (x, y) => (y.updated || '').localeCompare(x.updated || ''), bytes: (x, y) => y.bytes - x.bytes, tris: (x, y) => y.triangles - x.triangles }[state.sort];
+  if (cmp) list = [...list].sort(cmp);
+  main.querySelector('#count').textContent = `${list.length} 项${q ? `，匹配「${state.q}」` : ''}`;
+  main.querySelectorAll('.seg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.v === state.view));
+  const res = main.querySelector('#results');
+  if (!list.length) { res.innerHTML = `<p class="empty">没有符合条件的资产。</p>`; return; }
+  res.innerHTML = state.view === 'grid' || matchMedia('(max-width: 640px)').matches ? `<div class="cards">${list.map(card).join('')}</div>`
+    : `<div class="tablewrap"><table class="list"><thead><tr><th></th><th>名称</th><th>类型</th>${c ? '' : '<th>分类</th>'}<th class="n">文件</th><th class="n">体积</th><th class="n">面数</th><th class="n">更新</th></tr></thead><tbody>
+      ${list.map(a => `<tr><td><a href="asset.html?id=${a.id}" tabindex="-1">${img(a.cover, { sizes: '64px' })}</a></td><td><a href="asset.html?id=${a.id}"><b>${esc(a.title)}</b></a></td><td>${esc(a.kind)}</td>${c ? '' : `<td>${esc(d.categories.find(x => x.id === a.category).zh)}</td>`}
+      <td class="n">${a.files.length || '—'}</td><td class="n">${size(a.bytes)}</td><td class="n">${tris(a.triangles)}</td><td class="n">${date(a.updated)}</td></tr>`).join('')}</tbody></table></div>`;
+}
+
+function render() {
+  ov?.dispose(); ov = null;
+  const r = route();
+  if (r.view === 'overview') { H.setCurrent(''); cur = null; renderOverview(); }
+  else {
+    const [id, qs] = r.id.split('?'); const q = new URLSearchParams(qs || '').get('q');
+    if (q !== null) { state.q = q; H.search.value = q; }
+    if (!d.categories.some(c => c.id === id) && id !== 'all') { location.hash = ''; return; }
+    H.setCurrent(id === 'all' ? '' : id); state.kind = ''; cur = renderListShell(id); renderList();
+    scrollTo(0, 0);
+  }
+}
+addEventListener('hashchange', render);
+render();
+</script>
+</body>
+</html>

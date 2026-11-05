@@ -1,0 +1,35 @@
+{
+  "spec": 1,
+  "id": "m-market-functional",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "市肆功能组",
+  "english": "",
+  "summary": "五店三摊为一个逻辑资产；N2单店和人货A/B作为版本补丁，不新增库存条目。",
+  "status": "已发布",
+  "statusNote": "已公开 · 研究候选",
+  "cover": "../cities/luoyang/assets/west/market-N2-slg.png",
+  "files": [
+    {
+      "path": "assets/market-A-N2-local.glb",
+      "label": "独立完整A+N2 local-v1（不叠base/N2）"
+    },
+    {
+      "path": "assets/optional-B-routes-local.glb",
+      "label": "局部B补丁：先精确卸7个A路径"
+    },
+    {
+      "path": "../cities/luoyang/assets/market/market-cluster.glb",
+      "label": "v1基础组（不含N2补丁）"
+    },
+    {
+      "path": "../cities/luoyang/assets/market/N2-replacement.glb",
+      "label": "N2补丁：必须先精确卸原30节点"
+    },
+    {
+      "path": "../cities/luoyang/assets/market/flowB-routes.glb",
+      "label": "B补丁：必须先精确卸A的7路径"
+    }
+  ],
+  "legacyPath": true
+}
