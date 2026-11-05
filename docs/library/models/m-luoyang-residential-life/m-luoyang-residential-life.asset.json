@@ -1,0 +1,38 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-residential-life",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "连续住宅生活片区",
+  "english": "RESIDENTIAL LIFE BLOCK",
+  "summary": "13院、26屋的连续布局候选，复用既有住宅原型及近景构件，组织院内与公共通行空间。三档为同一片区，不是13件新作品或新的建筑家族。",
+  "status": "待审",
+  "statusNote": "已建模，未入城 · 独立运行模型",
+  "cover": "cover.webp",
+  "coverAlt": "连续住宅生活片区独立模型的CPU渲染，展示13院的建筑、院墙与通行地面。",
+  "gallery": [
+    "shots/detail.webp"
+  ],
+  "files": [
+    {
+      "path": "files/life-block-LOD0.glb",
+      "label": "LOD0 · 近景"
+    },
+    {
+      "path": "files/life-block-LOD1.glb",
+      "label": "LOD1 · 中景"
+    },
+    {
+      "path": "files/life-block-LOD2.glb",
+      "label": "LOD2 · 远景"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "三档最终运行模型的来源几何与逐角UV复核；90个入口、1,080段入口运动、231段院内连接、45段公共带检查及174,522个支承点未检出侵入或缺支承。26屋共975对、13院共234对包围盒分离检查通过。13处近景房屋替换保留既有位置、墙阶与地坪，40个建筑层节点及材料关系经核对。",
+    "限制与待解决": "全部布局与绝对位置仍属C类设计推测，不是约公元180年洛阳住宅的实测复原。只提供自包含运行GLB，不含可编辑源工程；灶与侧板为另卡独立附层，本下载不含该层。GLB采用米制Y-up及既有示意坐标，保留节点变换，不重复施加城市位置或轴转换。三档互斥加载，未入城；有限刚体通行检查不证明人体步态、无障碍、结构安全、全域共面或GPU性能。近景实例展开506,828三角，未测浏览器帧率、显存或实际绘制调用。"
+  },
+  "related": [
+    "p-luoyang",
+    "m-luoyang-residential-preparation"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-residential-preparation",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "院内备食关系",
+  "english": "COURTYARD PREPARATION RELATION",
+  "summary": "复用既有灶体与侧备食板，研究一处院内备食位置及其工作、后退与通行关系。两节点放置附层，不是新灶型或新建筑家族；位置和尺寸均为设计推测。",
+  "status": "待审",
+  "statusNote": "已建模，未入城 · 独立运行模型",
+  "cover": "cover.webp",
+  "coverAlt": "灶体与侧备食板的独立CPU渲染；模型本身不含地面。",
+  "gallery": [
+    "shots/detail.webp"
+  ],
+  "files": [
+    {
+      "path": "files/W2-stove-A-LOD0.glb",
+      "label": "LOD0 · 近景"
+    },
+    {
+      "path": "files/W2-stove-A-LOD1.glb",
+      "label": "LOD1 · 中景"
+    },
+    {
+      "path": "files/W2-stove-A-LOD2.glb",
+      "label": "LOD2 · 远景"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "三档灶与侧板保持原几何、索引、逐角UV和嵌入贴图，放置层独立重建字节一致。与对应住宅地面组合检查时，每档14条指定路线、2个固定朝向工作位、2个后退转身湾及65条保护路线通过限定碰撞与支承检查；错误工作位负例仍检出侵入。三档分别为2,864、1,076、464三角。",
+    "限制与待解决": "本下载只含灶与侧板运行GLB，不含地面、住宅或可编辑源工程，不能作为完整地面场景直接行走。地面支承结论依赖配套住宅层，不属于此独立文件自身。保留米制Y-up节点与既有放置坐标，不再次施加位置；每次加载一档。未入城，非确定的历史院落设计；固定朝向工作位不等于可任意原地转身。木侧板距灶壳约75毫米，热工风险未评估，无生火安全、消防、烟气、通风、食品卫生、结构或GPU性能认证。"
+  },
+  "related": [
+    "p-luoyang",
+    "m-luoyang-residential-life"
+  ]
+}
