@@ -21,64 +21,215 @@
   "scene": "scene.mjs",
   "chapters": [
     {
-      "id": "walls", "title": "城垣与城门", "status": "已入城", "statusNote": "城垣已入城 · 六座城门已建模",
+      "id": "walls",
+      "title": "城垣与城门",
+      "status": "已入城",
+      "statusNote": "城垣已入城 · 六座城门已建模",
       "line": "从城门，认出城的边界。",
       "text": "沿已布置的城墙与门楼观察边界，再回到街区，看城门怎样与道路相接。旄门等六座城门有独立的研究模型。",
-      "image": "progress-assets/mao-gate/mao-cover.webp", "focus": "walls"
+      "image": "progress-assets/mao-gate/mao-cover.webp",
+      "focus": "walls"
     },
     {
-      "id": "residential", "title": "住宅街区", "status": "已入城", "statusNote": "44 院已入城 · 北院新研究",
+      "id": "residential",
+      "title": "住宅街区",
+      "status": "已入城",
+      "statusNote": "44 院已入城 · 北院新研究",
       "line": "一方院落，接着另一方。",
       "text": "现有住宅原型已在街区中布置。近看门前、院心与沿边房屋，远看院落如何连成片。",
-      "image": "assets/chapter-2.webp", "focus": "residential"
+      "image": "assets/chapter-2.webp",
+      "focus": "residential"
     },
     {
-      "id": "market", "title": "市肆", "status": "已入城",
+      "id": "market",
+      "title": "市肆",
+      "status": "已入城",
       "line": "街边，开始有了买卖。",
       "text": "店铺和摊位组成一处市肆。沿街读它的入口、货物和留给人行的地方。",
-      "image": "assets/chapter-3.webp", "focus": "market"
+      "image": "assets/chapter-3.webp",
+      "focus": "market"
     },
     {
-      "id": "storage", "title": "仓储作业", "status": "已入城",
+      "id": "storage",
+      "title": "仓储作业",
+      "status": "已入城",
       "line": "仓房之外，还有一片前场。",
       "text": "仓体、收纳棚与作业区域一同保留，观察货物抵达、暂存和搬运的空间关系。",
-      "image": "assets/chapter-4.webp", "focus": "storage"
+      "image": "assets/chapter-4.webp",
+      "focus": "storage"
     },
     {
-      "id": "ritual", "title": "礼制建筑", "status": "已建模",
+      "id": "ritual",
+      "title": "礼制建筑",
+      "status": "已建模",
       "line": "把新的地标，记进城中。",
       "text": "灵台与太学长堂已有研究模型。这里记录它们的形体与当前接入进度，城市中的关系继续补上。",
-      "image": "assets/chapter-5.webp", "focus": "ritual"
+      "image": "assets/chapter-5.webp",
+      "focus": "ritual"
     },
     {
-      "id": "terrain", "title": "道路与地形", "status": "已入城",
+      "id": "terrain",
+      "title": "道路与地形",
+      "status": "已入城",
       "line": "让分散的建筑，有路相连。",
       "text": "从地面和道路读城市的骨架，查看现有模型怎样接入同一个街区。",
-      "image": "assets/chapter-6.webp", "focus": "terrain"
+      "image": "assets/chapter-6.webp",
+      "focus": "terrain"
     }
   ],
   "progress": [
-    { "title": "城垣与广阳门", "status": "已入城", "count": 13, "unit": "件", "chapter": "walls", "focus": "walls", "note": "既有 A/direct 城垣组合；十二门位有示意关系，实体门楼目前仅广阳门。" },
-    { "title": "城门研究", "status": "已建模", "count": 6, "unit": "座", "chapter": "walls", "focus": "research:research-mao-gate", "note": "开阳门、平城门、上西门、雍门、中东门与旄门，各自独立研究，尚未落位。" },
-    { "title": "住宅院落", "status": "已入城", "count": 44, "unit": "院", "chapter": "residential", "focus": "residential", "note": "36 个 C02 院与 8 个 D08 院共用原交付矩阵，六种原型。" },
-    { "title": "北区院落研究", "status": "已建模", "count": 5, "unit": "种", "chapter": "residential", "focus": "research:research-north13-court-A", "note": "生活院、储藏作业院及其修订、周边院落。" },
-    { "title": "市肆", "status": "已入城", "count": 8, "unit": "处", "chapter": "market", "focus": "market", "note": "五店三摊，含交易与储货空间；金市位置取自既有研究示意点。" },
-    { "title": "仓储作业", "status": "已入城", "count": 1, "unit": "组", "chapter": "storage", "focus": "storage", "note": "完整仓储组；外部连接待建。" },
-    { "title": "灵台与太学", "status": "已建模", "count": 3, "unit": "件", "chapter": "ritual", "focus": "research:research-lingtai", "note": "灵台类型研究、太学长堂 A/B 方案；城市位置等待资料配准。" },
-    { "title": "道路与地面", "status": "已入城", "count": 4, "unit": "件", "chapter": "terrain", "focus": "terrain", "note": "四个原子地面文件整体载入；古河渠位置仍未配准。" },
-    { "title": "无名宫院通行组合", "status": "已建模", "count": 1, "unit": "组", "note": "门卫切片、庭地、两侧廊与殿阶的未定位C级连接方案；复用原件不另计新建筑。" }
+    {
+      "title": "城垣与广阳门",
+      "status": "已入城",
+      "count": 13,
+      "unit": "件",
+      "chapter": "walls",
+      "focus": "walls",
+      "note": "既有 A/direct 城垣组合；十二门位有示意关系，实体门楼目前仅广阳门。"
+    },
+    {
+      "title": "城门研究",
+      "status": "已建模",
+      "count": 6,
+      "unit": "座",
+      "chapter": "walls",
+      "focus": "research:research-mao-gate",
+      "note": "开阳门、平城门、上西门、雍门、中东门与旄门共六座独立研究，尚未落位；旄门补齐独立资产卡，不增计第七座门。"
+    },
+    {
+      "title": "住宅院落",
+      "status": "已入城",
+      "count": 44,
+      "unit": "院",
+      "chapter": "residential",
+      "focus": "residential",
+      "note": "36 个 C02 院与 8 个 D08 院共用原交付矩阵，六种原型。"
+    },
+    {
+      "title": "北区院落研究",
+      "status": "已建模",
+      "count": 5,
+      "unit": "种",
+      "chapter": "residential",
+      "focus": "research:research-north13-court-A",
+      "note": "生活院、储藏作业院及其修订、周边院落。"
+    },
+    {
+      "title": "市肆",
+      "status": "已入城",
+      "count": 8,
+      "unit": "处",
+      "chapter": "market",
+      "focus": "market",
+      "note": "五店三摊，含交易与储货空间；金市位置取自既有研究示意点。"
+    },
+    {
+      "title": "仓储作业",
+      "status": "已入城",
+      "count": 1,
+      "unit": "组",
+      "chapter": "storage",
+      "focus": "storage",
+      "note": "完整仓储组；外部连接待建。"
+    },
+    {
+      "title": "灵台与太学",
+      "status": "已建模",
+      "count": 3,
+      "unit": "件",
+      "chapter": "ritual",
+      "focus": "research:research-lingtai",
+      "note": "灵台类型研究、太学长堂 A/B 方案；城市位置等待资料配准。"
+    },
+    {
+      "title": "道路与地面",
+      "status": "已入城",
+      "count": 4,
+      "unit": "件",
+      "chapter": "terrain",
+      "focus": "terrain",
+      "note": "四个原子地面文件整体载入；古河渠位置仍未配准。"
+    },
+    {
+      "title": "无名宫院通行组合",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "note": "门卫切片、庭地、两侧廊与殿阶的未定位C级连接方案；复用原件不另计新建筑。"
+    },
+    {
+      "title": "太学门外观经空间",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "chapter": "ritual",
+      "note": "覆屋、围护、南口与街道接口的独立C级关系试案；碑位留空，设施归属及180年状态待考，未入城。"
+    },
+    {
+      "title": "北郊方坛四陛",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "chapter": "ritual",
+      "note": "方坛四陛的局部C级尺度研究；围营和祠舍保持未知，不代表整个北郊，未定址。"
+    },
+    {
+      "title": "宫墙水道三段接口",
+      "status": "已建模",
+      "count": 1,
+      "unit": "组",
+      "chapter": "terrain",
+      "note": "三部分水道的未定位C级连接试案；尺寸、流向、用途和180年在用性未定。"
+    }
   ],
   "evidence": [
-    { "level": "有据", "text": "位置、范围或形制有来源支持，可展开查看具体依据。" },
-    { "level": "推测", "text": "在已有资料上补全的布局与形制，同时记录推测理由。" },
-    { "level": "未知", "text": "资料尚不足以确定，保留空白并记录待查问题。" }
+    {
+      "level": "有据",
+      "text": "位置、范围或形制有来源支持，可展开查看具体依据。"
+    },
+    {
+      "level": "推测",
+      "text": "在已有资料上补全的布局与形制，同时记录推测理由。"
+    },
+    {
+      "level": "未知",
+      "text": "资料尚不足以确定，保留空白并记录待查问题。"
+    }
   ],
   "journal": [
-    { "date": "2026-11-05", "title": "接通无名宫院通行接口", "text": "完成一组门内分流—庭地—侧廊—殿阶的独立连接模型，保留开放/闭门姿态与三档LOD。几何和支承检查通过，历史布局仍属推测，未放入城景。", "batch": "r2026.11.05-4" },
-    { "date": "2026-11-05", "batch": "r2026.11.05-1", "title": "接入旄门", "text": "伊苏里亚交付的旄门完整近景研究模型接入城垣与城门章节，按一个门楼家族计数，保留独立研究状态。" },
-    { "date": "2026-11-04", "batch": "r2026.11.04-5", "title": "新版建城手记", "text": "围绕现有城市模型重建页面，旧应用归档到 v1。首屏先看南侧十四院，章节共用原有城市坐标和四十四院矩阵。" },
-    { "date": "2026-11-04", "title": "研究模型入口", "text": "灵台、太学 A/B、五种北侧院落与六座新城门提供独立研究模型入口；未配准的候选保留独立空间。" },
-    { "date": "2026-11-03", "title": "住宅样板与模型库", "text": "发布 C01、C02、D08 院落设计样板与可复用模型库，保留各版本历史。" }
+    {
+      "date": "2026-11-05",
+      "title": "补齐四组独立研究模型卡",
+      "text": "旄门补齐独立查看入口，观经空间、北郊方坛与水道接口按已建模记录。所有成果仍未落城；既有城门家族不重复计数。本批附注 tag 与同名 Release 待补。"
+    },
+    {
+      "date": "2026-11-05",
+      "title": "接通无名宫院通行接口",
+      "text": "完成一组门内分流—庭地—侧廊—殿阶的独立连接模型，保留开放/闭门姿态与三档LOD。几何和支承检查通过，历史布局仍属推测，未放入城景。",
+      "batch": "r2026.11.05-4"
+    },
+    {
+      "date": "2026-11-05",
+      "batch": "r2026.11.05-1",
+      "title": "接入旄门",
+      "text": "伊苏里亚交付的旄门完整近景研究模型接入城垣与城门章节，按一个门楼家族计数，保留独立研究状态。"
+    },
+    {
+      "date": "2026-11-04",
+      "batch": "r2026.11.04-5",
+      "title": "新版建城手记",
+      "text": "围绕现有城市模型重建页面，旧应用归档到 v1。首屏先看南侧十四院，章节共用原有城市坐标和四十四院矩阵。"
+    },
+    {
+      "date": "2026-11-04",
+      "title": "研究模型入口",
+      "text": "灵台、太学 A/B、五种北侧院落与六座新城门提供独立研究模型入口；未配准的候选保留独立空间。"
+    },
+    {
+      "date": "2026-11-03",
+      "title": "住宅样板与模型库",
+      "text": "发布 C01、C02、D08 院落设计样板与可复用模型库，保留各版本历史。"
+    }
   ],
   "members": [
     "m-courtyard-family",
@@ -87,7 +238,11 @@
     "m-gate-roof-study",
     "m-eaves-shell",
     "m-passage-interface",
-    "m-luoyang-palace-admission-court"
+    "m-luoyang-palace-admission-court",
+    "m-luoyang-mao-gate",
+    "m-luoyang-stoneclassic-access-court",
+    "m-luoyang-palace-waterway-interface",
+    "m-luoyang-northern-altar"
   ],
   "notes": {
     "已完成的检查": "源文件、资源引用、模型身份、矩阵与预算的静态检查。",
