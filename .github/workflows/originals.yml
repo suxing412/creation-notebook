@@ -1,11 +1,18 @@
-# Each batch tag (rYYYY.MM.DD-N) gets a GitHub Release holding that batch's model originals.
+# Each batch (rYYYY.MM.DD-N) gets a GitHub Release holding that batch's model originals.
 # The website only shows models and publishes compressed copies; the uncompressed GLBs are kept here,
-# with originals.json (path, bytes, SHA-256). The producer adds the batch's source files to the same Release.
+# with originals.json (path, bytes, SHA-256). The batch's source files are added to the same Release.
+#
+# A batch is closed either way:
+# - by committing docs/asset-spec/batches/rYYYY.MM.DD-N.json to main (no tag rights needed): this workflow
+#   puts the annotated tag on that commit, pushes it, and archives the batch;
+# - or by pushing the r tag yourself.
 # Run it by hand (workflow_dispatch) to fill in every r tag whose Release has no originals.json yet.
 name: Archive model originals
 
 on:
   push:
+    branches: [main]
+    paths: ['docs/asset-spec/batches/**']
     tags: ['r*']
   workflow_dispatch:
 
@@ -28,13 +35,25 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Tag committed batch files
+        id: batches
+        if: github.ref_type == 'branch'
+        run: |
+          git fetch --force --tags origin
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python -I lab/tools/tag_batches.py
+
       - name: Put the batch's originals into its Release
         env:
           GH_TOKEN: ${{ github.token }}
+          NEW_TAGS: ${{ steps.batches.outputs.tags }}
         run: |
           git fetch --force --tags origin
-          if [ "${{ github.event_name }}" = "push" ]; then
+          if [ "${{ github.ref_type }}" = "tag" ]; then
             python -I lab/tools/release_originals.py "${GITHUB_REF_NAME}"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            for t in $NEW_TAGS; do python -I lab/tools/release_originals.py "$t"; done
           else
             python -I lab/tools/release_originals.py --missing
           fi

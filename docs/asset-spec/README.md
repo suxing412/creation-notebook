@@ -86,10 +86,15 @@ docs/library/models/m-bronze-lamp/
 2. 运行检查：`python -I lab/tools/build_assets.py --check`。有错误时会逐条列出，并以非零状态退出。
 3. 检查通过后提交。提交说明写清楚是哪件资产，例如 `Add m-bronze-lamp: bronze lamp LOD0/LOD1`。
 4. 推送到 main。部署接好之后，每次推送都会自动重跑检查并发布；检查不通过时，网站保持上一版。
-5. 一批工作完成后，照旧打 `rYYYY.MM.DD-N` tag 并推送。**每批新模型都必须有这个 tag**，原件只在它的 Release 里：
-   - 推送 tag 后，部署流程会自动建好同名 Release，把这一批新增或改动的 GLB 原件放进去，附清单 `originals.json`；
-   - 这一批的源文件由你上传到同一个 Release（见第 7 节）；
-   - Claude 按版本评审。
+5. 一批工作完成后收批。**带新模型或改动模型的批次必须收批**，因为原件只在这一批的 Release 里。收批的办法是提交一个批次文件 `docs/asset-spec/batches/rYYYY.MM.DD-N.json`，推到 main：
+   ```json
+   {"tag": "r2026.11.06-1", "summary": "这一批做了什么", "sources": ["model.blend", "source.zip"]}
+   ```
+   - `tag` 与文件名一致。日期用 Asia/Shanghai，N 是当天的批次序号；先查远程已有的 tag 和 `batches/` 里的文件，不要重号。
+   - `summary` 写一两句，会成为 tag 说明和 Release 说明的开头。
+   - `sources` 可以不写，写的是还没上传的源文件名，会列在 Release 说明里。
+
+   推送后，工作流会在加入这个文件的那次提交上打附注 tag，建好同名 Release，放进这一批新增或改动的 GLB 原件，并附清单 `originals.json`。有打 tag 权限的人，也可以照旧自己推送 tag，效果一样。这一批的源文件随后放进同一个 Release（见第 7 节）。Claude 按版本评审。
 
 ## 5. 加分类
 
@@ -129,17 +134,16 @@ docs/library/models/m-bronze-lamp/
 
 网站只负责展示：放展示图、GLB 和网页，不提供下载。原件一律到 GitHub Release 里取。GitHub Pages 整站上限 1 GB，部署时一旦超过上限就会失败，线上停在上一版。
 
-- **原件在批次 Release 里。** 每个 `rYYYY.MM.DD-N` tag 对应一个同名 Release，由 `.github/workflows/originals.yml` 自动创建：
+- **原件在批次 Release 里。** 每个 `rYYYY.MM.DD-N` 批次对应一个同名 Release，在收批后由 `.github/workflows/originals.yml` 自动创建：
   - 里面放这一批（上一个 r tag 之后）新增或改动的 GLB，未压缩，与仓库里提交的文件逐字节相同；
   - 文件名是 `docs/` 下的路径，把 `/` 写成 `__`，例如 `library__models__m-bronze-lamp__files__lamp-LOD0.glb`；
   - `originals.json` 列出每个文件的路径、体积和 SHA-256。
 
   要取某件资产的原件，先找它最近一次改动所在的批次，再到那个 Release 里下载。手动运行这个工作流，会补齐所有还没有原件清单的 r tag。
 
-- **源文件不提交进仓库。** `.blend`、源码 ZIP 及其分卷、`.psd`、`.exr`、`.fbx` 这类文件，上传到这一批 tag 的 Release。Release 在推送 tag 后会自动建好，等它出现再追加：
-  ```
-  gh release upload rYYYY.MM.DD-N model.blend source.zip
-  ```
+- **源文件不提交进仓库。** `.blend`、源码 ZIP 及其分卷、`.psd`、`.exr`、`.fbx` 这类文件，进这一批的 Release。有两种办法：
+  - **放进本机的待传文件夹**（没有 Release 上传权限时用这个）：按 tag 分子文件夹，例如 `D:/GitHub/creation-notebook-待传/r2026.11.06-1/model.blend`。Claude 在登录了 GitHub 的机器上运行 `python -I lab/tools/upload_sources.py`，逐个上传并核对 SHA-256。核对通过的文件挪到 `D:/待删-<日期>-已传源文件/`，不会直接删除；没通过的留在原处。
+  - **自己上传**：等 Release 建好后，运行 `gh release upload rYYYY.MM.DD-N model.blend source.zip`。不要自己用 `gh release create` 建，那样会和工作流撞车。
   在 `docs/` 里提交新的源文件，检查会报错。
 - **旧源文件已经归档。** 仓库里原有的源文件都放进了 Release `sources-2026.11.05`，分卷也已还原成校验过的完整 ZIP。部署时这些文件不会发布，页面上的下载链接会自动改成 Release 的地址。对照表在 `source-archive.json`，由 `lab/tools/archive_sources.py` 生成。
 - **部署时自动瘦身，仓库里留原件。** 发布网站时，`lab/tools/slim_site.py` 会做三件事：

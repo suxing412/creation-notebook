@@ -174,9 +174,11 @@ ${TEMPLATE}</pre>
 </section>
 
 <section class="sect spec-wrap" id="src"><h2>七 · 原件与源文件</h2>
-  <p class="lead">网站只负责展示：放展示图、GLB、网页，<b>不提供下载，原件一律到 GitHub Release 里取</b>。每个 <code>rYYYY.MM.DD-N</code> tag 对应一个同名 Release。推送 tag 后会自动建好这个 Release，把这一批新增或改动的 GLB 原件放进去：未压缩，与仓库里的文件逐字节相同，附清单 <code>originals.json</code>，列出路径、体积和 SHA-256。所以带新模型的批次必须打 tag。</p>
-  <p class="lead" style="margin-top:12px"><b>.blend、源码 ZIP、.psd、.exr、.fbx 这类源文件不提交进仓库</b>，上传到同一个 Release。仓库里原有的旧源文件已经归档到 Release <code>sources-2026.11.05</code>。</p>
-  <pre class="code"><span class="c"># 推送 tag、等 Release 自动建好之后</span>
+  <p class="lead">网站只负责展示：放展示图、GLB、网页，<b>不提供下载，原件一律到 GitHub Release 里取</b>。每个批次 <code>rYYYY.MM.DD-N</code> 对应一个同名 Release。收批后会自动建好这个 Release，把这一批新增或改动的 GLB 原件放进去：未压缩，与仓库里的文件逐字节相同，附清单 <code>originals.json</code>，列出路径、体积和 SHA-256。所以带新模型的批次必须收批，办法见第八节第 5 步。</p>
+  <p class="lead" style="margin-top:12px"><b>.blend、源码 ZIP、.psd、.exr、.fbx 这类源文件不提交进仓库</b>，进同一个 Release。没有上传权限的，把源文件放进本机待传文件夹，按 tag 分子文件夹；Claude 会上传并核对 SHA-256，核对通过的本地副本挪到 <code>D:/待删-*</code>。有权限的，也可以等 Release 建好后自己上传。仓库里原有的旧源文件已经归档到 Release <code>sources-2026.11.05</code>。</p>
+  <pre class="code"><span class="c"># 办法一：放进待传文件夹，由 Claude 运行 lab/tools/upload_sources.py</span>
+D:/GitHub/creation-notebook-待传/r2026.11.06-1/model.blend
+<span class="c"># 办法二：Release 建好之后自己上传（不要自己 create）</span>
 gh release upload rYYYY.MM.DD-N model.blend source.zip</pre>
   <p class="lead" style="margin-top:12px">网站体积上限是 1 GB，部署时超过上限会直接失败，线上停在上一版。部署会自动瘦身，仓库里保留原件：GLB 用 meshopt 压缩，PNG 转成 WebP。洛阳城景目录除外，它会核对文件哈希，所以原样发布；城景要更小，就自己用 <code>gltfpack -i in.glb -o out.glb -cc</code> 压缩，并同步更新哈希。</p>
 </section>
@@ -187,7 +189,7 @@ gh release upload rYYYY.MM.DD-N model.blend source.zip</pre>
     <li>运行检查：<code>python -I lab/tools/build_assets.py --check</code>。有错误会逐条列出，并以非零退出。</li>
     <li>只剩提醒或全绿，就提交；提交说明写清是哪件资产，例如 <code>Add m-bronze-lamp: bronze lamp LOD0/LOD1</code>。</li>
     <li>推送到 main。部署接好之后，推送会自动重跑这项检查并发布；检查不过，网站保持上一版。</li>
-    <li>一批做完照旧打 <code>rYYYY.MM.DD-N</code> tag 并推送（带新模型的批次必须打）。同名 Release 会自动建好，收下这一批的 GLB 原件；再把这一批的源文件传上去。Claude 按版本评审。</li>
+    <li>一批做完收批（带新模型的批次必须收批）：提交批次文件 <code>docs/asset-spec/batches/rYYYY.MM.DD-N.json</code>，写上 <code>{"tag": "…", "summary": "这一批做了什么", "sources": ["model.blend"]}</code>。推到 main 后，工作流会打好附注 tag，建同名 Release 并收下这一批的 GLB 原件。有权限的也可以自己推送 tag。源文件按第七节放进 Release。Claude 按版本评审。</li>
   </ol>
 </section>
 

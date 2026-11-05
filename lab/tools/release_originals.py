@@ -20,8 +20,10 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 MANIFEST = 'originals.json'
 
 
-def git(*a, binary=False):
-    r = subprocess.run(['git', '-C', ROOT, *a], capture_output=True, check=True)
+def git(*a, binary=False, check=True):
+    r = subprocess.run(['git', '-C', ROOT, *a], capture_output=True, check=check)
+    if not check:
+        return r
     return r.stdout if binary else r.stdout.decode('utf-8')
 
 
@@ -86,12 +88,19 @@ def archive(tag, dry):
                 todo.append(f)
         print(f'{tag}: {len(changed)} GLB originals since {prev or "the start"} ({total / 1e6:.0f} MB), {len(todo)} to upload'
               + (' · Release missing' if have is None else ''))
-        if dry or not changed:
+        bf = git('show', f'{tag}:docs/asset-spec/batches/{tag}.json', check=False)
+        bfile = json.loads(bf.stdout.decode('utf-8')) if bf.returncode == 0 else None
+        # a batch closed by a batch file gets its Release even without GLBs: its source files go there
+        if dry or not (changed or bfile):
             return
         if have is None:
             notes = (f'这一批（{prev or "仓库开始"} → {tag}）新增或改动的 GLB 原件，未压缩，与仓库里提交的文件逐字节相同。'
                      f'清单见 {MANIFEST}（路径、体积、SHA-256）。\n\n'
                      '网站上发布的是压缩后的副本，只用来展示。这一批的源文件（.blend、源码 ZIP 等）也上传到这个 Release。')
+            if bfile:
+                notes = (bfile.get('summary') or '').strip() + '\n\n' + notes
+                if bfile.get('sources'):
+                    notes += '\n\n待传的源文件：' + '、'.join(bfile['sources'])
             gh('release', 'create', tag, '--verify-tag', '--title', f'{tag} · 原件', '--notes', notes)
         for i in range(0, len(todo), 20):
             gh('release', 'upload', tag, *todo[i:i + 20], '--clobber')
