@@ -311,7 +311,7 @@
      "unit": "院",
      "chapter": "residential",
      "focus": "residential",
-     "note": "36 个 C02 院与 8 个 D08 院共用原交付矩阵，六种原型。"
+     "note": "36 个 C02 院与 8 个 D08 院共用原交付矩阵，六种原型。 原型卡补齐最新米制UV版本及明确标注的前版功能变体，不改变44院城市实例。 另收两套前版完整屋面候选作比较，不增加44院实例，也不将局部屋面验收外推至整院。"
     },
     {
      "title": "北区院落研究",
@@ -329,7 +329,7 @@
      "unit": "处",
      "chapter": "market",
      "focus": "market",
-     "note": "五店三摊，含交易与储货空间；金市位置取自既有研究示意点。"
+     "note": "五店三摊，含交易与储货空间；金市位置取自既有研究示意点。 功能组补齐v2运行件，不更改既有8摊铺落位；有限通行窄带与失败宽带范围保留。"
     },
     {
      "title": "仓储作业",
@@ -338,7 +338,7 @@
      "unit": "组",
      "chapter": "storage",
      "focus": "storage",
-     "note": "完整仓储组；外部连接待建。"
+     "note": "完整仓储组；外部连接待建。 补齐v2组装与单元三档，狭窄阶梯局限未解决，不增加既有作业组计数。"
     },
     {
      "title": "灵台与太学",
@@ -636,6 +636,42 @@
      "chapter": null,
      "focus": null,
      "note": "独立C研究模型，变体和LOD合计一组；未入城，不增加已放置的城市实例。"
+    },
+    {
+     "title": "夯土墙身家族",
+     "status": "已建模",
+     "count": 1,
+     "unit": "组",
+     "chapter": null,
+     "focus": null,
+     "note": "独立C研究组件，变体、姿态与LOD合计一组，不增加已放置的城市建筑实例。"
+    },
+    {
+     "title": "B2门窗开口套件",
+     "status": "已建模",
+     "count": 1,
+     "unit": "组",
+     "chapter": null,
+     "focus": null,
+     "note": "独立C研究组件，变体、姿态与LOD合计一组，不增加已放置的城市建筑实例。"
+    },
+    {
+     "title": "住宅内门修订组件",
+     "status": "已建模",
+     "count": 1,
+     "unit": "组",
+     "chapter": null,
+     "focus": null,
+     "note": "独立C研究组件，变体、姿态与LOD合计一组，不增加已放置的城市建筑实例。"
+    },
+    {
+     "title": "住宅主屋面",
+     "status": "已建模",
+     "count": 1,
+     "unit": "组",
+     "chapter": null,
+     "focus": null,
+     "note": "独立C研究组件，变体、姿态与LOD合计一组，不增加已放置的城市建筑实例。"
     }
    ],
    "evidence": [
@@ -653,6 +689,24 @@
     }
    ],
    "journal": [
+    {
+     "date": "2026-11-05",
+     "batch": null,
+     "title": "补齐两套整院屋面候选",
+     "text": "住宅原型现卡补收A院与长堂院落的完整屋面修订版本，保留前版门叶和接点局限；它们不是新住宅家族或当前城市替换，源工程Release与tag另待补。"
+    },
+    {
+     "date": "2026-11-05",
+     "batch": null,
+     "title": "补齐住宅内门与主屋面组件",
+     "text": "住宅单/双扇内门最终修订与同一主屋面近中档按组件归档，不增加住宅建筑实例，不改变城市落位。tag与源文件Release仍待补齐。"
+    },
+    {
+     "date": "2026-11-05",
+     "batch": null,
+     "title": "补齐墙身与功能原型版本",
+     "text": "夯土墙身和B2静态门窗套件独立建卡，住宅、仓储及市肆沿用现卡更新版本，保留旧文件和有限通行限制。tag与源文件Release仍待补齐。"
+    },
     {
      "date": "2026-11-05",
      "batch": null,
@@ -777,7 +831,11 @@
     "m-luoyang-mingtang",
     "m-luoyang-lingtai",
     "m-luoyang-southern-altar",
-    "m-luoyang-gallery-access"
+    "m-luoyang-gallery-access",
+    "m-luoyang-earthwall-family",
+    "m-luoyang-b2-facade-kit",
+    "m-luoyang-inner-door-components",
+    "m-luoyang-house-roof"
    ],
    "bytes": 0,
    "triangles": 0,
@@ -893,6 +951,101 @@
    "card": "library/models/m-luoyang-a1-neighborhood/m-luoyang-a1-neighborhood.asset.json",
    "bytes": 12624328,
    "triangles": 228112,
+   "textured": true
+  },
+  {
+   "id": "m-luoyang-b2-facade-kit",
+   "category": "models",
+   "kind": "城市构件",
+   "title": "B2门窗开口套件",
+   "english": "B2 DOOR AND WINDOW KIT",
+   "summary": "匹配既有B2开口的门窗C套件；三棂开门与五棂关门是两个互斥静态状态，不是两件作品。",
+   "alt": "B2门窗开口套件实际模型CPU预览；C级设计。",
+   "cover": {
+    "small": {
+     "src": "media/library-models-m-luoyang-b2-facade-kit-cover-720.webp",
+     "w": 720,
+     "h": 480
+    },
+    "large": {
+     "src": "media/library-models-m-luoyang-b2-facade-kit-cover-1800.webp",
+     "w": 1200,
+     "h": 800
+    },
+    "original": "../docs/library/models/m-luoyang-b2-facade-kit/cover.webp"
+   },
+   "coverIsShot": false,
+   "gallery": [
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-b2-facade-kit-shots-01-720.webp",
+      "w": 720,
+      "h": 480
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-b2-facade-kit-shots-01-1800.webp",
+      "w": 1200,
+      "h": 800
+     },
+     "original": "../docs/library/models/m-luoyang-b2-facade-kit/shots/01.webp"
+    }
+   ],
+   "files": [
+    {
+     "label": "closed · dense",
+     "path": "library/models/m-luoyang-b2-facade-kit/files/closed-dense.glb",
+     "url": "../docs/library/models/m-luoyang-b2-facade-kit/files/closed-dense.glb",
+     "format": "GLB",
+     "bytes": 368324,
+     "triangles": 168,
+     "vertices": 336,
+     "primitives": 14,
+     "materials": 1,
+     "images": 3,
+     "size": [
+      3.45,
+      2.1,
+      0.227
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "open · light",
+     "path": "library/models/m-luoyang-b2-facade-kit/files/open-light.glb",
+     "url": "../docs/library/models/m-luoyang-b2-facade-kit/files/open-light.glb",
+     "format": "GLB",
+     "bytes": 365640,
+     "triangles": 144,
+     "vertices": 288,
+     "primitives": 12,
+     "materials": 1,
+     "images": 3,
+     "size": [
+      3.45,
+      2.1,
+      0.729
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    }
+   ],
+   "page": null,
+   "notes": {
+    "已完成的检查": "GLB实际回读、有向几何、UV、逐体闭合与有限身体样点；开态通过，闭态按预期阻断。",
+    "限制与待解决": "仅固定1.3×2.1米门洞和0.8×0.8米窗洞；非连续动画或任意角度认证。没有LOD或同材质合批，宿主墙厚、地坪和周边须重验。"
+   },
+   "stats": {},
+   "state": "待审",
+   "status": "待审 · 已建模；独立模块待审。",
+   "public": true,
+   "updated": "2026-11-05T15:41:29+08:00",
+   "related": [
+    "p-luoyang"
+   ],
+   "card": "library/models/m-luoyang-b2-facade-kit/m-luoyang-b2-facade-kit.asset.json",
+   "bytes": 733964,
+   "triangles": 168,
    "textured": true
   },
   {
@@ -1607,6 +1760,285 @@
    "textured": true
   },
   {
+   "id": "m-luoyang-earthwall-family",
+   "category": "models",
+   "kind": "城市构件",
+   "title": "夯土墙身家族",
+   "english": "RAMMED EARTH WALL FAMILY",
+   "summary": "A/B短段、兼容C长段与西垣A10中远档合为一个C级夯土墙身家族，不含门楼或防御设施。",
+   "alt": "夯土墙身家族实际模型CPU预览；C级设计。",
+   "cover": {
+    "small": {
+     "src": "media/library-models-m-luoyang-earthwall-family-cover-720.webp",
+     "w": 720,
+     "h": 540
+    },
+    "large": {
+     "src": "media/library-models-m-luoyang-earthwall-family-cover-1800.webp",
+     "w": 1200,
+     "h": 900
+    },
+    "original": "../docs/library/models/m-luoyang-earthwall-family/cover.webp"
+   },
+   "coverIsShot": false,
+   "gallery": [
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-earthwall-family-shots-01-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-earthwall-family-shots-01-1800.webp",
+      "w": 1200,
+      "h": 900
+     },
+     "original": "../docs/library/models/m-luoyang-earthwall-family/shots/01.webp"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-earthwall-family-shots-02-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-earthwall-family-shots-02-1800.webp",
+      "w": 1600,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-earthwall-family/shots/02.webp"
+    }
+   ],
+   "files": [
+    {
+     "label": "earthwall · A · LOD0",
+     "path": "library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD0.glb",
+     "format": "GLB",
+     "bytes": 585316,
+     "triangles": 4352,
+     "vertices": 12676,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      16.0,
+      8.0,
+      14.049
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "earthwall · B · LOD0",
+     "path": "library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD0.glb",
+     "format": "GLB",
+     "bytes": 585316,
+     "triangles": 4352,
+     "vertices": 12676,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      24.0,
+      8.0,
+      14.055
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "earthwall · C · LOD0",
+     "path": "library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD0.glb",
+     "format": "GLB",
+     "bytes": 4783356,
+     "triangles": 33920,
+     "vertices": 99428,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      355.672,
+      6.03,
+      8.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "earthwall · A · LOD1",
+     "path": "library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD1.glb",
+     "format": "GLB",
+     "bytes": 107096,
+     "triangles": 1152,
+     "vertices": 2244,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      16.0,
+      8.0,
+      14.025
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "earthwall · A · LOD2",
+     "path": "library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-A-LOD2.glb",
+     "format": "GLB",
+     "bytes": 5928,
+     "triangles": 96,
+     "vertices": 90,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      16,
+      8,
+      14
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "earthwall · B · LOD1",
+     "path": "library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD1.glb",
+     "format": "GLB",
+     "bytes": 107096,
+     "triangles": 1152,
+     "vertices": 2244,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      24.0,
+      8.0,
+      14.03
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "earthwall · B · LOD2",
+     "path": "library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-B-LOD2.glb",
+     "format": "GLB",
+     "bytes": 5928,
+     "triangles": 96,
+     "vertices": 90,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      24,
+      8,
+      14
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "earthwall · C · LOD1",
+     "path": "library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD1.glb",
+     "format": "GLB",
+     "bytes": 585540,
+     "triangles": 4416,
+     "vertices": 12672,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      355.672,
+      6.03,
+      8.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "earthwall · C · LOD2",
+     "path": "library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-earthwall-family/files/earthwall-C-LOD2.glb",
+     "format": "GLB",
+     "bytes": 5976,
+     "triangles": 96,
+     "vertices": 90,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      355.672,
+      6.03,
+      8.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "westwall10 · LOD1",
+     "path": "library/models/m-luoyang-earthwall-family/files/westwall10-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-earthwall-family/files/westwall10-LOD1.glb",
+     "format": "GLB",
+     "bytes": 1738808,
+     "triangles": 13120,
+     "vertices": 37696,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      1202.848,
+      6.03,
+      8.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "westwall10 · LOD2",
+     "path": "library/models/m-luoyang-earthwall-family/files/westwall10-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-earthwall-family/files/westwall10-LOD2.glb",
+     "format": "GLB",
+     "bytes": 7560,
+     "triangles": 176,
+     "vertices": 161,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      1202.848,
+      6.03,
+      8.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    }
+   ],
+   "page": null,
+   "notes": {
+    "已完成的检查": "实际GLB闭合壳、绕序、UV、有限接面及原生导出一致性检查。",
+    "限制与待解决": "长度、截面、起伏和夯层颜色为C设计。A10精细近档超本批12MB预算，未列下载；中远档不能冒作近景。转角、地形、门接头与城市部署另验，无结构或GPU认证。"
+   },
+   "stats": {},
+   "state": "待审",
+   "status": "待审 · 已建模；独立模块待审。",
+   "public": true,
+   "updated": "2026-11-05T15:41:27+08:00",
+   "related": [
+    "p-luoyang"
+   ],
+   "card": "library/models/m-luoyang-earthwall-family/m-luoyang-earthwall-family.asset.json",
+   "bytes": 8517920,
+   "triangles": 33920,
+   "textured": false
+  },
+  {
    "id": "m-luoyang-foot-pestle",
    "category": "models",
    "kind": "器物",
@@ -2221,6 +2653,101 @@
    "textured": true
   },
   {
+   "id": "m-luoyang-house-roof",
+   "category": "models",
+   "kind": "构件",
+   "title": "住宅主屋面",
+   "english": "HOUSE MAIN ROOF",
+   "summary": "一组住宅主堂屋面近中景：近景保留实体板瓦浅槽、筒瓦凸背与搭接，中景保留简化旧实体屋面。两档属于同一逻辑屋顶，不能叠载，也不是两座独立建筑。",
+   "alt": "实际近景主屋面GLB的独立CPU总览，含真实瓦片几何。",
+   "cover": {
+    "small": {
+     "src": "media/library-models-m-luoyang-house-roof-cover-720.webp",
+     "w": 720,
+     "h": 495
+    },
+    "large": {
+     "src": "media/library-models-m-luoyang-house-roof-cover-1800.webp",
+     "w": 1600,
+     "h": 1100
+    },
+    "original": "../docs/library/models/m-luoyang-house-roof/cover.webp"
+   },
+   "coverIsShot": false,
+   "gallery": [
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-house-roof-shots-roof-reverse-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-house-roof-shots-roof-reverse-1800.webp",
+      "w": 1600,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-house-roof/shots/roof-reverse.webp"
+    }
+   ],
+   "files": [
+    {
+     "label": "TC03-main-roof-kit",
+     "path": "library/models/m-luoyang-house-roof/files/TC03-main-roof-kit.glb",
+     "url": "../docs/library/models/m-luoyang-house-roof/files/TC03-main-roof-kit.glb",
+     "format": "GLB",
+     "bytes": 10378412,
+     "triangles": 145380,
+     "vertices": 234876,
+     "primitives": 8,
+     "materials": 3,
+     "images": 9,
+     "size": [
+      18,
+      1.408,
+      6
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "TC03-roof-medium",
+     "path": "library/models/m-luoyang-house-roof/files/TC03-roof-medium.glb",
+     "url": "../docs/library/models/m-luoyang-house-roof/files/TC03-roof-medium.glb",
+     "format": "GLB",
+     "bytes": 713320,
+     "triangles": 5012,
+     "vertices": 10234,
+     "primitives": 1,
+     "materials": 1,
+     "images": 3,
+     "size": [
+      18.0,
+      1.27,
+      6.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    }
+   ],
+   "page": null,
+   "notes": {
+    "已完成的检查": "沿用最终实际GLB检查，近景145,380三角、中景5,012三角；文件原字节保留且贴图自包含。近景预览直接导入实际运行件渲染；只展示屋面，不加入院落。",
+    "限制与待解决": "中景不是细瓦壳的物理等价物，只供渲染比较，不能自动替换碰撞与导航。包络差异可能产生切换跳变，离线选择器并未部署到网页。建筑尺度和瓦件应用为C设计；有限接点与瓦件检查仍有微小残差，不是完整结构、防水、GPU或手机验收。未入城，未替换原屋面。"
+   },
+   "stats": {},
+   "state": "待审",
+   "status": "待审 · 已建模，未入城 · 独立研究模型",
+   "public": true,
+   "updated": "2026-11-05T15:48:13+08:00",
+   "related": [
+    "p-luoyang"
+   ],
+   "card": "library/models/m-luoyang-house-roof/m-luoyang-house-roof.asset.json",
+   "bytes": 11091732,
+   "triangles": 145380,
+   "textured": true
+  },
+  {
    "id": "m-luoyang-household-service",
    "category": "models",
    "kind": "建筑",
@@ -2319,6 +2846,203 @@
    "bytes": 1463296,
    "triangles": 1012,
    "textured": true
+  },
+  {
+   "id": "m-luoyang-inner-door-components",
+   "category": "models",
+   "kind": "构件",
+   "title": "住宅内门修订组件",
+   "english": "INNER DOOR COMPONENTS",
+   "summary": "住宅单扇与双扇内门的最终枢接修订组件，各含三档静态90度开门模型。只展示新增门叶、承接件与止挡，不含院落、原框墙或城市坐标；构造与尺寸均为C设计。",
+   "alt": "实际单扇内门运行组件导入后的独立CPU总览，未显示原院落门框。",
+   "cover": {
+    "small": {
+     "src": "media/library-models-m-luoyang-inner-door-components-cover-720.webp",
+     "w": 720,
+     "h": 495
+    },
+    "large": {
+     "src": "media/library-models-m-luoyang-inner-door-components-cover-1800.webp",
+     "w": 1600,
+     "h": 1100
+    },
+    "original": "../docs/library/models/m-luoyang-inner-door-components/cover.webp"
+   },
+   "coverIsShot": false,
+   "gallery": [
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-inner-door-components-shots-single-door-reverse-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-inner-door-components-shots-single-door-reverse-1800.webp",
+      "w": 1600,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-inner-door-components/shots/single-door-reverse.webp"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-inner-door-components-shots-paired-door-overview-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-inner-door-components-shots-paired-door-overview-1800.webp",
+      "w": 1600,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-inner-door-components/shots/paired-door-overview.webp"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-inner-door-components-shots-paired-door-reverse-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-inner-door-components-shots-paired-door-reverse-1800.webp",
+      "w": 1600,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-inner-door-components/shots/paired-door-reverse.webp"
+    }
+   ],
+   "files": [
+    {
+     "label": "single-door-LOD0",
+     "path": "library/models/m-luoyang-inner-door-components/files/single-door-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-inner-door-components/files/single-door-LOD0.glb",
+     "format": "GLB",
+     "bytes": 53712,
+     "triangles": 878,
+     "vertices": 1474,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      1.5,
+      2.05,
+      1.61
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "single-door-LOD1",
+     "path": "library/models/m-luoyang-inner-door-components/files/single-door-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-inner-door-components/files/single-door-LOD1.glb",
+     "format": "GLB",
+     "bytes": 29248,
+     "triangles": 498,
+     "vertices": 781,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      1.5,
+      2.05,
+      1.61
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "single-door-LOD2",
+     "path": "library/models/m-luoyang-inner-door-components/files/single-door-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-inner-door-components/files/single-door-LOD2.glb",
+     "format": "GLB",
+     "bytes": 18376,
+     "triangles": 318,
+     "vertices": 475,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      1.5,
+      2.05,
+      1.61
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "paired-door-LOD0",
+     "path": "library/models/m-luoyang-inner-door-components/files/paired-door-LOD0.glb",
+     "url": "../docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD0.glb",
+     "format": "GLB",
+     "bytes": 112236,
+     "triangles": 1872,
+     "vertices": 3117,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      1.3,
+      2.035,
+      0.59
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "paired-door-LOD1",
+     "path": "library/models/m-luoyang-inner-door-components/files/paired-door-LOD1.glb",
+     "url": "../docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD1.glb",
+     "format": "GLB",
+     "bytes": 58536,
+     "triangles": 1104,
+     "vertices": 1583,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      1.3,
+      2.035,
+      0.59
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "paired-door-LOD2",
+     "path": "library/models/m-luoyang-inner-door-components/files/paired-door-LOD2.glb",
+     "url": "../docs/library/models/m-luoyang-inner-door-components/files/paired-door-LOD2.glb",
+     "format": "GLB",
+     "bytes": 35508,
+     "triangles": 728,
+     "vertices": 934,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      1.3,
+      2.035,
+      0.59
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    }
+   ],
+   "page": null,
+   "notes": {
+    "已完成的检查": "采用最终修订三档；原生与实际导出有向几何、UV及有限枢接姿态检查已绑定。发布投影仅净化内部节点名称，非名称JSON及BIN逐字节相同。独立图由实际发布GLB导入渲染，不添加宿主构件。",
+    "限制与待解决": "各三档仅为新增门组件，不是整院三档。静态90度开门是有限通行检查使用状态，其他已测姿态仍阻挡原通行带；没有动画、运行时联锁、门闩、连续人体、承重或GPU/手机验收。单扇闭合仍有缝，双扇接点数值余量不是结构公差或考古精度；独立件不含原框墙，不证明任意洞口适配。未入城，不增加住宅实例。"
+   },
+   "stats": {},
+   "state": "待审",
+   "status": "待审 · 已建模，未入城 · 独立研究模型",
+   "public": true,
+   "updated": "2026-11-05T15:48:12+08:00",
+   "related": [
+    "p-luoyang"
+   ],
+   "card": "library/models/m-luoyang-inner-door-components/m-luoyang-inner-door-components.asset.json",
+   "bytes": 307616,
+   "triangles": 1872,
+   "textured": false
   },
   {
    "id": "m-luoyang-jin-gate",
@@ -7311,9 +8035,9 @@
    "category": "models",
    "kind": "城市构件",
    "title": "住宅院落模块组",
-   "english": "",
-   "summary": "六原型、十二LOD文件；44城中实例以相同逻辑ID引用，不是44份模型。",
-   "alt": "",
+   "english": "COURTYARD PROTOTYPE FAMILY",
+   "summary": "六院落原型的C2双LOD，加A2/B2有限功能预设与A/TC03完整院落屋面修订；分支不叠加，不新增家族。",
+   "alt": "原六院落家族外观，C2修订保持原几何和材质，仅更新米制UV。",
    "cover": {
     "small": {
      "src": "media/model-library-assets-courtyard-720.webp",
@@ -7328,10 +8052,463 @@
     "original": "../docs/model-library/assets/courtyard.png"
    },
    "coverIsShot": false,
-   "gallery": [],
+   "gallery": [
+    {
+     "small": {
+      "src": "media/model-library-updates-m-courtyard-family-shots-variant-00-720.webp",
+      "w": 720,
+      "h": 613
+     },
+     "large": {
+      "src": "media/model-library-updates-m-courtyard-family-shots-variant-00-1800.webp",
+      "w": 1350,
+      "h": 1150
+     },
+     "original": "../docs/model-library/updates/m-courtyard-family/shots/variant-00.webp"
+    },
+    {
+     "small": {
+      "src": "media/model-library-updates-m-courtyard-family-shots-variant-01-720.webp",
+      "w": 720,
+      "h": 613
+     },
+     "large": {
+      "src": "media/model-library-updates-m-courtyard-family-shots-variant-01-1800.webp",
+      "w": 1350,
+      "h": 1150
+     },
+     "original": "../docs/model-library/updates/m-courtyard-family/shots/variant-01.webp"
+    },
+    {
+     "small": {
+      "src": "media/model-library-updates-m-courtyard-family-shots-variant-02-720.webp",
+      "w": 720,
+      "h": 608
+     },
+     "large": {
+      "src": "media/model-library-updates-m-courtyard-family-shots-variant-02-1800.webp",
+      "w": 900,
+      "h": 760
+     },
+     "original": "../docs/model-library/updates/m-courtyard-family/shots/variant-02.webp"
+    },
+    {
+     "small": {
+      "src": "media/model-library-updates-m-courtyard-family-shots-variant-03-720.webp",
+      "w": 720,
+      "h": 608
+     },
+     "large": {
+      "src": "media/model-library-updates-m-courtyard-family-shots-variant-03-1800.webp",
+      "w": 900,
+      "h": 760
+     },
+     "original": "../docs/model-library/updates/m-courtyard-family/shots/variant-03.webp"
+    },
+    {
+     "small": {
+      "src": "media/model-library-updates-m-courtyard-family-shots-variant-04-720.webp",
+      "w": 720,
+      "h": 608
+     },
+     "large": {
+      "src": "media/model-library-updates-m-courtyard-family-shots-variant-04-1800.webp",
+      "w": 900,
+      "h": 760
+     },
+     "original": "../docs/model-library/updates/m-courtyard-family/shots/variant-04.webp"
+    },
+    {
+     "small": {
+      "src": "media/model-library-updates-m-courtyard-family-roof-revisions-shots-courtyard-A-roofs-v2-720.webp",
+      "w": 720,
+      "h": 609
+     },
+     "large": {
+      "src": "media/model-library-updates-m-courtyard-family-roof-revisions-shots-courtyard-A-roofs-v2-1800.webp",
+      "w": 1300,
+      "h": 1100
+     },
+     "original": "../docs/model-library/updates/m-courtyard-family/roof-revisions/shots/courtyard-A-roofs-v2.webp"
+    },
+    {
+     "small": {
+      "src": "media/model-library-updates-m-courtyard-family-roof-revisions-shots-courtyard-TC03-roof-v1-720.webp",
+      "w": 720,
+      "h": 655
+     },
+     "large": {
+      "src": "media/model-library-updates-m-courtyard-family-roof-revisions-shots-courtyard-TC03-roof-v1-1800.webp",
+      "w": 1100,
+      "h": 1000
+     },
+     "original": "../docs/model-library/updates/m-courtyard-family/roof-revisions/shots/courtyard-TC03-roof-v1.webp"
+    }
+   ],
    "files": [
     {
-     "label": "A · LOD0",
+     "label": "A · LOD0 · C2",
+     "path": "model-library/updates/m-courtyard-family/files/A-LOD0-C2.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/A-LOD0-C2.glb",
+     "format": "GLB",
+     "bytes": 1332364,
+     "triangles": 7564,
+     "vertices": 22692,
+     "primitives": 7,
+     "materials": 6,
+     "images": 0,
+     "size": [
+      18.0,
+      4.49,
+      28.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "A2 · LOD0 · C2",
+     "path": "model-library/updates/m-courtyard-family/files/A2-LOD0-C2.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/A2-LOD0-C2.glb",
+     "format": "GLB",
+     "bytes": 1164812,
+     "triangles": 6600,
+     "vertices": 19800,
+     "primitives": 7,
+     "materials": 6,
+     "images": 0,
+     "size": [
+      18.0,
+      4.49,
+      28.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "B · LOD0 · C2",
+     "path": "model-library/updates/m-courtyard-family/files/B-LOD0-C2.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/B-LOD0-C2.glb",
+     "format": "GLB",
+     "bytes": 1635312,
+     "triangles": 9300,
+     "vertices": 27900,
+     "primitives": 7,
+     "materials": 6,
+     "images": 0,
+     "size": [
+      18.0,
+      5.52,
+      28.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "B2 · LOD0 · C2",
+     "path": "model-library/updates/m-courtyard-family/files/B2-LOD0-C2.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/B2-LOD0-C2.glb",
+     "format": "GLB",
+     "bytes": 1486112,
+     "triangles": 8444,
+     "vertices": 25332,
+     "primitives": 7,
+     "materials": 6,
+     "images": 0,
+     "size": [
+      18.0,
+      5.27,
+      28.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "TC03 · 2 · LOD0 · C2",
+     "path": "model-library/updates/m-courtyard-family/files/TC03-2-LOD0-C2.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/TC03-2-LOD0-C2.glb",
+     "format": "GLB",
+     "bytes": 2467560,
+     "triangles": 14048,
+     "vertices": 42144,
+     "primitives": 10,
+     "materials": 7,
+     "images": 0,
+     "size": [
+      28.0,
+      4.54,
+      40.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "TC03 · LOD0 · C2",
+     "path": "model-library/updates/m-courtyard-family/files/TC03-LOD0-C2.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/TC03-LOD0-C2.glb",
+     "format": "GLB",
+     "bytes": 2568332,
+     "triangles": 14628,
+     "vertices": 43884,
+     "primitives": 10,
+     "materials": 7,
+     "images": 0,
+     "size": [
+      28.0,
+      4.54,
+      40.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "A · LOD1 · C2",
+     "path": "model-library/updates/m-courtyard-family/files/A-LOD1-C2.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/A-LOD1-C2.glb",
+     "format": "GLB",
+     "bytes": 229832,
+     "triangles": 1228,
+     "vertices": 3684,
+     "primitives": 7,
+     "materials": 6,
+     "images": 0,
+     "size": [
+      18.0,
+      4.49,
+      28.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "A2 · LOD1 · C2",
+     "path": "model-library/updates/m-courtyard-family/files/A2-LOD1-C2.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/A2-LOD1-C2.glb",
+     "format": "GLB",
+     "bytes": 229316,
+     "triangles": 1224,
+     "vertices": 3672,
+     "primitives": 7,
+     "materials": 6,
+     "images": 0,
+     "size": [
+      18.0,
+      4.49,
+      28.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "B · LOD1 · C2",
+     "path": "model-library/updates/m-courtyard-family/files/B-LOD1-C2.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/B-LOD1-C2.glb",
+     "format": "GLB",
+     "bytes": 282232,
+     "triangles": 1524,
+     "vertices": 4572,
+     "primitives": 7,
+     "materials": 6,
+     "images": 0,
+     "size": [
+      18.0,
+      5.52,
+      28.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "B2 · LOD1 · C2",
+     "path": "model-library/updates/m-courtyard-family/files/B2-LOD1-C2.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/B2-LOD1-C2.glb",
+     "format": "GLB",
+     "bytes": 283368,
+     "triangles": 1532,
+     "vertices": 4596,
+     "primitives": 7,
+     "materials": 6,
+     "images": 0,
+     "size": [
+      18.0,
+      5.27,
+      28.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "TC03 · 2 · LOD1 · C2",
+     "path": "model-library/updates/m-courtyard-family/files/TC03-2-LOD1-C2.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/TC03-2-LOD1-C2.glb",
+     "format": "GLB",
+     "bytes": 412900,
+     "triangles": 2240,
+     "vertices": 6720,
+     "primitives": 10,
+     "materials": 7,
+     "images": 0,
+     "size": [
+      28.0,
+      4.54,
+      40.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "TC03 · LOD1 · C2",
+     "path": "model-library/updates/m-courtyard-family/files/TC03-LOD1-C2.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/TC03-LOD1-C2.glb",
+     "format": "GLB",
+     "bytes": 413444,
+     "triangles": 2244,
+     "vertices": 6732,
+     "primitives": 10,
+     "materials": 7,
+     "images": 0,
+     "size": [
+      28.0,
+      4.54,
+      40.0
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "前C2功能变体 · A2 · deep",
+     "path": "model-library/updates/m-courtyard-family/files/A2-deep.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/A2-deep.glb",
+     "format": "GLB",
+     "bytes": 2593528,
+     "triangles": 23844,
+     "vertices": 41442,
+     "primitives": 15,
+     "materials": 6,
+     "images": 9,
+     "size": [
+      18.0,
+      4.49,
+      28.0
+     ],
+     "primsNoUV": 1,
+     "extUsed": []
+    },
+    {
+     "label": "前C2功能变体 · A2 · shallow",
+     "path": "model-library/updates/m-courtyard-family/files/A2-shallow.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/A2-shallow.glb",
+     "format": "GLB",
+     "bytes": 2296532,
+     "triangles": 18696,
+     "vertices": 33126,
+     "primitives": 15,
+     "materials": 6,
+     "images": 9,
+     "size": [
+      18.0,
+      4.49,
+      28.0
+     ],
+     "primsNoUV": 1,
+     "extUsed": []
+    },
+    {
+     "label": "前C2功能变体 · baseline",
+     "path": "model-library/updates/m-courtyard-family/files/baseline.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/baseline.glb",
+     "format": "GLB",
+     "bytes": 1710204,
+     "triangles": 8352,
+     "vertices": 16973,
+     "primitives": 4,
+     "materials": 4,
+     "images": 9,
+     "size": [
+      18.0,
+      5.07,
+      24.15
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "前C2功能变体 · north",
+     "path": "model-library/updates/m-courtyard-family/files/north.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/north.glb",
+     "format": "GLB",
+     "bytes": 1710524,
+     "triangles": 8352,
+     "vertices": 16983,
+     "primitives": 4,
+     "materials": 4,
+     "images": 9,
+     "size": [
+      18.0,
+      5.07,
+      24.15
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "前C2功能变体 · south",
+     "path": "model-library/updates/m-courtyard-family/files/south.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/files/south.glb",
+     "format": "GLB",
+     "bytes": 1710908,
+     "triangles": 8352,
+     "vertices": 16995,
+     "primitives": 4,
+     "materials": 4,
+     "images": 9,
+     "size": [
+      18.0,
+      5.07,
+      24.15
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "前C2屋面分支 · A院主屋与厢房近景v2 · 完整院落",
+     "path": "model-library/updates/m-courtyard-family/roof-revisions/files/courtyard-A-roofs-v2.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/roof-revisions/files/courtyard-A-roofs-v2.glb",
+     "format": "GLB",
+     "bytes": 11173976,
+     "triangles": 155196,
+     "vertices": 259194,
+     "primitives": 19,
+     "materials": 3,
+     "images": 9,
+     "size": [
+      18.0,
+      4.428,
+      24.15
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "前C2屋面分支 · TC03主堂屋面v1 · 完整院落",
+     "path": "model-library/updates/m-courtyard-family/roof-revisions/files/courtyard-TC03-roof-v1.glb",
+     "url": "../docs/model-library/updates/m-courtyard-family/roof-revisions/files/courtyard-TC03-roof-v1.glb",
+     "format": "GLB",
+     "bytes": 11008212,
+     "triangles": 154416,
+     "vertices": 252642,
+     "primitives": 18,
+     "materials": 7,
+     "images": 9,
+     "size": [
+      28.0,
+      4.678,
+      40.0
+     ],
+     "primsNoUV": 3,
+     "extUsed": []
+    },
+    {
+     "label": "旧版对照 · A · LOD0",
      "path": "cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb",
      "url": "../docs/cities/luoyang/assets/r01/R01-A-LOD0-prototype.glb",
      "format": "GLB",
@@ -7350,7 +8527,7 @@
      "extUsed": []
     },
     {
-     "label": "A · LOD1",
+     "label": "旧版对照 · A · LOD1",
      "path": "cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb",
      "url": "../docs/cities/luoyang/assets/r01/R01-A-LOD1-prototype.glb",
      "format": "GLB",
@@ -7369,7 +8546,7 @@
      "extUsed": []
     },
     {
-     "label": "B · LOD0",
+     "label": "旧版对照 · B · LOD0",
      "path": "cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb",
      "url": "../docs/cities/luoyang/assets/r01/R01-B-LOD0-prototype.glb",
      "format": "GLB",
@@ -7388,7 +8565,7 @@
      "extUsed": []
     },
     {
-     "label": "B · LOD1",
+     "label": "旧版对照 · B · LOD1",
      "path": "cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb",
      "url": "../docs/cities/luoyang/assets/r01/R01-B-LOD1-prototype.glb",
      "format": "GLB",
@@ -7407,7 +8584,7 @@
      "extUsed": []
     },
     {
-     "label": "TC03 · LOD0",
+     "label": "旧版对照 · TC03 · LOD0",
      "path": "cities/luoyang/assets/d08/TC03-LOD0-prototype.glb",
      "url": "../docs/cities/luoyang/assets/d08/TC03-LOD0-prototype.glb",
      "format": "GLB",
@@ -7426,7 +8603,7 @@
      "extUsed": []
     },
     {
-     "label": "TC03 · LOD1",
+     "label": "旧版对照 · TC03 · LOD1",
      "path": "cities/luoyang/assets/d08/TC03-LOD1-prototype.glb",
      "url": "../docs/cities/luoyang/assets/d08/TC03-LOD1-prototype.glb",
      "format": "GLB",
@@ -7445,7 +8622,7 @@
      "extUsed": []
     },
     {
-     "label": "A2 · LOD0",
+     "label": "旧版对照 · A2 · LOD0",
      "path": "cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
      "url": "../docs/cities/luoyang/assets/c02v/A2-LOD0-prototype.glb",
      "format": "GLB",
@@ -7464,7 +8641,7 @@
      "extUsed": []
     },
     {
-     "label": "A2 · LOD1",
+     "label": "旧版对照 · A2 · LOD1",
      "path": "cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
      "url": "../docs/cities/luoyang/assets/c02v/A2-LOD1-prototype.glb",
      "format": "GLB",
@@ -7483,7 +8660,7 @@
      "extUsed": []
     },
     {
-     "label": "B2 · LOD0",
+     "label": "旧版对照 · B2 · LOD0",
      "path": "cities/luoyang/assets/c02v/B2-LOD0-prototype.glb",
      "url": "../docs/cities/luoyang/assets/c02v/B2-LOD0-prototype.glb",
      "format": "GLB",
@@ -7502,7 +8679,7 @@
      "extUsed": []
     },
     {
-     "label": "B2 · LOD1",
+     "label": "旧版对照 · B2 · LOD1",
      "path": "cities/luoyang/assets/c02v/B2-LOD1-prototype.glb",
      "url": "../docs/cities/luoyang/assets/c02v/B2-LOD1-prototype.glb",
      "format": "GLB",
@@ -7521,7 +8698,7 @@
      "extUsed": []
     },
     {
-     "label": "TC03-2 · LOD0",
+     "label": "旧版对照 · TC03-2 · LOD0",
      "path": "cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb",
      "url": "../docs/cities/luoyang/assets/c02v/TC03-2-LOD0-prototype.glb",
      "format": "GLB",
@@ -7540,7 +8717,7 @@
      "extUsed": []
     },
     {
-     "label": "TC03-2 · LOD1",
+     "label": "旧版对照 · TC03-2 · LOD1",
      "path": "cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb",
      "url": "../docs/cities/luoyang/assets/c02v/TC03-2-LOD1-prototype.glb",
      "format": "GLB",
@@ -7560,17 +8737,22 @@
     }
    ],
    "page": null,
-   "notes": {},
+   "notes": {
+    "已完成的检查": "十二文件与原版世界有向几何精确一致、材质JSON不变；实际GLB有限UV及非退化面检查。 另收A2完整浅/深廊、B2现细节北/基准/南三预设，其各自固定配置与有限路线独立检查。 两份完整屋面分支均绑定最终GLB与原生有向三角、既有CPU整院图；新增屋面单构件闭合，有限接点及32瓦件配对检查。",
+    "限制与待解决": "盒投影为可重复平铺UV，允许重叠和轴向接缝，不是烘焙UV或曲面等距展开；未做动态LOD/GPU或全城替换。封面保留原几何外观，检查用棋盘材质不进入模型。 五份功能变体是前C2分支，未套全部最新UV修订；浅廊局部残差及旧屋内部接触保留。 A/TC03屋面分支是前C2独立完整院落版本，不与当前C2叠加，也未套全部最新UV修订。原土墙/木构/排水接触拓扑及瓦行相切残差保留；A院32支撑点与局部瓦片检查不代表全院零接触、承载或防水验收。TC03旧窄内门仍未修复，不能把独立门组件的最新验收借给本整院。"
+   },
    "stats": {},
-   "state": "已发布",
-   "status": "已发布 · 已公开 · 研究候选",
+   "state": "待审",
+   "status": "待审 · 既有家族修订待审，不改变城市场景。",
    "public": true,
-   "updated": "2026-11-04T09:09:41+08:00",
-   "related": [],
+   "updated": "2026-11-05T15:53:02+08:00",
+   "related": [
+    "p-luoyang"
+   ],
    "card": "model-library/m-courtyard-family.asset.json",
-   "bytes": 4816996,
-   "triangles": 14628,
-   "textured": false
+   "bytes": 49526464,
+   "triangles": 155196,
+   "textured": true
   },
   {
    "id": "m-eaves-shell",
@@ -7862,27 +9044,111 @@
    "category": "models",
    "kind": "城市构件",
    "title": "市肆功能组",
-   "english": "",
-   "summary": "五店三摊为一个逻辑资产；N2单店和人货A/B作为版本补丁，不新增库存条目。",
-   "alt": "",
+   "english": "MARKET FUNCTIONAL FAMILY",
+   "summary": "既有五店三摊家族增加v2完整三档，保留商业组团逻辑；与八铺四棚店前线为不同组合。",
+   "alt": "市肆功能组实际模型CPU预览；C级设计。",
    "cover": {
     "small": {
-     "src": "media/cities-luoyang-assets-west-market-N2-slg-720.webp",
+     "src": "media/model-library-updates-m-market-functional-cover-720.webp",
      "w": 720,
-     "h": 526
+     "h": 540
     },
     "large": {
-     "src": "media/cities-luoyang-assets-west-market-N2-slg-1800.webp",
-     "w": 1300,
-     "h": 950
+     "src": "media/model-library-updates-m-market-functional-cover-1800.webp",
+     "w": 1000,
+     "h": 750
     },
-    "original": "../docs/cities/luoyang/assets/west/market-N2-slg.png"
+    "original": "../docs/model-library/updates/m-market-functional/cover.webp"
    },
    "coverIsShot": false,
-   "gallery": [],
+   "gallery": [
+    {
+     "small": {
+      "src": "media/model-library-updates-m-market-functional-shots-01-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/model-library-updates-m-market-functional-shots-01-1800.webp",
+      "w": 1000,
+      "h": 750
+     },
+     "original": "../docs/model-library/updates/m-market-functional/shots/01.webp"
+    },
+    {
+     "small": {
+      "src": "media/model-library-updates-m-market-functional-shots-02-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/model-library-updates-m-market-functional-shots-02-1800.webp",
+      "w": 1000,
+      "h": 750
+     },
+     "original": "../docs/model-library/updates/m-market-functional/shots/02.webp"
+    }
+   ],
    "files": [
     {
-     "label": "独立完整A+N2 local-v1（不叠base/N2）",
+     "label": "v2 · market · LOD0",
+     "path": "model-library/updates/m-market-functional/files/market-LOD0.glb",
+     "url": "../docs/model-library/updates/m-market-functional/files/market-LOD0.glb",
+     "format": "GLB",
+     "bytes": 2845156,
+     "triangles": 18140,
+     "vertices": 54420,
+     "primitives": 4,
+     "materials": 4,
+     "images": 9,
+     "size": [
+      26.0,
+      4.33,
+      28.7
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "v2 · market · LOD1",
+     "path": "model-library/updates/m-market-functional/files/market-LOD1.glb",
+     "url": "../docs/model-library/updates/m-market-functional/files/market-LOD1.glb",
+     "format": "GLB",
+     "bytes": 1448032,
+     "triangles": 10652,
+     "vertices": 31956,
+     "primitives": 4,
+     "materials": 4,
+     "images": 9,
+     "size": [
+      26.0,
+      4.33,
+      28.7
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "v2 · market · LOD2",
+     "path": "model-library/updates/m-market-functional/files/market-LOD2.glb",
+     "url": "../docs/model-library/updates/m-market-functional/files/market-LOD2.glb",
+     "format": "GLB",
+     "bytes": 136216,
+     "triangles": 1288,
+     "vertices": 3864,
+     "primitives": 4,
+     "materials": 4,
+     "images": 0,
+     "size": [
+      26.0,
+      4.25,
+      27.2
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "旧版对照 · 独立完整A+N2 local-v1（不叠base/N2）",
      "path": "model-library/assets/market-A-N2-local.glb",
      "url": "../docs/model-library/assets/market-A-N2-local.glb",
      "format": "GLB",
@@ -7901,7 +9167,7 @@
      "extUsed": []
     },
     {
-     "label": "局部B补丁：先精确卸7个A路径",
+     "label": "旧版对照 · 局部B补丁：先精确卸7个A路径",
      "path": "model-library/assets/optional-B-routes-local.glb",
      "url": "../docs/model-library/assets/optional-B-routes-local.glb",
      "format": "GLB",
@@ -7920,7 +9186,7 @@
      "extUsed": []
     },
     {
-     "label": "v1基础组（不含N2补丁）",
+     "label": "旧版对照 · v1基础组（不含N2补丁）",
      "path": "cities/luoyang/assets/market/market-cluster.glb",
      "url": "../docs/cities/luoyang/assets/market/market-cluster.glb",
      "format": "GLB",
@@ -7939,7 +9205,7 @@
      "extUsed": []
     },
     {
-     "label": "N2补丁：必须先精确卸原30节点",
+     "label": "旧版对照 · N2补丁：必须先精确卸原30节点",
      "path": "cities/luoyang/assets/market/N2-replacement.glb",
      "url": "../docs/cities/luoyang/assets/market/N2-replacement.glb",
      "format": "GLB",
@@ -7958,7 +9224,7 @@
      "extUsed": []
     },
     {
-     "label": "B补丁：必须先精确卸A的7路径",
+     "label": "旧版对照 · B补丁：必须先精确卸A的7路径",
      "path": "cities/luoyang/assets/market/flowB-routes.glb",
      "url": "../docs/cities/luoyang/assets/market/flowB-routes.glb",
      "format": "GLB",
@@ -7978,17 +9244,22 @@
     }
    ],
    "page": null,
-   "notes": {},
+   "notes": {
+    "已完成的检查": "三档GLB/原生几何UV回读、源构件闭合检查；48个反向内部接面逐处分类保留。",
+    "限制与待解决": "原6米试探带最北侧穿过摊桌，每档19个失败射线保留；缩为y=-3至2.5的有限采样才无障碍。非连续导航、全碰撞、独立店门交互或GPU认证，形体与布局为C。"
+   },
    "stats": {},
-   "state": "已发布",
-   "status": "已发布 · 已公开 · 研究候选",
+   "state": "待审",
+   "status": "待审 · 既有家族修订待审，不改变城市场景。",
    "public": true,
-   "updated": "2026-11-03T14:21:25+08:00",
-   "related": [],
+   "updated": "2026-11-05T15:41:34+08:00",
+   "related": [
+    "p-luoyang"
+   ],
    "card": "model-library/m-market-functional.asset.json",
-   "bytes": 2211516,
+   "bytes": 6640920,
    "triangles": 18664,
-   "textured": false
+   "textured": true
   },
   {
    "id": "m-passage-interface",
@@ -8109,27 +9380,308 @@
    "category": "models",
    "kind": "城市构件",
    "title": "仓储作业功能组",
-   "english": "",
-   "summary": "两低仓、收纳棚、计验与搬运空间；A/B仓是组内变体，不叠加计数。",
-   "alt": "",
+   "english": "STORAGE OPERATIONS FAMILY",
+   "summary": "两仓与收货核验区的既有家族更新为v2三档，整组与A/B/收货区互斥使用，不重复计建筑。",
+   "alt": "仓储作业功能组实际模型CPU预览；C级设计。",
    "cover": {
     "small": {
-     "src": "media/cities-luoyang-assets-west-storage-organized-720.webp",
+     "src": "media/model-library-updates-m-storage-functional-cover-720.webp",
      "w": 720,
-     "h": 526
+     "h": 540
     },
     "large": {
-     "src": "media/cities-luoyang-assets-west-storage-organized-1800.webp",
-     "w": 1300,
-     "h": 950
+     "src": "media/model-library-updates-m-storage-functional-cover-1800.webp",
+     "w": 1000,
+     "h": 750
     },
-    "original": "../docs/cities/luoyang/assets/west/storage-organized.png"
+    "original": "../docs/model-library/updates/m-storage-functional/cover.webp"
    },
    "coverIsShot": false,
-   "gallery": [],
+   "gallery": [
+    {
+     "small": {
+      "src": "media/model-library-updates-m-storage-functional-shots-01-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/model-library-updates-m-storage-functional-shots-01-1800.webp",
+      "w": 1000,
+      "h": 750
+     },
+     "original": "../docs/model-library/updates/m-storage-functional/shots/01.webp"
+    },
+    {
+     "small": {
+      "src": "media/model-library-updates-m-storage-functional-shots-02-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/model-library-updates-m-storage-functional-shots-02-1800.webp",
+      "w": 1000,
+      "h": 750
+     },
+     "original": "../docs/model-library/updates/m-storage-functional/shots/02.webp"
+    },
+    {
+     "small": {
+      "src": "media/model-library-updates-m-storage-functional-shots-03-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/model-library-updates-m-storage-functional-shots-03-1800.webp",
+      "w": 1000,
+      "h": 750
+     },
+     "original": "../docs/model-library/updates/m-storage-functional/shots/03.webp"
+    },
+    {
+     "small": {
+      "src": "media/model-library-updates-m-storage-functional-shots-04-720.webp",
+      "w": 720,
+      "h": 540
+     },
+     "large": {
+      "src": "media/model-library-updates-m-storage-functional-shots-04-1800.webp",
+      "w": 1000,
+      "h": 750
+     },
+     "original": "../docs/model-library/updates/m-storage-functional/shots/04.webp"
+    }
+   ],
    "files": [
     {
-     "label": "organized v1完整组（不叠A/B单仓）",
+     "label": "v2 · granary · group · LOD0",
+     "path": "model-library/updates/m-storage-functional/files/granary-group-LOD0.glb",
+     "url": "../docs/model-library/updates/m-storage-functional/files/granary-group-LOD0.glb",
+     "format": "GLB",
+     "bytes": 1582228,
+     "triangles": 9496,
+     "vertices": 28488,
+     "primitives": 3,
+     "materials": 3,
+     "images": 6,
+     "size": [
+      35.5,
+      4.95,
+      25.8
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "v2 · granary · A · LOD0",
+     "path": "model-library/updates/m-storage-functional/files/granary-A-LOD0.glb",
+     "url": "../docs/model-library/updates/m-storage-functional/files/granary-A-LOD0.glb",
+     "format": "GLB",
+     "bytes": 1006080,
+     "triangles": 3848,
+     "vertices": 11544,
+     "primitives": 3,
+     "materials": 3,
+     "images": 6,
+     "size": [
+      10.0,
+      4.5,
+      7.98
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "v2 · granary · B · LOD0",
+     "path": "model-library/updates/m-storage-functional/files/granary-B-LOD0.glb",
+     "url": "../docs/model-library/updates/m-storage-functional/files/granary-B-LOD0.glb",
+     "format": "GLB",
+     "bytes": 1118304,
+     "triangles": 4948,
+     "vertices": 14844,
+     "primitives": 3,
+     "materials": 3,
+     "images": 6,
+     "size": [
+      13.0,
+      4.95,
+      7.62
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "v2 · granary · receiving · LOD0",
+     "path": "model-library/updates/m-storage-functional/files/granary-receiving-LOD0.glb",
+     "url": "../docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD0.glb",
+     "format": "GLB",
+     "bytes": 386980,
+     "triangles": 700,
+     "vertices": 2100,
+     "primitives": 2,
+     "materials": 2,
+     "images": 3,
+     "size": [
+      8.85,
+      3.5,
+      10.6
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "v2 · granary · group · LOD1",
+     "path": "model-library/updates/m-storage-functional/files/granary-group-LOD1.glb",
+     "url": "../docs/model-library/updates/m-storage-functional/files/granary-group-LOD1.glb",
+     "format": "GLB",
+     "bytes": 387252,
+     "triangles": 1592,
+     "vertices": 4776,
+     "primitives": 3,
+     "materials": 3,
+     "images": 6,
+     "size": [
+      35.5,
+      4.95,
+      25.8
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "v2 · granary · group · LOD2",
+     "path": "model-library/updates/m-storage-functional/files/granary-group-LOD2.glb",
+     "url": "../docs/model-library/updates/m-storage-functional/files/granary-group-LOD2.glb",
+     "format": "GLB",
+     "bytes": 79024,
+     "triangles": 748,
+     "vertices": 2244,
+     "primitives": 2,
+     "materials": 2,
+     "images": 0,
+     "size": [
+      35.5,
+      4.95,
+      23.9
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "v2 · granary · A · LOD1",
+     "path": "model-library/updates/m-storage-functional/files/granary-A-LOD1.glb",
+     "url": "../docs/model-library/updates/m-storage-functional/files/granary-A-LOD1.glb",
+     "format": "GLB",
+     "bytes": 267256,
+     "triangles": 416,
+     "vertices": 1248,
+     "primitives": 3,
+     "materials": 3,
+     "images": 6,
+     "size": [
+      10.0,
+      4.5,
+      7.98
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "v2 · granary · A · LOD2",
+     "path": "model-library/updates/m-storage-functional/files/granary-A-LOD2.glb",
+     "url": "../docs/model-library/updates/m-storage-functional/files/granary-A-LOD2.glb",
+     "format": "GLB",
+     "bytes": 35332,
+     "triangles": 320,
+     "vertices": 960,
+     "primitives": 2,
+     "materials": 2,
+     "images": 0,
+     "size": [
+      10.0,
+      4.5,
+      7.98
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "v2 · granary · B · LOD1",
+     "path": "model-library/updates/m-storage-functional/files/granary-B-LOD1.glb",
+     "url": "../docs/model-library/updates/m-storage-functional/files/granary-B-LOD1.glb",
+     "format": "GLB",
+     "bytes": 273392,
+     "triangles": 476,
+     "vertices": 1428,
+     "primitives": 3,
+     "materials": 3,
+     "images": 6,
+     "size": [
+      13.0,
+      4.95,
+      7.62
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "v2 · granary · B · LOD2",
+     "path": "model-library/updates/m-storage-functional/files/granary-B-LOD2.glb",
+     "url": "../docs/model-library/updates/m-storage-functional/files/granary-B-LOD2.glb",
+     "format": "GLB",
+     "bytes": 40244,
+     "triangles": 368,
+     "vertices": 1104,
+     "primitives": 2,
+     "materials": 2,
+     "images": 0,
+     "size": [
+      13.0,
+      4.95,
+      7.62
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "v2 · granary · receiving · LOD1",
+     "path": "model-library/updates/m-storage-functional/files/granary-receiving-LOD1.glb",
+     "url": "../docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD1.glb",
+     "format": "GLB",
+     "bytes": 187912,
+     "triangles": 700,
+     "vertices": 2100,
+     "primitives": 2,
+     "materials": 2,
+     "images": 3,
+     "size": [
+      8.85,
+      3.5,
+      10.6
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "v2 · granary · receiving · LOD2",
+     "path": "model-library/updates/m-storage-functional/files/granary-receiving-LOD2.glb",
+     "url": "../docs/model-library/updates/m-storage-functional/files/granary-receiving-LOD2.glb",
+     "format": "GLB",
+     "bytes": 7632,
+     "triangles": 60,
+     "vertices": 180,
+     "primitives": 1,
+     "materials": 1,
+     "images": 0,
+     "size": [
+      8.8,
+      3.5,
+      4.8
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "旧版对照 · organized v1完整组（不叠A/B单仓）",
      "path": "cities/luoyang/assets/storage/storage-group-organized.glb",
      "url": "../docs/cities/luoyang/assets/storage/storage-group-organized.glb",
      "format": "GLB",
@@ -8148,7 +9700,7 @@
      "extUsed": []
     },
     {
-     "label": "origin-v1 · 完整物理组",
+     "label": "旧版对照 · origin-v1 · 完整物理组",
      "path": "model-library/assets/storage-group-organized-local.glb",
      "url": "../docs/model-library/assets/storage-group-organized-local.glb",
      "format": "GLB",
@@ -8167,7 +9719,7 @@
      "extUsed": []
     },
     {
-     "label": "origin-v1 · A单仓（不可叠组）",
+     "label": "旧版对照 · origin-v1 · A单仓（不可叠组）",
      "path": "model-library/assets/warehouse-A-organized-local.glb",
      "url": "../docs/model-library/assets/warehouse-A-organized-local.glb",
      "format": "GLB",
@@ -8186,7 +9738,7 @@
      "extUsed": []
     },
     {
-     "label": "origin-v1 · B单仓（不可叠组）",
+     "label": "旧版对照 · origin-v1 · B单仓（不可叠组）",
      "path": "model-library/assets/warehouse-B-organized-local.glb",
      "url": "../docs/model-library/assets/warehouse-B-organized-local.glb",
      "format": "GLB",
@@ -8205,7 +9757,7 @@
      "extUsed": []
     },
     {
-     "label": "origin-v1 · 现代讲解层（非物理铺地）",
+     "label": "旧版对照 · origin-v1 · 现代讲解层（非物理铺地）",
      "path": "model-library/assets/optional-functional-overlay-local.glb",
      "url": "../docs/model-library/assets/optional-functional-overlay-local.glb",
      "format": "GLB",
@@ -8225,15 +9777,20 @@
     }
    ],
    "page": null,
-   "notes": {},
+   "notes": {
+    "已完成的检查": "十二GLB回读与分件复装；分区平地接近0.9/1.8米探针通过，楼梯仅0.9米横向条带通过。",
+    "限制与待解决": "原1.5米窄阶未扩宽：1.8米条带A仓51处、B仓77处高差失败。仅单列人力候选，非车辆登阶路线；不代表整个仓区禁车。有限探针非连续人体、负重、消防或GPU认证。"
+   },
    "stats": {},
-   "state": "已发布",
-   "status": "已发布 · 已公开 · 研究候选",
+   "state": "待审",
+   "status": "待审 · 既有家族修订待审，不改变城市场景。",
    "public": true,
-   "updated": "2026-11-03T14:21:25+08:00",
-   "related": [],
+   "updated": "2026-11-05T15:41:32+08:00",
+   "related": [
+    "p-luoyang"
+   ],
    "card": "model-library/m-storage-functional.asset.json",
-   "bytes": 5600196,
+   "bytes": 10971832,
    "triangles": 9508,
    "textured": true
   },

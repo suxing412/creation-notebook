@@ -4,32 +4,94 @@
   "category": "models",
   "kind": "城市构件",
   "title": "仓储作业功能组",
-  "english": "",
-  "summary": "两低仓、收纳棚、计验与搬运空间；A/B仓是组内变体，不叠加计数。",
-  "status": "已发布",
-  "statusNote": "已公开 · 研究候选",
-  "cover": "../cities/luoyang/assets/west/storage-organized.png",
+  "english": "STORAGE OPERATIONS FAMILY",
+  "summary": "两仓与收货核验区的既有家族更新为v2三档，整组与A/B/收货区互斥使用，不重复计建筑。",
+  "status": "待审",
+  "statusNote": "既有家族修订待审，不改变城市场景。",
+  "cover": "updates/m-storage-functional/cover.webp",
   "files": [
     {
+      "path": "updates/m-storage-functional/files/granary-group-LOD0.glb",
+      "label": "v2 · granary · group · LOD0"
+    },
+    {
+      "path": "updates/m-storage-functional/files/granary-A-LOD0.glb",
+      "label": "v2 · granary · A · LOD0"
+    },
+    {
+      "path": "updates/m-storage-functional/files/granary-B-LOD0.glb",
+      "label": "v2 · granary · B · LOD0"
+    },
+    {
+      "path": "updates/m-storage-functional/files/granary-receiving-LOD0.glb",
+      "label": "v2 · granary · receiving · LOD0"
+    },
+    {
+      "path": "updates/m-storage-functional/files/granary-group-LOD1.glb",
+      "label": "v2 · granary · group · LOD1"
+    },
+    {
+      "path": "updates/m-storage-functional/files/granary-group-LOD2.glb",
+      "label": "v2 · granary · group · LOD2"
+    },
+    {
+      "path": "updates/m-storage-functional/files/granary-A-LOD1.glb",
+      "label": "v2 · granary · A · LOD1"
+    },
+    {
+      "path": "updates/m-storage-functional/files/granary-A-LOD2.glb",
+      "label": "v2 · granary · A · LOD2"
+    },
+    {
+      "path": "updates/m-storage-functional/files/granary-B-LOD1.glb",
+      "label": "v2 · granary · B · LOD1"
+    },
+    {
+      "path": "updates/m-storage-functional/files/granary-B-LOD2.glb",
+      "label": "v2 · granary · B · LOD2"
+    },
+    {
+      "path": "updates/m-storage-functional/files/granary-receiving-LOD1.glb",
+      "label": "v2 · granary · receiving · LOD1"
+    },
+    {
+      "path": "updates/m-storage-functional/files/granary-receiving-LOD2.glb",
+      "label": "v2 · granary · receiving · LOD2"
+    },
+    {
       "path": "../cities/luoyang/assets/storage/storage-group-organized.glb",
-      "label": "organized v1完整组（不叠A/B单仓）"
+      "label": "旧版对照 · organized v1完整组（不叠A/B单仓）"
     },
     {
       "path": "assets/storage-group-organized-local.glb",
-      "label": "origin-v1 · 完整物理组"
+      "label": "旧版对照 · origin-v1 · 完整物理组"
     },
     {
       "path": "assets/warehouse-A-organized-local.glb",
-      "label": "origin-v1 · A单仓（不可叠组）"
+      "label": "旧版对照 · origin-v1 · A单仓（不可叠组）"
     },
     {
       "path": "assets/warehouse-B-organized-local.glb",
-      "label": "origin-v1 · B单仓（不可叠组）"
+      "label": "旧版对照 · origin-v1 · B单仓（不可叠组）"
     },
     {
       "path": "assets/optional-functional-overlay-local.glb",
-      "label": "origin-v1 · 现代讲解层（非物理铺地）"
+      "label": "旧版对照 · origin-v1 · 现代讲解层（非物理铺地）"
     }
   ],
-  "legacyPath": true
+  "legacyPath": true,
+  "coverAlt": "仓储作业功能组实际模型CPU预览；C级设计。",
+  "related": [
+    "p-luoyang"
+  ],
+  "notes": {
+    "已完成的检查": "十二GLB回读与分件复装；分区平地接近0.9/1.8米探针通过，楼梯仅0.9米横向条带通过。",
+    "限制与待解决": "原1.5米窄阶未扩宽：1.8米条带A仓51处、B仓77处高差失败。仅单列人力候选，非车辆登阶路线；不代表整个仓区禁车。有限探针非连续人体、负重、消防或GPU认证。"
+  },
+  "gallery": [
+    "updates/m-storage-functional/shots/01.webp",
+    "updates/m-storage-functional/shots/02.webp",
+    "updates/m-storage-functional/shots/03.webp",
+    "updates/m-storage-functional/shots/04.webp"
+  ]
 }

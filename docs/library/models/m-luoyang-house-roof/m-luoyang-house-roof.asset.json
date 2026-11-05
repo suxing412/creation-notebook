@@ -1,0 +1,33 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-house-roof",
+  "category": "models",
+  "kind": "构件",
+  "title": "住宅主屋面",
+  "english": "HOUSE MAIN ROOF",
+  "summary": "一组住宅主堂屋面近中景：近景保留实体板瓦浅槽、筒瓦凸背与搭接，中景保留简化旧实体屋面。两档属于同一逻辑屋顶，不能叠载，也不是两座独立建筑。",
+  "status": "待审",
+  "statusNote": "已建模，未入城 · 独立研究模型",
+  "cover": "cover.webp",
+  "coverAlt": "实际近景主屋面GLB的独立CPU总览，含真实瓦片几何。",
+  "gallery": [
+    "shots/roof-reverse.webp"
+  ],
+  "files": [
+    {
+      "path": "files/TC03-main-roof-kit.glb",
+      "label": "TC03-main-roof-kit"
+    },
+    {
+      "path": "files/TC03-roof-medium.glb",
+      "label": "TC03-roof-medium"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "沿用最终实际GLB检查，近景145,380三角、中景5,012三角；文件原字节保留且贴图自包含。近景预览直接导入实际运行件渲染；只展示屋面，不加入院落。",
+    "限制与待解决": "中景不是细瓦壳的物理等价物，只供渲染比较，不能自动替换碰撞与导航。包络差异可能产生切换跳变，离线选择器并未部署到网页。建筑尺度和瓦件应用为C设计；有限接点与瓦件检查仍有微小残差，不是完整结构、防水、GPU或手机验收。未入城，未替换原屋面。"
+  },
+  "related": [
+    "p-luoyang"
+  ]
+}

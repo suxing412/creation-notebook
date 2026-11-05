@@ -1,0 +1,33 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-b2-facade-kit",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "B2门窗开口套件",
+  "english": "B2 DOOR AND WINDOW KIT",
+  "summary": "匹配既有B2开口的门窗C套件；三棂开门与五棂关门是两个互斥静态状态，不是两件作品。",
+  "status": "待审",
+  "statusNote": "已建模；独立模块待审。",
+  "files": [
+    {
+      "path": "files/closed-dense.glb",
+      "label": "closed · dense"
+    },
+    {
+      "path": "files/open-light.glb",
+      "label": "open · light"
+    }
+  ],
+  "related": [
+    "p-luoyang"
+  ],
+  "notes": {
+    "已完成的检查": "GLB实际回读、有向几何、UV、逐体闭合与有限身体样点；开态通过，闭态按预期阻断。",
+    "限制与待解决": "仅固定1.3×2.1米门洞和0.8×0.8米窗洞；非连续动画或任意角度认证。没有LOD或同材质合批，宿主墙厚、地坪和周边须重验。"
+  },
+  "cover": "cover.webp",
+  "coverAlt": "B2门窗开口套件实际模型CPU预览；C级设计。",
+  "gallery": [
+    "shots/01.webp"
+  ]
+}
