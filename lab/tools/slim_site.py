@@ -413,8 +413,8 @@ def slim(out, log=print):
             continue
         keep, *rest = sorted(group)
         for v in rest:
-            if any(f'{v}/{f}' in pinned_files for f in trees[v]):
-                continue
+            # a recorded hash doesn't stop this: the kept copy has the same bytes (Luoyang's projection-map.json
+            # lists the F01 three.js hashes as provenance)
             # every reference into v must be rewritable
             edits = {}
             for r in site.text:
