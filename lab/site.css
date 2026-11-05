@@ -349,3 +349,45 @@ dl.props dd { text-align: right; font-family: var(--mono); word-break: break-all
 .ov-cursor[data-state="rotate"] .ring { width: 18px; height: 18px; opacity: .9; border-top-color: transparent; animation: cur-turn .9s linear infinite; }
 .ov-cursor.press .ring { width: 10px; height: 10px; }
 @keyframes cur-turn { from { transform: translate(calc(var(--rx) - 50%), calc(var(--ry) - 50%)) rotate(0); } to { transform: translate(calc(var(--rx) - 50%), calc(var(--ry) - 50%)) rotate(360deg); } }
+
+/* ===== overview card: where, latest plate, kinds, recent list ===== */
+.ov-card-where { display: flex; align-items: baseline; gap: 8px; padding-right: 48px; font: 500 11px/1.4 var(--mono); letter-spacing: .14em; color: var(--muted); }
+.ov-card-where b { font: 600 13px/1.4 var(--serif); letter-spacing: .12em; color: var(--ink); }
+.ov-card-where span::after { content: "·"; margin-left: 8px; }
+.ov-card-hero { position: relative; display: block; margin: 16px 0 0; aspect-ratio: 16 / 9; overflow: hidden; background: var(--tile); border: 1px solid var(--line); }
+.ov-card-hero img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.ov-card-hero img.shot { object-position: top; }
+.ov-card-hero:hover img { transform: scale(1.04); }
+.ov-card-hero .cap { position: absolute; left: 0; right: 0; bottom: 0; display: grid; gap: 1px; padding: 26px 12px 9px; color: #fff;
+  background: linear-gradient(transparent, rgba(12, 10, 8, .72)); }
+.ov-card-hero .cap em { font: 600 10px/1.2 var(--mono); font-style: normal; letter-spacing: .18em; opacity: .8; }
+.ov-card-hero .cap b { font: 600 15px/1.35 var(--serif); letter-spacing: .04em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ov-card-hero .cap small { font: 500 11px/1.3 var(--mono); opacity: .8; }
+.ov-card-hero + p { margin-top: 12px; }
+.ov-card-stats { flex-wrap: wrap; gap: 8px 22px; }
+.ov-card-kinds { display: flex; flex-wrap: wrap; gap: 6px; margin: -4px 0 14px; }
+.ov-card-kinds span { display: inline-flex; align-items: baseline; gap: 6px; padding: 3px 9px; border: 1px solid var(--line); font-size: 12px; color: var(--ink-2); }
+.ov-card-kinds b { font: 600 11px var(--mono); color: var(--muted); }
+.ov-card-recent { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 2px; }
+.ov-card-recent a { display: grid; grid-template-columns: 48px 1fr; gap: 10px; align-items: center; padding: 5px 6px; margin: 0 -6px; transition: background .2s; }
+.ov-card-recent a:hover { background: var(--paper-2); }
+.ov-card-recent img { width: 48px; height: 36px; object-fit: cover; background: var(--tile); border: 1px solid var(--line); }
+.ov-card-recent span { display: grid; min-width: 0; }
+.ov-card-recent b { font: 600 13px/1.4 var(--serif); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ov-card-recent small { font: 500 11px/1.3 var(--mono); color: var(--muted); }
+.ov-card-empty { color: var(--muted); }
+.ov-card.show > :nth-child(8) { animation-delay: .4s; } .ov-card.show > :nth-child(9) { animation-delay: .46s; } .ov-card.show > :nth-child(10) { animation-delay: .52s; }
+/* short screens: fewer rows first, then the plate */
+@media (max-height: 880px) { .ov-card-recent li:nth-child(n+3) { display: none; } .ov-card p { margin: 10px 0 12px; } }
+@media (max-height: 760px) { .ov-card-hero, .ov-card-recent { display: none; } }
+@media (max-width: 1000px) and (orientation: portrait), (max-width: 640px) {
+  .ov-card-hero, .ov-card-recent { display: none; }
+}
+html[data-era="modern"] .ov-card-hero, html[data-era="modern"] .ov-card-recent img { border: 2px solid var(--ink); }
+html[data-era="modern"] .ov-card-kinds span { border-color: var(--ink); font-weight: 600; }
+html[data-era="future"] .ov-card-hero { border-radius: 10px; border-color: var(--gold-soft); }
+html[data-era="future"] .ov-card-recent img, html[data-era="future"] .ov-card-kinds span { border-radius: 6px; }
+html[data-era="future"] .ov-card-kinds span { border-color: var(--gold-soft); }
+html[data-era="future"] .ov-card-recent a { border-radius: 8px; }
+html[data-era="early"] .ov-card-hero { border-color: var(--ink); box-shadow: inset 0 0 0 3px var(--card); }
+html[data-era="early"] .ov-card-kinds span { border-color: var(--gold-soft); }

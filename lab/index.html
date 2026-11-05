@@ -173,11 +173,22 @@ async function renderOverview() {
         if (!c) { cur = null; if (!sec.classList.contains('focused')) setNav(''); return; }
         cur = c; setNav(c.id);
         const list = d.assets.filter(a => a.category === c.id), nf = list.reduce((s, a) => s + a.files.length, 0), nb = list.reduce((s, a) => s + a.bytes, 0);
-        cardBox.innerHTML = `<i class="stamp" aria-hidden="true">${esc((info.typology || "").slice(0, 1))}</i><div class="meta">${esc(info.era.zh)} · ${esc(info.building || info.typology)}</div>
+        // newest first: the latest piece leads as a wide plate, the next few follow as a short list
+        const recent = [...list].sort((x, y) => (y.updated || '').localeCompare(x.updated || ''));
+        const hero = recent.find(a => a.cover), rest = recent.filter(a => a !== hero).slice(0, 3);
+        const kinds = Object.entries(list.reduce((m, a) => (m[a.kind] = (m[a.kind] || 0) + 1, m), {})).sort((x, y) => y[1] - x[1]);
+        const md = s => s ? `${+s.slice(5, 7)}月${+s.slice(8, 10)}日` : '—';
+        const href = a => `asset.html?id=${encodeURIComponent(a.id)}`;
+        cardBox.innerHTML = `<i class="stamp" aria-hidden="true">${esc((info.typology || "").slice(0, 1))}</i>
+          <div class="ov-card-where"><span>${esc(info.era.zh)}</span><b>${esc(info.building || info.typology)}</b></div>
           <h2>${esc(c.zh)}</h2><div class="en">${esc(c.en)}</div>
+          ${hero ? `<a class="ov-card-hero" href="${href(hero)}">${img(hero.cover, { alt: hero.alt || hero.title, sizes: '380px', cls: hero.coverIsShot ? 'shot' : '' })}
+            <span class="cap"><em>最新</em><b>${esc(hero.title)}</b><small>${esc(hero.kind)} · ${md(hero.updated)}</small></span></a>` : ''}
           <p>${esc(c.desc)}</p>
-          <dl class="ov-card-stats"><div><dt>资产</dt><dd>${list.length}</dd></div>${nf ? `<div><dt>文件</dt><dd>${nf}</dd></div><div><dt>体积</dt><dd>${size(nb)}</dd></div>` : ''}</dl>
-          <div class="ov-card-thumbs">${list.slice(0, 4).map(a => `<a href="asset.html?id=${encodeURIComponent(a.id)}" title="${esc(a.title)}">${img(a.cover, { alt: a.title, sizes: '90px' })}</a>`).join('')}${list.length > 4 ? `<a class="more" href="#${c.id}">+${list.length - 4}</a>` : ''}</div>
+          <dl class="ov-card-stats"><div><dt>资产</dt><dd>${list.length}</dd></div>${nf ? `<div><dt>文件</dt><dd>${nf}</dd></div><div><dt>体积</dt><dd>${size(nb)}</dd></div>` : ''}<div><dt>最近更新</dt><dd>${md(recent[0]?.updated)}</dd></div></dl>
+          ${kinds.length ? `<div class="ov-card-kinds" aria-label="类型">${kinds.map(([k, n]) => `<span>${esc(k)}<b>${n}</b></span>`).join('')}</div>` : ''}
+          ${rest.length ? `<ol class="ov-card-recent" aria-label="最近更新">${rest.map(a => `<li><a href="${href(a)}">${img(a.cover, { alt: '', sizes: '48px' })}<span><b>${esc(a.title)}</b><small>${esc(a.kind)} · ${md(a.updated)}</small></span></a></li>`).join('')}</ol>`
+            : list.length ? '' : '<p class="ov-card-empty">这里还没有资产。</p>'}
           <div class="ov-card-actions"><a class="btn solid" href="#${c.id}">进入${esc(c.zh)}<span>→</span></a><button class="btn" data-home>回到全城</button></div>`;
         cardBox.querySelector('[data-home]').onclick = () => { ov.home(); setNav(''); };
         setTimeout(() => cardBox.classList.add('show'), 30);
