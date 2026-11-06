@@ -1,0 +1,38 @@
+import { test, expect } from '@playwright/test';
+import { zones, distance, delta, state, instrument, openCity, settled, selectZone, assertFits, attachEvidence, assertHealthy } from './helpers.mjs';
+
+test('touch entry, narrow layout, group navigation and orientation fitting', async ({ page }, info) => {
+  const evidence = await instrument(page), gl = await openCity(page, true);
+  await expect(page.locator('#pj-open')).toBeHidden();
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  for (const id of ['Z18','Z23','Z41']) {
+    const s = await selectZone(page, id, true);
+    await assertFits(page, zones.find(z => z.id === id), s);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  }
+  await page.setViewportSize({ width: 812, height: 375 });
+  const landscape = await selectZone(page, 'Z03', true);
+  await assertFits(page, zones.find(z => z.id === 'Z03'), landscape);
+  await page.setViewportSize({ width: 375, height: 812 });
+  await expect.poll(async () => distance(await state(page))).toBeGreaterThan(distance(landscape));
+  await assertFits(page, zones.find(z => z.id === 'Z03'), await settled(page, 'Z03'));
+  await page.locator('#pj-canvas').scrollIntoViewIfNeeded();
+  const box = await page.locator('#pj-canvas').boundingBox(), beforeTouch = await state(page);
+  const session = await page.context().newCDPSession(page);
+  const point = { x: box.x+box.width*.4, y: box.y+box.height*.5 };
+  await session.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [point] });
+  await session.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: point.x+60, y: point.y+12 }] });
+  await session.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  await expect.poll(async () => delta((await state(page)).position,beforeTouch.position)).toBeGreaterThan(1);
+  const manual = await settled(page);
+  await page.setViewportSize({ width: 812, height: 375 });
+  await page.waitForTimeout(250);
+  expect(delta((await state(page)).position,manual.position)).toBeLessThan(1e-5);
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.locator('.ly-overview').tap();
+  const overview = await settled(page, null);
+  expect(Math.abs(overview.compassDegrees)).toBeCloseTo(180, 5);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+  await attachEvidence(page, info, evidence, { gl, device: 'Chromium mobile emulation; not a physical phone' });
+  assertHealthy(evidence);
+});
