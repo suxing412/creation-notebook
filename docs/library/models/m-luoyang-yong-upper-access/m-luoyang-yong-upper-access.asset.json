@@ -1,0 +1,47 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-yong-upper-access",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "雍门上层登临",
+  "english": "YONG GATE UPPER ACCESS",
+  "summary": "两段折返木阶与平台连接既有雍门上层。三档保留真实踏步，原门、地面、墙路不改；路线、材料和尺寸均为C级使用性设计。",
+  "status": "待审",
+  "statusNote": "v1.1独立C级附件，作为一个节点接入城景，保留原门与墙路；待质量评审。",
+  "cover": "cover.png",
+  "coverAlt": "雍门内侧两段折返木阶、立柱与中转平台的近景，顶平台接向既有门楼敞廊；门楼仅作上下文。",
+  "gallery": [
+    "shots/context.png",
+    "shots/top-port.png",
+    "shots/LOD1-detail.png",
+    "shots/LOD2-detail.png"
+  ],
+  "files": [
+    {
+      "path": "../../../cities/luoyang/progress-assets/yong-upper-access-C-v1_1/yong-upper-access-C-LOD0.glb",
+      "label": "完整近档 · LOD0（默认）"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/yong-upper-access-C-v1_1/yong-upper-access-C-LOD1.glb",
+      "label": "中档备选 · LOD1"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/yong-upper-access-C-v1_1/yong-upper-access-C-LOD2.glb",
+      "label": "远档备选 · LOD2"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "三档冻结GLB身份复核不变。固定0908c2b基线的主项目入口CPU检查72→73显示节点，原79节点定义及55资产定义不变；切章、回城、证据开关和撤回保留原显示签名，原雍门镜头三宽高比覆盖附件。既有v1.1专项另检32次升高、768身体姿态、151连续扫掠、44承托及8负例，两轮范围分列。",
+    "限制与待解决": "无雍门历史楼梯直接考古证据；未获全城G冻结。浏览器和HTTP检查见本批PR，未验收实体GPU、手机手感或C15性能预算。人体步态、重力、跌落、结构承载和无障碍未覆盖。",
+    "版本": "v1.1只将顶口两柱及对应斜撑端后退40毫米；旧v1约15毫米嵌墙失败保留。v1.1限定测试中与墙及进路身体边界各约25毫米正余量，不表示工程安全余量充足。",
+    "证据与设计": "门名及相对方位、异地城楼使用、陶楼梯与栏杆形式类比分开记录；不从明器尺寸或他门记载推定本门形制。全部材料、折返路线、踏步、平台、护栏与支承尺寸为C设计，不新增城门家族。",
+    "展示与装配": "独立卡默认展示LOD0，文件只含新附件，不含原门。主项目直接使用完整LOD0；LOD1/2保留备档。当前项目入口不会随缩放自动切换三档，不把底层nearUrl接口当作页面已具备的操作。",
+    "预览说明": "封面与图集为同版模型及原门上下文的既有Blender Cycles CPU离线实渲，非网页或GPU截图。仅清除PNG文字与路径元数据，图像像素不变；上下文门楼不在附件GLB内。",
+    "来源与权利": "新附件几何及木、土程序纹理由本项目独立制作。原门仅作为既有项目上下文，不复制博物馆照片或第三方模型。沿用现有项目权利状态，不新授予开放许可；来源合同与限制见模型文件所在目录的source.json及RIGHTS.md。",
+    "加载成本": "固定0908c2b基线的主项目CPU实际读入的原始GLB合计由19,057,896增至19,253,044字节，实例三角由372,230增至375,074；只增加完整LOD0一件。不等于实际HTTP传输、浏览器内存、帧率或C15通过。旧独立入口67节点口径不用于本项目首载。"
+  },
+  "related": [
+    "m-luoyang-yong-gate",
+    "p-luoyang"
+  ]
+}

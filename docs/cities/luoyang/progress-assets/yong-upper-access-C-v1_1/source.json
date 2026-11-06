@@ -1,0 +1,155 @@
+{
+  "spec": 1,
+  "assetId": "yong-upper-access-C-v1_1",
+  "cardId": "m-luoyang-yong-upper-access",
+  "version": "1.1",
+  "evidenceTier": "C",
+  "status": "city_manifest_entry_pending_review",
+  "cityInstalled": true,
+  "publicRelease": null,
+  "baselineMain": "d5b0ec6c6081d49eab0e3b987fa5abce56c18031",
+  "files": [
+    {
+      "path": "yong-upper-access-C-LOD0.glb",
+      "lod": 0,
+      "bytes": 195148,
+      "sha256": "d7f84be9b56bec8d13c7f82f165dd657d8e8348cb7a88eff1a9326c0b2512e9b"
+    },
+    {
+      "path": "yong-upper-access-C-LOD1.glb",
+      "lod": 1,
+      "bytes": 167884,
+      "sha256": "b98593f69a4e9daf13dc06130a33c95bdbbeb59ab2ec441117fc6ef66fc6ac2b"
+    },
+    {
+      "path": "yong-upper-access-C-LOD2.glb",
+      "lod": 2,
+      "bytes": 164524,
+      "sha256": "65712b16654ee18507d6d37cbb3c7dbed16a83c5b6c4315f515b54708a388689"
+    }
+  ],
+  "placement": {
+    "nodeId": "yong-upper-access-C-v1_1",
+    "chapter": "yong-gate",
+    "matrix": [
+      -0.01162686012685299,
+      0,
+      -0.9999324083328247,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0.9999324083328247,
+      0,
+      -0.01162686012685299,
+      0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1
+    ],
+    "matrixPolicy": "Exact existing gate matrix; no recomputed yaw, parent geometry changes or additional axis conversion.",
+    "replaces": []
+  },
+  "display": {
+    "projectDefaultFile": "yong-upper-access-C-LOD0.glb",
+    "cardDefaultFile": "yong-upper-access-C-LOD0.glb",
+    "automaticDistanceLOD": false,
+    "lod1And2": "retained alternatives, not simultaneous city instances",
+    "rollback": "Remove this single node and asset; preserve every baseline record.",
+    "nearUrl": null,
+    "chapterNodeIdsAppend": [
+      "yong-upper-access-C-v1_1"
+    ],
+    "chapterLoadNodeIdsAppend": [
+      "yong-upper-access-C-v1_1"
+    ]
+  },
+  "design": {
+    "risers": 32,
+    "riseMetres": 0.166875,
+    "treadMetres": 0.27,
+    "flightWidthMetres": 1.5,
+    "upperPortHeightMetres": 5.34,
+    "hiddenRamp": false,
+    "historicalReconstruction": false,
+    "newGateFamily": false
+  },
+  "validation": {
+    "frozenLegacyScope": "The existing v1.1 CPU package covered three LODs, 768 body poses, 151 swept segments, 44 support checks and 8 negative controls. It is not current navigation runtime or browser acceptance.",
+    "currentRuntime": {
+      "scope": "CPU execution of current navigation-scene -> city-navigation-renderer on fixed main; not browser/GPU or HTTP.",
+      "baselineMain": "0908c2babf8c6770372db6409113fa502c0b539d",
+      "baselineNodes": 72,
+      "candidateNodes": 73,
+      "baselineRawGlbBytes": 19057896,
+      "candidateRawGlbBytes": 19253044,
+      "baselineInstancedTriangles": 372230,
+      "candidateInstancedTriangles": 375074,
+      "originalNodeDefinitionsUnchanged": 79,
+      "originalAssetDefinitionsUnchanged": 55,
+      "allOldNodeSignaturesPreserved": true,
+      "chapterMembership": "Append new ID exactly once to yong-gate nodeIds and loadNodeIds; do not change camera.",
+      "tested": "Repeated chapter/full-city transitions, evidence toggle, rollback and competing navigation; complete mesh vertices inside unchanged chapter camera at three aspect ratios.",
+      "notClaimed": [
+        "real network transfer",
+        "GPU frame performance",
+        "automatic distance LOD",
+        "G freeze"
+      ]
+    },
+    "browserGPU": "Browser evidence belongs to the integration PR; no physical GPU or phone acceptance is claimed.",
+    "httpC15": "Exact HTTP model checks belong to integration CI; no C15 performance-budget acceptance is claimed.",
+    "physicalMovementAndStructuralSafety": "not covered",
+    "G": "not a G freeze"
+  },
+  "rights": {
+    "authorship": "New access geometry and procedural wood/earth textures independently authored for this project.",
+    "copiedThirdPartyAssets": false,
+    "context": "Existing project gate/apron only; no new rights are claimed over reused inputs.",
+    "licenseGrant": "No new license granted; preserve existing project rights.",
+    "thirdPartyResearch": "Source links and limited citations only; no museum photography, article scan or external mesh redistributed.",
+    "sourceArchive": "Editable source remains private pending complete sanitization and independent review; no engineering source archive is included in this repository."
+  },
+  "sources": [
+    {
+      "title": "《后汉书·志第二十七·百官四》",
+      "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs126.html",
+      "supports": "Gate name and relative direction only."
+    },
+    {
+      "title": "《后汉书·邓寇列传》广阿段",
+      "url": "https://www.shidianguji.com/book/HY2998/chapter/1kvp7qgm08ap2",
+      "supports": "Use of an upper gate tower at another place and date, not access geometry."
+    },
+    {
+      "title": "河南博物院《汉绿釉人形柱陶楼》",
+      "url": "https://www.chnmus.net/ch/collection/appraise/details.html?id=512153066925592911",
+      "supports": "Ladder/stair and balustrade form analogy only, not Yong gate."
+    },
+    {
+      "title": "《河南焦作白庄M51汉墓发掘简报》",
+      "url": "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_36336.shtml",
+      "supports": "Earlier ceramic stair-gallery representation, not full-scale parameters."
+    },
+    {
+      "title": "《三国志·诸葛亮传》刘琦高楼段",
+      "url": "https://www.shidianguji.com/book/HY2999/chapter/1krbpq98l1wkn",
+      "supports": "Removable ladder in a later narrative, not a Yong gate specification."
+    },
+    {
+      "title": "李思思《汉代建筑明器研究》",
+      "url": "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_36398.shtml",
+      "supports": "Funerary/artistic objects must not be treated as scaled building surveys."
+    }
+  ],
+  "sourceReview": "Reuses the bounded research recorded on 2026-11-06; this admission pass does not claim to have reread external full texts.",
+  "restrictions": [
+    "Do not call this an excavated or measured reconstruction of Yong gate stairs.",
+    "Do not install over, replace or edit protected original gate, wall, ground or road assets.",
+    "All public/city writes remain with the authorized single writer.",
+    "Do not treat private CPU tests as production, GPU, C15 or G acceptance."
+  ],
+  "batch": "r2026.11.07-2"
+}

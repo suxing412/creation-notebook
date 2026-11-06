@@ -142,7 +142,7 @@
     "封面说明": "暂用依据分区截图生成的AI概念封面，表达项目意向；不作为当前城景实渲或考古复原依据。"
    },
    "stats": {
-    "模型文件": 122
+    "模型文件": 125
    },
    "state": "建设中",
    "status": "建设中 · 从城垣，走进已建街区",
@@ -180,7 +180,7 @@
      "status": "已入城",
      "statusNote": "门体、通口与接街常显",
      "line": "让门体，真正接回城墙。",
-     "text": "雍门完整近景随全城显示，保持两翼、地坪与接街互相衔接。约49.6米C级工程接驳接到现有主路，未复原历史御道；具体落位、斜出角度与上层登临仍有未知。",
+     "text": "雍门完整近景随全城显示，保持两翼、地坪与接街互相衔接。约49.6米C级工程接驳接到现有主路，未复原历史御道；具体历史落位、斜出角度与登临方式仍有未知。独立登临v1.1为C级使用性设计，不代表历史楼梯复原。",
      "focus": "yong-gate",
      "image": {
       "small": {
@@ -337,7 +337,7 @@
      "unit": "件",
      "chapter": "walls",
      "focus": "walls",
-     "note": "12段既有城垣及广阳、雍门两座门体入城；雍门附件与远近档不另计门数。完整门体随全城显示，内侧接街连到现有模型道路，上层登临仍待建。 约49.6米接街与原路接收片作为雍门配套附件，不单列建模作品。"
+     "note": "12段既有城垣及广阳、雍门两座门体入城；雍门附件与远近档不另计门数。完整门体随全城显示，内侧接街连到现有模型道路，原门没有内置楼梯，独立登临附件另列。 约49.6米接街与原路接收片作为雍门配套附件，不单列建模作品。"
     },
     {
      "title": "城门研究",
@@ -734,6 +734,15 @@
      "chapter": "residential",
      "focus": "zone:Z14",
      "note": "复用井A，井与真实开孔地坪、14米短接路为一个整体，接既有地面。C级设计落位；不新增井家族或住宅院落，住宅总数仍47院。"
+    },
+    {
+     "title": "雍门上层登临附件",
+     "status": "已入城",
+     "count": 1,
+     "unit": "件附件",
+     "chapter": "yong-gate",
+     "focus": "yong-gate",
+     "note": "v1.1独立兼容附件，32次真实升高。本批将一件附件按原门矩阵装入；原门、墙路、地面及住宅47院不变，不新增城门家族。项目配置直接用LOD0，中远档为备档，无随缩放自动LOD切换。浏览器/GPU、实际HTTP/C15、人物物理与结构承载未由本包验收。"
     }
    ],
    "evidence": [
@@ -751,6 +760,12 @@
     }
    ],
    "journal": [
+    {
+     "date": "2026-11-07",
+     "batch": "r2026.11.07-2",
+     "title": "雍门登临v1.1独立附件接入",
+     "text": "v1.1独立兼容附件，32次真实升高。本批将一件附件按原门矩阵装入；原门、墙路、地面及住宅47院不变，不新增城门家族。项目配置直接用LOD0，中远档为备档，无随缩放自动LOD切换。浏览器/GPU、实际HTTP/C15、人物物理与结构承载未由本包验收。 v1嵌墙失败保留，v1.1只修订顶口两柱及斜撑端；不把私有CPU验证当成G冻结。源工程另经隐私审查，不进入仓库。"
+    },
     {
      "date": "2026-11-07",
      "batch": "r2026.11.07-1",
@@ -941,7 +956,8 @@
     "m-luoyang-inner-door-components",
     "m-luoyang-house-roof",
     "m-luoyang-civic-service-court",
-    "m-luoyang-residential-well-court"
+    "m-luoyang-residential-well-court",
+    "m-luoyang-yong-upper-access"
    ],
    "bytes": 0,
    "triangles": 0,
@@ -8665,6 +8681,166 @@
    "card": "library/models/m-luoyang-yong-gate/m-luoyang-yong-gate.asset.json",
    "bytes": 3842004,
    "triangles": 8228,
+   "textured": true
+  },
+  {
+   "id": "m-luoyang-yong-upper-access",
+   "category": "models",
+   "kind": "城市构件",
+   "title": "雍门上层登临",
+   "english": "YONG GATE UPPER ACCESS",
+   "summary": "两段折返木阶与平台连接既有雍门上层。三档保留真实踏步，原门、地面、墙路不改；路线、材料和尺寸均为C级使用性设计。",
+   "alt": "雍门内侧两段折返木阶、立柱与中转平台的近景，顶平台接向既有门楼敞廊；门楼仅作上下文。",
+   "cover": {
+    "small": {
+     "src": "media/library-models-m-luoyang-yong-upper-access-cover-720.webp",
+     "w": 720,
+     "h": 495
+    },
+    "large": {
+     "src": "media/library-models-m-luoyang-yong-upper-access-cover-1800.webp",
+     "w": 1600,
+     "h": 1100
+    },
+    "original": "../docs/library/models/m-luoyang-yong-upper-access/cover.png"
+   },
+   "coverIsShot": false,
+   "gallery": [
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-yong-upper-access-shots-context-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-yong-upper-access-shots-context-1800.webp",
+      "w": 1600,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-yong-upper-access/shots/context.png"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-yong-upper-access-shots-top-port-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-yong-upper-access-shots-top-port-1800.webp",
+      "w": 1600,
+      "h": 1100
+     },
+     "original": "../docs/library/models/m-luoyang-yong-upper-access/shots/top-port.png"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-yong-upper-access-shots-LOD1-detail-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-yong-upper-access-shots-LOD1-detail-1800.webp",
+      "w": 1200,
+      "h": 825
+     },
+     "original": "../docs/library/models/m-luoyang-yong-upper-access/shots/LOD1-detail.png"
+    },
+    {
+     "small": {
+      "src": "media/library-models-m-luoyang-yong-upper-access-shots-LOD2-detail-720.webp",
+      "w": 720,
+      "h": 495
+     },
+     "large": {
+      "src": "media/library-models-m-luoyang-yong-upper-access-shots-LOD2-detail-1800.webp",
+      "w": 1200,
+      "h": 825
+     },
+     "original": "../docs/library/models/m-luoyang-yong-upper-access/shots/LOD2-detail.png"
+    }
+   ],
+   "files": [
+    {
+     "label": "完整近档 · LOD0（默认）",
+     "path": "cities/luoyang/progress-assets/yong-upper-access-C-v1_1/yong-upper-access-C-LOD0.glb",
+     "url": "../docs/cities/luoyang/progress-assets/yong-upper-access-C-v1_1/yong-upper-access-C-LOD0.glb",
+     "format": "GLB",
+     "bytes": 195148,
+     "triangles": 2844,
+     "vertices": 5112,
+     "primitives": 2,
+     "materials": 2,
+     "images": 2,
+     "size": [
+      3.85,
+      6.65,
+      6.85
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "中档备选 · LOD1",
+     "path": "cities/luoyang/progress-assets/yong-upper-access-C-v1_1/yong-upper-access-C-LOD1.glb",
+     "url": "../docs/cities/luoyang/progress-assets/yong-upper-access-C-v1_1/yong-upper-access-C-LOD1.glb",
+     "format": "GLB",
+     "bytes": 167884,
+     "triangles": 2396,
+     "vertices": 4344,
+     "primitives": 2,
+     "materials": 2,
+     "images": 2,
+     "size": [
+      3.85,
+      6.65,
+      6.85
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    },
+    {
+     "label": "远档备选 · LOD2",
+     "path": "cities/luoyang/progress-assets/yong-upper-access-C-v1_1/yong-upper-access-C-LOD2.glb",
+     "url": "../docs/cities/luoyang/progress-assets/yong-upper-access-C-v1_1/yong-upper-access-C-LOD2.glb",
+     "format": "GLB",
+     "bytes": 164524,
+     "triangles": 2348,
+     "vertices": 4248,
+     "primitives": 2,
+     "materials": 2,
+     "images": 2,
+     "size": [
+      3.85,
+      6.65,
+      6.85
+     ],
+     "primsNoUV": 0,
+     "extUsed": []
+    }
+   ],
+   "page": null,
+   "notes": {
+    "已完成的检查": "三档冻结GLB身份复核不变。固定0908c2b基线的主项目入口CPU检查72→73显示节点，原79节点定义及55资产定义不变；切章、回城、证据开关和撤回保留原显示签名，原雍门镜头三宽高比覆盖附件。既有v1.1专项另检32次升高、768身体姿态、151连续扫掠、44承托及8负例，两轮范围分列。",
+    "限制与待解决": "无雍门历史楼梯直接考古证据；未获全城G冻结。浏览器和HTTP检查见本批PR，未验收实体GPU、手机手感或C15性能预算。人体步态、重力、跌落、结构承载和无障碍未覆盖。",
+    "版本": "v1.1只将顶口两柱及对应斜撑端后退40毫米；旧v1约15毫米嵌墙失败保留。v1.1限定测试中与墙及进路身体边界各约25毫米正余量，不表示工程安全余量充足。",
+    "证据与设计": "门名及相对方位、异地城楼使用、陶楼梯与栏杆形式类比分开记录；不从明器尺寸或他门记载推定本门形制。全部材料、折返路线、踏步、平台、护栏与支承尺寸为C设计，不新增城门家族。",
+    "展示与装配": "独立卡默认展示LOD0，文件只含新附件，不含原门。主项目直接使用完整LOD0；LOD1/2保留备档。当前项目入口不会随缩放自动切换三档，不把底层nearUrl接口当作页面已具备的操作。",
+    "预览说明": "封面与图集为同版模型及原门上下文的既有Blender Cycles CPU离线实渲，非网页或GPU截图。仅清除PNG文字与路径元数据，图像像素不变；上下文门楼不在附件GLB内。",
+    "来源与权利": "新附件几何及木、土程序纹理由本项目独立制作。原门仅作为既有项目上下文，不复制博物馆照片或第三方模型。沿用现有项目权利状态，不新授予开放许可；来源合同与限制见模型文件所在目录的source.json及RIGHTS.md。",
+    "加载成本": "固定0908c2b基线的主项目CPU实际读入的原始GLB合计由19,057,896增至19,253,044字节，实例三角由372,230增至375,074；只增加完整LOD0一件。不等于实际HTTP传输、浏览器内存、帧率或C15通过。旧独立入口67节点口径不用于本项目首载。"
+   },
+   "stats": {},
+   "state": "待审",
+   "status": "待审 · v1.1独立C级附件，作为一个节点接入城景，保留原门与墙路；待质量评审。",
+   "public": true,
+   "updated": "2026-11-07T02:02:11+08:00",
+   "related": [
+    "m-luoyang-yong-gate",
+    "p-luoyang"
+   ],
+   "card": "library/models/m-luoyang-yong-upper-access/m-luoyang-yong-upper-access.asset.json",
+   "bytes": 527556,
+   "triangles": 2844,
    "textured": true
   },
   {

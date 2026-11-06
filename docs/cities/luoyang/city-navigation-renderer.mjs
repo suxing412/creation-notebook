@@ -190,6 +190,34 @@ function fitOverviewPose(box, aspect, fov, direction) {
   return { target: center.toArray(), position: center.clone().addScaledVector(backward, distance).toArray() };
 }
 
+// Preserve the authored focus and direction; only back away if the chapter is clipped.
+function fitPreservingPose(pose, box, aspect, fov) {
+  const base = groundPose(pose);
+  if (!base || box.isEmpty() || !Number.isFinite(aspect) || aspect <= 0) return base;
+  const target = new THREE.Vector3(...base.target);
+  const backward = new THREE.Vector3(...base.position).sub(target);
+  const originalDistance = backward.length();
+  if (originalDistance < 1e-8) return base;
+  backward.normalize();
+  const right = new THREE.Vector3(0, 1, 0).cross(backward);
+  if (right.lengthSq() < 1e-12) right.set(1, 0, 0);
+  else right.normalize();
+  const up = backward.clone().cross(right).normalize();
+  const vertical = Math.tan(THREE.MathUtils.degToRad(fov) / 2);
+  const horizontal = vertical * aspect;
+  let required = originalDistance, padded = originalDistance;
+  for (const x of [box.min.x, box.max.x]) for (const y of [box.min.y, box.max.y]) for (const z of [box.min.z, box.max.z]) {
+    const q = new THREE.Vector3(x, y, z).sub(target);
+    const depth = q.dot(backward);
+    const h = Math.abs(q.dot(right)) / horizontal, v = Math.abs(q.dot(up)) / vertical;
+    const nearGuard = Math.max(depth + 0.1, depth / (1 - 1 / 2000) + 1e-6);
+    required = Math.max(required, depth + h, depth + v, nearGuard);
+    padded = Math.max(padded, depth + h / .87, depth + v / .87, nearGuard);
+  }
+  if (required <= originalDistance + 1e-8) return base;
+  return { target: [...base.target], position: target.clone().addScaledVector(backward, padded).toArray() };
+}
+
 function releaseSource(root) {
   const resources = new Set();
   const bitmaps = new Set();
@@ -243,6 +271,7 @@ export async function createCityRenderer({
   let overlayVisible = true;
   let selectedZone = null;
   let fittedZoneId = null;
+  let fittedChapterId = null;
   const heldKeys = new Set();
   const activePointers = new Set();
   let lastFrameTime = null;
@@ -504,6 +533,7 @@ export async function createCityRenderer({
     inputCamera.updateProjectionMatrix();
     if (overviewActive) applyPose(overviewPose(), true);
     else if (fittedZoneId) applyPose(zonePose(zones.get(fittedZoneId)), true);
+    else if (fittedChapterId) applyPose(chapterPose(chapters.get(fittedChapterId)), true);
     internalPixelRatio = Math.min(2, Math.min(4096, renderer.capabilities.maxTextureSize) / Math.max(width, height));
     const targetWidth = Math.max(1, Math.round(width * internalPixelRatio));
     const targetHeight = Math.max(1, Math.round(height * internalPixelRatio));
@@ -668,6 +698,14 @@ export async function createCityRenderer({
     return rebuild(null, cityIds);
   }
 
+  function chapterPose(chapter) {
+    const ids = chapter.nodeIds || manifest.nodes.filter(node => node.chapter === chapter.id).map(node => node.id);
+    const bounds = nodeBounds(ids);
+    const pose = chapter.camera || (!bounds.isEmpty() ? fitPose(bounds) : null);
+    // Other chapters retain their existing close-up composition.
+    return chapter.id === 'yong-gate' ? fitPreservingPose(pose, bounds, camera.aspect, camera.fov) : pose;
+  }
+
   async function focusChapter(id) {
     if (id === 'city' || id === 'overview') return resetView();
     const chapter = chapters.get(id);
@@ -681,11 +719,11 @@ export async function createCityRenderer({
     studyId = null;
     overviewActive = false;
     activeChapter = id;
-    const ids = chapter.nodeIds || manifest.nodes.filter(node => node.chapter === id).map(node => node.id);
-    const bounds = nodeBounds(ids);
-    const pose = chapter.camera || (!bounds.isEmpty() ? fitPose(bounds) : null);
+    const pose = chapterPose(chapter);
     onStatus(pose ? '左键旋转 · 滚轮推拉 · WASD 地面移动 · R 全城总览' : '这一章的资料尚未与城市坐标配准。');
-    return applyPose(pose);
+    const applied = applyPose(pose);
+    if (applied && id === 'yong-gate') fittedChapterId = id;
+    return applied;
   }
 
   async function focusCourtyard(id = selectedId) {
@@ -810,7 +848,7 @@ export async function createCityRenderer({
   function cancelAutomaticMotion() {
     ++navigationToken; ++generation;
     if (flight) { flight = null; syncInputPose(); }
-    overviewActive = false; fittedZoneId = null;
+    overviewActive = false; fittedZoneId = null; fittedChapterId = null;
   }
   function onKeyDown(event) {
     if (event.ctrlKey || event.metaKey || event.altKey || event.isComposing) return;
@@ -822,7 +860,7 @@ export async function createCityRenderer({
     if (!heldKeys.has(event.code)) cancelAutomaticMotion();
     heldKeys.add(event.code); requestRender();
   }
-  function beginNavigation() { ++navigationToken; ++generation; stopMotion(); return navigationToken; }
+  function beginNavigation() { ++navigationToken; ++generation; fittedChapterId = null; stopMotion(); return navigationToken; }
   function onControlStart() { cancelAutomaticMotion(); }
   function onControlChange() {
     orbitPending = true;
@@ -864,6 +902,7 @@ export async function createCityRenderer({
   function onContextLost(event) {
     event.preventDefault();
     contextLost = true;
+    fittedChapterId = null;
     stopMotion();
     cancelAnimationFrame(frame);
     frame = 0;

@@ -5466,5 +5466,58 @@ provenance.installedContentC01 = {
 };
 // midUrl is the delivered medium review LOD. Current city renderer selects far/near only.
 // END Z09 Z14 REVIEWED CONTENT C01
+// BEGIN YONG UPPER ACCESS V1.1 CONTENT
+// Full LOD0 is the runtime asset. Current project adapter has no automatic LOD selection.
+// LOD1/LOD2 remain delivered optional review files, with no nearUrl/midUrl.
+const yongAccessV11Asset = {
+  "id": "yong-upper-access-C-v1_1",
+  "sourcePath": "progress-assets/yong-upper-access-C-v1_1/yong-upper-access-C-LOD0.glb",
+  "path": "progress-assets/yong-upper-access-C-v1_1/yong-upper-access-C-LOD0.glb",
+  "bytes": 195148,
+  "sha256": "d7f84be9b56bec8d13c7f82f165dd657d8e8348cb7a88eff1a9326c0b2512e9b",
+  "tier": "C",
+  "sourceContract": "progress-assets/yong-upper-access-C-v1_1/source.json"
+};
+assets.push((({ path, ...asset }) => ({ ...asset, url: cityURL(path) }))(yongAccessV11Asset));
+nodes.push({
+  "id": "yong-upper-access-C-v1_1",
+  "asset": "yong-upper-access-C-v1_1",
+  "matrix": [
+      -0.01162686012685299,
+      0,
+      -0.9999324083328247,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0.9999324083328247,
+      0,
+      -0.01162686012685299,
+      0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1
+    ],
+  "tier": "C",
+  "initial": true,
+  "name": "access",
+  "chapter": "yong-gate",
+  "title": "雍门上层登临 · C级使用性试案 v1.1",
+  "basis": "无雍门登临直接证据；折返路线、全部尺寸和材料均为C设计。",
+  "replaces": [],
+  "summary": "C级折返登临附件；未见雍门登临直接证据。v1.1柱端后退40毫米，原试案矩阵不变。",
+  "countAsCourtyard": false,
+  "sourceContract": "progress-assets/yong-upper-access-C-v1_1/source.json"
+});
+const yongAccessV11Chapter = chapters.find(chapter => chapter.id === 'yong-gate');
+if (!yongAccessV11Chapter) throw new Error('Missing yong-gate chapter');
+yongAccessV11Chapter.nodeIds.push('yong-upper-access-C-v1_1');
+yongAccessV11Chapter.loadNodeIds.push('yong-upper-access-C-v1_1');
+provenance.sourceContracts.push({"path": "progress-assets/yong-upper-access-C-v1_1/source.json", "sha256": "c3c88ce6f49be590495382833d1d3a64d0a367c7f8e7bb206afcdc43ca8e6b8e"});
+provenance.initialModelBytes += 195148; // Legacy initial manifest budget, not project-page measured HTTP.
+provenance.allCityModelBytes += 195148; // One selected runtime URL; review files excluded.
+// END YONG UPPER ACCESS V1.1 CONTENT
 export const manifest = { assets, nodes, chapters, initialCamera, overview, researchModels, provenance };
 export default manifest;
