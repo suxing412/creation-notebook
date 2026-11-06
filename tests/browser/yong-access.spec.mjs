@@ -48,12 +48,19 @@ async function resizeAndSettle(page,viewport) {
 
 test('Yong access stays installed, fits the chapter after orientation changes and picks real geometry',async({page},info)=>{
   const touch=info.project.name==='mobile',evidence=await instrument(page),views=[];
-  await page.addInitScript(()=>document.addEventListener('luoyang-view-change',event=>{
+  await page.addInitScript(()=>{
+  window.yongPickClicks=[];
+  document.addEventListener('click',event=>{
+    window.yongPickClicks.push({time:event.timeStamp,trusted:event.isTrusted,pointerId:event.pointerId,
+      pointerType:event.pointerType,x:event.clientX,y:event.clientY,path:event.composedPath().map(el=>el.id).filter(Boolean)});
+  },true);
+  document.addEventListener('luoyang-view-change',event=>{
     const canvas=event.target,rect=canvas.parentElement.getBoundingClientRect();
     window.yongResizeFrame={serial:window.yongResizeSerial=(window.yongResizeSerial||0)+1,viewport:[innerWidth,innerHeight],
       visual:[visualViewport.width,visualViewport.height],stage:[Math.floor(rect.width),Math.floor(rect.height)],
       buffer:[canvas.width,canvas.height],pixelRatio:Math.min(devicePixelRatio||1,1.5),state:structuredClone(event.detail)};
-  },true));
+  },true);
+  });
   const gl=await openCity(page,touch);
   await page.emulateMedia({reducedMotion:'reduce'});
   const initial=await state(page);
@@ -87,11 +94,21 @@ test('Yong access stays installed, fits the chapter after orientation changes an
     await expect(page.locator('#pj-note')).toBeVisible();
     await expect(page.locator('#pj-nt')).toHaveText(fixture.title);
     await expect(page.locator('#pj-nl [data-l="C"]')).toHaveCount(1);
-    for(const type of ['pointerdown','pointerup','click']) {
+    for(const type of ['pointerdown','pointerup']) {
       await expect.poll(()=>page.evaluate(({started,type,touch})=>window.luoyangEvidence.inputs.some(e=>
         e.time>=started&&e.target==='pj-canvas'&&e.type===type&&e.trusted&&(!touch||e.pointerType==='touch')),
         {started,type,touch})).toBe(true);
     }
+    const chain=await page.evaluate(started=>window.luoyangEvidence.inputs.filter(e=>e.time>=started&&e.target==='pj-canvas'),started);
+    const down=chain.find(e=>e.type==='pointerdown'),up=chain.find(e=>e.type==='pointerup');
+    expect(up.pointerId).toBe(down.pointerId);
+    expect(Math.hypot(up.clientX-down.clientX,up.clientY-down.clientY)).toBeLessThan(2);
+    // Selection happens on pointerup. Its note can cover the hit point before the
+    // browser's trusted compatibility click (observed on mobile in run 42267665826).
+    await expect.poll(()=>page.evaluate(({down,up,touch})=>window.yongPickClicks.some(e=>
+      e.time>=up.time&&e.trusted&&e.pointerId===down.pointerId&&(!touch||e.pointerType==='touch')&&
+      Math.hypot(e.x-down.clientX,e.y-down.clientY)<2&&(e.path.includes('pj-canvas')||e.path.includes('pj-note'))),
+      {down,up,touch})).toBe(true);
     await click(page.locator('#pj-x'));
     await page.locator('.ly-workspace').screenshot({path:info.outputPath('yong-portrait-installed.png')});
     // A manual gesture relinquishes automatic chapter fitting; resize must not jump.
@@ -128,5 +145,5 @@ test('Yong access stays installed, fits the chapter after orientation changes an
     expect((await state(page)).sceneRevision).toBe(initial.sceneRevision);
     expect(evidence.modelRequests.filter(p=>p.includes('/yong-upper-access-C-v1_1/'))).toEqual([fixture.defaultPath]);
     assertHealthy(evidence);
-  } finally {await attachEvidence(page,info,evidence,{gl,views,fixture,device:touch?'Chromium mobile emulation; not a physical phone':'Chromium SwiftShader; not hardware GPU'});}
+  } finally {await attachEvidence(page,info,evidence,{gl,views,fixture,pickClicks:await page.evaluate(()=>window.yongPickClicks),device:touch?'Chromium mobile emulation; not a physical phone':'Chromium SwiftShader; not hardware GPU'});}
 });
