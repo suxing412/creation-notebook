@@ -1,11 +1,18 @@
 import { expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
+import manifest from '../../docs/cities/luoyang/city-data.mjs';
+const placedNodes = manifest.nodes.filter(n => n.space !== 'local-study' && !['U','X','unknown','excluded','未知','排除'].includes(n.tier ?? manifest.assets.find(a => a.id === n.asset)?.tier));
+const replaced = new Set(placedNodes.flatMap(n => n.replaces || []));
+const cityNodes = placedNodes.filter(n => !replaced.has(n.id));
+export const cityNodeIds = cityNodes.map(n => n.id).sort();
+export const cityModelPaths = [...new Set(cityNodes.map(n => new URL(manifest.assets.find(a => a.id === n.asset).url).pathname.split('/docs/')[1]))].sort();
 export const zones = JSON.parse(readFileSync(new URL('../../docs/cities/luoyang/planning-zones.json', import.meta.url))).zones;
 export const distance = s => Math.hypot(...s.position.map((v, i) => v - s.target[i]));
 export const delta = (a, b) => Math.hypot(...a.map((v, i) => v - b[i]));
 export const state = page => page.evaluate(() => window.luoyangEvidence.last);
 export async function instrument(page) {
-  const evidence = { pageErrors: [], consoleErrors: [], failedResponses: [], failedRequests: [] };
+  const evidence = { modelRequests: [], pageErrors: [], consoleErrors: [], failedResponses: [], failedRequests: [] };
+  page.on('request', r => { if (/\.glb(?:\?|$)/.test(r.url())) evidence.modelRequests.push(new URL(r.url()).pathname.slice(1)); });
   page.on('pageerror', e => evidence.pageErrors.push(String(e)));
   page.on('console', m => { if (m.type() === 'error') evidence.consoleErrors.push({ text: m.text(), url: m.location().url }); });
   page.on('response', r => { if (r.url().startsWith('http://127.0.0.1:8780/') && r.status() >= 400) evidence.failedResponses.push({ url: r.url(), status: r.status() }); });
@@ -37,6 +44,8 @@ export async function openCity(page, touch = false) {
   await expect(page.locator('#pj-stage')).toHaveAttribute('data-state', 'ready');
   await settled(page);
   await expect(page.locator('[data-zone]')).toHaveCount(41);
+  assertFullCity(await state(page));
+  await assertSidebar(page);
   const gl = await page.locator('#pj-canvas').evaluate(canvas => {
     const ctx = canvas.getContext('webgl2');
     return { available: !!ctx && !ctx.isContextLost(), width: canvas.width, height: canvas.height, renderer: ctx?.getParameter(ctx.RENDERER) };
@@ -99,10 +108,27 @@ export async function attachEvidence(page, info, evidence, extra = {}) {
   const runtime = await page.evaluate(() => window.luoyangEvidence);
   await info.attach('browser-evidence', { body: JSON.stringify({ ...evidence, ...extra, runtime }, null, 2), contentType: 'application/json' });
   await page.locator('#pj-stage').screenshot({ path: info.outputPath('city.png') });
+  await page.locator('.ly-workspace').screenshot({ path: info.outputPath('sidebar.png') });
 }
 export function assertHealthy(evidence) {
   expect(evidence.pageErrors).toEqual([]);
   expect(evidence.failedResponses).toEqual([]);
   expect(evidence.consoleErrors).toEqual([]);
   expect(evidence.failedRequests.filter(r => r.error !== 'net::ERR_ABORTED')).toEqual([]);
+}
+
+export function assertFullCity(s) {
+  expect(s.studyId).toBeNull();
+  expect(s.modelNodeIds).toEqual(cityNodeIds);
+  expect(s.modelNodeIds).toEqual(expect.arrayContaining(['market-main','market-N2','storage-main','ground-south','ground-D08','ground-network-ground-stitched']));
+  expect(s.modelNodeIds.some(id => id.startsWith('research-'))).toBe(false);
+}
+export async function assertSidebar(page) {
+  const sidebar = await page.locator('.ly-zone-bar').boundingBox();
+  const stage = await page.locator('#pj-stage').boundingBox();
+  expect(sidebar.x + sidebar.width).toBeLessThanOrEqual(stage.x);
+  expect(Math.abs(sidebar.y-stage.y)).toBeLessThan(2);
+  expect(Math.abs(sidebar.height-stage.height)).toBeLessThan(2);
+  expect(stage.width).toBeGreaterThan(150);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
 }

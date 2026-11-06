@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { zones, distance, delta, state, instrument, openCity, settled, selectZone, assertFits, attachEvidence, assertHealthy } from './helpers.mjs';
+import { zones, distance, delta, state, instrument, openCity, settled, selectZone, assertFits, attachEvidence, assertHealthy, assertFullCity, assertSidebar } from './helpers.mjs';
 
 test('touch entry, narrow layout, group navigation and orientation fitting', async ({ page }, info) => {
   const evidence = await instrument(page), gl = await openCity(page, true);
@@ -9,6 +9,8 @@ test('touch entry, narrow layout, group navigation and orientation fitting', asy
   for (const id of ['Z18','Z23','Z41']) {
     const s = await selectZone(page, id, true);
     await assertFits(page, zones.find(z => z.id === id), s);
+    assertFullCity(s);
+    await assertSidebar(page);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
   }
   await page.setViewportSize({ width: 812, height: 375 });

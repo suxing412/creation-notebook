@@ -1,17 +1,27 @@
 import { test, expect } from '@playwright/test';
-import { zones, distance, delta, state, instrument, openCity, settled, selectZone, assertFits, drag, attachEvidence, assertHealthy } from './helpers.mjs';
+import { zones, distance, delta, state, instrument, openCity, settled, selectZone, assertFits, drag, attachEvidence, assertHealthy, cityModelPaths, assertFullCity, assertSidebar } from './helpers.mjs';
 
 test('first load, all 41 zones, flight, controls and compass', async ({ page }, info) => {
   const evidence = await instrument(page), gl = await openCity(page);
   const overview = await state(page);
+  assertFullCity(overview);
+  expect([...new Set(evidence.modelRequests)].sort()).toEqual(cityModelPaths);
+  const initialRequests = [...evidence.modelRequests];
   expect(overview.chapter).toBe('city');
   expect(overview.position[2]).toBeLessThan(overview.target[2]);
   expect(Math.abs(overview.compassDegrees)).toBeCloseTo(180, 5);
   await selectZone(page, 'Z03');
   expect(await page.evaluate(() => window.luoyangEvidence.flights)).toBeGreaterThan(0);
-  // Visit every planning region, including every group and lazily loaded existing asset.
+  // Every region changes the camera while the complete city scene stays intact.
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  for (const zone of zones) await assertFits(page, zone, await selectZone(page, zone.id));
+  for (const zone of zones) {
+    const selected = await selectZone(page, zone.id);
+    await assertFits(page, zone, selected);
+    assertFullCity(selected);
+    expect(selected.sceneRevision).toBe(overview.sceneRevision);
+    expect(evidence.modelRequests).toEqual(initialRequests);
+  }
+  await assertSidebar(page);
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await selectZone(page, 'Z03');
   const before = await state(page), rotated = await drag(page);
@@ -59,44 +69,62 @@ test('first load, all 41 zones, flight, controls and compass', async ({ page }, 
   assertHealthy(evidence);
 });
 
-test('late asset completion cannot override manual navigation', async ({ page }, info) => {
-  const evidence = await instrument(page);
-  let release, started;
-  const gate = new Promise(resolve => { release = resolve; });
-  const requested = new Promise(resolve => { started = resolve; });
-  await page.route('**/market-cluster.glb', async route => { started(); await gate; await route.continue(); });
-  await openCity(page);
-  await selectZone(page, 'Z03');
-  await page.locator('[data-zone="Z13"]').click();
-  await requested;
-  const manual = await drag(page);
-  expect(manual.zoneId).toBe('Z03');
-  const response = page.waitForResponse('**/market-cluster.glb');
-  release();
-  await response;
-  await expect(page.locator('#pj-status')).toContainText('此视图暂不能打开，当前画面保持。');
-  const after = await settled(page, 'Z03');
-  expect(delta(after.position,manual.position)).toBeLessThan(1e-5);
-  expect(delta(after.target,manual.target)).toBeLessThan(1e-5);
-  await selectZone(page, 'Z13');
-  await attachEvidence(page, info, evidence);
-  assertHealthy(evidence);
-});
+for (const cancel of ['manual control', 'zone switch']) {
+  test(`late research completion cannot override ${cancel}`, async ({ page }, info) => {
+    const evidence = await instrument(page);
+    let release, started;
+    const gate = new Promise(resolve => { release = resolve; });
+    const requested = new Promise(resolve => { started = resolve; });
+    await page.route('**/study-lingtai-*.glb', async route => { started(); await gate; await route.continue(); });
+    await openCity(page);
+    const initial = await selectZone(page, 'Z03');
+    await page.locator('.pj-chapters [data-ch="ritual"]').click();
+    await requested;
+    const manual = cancel === 'manual control' ? await drag(page) : await selectZone(page, 'Z06');
+    assertFullCity(manual);
+    expect(manual.sceneRevision).toBe(initial.sceneRevision);
+    release();
+    if (cancel === 'manual control') {
+      await expect(page.locator('#pj-status')).toContainText('此视图暂不能打开，当前画面保持。');
+      const after = await settled(page, 'Z03');
+      assertFullCity(after);
+      expect(delta(after.position,manual.position)).toBeLessThan(1e-5);
+      expect(delta(after.target,manual.target)).toBeLessThan(1e-5);
+      expect(after.sceneRevision).toBe(initial.sceneRevision);
+    }
+    // Wait for the original parse/rebuild to finish before issuing another navigation.
+    await expect.poll(async () => (await state(page)).pendingSceneLoads).toBe(0);
+    const completed = await settled(page, manual.zoneId);
+    assertFullCity(completed);
+    expect(completed.sceneRevision).toBe(initial.sceneRevision);
+    expect(delta(completed.position,manual.position)).toBeLessThan(1e-5);
+    // Only now retry the independent research view; it must commit exactly once.
+    await page.locator('.pj-chapters [data-ch="ritual"]').click();
+    await expect.poll(async () => (await state(page)).studyId).toBe('research-lingtai');
+    const study = await settled(page);
+    expect(study.modelNodeIds).toEqual(['research-lingtai']);
+    expect(study.sceneRevision).toBe(initial.sceneRevision + 1);
+    assertFullCity(await selectZone(page, 'Z13'));
+    await attachEvidence(page, info, evidence);
+    assertHealthy(evidence);
+  });
+}
 
-test('failed lazy model keeps the current view and retries', async ({ page }, info) => {
+test('failed initial city load retries on the same page', async ({ page }, info) => {
   const evidence = await instrument(page);
   let fail = true, attempts = 0;
   await page.route('**/granary-city-LOD0.glb', route => {
     attempts++;
     return fail ? route.fulfill({ status: 503, body: 'intentional browser-test failure' }) : route.continue();
   });
-  await openCity(page);
-  const before = await selectZone(page, 'Z03');
-  await page.locator('[data-zone="Z06"]').click();
-  await expect(page.locator('#pj-status')).toContainText('失败');
-  expect((await state(page)).zoneId).toBe('Z03');
-  expect(delta((await state(page)).position,before.position)).toBeLessThan(1e-5);
+  await page.goto('/asset.html?id=p-luoyang', { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('#pj-stage')).toHaveAttribute('data-state', 'failed');
+  await expect(page.locator('#pj-status')).toContainText('可重试');
   fail = false;
+  await page.locator('.ly-overview').click();
+  await expect(page.locator('#pj-stage')).toHaveAttribute('data-state', 'ready');
+  assertFullCity(await settled(page, null));
+  expect(await page.locator('#pj-canvas').evaluate(canvas => !canvas.getContext('webgl2').isContextLost())).toBe(true);
   await selectZone(page, 'Z06');
   expect(attempts).toBeGreaterThanOrEqual(2);
   await attachEvidence(page, info, evidence, { intentionalFailure: 'granary-city-LOD0.glb:503', attempts });
@@ -117,7 +145,7 @@ test('research view returns to the city and history return stays interactive', a
   await page.locator('.pj-chapters [data-ch="ritual"]').click();
   await expect.poll(async () => (await state(page)).studyId).not.toBeNull();
   await selectZone(page, 'Z03');
-  expect((await state(page)).studyId).toBeNull();
+  assertFullCity(await state(page));
   const instance = await page.evaluate(() => window.luoyangEvidence.instance);
   await page.locator('.crumbs a').first().click();
   await page.waitForURL('**/index.html');
