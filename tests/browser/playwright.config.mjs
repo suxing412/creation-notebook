@@ -5,7 +5,7 @@ export default defineConfig({
   fullyParallel: false,
   workers: 1,
   retries: 0,
-  maxFailures: 1,
+  maxFailures: 0, // Collect every result; any failure still fails the required run.
   timeout: 240_000,
   expect: { timeout: 45_000 },
   reporter: [['line'], ['html', { open: 'never' }], ['json', { outputFile: 'test-results/results.json' }]],

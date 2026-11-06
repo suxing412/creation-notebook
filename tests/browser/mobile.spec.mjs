@@ -44,10 +44,12 @@ test('touch entry, narrow layout, group navigation and orientation fitting', asy
   await page.screenshot({ path: info.outputPath('overview-touch-target.png') });
   const overviewBox = await overviewButton.boundingBox();
   expect(await overviewButton.evaluate(el => { const r = el.getBoundingClientRect(); return el === document.elementFromPoint(r.x+r.width/2,r.y+r.height/2); })).toBe(true);
-  // Keep the drag and following tap on one CDP input driver; do not mix independent touch sequences.
-  await session.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: overviewBox.x+overviewBox.width/2, y: overviewBox.y+overviewBox.height/2, id: 1 }] });
-  await page.waitForTimeout(80); // A complete finger tap, after compositor presentation.
-  await session.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  // Ask Chromium to deliver one complete touch gesture (not a DOM click).
+  // https://chromedevtools.github.io/devtools-protocol/tot/Input/#method-synthesizeTapGesture
+  await session.send('Input.synthesizeTapGesture', { x: overviewBox.x+overviewBox.width/2, y: overviewBox.y+overviewBox.height/2, duration: 100, tapCount: 1, gestureSourceType: 'touch' });
+  for (const type of ['pointerdown','pointerup']) {
+    expect(await page.evaluate(type => window.luoyangEvidence.inputs.some(e => e.type === type && e.target === 'city' && e.pointerType === 'touch' && e.trusted),type)).toBe(true);
+  }
   await expect.poll(async () => page.evaluate(() => window.luoyangEvidence.inputs.some(e => e.type === 'click' && e.target === 'city' && e.trusted))).toBe(true);
   const overview = await settled(page, null);
   expect(Math.abs(overview.compassDegrees)).toBeCloseTo(180, 5);

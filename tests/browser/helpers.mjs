@@ -22,8 +22,8 @@ export async function instrument(page) {
     for (const type of ['pointerdown','pointerup','pointercancel','touchstart','touchend','touchcancel','click']) {
       document.addEventListener(type, e => {
         const target = e.target.closest?.('button,canvas,select');
-        if (!target) return;
-        window.luoyangEvidence.inputs.push({ type, target: target.dataset.focus || target.id, time: e.timeStamp, pointerType: e.pointerType, pointerId: e.pointerId, isPrimary: e.isPrimary, defaultPrevented: e.defaultPrevented, trusted: e.isTrusted });
+        if (!target && type !== 'click') return;
+        window.luoyangEvidence.inputs.push({ type, target: target?.dataset.focus || target?.id || null, element: e.target.tagName, elementId: e.target.id, clientX: e.clientX ?? e.changedTouches?.[0]?.clientX, clientY: e.clientY ?? e.changedTouches?.[0]?.clientY, scrollY, time: e.timeStamp, pointerType: e.pointerType, pointerId: e.pointerId, isPrimary: e.isPrimary, defaultPrevented: e.defaultPrevented, trusted: e.isTrusted });
         if (window.luoyangEvidence.inputs.length > 80) window.luoyangEvidence.inputs.shift();
       }, true);
     }
