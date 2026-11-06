@@ -39,10 +39,14 @@ test('touch entry, narrow layout, group navigation and orientation fitting', asy
   const overviewButton = page.locator('.ly-overview');
   // Bring the side controls below the fixed site header after orientation changes.
   await page.locator('.ly-workspace').evaluate(el => el.scrollIntoView({ block: 'start', behavior: 'instant' }));
+  // The browser's compositor must present the scroll before a raw CDP tap.
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  await page.screenshot({ path: info.outputPath('overview-touch-target.png') });
   const overviewBox = await overviewButton.boundingBox();
   expect(await overviewButton.evaluate(el => { const r = el.getBoundingClientRect(); return el === document.elementFromPoint(r.x+r.width/2,r.y+r.height/2); })).toBe(true);
   // Keep the drag and following tap on one CDP input driver; do not mix independent touch sequences.
   await session.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: overviewBox.x+overviewBox.width/2, y: overviewBox.y+overviewBox.height/2, id: 1 }] });
+  await page.waitForTimeout(80); // A complete finger tap, after compositor presentation.
   await session.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
   await expect.poll(async () => page.evaluate(() => window.luoyangEvidence.inputs.some(e => e.type === 'click' && e.target === 'city' && e.trusted))).toBe(true);
   const overview = await settled(page, null);
