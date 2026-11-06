@@ -18,7 +18,21 @@ export async function instrument(page) {
   page.on('response', r => { if (r.url().startsWith('http://127.0.0.1:8780/') && r.status() >= 400) evidence.failedResponses.push({ url: r.url(), status: r.status() }); });
   page.on('requestfailed', r => evidence.failedRequests.push({ url: r.url(), error: r.failure()?.errorText }));
   await page.addInitScript(() => {
-    window.luoyangEvidence = { instance: crypto.randomUUID(), frames: 0, flights: 0, shows: [], inputs: [], last: null };
+    window.luoyangEvidence = { instance: crypto.randomUUID(), frames: 0, flights: 0, shows: [], inputs: [], cancellations: [], dispatched: [], last: null };
+    const watched = new Set(['pointerdown','pointerup','touchstart','touchend','mousedown','mouseup','click']);
+    const descriptor = Object.getOwnPropertyDescriptor(Event.prototype,'preventDefault');
+    Object.defineProperty(Event.prototype,'preventDefault',{...descriptor,value:function(...args) {
+      const before=this.defaultPrevented, result=Reflect.apply(descriptor.value,this,args);
+      try {
+        if(watched.has(this.type)) window.luoyangEvidence.cancellations.push({type:this.type,time:this.timeStamp,cancelable:this.cancelable,before,after:this.defaultPrevented,target:this.target?.id || this.target?.tagName,stack:new Error().stack});
+      } catch {}
+      return result;
+    }});
+    for(const type of watched) window.addEventListener(type,event=>{
+      const entry={type,time:event.timeStamp,target:event.target?.dataset?.focus || event.target?.id || event.target?.tagName,cancelable:event.cancelable,trusted:event.isTrusted,clientX:event.clientX ?? event.changedTouches?.[0]?.clientX,clientY:event.clientY ?? event.changedTouches?.[0]?.clientY,scrollY};
+      window.luoyangEvidence.dispatched.push(entry);
+      setTimeout(()=>{entry.defaultPreventedAfter=event.defaultPrevented;entry.targetConnected=event.target?.isConnected;},0);
+    },{capture:true,passive:true});
     for (const type of ['pointerdown','pointerup','pointercancel','touchstart','touchend','touchcancel','click']) {
       document.addEventListener(type, e => {
         const target = e.target.closest?.('button,canvas,select');

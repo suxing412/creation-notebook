@@ -3,6 +3,19 @@ import { zones, distance, delta, state, instrument, openCity, settled, selectZon
 
 test('touch entry, narrow layout, group navigation and orientation fitting', async ({ page }, info) => {
   const evidence = await instrument(page), gl = await openCity(page, true);
+  const session = await page.context().newCDPSession(page);
+  let traceActive=false;
+  async function finishInputTrace() {
+    if(!traceActive) return;
+    const completed=new Promise(resolve=>session.once('Tracing.tracingComplete',resolve));
+    await session.send('Tracing.end');
+    const result=await completed; traceActive=false;
+    const chunks=[];
+    while(true) { const chunk=await session.send('IO.read',{handle:result.stream}); chunks.push(Buffer.from(chunk.data,chunk.base64Encoded?'base64':'utf8')); if(chunk.eof) break; }
+    await session.send('IO.close',{handle:result.stream});
+    await info.attach('chromium-input-trace',{body:Buffer.concat(chunks),contentType:'application/json'});
+    expect(result.dataLossOccurred).not.toBe(true);
+  }
   try {
   await expect(page.locator('#pj-open')).toBeHidden();
   await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -13,6 +26,7 @@ test('touch entry, narrow layout, group navigation and orientation fitting', asy
     await assertSidebar(page);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
   }
+  await session.send('Tracing.start',{categories:'input,latencyInfo,devtools.timeline,blink.user_timing',transferMode:'ReturnAsStream'}); traceActive=true;
   await page.setViewportSize({ width: 812, height: 375 });
   const landscape = await selectZone(page, 'Z03', true);
   await assertFits(page, zones.find(z => z.id === 'Z03'), landscape);
@@ -21,7 +35,6 @@ test('touch entry, narrow layout, group navigation and orientation fitting', asy
   await assertFits(page, zones.find(z => z.id === 'Z03'), await settled(page, 'Z03'));
   await page.locator('#pj-canvas').scrollIntoViewIfNeeded();
   const box = await page.locator('#pj-canvas').boundingBox(), beforeTouch = await state(page);
-  const session = await page.context().newCDPSession(page);
   const point = { x: box.x+box.width*.4, y: box.y+box.height*.5, id: 1 };
   await session.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [point] });
   await session.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: point.x+60, y: point.y+12, id: 1 }] });
@@ -46,7 +59,11 @@ test('touch entry, narrow layout, group navigation and orientation fitting', asy
   expect(await overviewButton.evaluate(el => { const r = el.getBoundingClientRect(); return el === document.elementFromPoint(r.x+r.width/2,r.y+r.height/2); })).toBe(true);
   // Ask Chromium to deliver one complete touch gesture (not a DOM click).
   // https://chromedevtools.github.io/devtools-protocol/tot/Input/#method-synthesizeTapGesture
+  await page.evaluate(()=>performance.mark('overview-touch-start'));
   await session.send('Input.synthesizeTapGesture', { x: overviewBox.x+overviewBox.width/2, y: overviewBox.y+overviewBox.height/2, duration: 100, tapCount: 1, gestureSourceType: 'touch' });
+  await page.waitForTimeout(1000);
+  await page.evaluate(()=>performance.mark('overview-touch-end'));
+  await finishInputTrace();
   for (const type of ['pointerdown','pointerup']) {
     expect(await page.evaluate(type => window.luoyangEvidence.inputs.some(e => e.type === type && e.target === 'city' && e.pointerType === 'touch' && e.trusted),type)).toBe(true);
   }
@@ -56,6 +73,7 @@ test('touch entry, narrow layout, group navigation and orientation fitting', asy
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
   assertHealthy(evidence);
   } finally {
+    await finishInputTrace();
     const viewport = await page.evaluate(() => ({ width: innerWidth, height: innerHeight, scale: visualViewport?.scale, scrollY }));
     await attachEvidence(page, info, evidence, { gl, viewport, device: 'Chromium mobile emulation; not a physical phone' });
   }

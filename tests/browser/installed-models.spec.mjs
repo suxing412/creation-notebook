@@ -24,6 +24,7 @@ for (const model of models) {
       await expect(page.locator('#pv-k')).toHaveText(file.label);
       await expect(page.locator('.vi span').filter({hasText:new RegExp(`^${model.materials} 材质$`)})).toHaveCount(1);
       responses.push({path:file.path,status:response.status(),bytes:body.length,sha256:sha256(body)});
+      await page.locator('#stage').evaluate(el=>el.scrollIntoView({block:'center',behavior:'instant'}));
       await page.locator('#stage').screenshot({path:info.outputPath(`variant-${index}.png`)});
     }
     await variant(0, () => page.goto(`/asset.html?id=${model.id}`, {waitUntil:'domcontentloaded'}));
