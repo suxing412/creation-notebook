@@ -29,7 +29,7 @@ export default defineConfig({
     timeout: 30_000,
   },
   projects: [
-    { name: 'mobile', testMatch: 'mobile.spec.mjs', use: { viewport: { width: 375, height: 812 }, isMobile: true, hasTouch: true } },
-    { name: 'desktop', testMatch: ['desktop.spec.mjs', 'installed-models.spec.mjs', 'motion.spec.mjs'] },
+    { name: 'mobile', testMatch: ['mobile.spec.mjs', 'yong-access.spec.mjs'], use: { viewport: { width: 375, height: 812 }, isMobile: true, hasTouch: true } },
+    { name: 'desktop', testMatch: ['desktop.spec.mjs', 'installed-models.spec.mjs', 'motion.spec.mjs', 'yong-access.spec.mjs'] },
   ],
 });
