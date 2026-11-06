@@ -20,9 +20,9 @@ test('touch entry, narrow layout, group navigation and orientation fitting', asy
   await page.locator('#pj-canvas').scrollIntoViewIfNeeded();
   const box = await page.locator('#pj-canvas').boundingBox(), beforeTouch = await state(page);
   const session = await page.context().newCDPSession(page);
-  const point = { x: box.x+box.width*.4, y: box.y+box.height*.5 };
+  const point = { x: box.x+box.width*.4, y: box.y+box.height*.5, id: 1 };
   await session.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [point] });
-  await session.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: point.x+60, y: point.y+12 }] });
+  await session.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: point.x+60, y: point.y+12, id: 1 }] });
   await session.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
   await expect.poll(async () => delta((await state(page)).position,beforeTouch.position)).toBeGreaterThan(1);
   const manual = await settled(page);
@@ -34,8 +34,14 @@ test('touch entry, narrow layout, group navigation and orientation fitting', asy
   await expect.poll(() => page.evaluate(() => [innerWidth, innerHeight, visualViewport.width, visualViewport.height])).toEqual([375,812,375,812]);
   await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
   await page.screenshot({ path: info.outputPath('portrait-before-overview.png') });
-  await page.locator('.ly-overview').tap();
-  await expect.poll(async () => page.evaluate(() => window.luoyangEvidence.inputs.some(e => e.type === 'click' && e.target === 'city'))).toBe(true);
+  const overviewButton = page.locator('.ly-overview');
+  await overviewButton.scrollIntoViewIfNeeded();
+  const overviewBox = await overviewButton.boundingBox();
+  expect(await overviewButton.evaluate(el => { const r = el.getBoundingClientRect(); return el === document.elementFromPoint(r.x+r.width/2,r.y+r.height/2); })).toBe(true);
+  // Keep the drag and following tap on one CDP input driver; do not mix independent touch sequences.
+  await session.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: overviewBox.x+overviewBox.width/2, y: overviewBox.y+overviewBox.height/2, id: 1 }] });
+  await session.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  await expect.poll(async () => page.evaluate(() => window.luoyangEvidence.inputs.some(e => e.type === 'click' && e.target === 'city' && e.trusted))).toBe(true);
   const overview = await settled(page, null);
   expect(Math.abs(overview.compassDegrees)).toBeCloseTo(180, 5);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);

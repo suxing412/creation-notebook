@@ -5,6 +5,7 @@ export default defineConfig({
   fullyParallel: false,
   workers: 1,
   retries: 0,
+  maxFailures: 1,
   timeout: 240_000,
   expect: { timeout: 45_000 },
   reporter: [['line'], ['html', { open: 'never' }], ['json', { outputFile: 'test-results/results.json' }]],
@@ -28,7 +29,7 @@ export default defineConfig({
     timeout: 30_000,
   },
   projects: [
-    { name: 'desktop', testMatch: 'desktop.spec.mjs' },
     { name: 'mobile', testMatch: 'mobile.spec.mjs', use: { viewport: { width: 375, height: 812 }, isMobile: true, hasTouch: true } },
+    { name: 'desktop', testMatch: 'desktop.spec.mjs' },
   ],
 });

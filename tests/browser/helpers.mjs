@@ -12,11 +12,11 @@ export async function instrument(page) {
   page.on('requestfailed', r => evidence.failedRequests.push({ url: r.url(), error: r.failure()?.errorText }));
   await page.addInitScript(() => {
     window.luoyangEvidence = { instance: crypto.randomUUID(), frames: 0, flights: 0, shows: [], inputs: [], last: null };
-    for (const type of ['pointerdown','pointerup','pointercancel','touchstart','touchend','click']) {
+    for (const type of ['pointerdown','pointerup','pointercancel','touchstart','touchend','touchcancel','click']) {
       document.addEventListener(type, e => {
         const target = e.target.closest?.('button,canvas,select');
         if (!target) return;
-        window.luoyangEvidence.inputs.push({ type, target: target.dataset.focus || target.id, time: e.timeStamp, pointerType: e.pointerType, defaultPrevented: e.defaultPrevented, trusted: e.isTrusted });
+        window.luoyangEvidence.inputs.push({ type, target: target.dataset.focus || target.id, time: e.timeStamp, pointerType: e.pointerType, pointerId: e.pointerId, isPrimary: e.isPrimary, defaultPrevented: e.defaultPrevented, trusted: e.isTrusted });
         if (window.luoyangEvidence.inputs.length > 80) window.luoyangEvidence.inputs.shift();
       }, true);
     }
