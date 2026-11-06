@@ -136,7 +136,14 @@ async function project(page,world) {
 }
 test('an out-and-back drag never selects the courtyard beneath its starting point',async({page},info)=>{
   const evidence=await instrument(page); await openCity(page); await selectZone(page,'Z14'); await workspace(page);
-  for(let i=0;i<12 && distance(await state(page))>1100;i++) { await wheel(page,-250); await settled(page); }
+  for(let i=0;i<12 && distance(await state(page))>1100;i++) {
+    const beforeDistance=distance(await state(page));
+    await wheel(page,-250);
+    // The wheel acknowledgement can precede the next rendered view state.
+    await expect.poll(async()=>distance(await state(page))).toBeLessThan(beforeDistance*.99);
+    await settled(page);
+  }
+  expect(distance(await settled(page))).toBeLessThanOrEqual(1100);
   const world=[717.730015807616,5.049999872843425,-982.1333320264201];
   let point=await project(page,world); await page.mouse.click(point.x,point.y);
   await expect(page.locator('#pj-nt')).toHaveText('住宅院落 01');
