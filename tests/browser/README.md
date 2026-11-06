@@ -17,3 +17,13 @@ The mobile overview tap remains an open follow-up (run 42247087399): trusted
 touch events were observed but no click. Its diagnostics and continuous-drag
 input correction are being reviewed separately; mobile success and physical
 phone behavior are not claimed by the model publication.
+
+Mobile follow-up candidate: use one touchscreen input path for zone and overview
+taps, and sample the same 60px drag over multiple real-time steps. Keep the
+original trusted-click, overview, ground-target, compass and orientation checks;
+also require fresh trusted events and a measured drag trajectory. Chromium input
+traces and event-cancellation diagnostics remain attached for review. Run
+42247087399 showed debugger synthesizeTapGesture did not enter Aura's gesture
+recognizer, while the single-jump drag produced a 17,000px/s fling. This candidate
+does not change application input handlers and does not certify rapid flicks or
+physical-phone behavior. Its mobile result remains pending until CI completes.
