@@ -28,7 +28,7 @@ const c = d.categories.find(x => x.id === a.category);
 document.title = `${a.title} · 数字资产库`;
 if (a.category === 'projects' && a.chapters?.length) {
   // large projects get their own page: live scene, chapters, progress, research notes, member assets
-  const { renderProject } = await import('./project.mjs');
+  const { renderProject } = await import(a.id === 'p-luoyang' ? './luoyang-project.mjs' : './project.mjs');
   renderProject({ main, a, c, d, esc, img, card, date });
 } else {
 const shots = [a.cover, ...a.gallery].filter(Boolean);

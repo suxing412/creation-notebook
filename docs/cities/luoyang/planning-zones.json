@@ -1,0 +1,6617 @@
+{
+  "schema": "luoyang-fullcity-planning-zones-v1",
+  "target_year_ce": 180,
+  "status": "actionable_design_draft_not_installed",
+  "source_sha": "eeee4c5e8e344cf58454e7cf7164bb5c38a859ad",
+  "frame": {
+    "id": "legacy-scene-E01",
+    "units": "schematic_m",
+    "origin": "既有工程原点不变，非考古实测点",
+    "world_axes": "E东、N北、H上",
+    "gltf": "[E,H,-N]",
+    "primary_coordinate_frame_for_this_plan": "legacy-scene-E01",
+    "A73_role": "仅独立考古比较图，不作为本规划注册或原点"
+  },
+  "display": {
+    "orientation": "南上、北下、东左、西右",
+    "world_axes_unchanged": true,
+    "screen_transform_cartesian": "[-E,-N]"
+  },
+  "read_me": [
+    "功能区边界不是新院墙；规划不修改网站/仓库/Space。",
+    "允许合理推测，历史可信度与设计推荐程度独立；所有historical_world_geometry保持原值。",
+    "基础区Z01–Z18完整覆盖现城；Z19–Z23为宫内子区与连接叠层；Z24–Z41为近远郊候选。"
+  ],
+  "global_design_rules": {
+    "not_claimed_han_regulations": true,
+    "road_reserve_halfwidth_m": 12.5,
+    "city_wall_inside_reserve_m": 25,
+    "fixed_model_no_build_buffer_m": 12.5,
+    "grain_m": 25,
+    "fire_separation_study_m": 50,
+    "water_flow_or_absolute_height_assigned": false,
+    "rules": [
+      "烟火按多风况验证，不能以东南方位替代风向证据。",
+      "住宅取水、井厕和污水分离需随地形/地下水判断，不编造汉代卫生条例。",
+      "粮仓、冶铸、窑、畜圈不同后勤，货运避礼仪入口，留装卸和回转。",
+      "B参考路和已建地面分别保留；参考线可作规划走廊，不全称已建道路；未建支路只提出接口目标。"
+    ]
+  },
+  "zones": [
+    {
+      "id": "Z01",
+      "name": "城垣与十二门接口保留带",
+      "layer_type": "base_reserve",
+      "parent_zone": null,
+      "category": "reserve",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2316.327,
+              3775.51
+            ],
+            [
+              2418.367,
+              3724.49
+            ],
+            [
+              2459.184,
+              3520.408
+            ],
+            [
+              2469.388,
+              2602.041
+            ],
+            [
+              2642.857,
+              2520.408
+            ],
+            [
+              2479.592,
+              663.265
+            ],
+            [
+              2459.184,
+              -30.612
+            ],
+            [
+              0.0,
+              20.408
+            ],
+            [
+              -30.612,
+              2653.061
+            ],
+            [
+              -40.816,
+              2755.102
+            ],
+            [
+              71.429,
+              3591.837
+            ],
+            [
+              1387.755,
+              3540.816
+            ],
+            [
+              1408.163,
+              3948.98
+            ],
+            [
+              2316.327,
+              3775.51
+            ]
+          ],
+          [
+            [
+              24.716894787241795,
+              44.900585274094226
+            ],
+            [
+              2434.9234400198707,
+              -5.103293222906704
+            ],
+            [
+              2454.6242303553367,
+              664.728404915183
+            ],
+            [
+              2616.4250877835693,
+              2505.21675065273
+            ],
+            [
+              2444.5636527932415,
+              2586.0932445655644
+            ],
+            [
+              2434.2114896364747,
+              3517.7950303153325
+            ],
+            [
+              2396.2504529169537,
+              3707.5974238227755
+            ],
+            [
+              2308.2397445801985,
+              3751.6027779911537
+            ],
+            [
+              1431.6968829969383,
+              3919.0327688285442
+            ],
+            [
+              1411.4893067047024,
+              3514.877282267183
+            ],
+            [
+              93.18364513819228,
+              3565.975014256664
+            ],
+            [
+              -15.648925112139896,
+              2754.678113117088
+            ],
+            [
+              -5.626493777389355,
+              2654.4528175634546
+            ],
+            [
+              24.716894787241795,
+              44.900585274094226
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        -40.816,
+        -30.612,
+        2642.857,
+        3948.98
+      ],
+      "anchorEN": [
+        0,
+        2875
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 314602,
+      "envelope_size_m": [
+        2684,
+        3980
+      ],
+      "planning_use": "城墙、门道与未来接口检查；宽25米为设计留白，不是汉代城内驰道宽。",
+      "record_ids": [
+        "city_enclosure",
+        "gate_shangxi",
+        "gate_yong",
+        "gate_guangyang",
+        "gate_xia",
+        "gate_gu",
+        "gate_shangdong",
+        "gate_zhongdong",
+        "gate_mao",
+        "gate_jin",
+        "gate_xiaoyuan",
+        "gate_pingcheng",
+        "gate_kaiyang"
+      ],
+      "source_ids": [
+        "R01",
+        "R21",
+        "R24"
+      ],
+      "source_links": [
+        {
+          "id": "R01",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs126.html"
+        },
+        {
+          "id": "R21",
+          "url": "https://k.sina.cn/article_2145932192_7fe853a001900gcbp.html"
+        },
+        {
+          "id": "R24",
+          "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/643503e53f1c0.pdf"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "城址与门名较高；逐段180年墙线和南垣闭合低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "高：优先锁定现物与通行，复用已建资产完善接口和日常使用关系。",
+      "layout_reasoning": "沿既有城界内侧留服务空间；十二门沿用旧点而不反推门楼形式。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "南垣沿用现城推断闭合段，不声称实测发现。",
+        "现城门体与墙节点均保持原矩阵。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-earthwall-family",
+          "title": "夯土墙身家族",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-earthwall-family/m-luoyang-earthwall-family.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-shangxi-gate",
+          "title": "上西门",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-shangxi-gate/m-luoyang-shangxi-gate.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-yong-gate",
+          "title": "雍门",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-yong-gate/m-luoyang-yong-gate.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-guangyang-gate",
+          "title": "广阳门",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-guangyang-gate/m-luoyang-guangyang-gate.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-xia-gate",
+          "title": "夏门",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-xia-gate/m-luoyang-xia-gate.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-gu-gate",
+          "title": "谷门",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-gu-gate/m-luoyang-gu-gate.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-shangdong-gate",
+          "title": "上东门",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-shangdong-gate/m-luoyang-shangdong-gate.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-zhongdong-gate",
+          "title": "中东门",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-zhongdong-gate/m-luoyang-zhongdong-gate.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-mao-gate",
+          "title": "旄门",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-mao-gate/m-luoyang-mao-gate.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-jin-gate",
+          "title": "津门",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-jin-gate/m-luoyang-jin-gate.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-xiaoyuan-gate",
+          "title": "小苑门",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-xiaoyuan-gate/m-luoyang-xiaoyuan-gate.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-pingcheng-gate",
+          "title": "平城门",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-pingcheng-gate/m-luoyang-pingcheng-gate.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-kaiyang-gate",
+          "title": "开阳门",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-kaiyang-gate/m-luoyang-kaiyang-gate.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 1
+    },
+    {
+      "id": "Z02",
+      "name": "B参考路通行预留带",
+      "layer_type": "base_reserve",
+      "parent_zone": null,
+      "category": "reserve",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              377.2093488682432,
+              502.296
+            ],
+            [
+              380.64575325666027,
+              1385.459
+            ],
+            [
+              9.129130584519514,
+              1385.459
+            ],
+            [
+              8.838435228921947,
+              1410.459
+            ],
+            [
+              380.7430287422846,
+              1410.459
+            ],
+            [
+              385.4201690962764,
+              2612.493696607768
+            ],
+            [
+              -5.2243048341872775,
+              2619.8642925442537
+            ],
+            [
+              -5.515115729303291,
+              2644.8742290221007
+            ],
+            [
+              520.6438053433822,
+              2634.9467756356894
+            ],
+            [
+              520.1721946566179,
+              2609.9512243643107
+            ],
+            [
+              410.41852309385706,
+              2612.0220330397688
+            ],
+            [
+              407.4895200554016,
+              1859.2622242202428
+            ],
+            [
+              894.6229057841382,
+              1850.1140310520418
+            ],
+            [
+              895.663151660795,
+              2061.285575131964
+            ],
+            [
+              920.662848339205,
+              2061.1624248680364
+            ],
+            [
+              919.620896548702,
+              1849.6445776024716
+            ],
+            [
+              1814.1327299487134,
+              1832.8459608725934
+            ],
+            [
+              1818.9059339469686,
+              2606.1110897004955
+            ],
+            [
+              1723.9836631837213,
+              2609.9592592889812
+            ],
+            [
+              1724.9963368162787,
+              2634.938740711019
+            ],
+            [
+              1819.0603418419394,
+              2631.125365402987
+            ],
+            [
+              1824.1805058100745,
+              3460.598451381948
+            ],
+            [
+              1681.378,
+              3511.598989307496
+            ],
+            [
+              1681.378,
+              3871.340740333117
+            ],
+            [
+              1706.378,
+              3866.5654464434674
+            ],
+            [
+              1706.378,
+              3529.2170106925037
+            ],
+            [
+              1849.2894941899253,
+              3478.177548618052
+            ],
+            [
+              1844.0545634179407,
+              2630.1120942013686
+            ],
+            [
+              2444.3449550596547,
+              2605.776190616242
+            ],
+            [
+              2444.5636527932415,
+              2586.0932445655644
+            ],
+            [
+              2456.9957935863035,
+              2580.2427874270556
+            ],
+            [
+              1843.90015552297,
+              2605.097818498877
+            ],
+            [
+              1839.1303084458104,
+              1832.3765151652608
+            ],
+            [
+              2030.1341759872605,
+              1828.7895299014021
+            ],
+            [
+              2038.5207546592271,
+              2591.9743532350035
+            ],
+            [
+              2063.519245340773,
+              2591.6996467649965
+            ],
+            [
+              2055.130526947796,
+              1828.3201072467732
+            ],
+            [
+              2556.090744049326,
+              1818.9122510622235
+            ],
+            [
+              2553.8961817444024,
+              1793.9490561174835
+            ],
+            [
+              2054.855812144646,
+              1803.3208582430952
+            ],
+            [
+              2040.222558268652,
+              471.684
+            ],
+            [
+              2448.9464946536073,
+              471.684
+            ],
+            [
+              2448.2112058344073,
+              446.684
+            ],
+            [
+              2039.9478352128613,
+              446.684
+            ],
+            [
+              2035.0743390135335,
+              3.1922638128186924
+            ],
+            [
+              2010.0785282509794,
+              3.71084488080934
+            ],
+            [
+              2014.9463258032802,
+              446.684
+            ],
+            [
+              1959.184,
+              446.684
+            ],
+            [
+              1959.184,
+              471.684
+            ],
+            [
+              2015.2210488590708,
+              471.684
+            ],
+            [
+              2029.85946118411,
+              1803.7902808977242
+            ],
+            [
+              1826.3196504427567,
+              1807.612686753351
+            ],
+            [
+              919.4977344699302,
+              1824.6424824920837
+            ],
+            [
+              910.6400595564444,
+              26.520586109117257
+            ],
+            [
+              885.6423109960263,
+              27.039207380056126
+            ],
+            [
+              887.8603076205259,
+              477.296
+            ],
+            [
+              402.1122626323046,
+              477.296
+            ],
+            [
+              400.39947636450006,
+              37.10640423189823
+            ],
+            [
+              375.40130511437576,
+              37.62503427226176
+            ],
+            [
+              377.11207338261886,
+              477.296
+            ],
+            [
+              19.68908123354162,
+              477.296
+            ],
+            [
+              19.398385877944055,
+              502.296
+            ],
+            [
+              377.2093488682432,
+              502.296
+            ]
+          ],
+          [
+            [
+              407.39223452681154,
+              1834.259643157369
+            ],
+            [
+              405.6943910001887,
+              1397.9103626253723
+            ],
+            [
+              402.2095381179289,
+              502.296
+            ],
+            [
+              887.9834593786368,
+              502.296
+            ],
+            [
+              894.4997437053663,
+              1825.1119359416539
+            ],
+            [
+              407.39223452681154,
+              1834.259643157369
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        -5.515115729303291,
+        3.1922638128186924,
+        2556.090744049326,
+        3871.340740333117
+      ],
+      "anchorEN": [
+        900,
+        1850
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 358379,
+      "envelope_size_m": [
+        2562,
+        3868
+      ],
+      "planning_use": "原B参考线两侧各12.5米规划通行预留；未建段只是候选，非现有铺装宽度，也非二十四街复原。",
+      "record_ids": [
+        "streets_24"
+      ],
+      "source_ids": [
+        "R01"
+      ],
+      "source_links": [
+        {
+          "id": "R01",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs126.html"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "本层是原B研究参考线，不全等于实建地面；二十四街有文献，线位未知",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "高：优先锁定现物与通行，复用已建资产完善接口和日常使用关系。",
+      "layout_reasoning": "用原路网组织可达性；留装卸与转向余地，新增支路必须另图审批。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "道路原LineString坐标逐点不改，不直线化、不补伪史实路网。",
+        "保留带遇既有资产12.5米保护包络则让行，不挪资产。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 1
+    },
+    {
+      "id": "Z03",
+      "name": "北宫总体候选区",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "palace",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1733.0095456050174,
+              2634.613883476578
+            ],
+            [
+              1724.9963368162787,
+              2634.938740711019
+            ],
+            [
+              1723.9836631837213,
+              2609.9592592889812
+            ],
+            [
+              1732.6445014909077,
+              2609.608147012415
+            ],
+            [
+              1724.49,
+              2051.02
+            ],
+            [
+              510.204,
+              2081.633
+            ],
+            [
+              540.816,
+              3479.592
+            ],
+            [
+              1744.898,
+              3448.98
+            ],
+            [
+              1733.0095456050174,
+              2634.613883476578
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        510.204,
+        2051.02,
+        1744.898,
+        3479.592
+      ],
+      "anchorEN": [
+        1100,
+        2900
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 1690963,
+      "envelope_size_m": [
+        1235,
+        1429
+      ],
+      "planning_use": "预留宫廷组团与南、东侧门控/水工关系，暂不填满院落。",
+      "record_ids": [
+        "north_palace",
+        "north_palace_wall_segments",
+        "han_palace_east_drain_2025"
+      ],
+      "source_ids": [
+        "R11",
+        "R24",
+        "R25"
+      ],
+      "source_links": [
+        {
+          "id": "R11",
+          "url": "https://www.thepaper.cn/newsDetail_forward_26569466"
+        },
+        {
+          "id": "R24",
+          "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/643503e53f1c0.pdf"
+        },
+        {
+          "id": "R25",
+          "url": "https://www.sohu.com/a/975311315_121119016"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "东汉北宫及东南墙存在有较强证据；旧全宫包络及内部布局低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "沿用现城旧示意宫界作为设计占位；后期考古框与文献重建框各自保留，不平均。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "约660×1398米后期墙框不等于180年宫区；约1000×1600米文献重建也不是实测。",
+        "新增东墙水道只可在区东侧做关系方案；东掖门魏晋现址不得套入。"
+      ],
+      "alternatives_and_movement_margin": [
+        "在本旧包络内先做可拆组团；待共同控制点取得后另做考古约束版本，不重注册现城。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-deyang-hall",
+          "title": "德阳殿空间研究",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-deyang-hall/m-luoyang-deyang-hall.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-yutang-halls",
+          "title": "玉堂前后殿关系",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-yutang-halls/m-luoyang-yutang-halls.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-admission-court",
+          "title": "无名宫院通行组合",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-admission-court/m-luoyang-palace-admission-court.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-guard",
+          "title": "宫门值守核验切片",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-guard/m-luoyang-palace-guard.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-sidehall",
+          "title": "宫廷侧廊庑",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-sidehall/m-luoyang-palace-sidehall.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-paired-que",
+          "title": "宫前土木对阙",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-paired-que/m-luoyang-palace-paired-que.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-waterway-interface",
+          "title": "宫墙水道三段接口",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-waterway-interface/m-luoyang-palace-waterway-interface.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z04",
+      "name": "南宫总体候选区",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "palace",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1967.5060465259617,
+              471.684
+            ],
+            [
+              1959.184,
+              471.684
+            ],
+            [
+              1959.184,
+              446.684
+            ],
+            [
+              1967.0343521922723,
+              446.684
+            ],
+            [
+              1959.184,
+              30.612
+            ],
+            [
+              969.388,
+              61.224
+            ],
+            [
+              1020.408,
+              1683.673
+            ],
+            [
+              1989.796,
+              1653.061
+            ],
+            [
+              1967.5060465259617,
+              471.684
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        969.388,
+        30.612,
+        1989.796,
+        1683.673
+      ],
+      "anchorEN": [
+        1450,
+        850
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 1590385,
+      "envelope_size_m": [
+        1020,
+        1653
+      ],
+      "planning_use": "保留南宫主要使用空间、平城门联系与东侧官署接口。",
+      "record_ids": [
+        "south_palace"
+      ],
+      "source_ids": [
+        "R04",
+        "R24"
+      ],
+      "source_links": [
+        {
+          "id": "R04",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs09.html"
+        },
+        {
+          "id": "R24",
+          "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/643503e53f1c0.pdf"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "南半城位置较可信；宫界形状、大小、内部坐标低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "沿用旧示意范围，以南北两分区组织礼仪、内廷和服务，无意宣称殿名已定位。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "不能用北魏阊阖门、太极殿格局补齐。",
+        "规划区边线不自动生成宫墙。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-palace-admission-court",
+          "title": "无名宫院通行组合",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-admission-court/m-luoyang-palace-admission-court.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-guard",
+          "title": "宫门值守核验切片",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-guard/m-luoyang-palace-guard.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-sidehall",
+          "title": "宫廷侧廊庑",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-sidehall/m-luoyang-palace-sidehall.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z05",
+      "name": "永安宫及东北园观候选",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "garden",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1788.1862025970013,
+              3500.0
+            ],
+            [
+              1750.0,
+              3513.637834033327
+            ],
+            [
+              1750.0,
+              3850.0
+            ],
+            [
+              1793.1027483938728,
+              3850.0
+            ],
+            [
+              2125.0,
+              3786.603723296547
+            ],
+            [
+              2125.0,
+              3500.0
+            ],
+            [
+              1788.1862025970013,
+              3500.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        1750.0,
+        3500.0,
+        2125.0,
+        3850.0
+      ],
+      "anchorEN": [
+        1900,
+        3675
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 120469,
+      "envelope_size_m": [
+        375,
+        350
+      ],
+      "planning_use": "以园观和疏布宫院为主，宫院占地首期不超过区内三分之一。",
+      "record_ids": [
+        "yongan"
+      ],
+      "source_ids": [
+        "R03",
+        "R04"
+      ],
+      "source_links": [
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        },
+        {
+          "id": "R04",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs09.html"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "永安在北宫东北有文献；具体范围低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "主选位于北宫旧包络东北外侧，西接北门方向，东与现仓组错开；东北关系不只相对宫区中心。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "不把园观全部硬铺成宫殿；与武库保留至少50米可调空地。"
+      ],
+      "alternatives_and_movement_margin": [
+        "旧示意点E2194/N3082在宫区中心东北而非外缘东北；保留为Z18东部的次选比较，不与主选同时建。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z06",
+      "name": "太仓与现仓组保留区",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "storage",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2125.0,
+              3500.0
+            ],
+            [
+              2125.0,
+              3786.603723296547
+            ],
+            [
+              2308.2397445801985,
+              3751.6027779911537
+            ],
+            [
+              2396.2504529169537,
+              3707.5974238227755
+            ],
+            [
+              2434.2114896364747,
+              3517.7950303153325
+            ],
+            [
+              2434.409210688448,
+              3500.0
+            ],
+            [
+              2125.0,
+              3500.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        2125.0,
+        3500.0,
+        2434.409210688448,
+        3786.603723296547
+      ],
+      "anchorEN": [
+        2300,
+        3675
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 73798,
+      "envelope_size_m": [
+        309,
+        287
+      ],
+      "planning_use": "原仓储组原位保留；规划多仓间空地、卸货院与出入口候选。",
+      "record_ids": [
+        "taicang"
+      ],
+      "source_ids": [
+        "R03",
+        "R09",
+        "R10",
+        "R22"
+      ],
+      "source_links": [
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        },
+        {
+          "id": "R09",
+          "url": "https://zh.wikisource.org/zh-hans/水經注集釋訂訛_(四庫全書本)/卷16"
+        },
+        {
+          "id": "R10",
+          "url": "https://www.cssn.cn/lsx/lsx_kgx/202210/t20221024_5552600.shtml"
+        },
+        {
+          "id": "R22",
+          "url": "https://paper.people.com.cn/rmrb/pc/content/202603/25/content_30147047.html"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "机构有据，东北位置为学术复原；非13座新见后期仓窖",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "高：优先锁定现物与通行，复用已建资产完善接口和日常使用关系。",
+      "layout_reasoning": "北东边缘靠外围运输，货流沿原东路接入，不穿北宫。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "禁止拆分现仓组为多处史实仓址。",
+        "仓外留50米规划周转/火隔缓冲，不等于汉制。",
+        "保持现仓组世界矩阵，补接口优先于新建仓体。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-storage-functional",
+          "title": "仓储作业功能组",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/model-library/m-storage-functional.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [
+        "storage-main"
+      ],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 1
+    },
+    {
+      "id": "Z07",
+      "name": "武库及守备预留区",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "storage",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1950.0,
+              3500.0
+            ],
+            [
+              2125.0,
+              3500.0
+            ],
+            [
+              2434.409210688448,
+              3500.0
+            ],
+            [
+              2437.4647429538713,
+              3225.0
+            ],
+            [
+              1950.0,
+              3225.0
+            ],
+            [
+              1950.0,
+              3500.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        1950.0,
+        3225.0,
+        2437.4647429538713,
+        3500.0
+      ],
+      "anchorEN": [
+        2250,
+        3450
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 133633,
+      "envelope_size_m": [
+        487,
+        275
+      ],
+      "planning_use": "武库主候选与守备轮驻、训练留地；五营仅区域归属，不划五座实名营区。",
+      "record_ids": [
+        "wuku",
+        "five_camps"
+      ],
+      "source_ids": [
+        "R01",
+        "R04",
+        "R10"
+      ],
+      "source_links": [
+        {
+          "id": "R01",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs126.html"
+        },
+        {
+          "id": "R04",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs09.html"
+        },
+        {
+          "id": "R10",
+          "url": "https://www.cssn.cn/lsx/lsx_kgx/202210/t20221024_5552600.shtml"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "武库东北位置属复原；北军机构确实，营地具体位置未知",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "避开太仓粮储和永安园观核心；货运可走东北原路外围。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "武库与粮仓间至少50米可调防火/安全空地；火工不得与粮储贴靠。",
+        "五营落点为设计推荐，不冒称驻防考古分布。"
+      ],
+      "alternatives_and_movement_margin": [
+        "五营训练可向城北郊Z34外缘另选低密服务区；不在祭祀院内设营。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-wuku",
+          "title": "武库收纳与点验",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-wuku/m-luoyang-wuku.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z08",
+      "name": "上东门内社稷主候选",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "ritual",
+      "planning_geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                2100.0,
+                2350.0
+              ],
+              [
+                2100.0,
+                2594.715474869631
+              ],
+              [
+                2456.9957935863035,
+                2580.2427874270556
+              ],
+              [
+                2616.4250877835693,
+                2505.21675065273
+              ],
+              [
+                2602.779685789583,
+                2350.0
+              ],
+              [
+                2100.0,
+                2350.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                2100.0,
+                2825.0
+              ],
+              [
+                2441.90915352176,
+                2825.0
+              ],
+              [
+                2444.3449550596547,
+                2605.776190616242
+              ],
+              [
+                2100.0,
+                2619.7360103019087
+              ],
+              [
+                2100.0,
+                2825.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        2100.0,
+        2350.0,
+        2616.4250877835693,
+        2825.0
+      ],
+      "anchorEN": [
+        2300,
+        2550
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 187265,
+      "envelope_size_m": [
+        516,
+        475
+      ],
+      "planning_use": "社稷低密礼仪留地；步广里仅外围竞争线索，不与坛体等同。",
+      "record_ids": [
+        "sheji",
+        "buguang_candidate"
+      ],
+      "source_ids": [
+        "R06",
+        "R09",
+        "R12",
+        "R13",
+        "R24"
+      ],
+      "source_links": [
+        {
+          "id": "R06",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs108.html"
+        },
+        {
+          "id": "R09",
+          "url": "https://zh.wikisource.org/zh-hans/水經注集釋訂訛_(四庫全書本)/卷16"
+        },
+        {
+          "id": "R12",
+          "url": "https://sites.lynu.edu.cn/hlwh/info/1023/1668.htm"
+        },
+        {
+          "id": "R13",
+          "url": "https://zh.wikisource.org/zh-hans/河南志"
+        },
+        {
+          "id": "R24",
+          "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/643503e53f1c0.pdf"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "迁上东门内关系较可信；具体坛界和里址低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "采用建武二十一年迁上东门内的文献关系；保留南侧城市服务通达。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "不机械套左祖右社。",
+        "上东门道路走廊不因礼区关闭；礼区出入口另在保留带接口设计。"
+      ],
+      "alternatives_and_movement_margin": [
+        "对其他宗庙社稷布局保留Z12为备选；备选不同时当作第二处确定社稷。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z09",
+      "name": "开阳门内三公与官署候选",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "civic",
+      "planning_geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                2000.0,
+                446.684
+              ],
+              [
+                2014.9463258032802,
+                446.684
+              ],
+              [
+                2010.0785282509794,
+                3.71084488080934
+              ],
+              [
+                2000.0,
+                3.9199412767540793
+              ],
+              [
+                2000.0,
+                446.684
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                2000.0,
+                900.0
+              ],
+              [
+                2019.92778007363,
+                900.0
+              ],
+              [
+                2015.2210488590708,
+                471.684
+              ],
+              [
+                2000.0,
+                471.684
+              ],
+              [
+                2000.0,
+                900.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                2475.3074071336046,
+                900.0
+              ],
+              [
+                2454.6242303553367,
+                664.728404915183
+              ],
+              [
+                2448.9464946536073,
+                471.684
+              ],
+              [
+                2040.222558268652,
+                471.684
+              ],
+              [
+                2044.929289483211,
+                900.0
+              ],
+              [
+                2475.3074071336046,
+                900.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                2188.94270616882,
+                0.0
+              ],
+              [
+                2035.0743390135335,
+                3.1922638128186924
+              ],
+              [
+                2039.9478352128613,
+                446.684
+              ],
+              [
+                2448.2112058344073,
+                446.684
+              ],
+              [
+                2435.073535797787,
+                0.0
+              ],
+              [
+                2188.94270616882,
+                0.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        2000.0,
+        0.0,
+        2475.3074071336046,
+        900.0
+      ],
+      "anchorEN": [
+        2225,
+        600
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 371722,
+      "envelope_size_m": [
+        475,
+        900
+      ],
+      "planning_use": "组织三公府候选与附属办公、门前候入和文书服务；不强定三府地块。",
+      "record_ids": [
+        "three_excellencies",
+        "situ",
+        "other_offices"
+      ],
+      "source_ids": [
+        "R01",
+        "R02",
+        "R03"
+      ],
+      "source_links": [
+        {
+          "id": "R01",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs126.html"
+        },
+        {
+          "id": "R02",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs123.html"
+        },
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "文献相对关系中；三府址与南宫苍龙阙具体轴线未知",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "在南宫东/东南、开阳门内，保留东宫门面对面关系的可调空间。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "司徒对苍龙阙只约束关系，不在未知宫门处捏造精确轴。",
+        "人流从开阳门进入候入空间；物资装卸走侧/后场，不穿仪式正面。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内三府院落位置允许150–250米调整；若苍龙阙假说变化，可上移到Z11南缘，现路不动。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z10",
+      "name": "东部生产与官作候选",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "workshop",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2075.0,
+              1450.0
+            ],
+            [
+              2523.658961106562,
+              1450.0
+            ],
+            [
+              2477.505205041466,
+              925.0
+            ],
+            [
+              2075.0,
+              925.0
+            ],
+            [
+              2075.0,
+              1450.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        2075.0,
+        925.0,
+        2523.658961106562,
+        1450.0
+      ],
+      "anchorEN": [
+        2325,
+        1200
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 223431,
+      "envelope_size_m": [
+        449,
+        525
+      ],
+      "planning_use": "先布轻作、米作与库院，冶铸仅小型可撤回研究区；染作等设独立水处理院。",
+      "record_ids": [
+        "east_foundry",
+        "official_workshops"
+      ],
+      "source_ids": [
+        "R01",
+        "R03",
+        "R15"
+      ],
+      "source_links": [
+        {
+          "id": "R01",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs126.html"
+        },
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        },
+        {
+          "id": "R15",
+          "url": "https://www.sohu.com/a/620471046_121119016"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "东部冶铸有综述线索但180年层未定；官作存在、地址未知",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "靠东路装卸运输，和南宫、住宅间留隔离；按工序而非强配官署专名。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "热作与住屋、木仓优先预留50米以上可调整空地；实际防火仍需材料与风工况分析。",
+        "不得声称东南恒为下风；风向、烟羽、高程另做验证。",
+        "清洁取水、染作排水和生活污水分开；未确定水源前不宣称功能已通。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-hand-mill",
+          "title": "人力石磨 A/B",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-hand-mill/m-luoyang-hand-mill.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-foot-pestle",
+          "title": "足碓与踏台",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-foot-pestle/m-luoyang-foot-pestle.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z11",
+      "name": "东部住宅与官署配套",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "residential",
+      "planning_geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                1875.0,
+                1806.698486958609
+              ],
+              [
+                2029.85946118411,
+                1803.7902808977242
+              ],
+              [
+                2025.9716873010216,
+                1450.0
+              ],
+              [
+                1985.964691076268,
+                1450.0
+              ],
+              [
+                1989.796,
+                1653.061
+              ],
+              [
+                1875.0,
+                1656.686106925194
+              ],
+              [
+                1875.0,
+                1806.698486958609
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                1875.0,
+                2350.0
+              ],
+              [
+                2035.8617173094808,
+                2350.0
+              ],
+              [
+                2030.1341759872605,
+                1828.7895299014021
+              ],
+              [
+                1875.0,
+                1831.7028950093961
+              ],
+              [
+                1875.0,
+                2350.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                2100.0,
+                2350.0
+              ],
+              [
+                2602.779685789583,
+                2350.0
+              ],
+              [
+                2556.090744049326,
+                1818.9122510622235
+              ],
+              [
+                2055.130526947796,
+                1828.3201072467732
+              ],
+              [
+                2060.863226719062,
+                2350.0
+              ],
+              [
+                2100.0,
+                2350.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                2075.0,
+                1450.0
+              ],
+              [
+                2050.9731967106027,
+                1450.0
+              ],
+              [
+                2054.855812144646,
+                1803.3208582430952
+              ],
+              [
+                2553.8961817444024,
+                1793.9490561174835
+              ],
+              [
+                2523.658961106562,
+                1450.0
+              ],
+              [
+                2075.0,
+                1450.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        1875.0,
+        1450.0,
+        2602.779685789583,
+        2350.0
+      ],
+      "anchorEN": [
+        2275,
+        1950
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 557389,
+      "envelope_size_m": [
+        728,
+        900
+      ],
+      "planning_use": "中低密住宅、驿宿/文书服务、官署机动扩展，保持临街与后勤分区。",
+      "record_ids": [
+        "residential",
+        "other_offices"
+      ],
+      "source_ids": [
+        "R01",
+        "R03",
+        "R13"
+      ],
+      "source_links": [
+        {
+          "id": "R01",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs126.html"
+        },
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        },
+        {
+          "id": "R13",
+          "url": "https://zh.wikisource.org/zh-hans/河南志"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "住宅普遍存在；具体街坊、身份与密度低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "处于宫城外与城东通路之间，承接日常人口但不堵南北货流。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "不套北魏里坊网，不建封闭整齐大坊作为史实。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-courtyard-family",
+          "title": "住宅院落模块组",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/model-library/m-courtyard-family.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-ordinary-house-types",
+          "title": "普通住屋与门房四型",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-ordinary-house-types/m-luoyang-ordinary-house-types.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-court-layout-kit",
+          "title": "普通院落两种组装",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-court-layout-kit/m-luoyang-court-layout-kit.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-workyard-shed",
+          "title": "开敞作业棚与足碓院",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-workyard-shed/m-luoyang-workyard-shed.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-residential-life",
+          "title": "连续住宅生活片区",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-residential-life/m-luoyang-residential-life.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-a1-neighborhood",
+          "title": "八宅三铺街区 A1",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-a1-neighborhood/m-luoyang-a1-neighborhood.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-well-family",
+          "title": "井栏与井架",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/model-library/well-study/m-well-family.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z12",
+      "name": "宗庙竞争布局留地",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "ritual",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              450.0,
+              1775.0
+            ],
+            [
+              875.0,
+              1775.0
+            ],
+            [
+              875.0,
+              1350.0
+            ],
+            [
+              450.0,
+              1350.0
+            ],
+            [
+              450.0,
+              1775.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        450.0,
+        1350.0,
+        875.0,
+        1775.0
+      ],
+      "anchorEN": [
+        650,
+        1550
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 180625,
+      "envelope_size_m": [
+        425,
+        425
+      ],
+      "planning_use": "高庙/世祖庙两对象在区内分别作可移动院组占位；不强画唯一东西次序。",
+      "record_ids": [
+        "ancestral_high",
+        "ancestral_shizu"
+      ],
+      "source_ids": [
+        "R06",
+        "R12"
+      ],
+      "source_links": [
+        {
+          "id": "R06",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs108.html"
+        },
+        {
+          "id": "R12",
+          "url": "https://sites.lynu.edu.cn/hlwh/info/1023/1668.htm"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "庙制存在有文献；具体选址竞争解释强，区界低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "选南宫西侧、避开现住宅与金市，具备礼仪进出和门外集合余地。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "本主选只是一种设计，不能称确证高庙址或世祖庙址。",
+        "两庙并非一座合并庙；本分区只是共同备选留地。"
+      ],
+      "alternatives_and_movement_margin": [
+        "东侧Z11南段可作为另一布局候选；两方案互斥，下一轮以门向、礼仪路径比较。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z13",
+      "name": "金市与既有5店3摊",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "market",
+      "planning_geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                50.0,
+                2250.0
+              ],
+              [
+                384.0096990813455,
+                2250.0
+              ],
+              [
+                382.2587403401078,
+                1800.0
+              ],
+              [
+                50.0,
+                1800.0
+              ],
+              [
+                50.0,
+                2250.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                450.0,
+                2250.0
+              ],
+              [
+                450.0,
+                1858.4638924006647
+              ],
+              [
+                407.4895200554016,
+                1859.2622242202428
+              ],
+              [
+                409.0098883310312,
+                2250.0
+              ],
+              [
+                450.0,
+                2250.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                450.0,
+                1800.0
+              ],
+              [
+                407.2589295897936,
+                1800.0
+              ],
+              [
+                407.39223452681154,
+                1834.259643157369
+              ],
+              [
+                450.0,
+                1833.4594843498774
+              ],
+              [
+                450.0,
+                1800.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        50.0,
+        1800.0,
+        450.0,
+        2250.0
+      ],
+      "anchorEN": [
+        225,
+        2000
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 167686,
+      "envelope_size_m": [
+        400,
+        450
+      ],
+      "planning_use": "以现5店3摊为样板，划临街零售、内侧装卸与市场管理空间。",
+      "record_ids": [
+        "jin_market"
+      ],
+      "source_ids": [
+        "R09",
+        "R10",
+        "R13"
+      ],
+      "source_links": [
+        {
+          "id": "R09",
+          "url": "https://zh.wikisource.org/zh-hans/水經注集釋訂訛_(四庫全書本)/卷16"
+        },
+        {
+          "id": "R10",
+          "url": "https://www.cssn.cn/lsx/lsx_kgx/202210/t20221024_5552600.shtml"
+        },
+        {
+          "id": "R13",
+          "url": "https://zh.wikisource.org/zh-hans/河南志"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "市名和区域回投存在后期文本风险；现位置为设计已有",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "高：优先锁定现物与通行，复用已建资产完善接口和日常使用关系。",
+      "layout_reasoning": "沿原西侧纵向通路组织人流，卸货不占门前主通行面。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "2渲染节点不是2家店；保留5店3摊计数。",
+        "至少预留一条可连续通行的环/回车通道，后续车型转弯验证。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-market-functional",
+          "title": "市肆功能组",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/model-library/m-market-functional.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-market-modular-assembly",
+          "title": "市肆模块与组装",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-market-modular-assembly/m-luoyang-market-modular-assembly.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-market-frontage",
+          "title": "八铺四棚店前线",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-market-frontage/m-luoyang-market-frontage.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [
+        "market-main",
+        "market-N2"
+      ],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 1
+    },
+    {
+      "id": "Z14",
+      "name": "既有47院与生活扩展区",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "residential",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              475.0,
+              1300.0
+            ],
+            [
+              825.0,
+              1300.0
+            ],
+            [
+              825.0,
+              675.0
+            ],
+            [
+              475.0,
+              675.0
+            ],
+            [
+              475.0,
+              1300.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        475.0,
+        675.0,
+        825.0,
+        1300.0
+      ],
+      "anchorEN": [
+        650,
+        1000
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 218750,
+      "envelope_size_m": [
+        350,
+        625
+      ],
+      "planning_use": "47物理院落原位，先完善门槛、地坪、井与污水/圈厕的隔离关系，再渐次补生活设施。",
+      "record_ids": [
+        "residential"
+      ],
+      "source_ids": [
+        "R13"
+      ],
+      "source_links": [
+        {
+          "id": "R13",
+          "url": "https://zh.wikisource.org/zh-hans/河南志"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "住宅类型可类比；现院址与密度为C设计",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "高：优先锁定现物与通行，复用已建资产完善接口和日常使用关系。",
+      "layout_reasoning": "现有院落都落本区，作为全城尺度与体验校准区。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "现渲染数据住宅近远档重复不加算，新建候选不计入47院。",
+        "井厕按地下水与排水研究留隔离，不先宣称固定安全米数。",
+        "院间通行、作业回退和门扇扫掠不得被新填充占用。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-courtyard-family",
+          "title": "住宅院落模块组",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/model-library/m-courtyard-family.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-ordinary-house-types",
+          "title": "普通住屋与门房四型",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-ordinary-house-types/m-luoyang-ordinary-house-types.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-court-layout-kit",
+          "title": "普通院落两种组装",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-court-layout-kit/m-luoyang-court-layout-kit.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-workyard-shed",
+          "title": "开敞作业棚与足碓院",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-workyard-shed/m-luoyang-workyard-shed.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-residential-life",
+          "title": "连续住宅生活片区",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-residential-life/m-luoyang-residential-life.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-a1-neighborhood",
+          "title": "八宅三铺街区 A1",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-a1-neighborhood/m-luoyang-a1-neighborhood.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-well-family",
+          "title": "井栏与井架",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/model-library/well-study/m-well-family.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [
+        "C02-018",
+        "C02-019",
+        "C02-020",
+        "C02-021",
+        "C02-022",
+        "C02-023",
+        "C02-024",
+        "C02-025",
+        "C02-026",
+        "C02-001",
+        "C02-002",
+        "C02-027",
+        "C02-028",
+        "C02-029",
+        "C02-030",
+        "C02-031",
+        "C02-003",
+        "C02-004",
+        "C02-005",
+        "C02-006",
+        "C02-007",
+        "C02-008",
+        "C02-009",
+        "C02-010",
+        "C02-011",
+        "C02-012",
+        "C02-013",
+        "C02-032",
+        "C02-014",
+        "C02-015",
+        "C02-016",
+        "C02-017",
+        "C02-033",
+        "C02-034",
+        "C02-035",
+        "C02-036",
+        "FROZEN-D08-S1",
+        "FROZEN-D08-S2",
+        "FROZEN-D08-S3",
+        "FROZEN-D08-S4",
+        "FROZEN-D08-M",
+        "FROZEN-D08-E",
+        "FROZEN-D08-NW",
+        "FROZEN-D08-NE",
+        "C_NORTH_INFILL_01",
+        "C_NORTH_INFILL_01-near",
+        "C_NORTH_INFILL_02",
+        "C_NORTH_INFILL_02-near",
+        "C_NORTH_INFILL_03",
+        "C_NORTH_INFILL_03-near"
+      ],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 1
+    },
+    {
+      "id": "Z15",
+      "name": "西南直里园与服务留地",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "garden",
+      "planning_geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                377.78406800138936,
+                650.0
+              ],
+              [
+                377.2093488682432,
+                502.296
+              ],
+              [
+                19.398385877944055,
+                502.296
+              ],
+              [
+                17.680911205816738,
+                650.0
+              ],
+              [
+                377.78406800138936,
+                650.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                875.0,
+                650.0
+              ],
+              [
+                875.0,
+                502.296
+              ],
+              [
+                402.2095381179289,
+                502.296
+              ],
+              [
+                402.7842572510751,
+                650.0
+              ],
+              [
+                875.0,
+                650.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                875.0,
+                27.260000418322992
+              ],
+              [
+                400.39947636450006,
+                37.10640423189823
+              ],
+              [
+                402.1122626323046,
+                477.296
+              ],
+              [
+                875.0,
+                477.296
+              ],
+              [
+                875.0,
+                27.260000418322992
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                377.11207338261886,
+                477.296
+              ],
+              [
+                375.40130511437576,
+                37.62503427226176
+              ],
+              [
+                24.716894787241795,
+                44.900585274094226
+              ],
+              [
+                19.68908123354162,
+                477.296
+              ],
+              [
+                377.11207338261886,
+                477.296
+              ]
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        17.680911205816738,
+        27.260000418322992,
+        875.0,
+        650.0
+      ],
+      "anchorEN": [
+        625,
+        300
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 488057,
+      "envelope_size_m": [
+        857,
+        623
+      ],
+      "planning_use": "园地、管理与疏散留白；西南接城门服务，保留日后地形调整余地。",
+      "record_ids": [
+        "zhili"
+      ],
+      "source_ids": [
+        "R03"
+      ],
+      "source_links": [
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "西南关系较可信；园界低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "直里在西南角有文献，避开现居住区作南侧缓冲。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z16",
+      "name": "西部日常住宅与轻作",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "residential",
+      "planning_geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                900.0,
+                2061.2642115120584
+              ],
+              [
+                895.663151660795,
+                2061.285575131964
+              ],
+              [
+                894.6229057841382,
+                1850.1140310520418
+              ],
+              [
+                407.4895200554016,
+                1859.2622242202428
+              ],
+              [
+                450.0,
+                1858.4638924006647
+              ],
+              [
+                450.0,
+                2200.0
+              ],
+              [
+                512.7959577069141,
+                2200.0
+              ],
+              [
+                510.204,
+                2081.633
+              ],
+              [
+                900.0,
+                2071.8059700021245
+              ],
+              [
+                900.0,
+                2061.2642115120584
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                875.0,
+                650.0
+              ],
+              [
+                402.7842572510751,
+                650.0
+              ],
+              [
+                405.6943910001887,
+                1397.9103626253723
+              ],
+              [
+                407.2589295897936,
+                1800.0
+              ],
+              [
+                450.0,
+                1800.0
+              ],
+              [
+                450.0,
+                1833.4594843498774
+              ],
+              [
+                894.4997437053663,
+                1825.1119359416539
+              ],
+              [
+                888.7110596698369,
+                650.0
+              ],
+              [
+                875.0,
+                650.0
+              ]
+            ],
+            [
+              [
+                475.0,
+                675.0
+              ],
+              [
+                825.0,
+                675.0
+              ],
+              [
+                825.0,
+                1300.0
+              ],
+              [
+                475.0,
+                1300.0
+              ],
+              [
+                475.0,
+                675.0
+              ]
+            ],
+            [
+              [
+                450.0,
+                1350.0
+              ],
+              [
+                875.0,
+                1350.0
+              ],
+              [
+                875.0,
+                1775.0
+              ],
+              [
+                450.0,
+                1775.0
+              ],
+              [
+                450.0,
+                1350.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                17.680911205816738,
+                650.0
+              ],
+              [
+                9.129130584519514,
+                1385.459
+              ],
+              [
+                380.64575325666027,
+                1385.459
+              ],
+              [
+                377.78406800138936,
+                650.0
+              ],
+              [
+                17.680911205816738,
+                650.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                50.0,
+                2200.0
+              ],
+              [
+                50.0,
+                1800.0
+              ],
+              [
+                382.2587403401078,
+                1800.0
+              ],
+              [
+                383.35848068349225,
+                2082.6355315335277
+              ],
+              [
+                380.7430287422846,
+                1410.459
+              ],
+              [
+                8.838435228921947,
+                1410.459
+              ],
+              [
+                -0.34220084123237915,
+                2200.0
+              ],
+              [
+                50.0,
+                2200.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        -0.34220084123237915,
+        650.0,
+        900.0,
+        2200.0
+      ],
+      "anchorEN": [
+        250,
+        1200
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 714101,
+      "envelope_size_m": [
+        900,
+        1550
+      ],
+      "planning_use": "以小尺度院落、井院、日常轻作为主，不生成全城统一密度。",
+      "record_ids": [
+        "residential",
+        "official_workshops"
+      ],
+      "source_ids": [
+        "R01",
+        "R03",
+        "R13"
+      ],
+      "source_links": [
+        {
+          "id": "R01",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs126.html"
+        },
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        },
+        {
+          "id": "R13",
+          "url": "https://zh.wikisource.org/zh-hans/河南志"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "住宅和轻作类型合理；分布与本地块范围低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "高：优先锁定现物与通行，复用已建资产完善接口和日常使用关系。",
+      "layout_reasoning": "利用原西干路与金市的步行联系，家庭作业与热作分开。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "集中染冶等移交Z10或Z31；住宅作业只布低污染工序。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-courtyard-family",
+          "title": "住宅院落模块组",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/model-library/m-courtyard-family.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-ordinary-house-types",
+          "title": "普通住屋与门房四型",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-ordinary-house-types/m-luoyang-ordinary-house-types.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-court-layout-kit",
+          "title": "普通院落两种组装",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-court-layout-kit/m-luoyang-court-layout-kit.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-workyard-shed",
+          "title": "开敞作业棚与足碓院",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-workyard-shed/m-luoyang-workyard-shed.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-residential-life",
+          "title": "连续住宅生活片区",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-residential-life/m-luoyang-residential-life.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-a1-neighborhood",
+          "title": "八宅三铺街区 A1",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-a1-neighborhood/m-luoyang-a1-neighborhood.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-well-family",
+          "title": "井栏与井架",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/model-library/well-study/m-well-family.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-hand-mill",
+          "title": "人力石磨 A/B",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-hand-mill/m-luoyang-hand-mill.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-foot-pestle",
+          "title": "足碓与踏台",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-foot-pestle/m-luoyang-foot-pestle.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 1
+    },
+    {
+      "id": "Z17",
+      "name": "濯龙与西园竞争候选",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "garden",
+      "planning_geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                450.0,
+                2250.0
+              ],
+              [
+                409.0098883310312,
+                2250.0
+              ],
+              [
+                410.41852309385706,
+                2612.0220330397688
+              ],
+              [
+                520.1721946566179,
+                2609.9512243643107
+              ],
+              [
+                520.6438053433822,
+                2634.9467756356894
+              ],
+              [
+                -5.515115729303291,
+                2644.8742290221007
+              ],
+              [
+                -5.626493777389355,
+                2654.4528175634546
+              ],
+              [
+                -15.648925112139896,
+                2754.678113117088
+              ],
+              [
+                93.18364513819228,
+                3565.975014256664
+              ],
+              [
+                550.0,
+                3548.268741462991
+              ],
+              [
+                550.0,
+                3479.358510413743
+              ],
+              [
+                540.816,
+                3479.592
+              ],
+              [
+                513.8908396025921,
+                2250.0
+              ],
+              [
+                450.0,
+                2250.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                50.0,
+                2250.0
+              ],
+              [
+                -0.9235915524275119,
+                2250.0
+              ],
+              [
+                -5.2243048341872775,
+                2619.8642925442537
+              ],
+              [
+                385.4201690962764,
+                2612.493696607768
+              ],
+              [
+                384.0096990813455,
+                2250.0
+              ],
+              [
+                50.0,
+                2250.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        -15.648925112139896,
+        2250.0,
+        550.0,
+        3565.975014256664
+      ],
+      "anchorEN": [
+        250,
+        3000
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 640633,
+      "envelope_size_m": [
+        566,
+        1316
+      ],
+      "planning_use": "北宫近旁的园林与低密宫属服务留地；濯龙主选、西园/西邸另记候选。",
+      "record_ids": [
+        "zhuolong",
+        "xiyuan"
+      ],
+      "source_ids": [
+        "R03",
+        "R04",
+        "R10"
+      ],
+      "source_links": [
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        },
+        {
+          "id": "R04",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs09.html"
+        },
+        {
+          "id": "R10",
+          "url": "https://www.cssn.cn/lsx/lsx_kgx/202210/t20221024_5552600.shtml"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "存在与近北宫关系中；西侧定位与两园等同均不确定",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "濯龙近北宫有据，西侧属学者推测，暂选西带保留较大调整空间。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "不把濯龙、西园、西邸认作同一设施；共享候选带不等于共址。"
+      ],
+      "alternatives_and_movement_margin": [
+        "可与Z18北侧剩余留白比较，但不得侵占Z03既定基础方案时不作说明。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z18",
+      "name": "城内机动住宅与公共服务",
+      "layer_type": "base_zone",
+      "parent_zone": null,
+      "category": "residential",
+      "planning_geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                9.129130584519514,
+                1385.459
+              ],
+              [
+                17.680911205816738,
+                650.0
+              ],
+              [
+                19.398385877944055,
+                502.296
+              ],
+              [
+                9.129130584519514,
+                1385.459
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                875.0,
+                650.0
+              ],
+              [
+                888.7110596698369,
+                650.0
+              ],
+              [
+                887.9834593786368,
+                502.296
+              ],
+              [
+                875.0,
+                502.296
+              ],
+              [
+                875.0,
+                650.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                405.6943910001887,
+                1397.9103626253723
+              ],
+              [
+                402.7842572510751,
+                650.0
+              ],
+              [
+                402.2095381179289,
+                502.296
+              ],
+              [
+                405.6943910001887,
+                1397.9103626253723
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                -5.2243048341872775,
+                2619.8642925442537
+              ],
+              [
+                -0.9235915524275119,
+                2250.0
+              ],
+              [
+                50.0,
+                2250.0
+              ],
+              [
+                50.0,
+                2200.0
+              ],
+              [
+                -0.34220084123237915,
+                2200.0
+              ],
+              [
+                -5.2243048341872775,
+                2619.8642925442537
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                887.8603076205259,
+                477.296
+              ],
+              [
+                885.6423109960263,
+                27.039207380056126
+              ],
+              [
+                400.39947636450006,
+                37.10640423189823
+              ],
+              [
+                875.0,
+                27.260000418322992
+              ],
+              [
+                875.0,
+                477.296
+              ],
+              [
+                887.8603076205259,
+                477.296
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                2044.929289483211,
+                900.0
+              ],
+              [
+                2040.222558268652,
+                471.684
+              ],
+              [
+                2050.9731967106027,
+                1450.0
+              ],
+              [
+                2075.0,
+                1450.0
+              ],
+              [
+                2075.0,
+                925.0
+              ],
+              [
+                2477.505205041466,
+                925.0
+              ],
+              [
+                2522.184377384491,
+                1433.226577421017
+              ],
+              [
+                2454.6242303553367,
+                664.728404915183
+              ],
+              [
+                2475.3074071336046,
+                900.0
+              ],
+              [
+                2044.929289483211,
+                900.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                1985.964691076268,
+                1450.0
+              ],
+              [
+                2025.9716873010216,
+                1450.0
+              ],
+              [
+                2019.92778007363,
+                900.0
+              ],
+              [
+                2000.0,
+                900.0
+              ],
+              [
+                2000.0,
+                471.684
+              ],
+              [
+                1967.5060465259617,
+                471.684
+              ],
+              [
+                1989.796,
+                1653.061
+              ],
+              [
+                1985.964691076268,
+                1450.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                1020.408,
+                1683.673
+              ],
+              [
+                969.388,
+                61.224
+              ],
+              [
+                1959.184,
+                30.612
+              ],
+              [
+                1967.0343521922723,
+                446.684
+              ],
+              [
+                2000.0,
+                446.684
+              ],
+              [
+                2000.0,
+                3.9199412767540793
+              ],
+              [
+                910.6400595564444,
+                26.520586109117257
+              ],
+              [
+                919.4977344699302,
+                1824.6424824920837
+              ],
+              [
+                1826.3196504427567,
+                1807.612686753351
+              ],
+              [
+                2029.85946118411,
+                1803.7902808977242
+              ],
+              [
+                1875.0,
+                1806.698486958609
+              ],
+              [
+                1875.0,
+                1656.686106925194
+              ],
+              [
+                1989.796,
+                1653.061
+              ],
+              [
+                1020.408,
+                1683.673
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                2434.9234400198707,
+                -5.103293222906704
+              ],
+              [
+                2035.0743390135335,
+                3.1922638128186924
+              ],
+              [
+                2188.94270616882,
+                0.0
+              ],
+              [
+                2435.073535797787,
+                0.0
+              ],
+              [
+                2434.9234400198707,
+                -5.103293222906704
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                1411.4893067047024,
+                3514.877282267183
+              ],
+              [
+                1431.6968829969383,
+                3919.0327688285442
+              ],
+              [
+                1681.378,
+                3871.340740333117
+              ],
+              [
+                1681.378,
+                3511.598989307496
+              ],
+              [
+                1824.1805058100745,
+                3460.598451381948
+              ],
+              [
+                1819.0603418419394,
+                2631.125365402987
+              ],
+              [
+                1724.9963368162787,
+                2634.938740711019
+              ],
+              [
+                1733.0095456050174,
+                2634.613883476578
+              ],
+              [
+                1744.898,
+                3448.98
+              ],
+              [
+                540.816,
+                3479.592
+              ],
+              [
+                550.0,
+                3479.358510413743
+              ],
+              [
+                550.0,
+                3548.268741462991
+              ],
+              [
+                93.18364513819228,
+                3565.975014256664
+              ],
+              [
+                1411.4893067047024,
+                3514.877282267183
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                512.7959577069141,
+                2200.0
+              ],
+              [
+                450.0,
+                2200.0
+              ],
+              [
+                450.0,
+                2250.0
+              ],
+              [
+                513.8908396025921,
+                2250.0
+              ],
+              [
+                510.204,
+                2081.633
+              ],
+              [
+                512.7959577069141,
+                2200.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                1724.49,
+                2051.02
+              ],
+              [
+                1732.6445014909077,
+                2609.608147012415
+              ],
+              [
+                1723.9836631837213,
+                2609.9592592889812
+              ],
+              [
+                1818.9059339469686,
+                2606.1110897004955
+              ],
+              [
+                1814.1327299487134,
+                1832.8459608725934
+              ],
+              [
+                919.620896548702,
+                1849.6445776024716
+              ],
+              [
+                920.662848339205,
+                2061.1624248680364
+              ],
+              [
+                900.0,
+                2061.2642115120584
+              ],
+              [
+                900.0,
+                2071.8059700021245
+              ],
+              [
+                510.204,
+                2081.633
+              ],
+              [
+                1724.49,
+                2051.02
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                1788.1862025970013,
+                3500.0
+              ],
+              [
+                1950.0,
+                3500.0
+              ],
+              [
+                1950.0,
+                3225.0
+              ],
+              [
+                2437.4647429538713,
+                3225.0
+              ],
+              [
+                2434.409210688448,
+                3500.0
+              ],
+              [
+                2441.90915352176,
+                2825.0
+              ],
+              [
+                2100.0,
+                2825.0
+              ],
+              [
+                2100.0,
+                2619.7360103019087
+              ],
+              [
+                2444.3449550596547,
+                2605.776190616242
+              ],
+              [
+                1844.0545634179407,
+                2630.1120942013686
+              ],
+              [
+                1849.2894941899253,
+                3478.177548618052
+              ],
+              [
+                1706.378,
+                3529.2170106925037
+              ],
+              [
+                1706.378,
+                3866.5654464434674
+              ],
+              [
+                2308.2397445801985,
+                3751.6027779911537
+              ],
+              [
+                2125.0,
+                3786.603723296547
+              ],
+              [
+                1793.1027483938728,
+                3850.0
+              ],
+              [
+                1750.0,
+                3850.0
+              ],
+              [
+                1750.0,
+                3513.637834033327
+              ],
+              [
+                1788.1862025970013,
+                3500.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                2456.9957935863035,
+                2580.2427874270556
+              ],
+              [
+                2100.0,
+                2594.715474869631
+              ],
+              [
+                2100.0,
+                2350.0
+              ],
+              [
+                2060.863226719062,
+                2350.0
+              ],
+              [
+                2063.519245340773,
+                2591.6996467649965
+              ],
+              [
+                2038.5207546592271,
+                2591.9743532350035
+              ],
+              [
+                2035.8617173094808,
+                2350.0
+              ],
+              [
+                1875.0,
+                2350.0
+              ],
+              [
+                1875.0,
+                1831.7028950093961
+              ],
+              [
+                2030.1341759872605,
+                1828.7895299014021
+              ],
+              [
+                1839.1303084458104,
+                1832.3765151652608
+              ],
+              [
+                1843.90015552297,
+                2605.097818498877
+              ],
+              [
+                2456.9957935863035,
+                2580.2427874270556
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                2616.4250877835693,
+                2505.21675065273
+              ],
+              [
+                2556.090744049326,
+                1818.9122510622235
+              ],
+              [
+                2602.779685789583,
+                2350.0
+              ],
+              [
+                2616.4250877835693,
+                2505.21675065273
+              ]
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        -5.2243048341872775,
+        -5.103293222906704,
+        2616.4250877835693,
+        3919.0327688285442
+      ],
+      "anchorEN": [
+        1250,
+        1850
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 1286471,
+      "envelope_size_m": [
+        2622,
+        3924
+      ],
+      "planning_use": "覆盖其余城内地面：住宅、杂役服务、公共空地与未来院组留白；先低密。",
+      "record_ids": [
+        "residential",
+        "other_offices",
+        "five_camps"
+      ],
+      "source_ids": [
+        "R01",
+        "R03",
+        "R13"
+      ],
+      "source_links": [
+        {
+          "id": "R01",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs126.html"
+        },
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        },
+        {
+          "id": "R13",
+          "url": "https://zh.wikisource.org/zh-hans/河南志"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "功能存在合理；任何具体地名落位低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "让城内基础区完整闭合；宫外边角不硬填实名设施，供争论位置迁移新方案。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "此区包含多个分离地块，不能解释成一座大院。",
+        "北军仅在北缘可选训练/营务子地块，不能在全区均布军营。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-courtyard-family",
+          "title": "住宅院落模块组",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/model-library/m-courtyard-family.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-ordinary-house-types",
+          "title": "普通住屋与门房四型",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-ordinary-house-types/m-luoyang-ordinary-house-types.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-court-layout-kit",
+          "title": "普通院落两种组装",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-court-layout-kit/m-luoyang-court-layout-kit.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-workyard-shed",
+          "title": "开敞作业棚与足碓院",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-workyard-shed/m-luoyang-workyard-shed.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-residential-life",
+          "title": "连续住宅生活片区",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-residential-life/m-luoyang-residential-life.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-a1-neighborhood",
+          "title": "八宅三铺街区 A1",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-a1-neighborhood/m-luoyang-a1-neighborhood.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-well-family",
+          "title": "井栏与井架",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/model-library/well-study/m-well-family.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z19",
+      "name": "北宫南部候入与朝会子区",
+      "layer_type": "subzone",
+      "parent_zone": "Z03",
+      "category": "palace",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1723.9836631837213,
+              2609.9592592889812
+            ],
+            [
+              1732.6445014909077,
+              2609.608147012415
+            ],
+            [
+              1724.49,
+              2051.02
+            ],
+            [
+              510.204,
+              2081.633
+            ],
+            [
+              522.1024538201764,
+              2625.0
+            ],
+            [
+              1724.5934180971578,
+              2625.0
+            ],
+            [
+              1723.9836631837213,
+              2609.9592592889812
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        510.204,
+        2051.02,
+        1732.6445014909077,
+        2625.0
+      ],
+      "anchorEN": [
+        1100,
+        2350
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 677433,
+      "envelope_size_m": [
+        1222,
+        574
+      ],
+      "planning_use": "先复用候入院、值守和侧殿，预留主要公共朝会空间。",
+      "record_ids": [
+        "north_palace"
+      ],
+      "source_ids": [
+        "R11",
+        "R24"
+      ],
+      "source_links": [
+        {
+          "id": "R11",
+          "url": "https://www.thepaper.cn/newsDetail_forward_26569466"
+        },
+        {
+          "id": "R24",
+          "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/643503e53f1c0.pdf"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "低：具体边界为设计推测",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "南向与宫间联系近；后勤另从侧翼组织。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "不把该朝会区强标德阳殿实址；殿名需独立证据。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-deyang-hall",
+          "title": "德阳殿空间研究",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-deyang-hall/m-luoyang-deyang-hall.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-yutang-halls",
+          "title": "玉堂前后殿关系",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-yutang-halls/m-luoyang-yutang-halls.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-admission-court",
+          "title": "无名宫院通行组合",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-admission-court/m-luoyang-palace-admission-court.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-guard",
+          "title": "宫门值守核验切片",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-guard/m-luoyang-palace-guard.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-sidehall",
+          "title": "宫廷侧廊庑",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-sidehall/m-luoyang-palace-sidehall.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-paired-que",
+          "title": "宫前土木对阙",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-paired-que/m-luoyang-palace-paired-que.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z20",
+      "name": "北宫北部居处与殿组子区",
+      "layer_type": "subzone",
+      "parent_zone": "Z03",
+      "category": "palace",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1724.9963368162787,
+              2634.938740711019
+            ],
+            [
+              1724.5934180971578,
+              2625.0
+            ],
+            [
+              522.1024538201764,
+              2625.0
+            ],
+            [
+              540.816,
+              3479.592
+            ],
+            [
+              1744.898,
+              3448.98
+            ],
+            [
+              1733.0095456050174,
+              2634.613883476578
+            ],
+            [
+              1724.9963368162787,
+              2634.938740711019
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        522.1024538201764,
+        2625.0,
+        1744.898,
+        3479.592
+      ],
+      "anchorEN": [
+        1100,
+        3100
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 1013530,
+      "envelope_size_m": [
+        1223,
+        855
+      ],
+      "planning_use": "德阳、玉堂等模型仅作宫内体量复用候选；鸿都门学先在北宫宫门附近留可移研究点。",
+      "record_ids": [
+        "north_palace",
+        "hongdu_school"
+      ],
+      "source_ids": [
+        "R04",
+        "R11",
+        "R23",
+        "R24"
+      ],
+      "source_links": [
+        {
+          "id": "R04",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs09.html"
+        },
+        {
+          "id": "R11",
+          "url": "https://www.thepaper.cn/newsDetail_forward_26569466"
+        },
+        {
+          "id": "R23",
+          "url": "https://jnxb.jnu.edu.cn/skb/CN/Y2014/V36/I2"
+        },
+        {
+          "id": "R24",
+          "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/643503e53f1c0.pdf"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "低：具体边界为设计推测",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "将内廷与南部候入分离；留侧向供应通道，避免新轴线穿现宫区之外。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "鸿都门学南/北宫有竞争解释，不能将北宫主选当确定史实。"
+      ],
+      "alternatives_and_movement_margin": [
+        "鸿都门学备选为Z21南宫门属区；对比版本只落一处，不重复建两学校。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-deyang-hall",
+          "title": "德阳殿空间研究",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-deyang-hall/m-luoyang-deyang-hall.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-yutang-halls",
+          "title": "玉堂前后殿关系",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-yutang-halls/m-luoyang-yutang-halls.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-admission-court",
+          "title": "无名宫院通行组合",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-admission-court/m-luoyang-palace-admission-court.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-guard",
+          "title": "宫门值守核验切片",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-guard/m-luoyang-palace-guard.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-sidehall",
+          "title": "宫廷侧廊庑",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-sidehall/m-luoyang-palace-sidehall.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-paired-que",
+          "title": "宫前土木对阙",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-paired-que/m-luoyang-palace-paired-que.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z21",
+      "name": "南宫北段殿庭子区",
+      "layer_type": "subzone",
+      "parent_zone": "Z04",
+      "category": "palace",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1020.408,
+              1683.673
+            ],
+            [
+              1989.796,
+              1653.061
+            ],
+            [
+              1977.4741930698592,
+              1000.0
+            ],
+            [
+              998.9090213202387,
+              1000.0
+            ],
+            [
+              1020.408,
+              1683.673
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        998.9090213202387,
+        1000.0,
+        1989.796,
+        1683.673
+      ],
+      "anchorEN": [
+        1450,
+        1350
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 651233,
+      "envelope_size_m": [
+        991,
+        684
+      ],
+      "planning_use": "预留殿庭、廊和南北宫联系的接入范围；鸿都门学只保留竞争解释标记。",
+      "record_ids": [
+        "south_palace",
+        "hongdu_school"
+      ],
+      "source_ids": [
+        "R04",
+        "R23",
+        "R24"
+      ],
+      "source_links": [
+        {
+          "id": "R04",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs09.html"
+        },
+        {
+          "id": "R23",
+          "url": "https://jnxb.jnu.edu.cn/skb/CN/Y2014/V36/I2"
+        },
+        {
+          "id": "R24",
+          "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/643503e53f1c0.pdf"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "低：具体边界为设计推测",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "接近两宫关系走廊，同时不让普通货运贯穿。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-palace-admission-court",
+          "title": "无名宫院通行组合",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-admission-court/m-luoyang-palace-admission-court.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-guard",
+          "title": "宫门值守核验切片",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-guard/m-luoyang-palace-guard.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-sidehall",
+          "title": "宫廷侧廊庑",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-sidehall/m-luoyang-palace-sidehall.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z22",
+      "name": "南宫南段门庭与服务子区",
+      "layer_type": "subzone",
+      "parent_zone": "Z04",
+      "category": "palace",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1959.184,
+              471.684
+            ],
+            [
+              1959.184,
+              446.684
+            ],
+            [
+              1967.0343521922723,
+              446.684
+            ],
+            [
+              1959.184,
+              30.612
+            ],
+            [
+              969.388,
+              61.224
+            ],
+            [
+              998.9090213202387,
+              1000.0
+            ],
+            [
+              1977.4741930698592,
+              1000.0
+            ],
+            [
+              1967.5060465259617,
+              471.684
+            ],
+            [
+              1959.184,
+              471.684
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        969.388,
+        30.612,
+        1977.4741930698592,
+        1000.0
+      ],
+      "anchorEN": [
+        1450,
+        500
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 939153,
+      "envelope_size_m": [
+        1008,
+        969
+      ],
+      "planning_use": "平城门方向入宫关系和侧向供应留地，内外分流。",
+      "record_ids": [
+        "south_palace"
+      ],
+      "source_ids": [
+        "R04",
+        "R24"
+      ],
+      "source_links": [
+        {
+          "id": "R04",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs09.html"
+        },
+        {
+          "id": "R24",
+          "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/643503e53f1c0.pdf"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "低：具体边界为设计推测",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "与南门关联而不借门点反推未知院墙及殿基。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-palace-admission-court",
+          "title": "无名宫院通行组合",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-admission-court/m-luoyang-palace-admission-court.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-guard",
+          "title": "宫门值守核验切片",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-guard/m-luoyang-palace-guard.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-palace-sidehall",
+          "title": "宫廷侧廊庑",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-sidehall/m-luoyang-palace-sidehall.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z23",
+      "name": "两宫复道关系走廊",
+      "layer_type": "candidate_overlay",
+      "parent_zone": null,
+      "category": "palace",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1519.3697487835336,
+              1672.1181526586151
+            ],
+            [
+              1419.4062512164662,
+              1674.819847341385
+            ],
+            [
+              1429.6102512164664,
+              2052.370847341385
+            ],
+            [
+              1529.5737487835338,
+              2049.669152658615
+            ],
+            [
+              1519.3697487835336,
+              1672.1181526586151
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        1419.4062512164662,
+        1672.1181526586151,
+        1529.5737487835338,
+        2052.370847341385
+      ],
+      "anchorEN": [
+        1475,
+        1850
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 37769,
+      "envelope_size_m": [
+        110,
+        380
+      ],
+      "planning_use": "保留宽100米可调关系走廊；复道自身宽高与端部另设计。",
+      "record_ids": [
+        "palace_link"
+      ],
+      "source_ids": [
+        "R03",
+        "R24"
+      ],
+      "source_links": [
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        },
+        {
+          "id": "R24",
+          "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/643503e53f1c0.pdf"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "两宫联系有史料；准确走向、长度和180年状态低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "继承原连接示意线，不改原道路；与中横路交叉需在后续解决高差/门禁。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "这是叠加关系带，明确允许覆盖Z02/Z18，不计入基础分区面积。",
+        "不得把100米预留宽称复道宽；未解高程前不造跨路实体。"
+      ],
+      "alternatives_and_movement_margin": [
+        "接头可在两宫相向边界各150米内调整；不移动宫外原道路。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-palace-gallery",
+          "title": "高架复道局部模块",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-palace-gallery/m-luoyang-palace-gallery.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-gallery-access",
+          "title": "复道服务登临节点",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-gallery-access/m-luoyang-gallery-access.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z24",
+      "name": "南郊灵台规划区",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "ritual",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1575.0,
+              -1225.0
+            ],
+            [
+              1575.0,
+              -950.0
+            ],
+            [
+              1325.0,
+              -950.0
+            ],
+            [
+              1325.0,
+              -1225.0
+            ],
+            [
+              1575.0,
+              -1225.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        1325.0,
+        -1225.0,
+        1575.0,
+        -950.0
+      ],
+      "anchorEN": [
+        1450,
+        -1050
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 68750,
+      "envelope_size_m": [
+        250,
+        275
+      ],
+      "planning_use": "遗址级别保留范围，台体/观测与出入、地形分开设计。",
+      "record_ids": [
+        "lingtai"
+      ],
+      "source_ids": [
+        "PL-SOUTH2022",
+        "R07",
+        "R12",
+        "R16"
+      ],
+      "source_links": [
+        {
+          "id": "PL-SOUTH2022",
+          "url": "https://www.sohu.com/a/615555773_121119016"
+        },
+        {
+          "id": "R07",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs107.html"
+        },
+        {
+          "id": "R12",
+          "url": "https://sites.lynu.edu.cn/hlwh/info/1023/1668.htm"
+        },
+        {
+          "id": "R16",
+          "url": "https://opac.ryukoku.ac.jp/iwjs0005opc/catdbl.do?hidden_return_link=true&pkey=BB21456102"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "遗址存在较高；180年上部形态与本规划边界低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "以灵台旧点附近为新规划参考，结合讲座同框关系安排三雍。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "规划250×275米不等于台体尺度；残台31×41米/高8米不是原建完整尺寸。"
+      ],
+      "alternatives_and_movement_margin": [
+        "新模型可在区内25–75米调整；规划灵台参考点较旧图点西19米、南9米，未动任何现有实例。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-lingtai",
+          "title": "灵台类型与踏步研究",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-lingtai/m-luoyang-lingtai.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z25",
+      "name": "南郊明堂规划区",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "ritual",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2050.0,
+              -1300.0
+            ],
+            [
+              2050.0,
+              -825.0
+            ],
+            [
+              1600.0,
+              -825.0
+            ],
+            [
+              1600.0,
+              -1300.0
+            ],
+            [
+              2050.0,
+              -1300.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        1600.0,
+        -1300.0,
+        2050.0,
+        -825.0
+      ],
+      "anchorEN": [
+        1825,
+        -1075
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 213750,
+      "envelope_size_m": [
+        450,
+        475
+      ],
+      "planning_use": "预留祭礼、集会、候入及周边步行空地，东汉与后期残迹分层。",
+      "record_ids": [
+        "mingtang"
+      ],
+      "source_ids": [
+        "PL-SOUTH2022",
+        "R07",
+        "R12",
+        "R16"
+      ],
+      "source_links": [
+        {
+          "id": "PL-SOUTH2022",
+          "url": "https://www.sohu.com/a/615555773_121119016"
+        },
+        {
+          "id": "R07",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs107.html"
+        },
+        {
+          "id": "R12",
+          "url": "https://sites.lynu.edu.cn/hlwh/info/1023/1668.htm"
+        },
+        {
+          "id": "R16",
+          "url": "https://opac.ryukoku.ac.jp/iwjs0005opc/catdbl.do?hidden_return_link=true&pkey=BB21456102"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "遗址存在较高；详细公开残迹多期，180年平面低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "保持西灵台、东辟雍；旧平城门延伸道仅作参考通达，不反推轴线。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "450×475米为留地尺度，不照搬北魏明堂完整测图。",
+        "旧道路穿过规划外缘时只保留原线，另做入口方案。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-mingtang",
+          "title": "明堂形制假说",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-mingtang/m-luoyang-mingtang.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z26",
+      "name": "南郊辟雍与环水规划区",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "ritual",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2425.0,
+              -1300.0
+            ],
+            [
+              2425.0,
+              -800.0
+            ],
+            [
+              2050.0,
+              -800.0
+            ],
+            [
+              2050.0,
+              -1300.0
+            ],
+            [
+              2425.0,
+              -1300.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        2050.0,
+        -1300.0,
+        2425.0,
+        -800.0
+      ],
+      "anchorEN": [
+        2200,
+        -1000
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 187500,
+      "envelope_size_m": [
+        375,
+        500
+      ],
+      "planning_use": "中央建筑、外围候入、环水与跨水连接分步设计；保留排水余地。",
+      "record_ids": [
+        "biyong"
+      ],
+      "source_ids": [
+        "PL-SOUTH2022",
+        "R07",
+        "R12",
+        "R16"
+      ],
+      "source_links": [
+        {
+          "id": "PL-SOUTH2022",
+          "url": "https://www.sohu.com/a/615555773_121119016"
+        },
+        {
+          "id": "R07",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs107.html"
+        },
+        {
+          "id": "R12",
+          "url": "https://sites.lynu.edu.cn/hlwh/info/1023/1668.htm"
+        },
+        {
+          "id": "R16",
+          "url": "https://opac.ryukoku.ac.jp/iwjs0005opc/catdbl.do?hidden_return_link=true&pkey=BB21456102"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "遗址存在较高；180年环水闭合、门阙细节不完整",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "依据讲座图把辟雍置明堂东；外包络与太学主选留地不重叠。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "本区375×500米不是考古院墙；环水不默认已证明四边完整闭合。",
+        "地面水位和水源未解前不赋流向；不按南上显示决定水流。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-biyong",
+          "title": "辟雍礼堂与围护",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-biyong/m-luoyang-biyong.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 2
+    },
+    {
+      "id": "Z27",
+      "name": "太学北部主选与东北备选",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "education",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2625.0,
+              -800.0
+            ],
+            [
+              2625.0,
+              -525.0
+            ],
+            [
+              2225.0,
+              -525.0
+            ],
+            [
+              2225.0,
+              -800.0
+            ],
+            [
+              2625.0,
+              -800.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        2225.0,
+        -800.0,
+        2625.0,
+        -525.0
+      ],
+      "anchorEN": [
+        2350,
+        -700
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 110000,
+      "envelope_size_m": [
+        400,
+        275
+      ],
+      "planning_use": "北部主选先复用长堂/观经关系；东北保留为多期竞争解释，180年不建完整围院。",
+      "record_ids": [
+        "taixue",
+        "xiping_classics"
+      ],
+      "source_ids": [
+        "PL-SOUTH2017",
+        "PL-SOUTH2022",
+        "R08",
+        "R10",
+        "R16",
+        "R24"
+      ],
+      "source_links": [
+        {
+          "id": "PL-SOUTH2017",
+          "url": "https://www.sohu.com/a/210236533_100029711"
+        },
+        {
+          "id": "PL-SOUTH2022",
+          "url": "https://www.sohu.com/a/615555773_121119016"
+        },
+        {
+          "id": "R08",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs65.html"
+        },
+        {
+          "id": "R10",
+          "url": "https://www.cssn.cn/lsx/lsx_kgx/202210/t20221024_5552600.shtml"
+        },
+        {
+          "id": "R16",
+          "url": "https://opac.ryukoku.ac.jp/iwjs0005opc/catdbl.do?hidden_return_link=true&pkey=BB21456102"
+        },
+        {
+          "id": "R24",
+          "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/643503e53f1c0.pdf"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "太学/石经存在较高；北部主体推定与东北承袭说竞争",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中高：推荐先留地并做一组可撤回体量/功能比较；不将整个候选框建满。",
+      "layout_reasoning": "讲座将辟雍北侧排房和石经残石推为汉太学主体；高崇文2023主张后期院落承袭汉格局，需并列。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "180年不得摆满183年告成的46碑成套；数量与门外位置保持研究性。",
+        "东北魏晋以来完整院落只作淡色对照，不纳入180年建筑生成。"
+      ],
+      "alternatives_and_movement_margin": [
+        "主选子包络E2225–2450/N-800–-550；东北备选E2450–2625/N-775–-525。",
+        "候选总区较讲座原包络抬北侧起点50米，避免与辟雍留地重叠；不是更正遗址位置。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-taixue-a",
+          "title": "太学长堂 A",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-taixue-a/m-luoyang-taixue-a.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-stoneclassic-access-court",
+          "title": "太学门外观经空间",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-stoneclassic-access-court/m-luoyang-stoneclassic-access-court.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "candidate_parts": [
+        {
+          "id": "north_primary",
+          "status": "recommended_180_candidate_not_confirmed",
+          "planning_geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  2450.0,
+                  -800.0
+                ],
+                [
+                  2450.0,
+                  -550.0
+                ],
+                [
+                  2225.0,
+                  -550.0
+                ],
+                [
+                  2225.0,
+                  -800.0
+                ],
+                [
+                  2450.0,
+                  -800.0
+                ]
+              ]
+            ]
+          },
+          "anchorEN": [
+            2350,
+            -700
+          ]
+        },
+        {
+          "id": "northeast_alternative",
+          "status": "competing_site_hypothesis_no_complete_180_enclosure",
+          "planning_geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  2625.0,
+                  -775.0
+                ],
+                [
+                  2625.0,
+                  -525.0
+                ],
+                [
+                  2450.0,
+                  -525.0
+                ],
+                [
+                  2450.0,
+                  -775.0
+                ],
+                [
+                  2625.0,
+                  -775.0
+                ]
+              ]
+            ]
+          },
+          "anchorEN": [
+            2525,
+            -650
+          ]
+        }
+      ],
+      "design_priority": 2
+    },
+    {
+      "id": "Z28",
+      "name": "城南市场与运输留地",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "market",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              900.0,
+              -800.0
+            ],
+            [
+              900.0,
+              -150.0
+            ],
+            [
+              -300.0,
+              -150.0
+            ],
+            [
+              -300.0,
+              -800.0
+            ],
+            [
+              900.0,
+              -800.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        -300.0,
+        -800.0,
+        900.0,
+        -150.0
+      ],
+      "anchorEN": [
+        300,
+        -450
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 780000,
+      "envelope_size_m": [
+        1200,
+        650
+      ],
+      "planning_use": "南市/羊市/县市竞争名称留在同一主候选带，设牲畜和普通交易分隔。",
+      "record_ids": [
+        "nan_market"
+      ],
+      "source_ids": [
+        "R09",
+        "R13"
+      ],
+      "source_links": [
+        {
+          "id": "R09",
+          "url": "https://zh.wikisource.org/zh-hans/水經注集釋訂訛_(四庫全書本)/卷16"
+        },
+        {
+          "id": "R13",
+          "url": "https://zh.wikisource.org/zh-hans/河南志"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "城南市场有后出文本，名称等同与180年址低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "接津门方向、离三雍核心较远；向南水岸可另选连接走廊，不先造桥。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "交易、圈养、排污与取水分别布置；不得把竞争名称同时当三个确定市场。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-market-modular-assembly",
+          "title": "市肆模块与组装",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-market-modular-assembly/m-luoyang-market-modular-assembly.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 3
+    },
+    {
+      "id": "Z29",
+      "name": "城东马市候选",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "market",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3475.0,
+              1850.0
+            ],
+            [
+              3475.0,
+              2625.0
+            ],
+            [
+              2850.0,
+              2625.0
+            ],
+            [
+              2850.0,
+              1850.0
+            ],
+            [
+              3475.0,
+              1850.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        2850.0,
+        1850.0,
+        3475.0,
+        2625.0
+      ],
+      "anchorEN": [
+        3150,
+        2250
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 484375,
+      "envelope_size_m": [
+        625,
+        775
+      ],
+      "planning_use": "畜交易、厩棚、检视与回车院；桥仅作局部待核关系。",
+      "record_ids": [
+        "ma_market",
+        "ma_bridge"
+      ],
+      "source_ids": [
+        "R03",
+        "R09"
+      ],
+      "source_links": [
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        },
+        {
+          "id": "R09",
+          "url": "https://zh.wikisource.org/zh-hans/水經注集釋訂訛_(四庫全書本)/卷16"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "相对方位中；具体市场边界和马市桥年代低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "马市在城东、中水官之西，靠门外交通；圈养污水不进生活取水端。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "马桥不因存在模型就当135年上东门石桥；两桥对象分开。",
+        "马市外圈预留50米弹性服务带，不阻上东门口通行。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-stable",
+          "title": "厩棚与饲槽 A/B",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-stable/m-luoyang-stable.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        },
+        {
+          "asset_id": "m-luoyang-market-modular-assembly",
+          "title": "市肆模块与组装",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-market-modular-assembly/m-luoyang-market-modular-assembly.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 3
+    },
+    {
+      "id": "Z30",
+      "name": "中水官与渠务服务候选",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "civic",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3850.0,
+              2000.0
+            ],
+            [
+              3850.0,
+              2500.0
+            ],
+            [
+              3550.0,
+              2500.0
+            ],
+            [
+              3550.0,
+              2000.0
+            ],
+            [
+              3850.0,
+              2000.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        3550.0,
+        2000.0,
+        3850.0,
+        2500.0
+      ],
+      "anchorEN": [
+        3700,
+        2250
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 150000,
+      "envelope_size_m": [
+        300,
+        500
+      ],
+      "planning_use": "水务办公、器具与维修作业留地，靠独立清洁用水点。",
+      "record_ids": [
+        "water_office"
+      ],
+      "source_ids": [
+        "R03"
+      ],
+      "source_links": [
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "马市东关系较强；确址低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "遵循中水官在马市东的文献关系，不把此坐标当确定遗址。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "与马市隔至少75米规划空地；真实取水/排污界面需地形水文验证。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 3
+    },
+    {
+      "id": "Z31",
+      "name": "东南西罗洼窑业候选",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "workshop",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              3650.0,
+              -1000.0
+            ],
+            [
+              3650.0,
+              -250.0
+            ],
+            [
+              2850.0,
+              -250.0
+            ],
+            [
+              2850.0,
+              -1000.0
+            ],
+            [
+              3650.0,
+              -1000.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        2850.0,
+        -1000.0,
+        3650.0,
+        -250.0
+      ],
+      "anchorEN": [
+        3250,
+        -625
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 600000,
+      "envelope_size_m": [
+        800,
+        750
+      ],
+      "planning_use": "瓦窑、堆料、燃料与运输院仅作低密工艺研究，外围留烟火隔离空间。",
+      "record_ids": [
+        "xiluowa_kilns"
+      ],
+      "source_ids": [
+        "R14",
+        "R15"
+      ],
+      "source_links": [
+        {
+          "id": "R14",
+          "url": "https://historytourism.scu.edu.cn/info/1035/3040.htm"
+        },
+        {
+          "id": "R15",
+          "url": "https://www.sohu.com/a/620471046_121119016"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "东汉窑址存在较强，180年在用和工程配准低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "城东南有东汉窑址线索；置城外、接东向货流，不穿宫廷礼仪路线。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "不把本800×750米包络当发掘窑群界。",
+        "烧煤瓦窑个体形制先复核原报告；烟气按多种风况，不宣称此处恒为下风。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-tile-kiln",
+          "title": "砖瓦窑 A/B",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-tile-kiln/m-luoyang-tile-kiln.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 3
+    },
+    {
+      "id": "Z32",
+      "name": "南郊坛广域主候选",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "ritual",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2350.0,
+              -4300.0
+            ],
+            [
+              2350.0,
+              -3100.0
+            ],
+            [
+              1250.0,
+              -3100.0
+            ],
+            [
+              1250.0,
+              -4300.0
+            ],
+            [
+              2350.0,
+              -4300.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        1250.0,
+        -4300.0,
+        2350.0,
+        -3100.0
+      ],
+      "anchorEN": [
+        1800,
+        -3700
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 1320000,
+      "envelope_size_m": [
+        1100,
+        1200
+      ],
+      "planning_use": "南郊圆坛八陛研究、围营/祠舍与出入路的大范围留地。",
+      "record_ids": [
+        "south_altar"
+      ],
+      "source_ids": [
+        "R05",
+        "R07",
+        "R12"
+      ],
+      "source_links": [
+        {
+          "id": "R05",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs106.html"
+        },
+        {
+          "id": "R07",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs107.html"
+        },
+        {
+          "id": "R12",
+          "url": "https://sites.lynu.edu.cn/hlwh/info/1023/1668.htm"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "制度有据，坛址未发现；本落区为低可信设计推荐",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "位于明堂更南，接平城门方向礼仪关系；城南七里只作尺度语义，不换算唯一点。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "1100×1200米为候选地区，不是坛体或已知围营尺寸。",
+        "不得套洛南北魏郊坛遗址。"
+      ],
+      "alternatives_and_movement_margin": [
+        "沿南北方向可平移约500–1000米比较；新方案调整不移动现城。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-southern-altar",
+          "title": "南郊圆坛八陛",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-southern-altar/m-luoyang-southern-altar.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 3
+    },
+    {
+      "id": "Z33",
+      "name": "明堂南侧雩场候选",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "ritual",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              2075.0,
+              -1850.0
+            ],
+            [
+              2075.0,
+              -1450.0
+            ],
+            [
+              1575.0,
+              -1450.0
+            ],
+            [
+              1575.0,
+              -1850.0
+            ],
+            [
+              2075.0,
+              -1850.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        1575.0,
+        -1850.0,
+        2075.0,
+        -1450.0
+      ],
+      "anchorEN": [
+        1825,
+        -1650
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 200000,
+      "envelope_size_m": [
+        500,
+        400
+      ],
+      "planning_use": "露天仪式与临时集合留地，保持低建设量。",
+      "record_ids": [
+        "rain_ritual_ground"
+      ],
+      "source_ids": [
+        "R12"
+      ],
+      "source_links": [
+        {
+          "id": "R12",
+          "url": "https://sites.lynu.edu.cn/hlwh/info/1023/1668.htm"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "文献线索中低；180年确址与使用状态低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "依据明堂南侧关系，避开三雍外界与更南河岸保留带。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "不把雩场等同南郊坛或南方迎气坛。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 3
+    },
+    {
+      "id": "Z34",
+      "name": "北郊上屯方向祭地候选",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "ritual",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1250.0,
+              5400.0
+            ],
+            [
+              1250.0,
+              5900.0
+            ],
+            [
+              900.0,
+              5900.0
+            ],
+            [
+              900.0,
+              5400.0
+            ],
+            [
+              1250.0,
+              5400.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        900.0,
+        5400.0,
+        1250.0,
+        5900.0
+      ],
+      "anchorEN": [
+        1075,
+        5650
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 175000,
+      "envelope_size_m": [
+        350,
+        500
+      ],
+      "planning_use": "350×500米候选围院量级占位；内部方坛、祠舍仍另行设计。",
+      "record_ids": [
+        "north_altar"
+      ],
+      "source_ids": [
+        "R07",
+        "R12"
+      ],
+      "source_links": [
+        {
+          "id": "R07",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs107.html"
+        },
+        {
+          "id": "R12",
+          "url": "https://sites.lynu.edu.cn/hlwh/info/1023/1668.htm"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "北郊/候选围院有研究，性质与分期尚需核；本工程位置低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "置北城之外足够远，与北军训练预留分开；实际上屯配准未完成。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "350×500米是院区候选，不是祭坛体。",
+        "不可把城北三四里、其他里数视作一致实测。"
+      ],
+      "alternatives_and_movement_margin": [
+        "E600–1600/N5000–6400为设计比较窗口；只选其中一块350×500米围院，不铺满窗口。"
+      ],
+      "reuse_models": [
+        {
+          "asset_id": "m-luoyang-northern-altar",
+          "title": "北郊方坛四陛",
+          "card_url": "https://github.com/suxing412/creation-notebook/blob/eeee4c5e8e344cf58454e7cf7164bb5c38a859ad/docs/library/models/m-luoyang-northern-altar/m-luoyang-northern-altar.asset.json",
+          "condition": "Existing model candidate only; historical identity, scale, foundation and installation require separate checks."
+        }
+      ],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "alternative_search_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1600.0,
+              5000.0
+            ],
+            [
+              1600.0,
+              6400.0
+            ],
+            [
+              600.0,
+              6400.0
+            ],
+            [
+              600.0,
+              5000.0
+            ],
+            [
+              1600.0,
+              5000.0
+            ]
+          ]
+        ]
+      },
+      "design_priority": 3
+    },
+    {
+      "id": "Z35",
+      "name": "五郊迎气方位候选组",
+      "layer_type": "candidate_overlay",
+      "parent_zone": null,
+      "category": "ritual",
+      "planning_geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                500.0,
+                -5200.0
+              ],
+              [
+                1300.0,
+                -5200.0
+              ],
+              [
+                1300.0,
+                -6000.0
+              ],
+              [
+                500.0,
+                -6000.0
+              ],
+              [
+                500.0,
+                -5200.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                -3500.0,
+                1800.0
+              ],
+              [
+                -2700.0,
+                1800.0
+              ],
+              [
+                -2700.0,
+                1000.0
+              ],
+              [
+                -3500.0,
+                1000.0
+              ],
+              [
+                -3500.0,
+                1800.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                4500.0,
+                1800.0
+              ],
+              [
+                5200.0,
+                1800.0
+              ],
+              [
+                5200.0,
+                1000.0
+              ],
+              [
+                4500.0,
+                1000.0
+              ],
+              [
+                4500.0,
+                1800.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                500.0,
+                7800.0
+              ],
+              [
+                1300.0,
+                7800.0
+              ],
+              [
+                1300.0,
+                7000.0
+              ],
+              [
+                500.0,
+                7000.0
+              ],
+              [
+                500.0,
+                7800.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        -3500.0,
+        -6000.0,
+        5200.0,
+        7800.0
+      ],
+      "anchorEN": [
+        4850,
+        1400
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 2480000,
+      "envelope_size_m": [
+        8700,
+        13800
+      ],
+      "planning_use": "四方迎气分别给方向性试验留地；中兆只给广域候选范围，暂不硬塞中心单点。",
+      "record_ids": [
+        "seasonal_east",
+        "seasonal_south",
+        "seasonal_west",
+        "seasonal_north",
+        "seasonal_central"
+      ],
+      "source_ids": [
+        "R07",
+        "R12"
+      ],
+      "source_links": [
+        {
+          "id": "R07",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs107.html"
+        },
+        {
+          "id": "R12",
+          "url": "https://sites.lynu.edu.cn/hlwh/info/1023/1668.htm"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "礼制文本存在，全部具体位置低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "以不同礼制对象的方位关系组织比较，不与南/北郊天地坛合并。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "分离多边形是四方设计候选，非五座已定位坛址。",
+        "中央候选在附加record规划层广域标示，推荐先做无定位尺度样板，再比较城南公共留地。"
+      ],
+      "alternatives_and_movement_margin": [
+        "东、南、西、北范围可各沿方向迁移1000米以上；里数未定，不以方框伪装测量精度。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 3
+    },
+    {
+      "id": "Z36",
+      "name": "古洛水与城旁水务保留廊带",
+      "layer_type": "candidate_overlay",
+      "parent_zone": null,
+      "category": "water",
+      "planning_geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -4000.0,
+                -1950.0
+              ],
+              [
+                6000.0,
+                -1950.0
+              ],
+              [
+                6000.0,
+                -2800.0
+              ],
+              [
+                -4000.0,
+                -2800.0
+              ],
+              [
+                -4000.0,
+                -1950.0
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                2600.0,
+                2500.0
+              ],
+              [
+                2475.0,
+                2500.0
+              ],
+              [
+                2475.0,
+                2700.0
+              ],
+              [
+                2600.0,
+                2700.0
+              ],
+              [
+                2600.0,
+                4000.0
+              ],
+              [
+                -500.0,
+                4000.0
+              ],
+              [
+                -500.0,
+                4250.0
+              ],
+              [
+                2600.0,
+                4250.0
+              ],
+              [
+                2800.0,
+                4250.0
+              ],
+              [
+                2800.0,
+                4000.0
+              ],
+              [
+                2800.0,
+                2700.0
+              ],
+              [
+                2850.0,
+                2700.0
+              ],
+              [
+                2850.0,
+                2500.0
+              ],
+              [
+                2800.0,
+                2500.0
+              ],
+              [
+                2800.0,
+                0.0
+              ],
+              [
+                2600.0,
+                0.0
+              ],
+              [
+                2600.0,
+                2500.0
+              ]
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        -4000.0,
+        -2800.0,
+        6000.0,
+        4250.0
+      ],
+      "anchorEN": [
+        1250,
+        -2350
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 10160000,
+      "envelope_size_m": [
+        10000,
+        7050
+      ],
+      "planning_use": "单独推测层：南侧留河岸洪泛空间、城旁留渠务空间；暂不生成具体河槽。",
+      "record_ids": [
+        "luo_river_180",
+        "yangqu_180",
+        "caoqu_east_gate",
+        "shangdong_bridge"
+      ],
+      "source_ids": [
+        "R09",
+        "R16",
+        "R17"
+      ],
+      "source_links": [
+        {
+          "id": "R09",
+          "url": "https://zh.wikisource.org/zh-hans/水經注集釋訂訛_(四庫全書本)/卷16"
+        },
+        {
+          "id": "R16",
+          "url": "https://opac.ryukoku.ac.jp/iwjs0005opc/catdbl.do?hidden_return_link=true&pkey=BB21456102"
+        },
+        {
+          "id": "R17",
+          "url": "https://www.sohu.com/a/674851252_121124388"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "河渠存在与135年桥文献较强；180年河槽、流向、岸线低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "让水工与城门、马市、南苑关系能被设计检查，同时不借今洛河代替古河。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "南河带与北/东渠带是规划保留范围，不是古河完整复原。",
+        "135年桥仅在上东门外局部另做关系研究，不能由渠廊宽反推桥长。",
+        "不造绝对标高，不按屏幕方向指定水流；坡度、洪水位和桥址待测绘/地形设计。"
+      ],
+      "alternatives_and_movement_margin": [
+        "古洛水比较窗口可向北或南迁移；该版本仅为留地，不把未明岸线锁死。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 3
+    },
+    {
+      "id": "Z37",
+      "name": "洛水南侧南园候选",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "garden",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              1000.0,
+              -4000.0
+            ],
+            [
+              1000.0,
+              -2900.0
+            ],
+            [
+              -800.0,
+              -2900.0
+            ],
+            [
+              -800.0,
+              -4000.0
+            ],
+            [
+              1000.0,
+              -4000.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        -800.0,
+        -4000.0,
+        1000.0,
+        -2900.0
+      ],
+      "anchorEN": [
+        100,
+        -3450
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 1980000,
+      "envelope_size_m": [
+        1800,
+        1100
+      ],
+      "planning_use": "疏林、园地与管理建筑低密留地；不跨候选河岸造确定宫院。",
+      "record_ids": [
+        "nanyuan"
+      ],
+      "source_ids": [
+        "R03"
+      ],
+      "source_links": [
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "相对洛水关系中高；古河线与本园界低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "满足南园在洛水南的关系，采用河岸保留带南侧。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "若古河候选位置改变，本园新方案随之调整；不动现城。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 3
+    },
+    {
+      "id": "Z38",
+      "name": "鸿池远东郊背景候选",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "garden",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              13000.0,
+              1000.0
+            ],
+            [
+              13000.0,
+              3000.0
+            ],
+            [
+              10000.0,
+              3000.0
+            ],
+            [
+              10000.0,
+              1000.0
+            ],
+            [
+              13000.0,
+              1000.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        10000.0,
+        1000.0,
+        13000.0,
+        3000.0
+      ],
+      "anchorEN": [
+        11500,
+        2000
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 6000000,
+      "envelope_size_m": [
+        3000,
+        2000
+      ],
+      "planning_use": "仅远郊背景分区，疏布水泽/苑囿研究；首期不建细节。",
+      "record_ids": [
+        "hongchi"
+      ],
+      "source_ids": [
+        "R03"
+      ],
+      "source_links": [
+        {
+          "id": "R03",
+          "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "东二十里文献关系中高；具体水面与绝对位置低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "以城东约二十里关系放在独立外围图，避免塞城旁；尺度仅用于远景组织。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "框位置不由精确汉里换算得出，不当作鸿池真实范围。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 3
+    },
+    {
+      "id": "Z39",
+      "name": "邙山180年前陵墓筛选区",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "cemetery",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              500.0,
+              5000.0
+            ],
+            [
+              500.0,
+              9000.0
+            ],
+            [
+              -5000.0,
+              9000.0
+            ],
+            [
+              -5000.0,
+              5000.0
+            ],
+            [
+              500.0,
+              5000.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        -5000.0,
+        5000.0,
+        500.0,
+        9000.0
+      ],
+      "anchorEN": [
+        -2500,
+        7000
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 22000000,
+      "envelope_size_m": [
+        5500,
+        4000
+      ],
+      "planning_use": "远郊陵区背景，先做180年前时相筛选，不依现代墓丘样貌批量造汉陵。",
+      "record_ids": [
+        "mangshan_cemeteries",
+        "m2_925",
+        "m2_926"
+      ],
+      "source_ids": [
+        "R18",
+        "R20"
+      ],
+      "source_links": [
+        {
+          "id": "R18",
+          "url": "https://www.lykgyjy.cn/wenwubaohu/371.html"
+        },
+        {
+          "id": "R20",
+          "url": "https://archaeology.pku.edu.cn/info/1031/4732.htm"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "东汉陵区存在高；各墓归属、180年地表状态与本范围低",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "北/西北陵区与城市分图；M2-925/926归此背景但不由公开GPS未经基准直接落工程点。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "灵帝189年以后陵不得进入180年画面。",
+        "M2-925/926为东汉前期墓线索，不自动保证180年墓丘形态。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 3
+    },
+    {
+      "id": "Z40",
+      "name": "洛南帝陵与白草坡候选",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "cemetery",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              10000.0,
+              -15000.0
+            ],
+            [
+              10000.0,
+              -11000.0
+            ],
+            [
+              3000.0,
+              -11000.0
+            ],
+            [
+              3000.0,
+              -15000.0
+            ],
+            [
+              10000.0,
+              -15000.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        3000.0,
+        -15000.0,
+        10000.0,
+        -11000.0
+      ],
+      "anchorEN": [
+        6500,
+        -13000
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 28000000,
+      "envelope_size_m": [
+        7000,
+        4000
+      ],
+      "planning_use": "远郊背景，先标陵园时代与范围候选；白草坡基本确认宣陵，180铭文证据单列。",
+      "record_ids": [
+        "luonan_cemeteries",
+        "baicaopo"
+      ],
+      "source_ids": [
+        "R19",
+        "R20"
+      ],
+      "source_links": [
+        {
+          "id": "R19",
+          "url": "https://www.xinhuanet.com/politics/2020-12/29/c_1126921867.htm"
+        },
+        {
+          "id": "R20",
+          "url": "https://archaeology.pku.edu.cn/info/1031/4732.htm"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "陵园及纪年器物证据较强；本工程坐标仅远景设计",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "南东远郊独立留地区，保持洛南/伊南文献与遗址背景，不挤进三雍旁。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "不把180年铭文自动当陵园初建年，也不把“基本确认”改为无争议唯一墓主。",
+        "不建立未经配准的现代GPS到场景转换。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 3
+    },
+    {
+      "id": "Z41",
+      "name": "西大郊旧刑徒墓地背景",
+      "layer_type": "peripheral_zone",
+      "parent_zone": null,
+      "category": "cemetery",
+      "planning_geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1000.0,
+              -4500.0
+            ],
+            [
+              -1000.0,
+              -3200.0
+            ],
+            [
+              -2400.0,
+              -3200.0
+            ],
+            [
+              -2400.0,
+              -4500.0
+            ],
+            [
+              -1000.0,
+              -4500.0
+            ]
+          ]
+        ]
+      },
+      "bboxEN": [
+        -2400.0,
+        -4500.0,
+        -1000.0,
+        -3200.0
+      ],
+      "anchorEN": [
+        -1700,
+        -3850
+      ],
+      "anchor_role": "选区/镜头/整体布局参照，不是区内所有模型的共同落点；多名物映射不表示重叠，单体须另排布，不自动生成world matrix",
+      "frame": "legacy-scene-E01",
+      "units": "schematic_m",
+      "area_schematic_m2": 1820000,
+      "envelope_size_m": [
+        1400,
+        1300
+      ],
+      "planning_use": "只保留较早墓地遗存背景，不表演180年仍持续埋葬。",
+      "record_ids": [
+        "xidajiao_cemetery"
+      ],
+      "source_ids": [
+        "R14",
+        "R17"
+      ],
+      "source_links": [
+        {
+          "id": "R14",
+          "url": "https://historytourism.scu.edu.cn/info/1035/3040.htm"
+        },
+        {
+          "id": "R17",
+          "url": "https://www.sohu.com/a/674851252_121124388"
+        }
+      ],
+      "historical_confidence": {
+        "site_or_relation": "墓地存在高；180年活动状态未证",
+        "precise_boundary": "未知；本区数值为设计规划，非史实精确度"
+      },
+      "design_recommendation": "中：推荐先保留方位与运输/环境关系；远郊和争议对象晚于城市核心细化。",
+      "layout_reasoning": "置城南偏西、规划洛水带南侧，避开南园核心。",
+      "constraints": [
+        "本区边界仅作功能分配，不自动生成为院墙、道路或古代行政界。",
+        "保留全部既有实例矩阵及道路原线；新建对象须另行审阅，不由本文件自动生成。",
+        "E、N为既有示意工程坐标；不得作为真实地理坐标或考古测量值。",
+        "不得把后出转载或砖重用资料简化成180年刑徒聚落现景。"
+      ],
+      "alternatives_and_movement_margin": [
+        "区内布局以25或50米粗网格迭代；可在本区调整新方案，不挪动现有对象。"
+      ],
+      "reuse_models": [],
+      "existing_nodes": [],
+      "execution_status": "planning_only_not_installed",
+      "design_priority": 3
+    }
+  ],
+  "sources": [
+    {
+      "id": "R01",
+      "title": "《续汉书·百官志四》城门、北军、将作大匠诸条",
+      "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs126.html",
+      "kind": "原文，司马彪记东汉制度；刘昭注引蔡质、应劭、李尤",
+      "verification": "本轮直读城门和将作、北军相关段；电子文本有乱码，须保留校勘意识",
+      "publication_date_or_period": "司马彪3世纪编纂；刘昭6世纪注，引东汉文献"
+    },
+    {
+      "id": "R02",
+      "title": "《续汉书·百官志一》太尉、司徒注",
+      "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs123.html",
+      "kind": "原文，注引汉官仪、蔡质汉仪、古今注",
+      "verification": "本轮直读太尉注与司徒注；原注已提示三府重建记载不同",
+      "publication_date_or_period": "司马彪3世纪编纂；刘昭6世纪注，引东汉文献"
+    },
+    {
+      "id": "R03",
+      "title": "《续汉书·百官志三》太仓、市长、钩盾、尚方等",
+      "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs125.html",
+      "kind": "原文，记东汉制度，注含近同期《汉官》",
+      "verification": "本轮直读；中水官在马市东、永安北宫东北、直里西南角、南园洛水南有明确文字",
+      "publication_date_or_period": "司马彪3世纪编纂；刘昭6世纪注，引东汉文献"
+    },
+    {
+      "id": "R04",
+      "title": "《后汉书·灵帝纪》178—189年诸条",
+      "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs09.html",
+      "kind": "原文，南朝宋编年，唐注",
+      "verification": "本轮直读鸿都门学、西邸、180年公府驻驾庑倒塌等；与已有LY002宫廷年代互证",
+      "publication_date_or_period": "范晔5世纪编纂；唐注"
+    },
+    {
+      "id": "R05",
+      "title": "《续汉书·祭祀志上》建武南郊条",
+      "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs106.html",
+      "kind": "原文，记东汉南郊制度",
+      "verification": "本轮打开原文，南郊细条沿用LY002已核内容；不能把开篇长安元始制度尺寸全套给洛阳",
+      "publication_date_or_period": "司马彪3世纪编纂；刘昭6世纪注"
+    },
+    {
+      "id": "R06",
+      "title": "《续汉书·祭祀志下》宗庙社稷条",
+      "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs108.html",
+      "kind": "原文，建武建庙、建社及后续制度",
+      "verification": "本轮直读高庙、世祖庙、社稷及建武二十一年迁上东门内注",
+      "publication_date_or_period": "司马彪3世纪编纂；刘昭6世纪注"
+    },
+    {
+      "id": "R07",
+      "title": "《续汉书·祭祀志中》及《光武帝纪下》三雍注",
+      "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs107.html",
+      "kind": "原文及唐注保存汉官仪；另见hhs02.html",
+      "verification": "本轮读祭祀中开篇和古籍入口，北郊/三雍细节沿用LY002已核；https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs02.html",
+      "publication_date_or_period": "3至7世纪传世文本；引东汉记录"
+    },
+    {
+      "id": "R08",
+      "title": "《后汉书·蔡邕传》《儒林传》石经条",
+      "url": "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs65.html",
+      "kind": "原文；儒林注引吴谢承，非180年测图",
+      "verification": "本轮未重读，沿用已核LY002 E-R06；儒林传另见 https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs85.html",
+      "publication_date_or_period": "范晔5世纪编纂；唐注，引3世纪谢承"
+    },
+    {
+      "id": "R09",
+      "title": "《水经注集释订讹》卷16 谷水",
+      "url": "https://zh.wikisource.org/zh-hans/水經注集釋訂訛_(四庫全書本)/卷16",
+      "kind": "北魏郦道元地理叙述，保存135年桥铭，夹有魏晋工程与后世校注",
+      "verification": "本轮直读上东门桥、马市、太仓狄泉及各代水工段；不可不分年代使用",
+      "publication_date_or_period": "郦道元6世纪；所引桥铭135年；四库汇校本18世纪"
+    },
+    {
+      "id": "R10",
+      "title": "徐龙国：汉魏两晋南北朝都城模式及其演变，《中原文物》2019年第1期",
+      "url": "https://www.cssn.cn/lsx/lsx_kgx/202210/t20221024_5552600.shtml",
+      "kind": "现代考古综述",
+      "verification": "本轮检索与前轮全文相互核对；三市、太仓武库区域属复原，不是新测坐标",
+      "publication_date_or_period": 2019
+    },
+    {
+      "id": "R11",
+      "title": "汉魏洛阳城宫城发现东汉北宫宫墙有关遗迹，2024-03-04",
+      "url": "https://www.thepaper.cn/newsDetail_forward_26569466",
+      "kind": "政务转载刘涛考古队长对2023发掘的介绍",
+      "verification": "本轮直读。河南考古院官方原页 https://www.hnswwkgyjy.cn/NewsView.php?News_ID=2283 可检索但打开502；未以访问失败作内容验证",
+      "publication_date_or_period": 2024
+    },
+    {
+      "id": "R12",
+      "title": "汉魏洛阳城的祭祀礼制建筑空间，洛阳师范学院河洛文化网页",
+      "url": "https://sites.lynu.edu.cn/hlwh/info/1023/1668.htm",
+      "kind": "现代学术论文转载，2023-01-15",
+      "verification": "本轮直读；北郊候选院区与礼制空间有参考性；村名推测及世祖庙位置属于作者推断",
+      "publication_date_or_period": 2023
+    },
+    {
+      "id": "R13",
+      "title": "《元河南志》卷二古籍汇录",
+      "url": "https://zh.wikisource.org/zh-hans/河南志",
+      "kind": "宋元汇编/后世辑本，含陆机、华延俊洛阳记等佚文",
+      "verification": "本轮检索文本与《水经注》互证；中国哲学书电子化计划相应入口403未读。三市别名、闾里分期须继续版本考",
+      "publication_date_or_period": "宋元汇编及后世辑本，材料各有年代"
+    },
+    {
+      "id": "R14",
+      "title": "四川大学：历史考古青年沙龙（成都）第六期纪要（二），刘涛报告，2017-06-29",
+      "url": "https://historytourism.scu.edu.cn/info/1035/3040.htm",
+      "kind": "高校记录发掘者讲座",
+      "verification": "本轮直读；明确1988—1989年城址东南东汉窑址发掘，北魏大市等另列",
+      "publication_date_or_period": 2017
+    },
+    {
+      "id": "R15",
+      "title": "沈丽华：汉唐时期都城地区窑业生产略论，《南方文物》2022年第4期（转载）",
+      "url": "https://www.sohu.com/a/620471046_121119016",
+      "kind": "考古研究者综述，网页为转载",
+      "verification": "本轮直读洛阳段、Y1描述及注13、14。原报告：《汉魏洛阳城发现的东汉烧煤瓦窑遗址》，《考古》1997年第2期；城内东部冶铸线索引杜金鹏、钱国祥主编《汉魏洛阳城遗址研究》，科学出版社，2007，第XI页。原报告未获读",
+      "publication_date_or_period": 2022
+    },
+    {
+      "id": "R16",
+      "title": "中国社科院考古所：《汉魏洛阳故城南郊礼制建筑遗址：1962—1992年考古发掘报告》，文物出版社，2010",
+      "url": "https://opac.ryukoku.ac.jp/iwjs0005opc/catdbl.do?hidden_return_link=true&pkey=BB21456102",
+      "kind": "原始考古总报告，书目已核，全文本轮未读",
+      "verification": "书目可追溯；项目成果摘要 https://www.pishu.com.cn/skwx_ps/ps/literature?ID=8644335&SiteID=14 可检索；不得把摘要当全书图版",
+      "publication_date_or_period": 2010
+    },
+    {
+      "id": "R17",
+      "title": "刘涛：略论洛阳西大郊东汉刑徒墓地的时代与布局（转载）",
+      "url": "https://www.sohu.com/a/674851252_121124388",
+      "kind": "考古研究者重分析1964资料",
+      "verification": "本轮直读摘要、纪年与砖重用方法。原始来源：《东汉洛阳城南郊的刑徒墓地》，考古1972年第4期；中国社科院考古所《汉魏洛阳故城南郊东汉刑徒墓地》，文物出版社2007。本轮未读两原报告",
+      "publication_date_or_period": "2023转载；考古资料1964，原报告1972/2007"
+    },
+    {
+      "id": "R18",
+      "title": "洛阳市考古研究院：邙山帝陵陵区述要及墓冢举例，2023-12-26",
+      "url": "https://www.lykgyjy.cn/wenwubaohu/371.html",
+      "kind": "考古机构官方资料，含公开GPS测点",
+      "verification": "本轮直读东汉陵区与M2-925/926；坐标基准未注明，不能自动当WGS84控制点",
+      "publication_date_or_period": 2023
+    },
+    {
+      "id": "R19",
+      "title": "新华社：河南洛阳出土纪年器物 基本确认墓主为汉桓帝，2020-12-29",
+      "url": "https://www.xinhuanet.com/politics/2020-12/29/c_1126921867.htm",
+      "kind": "记者采访主持发掘者王咸秋",
+      "verification": "本轮直读；白草坡村东北、180年铭文和宣陵归属的措辞均保留",
+      "publication_date_or_period": 2020
+    },
+    {
+      "id": "R20",
+      "title": "北京大学考古文博学院：杨哲峰《汉代帝陵》讲座纪要，2024",
+      "url": "https://archaeology.pku.edu.cn/info/1031/4732.htm",
+      "kind": "高校专家讲座纪要",
+      "verification": "本轮检索获悉东汉帝陵与追尊后陵区别；仅用于远郊背景分期，不作具体墓主唯一认定",
+      "publication_date_or_period": 2024
+    },
+    {
+      "id": "R21",
+      "title": "钱国祥：汉魏洛阳城城门与宫院门的考察研究（转载入口）",
+      "url": "https://k.sina.cn/article_2145932192_7fe853a001900gcbp.html",
+      "kind": "发掘研究者论文，后期城门资料较多",
+      "verification": "本轮仅检索；原始城址勘查报告应追《中国科学院考古所洛阳工作队：汉魏洛阳城初步勘查》，考古1973年第4期；不可据此认定所有门都是180年实测",
+      "publication_date_or_period": "本轮未核原论文发表年"
+    },
+    {
+      "id": "R22",
+      "title": "人民日报：汉魏洛阳城田野考古成果“上新”，2026-03-25",
+      "url": "https://paper.people.com.cn/rmrb/pc/content/202603/25/content_30147047.html",
+      "kind": "人民日报采访考古队刘涛、郭晓涛",
+      "verification": "本轮直读全文；东掖门始建魏晋，排除现址东汉宫门；13座仓窖不晚于北魏、可能属北魏太仓。标题强于正文，沿用正文限定，不前推180",
+      "publication_date_or_period": 2026
+    },
+    {
+      "id": "R23",
+      "title": "杨继刚：汉鸿都门学地理位置与政治斗争考论，《暨南学报》2014年第2期",
+      "url": "https://jnxb.jnu.edu.cn/skb/CN/Y2014/V36/I2",
+      "kind": "现代文献研究",
+      "verification": "本轮期刊官方目录摘要检索；说明南宫/北宫有不同说，不采用未读论文最终选址",
+      "publication_date_or_period": 2014
+    },
+    {
+      "id": "R24",
+      "title": "高崇文：东汉都城洛阳礼制文化研究，《中原文化研究》2023年第2期48—56页",
+      "url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/643503e53f1c0.pdf",
+      "kind": "现代研究综述及徐龙国示意图",
+      "verification": "本轮直读期刊官方9页论文PDF；另核128页整期刊PDF包含该文。示意图不是工程测图。",
+      "whole_issue_url": "https://www.zywhyj.cn/Uploads/PdfFile/2023-04-11/6434e64ce0ef9.pdf",
+      "sha256": "516b163774b02ed7ca6fc33706cc98a14a51a3b6708047b35513682043dd1dcd",
+      "publication_date_or_period": 2023
+    },
+    {
+      "id": "R25",
+      "title": "中国社会科学院考古研究所2025年度考古工作成果汇报会纪要（三），2026-01-12转载",
+      "url": "https://www.sohu.com/a/975311315_121119016",
+      "kind": "考古所年度汇报纪要的第三方转载，含莫阳报告",
+      "verification": "本轮直读洛阳段；东宫墙发现东汉砖水道；东掖门始建魏晋；宫东魏晋仓窖11座。未找到社科院官方首发页或正式发掘简报；与R22的13座/北魏候选分开记录",
+      "publication_date_or_period": 2026
+    },
+    {
+      "id": "PL-SOUTH2022",
+      "title": "钱国祥讲座回顾：阊阖天门开 建中立太极，2022-12-09转载",
+      "url": "https://www.sohu.com/a/615555773_121119016",
+      "kind": "广州考古/南汉二陵博物馆讲座整理转载；程浩整理",
+      "verification": "公开讲座整理称北部排房/石经推汉太学主部，东北完整院落推魏晋以后，判断语气为应该/应是，非分期测图"
+    },
+    {
+      "id": "PL-SOUTH2017",
+      "title": "钱国祥川大讲座通讯转载，2017-12-13",
+      "url": "https://www.sohu.com/a/210236533_100029711",
+      "kind": "高校讲座通讯转载",
+      "verification": "2017公开通讯与2022讲座解释可交叉核对，尺寸仍非180完整围院复原"
+    }
+  ],
+  "southern_relative_source_ids": [
+    "PL-SOUTH2022",
+    "PL-SOUTH2017",
+    "R24"
+  ],
+  "southern_reference": {
+    "source_file": "南郊相对规划依据.json",
+    "anchor_translation_EN": [
+      1450,
+      -1050
+    ],
+    "method": "讲座相对规划图以灵台为参考平移到既有工程框，再粗化25米；不是测绘配准",
+    "nominal_m_per_px": 1.7,
+    "sensitivity_m_per_px": [
+      1.55,
+      1.85
+    ],
+    "sensitivity_is_confidence_interval": false,
+    "old_reference_points_unchanged": {
+      "ritual_lingtai_B": {
+        "type": "Point",
+        "coordinates": [
+          1469.388,
+          -1040.816
+        ]
+      },
+      "ritual_mingtang_B": {
+        "type": "Point",
+        "coordinates": [
+          1795.918,
+          -1061.224
+        ]
+      },
+      "ritual_biyong_B": {
+        "type": "Point",
+        "coordinates": [
+          2183.673,
+          -938.776
+        ]
+      },
+      "ritual_taixue_B": {
+        "type": "Point",
+        "coordinates": [
+          2367.347,
+          -632.653
+        ]
+      }
+    },
+    "new_anchor_minus_old_schematic_EN": {
+      "灵台": [
+        -19.38799999999992,
+        -9.183999999999969
+      ],
+      "明堂": [
+        29.082000000000107,
+        -13.776000000000067
+      ],
+      "辟雍": [
+        16.327000000000226,
+        -61.224000000000046
+      ],
+      "太学主选": [
+        -17.347000000000207,
+        -67.34699999999998
+      ]
+    }
+  },
+  "checks": {
+    "result": "pass",
+    "zone_count": 41,
+    "city_base_zones": 18,
+    "intentional_subzones_or_overlays": 7,
+    "record_count": 70,
+    "mapped_records": 68,
+    "excluded_later_records": 2,
+    "invalid_geometry_count": 0,
+    "city_uncovered_area_m2": 0.0,
+    "city_base_outside_area_m2": 0.0,
+    "unexpected_base_overlap_count": 0,
+    "fixed_node_palace_overlap_count": 0,
+    "render_node_count_preserved": 77,
+    "physical_courtyards_preserved": 47,
+    "market_count_note": "5店3摊由2渲染节点承载，未加算或改动",
+    "source_geometry_immutable_hashes": {
+      "source_file_sha256": "158d4272df1b0fd4593ec1a732a75925f89fe200891efaea4f8fcc5bb3aefd72",
+      "instance_file_sha256": "b4ea6bc9398e447da8e4308ef971f5279a01ffa38357b1eaa54b2bb1881de6bf",
+      "city_geometry_sha256": "d591ef7d40bd85ab99a24f670342075e7cf87ff8317d9369d1701b23ab01711b",
+      "roads_geometry_sha256": "8f6adbcffa0e84d94e1eb31dbe12ca082a7e3cf474ce61d92cdd952d1138b2b6",
+      "node_matrices_sha256": "13e2bdd10c55dc4aa246d4f8bbc52e44fa8a1919d2dc17032c9ceb2fcf45ae54"
+    },
+    "source_files_not_modified": true,
+    "historical_world_geometries_unchanged": true,
+    "source_ids_resolve": true,
+    "zone_anchor_inside_geometry": true,
+    "record_anchor_inside_candidate": true,
+    "anchor_uses": "推荐标注点/迭代起点，不自动触发落城",
+    "new_numeric_precision": "新增主框25或50米网格；继承轮廓与几何裁切交点保留小数是算术结果，不是更高历史精度",
+    "planned_water_height": null,
+    "warnings": [
+      "现有道路是示意/工程骨架，不是二十四街逐条复原。",
+      "基础区与子区/候选叠层分开，叠层不可相加为城市面积。",
+      "北军、官署、宗庙和五郊含竞争方案，边界非历史定案。",
+      "外围大框只供背景和迁移比较；不得直接按框建满模型。"
+    ]
+  }
+}

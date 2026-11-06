@@ -1,0 +1,25 @@
+.ly-navigation .pj-stage { height: clamp(420px, calc(100svh - 270px), 820px); }
+.ly-navigation .pj-status { white-space: normal; max-width: min(660px, 85%); width: max-content; text-align: center; letter-spacing: .03em; }
+.ly-navigation .ly-zone-bar { align-items: center; gap: 10px; }
+.ly-navigation .ly-overview { background: var(--card); border: 1px solid var(--line); padding: 9px 14px; color: var(--ink); font: inherit; cursor: pointer; }
+.ly-navigation .ly-overview[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.ly-group-label { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.ly-group-label select { max-width: 180px; padding: 8px; background: var(--card); color: var(--ink); border: 1px solid var(--line); }
+.ly-navigation .ly-zone-chips { flex: 1 1 100%; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin; }
+.ly-navigation .ly-zone-chips button { flex: 0 0 auto; min-height: 40px; }
+.ly-navigation [hidden] { display: none !important; }
+.ly-options { display: flex; flex-wrap: wrap; gap: 12px 22px; align-items: center; padding-top: 9px; font-size: 12px; color: var(--muted); }
+.ly-zone-note { margin-top: 14px; padding: 12px 16px; border: 1px dashed var(--gold-soft); line-height: 1.7; font-size: 13px; }
+.ly-zone-note p { margin: 5px 0; color: var(--ink-2); }
+.ly-zone-note strong small { font-size: 12px; font-weight: normal; color: var(--muted); }
+.ly-compass { --bearing: 180deg; position: absolute; z-index: 2; left: 22px; top: 22px; width: 84px; height: 106px; pointer-events: none; color: var(--ink); text-align: center; }
+.ly-compass-rose { position: relative; height: 84px; border: 1px solid var(--gold-soft); border-radius: 50%; background: rgba(250,246,238,.88); transform: rotate(var(--bearing)); }
+.ly-compass-rose span { position: absolute; font: 600 10px sans-serif; transform: translate(-50%, -50%) rotate(calc(-1 * var(--bearing))); white-space: nowrap; }
+.ly-compass .north { left: 50%; top: 15%; color: #a14c36; }
+.ly-compass .south { left: 50%; top: 85%; }
+.ly-compass .east { left: 85%; top: 50%; }
+.ly-compass .west { left: 15%; top: 50%; }
+.ly-compass-rose i { position: absolute; left: 38px; top: 27px; width: 0; height: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-bottom: 13px solid #a14c36; }
+.ly-compass small { display: block; font-size: 10px; margin-top: 4px; }
+.ly-navigation canvas:focus-visible, .ly-navigation button:focus-visible { outline: 2px solid #9a623e; outline-offset: -3px; }
+@media(max-width:700px) { .ly-navigation .pj-stage { height: 65svh; min-height: 360px; aspect-ratio: auto; } .ly-compass { left:16px;top:16px;transform:scale(.85);transform-origin:top left; } .ly-zone-note { font-size:12px; } }

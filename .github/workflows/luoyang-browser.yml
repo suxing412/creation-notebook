@@ -1,0 +1,67 @@
+name: Luoyang browser checks
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+# No secrets, deployment, environments, caches or repository writes.
+permissions:
+  contents: read
+
+concurrency:
+  group: luoyang-browser-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Record tested revision
+        env:
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          mkdir -p browser-evidence
+          python -c 'import json,os,subprocess; print(json.dumps({"head":os.environ["PR_HEAD_SHA"],"base":os.environ["PR_BASE_SHA"],"merge":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()}))' > browser-evidence/revisions.json
+      - name: Install pinned tools
+        run: |
+          npm ci --prefix tests/browser --ignore-scripts --no-audit --no-fund
+          test "$(node -p "require('./tests/browser/package-lock.json').packages['node_modules/gltfpack'].integrity")" = 'sha512-YGt2vPUa3OZuGh4IqbKdorwPyr9PcKKVRHtxOcfrHz3c83EFA6WOJVQMzRej6gPbCWcVnrZ8RDKduxaGclW/xQ=='
+          python -m pip install --disable-pip-version-check pillow==12.3.0
+          cd tests/browser
+          npx playwright install --with-deps chromium
+      - name: Check asset contracts and restore generated files
+        run: |
+          python -I lab/tools/build_assets.py --check > browser-evidence/assets.log 2>&1
+          git restore -- lab/data
+          git clean -f -- lab/media
+          git diff --exit-code
+      - name: Build the deployment artifact
+        env:
+          GLTFPACK: node ${{ github.workspace }}/tests/browser/node_modules/gltfpack/cli.js
+          SLIM_CACHE: ${{ runner.temp }}/luoyang-slim-cache
+        run: python -I lab/tools/assemble_site.py _site > browser-evidence/build.log 2>&1
+      - name: Exercise the built site in Chromium
+        working-directory: tests/browser
+        run: npm test
+      - name: Upload browser evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: luoyang-browser-evidence
+          retention-days: 7
+          path: |
+            browser-evidence/
+            tests/browser/playwright-report/
+            tests/browser/test-results/
