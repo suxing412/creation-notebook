@@ -41,6 +41,16 @@ export async function renderProject({ main, a, c, d, esc, img, card, date }) {
 </header>
 
 <section class="pj-view" aria-label="实时城景">
+  <div class="ly-workspace">
+  <nav class="ly-zone-bar" aria-label="城市分区导航">
+    <button class="ly-overview" data-focus="city" aria-pressed="false">全城总览</button>
+    <label class="ly-group-label">分区
+      <select id="ly-zone-group" aria-label="选择分区组"><option value="base">城内基础区 · 18</option><option value="palace">宫区叠层 · 5</option><option value="outer">近远郊候选 · 18</option></select>
+    </label>
+    <div class="pj-chips ly-zone-chips" role="group" aria-label="镜头推向规划分区">
+      ${zones.map(zone => `<button data-focus="zone:${esc(zone.id)}" data-zone="${esc(zone.id)}" data-group="${groupOf(zone)}" aria-pressed="false" ${groupOf(zone) !== 'base' ? 'hidden' : ''}><i>${esc(zone.id)}</i><span>${esc(zone.name)}</span></button>`).join('')}
+    </div>
+  </nav>
   <div class="pj-stage" id="pj-stage" data-state="poster">
     ${img(a.cover, { alt: a.alt || a.title, sizes: '100vw', eager: true, cls: 'pj-poster' })}
     <canvas id="pj-canvas" tabindex="0" aria-label="${esc(a.title)}实时城景：左键旋转，滚轮推拉，WASD沿地面移动，R返回全城"></canvas>
@@ -58,14 +68,6 @@ export async function renderProject({ main, a, c, d, esc, img, card, date }) {
       <p id="pj-nm"></p><p class="pj-basis" id="pj-nb"></p>
     </aside>
   </div>
-  <div class="pj-bar ly-zone-bar">
-    <button class="ly-overview" data-focus="city" aria-pressed="false">全城总览</button>
-    <label class="ly-group-label">分区
-      <select id="ly-zone-group" aria-label="选择分区组"><option value="base">城内基础区 · 18</option><option value="palace">宫区叠层 · 5</option><option value="outer">近远郊候选 · 18</option></select>
-    </label>
-    <div class="pj-chips ly-zone-chips" role="group" aria-label="镜头推向规划分区">
-      ${zones.map(zone => `<button data-focus="zone:${esc(zone.id)}" data-zone="${esc(zone.id)}" data-group="${groupOf(zone)}" aria-pressed="false" ${groupOf(zone) !== 'base' ? 'hidden' : ''}><i>${esc(zone.id)}</i>${esc(zone.name)}</button>`).join('')}
-    </div>
   </div>
   <div class="ly-options">
     <label class="pj-tier"><input type="checkbox" id="ly-planning" checked> 规划虚线</label>
@@ -75,7 +77,7 @@ export async function renderProject({ main, a, c, d, esc, img, card, date }) {
   <p class="pj-hint" id="pj-hint">默认南上北下；镜头围绕地面旋转。先点画面再用 WASD，松键或移出焦点即停止。</p>
   <aside class="ly-zone-note" id="ly-zone-note" aria-live="polite">
     <strong>41区规划示意，不是41个已发现历史坊</strong>
-    <p>虚线是设计功能边界，既有模型保持原位。历史选址、绝对高程与测量注册仍有不确定；分区锚点不用于自动放置模型。</p>
+    <p>虚线是设计功能边界，已入城模型全部显示，分区只移动镜头。历史选址、绝对高程与测量注册仍有不确定；分区锚点不用于自动放置模型。</p>
   </aside>
 
 </section>

@@ -1,12 +1,14 @@
-.ly-navigation .pj-stage { height: clamp(420px, calc(100svh - 270px), 820px); }
+.ly-workspace { scroll-margin-top: calc(var(--head, 112px) + 12px); display: grid; grid-template-columns: clamp(190px, 22vw, 260px) minmax(0, 1fr); gap: 12px; height: clamp(420px, calc(100svh - 270px), 820px); }
+.ly-navigation .pj-stage { height: 100%; min-width: 0; aspect-ratio: auto; }
+.ly-navigation .ly-zone-bar { display: flex; flex-direction: column; align-items: stretch; gap: 10px; min-height: 0; padding: 12px; border: 1px solid var(--line); background: var(--card); }
 .ly-navigation .pj-status { white-space: normal; max-width: min(660px, 85%); width: max-content; text-align: center; letter-spacing: .03em; }
-.ly-navigation .ly-zone-bar { align-items: center; gap: 10px; }
 .ly-navigation .ly-overview { background: var(--card); border: 1px solid var(--line); padding: 9px 14px; color: var(--ink); font: inherit; cursor: pointer; }
 .ly-navigation .ly-overview[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
-.ly-group-label { display: flex; align-items: center; gap: 8px; font-size: 13px; }
-.ly-group-label select { max-width: 180px; padding: 8px; background: var(--card); color: var(--ink); border: 1px solid var(--line); }
-.ly-navigation .ly-zone-chips { flex: 1 1 100%; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; scrollbar-width: thin; }
-.ly-navigation .ly-zone-chips button { flex: 0 0 auto; min-height: 40px; }
+.ly-group-label { display: grid; gap: 6px; font-size: 13px; }
+.ly-group-label select { width: 100%; min-width: 0; padding: 8px; background: var(--card); color: var(--ink); border: 1px solid var(--line); }
+.ly-navigation .ly-zone-chips { display: flex; flex: 1; flex-direction: column; flex-wrap: nowrap; min-height: 0; overflow-y: auto; overflow-x: hidden; scrollbar-width: thin; overscroll-behavior: contain; }
+.ly-navigation .ly-zone-chips button { flex: 0 0 auto; min-height: 44px; padding: 10px 8px; text-align: left; line-height: 1.5; letter-spacing: .04em; overflow-wrap: anywhere; }
+.ly-zone-chips button i { flex-shrink: 0; }
 .ly-navigation [hidden] { display: none !important; }
 .ly-options { display: flex; flex-wrap: wrap; gap: 12px 22px; align-items: center; padding-top: 9px; font-size: 12px; color: var(--muted); }
 .ly-zone-note { margin-top: 14px; padding: 12px 16px; border: 1px dashed var(--gold-soft); line-height: 1.7; font-size: 13px; }
@@ -22,4 +24,15 @@
 .ly-compass-rose i { position: absolute; left: 38px; top: 27px; width: 0; height: 0; border-left: 3px solid transparent; border-right: 3px solid transparent; border-bottom: 13px solid #a14c36; }
 .ly-compass small { display: block; font-size: 10px; margin-top: 4px; }
 .ly-navigation canvas:focus-visible, .ly-navigation button:focus-visible { outline: 2px solid #9a623e; outline-offset: -3px; }
-@media(max-width:700px) { .ly-navigation .pj-stage { height: 65svh; min-height: 360px; aspect-ratio: auto; } .ly-compass { left:16px;top:16px;transform:scale(.85);transform-origin:top left; } .ly-zone-note { font-size:12px; } }
+@media(max-width:700px) {
+  .ly-workspace { grid-template-columns: 94px minmax(0, 1fr); gap: 6px; height: 65svh; min-height: 360px; }
+  .ly-navigation .ly-zone-bar { padding: 6px; gap: 8px; }
+  .ly-navigation .ly-overview { padding: 9px 2px; min-height: 44px; font-size: 12px; }
+  .ly-group-label { font-size: 11px; }
+  .ly-group-label select { padding: 8px 0; font-size: 11px; }
+  .ly-navigation .ly-zone-chips button { flex-direction: column; align-items: flex-start; gap: 2px; padding: 7px 5px; font-size: 11px; }
+  .ly-compass { left: 12px; top: 12px; transform: scale(.65); transform-origin: top left; }
+  .ly-navigation .pj-status { font-size: 11px; padding: 5px 8px; bottom: 16px; }
+  .ly-navigation .pj-open { min-width: 0; width: calc(100% - 28px); max-width: 200px; padding: 12px 8px; gap: 6px; font-size: 12px; }
+  .ly-zone-note { font-size: 12px; }
+}

@@ -16,9 +16,9 @@ const chapterText = {
 };
 
 function noteOf(node) {
-  const homes = manifest.nodes.filter(n => n.chapter === 'residential');
-  const i = homes.findIndex(n => n.id === node.id);
-  const title = i >= 0 ? `住宅院落 · 第 ${i + 1} 院` : node.chapter === 'terrain' ? '道路与地面' : String(node.title || node.id).replace(/^N2 /, '市肆 ');
+  // A residential chapter can also contain wells and other shared facilities.
+  // Keep each placed model's explicit identity instead of numbering every node as a home.
+  const title = String(node.title || (node.chapter === 'terrain' ? '道路与地面' : node.id)).replace(/^N2 /, '市肆 ');
   return {
     id: node.id, title,
     summary: node.summary || chapterText[node.chapter] || '已交付的建筑研究模型，可转动观察。',

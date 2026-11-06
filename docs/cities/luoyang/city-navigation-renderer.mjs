@@ -221,8 +221,13 @@ export async function createCityRenderer({
   const nodes = new Map([...manifest.nodes, ...(manifest.researchModels || [])].map(node => [node.id, node]));
   const chapters = new Map((manifest.chapters || []).map(chapter => [chapter.id, chapter]));
   const effectiveTier = node => node.tier ?? assets.get(node.asset)?.tier;
-  let loadedIds = new Set(manifest.nodes.filter(node => node.initial !== false && !isUnlocated(effectiveTier(node))).map(node => node.id));
-  let cityIds = loadedIds;
+  // Every placed city node is present from the first frame. `initial` was a
+  // chapter-loading hint, not a placement decision; research stays separate.
+  const cityIds = new Set(manifest.nodes.filter(node => node.space !== 'local-study' && !isUnlocated(effectiveTier(node))).map(node => node.id));
+  let loadedIds = cityIds;
+  let modelNodeIds = [];
+  let sceneRevision = 0;
+  let pendingSceneLoads = 0;
   const cache = new Map();
   const materialCache = new Map();
   const resources = new Set();
@@ -420,46 +425,54 @@ export async function createCityRenderer({
   }
 
   async function rebuild(nextNearId = null, nextIds = loadedIds) {
-    const token = ++generation;
-    const activeNodes = [...nextIds].map(id => nodes.get(id)).filter(node => node && !isUnlocated(effectiveTier(node)));
-    const replaced = new Set(activeNodes.flatMap(node => node.replaces || []));
-    const batches = new Map();
-    for (const node of activeNodes) {
-      if (replaced.has(node.id)) continue;
-      const near = node.id === nextNearId && Boolean(assets.get(node.asset)?.nearUrl);
-      const inferred = isInferred(effectiveTier(node));
-      const key = `${node.asset}:${near}:${inferred}`;
-      if (!batches.has(key)) batches.set(key, { asset: node.asset, near, inferred, nodes: [] });
-      batches.get(key).nodes.push(node);
-    }
-    const loaded = await Promise.all([...batches.values()].map(async batch => ({ ...batch, prototype: await loadAsset(batch.asset, batch.near) })));
-    if (disposed || token !== generation) return false;
-    const fresh = new THREE.Group();
+    ++pendingSceneLoads;
     try {
-      for (const batch of loaded) {
-        const matrices = batch.nodes.map(transformFor);
-        for (const part of batch.prototype.parts) {
-          const mesh = new THREE.InstancedMesh(part.geometry, getMaterial(part.pigment, batch.inferred), batch.nodes.length);
-          fresh.add(mesh);
-          matrices.forEach((matrix, index) => mesh.setMatrixAt(index, matrix));
-          mesh.instanceMatrix.needsUpdate = true;
-          mesh.computeBoundingBox();
-          mesh.computeBoundingSphere();
-          mesh.userData.nodes = batch.nodes;
-          mesh.name = batch.asset;
-        }
+      const token = ++generation;
+      const activeNodes = [...nextIds].map(id => nodes.get(id)).filter(node => node && !isUnlocated(effectiveTier(node)));
+      const replaced = new Set(activeNodes.flatMap(node => node.replaces || []));
+      const batches = new Map();
+      for (const node of activeNodes) {
+        if (replaced.has(node.id)) continue;
+        const near = node.id === nextNearId && Boolean(assets.get(node.asset)?.nearUrl);
+        const inferred = isInferred(effectiveTier(node));
+        const key = `${node.asset}:${near}:${inferred}`;
+        if (!batches.has(key)) batches.set(key, { asset: node.asset, near, inferred, nodes: [] });
+        batches.get(key).nodes.push(node);
       }
-    } catch (error) {
-      releaseInstances(fresh);
-      throw error;
+      const loaded = await Promise.all([...batches.values()].map(async batch => ({ ...batch, prototype: await loadAsset(batch.asset, batch.near) })));
+      if (disposed || token !== generation) return false;
+      const fresh = new THREE.Group();
+      try {
+        for (const batch of loaded) {
+          const matrices = batch.nodes.map(transformFor);
+          for (const part of batch.prototype.parts) {
+            const mesh = new THREE.InstancedMesh(part.geometry, getMaterial(part.pigment, batch.inferred), batch.nodes.length);
+            fresh.add(mesh);
+            matrices.forEach((matrix, index) => mesh.setMatrixAt(index, matrix));
+            mesh.instanceMatrix.needsUpdate = true;
+            mesh.computeBoundingBox();
+            mesh.computeBoundingSphere();
+            mesh.userData.nodes = batch.nodes;
+            mesh.name = batch.asset;
+          }
+        }
+      } catch (error) {
+        releaseInstances(fresh);
+        throw error;
+      }
+      releaseInstances(modelGroup);
+      modelGroup = fresh;
+      scene.add(modelGroup);
+      loadedIds = nextIds;
+      nearId = nextNearId;
+      modelNodeIds = [...new Set(fresh.children.flatMap(mesh => mesh.userData.nodes.map(node => node.id)))].sort();
+      ++sceneRevision;
+      requestRender();
+      return true;
+    } finally {
+      --pendingSceneLoads;
+      requestRender();
     }
-    releaseInstances(modelGroup);
-    modelGroup = fresh;
-    scene.add(modelGroup);
-    loadedIds = nextIds;
-    nearId = nextNearId;
-    requestRender();
-    return true;
   }
 
   function resize() {
@@ -618,19 +631,21 @@ export async function createCityRenderer({
     return box;
   }
 
+  async function restoreCity() {
+    if (loadedIds === cityIds && nearId === null && modelGroup.children.length) return true;
+    return rebuild(null, cityIds);
+  }
+
   async function focusChapter(id) {
     if (id === 'city' || id === 'overview') return resetView();
     const chapter = chapters.get(id);
     if (!chapter) return false;
     if (chapter.defaultResearchModel) return focusResearchModel(chapter.defaultResearchModel, id);
     const token = beginNavigation();
-    const nextIds = new Set(cityIds);
-    for (const nodeId of chapter.loadNodeIds || []) nextIds.add(nodeId);
     onStatus(`正在打开${chapter.title || chapter.name || '这一章'}…`);
-    const ready = await rebuild(null, nextIds);
+    const ready = await restoreCity();
     if (!ready || token !== navigationToken) return false;
     selectedZone = null; fittedZoneId = null; updateOverlay();
-    cityIds = nextIds;
     studyId = null;
     overviewActive = false;
     activeChapter = id;
@@ -646,12 +661,10 @@ export async function createCityRenderer({
     if (!node || isUnlocated(effectiveTier(node))) return false;
     if (node.space === 'local-study') return focusResearchModel(id);
     const token = beginNavigation();
-    const nextIds = new Set(cityIds);
-    nextIds.add(id);
+    if (!cityIds.has(id)) return false;
     onStatus('正在打开已有近景模型…');
-    if (!await rebuild(id, nextIds) || token !== navigationToken) return false;
+    if (!await rebuild(id, cityIds) || token !== navigationToken) return false;
     selectedZone = null; fittedZoneId = null; updateOverlay();
-    cityIds = nextIds;
     studyId = null;
     overviewActive = false;
     selectedId = id;
@@ -664,7 +677,7 @@ export async function createCityRenderer({
 
   async function resetView(immediate = false) {
     const token = beginNavigation();
-    if (!await rebuild(null, cityIds) || token !== navigationToken) return false;
+    if (!await restoreCity() || token !== navigationToken) return false;
     selectedZone = null; fittedZoneId = null; updateOverlay();
     studyId = null;
     activeChapter = 'city';
@@ -720,7 +733,7 @@ export async function createCityRenderer({
   }
 
   function getViewState() {
-    return { chapter: activeChapter, zoneId: selectedZone, studyId,
+    return { chapter: activeChapter, zoneId: selectedZone, studyId, modelNodeIds: [...modelNodeIds], sceneRevision, pendingSceneLoads,
       position: camera.position.toArray(), target: controls?.target.toArray() || [0,0,0],
       compassDegrees: controls ? compassAngle(camera.position.toArray(), controls.target.toArray()) : 180,
       moving: Boolean(flight || heldKeys.size), overlayVisible };
@@ -736,7 +749,7 @@ export async function createCityRenderer({
     ++navigationToken; ++generation; flight = null; overviewActive = false; fittedZoneId = null;
     heldKeys.add(event.code); requestRender();
   }
-  function beginNavigation() { ++navigationToken; flight = null; clearKeys(); return navigationToken; }
+  function beginNavigation() { ++navigationToken; ++generation; flight = null; clearKeys(); return navigationToken; }
   function onControlStart() { ++navigationToken; ++generation; flight = null; overviewActive = false; fittedZoneId = null; clearKeys(); }
   function suspend() { beginNavigation(); ++generation; cancelAnimationFrame(frame); frame = 0; }
   function resume() { resize(); requestRender(); }
@@ -762,10 +775,8 @@ export async function createCityRenderer({
     const token = beginNavigation();
     flight = null; clearKeys();
     onStatus(`正在查看 ${zone.id} ${zone.name}（规划示意）…`);
-    const nextIds = new Set(cityIds);
-    for (const nodeId of zone.existing_nodes || []) if (nodes.has(nodeId)) nextIds.add(nodeId);
-    if (!await rebuild(null, nextIds) || token !== navigationToken) return false;
-    cityIds = nextIds; studyId = null; selectedZone = id; fittedZoneId = id; activeChapter = 'zone'; overviewActive = false;
+    if (!await restoreCity() || token !== navigationToken) return false;
+    studyId = null; selectedZone = id; fittedZoneId = id; activeChapter = 'zone'; overviewActive = false;
     updateOverlay();
     const pose = zonePose(zone);
     onStatus('规划范围与已有模型；虚线是设计分区，不是考古定界。');
@@ -783,7 +794,7 @@ export async function createCityRenderer({
     onStatus('三维画面已暂停，可重新打开。');
   }
 
-  function dispose() {
+  function dispose(loseContext = true) {
     if (disposed) return;
     disposed = true;
     generation++;
@@ -812,7 +823,7 @@ export async function createCityRenderer({
     window.removeEventListener('resize', resize);
     signal?.removeEventListener('abort', onAbort);
     renderer?.dispose();
-    renderer?.forceContextLoss();
+    if (loseContext) renderer?.forceContextLoss();
   }
 
   try {
@@ -860,7 +871,8 @@ export async function createCityRenderer({
     onReady(lastMetrics);
     return { focusZone, focusChapter, focusCourtyard, focusResearchModel, resetView, setEvidenceVisible, setPlanningVisible, getViewState, suspend, resume, resize, dispose };
   } catch (error) {
-    dispose();
+    // Initial download failures must leave this canvas usable for a same-page retry.
+    dispose(false);
     throw error;
   }
 }
