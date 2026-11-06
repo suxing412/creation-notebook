@@ -223,6 +223,56 @@ def to_gltf(poly):
     return [[r3(e), 0.0, r3(-n)] for e, n in poly]
 
 
+# ------------------------------------------------------------------ 保守准入候选
+def gate(it, *, verified_installations=()):
+    """默认关闭安装；只接受独立可信验核方提供的完整条目白名单。
+
+    verified_installations 是接口占位，不是本函数生成的史证：调用方必须先独立
+    核定精确条目的东汉分期及考古控制点到世界坐标的映射，再传入原样字典 tuple。
+    当前 main 不传此参数，真实已核条目数为零；测试中的白名单全部是合成例。
+    候选条目内不得自带 verified/证据/坐标扩展字段冒充验核。现有条目协议没有
+    世界坐标字段，因此任何新增坐标字段也拒绝，不能将本函数当几何验核器。
+    本函数通过只代表消费了可信调用方的验核结果，不代表 G 冻结或城市安装许可。
+    """
+    keys = {'id', 'site', 'item', 'phase', 'position', 'request'}
+    sites = {s['id'] for s in SD.SITES}
+
+    def valid_shape(value):
+        return (type(value) is dict and set(value) == keys
+                and all(type(value[k]) is str and value[k].strip() for k in keys)
+                and value['site'] in sites)
+
+    if not valid_shape(it):
+        return {"admitted": False, "reasons": ['条目字段缺失、未知、类型错误或地点未知'], "renderPoint": False}
+    request = it['request']
+    if request not in ('install180', 'marker'):
+        return {"admitted": False, "reasons": ['未知请求类型：' + request], "renderPoint": False}
+    if request == 'install180':
+        reasons = []
+        if it['phase'] != 'EH':
+            reasons.append('安装分期不在精确 EH 白名单：' + it['phase'])
+        if it['position'] != 'A-surveyed-with-control-points':
+            reasons.append('无考古控制点：位置等级=' + it['position'])
+        trusted = (type(verified_installations) is tuple
+                   and all(valid_shape(v) and v['phase'] == 'EH'
+                           and v['position'] == 'A-surveyed-with-control-points'
+                           and v['request'] == 'install180'
+                           for v in verified_installations))
+        if not trusted or not any(it == v for v in verified_installations):
+            reasons.append('缺少与完整条目匹配的独立分期及世界坐标验核记录')
+        return {"admitted": not reasons, "reasons": reasons, "renderPoint": False}
+    # 只保留原 P16–P21 的完整条目及三种组合，绝不转成 install180。
+    marker_pairs = {('EH-figure', 'B'), ('EH', 'text-band'),
+                    ('EH+Jin', 'text-band-exclusive')}
+    marker_ids = {'P16', 'P17', 'P18', 'P19', 'P20', 'P21'}
+    admitted = ((it['phase'], it['position']) in marker_pairs
+                and any(it == v for v in SD.GATE_ITEMS
+                        if v['id'] in marker_ids and v['request'] == 'marker'))
+    return {"admitted": admitted,
+            "reasons": [] if admitted else ['不是已支持的研究标记分期/位置组合'],
+            "renderPoint": admitted and it['position'] == 'B'}
+
+
 # ------------------------------------------------------------------ 主程序
 def main():
     ap = argparse.ArgumentParser()
@@ -614,31 +664,25 @@ def main():
             "south-band-relabelled-north": separation(geo_s, bad3, wall)}
     checks.append(check('separation-negatives-all-caught', all(len(v) > 0 for v in negs.values()), {k: len(v) for k, v in negs.items()}))
 
-    # ---------------- 180安装层准入
-    LATER = {'W-Jin', 'Wei-Jin+', 'Wei/NW', 'after-180-other-facility', 'EH-other-facility'}
-
-    def gate(it):
-        reasons = []
-        if it['phase'] in LATER:
-            reasons.append('分期/设施不符：' + it['phase'])
-        if it['phase'] in ('unverified', 'unverified+NW-overlap'):
-            reasons.append('遗迹分期未核（原报告未读）' + ('；与北魏正光明堂可能同址' if 'NW' in it['phase'] else ''))
-        if it['request'] == 'install180':
-            if it['position'] != 'A-surveyed-with-control-points':
-                reasons.append('无考古控制点：位置等级=' + str(it['position']))
-            return {"admitted": False if reasons else True, "reasons": reasons}
-        # marker
-        if it['position'] not in ('B', 'text-band', 'text-band-exclusive'):
-            reasons.append('不是可作标记的位置类')
-        return {"admitted": not reasons, "reasons": reasons, "renderPoint": it['position'] == 'B'}
+    # ---------------- 180安装层准入（未接入独立验核，安装白名单保持空）
     gate_res = [dict(it, **gate(it)) for it in SD.GATE_ITEMS]
     adm180 = [g['id'] for g in gate_res if g['request'] == 'install180' and g['admitted']]
     adm_marker = [g['id'] for g in gate_res if g['request'] == 'marker' and g['admitted']]
     checks.append(check('install180-admits-nothing', adm180 == [], adm180))
     checks.append(check('markers-admitted-6', sorted(adm_marker) == ['P16', 'P17', 'P18', 'P19', 'P20', 'P21'], adm_marker))
-    gneg = [gate({"phase": "Wei/NW", "position": "B", "request": "marker"}), gate({"phase": "EH", "position": "A-surveyed-with-control-points", "request": "install180"}),
-            gate({"phase": "W-Jin", "position": "A-surveyed-with-control-points", "request": "install180"})]
-    checks.append(check('gate-negatives', (not gneg[0]['admitted']) and gneg[1]['admitted'] and (not gneg[2]['admitted']), gneg))
+    # 负例均记录完整输入和预期；EH+A 标签自身不是已核证据。
+    base = dict(SD.GATE_ITEMS[10], position='A-surveyed-with-control-points')
+    negative_inputs = [(phase, dict(base, phase=phase)) for phase in
+                       ('EH', 'EH+Jin', 'EH-figure', 'NW', 'Jin', 'unknown', 'EH ', 'EHH', 'W-Jin')]
+    negative_inputs += [('unknown-request', dict(base, request='install18O')),
+                        ('self-verified', dict(base, verified=True)),
+                        ('wrong-world-coordinate', dict(base, worldPosition=[0, 0, 1]))]
+    gneg = [{"case": name, "input": value, "expected": {"admitted": False},
+             "actual": gate(value)} for name, value in negative_inputs]
+    checks.append(check('gate-negatives', all(n['actual']['admitted'] is False for n in gneg), gneg))
+    gpos = [{"case": it['id'], "input": it, "expected": {"admitted": True},
+             "actual": gate(it)} for it in SD.GATE_ITEMS if it['request'] == 'marker']
+    checks.append(check('gate-positive-research-markers', all(n['actual']['admitted'] is True for n in gpos), gpos))
 
     # ---------------- 现有城市节点与约束区的叠合
     frames = json.load(open(os.path.join(a.ly005, 'qa/frames-bce3211.json'), encoding='utf-8'))
@@ -731,8 +775,8 @@ def main():
     jdump(dig, os.path.join(a.out, 'qa/digitization.json'))
     jdump({"units": SD.UNITS, "constraints": cons}, os.path.join(a.out, 'qa/consistency.json'))
     jdump({"errors": sep_errs, "minSouthNorthDistance_m": r3(min_sn), "northReadingsPairwiseDistance_m": excl, "negatives": negs}, os.path.join(a.out, 'qa/separation.json'))
-    jdump({"rules": {"install180": "只有'东汉分期已核'且'有考古控制点的测绘位置'才放行；本轮没有任何一项满足",
-                     "marker": "B示意点或文本带可作研究标记；后世/他设施资料不得作标记"}, "items": gate_res, "negatives": gneg}, os.path.join(a.out, 'qa/phase-gate.json'))
+    jdump({"rules": {"install180": "仅精确 EH+A 位置且完整条目匹配独立分期与世界坐标验核白名单；main 保持空白名单，本轮无安装准入",
+                     "marker": "仅原 P16–P21 完整条目及三种分期/位置组合可作研究标记；EH+Jin 互斥文本包络不是安装准入"}, "items": gate_res, "negatives": gneg, "positives": gpos}, os.path.join(a.out, 'qa/phase-gate.json'))
     jdump(overlap, os.path.join(a.out, 'qa/city-overlap.json'))
     write_md(out, qmap, os.path.join(a.out, 'tables/site-constraints.md'))
     draw_map(a, feats, wall, south_feats, north_feats, marker, os.path.join(a.out, 'preview/constraints-map.png'), hits, dig['figureCoverage'])
