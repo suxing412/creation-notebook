@@ -1,5 +1,5 @@
 // Luoyang planning navigation, derived from the existing city renderer.
-import { groundPose, groundMovement, compassAngle, zoneRings } from './ground-navigation.mjs';
+import { groundPose, groundInputVelocity, groundToWorld, worldToGround, stepGroundVelocity, constrainGroundStep, smoothOrbitOffset, compassAngle, zoneRings } from './ground-navigation.mjs';
 import * as THREE from '../../fusions/F01/vendor/three.module.js';
 import { GLTFLoader } from '../../fusions/F01/vendor/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from '../../fusions/F01/vendor/addons/controls/OrbitControls.js';
@@ -244,8 +244,13 @@ export async function createCityRenderer({
   let selectedZone = null;
   let fittedZoneId = null;
   const heldKeys = new Set();
-  let lastMovementTime = 0;
+  const activePointers = new Set();
+  let lastFrameTime = null;
+  let velocity = [0, 0, 0];
+  let orbitPending = false;
+  let movementBounds = [-Infinity, -Infinity, Infinity, Infinity];
   const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 60000);
+  const inputCamera = camera.clone();
   const postScene = new THREE.Scene();
   const postCamera = new THREE.Camera();
   const raycaster = new THREE.Raycaster();
@@ -466,6 +471,15 @@ export async function createCityRenderer({
       loadedIds = nextIds;
       nearId = nextNearId;
       modelNodeIds = [...new Set(fresh.children.flatMap(mesh => mesh.userData.nodes.map(node => node.id)))].sort();
+      const travel = new THREE.Box3().setFromObject(fresh);
+      if (nextIds === cityIds) for (const zone of planningZones) {
+        const [e0,n0,e1,n1] = zone.bboxEN;
+        travel.expandByPoint(new THREE.Vector3(e0,0,-n1));
+        travel.expandByPoint(new THREE.Vector3(e1,0,-n0));
+      }
+      const margin = nextIds === cityIds ? 500 : 100;
+      travel.expandByScalar(margin);
+      movementBounds = [travel.min.x,travel.min.z,travel.max.x,travel.max.z];
       ++sceneRevision;
       requestRender();
       return true;
@@ -486,6 +500,8 @@ export async function createCityRenderer({
     renderer.setSize(width, height, false);
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
+    inputCamera.aspect = camera.aspect;
+    inputCamera.updateProjectionMatrix();
     if (overviewActive) applyPose(overviewPose(), true);
     else if (fittedZoneId) applyPose(zonePose(zones.get(fittedZoneId)), true);
     internalPixelRatio = Math.min(2, Math.min(4096, renderer.capabilities.maxTextureSize) / Math.max(width, height));
@@ -515,28 +531,43 @@ export async function createCityRenderer({
   }
 
   function requestRender() {
-    if (!disposed && !contextLost && !document.hidden && !frame) frame = requestAnimationFrame(render);
+    if (!disposed && !contextLost && !document.hidden && !frame) {
+      if (lastFrameTime === null) lastFrameTime = performance.now();
+      frame = requestAnimationFrame(render);
+    }
   }
 
   function render(now = performance.now()) {
     frame = 0;
     if (disposed || contextLost || document.hidden || !width || !height) return;
-    if (heldKeys.size) {
-      const delta = groundMovement(camera.position.toArray(), controls.target.toArray(), heldKeys, lastMovementTime ? (now-lastMovementTime)/1000 : 1/60);
-      camera.position.add(new THREE.Vector3(...delta));
-      controls.target.add(new THREE.Vector3(...delta));
-      controls.target.y = 0;
-      controls.update();
-    }
-    lastMovementTime = now;
+    const dt = lastFrameTime === null ? 0 : Math.min(0.25, Math.max(0,(now-lastFrameTime)/1000));
+    lastFrameTime = now;
     if (flight) {
       const progress = Math.min(1, (now - flight.started) / flight.duration);
       const eased = progress * progress * (3 - 2 * progress);
       camera.position.lerpVectors(flight.fromPosition, flight.position, eased);
       controls.target.lerpVectors(flight.fromTarget, flight.target, eased);
       if (progress === 1) flight = null;
-      controls.update();
+      syncInputPose();
+    } else {
+      const smoothed = smoothOrbitOffset(camera.position.clone().sub(controls.target).toArray(), inputCamera.position.clone().sub(controls.target).toArray(), dt);
+      orbitPending = smoothed.pending;
+      camera.position.fromArray(smoothed.offset).add(controls.target);
+      const position = camera.position.toArray(), target = controls.target.toArray();
+      const right = new THREE.Vector3(1,0,0).applyQuaternion(camera.quaternion);
+      const horizontal = Math.hypot(right.x,right.z) || 1;
+      const fallback = [right.z/horizontal,-right.x/horizontal];
+      const desired = groundInputVelocity(position,target,heldKeys);
+      const stepped = stepGroundVelocity(velocity,desired,dt);
+      const bounded = constrainGroundStep(target,groundToWorld(stepped.delta,position,target,fallback),groundToWorld(stepped.velocity,position,target,fallback),movementBounds);
+      velocity = worldToGround(bounded.velocity,position,target,fallback);
+      const movement = new THREE.Vector3(...bounded.delta);
+      camera.position.add(movement);
+      inputCamera.position.add(movement);
+      controls.target.add(movement);
+      controls.target.y = 0;
     }
+    camera.lookAt(controls.target);
     const started = performance.now();
     const distance = camera.position.distanceTo(controls.target);
     camera.near = Math.max(0.08, distance / 2000);
@@ -581,7 +612,8 @@ export async function createCityRenderer({
       contextLost: false
     };
     onMetrics(lastMetrics);
-    if (flight || heldKeys.size) requestRender();
+    if (isMoving()) requestRender();
+    else lastFrameTime = null;
   }
 
   function fitPose(box, direction = new THREE.Vector3(0.8, 1.2, 1)) {
@@ -601,7 +633,7 @@ export async function createCityRenderer({
   function applyPose(pose, immediate = false) {
     pose = groundPose(pose);
     if (!pose) return false;
-    heldKeys.clear();
+    stopMotion();
     const position = new THREE.Vector3().fromArray(pose.position);
     const target = new THREE.Vector3().fromArray(pose.target);
     controls.maxDistance = Math.max(20000, position.distanceTo(target) * 1.1);
@@ -609,7 +641,7 @@ export async function createCityRenderer({
       flight = null;
       camera.position.copy(position);
       controls.target.copy(target);
-      controls.update();
+      syncInputPose();
     } else {
       flight = { fromPosition: camera.position.clone(), fromTarget: controls.target.clone(), position, target, started: performance.now(), duration: 900 };
     }
@@ -711,15 +743,22 @@ export async function createCityRenderer({
   }
 
   function onPointerDown(event) {
+    activePointers.add(event.pointerId);
     canvas.focus({ preventScroll: true });
     if (event.button !== 0) return;
-    pointerStart = { x: event.clientX, y: event.clientY, id: event.pointerId };
+    if (!event.isPrimary) { pointerStart = null; return; }
+    pointerStart = { x: event.clientX, y: event.clientY, id: event.pointerId, dragged: false };
   }
 
+  function onPointerMove(event) {
+    if (pointerStart?.id === event.pointerId && Math.hypot(pointerStart.x-event.clientX,pointerStart.y-event.clientY)>5) pointerStart.dragged = true;
+  }
+  function onPointerCancel(event) { activePointers.delete(event.pointerId); pointerStart = null; }
   function onPointerUp(event) {
+    activePointers.delete(event.pointerId);
     const start = pointerStart;
     pointerStart = null;
-    if (!start || start.id !== event.pointerId || Math.hypot(start.x - event.clientX, start.y - event.clientY) > 5) return;
+    if (!start || start.dragged || start.id !== event.pointerId || orbitPending || Math.hypot(start.x - event.clientX, start.y - event.clientY) > 5) return;
     const rect = canvas.getBoundingClientRect();
     pointer.set((event.clientX - rect.left) / rect.width * 2 - 1, 1 - (event.clientY - rect.top) / rect.height * 2);
     camera.updateMatrixWorld();
@@ -736,23 +775,61 @@ export async function createCityRenderer({
     return { chapter: activeChapter, zoneId: selectedZone, studyId, modelNodeIds: [...modelNodeIds], sceneRevision, pendingSceneLoads,
       position: camera.position.toArray(), target: controls?.target.toArray() || [0,0,0],
       compassDegrees: controls ? compassAngle(camera.position.toArray(), controls.target.toArray()) : 180,
-      moving: Boolean(flight || heldKeys.size), overlayVisible };
+      moving: isMoving(), flightActive: Boolean(flight), movementBounds: [...movementBounds], overlayVisible };
   }
-  function clearKeys() { heldKeys.clear(); lastMovementTime = 0; }
-  function onVisibility() { if (document.hidden) clearKeys(); requestRender(); }
-  function onKeyUp(event) { heldKeys.delete(event.code); }
+  function isMoving() { return Boolean(flight || heldKeys.size || orbitPending || Math.hypot(...velocity)); }
+  function syncInputPose() {
+    orbitPending = false;
+    if (!controls) return;
+    // update() would clamp only the input pose during a flight and create hidden
+    // movement after blur. The next real OrbitControls input recomputes its orbit.
+    camera.lookAt(controls.target);
+    inputCamera.position.copy(camera.position);
+    inputCamera.quaternion.copy(camera.quaternion);
+  }
+  function stopMotion() {
+    heldKeys.clear(); velocity = [0,0,0]; flight = null; pointerStart = null;
+    lastFrameTime = null;
+    syncInputPose();
+    if (activePointers.size && controls && !disposed) {
+      const target = controls.target.clone(), maxDistance = controls.maxDistance;
+      controls.dispose();
+      const captured = [...activePointers];
+      activePointers.clear();
+      for (const id of captured) if (canvas.hasPointerCapture(id)) canvas.releasePointerCapture(id);
+      // A new controls instance clears its public-input gesture lifecycle without
+      // depending on private vendor fields or synthesizing browser pointer events.
+      controls = configureControls(target,maxDistance);
+      syncInputPose();
+    }
+    activePointers.clear();
+  }
+  function onBlur() { beginNavigation(); requestRender(); }
+  function onVisibility() { if (document.hidden) beginNavigation(); requestRender(); }
+  function onKeyUp(event) { if (heldKeys.delete(event.code)) requestRender(); }
+  function cancelAutomaticMotion() {
+    ++navigationToken; ++generation;
+    if (flight) { flight = null; syncInputPose(); }
+    overviewActive = false; fittedZoneId = null;
+  }
   function onKeyDown(event) {
     if (event.ctrlKey || event.metaKey || event.altKey || event.isComposing) return;
-    if (event.code === 'KeyR') { event.preventDefault(); resetView().catch(error => onStatus(error.message)); return; }
+    if (event.code === 'KeyR') { event.preventDefault(); if (!event.repeat) resetView().catch(error => onStatus(error.message)); return; }
     if (!['KeyW','KeyA','KeyS','KeyD'].includes(event.code)) return;
     event.preventDefault();
-    ++navigationToken; ++generation; flight = null; overviewActive = false; fittedZoneId = null;
+    // Focus loss requires a fresh press, not the OS repeating a previously held key.
+    if (event.repeat && !heldKeys.has(event.code)) return;
+    if (!heldKeys.has(event.code)) cancelAutomaticMotion();
     heldKeys.add(event.code); requestRender();
   }
-  function beginNavigation() { ++navigationToken; ++generation; flight = null; clearKeys(); return navigationToken; }
-  function onControlStart() { ++navigationToken; ++generation; flight = null; overviewActive = false; fittedZoneId = null; clearKeys(); }
-  function suspend() { beginNavigation(); ++generation; cancelAnimationFrame(frame); frame = 0; }
-  function resume() { resize(); requestRender(); }
+  function beginNavigation() { ++navigationToken; ++generation; stopMotion(); return navigationToken; }
+  function onControlStart() { cancelAutomaticMotion(); }
+  function onControlChange() {
+    orbitPending = true;
+    requestRender();
+  }
+  function suspend() { beginNavigation(); cancelAnimationFrame(frame); frame = 0; }
+  function resume() { lastFrameTime = null; resize(); requestRender(); }
   function updateOverlay() {
     for (const child of [...overlayGroup.children]) { child.geometry.dispose(); child.material.dispose(); overlayGroup.remove(child); }
     const visible = selectedZone ? [zones.get(selectedZone)] : planningZones.filter(zone => Number(zone.id.slice(1)) <= 18);
@@ -773,7 +850,7 @@ export async function createCityRenderer({
   async function focusZone(id) {
     const zone = zones.get(id); if (!zone) return false;
     const token = beginNavigation();
-    flight = null; clearKeys();
+    flight = null;
     onStatus(`正在查看 ${zone.id} ${zone.name}（规划示意）…`);
     if (!await restoreCity() || token !== navigationToken) return false;
     studyId = null; selectedZone = id; fittedZoneId = id; activeChapter = 'zone'; overviewActive = false;
@@ -787,7 +864,7 @@ export async function createCityRenderer({
   function onContextLost(event) {
     event.preventDefault();
     contextLost = true;
-    clearKeys();
+    stopMotion();
     cancelAnimationFrame(frame);
     frame = 0;
     onMetrics({ ...lastMetrics, contextLost: true });
@@ -811,11 +888,13 @@ export async function createCityRenderer({
     materialCache.clear();
     canvas.removeEventListener('pointerdown', onPointerDown);
     canvas.removeEventListener('pointerup', onPointerUp);
+    canvas.removeEventListener('pointermove', onPointerMove);
+    canvas.removeEventListener('pointercancel', onPointerCancel);
     canvas.removeEventListener('keydown', onKeyDown);
-    canvas.removeEventListener('blur', clearKeys);
+    canvas.removeEventListener('blur', onBlur);
     window.removeEventListener('keyup', onKeyUp);
-    window.removeEventListener('blur', clearKeys);
-    clearKeys();
+    window.removeEventListener('blur', onBlur);
+    stopMotion();
     for (const child of overlayGroup.children) { child.geometry.dispose(); child.material.dispose(); }
     overlayGroup.clear();
     canvas.removeEventListener('webglcontextlost', onContextLost);
@@ -824,6 +903,25 @@ export async function createCityRenderer({
     signal?.removeEventListener('abort', onAbort);
     renderer?.dispose();
     if (loseContext) renderer?.forceContextLoss();
+  }
+
+  function configureControls(target = new THREE.Vector3(), maxDistance = 20000) {
+    const next = new OrbitControls(inputCamera, canvas);
+    // Vendor damping is per-update; actual camera smoothing above uses elapsed seconds.
+    next.enableDamping = false;
+    next.rotateSpeed = 0.42;
+    next.enablePan = false;
+    next.zoomToCursor = false;
+    next.mouseButtons = { LEFT: THREE.MOUSE.ROTATE, MIDDLE: null, RIGHT: null };
+    next.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_ROTATE };
+    next.minDistance = 5;
+    next.maxDistance = maxDistance;
+    next.target.copy(target);
+    next.minPolarAngle = 0.08;
+    next.maxPolarAngle = Math.PI * 0.48;
+    next.addEventListener('change', onControlChange);
+    next.addEventListener('start', onControlStart);
+    return next;
   }
 
   try {
@@ -835,25 +933,16 @@ export async function createCityRenderer({
     renderer.toneMapping = THREE.NoToneMapping;
     renderer.autoClear = false;
     renderer.info.autoReset = false;
-    controls = new OrbitControls(camera, canvas);
-    controls.enableDamping = false;
-    controls.enablePan = false;
-    controls.zoomToCursor = false;
-    controls.mouseButtons = { LEFT: THREE.MOUSE.ROTATE, MIDDLE: null, RIGHT: null };
-    controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_ROTATE };
-    controls.minDistance = 5;
-    controls.maxDistance = 20000;
-    controls.minPolarAngle = 0.08;
-    controls.maxPolarAngle = Math.PI * 0.48;
-    controls.addEventListener('change', requestRender);
-    controls.addEventListener('start', onControlStart);
+    controls = configureControls();
     canvas.addEventListener('webglcontextlost', onContextLost);
     canvas.addEventListener('pointerdown', onPointerDown);
     canvas.addEventListener('pointerup', onPointerUp);
+    canvas.addEventListener('pointermove', onPointerMove);
+    canvas.addEventListener('pointercancel', onPointerCancel);
     canvas.addEventListener('keydown', onKeyDown);
-    canvas.addEventListener('blur', clearKeys);
+    canvas.addEventListener('blur', onBlur);
     window.addEventListener('keyup', onKeyUp);
-    window.addEventListener('blur', clearKeys);
+    window.addEventListener('blur', onBlur);
     canvas.tabIndex = 0;
     scene.add(modelGroup);
     onStatus('正在打开已经建好的城市模型…');
@@ -866,6 +955,7 @@ export async function createCityRenderer({
     observer.observe(canvas.parentElement);
     window.addEventListener('resize', resize);
     document.addEventListener('visibilitychange', onVisibility);
+    cancelAnimationFrame(frame); frame = 0;
     render();
     onStatus('左键旋转 · 滚轮推拉 · WASD 地面移动 · R 全城总览');
     onReady(lastMetrics);

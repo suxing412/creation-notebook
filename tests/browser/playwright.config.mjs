@@ -30,6 +30,6 @@ export default defineConfig({
   },
   projects: [
     { name: 'mobile', testMatch: 'mobile.spec.mjs', use: { viewport: { width: 375, height: 812 }, isMobile: true, hasTouch: true } },
-    { name: 'desktop', testMatch: ['desktop.spec.mjs', 'installed-models.spec.mjs'] },
+    { name: 'desktop', testMatch: ['desktop.spec.mjs', 'installed-models.spec.mjs', 'motion.spec.mjs'] },
   ],
 });

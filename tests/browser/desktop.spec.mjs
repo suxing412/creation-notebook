@@ -17,6 +17,8 @@ test('first load, all 41 zones, flight, controls and compass', async ({ page }, 
   for (const zone of zones) {
     const selected = await selectZone(page, zone.id);
     await assertFits(page, zone, selected);
+    expect(selected.position[2]).toBeLessThan(selected.target[2]);
+    expect(Math.abs(selected.compassDegrees)).toBeCloseTo(180,5);
     assertFullCity(selected);
     expect(selected.sceneRevision).toBe(overview.sceneRevision);
     expect(evidence.modelRequests).toEqual(initialRequests);

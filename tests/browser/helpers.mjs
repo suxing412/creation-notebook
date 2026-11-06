@@ -18,7 +18,7 @@ export async function instrument(page) {
   page.on('response', r => { if (r.url().startsWith('http://127.0.0.1:8780/') && r.status() >= 400) evidence.failedResponses.push({ url: r.url(), status: r.status() }); });
   page.on('requestfailed', r => evidence.failedRequests.push({ url: r.url(), error: r.failure()?.errorText }));
   await page.addInitScript(() => {
-    window.luoyangEvidence = { instance: crypto.randomUUID(), frames: 0, flights: 0, shows: [], inputs: [], cancellations: [], dispatched: [], last: null };
+    window.luoyangEvidence = { instance: crypto.randomUUID(), frames: 0, flights: 0, shows: [], inputs: [], cancellations: [], dispatched: [], samples: [], blurs: [], last: null };
     const watched = new Set(['pointerdown','pointerup','touchstart','touchend','mousedown','mouseup','click']);
     const descriptor = Object.getOwnPropertyDescriptor(Event.prototype,'preventDefault');
     Object.defineProperty(Event.prototype,'preventDefault',{...descriptor,value:function(...args) {
@@ -42,11 +42,16 @@ export async function instrument(page) {
         if (window.luoyangEvidence.inputs.length > 80) window.luoyangEvidence.inputs.shift();
       }, true);
     }
+    document.addEventListener('blur', e => {
+      if (e.target.id === 'pj-canvas') window.luoyangEvidence.blurs.push({ frame: window.luoyangEvidence.frames, state: structuredClone(window.luoyangEvidence.last) });
+    }, true);
     addEventListener('pageshow', e => window.luoyangEvidence.shows.push({ persisted: e.persisted }));
     document.addEventListener('luoyang-view-change', e => {
       window.luoyangEvidence.last = structuredClone(e.detail);
       window.luoyangEvidence.frames++;
-      if (e.detail.moving) window.luoyangEvidence.flights++;
+      if (e.detail.flightActive) window.luoyangEvidence.flights++;
+      window.luoyangEvidence.samples.push({ frame: window.luoyangEvidence.frames, time: performance.now(), ...structuredClone(e.detail) });
+      if (window.luoyangEvidence.samples.length > 240) window.luoyangEvidence.samples.shift();
     }, true);
   });
   return evidence;
