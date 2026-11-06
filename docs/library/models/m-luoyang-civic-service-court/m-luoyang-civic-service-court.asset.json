@@ -1,0 +1,64 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-civic-service-court",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "官署附属接待与文书服务",
+  "english": "CIVIC RECEPTION AND RECORDS C01",
+  "summary": "复用既有H96、H64和G10三栋，增加地坪及四处两级门阶。A轴向候入与B侧向入院为互斥空间比较，不是具名三公府复原。",
+  "status": "待审",
+  "statusNote": "模型完成三档与合批自检，考据与造型待复核；城市落位以洛阳城清单为准。",
+  "cover": "shots/A-01-oblique.png",
+  "coverAlt": "轴向门房、北侧接待厅和东侧服务房分布于一片开放地坪，四处真实两级门阶接向门洞。",
+  "gallery": [
+    "shots/A-02-plan.png",
+    "shots/A-03-gate-front-steps.png",
+    "shots/A-04-gate-rear-steps.png",
+    "shots/A-05-reception-door.png",
+    "shots/A-06-mid-LOD1.png",
+    "shots/A-07-far-LOD2.png",
+    "shots/B-01-oblique.png",
+    "shots/B-02-plan.png",
+    "shots/B-03-side-gate.png",
+    "shots/B-04-service-door.png",
+    "shots/B-05-mid-LOD1.png",
+    "shots/B-06-far-LOD2.png"
+  ],
+  "files": [
+    {
+      "path": "../../../cities/luoyang/progress-assets/z09-civic-service-C01/z09-civic-A-LOD0.glb",
+      "label": "A布局 · 完整近景"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/z09-civic-service-C01/z09-civic-A-LOD1.glb",
+      "label": "A布局 · 中景"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/z09-civic-service-C01/z09-civic-A-LOD2.glb",
+      "label": "A布局 · 远景"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/z09-civic-service-C01/z09-civic-B-LOD0.glb",
+      "label": "B布局 · 完整近景"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/z09-civic-service-C01/z09-civic-B-LOD1.glb",
+      "label": "B布局 · 中景"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/z09-civic-service-C01/z09-civic-B-LOD2.glb",
+      "label": "B布局 · 远景"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "A/B各近中远三档，每份按4种既有材质合为4个图元。相对原冻结模型的有向三角、法线、UV、材质和图像核对通过；当前城景renderer的局部与世界Float32结果精确一致。原冻结源另有245项独立审计与52项renderer CPU断言，不替代合批后部署验收。",
+    "限制与待解决": "全部职能、布局、尺寸与坐标属C设计，不证明具体官府原址。外部城市道路未接；没有外围围墙或侧向封控。浏览器、GPU、实际HTTP及部署压缩后的模型未通过本包验收。原型结构简化与内部接触保留，不是人体运动、承载、疏散或无障碍认证。",
+    "依据与复用": "《后汉书·百官志一》的记室、门务与文书职能仅支持用途推演。H96/H64/G10来自既有普通住屋与门房四型。每方案3栋复用实例，A/B互斥；不计为6栋或新增建筑家族。",
+    "预览说明": "本卡13图是合批前冻结几何经GLB原生读回、保存重开后的Blender Cycles CPU渲染；仅删除文件路径元数据，像素不变。合批导出保留被核对的几何/UV/材质/图像，但这些图不冒充合批后的浏览器或GPU截图。",
+    "部署与权利": "卡片与城景引用同一份cities/luoyang/progress-assets下的合批模型；现行部署对该目录保留原字节，不增加压缩例外或复制另一份模型。原生blend是合批前编辑源。沿用本项目已有权利状态，不新授予许可。"
+  },
+  "related": [
+    "m-luoyang-ordinary-house-types",
+    "p-luoyang"
+  ]
+}

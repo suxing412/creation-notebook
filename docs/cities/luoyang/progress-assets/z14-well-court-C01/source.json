@@ -1,0 +1,142 @@
+{
+  "schema": "luoyang-reviewed-placement-v1",
+  "zone": "Z14",
+  "placement": {
+    "id": "Z14-WELL-COURT-C01",
+    "asset": "z14-well-court-C01",
+    "title": "住宅东缘开放井台 · C级设计",
+    "summary": "复用井A，新增开孔地坪与14米短接路；接入既有地面，不增加住宅院落数量。",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      800,
+      0.2,
+      -1050,
+      1
+    ],
+    "chapter": "residential",
+    "zoneId": "Z14",
+    "initial": true,
+    "tier": "C",
+    "basis": "41区Z14住宅生活区内的设计落位。井形类比河南博物院《绿釉陶井模型》；尺寸、井址、井台与路线为C级设计，不证明洛阳公元180年的实井或公共井制度。",
+    "sourceGroup": "Z14-reuse-C01",
+    "sourceContract": "progress-assets/z14-well-court-C01/source.json",
+    "kind": "water-facility",
+    "countAsCourtyard": false,
+    "bounds": {
+      "min": [
+        780.0,
+        -0.4499999761581421,
+        -1056.0
+      ],
+      "max": [
+        806.0,
+        3.45,
+        -1044.0
+      ]
+    }
+  },
+  "asset": {
+    "id": "z14-well-court-C01",
+    "tier": "C",
+    "bounds": {
+      "min": [
+        -20.0,
+        -0.6499999761581421,
+        -6.0
+      ],
+      "max": [
+        6.0,
+        3.25,
+        6.0
+      ]
+    },
+    "sourceContract": "progress-assets/z14-well-court-C01/source.json",
+    "path": "progress-assets/z14-well-court-C01/z14-well-court-far.glb",
+    "bytes": 323784,
+    "sha256": "d334614eb7f28a3f1240ffb6eae6b608d9a56bb35f09c250ac2554af674b9d70",
+    "midPath": "progress-assets/z14-well-court-C01/z14-well-court-mid.glb",
+    "midBytes": 583432,
+    "midSha256": "87e8907d055eaebc1f421afb0cf79e46362a8f964e11c2b3c3e49c5f84b60011",
+    "nearPath": "progress-assets/z14-well-court-C01/z14-well-court-near.glb",
+    "nearBytes": 1731732,
+    "nearSha256": "97b6cb0be98420cbd770e153ab5b964c2e2028b42bc5d8c5c5856639a984321e"
+  },
+  "lodMetrics": {
+    "far": {
+      "bytes": 323784,
+      "sha256": "d334614eb7f28a3f1240ffb6eae6b608d9a56bb35f09c250ac2554af674b9d70",
+      "triangles": 3248,
+      "bounds": {
+        "min": [
+          -20.0,
+          -0.6499999761581421,
+          -6.0
+        ],
+        "max": [
+          6.0,
+          3.25,
+          6.0
+        ]
+      }
+    },
+    "mid": {
+      "bytes": 583432,
+      "sha256": "87e8907d055eaebc1f421afb0cf79e46362a8f964e11c2b3c3e49c5f84b60011",
+      "triangles": 3248,
+      "bounds": {
+        "min": [
+          -20.0,
+          -0.6499999761581421,
+          -6.0
+        ],
+        "max": [
+          6.0,
+          3.25,
+          6.0
+        ]
+      }
+    },
+    "near": {
+      "bytes": 1731732,
+      "sha256": "97b6cb0be98420cbd770e153ab5b964c2e2028b42bc5d8c5c5856639a984321e",
+      "triangles": 9676,
+      "bounds": {
+        "min": [
+          -20.0,
+          -0.6499999761581421,
+          -6.0
+        ],
+        "max": [
+          6.0,
+          3.25,
+          6.0
+        ]
+      }
+    }
+  },
+  "evidenceTier": "C",
+  "units": "metres",
+  "sourceURLs": [
+    "https://www.chnmus.net/ch/collection/appraise/details.html?id=512156440644025062"
+  ],
+  "limits": [
+    "地坪与井筒孔随LOD成组原子替换，不同时加载组件或多个LOD。",
+    "地下部分是0.65米有限剖切体，不是真实井深、水位、地下水或卫生安全。",
+    "未来若启用H=-0.05的整城未开孔地板，必须先同步开孔重验；该地板不属于本次内容。"
+  ],
+  "LOD": "Actual far, medium, near exports; existing city renderer selects far/near. Mid is supplied and registered for independent review, not automatic three-level switching.",
+  "rollback": "Remove this one node and one asset registration plus related provenance additions. No pre-existing geometry was altered.",
+  "rights": "Existing project-owned source reuse; no new license granted.",
+  "validationLimit": "Geometry, material batching, source identity and CPU render path checked separately. Final site/browser/GPU/HTTP verification belongs to the integrating writer on its actual final commit."
+}

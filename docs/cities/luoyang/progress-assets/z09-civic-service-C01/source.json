@@ -1,0 +1,142 @@
+{
+  "schema": "luoyang-reviewed-placement-v1",
+  "zone": "Z09",
+  "placement": {
+    "id": "Z09-CIVIC-SERVICE-C01",
+    "asset": "z09-civic-A-C01",
+    "title": "官署附属文书与接待建筑组 · C级设计",
+    "summary": "复用H96、H64和G10，新增地坪与四处真实门阶。只装A布局；B为互斥独立方案。",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      2225,
+      0.2,
+      -600,
+      1
+    ],
+    "chapter": "civic",
+    "zoneId": "Z09",
+    "initial": true,
+    "tier": "C",
+    "basis": "41区Z09范围内的无名附属建筑组。官署职能类比《后汉书·百官志一》，精确落点、房型组合、门向、规模、地坪与门阶均为C级设计，不是具名三公府或考古复原。",
+    "sourceGroup": "Z09-reuse-C01",
+    "sourceContract": "progress-assets/z09-civic-service-C01/source.json",
+    "kind": "civic-service-group",
+    "countAsCourtyard": false,
+    "bounds": {
+      "min": [
+        2216.0,
+        0.019999992847442638,
+        -615.0
+      ],
+      "max": [
+        2241.0,
+        5.029999923706055,
+        -586.0
+      ]
+    }
+  },
+  "asset": {
+    "id": "z09-civic-A-C01",
+    "tier": "C",
+    "bounds": {
+      "min": [
+        -9.0,
+        -0.18000000715255737,
+        -15.0
+      ],
+      "max": [
+        16.0,
+        4.829999923706055,
+        14.0
+      ]
+    },
+    "sourceContract": "progress-assets/z09-civic-service-C01/source.json",
+    "path": "progress-assets/z09-civic-service-C01/z09-civic-A-LOD2.glb",
+    "bytes": 76424,
+    "sha256": "42b7a7b977d49431b839f93b7a164e0d44e96cc80f59a0c71c16cc6fd5e831b5",
+    "midPath": "progress-assets/z09-civic-service-C01/z09-civic-A-LOD1.glb",
+    "midBytes": 1865864,
+    "midSha256": "6479039dd2854e4aeccf3518ed9c3def9e6a09309dcb026d8cb324e36f4062f2",
+    "nearPath": "progress-assets/z09-civic-service-C01/z09-civic-A-LOD0.glb",
+    "nearBytes": 4213512,
+    "nearSha256": "4e7c4430f8800e9e687be60b898516547a7e5eab4ee44d4f257cc3ba7575ba20"
+  },
+  "lodMetrics": {
+    "far": {
+      "bytes": 76424,
+      "sha256": "42b7a7b977d49431b839f93b7a164e0d44e96cc80f59a0c71c16cc6fd5e831b5",
+      "triangles": 956,
+      "bounds": {
+        "min": [
+          -9.0,
+          -0.18000000715255737,
+          -15.0
+        ],
+        "max": [
+          16.0,
+          4.829999923706055,
+          14.0
+        ]
+      }
+    },
+    "mid": {
+      "bytes": 1865864,
+      "sha256": "6479039dd2854e4aeccf3518ed9c3def9e6a09309dcb026d8cb324e36f4062f2",
+      "triangles": 26052,
+      "bounds": {
+        "min": [
+          -9.0,
+          -0.18000000715255737,
+          -15.0
+        ],
+        "max": [
+          16.0,
+          4.894000053405762,
+          14.0
+        ]
+      }
+    },
+    "near": {
+      "bytes": 4213512,
+      "sha256": "4e7c4430f8800e9e687be60b898516547a7e5eab4ee44d4f257cc3ba7575ba20",
+      "triangles": 51484,
+      "bounds": {
+        "min": [
+          -9.0,
+          -0.18000000715255737,
+          -15.0
+        ],
+        "max": [
+          16.0,
+          4.9120001792907715,
+          14.0
+        ]
+      }
+    }
+  },
+  "evidenceTier": "C",
+  "units": "metres",
+  "sourceURLs": [
+    "https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/houhanshu/hhs123.html"
+  ],
+  "limits": [
+    "本次没有外部道路接入；地坪边界到达端口不代表已经与全城路网连通。",
+    "没有围墙，G10门洞不控制侧面进入。",
+    "不证明古代官署确址、排水、结构安全或负重通行。"
+  ],
+  "LOD": "Actual far, medium, near exports; existing city renderer selects far/near. Mid is supplied and registered for independent review, not automatic three-level switching.",
+  "rollback": "Remove this one node and one asset registration plus related provenance additions. No pre-existing geometry was altered.",
+  "rights": "Existing project-owned source reuse; no new license granted.",
+  "validationLimit": "Geometry, material batching, source identity and CPU render path checked separately. Final site/browser/GPU/HTTP verification belongs to the integrating writer on its actual final commit."
+}

@@ -15,6 +15,11 @@ concurrency:
 
 jobs:
   browser:
+    name: ${{ matrix.project }} browser
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [desktop, mobile]
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
@@ -54,12 +59,12 @@ jobs:
         run: python -I lab/tools/assemble_site.py _site > browser-evidence/build.log 2>&1
       - name: Exercise the built site in Chromium
         working-directory: tests/browser
-        run: npm test
+        run: npm test -- --project=${{ matrix.project }}
       - name: Upload browser evidence
         if: always()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
-          name: luoyang-browser-evidence
+          name: luoyang-${{ matrix.project }}-browser-evidence
           retention-days: 7
           path: |
             browser-evidence/

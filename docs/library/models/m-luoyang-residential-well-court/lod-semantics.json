@@ -1,0 +1,52 @@
+{
+  "schema": "z14-three-lod-semantics-v1",
+  "asset": "z14-well-court-C01",
+  "unit": "metre",
+  "tier": "C",
+  "evidenceLabel": "推测",
+  "worldPositionGLTF": [
+    800,
+    0.2,
+    -1050
+  ],
+  "rotationY": 0,
+  "scale": 1,
+  "wellInternalRyDegreesAlreadyBaked": 90,
+  "atomicLOD": true,
+  "exactlyOneCombinedAssetAtATime": true,
+  "lods": [
+    {
+      "level": 0,
+      "semantic": "near",
+      "path": "assets/z14-well-court-near.glb",
+      "triangles": 9676,
+      "texture": "9 well PBR images 512×512; paired ground 128×128",
+      "geometry": "48-sided matching well/ground contour",
+      "bytes": 1731732,
+      "sha256": "97b6cb0be98420cbd770e153ab5b964c2e2028b42bc5d8c5c5856639a984321e"
+    },
+    {
+      "level": 1,
+      "semantic": "mid",
+      "path": "assets/z14-well-court-mid.glb",
+      "triangles": 3248,
+      "texture": "9 well PBR images 256×256; paired ground 128×128",
+      "geometry": "16-sided matching well/ground contour",
+      "bytes": 583432,
+      "sha256": "87e8907d055eaebc1f421afb0cf79e46362a8f964e11c2b3c3e49c5f84b60011"
+    },
+    {
+      "level": 2,
+      "semantic": "far",
+      "path": "assets/z14-well-court-far.glb",
+      "triangles": 3248,
+      "texture": "9 well PBR images 128×128; paired ground 128×128",
+      "geometry": "16-sided matching well/ground contour",
+      "bytes": 323784,
+      "sha256": "d334614eb7f28a3f1240ffb6eae6b608d9a56bb35f09c250ac2554af674b9d70"
+    }
+  ],
+  "middleHonesty": "Middle is a texture-resolution LOD using the existing 256px source and the same coarse geometry as far. It is not a separately simplified geometric middle or renamed duplicate.",
+  "materialPolicy": "Six existing glTF material identities remain separate; same-material primitives are merged. Materials/PBR, samplers and image bytes are unchanged. Missing source UVs get zeros only on untextured primitives; all existing UV values are exact.",
+  "runtimeLimit": "Current 1628090 CPU geometry path was replayed, not GPU/UI or automatic mid-distance selection. Website integrator owns actual 3-tier switching and final deployment verification."
+}
