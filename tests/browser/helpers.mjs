@@ -107,6 +107,7 @@ export async function drag(page) {
 export async function attachEvidence(page, info, evidence, extra = {}) {
   const runtime = await page.evaluate(() => window.luoyangEvidence);
   await info.attach('browser-evidence', { body: JSON.stringify({ ...evidence, ...extra, runtime }, null, 2), contentType: 'application/json' });
+  await page.locator('.ly-workspace').evaluate(el => el.scrollIntoView({ block: 'start', behavior: 'instant' }));
   await page.locator('#pj-stage').screenshot({ path: info.outputPath('city.png') });
   await page.locator('.ly-workspace').screenshot({ path: info.outputPath('sidebar.png') });
 }

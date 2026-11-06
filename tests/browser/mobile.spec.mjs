@@ -37,7 +37,8 @@ test('touch entry, narrow layout, group navigation and orientation fitting', asy
   await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
   await page.screenshot({ path: info.outputPath('portrait-before-overview.png') });
   const overviewButton = page.locator('.ly-overview');
-  await overviewButton.scrollIntoViewIfNeeded();
+  // Bring the side controls below the fixed site header after orientation changes.
+  await page.locator('.ly-workspace').evaluate(el => el.scrollIntoView({ block: 'start', behavior: 'instant' }));
   const overviewBox = await overviewButton.boundingBox();
   expect(await overviewButton.evaluate(el => { const r = el.getBoundingClientRect(); return el === document.elementFromPoint(r.x+r.width/2,r.y+r.height/2); })).toBe(true);
   // Keep the drag and following tap on one CDP input driver; do not mix independent touch sequences.
