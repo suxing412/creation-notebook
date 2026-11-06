@@ -52,6 +52,8 @@ jobs:
           git restore -- lab/data
           git clean -f -- lab/media
           git diff --exit-code
+      - name: Check camera motion across frame rates
+        run: node --test tests/navigation-motion.test.mjs
       - name: Build the deployment artifact
         env:
           GLTFPACK: node ${{ github.workspace }}/tests/browser/node_modules/gltfpack/cli.js

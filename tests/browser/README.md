@@ -10,20 +10,10 @@ To run in an environment that permits browser/server startup, install the pinned
 
 The installed-content cases verify the nine delivered Z09/Z14 variants via their exact HTTP byte counts and SHA-256 values, render each in the independent viewer, and select the two placed city nodes using real mouse hits on their geometry. The fixed-camera evidence toggle checks rendered image change and restoration. City default membership is 72; Z09-B remains independent. These cases do not claim automatic city LOD switching.
 
-Desktop and mobile checks run as separate matrix jobs with separate artifacts.
-Neither suite skips tests or retries failures. The desktop job covers city and
-model publication; the mobile job retains the original touch/orientation case.
-The mobile overview tap remains an open follow-up (run 42247087399): trusted
-touch events were observed but no click. Its diagnostics and continuous-drag
-input correction are being reviewed separately; mobile success and physical
-phone behavior are not claimed by the model publication.
+Desktop and mobile checks run as separate matrix jobs with separate artifacts. Neither suite skips tests or retries failures. The desktop job covers city, model publication and camera movement; the mobile job covers touch navigation and orientation changes.
 
-Mobile follow-up candidate: use one touchscreen input path for zone and overview
-taps, and sample the same 60px drag over multiple real-time steps. Keep the
-original trusted-click, overview, ground-target, compass and orientation checks;
-also require fresh trusted events and a measured drag trajectory. Chromium input
-traces and event-cancellation diagnostics remain attached for review. Run
-42247087399 showed debugger synthesizeTapGesture did not enter Aura's gesture
-recognizer, while the single-jump drag produced a 17,000px/s fling. This candidate
-does not change application input handlers and does not certify rapid flicks or
-physical-phone behavior. Its mobile result remains pending until CI completes.
+The mobile input correction was verified by run 42252748113 (desktop 8/8 and mobile 1/1 on head 0d819da2). It uses the same touchscreen path for zone and overview taps, samples the 60px drag over multiple real-time steps, and requires fresh trusted events with a measured trajectory. Chromium traces and cancellation diagnostics remain attached. The earlier failure in run 42247087399 is preserved: debugger synthesizeTapGesture did not enter Aura's gesture recognizer, while a single-jump drag produced a 17,000px/s fling. This establishes normal sampled-drag behavior, not rapid flicks or physical-phone feel. Each later change must pass its own CI.
+
+Camera-motion regression also checks screen-relative WASD before and after rotation, continuously held W with mouse drag and wheel, blur snapshots with no subsequent movement, near/far zoom limits, an out-and-back drag over a verified courtyard roof, and cancellation of a pending research load on blur. `node --test tests/navigation-motion.test.mjs` separately checks the actual motion helpers at 10–144 updates/second; these are mathematical checks, not GPU frame-rate measurements.
+
+The camera uses time-based exponential smoothing of yaw/pitch and log-distance, and the exact integral of ground acceleration. OrbitControls remains the input parser, including wheel delta-mode normalization; its frame-based damping is disabled. References: https://threejs.org/docs/pages/OrbitControls.html , https://threejs.org/docs/pages/MathUtils.html , https://developer.mozilla.org/en-US/docs/Web/API/WheelEvent/deltaMode . Physical mouse, trackpad and phone feel still require user testing.

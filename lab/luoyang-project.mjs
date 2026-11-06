@@ -74,7 +74,7 @@ export async function renderProject({ main, a, c, d, esc, img, card, date }) {
     <label class="pj-tier"><input type="checkbox" id="pj-tier"> 显示史料等级</label>
     <span>左键旋转 · 滚轮推拉 · WASD 移动 · R 全城</span>
   </div>
-  <p class="pj-hint" id="pj-hint">默认南上北下；镜头围绕地面旋转。先点画面再用 WASD，松键或移出焦点即停止。</p>
+  <p class="pj-hint" id="pj-hint">默认南上北下；镜头围绕地面旋转。先点画面再用 WASD，松键后轻缓制动，移出焦点立即停止。</p>
   <aside class="ly-zone-note" id="ly-zone-note" aria-live="polite">
     <strong>41区规划示意，不是41个已发现历史坊</strong>
     <p>虚线是设计功能边界，已入城模型全部显示，分区只移动镜头。历史选址、绝对高程与测量注册仍有不确定；分区锚点不用于自动放置模型。</p>
@@ -176,7 +176,7 @@ ${members.length ? `<section class="ad-sect"><h2>组成资产<small>${members.le
       const moved = await s.focus(focus);
       if (token !== serial || disposed) return;
       if (!moved) status.textContent = '此视图暂不能打开，当前画面保持。';
-      updateView(s.getViewState()); canvas.focus({ preventScroll: true });
+      updateView(s.getViewState()); if (moved) canvas.focus({ preventScroll: true });
     } catch (error) {
       if (token === serial && !disposed) status.textContent = `视图加载失败，当前画面保留：${error.message}`;
     }
