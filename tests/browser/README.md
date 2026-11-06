@@ -7,3 +7,5 @@ Coverage: first real WebGL render of the complete placed city; unchanged model m
 This is Chromium with SwiftShader and mobile emulation. Physical phones, hardware GPU performance and production deployment are separate checks. No screenshot, model load, camera state or app module is mocked. Recovery tests delay or fail actual model requests, then retry them. The rendered node list is read from real instantiated meshes; independent research assets are excluded from the city.
 
 To run in an environment that permits browser/server startup, install the pinned package lock and Chromium, build `_site` using `lab/tools/assemble_site.py`, then run `npm test` in this directory. Do not bypass environment restrictions to run locally.
+
+The installed-content cases verify the nine delivered Z09/Z14 variants via their exact HTTP byte counts and SHA-256 values, render each in the independent viewer, and select the two placed city nodes using real mouse hits on their geometry. The fixed-camera evidence toggle checks rendered image change and restoration. City default membership is 72; Z09-B remains independent. These cases do not claim automatic city LOD switching.

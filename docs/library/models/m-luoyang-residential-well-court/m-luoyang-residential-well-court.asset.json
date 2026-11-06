@@ -1,0 +1,43 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-residential-well-court",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "住宅东缘开放井台",
+  "english": "RESIDENTIAL WELL COURT C01",
+  "summary": "复用已有井A，配真实开孔井台及14米接路，形成住宅东缘生活取水设施的C级设计。",
+  "status": "待审",
+  "statusNote": "模型完成三档与合批自检，考据与造型待复核；城市落位以洛阳城清单为准。",
+  "cover": "shots/installation.png",
+  "coverAlt": "四坡小亭和井栏立在开孔地坪上，西侧一条窄路接向住宅地坪。",
+  "gallery": [
+    "shots/installation.png",
+    "shots/opening.png",
+    "shots/city-context.png"
+  ],
+  "files": [
+    {
+      "path": "../../../cities/luoyang/progress-assets/z14-well-court-C01/z14-well-court-near.glb",
+      "label": "A近景 · 512px井材质与完整井台接路"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/z14-well-court-C01/z14-well-court-mid.glb",
+      "label": "A中景 · 256px材质，沿用远景粗几何"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/z14-well-court-C01/z14-well-court-far.glb",
+      "label": "A远景 · 128px井材质与完整井台接路"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "近中远三档各6材质/6图元，尺寸单位米，材质沿用既有共用土木瓦及原井附属材质命名。近景9676三角，中远景各3248三角。原材质图、法线、UV与有向三角核对通过；当前1628090城景renderer局部及世界Float32位置和法线全字节一致。井孔、558点步行支承、8柱脚、0.8×1.8米人体连续净空与E780接缝通过原阈值。",
+    "限制与待解决": "井址、尺度、井台、接路及用途均为C推测设计，不是洛阳古井实址。中景是256px贴图LOD，几何与远景相同，不冒充新中精度网格。未验浏览器/GPU、生产HTTP预算、运行时三档自动切换、水质、水位、排水、机构动作或结构安全。未来完整城市基面须同步开孔。",
+    "依据与复用": "形态类比依据河南博物院汉代陶井介绍，明器不能等比当现实建筑。井A复用既有m-well-family，本项新增的是地坪、接路和可撤回组合安装，不是一个新井家族。",
+    "预览说明": "三张图沿用已验证的近景原几何离线预览；只删PNG文件元数据，像素不变。合批后几何/材质/纹理保持。图不是新的合批后浏览器截图。",
+    "源文件与权利": "源包带真实近/256px中/128px远输入、两份原映射、确定性构建/合批/CPU验证脚本和三档可编辑GLB读回blend。读回blend不是原始参数化母工程。全部网格/贴图来自项目既有用户模型及已建井台；未引入新第三方模型/图片，不新授予许可。"
+  },
+  "related": [
+    "m-well-family",
+    "p-luoyang"
+  ]
+}

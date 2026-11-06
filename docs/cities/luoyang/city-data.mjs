@@ -5304,5 +5304,167 @@ export const provenance = {
   ]
 };
 
+// BEGIN Z09 Z14 REVIEWED CONTENT C01
+// Additive placement only: original assets, nodes, matrices, and 47 courtyard count stay unchanged.
+const z09z14ContentAsset0 = {
+  "id": "z09-civic-A-C01",
+  "tier": "C",
+  "bounds": {
+    "min": [
+      -9.0,
+      -0.18000000715255737,
+      -15.0
+    ],
+    "max": [
+      16.0,
+      4.829999923706055,
+      14.0
+    ]
+  },
+  "sourceContract": "progress-assets/z09-civic-service-C01/source.json",
+  "path": "progress-assets/z09-civic-service-C01/z09-civic-A-LOD2.glb",
+  "bytes": 76424,
+  "sha256": "42b7a7b977d49431b839f93b7a164e0d44e96cc80f59a0c71c16cc6fd5e831b5",
+  "midPath": "progress-assets/z09-civic-service-C01/z09-civic-A-LOD1.glb",
+  "midBytes": 1865864,
+  "midSha256": "6479039dd2854e4aeccf3518ed9c3def9e6a09309dcb026d8cb324e36f4062f2",
+  "nearPath": "progress-assets/z09-civic-service-C01/z09-civic-A-LOD0.glb",
+  "nearBytes": 4213512,
+  "nearSha256": "4e7c4430f8800e9e687be60b898516547a7e5eab4ee44d4f257cc3ba7575ba20"
+};
+assets.push((({ path, nearPath, midPath, ...asset }) => ({ ...asset, sourcePath: path, url: cityURL(path), nearUrl: cityURL(nearPath), midUrl: cityURL(midPath) }))(z09z14ContentAsset0));
+nodes.push({
+  "id": "Z09-CIVIC-SERVICE-C01",
+  "asset": "z09-civic-A-C01",
+  "title": "官署附属文书与接待建筑组 · C级设计",
+  "summary": "复用H96、H64和G10，新增地坪与四处真实门阶。只装A布局；B为互斥独立方案。",
+  "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2225,
+    0.2,
+    -600,
+    1
+  ],
+  "chapter": "civic",
+  "zoneId": "Z09",
+  "initial": true,
+  "tier": "C",
+  "basis": "41区Z09范围内的无名附属建筑组。官署职能类比《后汉书·百官志一》，精确落点、房型组合、门向、规模、地坪与门阶均为C级设计，不是具名三公府或考古复原。",
+  "sourceGroup": "Z09-reuse-C01",
+  "sourceContract": "progress-assets/z09-civic-service-C01/source.json",
+  "kind": "civic-service-group",
+  "countAsCourtyard": false,
+  "bounds": {
+    "min": [
+      2216.0,
+      0.019999992847442638,
+      -615.0
+    ],
+    "max": [
+      2241.0,
+      5.029999923706055,
+      -586.0
+    ]
+  }
+});
+provenance.sourceContracts.push({"path": "progress-assets/z09-civic-service-C01/source.json", "sha256": "6d25477f07d520f8ada665cde08fc895528436abe91dff271a9e68c7e306095e"});
+const z09z14ContentAsset1 = {
+  "id": "z14-well-court-C01",
+  "tier": "C",
+  "bounds": {
+    "min": [
+      -20.0,
+      -0.6499999761581421,
+      -6.0
+    ],
+    "max": [
+      6.0,
+      3.25,
+      6.0
+    ]
+  },
+  "sourceContract": "progress-assets/z14-well-court-C01/source.json",
+  "path": "progress-assets/z14-well-court-C01/z14-well-court-far.glb",
+  "bytes": 323784,
+  "sha256": "d334614eb7f28a3f1240ffb6eae6b608d9a56bb35f09c250ac2554af674b9d70",
+  "midPath": "progress-assets/z14-well-court-C01/z14-well-court-mid.glb",
+  "midBytes": 583432,
+  "midSha256": "87e8907d055eaebc1f421afb0cf79e46362a8f964e11c2b3c3e49c5f84b60011",
+  "nearPath": "progress-assets/z14-well-court-C01/z14-well-court-near.glb",
+  "nearBytes": 1731732,
+  "nearSha256": "97b6cb0be98420cbd770e153ab5b964c2e2028b42bc5d8c5c5856639a984321e"
+};
+assets.push((({ path, nearPath, midPath, ...asset }) => ({ ...asset, sourcePath: path, url: cityURL(path), nearUrl: cityURL(nearPath), midUrl: cityURL(midPath) }))(z09z14ContentAsset1));
+nodes.push({
+  "id": "Z14-WELL-COURT-C01",
+  "asset": "z14-well-court-C01",
+  "title": "住宅东缘开放井台 · C级设计",
+  "summary": "复用井A，新增开孔地坪与14米短接路；接入既有地面，不增加住宅院落数量。",
+  "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    800,
+    0.2,
+    -1050,
+    1
+  ],
+  "chapter": "residential",
+  "zoneId": "Z14",
+  "initial": true,
+  "tier": "C",
+  "basis": "41区Z14住宅生活区内的设计落位。井形类比河南博物院《绿釉陶井模型》；尺寸、井址、井台与路线为C级设计，不证明洛阳公元180年的实井或公共井制度。",
+  "sourceGroup": "Z14-reuse-C01",
+  "sourceContract": "progress-assets/z14-well-court-C01/source.json",
+  "kind": "water-facility",
+  "countAsCourtyard": false,
+  "bounds": {
+    "min": [
+      780.0,
+      -0.4499999761581421,
+      -1056.0
+    ],
+    "max": [
+      806.0,
+      3.45,
+      -1044.0
+    ]
+  }
+});
+provenance.sourceContracts.push({"path": "progress-assets/z14-well-court-C01/source.json", "sha256": "3c58bcfd6a8f1c418289930a4b2cd52cf7dae95ffe8e2d51cce9adc05f9959df"});
+provenance.initialModelBytes += 400208;
+provenance.allCityModelBytes += 6345452;
+provenance.installedContentC01 = {
+  "newCityNodes": 2,
+  "newReusedBuildingInstances": 3,
+  "newReusedWellInstances": 1,
+  "newBuildingFamilies": 0,
+  "newResidentialCourtyards": 0,
+  "existingResidentialCourtyardsUnchanged": 47,
+  "extraMediumReviewBytes": 2449296,
+  "Z09Variant": "A only; B must not be co-installed"
+};
+// midUrl is the delivered medium review LOD. Current city renderer selects far/near only.
+// END Z09 Z14 REVIEWED CONTENT C01
 export const manifest = { assets, nodes, chapters, initialCamera, overview, researchModels, provenance };
 export default manifest;
