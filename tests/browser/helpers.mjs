@@ -11,7 +11,15 @@ export async function instrument(page) {
   page.on('response', r => { if (r.url().startsWith('http://127.0.0.1:8780/') && r.status() >= 400) evidence.failedResponses.push({ url: r.url(), status: r.status() }); });
   page.on('requestfailed', r => evidence.failedRequests.push({ url: r.url(), error: r.failure()?.errorText }));
   await page.addInitScript(() => {
-    window.luoyangEvidence = { instance: crypto.randomUUID(), frames: 0, flights: 0, shows: [], last: null };
+    window.luoyangEvidence = { instance: crypto.randomUUID(), frames: 0, flights: 0, shows: [], inputs: [], last: null };
+    for (const type of ['pointerdown','pointerup','pointercancel','touchstart','touchend','click']) {
+      document.addEventListener(type, e => {
+        const target = e.target.closest?.('button,canvas,select');
+        if (!target) return;
+        window.luoyangEvidence.inputs.push({ type, target: target.dataset.focus || target.id, time: e.timeStamp, pointerType: e.pointerType, defaultPrevented: e.defaultPrevented, trusted: e.isTrusted });
+        if (window.luoyangEvidence.inputs.length > 80) window.luoyangEvidence.inputs.shift();
+      }, true);
+    }
     addEventListener('pageshow', e => window.luoyangEvidence.shows.push({ persisted: e.persisted }));
     document.addEventListener('luoyang-view-change', e => {
       window.luoyangEvidence.last = structuredClone(e.detail);

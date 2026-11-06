@@ -3,6 +3,7 @@ import { zones, distance, delta, state, instrument, openCity, settled, selectZon
 
 test('touch entry, narrow layout, group navigation and orientation fitting', async ({ page }, info) => {
   const evidence = await instrument(page), gl = await openCity(page, true);
+  try {
   await expect(page.locator('#pj-open')).toBeHidden();
   await page.emulateMedia({ reducedMotion: 'reduce' });
   for (const id of ['Z18','Z23','Z41']) {
@@ -29,10 +30,18 @@ test('touch entry, narrow layout, group navigation and orientation fitting', asy
   await page.waitForTimeout(250);
   expect(delta((await state(page)).position,manual.position)).toBeLessThan(1e-5);
   await page.setViewportSize({ width: 375, height: 812 });
+  // Emulation resize resolves before the compositor necessarily presents the new orientation.
+  await expect.poll(() => page.evaluate(() => [innerWidth, innerHeight, visualViewport.width, visualViewport.height])).toEqual([375,812,375,812]);
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  await page.screenshot({ path: info.outputPath('portrait-before-overview.png') });
   await page.locator('.ly-overview').tap();
+  await expect.poll(async () => page.evaluate(() => window.luoyangEvidence.inputs.some(e => e.type === 'click' && e.target === 'city'))).toBe(true);
   const overview = await settled(page, null);
   expect(Math.abs(overview.compassDegrees)).toBeCloseTo(180, 5);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
-  await attachEvidence(page, info, evidence, { gl, device: 'Chromium mobile emulation; not a physical phone' });
   assertHealthy(evidence);
+  } finally {
+    const viewport = await page.evaluate(() => ({ width: innerWidth, height: innerHeight, scale: visualViewport?.scale, scrollY }));
+    await attachEvidence(page, info, evidence, { gl, viewport, device: 'Chromium mobile emulation; not a physical phone' });
+  }
 });
