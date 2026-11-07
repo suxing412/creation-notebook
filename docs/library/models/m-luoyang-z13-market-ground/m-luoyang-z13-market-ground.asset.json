@@ -1,0 +1,41 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-z13-market-ground",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "Z13市街场地配套",
+  "english": "Z13 MARKET GROUND",
+  "summary": "连续展示地表、街段支承与路缘视觉收边，补足市街周边展示地表与视觉衔接；全部为C级设计。",
+  "status": "待审",
+  "statusNote": "已按C级设计接入Z13，待质量评审。",
+  "cover": "cover.png",
+  "coverAlt": "本版模型及市街上下文的离线CPU渲染，非网页截图。",
+  "gallery": [
+    "shots/context.png"
+  ],
+  "files": [
+    {
+      "path": "../../../cities/luoyang/progress-assets/z13-market-C-v1/z13-frontage-support-and-steps-C.glb",
+      "label": "支承与踏步（默认）"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/z13-market-C-v1/z13-continuous-display-C.glb",
+      "label": "连续展示地表"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/z13-market-C-v1/z13-road-edge-visual-infill-C.glb",
+      "label": "路缘视觉收边"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "交接GLB字节身份、变换、包络及有限几何检查；公开版本浏览器结果见本批PR。",
+    "限制与待解决": "史实与设计分列；未验收真实手机手感、硬件GPU性能或C15预算。场地收边没有物理碰撞或承载声明。",
+    "展示与装配": "三件配套随Z13市街常显；本卡三个文件是不同构件，不是LOD。收边只补视觉缝，台地与道路的高差仍保留。",
+    "预览说明": "本版模型离线CPU实渲，含市街上下文；上下文建筑不包含在本卡GLB内。",
+    "来源与权利": "项目原创几何与常量材质，沿用既有权利状态。范围和限制见资源目录source.json及RIGHTS.md；无历史道路或地基构造复原声明。"
+  },
+  "related": [
+    "p-luoyang",
+    "m-luoyang-market-frontage"
+  ]
+}

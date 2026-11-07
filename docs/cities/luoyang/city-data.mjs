@@ -1,3 +1,4 @@
+import { installZ13 } from './z13-content.mjs';
 // Existing delivered assets only. Coordinate/identity sources are listed below.
 // City-space GLBs keep their original coordinates; courtyard instances use the
 // delivered column-major matrices. Local study models are rendered separately.
@@ -1486,14 +1487,14 @@ const assetRecords = [
   }
 ];
 
-export const assets = assetRecords.map(({ path, nearPath, ...asset }) => ({
+let assets = assetRecords.map(({ path, nearPath, ...asset }) => ({
   ...asset,
   sourcePath: path,
   url: cityURL(path),
   ...(nearPath ? { nearUrl: cityURL(nearPath) } : {}),
 }));
 
-export const nodes = [
+let nodes = [
   {
     "id": "yong-gate-body",
     "asset": "yong-gate-near",
@@ -4431,7 +4432,7 @@ export const nodes = [
   }
 ];
 
-export const chapters = [
+let chapters = [
   {
     "camera": {
       "position": [
@@ -4789,7 +4790,7 @@ export const chapters = [
   }
 ];
 
-export const initialCamera = {
+let initialCamera = {
   "position": [
     590,
     220,
@@ -4802,7 +4803,7 @@ export const initialCamera = {
   ]
 };
 
-export const overview = {
+let overview = {
   "camera": {
     "position": [
       3300,
@@ -4829,7 +4830,7 @@ export const overview = {
   }
 };
 
-export const researchModels = [
+let researchModels = [
   {
     "id": "research-lingtai",
     "asset": "study-lingtai",
@@ -5206,7 +5207,7 @@ export const researchModels = [
   }
 ];
 
-export const provenance = {
+let provenance = {
   "id": "luoyang-m1-existing-progress",
   "coordinateFrame": {
     "id": "luoyang-local-schematic-v01",
@@ -5519,5 +5520,9 @@ provenance.sourceContracts.push({"path": "progress-assets/yong-upper-access-C-v1
 provenance.initialModelBytes += 195148; // Legacy initial manifest budget, not project-page measured HTTP.
 provenance.allCityModelBytes += 195148; // One selected runtime URL; review files excluded.
 // END YONG UPPER ACCESS V1.1 CONTENT
-export const manifest = { assets, nodes, chapters, initialCamera, overview, researchModels, provenance };
+const z13Installation = installZ13({ assets, nodes, chapters, initialCamera, overview, researchModels, provenance });
+({ assets, nodes, chapters, initialCamera, overview, researchModels, provenance } = z13Installation.manifest);
+export { assets, nodes, chapters, initialCamera, overview, researchModels, provenance };
+export const manifest = z13Installation.manifest;
+export const z13Receipt = z13Installation.receipt;
 export default manifest;

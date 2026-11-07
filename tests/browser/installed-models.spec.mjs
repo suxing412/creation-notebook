@@ -22,7 +22,7 @@ for (const model of models) {
       expect(await page.locator('#vh canvas').evaluate(c => { const gl=c.getContext('webgl2');return !!gl && !gl.isContextLost() && c.width>0 && c.height>0; })).toBe(true);
       await expect(page.locator('[data-mode="3d"]')).toHaveAttribute('aria-pressed','true');
       await expect(page.locator('#pv-k')).toHaveText(file.label);
-      await expect(page.locator('.vi span').filter({hasText:new RegExp(`^${model.materials} 材质$`)})).toHaveCount(1);
+      await expect(page.locator('.vi span').filter({hasText:new RegExp(`^${file.materials ?? model.materials} 材质$`)})).toHaveCount(1);
       responses.push({path:file.path,status:response.status(),bytes:body.length,sha256:sha256(body)});
       await page.locator('#stage').evaluate(el=>el.scrollIntoView({block:'center',behavior:'instant'}));
       await page.locator('#stage').screenshot({path:info.outputPath(`variant-${index}.png`)});
@@ -49,7 +49,7 @@ function project(point, view, rect, aspect) {
 test('Z09-A and Z14 remain in the city, select by real geometry and keep evidence visible', async ({ page }, info) => {
   const evidence=await instrument(page),gl=await openCity(page);
   await page.emulateMedia({reducedMotion:'reduce'});
-  expect(cityNodeIds).toHaveLength(73);
+  expect(cityNodeIds).toHaveLength(78);
   const initial=await state(page);
   expect(initial.modelNodeIds).toEqual(expect.arrayContaining(['Z09-CIVIC-SERVICE-C01','Z14-WELL-COURT-C01']));
   expect(initial.modelNodeIds.some(id=>/z09.*(?:-B-|layout-B)/i.test(id))).toBe(false);

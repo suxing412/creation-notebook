@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "zone": "Z13",
+  "classification": "C级设计；不作为公元180年洛阳原状复原",
+  "assets": [
+    {
+      "id": "z13-frontage-original-v21",
+      "nodeId": "Z13-FRONTAGE-V21-C01",
+      "title": "八铺四棚市街 · C级设计",
+      "path": "../../library/models/m-luoyang-market-frontage/files/street_frontage-LOD0.glb",
+      "bytes": 1932544,
+      "sha256": "46f08f41aa290218e9a3ec4e4de4e2cb676f10a80a035e9b6d3e1f8a0c5bf6f2",
+      "tier": "C"
+    },
+    {
+      "id": "z13-frontage-support-C",
+      "nodeId": "Z13-FRONTAGE-SUPPORT-C01",
+      "title": "市街支承与踏步 · C级设计",
+      "path": "progress-assets/z13-market-C-v1/z13-frontage-support-and-steps-C.glb",
+      "bytes": 35928,
+      "sha256": "2c626c2aca1ea534d2f6df1ce14ccae2e6ee2c75e2cd01ee52aae9539298e8dd",
+      "tier": "C"
+    },
+    {
+      "id": "z13-continuous-display-ground-C-v1",
+      "nodeId": "Z13-DISPLAY-GROUND-C01",
+      "title": "市街连续展示地表 · C级设计",
+      "path": "progress-assets/z13-market-C-v1/z13-continuous-display-C.glb",
+      "bytes": 1196,
+      "sha256": "80f8cfc4f9ca1c743ecfca7fed89806db1476bf7e77288e3c9b6e61bfb5c749b",
+      "tier": "C"
+    },
+    {
+      "id": "z13-road-edge-visual-infill-C-v1",
+      "nodeId": "Z13-ROAD-EDGE-INFILL-C01",
+      "title": "市街路缘视觉收边 · C级设计",
+      "path": "progress-assets/z13-market-C-v1/z13-road-edge-visual-infill-C.glb",
+      "bytes": 1052,
+      "sha256": "1ecf18181776e38ec53e2b9c6dbcb1ad41b0e32c6c2b6d57afc76e48e119d526",
+      "tier": "C"
+    },
+    {
+      "id": "z13-grey-pottery-bowl-C",
+      "nodeId": "market_bowl_C01",
+      "title": "市街灰陶碗 · C级设计",
+      "path": "progress-assets/z13-market-C-v1/bowl-C-LOD0.glb",
+      "bytes": 36716,
+      "sha256": "0014e893fb5ae5630b32e755548c2cb3ed7191d7f3441654fdff7d6bb83cf8bd",
+      "tier": "C"
+    }
+  ],
+  "placement": {
+    "frontageAndSupportColumnMajor": [
+      0,
+      0,
+      -1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      300,
+      0.2,
+      -2000,
+      1
+    ],
+    "groundAndEdge": "外部identity；GLB已含世界位移，不重复变换",
+    "bowlWorldPosition": [
+      294,
+      1.2099999904632568,
+      -1979
+    ]
+  },
+  "installOrder": [
+    "frontage/support/ground",
+    "edge",
+    "bowl"
+  ],
+  "withdrawOrder": [
+    "bowl",
+    "edge",
+    "frontage/support/ground"
+  ],
+  "limits": [
+    "地表为约3868.96平方米的展示面，避开既有支承和道路，不是全城地基。",
+    "路缘仅补60米视觉接缝，无碰撞或承载能力声明。",
+    "碗类比异地东汉灰陶平底碗；完整轮廓、材料、厚度、摆放和用途均为设计。",
+    "旧五店三摊及47院不变；新街段复用既有八铺四棚家族。",
+    "原始几何离线检查不等同浏览器运动深度、真机手感或性能预算验收。"
+  ]
+}
