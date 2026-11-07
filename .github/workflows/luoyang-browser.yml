@@ -14,6 +14,24 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  auditor:
+    name: GLB auditor regressions
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Install pinned image reader
+        run: python -m pip install --disable-pip-version-check pillow==12.3.0
+      - name: Check decoding, cache failures, and real timeout
+        run: python -B -I tests/test_glb_audit.py
   browser:
     name: ${{ matrix.project }} browser
     strategy:
@@ -48,6 +66,8 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Check asset contracts and restore generated files
         run: |
+          # A local cache is a performance hint, never evidence for this CI gate.
+          python -c "from pathlib import Path; Path('lab/data/glb-cache.json').write_text('{}')"
           python -I lab/tools/build_assets.py --check > browser-evidence/assets.log 2>&1
           git restore -- lab/data
           git clean -f -- lab/media
