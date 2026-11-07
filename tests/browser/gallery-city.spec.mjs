@@ -13,6 +13,8 @@ test('gallery eight-part assembly remains in the real city and exposes finite gr
  page.on('response',r=>{if(files.some(f=>new URL(r.url()).pathname===f.path))received.push(r);});
  await page.addInitScript(()=>{
   window.galleryClicks=[];
+  window.galleryEvidenceChanges=[];
+  document.addEventListener('change',e=>{if(e.target.id==='pj-tier')window.galleryEvidenceChanges.push({frame:window.galleryViewportSerial||0,checked:e.target.checked,trusted:e.isTrusted});},true);
   document.addEventListener('click',e=>window.galleryClicks.push({time:e.timeStamp,trusted:e.isTrusted,pointerId:e.pointerId,pointerType:e.pointerType,x:e.clientX,y:e.clientY,path:e.composedPath().map(n=>n.id).filter(Boolean)}),true);
   document.addEventListener('luoyang-view-change',e=>{const canvas=e.target,r=canvas.parentElement.getBoundingClientRect();window.galleryViewportFrame={serial:window.galleryViewportSerial=(window.galleryViewportSerial||0)+1,viewport:[innerWidth,innerHeight],visual:[visualViewport.width,visualViewport.height],stage:[Math.floor(r.width),Math.floor(r.height)],buffer:[canvas.width,canvas.height],ratio:Math.min(devicePixelRatio||1,1.5),state:structuredClone(e.detail)};},true);
  });
@@ -75,16 +77,21 @@ test('gallery eight-part assembly remains in the real city and exposes finite gr
   if(touch)await resize({width:375,height:812});
   await chapter();const stable=await state(page),captureStates=[];
   async function evidenceShot(name,visible){
-   await expect.poll(async()=>(await state(page)).evidenceVisible).toBe(visible);await align();
+   if(visible)await expect(page.locator('#pj-tier')).toBeChecked();else await expect(page.locator('#pj-tier')).not.toBeChecked();await align();
    const box=await canvasRect();expect(box.y).toBeGreaterThanOrEqual(0);expect(box.y+box.height).toBeLessThanOrEqual(page.viewportSize().height);
    const png=await page.locator('#pj-canvas').screenshot();
    // Attach before assertions so failures preserve the actual off/on/restored images.
    await info.attach(name,{body:png,contentType:'image/png'});
    captureStates.push({name,state:await state(page),rect:await canvasRect(),scrollY:await page.evaluate(()=>scrollY)});return png;
   }
+  async function evidenceChange(checked){
+   const before=await page.evaluate(()=>galleryEvidenceChanges.length);
+   await page.locator('#pj-tier').setChecked(checked);
+   await expect.poll(()=>page.evaluate(({before,checked})=>{const change=galleryEvidenceChanges.at(-1);return galleryEvidenceChanges.length===before+1&&change.trusted&&change.checked===checked&&galleryViewportSerial>change.frame;},{before,checked})).toBe(true);
+  }
   const plain=await evidenceShot('gallery-evidence-off',false);
-  await page.locator('#pj-tier').check();const marked=await evidenceShot('gallery-evidence-on',true);
-  await page.locator('#pj-tier').uncheck();const restored=await evidenceShot('gallery-evidence-restored',false);
+  await evidenceChange(true);const marked=await evidenceShot('gallery-evidence-on',true);
+  await evidenceChange(false);const restored=await evidenceShot('gallery-evidence-restored',false);
   await info.attach('gallery-evidence-capture-states',{body:JSON.stringify(captureStates,null,2),contentType:'application/json'});
   expect(marked.equals(plain)).toBe(false);expect(restored.equals(plain),'Evidence-off PNG must restore every byte').toBe(true);
   for(const capture of captureStates){expect(capture.state.position).toEqual(stable.position);expect(capture.state.target).toEqual(stable.target);expect(capture.rect).toEqual(captureStates[0].rect);expect(capture.scrollY).toBe(captureStates[0].scrollY);}
@@ -92,5 +99,5 @@ test('gallery eight-part assembly remains in the real city and exposes finite gr
   await selectZone(page,'Z14',touch);await selectZone(page,'Z23',touch);await align();await click(page.locator('.ly-overview'));
   await expect.poll(async()=>{const s=await state(page);return s.chapter==='city'&&!s.moving;}).toBe(true);
   const end=await settled(page);expect(end.position).toEqual(initial.position);expect(end.target).toEqual(initial.target);expect(end.modelNodeIds).toEqual(expected);expect(end.sceneRevision).toBe(initial.sceneRevision);expect(evidence.modelRequests).toEqual(requests);assertHealthy(evidence);
- }finally{await attachEvidence(page,info,evidence,{gl,http,views,galleryClicks:await page.evaluate(()=>window.galleryClicks||[]),budget:galleryRuntimeBudget});}
+ }finally{await attachEvidence(page,info,evidence,{gl,http,views,galleryClicks:await page.evaluate(()=>window.galleryClicks||[]),galleryEvidenceChanges:await page.evaluate(()=>window.galleryEvidenceChanges||[]),budget:galleryRuntimeBudget});}
 });
