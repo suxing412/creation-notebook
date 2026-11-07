@@ -10,7 +10,7 @@
 最要紧的三条：
 1. **W30〔中，新〕全城一次加载全部节点，线上模型下载量约为上次实测的 7 倍**：C13 判为退步。桌面打开项目页就自动加载，整页 13.4 MB。
 2. **W32〔中，新〕新入城的三件在产品里看不清**：Z09、Z14 的「在城中看」只把镜头推到整个分区，模型只有一个小点；灰陶碗的按钮落到市肆全景，碗看不见。
-3. **C18〔低，范围变化〕r2026.11.07-1 声明的两个源文件 ZIP 没有归档**：Release 里只有 GLB 和 `originals.json`，本机待传目录也没有这个 tag 的文件夹。旧批次 -5、-6 的 ZIP 已补进 Release。
+3. **C18〔低，范围变化〕r2026.11.07-1 声明的两个源文件 ZIP 没有归档**：Release 里只有 GLB 和 `originals.json`，本机待传目录也没有这个 tag 的文件夹。旧批次只有 -6 确认补齐。
 
 ## 本版改了什么
 
@@ -46,7 +46,7 @@
 | C14 | 仓库体积增长快（设计意见） | 部分修 | 部分修 | GLB 增加 15.6 MB；发布站 456 MB，低于 1 GB 上限 |
 | C16 | 同一套贴图被重复嵌进几十个 GLB | 未修 | 未修 | 新增重复：Z09 的 A、B 同档贴图哈希相同，四个文件各内嵌 1.0 MB 或 0.37 MB 贴图 |
 | C17 | 武库 B 三档都有退化三角形 | 未修 | 未修 | 全库退化面仍是 42，新文件为 0 |
-| C18 | 声明的源文件没有归档 | 未修 | 部分修 | r2026.11.07-1 声明的 `Z09-civic-service-C01-source-and-city-export-20261106.zip`、`Z14-well-court-C01-source-20261106.zip` 不在 Release，也不在待传目录。-5、-6 的 ZIP 已进 Release（`luoyang-yong-apron-r2026.11.05-5-public-source.zip`、`luoyang-yong-road-release-source-v2.zip`），这两批算已补；-8 的 Release 里仍没有 ZIP |
+| C18 | 声明的源文件没有归档 | 未修 | 部分修 | r2026.11.07-1 声明的 `Z09-civic-service-C01-source-and-city-export-20261106.zip`、`Z14-well-court-C01-source-20261106.zip` 不在 Release，也不在待传目录。-6 声明的 `luoyang-yong-road-release-source-v2.zip` 已进 Release，这一批算已补。-5 的 Release 里是 `luoyang-yong-apron-r2026.11.05-5-public-source.zip`，与声明的 `luoyang-yong-city-v1.1-private-source.zip` 名字不同，要确认是否为替代文件。-8 声明的 `luoyang-north-three-placement-source-v1.zip` 仍不在 Release |
 | C19 | 几座城门研究模型很难分辨（设计意见） | 未修 | 未修 | 城门模型和图片没动 |
 | C20 | 12 个三角形的路面带了 380 KB 贴图 | 未修 | 未修 | 文件没动 |
 | C21 | 接街只有 3 米宽、接口有色差（设计意见） | 未修 | 未修 | 文件没动 |
