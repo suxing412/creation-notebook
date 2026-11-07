@@ -64,7 +64,10 @@ test('gallery eight-part assembly remains in the real city and exposes finite gr
    await page.mouse.move(rect.x+rect.width*.45,rect.y+rect.height*.55);await page.mouse.down();try{for(let i=1;i<=12;i++){await page.mouse.move(rect.x+rect.width*.45+3*i,rect.y+rect.height*.55+i);await page.waitForTimeout(16);}}finally{await page.mouse.up();}
   }
   await expect.poll(async()=>delta((await state(page)).position,beforeDrag.position)).toBeGreaterThan(.2);
-  const moved=await settled(page);expect(moved.target).toEqual(beforeDrag.target);expect(moved.modelNodeIds).toEqual(expected);
+  const moved=await settled(page);expect(moved.target[1]).toBe(0);expect(beforeDrag.target[1]).toBe(0);
+  // OrbitControls clampLength normalizes then rescales target even without panning.
+  const targetTolerance=8*Number.EPSILON*Math.max(1,...beforeDrag.target.map(Math.abs));
+  expect(Math.hypot(moved.target[0]-beforeDrag.target[0],moved.target[2]-beforeDrag.target[2])).toBeLessThanOrEqual(targetTolerance);expect(moved.modelNodeIds).toEqual(expected);
   const samples=await page.evaluate(t=>luoyangEvidence.samples.filter(s=>s.time>=t),started);expect(samples.length).toBeGreaterThan(1);expect(samples.every(s=>s.target[1]===0)).toBe(true);await expect(page.locator('#pj-note')).toBeHidden();
   if(!touch){await page.mouse.wheel(0,120);await expect.poll(async()=>distance(await state(page))).toBeGreaterThan(distance(moved)*1.01);assertFullCity(await settled(page));}
   // Real product evidence switch: render change and exact restoration at one settled pose.

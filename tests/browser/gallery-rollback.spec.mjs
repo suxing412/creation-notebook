@@ -63,7 +63,10 @@ test('gallery installation renders eight real parts and returns exactly to the i
    const started=await page.evaluate(()=>performance.now());await page.mouse.move(box.x+box.width*.5,box.y+box.height*.5);await page.mouse.down();
    try{for(let i=1;i<=8;i++){await page.mouse.move(box.x+box.width*.5+i*4,box.y+box.height*.5+i);await page.waitForTimeout(50);await shot(`${label}-drag-${i}`);}}finally{await page.mouse.up();}
    await expect.poll(()=>page.evaluate(before=>Math.hypot(...galleryQA.state.position.map((v,i)=>v-before[i])),beforeDrag.position)).toBeGreaterThan(.05);
-   const dragged=await ready();assertInstalled(dragged);expect(dragged.target).toEqual(beforeDrag.target);
+   const dragged=await ready();assertInstalled(dragged);expect(dragged.target[1]).toBe(0);expect(beforeDrag.target[1]).toBe(0);
+   // Permit only machine-scale target normalization error from OrbitControls.
+   const targetTolerance=8*Number.EPSILON*Math.max(1,...beforeDrag.target.map(Math.abs));
+   expect(Math.hypot(dragged.target[0]-beforeDrag.target[0],dragged.target[2]-beforeDrag.target[2])).toBeLessThanOrEqual(targetTolerance);
    const samples=await page.evaluate(t=>galleryQA.states.filter(s=>s.time>=t),started);expect(samples.length).toBeGreaterThan(1);expect(samples.every(s=>s.target[1]===0)).toBe(true);
    const afterMotion=await shot(`${label}-after-motion`);await action('#evidence',{evidence:true});expect(hash(await shot(`${label}-evidence-after-motion`))).not.toBe(hash(afterMotion));
    await action('#evidence',{evidence:false});expect(await page.locator('#gallery-qa-canvas').screenshot()).toEqual(afterMotion);
