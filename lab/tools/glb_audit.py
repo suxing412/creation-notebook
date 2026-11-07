@@ -1,5 +1,8 @@
-"""Stdlib-only GLB auditor: structure, geometry stats, materials, textures, basic hygiene."""
+"""GLB auditor; compressed views additionally require Node and the vendored decoder."""
 import json, struct, sys, os, hashlib, math
+# Keep the standalone `python -I lab/tools/glb_audit.py` entrypoint usable.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from glb_audit_io import Accessors, AuditError, MAX_FILE, load_glb, require
 
 CT = {5120: 'b', 5121: 'B', 5122: 'h', 5123: 'H', 5125: 'I', 5126: 'f'}
 NC = {'SCALAR': 1, 'VEC2': 2, 'VEC3': 3, 'VEC4': 4, 'MAT2': 4, 'MAT3': 9, 'MAT4': 16}
@@ -36,39 +39,37 @@ def det3(m):
 
 
 def audit(path):
-    raw = open(path, 'rb').read()
-    out = {'path': path.replace('\\', '/'), 'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(), 'issues': []}
-    if raw[:4] != b'glTF':
-        out['issues'].append('NOT_GLB_MAGIC'); return out
-    ver, length = struct.unpack_from('<II', raw, 4)
-    if length != len(raw):
-        out['issues'].append(f'LENGTH_MISMATCH header={length}')
-    off = 12; js = None; bin_ = b''
-    while off < len(raw):
-        clen, ctype = struct.unpack_from('<II', raw, off); off += 8
-        chunk = raw[off:off + clen]; off += clen
-        if ctype == 0x4E4F534A: js = json.loads(chunk.decode('utf-8'))
-        elif ctype == 0x004E4942: bin_ = chunk
-    g = js
+    path = os.fspath(path)
+    # Bound reads before allocation. Hash the original transport bytes, never a
+    # reconstructed GLB or decoded buffer.
+    with open(path, 'rb') as source:
+        raw = source.read(MAX_FILE + 1)
+    out = {'path': path.replace('\\', '/'), 'bytes': len(raw),
+           'sha256': hashlib.sha256(raw).hexdigest(), 'issues': [], 'fatalErrors': []}
+    if len(raw) > MAX_FILE:
+        # Oversized input is not fully read: do not mislabel a prefix digest.
+        out.update(bytes=os.path.getsize(path), sha256=None)
+        out['fatalErrors'] = ['FILE_LIMIT']; out['issues'] = ['FILE_LIMIT']; return out
+    try:
+        # Commit computed statistics only after the whole audit succeeds.
+        return _audit(raw, {**out, 'issues': [], 'fatalErrors': []})
+    except (AuditError, ValueError, KeyError, IndexError, TypeError, AttributeError, struct.error, OverflowError, RecursionError) as error:
+        out['fatalErrors'] = [str(error) or type(error).__name__]
+        out['issues'].append('PARSE_ERROR:' + out['fatalErrors'][0])
+        return out
+
+
+def _audit(raw, out):
+    g, bin_ = load_glb(raw)
     out['generator'] = g.get('asset', {}).get('generator')
     out['version'] = g.get('asset', {}).get('version')
     out['extUsed'] = g.get('extensionsUsed', [])
     out['extReq'] = g.get('extensionsRequired', [])
+    data = Accessors(g, bin_)
     acc = g.get('accessors', []); bvs = g.get('bufferViews', [])
-
-    def read(ai, limit=None):
-        a = acc[ai]
-        if 'bufferView' not in a:
-            return None
-        bv = bvs[a['bufferView']]
-        n = NC[a['type']]; fmt = CT[a['componentType']]; cs = struct.calcsize(fmt)
-        stride = bv.get('byteStride') or cs * n
-        base = bv.get('byteOffset', 0) + a.get('byteOffset', 0)
-        cnt = a['count'] if limit is None else min(a['count'], limit)
-        res = []
-        for i in range(cnt):
-            res.append(struct.unpack_from('<' + fmt * n, bin_, base + i * stride))
-        return res
+    read = data.read
+    out['decodedViews'] = data.decoded_views
+    out['decodedBytes'] = data.decoded_bytes
 
     meshes = g.get('meshes', [])
     tri = 0; verts = 0; prims = 0; nouv = 0; nonorm = 0; degen = 0; nonindexed = 0; modes = set()
@@ -129,6 +130,7 @@ def audit(path):
     def walk(ni, pm):
         nonlocal negdet
         n = nodes[ni]; m = mat_mul(pm, trs(n))
+        require(all(math.isfinite(v) for v in m), 'NONFINITE_WORLD_TRANSFORM')
         if 'mesh' in n:
             if det3(m) < 0: negdet += 1
             for p in meshes[n['mesh']]['primitives']:
@@ -139,6 +141,7 @@ def audit(path):
                         for cy in (mn[1], mx[1]):
                             for cz in (mn[2], mx[2]):
                                 q = xf(m, [cx, cy, cz])
+                                require(all(math.isfinite(v) for v in q), 'NONFINITE_WORLD_BOUNDS')
                                 for i in range(3):
                                     lo[i] = min(lo[i], q[i]); hi[i] = max(hi[i], q[i])
         for c in n.get('children', []):
@@ -148,11 +151,15 @@ def audit(path):
         walk(r, I)
     if lo[0] != math.inf:
         out['bboxMin'] = [round(x, 3) for x in lo]; out['bboxMax'] = [round(x, 3) for x in hi]
-        out['size'] = [round(hi[i] - lo[i], 3) for i in range(3)]
-        out['center'] = [round((hi[i] + lo[i]) / 2, 3) for i in range(3)]
+        size = [hi[i] - lo[i] for i in range(3)]
+        center = [hi[i] / 2 + lo[i] / 2 for i in range(3)]
+        require(all(math.isfinite(v) for v in size + center), 'NONFINITE_WORLD_BOUNDS')
+        out['size'] = [round(v, 3) for v in size]
+        out['center'] = [round(v, 3) for v in center]
     out['mirroredMeshNodes'] = negdet
     # issues
-    if out['extReq']: out['issues'].append('EXT_REQUIRED:' + ','.join(out['extReq']))
+    # Supported required extensions have been fully decoded/handled above.
+    # Unknown required extensions are fatal, never silently removed.
     if degen: out['issues'].append(f'DEGENERATE_TRIS:{degen}')
     if nonorm: out['issues'].append(f'PRIMS_NO_NORMAL:{nonorm}')
     if out['primsNoMaterial']: out['issues'].append(f'PRIMS_NO_MATERIAL:{out["primsNoMaterial"]}')
@@ -164,13 +171,16 @@ def audit(path):
 
 if __name__ == '__main__':
     root = sys.argv[1]; listfile = sys.argv[2]; outp = sys.argv[3]
-    res = []
+    res = []; failed = False
     for rel in open(listfile, encoding='utf-8').read().split():
         p = os.path.join(root, rel)
         try:
             r = audit(p); r['path'] = rel
         except Exception as e:
             r = {'path': rel, 'issues': ['PARSE_ERROR:' + repr(e)]}
+        failed = failed or bool(r.get('fatalErrors')) or any(i.startswith('PARSE_ERROR:') for i in r.get('issues', []))
         res.append(r)
         print(rel, r.get('triangles'), r.get('issues'), flush=True)
     json.dump(res, open(outp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+
+    sys.exit(1 if failed else 0)

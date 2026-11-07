@@ -10,7 +10,7 @@ Run from anywhere:
   python -I lab/tools/build_assets.py           build, print a summary
   python -I lab/tools/build_assets.py --check   same, but exit 1 if any card has an error (use before pushing / in CI)
 """
-import json, os, re, glob, subprocess, sys, datetime
+import json, os, re, glob, subprocess, sys, datetime, hashlib, math
 from PIL import Image
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -24,9 +24,16 @@ CATS = {c['id']: c for c in SPEC['categories']}
 STATUS = {s['id']: s for s in SPEC['statuses']}
 sys.path.insert(0, HERE)
 from glb_audit import audit  # noqa: E402
+from glb_audit_io import cache_identity, load_glb, MAX_FILE, SUPPORTED_REQUIRED  # noqa: E402
+AUDIT_ID = cache_identity()
 
 CACHE_PATH = os.path.join(LAB, 'data', 'glb-cache.json')
-cache = json.load(open(CACHE_PATH, encoding='utf-8')) if os.path.exists(CACHE_PATH) else {}
+try:
+    cache = json.load(open(CACHE_PATH, encoding='utf-8')) if os.path.exists(CACHE_PATH) else {}
+except (OSError, ValueError):
+    cache = {}  # A broken performance hint must not skip validation or abort the report.
+if not isinstance(cache, dict):
+    cache = {}
 FIELDS = {'spec', 'id', 'category', 'kind', 'title', 'english', 'summary', 'status', 'statusNote', 'cover', 'coverAlt', 'coverIsShot',
           'gallery', 'files', 'page', 'notes', 'stats', 'related', 'legacyPath', '$schema',
           'scene', 'chapters', 'progress', 'evidence', 'journal', 'members'}
@@ -64,14 +71,59 @@ def pic(rel):
     return {'small': thumb(rel, 720), 'large': thumb(rel, 1800), 'original': '../docs/' + rel}
 
 
+AUDIT_FIELDS = {'bytes', 'sha256', 'triangles', 'vertices', 'primitives', 'materials', 'images', 'size', 'primsNoUV', 'extUsed', 'issues'}
+
+
+def valid_summary(entry, digest, raw_size, used):
+    if not isinstance(entry, dict) or set(entry) != {'auditIdentity', 'summary'} or entry['auditIdentity'] != AUDIT_ID:
+        return False
+    info = entry['summary']
+    if not isinstance(info, dict) or set(info) != AUDIT_FIELDS:
+        return False
+    if info['sha256'] != digest or info['bytes'] != raw_size or info['extUsed'] != used:
+        return False
+    for k in ('bytes', 'triangles', 'vertices', 'primitives', 'materials', 'images', 'primsNoUV'):
+        if type(info[k]) is not int or info[k] < 0:
+            return False
+    for k in ('extUsed', 'issues'):
+        if not isinstance(info[k], list) or any(not isinstance(x, str) for x in info[k]):
+            return False
+    if any(x.startswith(('PARSE_ERROR:', 'EXT_REQUIRED_UNSUPPORTED:', 'FILE_LIMIT')) for x in info['issues']):
+        return False
+    size = info['size']
+    return size is None or (isinstance(size, list) and len(size) == 3 and
+                           all(type(x) in (int, float) and math.isfinite(x) and x >= 0 for x in size))
+
+
 def glb_info(rel):
     full = os.path.join(DOCS, rel)
-    st = os.stat(full)
-    key = f'{rel}:{st.st_size}:{int(st.st_mtime)}'
-    if key not in cache or 'extUsed' not in cache[key]:
+    with open(full, 'rb') as source:
+        raw = source.read(MAX_FILE + 1)
+    if len(raw) > MAX_FILE:
+        raise ValueError('FILE_LIMIT')
+    digest = hashlib.sha256(raw).hexdigest()
+    g, _ = load_glb(raw)
+    used = g.get('extensionsUsed', [])
+    required = g.get('extensionsRequired', [])
+    if not isinstance(used, list) or not isinstance(required, list) or not all(isinstance(x, str) for x in used + required):
+        raise ValueError('INVALID_EXTENSION_LIST')
+    if not set(required) <= set(used) or set(required) - SUPPORTED_REQUIRED:
+        raise ValueError('EXT_REQUIRED_UNSUPPORTED')
+    # Derive decoder requirements from the CURRENT input, never cache metadata.
+    compressed = ('EXT_meshopt_compression' in used + required or
+                  any('EXT_meshopt_compression' in bv.get('extensions', {}) for bv in g.get('bufferViews', [])))
+    key = f'{rel}:{AUDIT_ID}:{digest}'
+    previous = cache.get(key)
+    if compressed or not valid_summary(previous, digest, len(raw), used):
+        cache.pop(key, None)  # A failed refresh must not retain a success entry.
         a = audit(full)
-        cache[key] = {k: a.get(k) for k in ('bytes', 'triangles', 'vertices', 'primitives', 'materials', 'images', 'size', 'primsNoUV', 'extUsed')}
-    return cache[key]
+        if a.get('fatalErrors'):
+            raise ValueError('; '.join(a['fatalErrors']))
+        if a.get('sha256') != digest:
+            raise ValueError('GLB_CHANGED_DURING_AUDIT')
+        cache[key] = {'auditIdentity': AUDIT_ID, 'summary': {k: a.get(k) for k in sorted(AUDIT_FIELDS)}}
+    return cache[key]['summary']
+
 
 
 def updated(rels):
@@ -192,6 +244,8 @@ def check_card(path):
         except Exception as e:  # noqa: BLE001
             E.append(f'GLB 读不出来：{p}（{e}）')
             continue
+        for issue in info.get('issues') or []:
+            W.append(f'GLB 审计提醒：{p}（{issue}）')
         mb = (info.get('bytes') or 0) / 1e6
         if mb > LIM['glbMaxMB']:
             E.append(f'GLB 超过 {LIM["glbMaxMB"]} MB：{p}（{mb:.1f} MB）')
