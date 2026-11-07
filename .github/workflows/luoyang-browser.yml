@@ -54,8 +54,10 @@ jobs:
           git diff --exit-code
       - name: Fetch immutable pre-Z13 baseline
         run: git fetch --no-tags --depth=1 https://github.com/suxing412/creation-notebook.git d840a304fff11a3603fc9370360b23dc3ca1562e
-      - name: Check camera motion and reversible Z13 installation
-        run: node --test tests/navigation-motion.test.mjs tests/z13-content.test.mjs
+      - name: Fetch immutable pre-gallery baseline
+        run: git fetch --no-tags --depth=1 https://github.com/suxing412/creation-notebook.git 047e39d207d264739d22bfb68a9a378b6646767f
+      - name: Check camera motion and reversible content installation
+        run: node --test tests/navigation-motion.test.mjs tests/z13-content.test.mjs tests/gallery-content.test.mjs
       - name: Build the deployment artifact
         env:
           GLTFPACK: node ${{ github.workspace }}/tests/browser/node_modules/gltfpack/cli.js
@@ -63,6 +65,8 @@ jobs:
         run: python -I lab/tools/assemble_site.py _site > browser-evidence/build.log 2>&1
       - name: Add unpublished Z13 verification harness
         run: node tests/browser/prepare-z13-harness.mjs
+      - name: Add unpublished gallery verification harness
+        run: node tests/browser/prepare-gallery-harness.mjs
       - name: Exercise the built site in Chromium
         working-directory: tests/browser
         run: npm test -- --project=${{ matrix.project }}
