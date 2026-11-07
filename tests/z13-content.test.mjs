@@ -4,13 +4,15 @@ import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { installZ13,withdrawZ13,z13Records,z13NodeIds } from '../docs/cities/luoyang/z13-content.mjs';
+import { withContractIdentityCorrections } from './contract-identity-fixture.mjs';
 import current, * as named from '../docs/cities/luoyang/city-data.mjs';
 import { withdrawGallery } from '../docs/cities/luoyang/gallery-content.mjs';
 const published=withdrawGallery(current,named.galleryReceipt);
 const baselineSHA='d840a304fff11a3603fc9370360b23dc3ca1562e';
 const original=execFileSync('git',['show',`${baselineSHA}:docs/cities/luoyang/city-data.mjs`],{encoding:'utf8'});
 const source=original.replaceAll('import.meta.url',JSON.stringify(new URL('../docs/cities/luoyang/city-data.mjs',import.meta.url).href));
-const base=(await import(`data:text/javascript;base64,${Buffer.from(source).toString('base64')}`)).default;
+const historical=(await import(`data:text/javascript;base64,${Buffer.from(source).toString('base64')}`)).default;
+const base=withContractIdentityCorrections(historical);
 const installed=installZ13(base),clone=x=>structuredClone(x);
 test('independent baseline survives install, withdraw and reinstall exactly',()=>{
  assert.equal(base.nodes.length,80);assert.equal(base.assets.length,56);
