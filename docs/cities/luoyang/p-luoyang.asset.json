@@ -65,9 +65,10 @@
       "title": "市肆",
       "status": "已入城",
       "line": "街边，开始有了买卖。",
-      "text": "店铺和摊位组成一处市肆。沿街读它的入口、货物和留给人行的地方。",
+      "text": "保留既有五店三摊，在Z13新增一段八铺四棚街段、支承踏步、连续展示地表、路缘收边与一只灰陶碗。位置、布局及器物摆放均为C级设计，不是古城原状复原。",
       "image": "assets/chapter-3.webp",
-      "focus": "market"
+      "focus": "market",
+      "statusNote": "原五店三摊与新增八铺四棚常显"
     },
     {
       "id": "storage",
@@ -341,10 +342,12 @@
     },
     {
       "title": "八铺四棚店前线",
-      "status": "已建模",
+      "status": "已入城",
       "count": 1,
       "unit": "组",
-      "note": "独立C研究模型，变体和LOD合计一组；未入城，不增加已放置的城市实例。"
+      "note": "复用v2.1原件新增一处Z13设计落位，原八铺四棚家族不重复计型；保留旧五店三摊。配套地表、支承和收边另列，不计新院落。",
+      "chapter": "market",
+      "focus": "market"
     },
     {
       "title": "开敞作业棚与足碓院",
@@ -450,6 +453,24 @@
       "chapter": "yong-gate",
       "focus": "yong-gate",
       "note": "v1.1独立兼容附件，32次真实升高。本批将一件附件按原门矩阵装入；原门、墙路、地面及住宅47院不变，不新增城门家族。项目配置直接用LOD0，中远档为备档，无随缩放自动LOD切换。浏览器/GPU、实际HTTP/C15、人物物理与结构承载未由本包验收。"
+    },
+    {
+      "title": "Z13市街场地配套",
+      "status": "已入城",
+      "count": 1,
+      "unit": "组",
+      "chapter": "market",
+      "focus": "market",
+      "note": "支承踏步、连续展示地表及路缘视觉收边三件；均为C设计，不是全城地基或道路复原。"
+    },
+    {
+      "title": "市街灰陶平底碗",
+      "status": "已入城",
+      "count": 1,
+      "unit": "只",
+      "chapter": "market",
+      "focus": "market",
+      "note": "W1台面一只C级器物，类比异地东汉类型；三档只计一只，城市使用LOD0。"
     }
   ],
   "evidence": [
@@ -467,6 +488,12 @@
     }
   ],
   "journal": [
+    {
+      "date": "2026-11-07",
+      "batch": "r2026.11.07-3",
+      "title": "Z13市街与灰陶碗入城",
+      "text": "八铺四棚原件在Z13设计落位，接入支承、连续展示地表、视觉收边和W1台面灰陶碗。旧73节点与47院保留，新增5个常显节点；史实类比不等同本地原状，网页交互与撤回检查见本批PR。"
+    },
     {
       "date": "2026-11-07",
       "title": "雍门登临v1.1独立附件接入",
@@ -650,7 +677,9 @@
     "m-luoyang-house-roof",
     "m-luoyang-civic-service-court",
     "m-luoyang-residential-well-court",
-    "m-luoyang-yong-upper-access"
+    "m-luoyang-yong-upper-access",
+    "m-luoyang-z13-market-ground",
+    "m-luoyang-grey-pottery-bowl"
   ],
   "notes": {
     "已完成的检查": "源文件、资源引用、模型身份、矩阵与预算的静态检查。",

@@ -1,0 +1,41 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-grey-pottery-bowl",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "市街灰陶平底碗",
+  "english": "GREY POTTERY BOWL",
+  "summary": "以异地东汉灰陶平底碗作类型参考，在Z13市街W1台面放置一只C级设计器物；三档对应同一器物。",
+  "status": "待审",
+  "statusNote": "已按C级设计接入Z13，待质量评审。",
+  "cover": "cover.png",
+  "coverAlt": "本版模型及市街上下文的离线CPU渲染，非网页截图。",
+  "gallery": [
+    "shots/context.png"
+  ],
+  "files": [
+    {
+      "path": "../../../cities/luoyang/progress-assets/z13-market-C-v1/bowl-C-LOD0.glb",
+      "label": "近档 LOD0（默认）"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/z13-market-C-v1/bowl-C-LOD1.glb",
+      "label": "中档 LOD1（独立备选）"
+    },
+    {
+      "path": "../../../cities/luoyang/progress-assets/z13-market-C-v1/bowl-C-LOD2.glb",
+      "label": "远档 LOD2（独立备选）"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "交接GLB字节身份、变换、包络及有限几何检查；公开版本浏览器结果见本批PR。",
+    "限制与待解决": "类型参考来自异地东汉墓葬器物，不证明洛阳180年的市售实物或用途；厚度、完整轮廓与摆放为C设计。未验收实体碰撞、承载、真机手感或硬件GPU性能。",
+    "展示与装配": "W1台面一只碗随市街常显，城市只加载LOD0；LOD1/2在独立卡选看，不启用运行时自动LOD，不重复计物件。",
+    "预览说明": "本版模型离线CPU实渲，含市街上下文；上下文建筑不包含在本卡GLB内。",
+    "来源与权利": "项目原创几何与常量材质；沿用既有权利状态。灰陶碗异地类型参考及限制详见资源目录RIGHTS.md和source.json。"
+  },
+  "related": [
+    "p-luoyang",
+    "m-luoyang-market-frontage"
+  ]
+}
