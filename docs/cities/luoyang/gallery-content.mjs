@@ -7,11 +7,12 @@ export const galleryRecords = freeze(clone(rawRecords));
 export const galleryScopes = freeze(['six-plus-prefix', 'all-eight']);
 export const defaultGalleryScope = 'all-eight'; // Caller selects the bounded assembly; this module cannot grant admission.
 const key = 'galleryLocalC1', chapterId = 'gallery-local-c', sourcePath = 'progress-assets/gallery-local-C-v1/source.json';
-const sourceSHA = 'e9a13b0538e98b4f4a07628810d57e5e401dc16ed9c4ff434e0d291b783bbcb9';
+const sourceSHA = 'd9776eed9a8d5dfc039210d319610a786d37e66b12b5667da245795c9e4a5467';
 const equal = (a,b) => JSON.stringify(a) === JSON.stringify(b);
 const guard = (condition,message) => { if (!condition) throw new Error('Gallery: '+message); };
 const selected = scope => { guard(galleryScopes.includes(scope),'Unknown scope'); return galleryRecords.slice(0,scope === 'all-eight' ? 8 : 7); };
-const urlFor = path => new URL(path,import.meta.url).href;
+// Old library pages served slimmed bytes at these paths; isolate the original city payload from that cache.
+const runtimeURL = r => { const url=new URL(r.path,import.meta.url);if(r.reusesPublishedFile)url.searchParams.set('v',r.sha256);return url.href; };
 const unavailable = tier => ['U','X','unknown','excluded','未知','排除'].includes(tier);
 function checkShape(m) {
  guard(m && ['assets','nodes','chapters','researchModels'].every(k=>Array.isArray(m[k])) && m.provenance && Array.isArray(m.provenance.sourceContracts),'Missing manifest collections');
@@ -31,15 +32,15 @@ export function describeProjectRuntime(m) {
  return {manifestNodes:m.nodes.length,manifestAssets:m.assets.length,locatedNodes:active.length,replacementSuppressedNodes:active.length-drawn.length,drawnNodes:drawn.length,uniqueRuntimeURLs:urls.size,selectedDefaultGLBBytes:[...urls.values()].reduce((n,a)=>n+a.bytes,0),drawnNodeIds:drawn.map(n=>n.id)};
 }
 function expectedAsset(r) {
- return {id:r.id,sourcePath:r.path,url:urlFor(r.path),bytes:r.bytes,sha256:r.sha256,bounds:clone(r.bounds),tier:'C',...(r.reusesPublishedFile?{}:{sourceContract:sourcePath})};
+ return {id:r.id,sourcePath:r.path,url:runtimeURL(r),bytes:r.bytes,sha256:r.sha256,bounds:clone(r.bounds),tier:'C',...(r.reusesPublishedFile?{}:{sourceContract:sourcePath})};
 }
 function matchingOriginal(m,r) {
- const found=m.assets.filter(a=>a.sha256===r.sha256 || a.url===urlFor(r.path) || a.sourcePath===r.path);
+ const found=m.assets.filter(a=>a.sha256===r.sha256 || a.url===runtimeURL(r) || a.sourcePath===r.path);
  guard(found.length<=1,'Duplicate SHA records require explicit deduplication: '+r.component);
  if(!found.length)return null;
  const a=found[0];
  guard(r.reusesPublishedFile,'Supplemental asset already present without gallery receipt');
- guard(a.sha256===r.sha256 && a.bytes===r.bytes && a.url===urlFor(r.path) && equal(a.bounds,r.bounds) && !(a.excludeNodes?.length),'Original record changed: '+r.component);
+ guard(a.sha256===r.sha256 && a.bytes===r.bytes && a.url===runtimeURL(r) && equal(a.bounds,r.bounds) && !(a.excludeNodes?.length),'Original record changed: '+r.component);
  return a;
 }
 function combinedBounds(records){return {min:[0,1,2].map(i=>Math.min(...records.map(r=>r.worldBounds.min[i]))),max:[0,1,2].map(i=>Math.max(...records.map(r=>r.worldBounds.max[i])))};}

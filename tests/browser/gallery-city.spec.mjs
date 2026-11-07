@@ -32,7 +32,7 @@ test('gallery eight-part assembly remains in the real city and exposes finite gr
  try{
   gl=await openCity(page,touch);await page.emulateMedia({reducedMotion:'reduce'});const initial=await state(page);
   expect(expected).toHaveLength(86);expect(initial.modelNodeIds).toEqual(expected);
-  for(const file of files){const responses=received.filter(r=>new URL(r.url()).pathname===file.path);expect(responses).toHaveLength(1);const response=responses[0],body=await response.body();expect(response.status()).toBe(200);expect(body.length).toBe(file.bytes);const sha=createHash('sha256').update(body).digest('hex');expect(sha).toBe(file.sha256);http.push({path:file.path,bytes:body.length,sha256:sha});}
+  for(const file of files){const responses=received.filter(r=>new URL(r.url()).pathname===file.path);expect(responses).toHaveLength(1);const response=responses[0],body=await response.body();expect(response.status()).toBe(200);expect(new URL(response.url()).search).toBe(file.reusesPublishedFile?'?v='+file.sha256:'');expect(body.length).toBe(file.bytes);const sha=createHash('sha256').update(body).digest('hex');expect(sha).toBe(file.sha256);http.push({path:file.path,url:response.url(),bytes:body.length,sha256:sha});}
   expect(http.reduce((n,f)=>n+f.bytes,0)).toBe(galleryRuntimeBudget.newUniqueBytes);const requests=evidence.modelRequests.slice();
   const dimensions=touch?[{width:375,height:812,label:'portrait'},{width:812,height:375,label:'landscape'}]:[{width:1440,height:1000,label:'desktop'}];
   for(const viewport of dimensions){
@@ -70,12 +70,24 @@ test('gallery eight-part assembly remains in the real city and exposes finite gr
   expect(Math.hypot(moved.target[0]-beforeDrag.target[0],moved.target[2]-beforeDrag.target[2])).toBeLessThanOrEqual(targetTolerance);expect(moved.modelNodeIds).toEqual(expected);
   const samples=await page.evaluate(t=>luoyangEvidence.samples.filter(s=>s.time>=t),started);expect(samples.length).toBeGreaterThan(1);expect(samples.every(s=>s.target[1]===0)).toBe(true);await expect(page.locator('#pj-note')).toBeHidden();
   if(!touch){await page.mouse.wheel(0,120);await expect.poll(async()=>distance(await state(page))).toBeGreaterThan(distance(moved)*1.01);assertFullCity(await settled(page));}
-  // Real product evidence switch: render change and exact restoration at one settled pose.
-  await chapter();const stable=await state(page),plain=await page.locator('#pj-canvas').screenshot();
-  await page.locator('#pj-tier').check();await align();const marked=await page.locator('#pj-canvas').screenshot();expect(marked.equals(plain)).toBe(false);
-  await page.locator('#pj-tier').uncheck();await align();expect(await page.locator('#pj-canvas').screenshot()).toEqual(plain);
-  expect((await state(page)).position).toEqual(stable.position);expect((await state(page)).target).toEqual(stable.target);
-  await info.attach('gallery-evidence-off',{body:plain,contentType:'image/png'});await info.attach('gallery-evidence-on',{body:marked,contentType:'image/png'});
+  // Capture a complete visible canvas: the 404px landscape canvas exceeds its 375px viewport.
+  // Landscape framing, real picks and touch drag above remain covered.
+  if(touch)await resize({width:375,height:812});
+  await chapter();const stable=await state(page),captureStates=[];
+  async function evidenceShot(name,visible){
+   await expect.poll(async()=>(await state(page)).evidenceVisible).toBe(visible);await align();
+   const box=await canvasRect();expect(box.y).toBeGreaterThanOrEqual(0);expect(box.y+box.height).toBeLessThanOrEqual(page.viewportSize().height);
+   const png=await page.locator('#pj-canvas').screenshot();
+   // Attach before assertions so failures preserve the actual off/on/restored images.
+   await info.attach(name,{body:png,contentType:'image/png'});
+   captureStates.push({name,state:await state(page),rect:await canvasRect(),scrollY:await page.evaluate(()=>scrollY)});return png;
+  }
+  const plain=await evidenceShot('gallery-evidence-off',false);
+  await page.locator('#pj-tier').check();const marked=await evidenceShot('gallery-evidence-on',true);
+  await page.locator('#pj-tier').uncheck();const restored=await evidenceShot('gallery-evidence-restored',false);
+  await info.attach('gallery-evidence-capture-states',{body:JSON.stringify(captureStates,null,2),contentType:'application/json'});
+  expect(marked.equals(plain)).toBe(false);expect(restored.equals(plain),'Evidence-off PNG must restore every byte').toBe(true);
+  for(const capture of captureStates){expect(capture.state.position).toEqual(stable.position);expect(capture.state.target).toEqual(stable.target);expect(capture.rect).toEqual(captureStates[0].rect);expect(capture.scrollY).toBe(captureStates[0].scrollY);}
   if(touch){await resize({width:375,height:812});await chapter();await page.locator('#pj-stage').screenshot({path:info.outputPath('gallery-portrait-return.png')});}
   await selectZone(page,'Z14',touch);await selectZone(page,'Z23',touch);await align();await click(page.locator('.ly-overview'));
   await expect.poll(async()=>{const s=await state(page);return s.chapter==='city'&&!s.moving;}).toBe(true);

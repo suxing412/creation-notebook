@@ -33,6 +33,8 @@ test('exact eight GLBs and source identity match measured runtime budget',()=>{
   assert.equal(b.readUInt32LE(0),0x46546c67);assert.equal(b.readUInt32LE(4),2);assert.equal(b.readUInt32LE(8),b.length);
   const json=JSON.parse(b.subarray(20,20+b.readUInt32LE(12)).toString());
   assert.ok((json.buffers||[]).every(v=>!v.uri));assert.ok((json.images||[]).every(v=>v.bufferView!==undefined&&!v.uri));
+  const asset=published.assets.find(a=>a.id===r.id),url=new URL(asset.url);
+  assert.equal(url.search,r.reusesPublishedFile?'?v='+r.sha256:'');assert.equal(asset.sourcePath,r.path);
   const n=published.nodes.find(n=>n.id===r.nodeId);assert.deepEqual(n.matrix,r.matrix);assert.deepEqual(n.bounds,r.worldBounds);bytes+=b.length;
  }
  assert.equal(bytes,2241292);assert.equal(galleryRecords.reduce((s,r)=>s+r.triangles,0),7696);
