@@ -1,3 +1,4 @@
+import { galleryRecords } from '../../docs/cities/luoyang/gallery-records.mjs';
 import { test,expect } from '@playwright/test';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
@@ -5,13 +6,13 @@ import { z13Records,z13NodeIds } from '../../docs/cities/luoyang/z13-content.mjs
 import { instrument,openCity,state,settled,selectZone,assertFullCity,assertHealthy,attachEvidence } from './helpers.mjs';
 import { project,streetPoint,groundPoint } from './z13-geometry.mjs';
 const old=JSON.parse(readFileSync(new URL('./yong-access.json',import.meta.url)));
-const expected=[...old.previousCityNodeIds,old.id,...z13NodeIds].sort();
+const expected=[...old.previousCityNodeIds,old.id,...z13NodeIds,...galleryRecords.map(r=>r.nodeId)].sort();
 const files=z13Records.map(a=>({...a,path:new URL(a.path,'https://example.test/cities/luoyang/z13-content.mjs').pathname}));
 test('Z13 five-piece installation loads exact files and remains visible during chapter and zone navigation',async({page},info)=>{
  const touch=info.project.name==='mobile',evidence=await instrument(page),received=[];
  page.on('response',r=>{if(files.some(f=>new URL(r.url()).pathname===f.path))received.push(r);});
  const gl=await openCity(page,touch);await page.emulateMedia({reducedMotion:'reduce'});
- const initial=await state(page);expect(initial.modelNodeIds).toEqual(expected);expect(expected).toHaveLength(78);
+ const initial=await state(page);expect(initial.modelNodeIds).toEqual(expected);expect(expected).toHaveLength(86);
  const http=[];
  for(const f of files){const matches=received.filter(r=>new URL(r.url()).pathname===f.path);expect(matches).toHaveLength(1);
   const body=await matches[0].body();expect(matches[0].status()).toBe(200);expect(body.length).toBe(f.bytes);

@@ -1,3 +1,4 @@
+import { installGallery } from './gallery-content.mjs';
 import { installZ13 } from './z13-content.mjs';
 // Existing delivered assets only. Coordinate/identity sources are listed below.
 // City-space GLBs keep their original coordinates; courtyard instances use the
@@ -5521,8 +5522,10 @@ provenance.initialModelBytes += 195148; // Legacy initial manifest budget, not p
 provenance.allCityModelBytes += 195148; // One selected runtime URL; review files excluded.
 // END YONG UPPER ACCESS V1.1 CONTENT
 const z13Installation = installZ13({ assets, nodes, chapters, initialCamera, overview, researchModels, provenance });
-({ assets, nodes, chapters, initialCamera, overview, researchModels, provenance } = z13Installation.manifest);
+const galleryInstallation = installGallery(z13Installation.manifest);
+({ assets, nodes, chapters, initialCamera, overview, researchModels, provenance } = galleryInstallation.manifest);
 export { assets, nodes, chapters, initialCamera, overview, researchModels, provenance };
-export const manifest = z13Installation.manifest;
+export const manifest = galleryInstallation.manifest;
+export const galleryReceipt = galleryInstallation.receipt;
 export const z13Receipt = z13Installation.receipt;
 export default manifest;

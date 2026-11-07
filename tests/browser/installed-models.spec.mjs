@@ -49,7 +49,7 @@ function project(point, view, rect, aspect) {
 test('Z09-A and Z14 remain in the city, select by real geometry and keep evidence visible', async ({ page }, info) => {
   const evidence=await instrument(page),gl=await openCity(page);
   await page.emulateMedia({reducedMotion:'reduce'});
-  expect(cityNodeIds).toHaveLength(78);
+  expect(cityNodeIds).toHaveLength(86);
   const initial=await state(page);
   expect(initial.modelNodeIds).toEqual(expect.arrayContaining(['Z09-CIVIC-SERVICE-C01','Z14-WELL-COURT-C01']));
   expect(initial.modelNodeIds.some(id=>/z09.*(?:-B-|layout-B)/i.test(id))).toBe(false);

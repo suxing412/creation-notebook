@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "title": "复道局部八件空间装配研究",
+  "tier": "C",
+  "sourceMainCommit": "047e39d207d264739d22bfb68a9a378b6646767f",
+  "status": "C-level local assembly in city manifest",
+  "coordinateFrame": "Existing schematic ENH; glTF [E,H,-N], not survey, true north or absolute elevation",
+  "method": "Frozen original library models plus six finite C-level supplemental surfaces. Original models and all source matrices unchanged.",
+  "scopeVariants": {
+    "all-eight": "Eight-part C-level local ground approach, no public access or historical route claim",
+    "six-plus-prefix": "Seven-part variant without rear surface; open terminus, not road-connected"
+  },
+  "runtime": {
+    "defaultQuality": "LOD0",
+    "automaticLOD": false,
+    "allLocatedNodesLoadedByProjectRenderer": true,
+    "noGlobalCameraChange": true,
+    "nearAutofocus": false,
+    "reusedLibraryURLsVersionedBySHA256": true
+  },
+  "limits": [
+    "Not a palace endpoint, historical identified gate, complete palace route or public free-entry route.",
+    "Absolute elevation, sub-cut soil bearing and real terrain continuity remain unknown.",
+    "No engine collision, structural, GPU/mobile or accessible-whole-route certification.",
+    "No edits to original road, palace, Z23 geometry or protected assets.",
+    "Source modeling files and private placement/audit inputs are not part of the public patch."
+  ],
+  "componentPathBase": "docs/cities/luoyang/; all components.path values are relative to this city directory, not to source.json",
+  "components": [
+    {
+      "component": "GALLERY-A",
+      "path": "../../library/models/m-luoyang-palace-gallery/files/gallery-A-LOD0.glb",
+      "bytes": 1257116,
+      "sha256": "0c09279723e2334c35f21c7602c195cc867d97808ac0f99ccf6f0208d3ff3849",
+      "triangles": 4160,
+      "reusesPublishedFile": true
+    },
+    {
+      "component": "ACCESS-A",
+      "path": "../../library/models/m-luoyang-gallery-access/files/access-A-LOD0.glb",
+      "bytes": 962724,
+      "sha256": "7916821b31e854067702a54e7c66511ecc9d004d046f4ce676ea3ecd175d3a4e",
+      "triangles": 3328,
+      "reusesPublishedFile": true
+    },
+    {
+      "component": "THRESHOLD-C-v2",
+      "path": "progress-assets/gallery-local-C-v1/access-gallery-threshold-C-v2.glb",
+      "bytes": 2224,
+      "sha256": "ee694b147199ea786f7f5696d7e026ffdd4d93acd55aa424445684e0caa13a42",
+      "triangles": 12,
+      "reusesPublishedFile": false
+    },
+    {
+      "component": "APPROACH-GROUND-C",
+      "path": "progress-assets/gallery-local-C-v1/gallery-approach-ground-C-v2.glb",
+      "bytes": 6416,
+      "sha256": "0f83686e029eb296f72c9c12e43e143062ed6aeb416a167fdabe1af609e79399",
+      "triangles": 108,
+      "reusesPublishedFile": false
+    },
+    {
+      "component": "GALLERY-EXTERNAL-FINITE-C",
+      "path": "progress-assets/gallery-local-C-v1/gallery-external-finite-C.glb",
+      "bytes": 2008,
+      "sha256": "2ffcd4c39b71fc864786c5a85297e3bcfb8f86c182dada1a7aab1644054b85ee",
+      "triangles": 12,
+      "reusesPublishedFile": false
+    },
+    {
+      "component": "FOUNDATION-GROUND-C",
+      "path": "progress-assets/gallery-local-C-v1/gallery-foundation-ground-C.glb",
+      "bytes": 3920,
+      "sha256": "a060cc78838c20b57065aabd69e1ac59c5da814fdf7b71709a478c4e1d78d6ed",
+      "triangles": 36,
+      "reusesPublishedFile": false
+    },
+    {
+      "component": "west-connector-prefix-C",
+      "path": "progress-assets/gallery-local-C-v1/west-connector-prefix-city-C.glb",
+      "bytes": 3424,
+      "sha256": "4140d298daf18a7bf5aba179720cde0c12a4eb57f6c5f0437dcb4d1c807d847a",
+      "triangles": 20,
+      "reusesPublishedFile": false
+    },
+    {
+      "component": "west-connector-protected-C",
+      "path": "progress-assets/gallery-local-C-v1/west-connector-protected-city-C.glb",
+      "bytes": 3460,
+      "sha256": "959e2989638630ee2ffb64c641ea3956104d2048b3f0c78b6f24445099128fae",
+      "triangles": 20,
+      "reusesPublishedFile": false
+    }
+  ],
+  "materialOnlyIdentity": [
+    {
+      "originalSHA256": "becd1fc56d4a92aa880bf59d946aad71046874eccbacd14c78a222c3a59020c7",
+      "citySHA256": "4140d298daf18a7bf5aba179720cde0c12a4eb57f6c5f0437dcb4d1c807d847a",
+      "BIN_SHA256": "c47aac140e467f956761b86f9c3e44de793ff922e6e706c103a22a141e79bf0a",
+      "nonMaterialJSONIdentical": true
+    },
+    {
+      "originalSHA256": "7965c3489a644010ceadf1b521d6ca1e75ea76742f12bc56ff3ed86380c1650a",
+      "citySHA256": "959e2989638630ee2ffb64c641ea3956104d2048b3f0c78b6f24445099128fae",
+      "BIN_SHA256": "7e069da55f2ba51dffe22ba3a182394f218a5fb2318c1db28a281e50aeb758a5",
+      "nonMaterialJSONIdentical": true
+    }
+  ]
+}
