@@ -4,11 +4,9 @@
 set -e
 LAB="$1"; BASE="$2"; SCRATCH="$3"; ORIG="$4"
 ME=LY-009
-rm -rf $ME/source/__pycache__
-python -I $ME/source/parse_taskpool.py TASKPOOL.md $ME/qa/taskpool.parsed.json
-python -I $ME/source/check_whitelist.py --scan . $ME/qa/whitelist-scan.json || true   # FAIL is reported, not fatal (PZ-14)
-python -I $ME/source/build_board.py . "$LAB" "$BASE" $ME
-python -I $ME/source/make_handover_example.py . $ME "$LAB" "$BASE"
-python -I $ME/source/check_board.py . "$LAB" "$BASE" $ME "$SCRATCH" $ORIG
-python -I $ME/source/render_board.py $ME
-rm -rf $ME/source/__pycache__
+python -I -B $ME/source/parse_taskpool.py TASKPOOL.md $ME/qa/taskpool.parsed.json
+python -I -B $ME/source/check_whitelist.py --scan . $ME/qa/whitelist-scan.json  # Fail closed; PZ-14 still needs independent review.
+python -I -B $ME/source/build_board.py . "$LAB" "$BASE" $ME
+python -I -B $ME/source/make_handover_example.py . $ME "$LAB" "$BASE"
+python -I -B $ME/source/check_board.py . "$LAB" "$BASE" $ME "$SCRATCH" $ORIG
+python -I -B $ME/source/render_board.py $ME

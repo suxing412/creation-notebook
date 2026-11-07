@@ -2,7 +2,7 @@
 
 Modes (all read-only):
   python -I check_whitelist.py --seat LY-021 --paths <file with one path per line> [--root <workpacks>]
-  python -I check_whitelist.py --seat LY-021 --git <repo> <base> <head>      (git diff --name-only)
+  python -I check_whitelist.py --seat LY-021 --git <repo> <base> <head>      (both sides; committed blob sizes)
   python -I check_whitelist.py --scan <workpacks root> <out.json>           (classify every file; plus
                                                                             git status of the shared branch)
 Paths are workpacks-relative ('LY-021/brief.md'). A path with '..', a drive letter, a leading '/',
@@ -12,6 +12,7 @@ Rule set (version 1):
   R1  a seat may write only '<seat>/**'                          (pool: 唯一写入区)
   R2  root files TASKPOOL.md / taskboard.json / README.md / .gitignore / .gitattributes: coordinator only
   R3  inside the seat dir, source projects are refused: *.blend *.blend1 *.zip *.7z *.rar *.part### *.z##
+      *.tar *.gz *.tgz *.bz2 *.xz (including compound suffixes such as *.tar.gz)
       (README: 源工程（.blend、源 ZIP）不进这个分支)
   R4  a .glb above 15,000,000 bytes is refused (pool: 单GLB不超过15,000,000字节)
   R5  any file above 100 MiB is refused (GitHub hard limit); above 50 MiB is a warning
@@ -23,7 +24,7 @@ import json, os, re, subprocess, sys, hashlib
 
 COORD_FILES = {'TASKPOOL.md', 'taskboard.json', 'README.md', '.gitignore', '.gitattributes'}
 SEAT_RE = re.compile(r'^LY-(\d{3})$')
-SOURCE_EXT = re.compile(r'\.(blend\d*|zip|7z|rar|part\d+|z\d\d)$', re.I)
+SOURCE_EXT = re.compile(r'\.(blend\d*|zip|7z|rar|part\d+|z\d\d|tar|gz|tgz|bz2|xz)$', re.I)
 JUNK = re.compile(r'(^|/)(__pycache__/|Thumbs\.db$|\.DS_Store$)|\.pyc$')
 GLB_LIMIT = 15_000_000
 HARD = 100 * 1024 * 1024
@@ -96,9 +97,35 @@ def check_paths(seat, items):
             'verdict': 'PASS' if all(r['ok'] for r in out) else 'FAIL'}
 
 
-def git(repo, *args):
-    return subprocess.run(['git', '--no-optional-locks', '-C', repo, *args], capture_output=True,
-                          text=True, encoding='utf-8', check=True).stdout
+def git(repo, *args, raw=False):
+    out = subprocess.run(['git', '--no-optional-locks', '--no-replace-objects', '-C', repo, *args], capture_output=True,
+                         check=True).stdout
+    return out if raw else out.decode('utf-8', errors='surrogateescape')
+
+
+def git_items(repo, base, head):
+    """Check every changed path, including deletions, without reading the working tree."""
+    # Read original objects, pin refs, and prevent Git config from hiding changed paths.
+    base = git(repo, 'rev-parse', '--verify', '--end-of-options', f'{base}^{{commit}}').strip()
+    head = git(repo, 'rev-parse', '--verify', '--end-of-options', f'{head}^{{commit}}').strip()
+    fields = git(repo, 'diff', '--name-status', '-z', '--no-renames', '--no-ext-diff', '--ignore-submodules=none',
+                 '--no-textconv', base, head, '--', raw=True).split(b'\0')
+    if fields.pop() != b'' or len(fields) % 2:
+        raise ValueError('invalid NUL-delimited git diff output')
+    items = []
+    for i in range(0, len(fields), 2):
+        status, path = fields[i], os.fsdecode(fields[i + 1])
+        if status not in (b'A', b'M', b'D', b'T') or not path:
+            raise ValueError('unexpected git diff status or empty path')
+        size = None
+        if status != b'D':
+            obj = f'{head}:{path}'
+            if git(repo, 'cat-file', '-t', obj).strip() != 'blob':
+                raise ValueError(f'changed path is not a blob: {path!r}')
+            size = int(git(repo, 'cat-file', '-s', obj).strip())
+        # A deletion has no head blob, but must still pass the same path/owner rules.
+        items.append((path, size))
+    return items
 
 
 def scan(root):
@@ -126,7 +153,7 @@ def scan(root):
             warns.append({'path': rel, 'warn': r['warn']})
     # which violations are already kept out of git by the root .gitignore (read-only check-ignore)
     if bad:
-        r = subprocess.run(['git', '--no-optional-locks', '-C', root, 'check-ignore', '--stdin', '-z', '-v', '-n'],
+        r = subprocess.run(['git', '--no-optional-locks', '--no-replace-objects', '-C', root, 'check-ignore', '--stdin', '-z', '-v', '-n'],
                            input='\0'.join(v['path'] for v in bad) + '\0', capture_output=True, text=True, encoding='utf-8')
         f = r.stdout.split('\0')
         ign = {}
@@ -190,7 +217,7 @@ if __name__ == '__main__':
     else:
         i = a.index('--git')
         repo, base, head = a[i + 1:i + 4]
-        items = [(p, None) for p in git(repo, 'diff', '--name-only', f'{base}..{head}').splitlines() if p]
+        items = git_items(repo, base, head)
     out = check_paths(seat, items)
-    print(json.dumps(out, ensure_ascii=False, indent=1))
+    print(json.dumps(out, ensure_ascii=True, indent=1))
     sys.exit(0 if out['verdict'] == 'PASS' else 1)

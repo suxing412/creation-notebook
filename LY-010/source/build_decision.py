@@ -30,16 +30,8 @@ def wjson(rel, obj):
 
 
 def done_set():
-    done = set()
-    for i in range(1, 100):
-        sid = f"LY-{i:03d}"
-        p = os.path.join(WP, sid, "status.json")
-        if os.path.exists(p):
-            st = jload(p).get("status")
-            if st in ("交付完成", "复用完成"):
-                done.add(sid)
-    done.add("LY-010")  # this seat, delivered by this run
-    return done
+    # Private recovery never confers independent acceptance or completion.
+    return set()
 
 
 # ------------------------------------------------------------------ checks (pure functions of a model dict)
@@ -103,7 +95,7 @@ def run_checks(M, ctx):
     nob = [s for s in blocked if not seats[s]["blockers"] or not any(i for i in seats[s]["needsInputs"])]
     rec("C05", not leak and not nob, {"blocked": sorted(blocked), "transitivelyWaiting": sorted(trans - blocked), "releasedDespiteBlockedDep": leak, "blockedWithoutReason": nob})
     # C06 batch closure + no blocked/local seats in city batches
-    done = ctx["done"] | {"LY-003", "LY-004"}
+    done = ctx["done"]
     seen = set()
     probs = []
     for b in batches:
@@ -142,13 +134,14 @@ def run_checks(M, ctx):
 
 
 def main():
+    raise SystemExit("BLOCKED: unfinished legacy builder is quarantined; use the private blocked-only candidate. No G freeze or completion is granted.")
     lab = sys.argv[1]
     commit = subprocess.run(["git", "-C", lab, "rev-parse", "cad338b"], capture_output=True, text=True, check=True).stdout.strip()
     taskboard = jload(os.path.join(WP, "taskboard.json"))
     board_v2 = jload(os.path.join(WP, "LY-009", "board", "taskboard.v2.json"))
     tb = {x["id"]: x for x in taskboard["seats"]}
-    deps = {x["id"]: [d for d in x["deps"] if d not in G] for x in taskboard["seats"]}
-    deps_v2 = {x["id"]: [d for d in x["deps"] if d not in G] for x in board_v2["seats"]}
+    deps = {x["id"]: list(x["deps"]) for x in taskboard["seats"]}
+    deps_v2 = {x["id"]: list(x["deps"]) for x in board_v2["seats"]}
     inv = jload(os.path.join(HERE, "qa", "candidate-inventory.json"))
     dump = jload(os.path.join(HERE, "qa", "city-data.cad338b.dump.json"))
     files = {f["path"]: f for c in inv["cards"].values() for f in c["files"]}
@@ -219,7 +212,7 @@ def main():
     for sid in sorted(D.SEATS):
         v = dict(D.SEATS[sid])
         t = tb[sid]
-        pend = [d for d in deps[sid] if d not in done and d not in ("LY-003", "LY-004")]
+        pend = [d for d in deps[sid] if d not in done]
         if v["decision"] == D.SERVICE:
             now = "持续服务：按批次 manifest 开验"
         elif v["decision"] == D.BLOCK:

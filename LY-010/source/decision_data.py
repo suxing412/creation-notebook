@@ -311,7 +311,7 @@ REGIONS = [
                "refs": ["file:docs/library/models/m-luoyang-biyong/files/biyong-A-LOD0.glb", "file:docs/library/models/m-luoyang-biyong/files/enclosure-L-LOD0.glb",
                         "file:docs/library/models/m-luoyang-mingtang/files/mingtang-A-LOD0.glb",
                         "file:docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD1.glb", "file:docs/library/models/m-luoyang-lingtai/files/lingtai-A-LOD2.glb",
-                        "file:docs/library/models/m-luoyang-taixue-a/files/taixue-A-LOD1.glb",
+                        "file:docs/cities/luoyang/progress-assets/taixue-A-v3.2/models/taixue-A-LOD1.glb",
                         "file:docs/library/models/m-luoyang-stoneclassic-access-court/files/stoneclassic_access_near.glb"]},
   "retainedUnselected": [{"scheme": "明堂 B（阶脚 r=14.48）", "rule": "未选；LY-075 已核 A/B 内部，B 保留"}, {"scheme": "辟雍围护 A-v2（母版）", "rule": "未选"},
                          {"scheme": "辟雍北面跨水板与北段水符号", "rule": "不做；水符号北段由 LY-073 去掉或标争议（LY-002 D-04、E-R05）"},
