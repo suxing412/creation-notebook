@@ -1,3 +1,4 @@
+import {displayGroundId} from '../../docs/cities/luoyang/ground-content.mjs';
 import { galleryRecords } from '../../docs/cities/luoyang/gallery-records.mjs';
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
@@ -66,7 +67,7 @@ test('Yong access stays installed, fits the chapter after orientation changes an
   const gl=await openCity(page,touch);
   await page.emulateMedia({reducedMotion:'reduce'});
   const initial=await state(page);
-  expect(initial.modelNodeIds).toEqual([...fixture.previousCityNodeIds,fixture.id,...z13NodeIds,...galleryRecords.map(r=>r.nodeId)].sort());
+  expect(initial.modelNodeIds).toEqual([...fixture.previousCityNodeIds,fixture.id,...z13NodeIds,...galleryRecords.map(r=>r.nodeId),displayGroundId].sort());
   expect(initial.modelNodeIds).toHaveLength(87);
   const chapter=page.locator('.pj-chapters [data-ch="yong-gate"]');
   const click=locator=>touch?locator.tap():locator.click();

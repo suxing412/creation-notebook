@@ -3,11 +3,11 @@ import {createHash} from 'node:crypto';
 import {displayGroundId as id} from '../../docs/cities/luoyang/ground-content.mjs';
 const hash=b=>createHash('sha256').update(b).digest('hex');
 test('independent ground rollback renders 86 to 87 to 86 to 87, restoring full manifest and fixed-view pixels',async({page},info)=>{
- test.setTimeout(480000);const captures=[],errors=[],bad=[];page.on('pageerror',e=>errors.push(String(e)));page.on('response',r=>{if(r.status()>=400)bad.push({status:r.status(),url:r.url()});});
+ test.setTimeout(480000);const touch=info.project.name==='mobile',session=touch?await page.context().newCDPSession(page):null;const captures=[],errors=[],bad=[];page.on('pageerror',e=>errors.push(String(e)));page.on('response',r=>{if(r.status()>=400)bad.push({status:r.status(),url:r.url()});});
  await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/cities/luoyang/ground-qa.html');
  const state=()=>page.evaluate(()=>groundQA.state),metrics=()=>page.evaluate(()=>groundQA.metrics.at(-1));
  async function ready(){await expect.poll(()=>page.evaluate(()=>{const q=window.groundQA,m=q?.metrics.at(-1);return !!q?.ready&&q.state&&!q.state.moving&&q.state.pendingSceneLoads===0&&m?.epoch===q.epoch&&!m.contextLost;})).toBe(true);const s=await state();expect(s.target[1]).toBe(0);return s;}
- async function click(selector){const serial=await page.evaluate(()=>groundQA.actionSerial);await page.locator(selector).click();await expect.poll(()=>page.evaluate(()=>groundQA.actionSerial)).toBeGreaterThan(serial);return ready();}
+ async function click(selector){const serial=await page.evaluate(()=>groundQA.actionSerial);if(touch)await page.locator(selector).tap();else await page.locator(selector).click();await expect.poll(()=>page.evaluate(()=>groundQA.actionSerial)).toBeGreaterThan(serial);return ready();}
  async function shot(name){const b=await page.locator('#ground-qa-canvas').screenshot();captures.push({name,sha256:hash(b),state:await state(),metrics:await metrics()});await info.attach(name,{body:b,contentType:'image/png'});return b;}
  try{
   const base=await ready();expect(base.modelNodeIds).toHaveLength(86);expect(base.modelNodeIds).not.toContain(id);const manifest=await page.evaluate(()=>groundQA.manifest);
@@ -17,10 +17,11 @@ test('independent ground rollback renders 86 to 87 to 86 to 87, restoring full m
   for(const focus of ['qa-ground-wall','qa-ground-market','qa-ground-road','qa-ground-well']){
    await click('[data-focus="'+focus+'"]');const plain=await shot(focus+'-still');await click('#redraw');expect(await page.locator('#ground-qa-canvas').screenshot()).toEqual(plain);
    await click('#evidence');await shot(focus+'-evidence');await click('#evidence');expect(await page.locator('#ground-qa-canvas').screenshot()).toEqual(plain);
-   const box=await page.locator('#ground-qa-canvas').boundingBox();await page.mouse.move(box.x+box.width*.5,box.y+box.height*.5);await page.mouse.down();
-   try{for(let k=1;k<=6;k++){await page.mouse.move(box.x+box.width*.5+k*3,box.y+box.height*.5+k);await page.waitForTimeout(50);await shot(focus+'-motion-'+k);}}finally{await page.mouse.up();}
+   await page.locator('#ground-qa-canvas').scrollIntoViewIfNeeded();const box=await page.locator('#ground-qa-canvas').boundingBox(),point={x:box.x+box.width*.5,y:box.y+box.height*.5,id:1};
+   if(touch)await session.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[point]});else{await page.mouse.move(point.x,point.y);await page.mouse.down();}
+   try{for(let k=1;k<=6;k++){await page.waitForTimeout(50);const next={x:point.x+k*3,y:point.y+k,id:1};if(touch)await session.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[next]});else await page.mouse.move(next.x,next.y);await shot(focus+'-motion-'+k);}}finally{if(touch)await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});else await page.mouse.up();}
    await ready();expect((await state()).modelNodeIds).toHaveLength(87);expect((await state()).target[1]).toBe(0);
-   await page.mouse.click(box.x+box.width*.5,box.y+box.height*.6);expect(await page.evaluate(()=>groundQA.selected?.id)).not.toBe(id);
+   if(touch)await page.touchscreen.tap(box.x+box.width*.5,box.y+box.height*.6);else await page.mouse.click(box.x+box.width*.5,box.y+box.height*.6);expect(await page.evaluate(()=>groundQA.selected?.id)).not.toBe(id);
   }
   await click('#research');expect((await state()).modelNodeIds).not.toContain(id);await click('#city');expect((await state()).modelNodeIds).toHaveLength(87);
   const withdrawn=await click('#withdraw');expect(withdrawn.modelNodeIds).toEqual(base.modelNodeIds);expect(await page.evaluate(()=>groundQA.manifest)).toEqual(manifest);

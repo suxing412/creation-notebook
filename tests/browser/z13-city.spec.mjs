@@ -1,3 +1,4 @@
+import {displayGroundId} from '../../docs/cities/luoyang/ground-content.mjs';
 import { galleryRecords } from '../../docs/cities/luoyang/gallery-records.mjs';
 import { test,expect } from '@playwright/test';
 import { createHash } from 'node:crypto';
@@ -6,7 +7,7 @@ import { z13Records,z13NodeIds } from '../../docs/cities/luoyang/z13-content.mjs
 import { instrument,openCity,state,settled,selectZone,assertFullCity,assertHealthy,attachEvidence } from './helpers.mjs';
 import { project,streetPoint,groundPoint } from './z13-geometry.mjs';
 const old=JSON.parse(readFileSync(new URL('./yong-access.json',import.meta.url)));
-const expected=[...old.previousCityNodeIds,old.id,...z13NodeIds,...galleryRecords.map(r=>r.nodeId)].sort();
+const expected=[...old.previousCityNodeIds,old.id,...z13NodeIds,...galleryRecords.map(r=>r.nodeId),displayGroundId].sort();
 const files=z13Records.map(a=>({...a,path:new URL(a.path,'https://example.test/cities/luoyang/z13-content.mjs').pathname}));
 test('Z13 five-piece installation loads exact files and remains visible during chapter and zone navigation',async({page},info)=>{
  const touch=info.project.name==='mobile',evidence=await instrument(page),received=[];

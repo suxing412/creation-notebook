@@ -1,3 +1,4 @@
+import {displayGroundId} from '../../docs/cities/luoyang/ground-content.mjs';
 import {test,expect} from '@playwright/test';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -6,7 +7,7 @@ import {z13NodeIds} from '../../docs/cities/luoyang/z13-content.mjs';
 import {instrument,openCity,state,settled,selectZone,assertFullCity,assertHealthy,attachEvidence,delta,distance} from './helpers.mjs';
 import {galleryPicks,galleryRuntimeBudget,project,corners} from './gallery-geometry.mjs';
 const old=JSON.parse(readFileSync(new URL('./yong-access.json',import.meta.url)));
-const expected=[...old.previousCityNodeIds,old.id,...z13NodeIds,...galleryRecords.map(r=>r.nodeId)].sort();
+const expected=[...old.previousCityNodeIds,old.id,...z13NodeIds,...galleryRecords.map(r=>r.nodeId),displayGroundId].sort();
 const files=galleryRecords.map(r=>({...r,path:new URL(r.path,'https://site.invalid/cities/luoyang/gallery-content.mjs').pathname}));
 test('gallery eight-part assembly remains in the real city and exposes finite ground and both approach sections',async({page},info)=>{
  test.setTimeout(360_000);const touch=info.project.name==='mobile',evidence=await instrument(page),received=[],views=[],http=[];let gl;

@@ -6,7 +6,7 @@ test('display-only ground survives every zone without replacing city models; res
  try{
   await openCity(page,info.project.name==='mobile');const first=await state(page);expect(first.modelNodeIds).toHaveLength(87);expect(first.modelNodeIds).toContain(id);
   const ids=[...first.modelNodeIds].sort();for(const z of zones){const s=await selectZone(page,z.id,info.project.name==='mobile');expect([...s.modelNodeIds].sort()).toEqual(ids);assertFullCity(s);expect(s.sceneRevision).toBe(first.sceneRevision);}
-  await page.locator('.pj-chapters [data-ch="ritual"]').click();await expect.poll(async()=>(await state(page)).studyId).not.toBeNull();expect((await settled(page)).modelNodeIds).not.toContain(id);
+  const ritual=page.locator('.pj-chapters [data-ch="ritual"]');if(info.project.name==='mobile')await ritual.tap();else await ritual.click();await expect.poll(async()=>(await state(page)).studyId).not.toBeNull();expect((await settled(page)).modelNodeIds).not.toContain(id);
   expect((await selectZone(page,'Z13',info.project.name==='mobile')).modelNodeIds).toEqual(first.modelNodeIds);
   const canvas=page.locator('#pj-canvas'),box=await canvas.boundingBox();if(info.project.name==='mobile')await canvas.tap({position:{x:box.width*.5,y:box.height*.65}});else await page.mouse.click(box.x+box.width*.5,box.y+box.height*.65);
   // Ground cannot become the picked model. Presence is separately proved by the complete runtime membership.
