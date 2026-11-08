@@ -20,7 +20,7 @@ test('independent ground rollback renders 86 to 87 to 86 to 87, restoring full m
    await page.locator('#ground-qa-canvas').scrollIntoViewIfNeeded();const box=await page.locator('#ground-qa-canvas').boundingBox(),point={x:box.x+box.width*.5,y:box.y+box.height*.5,id:1};
    if(touch)await session.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[point]});else{await page.mouse.move(point.x,point.y);await page.mouse.down();}
    try{for(let k=1;k<=6;k++){await page.waitForTimeout(50);const next={x:point.x+k*3,y:point.y+k,id:1};if(touch)await session.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[next]});else await page.mouse.move(next.x,next.y);await shot(focus+'-motion-'+k);}}finally{if(touch)await session.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});else await page.mouse.up();}
-   await ready();expect((await state()).modelNodeIds).toHaveLength(87);expect((await state()).target[1]).toBe(0);
+   await ready();expect((await state()).modelNodeIds).toHaveLength(87);expect((await state()).target[1]).toBe(0);expect(new Set(captures.filter(c=>c.name.startsWith(focus+'-motion-')).map(c=>c.sha256)).size,'Motion views must show geometry rather than an obstructed blank wall').toBeGreaterThan(1);
    if(touch)await page.touchscreen.tap(box.x+box.width*.5,box.y+box.height*.6);else await page.mouse.click(box.x+box.width*.5,box.y+box.height*.6);expect(await page.evaluate(()=>groundQA.selected?.id)).not.toBe(id);
   }
   await click('#research');expect((await state()).modelNodeIds).not.toContain(id);await click('#city');expect((await state()).modelNodeIds).toHaveLength(87);

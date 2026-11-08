@@ -2,7 +2,7 @@ import baseline from './ground-baseline-city-data.mjs';
 import {installDisplayGround,withdrawDisplayGround} from './ground-content.mjs';
 import {createCityRenderer} from './city-navigation-renderer.mjs';
 const stage=document.querySelector('#stage');let current=structuredClone(baseline),receipt,renderer,evidence=false;
-const views=[{id:'qa-ground-wide',camera:{position:[3200,2800,-4400],target:[1300,0,-1950]}},{id:'qa-ground-wall',camera:{position:[-12,1.4,-1398],target:[-20,0,-1400]}},{id:'qa-ground-market',camera:{position:[310,2,-1990],target:[300,0,-2000]}}];
+const views=[{id:'qa-ground-wide',camera:{position:[3200,2800,-4400],target:[1300,0,-1950]}},{id:'qa-ground-wall',camera:{position:[-12,1.4,-1398],target:[-20,0,-1400]}},{id:'qa-ground-market',camera:{position:[266,1.4,-1967],target:[282,0,-1962.18]}}];
 views.push({id:'qa-ground-road',camera:{position:[297,.7,-1959],target:[297,.16,-1962.18396]}},{id:'qa-ground-well',camera:{position:[801.2,1.6,-1048.8],target:[800,-.15,-1050]}});
 const qa=window.groundQA={ready:false,epoch:0,serial:0,actionSerial:0,state:null,states:[],metrics:[],selected:null,selectionSerial:0,actions:[],errors:[],mode:'baseline'};
 async function mount(){
