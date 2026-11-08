@@ -3,17 +3,18 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import published,* as named from '../docs/cities/luoyang/city-data.mjs';
+import current,* as named from '../docs/cities/luoyang/city-data.mjs';
 import { installGallery,withdrawGallery,describeProjectRuntime,galleryRecords } from '../docs/cities/luoyang/gallery-content.mjs';
 import { preGallery,gitFile,baselineSHA } from './pre-gallery-baseline.mjs';
 import { withContractIdentityCorrections } from './contract-identity-fixture.mjs';
 const base=withContractIdentityCorrections(preGallery);
+const published=named.preDisplayGroundManifest;
 const clone=x=>structuredClone(x),hash=b=>createHash('sha256').update(b).digest('hex'),installed=installGallery(base);
 const ids=galleryRecords.map(r=>r.nodeId);
 test('independent 78-node city installs, withdraws and reinstalls exactly',()=>{
  const original=clone(base);
  assert.deepEqual(installed.manifest,published);
- for(const k of ['assets','nodes','chapters','initialCamera','overview','researchModels','provenance'])assert.equal(named[k],published[k]);
+ for(const k of ['assets','nodes','chapters','initialCamera','overview','researchModels','provenance'])assert.equal(named[k],current[k]);
  assert.deepEqual(describeProjectRuntime(base).drawnNodes,78);
  assert.equal(describeProjectRuntime(published).drawnNodes,86);
  assert.deepEqual([published.nodes.length,published.assets.length],[93,69]);
@@ -82,7 +83,7 @@ test('unrelated concurrent work survives withdrawal and separately selected seve
 test('project records exactly one local assembly, keeps original families and honest limitations',()=>{
  const card=JSON.parse(readFileSync(new URL('../docs/cities/luoyang/p-luoyang.asset.json',import.meta.url)));
  const old=JSON.parse(gitFile('docs/cities/luoyang/p-luoyang.asset.json'));
- assert.deepEqual(card.members,old.members);assert.equal(card.chapters.filter(c=>c.id==='gallery-local-c').length,1);
+ assert.deepEqual(card.members.filter(id=>id!=='m-luoyang-city-continuous-ground'),old.members);assert.equal(card.members.filter(id=>id==='m-luoyang-city-continuous-ground').length,1);assert.equal(card.chapters.filter(c=>c.id==='gallery-local-c').length,1);
  assert.equal(card.files.length,6);assert.ok(card.files.every(f=>f.path.startsWith('progress-assets/gallery-local-C-v1/')));
  assert.equal(card.progress.filter(p=>p.focus==='gallery-local-c').length,3);
  assert.ok(card.chapters.find(c=>c.id==='gallery-local-c').text.includes('C设计'));

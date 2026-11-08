@@ -29,7 +29,7 @@ export default defineConfig({
     timeout: 30_000,
   },
   projects: [
-    { name: 'mobile', testMatch: ['mobile.spec.mjs', 'yong-access.spec.mjs', 'z13-city.spec.mjs', 'gallery-city.spec.mjs'], use: { viewport: { width: 375, height: 812 }, isMobile: true, hasTouch: true } },
-    { name: 'desktop', testMatch: ['desktop.spec.mjs', 'installed-models.spec.mjs', 'motion.spec.mjs', 'yong-access.spec.mjs', 'z13-city.spec.mjs', 'z13-rollback.spec.mjs', 'gallery-city.spec.mjs', 'gallery-rollback.spec.mjs'] },
+    { name: 'mobile', testMatch: ['mobile.spec.mjs', 'yong-access.spec.mjs', 'z13-city.spec.mjs', 'gallery-city.spec.mjs', 'ground-city.spec.mjs', 'ground-rollback.spec.mjs'], use: { viewport: { width: 375, height: 812 }, isMobile: true, hasTouch: true } },
+    { name: 'desktop', testMatch: ['desktop.spec.mjs', 'installed-models.spec.mjs', 'motion.spec.mjs', 'yong-access.spec.mjs', 'z13-city.spec.mjs', 'z13-rollback.spec.mjs', 'gallery-city.spec.mjs', 'gallery-rollback.spec.mjs', 'ground-city.spec.mjs', 'ground-rollback.spec.mjs'] },
   ],
 });

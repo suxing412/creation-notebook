@@ -77,7 +77,7 @@ jobs:
       - name: Fetch immutable pre-gallery baseline
         run: git fetch --no-tags --depth=1 https://github.com/suxing412/creation-notebook.git 047e39d207d264739d22bfb68a9a378b6646767f
       - name: Check camera motion and reversible content installation
-        run: node --test tests/navigation-motion.test.mjs tests/z13-content.test.mjs tests/gallery-content.test.mjs
+        run: node --test tests/navigation-motion.test.mjs tests/z13-content.test.mjs tests/gallery-content.test.mjs tests/ground-content.test.mjs
       - name: Build the deployment artifact
         env:
           GLTFPACK: node ${{ github.workspace }}/tests/browser/node_modules/gltfpack/cli.js
@@ -87,6 +87,8 @@ jobs:
         run: node tests/browser/prepare-z13-harness.mjs
       - name: Add unpublished gallery verification harness
         run: node tests/browser/prepare-gallery-harness.mjs
+      - name: Add unpublished continuous-ground verification harness
+        run: node tests/browser/prepare-ground-harness.mjs
       - name: Exercise the built site in Chromium
         working-directory: tests/browser
         run: npm test -- --project=${{ matrix.project }}

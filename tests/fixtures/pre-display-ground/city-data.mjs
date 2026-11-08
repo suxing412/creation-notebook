@@ -1,0 +1,5543 @@
+import { installGallery } from './gallery-content.mjs';
+import { installZ13 } from './z13-content.mjs';
+// Existing delivered assets only. Coordinate/identity sources are listed below.
+// City-space GLBs keep their original coordinates; courtyard instances use the
+// delivered column-major matrices. Local study models are rendered separately.
+const cityURL = (path) => new URL('../../cities/luoyang/' + path, import.meta.url).href;
+
+const assetRecords = [
+  {
+    "id": "courtyard-A",
+    "path": "assets/r01/R01-A-LOD1-prototype.glb",
+    "bytes": 92328,
+    "sha256": "0827fa4994b2de3196b05e233dfc4b82c63c0742407252fbc81fc01059895445",
+    "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_hardpacked_activity_ground"
+    ],
+    "bounds": {
+      "min": [
+        -9.000001,
+        0.2,
+        -12.000004
+      ],
+      "max": [
+        9.000003,
+        4.49,
+        12.150002
+      ]
+    },
+    "nearPath": "assets/r01/R01-A-LOD0-prototype.glb",
+    "nearBytes": 510536,
+    "nearSha256": "93b70de24ee56573ef18dbf678c7a27a5c493b36c041484e7a7ff6b319324ca2",
+    "sourceContract": "data/far44/preflight-contract.json"
+  },
+  {
+    "id": "courtyard-B",
+    "path": "assets/r01/R01-B-LOD1-prototype.glb",
+    "bytes": 112776,
+    "sha256": "25f018fa8fad0ec62317bd6b5d69e3c948f79b57df125bc91d9893c8db0c3de6",
+    "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_loading_yard"
+    ],
+    "bounds": {
+      "min": [
+        -9.000001,
+        0.2,
+        -12.000004
+      ],
+      "max": [
+        9.000003,
+        5.52,
+        12.150002
+      ]
+    },
+    "nearPath": "assets/r01/R01-B-LOD0-prototype.glb",
+    "nearBytes": 626016,
+    "nearSha256": "a8d94bb3897825c6682a9fa9a0fafb310b9a8ac6bbf77c66e5bdf5e81499eeed",
+    "sourceContract": "data/far44/preflight-contract.json"
+  },
+  {
+    "id": "courtyard-TC03",
+    "path": "assets/d08/TC03-LOD1-prototype.glb",
+    "bytes": 164300,
+    "sha256": "8daea250825976b3e103a27a967c5cc065e2b812fcba242cc088e3557d081daa",
+    "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane"
+    ],
+    "bounds": {
+      "min": [
+        -2e-06,
+        0.2,
+        -36.000006
+      ],
+      "max": [
+        28.000006,
+        4.54,
+        4.0
+      ]
+    },
+    "nearPath": "assets/d08/TC03-LOD0-prototype.glb",
+    "nearBytes": 981664,
+    "nearSha256": "367a7d2534443bcadab8ea0918d19b6fcc236ee0ef2178897d3d287c54acc148",
+    "sourceContract": "data/far44/preflight-contract.json"
+  },
+  {
+    "id": "courtyard-A2",
+    "path": "assets/c02v/A2-LOD1-prototype.glb",
+    "bytes": 92220,
+    "sha256": "277e9e73e8f2d8b8e07ec828671d37cc7c9e3f1653dcebfe4290c51de412d85d",
+    "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_hardpacked_activity_ground"
+    ],
+    "bounds": {
+      "min": [
+        -9.000001,
+        0.2,
+        -12.000004
+      ],
+      "max": [
+        9.000003,
+        4.49,
+        12.150002
+      ]
+    },
+    "nearPath": "assets/c02v/A2-LOD0-prototype.glb",
+    "nearBytes": 447064,
+    "nearSha256": "19b052022b2f6955e4a72f1a48280f7f8c229e11f001aa02ac95e357b890d9c7",
+    "sourceContract": "data/far44/preflight-contract.json"
+  },
+  {
+    "id": "courtyard-B2",
+    "path": "assets/c02v/B2-LOD1-prototype.glb",
+    "bytes": 113064,
+    "sha256": "8328237369a33571421b2ef9b4f2e2df4761f070db2556c9cd6eff326fdfa3db",
+    "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_loading_yard"
+    ],
+    "bounds": {
+      "min": [
+        -9.000001,
+        0.2,
+        -12.000004
+      ],
+      "max": [
+        9.000003,
+        5.27,
+        12.150002
+      ]
+    },
+    "nearPath": "assets/c02v/B2-LOD0-prototype.glb",
+    "nearBytes": 569280,
+    "nearSha256": "d99affcae95cfe2265e5ed36906a219305e387554c44a5ca9c84552453e791f7",
+    "sourceContract": "data/far44/preflight-contract.json"
+  },
+  {
+    "id": "courtyard-TC03-2",
+    "path": "assets/c02v/TC03-2-LOD1-prototype.glb",
+    "bytes": 164200,
+    "sha256": "d2432b7c22017c46a1b4bab9046aec5869af447a78a08875923ec60d76df4de1",
+    "excludeNodes": [
+      "site_lot",
+      "site_neutral_lane",
+      "designed_front_apron",
+      "designed_side_passage",
+      "designed_rear_work_ground"
+    ],
+    "bounds": {
+      "min": [
+        -2e-06,
+        0.2,
+        -36.000006
+      ],
+      "max": [
+        28.000006,
+        4.54,
+        0.150002
+      ]
+    },
+    "nearPath": "assets/c02v/TC03-2-LOD0-prototype.glb",
+    "nearBytes": 943548,
+    "nearSha256": "bf6287a5f40c5a73a5835a32eb7ff96023a624876381ce87c1f3423fd623d152",
+    "sourceContract": "data/far44/preflight-contract.json"
+  },
+  {
+    "id": "wall-A-wall-00",
+    "path": "assets/city-wall/A/wall-00.glb",
+    "bytes": 2412,
+    "sha256": "12d84a0b27f7e5d630b46f76b751f956177a055c0afd1b925da8d9ec551abc74",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        750.32196,
+        0.17,
+        -3953.771484
+      ],
+      "max": [
+        1678.25769,
+        6.2,
+        -3536.665771
+      ]
+    },
+    "sourceContract": "data/west/city-wall-interface.json"
+  },
+  {
+    "id": "wall-A-wall-01",
+    "path": "assets/city-wall/A/wall-01.glb",
+    "bytes": 2748,
+    "sha256": "cfbbc45a874a32a0501ea6e57dbd58aefcb2c2e42c943ad34f9704e3b7453a95",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        1708.188477,
+        0.17,
+        -3895.457275
+      ],
+      "max": [
+        2473.36084,
+        6.2,
+        -2604.418701
+      ]
+    },
+    "sourceContract": "data/west/city-wall-interface.json"
+  },
+  {
+    "id": "wall-A-wall-02",
+    "path": "assets/city-wall/A/wall-02.glb",
+    "bytes": 2068,
+    "sha256": "8a17587a995e6851a1c4c7e0844f79cb880cf70348edb55dfb62891434b2afa9",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        2494.447266,
+        0.17,
+        -2593.066162
+      ],
+      "max": [
+        2647.085938,
+        6.2,
+        -1820.956909
+      ]
+    },
+    "sourceContract": "data/west/city-wall-interface.json"
+  },
+  {
+    "id": "wall-A-wall-03",
+    "path": "assets/city-wall/A/wall-03.glb",
+    "bytes": 2072,
+    "sha256": "cd4cb2b629c15cbf1eaaada61eca546fc96a034a1a53802acd9d7ebeb84e4762",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        2470.058105,
+        0.17,
+        -1789.780518
+      ],
+      "max": [
+        2582.579834,
+        6.2,
+        -474.936005
+      ]
+    },
+    "sourceContract": "data/west/city-wall-interface.json"
+  },
+  {
+    "id": "wall-A-wall-04",
+    "path": "assets/city-wall/A/wall-04.glb",
+    "bytes": 2948,
+    "sha256": "50d8c7aa2c7d7dce95a894edf05bc1ecd2dbc73fbcd633e1c67f36065fd893ae",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        2026.310791,
+        0.17,
+        -443.185028
+      ],
+      "max": [
+        2477.114014,
+        6.2,
+        34.693394
+      ]
+    },
+    "sourceContract": "data/west/city-wall-interface.json"
+  },
+  {
+    "id": "wall-A-wall-05",
+    "path": "assets/city-wall/A/wall-05.glb",
+    "bytes": 1732,
+    "sha256": "4e000b0c34b26504ff30b7c4c9748ede9f1b84819dcc75301b57caca85f261ae",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        1638.722656,
+        0.17,
+        9.592699
+      ],
+      "max": [
+        1994.483643,
+        6.2,
+        24.968409
+      ]
+    },
+    "sourceContract": "data/west/city-wall-interface.json"
+  },
+  {
+    "id": "wall-A-wall-06",
+    "path": "assets/city-wall/A/wall-06.glb",
+    "bytes": 1732,
+    "sha256": "d7d3cc79fe7ea85cda3147c90531dfb7403789405f4af0671baef7d6ba89993e",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        914.121155,
+        0.17,
+        -5.440404
+      ],
+      "max": [
+        1606.895508,
+        6.2,
+        16.927225
+      ]
+    },
+    "sourceContract": "data/west/city-wall-interface.json"
+  },
+  {
+    "id": "wall-A-wall-07",
+    "path": "assets/city-wall/A/wall-07.glb",
+    "bytes": 1736,
+    "sha256": "e7db9cff3eed1e7fe088a5199a5479d483ba68a2f440624cb68f6848373be550",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        403.925079,
+        0.17,
+        -16.025301
+      ],
+      "max": [
+        882.293884,
+        6.2,
+        1.894121
+      ]
+    },
+    "sourceContract": "data/west/city-wall-interface.json"
+  },
+  {
+    "id": "wall-A-wall-10",
+    "path": "assets/city-wall/A/wall-10.glb",
+    "bytes": 1740,
+    "sha256": "afb20f8e3b19dfd85a65bf1462dea09225336d336c272425fad4d7491e3cfde9",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -34.18705,
+        0.17,
+        -2616.584717
+      ],
+      "max": [
+        -12.202044,
+        6.2,
+        -1413.725098
+      ]
+    },
+    "sourceContract": "data/west/city-wall-interface.json"
+  },
+  {
+    "id": "wall-A-wall-11",
+    "path": "assets/city-wall/A/wall-11.glb",
+    "bytes": 2752,
+    "sha256": "2cfa846184cf28e36cacb832250b5d2afcdbdc6968c81c3f09957ed968e21ecd",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -44.842735,
+        0.17,
+        -3595.974854
+      ],
+      "max": [
+        718.655823,
+        6.2,
+        -2648.489746
+      ]
+    },
+    "sourceContract": "data/west/city-wall-interface.json"
+  },
+  {
+    "id": "wall-direct-gate-body-only",
+    "path": "assets/city-wall/direct/gate-body-only.glb",
+    "bytes": 1139920,
+    "sha256": "cdba2d5c3bbf14bbf9c6ed59e3fcadf174c13e882a5ccb1522b81bc9949d5058",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -3.7,
+        6.2,
+        -496.79599
+      ],
+      "max": [
+        3.7,
+        10.3,
+        -482.79599
+      ]
+    },
+    "sourceContract": "data/west/city-wall-interface.json"
+  },
+  {
+    "id": "wall-direct-wall-08",
+    "path": "assets/city-wall/direct/wall-08.glb",
+    "bytes": 7252,
+    "sha256": "221b8dc8c5702bbd9980e72e291e61f54a0544ccb05a8923bb53d0f9a62a8a90",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -8.759327,
+        0.17,
+        -485.79599
+      ],
+      "max": [
+        372.09787,
+        6.2,
+        -8.690771
+      ]
+    },
+    "sourceContract": "data/west/city-wall-interface.json"
+  },
+  {
+    "id": "wall-direct-wall-09",
+    "path": "assets/city-wall/direct/wall-09.glb",
+    "bytes": 5020,
+    "sha256": "d4fb5c1cbf3c08ff18f9dcf1b25cab67e44a36a00ade3b8b67fb5eb3679c31be",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -19.829439,
+        0.17,
+        -1381.820312
+      ],
+      "max": [
+        4.0,
+        6.2,
+        -493.79599
+      ]
+    },
+    "sourceContract": "data/west/city-wall-interface.json"
+  },
+  {
+    "id": "ground-network-ground-stitched",
+    "path": "assets/ground-atomic/network-ground-stitched.glb",
+    "bytes": 3565544,
+    "sha256": "fdfc3ce5c63305f79aa746b31c3be60f3d11a6acb75f190886124f2d3446db60",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -39.0,
+        0.0,
+        -2622.460693
+      ],
+      "max": [
+        2528.385498,
+        0.21,
+        1224.515625
+      ]
+    },
+    "sourceContract": "data/west/ground-atomic-contract.json"
+  },
+  {
+    "id": "ground-retained",
+    "path": "assets/ground-atomic/retained.glb",
+    "bytes": 629740,
+    "sha256": "aed8b3d4cb12aeaddf5c696a8a86355b15b7cb4fc8ebd76cc364d23789d630cc",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        480,
+        0,
+        -1250
+      ],
+      "max": [
+        780,
+        0.21,
+        -700
+      ]
+    },
+    "sourceContract": "data/west/ground-atomic-contract.json"
+  },
+  {
+    "id": "ground-south",
+    "path": "assets/ground-atomic/south.glb",
+    "bytes": 2623560,
+    "sha256": "4313826ddf5fbe0c0d8dcb4983d6cdbd647713d49faa1980cd34f587a3273a0e",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        486,
+        0,
+        -852
+      ],
+      "max": [
+        710,
+        0.21,
+        -706
+      ]
+    },
+    "sourceContract": "data/west/ground-atomic-contract.json"
+  },
+  {
+    "id": "ground-D08",
+    "path": "assets/ground-atomic/D08.glb",
+    "bytes": 6664,
+    "sha256": "3ab933108b88c5c359fc7512d324e14f15157eaa54fb17f80f2adeb6c4626d9a",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -60.0,
+        0,
+        -55.0
+      ],
+      "max": [
+        60.0,
+        0.2,
+        31.0
+      ]
+    },
+    "sourceContract": "data/west/ground-atomic-contract.json"
+  },
+  {
+    "id": "market-main",
+    "path": "assets/market/market-cluster.glb",
+    "bytes": 1031928,
+    "sha256": "77b8bf2e9e1488df02c99ffa1b83af9517fabbb23e9d6b7f86dd3c3361c5a5c8",
+    "excludeNodes": [
+      "N2_floor",
+      "N2_sidewall",
+      "N2_sidewall.001",
+      "N2_rearwall",
+      "N2_rearwall.001",
+      "N2_rear_lintel",
+      "N2_frontpost",
+      "N2_frontpost.001",
+      "N2_frontpost.002",
+      "N2_frontbeam",
+      "N2_gable_-3.87",
+      "N2_gable_3.87",
+      "N2_frontstep",
+      "N2_rearstep",
+      "N2_counter",
+      "N2_counterleg",
+      "N2_counterleg.001",
+      "N2_counter.001",
+      "N2_counterleg.002",
+      "N2_counterleg.003",
+      "N2_shelfpost",
+      "N2_shelfpost.001",
+      "N2_shelfpost.002",
+      "N2_shelfpost.003",
+      "N2_store_shelf",
+      "N2_store_shelf.001",
+      "N2_store_shelf.002",
+      "N2_closed_stock",
+      "N2_closed_stock.001",
+      "N2_closed_stock.002"
+    ],
+    "bounds": {
+      "min": [
+        184.285995,
+        0.0,
+        -1981.18396
+      ],
+      "max": [
+        244.285995,
+        4.53,
+        -1937.18396
+      ]
+    },
+    "sourceContract": "data/west/N2-contract.json"
+  },
+  {
+    "id": "market-N2",
+    "path": "assets/market/N2-replacement.glb",
+    "bytes": 72984,
+    "sha256": "d33cbad1ea14e9436219e895791aafa3c4de20dfe7648635909d6b734e1c99d1",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        210.285995,
+        0.2,
+        -1973.53396
+      ],
+      "max": [
+        218.285995,
+        4.33,
+        -1965.68396
+      ]
+    },
+    "sourceContract": "data/west/N2-contract.json"
+  },
+  {
+    "id": "storage-main",
+    "path": "progress-assets/granary-city-v1/granary-city-LOD0.glb",
+    "bytes": 1663844,
+    "sha256": "5937211c7366a5920ae222185176f198cc3d16e8763605fa248e61031c74bc93",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        2249.714111,
+        0.0,
+        -3699.468994
+      ],
+      "max": [
+        2321.714111,
+        5.15,
+        -3647.468994
+      ]
+    },
+    "sourceContract": "progress-assets/granary-city-v1/source.json"
+  },
+  {
+    "id": "study-lingtai",
+    "path": "progress-assets/flat/study-lingtai-c1b58de1bff4.glb",
+    "format": "glb",
+    "bytes": 2071760,
+    "sha256": "c1b58de1bff44b80a8675302101435443b16acbe902d88f4526c10edbb6dfe85",
+    "bundleBytes": 2071760,
+    "sourceGlbSha256": "515ffbbbac8c6da5f726a87dfb2b61f50bce62da04275a6fccfdb4244f94a7ce",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -34.0,
+        -0.3,
+        -34.0
+      ],
+      "max": [
+        34.0,
+        6,
+        34.0
+      ]
+    },
+    "sourceRepositoryPath": "modeling-lab/content/luoyang/lingtai-quality-v1/display/lingtai-A-quality-LOD1.gltf",
+    "metadataPage": "model-library/lingtai/metadata.json",
+    "units": "metres",
+    "axes": "glTF X east / Y up / Z south",
+    "sourceAsset": {
+      "path": "progress-assets/lingtai-quality-v1/display/lingtai-A-quality-LOD1.gltf",
+      "bytes": 571077,
+      "sha256": "c27d581371f6eb6956983674802a6006c0f665d5dd5dcb6f36089d6fbc130220",
+      "bundleBytes": 3306104,
+      "format": "gltf"
+    },
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "study-taixue-A",
+    "path": "progress-assets/flat/study-taixue-A-ee4163421d16.glb",
+    "format": "glb",
+    "bytes": 248276,
+    "sha256": "ee4163421d1652b9301b8d50c7fe9f04ed09440000683b9a207ddf3f1600dda3",
+    "bundleBytes": 248276,
+    "sourceGlbSha256": "413c2f35ec264dfbc6f24c1ceab9a0f8ce492c975b50e34fd5320ad25be391f2",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -18.799999237060547,
+        0.0,
+        -3.799999952316284
+      ],
+      "max": [
+        18.799999237060547,
+        6.130000114440918,
+        4.849999904632568
+      ]
+    },
+    "sourceRepositoryPath": "modeling-lab/review-batches/2026-11-04-taixue-A-v3.2/models/taixue-A-LOD1.glb",
+    "metadataPage": "cities/luoyang/progress-assets/taixue-A-v3.2/source.json",
+    "units": "metres",
+    "axes": "glTF X east / Y up / Z south",
+    "sourceCommit": "95db183586d30d7e4c8e7574f267507bbbcdd9e3",
+    "sourceContract": "progress-assets/taixue-A-v3.2/source.json",
+    "sourceVersion": "3.2",
+    "lod": 1,
+    "sourceAsset": {
+      "path": "progress-assets/taixue-A-v3.2/models/taixue-A-LOD1.glb",
+      "bytes": 638660,
+      "sha256": "413c2f35ec264dfbc6f24c1ceab9a0f8ce492c975b50e34fd5320ad25be391f2",
+      "bundleBytes": 638660,
+      "format": "glb"
+    },
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "study-taixue-B",
+    "path": "progress-assets/flat/study-taixue-B-11b01e4948be.glb",
+    "format": "glb",
+    "bytes": 373040,
+    "sha256": "11b01e4948be0e0e229116b9eaa939f6b932058a0d3513ac676012188a260c57",
+    "bundleBytes": 373040,
+    "sourceGlbSha256": "eea1607b4d87653e09c69c36c79bc75c38ca7bb07da1ef0769c9b3c7b61a03b4",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -26.0,
+        -0.4,
+        -9.5
+      ],
+      "max": [
+        26.0,
+        6.93,
+        9.5
+      ]
+    },
+    "sourceRepositoryPath": "modeling-lab/content/luoyang/taixue-long-hall-v1/display/hall-B-LOD1.gltf",
+    "metadataPage": "model-library/taixue/metadata.json",
+    "units": "metres",
+    "axes": "glTF X east / Y up / Z south",
+    "sourceAsset": {
+      "path": "progress-assets/taixue-long-hall-v1/display/hall-B-LOD1.gltf",
+      "bytes": 127935,
+      "sha256": "fa828ef0ee2188fbae5149fc8c85dd7df1d8dfc4c2e6cacaaf19903908ecf089",
+      "bundleBytes": 1485940,
+      "format": "gltf"
+    },
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "study-north13-kaiyang-K",
+    "path": "progress-assets/flat/study-north13-kaiyang-K-94693c58dd63.glb",
+    "format": "glb",
+    "bytes": 138768,
+    "sha256": "94693c58dd6308153c5900b0bb9698eff138811f39369f54f545b9034417e71e",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -13.600000381469727,
+        0,
+        -6.310879707336426
+      ],
+      "max": [
+        13.600000381469727,
+        10.230000495910645,
+        6.310879707336426
+      ]
+    },
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "sourcePackage": "luoyang-kaiyang-gate-study-v1",
+    "lod": 1,
+    "availableLod2": {
+      "path": "progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD2.glb",
+      "bytes": 55280,
+      "sha256": "13ff78a7a1fe9159ed577d715ff30c75cf3d0e8f6d2d47311968f660986ed801",
+      "bounds": {
+        "min": [
+          -13.600000381469727,
+          0,
+          -6.300000190734863
+        ],
+        "max": [
+          13.600000381469727,
+          10.230000495910645,
+          6.300000190734863
+        ]
+      }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-kaiyang-gate-study-v1/models/kaiyang-K-LOD1.glb",
+      "bytes": 495712,
+      "sha256": "d82f13fcbadaf5dd713bbbc2b8c826c87e1165c7dccf23e520379559bf521ee8",
+      "format": "glb"
+    },
+    "bundleBytes": 138768,
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "study-north13-court-A2",
+    "path": "progress-assets/flat/study-north13-court-A2-db02f24fde89.glb",
+    "format": "glb",
+    "bytes": 395408,
+    "sha256": "db02f24fde899b73d5902b41391a7a5e6db64affac25b7cc609de3d46a3b0994",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        4.489999771118164,
+        12.150002479553223
+      ]
+    },
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "sourcePackage": "luoyang-north-four-courts-v2",
+    "lod": 1,
+    "availableLod2": {
+      "path": "progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-A2-LOD2.glb",
+      "bytes": 121516,
+      "sha256": "4691c63041231344e7309643c94c84938bb403b2a4ae68b595e6399b37214589",
+      "bounds": {
+        "min": [
+          -9.000001907348633,
+          0.19999992847442627,
+          -12.00000286102295
+        ],
+        "max": [
+          9.00000286102295,
+          4.489999771118164,
+          12.150002479553223
+        ]
+      }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-A2-LOD1.glb",
+      "bytes": 752352,
+      "sha256": "d76580bbb5a7c89391152f32bd65b81595fbc300d6da69b2c6e819fff9d941c2",
+      "format": "glb"
+    },
+    "bundleBytes": 395408,
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "study-north13-court-B",
+    "path": "progress-assets/flat/study-north13-court-B-6f7f84af4e7f.glb",
+    "format": "glb",
+    "bytes": 546768,
+    "sha256": "6f7f84af4e7f57920dc1182b747a7081bca9d15b2d595d3ec80593f60e022282",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        5.519999980926514,
+        12.150002479553223
+      ]
+    },
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "sourcePackage": "luoyang-north-four-courts-v2",
+    "lod": 1,
+    "availableLod2": {
+      "path": "progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD2.glb",
+      "bytes": 150468,
+      "sha256": "641b05a535a266dce29c8c966cccb576e522b65a4586e95e8cfe1fb30fb69952",
+      "bounds": {
+        "min": [
+          -9.000001907348633,
+          0.19999992847442627,
+          -12.00000286102295
+        ],
+        "max": [
+          9.00000286102295,
+          5.519999980926514,
+          12.150002479553223
+        ]
+      }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B-LOD1.glb",
+      "bytes": 903708,
+      "sha256": "2be52632e16e43290ef96aae7479cd7c1faa413b2090cd2af162652a8bb16d9c",
+      "format": "glb"
+    },
+    "bundleBytes": 546768,
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "study-north13-court-B2",
+    "path": "progress-assets/flat/study-north13-court-B2-7d3758ce668d.glb",
+    "format": "glb",
+    "bytes": 502688,
+    "sha256": "7d3758ce668d06541694e7e17d947d5b380a0974311c57eba7968284214c6ac2",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        5.269999980926514,
+        12.150002479553223
+      ]
+    },
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "sourcePackage": "luoyang-north-four-courts-v2",
+    "lod": 1,
+    "availableLod2": {
+      "path": "progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B2-LOD2.glb",
+      "bytes": 150456,
+      "sha256": "b9651fa3ef9bc449131da9eadf86c1fa985ef798d5badc675a81c30174181380",
+      "bounds": {
+        "min": [
+          -9.000001907348633,
+          0.19999992847442627,
+          -12.00000286102295
+        ],
+        "max": [
+          9.00000286102295,
+          5.269999980926514,
+          12.150002479553223
+        ]
+      }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-north-four-courts-v2/models/court-B2-LOD1.glb",
+      "bytes": 859632,
+      "sha256": "95b66c5d994cac56d38327896bfe3b370fb4a3daaf643b0250c225cd8e83795e",
+      "format": "glb"
+    },
+    "bundleBytes": 502688,
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "study-north13-court-TC03-2",
+    "path": "progress-assets/flat/study-north13-court-TC03-2-98bedd183667.glb",
+    "format": "glb",
+    "bytes": 821660,
+    "sha256": "98bedd1836674388e9aee3794af12def4235d566324dae877c6ab7baee0c3a05",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -2.4482617391186068e-06,
+        0.19999992847442627,
+        -36.000003814697266
+      ],
+      "max": [
+        28.0000057220459,
+        4.539999961853027,
+        0.15000060200691223
+      ]
+    },
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "sourcePackage": "luoyang-north-perimeter-v1",
+    "lod": 1,
+    "availableLod2": {
+      "path": "progress-assets/north13-gates/luoyang-north-perimeter-v1/models/court-TC03-2-LOD2.glb",
+      "bytes": 219732,
+      "sha256": "b8dda6789f4f9dcfddf1a1da430f43aa25ab6a56a0cb894ea139339a646a6905",
+      "bounds": {
+        "min": [
+          -2.4482617391186068e-06,
+          0.19999992847442627,
+          -36.000003814697266
+        ],
+        "max": [
+          28.0000057220459,
+          4.539999961853027,
+          0.15000060200691223
+        ]
+      }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-north-perimeter-v1/models/court-TC03-2-LOD1.glb",
+      "bytes": 1178612,
+      "sha256": "9003d00a45b4866385fbd6092a5c2f3b99438c9a4f3714543b9a107cdaac4024",
+      "format": "glb"
+    },
+    "bundleBytes": 821660,
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "study-north13-court-A",
+    "path": "progress-assets/flat/study-north13-court-A-19a42b6b0b1c.glb",
+    "format": "glb",
+    "bytes": 444348,
+    "sha256": "19a42b6b0b1cc1f204e112fc9d63b626895bf0f9b94922cac6ab2bd1cb810ff4",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        4.489999771118164,
+        12.15000057220459
+      ]
+    },
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "sourcePackage": "luoyang-north-second-row-v1",
+    "lod": 1,
+    "availableLod2": {
+      "path": "progress-assets/north13-gates/luoyang-north-second-row-v1/models/court-A-LOD2.glb",
+      "bytes": 121496,
+      "sha256": "8e098a5f382448c20d07422f30543e6d3234112bc1fc9327d6ae6860a6cff94d",
+      "bounds": {
+        "min": [
+          -9.000001907348633,
+          0.19999992847442627,
+          -12.00000286102295
+        ],
+        "max": [
+          9.00000286102295,
+          4.489999771118164,
+          12.15000057220459
+        ]
+      }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-north-second-row-v1/models/court-A-LOD1.glb",
+      "bytes": 801292,
+      "sha256": "245c20b6385dcee4c55ca300f7e2420b07ca883b5e91b5dcd5a93e5b5a561e6a",
+      "format": "glb"
+    },
+    "bundleBytes": 444348,
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "study-north13-pingcheng-P",
+    "path": "progress-assets/flat/study-north13-pingcheng-P-c8ab88f4b326.glb",
+    "format": "glb",
+    "bytes": 119320,
+    "sha256": "c8ab88f4b326e0c24346b97e7429cdf3d43d463a53b918017c21cf0428d74f11",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -14.061697959899902,
+        0,
+        -6.350925445556641
+      ],
+      "max": [
+        14.061697959899902,
+        10.24000072479248,
+        6.350925445556641
+      ]
+    },
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "sourcePackage": "luoyang-pingcheng-gate-study-v1",
+    "lod": 1,
+    "availableLod2": {
+      "path": "progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD2.glb",
+      "bytes": 42072,
+      "sha256": "e6f289f78dc05c2d0c5ea6ef11726748be6b35ffb68315a5b7fc1186f3c5551e",
+      "bounds": {
+        "min": [
+          -14,
+          0,
+          -6.300000190734863
+        ],
+        "max": [
+          14,
+          10.24000072479248,
+          6.300000190734863
+        ]
+      }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-pingcheng-gate-study-v1/models/pingcheng-P-LOD1.glb",
+      "bytes": 476264,
+      "sha256": "7d995a1b95026cb3d626bf6ad6bdd01edcf89d7c5baab87ffff341360d51f102",
+      "format": "glb"
+    },
+    "bundleBytes": 119320,
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "study-north13-shangxi-X",
+    "path": "progress-assets/flat/study-north13-shangxi-X-9a892e7f27f7.glb",
+    "format": "glb",
+    "bytes": 124096,
+    "sha256": "9a892e7f27f7b8faf8cc95cdd22b66a77da5ef5e2cf03636d40f79ac8d26f851",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -13.46119213104248,
+        0,
+        -5.751530647277832
+      ],
+      "max": [
+        13.46119213104248,
+        11.34000015258789,
+        5.751530647277832
+      ]
+    },
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "sourcePackage": "luoyang-shangxi-gate-study-v1",
+    "lod": 1,
+    "availableLod2": {
+      "path": "progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD2.glb",
+      "bytes": 41236,
+      "sha256": "99047569c6248c99e0601924613ad9e9c710d25248ac661fd29a2bae84665862",
+      "bounds": {
+        "min": [
+          -13.399999618530273,
+          0,
+          -5.699999809265137
+        ],
+        "max": [
+          13.399999618530273,
+          11.34000015258789,
+          5.699999809265137
+        ]
+      }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-shangxi-gate-study-v1/models/shangxi-X-LOD1.glb",
+      "bytes": 481044,
+      "sha256": "00a2eb67b73bac04f267e24540f6fd2e6bf26689e4c0783783d664566bc24312",
+      "format": "glb"
+    },
+    "bundleBytes": 124096,
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "study-north13-yong-Y",
+    "path": "progress-assets/flat/study-north13-yong-Y-1983dab58385.glb",
+    "format": "glb",
+    "bytes": 144900,
+    "sha256": "1983dab583853beb9b2a905227c9b63526b3696811b049466ccf471db58ba164",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -12.600000381469727,
+        0,
+        -5.811703681945801
+      ],
+      "max": [
+        12.600000381469727,
+        10.230000495910645,
+        5.811703681945801
+      ]
+    },
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "sourcePackage": "luoyang-yong-gate-study-v1",
+    "lod": 1,
+    "availableLod2": {
+      "path": "progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD2.glb",
+      "bytes": 58612,
+      "sha256": "7406a24cf7124fcde7409a30f2961251a873a64ea9a3ab6a3e9e206085ad6074",
+      "bounds": {
+        "min": [
+          -12.600000381469727,
+          0,
+          -5.800000190734863
+        ],
+        "max": [
+          12.600000381469727,
+          10.230000495910645,
+          5.800000190734863
+        ]
+      }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD1.glb",
+      "bytes": 501844,
+      "sha256": "c277f7e31d764384979e4712fef95472fb8749f930b5a75a54028e106939652c",
+      "format": "glb"
+    },
+    "bundleBytes": 144900,
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "study-north13-zhongdong-Z",
+    "path": "progress-assets/flat/study-north13-zhongdong-Z-856cfff1f015.glb",
+    "format": "glb",
+    "bytes": 957224,
+    "sha256": "856cfff1f015f8ce3c216cb9908a82dc9038846fa94170255730142f19693d3c",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -12.600000381469727,
+        0,
+        -5
+      ],
+      "max": [
+        12.600000381469727,
+        10.458000183105469,
+        5
+      ]
+    },
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "sourcePackage": "luoyang-zhongdong-gate-study-v1.1",
+    "lod": 1,
+    "availableLod2": {
+      "path": "progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD2.glb",
+      "bytes": 51936,
+      "sha256": "cefa53325287e76d6506463f1d01227a9bcb30ce32f21c5b37afd17c176c7038",
+      "bounds": {
+        "min": [
+          -12.600000381469727,
+          0,
+          -5
+        ],
+        "max": [
+          12.600000381469727,
+          10.458000183105469,
+          5
+        ]
+      }
+    },
+    "sourceAsset": {
+      "path": "progress-assets/north13-gates/luoyang-zhongdong-gate-study-v1.1/models/zhongdong-Z-LOD1.glb",
+      "bytes": 1343084,
+      "sha256": "a78b7c84c1757e94a2ce9e455370c5003b22b999a5cc254b39374461c7808e0f",
+      "format": "glb"
+    },
+    "bundleBytes": 957224,
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "study-mao-gate",
+    "path": "progress-assets/flat/study-mao-gate-0ae54089b66a.glb",
+    "bytes": 1150620,
+    "sha256": "0ae54089b66a54f17db78c53ce9164b2bb99e6292b466c4c7c90f498385063e8",
+    "excludeNodes": [],
+    "bounds": {
+      "min": [
+        -14.883401870727539,
+        -0.1599999964237213,
+        -6.558533191680908
+      ],
+      "max": [
+        16.950000762939453,
+        10.864999771118164,
+        6.558533191680908
+      ]
+    },
+    "sourceCommit": "0e891604d47abeacc9ed1733b9be486d2d65e9af",
+    "sourceContract": "progress-assets/mao-gate/source.json",
+    "lod": 0,
+    "sourceAsset": {
+      "path": "progress-assets/mao-gate/mao-C-LOD0.glb",
+      "bytes": 2140916,
+      "sha256": "d8fbad038b582634084f0248d2e4b23f13f41d850b83f64ec4cfcc3b90264388"
+    },
+    "format": "glb",
+    "bundleBytes": 1150620,
+    "projectionSourceContract": "progress-assets/flat/source.json"
+  },
+  {
+    "id": "yong-gate-near",
+    "path": "../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+    "bytes": 1570856,
+    "sha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e",
+    "bounds": {
+      "min": [
+        -12.600000381469727,
+        0.0,
+        -5.811703681945801
+      ],
+      "max": [
+        12.600000381469727,
+        10.230000495910645,
+        5.811703681945801
+      ]
+    },
+    "sourceContract": "progress-assets/yong-city-v1/source.json"
+  },
+  {
+    "id": "yong-gate-apron",
+    "path": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "bytes": 388208,
+    "sha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb",
+    "bounds": {
+      "min": [
+        -15.99994945526123,
+        -0.20000000298023224,
+        -9.5
+      ],
+      "max": [
+        16.00006103515625,
+        6.029999732971191,
+        9.5
+      ]
+    },
+    "sourceContract": "progress-assets/yong-city-v1/source.json"
+  },
+  {
+    "id": "yong-gate-far",
+    "path": "progress-assets/north13-gates/luoyang-yong-gate-study-v1/models/yong-Y-LOD2.glb",
+    "bytes": 58612,
+    "sha256": "7406a24cf7124fcde7409a30f2961251a873a64ea9a3ab6a3e9e206085ad6074",
+    "bounds": {
+      "min": [
+        -12.600000381469727,
+        0.0,
+        -5.800000190734863
+      ],
+      "max": [
+        12.600000381469727,
+        10.230000495910645,
+        5.800000190734863
+      ]
+    },
+    "nearPath": "../../library/models/m-luoyang-yong-gate/files/yong-Y-LOD0.glb",
+    "nearBytes": 1570856,
+    "nearSha256": "45743d730f7694fe5cb31073c09cdeb6336a84e09b7969613d6a24679baf941e"
+  },
+  {
+    "id": "yong-apron-far",
+    "path": "progress-assets/yong-city-v1/yong-apron-LOD2.glb",
+    "bytes": 7564,
+    "sha256": "fb8a5f2f93aace63e0229cdc4a9c65d0c1450bb80bf8965e75da0fd92cad529a",
+    "bounds": {
+      "min": [
+        -15.99994945526123,
+        -0.20000000298023224,
+        -9.5
+      ],
+      "max": [
+        16.00006103515625,
+        6.029999732971191,
+        9.5
+      ]
+    },
+    "nearPath": "progress-assets/yong-city-v1/yong-apron-LOD0.glb",
+    "nearBytes": 388208,
+    "nearSha256": "e52eaaf514c3e514dcaaaef3443c168538ad117dd8f515bd3d321422406738cb"
+  },
+  {
+    "id": "yong-road-link-far",
+    "path": "progress-assets/yong-road-link-v2/yong-road-link-LOD2.glb",
+    "bytes": 2252,
+    "sha256": "2a32c700d401af623701a2ec84523ea2d7688fc9b5d128f22cae542a85b7b844",
+    "bounds": {
+      "min": [
+        -2.0767815113067627,
+        -0.20000000298023224,
+        9.5
+      ],
+      "max": [
+        1.5001014471054077,
+        0.03999999165534973,
+        59.13047409057617
+      ]
+    },
+    "nearPath": "progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+    "nearBytes": 382876,
+    "nearSha256": "456a7dd54a5fd623ab17d9823ab1a12701bd764bdd219ec8884e9538536cd93d"
+  },
+  {
+    "id": "yong-road-link-near",
+    "path": "progress-assets/yong-road-link-v2/yong-road-link-LOD0.glb",
+    "bytes": 382876,
+    "sha256": "456a7dd54a5fd623ab17d9823ab1a12701bd764bdd219ec8884e9538536cd93d",
+    "bounds": {
+      "min": [
+        -2.0767815113067627,
+        -0.20000000298023224,
+        9.5
+      ],
+      "max": [
+        1.5001014471054077,
+        0.03999999165534973,
+        59.13047409057617
+      ]
+    }
+  },
+  {
+    "id": "yong-road-receiver",
+    "path": "progress-assets/yong-road-link-v2/yong-road-receiver-component209.glb",
+    "bytes": 9140,
+    "sha256": "e5baa0df8fd28e117b4ef997cab0d962b0834a4c9664bb1ed73b7746d2488e38",
+    "bounds": {
+      "min": [
+        43.100006103515625,
+        0.0,
+        -2622.460693359375
+      ],
+      "max": [
+        1445.49072265625,
+        0.20999999344348907,
+        -835.9883422851562
+      ]
+    }
+  },
+  {
+    "path": "../../library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD2.glb",
+    "bytes": 87196,
+    "sha256": "44366ced8b71c5a3cbd417f8aacfafa095f92012e13f2a989735a8aac1e5ce67",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        5.029999732971191,
+        12.150002479553223
+      ]
+    },
+    "id": "north-three-opposed_rooms-far",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "nearPath": "../../library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD0.glb",
+    "nearBytes": 1512104,
+    "nearSha256": "21ffb5af02cef43552a8fd41173297569e5dac7173d0e76f09a0ef408b99a9ce"
+  },
+  {
+    "path": "../../library/models/m-luoyang-court-layout-kit/files/opposed_rooms-LOD0.glb",
+    "bytes": 1512104,
+    "sha256": "21ffb5af02cef43552a8fd41173297569e5dac7173d0e76f09a0ef408b99a9ce",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        5.128161907196045,
+        12.150002479553223
+      ]
+    },
+    "id": "north-three-opposed_rooms-near",
+    "sourceContract": "progress-assets/north-three-v1/source.json"
+  },
+  {
+    "path": "../../library/models/m-luoyang-court-layout-kit/files/compact_work-LOD2.glb",
+    "bytes": 73328,
+    "sha256": "84426f9142947741f0944ed4772d4008dfa2f687241618306503230ac593bba0",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        4.730000019073486,
+        12.150002479553223
+      ]
+    },
+    "id": "north-three-compact_work-far",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "nearPath": "../../library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb",
+    "nearBytes": 1446320,
+    "nearSha256": "e799b5880cd12a5c9255f1c2cadbb49051032027d1781e8e6dd3c27dd48c7ce2"
+  },
+  {
+    "path": "../../library/models/m-luoyang-court-layout-kit/files/compact_work-LOD0.glb",
+    "bytes": 1446320,
+    "sha256": "e799b5880cd12a5c9255f1c2cadbb49051032027d1781e8e6dd3c27dd48c7ce2",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        4.829568386077881,
+        12.150002479553223
+      ]
+    },
+    "id": "north-three-compact_work-near",
+    "sourceContract": "progress-assets/north-three-v1/source.json"
+  },
+  {
+    "path": "../../library/models/m-luoyang-workyard-shed/files/workyard-LOD2.glb",
+    "bytes": 167792,
+    "sha256": "574d81d91d3898bf9de5e3d46b2b7d8532dd2c1b52d4ac35f7132898a1babda0",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        5.029999732971191,
+        12.150002479553223
+      ]
+    },
+    "id": "north-three-workyard-far",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "nearPath": "../../library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
+    "nearBytes": 1850040,
+    "nearSha256": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e"
+  },
+  {
+    "path": "../../library/models/m-luoyang-workyard-shed/files/workyard-LOD0.glb",
+    "bytes": 1850040,
+    "sha256": "7eb9739ec09a1ebbbcf16891d14be1488fc484be72c4bae273ec1a993139d17e",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        5.128161907196045,
+        12.150002479553223
+      ]
+    },
+    "id": "north-three-workyard-near",
+    "sourceContract": "progress-assets/north-three-v1/source.json"
+  }
+];
+
+let assets = assetRecords.map(({ path, nearPath, ...asset }) => ({
+  ...asset,
+  sourcePath: path,
+  url: cityURL(path),
+  ...(nearPath ? { nearUrl: cityURL(nearPath) } : {}),
+}));
+
+let nodes = [
+  {
+    "id": "yong-gate-body",
+    "asset": "yong-gate-near",
+    "chapter": "walls",
+    "title": "雍门 · C级设计候选",
+    "summary": "与既有城墙、三门道地坪和约49.6米C级接街组合；不代表历史道路复原或全城交通完成。",
+    "matrix": [
+      -0.01162686012685299,
+      0.0,
+      -0.9999324083328247,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.9999324083328247,
+      0.0,
+      -0.01162686012685299,
+      0.0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1.0
+    ],
+    "bounds": {
+      "min": [
+        -21.970934601541217,
+        0.17000000178813934,
+        -1410.439289595516
+      ],
+      "max": [
+        -10.060548094991987,
+        10.400000497698784,
+        -1385.106120560734
+      ]
+    },
+    "initial": false,
+    "tier": "C",
+    "basis": "雍门名与西侧相对方位有文献；本次工程位置由现有C墙端推得，不是实测古门位。未把北魏西阳门轴线前推至东汉。",
+    "replaces": [
+      "yong-gate-body-far"
+    ]
+  },
+  {
+    "id": "yong-gate-interface",
+    "asset": "yong-gate-apron",
+    "chapter": "walls",
+    "title": "雍门接墙与汇流地面",
+    "summary": "与既有城墙、三门道地坪和约49.6米C级接街组合；不代表历史道路复原或全城交通完成。",
+    "matrix": [
+      -0.01162686012685299,
+      0.0,
+      -0.9999324083328247,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.9999324083328247,
+      0.0,
+      -0.01162686012685299,
+      0.0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1.0
+    ],
+    "bounds": {
+      "min": [
+        -25.663923039269804,
+        -0.030000001192092896,
+        -1413.8181577197688
+      ],
+      "max": [
+        -6.367559657263401,
+        6.199999734759331,
+        -1381.7273649513559
+      ]
+    },
+    "initial": false,
+    "tier": "C",
+    "basis": "雍门名与西侧相对方位有文献；本次工程位置由现有C墙端推得，不是实测古门位。未把北魏西阳门轴线前推至东汉。",
+    "replaces": [
+      "yong-gate-interface-far"
+    ]
+  },
+  {
+    "id": "C02-018",
+    "asset": "courtyard-B",
+    "title": "住宅院落 01",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      724.06335,
+      0,
+      -983.8,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        715.063347,
+        0.2,
+        -995.950002
+      ],
+      "max": [
+        733.063351,
+        5.52,
+        -971.799996
+      ]
+    },
+    "variant": "B"
+  },
+  {
+    "id": "C02-019",
+    "asset": "courtyard-A",
+    "title": "住宅院落 02",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      745.08936,
+      0,
+      -983.8,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        736.089357,
+        0.2,
+        -995.950002
+      ],
+      "max": [
+        754.089361,
+        4.49,
+        -971.799996
+      ]
+    },
+    "variant": "A"
+  },
+  {
+    "id": "C02-020",
+    "asset": "courtyard-TC03",
+    "title": "住宅院落 03",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      738.98936,
+      0,
+      -1004.2,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        738.989358,
+        0.2,
+        -1040.200006
+      ],
+      "max": [
+        766.989366,
+        4.54,
+        -1000.2
+      ]
+    },
+    "variant": "TC03"
+  },
+  {
+    "id": "C02-021",
+    "asset": "courtyard-A2",
+    "title": "住宅院落 04",
+    "matrix": [
+      0,
+      0,
+      1.0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      -1.0,
+      0,
+      0,
+      0,
+      717.45,
+      0,
+      -893.64308,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        705.299998,
+        0.2,
+        -902.643081
+      ],
+      "max": [
+        729.450004,
+        4.49,
+        -884.643077
+      ]
+    },
+    "variant": "A2"
+  },
+  {
+    "id": "C02-022",
+    "asset": "courtyard-B2",
+    "title": "住宅院落 05",
+    "matrix": [
+      0,
+      0,
+      1.0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      -1.0,
+      0,
+      0,
+      0,
+      717.45,
+      0,
+      -923.30228,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        705.299998,
+        0.2,
+        -932.302281
+      ],
+      "max": [
+        729.450004,
+        5.27,
+        -914.302277
+      ]
+    },
+    "variant": "B2"
+  },
+  {
+    "id": "C02-023",
+    "asset": "courtyard-A",
+    "title": "住宅院落 06",
+    "matrix": [
+      0,
+      0,
+      1.0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      -1.0,
+      0,
+      0,
+      0,
+      717.45,
+      0,
+      -949.71557,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        705.299998,
+        0.2,
+        -958.715571
+      ],
+      "max": [
+        729.450004,
+        4.49,
+        -940.715567
+      ]
+    },
+    "variant": "A"
+  },
+  {
+    "id": "C02-024",
+    "asset": "courtyard-A2",
+    "title": "住宅院落 07",
+    "matrix": [
+      0,
+      0,
+      1.0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      -1.0,
+      0,
+      0,
+      0,
+      717.45,
+      0,
+      -1025.21097,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        705.299998,
+        0.2,
+        -1034.210971
+      ],
+      "max": [
+        729.450004,
+        4.49,
+        -1016.210967
+      ]
+    },
+    "variant": "A2"
+  },
+  {
+    "id": "C02-025",
+    "asset": "courtyard-B",
+    "title": "住宅院落 08",
+    "matrix": [
+      0,
+      0,
+      1.0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      -1.0,
+      0,
+      0,
+      0,
+      717.45,
+      0,
+      -1053.25621,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        705.299998,
+        0.2,
+        -1062.256211
+      ],
+      "max": [
+        729.450004,
+        5.52,
+        -1044.256207
+      ]
+    },
+    "variant": "B"
+  },
+  {
+    "id": "C02-026",
+    "asset": "courtyard-A",
+    "title": "住宅院落 09",
+    "matrix": [
+      0,
+      0,
+      1.0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      -1.0,
+      0,
+      0,
+      0,
+      717.45,
+      0,
+      -1084.58194,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        705.299998,
+        0.2,
+        -1093.581941
+      ],
+      "max": [
+        729.450004,
+        4.49,
+        -1075.581937
+      ]
+    },
+    "variant": "A"
+  },
+  {
+    "id": "C02-001",
+    "asset": "courtyard-A2",
+    "title": "住宅院落 10",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      679.1392,
+      0,
+      -1176.2,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        670.139199,
+        0.2,
+        -1188.200004
+      ],
+      "max": [
+        688.139203,
+        4.49,
+        -1164.049998
+      ]
+    },
+    "variant": "A2"
+  },
+  {
+    "id": "C02-002",
+    "asset": "courtyard-B2",
+    "title": "住宅院落 11",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      633.97426,
+      0,
+      -1176.2,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        624.974259,
+        0.2,
+        -1188.200004
+      ],
+      "max": [
+        642.974263,
+        5.27,
+        -1164.049998
+      ]
+    },
+    "variant": "B2"
+  },
+  {
+    "id": "C02-027",
+    "asset": "courtyard-A",
+    "title": "住宅院落 12",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      671.07752,
+      0,
+      -1143.8,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        662.077517,
+        0.2,
+        -1155.950002
+      ],
+      "max": [
+        680.077521,
+        4.49,
+        -1131.799996
+      ]
+    },
+    "variant": "A"
+  },
+  {
+    "id": "C02-028",
+    "asset": "courtyard-A2",
+    "title": "住宅院落 13",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      634.03585,
+      0,
+      -1143.8,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        625.035847,
+        0.2,
+        -1155.950002
+      ],
+      "max": [
+        643.035851,
+        4.49,
+        -1131.799996
+      ]
+    },
+    "variant": "A2"
+  },
+  {
+    "id": "C02-029",
+    "asset": "courtyard-B",
+    "title": "住宅院落 14",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      608.78268,
+      0,
+      -1143.8,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        599.782677,
+        0.2,
+        -1155.950002
+      ],
+      "max": [
+        617.782681,
+        5.52,
+        -1131.799996
+      ]
+    },
+    "variant": "B"
+  },
+  {
+    "id": "C02-030",
+    "asset": "courtyard-A",
+    "title": "住宅院落 15",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      575.35019,
+      0,
+      -1143.8,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        566.350187,
+        0.2,
+        -1155.950002
+      ],
+      "max": [
+        584.350191,
+        4.49,
+        -1131.799996
+      ]
+    },
+    "variant": "A"
+  },
+  {
+    "id": "C02-031",
+    "asset": "courtyard-A2",
+    "title": "住宅院落 16",
+    "matrix": [
+      0,
+      0,
+      1.0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      -1.0,
+      0,
+      0,
+      0,
+      636.2,
+      0,
+      -1205.0107,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        624.049998,
+        0.2,
+        -1214.010701
+      ],
+      "max": [
+        648.200004,
+        4.49,
+        -1196.010697
+      ]
+    },
+    "variant": "A2"
+  },
+  {
+    "id": "C02-003",
+    "asset": "courtyard-TC03-2",
+    "title": "住宅院落 17",
+    "matrix": [
+      0,
+      0,
+      -1.0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1.0,
+      0,
+      0,
+      0,
+      615.8,
+      0,
+      -1164.95544,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        579.799994,
+        0.2,
+        -1192.955446
+      ],
+      "max": [
+        615.950002,
+        4.54,
+        -1164.955438
+      ]
+    },
+    "variant": "TC03-2"
+  },
+  {
+    "id": "C02-004",
+    "asset": "courtyard-B2",
+    "title": "住宅院落 18",
+    "matrix": [
+      0,
+      0,
+      1.0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      -1.0,
+      0,
+      0,
+      0,
+      717.45,
+      0,
+      -1157.81935,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        705.299998,
+        0.2,
+        -1166.819351
+      ],
+      "max": [
+        729.450004,
+        5.27,
+        -1148.819347
+      ]
+    },
+    "variant": "B2"
+  },
+  {
+    "id": "C02-005",
+    "asset": "courtyard-B",
+    "title": "住宅院落 19",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      514,
+      0,
+      -782.55,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        504.999997,
+        0.2,
+        -794.700002
+      ],
+      "max": [
+        523.000001,
+        5.52,
+        -770.549996
+      ]
+    },
+    "variant": "B"
+  },
+  {
+    "id": "C02-006",
+    "asset": "courtyard-B2",
+    "title": "住宅院落 20",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      537,
+      0,
+      -781.55,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        527.999997,
+        0.2,
+        -793.700002
+      ],
+      "max": [
+        546.000001,
+        5.27,
+        -769.549996
+      ]
+    },
+    "variant": "B2"
+  },
+  {
+    "id": "C02-007",
+    "asset": "courtyard-A",
+    "title": "住宅院落 21",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      590,
+      0,
+      -782.55,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        580.999997,
+        0.2,
+        -794.700002
+      ],
+      "max": [
+        599.000001,
+        4.49,
+        -770.549996
+      ]
+    },
+    "variant": "A"
+  },
+  {
+    "id": "C02-008",
+    "asset": "courtyard-TC03",
+    "title": "住宅院落 22",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      658,
+      0,
+      -794.55,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        629.999994,
+        0.2,
+        -798.55
+      ],
+      "max": [
+        658.000002,
+        4.54,
+        -758.549994
+      ]
+    },
+    "variant": "TC03"
+  },
+  {
+    "id": "C02-009",
+    "asset": "courtyard-B",
+    "title": "住宅院落 23",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      508,
+      0,
+      -817.45,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        498.999999,
+        0.2,
+        -829.450004
+      ],
+      "max": [
+        517.000003,
+        5.52,
+        -805.299998
+      ]
+    },
+    "variant": "B"
+  },
+  {
+    "id": "C02-010",
+    "asset": "courtyard-A2",
+    "title": "住宅院落 24",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      531,
+      0,
+      -818.45,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        521.999999,
+        0.2,
+        -830.450004
+      ],
+      "max": [
+        540.000003,
+        4.49,
+        -806.299998
+      ]
+    },
+    "variant": "A2"
+  },
+  {
+    "id": "C02-011",
+    "asset": "courtyard-A",
+    "title": "住宅院落 25",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      554,
+      0,
+      -817.45,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        544.999999,
+        0.2,
+        -829.450004
+      ],
+      "max": [
+        563.000003,
+        4.49,
+        -805.299998
+      ]
+    },
+    "variant": "A"
+  },
+  {
+    "id": "C02-012",
+    "asset": "courtyard-TC03-2",
+    "title": "住宅院落 26",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      570,
+      0,
+      -805.45,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        569.999998,
+        0.2,
+        -841.450006
+      ],
+      "max": [
+        598.000006,
+        4.54,
+        -805.299998
+      ]
+    },
+    "variant": "TC03-2"
+  },
+  {
+    "id": "C02-013",
+    "asset": "courtyard-A2",
+    "title": "住宅院落 27",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      612,
+      0,
+      -817.45,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        602.999999,
+        0.2,
+        -829.450004
+      ],
+      "max": [
+        621.000003,
+        4.49,
+        -805.299998
+      ]
+    },
+    "variant": "A2"
+  },
+  {
+    "id": "C02-032",
+    "asset": "courtyard-B2",
+    "title": "住宅院落 28",
+    "matrix": [
+      0,
+      0,
+      -1.0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1.0,
+      0,
+      0,
+      0,
+      548.8,
+      0,
+      -758,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        536.799996,
+        0.2,
+        -767.000003
+      ],
+      "max": [
+        560.950002,
+        5.27,
+        -748.999999
+      ]
+    },
+    "variant": "B2"
+  },
+  {
+    "id": "C02-014",
+    "asset": "courtyard-A",
+    "title": "住宅院落 29",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      584,
+      0,
+      -728.8,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        574.999997,
+        0.2,
+        -740.950002
+      ],
+      "max": [
+        593.000001,
+        4.49,
+        -716.799996
+      ]
+    },
+    "variant": "A"
+  },
+  {
+    "id": "C02-015",
+    "asset": "courtyard-A2",
+    "title": "住宅院落 30",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      607,
+      0,
+      -728.8,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        597.999997,
+        0.2,
+        -740.950002
+      ],
+      "max": [
+        616.000001,
+        4.49,
+        -716.799996
+      ]
+    },
+    "variant": "A2"
+  },
+  {
+    "id": "C02-016",
+    "asset": "courtyard-B",
+    "title": "住宅院落 31",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      613,
+      0,
+      -761.2,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        603.999999,
+        0.2,
+        -773.200004
+      ],
+      "max": [
+        622.000003,
+        5.52,
+        -749.049998
+      ]
+    },
+    "variant": "B"
+  },
+  {
+    "id": "C02-017",
+    "asset": "courtyard-A",
+    "title": "住宅院落 32",
+    "matrix": [
+      0,
+      0,
+      -1.0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1.0,
+      0,
+      0,
+      0,
+      650,
+      0,
+      -825,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        637.999996,
+        0.2,
+        -834.000003
+      ],
+      "max": [
+        662.150002,
+        4.49,
+        -815.999999
+      ]
+    },
+    "variant": "A"
+  },
+  {
+    "id": "C02-033",
+    "asset": "courtyard-B2",
+    "title": "住宅院落 33",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      639.10105,
+      0,
+      -1080.2,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        630.101049,
+        0.2,
+        -1092.200004
+      ],
+      "max": [
+        648.101053,
+        5.27,
+        -1068.049998
+      ]
+    },
+    "variant": "B2"
+  },
+  {
+    "id": "C02-034",
+    "asset": "courtyard-B",
+    "title": "住宅院落 34",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      601.89119,
+      0,
+      -1080.2,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        592.891189,
+        0.2,
+        -1092.200004
+      ],
+      "max": [
+        610.891193,
+        5.52,
+        -1068.049998
+      ]
+    },
+    "variant": "B"
+  },
+  {
+    "id": "C02-035",
+    "asset": "courtyard-A2",
+    "title": "住宅院落 35",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      548.32284,
+      0,
+      -1080.2,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        539.322839,
+        0.2,
+        -1092.200004
+      ],
+      "max": [
+        557.322843,
+        4.49,
+        -1068.049998
+      ]
+    },
+    "variant": "A2"
+  },
+  {
+    "id": "C02-036",
+    "asset": "courtyard-B2",
+    "title": "住宅院落 36",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      520.56271,
+      0,
+      -1080.2,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "C02_36",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        511.562709,
+        0.2,
+        -1092.200004
+      ],
+      "max": [
+        529.562713,
+        5.27,
+        -1068.049998
+      ]
+    },
+    "variant": "B2"
+  },
+  {
+    "id": "FROZEN-D08-S1",
+    "asset": "courtyard-A",
+    "title": "住宅院落 37",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      543,
+      0,
+      -945,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "old8_shared_prototypes",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        533.999997,
+        0.2,
+        -957.150002
+      ],
+      "max": [
+        552.000001,
+        4.49,
+        -932.999996
+      ]
+    },
+    "variant": "A"
+  },
+  {
+    "id": "FROZEN-D08-S2",
+    "asset": "courtyard-B",
+    "title": "住宅院落 38",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      565,
+      0,
+      -945,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "old8_shared_prototypes",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        555.999997,
+        0.2,
+        -957.150002
+      ],
+      "max": [
+        574.000001,
+        5.52,
+        -932.999996
+      ]
+    },
+    "variant": "B"
+  },
+  {
+    "id": "FROZEN-D08-S3",
+    "asset": "courtyard-A",
+    "title": "住宅院落 39",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      589,
+      0,
+      -945,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "old8_shared_prototypes",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        579.999997,
+        0.2,
+        -957.150002
+      ],
+      "max": [
+        598.000001,
+        4.49,
+        -932.999996
+      ]
+    },
+    "variant": "A"
+  },
+  {
+    "id": "FROZEN-D08-S4",
+    "asset": "courtyard-B",
+    "title": "住宅院落 40",
+    "matrix": [
+      -1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      -1.0,
+      0,
+      611,
+      0,
+      -945,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "old8_shared_prototypes",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        601.999997,
+        0.2,
+        -957.150002
+      ],
+      "max": [
+        620.000001,
+        5.52,
+        -932.999996
+      ]
+    },
+    "variant": "B"
+  },
+  {
+    "id": "FROZEN-D08-M",
+    "asset": "courtyard-A",
+    "title": "住宅院落 41",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      575,
+      0,
+      -975,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "old8_shared_prototypes",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        565.999999,
+        0.2,
+        -987.000004
+      ],
+      "max": [
+        584.000003,
+        4.49,
+        -962.849998
+      ]
+    },
+    "variant": "A"
+  },
+  {
+    "id": "FROZEN-D08-E",
+    "asset": "courtyard-B",
+    "title": "住宅院落 42",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      629,
+      0,
+      -975,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "old8_shared_prototypes",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        619.999999,
+        0.2,
+        -987.000004
+      ],
+      "max": [
+        638.000003,
+        5.52,
+        -962.849998
+      ]
+    },
+    "variant": "B"
+  },
+  {
+    "id": "FROZEN-D08-NW",
+    "asset": "courtyard-TC03",
+    "title": "住宅院落 43",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      534,
+      0,
+      -963,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "old8_shared_prototypes",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        533.999998,
+        0.2,
+        -999.000006
+      ],
+      "max": [
+        562.000006,
+        4.54,
+        -959.0
+      ]
+    },
+    "variant": "TC03"
+  },
+  {
+    "id": "FROZEN-D08-NE",
+    "asset": "courtyard-TC03",
+    "title": "住宅院落 44",
+    "matrix": [
+      1.0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1.0,
+      0,
+      588,
+      0,
+      -975,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "推测",
+    "basis": "既有 C-alt 44 院交付的原矩阵。住宅形态与落位为设计研究，尚无对应古代宅址的实测定位。",
+    "sourceGroup": "old8_shared_prototypes",
+    "sourceContract": "data/far44/instances-calt.json",
+    "bounds": {
+      "min": [
+        587.999998,
+        0.2,
+        -1011.000006
+      ],
+      "max": [
+        616.000006,
+        4.54,
+        -971.0
+      ]
+    },
+    "variant": "TC03"
+  },
+  {
+    "id": "wall-A-wall-00",
+    "asset": "wall-A-wall-00",
+    "title": "既有城垣研究段",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "walls",
+    "initial": true,
+    "tier": "推测",
+    "basis": "沿已保存城垣示意关系建模的 A/direct 研究版本，形制与衔接为设计推测。当前包含一座广阳门体，其余门位保留缺口。",
+    "sourceContract": "data/west/city-wall-interface.json",
+    "bounds": {
+      "min": [
+        750.32196,
+        0.17,
+        -3953.771484
+      ],
+      "max": [
+        1678.25769,
+        6.2,
+        -3536.665771
+      ]
+    }
+  },
+  {
+    "id": "wall-A-wall-01",
+    "asset": "wall-A-wall-01",
+    "title": "既有城垣研究段",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "walls",
+    "initial": true,
+    "tier": "推测",
+    "basis": "沿已保存城垣示意关系建模的 A/direct 研究版本，形制与衔接为设计推测。当前包含一座广阳门体，其余门位保留缺口。",
+    "sourceContract": "data/west/city-wall-interface.json",
+    "bounds": {
+      "min": [
+        1708.188477,
+        0.17,
+        -3895.457275
+      ],
+      "max": [
+        2473.36084,
+        6.2,
+        -2604.418701
+      ]
+    }
+  },
+  {
+    "id": "wall-A-wall-02",
+    "asset": "wall-A-wall-02",
+    "title": "既有城垣研究段",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "walls",
+    "initial": true,
+    "tier": "推测",
+    "basis": "沿已保存城垣示意关系建模的 A/direct 研究版本，形制与衔接为设计推测。当前包含一座广阳门体，其余门位保留缺口。",
+    "sourceContract": "data/west/city-wall-interface.json",
+    "bounds": {
+      "min": [
+        2494.447266,
+        0.17,
+        -2593.066162
+      ],
+      "max": [
+        2647.085938,
+        6.2,
+        -1820.956909
+      ]
+    }
+  },
+  {
+    "id": "wall-A-wall-03",
+    "asset": "wall-A-wall-03",
+    "title": "既有城垣研究段",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "walls",
+    "initial": true,
+    "tier": "推测",
+    "basis": "沿已保存城垣示意关系建模的 A/direct 研究版本，形制与衔接为设计推测。当前包含一座广阳门体，其余门位保留缺口。",
+    "sourceContract": "data/west/city-wall-interface.json",
+    "bounds": {
+      "min": [
+        2470.058105,
+        0.17,
+        -1789.780518
+      ],
+      "max": [
+        2582.579834,
+        6.2,
+        -474.936005
+      ]
+    }
+  },
+  {
+    "id": "wall-A-wall-04",
+    "asset": "wall-A-wall-04",
+    "title": "既有城垣研究段",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "walls",
+    "initial": true,
+    "tier": "推测",
+    "basis": "沿已保存城垣示意关系建模的 A/direct 研究版本，形制与衔接为设计推测。当前包含一座广阳门体，其余门位保留缺口。",
+    "sourceContract": "data/west/city-wall-interface.json",
+    "bounds": {
+      "min": [
+        2026.310791,
+        0.17,
+        -443.185028
+      ],
+      "max": [
+        2477.114014,
+        6.2,
+        34.693394
+      ]
+    }
+  },
+  {
+    "id": "wall-A-wall-05",
+    "asset": "wall-A-wall-05",
+    "title": "既有城垣研究段",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "walls",
+    "initial": true,
+    "tier": "推测",
+    "basis": "沿已保存城垣示意关系建模的 A/direct 研究版本，形制与衔接为设计推测。当前包含一座广阳门体，其余门位保留缺口。",
+    "sourceContract": "data/west/city-wall-interface.json",
+    "bounds": {
+      "min": [
+        1638.722656,
+        0.17,
+        9.592699
+      ],
+      "max": [
+        1994.483643,
+        6.2,
+        24.968409
+      ]
+    }
+  },
+  {
+    "id": "wall-A-wall-06",
+    "asset": "wall-A-wall-06",
+    "title": "既有城垣研究段",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "walls",
+    "initial": true,
+    "tier": "推测",
+    "basis": "沿已保存城垣示意关系建模的 A/direct 研究版本，形制与衔接为设计推测。当前包含一座广阳门体，其余门位保留缺口。",
+    "sourceContract": "data/west/city-wall-interface.json",
+    "bounds": {
+      "min": [
+        914.121155,
+        0.17,
+        -5.440404
+      ],
+      "max": [
+        1606.895508,
+        6.2,
+        16.927225
+      ]
+    }
+  },
+  {
+    "id": "wall-A-wall-07",
+    "asset": "wall-A-wall-07",
+    "title": "既有城垣研究段",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "walls",
+    "initial": true,
+    "tier": "推测",
+    "basis": "沿已保存城垣示意关系建模的 A/direct 研究版本，形制与衔接为设计推测。当前包含一座广阳门体，其余门位保留缺口。",
+    "sourceContract": "data/west/city-wall-interface.json",
+    "bounds": {
+      "min": [
+        403.925079,
+        0.17,
+        -16.025301
+      ],
+      "max": [
+        882.293884,
+        6.2,
+        1.894121
+      ]
+    }
+  },
+  {
+    "id": "wall-A-wall-10",
+    "asset": "wall-A-wall-10",
+    "title": "既有城垣研究段",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "walls",
+    "initial": true,
+    "tier": "推测",
+    "basis": "沿已保存城垣示意关系建模的 A/direct 研究版本，形制与衔接为设计推测。当前包含一座广阳门体，其余门位保留缺口。",
+    "sourceContract": "data/west/city-wall-interface.json",
+    "bounds": {
+      "min": [
+        -34.18705,
+        0.17,
+        -2616.584717
+      ],
+      "max": [
+        -12.202044,
+        6.2,
+        -1413.725098
+      ]
+    }
+  },
+  {
+    "id": "wall-A-wall-11",
+    "asset": "wall-A-wall-11",
+    "title": "既有城垣研究段",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "walls",
+    "initial": true,
+    "tier": "推测",
+    "basis": "沿已保存城垣示意关系建模的 A/direct 研究版本，形制与衔接为设计推测。当前包含一座广阳门体，其余门位保留缺口。",
+    "sourceContract": "data/west/city-wall-interface.json",
+    "bounds": {
+      "min": [
+        -44.842735,
+        0.17,
+        -3595.974854
+      ],
+      "max": [
+        718.655823,
+        6.2,
+        -2648.489746
+      ]
+    }
+  },
+  {
+    "id": "wall-direct-gate-body-only",
+    "asset": "wall-direct-gate-body-only",
+    "title": "广阳门实体研究",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "walls",
+    "initial": true,
+    "tier": "推测",
+    "basis": "沿已保存城垣示意关系建模的 A/direct 研究版本，形制与衔接为设计推测。当前包含一座广阳门体，其余门位保留缺口。",
+    "sourceContract": "data/west/city-wall-interface.json",
+    "bounds": {
+      "min": [
+        -3.7,
+        6.2,
+        -496.79599
+      ],
+      "max": [
+        3.7,
+        10.3,
+        -482.79599
+      ]
+    }
+  },
+  {
+    "id": "wall-direct-wall-08",
+    "asset": "wall-direct-wall-08",
+    "title": "既有城垣研究段",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "walls",
+    "initial": true,
+    "tier": "推测",
+    "basis": "沿已保存城垣示意关系建模的 A/direct 研究版本，形制与衔接为设计推测。当前包含一座广阳门体，其余门位保留缺口。",
+    "sourceContract": "data/west/city-wall-interface.json",
+    "bounds": {
+      "min": [
+        -8.759327,
+        0.17,
+        -485.79599
+      ],
+      "max": [
+        372.09787,
+        6.2,
+        -8.690771
+      ]
+    }
+  },
+  {
+    "id": "wall-direct-wall-09",
+    "asset": "wall-direct-wall-09",
+    "title": "既有城垣研究段",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "walls",
+    "initial": true,
+    "tier": "推测",
+    "basis": "沿已保存城垣示意关系建模的 A/direct 研究版本，形制与衔接为设计推测。当前包含一座广阳门体，其余门位保留缺口。",
+    "sourceContract": "data/west/city-wall-interface.json",
+    "bounds": {
+      "min": [
+        -19.829439,
+        0.17,
+        -1381.820312
+      ],
+      "max": [
+        4.0,
+        6.2,
+        -493.79599
+      ]
+    }
+  },
+  {
+    "id": "ground-network-ground-stitched",
+    "asset": "ground-network-ground-stitched",
+    "title": "道路连接地面",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "terrain",
+    "initial": false,
+    "tier": "推测",
+    "basis": "C-alt、6 米道路、A/direct 城墙的既有地面组合。network-ground-stitched 三个原子节点整体显示，D08 保留交付规定的单次平移。",
+    "sourceContract": "data/west/ground-atomic-contract.json",
+    "bounds": {
+      "min": [
+        -39.0,
+        0.0,
+        -2622.460693
+      ],
+      "max": [
+        2528.385498,
+        0.21,
+        1224.515625
+      ]
+    },
+    "replaces": [
+      "yong-road-receiver"
+    ]
+  },
+  {
+    "id": "ground-retained",
+    "asset": "ground-retained",
+    "title": "既有保留地面",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "terrain",
+    "initial": true,
+    "tier": "推测",
+    "basis": "C-alt、6 米道路、A/direct 城墙的既有地面组合。network-ground-stitched 三个原子节点整体显示，D08 保留交付规定的单次平移。",
+    "sourceContract": "data/west/ground-atomic-contract.json",
+    "bounds": {
+      "min": [
+        480,
+        0,
+        -1250
+      ],
+      "max": [
+        780,
+        0.21,
+        -700
+      ]
+    }
+  },
+  {
+    "id": "ground-south",
+    "asset": "ground-south",
+    "title": "南区地面",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "terrain",
+    "initial": false,
+    "tier": "推测",
+    "basis": "C-alt、6 米道路、A/direct 城墙的既有地面组合。network-ground-stitched 三个原子节点整体显示，D08 保留交付规定的单次平移。",
+    "sourceContract": "data/west/ground-atomic-contract.json",
+    "bounds": {
+      "min": [
+        486,
+        0,
+        -852
+      ],
+      "max": [
+        710,
+        0.21,
+        -706
+      ]
+    }
+  },
+  {
+    "id": "ground-D08",
+    "asset": "ground-D08",
+    "title": "八院样段地面",
+    "position": [
+      580,
+      0,
+      -960
+    ],
+    "chapter": "terrain",
+    "initial": false,
+    "tier": "推测",
+    "basis": "C-alt、6 米道路、A/direct 城墙的既有地面组合。network-ground-stitched 三个原子节点整体显示，D08 保留交付规定的单次平移。",
+    "sourceContract": "data/west/ground-atomic-contract.json",
+    "bounds": {
+      "min": [
+        520.0,
+        0.0,
+        -1015.0
+      ],
+      "max": [
+        640.0,
+        0.2,
+        -929.0
+      ]
+    }
+  },
+  {
+    "id": "market-main",
+    "asset": "market-main",
+    "title": "市肆功能研究",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "market",
+    "initial": false,
+    "tier": "推测",
+    "basis": "金市示意点附近的五店三摊功能样板，落位及内部经营空间为设计推测。按 N2 合同仅替换原市肆根内指定的 30 个节点，共享屋顶保留。",
+    "sourceContract": "data/west/N2-contract.json",
+    "bounds": {
+      "min": [
+        184.285995,
+        0.0,
+        -1981.18396
+      ],
+      "max": [
+        244.285995,
+        4.53,
+        -1937.18396
+      ]
+    }
+  },
+  {
+    "id": "market-N2",
+    "asset": "market-N2",
+    "title": "交易与储货修订",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "market",
+    "initial": false,
+    "tier": "推测",
+    "basis": "金市示意点附近的五店三摊功能样板，落位及内部经营空间为设计推测。按 N2 合同仅替换原市肆根内指定的 30 个节点，共享屋顶保留。",
+    "sourceContract": "data/west/N2-contract.json",
+    "bounds": {
+      "min": [
+        210.285995,
+        0.2,
+        -1973.53396
+      ],
+      "max": [
+        218.285995,
+        4.33,
+        -1965.68396
+      ]
+    }
+  },
+  {
+    "id": "storage-main",
+    "asset": "storage-main",
+    "title": "仓储作业功能组",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "storage",
+    "initial": false,
+    "tier": "推测",
+    "basis": "太仓示意点附近的既有仓储功能组，保留原位置和地坪。城市保持完整近档展示；中远档仅作为独立备选，不宣称自动切换。三档为同一组，不叠加计数。地块及形态为设计推测，外部道路尚未连接。",
+    "sourceContract": "progress-assets/granary-city-v1/source.json",
+    "bounds": {
+      "min": [
+        2249.714111,
+        0.0,
+        -3699.468994
+      ],
+      "max": [
+        2321.714111,
+        5.15,
+        -3647.468994
+      ]
+    }
+  },
+  {
+    "id": "yong-gate-body-far",
+    "asset": "yong-gate-far",
+    "chapter": "walls",
+    "title": "雍门 · C级设计候选 · 全城远档",
+    "summary": "当前全城远档显示；进入雍门章节时由完整近档替换。位置和形制仍为C级设计。",
+    "matrix": [
+      -0.01162686012685299,
+      0.0,
+      -0.9999324083328247,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.9999324083328247,
+      0.0,
+      -0.01162686012685299,
+      0.0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1.0
+    ],
+    "bounds": {
+      "min": [
+        -21.970934601541217,
+        0.17000000178813934,
+        -1410.439289595516
+      ],
+      "max": [
+        -10.060548094991987,
+        10.400000497698784,
+        -1385.106120560734
+      ]
+    },
+    "initial": true,
+    "tier": "C",
+    "basis": "雍门名与西侧相对方位有文献；本次工程位置由现有C墙端推得，不是实测古门位。未把北魏西阳门轴线前推至东汉。"
+  },
+  {
+    "id": "yong-gate-interface-far",
+    "asset": "yong-apron-far",
+    "chapter": "walls",
+    "title": "雍门接墙与汇流地面 · 全城远档",
+    "summary": "当前全城远档显示；进入雍门章节时由完整近档替换。位置和形制仍为C级设计。",
+    "matrix": [
+      -0.01162686012685299,
+      0.0,
+      -0.9999324083328247,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.9999324083328247,
+      0.0,
+      -0.01162686012685299,
+      0.0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1.0
+    ],
+    "bounds": {
+      "min": [
+        -25.663923039269804,
+        -0.030000001192092896,
+        -1413.8181577197688
+      ],
+      "max": [
+        -6.367559657263401,
+        6.199999734759331,
+        -1381.7273649513559
+      ]
+    },
+    "initial": true,
+    "tier": "C",
+    "basis": "雍门名与西侧相对方位有文献；本次工程位置由现有C墙端推得，不是实测古门位。未把北魏西阳门轴线前推至东汉。"
+  },
+  {
+    "id": "yong-road-link",
+    "asset": "yong-road-link-far",
+    "chapter": "terrain",
+    "title": "雍门内侧接街 · C级设计",
+    "summary": "约49.6米C级工程接驳；默认远档与近档几何一致，仅材质细节不同。连接到现有主路的真实接点，不证明全城网络连通。",
+    "matrix": [
+      -0.01162686012685299,
+      0.0,
+      -0.9999324083328247,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.9999324083328247,
+      0.0,
+      -0.01162686012685299,
+      0.0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1.0
+    ],
+    "bounds": {
+      "min": [
+        -6.533824938806351,
+        -0.030000001192092896,
+        -1399.3831603020778
+      ],
+      "max": [
+        43.10000704347841,
+        0.20999999344348907,
+        -1396.3831601723928
+      ]
+    },
+    "initial": true,
+    "tier": "C",
+    "basis": "真实已建地面边界与净空的工程匹配；无历史道路测绘定位证据。"
+  },
+  {
+    "id": "yong-road-link-near",
+    "asset": "yong-road-link-near",
+    "chapter": "terrain",
+    "title": "雍门内侧接街 · C级设计",
+    "summary": "约49.6米C级工程接驳；默认远档与近档几何一致，仅材质细节不同。连接到现有主路的真实接点，不证明全城网络连通。",
+    "matrix": [
+      -0.01162686012685299,
+      0.0,
+      -0.9999324083328247,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.9999324083328247,
+      0.0,
+      -0.01162686012685299,
+      0.0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1.0
+    ],
+    "bounds": {
+      "min": [
+        -6.533824938806351,
+        -0.030000001192092896,
+        -1399.3831603020778
+      ],
+      "max": [
+        43.10000704347841,
+        0.20999999344348907,
+        -1396.3831601723928
+      ]
+    },
+    "initial": false,
+    "tier": "C",
+    "basis": "真实已建地面边界与净空的工程匹配；无历史道路测绘定位证据。",
+    "replaces": [
+      "yong-road-link"
+    ]
+  },
+  {
+    "id": "yong-road-receiver",
+    "asset": "yong-road-receiver",
+    "title": "雍门所接主路连通片 · C级现有模型",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "chapter": "terrain",
+    "initial": true,
+    "tier": "C",
+    "basis": "来自既有C-alt六米道路模型的209三角连通分量，无损抽取而非新增历史道路。GLB内平移保留，城市实例为恒等变换；原network仍遵守三节点整体加载合同。",
+    "sourceContract": "progress-assets/yong-road-link-v2/source.json",
+    "bounds": {
+      "min": [
+        43.100006103515625,
+        0.0,
+        -2622.460693359375
+      ],
+      "max": [
+        1445.49072265625,
+        0.20999999344348907,
+        -835.9883422851562
+      ]
+    },
+    "summary": "无损提取现有primary的209三角连通分量，范围约1.4×1.8千米，非50米短片。完整道路章加载原network后替换本片；默认显示不等于完整网络。"
+  },
+  {
+    "id": "C_NORTH_INFILL_01",
+    "asset": "north-three-opposed_rooms-far",
+    "title": "住宅院落 45 · 北缘新增",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      586,
+      0,
+      -1234,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "C",
+    "basis": "沿用已建18×24米院落组合，在既有住宅试验区地面上新增C级设计落位。东汉陶院落只作功能组合比较，不证明洛阳古代宅址、院数或尺寸。",
+    "sourceGroup": "north_three_infill_C",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "variant": "opposed_rooms",
+    "bounds": {
+      "min": [
+        576.9999980926514,
+        0.19999992847442627,
+        -1246.000002861023
+      ],
+      "max": [
+        595.000002861023,
+        5.128161907196045,
+        -1221.8499975204468
+      ]
+    },
+    "summary": "住宅试验区北缘新增三院之一；全城用现有远档，进入北缘三院章节加载完整近档。未达到013近景质量或连续人体通行认证。"
+  },
+  {
+    "id": "C_NORTH_INFILL_01-near",
+    "asset": "north-three-opposed_rooms-near",
+    "title": "住宅院落 45 · 北缘新增",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      586,
+      0,
+      -1234,
+      1
+    ],
+    "chapter": "north-three",
+    "initial": false,
+    "tier": "C",
+    "basis": "沿用已建18×24米院落组合，在既有住宅试验区地面上新增C级设计落位。东汉陶院落只作功能组合比较，不证明洛阳古代宅址、院数或尺寸。",
+    "sourceGroup": "north_three_infill_C",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "variant": "opposed_rooms",
+    "bounds": {
+      "min": [
+        576.9999980926514,
+        0.19999992847442627,
+        -1246.000002861023
+      ],
+      "max": [
+        595.000002861023,
+        5.128161907196045,
+        -1221.8499975204468
+      ]
+    },
+    "summary": "住宅试验区北缘新增三院之一；全城用现有远档，进入北缘三院章节加载完整近档。未达到013近景质量或连续人体通行认证。",
+    "replaces": [
+      "C_NORTH_INFILL_01"
+    ]
+  },
+  {
+    "id": "C_NORTH_INFILL_02",
+    "asset": "north-three-compact_work-far",
+    "title": "住宅院落 46 · 北缘新增",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      612,
+      0,
+      -1234,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "C",
+    "basis": "沿用已建18×24米院落组合，在既有住宅试验区地面上新增C级设计落位。东汉陶院落只作功能组合比较，不证明洛阳古代宅址、院数或尺寸。",
+    "sourceGroup": "north_three_infill_C",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "variant": "compact_work",
+    "bounds": {
+      "min": [
+        602.9999980926514,
+        0.19999992847442627,
+        -1246.000002861023
+      ],
+      "max": [
+        621.000002861023,
+        4.829568386077881,
+        -1221.8499975204468
+      ]
+    },
+    "summary": "住宅试验区北缘新增三院之一；全城用现有远档，进入北缘三院章节加载完整近档。未达到013近景质量或连续人体通行认证。"
+  },
+  {
+    "id": "C_NORTH_INFILL_02-near",
+    "asset": "north-three-compact_work-near",
+    "title": "住宅院落 46 · 北缘新增",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      612,
+      0,
+      -1234,
+      1
+    ],
+    "chapter": "north-three",
+    "initial": false,
+    "tier": "C",
+    "basis": "沿用已建18×24米院落组合，在既有住宅试验区地面上新增C级设计落位。东汉陶院落只作功能组合比较，不证明洛阳古代宅址、院数或尺寸。",
+    "sourceGroup": "north_three_infill_C",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "variant": "compact_work",
+    "bounds": {
+      "min": [
+        602.9999980926514,
+        0.19999992847442627,
+        -1246.000002861023
+      ],
+      "max": [
+        621.000002861023,
+        4.829568386077881,
+        -1221.8499975204468
+      ]
+    },
+    "summary": "住宅试验区北缘新增三院之一；全城用现有远档，进入北缘三院章节加载完整近档。未达到013近景质量或连续人体通行认证。",
+    "replaces": [
+      "C_NORTH_INFILL_02"
+    ]
+  },
+  {
+    "id": "C_NORTH_INFILL_03",
+    "asset": "north-three-workyard-far",
+    "title": "住宅院落 47 · 北缘新增",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      638,
+      0,
+      -1234,
+      1
+    ],
+    "chapter": "residential",
+    "initial": true,
+    "tier": "C",
+    "basis": "沿用已建18×24米院落组合，在既有住宅试验区地面上新增C级设计落位。东汉陶院落只作功能组合比较，不证明洛阳古代宅址、院数或尺寸。",
+    "sourceGroup": "north_three_infill_C",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "variant": "workyard",
+    "bounds": {
+      "min": [
+        628.9999980926514,
+        0.19999992847442627,
+        -1246.000002861023
+      ],
+      "max": [
+        647.000002861023,
+        5.128161907196045,
+        -1221.8499975204468
+      ]
+    },
+    "summary": "住宅试验区北缘新增三院之一；全城用现有远档，进入北缘三院章节加载完整近档。未达到013近景质量或连续人体通行认证。"
+  },
+  {
+    "id": "C_NORTH_INFILL_03-near",
+    "asset": "north-three-workyard-near",
+    "title": "住宅院落 47 · 北缘新增",
+    "matrix": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      638,
+      0,
+      -1234,
+      1
+    ],
+    "chapter": "north-three",
+    "initial": false,
+    "tier": "C",
+    "basis": "沿用已建18×24米院落组合，在既有住宅试验区地面上新增C级设计落位。东汉陶院落只作功能组合比较，不证明洛阳古代宅址、院数或尺寸。",
+    "sourceGroup": "north_three_infill_C",
+    "sourceContract": "progress-assets/north-three-v1/source.json",
+    "variant": "workyard",
+    "bounds": {
+      "min": [
+        628.9999980926514,
+        0.19999992847442627,
+        -1246.000002861023
+      ],
+      "max": [
+        647.000002861023,
+        5.128161907196045,
+        -1221.8499975204468
+      ]
+    },
+    "summary": "住宅试验区北缘新增三院之一；全城用现有远档，进入北缘三院章节加载完整近档。未达到013近景质量或连续人体通行认证。",
+    "replaces": [
+      "C_NORTH_INFILL_03"
+    ]
+  }
+];
+
+let chapters = [
+  {
+    "camera": {
+      "position": [
+        21.644511224702,
+        25.17000000178814,
+        -1427.2125656045973
+      ],
+      "target": [
+        -16.0157413482666,
+        4.170000001788139,
+        -1397.772705078125
+      ]
+    },
+    "id": "yong-gate",
+    "title": "雍门与通口",
+    "subtitle": "近档按章加载 · 内侧接街 · C级设计落位",
+    "nodeIds": [
+      "yong-gate-body",
+      "yong-gate-interface"
+    ],
+    "loadNodeIds": [
+      "yong-gate-body",
+      "yong-gate-interface",
+      "yong-road-link-near",
+      "yong-road-receiver"
+    ],
+    "tier": "C",
+    "basis": "两翼复用旧试放几何并配连续地坪，约49.6米C级接驳已连至既有主路分量。墙端匹配和模型连续不证明历史道路位置、完整交通网络或结构安全。"
+  },
+  {
+    "id": "walls",
+    "title": "城墙与城门",
+    "subtitle": "既有城垣 · 一座广阳门实体",
+    "nodeIds": [
+      "wall-A-wall-00",
+      "wall-A-wall-01",
+      "wall-A-wall-02",
+      "wall-A-wall-03",
+      "wall-A-wall-04",
+      "wall-A-wall-05",
+      "wall-A-wall-06",
+      "wall-A-wall-07",
+      "wall-A-wall-10",
+      "wall-A-wall-11",
+      "wall-direct-gate-body-only",
+      "wall-direct-wall-08",
+      "wall-direct-wall-09"
+    ],
+    "loadNodeIds": [
+      "wall-A-wall-00",
+      "wall-A-wall-01",
+      "wall-A-wall-02",
+      "wall-A-wall-03",
+      "wall-A-wall-04",
+      "wall-A-wall-05",
+      "wall-A-wall-06",
+      "wall-A-wall-07",
+      "wall-A-wall-10",
+      "wall-A-wall-11",
+      "wall-direct-gate-body-only",
+      "wall-direct-wall-08",
+      "wall-direct-wall-09"
+    ],
+    "camera": {
+      "position": [
+        -52,
+        32,
+        -430
+      ],
+      "target": [
+        0,
+        3,
+        -489.796
+      ]
+    },
+    "tier": "推测",
+    "basis": "采用既有 A/direct 研究资产。十二门位有示意关系，实体门楼目前仅广阳门。",
+    "sourceIds": [
+      "city_wall_schematic_B",
+      "gate_guangyang_B"
+    ],
+    "researchModelIds": [
+      "research-north13-kaiyang-K",
+      "research-north13-pingcheng-P",
+      "research-north13-shangxi-X",
+      "research-north13-yong-Y",
+      "research-north13-zhongdong-Z",
+      "research-mao-gate"
+    ]
+  },
+  {
+    "id": "residential",
+    "title": "住宅院落",
+    "subtitle": "47 座已落位院落 · 原44院与北缘3院",
+    "nodeIds": [
+      "C02-018",
+      "C02-019",
+      "C02-020",
+      "C02-021",
+      "C02-022",
+      "C02-023",
+      "C02-024",
+      "C02-025",
+      "C02-026",
+      "C02-001",
+      "C02-002",
+      "C02-027",
+      "C02-028",
+      "C02-029",
+      "C02-030",
+      "C02-031",
+      "C02-003",
+      "C02-004",
+      "C02-005",
+      "C02-006",
+      "C02-007",
+      "C02-008",
+      "C02-009",
+      "C02-010",
+      "C02-011",
+      "C02-012",
+      "C02-013",
+      "C02-032",
+      "C02-014",
+      "C02-015",
+      "C02-016",
+      "C02-017",
+      "C02-033",
+      "C02-034",
+      "C02-035",
+      "C02-036",
+      "FROZEN-D08-S1",
+      "FROZEN-D08-S2",
+      "FROZEN-D08-S3",
+      "FROZEN-D08-S4",
+      "FROZEN-D08-M",
+      "FROZEN-D08-E",
+      "FROZEN-D08-NW",
+      "FROZEN-D08-NE",
+      "C_NORTH_INFILL_01",
+      "C_NORTH_INFILL_02",
+      "C_NORTH_INFILL_03"
+    ],
+    "loadNodeIds": [
+      "C02-018",
+      "C02-019",
+      "C02-020",
+      "C02-021",
+      "C02-022",
+      "C02-023",
+      "C02-024",
+      "C02-025",
+      "C02-026",
+      "C02-001",
+      "C02-002",
+      "C02-027",
+      "C02-028",
+      "C02-029",
+      "C02-030",
+      "C02-031",
+      "C02-003",
+      "C02-004",
+      "C02-005",
+      "C02-006",
+      "C02-007",
+      "C02-008",
+      "C02-009",
+      "C02-010",
+      "C02-011",
+      "C02-012",
+      "C02-013",
+      "C02-032",
+      "C02-014",
+      "C02-015",
+      "C02-016",
+      "C02-017",
+      "C02-033",
+      "C02-034",
+      "C02-035",
+      "C02-036",
+      "FROZEN-D08-S1",
+      "FROZEN-D08-S2",
+      "FROZEN-D08-S3",
+      "FROZEN-D08-S4",
+      "FROZEN-D08-M",
+      "FROZEN-D08-E",
+      "FROZEN-D08-NW",
+      "FROZEN-D08-NE",
+      "C_NORTH_INFILL_01",
+      "C_NORTH_INFILL_02",
+      "C_NORTH_INFILL_03",
+      "ground-retained"
+    ],
+    "camera": {
+      "position": [
+        590,
+        220,
+        -680
+      ],
+      "target": [
+        590,
+        0,
+        -790
+      ]
+    },
+    "tier": "推测",
+    "basis": "原36个C02与8个D08院的矩阵不变；北缘新增三种已交付组合，共47个C级设计落位。全部不是考古院址/院数复原。",
+    "researchModelIds": [
+      "research-north13-court-A2",
+      "research-north13-court-B",
+      "research-north13-court-B2",
+      "research-north13-court-TC03-2",
+      "research-north13-court-A"
+    ]
+  },
+  {
+    "id": "market",
+    "title": "市肆街景",
+    "subtitle": "五店三摊 · 交易与储货样板",
+    "nodeIds": [
+      "market-main",
+      "market-N2"
+    ],
+    "loadNodeIds": [
+      "market-main",
+      "market-N2"
+    ],
+    "bounds": {
+      "min": [
+        184.285995,
+        0.0,
+        -1981.18396
+      ],
+      "max": [
+        244.285995,
+        4.53,
+        -1937.18396
+      ]
+    },
+    "tier": "推测",
+    "basis": "金市位置取自既有研究示意点，现有功能组的街面与内部安排为设计研究。",
+    "sourceIds": [
+      "region_jin_B"
+    ]
+  },
+  {
+    "id": "storage",
+    "title": "仓储作业",
+    "subtitle": "完整仓储组 · 外部连接待建",
+    "nodeIds": [
+      "storage-main"
+    ],
+    "loadNodeIds": [
+      "storage-main"
+    ],
+    "camera": {
+      "position": [
+        2349.714,
+        60,
+        -3597.469
+      ],
+      "target": [
+        2285.714,
+        0,
+        -3673.469
+      ]
+    },
+    "tier": "推测",
+    "basis": "展示已整理仓储组，独立 A/B 仓房与说明地面不会叠加为新增建筑。",
+    "sourceIds": [
+      "region_taicang_B"
+    ]
+  },
+  {
+    "id": "ritual",
+    "title": "礼制研究",
+    "subtitle": "灵台与太学 · 独立模型研究",
+    "nodeIds": [],
+    "loadNodeIds": [],
+    "researchModelIds": [
+      "research-lingtai",
+      "research-taixue-A",
+      "research-taixue-B"
+    ],
+    "camera": null,
+    "tier": "推测",
+    "basis": "礼制模型已交付，metadata 的 cityPlacement 为 null。采用独立局部模型视图展示，城市位置等待内容资料配准。",
+    "defaultResearchModel": "research-lingtai"
+  },
+  {
+    "id": "terrain",
+    "title": "道路与地面",
+    "subtitle": "已建道路与地面组合",
+    "nodeIds": [
+      "ground-network-ground-stitched",
+      "ground-retained",
+      "ground-south",
+      "ground-D08",
+      "yong-road-link",
+      "yong-road-link-near",
+      "yong-road-receiver"
+    ],
+    "loadNodeIds": [
+      "ground-network-ground-stitched",
+      "ground-retained",
+      "ground-south",
+      "ground-D08",
+      "yong-road-link-near",
+      "yong-road-receiver"
+    ],
+    "camera": {
+      "position": [
+        800,
+        500,
+        -350
+      ],
+      "target": [
+        330,
+        0,
+        -650
+      ]
+    },
+    "tier": "推测",
+    "basis": "按现有原子地面合同展示完整四文件组合，保留道路关系与设计地面。古河渠位置仍未配准。"
+  },
+  {
+    "id": "north-three",
+    "title": "住宅北缘三院",
+    "subtitle": "三屋对置、紧凑作业与足碓院 · C级落位",
+    "nodeIds": [
+      "C_NORTH_INFILL_01-near",
+      "C_NORTH_INFILL_02-near",
+      "C_NORTH_INFILL_03-near"
+    ],
+    "loadNodeIds": [
+      "C_NORTH_INFILL_01-near",
+      "C_NORTH_INFILL_02-near",
+      "C_NORTH_INFILL_03-near",
+      "ground-retained"
+    ],
+    "camera": {
+      "position": [
+        684,
+        52,
+        -1178
+      ],
+      "target": [
+        612,
+        2,
+        -1234
+      ]
+    },
+    "tier": "C",
+    "basis": "复用已交付三种院落及原retained整片地面；不改变旧44院或待部署13院。模型地面连续不代表历史巷道复原。"
+  }
+];
+
+let initialCamera = {
+  "position": [
+    590,
+    220,
+    -680
+  ],
+  "target": [
+    590,
+    0,
+    -790
+  ]
+};
+
+let overview = {
+  "camera": {
+    "position": [
+      3300,
+      3000,
+      1000
+    ],
+    "target": [
+      1200,
+      0,
+      -1800
+    ]
+  },
+  "bounds": {
+    "min": [
+      -44.842735,
+      0.17,
+      -3953.771484
+    ],
+    "max": [
+      2647.085938,
+      10.3,
+      34.693394
+    ]
+  }
+};
+
+let researchModels = [
+  {
+    "id": "research-lingtai",
+    "asset": "study-lingtai",
+    "title": "灵台类型研究",
+    "chapter": "ritual",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "依据已交付的独立类型研究模型观察形体。原 metadata 的 cityPlacement 为空，当前以自身局部米坐标单独展示。",
+    "bounds": {
+      "min": [
+        -34.0,
+        -0.3,
+        -34.0
+      ],
+      "max": [
+        34.0,
+        6,
+        34.0
+      ]
+    },
+    "coverPath": "model-library/lingtai/cover-whole.png"
+  },
+  {
+    "id": "research-taixue-A",
+    "asset": "study-taixue-A",
+    "title": "太学长堂 · A方案入口修订",
+    "chapter": "ritual",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "已交付的太学长堂 A v3.2 入口修订模型，踏步调整至柱间开间。长堂尺度、席位与路线属于设计推测，当前以局部米坐标单独展示。",
+    "bounds": {
+      "min": [
+        -18.799999237060547,
+        0.0,
+        -3.799999952316284
+      ],
+      "max": [
+        18.799999237060547,
+        6.130000114440918,
+        4.849999904632568
+      ]
+    },
+    "coverPath": "cities/luoyang/progress-assets/taixue-A-v3.2/after-whole.webp",
+    "description": "踏步调整到柱间开间，保留长堂的柱网、梁架、屋顶与席位。",
+    "sourceCommit": "95db183586d30d7e4c8e7574f267507bbbcdd9e3",
+    "sourceContract": "progress-assets/taixue-A-v3.2/source.json",
+    "sourceVersion": "3.2",
+    "deliveryStatus": "A方案入口已修订 · 独立研究"
+  },
+  {
+    "id": "research-taixue-B",
+    "asset": "study-taixue-B",
+    "title": "太学长堂 · B方案",
+    "chapter": "ritual",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "依据已交付的独立类型研究模型观察形体。原 metadata 的 cityPlacement 为空，当前以自身局部米坐标单独展示。",
+    "bounds": {
+      "min": [
+        -26.0,
+        -0.4,
+        -9.5
+      ],
+      "max": [
+        26.0,
+        6.93,
+        9.5
+      ]
+    },
+    "coverPath": "model-library/taixue/cover-B-whole.png"
+  },
+  {
+    "id": "research-north13-kaiyang-K",
+    "asset": "study-north13-kaiyang-K",
+    "title": "开阳门 · 已建研究候选",
+    "chapter": "walls",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "已交付的城门研究候选，以自身局部坐标单独展示。来源 placement 的 activation 为 false，所需城墙叠层与正式落位仍待确认。",
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourcePackage": "luoyang-kaiyang-gate-study-v1",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "bounds": {
+      "min": [
+        -13.600000381469727,
+        0,
+        -6.310879707336426
+      ],
+      "max": [
+        13.600000381469727,
+        10.230000495910645,
+        6.310879707336426
+      ]
+    },
+    "deliveryStatus": "已交付 · 待合入城景"
+  },
+  {
+    "id": "research-north13-court-A2",
+    "asset": "study-north13-court-A2",
+    "title": "北区院落 · 生活院修订",
+    "chapter": "residential",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "已交付的北区院落修订研究，以自身局部坐标单独展示。城市合入与原有地块替换仍待确认。",
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourcePackage": "luoyang-north-four-courts-v2",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        4.489999771118164,
+        12.150002479553223
+      ]
+    },
+    "deliveryStatus": "已交付 · 待合入城景"
+  },
+  {
+    "id": "research-north13-court-B",
+    "asset": "study-north13-court-B",
+    "title": "北区院落 · 储藏作业院",
+    "chapter": "residential",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "已交付的北区院落修订研究，以自身局部坐标单独展示。城市合入与原有地块替换仍待确认。",
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourcePackage": "luoyang-north-four-courts-v2",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        5.519999980926514,
+        12.150002479553223
+      ]
+    },
+    "deliveryStatus": "已交付 · 待合入城景"
+  },
+  {
+    "id": "research-north13-court-B2",
+    "asset": "study-north13-court-B2",
+    "title": "北区院落 · 储藏作业院修订",
+    "chapter": "residential",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "已交付的北区院落修订研究，以自身局部坐标单独展示。城市合入与原有地块替换仍待确认。",
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourcePackage": "luoyang-north-four-courts-v2",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        5.269999980926514,
+        12.150002479553223
+      ]
+    },
+    "deliveryStatus": "已交付 · 待合入城景"
+  },
+  {
+    "id": "research-north13-court-TC03-2",
+    "asset": "study-north13-court-TC03-2",
+    "title": "北区院落 · 周边院落",
+    "chapter": "residential",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "已交付的北区院落修订研究，以自身局部坐标单独展示。城市合入与原有地块替换仍待确认。",
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourcePackage": "luoyang-north-perimeter-v1",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "bounds": {
+      "min": [
+        -2.4482617391186068e-06,
+        0.19999992847442627,
+        -36.000003814697266
+      ],
+      "max": [
+        28.0000057220459,
+        4.539999961853027,
+        0.15000060200691223
+      ]
+    },
+    "deliveryStatus": "已交付 · 待合入城景"
+  },
+  {
+    "id": "research-north13-court-A",
+    "asset": "study-north13-court-A",
+    "title": "北区院落 · 生活院",
+    "chapter": "residential",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "已交付的北区院落修订研究，以自身局部坐标单独展示。城市合入与原有地块替换仍待确认。",
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourcePackage": "luoyang-north-second-row-v1",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "bounds": {
+      "min": [
+        -9.000001907348633,
+        0.19999992847442627,
+        -12.00000286102295
+      ],
+      "max": [
+        9.00000286102295,
+        4.489999771118164,
+        12.15000057220459
+      ]
+    },
+    "deliveryStatus": "已交付 · 待合入城景"
+  },
+  {
+    "id": "research-north13-pingcheng-P",
+    "asset": "study-north13-pingcheng-P",
+    "title": "平城门 · 已建研究候选",
+    "chapter": "walls",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "已交付的城门研究候选，以自身局部坐标单独展示。来源 placement 的 activation 为 false，所需城墙叠层与正式落位仍待确认。",
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourcePackage": "luoyang-pingcheng-gate-study-v1",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "bounds": {
+      "min": [
+        -14.061697959899902,
+        0,
+        -6.350925445556641
+      ],
+      "max": [
+        14.061697959899902,
+        10.24000072479248,
+        6.350925445556641
+      ]
+    },
+    "deliveryStatus": "已交付 · 待合入城景"
+  },
+  {
+    "id": "research-north13-shangxi-X",
+    "asset": "study-north13-shangxi-X",
+    "title": "上西门 · 已建研究候选",
+    "chapter": "walls",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "已交付的城门研究候选，以自身局部坐标单独展示。来源 placement 的 activation 为 false，所需城墙叠层与正式落位仍待确认。",
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourcePackage": "luoyang-shangxi-gate-study-v1",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "bounds": {
+      "min": [
+        -13.46119213104248,
+        0,
+        -5.751530647277832
+      ],
+      "max": [
+        13.46119213104248,
+        11.34000015258789,
+        5.751530647277832
+      ]
+    },
+    "deliveryStatus": "已交付 · 待合入城景"
+  },
+  {
+    "id": "research-north13-yong-Y",
+    "asset": "study-north13-yong-Y",
+    "title": "雍门 · 已建研究候选",
+    "chapter": "walls",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "已交付的城门研究候选，以自身局部坐标单独展示。来源 placement 的 activation 为 false，所需城墙叠层与正式落位仍待确认。",
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourcePackage": "luoyang-yong-gate-study-v1",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "bounds": {
+      "min": [
+        -12.600000381469727,
+        0,
+        -5.811703681945801
+      ],
+      "max": [
+        12.600000381469727,
+        10.230000495910645,
+        5.811703681945801
+      ]
+    },
+    "deliveryStatus": "已交付 · 待合入城景"
+  },
+  {
+    "id": "research-north13-zhongdong-Z",
+    "asset": "study-north13-zhongdong-Z",
+    "title": "中东门 · 已建研究候选",
+    "chapter": "walls",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "已交付的城门研究候选，以自身局部坐标单独展示。来源 placement 的 activation 为 false，所需城墙叠层与正式落位仍待确认。",
+    "sourceContract": "progress-assets/north13-gates/source.json",
+    "sourcePackage": "luoyang-zhongdong-gate-study-v1.1",
+    "sourceCommit": "2e80576f26c3cb3c08648d6e8c9507f89f0fe1bc",
+    "bounds": {
+      "min": [
+        -12.600000381469727,
+        0,
+        -5
+      ],
+      "max": [
+        12.600000381469727,
+        10.458000183105469,
+        5
+      ]
+    },
+    "deliveryStatus": "已交付 · 待合入城景"
+  },
+  {
+    "id": "research-mao-gate",
+    "asset": "study-mao-gate",
+    "title": "旄门 · 已建研究候选",
+    "summary": "三洞门楼与登临附件的完整近景研究模型。可转动查看门洞、屋面和上层连接。",
+    "chapter": "walls",
+    "space": "local-study",
+    "cityPlacement": null,
+    "initial": false,
+    "tier": "推测",
+    "basis": "旄门名及三洞类比来自交付研究资料，形制与尺寸属于设计推测。登临附件为工程提案，城市落位与城墙、道路接续待核。当前展示完整静态模型。",
+    "sourceCommit": "0e891604d47abeacc9ed1733b9be486d2d65e9af",
+    "sourceContract": "progress-assets/mao-gate/source.json",
+    "bounds": {
+      "min": [
+        -14.883401870727539,
+        -0.1599999964237213,
+        -6.558533191680908
+      ],
+      "max": [
+        16.950000762939453,
+        10.864999771118164,
+        6.558533191680908
+      ]
+    },
+    "deliveryStatus": "已交付 · 待合入城景"
+  }
+];
+
+let provenance = {
+  "id": "luoyang-m1-existing-progress",
+  "coordinateFrame": {
+    "id": "luoyang-local-schematic-v01",
+    "units": "schematic engineering metres",
+    "axes": "glTF X diagram east, Y up, Z negative diagram north",
+    "geographicOrigin": null,
+    "rotationToTrueNorth": null
+  },
+  "counts": {
+    "courtyards": 47,
+    "cityWallAssets": 15,
+    "builtGateBodies": 2,
+    "marketShops": 5,
+    "marketStalls": 3,
+    "independentResearchModels": 14,
+    "deliveredNorthCourtyardResearchTypes": 5,
+    "deliveredGateResearchCandidates": 6
+  },
+  "sourceContracts": [
+    {
+      "path": "data/far44/instances-calt.json",
+      "sha256": "e39fdafb016c9ff7f42e25bfcbfe37152f381fac84ffe2cca11cd6fc936fdf7e"
+    },
+    {
+      "path": "data/far44/preflight-contract.json",
+      "sha256": "c9aafa7d22100deb141c554deffd07da67818af711a75cb6f36144fe68f9cc50"
+    },
+    {
+      "path": "data/west/city-wall-interface.json",
+      "sha256": "ca75d115d49d38a53c66258af12e6e455d314f0f75548899e021276c5b100543"
+    },
+    {
+      "path": "data/west/ground-atomic-contract.json",
+      "sha256": "7f26720bf40fc8cd7f7d0b445398d889fcc70c407f7cc7e26e4acd0eb6332367"
+    },
+    {
+      "path": "data/west/N2-contract.json",
+      "sha256": "498f51fcd0723da69ab1b97c56f3de004a449a86e0e322dedc6489446a00e2cd"
+    },
+    {
+      "path": "data/west/market-interface.json",
+      "sha256": "2957184accc87e5c2089987c71023cd09a8ef0274b2daab1fce4d39623606347"
+    },
+    {
+      "path": "data/west/storage-interface.json",
+      "sha256": "4f3ccae9891c2fcd2ae3d962c3740a4b53eac7faea872b5ce28596cf1a62c2b3"
+    },
+    {
+      "path": "data/evidence/evidence-geometry.json",
+      "sha256": "fa8b7002869e01e981d2b2679c327a2f1db957119e55537e06289ca59e5ba7c7"
+    },
+    {
+      "path": "data/evidence/stage-contract.json",
+      "sha256": "3227460643f5c8df8345ff750b128a27a8a5a497ab426ddcaa3574f0aafa705b"
+    },
+    {
+      "path": "progress-assets/north13-gates/source.json",
+      "sha256": "dc16990098026ab441455636507de821a5869e82b4576073f58a77f46fdab515"
+    },
+    {
+      "path": "progress-assets/mao-gate/source.json",
+      "sha256": "95589c004a939a4adcb76fe005b32a1ebf6c5645a37106d045708d0fb0c4ee12"
+    },
+    {
+      "path": "progress-assets/taixue-A-v3.2/source.json",
+      "sha256": "535e10ae94ef57dda5bd608f0d16a8736a71370774b5b08c732c1fcbe9653083",
+      "sourceCommit": "95db183586d30d7e4c8e7574f267507bbbcdd9e3"
+    },
+    {
+      "path": "progress-assets/flat/source.json",
+      "sha256": "ddd1445c1dddabc7f2134b4dc0c3fae37484e619099ea549a4104bf483b486c1"
+    },
+    {
+      "path": "progress-assets/north-three-v1/source.json",
+      "sha256": "d2cadd21e9b5fc9a3f7cee23927681a957118734c93a047cecab1038cc39c249"
+    },
+    {
+      "path": "progress-assets/granary-city-v1/source.json",
+      "sha256": "30e74bda8a965f4f7c84aaa32bdb7a179680b6163150584cdeb58de3e3f12639"
+    },
+    {
+      "path": "progress-assets/yong-city-v1/source.json",
+      "sha256": "325fb5caa15ee631896495c2c71b93e4b0267933c15bfc3fbd9f6be050e8f238"
+    },
+    {
+      "path": "progress-assets/yong-road-link-v2/source.json",
+      "sha256": "3e402679151868949efe5733ca9ebee4ad12a6bea45e4b302e4b9f2a12b1b7d5"
+    }
+  ],
+  "initialModelBytes": 2948644,
+  "allCityModelBytes": 19063572,
+  "limits": [
+    "原44院与新增3院均为有记录的C级设计落位，数量不对应古代宅址。",
+    "城垣和门位使用示意关系，形体与住宅落位属于设计推测。",
+    "北宫新墙与古水系仍未配准，相关几何保留空缺。"
+  ],
+  "researchGeometryPolicy": "Independent local model views. cityPlacement=null is preserved; delivered gate candidates with activation=false are not activated in the city.",
+  "studyReplacements": [
+    {
+      "assetId": "study-taixue-A",
+      "instanceId": "research-taixue-A",
+      "sourceVersion": "3.2",
+      "sourceCommit": "95db183586d30d7e4c8e7574f267507bbbcdd9e3",
+      "sourceContract": "progress-assets/taixue-A-v3.2/source.json",
+      "cityPlacement": null
+    }
+  ]
+};
+
+// BEGIN Z09 Z14 REVIEWED CONTENT C01
+// Additive placement only: original assets, nodes, matrices, and 47 courtyard count stay unchanged.
+const z09z14ContentAsset0 = {
+  "id": "z09-civic-A-C01",
+  "tier": "C",
+  "bounds": {
+    "min": [
+      -9.0,
+      -0.18000000715255737,
+      -15.0
+    ],
+    "max": [
+      16.0,
+      4.829999923706055,
+      14.0
+    ]
+  },
+  "sourceContract": "progress-assets/z09-civic-service-C01/source.json",
+  "path": "progress-assets/z09-civic-service-C01/z09-civic-A-LOD2.glb",
+  "bytes": 76424,
+  "sha256": "42b7a7b977d49431b839f93b7a164e0d44e96cc80f59a0c71c16cc6fd5e831b5",
+  "midPath": "progress-assets/z09-civic-service-C01/z09-civic-A-LOD1.glb",
+  "midBytes": 1865864,
+  "midSha256": "6479039dd2854e4aeccf3518ed9c3def9e6a09309dcb026d8cb324e36f4062f2",
+  "nearPath": "progress-assets/z09-civic-service-C01/z09-civic-A-LOD0.glb",
+  "nearBytes": 4213512,
+  "nearSha256": "4e7c4430f8800e9e687be60b898516547a7e5eab4ee44d4f257cc3ba7575ba20"
+};
+assets.push((({ path, nearPath, midPath, ...asset }) => ({ ...asset, sourcePath: path, url: cityURL(path), nearUrl: cityURL(nearPath), midUrl: cityURL(midPath) }))(z09z14ContentAsset0));
+nodes.push({
+  "id": "Z09-CIVIC-SERVICE-C01",
+  "asset": "z09-civic-A-C01",
+  "title": "官署附属文书与接待建筑组 · C级设计",
+  "summary": "复用H96、H64和G10，新增地坪与四处真实门阶。只装A布局；B为互斥独立方案。",
+  "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2225,
+    0.2,
+    -600,
+    1
+  ],
+  "chapter": "civic",
+  "zoneId": "Z09",
+  "initial": true,
+  "tier": "C",
+  "basis": "41区Z09范围内的无名附属建筑组。官署职能类比《后汉书·百官志一》，精确落点、房型组合、门向、规模、地坪与门阶均为C级设计，不是具名三公府或考古复原。",
+  "sourceGroup": "Z09-reuse-C01",
+  "sourceContract": "progress-assets/z09-civic-service-C01/source.json",
+  "kind": "civic-service-group",
+  "countAsCourtyard": false,
+  "bounds": {
+    "min": [
+      2216.0,
+      0.019999992847442638,
+      -615.0
+    ],
+    "max": [
+      2241.0,
+      5.029999923706055,
+      -586.0
+    ]
+  }
+});
+provenance.sourceContracts.push({"path": "progress-assets/z09-civic-service-C01/source.json", "sha256": "6d25477f07d520f8ada665cde08fc895528436abe91dff271a9e68c7e306095e"});
+const z09z14ContentAsset1 = {
+  "id": "z14-well-court-C01",
+  "tier": "C",
+  "bounds": {
+    "min": [
+      -20.0,
+      -0.6499999761581421,
+      -6.0
+    ],
+    "max": [
+      6.0,
+      3.25,
+      6.0
+    ]
+  },
+  "sourceContract": "progress-assets/z14-well-court-C01/source.json",
+  "path": "progress-assets/z14-well-court-C01/z14-well-court-far.glb",
+  "bytes": 323784,
+  "sha256": "d334614eb7f28a3f1240ffb6eae6b608d9a56bb35f09c250ac2554af674b9d70",
+  "midPath": "progress-assets/z14-well-court-C01/z14-well-court-mid.glb",
+  "midBytes": 583432,
+  "midSha256": "87e8907d055eaebc1f421afb0cf79e46362a8f964e11c2b3c3e49c5f84b60011",
+  "nearPath": "progress-assets/z14-well-court-C01/z14-well-court-near.glb",
+  "nearBytes": 1731732,
+  "nearSha256": "97b6cb0be98420cbd770e153ab5b964c2e2028b42bc5d8c5c5856639a984321e"
+};
+assets.push((({ path, nearPath, midPath, ...asset }) => ({ ...asset, sourcePath: path, url: cityURL(path), nearUrl: cityURL(nearPath), midUrl: cityURL(midPath) }))(z09z14ContentAsset1));
+nodes.push({
+  "id": "Z14-WELL-COURT-C01",
+  "asset": "z14-well-court-C01",
+  "title": "住宅东缘开放井台 · C级设计",
+  "summary": "复用井A，新增开孔地坪与14米短接路；接入既有地面，不增加住宅院落数量。",
+  "matrix": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    800,
+    0.2,
+    -1050,
+    1
+  ],
+  "chapter": "residential",
+  "zoneId": "Z14",
+  "initial": true,
+  "tier": "C",
+  "basis": "41区Z14住宅生活区内的设计落位。井形类比河南博物院《绿釉陶井模型》；尺寸、井址、井台与路线为C级设计，不证明洛阳公元180年的实井或公共井制度。",
+  "sourceGroup": "Z14-reuse-C01",
+  "sourceContract": "progress-assets/z14-well-court-C01/source.json",
+  "kind": "water-facility",
+  "countAsCourtyard": false,
+  "bounds": {
+    "min": [
+      780.0,
+      -0.4499999761581421,
+      -1056.0
+    ],
+    "max": [
+      806.0,
+      3.45,
+      -1044.0
+    ]
+  }
+});
+provenance.sourceContracts.push({"path": "progress-assets/z14-well-court-C01/source.json", "sha256": "3c58bcfd6a8f1c418289930a4b2cd52cf7dae95ffe8e2d51cce9adc05f9959df"});
+provenance.initialModelBytes += 400208;
+provenance.allCityModelBytes += 6345452;
+provenance.installedContentC01 = {
+  "newCityNodes": 2,
+  "newReusedBuildingInstances": 3,
+  "newReusedWellInstances": 1,
+  "newBuildingFamilies": 0,
+  "newResidentialCourtyards": 0,
+  "existingResidentialCourtyardsUnchanged": 47,
+  "extraMediumReviewBytes": 2449296,
+  "Z09Variant": "A only; B must not be co-installed"
+};
+// midUrl is the delivered medium review LOD. Current city renderer selects far/near only.
+// END Z09 Z14 REVIEWED CONTENT C01
+// BEGIN YONG UPPER ACCESS V1.1 CONTENT
+// Full LOD0 is the runtime asset. Current project adapter has no automatic LOD selection.
+// LOD1/LOD2 remain delivered optional review files, with no nearUrl/midUrl.
+const yongAccessV11Asset = {
+  "id": "yong-upper-access-C-v1_1",
+  "sourcePath": "progress-assets/yong-upper-access-C-v1_1/yong-upper-access-C-LOD0.glb",
+  "path": "progress-assets/yong-upper-access-C-v1_1/yong-upper-access-C-LOD0.glb",
+  "bytes": 195148,
+  "sha256": "d7f84be9b56bec8d13c7f82f165dd657d8e8348cb7a88eff1a9326c0b2512e9b",
+  "tier": "C",
+  "sourceContract": "progress-assets/yong-upper-access-C-v1_1/source.json"
+};
+assets.push((({ path, ...asset }) => ({ ...asset, url: cityURL(path) }))(yongAccessV11Asset));
+nodes.push({
+  "id": "yong-upper-access-C-v1_1",
+  "asset": "yong-upper-access-C-v1_1",
+  "matrix": [
+      -0.01162686012685299,
+      0,
+      -0.9999324083328247,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0.9999324083328247,
+      0,
+      -0.01162686012685299,
+      0,
+      -16.0157413482666,
+      0.17000000178813934,
+      -1397.772705078125,
+      1
+    ],
+  "tier": "C",
+  "initial": true,
+  "name": "access",
+  "chapter": "yong-gate",
+  "title": "雍门上层登临 · C级使用性试案 v1.1",
+  "basis": "无雍门登临直接证据；折返路线、全部尺寸和材料均为C设计。",
+  "replaces": [],
+  "summary": "C级折返登临附件；未见雍门登临直接证据。v1.1柱端后退40毫米，原试案矩阵不变。",
+  "countAsCourtyard": false,
+  "sourceContract": "progress-assets/yong-upper-access-C-v1_1/source.json"
+});
+const yongAccessV11Chapter = chapters.find(chapter => chapter.id === 'yong-gate');
+if (!yongAccessV11Chapter) throw new Error('Missing yong-gate chapter');
+yongAccessV11Chapter.nodeIds.push('yong-upper-access-C-v1_1');
+yongAccessV11Chapter.loadNodeIds.push('yong-upper-access-C-v1_1');
+provenance.sourceContracts.push({"path": "progress-assets/yong-upper-access-C-v1_1/source.json", "sha256": "c3c88ce6f49be590495382833d1d3a64d0a367c7f8e7bb206afcdc43ca8e6b8e"});
+provenance.initialModelBytes += 195148; // Legacy initial manifest budget, not project-page measured HTTP.
+provenance.allCityModelBytes += 195148; // One selected runtime URL; review files excluded.
+// END YONG UPPER ACCESS V1.1 CONTENT
+const z13Installation = installZ13({ assets, nodes, chapters, initialCamera, overview, researchModels, provenance });
+const galleryInstallation = installGallery(z13Installation.manifest);
+({ assets, nodes, chapters, initialCamera, overview, researchModels, provenance } = galleryInstallation.manifest);
+export { assets, nodes, chapters, initialCamera, overview, researchModels, provenance };
+export const manifest = galleryInstallation.manifest;
+export const galleryReceipt = galleryInstallation.receipt;
+export const z13Receipt = z13Installation.receipt;
+export default manifest;
