@@ -1,0 +1,73 @@
+{
+  "batch": "r2026.11.08-1",
+  "baseCommit": "cf9defa04c293033ba07f063f7d7721197a58461",
+  "scope": "One additive complete city ground only. Other models remain for later batches.",
+  "asset": {
+    "path": "city-continuous-ground-C-v6.glb",
+    "sha256": "0bd2df3ff0ae3d55a82705e6e030d3b4164247ef6549149723451eef3a09146d",
+    "bytes": 56416,
+    "triangles": 512
+  },
+  "runtime": {
+    "visibleNodesBefore": 86,
+    "visibleNodesAfter": 87,
+    "manifestNodesBefore": 93,
+    "manifestNodesAfter": 94,
+    "assetsBefore": 69,
+    "assetsAfter": 70,
+    "uniqueDefaultURLsBefore": 48,
+    "uniqueDefaultURLsAfter": 49,
+    "defaultGLBBytesBefore": 23501772,
+    "defaultGLBBytesAfter": 23558188,
+    "newCourtyards": 0,
+    "existingNodeAssetMatrixChapterCameraChanges": 0
+  },
+  "geometryChecks": {
+    "closedComponents": 1,
+    "euler": 2,
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 0,
+    "degenerateTriangles": 0,
+    "testedTrianglePairs": 130816,
+    "unexpectedSelfIntersections": 0,
+    "roadBottomAreaSquareMetres": 38549.5052,
+    "roadUnderfillAreaSquareMetres": 0,
+    "wallFootMaximumVerticalErrorMillimetres": 0.00546,
+    "wellClosedAtOriginalModelDepth": true,
+    "zeroPlaneNewOcclusionAreaSquareMetres": 0,
+    "deliberateHiddenUndercutDoubleProjectionSquareMetres": 0.058593754
+  },
+  "legacyDispositions": [
+    {
+      "item": "PZ-01",
+      "result": "Ground-only base pinned to cf9; original66 nodes retain transforms, source GLB SHA and bounds. This is a targeted preservation check, not a global G rebaseline."
+    },
+    {
+      "item": "LY-005 / LY-006",
+      "result": "Current original93 manifest nodes and14 research models preserved. No old port or ownership registry is consumed or edited. Historical aggregate scripts were not rerun and are not reported as passed."
+    },
+    {
+      "item": "PZ-09 source identities",
+      "result": "Already corrected by approved PR13; all22 existing raw-byte contracts independently verified."
+    },
+    {
+      "item": "PZ-09 Yong research duplicate",
+      "result": "Existing local-study with null city placement remains isolated and unchanged; no new Yong study placed."
+    },
+    {
+      "item": "PZ-09 Mao gate name",
+      "result": "Current manifest uses the Mao variant name. No gate name or original gate source edited by this batch."
+    },
+    {
+      "item": "PZ-09 ritual classification",
+      "result": "Existing ritual/north-suburb research stays isolated and unchanged; no new ritual candidate placed."
+    }
+  ],
+  "limits": [
+    "No global release of G, PZ-09, protected original assets or old ports.",
+    "No geographic or archaeological terrain claim.",
+    "No structural bearing, walking, collision or drainage certification.",
+    "Previews are CPU actual-geometry renders, not browser screenshots.",
+    "Desktop and mobile CI must pass before merge; deployed output must be verified after merge."
+  ]
+}

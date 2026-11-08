@@ -1,0 +1,32 @@
+{
+  "spec": 1,
+  "id": "m-luoyang-city-continuous-ground",
+  "category": "models",
+  "kind": "城市构件",
+  "title": "全城连续土基地表",
+  "english": "CONTINUOUS CITY GROUND",
+  "summary": "覆盖现有全城场景的单体无孔C级土基，所有旧模型与道路原位保留。",
+  "status": "待审",
+  "statusNote": "已接入本提交的全城场景；公开网页是否更新以部署结果为准。",
+  "cover": "cover.png",
+  "coverAlt": "当前86节点与v6完整连续土基的固定镜头Blender CPU渲染，使用原GLB材质，不是网页截图。",
+  "gallery": [
+    "shots/roads.png",
+    "shots/well.png",
+    "shots/edge.png"
+  ],
+  "files": [
+    {
+      "path": "../../../cities/luoyang/progress-assets/city-continuous-ground-C-v6/city-continuous-ground-C-v6.glb",
+      "label": "完整连续土基 · 单一低复杂度档"
+    }
+  ],
+  "notes": {
+    "已完成的检查": "48个现行GLB逐项SHA核对、86节点399680三角实测；旧件与矩阵不变，土面贴主路底与12墙脚。新土体单连通闭合、无贯穿孔，带法线与UV；接入可精确撤回。",
+    "限制与待解决": "几何可视接触不作结构承托、行走碰撞、排水或全角度GPU认证。两处零高程薄面下留1毫米视觉避让，历史地形未配准。",
+    "考据与推测": "C级展示设计；边界来自现有模型包络并外扩25示意米，不是古城界、测绘地形或水系；无地理配准。",
+    "显示与通行": "普通顶H=0.16，12墙脚局部接至H=0.17，底H=-0.50；旧路坪顶H=0.17–0.21保留。两个零面下保留凹区，井口闭底至原模型H=-0.45，不封井口、不填门洞。非碰撞、非可拾取、单一模型档。",
+    "预览说明": "四图均为冻结v6土基与原86节点的固定镜头离线实模渲染，保留原GLB材质，颜色不作历史认定；不是网页截图。网页测试另行记录。"
+  },
+  "related": []
+}

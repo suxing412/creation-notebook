@@ -12,7 +12,7 @@ test('Z13 five-piece installation loads exact files and remains visible during c
  const touch=info.project.name==='mobile',evidence=await instrument(page),received=[];
  page.on('response',r=>{if(files.some(f=>new URL(r.url()).pathname===f.path))received.push(r);});
  const gl=await openCity(page,touch);await page.emulateMedia({reducedMotion:'reduce'});
- const initial=await state(page);expect(initial.modelNodeIds).toEqual(expected);expect(expected).toHaveLength(86);
+ const initial=await state(page);expect(initial.modelNodeIds).toEqual(expected);expect(expected).toHaveLength(87);
  const http=[];
  for(const f of files){const matches=received.filter(r=>new URL(r.url()).pathname===f.path);expect(matches).toHaveLength(1);
   const body=await matches[0].body();expect(matches[0].status()).toBe(200);expect(body.length).toBe(f.bytes);

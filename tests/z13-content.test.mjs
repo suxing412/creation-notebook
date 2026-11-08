@@ -7,7 +7,7 @@ import { installZ13,withdrawZ13,z13Records,z13NodeIds } from '../docs/cities/luo
 import { withContractIdentityCorrections } from './contract-identity-fixture.mjs';
 import current, * as named from '../docs/cities/luoyang/city-data.mjs';
 import { withdrawGallery } from '../docs/cities/luoyang/gallery-content.mjs';
-const published=withdrawGallery(current,named.galleryReceipt);
+const published=withdrawGallery(named.preDisplayGroundManifest,named.galleryReceipt);
 const baselineSHA='d840a304fff11a3603fc9370360b23dc3ca1562e';
 const original=execFileSync('git',['show',`${baselineSHA}:docs/cities/luoyang/city-data.mjs`],{encoding:'utf8'});
 const source=original.replaceAll('import.meta.url',JSON.stringify(new URL('../docs/cities/luoyang/city-data.mjs',import.meta.url).href));

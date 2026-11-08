@@ -33,7 +33,7 @@ test('gallery eight-part assembly remains in the real city and exposes finite gr
  }
  try{
   gl=await openCity(page,touch);await page.emulateMedia({reducedMotion:'reduce'});const initial=await state(page);
-  expect(expected).toHaveLength(86);expect(initial.modelNodeIds).toEqual(expected);
+  expect(expected).toHaveLength(87);expect(initial.modelNodeIds).toEqual(expected);
   for(const file of files){const responses=received.filter(r=>new URL(r.url()).pathname===file.path);expect(responses).toHaveLength(1);const response=responses[0],body=await response.body();expect(response.status()).toBe(200);expect(new URL(response.url()).search).toBe(file.reusesPublishedFile?'?v='+file.sha256:'');expect(body.length).toBe(file.bytes);const sha=createHash('sha256').update(body).digest('hex');expect(sha).toBe(file.sha256);http.push({path:file.path,url:response.url(),bytes:body.length,sha256:sha});}
   expect(http.reduce((n,f)=>n+f.bytes,0)).toBe(galleryRuntimeBudget.newUniqueBytes);const requests=evidence.modelRequests.slice();
   const dimensions=touch?[{width:375,height:812,label:'portrait'},{width:812,height:375,label:'landscape'}]:[{width:1440,height:1000,label:'desktop'}];

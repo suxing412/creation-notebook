@@ -1,3 +1,4 @@
+import { installDisplayGround } from './ground-content.mjs';
 import { installGallery } from './gallery-content.mjs';
 import { installZ13 } from './z13-content.mjs';
 // Existing delivered assets only. Coordinate/identity sources are listed below.
@@ -5535,9 +5536,12 @@ provenance.allCityModelBytes += 195148; // One selected runtime URL; review file
 // END YONG UPPER ACCESS V1.1 CONTENT
 const z13Installation = installZ13({ assets, nodes, chapters, initialCamera, overview, researchModels, provenance });
 const galleryInstallation = installGallery(z13Installation.manifest);
-({ assets, nodes, chapters, initialCamera, overview, researchModels, provenance } = galleryInstallation.manifest);
+export const preDisplayGroundManifest = galleryInstallation.manifest;
+const displayGroundInstallation = installDisplayGround(preDisplayGroundManifest);
+({ assets, nodes, chapters, initialCamera, overview, researchModels, provenance } = displayGroundInstallation.manifest);
 export { assets, nodes, chapters, initialCamera, overview, researchModels, provenance };
-export const manifest = galleryInstallation.manifest;
+export const manifest = displayGroundInstallation.manifest;
+export const displayGroundReceipt = displayGroundInstallation.receipt;
 export const galleryReceipt = galleryInstallation.receipt;
 export const z13Receipt = z13Installation.receipt;
 export default manifest;
