@@ -61,7 +61,7 @@
 | W29 | `assets.json` 比所在版本旧一步，「最近更新」不准 | 未修 | **退步** | 这次不只是日期旧：整张新卡都缺（已提交 94 张，重建后 95 张），重建后还有 6 处 `updated` 变化。后果见 W35 |
 | W30 | 全城一次加载全部节点 | 未修 | 未修 | 线上冷开 49 个 GLB、12.88 MB，整页 17.75 MB（上次 13.4 MB）。另外 `provenance.initialModelBytes` 是 7,849,144，而运行时默认模型是 23,558,188 B，这个预算字段已经不反映实际 |
 | W31 | 手机项目页提示键鼠操作，侧栏占宽 | 未修 | 未修 | 375 宽下画布 227 px，页面仍写「WASD」（`m-city-open.jpg`） |
-| W32 | 「在城中看」到不了新入城的模型 | 未修 | 未修 | `zone:Z09` 机位距目标约 1,440 m，模型仍只是小点（`city-zone-Z09.jpg`）；`luoyang-project.mjs` 没改 |
+| W32 | 「在城中看」到不了新入城的模型 | 未修 | 未修 | `zone:Z09` 机位距目标约 1,450 m，模型仍只是小点（`city-zone-Z09.jpg`）；`luoyang-project.mjs` 没改 |
 | W33 | 内容测试在 Windows 本地失败 | 未修 | 未修，范围扩大 | 本机 `core.autocrlf=true` 下 3 个文件失败，新增 `ground-content.test.mjs`（`140854 !== 135311`）。`.gitattributes` 仍没有 `eol=lf`。按 LF 导出后 51/53 通过，余下 2 项是因为导出目录不是 Git 仓库。`tests/test_glb_audit.py` 在中文 Windows 上 35 项有 1 个错误：子进程输出按 GBK 解码 |
 
 ## 新问题 · 给伊苏里亚（内容与模型）
