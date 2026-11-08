@@ -5,7 +5,9 @@ import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import published,* as named from '../docs/cities/luoyang/city-data.mjs';
 import { installGallery,withdrawGallery,describeProjectRuntime,galleryRecords } from '../docs/cities/luoyang/gallery-content.mjs';
-import { preGallery as base,gitFile,baselineSHA } from './pre-gallery-baseline.mjs';
+import { preGallery,gitFile,baselineSHA } from './pre-gallery-baseline.mjs';
+import { withContractIdentityCorrections } from './contract-identity-fixture.mjs';
+const base=withContractIdentityCorrections(preGallery);
 const clone=x=>structuredClone(x),hash=b=>createHash('sha256').update(b).digest('hex'),installed=installGallery(base);
 const ids=galleryRecords.map(r=>r.nodeId);
 test('independent 78-node city installs, withdraws and reinstalls exactly',()=>{
@@ -86,4 +88,22 @@ test('project records exactly one local assembly, keeps original families and ho
  assert.ok(card.chapters.find(c=>c.id==='gallery-local-c').text.includes('C设计'));
  assert.equal(published.provenance.galleryLocalC1.automaticLOD,false);
  assert.equal(published.provenance.galleryLocalC1.wholeRouteOrPublicEntryClaim,false);
+});
+
+test('all source contracts bind exact raw bytes and every current usage',()=>{
+ const rows=published.provenance.sourceContracts;
+ assert.equal(rows.length,22);assert.equal(new Set(rows.map(r=>r.path)).size,22);
+ for(const row of rows)assert.equal(hash(readFileSync(new URL('../docs/cities/luoyang/'+row.path,import.meta.url))),row.sha256,row.path);
+ let usages=0;
+ function walk(value){
+  if(Array.isArray(value)){for(const child of value)walk(child);return;}
+  if(!value||typeof value!=='object')return;
+  if(Object.hasOwn(value,'sourceContract')){usages++;assert.equal(rows.filter(r=>r.path===value.sourceContract).length,1,value.sourceContract);}
+  for(const child of Object.values(value))walk(child);
+ }
+ walk(published);assert.equal(usages,160);
+ const original=clone(preGallery);withContractIdentityCorrections(preGallery);assert.deepEqual(preGallery,original);
+ const broken=clone(preGallery);broken.provenance.sourceContracts[0].sha256='0'.repeat(64);
+ assert.throws(()=>withContractIdentityCorrections(broken));
+ assert.throws(()=>withContractIdentityCorrections(base));
 });
